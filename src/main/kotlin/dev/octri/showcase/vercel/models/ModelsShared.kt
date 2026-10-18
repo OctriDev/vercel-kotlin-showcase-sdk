@@ -3,10 +3,10 @@
 
 package dev.octri.showcase.vercel.models
 
-/**
- * Typed representation of the `GlobalConfigItemValue` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = GlobalConfigItemValue.Deserializer::class)
+/** Typed representation of the `GlobalConfigItemValue` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = GlobalConfigItemValue.Deserializer::class
+)
 sealed interface GlobalConfigItemValue {
     /** Chooses the branch this payload is shaped like. */
     class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<GlobalConfigItemValue>() {
@@ -17,43 +17,97 @@ sealed interface GlobalConfigItemValue {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
             return when {
-                node.isTextual -> StringGlobalConfigItemValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
-                node.isNumber -> DoubleGlobalConfigItemValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Double>() {}))
-                node.isArray -> ListGlobalConfigItemValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<List<GlobalConfigItemValue?>>() {}))
-                node.isBoolean -> BooleanGlobalConfigItemValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {}))
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, GlobalConfigItemValue::class.java, "no GlobalConfigItemValue branch accepts this payload")
+                node.isTextual ->
+                    StringGlobalConfigItemValue(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
+                        )
+                    )
+                node.isNumber ->
+                    DoubleGlobalConfigItemValue(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<Double>() {},
+                        )
+                    )
+                node.isArray ->
+                    ListGlobalConfigItemValue(
+                        mapper.convertValue(
+                            node,
+                            object :
+                                com.fasterxml.jackson.core.type.TypeReference<
+                                    List<GlobalConfigItemValue?>
+                                >() {},
+                        )
+                    )
+                node.isBoolean ->
+                    BooleanGlobalConfigItemValue(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {},
+                        )
+                    )
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        GlobalConfigItemValue::class.java,
+                        "no GlobalConfigItemValue branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class StringGlobalConfigItemValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : GlobalConfigItemValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class StringGlobalConfigItemValue(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
+) : GlobalConfigItemValue
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class DoubleGlobalConfigItemValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: Double) : GlobalConfigItemValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class DoubleGlobalConfigItemValue(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Double
+) : GlobalConfigItemValue
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class ListGlobalConfigItemValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: List<GlobalConfigItemValue?>) : GlobalConfigItemValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class ListGlobalConfigItemValue(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: List<GlobalConfigItemValue?>
+) : GlobalConfigItemValue
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class BooleanGlobalConfigItemValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) : GlobalConfigItemValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class BooleanGlobalConfigItemValue(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean
+) : GlobalConfigItemValue
 
 /**
- * This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
+ * This object contains information related to the pagination of the current request, including the
+ * necessary parameters to get the next or previous page of data.
  */
 data class Pagination(
-    /**
-     * Amount of items in the current page.
-     */
+    /** Amount of items in the current page. */
     val count: Double,
-    /**
-     * Timestamp that must be used to request the next page.
-     */
+    /** Timestamp that must be used to request the next page. */
     @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: Double?,
-    /**
-     * Timestamp that must be used to request the previous page.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("prev", required = true) val prev: Double?
+    /** Timestamp that must be used to request the previous page. */
+    @com.fasterxml.jackson.annotation.JsonProperty("prev", required = true) val prev: Double?,
 )

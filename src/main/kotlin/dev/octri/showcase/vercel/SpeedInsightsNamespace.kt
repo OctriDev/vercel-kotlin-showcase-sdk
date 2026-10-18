@@ -3,13 +3,22 @@
 
 package dev.octri.showcase.vercel
 
-
 class SpeedInsightsNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Updates the Speed Insights toggle for a project. Provide the `value` field to set the toggle state, and use `projectId` to select the project. The response confirms the resulting toggle value.
+     * Updates the Speed Insights toggle for a project. Provide the `value` field to set the toggle
+     * state, and use `projectId` to select the project. The response confirms the resulting toggle
+     * value.
      */
-    fun createToggle(projectId: String, value: Boolean, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.SpeedInsights.CreateSpeedInsightsToggleResponse {
-        return dev.octri.showcase.vercel.methods.SpeedInsights.createSpeedInsightsToggle(clientConfig, projectId, value, options)
+    fun createToggle(
+        projectId: String,
+        value: Boolean,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.SpeedInsights.CreateSpeedInsightsToggleResponse {
+        return dev.octri.showcase.vercel.methods.SpeedInsights.createSpeedInsightsToggle(
+            clientConfig,
+            projectId,
+            value,
+            options,
+        )
     }
-
 }

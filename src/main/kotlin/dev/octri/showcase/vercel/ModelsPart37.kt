@@ -7,11 +7,13 @@ typealias TeamLimitedSaml = dev.octri.showcase.vercel.models.TeamLimitedSaml
 
 typealias TeamLimitedSamlConnection = dev.octri.showcase.vercel.models.TeamLimitedSamlConnection
 
-typealias TeamLimitedSamlConnectionSyncStateEnum = dev.octri.showcase.vercel.models.TeamLimitedSamlConnectionSyncStateEnum
+typealias TeamLimitedSamlConnectionSyncStateEnum =
+    dev.octri.showcase.vercel.models.TeamLimitedSamlConnectionSyncStateEnum
 
 typealias TeamLimitedSamlDirectory = dev.octri.showcase.vercel.models.TeamLimitedSamlDirectory
 
-typealias TeamLimitedSamlDirectorySyncStateEnum = dev.octri.showcase.vercel.models.TeamLimitedSamlDirectorySyncStateEnum
+typealias TeamLimitedSamlDirectorySyncStateEnum =
+    dev.octri.showcase.vercel.models.TeamLimitedSamlDirectorySyncStateEnum
 
 typealias TeamLimitedSamlEnforcedEnum = dev.octri.showcase.vercel.models.TeamLimitedSamlEnforcedEnum
 
@@ -19,55 +21,71 @@ typealias TeamMembership = dev.octri.showcase.vercel.models.TeamMembership
 
 typealias TeamMembershipConfirmedEnum = dev.octri.showcase.vercel.models.TeamMembershipConfirmedEnum
 
-typealias TeamMembershipEntitlementsItem = dev.octri.showcase.vercel.models.TeamMembershipEntitlementsItem
+typealias TeamMembershipEntitlementsItem =
+    dev.octri.showcase.vercel.models.TeamMembershipEntitlementsItem
 
-typealias TeamMembershipIsOrgBackingTeamMembershipEnum = dev.octri.showcase.vercel.models.TeamMembershipIsOrgBackingTeamMembershipEnum
+typealias TeamMembershipIsOrgBackingTeamMembershipEnum =
+    dev.octri.showcase.vercel.models.TeamMembershipIsOrgBackingTeamMembershipEnum
 
 typealias TeamMembershipJoinedFrom = dev.octri.showcase.vercel.models.TeamMembershipJoinedFrom
 
-typealias TeamMembershipJoinedFromOriginEnum = dev.octri.showcase.vercel.models.TeamMembershipJoinedFromOriginEnum
+typealias TeamMembershipJoinedFromOriginEnum =
+    dev.octri.showcase.vercel.models.TeamMembershipJoinedFromOriginEnum
 
 typealias TeamMembershipRoleEnum = dev.octri.showcase.vercel.models.TeamMembershipRoleEnum
 
-typealias TeamMembershipTeamPermissionsItemEnum = dev.octri.showcase.vercel.models.TeamMembershipTeamPermissionsItemEnum
+typealias TeamMembershipTeamPermissionsItemEnum =
+    dev.octri.showcase.vercel.models.TeamMembershipTeamPermissionsItemEnum
 
-typealias TeamMembershipTeamRolesItemEnum = dev.octri.showcase.vercel.models.TeamMembershipTeamRolesItemEnum
+typealias TeamMembershipTeamRolesItemEnum =
+    dev.octri.showcase.vercel.models.TeamMembershipTeamRolesItemEnum
 
 typealias TeamNsnbConfig = dev.octri.showcase.vercel.models.TeamNsnbConfig
 
-typealias TeamNsnbConfigPreferenceEnum = dev.octri.showcase.vercel.models.TeamNsnbConfigPreferenceEnum
+typealias TeamNsnbConfigPreferenceEnum =
+    dev.octri.showcase.vercel.models.TeamNsnbConfigPreferenceEnum
 
 typealias TeamPlatformEnum = dev.octri.showcase.vercel.models.TeamPlatformEnum
 
 typealias TeamRemoteCaching = dev.octri.showcase.vercel.models.TeamRemoteCaching
 
-typealias TeamRemoteCachingEnabledEnum = dev.octri.showcase.vercel.models.TeamRemoteCachingEnabledEnum
+typealias TeamRemoteCachingEnabledEnum =
+    dev.octri.showcase.vercel.models.TeamRemoteCachingEnabledEnum
 
-typealias TeamRequireVerifiedCommitsEnum = dev.octri.showcase.vercel.models.TeamRequireVerifiedCommitsEnum
+typealias TeamRequireVerifiedCommitsEnum =
+    dev.octri.showcase.vercel.models.TeamRequireVerifiedCommitsEnum
 
 typealias TeamResourceConfig = dev.octri.showcase.vercel.models.TeamResourceConfig
 
-typealias TeamResourceConfigBuildEntitlements = dev.octri.showcase.vercel.models.TeamResourceConfigBuildEntitlements
+typealias TeamResourceConfigBuildEntitlements =
+    dev.octri.showcase.vercel.models.TeamResourceConfigBuildEntitlements
 
-typealias TeamResourceConfigBuildEntitlementsEnhancedBuildsEnum = dev.octri.showcase.vercel.models.TeamResourceConfigBuildEntitlementsEnhancedBuildsEnum
+typealias TeamResourceConfigBuildEntitlementsEnhancedBuildsEnum =
+    dev.octri.showcase.vercel.models.TeamResourceConfigBuildEntitlementsEnhancedBuildsEnum
 
-typealias TeamResourceConfigBuildMachine = dev.octri.showcase.vercel.models.TeamResourceConfigBuildMachine
+typealias TeamResourceConfigBuildMachine =
+    dev.octri.showcase.vercel.models.TeamResourceConfigBuildMachine
 
-typealias TeamResourceConfigBuildMachineDefaultEnum = dev.octri.showcase.vercel.models.TeamResourceConfigBuildMachineDefaultEnum
+typealias TeamResourceConfigBuildMachineDefaultEnum =
+    dev.octri.showcase.vercel.models.TeamResourceConfigBuildMachineDefaultEnum
 
-typealias TeamResourceConfigElasticConcurrencyEnabledEnum = dev.octri.showcase.vercel.models.TeamResourceConfigElasticConcurrencyEnabledEnum
+typealias TeamResourceConfigElasticConcurrencyEnabledEnum =
+    dev.octri.showcase.vercel.models.TeamResourceConfigElasticConcurrencyEnabledEnum
 
 typealias TeamSaml = dev.octri.showcase.vercel.models.TeamSaml
 
 typealias TeamSamlConnection = dev.octri.showcase.vercel.models.TeamSamlConnection
 
-typealias TeamSamlConnectionSyncStateEnum = dev.octri.showcase.vercel.models.TeamSamlConnectionSyncStateEnum
+typealias TeamSamlConnectionSyncStateEnum =
+    dev.octri.showcase.vercel.models.TeamSamlConnectionSyncStateEnum
 
-typealias TeamSamlDefaultRedirectUriEnum = dev.octri.showcase.vercel.models.TeamSamlDefaultRedirectUriEnum
+typealias TeamSamlDefaultRedirectUriEnum =
+    dev.octri.showcase.vercel.models.TeamSamlDefaultRedirectUriEnum
 
 typealias TeamSamlDirectory = dev.octri.showcase.vercel.models.TeamSamlDirectory
 
-typealias TeamSamlDirectorySyncStateEnum = dev.octri.showcase.vercel.models.TeamSamlDirectorySyncStateEnum
+typealias TeamSamlDirectorySyncStateEnum =
+    dev.octri.showcase.vercel.models.TeamSamlDirectorySyncStateEnum
 
 typealias TeamSamlEnforcedEnum = dev.octri.showcase.vercel.models.TeamSamlEnforcedEnum
 
@@ -75,55 +93,77 @@ typealias TeamSamlRolesValueVariant0 = dev.octri.showcase.vercel.models.TeamSaml
 
 typealias TeamSamlRolesValueVariant1 = dev.octri.showcase.vercel.models.TeamSamlRolesValueVariant1
 
-typealias TeamSamlRolesValueVariant1TeamPermissionsItemEnum = dev.octri.showcase.vercel.models.TeamSamlRolesValueVariant1TeamPermissionsItemEnum
+typealias TeamSamlRolesValueVariant1TeamPermissionsItemEnum =
+    dev.octri.showcase.vercel.models.TeamSamlRolesValueVariant1TeamPermissionsItemEnum
 
-typealias TeamSamlRolesValueVariant1TeamRolesItemEnum = dev.octri.showcase.vercel.models.TeamSamlRolesValueVariant1TeamRolesItemEnum
+typealias TeamSamlRolesValueVariant1TeamRolesItemEnum =
+    dev.octri.showcase.vercel.models.TeamSamlRolesValueVariant1TeamRolesItemEnum
 
-typealias TeamSamlRolesValueVariant2Enum = dev.octri.showcase.vercel.models.TeamSamlRolesValueVariant2Enum
+typealias TeamSamlRolesValueVariant2Enum =
+    dev.octri.showcase.vercel.models.TeamSamlRolesValueVariant2Enum
 
-typealias TeamSensitiveEnvironmentVariablePolicyEnum = dev.octri.showcase.vercel.models.TeamSensitiveEnvironmentVariablePolicyEnum
+typealias TeamSensitiveEnvironmentVariablePolicyEnum =
+    dev.octri.showcase.vercel.models.TeamSensitiveEnvironmentVariablePolicyEnum
 
 typealias TeamStrictConnectors = dev.octri.showcase.vercel.models.TeamStrictConnectors
 
-typealias TeamStrictConnectorsEnabledEnum = dev.octri.showcase.vercel.models.TeamStrictConnectorsEnabledEnum
+typealias TeamStrictConnectorsEnabledEnum =
+    dev.octri.showcase.vercel.models.TeamStrictConnectorsEnabledEnum
 
-typealias TeamStrictDeploymentProtectionSettings = dev.octri.showcase.vercel.models.TeamStrictDeploymentProtectionSettings
+typealias TeamStrictDeploymentProtectionSettings =
+    dev.octri.showcase.vercel.models.TeamStrictDeploymentProtectionSettings
 
-typealias TeamStrictDeploymentProtectionSettingsEnabledEnum = dev.octri.showcase.vercel.models.TeamStrictDeploymentProtectionSettingsEnabledEnum
+typealias TeamStrictDeploymentProtectionSettingsEnabledEnum =
+    dev.octri.showcase.vercel.models.TeamStrictDeploymentProtectionSettingsEnabledEnum
 
-typealias TeamStrictPasswordProtectionSettings = dev.octri.showcase.vercel.models.TeamStrictPasswordProtectionSettings
+typealias TeamStrictPasswordProtectionSettings =
+    dev.octri.showcase.vercel.models.TeamStrictPasswordProtectionSettings
 
-typealias TeamStrictPasswordProtectionSettingsEnabledEnum = dev.octri.showcase.vercel.models.TeamStrictPasswordProtectionSettingsEnabledEnum
+typealias TeamStrictPasswordProtectionSettingsEnabledEnum =
+    dev.octri.showcase.vercel.models.TeamStrictPasswordProtectionSettingsEnabledEnum
 
 typealias TeamStrictShareableLinks = dev.octri.showcase.vercel.models.TeamStrictShareableLinks
 
-typealias TeamStrictShareableLinksEnabledEnum = dev.octri.showcase.vercel.models.TeamStrictShareableLinksEnabledEnum
+typealias TeamStrictShareableLinksEnabledEnum =
+    dev.octri.showcase.vercel.models.TeamStrictShareableLinksEnabledEnum
 
 typealias TestDrainRequestDelivery = dev.octri.showcase.vercel.models.TestDrainRequestDelivery
 
-typealias TestDrainRequestDeliveryVariant0 = dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant0
+typealias TestDrainRequestDeliveryVariant0 =
+    dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant0
 
-typealias TestDrainRequestDeliveryVariant0CompressionEnum = dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant0CompressionEnum
+typealias TestDrainRequestDeliveryVariant0CompressionEnum =
+    dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant0CompressionEnum
 
-typealias TestDrainRequestDeliveryVariant0EncodingEnum = dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant0EncodingEnum
+typealias TestDrainRequestDeliveryVariant0EncodingEnum =
+    dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant0EncodingEnum
 
-typealias TestDrainRequestDeliveryVariant1 = dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant1
+typealias TestDrainRequestDeliveryVariant1 =
+    dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant1
 
-typealias TestDrainRequestDeliveryVariant1EncodingEnum = dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant1EncodingEnum
+typealias TestDrainRequestDeliveryVariant1EncodingEnum =
+    dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant1EncodingEnum
 
-typealias TestDrainRequestDeliveryVariant1Endpoint = dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant1Endpoint
+typealias TestDrainRequestDeliveryVariant1Endpoint =
+    dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant1Endpoint
 
-typealias TestDrainRequestDeliveryVariant2 = dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant2
+typealias TestDrainRequestDeliveryVariant2 =
+    dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant2
 
-typealias TestDrainRequestDeliveryVariant2CompressionEnum = dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant2CompressionEnum
+typealias TestDrainRequestDeliveryVariant2CompressionEnum =
+    dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant2CompressionEnum
 
-typealias TestDrainRequestDeliveryVariant2EncodingEnum = dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant2EncodingEnum
+typealias TestDrainRequestDeliveryVariant2EncodingEnum =
+    dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant2EncodingEnum
 
-typealias TestDrainRequestDeliveryVariant2FileStructureEnum = dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant2FileStructureEnum
+typealias TestDrainRequestDeliveryVariant2FileStructureEnum =
+    dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant2FileStructureEnum
 
-typealias TestDrainRequestDeliveryVariant2ObjectAclEnum = dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant2ObjectAclEnum
+typealias TestDrainRequestDeliveryVariant2ObjectAclEnum =
+    dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant2ObjectAclEnum
 
-typealias TestDrainRequestDeliveryVariant2ServerSideEncryptionEnum = dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant2ServerSideEncryptionEnum
+typealias TestDrainRequestDeliveryVariant2ServerSideEncryptionEnum =
+    dev.octri.showcase.vercel.models.TestDrainRequestDeliveryVariant2ServerSideEncryptionEnum
 
 typealias TldName = dev.octri.showcase.vercel.models.TldName
 
@@ -149,7 +189,8 @@ typealias TooManyRequestsRetryAfter = dev.octri.showcase.vercel.models.TooManyRe
 
 typealias TooManyRequestsStatusEnum = dev.octri.showcase.vercel.models.TooManyRequestsStatusEnum
 
-typealias TransferInDomainResponseLinksValueMethodEnum = dev.octri.showcase.vercel.models.TransferInDomainResponseLinksValueMethodEnum
+typealias TransferInDomainResponseLinksValueMethodEnum =
+    dev.octri.showcase.vercel.models.TransferInDomainResponseLinksValueMethodEnum
 
 typealias Unauthorized = dev.octri.showcase.vercel.models.Unauthorized
 
@@ -157,282 +198,413 @@ typealias UnauthorizedCodeEnum = dev.octri.showcase.vercel.models.UnauthorizedCo
 
 typealias UnauthorizedStatusEnum = dev.octri.showcase.vercel.models.UnauthorizedStatusEnum
 
-typealias UnknownGetDomainContactVerificationResponse = dev.octri.showcase.vercel.models.UnknownGetDomainContactVerificationResponse
+typealias UnknownGetDomainContactVerificationResponse =
+    dev.octri.showcase.vercel.models.UnknownGetDomainContactVerificationResponse
 
-typealias UnknownListFlagsV2ResponseDataItem = dev.octri.showcase.vercel.models.UnknownListFlagsV2ResponseDataItem
+typealias UnknownListFlagsV2ResponseDataItem =
+    dev.octri.showcase.vercel.models.UnknownListFlagsV2ResponseDataItem
 
-typealias UnknownListTeamFlagsV2ResponseDataItem = dev.octri.showcase.vercel.models.UnknownListTeamFlagsV2ResponseDataItem
+typealias UnknownListTeamFlagsV2ResponseDataItem =
+    dev.octri.showcase.vercel.models.UnknownListTeamFlagsV2ResponseDataItem
 
-typealias UnknownListTeamsResponseTeamsItem = dev.octri.showcase.vercel.models.UnknownListTeamsResponseTeamsItem
+typealias UnknownListTeamsResponseTeamsItem =
+    dev.octri.showcase.vercel.models.UnknownListTeamsResponseTeamsItem
 
-typealias UpdateAccessGroupProjectResponseRoleEnum = dev.octri.showcase.vercel.models.UpdateAccessGroupProjectResponseRoleEnum
+typealias UpdateAccessGroupProjectResponseRoleEnum =
+    dev.octri.showcase.vercel.models.UpdateAccessGroupProjectResponseRoleEnum
 
-typealias UpdateAccessGroupProjectRoleEnum = dev.octri.showcase.vercel.models.UpdateAccessGroupProjectRoleEnum
+typealias UpdateAccessGroupProjectRoleEnum =
+    dev.octri.showcase.vercel.models.UpdateAccessGroupProjectRoleEnum
 
-typealias UpdateAccessGroupProjectsItemRoleEnum = dev.octri.showcase.vercel.models.UpdateAccessGroupProjectsItemRoleEnum
+typealias UpdateAccessGroupProjectsItemRoleEnum =
+    dev.octri.showcase.vercel.models.UpdateAccessGroupProjectsItemRoleEnum
 
-typealias UpdateAccessGroupResponseEntitlementsItemEnum = dev.octri.showcase.vercel.models.UpdateAccessGroupResponseEntitlementsItemEnum
+typealias UpdateAccessGroupResponseEntitlementsItemEnum =
+    dev.octri.showcase.vercel.models.UpdateAccessGroupResponseEntitlementsItemEnum
 
-typealias UpdateAttackChallengeModeResponseAttackModeEnabledEnum = dev.octri.showcase.vercel.models.UpdateAttackChallengeModeResponseAttackModeEnabledEnum
+typealias UpdateAttackChallengeModeResponseAttackModeEnabledEnum =
+    dev.octri.showcase.vercel.models.UpdateAttackChallengeModeResponseAttackModeEnabledEnum
 
 typealias UpdateCheckConclusionEnum = dev.octri.showcase.vercel.models.UpdateCheckConclusionEnum
 
-typealias UpdateCheckOutputMetricsCLSSourceEnum = dev.octri.showcase.vercel.models.UpdateCheckOutputMetricsCLSSourceEnum
+typealias UpdateCheckOutputMetricsCLSSourceEnum =
+    dev.octri.showcase.vercel.models.UpdateCheckOutputMetricsCLSSourceEnum
 
-typealias UpdateCheckOutputMetricsFCPSourceEnum = dev.octri.showcase.vercel.models.UpdateCheckOutputMetricsFCPSourceEnum
+typealias UpdateCheckOutputMetricsFCPSourceEnum =
+    dev.octri.showcase.vercel.models.UpdateCheckOutputMetricsFCPSourceEnum
 
-typealias UpdateCheckOutputMetricsLCPSourceEnum = dev.octri.showcase.vercel.models.UpdateCheckOutputMetricsLCPSourceEnum
+typealias UpdateCheckOutputMetricsLCPSourceEnum =
+    dev.octri.showcase.vercel.models.UpdateCheckOutputMetricsLCPSourceEnum
 
-typealias UpdateCheckOutputMetricsTBTSourceEnum = dev.octri.showcase.vercel.models.UpdateCheckOutputMetricsTBTSourceEnum
+typealias UpdateCheckOutputMetricsTBTSourceEnum =
+    dev.octri.showcase.vercel.models.UpdateCheckOutputMetricsTBTSourceEnum
 
-typealias UpdateCheckOutputMetricsVirtualExperienceScoreSourceEnum = dev.octri.showcase.vercel.models.UpdateCheckOutputMetricsVirtualExperienceScoreSourceEnum
+typealias UpdateCheckOutputMetricsVirtualExperienceScoreSourceEnum =
+    dev.octri.showcase.vercel.models.UpdateCheckOutputMetricsVirtualExperienceScoreSourceEnum
 
-typealias UpdateCheckResponseBlockingEnum = dev.octri.showcase.vercel.models.UpdateCheckResponseBlockingEnum
+typealias UpdateCheckResponseBlockingEnum =
+    dev.octri.showcase.vercel.models.UpdateCheckResponseBlockingEnum
 
-typealias UpdateCheckResponseConclusionEnum = dev.octri.showcase.vercel.models.UpdateCheckResponseConclusionEnum
+typealias UpdateCheckResponseConclusionEnum =
+    dev.octri.showcase.vercel.models.UpdateCheckResponseConclusionEnum
 
-typealias UpdateCheckResponseOutputMetricsCLSSourceEnum = dev.octri.showcase.vercel.models.UpdateCheckResponseOutputMetricsCLSSourceEnum
+typealias UpdateCheckResponseOutputMetricsCLSSourceEnum =
+    dev.octri.showcase.vercel.models.UpdateCheckResponseOutputMetricsCLSSourceEnum
 
-typealias UpdateCheckResponseOutputMetricsFCPSourceEnum = dev.octri.showcase.vercel.models.UpdateCheckResponseOutputMetricsFCPSourceEnum
+typealias UpdateCheckResponseOutputMetricsFCPSourceEnum =
+    dev.octri.showcase.vercel.models.UpdateCheckResponseOutputMetricsFCPSourceEnum
 
-typealias UpdateCheckResponseOutputMetricsLCPSourceEnum = dev.octri.showcase.vercel.models.UpdateCheckResponseOutputMetricsLCPSourceEnum
+typealias UpdateCheckResponseOutputMetricsLCPSourceEnum =
+    dev.octri.showcase.vercel.models.UpdateCheckResponseOutputMetricsLCPSourceEnum
 
-typealias UpdateCheckResponseOutputMetricsTBTSourceEnum = dev.octri.showcase.vercel.models.UpdateCheckResponseOutputMetricsTBTSourceEnum
+typealias UpdateCheckResponseOutputMetricsTBTSourceEnum =
+    dev.octri.showcase.vercel.models.UpdateCheckResponseOutputMetricsTBTSourceEnum
 
-typealias UpdateCheckResponseOutputMetricsVirtualExperienceScoreSourceEnum = dev.octri.showcase.vercel.models.UpdateCheckResponseOutputMetricsVirtualExperienceScoreSourceEnum
+typealias UpdateCheckResponseOutputMetricsVirtualExperienceScoreSourceEnum =
+    dev.octri.showcase.vercel.models.UpdateCheckResponseOutputMetricsVirtualExperienceScoreSourceEnum
 
-typealias UpdateCheckResponseRerequestableEnum = dev.octri.showcase.vercel.models.UpdateCheckResponseRerequestableEnum
+typealias UpdateCheckResponseRerequestableEnum =
+    dev.octri.showcase.vercel.models.UpdateCheckResponseRerequestableEnum
 
-typealias UpdateCheckResponseStatusEnum = dev.octri.showcase.vercel.models.UpdateCheckResponseStatusEnum
+typealias UpdateCheckResponseStatusEnum =
+    dev.octri.showcase.vercel.models.UpdateCheckResponseStatusEnum
 
 typealias UpdateCheckStatusEnum = dev.octri.showcase.vercel.models.UpdateCheckStatusEnum
 
-typealias UpdateCustomEnvironmentBranchMatcherTypeEnum = dev.octri.showcase.vercel.models.UpdateCustomEnvironmentBranchMatcherTypeEnum
+typealias UpdateCustomEnvironmentBranchMatcherTypeEnum =
+    dev.octri.showcase.vercel.models.UpdateCustomEnvironmentBranchMatcherTypeEnum
 
-typealias UpdateCustomEnvironmentResponseBranchMatcherTypeEnum = dev.octri.showcase.vercel.models.UpdateCustomEnvironmentResponseBranchMatcherTypeEnum
+typealias UpdateCustomEnvironmentResponseBranchMatcherTypeEnum =
+    dev.octri.showcase.vercel.models.UpdateCustomEnvironmentResponseBranchMatcherTypeEnum
 
-typealias UpdateCustomEnvironmentResponseDomainsItemRedirectStatusCodeEnum = dev.octri.showcase.vercel.models.UpdateCustomEnvironmentResponseDomainsItemRedirectStatusCodeEnum
+typealias UpdateCustomEnvironmentResponseDomainsItemRedirectStatusCodeEnum =
+    dev.octri.showcase.vercel.models.UpdateCustomEnvironmentResponseDomainsItemRedirectStatusCodeEnum
 
-typealias UpdateCustomEnvironmentResponseDomainsItemVerifiedEnum = dev.octri.showcase.vercel.models.UpdateCustomEnvironmentResponseDomainsItemVerifiedEnum
+typealias UpdateCustomEnvironmentResponseDomainsItemVerifiedEnum =
+    dev.octri.showcase.vercel.models.UpdateCustomEnvironmentResponseDomainsItemVerifiedEnum
 
-typealias UpdateCustomEnvironmentResponseTypeEnum = dev.octri.showcase.vercel.models.UpdateCustomEnvironmentResponseTypeEnum
+typealias UpdateCustomEnvironmentResponseTypeEnum =
+    dev.octri.showcase.vercel.models.UpdateCustomEnvironmentResponseTypeEnum
 
-typealias UpdateDeploymentCheckRunConclusionEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunConclusionEnum
+typealias UpdateDeploymentCheckRunConclusionEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunConclusionEnum
 
-typealias UpdateDeploymentCheckRunResponse = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponse
+typealias UpdateDeploymentCheckRunResponse =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponse
 
-typealias UpdateDeploymentCheckRunResponseVariant0 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0
+typealias UpdateDeploymentCheckRunResponseVariant0 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0
 
-typealias UpdateDeploymentCheckRunResponseVariant0BlocksEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0BlocksEnum
+typealias UpdateDeploymentCheckRunResponseVariant0BlocksEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0BlocksEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant0ConclusionEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0ConclusionEnum
+typealias UpdateDeploymentCheckRunResponseVariant0ConclusionEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0ConclusionEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant0ExpectationRef = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0ExpectationRef
+typealias UpdateDeploymentCheckRunResponseVariant0ExpectationRef =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0ExpectationRef
 
-typealias UpdateDeploymentCheckRunResponseVariant0RequiresEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0RequiresEnum
+typealias UpdateDeploymentCheckRunResponseVariant0RequiresEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0RequiresEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant0 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant0
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant0 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant0
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant0KindEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant0KindEnum
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant0KindEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant0KindEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant1 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant1
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant1 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant1
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant1KindEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant1KindEnum
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant1KindEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant1KindEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant2 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant2
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant2 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant2
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant2KindEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant2KindEnum
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant2KindEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant2KindEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant2ProviderEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant2ProviderEnum
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant2ProviderEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant2ProviderEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant3 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant3
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant3 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant3
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant3OriginEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant3OriginEnum
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant3OriginEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant3OriginEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant3SubKindEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant3SubKindEnum
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant3SubKindEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant3SubKindEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4OriginEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4OriginEnum
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4OriginEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4OriginEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant0 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant0
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant0 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant0
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant1 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant1
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant1 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant1
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant2 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant2
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant2 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant2
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant3 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant3
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant3 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant3
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX07d4b1a6d1 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX07d4b1a6d1
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX07d4b1a6d1 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX07d4b1a6d1
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX4c011b27da = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX4c011b27da
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX4c011b27da =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX4c011b27da
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX5849193f03 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX5849193f03
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX5849193f03 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX5849193f03
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX984745a855 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX984745a855
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX984745a855 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX984745a855
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiXd245817b07 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiXd245817b07
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiXd245817b07 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiXd245817b07
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiXfcf36240a1 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiXfcf36240a1
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiXfcf36240a1 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiXfcf36240a1
 
-typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SubKindEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SubKindEnum
+typealias UpdateDeploymentCheckRunResponseVariant0SourceVariant4SubKindEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0SourceVariant4SubKindEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant0StatusEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0StatusEnum
+typealias UpdateDeploymentCheckRunResponseVariant0StatusEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0StatusEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant0TaskSummary = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0TaskSummary
+typealias UpdateDeploymentCheckRunResponseVariant0TaskSummary =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant0TaskSummary
 
-typealias UpdateDeploymentCheckRunResponseVariant1 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1
+typealias UpdateDeploymentCheckRunResponseVariant1 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1
 
-typealias UpdateDeploymentCheckRunResponseVariant1BlocksEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1BlocksEnum
+typealias UpdateDeploymentCheckRunResponseVariant1BlocksEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1BlocksEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant1ConclusionEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1ConclusionEnum
+typealias UpdateDeploymentCheckRunResponseVariant1ConclusionEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1ConclusionEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant1ExpectationRef = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1ExpectationRef
+typealias UpdateDeploymentCheckRunResponseVariant1ExpectationRef =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1ExpectationRef
 
-typealias UpdateDeploymentCheckRunResponseVariant1RequiresEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1RequiresEnum
+typealias UpdateDeploymentCheckRunResponseVariant1RequiresEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1RequiresEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant1SourceVariant0 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1SourceVariant0
+typealias UpdateDeploymentCheckRunResponseVariant1SourceVariant0 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1SourceVariant0
 
-typealias UpdateDeploymentCheckRunResponseVariant1SourceVariant0OriginEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1SourceVariant0OriginEnum
+typealias UpdateDeploymentCheckRunResponseVariant1SourceVariant0OriginEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1SourceVariant0OriginEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant1SourceVariant0SubKindEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1SourceVariant0SubKindEnum
+typealias UpdateDeploymentCheckRunResponseVariant1SourceVariant0SubKindEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1SourceVariant0SubKindEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant1SourceVariant1 = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1SourceVariant1
+typealias UpdateDeploymentCheckRunResponseVariant1SourceVariant1 =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1SourceVariant1
 
-typealias UpdateDeploymentCheckRunResponseVariant1SourceVariant1OriginEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1SourceVariant1OriginEnum
+typealias UpdateDeploymentCheckRunResponseVariant1SourceVariant1OriginEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1SourceVariant1OriginEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant1SourceVariant1SubKindEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1SourceVariant1SubKindEnum
+typealias UpdateDeploymentCheckRunResponseVariant1SourceVariant1SubKindEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1SourceVariant1SubKindEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant1StatusEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1StatusEnum
+typealias UpdateDeploymentCheckRunResponseVariant1StatusEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1StatusEnum
 
-typealias UpdateDeploymentCheckRunResponseVariant1TaskSummary = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1TaskSummary
+typealias UpdateDeploymentCheckRunResponseVariant1TaskSummary =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunResponseVariant1TaskSummary
 
-typealias UpdateDeploymentCheckRunStatusEnum = dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunStatusEnum
+typealias UpdateDeploymentCheckRunStatusEnum =
+    dev.octri.showcase.vercel.models.UpdateDeploymentCheckRunStatusEnum
 
 typealias UpdateDomainsResponse = dev.octri.showcase.vercel.models.UpdateDomainsResponse
 
-typealias UpdateDomainsResponseVariant0 = dev.octri.showcase.vercel.models.UpdateDomainsResponseVariant0
+typealias UpdateDomainsResponseVariant0 =
+    dev.octri.showcase.vercel.models.UpdateDomainsResponseVariant0
 
-typealias UpdateDomainsResponseVariant0MovedEnum = dev.octri.showcase.vercel.models.UpdateDomainsResponseVariant0MovedEnum
+typealias UpdateDomainsResponseVariant0MovedEnum =
+    dev.octri.showcase.vercel.models.UpdateDomainsResponseVariant0MovedEnum
 
-typealias UpdateDomainsResponseVariant1 = dev.octri.showcase.vercel.models.UpdateDomainsResponseVariant1
+typealias UpdateDomainsResponseVariant1 =
+    dev.octri.showcase.vercel.models.UpdateDomainsResponseVariant1
 
-typealias UpdateDomainsResponseVariant1MovedEnum = dev.octri.showcase.vercel.models.UpdateDomainsResponseVariant1MovedEnum
+typealias UpdateDomainsResponseVariant1MovedEnum =
+    dev.octri.showcase.vercel.models.UpdateDomainsResponseVariant1MovedEnum
 
-typealias UpdateDomainsResponseVariant2 = dev.octri.showcase.vercel.models.UpdateDomainsResponseVariant2
+typealias UpdateDomainsResponseVariant2 =
+    dev.octri.showcase.vercel.models.UpdateDomainsResponseVariant2
 
-typealias UpdateDomainsResponseVariant2EchModeEnum = dev.octri.showcase.vercel.models.UpdateDomainsResponseVariant2EchModeEnum
+typealias UpdateDomainsResponseVariant2EchModeEnum =
+    dev.octri.showcase.vercel.models.UpdateDomainsResponseVariant2EchModeEnum
 
-typealias UpdateDomainsResponseVariant2RenewEnum = dev.octri.showcase.vercel.models.UpdateDomainsResponseVariant2RenewEnum
+typealias UpdateDomainsResponseVariant2RenewEnum =
+    dev.octri.showcase.vercel.models.UpdateDomainsResponseVariant2RenewEnum
 
-typealias UpdateDomainsResponseVariant2ZoneEnum = dev.octri.showcase.vercel.models.UpdateDomainsResponseVariant2ZoneEnum
+typealias UpdateDomainsResponseVariant2ZoneEnum =
+    dev.octri.showcase.vercel.models.UpdateDomainsResponseVariant2ZoneEnum
 
-typealias UpdateDomainsVariant0EchModeEnum = dev.octri.showcase.vercel.models.UpdateDomainsVariant0EchModeEnum
+typealias UpdateDomainsVariant0EchModeEnum =
+    dev.octri.showcase.vercel.models.UpdateDomainsVariant0EchModeEnum
 
 typealias UpdateDrainProjectsEnum = dev.octri.showcase.vercel.models.UpdateDrainProjectsEnum
 
 typealias UpdateDrainRequestDelivery = dev.octri.showcase.vercel.models.UpdateDrainRequestDelivery
 
-typealias UpdateDrainRequestDeliveryVariant0 = dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant0
+typealias UpdateDrainRequestDeliveryVariant0 =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant0
 
-typealias UpdateDrainRequestDeliveryVariant0CompressionEnum = dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant0CompressionEnum
+typealias UpdateDrainRequestDeliveryVariant0CompressionEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant0CompressionEnum
 
-typealias UpdateDrainRequestDeliveryVariant0EncodingEnum = dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant0EncodingEnum
+typealias UpdateDrainRequestDeliveryVariant0EncodingEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant0EncodingEnum
 
-typealias UpdateDrainRequestDeliveryVariant1 = dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant1
+typealias UpdateDrainRequestDeliveryVariant1 =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant1
 
-typealias UpdateDrainRequestDeliveryVariant1EncodingEnum = dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant1EncodingEnum
+typealias UpdateDrainRequestDeliveryVariant1EncodingEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant1EncodingEnum
 
-typealias UpdateDrainRequestDeliveryVariant1Endpoint = dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant1Endpoint
+typealias UpdateDrainRequestDeliveryVariant1Endpoint =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant1Endpoint
 
-typealias UpdateDrainRequestDeliveryVariant2 = dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant2
+typealias UpdateDrainRequestDeliveryVariant2 =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant2
 
-typealias UpdateDrainRequestDeliveryVariant2CompressionEnum = dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant2CompressionEnum
+typealias UpdateDrainRequestDeliveryVariant2CompressionEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant2CompressionEnum
 
-typealias UpdateDrainRequestDeliveryVariant2EncodingEnum = dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant2EncodingEnum
+typealias UpdateDrainRequestDeliveryVariant2EncodingEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant2EncodingEnum
 
-typealias UpdateDrainRequestDeliveryVariant2FileStructureEnum = dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant2FileStructureEnum
+typealias UpdateDrainRequestDeliveryVariant2FileStructureEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant2FileStructureEnum
 
-typealias UpdateDrainRequestDeliveryVariant2ObjectAclEnum = dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant2ObjectAclEnum
+typealias UpdateDrainRequestDeliveryVariant2ObjectAclEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant2ObjectAclEnum
 
-typealias UpdateDrainRequestDeliveryVariant2ServerSideEncryptionEnum = dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant2ServerSideEncryptionEnum
+typealias UpdateDrainRequestDeliveryVariant2ServerSideEncryptionEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestDeliveryVariant2ServerSideEncryptionEnum
 
 typealias UpdateDrainRequestFilter = dev.octri.showcase.vercel.models.UpdateDrainRequestFilter
 
-typealias UpdateDrainRequestFilterVariant1 = dev.octri.showcase.vercel.models.UpdateDrainRequestFilterVariant1
+typealias UpdateDrainRequestFilterVariant1 =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestFilterVariant1
 
-typealias UpdateDrainRequestFilterVariant1FilterVariant0 = dev.octri.showcase.vercel.models.UpdateDrainRequestFilterVariant1FilterVariant0
+typealias UpdateDrainRequestFilterVariant1FilterVariant0 =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestFilterVariant1FilterVariant0
 
-typealias UpdateDrainRequestFilterVariant1FilterVariant0Deployment = dev.octri.showcase.vercel.models.UpdateDrainRequestFilterVariant1FilterVariant0Deployment
+typealias UpdateDrainRequestFilterVariant1FilterVariant0Deployment =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestFilterVariant1FilterVariant0Deployment
 
-typealias UpdateDrainRequestFilterVariant1FilterVariant0DeploymentEnvirXa0614b5d83 = dev.octri.showcase.vercel.models.UpdateDrainRequestFilterVariant1FilterVariant0DeploymentEnvirXa0614b5d83
+typealias UpdateDrainRequestFilterVariant1FilterVariant0DeploymentEnvirXa0614b5d83 =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestFilterVariant1FilterVariant0DeploymentEnvirXa0614b5d83
 
-typealias UpdateDrainRequestFilterVariant1FilterVariant0Log = dev.octri.showcase.vercel.models.UpdateDrainRequestFilterVariant1FilterVariant0Log
+typealias UpdateDrainRequestFilterVariant1FilterVariant0Log =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestFilterVariant1FilterVariant0Log
 
-typealias UpdateDrainRequestFilterVariant1FilterVariant0LogSourcesItemEnum = dev.octri.showcase.vercel.models.UpdateDrainRequestFilterVariant1FilterVariant0LogSourcesItemEnum
+typealias UpdateDrainRequestFilterVariant1FilterVariant0LogSourcesItemEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestFilterVariant1FilterVariant0LogSourcesItemEnum
 
-typealias UpdateDrainRequestFilterVariant1FilterVariant0Project = dev.octri.showcase.vercel.models.UpdateDrainRequestFilterVariant1FilterVariant0Project
+typealias UpdateDrainRequestFilterVariant1FilterVariant0Project =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestFilterVariant1FilterVariant0Project
 
-typealias UpdateDrainRequestFilterVariant1FilterVariant1 = dev.octri.showcase.vercel.models.UpdateDrainRequestFilterVariant1FilterVariant1
+typealias UpdateDrainRequestFilterVariant1FilterVariant1 =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestFilterVariant1FilterVariant1
 
 typealias UpdateDrainRequestSource = dev.octri.showcase.vercel.models.UpdateDrainRequestSource
 
-typealias UpdateDrainRequestSourceVariant0 = dev.octri.showcase.vercel.models.UpdateDrainRequestSourceVariant0
+typealias UpdateDrainRequestSourceVariant0 =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestSourceVariant0
 
-typealias UpdateDrainRequestSourceVariant1 = dev.octri.showcase.vercel.models.UpdateDrainRequestSourceVariant1
+typealias UpdateDrainRequestSourceVariant1 =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestSourceVariant1
 
-typealias UpdateDrainRequestSourceVariant2 = dev.octri.showcase.vercel.models.UpdateDrainRequestSourceVariant2
+typealias UpdateDrainRequestSourceVariant2 =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestSourceVariant2
 
-typealias UpdateDrainRequestSourceVariant3 = dev.octri.showcase.vercel.models.UpdateDrainRequestSourceVariant3
+typealias UpdateDrainRequestSourceVariant3 =
+    dev.octri.showcase.vercel.models.UpdateDrainRequestSourceVariant3
 
 typealias UpdateDrainResponse = dev.octri.showcase.vercel.models.UpdateDrainResponse
 
 typealias UpdateDrainResponseVariant0 = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0
 
-typealias UpdateDrainResponseVariant0DeliveryVariant0 = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant0
+typealias UpdateDrainResponseVariant0DeliveryVariant0 =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant0
 
-typealias UpdateDrainResponseVariant0DeliveryVariant0CompressionEnum = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant0CompressionEnum
+typealias UpdateDrainResponseVariant0DeliveryVariant0CompressionEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant0CompressionEnum
 
-typealias UpdateDrainResponseVariant0DeliveryVariant0EncodingEnum = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant0EncodingEnum
+typealias UpdateDrainResponseVariant0DeliveryVariant0EncodingEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant0EncodingEnum
 
-typealias UpdateDrainResponseVariant0DeliveryVariant0SecretVariant1 = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant0SecretVariant1
+typealias UpdateDrainResponseVariant0DeliveryVariant0SecretVariant1 =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant0SecretVariant1
 
-typealias UpdateDrainResponseVariant0DeliveryVariant0SecretVariant1KindEnum = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant0SecretVariant1KindEnum
+typealias UpdateDrainResponseVariant0DeliveryVariant0SecretVariant1KindEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant0SecretVariant1KindEnum
 
-typealias UpdateDrainResponseVariant0DeliveryVariant0TypeEnum = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant0TypeEnum
+typealias UpdateDrainResponseVariant0DeliveryVariant0TypeEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant0TypeEnum
 
-typealias UpdateDrainResponseVariant0DeliveryVariant1 = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant1
+typealias UpdateDrainResponseVariant0DeliveryVariant1 =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant1
 
-typealias UpdateDrainResponseVariant0DeliveryVariant1EncodingEnum = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant1EncodingEnum
+typealias UpdateDrainResponseVariant0DeliveryVariant1EncodingEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant1EncodingEnum
 
-typealias UpdateDrainResponseVariant0DeliveryVariant1Endpoint = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant1Endpoint
+typealias UpdateDrainResponseVariant0DeliveryVariant1Endpoint =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant1Endpoint
 
-typealias UpdateDrainResponseVariant0DeliveryVariant1SecretVariant1 = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant1SecretVariant1
+typealias UpdateDrainResponseVariant0DeliveryVariant1SecretVariant1 =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant1SecretVariant1
 
-typealias UpdateDrainResponseVariant0DeliveryVariant1SecretVariant1KindEnum = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant1SecretVariant1KindEnum
+typealias UpdateDrainResponseVariant0DeliveryVariant1SecretVariant1KindEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant1SecretVariant1KindEnum
 
-typealias UpdateDrainResponseVariant0DeliveryVariant1TypeEnum = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant1TypeEnum
+typealias UpdateDrainResponseVariant0DeliveryVariant1TypeEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant1TypeEnum
 
-typealias UpdateDrainResponseVariant0DeliveryVariant2 = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant2
+typealias UpdateDrainResponseVariant0DeliveryVariant2 =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant2
 
-typealias UpdateDrainResponseVariant0DeliveryVariant2TypeEnum = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant2TypeEnum
+typealias UpdateDrainResponseVariant0DeliveryVariant2TypeEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant2TypeEnum
 
-typealias UpdateDrainResponseVariant0DeliveryVariant3 = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant3
+typealias UpdateDrainResponseVariant0DeliveryVariant3 =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant3
 
-typealias UpdateDrainResponseVariant0DeliveryVariant3CompressionEnum = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant3CompressionEnum
+typealias UpdateDrainResponseVariant0DeliveryVariant3CompressionEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant3CompressionEnum
 
-typealias UpdateDrainResponseVariant0DeliveryVariant3EncodingEnum = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant3EncodingEnum
+typealias UpdateDrainResponseVariant0DeliveryVariant3EncodingEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant3EncodingEnum
 
-typealias UpdateDrainResponseVariant0DeliveryVariant3FileStructureEnum = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant3FileStructureEnum
+typealias UpdateDrainResponseVariant0DeliveryVariant3FileStructureEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant3FileStructureEnum
 
-typealias UpdateDrainResponseVariant0DeliveryVariant3ObjectAclEnum = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant3ObjectAclEnum
+typealias UpdateDrainResponseVariant0DeliveryVariant3ObjectAclEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant3ObjectAclEnum
 
-typealias UpdateDrainResponseVariant0DeliveryVariant3ServerSideEncryptionEnum = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant3ServerSideEncryptionEnum
+typealias UpdateDrainResponseVariant0DeliveryVariant3ServerSideEncryptionEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant3ServerSideEncryptionEnum
 
-typealias UpdateDrainResponseVariant0DeliveryVariant3TypeEnum = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant3TypeEnum
+typealias UpdateDrainResponseVariant0DeliveryVariant3TypeEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant3TypeEnum
 
-typealias UpdateDrainResponseVariant0DeliveryVariant4 = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant4
+typealias UpdateDrainResponseVariant0DeliveryVariant4 =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant4
 
-typealias UpdateDrainResponseVariant0DeliveryVariant4TargetEnum = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant4TargetEnum
+typealias UpdateDrainResponseVariant0DeliveryVariant4TargetEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant4TargetEnum
 
-typealias UpdateDrainResponseVariant0DeliveryVariant4TypeEnum = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant4TypeEnum
+typealias UpdateDrainResponseVariant0DeliveryVariant4TypeEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant4TypeEnum

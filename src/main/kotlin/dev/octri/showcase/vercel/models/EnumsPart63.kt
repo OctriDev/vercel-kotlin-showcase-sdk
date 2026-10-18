@@ -3,97 +3,149 @@
 
 package dev.octri.showcase.vercel.models
 
-class PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatXd144bfbb02 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatXd144bfbb02 && value == other.value
+class PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatXd144bfbb02
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatXd144bfbb02 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatXd144bfbb02(false)
-        @JvmField val TRUE = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatXd144bfbb02(true)
+        @JvmField
+        val FALSE = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatXd144bfbb02(false)
+        @JvmField
+        val TRUE = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatXd144bfbb02(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatXd144bfbb02(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatXd144bfbb02(value)
     }
 }
 
-class PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX94fbd99bfc private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX94fbd99bfc && value == other.value
+class PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX94fbd99bfc
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX94fbd99bfc &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val UNKNOWN = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX94fbd99bfc("*")
+        @JvmField
+        val UNKNOWN = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX94fbd99bfc("*")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX94fbd99bfc(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX94fbd99bfc(value)
     }
 }
 
-class PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX7a1d6c4572 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX7a1d6c4572 && value == other.value
+class PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX7a1d6c4572
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX7a1d6c4572 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CHALLENGE = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX7a1d6c4572("challenge")
-        @JvmField val DENY = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX7a1d6c4572("deny")
-        @JvmField val LOG = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX7a1d6c4572("log")
-        @JvmField val RATE_LIMIT = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX7a1d6c4572("rate_limit")
+        @JvmField
+        val CHALLENGE =
+            PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX7a1d6c4572("challenge")
+        @JvmField
+        val DENY = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX7a1d6c4572("deny")
+        @JvmField
+        val LOG = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX7a1d6c4572("log")
+        @JvmField
+        val RATE_LIMIT =
+            PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX7a1d6c4572("rate_limit")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX7a1d6c4572(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX7a1d6c4572(value)
     }
 }
 
-class PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX4986bd35f6 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX4986bd35f6 && value == other.value
+class PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX4986bd35f6
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX4986bd35f6 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val FIXED_WINDOW = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX4986bd35f6("fixed_window")
-        @JvmField val TOKEN_BUCKET = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX4986bd35f6("token_bucket")
+        @JvmField
+        val FIXED_WINDOW =
+            PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX4986bd35f6("fixed_window")
+        @JvmField
+        val TOKEN_BUCKET =
+            PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX4986bd35f6("token_bucket")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX4986bd35f6(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX4986bd35f6(value)
     }
 }
 
-class PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX660b97bed1 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX660b97bed1 && value == other.value
+class PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX660b97bed1
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX660b97bed1 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX660b97bed1(false)
-        @JvmField val TRUE = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX660b97bed1(true)
+        @JvmField
+        val FALSE = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX660b97bed1(false)
+        @JvmField
+        val TRUE = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX660b97bed1(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX660b97bed1(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX660b97bed1(value)
     }
 }
 
-class PutFirewallConfigResponseActiveRulesItemVariant1ActiveEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is PutFirewallConfigResponseActiveRulesItemVariant1ActiveEnum && value == other.value
+class PutFirewallConfigResponseActiveRulesItemVariant1ActiveEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is PutFirewallConfigResponseActiveRulesItemVariant1ActiveEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -101,124 +153,262 @@ class PutFirewallConfigResponseActiveRulesItemVariant1ActiveEnum private constru
         @JvmField val FALSE = PutFirewallConfigResponseActiveRulesItemVariant1ActiveEnum(false)
         @JvmField val TRUE = PutFirewallConfigResponseActiveRulesItemVariant1ActiveEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = PutFirewallConfigResponseActiveRulesItemVariant1ActiveEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            PutFirewallConfigResponseActiveRulesItemVariant1ActiveEnum(value)
     }
 }
 
-class PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouX963c4413be private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouX963c4413be && value == other.value
+class PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouX963c4413be
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouX963c4413be &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouX963c4413be(false)
-        @JvmField val TRUE = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouX963c4413be(true)
+        @JvmField
+        val FALSE = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouX963c4413be(false)
+        @JvmField
+        val TRUE = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouX963c4413be(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouX963c4413be(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouX963c4413be(value)
     }
 }
 
-class PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510 && value == other.value
+class PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val EQ = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("eq")
-        @JvmField val EX = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("ex")
-        @JvmField val GT = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("gt")
-        @JvmField val GTE = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("gte")
-        @JvmField val INC = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("inc")
-        @JvmField val LIST = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("list")
-        @JvmField val LT = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("lt")
-        @JvmField val LTE = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("lte")
-        @JvmField val NEQ = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("neq")
-        @JvmField val NEX = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("nex")
-        @JvmField val NINC = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("ninc")
-        @JvmField val PRE = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("pre")
-        @JvmField val RE = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("re")
-        @JvmField val SUB = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("sub")
-        @JvmField val SUF = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("suf")
+        @JvmField
+        val EQ = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("eq")
+        @JvmField
+        val EX = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("ex")
+        @JvmField
+        val GT = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("gt")
+        @JvmField
+        val GTE = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("gte")
+        @JvmField
+        val INC = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("inc")
+        @JvmField
+        val LIST = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("list")
+        @JvmField
+        val LT = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("lt")
+        @JvmField
+        val LTE = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("lte")
+        @JvmField
+        val NEQ = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("neq")
+        @JvmField
+        val NEX = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("nex")
+        @JvmField
+        val NINC = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("ninc")
+        @JvmField
+        val PRE = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("pre")
+        @JvmField
+        val RE = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("re")
+        @JvmField
+        val SUB = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("sub")
+        @JvmField
+        val SUF = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510("suf")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc1b59dd510(value)
     }
 }
 
-class PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6 && value == other.value
+class PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val BOT_CATEGORY = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("bot_category")
-        @JvmField val BOT_NAME = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("bot_name")
-        @JvmField val BOT_PROTECTION = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("bot_protection")
-        @JvmField val BOT_STATUS = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("bot_status")
-        @JvmField val COOKIE = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("cookie")
-        @JvmField val DOMAIN_ENVIRONMENT = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("domain_environment")
-        @JvmField val ENVIRONMENT = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("environment")
-        @JvmField val GEO_AS_NUMBER = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("geo_as_number")
-        @JvmField val GEO_CITY = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("geo_city")
-        @JvmField val GEO_CONTINENT = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("geo_continent")
-        @JvmField val GEO_COUNTRY = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("geo_country")
-        @JvmField val GEO_COUNTRY_REGION = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("geo_country_region")
-        @JvmField val HEADER = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("header")
-        @JvmField val HOST = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("host")
-        @JvmField val IP_ADDRESS = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("ip_address")
-        @JvmField val JA3_DIGEST = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("ja3_digest")
-        @JvmField val JA4_DIGEST = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("ja4_digest")
-        @JvmField val METHOD = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("method")
-        @JvmField val PATH = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("path")
-        @JvmField val PROTOCOL = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("protocol")
-        @JvmField val QUERY = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("query")
-        @JvmField val RATE_LIMIT_API_ID = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("rate_limit_api_id")
-        @JvmField val RAW_PATH = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("raw_path")
-        @JvmField val REGION = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("region")
-        @JvmField val RESPONSE_CODE = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("response_code")
-        @JvmField val ROUTE = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("route")
-        @JvmField val RULESET = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("ruleset")
-        @JvmField val SCHEME = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("scheme")
-        @JvmField val SERVER_ACTION = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("server_action")
-        @JvmField val SHARED_CONDITION = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("shared_condition")
-        @JvmField val TARGET_PATH = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("target_path")
-        @JvmField val TRAFFIC_SOURCE = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("traffic_source")
-        @JvmField val TRUSTED_SOURCE = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("trusted_source")
-        @JvmField val USER_AGENT = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("user_agent")
+        @JvmField
+        val BOT_CATEGORY =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("bot_category")
+        @JvmField
+        val BOT_NAME =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("bot_name")
+        @JvmField
+        val BOT_PROTECTION =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6(
+                "bot_protection"
+            )
+        @JvmField
+        val BOT_STATUS =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("bot_status")
+        @JvmField
+        val COOKIE =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("cookie")
+        @JvmField
+        val DOMAIN_ENVIRONMENT =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6(
+                "domain_environment"
+            )
+        @JvmField
+        val ENVIRONMENT =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("environment")
+        @JvmField
+        val GEO_AS_NUMBER =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6(
+                "geo_as_number"
+            )
+        @JvmField
+        val GEO_CITY =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("geo_city")
+        @JvmField
+        val GEO_CONTINENT =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6(
+                "geo_continent"
+            )
+        @JvmField
+        val GEO_COUNTRY =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("geo_country")
+        @JvmField
+        val GEO_COUNTRY_REGION =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6(
+                "geo_country_region"
+            )
+        @JvmField
+        val HEADER =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("header")
+        @JvmField
+        val HOST = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("host")
+        @JvmField
+        val IP_ADDRESS =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("ip_address")
+        @JvmField
+        val JA3_DIGEST =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("ja3_digest")
+        @JvmField
+        val JA4_DIGEST =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("ja4_digest")
+        @JvmField
+        val METHOD =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("method")
+        @JvmField
+        val PATH = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("path")
+        @JvmField
+        val PROTOCOL =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("protocol")
+        @JvmField
+        val QUERY =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("query")
+        @JvmField
+        val RATE_LIMIT_API_ID =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6(
+                "rate_limit_api_id"
+            )
+        @JvmField
+        val RAW_PATH =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("raw_path")
+        @JvmField
+        val REGION =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("region")
+        @JvmField
+        val RESPONSE_CODE =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6(
+                "response_code"
+            )
+        @JvmField
+        val ROUTE =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("route")
+        @JvmField
+        val RULESET =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("ruleset")
+        @JvmField
+        val SCHEME =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("scheme")
+        @JvmField
+        val SERVER_ACTION =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6(
+                "server_action"
+            )
+        @JvmField
+        val SHARED_CONDITION =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6(
+                "shared_condition"
+            )
+        @JvmField
+        val TARGET_PATH =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("target_path")
+        @JvmField
+        val TRAFFIC_SOURCE =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6(
+                "traffic_source"
+            )
+        @JvmField
+        val TRUSTED_SOURCE =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6(
+                "trusted_source"
+            )
+        @JvmField
+        val USER_AGENT =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6("user_agent")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6(value)
     }
 }
 
-class PutFirewallConfigResponseActiveRulesItemVariant1ValidEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is PutFirewallConfigResponseActiveRulesItemVariant1ValidEnum && value == other.value
+class PutFirewallConfigResponseActiveRulesItemVariant1ValidEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is PutFirewallConfigResponseActiveRulesItemVariant1ValidEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
         @JvmField val FALSE = PutFirewallConfigResponseActiveRulesItemVariant1ValidEnum(false)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = PutFirewallConfigResponseActiveRulesItemVariant1ValidEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            PutFirewallConfigResponseActiveRulesItemVariant1ValidEnum(value)
     }
 }
 
-enum class RegistrantFieldVariant0TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RegistrantFieldVariant0TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     STRING("string");
 
     override fun toString() = value
@@ -226,12 +416,15 @@ enum class RegistrantFieldVariant0TypeEnum(@com.fasterxml.jackson.annotation.Jso
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RegistrantFieldVariant1TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RegistrantFieldVariant1TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     ENUM("enum");
 
     override fun toString() = value
@@ -239,12 +432,15 @@ enum class RegistrantFieldVariant1TypeEnum(@com.fasterxml.jackson.annotation.Jso
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RegistrantFieldVariant2TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RegistrantFieldVariant2TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     ACKNOWLEDGEMENT("acknowledgement");
 
     override fun toString() = value
@@ -252,12 +448,15 @@ enum class RegistrantFieldVariant2TypeEnum(@com.fasterxml.jackson.annotation.Jso
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RegistrantFieldVariant3TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RegistrantFieldVariant3TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     NOTICE("notice");
 
     override fun toString() = value
@@ -265,12 +464,15 @@ enum class RegistrantFieldVariant3TypeEnum(@com.fasterxml.jackson.annotation.Jso
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RemoveProjectEnvResponseItemContentHintVariant0TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RemoveProjectEnvResponseItemContentHintVariant0TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     REDIS_URL("redis-url");
 
     override fun toString() = value
@@ -278,12 +480,15 @@ enum class RemoveProjectEnvResponseItemContentHintVariant0TypeEnum(@com.fasterxm
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RemoveProjectEnvResponseItemContentHintVariant1TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RemoveProjectEnvResponseItemContentHintVariant1TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     REDIS_REST_API_URL("redis-rest-api-url");
 
     override fun toString() = value
@@ -291,12 +496,15 @@ enum class RemoveProjectEnvResponseItemContentHintVariant1TypeEnum(@com.fasterxm
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RemoveProjectEnvResponseItemContentHintVariant10TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RemoveProjectEnvResponseItemContentHintVariant10TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_USER("postgres-user");
 
     override fun toString() = value
@@ -304,12 +512,15 @@ enum class RemoveProjectEnvResponseItemContentHintVariant10TypeEnum(@com.fasterx
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RemoveProjectEnvResponseItemContentHintVariant11TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RemoveProjectEnvResponseItemContentHintVariant11TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_HOST("postgres-host");
 
     override fun toString() = value
@@ -317,12 +528,15 @@ enum class RemoveProjectEnvResponseItemContentHintVariant11TypeEnum(@com.fasterx
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RemoveProjectEnvResponseItemContentHintVariant12TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RemoveProjectEnvResponseItemContentHintVariant12TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_PASSWORD("postgres-password");
 
     override fun toString() = value
@@ -330,12 +544,15 @@ enum class RemoveProjectEnvResponseItemContentHintVariant12TypeEnum(@com.fasterx
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RemoveProjectEnvResponseItemContentHintVariant13TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RemoveProjectEnvResponseItemContentHintVariant13TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_DATABASE("postgres-database");
 
     override fun toString() = value
@@ -343,12 +560,15 @@ enum class RemoveProjectEnvResponseItemContentHintVariant13TypeEnum(@com.fasterx
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RemoveProjectEnvResponseItemContentHintVariant14TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RemoveProjectEnvResponseItemContentHintVariant14TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_URL_NO_SSL("postgres-url-no-ssl");
 
     override fun toString() = value
@@ -356,12 +576,15 @@ enum class RemoveProjectEnvResponseItemContentHintVariant14TypeEnum(@com.fasterx
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RemoveProjectEnvResponseItemContentHintVariant15TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RemoveProjectEnvResponseItemContentHintVariant15TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     INTEGRATION_STORE_SECRET("integration-store-secret");
 
     override fun toString() = value
@@ -369,12 +592,15 @@ enum class RemoveProjectEnvResponseItemContentHintVariant15TypeEnum(@com.fasterx
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RemoveProjectEnvResponseItemContentHintVariant16TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RemoveProjectEnvResponseItemContentHintVariant16TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     FLAGS_CONNECTION_STRING("flags-connection-string");
 
     override fun toString() = value
@@ -382,12 +608,15 @@ enum class RemoveProjectEnvResponseItemContentHintVariant16TypeEnum(@com.fasterx
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RemoveProjectEnvResponseItemContentHintVariant2TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RemoveProjectEnvResponseItemContentHintVariant2TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     REDIS_REST_API_TOKEN("redis-rest-api-token");
 
     override fun toString() = value
@@ -395,12 +624,15 @@ enum class RemoveProjectEnvResponseItemContentHintVariant2TypeEnum(@com.fasterxm
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RemoveProjectEnvResponseItemContentHintVariant3TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RemoveProjectEnvResponseItemContentHintVariant3TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     REDIS_REST_API_READ_ONLY_TOKEN("redis-rest-api-read-only-token");
 
     override fun toString() = value
@@ -408,12 +640,15 @@ enum class RemoveProjectEnvResponseItemContentHintVariant3TypeEnum(@com.fasterxm
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RemoveProjectEnvResponseItemContentHintVariant4TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RemoveProjectEnvResponseItemContentHintVariant4TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     BLOB_READ_WRITE_TOKEN("blob-read-write-token");
 
     override fun toString() = value
@@ -421,12 +656,15 @@ enum class RemoveProjectEnvResponseItemContentHintVariant4TypeEnum(@com.fasterxm
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RemoveProjectEnvResponseItemContentHintVariant5TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RemoveProjectEnvResponseItemContentHintVariant5TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     BLOB_STORE_ID("blob-store-id");
 
     override fun toString() = value
@@ -434,12 +672,15 @@ enum class RemoveProjectEnvResponseItemContentHintVariant5TypeEnum(@com.fasterxm
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RemoveProjectEnvResponseItemContentHintVariant6TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RemoveProjectEnvResponseItemContentHintVariant6TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     BLOB_WEBHOOK_PUBLIC_KEY("blob-webhook-public-key");
 
     override fun toString() = value
@@ -447,12 +688,15 @@ enum class RemoveProjectEnvResponseItemContentHintVariant6TypeEnum(@com.fasterxm
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RemoveProjectEnvResponseItemContentHintVariant7TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RemoveProjectEnvResponseItemContentHintVariant7TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_URL("postgres-url");
 
     override fun toString() = value
@@ -460,12 +704,15 @@ enum class RemoveProjectEnvResponseItemContentHintVariant7TypeEnum(@com.fasterxm
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RemoveProjectEnvResponseItemContentHintVariant8TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RemoveProjectEnvResponseItemContentHintVariant8TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_URL_NON_POOLING("postgres-url-non-pooling");
 
     override fun toString() = value
@@ -473,12 +720,15 @@ enum class RemoveProjectEnvResponseItemContentHintVariant8TypeEnum(@com.fasterxm
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RemoveProjectEnvResponseItemContentHintVariant9TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RemoveProjectEnvResponseItemContentHintVariant9TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_PRISMA_URL("postgres-prisma-url");
 
     override fun toString() = value
@@ -486,12 +736,15 @@ enum class RemoveProjectEnvResponseItemContentHintVariant9TypeEnum(@com.fasterxm
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RevokeKmsSigningKeyResponsePoliciesItemVariant0KindEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RevokeKmsSigningKeyResponsePoliciesItemVariant0KindEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     PROJECT_GRANT("project-grant");
 
     override fun toString() = value
@@ -499,12 +752,15 @@ enum class RevokeKmsSigningKeyResponsePoliciesItemVariant0KindEnum(@com.fasterxm
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class RevokeKmsSigningKeyResponsePoliciesItemVariant1KindEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class RevokeKmsSigningKeyResponsePoliciesItemVariant1KindEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     CONNEX_GRANT("connex-grant");
 
     override fun toString() = value
@@ -512,19 +768,23 @@ enum class RevokeKmsSigningKeyResponsePoliciesItemVariant1KindEnum(@com.fasterxm
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
 /**
- * The network policy mode. - 'allow-all': All traffic is allowed. - 'deny-all': All traffic is blocked. - 'custom': Traffic is controlled by explicit allow/deny rules.
+ * The network policy mode. - 'allow-all': All traffic is allowed. - 'deny-all': All traffic is
+ * blocked. - 'custom': Traffic is controlled by explicit allow/deny rules.
  */
-class SandboxNetworkPolicyModeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is SandboxNetworkPolicyModeEnum && value == other.value
+class SandboxNetworkPolicyModeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is SandboxNetworkPolicyModeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -533,61 +793,75 @@ class SandboxNetworkPolicyModeEnum private constructor(
         @JvmField val CUSTOM = SandboxNetworkPolicyModeEnum("custom")
         @JvmField val DENY_ALL = SandboxNetworkPolicyModeEnum("deny-all")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = SandboxNetworkPolicyModeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = SandboxNetworkPolicyModeEnum(value)
     }
 }
 
-/**
- * Whether the route is reserved by the system (e.g. for internal use).
- */
-class SandboxPublicRouteSystemEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is SandboxPublicRouteSystemEnum && value == other.value
+/** Whether the route is reserved by the system (e.g. for internal use). */
+class SandboxPublicRouteSystemEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is SandboxPublicRouteSystemEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
         @JvmField val TRUE = SandboxPublicRouteSystemEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = SandboxPublicRouteSystemEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = SandboxPublicRouteSystemEnum(value)
     }
 }
 
-/**
- * `false` means the domain is unavailable or its availability could not be confirmed.
- */
-class SearchDomainsResponseResultsItemVariant0AvailableEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is SearchDomainsResponseResultsItemVariant0AvailableEnum && value == other.value
+/** `false` means the domain is unavailable or its availability could not be confirmed. */
+class SearchDomainsResponseResultsItemVariant0AvailableEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is SearchDomainsResponseResultsItemVariant0AvailableEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
         @JvmField val FALSE = SearchDomainsResponseResultsItemVariant0AvailableEnum(false)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = SearchDomainsResponseResultsItemVariant0AvailableEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = SearchDomainsResponseResultsItemVariant0AvailableEnum(value)
     }
 }
 
-class SearchDomainsResponseResultsItemVariant1AvailableEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is SearchDomainsResponseResultsItemVariant1AvailableEnum && value == other.value
+class SearchDomainsResponseResultsItemVariant1AvailableEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is SearchDomainsResponseResultsItemVariant1AvailableEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
         @JvmField val TRUE = SearchDomainsResponseResultsItemVariant1AvailableEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = SearchDomainsResponseResultsItemVariant1AvailableEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = SearchDomainsResponseResultsItemVariant1AvailableEnum(value)
     }
 }

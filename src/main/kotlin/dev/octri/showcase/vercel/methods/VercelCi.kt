@@ -62,742 +62,749 @@ import dev.octri.showcase.vercel.UpdateVercelCiRepositorySettingsParameterEnum
 import dev.octri.showcase.vercel.UpdateVercelCiRepositorySettingsResponseProviderVariant0Enum
 
 object VercelCi {
-data class GetVercelCiRepositorySettingsResponse(
-    val provider: GetVercelCiRepositorySettingsResponseProviderVariant0Enum,
-    val organizationId: String,
-    val repository: String,
-    val ciEnabled: Boolean,
-    val ciEnabledAt: Double? = null,
-    val updatedAt: Double? = null
-)
+    data class GetVercelCiRepositorySettingsResponse(
+        val provider: GetVercelCiRepositorySettingsResponseProviderVariant0Enum,
+        val organizationId: String,
+        val repository: String,
+        val ciEnabled: Boolean,
+        val ciEnabledAt: Double? = null,
+        val updatedAt: Double? = null,
+    )
 
-data class UpdateVercelCiRepositorySettingsResponse(
-    val provider: UpdateVercelCiRepositorySettingsResponseProviderVariant0Enum,
-    val organizationId: String,
-    val repository: String,
-    val ciEnabled: Boolean,
-    val ciEnabledAt: Double? = null,
-    val updatedAt: Double? = null
-)
+    data class UpdateVercelCiRepositorySettingsResponse(
+        val provider: UpdateVercelCiRepositorySettingsResponseProviderVariant0Enum,
+        val organizationId: String,
+        val repository: String,
+        val ciEnabled: Boolean,
+        val ciEnabledAt: Double? = null,
+        val updatedAt: Double? = null,
+    )
 
+    data class ListVercelCiInvocationsResponseInvocationsItemSkipped(val reason: String)
 
+    data class ListVercelCiInvocationsResponseInvocationsItemBootstrappingStarted(
+        val startedAt: Double
+    )
 
-data class ListVercelCiInvocationsResponseInvocationsItemSkipped(
-    val reason: String
-)
+    data class ListVercelCiInvocationsResponseInvocationsItemBootstrappingFailed(val reason: String)
 
-data class ListVercelCiInvocationsResponseInvocationsItemBootstrappingStarted(
-    val startedAt: Double
-)
+    data class ListVercelCiInvocationsResponseInvocationsItemSandboxSnapshotted(
+        val sandboxSnapshotId: String,
+        val workingDirectory: String,
+        val snapshottedAt: Double? = null,
+    )
 
-data class ListVercelCiInvocationsResponseInvocationsItemBootstrappingFailed(
-    val reason: String
-)
+    data class ListVercelCiInvocationsResponseInvocationsItemSandboxNamed(
+        val sandboxName: String,
+        val workingDirectory: String,
+        val readyAt: Double? = null,
+    )
 
-data class ListVercelCiInvocationsResponseInvocationsItemSandboxSnapshotted(
-    val sandboxSnapshotId: String,
-    val workingDirectory: String,
-    val snapshottedAt: Double? = null
-)
+    data class ListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCreated(
+        val names: List<String>,
+        val source: ListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCXbc64f50e23? =
+            null,
+        val scheduledAt: Double? = null,
+    )
 
-data class ListVercelCiInvocationsResponseInvocationsItemSandboxNamed(
-    val sandboxName: String,
-    val workingDirectory: String,
-    val readyAt: Double? = null
-)
+    data class ListVercelCiInvocationsResponseInvocationsItemCompleted(
+        val completedAt: Double,
+        val conclusion: ListVercelCiInvocationsResponseInvocationsItemCompletedConcluXa38c158910? =
+            null,
+    )
 
-data class ListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCreated(
-    val names: List<String>,
-    val source: ListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCXbc64f50e23? = null,
-    val scheduledAt: Double? = null
-)
+    /** The terminal setup result. Omitted while invocation setup is still running. */
+    data class ListVercelCiInvocationsResponseInvocationsItemSetupConclusion(
+        val result: ListVercelCiInvocationsResponseInvocationsItemSetupConclusionX6bfa1bf388
+    )
 
-data class ListVercelCiInvocationsResponseInvocationsItemCompleted(
-    val completedAt: Double,
-    val conclusion: ListVercelCiInvocationsResponseInvocationsItemCompletedConcluXa38c158910? = null
-)
-
-/**
- * The terminal setup result. Omitted while invocation setup is still running.
- */
-data class ListVercelCiInvocationsResponseInvocationsItemSetupConclusion(
-    val result: ListVercelCiInvocationsResponseInvocationsItemSetupConclusionX6bfa1bf388
-)
-
-/**
- * The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows.
- */
-data class ListVercelCiInvocationsResponseInvocationsItemRunConclusion(
-    val result: ListVercelCiInvocationsResponseInvocationsItemRunConclusionReX9d1b292c01
-)
-
-data class ListVercelCiInvocationsResponseInvocationsItem(
-    val invocationId: String,
-    val attempt: Double,
-    val teamId: String,
     /**
-     * Typed representation of the `ListVercelCiInvocationsResponseInvocationsItemSource` API schema.
+     * The aggregate outcome of every job in the invocation. Omitted while jobs are still running.
+     * Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded".
+     * Present on completed invocations written after the field shipped; absent on older rows.
      */
-    val source: ListVercelCiInvocationsResponseInvocationsItemSource,
-    val createdAt: Double,
-    val repositoryKey: String,
-    val ref: String,
-    val commitSha: String,
-    val status: ListVercelCiInvocationsResponseInvocationsItemStatusVariant0Enum,
-    val skipped: ListVercelCiInvocationsResponseInvocationsItemSkipped? = null,
-    val bootstrappingStarted: ListVercelCiInvocationsResponseInvocationsItemBootstrappingStarted? = null,
-    val bootstrappingFailed: ListVercelCiInvocationsResponseInvocationsItemBootstrappingFailed? = null,
-    val sandboxSnapshotted: ListVercelCiInvocationsResponseInvocationsItemSandboxSnapshotted? = null,
-    val sandboxNamed: ListVercelCiInvocationsResponseInvocationsItemSandboxNamed? = null,
-    val jobDefinitionsCreated: ListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCreated? = null,
-    val completed: ListVercelCiInvocationsResponseInvocationsItemCompleted? = null,
+    data class ListVercelCiInvocationsResponseInvocationsItemRunConclusion(
+        val result: ListVercelCiInvocationsResponseInvocationsItemRunConclusionReX9d1b292c01
+    )
+
+    data class ListVercelCiInvocationsResponseInvocationsItem(
+        val invocationId: String,
+        val attempt: Double,
+        val teamId: String,
+        /**
+         * Typed representation of the `ListVercelCiInvocationsResponseInvocationsItemSource` API
+         * schema.
+         */
+        val source: ListVercelCiInvocationsResponseInvocationsItemSource,
+        val createdAt: Double,
+        val repositoryKey: String,
+        val ref: String,
+        val commitSha: String,
+        val status: ListVercelCiInvocationsResponseInvocationsItemStatusVariant0Enum,
+        val skipped: ListVercelCiInvocationsResponseInvocationsItemSkipped? = null,
+        val bootstrappingStarted:
+            ListVercelCiInvocationsResponseInvocationsItemBootstrappingStarted? =
+            null,
+        val bootstrappingFailed:
+            ListVercelCiInvocationsResponseInvocationsItemBootstrappingFailed? =
+            null,
+        val sandboxSnapshotted: ListVercelCiInvocationsResponseInvocationsItemSandboxSnapshotted? =
+            null,
+        val sandboxNamed: ListVercelCiInvocationsResponseInvocationsItemSandboxNamed? = null,
+        val jobDefinitionsCreated:
+            ListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCreated? =
+            null,
+        val completed: ListVercelCiInvocationsResponseInvocationsItemCompleted? = null,
+        /** The terminal setup result. Omitted while invocation setup is still running. */
+        val setupConclusion: ListVercelCiInvocationsResponseInvocationsItemSetupConclusion? = null,
+        /**
+         * The aggregate outcome of every job in the invocation. Omitted while jobs are still
+         * running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else
+         * "succeeded". Present on completed invocations written after the field shipped; absent on
+         * older rows.
+         */
+        val runConclusion: ListVercelCiInvocationsResponseInvocationsItemRunConclusion? = null,
+    )
+
+    data class ListVercelCiInvocationsResponsePagination(val nextCursor: String? = null)
+
+    data class ListVercelCiInvocationsResponse(
+        val invocations: List<ListVercelCiInvocationsResponseInvocationsItem>,
+        val repositories: Map<String, Any>,
+        val pagination: ListVercelCiInvocationsResponsePagination,
+    )
+
+    data class ListVercelCiBranchesResponseBranchesItem(
+        val name: String,
+        val count: Double,
+    )
+
+    data class ListVercelCiBranchesResponse(
+        val branches: List<ListVercelCiBranchesResponseBranchesItem>
+    )
+
+    data class CreateVercelCiTaskAnalysisResponse(
+        val analysisId: String,
+        val status: CreateVercelCiTaskAnalysisResponseStatusVariant0Enum,
+    )
+
+    data class GetVercelCiTaskAnalysisResponse(
+        val analysisId: String,
+        val status: GetVercelCiTaskAnalysisResponseStatusVariant0Enum,
+        val failureReason: String? = null,
+    )
+
+    data class CreateVercelCiTaskConfigurationPullRequestTasksItem(
+        val name: String,
+        val configPath: String,
+    )
+
+    data class CreateVercelCiTaskConfigurationPullRequestResponse(
+        val url: String,
+        val changedTaskNames: List<String>,
+    )
+
+    data class ListVercelCiTaskAnalysisTasksResponseTasksItem(
+        val name: String,
+        val configPath: String,
+        val recommendationReasons: List<String>,
+    )
+
+    data class ListVercelCiTaskAnalysisTasksResponsePagination(val nextCursor: String? = null)
+
+    data class ListVercelCiTaskAnalysisTasksResponse(
+        val tasks: List<ListVercelCiTaskAnalysisTasksResponseTasksItem>,
+        val pagination: ListVercelCiTaskAnalysisTasksResponsePagination,
+    )
+
+    data class ListVercelCiInvocationAttemptsResponseAttemptsItemSkipped(val reason: String)
+
+    data class ListVercelCiInvocationAttemptsResponseAttemptsItemBootstrappingStarted(
+        val startedAt: Double
+    )
+
+    data class ListVercelCiInvocationAttemptsResponseAttemptsItemBootstrappingFailed(
+        val reason: String
+    )
+
+    data class ListVercelCiInvocationAttemptsResponseAttemptsItemSandboxSnapshotted(
+        val sandboxSnapshotId: String,
+        val workingDirectory: String,
+        val snapshottedAt: Double? = null,
+    )
+
+    data class ListVercelCiInvocationAttemptsResponseAttemptsItemSandboxNamed(
+        val sandboxName: String,
+        val workingDirectory: String,
+        val readyAt: Double? = null,
+    )
+
+    data class ListVercelCiInvocationAttemptsResponseAttemptsItemJobDefinitionsCreated(
+        val names: List<String>,
+        val source: ListVercelCiInvocationAttemptsResponseAttemptsItemJobDefinitiX1715929dff? =
+            null,
+        val scheduledAt: Double? = null,
+    )
+
+    data class ListVercelCiInvocationAttemptsResponseAttemptsItemCompleted(
+        val completedAt: Double,
+        val conclusion: ListVercelCiInvocationAttemptsResponseAttemptsItemCompletedCoXe06721b658? =
+            null,
+    )
+
+    /** The terminal setup result. Omitted while invocation setup is still running. */
+    data class ListVercelCiInvocationAttemptsResponseAttemptsItemSetupConclusion(
+        val result: ListVercelCiInvocationAttemptsResponseAttemptsItemSetupConcluXb8df984f03
+    )
+
     /**
-     * The terminal setup result. Omitted while invocation setup is still running.
+     * The aggregate outcome of every job in the invocation. Omitted while jobs are still running.
+     * Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded".
+     * Present on completed invocations written after the field shipped; absent on older rows.
      */
-    val setupConclusion: ListVercelCiInvocationsResponseInvocationsItemSetupConclusion? = null,
+    data class ListVercelCiInvocationAttemptsResponseAttemptsItemRunConclusion(
+        val result: ListVercelCiInvocationAttemptsResponseAttemptsItemRunConclusiXa8f93a7414
+    )
+
+    data class ListVercelCiInvocationAttemptsResponseAttemptsItem(
+        val invocationId: String,
+        val attempt: Double,
+        val teamId: String,
+        /**
+         * Typed representation of the `ListVercelCiInvocationAttemptsResponseAttemptsItemSource`
+         * API schema.
+         */
+        val source: ListVercelCiInvocationAttemptsResponseAttemptsItemSource,
+        val createdAt: Double,
+        val repositoryKey: String,
+        val ref: String,
+        val commitSha: String,
+        val status: ListVercelCiInvocationAttemptsResponseAttemptsItemStatusVariant0Enum,
+        val skipped: ListVercelCiInvocationAttemptsResponseAttemptsItemSkipped? = null,
+        val bootstrappingStarted:
+            ListVercelCiInvocationAttemptsResponseAttemptsItemBootstrappingStarted? =
+            null,
+        val bootstrappingFailed:
+            ListVercelCiInvocationAttemptsResponseAttemptsItemBootstrappingFailed? =
+            null,
+        val sandboxSnapshotted:
+            ListVercelCiInvocationAttemptsResponseAttemptsItemSandboxSnapshotted? =
+            null,
+        val sandboxNamed: ListVercelCiInvocationAttemptsResponseAttemptsItemSandboxNamed? = null,
+        val jobDefinitionsCreated:
+            ListVercelCiInvocationAttemptsResponseAttemptsItemJobDefinitionsCreated? =
+            null,
+        val completed: ListVercelCiInvocationAttemptsResponseAttemptsItemCompleted? = null,
+        /** The terminal setup result. Omitted while invocation setup is still running. */
+        val setupConclusion: ListVercelCiInvocationAttemptsResponseAttemptsItemSetupConclusion? =
+            null,
+        /**
+         * The aggregate outcome of every job in the invocation. Omitted while jobs are still
+         * running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else
+         * "succeeded". Present on completed invocations written after the field shipped; absent on
+         * older rows.
+         */
+        val runConclusion: ListVercelCiInvocationAttemptsResponseAttemptsItemRunConclusion? = null,
+    )
+
+    data class ListVercelCiInvocationAttemptsResponse(
+        val attempts: List<ListVercelCiInvocationAttemptsResponseAttemptsItem>,
+        val repositories: Map<String, Any>,
+    )
+
+    data class GetVercelCiInvocationTreeResponseInvocationSkipped(val reason: String)
+
+    data class GetVercelCiInvocationTreeResponseInvocationBootstrappingStarted(
+        val startedAt: Double
+    )
+
+    data class GetVercelCiInvocationTreeResponseInvocationBootstrappingFailed(val reason: String)
+
+    data class GetVercelCiInvocationTreeResponseInvocationSandboxSnapshotted(
+        val sandboxSnapshotId: String,
+        val workingDirectory: String,
+        val snapshottedAt: Double? = null,
+    )
+
+    data class GetVercelCiInvocationTreeResponseInvocationSandboxNamed(
+        val sandboxName: String,
+        val workingDirectory: String,
+        val readyAt: Double? = null,
+    )
+
+    data class GetVercelCiInvocationTreeResponseInvocationJobDefinitionsCreated(
+        val names: List<String>,
+        val source: GetVercelCiInvocationTreeResponseInvocationJobDefinitionsCreaX53c59af123? =
+            null,
+        val scheduledAt: Double? = null,
+    )
+
+    data class GetVercelCiInvocationTreeResponseInvocationCompleted(
+        val completedAt: Double,
+        val conclusion: GetVercelCiInvocationTreeResponseInvocationCompletedConclusioX041f43fef6? =
+            null,
+    )
+
+    /** The terminal setup result. Omitted while invocation setup is still running. */
+    data class GetVercelCiInvocationTreeResponseInvocationSetupConclusion(
+        val result: GetVercelCiInvocationTreeResponseInvocationSetupConclusionResX56ce4bdbc5
+    )
+
     /**
-     * The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows.
+     * The aggregate outcome of every job in the invocation. Omitted while jobs are still running.
+     * Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded".
+     * Present on completed invocations written after the field shipped; absent on older rows.
      */
-    val runConclusion: ListVercelCiInvocationsResponseInvocationsItemRunConclusion? = null
-)
+    data class GetVercelCiInvocationTreeResponseInvocationRunConclusion(
+        val result: GetVercelCiInvocationTreeResponseInvocationRunConclusionResulX89b197f4b6
+    )
 
-data class ListVercelCiInvocationsResponsePagination(
-    val nextCursor: String? = null
-)
+    data class GetVercelCiInvocationTreeResponseInvocation(
+        val invocationId: String,
+        val attempt: Double,
+        val teamId: String,
+        /**
+         * Typed representation of the `GetVercelCiInvocationTreeResponseInvocationSource` API
+         * schema.
+         */
+        val source: GetVercelCiInvocationTreeResponseInvocationSource,
+        val createdAt: Double,
+        val repositoryKey: String,
+        val ref: String,
+        val commitSha: String,
+        val status: GetVercelCiInvocationTreeResponseInvocationStatusVariant0Enum,
+        val skipped: GetVercelCiInvocationTreeResponseInvocationSkipped? = null,
+        val bootstrappingStarted: GetVercelCiInvocationTreeResponseInvocationBootstrappingStarted? =
+            null,
+        val bootstrappingFailed: GetVercelCiInvocationTreeResponseInvocationBootstrappingFailed? =
+            null,
+        val sandboxSnapshotted: GetVercelCiInvocationTreeResponseInvocationSandboxSnapshotted? =
+            null,
+        val sandboxNamed: GetVercelCiInvocationTreeResponseInvocationSandboxNamed? = null,
+        val jobDefinitionsCreated:
+            GetVercelCiInvocationTreeResponseInvocationJobDefinitionsCreated? =
+            null,
+        val completed: GetVercelCiInvocationTreeResponseInvocationCompleted? = null,
+        /** The terminal setup result. Omitted while invocation setup is still running. */
+        val setupConclusion: GetVercelCiInvocationTreeResponseInvocationSetupConclusion? = null,
+        /**
+         * The aggregate outcome of every job in the invocation. Omitted while jobs are still
+         * running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else
+         * "succeeded". Present on completed invocations written after the field shipped; absent on
+         * older rows.
+         */
+        val runConclusion: GetVercelCiInvocationTreeResponseInvocationRunConclusion? = null,
+    )
 
-data class ListVercelCiInvocationsResponse(
-    val invocations: List<ListVercelCiInvocationsResponseInvocationsItem>,
-    val repositories: Map<String, Any>,
-    val pagination: ListVercelCiInvocationsResponsePagination
-)
+    data class GetVercelCiInvocationTreeResponseJobsItemDefinition(
+        val invocationId: String,
+        val invocationAttempt: Double,
+        val jobDefinitionId: String,
+        val kind: GetVercelCiInvocationTreeResponseJobsItemDefinitionKindVariant0Enum,
+        val name: String,
+        val command: String,
+        val createdAt: Double,
+    )
 
-data class ListVercelCiBranchesResponseBranchesItem(
-    val name: String,
-    val count: Double
-)
+    data class GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinition(
+        val invocationId: String,
+        val invocationAttempt: Double,
+        val jobDefinitionId: String,
+        val jobRunAttempt: Double,
+        val taskDefinitionId: String,
+        val name: String,
+        /**
+         * Typed representation of the
+         * `GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOperation` API schema.
+         */
+        val operation: GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOperation,
+        val dependencyTaskDefinitionIds: List<String>,
+        val createdAt: Double,
+        val packageDirectory: String? = null,
+    )
 
-data class ListVercelCiBranchesResponse(
-    val branches: List<ListVercelCiBranchesResponseBranchesItem>
-)
+    data class GetVercelCiInvocationTreeResponseJobsItemTasksItemRunStarted(val startedAt: Double)
 
-data class CreateVercelCiTaskAnalysisResponse(
-    val analysisId: String,
-    val status: CreateVercelCiTaskAnalysisResponseStatusVariant0Enum
-)
+    data class GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleted(
+        val completedAt: Double,
+        /**
+         * Typed representation of the
+         * `GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompletedConclusion` API schema.
+         */
+        val conclusion: GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompletedConclusion,
+    )
 
-data class GetVercelCiTaskAnalysisResponse(
-    val analysisId: String,
-    val status: GetVercelCiTaskAnalysisResponseStatusVariant0Enum,
-    val failureReason: String? = null
-)
+    data class GetVercelCiInvocationTreeResponseJobsItemTasksItemRunDeploymentBinding(
+        val deploymentId: String,
+        val deploymentCreatedAt: Double,
+        val eventAt: Double,
+        val readyState: String? = null,
+    )
 
-data class CreateVercelCiTaskConfigurationPullRequestTasksItem(
-    val name: String,
-    val configPath: String
-)
+    data class GetVercelCiInvocationTreeResponseJobsItemTasksItemRun(
+        val invocationId: String,
+        val invocationAttempt: Double,
+        val jobDefinitionId: String,
+        val jobRunAttempt: Double,
+        val taskDefinitionId: String,
+        val attempt: Double,
+        val createdAt: Double,
+        val started: GetVercelCiInvocationTreeResponseJobsItemTasksItemRunStarted? = null,
+        val completed: GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleted? = null,
+        val deploymentBinding:
+            GetVercelCiInvocationTreeResponseJobsItemTasksItemRunDeploymentBinding? =
+            null,
+    )
 
-data class CreateVercelCiTaskConfigurationPullRequestResponse(
-    val url: String,
-    val changedTaskNames: List<String>
-)
+    data class GetVercelCiInvocationTreeResponseJobsItemTasksItem(
+        val definition: GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinition,
+        val run: GetVercelCiInvocationTreeResponseJobsItemTasksItemRun? = null,
+    )
 
-data class ListVercelCiTaskAnalysisTasksResponseTasksItem(
-    val name: String,
-    val configPath: String,
-    val recommendationReasons: List<String>
-)
+    data class GetVercelCiInvocationTreeResponseJobsItemRunStarted(val startedAt: Double)
 
-data class ListVercelCiTaskAnalysisTasksResponsePagination(
-    val nextCursor: String? = null
-)
+    data class GetVercelCiInvocationTreeResponseJobsItemRunCompleted(
+        val completedAt: Double,
+        /**
+         * Typed representation of the
+         * `GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusion` API schema.
+         */
+        val conclusion: GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusion,
+    )
 
-data class ListVercelCiTaskAnalysisTasksResponse(
-    val tasks: List<ListVercelCiTaskAnalysisTasksResponseTasksItem>,
-    val pagination: ListVercelCiTaskAnalysisTasksResponsePagination
-)
+    data class GetVercelCiInvocationTreeResponseJobsItemRun(
+        val invocationId: String,
+        val invocationAttempt: Double,
+        val jobDefinitionId: String,
+        val attempt: Double,
+        val createdAt: Double,
+        val started: GetVercelCiInvocationTreeResponseJobsItemRunStarted? = null,
+        val completed: GetVercelCiInvocationTreeResponseJobsItemRunCompleted? = null,
+    )
 
+    data class GetVercelCiInvocationTreeResponseJobsItem(
+        val definition: GetVercelCiInvocationTreeResponseJobsItemDefinition,
+        val tasks: List<GetVercelCiInvocationTreeResponseJobsItemTasksItem>,
+        val run: GetVercelCiInvocationTreeResponseJobsItemRun? = null,
+    )
 
+    data class GetVercelCiInvocationTreeResponse(
+        val invocation: GetVercelCiInvocationTreeResponseInvocation,
+        val repositories: Map<String, Any>,
+        val jobs: List<GetVercelCiInvocationTreeResponseJobsItem>,
+    )
 
-data class ListVercelCiInvocationAttemptsResponseAttemptsItemSkipped(
-    val reason: String
-)
+    data class GetVercelCiInvocationResponseInvocationSkipped(val reason: String)
 
-data class ListVercelCiInvocationAttemptsResponseAttemptsItemBootstrappingStarted(
-    val startedAt: Double
-)
+    data class GetVercelCiInvocationResponseInvocationBootstrappingStarted(val startedAt: Double)
 
-data class ListVercelCiInvocationAttemptsResponseAttemptsItemBootstrappingFailed(
-    val reason: String
-)
+    data class GetVercelCiInvocationResponseInvocationBootstrappingFailed(val reason: String)
 
-data class ListVercelCiInvocationAttemptsResponseAttemptsItemSandboxSnapshotted(
-    val sandboxSnapshotId: String,
-    val workingDirectory: String,
-    val snapshottedAt: Double? = null
-)
+    data class GetVercelCiInvocationResponseInvocationSandboxSnapshotted(
+        val sandboxSnapshotId: String,
+        val workingDirectory: String,
+        val snapshottedAt: Double? = null,
+    )
 
-data class ListVercelCiInvocationAttemptsResponseAttemptsItemSandboxNamed(
-    val sandboxName: String,
-    val workingDirectory: String,
-    val readyAt: Double? = null
-)
+    data class GetVercelCiInvocationResponseInvocationSandboxNamed(
+        val sandboxName: String,
+        val workingDirectory: String,
+        val readyAt: Double? = null,
+    )
 
-data class ListVercelCiInvocationAttemptsResponseAttemptsItemJobDefinitionsCreated(
-    val names: List<String>,
-    val source: ListVercelCiInvocationAttemptsResponseAttemptsItemJobDefinitiX1715929dff? = null,
-    val scheduledAt: Double? = null
-)
+    data class GetVercelCiInvocationResponseInvocationJobDefinitionsCreated(
+        val names: List<String>,
+        val source: GetVercelCiInvocationResponseInvocationJobDefinitionsCreatedSX79ada681fc? =
+            null,
+        val scheduledAt: Double? = null,
+    )
 
-data class ListVercelCiInvocationAttemptsResponseAttemptsItemCompleted(
-    val completedAt: Double,
-    val conclusion: ListVercelCiInvocationAttemptsResponseAttemptsItemCompletedCoXe06721b658? = null
-)
+    data class GetVercelCiInvocationResponseInvocationCompleted(
+        val completedAt: Double,
+        val conclusion: GetVercelCiInvocationResponseInvocationCompletedConclusionVariant0Enum? =
+            null,
+    )
 
-/**
- * The terminal setup result. Omitted while invocation setup is still running.
- */
-data class ListVercelCiInvocationAttemptsResponseAttemptsItemSetupConclusion(
-    val result: ListVercelCiInvocationAttemptsResponseAttemptsItemSetupConcluXb8df984f03
-)
+    /** The terminal setup result. Omitted while invocation setup is still running. */
+    data class GetVercelCiInvocationResponseInvocationSetupConclusion(
+        val result: GetVercelCiInvocationResponseInvocationSetupConclusionResultVariant0Enum
+    )
 
-/**
- * The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows.
- */
-data class ListVercelCiInvocationAttemptsResponseAttemptsItemRunConclusion(
-    val result: ListVercelCiInvocationAttemptsResponseAttemptsItemRunConclusiXa8f93a7414
-)
-
-data class ListVercelCiInvocationAttemptsResponseAttemptsItem(
-    val invocationId: String,
-    val attempt: Double,
-    val teamId: String,
     /**
-     * Typed representation of the `ListVercelCiInvocationAttemptsResponseAttemptsItemSource` API schema.
+     * The aggregate outcome of every job in the invocation. Omitted while jobs are still running.
+     * Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded".
+     * Present on completed invocations written after the field shipped; absent on older rows.
      */
-    val source: ListVercelCiInvocationAttemptsResponseAttemptsItemSource,
-    val createdAt: Double,
-    val repositoryKey: String,
-    val ref: String,
-    val commitSha: String,
-    val status: ListVercelCiInvocationAttemptsResponseAttemptsItemStatusVariant0Enum,
-    val skipped: ListVercelCiInvocationAttemptsResponseAttemptsItemSkipped? = null,
-    val bootstrappingStarted: ListVercelCiInvocationAttemptsResponseAttemptsItemBootstrappingStarted? = null,
-    val bootstrappingFailed: ListVercelCiInvocationAttemptsResponseAttemptsItemBootstrappingFailed? = null,
-    val sandboxSnapshotted: ListVercelCiInvocationAttemptsResponseAttemptsItemSandboxSnapshotted? = null,
-    val sandboxNamed: ListVercelCiInvocationAttemptsResponseAttemptsItemSandboxNamed? = null,
-    val jobDefinitionsCreated: ListVercelCiInvocationAttemptsResponseAttemptsItemJobDefinitionsCreated? = null,
-    val completed: ListVercelCiInvocationAttemptsResponseAttemptsItemCompleted? = null,
-    /**
-     * The terminal setup result. Omitted while invocation setup is still running.
-     */
-    val setupConclusion: ListVercelCiInvocationAttemptsResponseAttemptsItemSetupConclusion? = null,
-    /**
-     * The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows.
-     */
-    val runConclusion: ListVercelCiInvocationAttemptsResponseAttemptsItemRunConclusion? = null
-)
-
-data class ListVercelCiInvocationAttemptsResponse(
-    val attempts: List<ListVercelCiInvocationAttemptsResponseAttemptsItem>,
-    val repositories: Map<String, Any>
-)
-
-
-
-data class GetVercelCiInvocationTreeResponseInvocationSkipped(
-    val reason: String
-)
-
-data class GetVercelCiInvocationTreeResponseInvocationBootstrappingStarted(
-    val startedAt: Double
-)
-
-data class GetVercelCiInvocationTreeResponseInvocationBootstrappingFailed(
-    val reason: String
-)
-
-data class GetVercelCiInvocationTreeResponseInvocationSandboxSnapshotted(
-    val sandboxSnapshotId: String,
-    val workingDirectory: String,
-    val snapshottedAt: Double? = null
-)
-
-data class GetVercelCiInvocationTreeResponseInvocationSandboxNamed(
-    val sandboxName: String,
-    val workingDirectory: String,
-    val readyAt: Double? = null
-)
-
-data class GetVercelCiInvocationTreeResponseInvocationJobDefinitionsCreated(
-    val names: List<String>,
-    val source: GetVercelCiInvocationTreeResponseInvocationJobDefinitionsCreaX53c59af123? = null,
-    val scheduledAt: Double? = null
-)
-
-data class GetVercelCiInvocationTreeResponseInvocationCompleted(
-    val completedAt: Double,
-    val conclusion: GetVercelCiInvocationTreeResponseInvocationCompletedConclusioX041f43fef6? = null
-)
-
-/**
- * The terminal setup result. Omitted while invocation setup is still running.
- */
-data class GetVercelCiInvocationTreeResponseInvocationSetupConclusion(
-    val result: GetVercelCiInvocationTreeResponseInvocationSetupConclusionResX56ce4bdbc5
-)
-
-/**
- * The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows.
- */
-data class GetVercelCiInvocationTreeResponseInvocationRunConclusion(
-    val result: GetVercelCiInvocationTreeResponseInvocationRunConclusionResulX89b197f4b6
-)
-
-data class GetVercelCiInvocationTreeResponseInvocation(
-    val invocationId: String,
-    val attempt: Double,
-    val teamId: String,
-    /**
-     * Typed representation of the `GetVercelCiInvocationTreeResponseInvocationSource` API schema.
-     */
-    val source: GetVercelCiInvocationTreeResponseInvocationSource,
-    val createdAt: Double,
-    val repositoryKey: String,
-    val ref: String,
-    val commitSha: String,
-    val status: GetVercelCiInvocationTreeResponseInvocationStatusVariant0Enum,
-    val skipped: GetVercelCiInvocationTreeResponseInvocationSkipped? = null,
-    val bootstrappingStarted: GetVercelCiInvocationTreeResponseInvocationBootstrappingStarted? = null,
-    val bootstrappingFailed: GetVercelCiInvocationTreeResponseInvocationBootstrappingFailed? = null,
-    val sandboxSnapshotted: GetVercelCiInvocationTreeResponseInvocationSandboxSnapshotted? = null,
-    val sandboxNamed: GetVercelCiInvocationTreeResponseInvocationSandboxNamed? = null,
-    val jobDefinitionsCreated: GetVercelCiInvocationTreeResponseInvocationJobDefinitionsCreated? = null,
-    val completed: GetVercelCiInvocationTreeResponseInvocationCompleted? = null,
-    /**
-     * The terminal setup result. Omitted while invocation setup is still running.
-     */
-    val setupConclusion: GetVercelCiInvocationTreeResponseInvocationSetupConclusion? = null,
-    /**
-     * The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows.
-     */
-    val runConclusion: GetVercelCiInvocationTreeResponseInvocationRunConclusion? = null
-)
-
-data class GetVercelCiInvocationTreeResponseJobsItemDefinition(
-    val invocationId: String,
-    val invocationAttempt: Double,
-    val jobDefinitionId: String,
-    val kind: GetVercelCiInvocationTreeResponseJobsItemDefinitionKindVariant0Enum,
-    val name: String,
-    val command: String,
-    val createdAt: Double
-)
-
-data class GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinition(
-    val invocationId: String,
-    val invocationAttempt: Double,
-    val jobDefinitionId: String,
-    val jobRunAttempt: Double,
-    val taskDefinitionId: String,
-    val name: String,
-    /**
-     * Typed representation of the `GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOperation` API schema.
-     */
-    val operation: GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOperation,
-    val dependencyTaskDefinitionIds: List<String>,
-    val createdAt: Double,
-    val packageDirectory: String? = null
-)
-
-data class GetVercelCiInvocationTreeResponseJobsItemTasksItemRunStarted(
-    val startedAt: Double
-)
-
-data class GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleted(
-    val completedAt: Double,
-    /**
-     * Typed representation of the `GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompletedConclusion` API schema.
-     */
-    val conclusion: GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompletedConclusion
-)
-
-data class GetVercelCiInvocationTreeResponseJobsItemTasksItemRunDeploymentBinding(
-    val deploymentId: String,
-    val deploymentCreatedAt: Double,
-    val eventAt: Double,
-    val readyState: String? = null
-)
-
-data class GetVercelCiInvocationTreeResponseJobsItemTasksItemRun(
-    val invocationId: String,
-    val invocationAttempt: Double,
-    val jobDefinitionId: String,
-    val jobRunAttempt: Double,
-    val taskDefinitionId: String,
-    val attempt: Double,
-    val createdAt: Double,
-    val started: GetVercelCiInvocationTreeResponseJobsItemTasksItemRunStarted? = null,
-    val completed: GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleted? = null,
-    val deploymentBinding: GetVercelCiInvocationTreeResponseJobsItemTasksItemRunDeploymentBinding? = null
-)
-
-data class GetVercelCiInvocationTreeResponseJobsItemTasksItem(
-    val definition: GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinition,
-    val run: GetVercelCiInvocationTreeResponseJobsItemTasksItemRun? = null
-)
-
-data class GetVercelCiInvocationTreeResponseJobsItemRunStarted(
-    val startedAt: Double
-)
-
-data class GetVercelCiInvocationTreeResponseJobsItemRunCompleted(
-    val completedAt: Double,
-    /**
-     * Typed representation of the `GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusion` API schema.
-     */
-    val conclusion: GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusion
-)
-
-data class GetVercelCiInvocationTreeResponseJobsItemRun(
-    val invocationId: String,
-    val invocationAttempt: Double,
-    val jobDefinitionId: String,
-    val attempt: Double,
-    val createdAt: Double,
-    val started: GetVercelCiInvocationTreeResponseJobsItemRunStarted? = null,
-    val completed: GetVercelCiInvocationTreeResponseJobsItemRunCompleted? = null
-)
-
-data class GetVercelCiInvocationTreeResponseJobsItem(
-    val definition: GetVercelCiInvocationTreeResponseJobsItemDefinition,
-    val tasks: List<GetVercelCiInvocationTreeResponseJobsItemTasksItem>,
-    val run: GetVercelCiInvocationTreeResponseJobsItemRun? = null
-)
-
-data class GetVercelCiInvocationTreeResponse(
-    val invocation: GetVercelCiInvocationTreeResponseInvocation,
-    val repositories: Map<String, Any>,
-    val jobs: List<GetVercelCiInvocationTreeResponseJobsItem>
-)
-
-
-
-data class GetVercelCiInvocationResponseInvocationSkipped(
-    val reason: String
-)
-
-data class GetVercelCiInvocationResponseInvocationBootstrappingStarted(
-    val startedAt: Double
-)
-
-data class GetVercelCiInvocationResponseInvocationBootstrappingFailed(
-    val reason: String
-)
-
-data class GetVercelCiInvocationResponseInvocationSandboxSnapshotted(
-    val sandboxSnapshotId: String,
-    val workingDirectory: String,
-    val snapshottedAt: Double? = null
-)
-
-data class GetVercelCiInvocationResponseInvocationSandboxNamed(
-    val sandboxName: String,
-    val workingDirectory: String,
-    val readyAt: Double? = null
-)
-
-data class GetVercelCiInvocationResponseInvocationJobDefinitionsCreated(
-    val names: List<String>,
-    val source: GetVercelCiInvocationResponseInvocationJobDefinitionsCreatedSX79ada681fc? = null,
-    val scheduledAt: Double? = null
-)
-
-data class GetVercelCiInvocationResponseInvocationCompleted(
-    val completedAt: Double,
-    val conclusion: GetVercelCiInvocationResponseInvocationCompletedConclusionVariant0Enum? = null
-)
-
-/**
- * The terminal setup result. Omitted while invocation setup is still running.
- */
-data class GetVercelCiInvocationResponseInvocationSetupConclusion(
-    val result: GetVercelCiInvocationResponseInvocationSetupConclusionResultVariant0Enum
-)
-
-/**
- * The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows.
- */
-data class GetVercelCiInvocationResponseInvocationRunConclusion(
-    val result: GetVercelCiInvocationResponseInvocationRunConclusionResultVariant0Enum
-)
-
-data class GetVercelCiInvocationResponseInvocation(
-    val invocationId: String,
-    val attempt: Double,
-    val teamId: String,
-    /**
-     * Typed representation of the `GetVercelCiInvocationResponseInvocationSource` API schema.
-     */
-    val source: GetVercelCiInvocationResponseInvocationSource,
-    val createdAt: Double,
-    val repositoryKey: String,
-    val ref: String,
-    val commitSha: String,
-    val status: GetVercelCiInvocationResponseInvocationStatusVariant0Enum,
-    val skipped: GetVercelCiInvocationResponseInvocationSkipped? = null,
-    val bootstrappingStarted: GetVercelCiInvocationResponseInvocationBootstrappingStarted? = null,
-    val bootstrappingFailed: GetVercelCiInvocationResponseInvocationBootstrappingFailed? = null,
-    val sandboxSnapshotted: GetVercelCiInvocationResponseInvocationSandboxSnapshotted? = null,
-    val sandboxNamed: GetVercelCiInvocationResponseInvocationSandboxNamed? = null,
-    val jobDefinitionsCreated: GetVercelCiInvocationResponseInvocationJobDefinitionsCreated? = null,
-    val completed: GetVercelCiInvocationResponseInvocationCompleted? = null,
-    /**
-     * The terminal setup result. Omitted while invocation setup is still running.
-     */
-    val setupConclusion: GetVercelCiInvocationResponseInvocationSetupConclusion? = null,
-    /**
-     * The aggregate outcome of every job in the invocation. Omitted while jobs are still running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else "succeeded". Present on completed invocations written after the field shipped; absent on older rows.
-     */
-    val runConclusion: GetVercelCiInvocationResponseInvocationRunConclusion? = null
-)
-
-data class GetVercelCiInvocationResponse(
-    val invocation: GetVercelCiInvocationResponseInvocation,
-    val repositories: Map<String, Any>
-)
-
-data class RetryVercelCiInvocationResponse(
-    val invocationId: String,
-    val attempt: Double
-)
-
-data class ListVercelCiJobDefinitionsResponseJobDefinitionsItem(
-    val invocationId: String,
-    val invocationAttempt: Double,
-    val jobDefinitionId: String,
-    val kind: ListVercelCiJobDefinitionsResponseJobDefinitionsItemKindVariant0Enum,
-    val name: String,
-    val command: String,
-    val createdAt: Double
-)
-
-data class ListVercelCiJobDefinitionsResponse(
-    val jobDefinitions: List<ListVercelCiJobDefinitionsResponseJobDefinitionsItem>
-)
-
-data class GetVercelCiJobDefinitionResponseJobDefinition(
-    val invocationId: String,
-    val invocationAttempt: Double,
-    val jobDefinitionId: String,
-    val kind: GetVercelCiJobDefinitionResponseJobDefinitionKindVariant0Enum,
-    val name: String,
-    val command: String,
-    val createdAt: Double
-)
-
-data class GetVercelCiJobDefinitionResponse(
-    val jobDefinition: GetVercelCiJobDefinitionResponseJobDefinition
-)
-
-data class ListVercelCiJobRunsResponseJobRunsItemStarted(
-    val startedAt: Double
-)
-
-data class ListVercelCiJobRunsResponseJobRunsItemCompleted(
-    val completedAt: Double,
-    /**
-     * Typed representation of the `ListVercelCiJobRunsResponseJobRunsItemCompletedConclusion` API schema.
-     */
-    val conclusion: ListVercelCiJobRunsResponseJobRunsItemCompletedConclusion
-)
-
-data class ListVercelCiJobRunsResponseJobRunsItem(
-    val invocationId: String,
-    val invocationAttempt: Double,
-    val jobDefinitionId: String,
-    val attempt: Double,
-    val createdAt: Double,
-    val started: ListVercelCiJobRunsResponseJobRunsItemStarted? = null,
-    val completed: ListVercelCiJobRunsResponseJobRunsItemCompleted? = null
-)
-
-data class ListVercelCiJobRunsResponse(
-    val jobRuns: List<ListVercelCiJobRunsResponseJobRunsItem>
-)
-
-data class GetVercelCiJobRunResponseJobRunStarted(
-    val startedAt: Double
-)
-
-data class GetVercelCiJobRunResponseJobRunCompleted(
-    val completedAt: Double,
-    /**
-     * Typed representation of the `GetVercelCiJobRunResponseJobRunCompletedConclusion` API schema.
-     */
-    val conclusion: GetVercelCiJobRunResponseJobRunCompletedConclusion
-)
-
-data class GetVercelCiJobRunResponseJobRun(
-    val invocationId: String,
-    val invocationAttempt: Double,
-    val jobDefinitionId: String,
-    val attempt: Double,
-    val createdAt: Double,
-    val started: GetVercelCiJobRunResponseJobRunStarted? = null,
-    val completed: GetVercelCiJobRunResponseJobRunCompleted? = null
-)
-
-data class GetVercelCiJobRunResponse(
-    val jobRun: GetVercelCiJobRunResponseJobRun
-)
-
-data class ListVercelCiTaskDefinitionsResponseTaskDefinitionsItem(
-    val invocationId: String,
-    val invocationAttempt: Double,
-    val jobDefinitionId: String,
-    val jobRunAttempt: Double,
-    val taskDefinitionId: String,
-    val name: String,
-    /**
-     * Typed representation of the `ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperation` API schema.
-     */
-    val operation: ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperation,
-    val dependencyTaskDefinitionIds: List<String>,
-    val createdAt: Double,
-    val packageDirectory: String? = null
-)
-
-data class ListVercelCiTaskDefinitionsResponse(
-    val taskDefinitions: List<ListVercelCiTaskDefinitionsResponseTaskDefinitionsItem>
-)
-
-data class ListVercelCiTaskRunsResponseTaskRunsItemStarted(
-    val startedAt: Double
-)
-
-data class ListVercelCiTaskRunsResponseTaskRunsItemCompleted(
-    val completedAt: Double,
-    /**
-     * Typed representation of the `ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusion` API schema.
-     */
-    val conclusion: ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusion
-)
-
-data class ListVercelCiTaskRunsResponseTaskRunsItemDeploymentBinding(
-    val deploymentId: String,
-    val deploymentCreatedAt: Double,
-    val eventAt: Double,
-    val readyState: String? = null
-)
-
-data class ListVercelCiTaskRunsResponseTaskRunsItem(
-    val invocationId: String,
-    val invocationAttempt: Double,
-    val jobDefinitionId: String,
-    val jobRunAttempt: Double,
-    val taskDefinitionId: String,
-    val attempt: Double,
-    val createdAt: Double,
-    val started: ListVercelCiTaskRunsResponseTaskRunsItemStarted? = null,
-    val completed: ListVercelCiTaskRunsResponseTaskRunsItemCompleted? = null,
-    val deploymentBinding: ListVercelCiTaskRunsResponseTaskRunsItemDeploymentBinding? = null
-)
-
-data class ListVercelCiTaskRunsResponse(
-    val taskRuns: List<ListVercelCiTaskRunsResponseTaskRunsItem>
-)
-
-data class GetVercelCiInvocationLogsResponseLinesItem(
-    val level: String,
-    val timestamp: Double,
-    val message: String
-)
-
-data class GetVercelCiInvocationLogsResponse(
-    val lines: List<GetVercelCiInvocationLogsResponseLinesItem>
-)
-
-data class GetVercelCiTaskLogsResponseTasksItemLinesItem(
-    val level: String,
-    val timestamp: Double,
-    val message: String
-)
-
-data class GetVercelCiTaskLogsResponseTasksItem(
-    val jobDefinitionId: String,
-    val jobName: String,
-    val jobRunAttempt: Double,
-    val taskDefinitionId: String,
-    val taskName: String,
-    val lines: List<GetVercelCiTaskLogsResponseTasksItemLinesItem>,
-    val taskRunAttempt: Double? = null,
-    /**
-     * Typed representation of the `GetVercelCiTaskLogsResponseTasksItemConclusion` API schema.
-     */
-    val conclusion: GetVercelCiTaskLogsResponseTasksItemConclusion? = null
-)
-
-data class GetVercelCiTaskLogsResponse(
-    val tasks: List<GetVercelCiTaskLogsResponseTasksItem>,
-    /**
-     * Whether more tasks matched the filters than were returned. With `search`, whether more than 1000 lines matched.
-     */
-    val hasMore: Boolean
-)
-
-data class SearchVercelCiLogsResponseInvocationsItemTasksItemLinesItem(
-    val level: String,
-    val timestamp: Double,
-    val message: String
-)
-
-data class SearchVercelCiLogsResponseInvocationsItemTasksItem(
-    val jobDefinitionId: String,
-    val jobName: String,
-    val jobRunAttempt: Double,
-    val taskDefinitionId: String,
-    val taskName: String,
-    val lines: List<SearchVercelCiLogsResponseInvocationsItemTasksItemLinesItem>,
-    val taskRunAttempt: Double? = null,
-    /**
-     * Typed representation of the `SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion` API schema.
-     */
-    val conclusion: SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion? = null
-)
-
-data class SearchVercelCiLogsResponseInvocationsItem(
-    val invocationId: String,
-    val attempt: Double,
-    val tasks: List<SearchVercelCiLogsResponseInvocationsItemTasksItem>
-)
-
-data class SearchVercelCiLogsResponse(
-    val invocations: List<SearchVercelCiLogsResponseInvocationsItem>,
-    /**
-     * Whether more than 1000 lines matched. The newest lines are returned.
-     */
-    val hasMore: Boolean
-)
-
-data class GetVercelCiJobRunLogsResponseLinesItem(
-    val level: String,
-    val timestamp: Double,
-    val message: String
-)
-
-data class GetVercelCiJobRunLogsResponse(
-    val lines: List<GetVercelCiJobRunLogsResponseLinesItem>
-)
-
-data class GetVercelCiTaskRunLogsResponseLinesItem(
-    val level: String,
-    val timestamp: Double,
-    val message: String
-)
-
-data class GetVercelCiTaskRunLogsResponse(
-    val lines: List<GetVercelCiTaskRunLogsResponseLinesItem>
-)
+    data class GetVercelCiInvocationResponseInvocationRunConclusion(
+        val result: GetVercelCiInvocationResponseInvocationRunConclusionResultVariant0Enum
+    )
+
+    data class GetVercelCiInvocationResponseInvocation(
+        val invocationId: String,
+        val attempt: Double,
+        val teamId: String,
+        /**
+         * Typed representation of the `GetVercelCiInvocationResponseInvocationSource` API schema.
+         */
+        val source: GetVercelCiInvocationResponseInvocationSource,
+        val createdAt: Double,
+        val repositoryKey: String,
+        val ref: String,
+        val commitSha: String,
+        val status: GetVercelCiInvocationResponseInvocationStatusVariant0Enum,
+        val skipped: GetVercelCiInvocationResponseInvocationSkipped? = null,
+        val bootstrappingStarted: GetVercelCiInvocationResponseInvocationBootstrappingStarted? =
+            null,
+        val bootstrappingFailed: GetVercelCiInvocationResponseInvocationBootstrappingFailed? = null,
+        val sandboxSnapshotted: GetVercelCiInvocationResponseInvocationSandboxSnapshotted? = null,
+        val sandboxNamed: GetVercelCiInvocationResponseInvocationSandboxNamed? = null,
+        val jobDefinitionsCreated: GetVercelCiInvocationResponseInvocationJobDefinitionsCreated? =
+            null,
+        val completed: GetVercelCiInvocationResponseInvocationCompleted? = null,
+        /** The terminal setup result. Omitted while invocation setup is still running. */
+        val setupConclusion: GetVercelCiInvocationResponseInvocationSetupConclusion? = null,
+        /**
+         * The aggregate outcome of every job in the invocation. Omitted while jobs are still
+         * running. Any failed job → "failed"; any (non-cascade) skipped job → "skipped"; else
+         * "succeeded". Present on completed invocations written after the field shipped; absent on
+         * older rows.
+         */
+        val runConclusion: GetVercelCiInvocationResponseInvocationRunConclusion? = null,
+    )
+
+    data class GetVercelCiInvocationResponse(
+        val invocation: GetVercelCiInvocationResponseInvocation,
+        val repositories: Map<String, Any>,
+    )
+
+    data class RetryVercelCiInvocationResponse(
+        val invocationId: String,
+        val attempt: Double,
+    )
+
+    data class ListVercelCiJobDefinitionsResponseJobDefinitionsItem(
+        val invocationId: String,
+        val invocationAttempt: Double,
+        val jobDefinitionId: String,
+        val kind: ListVercelCiJobDefinitionsResponseJobDefinitionsItemKindVariant0Enum,
+        val name: String,
+        val command: String,
+        val createdAt: Double,
+    )
+
+    data class ListVercelCiJobDefinitionsResponse(
+        val jobDefinitions: List<ListVercelCiJobDefinitionsResponseJobDefinitionsItem>
+    )
+
+    data class GetVercelCiJobDefinitionResponseJobDefinition(
+        val invocationId: String,
+        val invocationAttempt: Double,
+        val jobDefinitionId: String,
+        val kind: GetVercelCiJobDefinitionResponseJobDefinitionKindVariant0Enum,
+        val name: String,
+        val command: String,
+        val createdAt: Double,
+    )
+
+    data class GetVercelCiJobDefinitionResponse(
+        val jobDefinition: GetVercelCiJobDefinitionResponseJobDefinition
+    )
+
+    data class ListVercelCiJobRunsResponseJobRunsItemStarted(val startedAt: Double)
+
+    data class ListVercelCiJobRunsResponseJobRunsItemCompleted(
+        val completedAt: Double,
+        /**
+         * Typed representation of the `ListVercelCiJobRunsResponseJobRunsItemCompletedConclusion`
+         * API schema.
+         */
+        val conclusion: ListVercelCiJobRunsResponseJobRunsItemCompletedConclusion,
+    )
+
+    data class ListVercelCiJobRunsResponseJobRunsItem(
+        val invocationId: String,
+        val invocationAttempt: Double,
+        val jobDefinitionId: String,
+        val attempt: Double,
+        val createdAt: Double,
+        val started: ListVercelCiJobRunsResponseJobRunsItemStarted? = null,
+        val completed: ListVercelCiJobRunsResponseJobRunsItemCompleted? = null,
+    )
+
+    data class ListVercelCiJobRunsResponse(
+        val jobRuns: List<ListVercelCiJobRunsResponseJobRunsItem>
+    )
+
+    data class GetVercelCiJobRunResponseJobRunStarted(val startedAt: Double)
+
+    data class GetVercelCiJobRunResponseJobRunCompleted(
+        val completedAt: Double,
+        /**
+         * Typed representation of the `GetVercelCiJobRunResponseJobRunCompletedConclusion` API
+         * schema.
+         */
+        val conclusion: GetVercelCiJobRunResponseJobRunCompletedConclusion,
+    )
+
+    data class GetVercelCiJobRunResponseJobRun(
+        val invocationId: String,
+        val invocationAttempt: Double,
+        val jobDefinitionId: String,
+        val attempt: Double,
+        val createdAt: Double,
+        val started: GetVercelCiJobRunResponseJobRunStarted? = null,
+        val completed: GetVercelCiJobRunResponseJobRunCompleted? = null,
+    )
+
+    data class GetVercelCiJobRunResponse(val jobRun: GetVercelCiJobRunResponseJobRun)
+
+    data class ListVercelCiTaskDefinitionsResponseTaskDefinitionsItem(
+        val invocationId: String,
+        val invocationAttempt: Double,
+        val jobDefinitionId: String,
+        val jobRunAttempt: Double,
+        val taskDefinitionId: String,
+        val name: String,
+        /**
+         * Typed representation of the
+         * `ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperation` API schema.
+         */
+        val operation: ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperation,
+        val dependencyTaskDefinitionIds: List<String>,
+        val createdAt: Double,
+        val packageDirectory: String? = null,
+    )
+
+    data class ListVercelCiTaskDefinitionsResponse(
+        val taskDefinitions: List<ListVercelCiTaskDefinitionsResponseTaskDefinitionsItem>
+    )
+
+    data class ListVercelCiTaskRunsResponseTaskRunsItemStarted(val startedAt: Double)
+
+    data class ListVercelCiTaskRunsResponseTaskRunsItemCompleted(
+        val completedAt: Double,
+        /**
+         * Typed representation of the `ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusion`
+         * API schema.
+         */
+        val conclusion: ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusion,
+    )
+
+    data class ListVercelCiTaskRunsResponseTaskRunsItemDeploymentBinding(
+        val deploymentId: String,
+        val deploymentCreatedAt: Double,
+        val eventAt: Double,
+        val readyState: String? = null,
+    )
+
+    data class ListVercelCiTaskRunsResponseTaskRunsItem(
+        val invocationId: String,
+        val invocationAttempt: Double,
+        val jobDefinitionId: String,
+        val jobRunAttempt: Double,
+        val taskDefinitionId: String,
+        val attempt: Double,
+        val createdAt: Double,
+        val started: ListVercelCiTaskRunsResponseTaskRunsItemStarted? = null,
+        val completed: ListVercelCiTaskRunsResponseTaskRunsItemCompleted? = null,
+        val deploymentBinding: ListVercelCiTaskRunsResponseTaskRunsItemDeploymentBinding? = null,
+    )
+
+    data class ListVercelCiTaskRunsResponse(
+        val taskRuns: List<ListVercelCiTaskRunsResponseTaskRunsItem>
+    )
+
+    data class GetVercelCiInvocationLogsResponseLinesItem(
+        val level: String,
+        val timestamp: Double,
+        val message: String,
+    )
+
+    data class GetVercelCiInvocationLogsResponse(
+        val lines: List<GetVercelCiInvocationLogsResponseLinesItem>
+    )
+
+    data class GetVercelCiTaskLogsResponseTasksItemLinesItem(
+        val level: String,
+        val timestamp: Double,
+        val message: String,
+    )
+
+    data class GetVercelCiTaskLogsResponseTasksItem(
+        val jobDefinitionId: String,
+        val jobName: String,
+        val jobRunAttempt: Double,
+        val taskDefinitionId: String,
+        val taskName: String,
+        val lines: List<GetVercelCiTaskLogsResponseTasksItemLinesItem>,
+        val taskRunAttempt: Double? = null,
+        /**
+         * Typed representation of the `GetVercelCiTaskLogsResponseTasksItemConclusion` API schema.
+         */
+        val conclusion: GetVercelCiTaskLogsResponseTasksItemConclusion? = null,
+    )
+
+    data class GetVercelCiTaskLogsResponse(
+        val tasks: List<GetVercelCiTaskLogsResponseTasksItem>,
+        /**
+         * Whether more tasks matched the filters than were returned. With `search`, whether more
+         * than 1000 lines matched.
+         */
+        val hasMore: Boolean,
+    )
+
+    data class SearchVercelCiLogsResponseInvocationsItemTasksItemLinesItem(
+        val level: String,
+        val timestamp: Double,
+        val message: String,
+    )
+
+    data class SearchVercelCiLogsResponseInvocationsItemTasksItem(
+        val jobDefinitionId: String,
+        val jobName: String,
+        val jobRunAttempt: Double,
+        val taskDefinitionId: String,
+        val taskName: String,
+        val lines: List<SearchVercelCiLogsResponseInvocationsItemTasksItemLinesItem>,
+        val taskRunAttempt: Double? = null,
+        /**
+         * Typed representation of the
+         * `SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion` API schema.
+         */
+        val conclusion: SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion? = null,
+    )
+
+    data class SearchVercelCiLogsResponseInvocationsItem(
+        val invocationId: String,
+        val attempt: Double,
+        val tasks: List<SearchVercelCiLogsResponseInvocationsItemTasksItem>,
+    )
+
+    data class SearchVercelCiLogsResponse(
+        val invocations: List<SearchVercelCiLogsResponseInvocationsItem>,
+        /** Whether more than 1000 lines matched. The newest lines are returned. */
+        val hasMore: Boolean,
+    )
+
+    data class GetVercelCiJobRunLogsResponseLinesItem(
+        val level: String,
+        val timestamp: Double,
+        val message: String,
+    )
+
+    data class GetVercelCiJobRunLogsResponse(
+        val lines: List<GetVercelCiJobRunLogsResponseLinesItem>
+    )
+
+    data class GetVercelCiTaskRunLogsResponseLinesItem(
+        val level: String,
+        val timestamp: Double,
+        val message: String,
+    )
+
+    data class GetVercelCiTaskRunLogsResponse(
+        val lines: List<GetVercelCiTaskRunLogsResponseLinesItem>
+    )
 
     /** Parameters for [updateVercelCiRepositorySettings]. */
     data class UpdateVercelCiRepositorySettingsRequest(
@@ -806,7 +813,7 @@ data class GetVercelCiTaskRunLogsResponse(
         val repository: String,
         val ciEnabled: Boolean,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [listVercelCiInvocations]. */
@@ -825,7 +832,7 @@ data class GetVercelCiTaskRunLogsResponse(
         val limit: Double? = null,
         val cursor: String? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [getVercelCiJobRun]. */
@@ -835,7 +842,7 @@ data class GetVercelCiTaskRunLogsResponse(
         val jobDefinitionId: String,
         val runAttempt: String,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [listVercelCiTaskDefinitions]. */
@@ -845,7 +852,7 @@ data class GetVercelCiTaskRunLogsResponse(
         val jobDefinitionId: String,
         val runAttempt: String,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [listVercelCiTaskRuns]. */
@@ -856,7 +863,7 @@ data class GetVercelCiTaskRunLogsResponse(
         val runAttempt: String,
         val taskRunAttempt: String? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [getVercelCiTaskLogs]. */
@@ -869,7 +876,7 @@ data class GetVercelCiTaskRunLogsResponse(
         val search: String? = null,
         val limit: Double? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [getVercelCiJobRunLogs]. */
@@ -882,7 +889,7 @@ data class GetVercelCiTaskRunLogsResponse(
         val since: Double? = null,
         val level: List<GetVercelCiJobRunLogsParameterItemEnum>? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [getVercelCiTaskRunLogs]. */
@@ -897,191 +904,344 @@ data class GetVercelCiTaskRunLogsResponse(
         val since: Double? = null,
         val level: List<GetVercelCiTaskRunLogsParameterItemEnum>? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /**
-     * Retrieves Vercel CI settings for a connected repository. Identify the repository with `provider`, `organizationId`, and `repository`; use `teamId` or `slug` to make the request on behalf of a team. The response includes whether Vercel CI is enabled and the associated timestamps.
+     * Retrieves Vercel CI settings for a connected repository. Identify the repository with
+     * `provider`, `organizationId`, and `repository`; use `teamId` or `slug` to make the request on
+     * behalf of a team. The response includes whether Vercel CI is enabled and the associated
+     * timestamps.
      */
-    fun getVercelCiRepositorySettings(clientConfig: ClientConfig, provider: GetVercelCiRepositorySettingsParameterEnum, organizationId: String, repository: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetVercelCiRepositorySettingsResponse =
-        dev.octri.showcase.vercel.methods.VercelCiGetVercelCiRepositorySettingsOperation.getVercelCiRepositorySettings(
-            clientConfig,
-            provider,
-            organizationId,
-            repository,
-            teamId,
-            slug,
-            options,
-        )
+    fun getVercelCiRepositorySettings(
+        clientConfig: ClientConfig,
+        provider: GetVercelCiRepositorySettingsParameterEnum,
+        organizationId: String,
+        repository: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetVercelCiRepositorySettingsResponse =
+        dev.octri.showcase.vercel.methods.VercelCiGetVercelCiRepositorySettingsOperation
+            .getVercelCiRepositorySettings(
+                clientConfig,
+                provider,
+                organizationId,
+                repository,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Updates the Vercel CI enabled state for a connected repository. Identify the repository with `provider`, `organizationId`, and `repository`, then set `ciEnabled` in the request body. Use `teamId` or `slug` to perform the request on behalf of a team.
+     * Updates the Vercel CI enabled state for a connected repository. Identify the repository with
+     * `provider`, `organizationId`, and `repository`, then set `ciEnabled` in the request body. Use
+     * `teamId` or `slug` to perform the request on behalf of a team.
      */
-    fun updateVercelCiRepositorySettings(clientConfig: ClientConfig, request: UpdateVercelCiRepositorySettingsRequest, options: RequestOptions? = null): UpdateVercelCiRepositorySettingsResponse =
-        dev.octri.showcase.vercel.methods.VercelCiUpdateVercelCiRepositorySettingsOperation.updateVercelCiRepositorySettings(
-            clientConfig,
-            request,
-            options,
-        )
+    fun updateVercelCiRepositorySettings(
+        clientConfig: ClientConfig,
+        request: UpdateVercelCiRepositorySettingsRequest,
+        options: RequestOptions? = null,
+    ): UpdateVercelCiRepositorySettingsResponse =
+        dev.octri.showcase.vercel.methods.VercelCiUpdateVercelCiRepositorySettingsOperation
+            .updateVercelCiRepositorySettings(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Lists Vercel CI invocations for a team, with optional filters for repository, branch, commit, status, conclusion, source, author, and creation time. Use `cursor` to continue from a previous response and `limit` to set the page size. The response includes invocation records, repository details, and pagination metadata.
+     * Lists Vercel CI invocations for a team, with optional filters for repository, branch, commit,
+     * status, conclusion, source, author, and creation time. Use `cursor` to continue from a
+     * previous response and `limit` to set the page size. The response includes invocation records,
+     * repository details, and pagination metadata.
      */
-    fun listVercelCiInvocations(clientConfig: ClientConfig, request: ListVercelCiInvocationsRequest, options: RequestOptions? = null): ListVercelCiInvocationsResponse =
-        dev.octri.showcase.vercel.methods.VercelCiListVercelCiInvocationsOperation.listVercelCiInvocations(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listVercelCiInvocations(
+        clientConfig: ClientConfig,
+        request: ListVercelCiInvocationsRequest,
+        options: RequestOptions? = null,
+    ): ListVercelCiInvocationsResponse =
+        dev.octri.showcase.vercel.methods.VercelCiListVercelCiInvocationsOperation
+            .listVercelCiInvocations(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Lists Vercel CI branch suggestions for a team. Use `query` to filter the suggestions and `limit` to control how many results are returned. The response contains branch names and their counts.
+     * Lists Vercel CI branch suggestions for a team. Use `query` to filter the suggestions and
+     * `limit` to control how many results are returned. The response contains branch names and
+     * their counts.
      */
-    fun listVercelCiBranches(clientConfig: ClientConfig, query: String? = null, limit: Double? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ListVercelCiBranchesResponse =
-        dev.octri.showcase.vercel.methods.VercelCiListVercelCiBranchesOperation.listVercelCiBranches(
-            clientConfig,
-            query,
-            limit,
-            teamId,
-            slug,
-            options,
-        )
+    fun listVercelCiBranches(
+        clientConfig: ClientConfig,
+        query: String? = null,
+        limit: Double? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ListVercelCiBranchesResponse =
+        dev.octri.showcase.vercel.methods.VercelCiListVercelCiBranchesOperation
+            .listVercelCiBranches(
+                clientConfig,
+                query,
+                limit,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Starts an asynchronous Vercel CI task analysis for a repository. Supply the repository `owner` and `repo` in the request body, and use `teamId` or `slug` to perform the request on behalf of a team. A 202 response confirms acceptance and provides an `analysisId` to check the analysis status.
+     * Starts an asynchronous Vercel CI task analysis for a repository. Supply the repository
+     * `owner` and `repo` in the request body, and use `teamId` or `slug` to perform the request on
+     * behalf of a team. A 202 response confirms acceptance and provides an `analysisId` to check
+     * the analysis status.
      */
-    fun createVercelCiTaskAnalysis(clientConfig: ClientConfig, owner: String, repo: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): CreateVercelCiTaskAnalysisResponse =
-        dev.octri.showcase.vercel.methods.VercelCiCreateVercelCiTaskAnalysisOperation.createVercelCiTaskAnalysis(
-            clientConfig,
-            owner,
-            repo,
-            teamId,
-            slug,
-            options,
-        )
+    fun createVercelCiTaskAnalysis(
+        clientConfig: ClientConfig,
+        owner: String,
+        repo: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): CreateVercelCiTaskAnalysisResponse =
+        dev.octri.showcase.vercel.methods.VercelCiCreateVercelCiTaskAnalysisOperation
+            .createVercelCiTaskAnalysis(
+                clientConfig,
+                owner,
+                repo,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Retrieves the current status of a Vercel CI task analysis. Use `analysisId` to identify the analysis and optionally pass `teamId` or `slug` to make the request on behalf of a team. The response includes a failure reason when one is available.
+     * Retrieves the current status of a Vercel CI task analysis. Use `analysisId` to identify the
+     * analysis and optionally pass `teamId` or `slug` to make the request on behalf of a team. The
+     * response includes a failure reason when one is available.
      */
-    fun getVercelCiTaskAnalysis(clientConfig: ClientConfig, analysisId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetVercelCiTaskAnalysisResponse =
-        dev.octri.showcase.vercel.methods.VercelCiGetVercelCiTaskAnalysisOperation.getVercelCiTaskAnalysis(
-            clientConfig,
-            analysisId,
-            teamId,
-            slug,
-            options,
-        )
+    fun getVercelCiTaskAnalysis(
+        clientConfig: ClientConfig,
+        analysisId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetVercelCiTaskAnalysisResponse =
+        dev.octri.showcase.vercel.methods.VercelCiGetVercelCiTaskAnalysisOperation
+            .getVercelCiTaskAnalysis(
+                clientConfig,
+                analysisId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Creates a GitHub pull request that adds Vercel CI tags for tasks discovered in a completed analysis. Identify the analysis with `analysisId` and provide the tasks and configuration paths in the request body. The response includes the pull request URL and the names of changed tasks.
+     * Creates a GitHub pull request that adds Vercel CI tags for tasks discovered in a completed
+     * analysis. Identify the analysis with `analysisId` and provide the tasks and configuration
+     * paths in the request body. The response includes the pull request URL and the names of
+     * changed tasks.
      */
-    fun createVercelCiTaskConfigurationPullRequest(clientConfig: ClientConfig, analysisId: String, tasks: List<CreateVercelCiTaskConfigurationPullRequestTasksItem>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): CreateVercelCiTaskConfigurationPullRequestResponse =
-        dev.octri.showcase.vercel.methods.VercelCiCreateVercelCiTaskConfigurationPullRequestOperation.createVercelCiTaskConfigurationPullRequest(
-            clientConfig,
-            analysisId,
-            tasks,
-            teamId,
-            slug,
-            options,
-        )
+    fun createVercelCiTaskConfigurationPullRequest(
+        clientConfig: ClientConfig,
+        analysisId: String,
+        tasks: List<CreateVercelCiTaskConfigurationPullRequestTasksItem>,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): CreateVercelCiTaskConfigurationPullRequestResponse =
+        dev.octri.showcase.vercel.methods
+            .VercelCiCreateVercelCiTaskConfigurationPullRequestOperation
+            .createVercelCiTaskConfigurationPullRequest(
+                clientConfig,
+                analysisId,
+                tasks,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Lists tasks discovered by a completed Vercel CI task analysis. Identify the analysis with `analysisId`, and use `cursor` and `limit` to retrieve task results in pages. Each task includes its configuration path and recommendation reasons.
+     * Lists tasks discovered by a completed Vercel CI task analysis. Identify the analysis with
+     * `analysisId`, and use `cursor` and `limit` to retrieve task results in pages. Each task
+     * includes its configuration path and recommendation reasons.
      */
-    fun listVercelCiTaskAnalysisTasks(clientConfig: ClientConfig, analysisId: String, cursor: String? = null, limit: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ListVercelCiTaskAnalysisTasksResponse =
-        dev.octri.showcase.vercel.methods.VercelCiListVercelCiTaskAnalysisTasksOperation.listVercelCiTaskAnalysisTasks(
-            clientConfig,
-            analysisId,
-            cursor,
-            limit,
-            teamId,
-            slug,
-            options,
-        )
+    fun listVercelCiTaskAnalysisTasks(
+        clientConfig: ClientConfig,
+        analysisId: String,
+        cursor: String? = null,
+        limit: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ListVercelCiTaskAnalysisTasksResponse =
+        dev.octri.showcase.vercel.methods.VercelCiListVercelCiTaskAnalysisTasksOperation
+            .listVercelCiTaskAnalysisTasks(
+                clientConfig,
+                analysisId,
+                cursor,
+                limit,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Lists all attempts for a Vercel CI invocation. Use `invocationId` to identify the invocation and optionally pass `teamId` or `slug` to make the request on behalf of a team. The response includes attempt records and repository details.
+     * Lists all attempts for a Vercel CI invocation. Use `invocationId` to identify the invocation
+     * and optionally pass `teamId` or `slug` to make the request on behalf of a team. The response
+     * includes attempt records and repository details.
      */
-    fun listVercelCiInvocationAttempts(clientConfig: ClientConfig, invocationId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ListVercelCiInvocationAttemptsResponse =
-        dev.octri.showcase.vercel.methods.VercelCiListVercelCiInvocationAttemptsOperation.listVercelCiInvocationAttempts(
-            clientConfig,
-            invocationId,
-            teamId,
-            slug,
-            options,
-        )
+    fun listVercelCiInvocationAttempts(
+        clientConfig: ClientConfig,
+        invocationId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ListVercelCiInvocationAttemptsResponse =
+        dev.octri.showcase.vercel.methods.VercelCiListVercelCiInvocationAttemptsOperation
+            .listVercelCiInvocationAttempts(
+                clientConfig,
+                invocationId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Retrieves an invocation attempt with its job definitions, latest job runs, and task definitions and active task runs. Use `attempt` to select an attempt, or omit it to use the latest; set `follow` to `1` to receive newline-delimited JSON updates until the attempt finishes or the stream times out.
+     * Retrieves an invocation attempt with its job definitions, latest job runs, and task
+     * definitions and active task runs. Use `attempt` to select an attempt, or omit it to use the
+     * latest; set `follow` to `1` to receive newline-delimited JSON updates until the attempt
+     * finishes or the stream times out.
      */
-    fun getVercelCiInvocationTree(clientConfig: ClientConfig, invocationId: String, attempt: String? = null, follow: GetVercelCiInvocationTreeParameterEnum? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetVercelCiInvocationTreeResponse =
-        dev.octri.showcase.vercel.methods.VercelCiGetVercelCiInvocationTreeOperation.getVercelCiInvocationTree(
-            clientConfig,
-            invocationId,
-            attempt,
-            follow,
-            teamId,
-            slug,
-            options,
-        )
+    fun getVercelCiInvocationTree(
+        clientConfig: ClientConfig,
+        invocationId: String,
+        attempt: String? = null,
+        follow: GetVercelCiInvocationTreeParameterEnum? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetVercelCiInvocationTreeResponse =
+        dev.octri.showcase.vercel.methods.VercelCiGetVercelCiInvocationTreeOperation
+            .getVercelCiInvocationTree(
+                clientConfig,
+                invocationId,
+                attempt,
+                follow,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Retrieves a specific invocation attempt and its repository details. Use `invocationId` and `attempt` to identify the attempt you want to inspect. The response includes the invocation record and associated repositories.
+     * Retrieves a specific invocation attempt and its repository details. Use `invocationId` and
+     * `attempt` to identify the attempt you want to inspect. The response includes the invocation
+     * record and associated repositories.
      */
-    fun getVercelCiInvocation(clientConfig: ClientConfig, invocationId: String, attempt: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetVercelCiInvocationResponse =
-        dev.octri.showcase.vercel.methods.VercelCiGetVercelCiInvocationOperation.getVercelCiInvocation(
-            clientConfig,
-            invocationId,
-            attempt,
-            teamId,
-            slug,
-            options,
-        )
+    fun getVercelCiInvocation(
+        clientConfig: ClientConfig,
+        invocationId: String,
+        attempt: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetVercelCiInvocationResponse =
+        dev.octri.showcase.vercel.methods.VercelCiGetVercelCiInvocationOperation
+            .getVercelCiInvocation(
+                clientConfig,
+                invocationId,
+                attempt,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Triggers a retry of a terminal Vercel CI invocation attempt. Use `invocationId` and `attempt` to identify the attempt to retry. The response confirms that the retry was scheduled and provides the new attempt number.
+     * Triggers a retry of a terminal Vercel CI invocation attempt. Use `invocationId` and `attempt`
+     * to identify the attempt to retry. The response confirms that the retry was scheduled and
+     * provides the new attempt number.
      */
-    fun retryVercelCiInvocation(clientConfig: ClientConfig, invocationId: String, attempt: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): RetryVercelCiInvocationResponse =
-        dev.octri.showcase.vercel.methods.VercelCiRetryVercelCiInvocationOperation.retryVercelCiInvocation(
-            clientConfig,
-            invocationId,
-            attempt,
-            teamId,
-            slug,
-            options,
-        )
+    fun retryVercelCiInvocation(
+        clientConfig: ClientConfig,
+        invocationId: String,
+        attempt: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): RetryVercelCiInvocationResponse =
+        dev.octri.showcase.vercel.methods.VercelCiRetryVercelCiInvocationOperation
+            .retryVercelCiInvocation(
+                clientConfig,
+                invocationId,
+                attempt,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Lists the job definitions associated with an invocation attempt. Use `invocationId` and `attempt` to select the attempt whose jobs you want to inspect. Each result includes the job definition's identifier, kind, name, command, and creation time.
+     * Lists the job definitions associated with an invocation attempt. Use `invocationId` and
+     * `attempt` to select the attempt whose jobs you want to inspect. Each result includes the job
+     * definition's identifier, kind, name, command, and creation time.
      */
-    fun listVercelCiJobDefinitions(clientConfig: ClientConfig, invocationId: String, attempt: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ListVercelCiJobDefinitionsResponse =
-        dev.octri.showcase.vercel.methods.VercelCiListVercelCiJobDefinitionsOperation.listVercelCiJobDefinitions(
-            clientConfig,
-            invocationId,
-            attempt,
-            teamId,
-            slug,
-            options,
-        )
+    fun listVercelCiJobDefinitions(
+        clientConfig: ClientConfig,
+        invocationId: String,
+        attempt: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ListVercelCiJobDefinitionsResponse =
+        dev.octri.showcase.vercel.methods.VercelCiListVercelCiJobDefinitionsOperation
+            .listVercelCiJobDefinitions(
+                clientConfig,
+                invocationId,
+                attempt,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Retrieves a specific job definition for an invocation attempt. Use `invocationId`, `attempt`, and `jobDefinitionId` to identify the definition. The response contains the job definition's kind, name, command, and creation time.
+     * Retrieves a specific job definition for an invocation attempt. Use `invocationId`, `attempt`,
+     * and `jobDefinitionId` to identify the definition. The response contains the job definition's
+     * kind, name, command, and creation time.
      */
-    fun getVercelCiJobDefinition(clientConfig: ClientConfig, invocationId: String, attempt: String, jobDefinitionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetVercelCiJobDefinitionResponse =
-        dev.octri.showcase.vercel.methods.VercelCiGetVercelCiJobDefinitionOperation.getVercelCiJobDefinition(
-            clientConfig,
-            invocationId,
-            attempt,
-            jobDefinitionId,
-            teamId,
-            slug,
-            options,
-        )
+    fun getVercelCiJobDefinition(
+        clientConfig: ClientConfig,
+        invocationId: String,
+        attempt: String,
+        jobDefinitionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetVercelCiJobDefinitionResponse =
+        dev.octri.showcase.vercel.methods.VercelCiGetVercelCiJobDefinitionOperation
+            .getVercelCiJobDefinition(
+                clientConfig,
+                invocationId,
+                attempt,
+                jobDefinitionId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Lists the runs for a job definition in a specific invocation attempt. Use `invocationId`, `attempt`, and `jobDefinitionId` to select the job whose run history you want to inspect. Each result includes the run attempt number and creation time, with start and completion details when available.
+     * Lists the runs for a job definition in a specific invocation attempt. Use `invocationId`,
+     * `attempt`, and `jobDefinitionId` to select the job whose run history you want to inspect.
+     * Each result includes the run attempt number and creation time, with start and completion
+     * details when available.
      */
-    fun listVercelCiJobRuns(clientConfig: ClientConfig, invocationId: String, attempt: String, jobDefinitionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ListVercelCiJobRunsResponse =
+    fun listVercelCiJobRuns(
+        clientConfig: ClientConfig,
+        invocationId: String,
+        attempt: String,
+        jobDefinitionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ListVercelCiJobRunsResponse =
         dev.octri.showcase.vercel.methods.VercelCiListVercelCiJobRunsOperation.listVercelCiJobRuns(
             clientConfig,
             invocationId,
@@ -1093,9 +1253,15 @@ data class GetVercelCiTaskRunLogsResponse(
         )
 
     /**
-     * Retrieves a specific run attempt for a job definition. Use `invocationId`, `attempt`, `jobDefinitionId`, and `runAttempt` to identify the run. The response contains the run's creation time and any available start and completion details.
+     * Retrieves a specific run attempt for a job definition. Use `invocationId`, `attempt`,
+     * `jobDefinitionId`, and `runAttempt` to identify the run. The response contains the run's
+     * creation time and any available start and completion details.
      */
-    fun getVercelCiJobRun(clientConfig: ClientConfig, request: GetVercelCiJobRunRequest, options: RequestOptions? = null): GetVercelCiJobRunResponse =
+    fun getVercelCiJobRun(
+        clientConfig: ClientConfig,
+        request: GetVercelCiJobRunRequest,
+        options: RequestOptions? = null,
+    ): GetVercelCiJobRunResponse =
         dev.octri.showcase.vercel.methods.VercelCiGetVercelCiJobRunOperation.getVercelCiJobRun(
             clientConfig,
             request,
@@ -1103,43 +1269,75 @@ data class GetVercelCiTaskRunLogsResponse(
         )
 
     /**
-     * Lists the task definitions associated with a job run. Use `invocationId`, `attempt`, `jobDefinitionId`, and `runAttempt` to select the run. Each result includes its task definition identifier, name, operation, dependencies, and creation time.
+     * Lists the task definitions associated with a job run. Use `invocationId`, `attempt`,
+     * `jobDefinitionId`, and `runAttempt` to select the run. Each result includes its task
+     * definition identifier, name, operation, dependencies, and creation time.
      */
-    fun listVercelCiTaskDefinitions(clientConfig: ClientConfig, request: ListVercelCiTaskDefinitionsRequest, options: RequestOptions? = null): ListVercelCiTaskDefinitionsResponse =
-        dev.octri.showcase.vercel.methods.VercelCiListVercelCiTaskDefinitionsOperation.listVercelCiTaskDefinitions(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listVercelCiTaskDefinitions(
+        clientConfig: ClientConfig,
+        request: ListVercelCiTaskDefinitionsRequest,
+        options: RequestOptions? = null,
+    ): ListVercelCiTaskDefinitionsResponse =
+        dev.octri.showcase.vercel.methods.VercelCiListVercelCiTaskDefinitionsOperation
+            .listVercelCiTaskDefinitions(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Lists the task runs for a job run. Use `invocationId`, `attempt`, `jobDefinitionId`, and `runAttempt` to select the job run, and use `taskRunAttempt` to filter the results by task run attempt. Each result includes task identifiers, the attempt number, creation time, and available start, completion, and deployment binding details.
+     * Lists the task runs for a job run. Use `invocationId`, `attempt`, `jobDefinitionId`, and
+     * `runAttempt` to select the job run, and use `taskRunAttempt` to filter the results by task
+     * run attempt. Each result includes task identifiers, the attempt number, creation time, and
+     * available start, completion, and deployment binding details.
      */
-    fun listVercelCiTaskRuns(clientConfig: ClientConfig, request: ListVercelCiTaskRunsRequest, options: RequestOptions? = null): ListVercelCiTaskRunsResponse =
-        dev.octri.showcase.vercel.methods.VercelCiListVercelCiTaskRunsOperation.listVercelCiTaskRuns(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listVercelCiTaskRuns(
+        clientConfig: ClientConfig,
+        request: ListVercelCiTaskRunsRequest,
+        options: RequestOptions? = null,
+    ): ListVercelCiTaskRunsResponse =
+        dev.octri.showcase.vercel.methods.VercelCiListVercelCiTaskRunsOperation
+            .listVercelCiTaskRuns(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Retrieves log lines for a specific invocation attempt. Use `level` to filter the results to one or more log levels, such as `warn` or `error`. Each returned line includes its level, timestamp, and message.
+     * Retrieves log lines for a specific invocation attempt. Use `level` to filter the results to
+     * one or more log levels, such as `warn` or `error`. Each returned line includes its level,
+     * timestamp, and message.
      */
-    fun getVercelCiInvocationLogs(clientConfig: ClientConfig, invocationId: String, attempt: String, level: List<GetVercelCiInvocationLogsParameterItemEnum>? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetVercelCiInvocationLogsResponse =
-        dev.octri.showcase.vercel.methods.VercelCiGetVercelCiInvocationLogsOperation.getVercelCiInvocationLogs(
-            clientConfig,
-            invocationId,
-            attempt,
-            level,
-            teamId,
-            slug,
-            options,
-        )
+    fun getVercelCiInvocationLogs(
+        clientConfig: ClientConfig,
+        invocationId: String,
+        attempt: String,
+        level: List<GetVercelCiInvocationLogsParameterItemEnum>? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetVercelCiInvocationLogsResponse =
+        dev.octri.showcase.vercel.methods.VercelCiGetVercelCiInvocationLogsOperation
+            .getVercelCiInvocationLogs(
+                clientConfig,
+                invocationId,
+                attempt,
+                level,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Lists log lines for tasks in a specific invocation attempt, grouped by task. Use `task`, `conclusion`, and `level` to filter the results, or use `search` to return only tasks with matching lines. Search returns at most 1,000 matching lines and ignores `limit`.
+     * Lists log lines for tasks in a specific invocation attempt, grouped by task. Use `task`,
+     * `conclusion`, and `level` to filter the results, or use `search` to return only tasks with
+     * matching lines. Search returns at most 1,000 matching lines and ignores `limit`.
      */
-    fun getVercelCiTaskLogs(clientConfig: ClientConfig, request: GetVercelCiTaskLogsRequest, options: RequestOptions? = null): GetVercelCiTaskLogsResponse =
+    fun getVercelCiTaskLogs(
+        clientConfig: ClientConfig,
+        request: GetVercelCiTaskLogsRequest,
+        options: RequestOptions? = null,
+    ): GetVercelCiTaskLogsResponse =
         dev.octri.showcase.vercel.methods.VercelCiGetVercelCiTaskLogsOperation.getVercelCiTaskLogs(
             clientConfig,
             request,
@@ -1147,9 +1345,20 @@ data class GetVercelCiTaskRunLogsResponse(
         )
 
     /**
-     * Searches task logs across multiple invocation attempts and returns only invocations and tasks with matching lines. Supply up to 50 unique invocation attempts in `invocation` and a search string in `search`; matching is case-insensitive. When more than 1,000 lines match, the response keeps the newest lines.
+     * Searches task logs across multiple invocation attempts and returns only invocations and tasks
+     * with matching lines. Supply up to 50 unique invocation attempts in `invocation` and a search
+     * string in `search`; matching is case-insensitive. When more than 1,000 lines match, the
+     * response keeps the newest lines.
      */
-    fun searchVercelCiLogs(clientConfig: ClientConfig, invocation: List<String>, search: String, level: List<SearchVercelCiLogsParameterItemEnum>? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SearchVercelCiLogsResponse =
+    fun searchVercelCiLogs(
+        clientConfig: ClientConfig,
+        invocation: List<String>,
+        search: String,
+        level: List<SearchVercelCiLogsParameterItemEnum>? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SearchVercelCiLogsResponse =
         dev.octri.showcase.vercel.methods.VercelCiSearchVercelCiLogsOperation.searchVercelCiLogs(
             clientConfig,
             invocation,
@@ -1161,22 +1370,37 @@ data class GetVercelCiTaskRunLogsResponse(
         )
 
     /**
-     * Retrieves log lines for a specific job run attempt. Use `level` to filter the returned lines, or provide `since` to retrieve lines from a specified point. Set `follow` to 1 to request ongoing log output.
+     * Retrieves log lines for a specific job run attempt. Use `level` to filter the returned lines,
+     * or provide `since` to retrieve lines from a specified point. Set `follow` to 1 to request
+     * ongoing log output.
      */
-    fun getVercelCiJobRunLogs(clientConfig: ClientConfig, request: GetVercelCiJobRunLogsRequest, options: RequestOptions? = null): GetVercelCiJobRunLogsResponse =
-        dev.octri.showcase.vercel.methods.VercelCiGetVercelCiJobRunLogsOperation.getVercelCiJobRunLogs(
-            clientConfig,
-            request,
-            options,
-        )
+    fun getVercelCiJobRunLogs(
+        clientConfig: ClientConfig,
+        request: GetVercelCiJobRunLogsRequest,
+        options: RequestOptions? = null,
+    ): GetVercelCiJobRunLogsResponse =
+        dev.octri.showcase.vercel.methods.VercelCiGetVercelCiJobRunLogsOperation
+            .getVercelCiJobRunLogs(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Retrieves log lines for a specific task run attempt. Use `level` to filter the returned lines, or provide `since` to retrieve lines from a specified point. Set `follow` to 1 to stream newline-delimited JSON log lines until the task run finishes or the stream reaches its maximum duration.
+     * Retrieves log lines for a specific task run attempt. Use `level` to filter the returned
+     * lines, or provide `since` to retrieve lines from a specified point. Set `follow` to 1 to
+     * stream newline-delimited JSON log lines until the task run finishes or the stream reaches its
+     * maximum duration.
      */
-    fun getVercelCiTaskRunLogs(clientConfig: ClientConfig, request: GetVercelCiTaskRunLogsRequest, options: RequestOptions? = null): GetVercelCiTaskRunLogsResponse =
-        dev.octri.showcase.vercel.methods.VercelCiGetVercelCiTaskRunLogsOperation.getVercelCiTaskRunLogs(
-            clientConfig,
-            request,
-            options,
-        )
+    fun getVercelCiTaskRunLogs(
+        clientConfig: ClientConfig,
+        request: GetVercelCiTaskRunLogsRequest,
+        options: RequestOptions? = null,
+    ): GetVercelCiTaskRunLogsResponse =
+        dev.octri.showcase.vercel.methods.VercelCiGetVercelCiTaskRunLogsOperation
+            .getVercelCiTaskRunLogs(
+                clientConfig,
+                request,
+                options,
+            )
 }

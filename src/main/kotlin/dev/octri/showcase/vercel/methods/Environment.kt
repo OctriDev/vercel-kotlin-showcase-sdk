@@ -37,965 +37,666 @@ import dev.octri.showcase.vercel.UpdateSharedEnvVariableResponseUpdatedItemTypeE
 import java.time.OffsetDateTime
 
 object Environment {
-data class CreateSharedEnvVariableEvsItem(
-    /**
-     * The name of the Shared Environment Variable
-     */
-    val key: String,
-    /**
-     * The value of the Shared Environment Variable
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    /**
-     * A comment to add context on what this Shared Environment Variable is for
-     */
-    val comment: String? = null
-)
-
-
-
-
-
-data class CreateSharedEnvVariableResponseCreatedItem(
-    /**
-     * whether or not this env varible applies to custom environments
-     */
-    val applyToAllCustomEnvironments: Boolean? = null,
-    /**
-     * A user provided comment that describes what this Shared Env Var is for.
-     */
-    val comment: String? = null,
-    /**
-     * The date when the Shared Env Var was created.
-     */
-    val created: OffsetDateTime? = null,
-    /**
-     * Timestamp for when the Shared Env Var was created.
-     */
-    val createdAt: Double? = null,
-    /**
-     * The unique identifier of the user who created the Shared Env Var.
-     */
-    val createdBy: String? = null,
-    /**
-     * The custom environment IDs that this Shared Env Var is scoped to.
-     */
-    val customEnvironmentIds: List<String>? = null,
-    /**
-     * whether or not this env variable is decrypted
-     */
-    val decrypted: Boolean? = null,
-    /**
-     * Timestamp for when the Shared Env Var was (soft) deleted.
-     */
-    val deletedAt: Double? = null,
-    /**
-     * The unique identifier of the user who deleted the Shared Env Var.
-     */
-    val deletedBy: String? = null,
-    /**
-     * The unique identifier of the Shared Env Var.
-     */
-    val id: String? = null,
-    /**
-     * The name of the Shared Env Var.
-     */
-    val key: String? = null,
-    /**
-     * The last editor full name or username.
-     */
-    val lastEditedByDisplayName: String? = null,
-    /**
-     * Typed representation of the `CreateSharedEnvVariableResponseCreatedItemLastEditedByPrincipal` API schema.
-     */
-    val lastEditedByPrincipal: CreateSharedEnvVariableResponseCreatedItemLastEditedByPrincipal? = null,
-    /**
-     * The unique identifier of the owner (team) the Shared Env Var was created for.
-     */
-    val ownerId: String? = null,
-    /**
-     * The unique identifiers of the projects which the Shared Env Var is linked to.
-     */
-    val projectId: List<String>? = null,
-    /**
-     * environments this env variable targets
-     */
-    val target: List<CreateSharedEnvVariableResponseCreatedItemTargetItemEnum>? = null,
-    /**
-     * The type of this cosmos doc instance, if blank, assume secret.
-     */
-    val type: CreateSharedEnvVariableResponseCreatedItemTypeEnum? = null,
-    /**
-     * Timestamp for when the Shared Env Var was last updated.
-     */
-    val updatedAt: Double? = null,
-    /**
-     * The unique identifier of the user who last updated the Shared Env Var.
-     */
-    val updatedBy: String? = null,
-    /**
-     * The value of the Shared Env Var.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-)
-
-
-
-
-
-
-
-data class CreateSharedEnvVariableResponseFailedItemError(
-    val code: String,
-    val message: String,
-    val action: String? = null,
-    val envVarId: String? = null,
-    val envVarKey: String? = null,
-    val gitBranch: String? = null,
-    val key: String? = null,
-    val link: String? = null,
-    val project: String? = null,
-    val target: Any? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
-)
-
-data class CreateSharedEnvVariableResponseFailedItem(
-    val error: CreateSharedEnvVariableResponseFailedItemError
-)
-
-data class CreateSharedEnvVariableResponse(
-    val created: List<CreateSharedEnvVariableResponseCreatedItem>,
-    val failed: List<CreateSharedEnvVariableResponseFailedItem>
-)
-
-
-
-
-
-
-
-data class ListSharedEnvVariableResponseDataItem(
-    /**
-     * The date when the Shared Env Var was created.
-     */
-    val created: OffsetDateTime,
-    /**
-     * whether or not this env variable is decrypted
-     */
-    val decrypted: Boolean,
-    /**
-     * The unique identifier of the Shared Env Var.
-     */
-    val id: String,
-    /**
-     * The name of the Shared Env Var.
-     */
-    val key: String,
-    val securityIssues: List<ListSharedEnvVariableResponseDataItemSecurityIssuesItemEnum>,
-    /**
-     * whether or not this env varible applies to custom environments
-     */
-    val applyToAllCustomEnvironments: Boolean? = null,
-    /**
-     * A user provided comment that describes what this Shared Env Var is for.
-     */
-    val comment: String? = null,
-    /**
-     * Timestamp for when the Shared Env Var was created.
-     */
-    val createdAt: Double? = null,
-    /**
-     * The unique identifier of the user who created the Shared Env Var.
-     */
-    val createdBy: String? = null,
-    /**
-     * The custom environment IDs that this Shared Env Var is scoped to.
-     */
-    val customEnvironmentIds: List<String>? = null,
-    /**
-     * Timestamp for when the Shared Env Var was (soft) deleted.
-     */
-    val deletedAt: Double? = null,
-    /**
-     * The unique identifier of the user who deleted the Shared Env Var.
-     */
-    val deletedBy: String? = null,
-    /**
-     * The last editor full name or username.
-     */
-    val lastEditedByDisplayName: String? = null,
-    /**
-     * Typed representation of the `ListSharedEnvVariableResponseDataItemLastEditedByPrincipal` API schema.
-     */
-    val lastEditedByPrincipal: ListSharedEnvVariableResponseDataItemLastEditedByPrincipal? = null,
-    /**
-     * The unique identifier of the owner (team) the Shared Env Var was created for.
-     */
-    val ownerId: String? = null,
-    /**
-     * The unique identifiers of the projects which the Shared Env Var is linked to.
-     */
-    val projectId: List<String>? = null,
-    /**
-     * environments this env variable targets
-     */
-    val target: List<ListSharedEnvVariableResponseDataItemTargetItemEnum>? = null,
-    /**
-     * The type of this cosmos doc instance, if blank, assume secret.
-     */
-    val type: ListSharedEnvVariableResponseDataItemTypeEnum? = null,
-    /**
-     * Timestamp for when the Shared Env Var was last updated.
-     */
-    val updatedAt: Double? = null,
-    /**
-     * The unique identifier of the user who last updated the Shared Env Var.
-     */
-    val updatedBy: String? = null,
-    /**
-     * The value of the Shared Env Var.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-)
-
-data class ListSharedEnvVariableResponse(
-    @com.fasterxml.jackson.annotation.JsonProperty("data") val `data`: List<ListSharedEnvVariableResponseDataItem>,
-    /**
-     * This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
-     */
-    val pagination: Pagination
-)
-
-
-
-
-
-
-
-data class UpdateSharedEnvVariableResponseFailedItemError(
-    val code: String,
-    val message: String,
-    val action: String? = null,
-    val envVarId: String? = null,
-    val envVarKey: String? = null,
-    val gitBranch: String? = null,
-    val key: String? = null,
-    val link: String? = null,
-    val project: String? = null,
-    val target: Any? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
-)
-
-data class UpdateSharedEnvVariableResponseFailedItem(
-    val error: UpdateSharedEnvVariableResponseFailedItemError
-)
-
-
-
-
-
-data class UpdateSharedEnvVariableResponseUpdatedItem(
-    /**
-     * whether or not this env varible applies to custom environments
-     */
-    val applyToAllCustomEnvironments: Boolean? = null,
-    /**
-     * A user provided comment that describes what this Shared Env Var is for.
-     */
-    val comment: String? = null,
-    /**
-     * The date when the Shared Env Var was created.
-     */
-    val created: OffsetDateTime? = null,
-    /**
-     * Timestamp for when the Shared Env Var was created.
-     */
-    val createdAt: Double? = null,
-    /**
-     * The unique identifier of the user who created the Shared Env Var.
-     */
-    val createdBy: String? = null,
-    /**
-     * The custom environment IDs that this Shared Env Var is scoped to.
-     */
-    val customEnvironmentIds: List<String>? = null,
-    /**
-     * whether or not this env variable is decrypted
-     */
-    val decrypted: Boolean? = null,
-    /**
-     * Timestamp for when the Shared Env Var was (soft) deleted.
-     */
-    val deletedAt: Double? = null,
-    /**
-     * The unique identifier of the user who deleted the Shared Env Var.
-     */
-    val deletedBy: String? = null,
-    /**
-     * The unique identifier of the Shared Env Var.
-     */
-    val id: String? = null,
-    /**
-     * The name of the Shared Env Var.
-     */
-    val key: String? = null,
-    /**
-     * The last editor full name or username.
-     */
-    val lastEditedByDisplayName: String? = null,
-    /**
-     * Typed representation of the `UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipal` API schema.
-     */
-    val lastEditedByPrincipal: UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipal? = null,
-    /**
-     * The unique identifier of the owner (team) the Shared Env Var was created for.
-     */
-    val ownerId: String? = null,
-    /**
-     * The unique identifiers of the projects which the Shared Env Var is linked to.
-     */
-    val projectId: List<String>? = null,
-    /**
-     * environments this env variable targets
-     */
-    val target: List<UpdateSharedEnvVariableResponseUpdatedItemTargetItemEnum>? = null,
-    /**
-     * The type of this cosmos doc instance, if blank, assume secret.
-     */
-    val type: UpdateSharedEnvVariableResponseUpdatedItemTypeEnum? = null,
-    /**
-     * Timestamp for when the Shared Env Var was last updated.
-     */
-    val updatedAt: Double? = null,
-    /**
-     * The unique identifier of the user who last updated the Shared Env Var.
-     */
-    val updatedBy: String? = null,
-    /**
-     * The value of the Shared Env Var.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-)
-
-data class UpdateSharedEnvVariableResponse(
-    val failed: List<UpdateSharedEnvVariableResponseFailedItem>,
-    val updated: List<UpdateSharedEnvVariableResponseUpdatedItem>
-)
-
-
-
-
-
-
-
-data class DeleteSharedEnvVariableResponseFailedItemError(
-    val code: String,
-    val message: String,
-    val action: String? = null,
-    val envVarId: String? = null,
-    val envVarKey: String? = null,
-    val gitBranch: String? = null,
-    val key: String? = null,
-    val link: String? = null,
-    val project: String? = null,
-    val target: Any? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
-)
-
-data class DeleteSharedEnvVariableResponseFailedItem(
-    val error: DeleteSharedEnvVariableResponseFailedItemError
-)
-
-data class DeleteSharedEnvVariableResponse(
-    val deleted: List<String>,
-    val failed: List<DeleteSharedEnvVariableResponseFailedItem>
-)
-
-
-
-
-
-data class GetSharedEnvVarResponse(
-    /**
-     * whether or not this env varible applies to custom environments
-     */
-    val applyToAllCustomEnvironments: Boolean? = null,
-    /**
-     * A user provided comment that describes what this Shared Env Var is for.
-     */
-    val comment: String? = null,
-    /**
-     * The date when the Shared Env Var was created.
-     */
-    val created: OffsetDateTime? = null,
-    /**
-     * Timestamp for when the Shared Env Var was created.
-     */
-    val createdAt: Double? = null,
-    /**
-     * The unique identifier of the user who created the Shared Env Var.
-     */
-    val createdBy: String? = null,
-    /**
-     * The custom environment IDs that this Shared Env Var is scoped to.
-     */
-    val customEnvironmentIds: List<String>? = null,
-    /**
-     * whether or not this env variable is decrypted
-     */
-    val decrypted: Boolean? = null,
-    /**
-     * Timestamp for when the Shared Env Var was (soft) deleted.
-     */
-    val deletedAt: Double? = null,
-    /**
-     * The unique identifier of the user who deleted the Shared Env Var.
-     */
-    val deletedBy: String? = null,
-    /**
-     * The unique identifier of the Shared Env Var.
-     */
-    val id: String? = null,
-    /**
-     * The name of the Shared Env Var.
-     */
-    val key: String? = null,
-    /**
-     * The last editor full name or username.
-     */
-    val lastEditedByDisplayName: String? = null,
-    /**
-     * Typed representation of the `GetSharedEnvVarResponseLastEditedByPrincipal` API schema.
-     */
-    val lastEditedByPrincipal: GetSharedEnvVarResponseLastEditedByPrincipal? = null,
-    /**
-     * The unique identifier of the owner (team) the Shared Env Var was created for.
-     */
-    val ownerId: String? = null,
-    /**
-     * The unique identifiers of the projects which the Shared Env Var is linked to.
-     */
-    val projectId: List<String>? = null,
-    /**
-     * environments this env variable targets
-     */
-    val target: List<GetSharedEnvVarResponseTargetItemEnum>? = null,
-    /**
-     * The type of this cosmos doc instance, if blank, assume secret.
-     */
-    val type: GetSharedEnvVarResponseTypeEnum? = null,
-    /**
-     * Timestamp for when the Shared Env Var was last updated.
-     */
-    val updatedAt: Double? = null,
-    /**
-     * The unique identifier of the user who last updated the Shared Env Var.
-     */
-    val updatedBy: String? = null,
-    /**
-     * The value of the Shared Env Var.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-)
-
-data class UnlinkSharedEnvVariableResponse(
-    val id: String
-)
-
-/**
- * How we want to determine a matching branch. This is optional.
- */
-data class CreateCustomEnvironmentBranchMatcher(
-    /**
-     * Type of matcher. One of "equals", "startsWith", or "endsWith".
-     */
-    val type: CreateCustomEnvironmentBranchMatcherTypeEnum,
-    /**
-     * Git branch name or portion thereof.
-     */
-    val pattern: String
-)
-
-
-
-/**
- * Configuration for matching git branches to this environment
- */
-data class CreateCustomEnvironmentResponseBranchMatcher(
-    /**
-     * The pattern to match against branch names
-     */
-    val pattern: String,
-    /**
-     * The type of matching to perform
-     */
-    val type: CreateCustomEnvironmentResponseBranchMatcherTypeEnum
-)
-
-/**
- * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
- */
-data class CreateCustomEnvironmentResponseDomainsItemVerificationItem(
-    val domain: String,
-    val reason: String,
-    val type: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String
-)
-
-/**
- * List of domains associated with this environment
- */
-data class CreateCustomEnvironmentResponseDomainsItem(
-    val apexName: String,
-    val name: String,
-    val projectId: String,
-    /**
-     * `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-     */
-    val verified: Boolean,
-    val createdAt: Double? = null,
-    val customEnvironmentId: String? = null,
-    val gitBranch: String? = null,
-    val redirect: String? = null,
-    val redirectStatusCode: Double? = null,
-    val updatedAt: Double? = null,
-    /**
-     * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-     */
-    val verification: List<CreateCustomEnvironmentResponseDomainsItemVerificationItem>? = null
-)
-
-/**
- * Internal representation of a custom environment with all required properties
- */
-data class CreateCustomEnvironmentResponse(
-    /**
-     * Timestamp when the environment was created
-     */
-    val createdAt: Double,
-    /**
-     * Unique identifier for the custom environment (format: env_*)
-     */
-    val id: String,
-    /**
-     * URL-friendly name of the environment
-     */
-    val slug: String,
-    /**
-     * The type of environment (production, preview, or development)
-     */
-    val type: CreateCustomEnvironmentResponseTypeEnum,
-    /**
-     * Timestamp when the environment was last updated
-     */
-    val updatedAt: Double,
-    /**
-     * Configuration for matching git branches to this environment
-     */
-    val branchMatcher: CreateCustomEnvironmentResponseBranchMatcher? = null,
-    /**
-     * List of aliases for the current deployment
-     */
-    val currentDeploymentAliases: List<String>? = null,
-    /**
-     * Optional description of the environment's purpose
-     */
-    val description: String? = null,
-    /**
-     * List of domains associated with this environment
-     */
-    val domains: List<CreateCustomEnvironmentResponseDomainsItem>? = null
-)
-
-/**
- * The maximum number of custom environments allowed either by the team's plan type or a custom override.
- */
-data class ListEnvironmentCustomResponseAccountLimit(
-    val total: Double
-)
-
-
-
-/**
- * Configuration for matching git branches to this environment
- */
-data class ListEnvironmentCustomResponseEnvironmentsItemBranchMatcher(
-    /**
-     * The pattern to match against branch names
-     */
-    val pattern: String,
-    /**
-     * The type of matching to perform
-     */
-    val type: ListEnvironmentCustomResponseEnvironmentsItemBranchMatcherTypeEnum
-)
-
-/**
- * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
- */
-data class ListEnvironmentCustomResponseEnvironmentsItemDomainsItemVerificationItem(
-    val domain: String,
-    val reason: String,
-    val type: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String
-)
-
-/**
- * List of domains associated with this environment
- */
-data class ListEnvironmentCustomResponseEnvironmentsItemDomainsItem(
-    val apexName: String,
-    val name: String,
-    val projectId: String,
-    /**
-     * `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-     */
-    val verified: Boolean,
-    val createdAt: Double? = null,
-    val customEnvironmentId: String? = null,
-    val gitBranch: String? = null,
-    val redirect: String? = null,
-    val redirectStatusCode: Double? = null,
-    val updatedAt: Double? = null,
-    /**
-     * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-     */
-    val verification: List<ListEnvironmentCustomResponseEnvironmentsItemDomainsItemVerificationItem>? = null
-)
-
-data class ListEnvironmentCustomResponseEnvironmentsItem(
-    /**
-     * Timestamp when the environment was created
-     */
-    val createdAt: Double,
-    /**
-     * Unique identifier for the custom environment (format: env_*)
-     */
-    val id: String,
-    /**
-     * URL-friendly name of the environment
-     */
-    val slug: String,
-    /**
-     * The type of environment (production, preview, or development)
-     */
-    val type: ListEnvironmentCustomResponseEnvironmentsItemTypeEnum,
-    /**
-     * Timestamp when the environment was last updated
-     */
-    val updatedAt: Double,
-    /**
-     * Configuration for matching git branches to this environment
-     */
-    val branchMatcher: ListEnvironmentCustomResponseEnvironmentsItemBranchMatcher? = null,
-    /**
-     * List of aliases for the current deployment
-     */
-    val currentDeploymentAliases: List<String>? = null,
-    /**
-     * Optional description of the environment's purpose
-     */
-    val description: String? = null,
-    /**
-     * List of domains associated with this environment
-     */
-    val domains: List<ListEnvironmentCustomResponseEnvironmentsItemDomainsItem>? = null
-)
-
-data class ListEnvironmentCustomResponse(
-    /**
-     * The maximum number of custom environments allowed either by the team's plan type or a custom override.
-     */
-    val accountLimit: ListEnvironmentCustomResponseAccountLimit,
-    val environments: List<ListEnvironmentCustomResponseEnvironmentsItem>
-)
-
-
-
-/**
- * Configuration for matching git branches to this environment
- */
-data class GetCustomEnvironmentResponseBranchMatcher(
-    /**
-     * The pattern to match against branch names
-     */
-    val pattern: String,
-    /**
-     * The type of matching to perform
-     */
-    val type: GetCustomEnvironmentResponseBranchMatcherTypeEnum
-)
-
-/**
- * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
- */
-data class GetCustomEnvironmentResponseDomainsItemVerificationItem(
-    val domain: String,
-    val reason: String,
-    val type: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String
-)
-
-/**
- * List of domains associated with this environment
- */
-data class GetCustomEnvironmentResponseDomainsItem(
-    val apexName: String,
-    val name: String,
-    val projectId: String,
-    /**
-     * `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-     */
-    val verified: Boolean,
-    val createdAt: Double? = null,
-    val customEnvironmentId: String? = null,
-    val gitBranch: String? = null,
-    val redirect: String? = null,
-    val redirectStatusCode: Double? = null,
-    val updatedAt: Double? = null,
-    /**
-     * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-     */
-    val verification: List<GetCustomEnvironmentResponseDomainsItemVerificationItem>? = null
-)
-
-/**
- * Internal representation of a custom environment with all required properties
- */
-data class GetCustomEnvironmentResponse(
-    /**
-     * Timestamp when the environment was created
-     */
-    val createdAt: Double,
-    /**
-     * Unique identifier for the custom environment (format: env_*)
-     */
-    val id: String,
-    /**
-     * URL-friendly name of the environment
-     */
-    val slug: String,
-    /**
-     * The type of environment (production, preview, or development)
-     */
-    val type: GetCustomEnvironmentResponseTypeEnum,
-    /**
-     * Timestamp when the environment was last updated
-     */
-    val updatedAt: Double,
-    /**
-     * Configuration for matching git branches to this environment
-     */
-    val branchMatcher: GetCustomEnvironmentResponseBranchMatcher? = null,
-    /**
-     * List of aliases for the current deployment
-     */
-    val currentDeploymentAliases: List<String>? = null,
-    /**
-     * Optional description of the environment's purpose
-     */
-    val description: String? = null,
-    /**
-     * List of domains associated with this environment
-     */
-    val domains: List<GetCustomEnvironmentResponseDomainsItem>? = null
-)
-
-/**
- * How we want to determine a matching branch. This is optional.
- */
-data class UpdateCustomEnvironmentBranchMatcher(
-    /**
-     * Type of matcher. One of "equals", "startsWith", or "endsWith".
-     */
-    val type: UpdateCustomEnvironmentBranchMatcherTypeEnum,
-    /**
-     * Git branch name or portion thereof.
-     */
-    val pattern: String
-)
-
-
-
-/**
- * Configuration for matching git branches to this environment
- */
-data class UpdateCustomEnvironmentResponseBranchMatcher(
-    /**
-     * The pattern to match against branch names
-     */
-    val pattern: String,
-    /**
-     * The type of matching to perform
-     */
-    val type: UpdateCustomEnvironmentResponseBranchMatcherTypeEnum
-)
-
-/**
- * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
- */
-data class UpdateCustomEnvironmentResponseDomainsItemVerificationItem(
-    val domain: String,
-    val reason: String,
-    val type: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String
-)
-
-/**
- * List of domains associated with this environment
- */
-data class UpdateCustomEnvironmentResponseDomainsItem(
-    val apexName: String,
-    val name: String,
-    val projectId: String,
-    /**
-     * `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-     */
-    val verified: Boolean,
-    val createdAt: Double? = null,
-    val customEnvironmentId: String? = null,
-    val gitBranch: String? = null,
-    val redirect: String? = null,
-    val redirectStatusCode: Double? = null,
-    val updatedAt: Double? = null,
-    /**
-     * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-     */
-    val verification: List<UpdateCustomEnvironmentResponseDomainsItemVerificationItem>? = null
-)
-
-/**
- * Internal representation of a custom environment with all required properties
- */
-data class UpdateCustomEnvironmentResponse(
-    /**
-     * Timestamp when the environment was created
-     */
-    val createdAt: Double,
-    /**
-     * Unique identifier for the custom environment (format: env_*)
-     */
-    val id: String,
-    /**
-     * URL-friendly name of the environment
-     */
-    val slug: String,
-    /**
-     * The type of environment (production, preview, or development)
-     */
-    val type: UpdateCustomEnvironmentResponseTypeEnum,
-    /**
-     * Timestamp when the environment was last updated
-     */
-    val updatedAt: Double,
-    /**
-     * Configuration for matching git branches to this environment
-     */
-    val branchMatcher: UpdateCustomEnvironmentResponseBranchMatcher? = null,
-    /**
-     * List of aliases for the current deployment
-     */
-    val currentDeploymentAliases: List<String>? = null,
-    /**
-     * Optional description of the environment's purpose
-     */
-    val description: String? = null,
-    /**
-     * List of domains associated with this environment
-     */
-    val domains: List<UpdateCustomEnvironmentResponseDomainsItem>? = null
-)
-
-
-
-/**
- * Configuration for matching git branches to this environment
- */
-data class RemoveCustomEnvironmentResponseBranchMatcher(
-    /**
-     * The pattern to match against branch names
-     */
-    val pattern: String,
-    /**
-     * The type of matching to perform
-     */
-    val type: RemoveCustomEnvironmentResponseBranchMatcherTypeEnum
-)
-
-/**
- * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
- */
-data class RemoveCustomEnvironmentResponseDomainsItemVerificationItem(
-    val domain: String,
-    val reason: String,
-    val type: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String
-)
-
-/**
- * List of domains associated with this environment
- */
-data class RemoveCustomEnvironmentResponseDomainsItem(
-    val apexName: String,
-    val name: String,
-    val projectId: String,
-    /**
-     * `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
-     */
-    val verified: Boolean,
-    val createdAt: Double? = null,
-    val customEnvironmentId: String? = null,
-    val gitBranch: String? = null,
-    val redirect: String? = null,
-    val redirectStatusCode: Double? = null,
-    val updatedAt: Double? = null,
-    /**
-     * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
-     */
-    val verification: List<RemoveCustomEnvironmentResponseDomainsItemVerificationItem>? = null
-)
-
-/**
- * Internal representation of a custom environment with all required properties
- */
-data class RemoveCustomEnvironmentResponse(
-    /**
-     * Timestamp when the environment was created
-     */
-    val createdAt: Double,
-    /**
-     * Unique identifier for the custom environment (format: env_*)
-     */
-    val id: String,
-    /**
-     * URL-friendly name of the environment
-     */
-    val slug: String,
-    /**
-     * The type of environment (production, preview, or development)
-     */
-    val type: RemoveCustomEnvironmentResponseTypeEnum,
-    /**
-     * Timestamp when the environment was last updated
-     */
-    val updatedAt: Double,
-    /**
-     * Configuration for matching git branches to this environment
-     */
-    val branchMatcher: RemoveCustomEnvironmentResponseBranchMatcher? = null,
-    /**
-     * List of aliases for the current deployment
-     */
-    val currentDeploymentAliases: List<String>? = null,
-    /**
-     * Optional description of the environment's purpose
-     */
-    val description: String? = null,
-    /**
-     * List of domains associated with this environment
-     */
-    val domains: List<RemoveCustomEnvironmentResponseDomainsItem>? = null
-)
+    data class CreateSharedEnvVariableEvsItem(
+        /** The name of the Shared Environment Variable */
+        val key: String,
+        /** The value of the Shared Environment Variable */
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+        /** A comment to add context on what this Shared Environment Variable is for */
+        val comment: String? = null,
+    )
+
+    data class CreateSharedEnvVariableResponseCreatedItem(
+        /** whether or not this env varible applies to custom environments */
+        val applyToAllCustomEnvironments: Boolean? = null,
+        /** A user provided comment that describes what this Shared Env Var is for. */
+        val comment: String? = null,
+        /** The date when the Shared Env Var was created. */
+        val created: OffsetDateTime? = null,
+        /** Timestamp for when the Shared Env Var was created. */
+        val createdAt: Double? = null,
+        /** The unique identifier of the user who created the Shared Env Var. */
+        val createdBy: String? = null,
+        /** The custom environment IDs that this Shared Env Var is scoped to. */
+        val customEnvironmentIds: List<String>? = null,
+        /** whether or not this env variable is decrypted */
+        val decrypted: Boolean? = null,
+        /** Timestamp for when the Shared Env Var was (soft) deleted. */
+        val deletedAt: Double? = null,
+        /** The unique identifier of the user who deleted the Shared Env Var. */
+        val deletedBy: String? = null,
+        /** The unique identifier of the Shared Env Var. */
+        val id: String? = null,
+        /** The name of the Shared Env Var. */
+        val key: String? = null,
+        /** The last editor full name or username. */
+        val lastEditedByDisplayName: String? = null,
+        /**
+         * Typed representation of the
+         * `CreateSharedEnvVariableResponseCreatedItemLastEditedByPrincipal` API schema.
+         */
+        val lastEditedByPrincipal:
+            CreateSharedEnvVariableResponseCreatedItemLastEditedByPrincipal? =
+            null,
+        /** The unique identifier of the owner (team) the Shared Env Var was created for. */
+        val ownerId: String? = null,
+        /** The unique identifiers of the projects which the Shared Env Var is linked to. */
+        val projectId: List<String>? = null,
+        /** environments this env variable targets */
+        val target: List<CreateSharedEnvVariableResponseCreatedItemTargetItemEnum>? = null,
+        /** The type of this cosmos doc instance, if blank, assume secret. */
+        val type: CreateSharedEnvVariableResponseCreatedItemTypeEnum? = null,
+        /** Timestamp for when the Shared Env Var was last updated. */
+        val updatedAt: Double? = null,
+        /** The unique identifier of the user who last updated the Shared Env Var. */
+        val updatedBy: String? = null,
+        /** The value of the Shared Env Var. */
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    )
+
+    data class CreateSharedEnvVariableResponseFailedItemError(
+        val code: String,
+        val message: String,
+        val action: String? = null,
+        val envVarId: String? = null,
+        val envVarKey: String? = null,
+        val gitBranch: String? = null,
+        val key: String? = null,
+        val link: String? = null,
+        val project: String? = null,
+        val target: Any? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
+    )
+
+    data class CreateSharedEnvVariableResponseFailedItem(
+        val error: CreateSharedEnvVariableResponseFailedItemError
+    )
+
+    data class CreateSharedEnvVariableResponse(
+        val created: List<CreateSharedEnvVariableResponseCreatedItem>,
+        val failed: List<CreateSharedEnvVariableResponseFailedItem>,
+    )
+
+    data class ListSharedEnvVariableResponseDataItem(
+        /** The date when the Shared Env Var was created. */
+        val created: OffsetDateTime,
+        /** whether or not this env variable is decrypted */
+        val decrypted: Boolean,
+        /** The unique identifier of the Shared Env Var. */
+        val id: String,
+        /** The name of the Shared Env Var. */
+        val key: String,
+        val securityIssues: List<ListSharedEnvVariableResponseDataItemSecurityIssuesItemEnum>,
+        /** whether or not this env varible applies to custom environments */
+        val applyToAllCustomEnvironments: Boolean? = null,
+        /** A user provided comment that describes what this Shared Env Var is for. */
+        val comment: String? = null,
+        /** Timestamp for when the Shared Env Var was created. */
+        val createdAt: Double? = null,
+        /** The unique identifier of the user who created the Shared Env Var. */
+        val createdBy: String? = null,
+        /** The custom environment IDs that this Shared Env Var is scoped to. */
+        val customEnvironmentIds: List<String>? = null,
+        /** Timestamp for when the Shared Env Var was (soft) deleted. */
+        val deletedAt: Double? = null,
+        /** The unique identifier of the user who deleted the Shared Env Var. */
+        val deletedBy: String? = null,
+        /** The last editor full name or username. */
+        val lastEditedByDisplayName: String? = null,
+        /**
+         * Typed representation of the `ListSharedEnvVariableResponseDataItemLastEditedByPrincipal`
+         * API schema.
+         */
+        val lastEditedByPrincipal: ListSharedEnvVariableResponseDataItemLastEditedByPrincipal? =
+            null,
+        /** The unique identifier of the owner (team) the Shared Env Var was created for. */
+        val ownerId: String? = null,
+        /** The unique identifiers of the projects which the Shared Env Var is linked to. */
+        val projectId: List<String>? = null,
+        /** environments this env variable targets */
+        val target: List<ListSharedEnvVariableResponseDataItemTargetItemEnum>? = null,
+        /** The type of this cosmos doc instance, if blank, assume secret. */
+        val type: ListSharedEnvVariableResponseDataItemTypeEnum? = null,
+        /** Timestamp for when the Shared Env Var was last updated. */
+        val updatedAt: Double? = null,
+        /** The unique identifier of the user who last updated the Shared Env Var. */
+        val updatedBy: String? = null,
+        /** The value of the Shared Env Var. */
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    )
+
+    data class ListSharedEnvVariableResponse(
+        @com.fasterxml.jackson.annotation.JsonProperty("data")
+        val `data`: List<ListSharedEnvVariableResponseDataItem>,
+        /**
+         * This object contains information related to the pagination of the current request,
+         * including the necessary parameters to get the next or previous page of data.
+         */
+        val pagination: Pagination,
+    )
+
+    data class UpdateSharedEnvVariableResponseFailedItemError(
+        val code: String,
+        val message: String,
+        val action: String? = null,
+        val envVarId: String? = null,
+        val envVarKey: String? = null,
+        val gitBranch: String? = null,
+        val key: String? = null,
+        val link: String? = null,
+        val project: String? = null,
+        val target: Any? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
+    )
+
+    data class UpdateSharedEnvVariableResponseFailedItem(
+        val error: UpdateSharedEnvVariableResponseFailedItemError
+    )
+
+    data class UpdateSharedEnvVariableResponseUpdatedItem(
+        /** whether or not this env varible applies to custom environments */
+        val applyToAllCustomEnvironments: Boolean? = null,
+        /** A user provided comment that describes what this Shared Env Var is for. */
+        val comment: String? = null,
+        /** The date when the Shared Env Var was created. */
+        val created: OffsetDateTime? = null,
+        /** Timestamp for when the Shared Env Var was created. */
+        val createdAt: Double? = null,
+        /** The unique identifier of the user who created the Shared Env Var. */
+        val createdBy: String? = null,
+        /** The custom environment IDs that this Shared Env Var is scoped to. */
+        val customEnvironmentIds: List<String>? = null,
+        /** whether or not this env variable is decrypted */
+        val decrypted: Boolean? = null,
+        /** Timestamp for when the Shared Env Var was (soft) deleted. */
+        val deletedAt: Double? = null,
+        /** The unique identifier of the user who deleted the Shared Env Var. */
+        val deletedBy: String? = null,
+        /** The unique identifier of the Shared Env Var. */
+        val id: String? = null,
+        /** The name of the Shared Env Var. */
+        val key: String? = null,
+        /** The last editor full name or username. */
+        val lastEditedByDisplayName: String? = null,
+        /**
+         * Typed representation of the
+         * `UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipal` API schema.
+         */
+        val lastEditedByPrincipal:
+            UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipal? =
+            null,
+        /** The unique identifier of the owner (team) the Shared Env Var was created for. */
+        val ownerId: String? = null,
+        /** The unique identifiers of the projects which the Shared Env Var is linked to. */
+        val projectId: List<String>? = null,
+        /** environments this env variable targets */
+        val target: List<UpdateSharedEnvVariableResponseUpdatedItemTargetItemEnum>? = null,
+        /** The type of this cosmos doc instance, if blank, assume secret. */
+        val type: UpdateSharedEnvVariableResponseUpdatedItemTypeEnum? = null,
+        /** Timestamp for when the Shared Env Var was last updated. */
+        val updatedAt: Double? = null,
+        /** The unique identifier of the user who last updated the Shared Env Var. */
+        val updatedBy: String? = null,
+        /** The value of the Shared Env Var. */
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    )
+
+    data class UpdateSharedEnvVariableResponse(
+        val failed: List<UpdateSharedEnvVariableResponseFailedItem>,
+        val updated: List<UpdateSharedEnvVariableResponseUpdatedItem>,
+    )
+
+    data class DeleteSharedEnvVariableResponseFailedItemError(
+        val code: String,
+        val message: String,
+        val action: String? = null,
+        val envVarId: String? = null,
+        val envVarKey: String? = null,
+        val gitBranch: String? = null,
+        val key: String? = null,
+        val link: String? = null,
+        val project: String? = null,
+        val target: Any? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
+    )
+
+    data class DeleteSharedEnvVariableResponseFailedItem(
+        val error: DeleteSharedEnvVariableResponseFailedItemError
+    )
+
+    data class DeleteSharedEnvVariableResponse(
+        val deleted: List<String>,
+        val failed: List<DeleteSharedEnvVariableResponseFailedItem>,
+    )
+
+    data class GetSharedEnvVarResponse(
+        /** whether or not this env varible applies to custom environments */
+        val applyToAllCustomEnvironments: Boolean? = null,
+        /** A user provided comment that describes what this Shared Env Var is for. */
+        val comment: String? = null,
+        /** The date when the Shared Env Var was created. */
+        val created: OffsetDateTime? = null,
+        /** Timestamp for when the Shared Env Var was created. */
+        val createdAt: Double? = null,
+        /** The unique identifier of the user who created the Shared Env Var. */
+        val createdBy: String? = null,
+        /** The custom environment IDs that this Shared Env Var is scoped to. */
+        val customEnvironmentIds: List<String>? = null,
+        /** whether or not this env variable is decrypted */
+        val decrypted: Boolean? = null,
+        /** Timestamp for when the Shared Env Var was (soft) deleted. */
+        val deletedAt: Double? = null,
+        /** The unique identifier of the user who deleted the Shared Env Var. */
+        val deletedBy: String? = null,
+        /** The unique identifier of the Shared Env Var. */
+        val id: String? = null,
+        /** The name of the Shared Env Var. */
+        val key: String? = null,
+        /** The last editor full name or username. */
+        val lastEditedByDisplayName: String? = null,
+        /**
+         * Typed representation of the `GetSharedEnvVarResponseLastEditedByPrincipal` API schema.
+         */
+        val lastEditedByPrincipal: GetSharedEnvVarResponseLastEditedByPrincipal? = null,
+        /** The unique identifier of the owner (team) the Shared Env Var was created for. */
+        val ownerId: String? = null,
+        /** The unique identifiers of the projects which the Shared Env Var is linked to. */
+        val projectId: List<String>? = null,
+        /** environments this env variable targets */
+        val target: List<GetSharedEnvVarResponseTargetItemEnum>? = null,
+        /** The type of this cosmos doc instance, if blank, assume secret. */
+        val type: GetSharedEnvVarResponseTypeEnum? = null,
+        /** Timestamp for when the Shared Env Var was last updated. */
+        val updatedAt: Double? = null,
+        /** The unique identifier of the user who last updated the Shared Env Var. */
+        val updatedBy: String? = null,
+        /** The value of the Shared Env Var. */
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    )
+
+    data class UnlinkSharedEnvVariableResponse(val id: String)
+
+    /** How we want to determine a matching branch. This is optional. */
+    data class CreateCustomEnvironmentBranchMatcher(
+        /** Type of matcher. One of "equals", "startsWith", or "endsWith". */
+        val type: CreateCustomEnvironmentBranchMatcherTypeEnum,
+        /** Git branch name or portion thereof. */
+        val pattern: String,
+    )
+
+    /** Configuration for matching git branches to this environment */
+    data class CreateCustomEnvironmentResponseBranchMatcher(
+        /** The pattern to match against branch names */
+        val pattern: String,
+        /** The type of matching to perform */
+        val type: CreateCustomEnvironmentResponseBranchMatcherTypeEnum,
+    )
+
+    /**
+     * A list of verification challenges, one of which must be completed to verify the domain for
+     * use on the project. After the challenge is complete `POST
+     * /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If
+     * `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching
+     * `verification.value`.
+     */
+    data class CreateCustomEnvironmentResponseDomainsItemVerificationItem(
+        val domain: String,
+        val reason: String,
+        val type: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+    )
+
+    /** List of domains associated with this environment */
+    data class CreateCustomEnvironmentResponseDomainsItem(
+        val apexName: String,
+        val name: String,
+        val projectId: String,
+        /**
+         * `true` if the domain is verified for use with the project. If `false` it will not be used
+         * as an alias on this project until the challenge in `verification` is completed.
+         */
+        val verified: Boolean,
+        val createdAt: Double? = null,
+        val customEnvironmentId: String? = null,
+        val gitBranch: String? = null,
+        val redirect: String? = null,
+        val redirectStatusCode: Double? = null,
+        val updatedAt: Double? = null,
+        /**
+         * A list of verification challenges, one of which must be completed to verify the domain
+         * for use on the project. After the challenge is complete `POST
+         * /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: -
+         * If `verification.type = TXT` the `verification.domain` will be checked for a TXT record
+         * matching `verification.value`.
+         */
+        val verification: List<CreateCustomEnvironmentResponseDomainsItemVerificationItem>? = null,
+    )
+
+    /** Internal representation of a custom environment with all required properties */
+    data class CreateCustomEnvironmentResponse(
+        /** Timestamp when the environment was created */
+        val createdAt: Double,
+        /** Unique identifier for the custom environment (format: env_*) */
+        val id: String,
+        /** URL-friendly name of the environment */
+        val slug: String,
+        /** The type of environment (production, preview, or development) */
+        val type: CreateCustomEnvironmentResponseTypeEnum,
+        /** Timestamp when the environment was last updated */
+        val updatedAt: Double,
+        /** Configuration for matching git branches to this environment */
+        val branchMatcher: CreateCustomEnvironmentResponseBranchMatcher? = null,
+        /** List of aliases for the current deployment */
+        val currentDeploymentAliases: List<String>? = null,
+        /** Optional description of the environment's purpose */
+        val description: String? = null,
+        /** List of domains associated with this environment */
+        val domains: List<CreateCustomEnvironmentResponseDomainsItem>? = null,
+    )
+
+    /**
+     * The maximum number of custom environments allowed either by the team's plan type or a custom
+     * override.
+     */
+    data class ListEnvironmentCustomResponseAccountLimit(val total: Double)
+
+    /** Configuration for matching git branches to this environment */
+    data class ListEnvironmentCustomResponseEnvironmentsItemBranchMatcher(
+        /** The pattern to match against branch names */
+        val pattern: String,
+        /** The type of matching to perform */
+        val type: ListEnvironmentCustomResponseEnvironmentsItemBranchMatcherTypeEnum,
+    )
+
+    /**
+     * A list of verification challenges, one of which must be completed to verify the domain for
+     * use on the project. After the challenge is complete `POST
+     * /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If
+     * `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching
+     * `verification.value`.
+     */
+    data class ListEnvironmentCustomResponseEnvironmentsItemDomainsItemVerificationItem(
+        val domain: String,
+        val reason: String,
+        val type: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+    )
+
+    /** List of domains associated with this environment */
+    data class ListEnvironmentCustomResponseEnvironmentsItemDomainsItem(
+        val apexName: String,
+        val name: String,
+        val projectId: String,
+        /**
+         * `true` if the domain is verified for use with the project. If `false` it will not be used
+         * as an alias on this project until the challenge in `verification` is completed.
+         */
+        val verified: Boolean,
+        val createdAt: Double? = null,
+        val customEnvironmentId: String? = null,
+        val gitBranch: String? = null,
+        val redirect: String? = null,
+        val redirectStatusCode: Double? = null,
+        val updatedAt: Double? = null,
+        /**
+         * A list of verification challenges, one of which must be completed to verify the domain
+         * for use on the project. After the challenge is complete `POST
+         * /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: -
+         * If `verification.type = TXT` the `verification.domain` will be checked for a TXT record
+         * matching `verification.value`.
+         */
+        val verification:
+            List<ListEnvironmentCustomResponseEnvironmentsItemDomainsItemVerificationItem>? =
+            null,
+    )
+
+    data class ListEnvironmentCustomResponseEnvironmentsItem(
+        /** Timestamp when the environment was created */
+        val createdAt: Double,
+        /** Unique identifier for the custom environment (format: env_*) */
+        val id: String,
+        /** URL-friendly name of the environment */
+        val slug: String,
+        /** The type of environment (production, preview, or development) */
+        val type: ListEnvironmentCustomResponseEnvironmentsItemTypeEnum,
+        /** Timestamp when the environment was last updated */
+        val updatedAt: Double,
+        /** Configuration for matching git branches to this environment */
+        val branchMatcher: ListEnvironmentCustomResponseEnvironmentsItemBranchMatcher? = null,
+        /** List of aliases for the current deployment */
+        val currentDeploymentAliases: List<String>? = null,
+        /** Optional description of the environment's purpose */
+        val description: String? = null,
+        /** List of domains associated with this environment */
+        val domains: List<ListEnvironmentCustomResponseEnvironmentsItemDomainsItem>? = null,
+    )
+
+    data class ListEnvironmentCustomResponse(
+        /**
+         * The maximum number of custom environments allowed either by the team's plan type or a
+         * custom override.
+         */
+        val accountLimit: ListEnvironmentCustomResponseAccountLimit,
+        val environments: List<ListEnvironmentCustomResponseEnvironmentsItem>,
+    )
+
+    /** Configuration for matching git branches to this environment */
+    data class GetCustomEnvironmentResponseBranchMatcher(
+        /** The pattern to match against branch names */
+        val pattern: String,
+        /** The type of matching to perform */
+        val type: GetCustomEnvironmentResponseBranchMatcherTypeEnum,
+    )
+
+    /**
+     * A list of verification challenges, one of which must be completed to verify the domain for
+     * use on the project. After the challenge is complete `POST
+     * /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If
+     * `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching
+     * `verification.value`.
+     */
+    data class GetCustomEnvironmentResponseDomainsItemVerificationItem(
+        val domain: String,
+        val reason: String,
+        val type: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+    )
+
+    /** List of domains associated with this environment */
+    data class GetCustomEnvironmentResponseDomainsItem(
+        val apexName: String,
+        val name: String,
+        val projectId: String,
+        /**
+         * `true` if the domain is verified for use with the project. If `false` it will not be used
+         * as an alias on this project until the challenge in `verification` is completed.
+         */
+        val verified: Boolean,
+        val createdAt: Double? = null,
+        val customEnvironmentId: String? = null,
+        val gitBranch: String? = null,
+        val redirect: String? = null,
+        val redirectStatusCode: Double? = null,
+        val updatedAt: Double? = null,
+        /**
+         * A list of verification challenges, one of which must be completed to verify the domain
+         * for use on the project. After the challenge is complete `POST
+         * /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: -
+         * If `verification.type = TXT` the `verification.domain` will be checked for a TXT record
+         * matching `verification.value`.
+         */
+        val verification: List<GetCustomEnvironmentResponseDomainsItemVerificationItem>? = null,
+    )
+
+    /** Internal representation of a custom environment with all required properties */
+    data class GetCustomEnvironmentResponse(
+        /** Timestamp when the environment was created */
+        val createdAt: Double,
+        /** Unique identifier for the custom environment (format: env_*) */
+        val id: String,
+        /** URL-friendly name of the environment */
+        val slug: String,
+        /** The type of environment (production, preview, or development) */
+        val type: GetCustomEnvironmentResponseTypeEnum,
+        /** Timestamp when the environment was last updated */
+        val updatedAt: Double,
+        /** Configuration for matching git branches to this environment */
+        val branchMatcher: GetCustomEnvironmentResponseBranchMatcher? = null,
+        /** List of aliases for the current deployment */
+        val currentDeploymentAliases: List<String>? = null,
+        /** Optional description of the environment's purpose */
+        val description: String? = null,
+        /** List of domains associated with this environment */
+        val domains: List<GetCustomEnvironmentResponseDomainsItem>? = null,
+    )
+
+    /** How we want to determine a matching branch. This is optional. */
+    data class UpdateCustomEnvironmentBranchMatcher(
+        /** Type of matcher. One of "equals", "startsWith", or "endsWith". */
+        val type: UpdateCustomEnvironmentBranchMatcherTypeEnum,
+        /** Git branch name or portion thereof. */
+        val pattern: String,
+    )
+
+    /** Configuration for matching git branches to this environment */
+    data class UpdateCustomEnvironmentResponseBranchMatcher(
+        /** The pattern to match against branch names */
+        val pattern: String,
+        /** The type of matching to perform */
+        val type: UpdateCustomEnvironmentResponseBranchMatcherTypeEnum,
+    )
+
+    /**
+     * A list of verification challenges, one of which must be completed to verify the domain for
+     * use on the project. After the challenge is complete `POST
+     * /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If
+     * `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching
+     * `verification.value`.
+     */
+    data class UpdateCustomEnvironmentResponseDomainsItemVerificationItem(
+        val domain: String,
+        val reason: String,
+        val type: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+    )
+
+    /** List of domains associated with this environment */
+    data class UpdateCustomEnvironmentResponseDomainsItem(
+        val apexName: String,
+        val name: String,
+        val projectId: String,
+        /**
+         * `true` if the domain is verified for use with the project. If `false` it will not be used
+         * as an alias on this project until the challenge in `verification` is completed.
+         */
+        val verified: Boolean,
+        val createdAt: Double? = null,
+        val customEnvironmentId: String? = null,
+        val gitBranch: String? = null,
+        val redirect: String? = null,
+        val redirectStatusCode: Double? = null,
+        val updatedAt: Double? = null,
+        /**
+         * A list of verification challenges, one of which must be completed to verify the domain
+         * for use on the project. After the challenge is complete `POST
+         * /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: -
+         * If `verification.type = TXT` the `verification.domain` will be checked for a TXT record
+         * matching `verification.value`.
+         */
+        val verification: List<UpdateCustomEnvironmentResponseDomainsItemVerificationItem>? = null,
+    )
+
+    /** Internal representation of a custom environment with all required properties */
+    data class UpdateCustomEnvironmentResponse(
+        /** Timestamp when the environment was created */
+        val createdAt: Double,
+        /** Unique identifier for the custom environment (format: env_*) */
+        val id: String,
+        /** URL-friendly name of the environment */
+        val slug: String,
+        /** The type of environment (production, preview, or development) */
+        val type: UpdateCustomEnvironmentResponseTypeEnum,
+        /** Timestamp when the environment was last updated */
+        val updatedAt: Double,
+        /** Configuration for matching git branches to this environment */
+        val branchMatcher: UpdateCustomEnvironmentResponseBranchMatcher? = null,
+        /** List of aliases for the current deployment */
+        val currentDeploymentAliases: List<String>? = null,
+        /** Optional description of the environment's purpose */
+        val description: String? = null,
+        /** List of domains associated with this environment */
+        val domains: List<UpdateCustomEnvironmentResponseDomainsItem>? = null,
+    )
+
+    /** Configuration for matching git branches to this environment */
+    data class RemoveCustomEnvironmentResponseBranchMatcher(
+        /** The pattern to match against branch names */
+        val pattern: String,
+        /** The type of matching to perform */
+        val type: RemoveCustomEnvironmentResponseBranchMatcherTypeEnum,
+    )
+
+    /**
+     * A list of verification challenges, one of which must be completed to verify the domain for
+     * use on the project. After the challenge is complete `POST
+     * /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If
+     * `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching
+     * `verification.value`.
+     */
+    data class RemoveCustomEnvironmentResponseDomainsItemVerificationItem(
+        val domain: String,
+        val reason: String,
+        val type: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+    )
+
+    /** List of domains associated with this environment */
+    data class RemoveCustomEnvironmentResponseDomainsItem(
+        val apexName: String,
+        val name: String,
+        val projectId: String,
+        /**
+         * `true` if the domain is verified for use with the project. If `false` it will not be used
+         * as an alias on this project until the challenge in `verification` is completed.
+         */
+        val verified: Boolean,
+        val createdAt: Double? = null,
+        val customEnvironmentId: String? = null,
+        val gitBranch: String? = null,
+        val redirect: String? = null,
+        val redirectStatusCode: Double? = null,
+        val updatedAt: Double? = null,
+        /**
+         * A list of verification challenges, one of which must be completed to verify the domain
+         * for use on the project. After the challenge is complete `POST
+         * /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: -
+         * If `verification.type = TXT` the `verification.domain` will be checked for a TXT record
+         * matching `verification.value`.
+         */
+        val verification: List<RemoveCustomEnvironmentResponseDomainsItemVerificationItem>? = null,
+    )
+
+    /** Internal representation of a custom environment with all required properties */
+    data class RemoveCustomEnvironmentResponse(
+        /** Timestamp when the environment was created */
+        val createdAt: Double,
+        /** Unique identifier for the custom environment (format: env_*) */
+        val id: String,
+        /** URL-friendly name of the environment */
+        val slug: String,
+        /** The type of environment (production, preview, or development) */
+        val type: RemoveCustomEnvironmentResponseTypeEnum,
+        /** Timestamp when the environment was last updated */
+        val updatedAt: Double,
+        /** Configuration for matching git branches to this environment */
+        val branchMatcher: RemoveCustomEnvironmentResponseBranchMatcher? = null,
+        /** List of aliases for the current deployment */
+        val currentDeploymentAliases: List<String>? = null,
+        /** Optional description of the environment's purpose */
+        val description: String? = null,
+        /** List of domains associated with this environment */
+        val domains: List<RemoveCustomEnvironmentResponseDomainsItem>? = null,
+    )
 
     /** Parameters for [createSharedEnvVariable]. */
     data class CreateSharedEnvVariableRequest(
@@ -1004,7 +705,7 @@ data class RemoveCustomEnvironmentResponse(
         val slug: String? = null,
         val type: CreateSharedEnvVariableTypeEnum? = null,
         val target: List<CreateSharedEnvVariableTargetItemEnum>? = null,
-        val projectId: List<String>? = null
+        val projectId: List<String>? = null,
     )
 
     /** Parameters for [listSharedEnvVariable]. */
@@ -1017,7 +718,7 @@ data class RemoveCustomEnvironmentResponse(
         val excludeProjectId: String? = null,
         val excludeProjectId2: String? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [createCustomEnvironment]. */
@@ -1028,7 +729,7 @@ data class RemoveCustomEnvironmentResponse(
         val slug2: String? = null,
         val description: String? = null,
         val branchMatcher: CreateCustomEnvironmentBranchMatcher? = null,
-        val copyEnvVarsFrom: String? = null
+        val copyEnvVarsFrom: String? = null,
     )
 
     /** Parameters for [updateCustomEnvironment]. */
@@ -1039,57 +740,98 @@ data class RemoveCustomEnvironmentResponse(
         val slug: String? = null,
         val slug2: String? = null,
         val description: String? = null,
-        val branchMatcher: SdkClient.SdkOptional<UpdateCustomEnvironmentBranchMatcher?>? = null
+        val branchMatcher: SdkClient.SdkOptional<UpdateCustomEnvironmentBranchMatcher?>? = null,
     )
 
     /**
-     * Creates one or more shared environment variables for a team. Provide between 1 and 50 entries in `evs`, each with a `key` and `value`, and specify at least one target or custom-environment scope. A 201 response reports which entries were created and which failed.
+     * Creates one or more shared environment variables for a team. Provide between 1 and 50 entries
+     * in `evs`, each with a `key` and `value`, and specify at least one target or
+     * custom-environment scope. A 201 response reports which entries were created and which failed.
      */
-    fun createSharedEnvVariable(clientConfig: ClientConfig, request: CreateSharedEnvVariableRequest, options: RequestOptions? = null): CreateSharedEnvVariableResponse =
-        dev.octri.showcase.vercel.methods.EnvironmentCreateSharedEnvVariableOperation.createSharedEnvVariable(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createSharedEnvVariable(
+        clientConfig: ClientConfig,
+        request: CreateSharedEnvVariableRequest,
+        options: RequestOptions? = null,
+    ): CreateSharedEnvVariableResponse =
+        dev.octri.showcase.vercel.methods.EnvironmentCreateSharedEnvVariableOperation
+            .createSharedEnvVariable(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Lists shared environment variables for a team, with optional filters for search terms, projects, and variable IDs. Use the exclusion filters to omit specified IDs or project associations from the results. The response includes variable records and pagination information.
+     * Lists shared environment variables for a team, with optional filters for search terms,
+     * projects, and variable IDs. Use the exclusion filters to omit specified IDs or project
+     * associations from the results. The response includes variable records and pagination
+     * information.
      */
-    fun listSharedEnvVariable(clientConfig: ClientConfig, request: ListSharedEnvVariableRequest, options: RequestOptions? = null): ListSharedEnvVariableResponse =
-        dev.octri.showcase.vercel.methods.EnvironmentListSharedEnvVariableOperation.listSharedEnvVariable(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listSharedEnvVariable(
+        clientConfig: ClientConfig,
+        request: ListSharedEnvVariableRequest,
+        options: RequestOptions? = null,
+    ): ListSharedEnvVariableResponse =
+        dev.octri.showcase.vercel.methods.EnvironmentListSharedEnvVariableOperation
+            .listSharedEnvVariable(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Updates one or more shared environment variables for a team. Provide an `updates` object keyed by environment variable IDs, with each value containing the changes to apply. The response separates updated variables from entries that failed.
+     * Updates one or more shared environment variables for a team. Provide an `updates` object
+     * keyed by environment variable IDs, with each value containing the changes to apply. The
+     * response separates updated variables from entries that failed.
      */
-    fun updateSharedEnvVariable(clientConfig: ClientConfig, updates: Map<String, Map<String, Any>>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): UpdateSharedEnvVariableResponse =
-        dev.octri.showcase.vercel.methods.EnvironmentUpdateSharedEnvVariableOperation.updateSharedEnvVariable(
-            clientConfig,
-            updates,
-            teamId,
-            slug,
-            options,
-        )
+    fun updateSharedEnvVariable(
+        clientConfig: ClientConfig,
+        updates: Map<String, Map<String, Any>>,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): UpdateSharedEnvVariableResponse =
+        dev.octri.showcase.vercel.methods.EnvironmentUpdateSharedEnvVariableOperation
+            .updateSharedEnvVariable(
+                clientConfig,
+                updates,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Deletes one or more shared environment variables for a team. Supply their identifiers in the `ids` array and use `teamId` or `slug` to select the team context. The response reports which identifiers were deleted and which failed.
+     * Deletes one or more shared environment variables for a team. Supply their identifiers in the
+     * `ids` array and use `teamId` or `slug` to select the team context. The response reports which
+     * identifiers were deleted and which failed.
      */
-    fun deleteSharedEnvVariable(clientConfig: ClientConfig, ids: List<String>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): DeleteSharedEnvVariableResponse =
-        dev.octri.showcase.vercel.methods.EnvironmentDeleteSharedEnvVariableOperation.deleteSharedEnvVariable(
-            clientConfig,
-            ids,
-            teamId,
-            slug,
-            options,
-        )
+    fun deleteSharedEnvVariable(
+        clientConfig: ClientConfig,
+        ids: List<String>,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): DeleteSharedEnvVariableResponse =
+        dev.octri.showcase.vercel.methods.EnvironmentDeleteSharedEnvVariableOperation
+            .deleteSharedEnvVariable(
+                clientConfig,
+                ids,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Retrieves the decrypted value and metadata for a shared environment variable. Supply its `id` and, when needed, `teamId` or `slug` to select the team context. The response includes whether the value is decrypted and the projects and custom environments associated with it.
+     * Retrieves the decrypted value and metadata for a shared environment variable. Supply its `id`
+     * and, when needed, `teamId` or `slug` to select the team context. The response includes
+     * whether the value is decrypted and the projects and custom environments associated with it.
      */
-    fun getSharedEnvVar(clientConfig: ClientConfig, id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetSharedEnvVarResponse =
+    fun getSharedEnvVar(
+        clientConfig: ClientConfig,
+        id: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetSharedEnvVarResponse =
         dev.octri.showcase.vercel.methods.EnvironmentGetSharedEnvVarOperation.getSharedEnvVar(
             clientConfig,
             id,
@@ -1099,75 +841,128 @@ data class RemoveCustomEnvironmentResponse(
         )
 
     /**
-     * Disconnects a shared environment variable from a project without deleting the variable. Supply the variable's `id` and the target `projectId`, and use `teamId` or `slug` to select the team context. The response identifies the shared environment variable that was unlinked.
+     * Disconnects a shared environment variable from a project without deleting the variable.
+     * Supply the variable's `id` and the target `projectId`, and use `teamId` or `slug` to select
+     * the team context. The response identifies the shared environment variable that was unlinked.
      */
-    fun unlinkSharedEnvVariable(clientConfig: ClientConfig, id: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): UnlinkSharedEnvVariableResponse =
-        dev.octri.showcase.vercel.methods.EnvironmentUnlinkSharedEnvVariableOperation.unlinkSharedEnvVariable(
-            clientConfig,
-            id,
-            projectId,
-            teamId,
-            slug,
-            options,
-        )
+    fun unlinkSharedEnvVariable(
+        clientConfig: ClientConfig,
+        id: String,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): UnlinkSharedEnvVariableResponse =
+        dev.octri.showcase.vercel.methods.EnvironmentUnlinkSharedEnvVariableOperation
+            .unlinkSharedEnvVariable(
+                clientConfig,
+                id,
+                projectId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Creates a custom environment for a project. Provide a `slug` and, if needed, a `description`, branch-matching configuration, or source for copied environment variables. The environment cannot be named Production or Preview.
+     * Creates a custom environment for a project. Provide a `slug` and, if needed, a `description`,
+     * branch-matching configuration, or source for copied environment variables. The environment
+     * cannot be named Production or Preview.
      */
-    fun createCustomEnvironment(clientConfig: ClientConfig, request: CreateCustomEnvironmentRequest, options: RequestOptions? = null): CreateCustomEnvironmentResponse =
-        dev.octri.showcase.vercel.methods.EnvironmentCreateCustomEnvironmentOperation.createCustomEnvironment(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createCustomEnvironment(
+        clientConfig: ClientConfig,
+        request: CreateCustomEnvironmentRequest,
+        options: RequestOptions? = null,
+    ): CreateCustomEnvironmentResponse =
+        dev.octri.showcase.vercel.methods.EnvironmentCreateCustomEnvironmentOperation
+            .createCustomEnvironment(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Lists custom environments configured for a project. Use `gitBranch` to filter the results to environments associated with a specific Git branch.
+     * Lists custom environments configured for a project. Use `gitBranch` to filter the results to
+     * environments associated with a specific Git branch.
      */
-    fun listEnvironmentCustom(clientConfig: ClientConfig, idOrName: String, gitBranch: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ListEnvironmentCustomResponse =
-        dev.octri.showcase.vercel.methods.EnvironmentListEnvironmentCustomOperation.listEnvironmentCustom(
-            clientConfig,
-            idOrName,
-            gitBranch,
-            teamId,
-            slug,
-            options,
-        )
+    fun listEnvironmentCustom(
+        clientConfig: ClientConfig,
+        idOrName: String,
+        gitBranch: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ListEnvironmentCustomResponse =
+        dev.octri.showcase.vercel.methods.EnvironmentListEnvironmentCustomOperation
+            .listEnvironmentCustom(
+                clientConfig,
+                idOrName,
+                gitBranch,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Retrieves a custom environment from a project by its identifier or slug. Use the project identifier or name together with `environmentSlugOrId` to select the environment.
+     * Retrieves a custom environment from a project by its identifier or slug. Use the project
+     * identifier or name together with `environmentSlugOrId` to select the environment.
      */
-    fun getCustomEnvironment(clientConfig: ClientConfig, idOrName: String, environmentSlugOrId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetCustomEnvironmentResponse =
-        dev.octri.showcase.vercel.methods.EnvironmentGetCustomEnvironmentOperation.getCustomEnvironment(
-            clientConfig,
-            idOrName,
-            environmentSlugOrId,
-            teamId,
-            slug,
-            options,
-        )
+    fun getCustomEnvironment(
+        clientConfig: ClientConfig,
+        idOrName: String,
+        environmentSlugOrId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetCustomEnvironmentResponse =
+        dev.octri.showcase.vercel.methods.EnvironmentGetCustomEnvironmentOperation
+            .getCustomEnvironment(
+                clientConfig,
+                idOrName,
+                environmentSlugOrId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Updates a custom environment’s slug, description, or branch-matching configuration. Supply only the properties you want to change; the environment cannot be named Production or Preview.
+     * Updates a custom environment’s slug, description, or branch-matching configuration. Supply
+     * only the properties you want to change; the environment cannot be named Production or
+     * Preview.
      */
-    fun updateCustomEnvironment(clientConfig: ClientConfig, request: UpdateCustomEnvironmentRequest, options: RequestOptions? = null): UpdateCustomEnvironmentResponse =
-        dev.octri.showcase.vercel.methods.EnvironmentUpdateCustomEnvironmentOperation.updateCustomEnvironment(
-            clientConfig,
-            request,
-            options,
-        )
+    fun updateCustomEnvironment(
+        clientConfig: ClientConfig,
+        request: UpdateCustomEnvironmentRequest,
+        options: RequestOptions? = null,
+    ): UpdateCustomEnvironmentResponse =
+        dev.octri.showcase.vercel.methods.EnvironmentUpdateCustomEnvironmentOperation
+            .updateCustomEnvironment(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Deletes a custom environment from a project. You can set `deleteUnassignedEnvironmentVariables` in the request body to also delete environment variables that are not assigned to any environments.
+     * Deletes a custom environment from a project. You can set
+     * `deleteUnassignedEnvironmentVariables` in the request body to also delete environment
+     * variables that are not assigned to any environments.
      */
-    fun removeCustomEnvironment(clientConfig: ClientConfig, idOrName: String, environmentSlugOrId: String, teamId: String? = null, slug: String? = null, deleteUnassignedEnvironmentVariables: Boolean? = null, options: RequestOptions? = null): RemoveCustomEnvironmentResponse =
-        dev.octri.showcase.vercel.methods.EnvironmentRemoveCustomEnvironmentOperation.removeCustomEnvironment(
-            clientConfig,
-            idOrName,
-            environmentSlugOrId,
-            teamId,
-            slug,
-            deleteUnassignedEnvironmentVariables,
-            options,
-        )
+    fun removeCustomEnvironment(
+        clientConfig: ClientConfig,
+        idOrName: String,
+        environmentSlugOrId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        deleteUnassignedEnvironmentVariables: Boolean? = null,
+        options: RequestOptions? = null,
+    ): RemoveCustomEnvironmentResponse =
+        dev.octri.showcase.vercel.methods.EnvironmentRemoveCustomEnvironmentOperation
+            .removeCustomEnvironment(
+                clientConfig,
+                idOrName,
+                environmentSlugOrId,
+                teamId,
+                slug,
+                deleteUnassignedEnvironmentVariables,
+                options,
+            )
 }

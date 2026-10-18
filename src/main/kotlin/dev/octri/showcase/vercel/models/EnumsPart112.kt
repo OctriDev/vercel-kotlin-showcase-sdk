@@ -3,575 +3,909 @@
 
 package dev.octri.showcase.vercel.models
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX9930c439e4 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX9930c439e4 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX9930c439e4
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX9930c439e4 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX9930c439e4(false)
-        @JvmField val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX9930c439e4(true)
+        @JvmField
+        val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX9930c439e4(false)
+        @JvmField
+        val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX9930c439e4(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX9930c439e4(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX9930c439e4(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX9a5f9a80d2 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX9a5f9a80d2 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX9a5f9a80d2
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX9a5f9a80d2 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CREATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX9a5f9a80d2("create")
-        @JvmField val UPDATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX9a5f9a80d2("update")
+        @JvmField
+        val CREATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX9a5f9a80d2("create")
+        @JvmField
+        val UPDATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX9a5f9a80d2("update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX9a5f9a80d2(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX9a5f9a80d2(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProXf6a4a1a775 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXf6a4a1a775 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProXf6a4a1a775
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXf6a4a1a775 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXf6a4a1a775(false)
-        @JvmField val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXf6a4a1a775(true)
+        @JvmField
+        val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXf6a4a1a775(false)
+        @JvmField
+        val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXf6a4a1a775(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetConfigurationProductsResponseProductsItemMetadataSchemaProXf6a4a1a775(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXf6a4a1a775(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX98630d6a4f private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX98630d6a4f && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX98630d6a4f
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX98630d6a4f &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CREATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX98630d6a4f("create")
-        @JvmField val UPDATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX98630d6a4f("update")
+        @JvmField
+        val CREATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX98630d6a4f("create")
+        @JvmField
+        val UPDATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX98630d6a4f("update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX98630d6a4f(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX98630d6a4f(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX105a3969d6 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX105a3969d6 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX105a3969d6
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX105a3969d6 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX105a3969d6(false)
-        @JvmField val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX105a3969d6(true)
+        @JvmField
+        val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX105a3969d6(false)
+        @JvmField
+        val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX105a3969d6(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX105a3969d6(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX105a3969d6(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX3af498a4d2 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX3af498a4d2 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX3af498a4d2
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX3af498a4d2 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CREATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX3af498a4d2("create")
-        @JvmField val UPDATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX3af498a4d2("update")
+        @JvmField
+        val CREATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX3af498a4d2("create")
+        @JvmField
+        val UPDATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX3af498a4d2("update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX3af498a4d2(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX3af498a4d2(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX6c0cb89d88 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX6c0cb89d88 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX6c0cb89d88
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX6c0cb89d88 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX6c0cb89d88(false)
-        @JvmField val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX6c0cb89d88(true)
+        @JvmField
+        val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX6c0cb89d88(false)
+        @JvmField
+        val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX6c0cb89d88(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX6c0cb89d88(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX6c0cb89d88(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX430b19f9a2 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX430b19f9a2 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX430b19f9a2
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX430b19f9a2 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX430b19f9a2(false)
-        @JvmField val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX430b19f9a2(true)
+        @JvmField
+        val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX430b19f9a2(false)
+        @JvmField
+        val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX430b19f9a2(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX430b19f9a2(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX430b19f9a2(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc101f81055 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXc101f81055 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc101f81055
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXc101f81055 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CREATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXc101f81055("create")
-        @JvmField val UPDATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXc101f81055("update")
+        @JvmField
+        val CREATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXc101f81055("create")
+        @JvmField
+        val UPDATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXc101f81055("update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProXc101f81055(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXc101f81055(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc9abcdaacc private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXc9abcdaacc && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc9abcdaacc
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXc9abcdaacc &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val STRING = GetConfigurationProductsResponseProductsItemMetadataSchemaProXc9abcdaacc("string")
+        @JvmField
+        val STRING =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXc9abcdaacc("string")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProXc9abcdaacc(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXc9abcdaacc(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX15d6c1bbb1 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX15d6c1bbb1 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX15d6c1bbb1
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX15d6c1bbb1 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val ARRAY = GetConfigurationProductsResponseProductsItemMetadataSchemaProX15d6c1bbb1("array")
+        @JvmField
+        val ARRAY =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX15d6c1bbb1("array")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX15d6c1bbb1(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX15d6c1bbb1(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProXdbee118882 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXdbee118882 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProXdbee118882
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXdbee118882 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val MULTI_SELECT = GetConfigurationProductsResponseProductsItemMetadataSchemaProXdbee118882("multi-select")
+        @JvmField
+        val MULTI_SELECT =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXdbee118882("multi-select")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProXdbee118882(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXdbee118882(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX19545949e2 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX19545949e2 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX19545949e2
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX19545949e2 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX19545949e2(false)
-        @JvmField val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX19545949e2(true)
+        @JvmField
+        val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX19545949e2(false)
+        @JvmField
+        val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX19545949e2(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX19545949e2(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX19545949e2(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX221afb7541 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX221afb7541 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX221afb7541
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX221afb7541 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CREATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX221afb7541("create")
-        @JvmField val UPDATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX221afb7541("update")
+        @JvmField
+        val CREATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX221afb7541("create")
+        @JvmField
+        val UPDATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX221afb7541("update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX221afb7541(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX221afb7541(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX105b941e7b private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX105b941e7b && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX105b941e7b
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX105b941e7b &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX105b941e7b(false)
-        @JvmField val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX105b941e7b(true)
+        @JvmField
+        val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX105b941e7b(false)
+        @JvmField
+        val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX105b941e7b(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX105b941e7b(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX105b941e7b(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX6fa0d4cd87 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX6fa0d4cd87 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX6fa0d4cd87
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX6fa0d4cd87 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CREATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX6fa0d4cd87("create")
-        @JvmField val UPDATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX6fa0d4cd87("update")
+        @JvmField
+        val CREATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX6fa0d4cd87("create")
+        @JvmField
+        val UPDATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX6fa0d4cd87("update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX6fa0d4cd87(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX6fa0d4cd87(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX9292f906a5 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX9292f906a5 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX9292f906a5
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX9292f906a5 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX9292f906a5(false)
-        @JvmField val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX9292f906a5(true)
+        @JvmField
+        val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX9292f906a5(false)
+        @JvmField
+        val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX9292f906a5(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX9292f906a5(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX9292f906a5(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX995edc774e private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX995edc774e && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX995edc774e
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX995edc774e &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CREATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX995edc774e("create")
-        @JvmField val UPDATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX995edc774e("update")
+        @JvmField
+        val CREATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX995edc774e("create")
+        @JvmField
+        val UPDATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX995edc774e("update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX995edc774e(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX995edc774e(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX05aa06b561 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX05aa06b561 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX05aa06b561
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX05aa06b561 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX05aa06b561(false)
-        @JvmField val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX05aa06b561(true)
+        @JvmField
+        val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX05aa06b561(false)
+        @JvmField
+        val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX05aa06b561(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX05aa06b561(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX05aa06b561(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX6a32511d68 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX6a32511d68 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX6a32511d68
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX6a32511d68 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CREATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX6a32511d68("create")
-        @JvmField val UPDATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX6a32511d68("update")
+        @JvmField
+        val CREATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX6a32511d68("create")
+        @JvmField
+        val UPDATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX6a32511d68("update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX6a32511d68(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX6a32511d68(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX4b515ff4ca private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX4b515ff4ca && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX4b515ff4ca
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX4b515ff4ca &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX4b515ff4ca(false)
-        @JvmField val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX4b515ff4ca(true)
+        @JvmField
+        val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX4b515ff4ca(false)
+        @JvmField
+        val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX4b515ff4ca(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX4b515ff4ca(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX4b515ff4ca(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX585fb4e98b private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX585fb4e98b && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX585fb4e98b
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX585fb4e98b &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX585fb4e98b(false)
-        @JvmField val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX585fb4e98b(true)
+        @JvmField
+        val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX585fb4e98b(false)
+        @JvmField
+        val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX585fb4e98b(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX585fb4e98b(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX585fb4e98b(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProXbbe2081d33 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXbbe2081d33 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProXbbe2081d33
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXbbe2081d33 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CREATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXbbe2081d33("create")
-        @JvmField val UPDATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXbbe2081d33("update")
+        @JvmField
+        val CREATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXbbe2081d33("create")
+        @JvmField
+        val UPDATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXbbe2081d33("update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProXbbe2081d33(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXbbe2081d33(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX8c9bcb4967 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX8c9bcb4967 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX8c9bcb4967
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX8c9bcb4967 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val STRING = GetConfigurationProductsResponseProductsItemMetadataSchemaProX8c9bcb4967("string")
+        @JvmField
+        val STRING =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX8c9bcb4967("string")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX8c9bcb4967(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX8c9bcb4967(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX7b314c216c private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX7b314c216c && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX7b314c216c
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX7b314c216c &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val VERCEL_REGION = GetConfigurationProductsResponseProductsItemMetadataSchemaProX7b314c216c("vercel-region")
+        @JvmField
+        val VERCEL_REGION =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX7b314c216c(
+                "vercel-region"
+            )
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX7b314c216c(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX7b314c216c(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX6126443ce2 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX6126443ce2 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX6126443ce2
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX6126443ce2 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX6126443ce2(false)
-        @JvmField val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX6126443ce2(true)
+        @JvmField
+        val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX6126443ce2(false)
+        @JvmField
+        val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX6126443ce2(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX6126443ce2(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX6126443ce2(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProXbf1c39f5f4 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXbf1c39f5f4 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProXbf1c39f5f4
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXbf1c39f5f4 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CREATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXbf1c39f5f4("create")
-        @JvmField val UPDATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXbf1c39f5f4("update")
+        @JvmField
+        val CREATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXbf1c39f5f4("create")
+        @JvmField
+        val UPDATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXbf1c39f5f4("update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProXbf1c39f5f4(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXbf1c39f5f4(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX5b6b71f657 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX5b6b71f657 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX5b6b71f657
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX5b6b71f657 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX5b6b71f657(false)
-        @JvmField val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX5b6b71f657(true)
+        @JvmField
+        val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX5b6b71f657(false)
+        @JvmField
+        val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX5b6b71f657(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX5b6b71f657(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX5b6b71f657(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX4914e68341 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX4914e68341 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX4914e68341
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX4914e68341 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CREATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX4914e68341("create")
-        @JvmField val UPDATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX4914e68341("update")
+        @JvmField
+        val CREATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX4914e68341("create")
+        @JvmField
+        val UPDATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX4914e68341("update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX4914e68341(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX4914e68341(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProXe037ae692d private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXe037ae692d && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProXe037ae692d
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXe037ae692d &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXe037ae692d(false)
-        @JvmField val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXe037ae692d(true)
+        @JvmField
+        val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXe037ae692d(false)
+        @JvmField
+        val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXe037ae692d(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetConfigurationProductsResponseProductsItemMetadataSchemaProXe037ae692d(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXe037ae692d(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProXa5f0fcbd89 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXa5f0fcbd89 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProXa5f0fcbd89
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXa5f0fcbd89 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CREATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXa5f0fcbd89("create")
-        @JvmField val UPDATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXa5f0fcbd89("update")
+        @JvmField
+        val CREATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXa5f0fcbd89("create")
+        @JvmField
+        val UPDATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXa5f0fcbd89("update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProXa5f0fcbd89(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXa5f0fcbd89(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProX4d656d2a85 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX4d656d2a85 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProX4d656d2a85
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProX4d656d2a85 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX4d656d2a85(false)
-        @JvmField val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX4d656d2a85(true)
+        @JvmField
+        val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX4d656d2a85(false)
+        @JvmField
+        val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProX4d656d2a85(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetConfigurationProductsResponseProductsItemMetadataSchemaProX4d656d2a85(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX4d656d2a85(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProXfe7bc29e30 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXfe7bc29e30 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProXfe7bc29e30
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXfe7bc29e30 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CREATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXfe7bc29e30("create")
-        @JvmField val UPDATE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXfe7bc29e30("update")
+        @JvmField
+        val CREATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXfe7bc29e30("create")
+        @JvmField
+        val UPDATE =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXfe7bc29e30("update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetConfigurationProductsResponseProductsItemMetadataSchemaProXfe7bc29e30(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXfe7bc29e30(value)
     }
 }
 
-class GetConfigurationProductsResponseProductsItemMetadataSchemaProXb8d5dffc83 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXb8d5dffc83 && value == other.value
+class GetConfigurationProductsResponseProductsItemMetadataSchemaProXb8d5dffc83
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetConfigurationProductsResponseProductsItemMetadataSchemaProXb8d5dffc83 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXb8d5dffc83(false)
-        @JvmField val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXb8d5dffc83(true)
+        @JvmField
+        val FALSE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXb8d5dffc83(false)
+        @JvmField
+        val TRUE = GetConfigurationProductsResponseProductsItemMetadataSchemaProXb8d5dffc83(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetConfigurationProductsResponseProductsItemMetadataSchemaProXb8d5dffc83(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXb8d5dffc83(value)
     }
 }

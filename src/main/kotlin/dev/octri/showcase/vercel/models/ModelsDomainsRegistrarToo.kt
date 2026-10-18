@@ -3,78 +3,44 @@
 
 package dev.octri.showcase.vercel.models
 
-/**
- * The number of domains in the order is too high.
- */
+/** The number of domains in the order is too high. */
 data class TooManyDomains(
-    /**
-     * Required enumerated value serialized in the `status` wire field.
-     */
+    /** Required enumerated value serialized in the `status` wire field. */
     val status: Long,
-    /**
-     * Required enumerated value serialized in the `code` wire field.
-     */
+    /** Required enumerated value serialized in the `code` wire field. */
     val code: TooManyDomainsCodeEnum,
-    /**
-     * Required `string` value serialized in the `message` wire field.
-     */
-    val message: String
-)
-
-/**
- * Required object value serialized in the `retryAfter` wire field.
- */
-data class TooManyRequestsRetryAfter(
-    /**
-     * Required `number` value serialized in the `value` wire field.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Double,
-    /**
-     * Required `string` value serialized in the `str` wire field.
-     */
-    val str: String
-)
-
-/**
- * Required object value serialized in the `limit` wire field.
- */
-data class TooManyRequestsLimit(
-    /**
-     * Required `number` value serialized in the `total` wire field.
-     */
-    val total: Double,
-    /**
-     * Required `number` value serialized in the `remaining` wire field.
-     */
-    val remaining: Double,
-    /**
-     * Required `number` value serialized in the `reset` wire field.
-     */
-    val reset: Double
-)
-
-/**
- * Typed representation of the `TooManyRequests` API schema.
- */
-data class TooManyRequests(
-    /**
-     * Required enumerated value serialized in the `status` wire field.
-     */
-    val status: Long,
-    /**
-     * Required enumerated value serialized in the `code` wire field.
-     */
-    val code: TooManyRequestsCodeEnum,
-    /**
-     * Required `string` value serialized in the `message` wire field.
-     */
+    /** Required `string` value serialized in the `message` wire field. */
     val message: String,
-    /**
-     * Required object value serialized in the `retryAfter` wire field.
-     */
+)
+
+/** Required object value serialized in the `retryAfter` wire field. */
+data class TooManyRequestsRetryAfter(
+    /** Required `number` value serialized in the `value` wire field. */
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Double,
+    /** Required `string` value serialized in the `str` wire field. */
+    val str: String,
+)
+
+/** Required object value serialized in the `limit` wire field. */
+data class TooManyRequestsLimit(
+    /** Required `number` value serialized in the `total` wire field. */
+    val total: Double,
+    /** Required `number` value serialized in the `remaining` wire field. */
+    val remaining: Double,
+    /** Required `number` value serialized in the `reset` wire field. */
+    val reset: Double,
+)
+
+/** Typed representation of the `TooManyRequests` API schema. */
+data class TooManyRequests(
+    /** Required enumerated value serialized in the `status` wire field. */
+    val status: Long,
+    /** Required enumerated value serialized in the `code` wire field. */
+    val code: TooManyRequestsCodeEnum,
+    /** Required `string` value serialized in the `message` wire field. */
+    val message: String,
+    /** Required object value serialized in the `retryAfter` wire field. */
     val retryAfter: TooManyRequestsRetryAfter,
-    /**
-     * Required object value serialized in the `limit` wire field.
-     */
-    val limit: TooManyRequestsLimit
+    /** Required object value serialized in the `limit` wire field. */
+    val limit: TooManyRequestsLimit,
 ) : dev.octri.showcase.vercel.ErrorBody

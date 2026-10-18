@@ -3,168 +3,408 @@
 
 package dev.octri.showcase.vercel
 
-
 class GlobalConfigNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Lists all Global Configs available to the authenticated user. Use `teamId` or `slug` to perform the request on behalf of a team. Each result includes its identifier, name, digest, item count, size, and timestamps.
+     * Lists all Global Configs available to the authenticated user. Use `teamId` or `slug` to
+     * perform the request on behalf of a team. Each result includes its identifier, name, digest,
+     * item count, size, and timestamps.
      *
      * Returns all Global Configs.
      */
-    fun getEdgeConfigs(teamId: String? = null, slug: String? = null, options: RequestOptions? = null): List<dev.octri.showcase.vercel.methods.GlobalConfig.GetEdgeConfigsResponseItem> {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfigs(clientConfig, teamId, slug, options)
+    fun getEdgeConfigs(
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): List<dev.octri.showcase.vercel.methods.GlobalConfig.GetEdgeConfigsResponseItem> {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfigs(
+            clientConfig,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Creates a Global Config for the authenticated user or specified team. Supply a `slug` that is at most 64 characters and contains only letters, numbers, underscores, or hyphens; you can also provide initial `items`.
+     * Creates a Global Config for the authenticated user or specified team. Supply a `slug` that is
+     * at most 64 characters and contains only letters, numbers, underscores, or hyphens; you can
+     * also provide initial `items`.
      *
      * Creates a Global Config.
      */
-    fun createEdgeConfig(slug: String, teamId: String? = null, slug2: String? = null, items: Map<String, Any>? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.GlobalConfig.CreateEdgeConfigResponse {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.createEdgeConfig(clientConfig, slug, teamId, slug2, items, options)
+    fun createEdgeConfig(
+        slug: String,
+        teamId: String? = null,
+        slug2: String? = null,
+        items: Map<String, Any>? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.GlobalConfig.CreateEdgeConfigResponse {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.createEdgeConfig(
+            clientConfig,
+            slug,
+            teamId,
+            slug2,
+            items,
+            options,
+        )
     }
 
     /**
-     * Retrieves a Global Config by its identifier. Use `teamId` or `slug` to make the request on behalf of a team when needed.
+     * Retrieves a Global Config by its identifier. Use `teamId` or `slug` to make the request on
+     * behalf of a team when needed.
      *
      * Returns a Global Config.
      */
-    fun getEdgeConfig(edgeConfigId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.GlobalConfig.GetEdgeConfigResponse {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfig(clientConfig, edgeConfigId, teamId, slug, options)
+    fun getEdgeConfig(
+        edgeConfigId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.GlobalConfig.GetEdgeConfigResponse {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfig(
+            clientConfig,
+            edgeConfigId,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Replaces a Global Config's name. Supply the required `slug` in the request body; use `teamId` or `slug` to make the request on behalf of a team when needed.
+     * Replaces a Global Config's name. Supply the required `slug` in the request body; use `teamId`
+     * or `slug` to make the request on behalf of a team when needed.
      *
      * Updates a Global Config.
      */
-    fun updateEdgeConfig(edgeConfigId: String, slug: String, teamId: String? = null, slug2: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.GlobalConfig.UpdateEdgeConfigResponse {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.updateEdgeConfig(clientConfig, edgeConfigId, slug, teamId, slug2, options)
+    fun updateEdgeConfig(
+        edgeConfigId: String,
+        slug: String,
+        teamId: String? = null,
+        slug2: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.GlobalConfig.UpdateEdgeConfigResponse {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.updateEdgeConfig(
+            clientConfig,
+            edgeConfigId,
+            slug,
+            teamId,
+            slug2,
+            options,
+        )
     }
 
     /**
-     * Deletes a Global Config by its identifier. Use `teamId` or `slug` to make the request on behalf of a team when needed; deletion removes the specified Global Config.
+     * Deletes a Global Config by its identifier. Use `teamId` or `slug` to make the request on
+     * behalf of a team when needed; deletion removes the specified Global Config.
      *
      * Delete a Global Config by id.
      */
-    fun deleteEdgeConfig(edgeConfigId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.deleteEdgeConfig(clientConfig, edgeConfigId, teamId, slug, options)
+    fun deleteEdgeConfig(
+        edgeConfigId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.deleteEdgeConfig(
+            clientConfig,
+            edgeConfigId,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Lists all items in a Global Config. Use the `edgeConfigId` path parameter to select the config; it must begin with the `ecfg_` prefix.
+     * Lists all items in a Global Config. Use the `edgeConfigId` path parameter to select the
+     * config; it must begin with the `ecfg_` prefix.
      *
      * Returns all items of a Global Config.
      */
-    fun getEdgeConfigItems(edgeConfigId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): List<GlobalConfigItem> {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfigItems(clientConfig, edgeConfigId, teamId, slug, options)
+    fun getEdgeConfigItems(
+        edgeConfigId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): List<GlobalConfigItem> {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfigItems(
+            clientConfig,
+            edgeConfigId,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Updates multiple items in a Global Config in one request. Supply the required `items` array with the item operations to apply; the `edgeConfigId` must begin with the `ecfg_` prefix.
+     * Updates multiple items in a Global Config in one request. Supply the required `items` array
+     * with the item operations to apply; the `edgeConfigId` must begin with the `ecfg_` prefix.
      *
      * Update multiple Global Config Items in batch.
      */
-    fun patchEdgeConfigItems(edgeConfigId: String, items: List<PatchEdgeConfigItemsRequestItemsItem>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.GlobalConfig.PatchEdgeConfigItemsResponse {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.patchEdgeConfigItems(clientConfig, edgeConfigId, items, teamId, slug, options)
+    fun patchEdgeConfigItems(
+        edgeConfigId: String,
+        items: List<PatchEdgeConfigItemsRequestItemsItem>,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.GlobalConfig.PatchEdgeConfigItemsResponse {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.patchEdgeConfigItems(
+            clientConfig,
+            edgeConfigId,
+            items,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Retrieves the schema associated with a Global Config. Use `edgeConfigId` to select the config and `teamId` or `slug` to make the request on behalf of a team when needed.
+     * Retrieves the schema associated with a Global Config. Use `edgeConfigId` to select the config
+     * and `teamId` or `slug` to make the request on behalf of a team when needed.
      *
      * Returns the schema of a Global Config.
      */
-    fun getEdgeConfigSchema(edgeConfigId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Map<String, Any> {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfigSchema(clientConfig, edgeConfigId, teamId, slug, options)
+    fun getEdgeConfigSchema(
+        edgeConfigId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Map<String, Any> {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfigSchema(
+            clientConfig,
+            edgeConfigId,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Updates the schema for a Global Config. Supply the required `definition` object; use `dryRun` to request a schema update without applying it, if supported by the API.
+     * Updates the schema for a Global Config. Supply the required `definition` object; use `dryRun`
+     * to request a schema update without applying it, if supported by the API.
      *
      * Update a Global Config's schema.
      */
-    fun patchEdgeConfigSchema(edgeConfigId: String, definition: Any, dryRun: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Map<String, Any> {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.patchEdgeConfigSchema(clientConfig, edgeConfigId, definition, dryRun, teamId, slug, options)
+    fun patchEdgeConfigSchema(
+        edgeConfigId: String,
+        definition: Any,
+        dryRun: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Map<String, Any> {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.patchEdgeConfigSchema(
+            clientConfig,
+            edgeConfigId,
+            definition,
+            dryRun,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Deletes the schema associated with a Global Config. Use `edgeConfigId` to select the config and `teamId` or `slug` to make the request on behalf of a team when needed.
+     * Deletes the schema associated with a Global Config. Use `edgeConfigId` to select the config
+     * and `teamId` or `slug` to make the request on behalf of a team when needed.
      *
      * Deletes the schema of existing Global Config.
      */
-    fun deleteEdgeConfigSchema(edgeConfigId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.deleteEdgeConfigSchema(clientConfig, edgeConfigId, teamId, slug, options)
+    fun deleteEdgeConfigSchema(
+        edgeConfigId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.deleteEdgeConfigSchema(
+            clientConfig,
+            edgeConfigId,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Retrieves a specific item from a Global Config. Supply the config identifier and item key to select the item; the config identifier must begin with the `ecfg_` prefix.
+     * Retrieves a specific item from a Global Config. Supply the config identifier and item key to
+     * select the item; the config identifier must begin with the `ecfg_` prefix.
      *
      * Returns a specific Global Config Item.
      */
-    fun getEdgeConfigItem(edgeConfigId: String, edgeConfigItemKey: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GlobalConfigItem {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfigItem(clientConfig, edgeConfigId, edgeConfigItemKey, teamId, slug, options)
+    fun getEdgeConfigItem(
+        edgeConfigId: String,
+        edgeConfigItemKey: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GlobalConfigItem {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfigItem(
+            clientConfig,
+            edgeConfigId,
+            edgeConfigItemKey,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Lists the tokens associated with a Global Config. Use `edgeConfigId` to select the Global Config and optionally `teamId` or `slug` to make the request on behalf of a team. The response includes token metadata and a masked token representation.
+     * Lists the tokens associated with a Global Config. Use `edgeConfigId` to select the Global
+     * Config and optionally `teamId` or `slug` to make the request on behalf of a team. The
+     * response includes token metadata and a masked token representation.
      *
      * Returns all tokens of a Global Config.
      */
-    fun getEdgeConfigTokens(edgeConfigId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): List<GlobalConfigToken> {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfigTokens(clientConfig, edgeConfigId, teamId, slug, options)
+    fun getEdgeConfigTokens(
+        edgeConfigId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): List<GlobalConfigToken> {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfigTokens(
+            clientConfig,
+            edgeConfigId,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Deletes one or more tokens from an existing Global Config. Provide token values or token IDs in the request body to choose which tokens to delete. Each supplied list must contain at least one item.
+     * Deletes one or more tokens from an existing Global Config. Provide token values or token IDs
+     * in the request body to choose which tokens to delete. Each supplied list must contain at
+     * least one item.
      *
      * Deletes one or more tokens of an existing Global Config.
      */
-    fun deleteEdgeConfigTokens(edgeConfigId: String, teamId: String? = null, slug: String? = null, tokens: List<String>? = null, ids: List<String>? = null, options: RequestOptions? = null): Unit {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.deleteEdgeConfigTokens(clientConfig, edgeConfigId, teamId, slug, tokens, ids, options)
+    fun deleteEdgeConfigTokens(
+        edgeConfigId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        tokens: List<String>? = null,
+        ids: List<String>? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.deleteEdgeConfigTokens(
+            clientConfig,
+            edgeConfigId,
+            teamId,
+            slug,
+            tokens,
+            ids,
+            options,
+        )
     }
 
     /**
-     * Retrieves metadata for a specific Global Config token. Use `edgeConfigId` and `token` to identify the token whose metadata you need. The response includes a partially masked token representation and may include the full token for backwards compatibility.
+     * Retrieves metadata for a specific Global Config token. Use `edgeConfigId` and `token` to
+     * identify the token whose metadata you need. The response includes a partially masked token
+     * representation and may include the full token for backwards compatibility.
      *
      * Return meta data about a Global Config token.
      */
-    fun getEdgeConfigToken(edgeConfigId: String, token: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GlobalConfigToken {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfigToken(clientConfig, edgeConfigId, token, teamId, slug, options)
+    fun getEdgeConfigToken(
+        edgeConfigId: String,
+        token: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GlobalConfigToken {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfigToken(
+            clientConfig,
+            edgeConfigId,
+            token,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Creates a token for an existing Global Config. Provide a `label` to identify the token, with a maximum length of 52 characters. The 201 response includes the new token and its ID.
+     * Creates a token for an existing Global Config. Provide a `label` to identify the token, with
+     * a maximum length of 52 characters. The 201 response includes the new token and its ID.
      *
      * Adds a token to an existing Global Config.
      */
-    fun createEdgeConfigToken(edgeConfigId: String, label: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.GlobalConfig.CreateEdgeConfigTokenResponse {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.createEdgeConfigToken(clientConfig, edgeConfigId, label, teamId, slug, options)
+    fun createEdgeConfigToken(
+        edgeConfigId: String,
+        label: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.GlobalConfig.CreateEdgeConfigTokenResponse {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.createEdgeConfigToken(
+            clientConfig,
+            edgeConfigId,
+            label,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Retrieves a specific version of a Global Config from backup storage. Use `edgeConfigId` and `edgeConfigBackupVersionId` to select the Global Config and backup version. The response contains the backup data and its associated metadata.
+     * Retrieves a specific version of a Global Config from backup storage. Use `edgeConfigId` and
+     * `edgeConfigBackupVersionId` to select the Global Config and backup version. The response
+     * contains the backup data and its associated metadata.
      *
      * Retrieves a specific version of a Global Config from backup storage.
      */
-    fun getEdgeConfigBackup(edgeConfigId: String, edgeConfigBackupVersionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetEdgeConfigBackupResponse {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfigBackup(clientConfig, edgeConfigId, edgeConfigBackupVersionId, teamId, slug, options)
+    fun getEdgeConfigBackup(
+        edgeConfigId: String,
+        edgeConfigBackupVersionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetEdgeConfigBackupResponse {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfigBackup(
+            clientConfig,
+            edgeConfigId,
+            edgeConfigBackupVersionId,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Restores a specific backup version of a Global Config. Use `edgeConfigId` and `edgeConfigBackupVersionId` to select the Global Config and the version to restore. The response reports the resulting digest, previous digest, restored backup version, and status.
+     * Restores a specific backup version of a Global Config. Use `edgeConfigId` and
+     * `edgeConfigBackupVersionId` to select the Global Config and the version to restore. The
+     * response reports the resulting digest, previous digest, restored backup version, and status.
      *
      * Restores a Global Config backup.
      */
-    fun restoreEdgeConfigBackup(edgeConfigId: String, edgeConfigBackupVersionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.GlobalConfig.RestoreEdgeConfigBackupResponse {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.restoreEdgeConfigBackup(clientConfig, edgeConfigId, edgeConfigBackupVersionId, teamId, slug, options)
+    fun restoreEdgeConfigBackup(
+        edgeConfigId: String,
+        edgeConfigBackupVersionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.GlobalConfig.RestoreEdgeConfigBackupResponse {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.restoreEdgeConfigBackup(
+            clientConfig,
+            edgeConfigId,
+            edgeConfigBackupVersionId,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Lists backups of a Global Config. Use `next` to continue from a pagination cursor, `limit` to control the number of results, and `metadata` to filter the backups. The response includes backup records and pagination information.
+     * Lists backups of a Global Config. Use `next` to continue from a pagination cursor, `limit` to
+     * control the number of results, and `metadata` to filter the backups. The response includes
+     * backup records and pagination information.
      *
      * Returns backups of a Global Config.
      */
-    fun getEdgeConfigBackups(request: dev.octri.showcase.vercel.methods.GlobalConfig.GetEdgeConfigBackupsRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.GlobalConfig.GetEdgeConfigBackupsResponse {
-        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfigBackups(clientConfig, request, options)
+    fun getEdgeConfigBackups(
+        request: dev.octri.showcase.vercel.methods.GlobalConfig.GetEdgeConfigBackupsRequest,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.GlobalConfig.GetEdgeConfigBackupsResponse {
+        return dev.octri.showcase.vercel.methods.GlobalConfig.getEdgeConfigBackups(
+            clientConfig,
+            request,
+            options,
+        )
     }
-
 }

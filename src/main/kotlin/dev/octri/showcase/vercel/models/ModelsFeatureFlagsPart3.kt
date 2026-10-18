@@ -6,17 +6,27 @@ package dev.octri.showcase.vercel.models
 /**
  * Typed representation of the `UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs` API schema.
  */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs.Deserializer::class)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs.Deserializer::class
+)
 sealed interface UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<
+            UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs
+        >() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsOwnedTypes.firstOrNull {
+                        (keys, _) ->
+                        keys.any(node::has)
+                    }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -24,34 +34,93 @@ sealed interface UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs>> = listOf(UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0::class.java, UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes:
+                List<Class<out UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs>> =
+                listOf(
+                    UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0::class.java,
+                    UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                node.isTextual -> StringUpdateFlagSegmentRequestDataRulesItemConditionsItemRhs(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
-                node.isNumber -> DoubleUpdateFlagSegmentRequestDataRulesItemConditionsItemRhs(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Double>() {}))
-                node.isBoolean -> BooleanUpdateFlagSegmentRequestDataRulesItemConditionsItemRhs(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {}))
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs::class.java, "no UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs branch accepts this payload")
+                node.isTextual ->
+                    StringUpdateFlagSegmentRequestDataRulesItemConditionsItemRhs(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
+                        )
+                    )
+                node.isNumber ->
+                    DoubleUpdateFlagSegmentRequestDataRulesItemConditionsItemRhs(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<Double>() {},
+                        )
+                    )
+                node.isBoolean ->
+                    BooleanUpdateFlagSegmentRequestDataRulesItemConditionsItemRhs(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {},
+                        )
+                    )
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs::class.java,
+                        "no UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsOwnedTypes: List<Pair<List<String>, Class<out UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs>>> = listOf(
-    listOf("items") to UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0::class.java,
-    listOf("pattern", "flags") to UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1::class.java,
+internal val UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsOwnedTypes:
+    List<Pair<List<String>, Class<out UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs>>> =
+    listOf(
+        listOf("items") to
+            UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0::class.java,
+        listOf("pattern", "flags") to
+            UpdateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1::class.java,
+    )
+
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
 )
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class StringUpdateFlagSegmentRequestDataRulesItemConditionsItemRhs(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
+) : UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class StringUpdateFlagSegmentRequestDataRulesItemConditionsItemRhs(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class DoubleUpdateFlagSegmentRequestDataRulesItemConditionsItemRhs(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Double
+) : UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class DoubleUpdateFlagSegmentRequestDataRulesItemConditionsItemRhs(@get:com.fasterxml.jackson.annotation.JsonValue val value: Double) : UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class BooleanUpdateFlagSegmentRequestDataRulesItemConditionsItemRhs(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean
+) : UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class BooleanUpdateFlagSegmentRequestDataRulesItemConditionsItemRhs(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) : UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs
-
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UpdateFlagSegmentRequestDataRulesItemOutcomeVariant0(
     @com.fasterxml.jackson.annotation.JsonProperty("type", required = true) val type: Any?
 ) : UpdateFlagSegmentRequestDataRulesItemOutcome
@@ -59,30 +128,42 @@ data class UpdateFlagSegmentRequestDataRulesItemOutcomeVariant0(
 data class UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Base(
     @com.fasterxml.jackson.annotation.JsonProperty("type", required = true) val type: Any?,
     val kind: String,
-    val attribute: String
+    val attribute: String,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1(
     @com.fasterxml.jackson.annotation.JsonProperty("type", required = true) val type: Any?,
     val base: UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1Base,
-    val passPromille: Double
+    val passPromille: Double,
 ) : UpdateFlagSegmentRequestDataRulesItemOutcome
 
-/**
- * Typed representation of the `UpdateFlagSegmentRequestDataRulesItemOutcome` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UpdateFlagSegmentRequestDataRulesItemOutcome.Deserializer::class)
+/** Typed representation of the `UpdateFlagSegmentRequestDataRulesItemOutcome` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = UpdateFlagSegmentRequestDataRulesItemOutcome.Deserializer::class
+)
 sealed interface UpdateFlagSegmentRequestDataRulesItemOutcome {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UpdateFlagSegmentRequestDataRulesItemOutcome>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<
+            UpdateFlagSegmentRequestDataRulesItemOutcome
+        >() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): UpdateFlagSegmentRequestDataRulesItemOutcome {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = UpdateFlagSegmentRequestDataRulesItemOutcomeOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                UpdateFlagSegmentRequestDataRulesItemOutcomeOwnedTypes.firstOrNull { (keys, _) ->
+                        keys.any(node::has)
+                    }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -90,28 +171,41 @@ sealed interface UpdateFlagSegmentRequestDataRulesItemOutcome {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out UpdateFlagSegmentRequestDataRulesItemOutcome>> = listOf(UpdateFlagSegmentRequestDataRulesItemOutcomeVariant0::class.java, UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out UpdateFlagSegmentRequestDataRulesItemOutcome>> =
+                listOf(
+                    UpdateFlagSegmentRequestDataRulesItemOutcomeVariant0::class.java,
+                    UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, UpdateFlagSegmentRequestDataRulesItemOutcome::class.java, "no UpdateFlagSegmentRequestDataRulesItemOutcome branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        UpdateFlagSegmentRequestDataRulesItemOutcome::class.java,
+                        "no UpdateFlagSegmentRequestDataRulesItemOutcome branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val UpdateFlagSegmentRequestDataRulesItemOutcomeOwnedTypes: List<Pair<List<String>, Class<out UpdateFlagSegmentRequestDataRulesItemOutcome>>> = listOf(
-    listOf("base", "passPromille") to UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1::class.java,
-)
+internal val UpdateFlagSegmentRequestDataRulesItemOutcomeOwnedTypes:
+    List<Pair<List<String>, Class<out UpdateFlagSegmentRequestDataRulesItemOutcome>>> =
+    listOf(
+        listOf("base", "passPromille") to
+            UpdateFlagSegmentRequestDataRulesItemOutcomeVariant1::class.java
+    )
 
 data class UpdateFlagSegmentResponseVariant0DataExcludeValueValueItem(
     @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val note: String? = null
+    val note: String? = null,
 )
 
 data class UpdateFlagSegmentResponseVariant0DataIncludeValueValueItem(
     @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val note: String? = null
+    val note: String? = null,
 )
 
 data class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant0(
@@ -121,7 +215,7 @@ data class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVarian
 data class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLhsVariant1(
     val attribute: String,
     val kind: String,
-    val type: UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX15fb240ccb
+    val type: UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemLX15fb240ccb,
 )
 
 data class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpOptions(
@@ -131,31 +225,31 @@ data class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpOption
 data class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX00427006d0(
     @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Double,
     val label: String? = null,
-    val note: String? = null
+    val note: String? = null,
 )
 
 data class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX579c112e44(
     @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
     val label: String? = null,
-    val note: String? = null
+    val note: String? = null,
 )
 
 data class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant2(
     val items: List<Any>,
-    val type: UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX2f6eff5c10
+    val type: UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRX2f6eff5c10,
 )
 
 data class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRhsVariant3(
     val flags: String,
     val pattern: String,
-    val type: UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRXc4ea0bc355
+    val type: UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemRXc4ea0bc355,
 )
 
 data class UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItem(
     val cmp: UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpEnum,
     val lhs: Any,
     val cmpOptions: UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItemCmpOptions? = null,
-    val rhs: Any? = null
+    val rhs: Any? = null,
 )
 
 data class UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0(
@@ -165,31 +259,47 @@ data class UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant0(
 data class UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Base(
     val attribute: String,
     val kind: String,
-    val type: UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Xbc31970fb8
+    val type: UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Xbc31970fb8,
 )
 
 data class UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1(
     val base: UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1Base,
     val passPromille: Double,
-    val type: UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1TypeEnum
+    val type: UpdateFlagSegmentResponseVariant0DataRulesItemOutcomeVariant1TypeEnum,
 )
 
 data class UpdateFlagSegmentResponseVariant0DataRulesItem(
     val conditions: List<UpdateFlagSegmentResponseVariant0DataRulesItemConditionsItem>,
     val id: String,
-    val outcome: Any
+    val outcome: Any,
 )
 
 data class UpdateFlagSegmentResponseVariant0Data(
-    val exclude: Map<String, Map<String, List<UpdateFlagSegmentResponseVariant0DataExcludeValueValueItem>>>? = null,
-    val include: Map<String, Map<String, List<UpdateFlagSegmentResponseVariant0DataIncludeValueValueItem>>>? = null,
-    val rules: List<UpdateFlagSegmentResponseVariant0DataRulesItem>? = null
+    val exclude:
+        Map<
+            String,
+            Map<String, List<UpdateFlagSegmentResponseVariant0DataExcludeValueValueItem>>,
+        >? =
+        null,
+    val include:
+        Map<
+            String,
+            Map<String, List<UpdateFlagSegmentResponseVariant0DataIncludeValueValueItem>>,
+        >? =
+        null,
+    val rules: List<UpdateFlagSegmentResponseVariant0DataRulesItem>? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UpdateFlagSegmentResponseVariant0(
     val createdAt: Double,
-    @com.fasterxml.jackson.annotation.JsonProperty("data") val `data`: UpdateFlagSegmentResponseVariant0Data,
+    @com.fasterxml.jackson.annotation.JsonProperty("data")
+    val `data`: UpdateFlagSegmentResponseVariant0Data,
     val hint: String,
     val id: String,
     val label: String,
@@ -200,23 +310,26 @@ data class UpdateFlagSegmentResponseVariant0(
     val createdBy: String? = null,
     val description: String? = null,
     val usedByFlags: List<String>? = null,
-    val usedBySegments: List<String>? = null
+    val usedBySegments: List<String>? = null,
 ) : UpdateFlagSegmentResponse
 
-/**
- * Typed representation of the `UpdateFlagSegmentResponse` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UpdateFlagSegmentResponse.Deserializer::class)
+/** Typed representation of the `UpdateFlagSegmentResponse` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = UpdateFlagSegmentResponse.Deserializer::class
+)
 sealed interface UpdateFlagSegmentResponse {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UpdateFlagSegmentResponse>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<UpdateFlagSegmentResponse>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): UpdateFlagSegmentResponse {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = UpdateFlagSegmentResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                UpdateFlagSegmentResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -224,16 +337,23 @@ sealed interface UpdateFlagSegmentResponse {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out UpdateFlagSegmentResponse>> = listOf(UpdateFlagSegmentResponseVariant0::class.java, Segment::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out UpdateFlagSegmentResponse>> =
+                listOf(UpdateFlagSegmentResponseVariant0::class.java, Segment::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, UpdateFlagSegmentResponse::class.java, "no UpdateFlagSegmentResponse branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        UpdateFlagSegmentResponse::class.java,
+                        "no UpdateFlagSegmentResponse branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val UpdateFlagSegmentResponseOwnedTypes: List<Pair<List<String>, Class<out UpdateFlagSegmentResponse>>> = listOf(
-    listOf("metadata") to Segment::class.java,
-)
+internal val UpdateFlagSegmentResponseOwnedTypes:
+    List<Pair<List<String>, Class<out UpdateFlagSegmentResponse>>> =
+    listOf(listOf("metadata") to Segment::class.java)

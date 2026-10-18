@@ -12,25 +12,46 @@ import dev.octri.showcase.vercel.Validation
 
 object EdgeCache {
 
-
     /**
-     * Invalidates cache entries associated with the specified tags, marking them stale for background revalidation on the next request. Supply `projectIdOrName` to scope the operation and `tags` in the body. You can target `production` or `preview` with the optional `target` field.
+     * Invalidates cache entries associated with the specified tags, marking them stale for
+     * background revalidation on the next request. Supply `projectIdOrName` to scope the operation
+     * and `tags` in the body. You can target `production` or `preview` with the optional `target`
+     * field.
      *
-     * Marks a cache tag as stale, causing cache entries associated with that tag to be revalidated in the background on the next request.
+     * Marks a cache tag as stale, causing cache entries associated with that tag to be revalidated
+     * in the background on the next request.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun invalidateByTags(clientConfig: ClientConfig, projectIdOrName: String, tags: Any, teamId: String? = null, slug: String? = null, target: InvalidateByTagsTargetEnum? = null, options: RequestOptions? = null): Unit {
-        SdkClient.request<Unit>(SdkClient.RequestSpec("POST", "/v1/edge-cache/invalidate-by-tags", config = clientConfig, query = mapOf("projectIdOrName" to
-    SdkClient.queryValue(projectIdOrName, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("tags" to (tags), "target" to (SdkClient.omitIfNull(target))), operationId = "invalidateByTags", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+    fun invalidateByTags(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        tags: Any,
+        teamId: String? = null,
+        slug: String? = null,
+        target: InvalidateByTagsTargetEnum? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "POST",
+                "/v1/edge-cache/invalidate-by-tags",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "projectIdOrName" to SdkClient.queryValue(projectIdOrName, "form", true),
+                        "teamId" to SdkClient.queryValue(teamId, "form", true),
+                        "slug" to SdkClient.queryValue(slug, "form", true),
+                    ),
+                body =
+                    SdkClient.bodyMap("tags" to (tags), "target" to (SdkClient.omitIfNull(target))),
+                operationId = "invalidateByTags",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
-
-
-
-
-
-
 
     /** Parameters for [dangerouslyDeleteByTags]. */
     data class DangerouslyDeleteByTagsRequest(
@@ -39,83 +60,164 @@ object EdgeCache {
         val teamId: String? = null,
         val slug: String? = null,
         val revalidationDeadlineSeconds: Long? = null,
-        val target: DangerouslyDeleteByTagsTargetEnum? = null
+        val target: DangerouslyDeleteByTagsTargetEnum? = null,
     )
 
     /**
-     * Marks cache entries associated with the specified tags as deleted so they are revalidated in the foreground on the next request. Supply `projectIdOrName` and `tags`, and optionally set `revalidationDeadlineSeconds` or `target`. Use this operation cautiously: deleting cached entries can send many concurrent requests to the origin; prefer tag invalidation for routine use.
+     * Marks cache entries associated with the specified tags as deleted so they are revalidated in
+     * the foreground on the next request. Supply `projectIdOrName` and `tags`, and optionally set
+     * `revalidationDeadlineSeconds` or `target`. Use this operation cautiously: deleting cached
+     * entries can send many concurrent requests to the origin; prefer tag invalidation for routine
+     * use.
      *
-     * Marks a cache tag as deleted, causing cache entries associated with that tag to be revalidated in the foreground on the next request. Use this method with caution because one tag can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateByTag` instead.
+     * Marks a cache tag as deleted, causing cache entries associated with that tag to be
+     * revalidated in the foreground on the next request. Use this method with caution because one
+     * tag can be associated with many paths and deleting the cache can cause many concurrent
+     * requests to the origin leading to cache stampede problem. This method is for advanced use
+     * cases and is not recommended; prefer using `invalidateByTag` instead.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun dangerouslyDeleteByTags(clientConfig: ClientConfig, request: DangerouslyDeleteByTagsRequest, options: RequestOptions? = null): Unit {
+    fun dangerouslyDeleteByTags(
+        clientConfig: ClientConfig,
+        request: DangerouslyDeleteByTagsRequest,
+        options: RequestOptions? = null,
+    ): Unit {
         validateDangerouslyDeleteByTagsRequest(request)
 
-        SdkClient.request<Unit>(SdkClient.RequestSpec("POST", "/v1/edge-cache/dangerously-delete-by-tags", config = clientConfig, query = mapOf("projectIdOrName" to
-    SdkClient.queryValue(request.projectIdOrName, "form", true), "teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("tags" to (request.tags), "revalidationDeadlineSeconds" to
-    (SdkClient.omitIfNull(request.revalidationDeadlineSeconds)), "target" to (SdkClient.omitIfNull(request.target))), operationId = "dangerouslyDeleteByTags", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "POST",
+                "/v1/edge-cache/dangerously-delete-by-tags",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "projectIdOrName" to
+                            SdkClient.queryValue(request.projectIdOrName, "form", true),
+                        "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                        "slug" to SdkClient.queryValue(request.slug, "form", true),
+                    ),
+                body =
+                    SdkClient.bodyMap(
+                        "tags" to (request.tags),
+                        "revalidationDeadlineSeconds" to
+                            (SdkClient.omitIfNull(request.revalidationDeadlineSeconds)),
+                        "target" to (SdkClient.omitIfNull(request.target)),
+                    ),
+                operationId = "dangerouslyDeleteByTags",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
-
 
     private fun validateDangerouslyDeleteByTagsRequest(request: DangerouslyDeleteByTagsRequest) {
         if (request.revalidationDeadlineSeconds != null) {
-            Validation.validateRange("revalidationDeadlineSeconds", request.revalidationDeadlineSeconds, Validation.RangeOpts(min = 0.0, max = 31536000.0))
-}
+            Validation.validateRange(
+                "revalidationDeadlineSeconds",
+                request.revalidationDeadlineSeconds,
+                Validation.RangeOpts(min = 0.0, max = 31536000.0),
+            )
+        }
     }
 
-
-
-
-
-
     /**
-     * Invalidates source images, marking them stale so their transformed images are revalidated in the background on the next request. Use `projectIdOrName` to scope the operation and supply the image sources in `srcImages`. The request can include between 1 and 8 source images.
+     * Invalidates source images, marking them stale so their transformed images are revalidated in
+     * the background on the next request. Use `projectIdOrName` to scope the operation and supply
+     * the image sources in `srcImages`. The request can include between 1 and 8 source images.
      *
-     * Marks a source image as stale, causing its corresponding transformed images to be revalidated in the background on the next request.
+     * Marks a source image as stale, causing its corresponding transformed images to be revalidated
+     * in the background on the next request.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun invalidateBySrcImages(clientConfig: ClientConfig, projectIdOrName: String, srcImages: List<String>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
+    fun invalidateBySrcImages(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        srcImages: List<String>,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit {
         Validation.validateItems("srcImages", srcImages, Validation.LengthOpts(min = 1, max = 8))
 
-        SdkClient.request<Unit>(SdkClient.RequestSpec("POST", "/v1/edge-cache/invalidate-by-src-images", config = clientConfig, query = mapOf("projectIdOrName" to
-    SdkClient.queryValue(projectIdOrName, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("srcImages" to (srcImages)), operationId = "invalidateBySrcImages", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "POST",
+                "/v1/edge-cache/invalidate-by-src-images",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "projectIdOrName" to SdkClient.queryValue(projectIdOrName, "form", true),
+                        "teamId" to SdkClient.queryValue(teamId, "form", true),
+                        "slug" to SdkClient.queryValue(slug, "form", true),
+                    ),
+                body = SdkClient.bodyMap("srcImages" to (srcImages)),
+                operationId = "invalidateBySrcImages",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 
-
-
-
-
-
-
     /**
-     * Marks cache entries associated with source images as deleted so they are revalidated in the foreground on the next request. Provide `projectIdOrName` and between 1 and 8 entries in `srcImages`; you can optionally set `revalidationDeadlineSeconds`. Use this operation cautiously because foreground revalidation can send many concurrent requests to the origin; prefer source image invalidation for routine use.
+     * Marks cache entries associated with source images as deleted so they are revalidated in the
+     * foreground on the next request. Provide `projectIdOrName` and between 1 and 8 entries in
+     * `srcImages`; you can optionally set `revalidationDeadlineSeconds`. Use this operation
+     * cautiously because foreground revalidation can send many concurrent requests to the origin;
+     * prefer source image invalidation for routine use.
      *
-     * Marks a source image as deleted, causing cache entries associated with that source image to be revalidated in the foreground on the next request. Use this method with caution because one source image can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateBySrcImage` instead.
+     * Marks a source image as deleted, causing cache entries associated with that source image to
+     * be revalidated in the foreground on the next request. Use this method with caution because
+     * one source image can be associated with many paths and deleting the cache can cause many
+     * concurrent requests to the origin leading to cache stampede problem. This method is for
+     * advanced use cases and is not recommended; prefer using `invalidateBySrcImage` instead.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun dangerouslyDeleteBySrcImages(clientConfig: ClientConfig, projectIdOrName: String, srcImages: List<String>, teamId: String? = null, slug: String? = null, revalidationDeadlineSeconds: Long? = null, options: RequestOptions? = null): Unit {
+    fun dangerouslyDeleteBySrcImages(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        srcImages: List<String>,
+        teamId: String? = null,
+        slug: String? = null,
+        revalidationDeadlineSeconds: Long? = null,
+        options: RequestOptions? = null,
+    ): Unit {
         Validation.validateItems("srcImages", srcImages, Validation.LengthOpts(min = 1, max = 8))
 
         if (revalidationDeadlineSeconds != null) {
-            Validation.validateRange("revalidationDeadlineSeconds", revalidationDeadlineSeconds, Validation.RangeOpts(min = 0.0, max = 31536000.0))
-}
+            Validation.validateRange(
+                "revalidationDeadlineSeconds",
+                revalidationDeadlineSeconds,
+                Validation.RangeOpts(min = 0.0, max = 31536000.0),
+            )
+        }
 
-        SdkClient.request<Unit>(SdkClient.RequestSpec("POST", "/v1/edge-cache/dangerously-delete-by-src-images", config = clientConfig, query = mapOf("projectIdOrName" to
-    SdkClient.queryValue(projectIdOrName, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("srcImages" to (srcImages), "revalidationDeadlineSeconds" to
-    (SdkClient.omitIfNull(revalidationDeadlineSeconds))), operationId = "dangerouslyDeleteBySrcImages", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "POST",
+                "/v1/edge-cache/dangerously-delete-by-src-images",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "projectIdOrName" to SdkClient.queryValue(projectIdOrName, "form", true),
+                        "teamId" to SdkClient.queryValue(teamId, "form", true),
+                        "slug" to SdkClient.queryValue(slug, "form", true),
+                    ),
+                body =
+                    SdkClient.bodyMap(
+                        "srcImages" to (srcImages),
+                        "revalidationDeadlineSeconds" to
+                            (SdkClient.omitIfNull(revalidationDeadlineSeconds)),
+                    ),
+                operationId = "dangerouslyDeleteBySrcImages",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
-
-
-
-
-
-
-
 }
