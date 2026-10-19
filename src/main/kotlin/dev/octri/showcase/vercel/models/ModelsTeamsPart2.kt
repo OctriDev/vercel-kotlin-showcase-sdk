@@ -4,478 +4,604 @@
 package dev.octri.showcase.vercel.models
 
 /**
- * When "Single Sign-On (SAML)" is configured, this object contains information regarding the
- * configuration of the Identity Provider (IdP).
+ * When "Single Sign-On (SAML)" is configured, this object contains information regarding the configuration of the Identity Provider (IdP).
  */
 data class TeamSaml(
     /**
-     * When `true`, interactions with the Team **must** be done with an authentication token that
-     * has been authenticated with the Team's SAML Single Sign-On provider.
+     * When `true`, interactions with the Team **must** be done with an authentication token that has been authenticated with the Team's SAML Single Sign-On provider.
      */
     val enforced: Boolean,
-    /** Information for the SAML Single Sign-On configuration. */
+    /**
+     * Information for the SAML Single Sign-On configuration.
+     */
     val connection: TeamSamlConnection? = null,
-    /** The default redirect URI to use after successful SAML authentication. */
+    /**
+     * The default redirect URI to use after successful SAML authentication.
+     */
     val defaultRedirectUri: TeamSamlDefaultRedirectUriEnum? = null,
-    /** Information for the Directory Sync configuration. */
+    /**
+     * Information for the Directory Sync configuration.
+     */
     val directory: TeamSamlDirectory? = null,
     /**
-     * When "Directory Sync" is configured, this object contains a mapping of which Directory Group
-     * (by ID) should be assigned to which Vercel Team roles and permissions, or an access group.
-     * Bare team roles are deprecated in favor of DirectorySyncRolesMapping.
+     * When "Directory Sync" is configured, this object contains a mapping of which Directory Group (by ID) should be assigned to which Vercel Team roles and permissions, or an access group. Bare team roles are deprecated in favor of DirectorySyncRolesMapping.
      */
-    val roles: Map<String, Any>? = null,
+    val roles: Map<String, Any>? = null
 )
 
 /**
- * When enabled, creating and managing connectors requires Owner role or the ConnectorManager
- * permission.
+ * When enabled, creating and managing connectors requires Owner role or the ConnectorManager permission.
  */
 data class TeamStrictConnectors(
-    /** Required enumerated value serialized in the `enabled` wire field. */
+    /**
+     * Required enumerated value serialized in the `enabled` wire field.
+     */
     val enabled: Boolean,
-    /** Required `number` value serialized in the `updatedAt` wire field. */
-    val updatedAt: Double,
+    /**
+     * Required `number` value serialized in the `updatedAt` wire field.
+     */
+    val updatedAt: Double
 )
 
-/** When enabled, deployment protection settings require stricter permissions (owner-only). */
+/**
+ * When enabled, deployment protection settings require stricter permissions (owner-only).
+ */
 data class TeamStrictDeploymentProtectionSettings(
-    /** Required enumerated value serialized in the `enabled` wire field. */
+    /**
+     * Required enumerated value serialized in the `enabled` wire field.
+     */
     val enabled: Boolean,
-    /** Required `number` value serialized in the `updatedAt` wire field. */
-    val updatedAt: Double,
+    /**
+     * Required `number` value serialized in the `updatedAt` wire field.
+     */
+    val updatedAt: Double
 )
 
-/** When enabled, adding, changing, or removing project password protection requires Owner role. */
+/**
+ * When enabled, adding, changing, or removing project password protection requires Owner role.
+ */
 data class TeamStrictPasswordProtectionSettings(
-    /** Required enumerated value serialized in the `enabled` wire field. */
+    /**
+     * Required enumerated value serialized in the `enabled` wire field.
+     */
     val enabled: Boolean,
-    /** Required `number` value serialized in the `updatedAt` wire field. */
-    val updatedAt: Double,
+    /**
+     * Required `number` value serialized in the `updatedAt` wire field.
+     */
+    val updatedAt: Double
 )
 
-/** When enabled, creating shareable links requires Owner role. */
+/**
+ * When enabled, creating shareable links requires Owner role.
+ */
 data class TeamStrictShareableLinks(
-    /** Required enumerated value serialized in the `enabled` wire field. */
+    /**
+     * Required enumerated value serialized in the `enabled` wire field.
+     */
     val enabled: Boolean,
-    /** Required `number` value serialized in the `updatedAt` wire field. */
-    val updatedAt: Double,
+    /**
+     * Required `number` value serialized in the `updatedAt` wire field.
+     */
+    val updatedAt: Double
 )
 
-/** Data representing a Team. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+/**
+ * Data representing a Team.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 class Team(
-    /** The ID of the file used as avatar for this Team. */
+    /**
+     * The ID of the file used as avatar for this Team.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("avatar", required = true) val avatar: String?,
-    /** The team's billing plan. */
-    @com.fasterxml.jackson.annotation.JsonProperty("billing", required = true)
-    val billing: TeamBilling?,
-    /** UNIX timestamp (in milliseconds) when the Team was created. */
+    /**
+     * The team's billing plan.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("billing", required = true) val billing: TeamBilling?,
+    /**
+     * UNIX timestamp (in milliseconds) when the Team was created.
+     */
     val createdAt: Double,
-    /** The ID of the user who created the Team. */
+    /**
+     * The ID of the user who created the Team.
+     */
     val creatorId: String,
-    /** A short description of the Team. */
-    @com.fasterxml.jackson.annotation.JsonProperty("description", required = true)
-    val description: String?,
-    /** The Team's unique identifier. */
+    /**
+     * A short description of the Team.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("description", required = true) val description: String?,
+    /**
+     * The Team's unique identifier.
+     */
     val id: String,
     /**
-     * Property indicating that this Team data contains full information. Limited Team data has
-     * `limited: true`.
+     * Property indicating that this Team data contains full information. Limited Team data has `limited: true`.
      */
     val limited: Boolean,
-    /** Name associated with the Team account, or `null` if none has been provided. */
+    /**
+     * Name associated with the Team account, or `null` if none has been provided.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name", required = true) val name: String?,
-    /** The Team's slug, which is unique across the Vercel platform. */
+    /**
+     * The Team's slug, which is unique across the Vercel platform.
+     */
     val slug: String,
-    /** The prefix that is prepended to automatic aliases. */
+    /**
+     * The prefix that is prepended to automatic aliases.
+     */
     val stagingPrefix: String,
-    /** Timestamp (in milliseconds) of when the Team was last updated. */
+    /**
+     * Timestamp (in milliseconds) of when the Team was last updated.
+     */
     val updatedAt: Double,
     /**
-     * Timestamp (ms) after which API keys created at or before this time are considered invalid for
-     * this team.
+     * Timestamp (ms) after which API keys created at or before this time are considered invalid for this team.
      */
     val apiKeysInvalidatedAt: Double? = null,
     /**
-     * Timestamp (ms) after which Vercel App tokens created at or before this time are considered
-     * invalid for this team.
+     * Timestamp (ms) after which Vercel App tokens created at or before this time are considered invalid for this team.
      */
     val appTokensInvalidatedAt: Double? = null,
-    /** Optional object value serialized in the `connect` wire field. */
+    /**
+     * Optional object value serialized in the `connect` wire field.
+     */
     val connect: TeamConnect? = null,
     /**
-     * Default continuous-usage billing kind for projects under this team. Absent means projects
-     * stay unmetered.
+     * Default continuous-usage billing kind for projects under this team. Absent means projects stay unmetered.
      */
     val defaultContinuousUsageKind: TeamDefaultContinuousUsageKindEnum? = null,
-    /** Default deployment protection for this team null indicates protection is disabled */
+    /**
+     * Default deployment protection for this team null indicates protection is disabled
+     */
     val defaultDeploymentProtection: TeamDefaultDeploymentProtection? = null,
-    /** Default deployment expiration settings for this team */
+    /**
+     * Default deployment expiration settings for this team
+     */
     val defaultExpirationSettings: TeamDefaultExpirationSettings? = null,
-    /** Default Passport configuration for new projects in this team. */
+    /**
+     * Default Passport configuration for new projects in this team.
+     */
     val defaultPassport: TeamDefaultPassport? = null,
-    /** Default job configuration applied to new projects created in this team. */
+    /**
+     * Default job configuration applied to new projects created in this team.
+     */
     val defaultProjectJobs: TeamDefaultProjectJobs? = null,
-    /** Default roles for the team. */
+    /**
+     * Default roles for the team.
+     */
     val defaultRoles: TeamDefaultRoles? = null,
     /**
-     * Composable deployment-time policy for the team. Used as the default for every project on the
-     * team, with optional per-project overrides on `project.deploymentPolicy`.
+     * Composable deployment-time policy for the team. Used as the default for every project on the team, with optional per-project overrides on `project.deploymentPolicy`.
      */
     val deploymentPolicy: TeamDeploymentPolicy? = null,
     /**
-     * Pro deployment-storage pricing rollout cohort and milestones. Absent when the team has not
-     * been placed in a rollout cohort yet.
+     * Pro deployment-storage pricing rollout cohort and milestones. Absent when the team has not been placed in a rollout cohort yet.
      */
     val deploymentStorageRollout: TeamDeploymentStorageRollout? = null,
-    /** Optional API value serialized in the `disableHardAutoBlocks` wire field. */
+    /**
+     * Optional API value serialized in the `disableHardAutoBlocks` wire field.
+     */
     val disableHardAutoBlocks: Any? = null,
     /**
-     * Default for projects in the team. When `true`, projects in this team will not emit GitHub
-     * repository-dispatch events on deployment events unless the project explicitly overrides this
-     * setting via `project.gitProviderOptions.disableRepositoryDispatchEvents`.
+     * Default for projects in the team. When `true`, projects in this team will not emit GitHub repository-dispatch events on deployment events unless the project explicitly overrides this setting via `project.gitProviderOptions.disableRepositoryDispatchEvents`.
      */
     val disableRepositoryDispatchEvents: Boolean? = null,
-    /** Require production secrets to use a different value than preview or development. */
+    /**
+     * Require production secrets to use a different value than preview or development.
+     */
     val disjunctiveProductionSecretPolicy: TeamDisjunctiveProductionSecretPolicyEnum? = null,
-    /** Controls who can request access to protected deployments. */
+    /**
+     * Controls who can request access to protected deployments.
+     */
     val dpAccessRequestsMode: TeamDpAccessRequestsModeEnum? = null,
-    /** Hostname that'll be matched with emails on sign-up to automatically join the Team. */
+    /**
+     * Hostname that'll be matched with emails on sign-up to automatically join the Team.
+     */
     val emailDomain: String? = null,
-    /** Whether toolbar is enabled on preview deployments */
+    /**
+     * Whether toolbar is enabled on preview deployments
+     */
     val enablePreviewFeedback: TeamEnablePreviewFeedbackEnum? = null,
-    /** Whether toolbar is enabled on production deployments */
+    /**
+     * Whether toolbar is enabled on production deployments
+     */
     val enableProductionFeedback: TeamEnableProductionFeedbackEnum? = null,
-    /** Indicates if IP addresses should be accessible in observability (o11y) tooling */
+    /**
+     * Indicates if IP addresses should be accessible in observability (o11y) tooling
+     */
     val hideIpAddresses: Boolean? = null,
-    /** Indicates if IP addresses should be accessible in log drains */
+    /**
+     * Indicates if IP addresses should be accessible in log drains
+     */
     val hideIpAddressesInLogDrains: Boolean? = null,
     /**
-     * Timestamp (ms) after which integration tokens created at or before this time are considered
-     * invalid for this team.
+     * Timestamp (ms) after which integration tokens created at or before this time are considered invalid for this team.
      */
     val integrationTokensInvalidatedAt: Double? = null,
-    /** Code that can be used to join this Team. Only visible to Team owners. */
+    /**
+     * Code that can be used to join this Team. Only visible to Team owners.
+     */
     val inviteCode: String? = null,
-    /** Optional array value serialized in the `ipBuckets` wire field. */
+    /**
+     * Optional array value serialized in the `ipBuckets` wire field.
+     */
     val ipBuckets: List<TeamIpBucketsItem>? = null,
-    /** The membership of the authenticated User in relation to the Team. */
+    /**
+     * The membership of the authenticated User in relation to the Team.
+     */
     val membership: TeamMembership? = null,
-    /** NSNB configuration for the team. */
+    /**
+     * NSNB configuration for the team.
+     */
     val nsnbConfig: TeamNsnbConfig? = null,
     /**
-     * Best-effort ID of the organization’s root billing team. When present, compare `orgRootTeamId
-     * === id` to identify the root team. It may be omitted even when `parentId` is set if
-     * organization resolution fails or the referenced organization is missing. Always omitted for
-     * non-organization teams.
+     * Best-effort ID of the organization’s root billing team. When present, compare `orgRootTeamId === id` to identify the root team. It may be omitted even when `parentId` is set if organization resolution fails or the referenced organization is missing. Always omitted for non-organization teams.
      */
     val orgRootTeamId: String? = null,
     /**
-     * The organizationId for teams that belong to an organization (set on both the organization's
-     * root team and its child teams).
+     * The organizationId for teams that belong to an organization (set on both the organization's root team and its child teams).
      */
     val parentId: String? = null,
     /**
-     * Timestamp (ms) after which personal access tokens created at or before this time are
-     * considered invalid for this team.
+     * Timestamp (ms) after which personal access tokens created at or before this time are considered invalid for this team.
      */
     val personalAccessTokensInvalidatedAt: Double? = null,
-    /** Whether the team is a platform team. */
+    /**
+     * Whether the team is a platform team.
+     */
     val platform: Boolean? = null,
-    /** The hostname that is current set as preview deployment suffix. */
+    /**
+     * The hostname that is current set as preview deployment suffix.
+     */
     val previewDeploymentSuffix: String? = null,
-    /** Is remote caching enabled for this team */
+    /**
+     * Is remote caching enabled for this team
+     */
     val remoteCaching: TeamRemoteCaching? = null,
     /**
-     * When enabled, all projects in the team require commits to be signed and verified by the git
-     * provider before deployments will be created. Projects may override this via
-     * `project.gitProviderOptions.requireVerifiedCommits` (gated by `Project:Update`).
+     * When enabled, all projects in the team require commits to be signed and verified by the git provider before deployments will be created. Projects may override this via `project.gitProviderOptions.requireVerifiedCommits` (gated by `Project:Update`).
      */
     val requireVerifiedCommits: Boolean? = null,
-    /** Optional object value serialized in the `resourceConfig` wire field. */
+    /**
+     * Optional object value serialized in the `resourceConfig` wire field.
+     */
     val resourceConfig: TeamResourceConfig? = null,
     /**
-     * When "Single Sign-On (SAML)" is configured, this object contains information regarding the
-     * configuration of the Identity Provider (IdP).
+     * When "Single Sign-On (SAML)" is configured, this object contains information regarding the configuration of the Identity Provider (IdP).
      */
     val saml: TeamSaml? = null,
-    /** Sensitive environment variable policy for this team */
+    /**
+     * Sensitive environment variable policy for this team
+     */
     val sensitiveEnvironmentVariablePolicy: TeamSensitiveEnvironmentVariablePolicyEnum? = null,
     /**
-     * When enabled, creating and managing connectors requires Owner role or the ConnectorManager
-     * permission.
+     * When enabled, creating and managing connectors requires Owner role or the ConnectorManager permission.
      */
     val strictConnectors: TeamStrictConnectors? = null,
-    /** When enabled, deployment protection settings require stricter permissions (owner-only). */
+    /**
+     * When enabled, deployment protection settings require stricter permissions (owner-only).
+     */
     val strictDeploymentProtectionSettings: TeamStrictDeploymentProtectionSettings? = null,
     /**
      * When enabled, adding, changing, or removing project password protection requires Owner role.
      */
     val strictPasswordProtectionSettings: TeamStrictPasswordProtectionSettings? = null,
-    /** When enabled, creating shareable links requires Owner role. */
-    val strictShareableLinks: TeamStrictShareableLinks? = null,
+    /**
+     * When enabled, creating shareable links requires Owner role.
+     */
+    val strictShareableLinks: TeamStrictShareableLinks? = null
 ) : ListTeamsResponseTeamsItem {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariant0(
-    /** Required enumerated value serialized in the `target` wire field. */
+    /**
+     * Required enumerated value serialized in the `target` wire field.
+     */
     val target: TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX700fb69d00,
-    /** Required enumerated value serialized in the `type` wire field. */
-    val type: TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX59192ae249,
+    /**
+     * Required enumerated value serialized in the `type` wire field.
+     */
+    val type: TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX59192ae249
 ) : TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariant1(
-    /** Required `string` value serialized in the `environmentId` wire field. */
+    /**
+     * Required `string` value serialized in the `environmentId` wire field.
+     */
     val environmentId: String,
-    /** Required enumerated value serialized in the `type` wire field. */
-    val type: TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX01a59e6bfe,
+    /**
+     * Required enumerated value serialized in the `type` wire field.
+     */
+    val type: TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX01a59e6bfe
 ) : TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItem
 
-/** Required API value serialized in the `environments[]` wire field. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+/**
+ * Required API value serialized in the `environments[]` wire field.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariant0::class,
-        name = "system",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariant1::class,
-        name = "custom",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariant0::class, name = "system"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariant1::class, name = "custom")
 )
 sealed interface TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0(
-    /** Required enumerated value serialized in the `target` wire field. */
+    /**
+     * Required enumerated value serialized in the `target` wire field.
+     */
     val target: TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0TargetEnum,
-    /** Required enumerated value serialized in the `type` wire field. */
-    val type: TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0TypeEnum,
+    /**
+     * Required enumerated value serialized in the `type` wire field.
+     */
+    val type: TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0TypeEnum
 ) : TeamDeploymentPolicyGitSourcesItemEnvironmentsItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant1(
-    /** Required `string` value serialized in the `environmentId` wire field. */
+    /**
+     * Required `string` value serialized in the `environmentId` wire field.
+     */
     val environmentId: String,
-    /** Required enumerated value serialized in the `type` wire field. */
-    val type: TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant1TypeEnum,
+    /**
+     * Required enumerated value serialized in the `type` wire field.
+     */
+    val type: TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant1TypeEnum
 ) : TeamDeploymentPolicyGitSourcesItemEnvironmentsItem
 
-/** Required API value serialized in the `environments[]` wire field. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+/**
+ * Required API value serialized in the `environments[]` wire field.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0::class,
-        name = "system",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant1::class,
-        name = "custom",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0::class, name = "system"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant1::class, name = "custom")
 )
 sealed interface TeamDeploymentPolicyGitSourcesItemEnvironmentsItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class TeamDeploymentPolicyGitSourcesItemSourcesItemVariant0(
-    /** Required `string` value serialized in the `org` wire field. */
+    /**
+     * Required `string` value serialized in the `org` wire field.
+     */
     val org: String,
-    /** Required enumerated value serialized in the `provider` wire field. */
+    /**
+     * Required enumerated value serialized in the `provider` wire field.
+     */
     val provider: TeamDeploymentPolicyGitSourcesItemSourcesItemVariant0ProviderEnum,
-    /** Optional `string` value serialized in the `repo` wire field. */
-    val repo: String? = null,
+    /**
+     * Optional `string` value serialized in the `repo` wire field.
+     */
+    val repo: String? = null
 ) : TeamDeploymentPolicyGitSourcesItemSourcesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class TeamDeploymentPolicyGitSourcesItemSourcesItemVariant1(
-    /** Required `string` value serialized in the `namespace` wire field. */
+    /**
+     * Required `string` value serialized in the `namespace` wire field.
+     */
     val namespace: String,
-    /** Required enumerated value serialized in the `provider` wire field. */
+    /**
+     * Required enumerated value serialized in the `provider` wire field.
+     */
     val provider: TeamDeploymentPolicyGitSourcesItemSourcesItemVariant1ProviderEnum,
-    /** Optional `string` value serialized in the `project` wire field. */
-    val project: String? = null,
+    /**
+     * Optional `string` value serialized in the `project` wire field.
+     */
+    val project: String? = null
 ) : TeamDeploymentPolicyGitSourcesItemSourcesItem
 
-/** Required API value serialized in the `sources[]` wire field. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION
-)
+/**
+ * Required API value serialized in the `sources[]` wire field.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TeamDeploymentPolicyGitSourcesItemSourcesItemVariant0::class
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TeamDeploymentPolicyGitSourcesItemSourcesItemVariant1::class
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = TeamDeploymentPolicyGitSourcesItemSourcesItemVariant0::class),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = TeamDeploymentPolicyGitSourcesItemSourcesItemVariant1::class)
 )
 sealed interface TeamDeploymentPolicyGitSourcesItemSourcesItem
 
-/** Required object value serialized in the `entitlements[]` wire field. */
+/**
+ * Required object value serialized in the `entitlements[]` wire field.
+ */
 data class TeamLimitedMembershipEntitlementsItem(
-    /** Required `string` value serialized in the `entitlement` wire field. */
+    /**
+     * Required `string` value serialized in the `entitlement` wire field.
+     */
     val entitlement: String
 )
 
-/** Optional object value serialized in the `joinedFrom` wire field. */
+/**
+ * Optional object value serialized in the `joinedFrom` wire field.
+ */
 data class TeamLimitedMembershipJoinedFrom(
-    /** Required enumerated value serialized in the `origin` wire field. */
+    /**
+     * Required enumerated value serialized in the `origin` wire field.
+     */
     val origin: TeamLimitedMembershipJoinedFromOriginEnum,
-    /** Optional `string` value serialized in the `commitId` wire field. */
+    /**
+     * Optional `string` value serialized in the `commitId` wire field.
+     */
     val commitId: String? = null,
-    /** Optional `number` value serialized in the `dsyncConnectedAt` wire field. */
+    /**
+     * Optional `number` value serialized in the `dsyncConnectedAt` wire field.
+     */
     val dsyncConnectedAt: Double? = null,
-    /** Optional `string` value serialized in the `dsyncUserId` wire field. */
+    /**
+     * Optional `string` value serialized in the `dsyncUserId` wire field.
+     */
     val dsyncUserId: String? = null,
-    /** Optional API value serialized in the `gitUserId` wire field. */
+    /**
+     * Optional API value serialized in the `gitUserId` wire field.
+     */
     val gitUserId: Any? = null,
-    /** Optional `string` value serialized in the `gitUserLogin` wire field. */
+    /**
+     * Optional `string` value serialized in the `gitUserLogin` wire field.
+     */
     val gitUserLogin: String? = null,
-    /** Optional `string` value serialized in the `idpUserId` wire field. */
+    /**
+     * Optional `string` value serialized in the `idpUserId` wire field.
+     */
     val idpUserId: String? = null,
-    /** Optional `string` value serialized in the `repoId` wire field. */
+    /**
+     * Optional `string` value serialized in the `repoId` wire field.
+     */
     val repoId: String? = null,
-    /** Optional `string` value serialized in the `repoPath` wire field. */
+    /**
+     * Optional `string` value serialized in the `repoPath` wire field.
+     */
     val repoPath: String? = null,
-    /** Optional `number` value serialized in the `ssoConnectedAt` wire field. */
+    /**
+     * Optional `number` value serialized in the `ssoConnectedAt` wire field.
+     */
     val ssoConnectedAt: Double? = null,
-    /** Optional `string` value serialized in the `ssoUserId` wire field. */
-    val ssoUserId: String? = null,
-)
-
-/** The membership of the authenticated User in relation to the Team. */
-data class TeamLimitedMembership(
-    /** Required enumerated value serialized in the `confirmed` wire field. */
-    val confirmed: Boolean,
-    /** Required `number` value serialized in the `created` wire field. */
-    val created: Double,
-    /** Required `number` value serialized in the `createdAt` wire field. */
-    val createdAt: Double,
-    /** Required enumerated value serialized in the `role` wire field. */
-    val role: TeamLimitedMembershipRoleEnum,
-    /** Optional `number` value serialized in the `accessRequestedAt` wire field. */
-    val accessRequestedAt: Double? = null,
-    /** Optional array value serialized in the `entitlements` wire field. */
-    val entitlements: List<TeamLimitedMembershipEntitlementsItem>? = null,
-    /** Optional enumerated value serialized in the `isOrgBackingTeamMembership` wire field. */
-    val isOrgBackingTeamMembership: Boolean? = null,
-    /** Optional object value serialized in the `joinedFrom` wire field. */
-    val joinedFrom: TeamLimitedMembershipJoinedFrom? = null,
-    /** Optional `string` value serialized in the `organizationId` wire field. */
-    val organizationId: String? = null,
-    /** Optional `string` value serialized in the `teamId` wire field. */
-    val teamId: String? = null,
-    /** Optional array value serialized in the `teamPermissions` wire field. */
-    val teamPermissions: List<TeamLimitedMembershipTeamPermissionsItemEnum>? = null,
-    /** Optional array value serialized in the `teamRoles` wire field. */
-    val teamRoles: List<TeamLimitedMembershipTeamRolesItemEnum>? = null,
-    /** Optional `string` value serialized in the `uid` wire field. */
-    val uid: String? = null,
-)
-
-/** Information for the SAML Single Sign-On configuration. */
-data class TeamLimitedSamlConnection(
-    /** Timestamp (in milliseconds) of when the configuration was connected. */
-    val connectedAt: Double,
-    /** Current state of the connection. */
-    val state: String,
-    /** The Identity Provider "type", for example Okta. */
-    val type: String,
-    /** Required `string` value serialized in the `status` wire field. */
-    val status: String,
-    /** Timestamp (in milliseconds) of when the last webhook event was received from WorkOS. */
-    val lastReceivedWebhookEvent: Double? = null,
-    /** Timestamp (in milliseconds) of when the last directory sync was performed. */
-    val lastSyncedAt: Double? = null,
     /**
-     * Controls whether directory sync events are processed. - 'SETUP': Directory connected but role
-     * mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully
-     * configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat
-     * as 'ACTIVE' for backwards compatibility.
+     * Optional `string` value serialized in the `ssoUserId` wire field.
      */
-    val syncState: TeamLimitedSamlConnectionSyncStateEnum? = null,
-)
-
-/** Information for the Directory Sync configuration. */
-data class TeamLimitedSamlDirectory(
-    /** Timestamp (in milliseconds) of when the configuration was connected. */
-    val connectedAt: Double,
-    /** Current state of the connection. */
-    val state: String,
-    /** The Identity Provider "type", for example Okta. */
-    val type: String,
-    /** Timestamp (in milliseconds) of when the last webhook event was received from WorkOS. */
-    val lastReceivedWebhookEvent: Double? = null,
-    /** Timestamp (in milliseconds) of when the last directory sync was performed. */
-    val lastSyncedAt: Double? = null,
-    /**
-     * Controls whether directory sync events are processed. - 'SETUP': Directory connected but role
-     * mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully
-     * configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat
-     * as 'ACTIVE' for backwards compatibility.
-     */
-    val syncState: TeamLimitedSamlDirectorySyncStateEnum? = null,
+    val ssoUserId: String? = null
 )
 
 /**
- * When "Single Sign-On (SAML)" is configured, this object contains information that allows the
- * client-side to identify whether or not this Team has SAML enforced.
+ * The membership of the authenticated User in relation to the Team.
+ */
+data class TeamLimitedMembership(
+    /**
+     * Required enumerated value serialized in the `confirmed` wire field.
+     */
+    val confirmed: Boolean,
+    /**
+     * Required `number` value serialized in the `created` wire field.
+     */
+    val created: Double,
+    /**
+     * Required `number` value serialized in the `createdAt` wire field.
+     */
+    val createdAt: Double,
+    /**
+     * Required enumerated value serialized in the `role` wire field.
+     */
+    val role: TeamLimitedMembershipRoleEnum,
+    /**
+     * Optional `number` value serialized in the `accessRequestedAt` wire field.
+     */
+    val accessRequestedAt: Double? = null,
+    /**
+     * Optional array value serialized in the `entitlements` wire field.
+     */
+    val entitlements: List<TeamLimitedMembershipEntitlementsItem>? = null,
+    /**
+     * Optional enumerated value serialized in the `isOrgBackingTeamMembership` wire field.
+     */
+    val isOrgBackingTeamMembership: Boolean? = null,
+    /**
+     * Optional object value serialized in the `joinedFrom` wire field.
+     */
+    val joinedFrom: TeamLimitedMembershipJoinedFrom? = null,
+    /**
+     * Optional `string` value serialized in the `organizationId` wire field.
+     */
+    val organizationId: String? = null,
+    /**
+     * Optional `string` value serialized in the `teamId` wire field.
+     */
+    val teamId: String? = null,
+    /**
+     * Optional array value serialized in the `teamPermissions` wire field.
+     */
+    val teamPermissions: List<TeamLimitedMembershipTeamPermissionsItemEnum>? = null,
+    /**
+     * Optional array value serialized in the `teamRoles` wire field.
+     */
+    val teamRoles: List<TeamLimitedMembershipTeamRolesItemEnum>? = null,
+    /**
+     * Optional `string` value serialized in the `uid` wire field.
+     */
+    val uid: String? = null
+)
+
+/**
+ * Information for the SAML Single Sign-On configuration.
+ */
+data class TeamLimitedSamlConnection(
+    /**
+     * Timestamp (in milliseconds) of when the configuration was connected.
+     */
+    val connectedAt: Double,
+    /**
+     * Current state of the connection.
+     */
+    val state: String,
+    /**
+     * The Identity Provider "type", for example Okta.
+     */
+    val type: String,
+    /**
+     * Required `string` value serialized in the `status` wire field.
+     */
+    val status: String,
+    /**
+     * Timestamp (in milliseconds) of when the last webhook event was received from WorkOS.
+     */
+    val lastReceivedWebhookEvent: Double? = null,
+    /**
+     * Timestamp (in milliseconds) of when the last directory sync was performed.
+     */
+    val lastSyncedAt: Double? = null,
+    /**
+     * Controls whether directory sync events are processed. - 'SETUP': Directory connected but role mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as 'ACTIVE' for backwards compatibility.
+     */
+    val syncState: TeamLimitedSamlConnectionSyncStateEnum? = null
+)
+
+/**
+ * Information for the Directory Sync configuration.
+ */
+data class TeamLimitedSamlDirectory(
+    /**
+     * Timestamp (in milliseconds) of when the configuration was connected.
+     */
+    val connectedAt: Double,
+    /**
+     * Current state of the connection.
+     */
+    val state: String,
+    /**
+     * The Identity Provider "type", for example Okta.
+     */
+    val type: String,
+    /**
+     * Timestamp (in milliseconds) of when the last webhook event was received from WorkOS.
+     */
+    val lastReceivedWebhookEvent: Double? = null,
+    /**
+     * Timestamp (in milliseconds) of when the last directory sync was performed.
+     */
+    val lastSyncedAt: Double? = null,
+    /**
+     * Controls whether directory sync events are processed. - 'SETUP': Directory connected but role mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as 'ACTIVE' for backwards compatibility.
+     */
+    val syncState: TeamLimitedSamlDirectorySyncStateEnum? = null
+)
+
+/**
+ * When "Single Sign-On (SAML)" is configured, this object contains information that allows the client-side to identify whether or not this Team has SAML enforced.
  */
 data class TeamLimitedSaml(
     /**
-     * When `true`, interactions with the Team **must** be done with an authentication token that
-     * has been authenticated with the Team's SAML Single Sign-On provider.
+     * When `true`, interactions with the Team **must** be done with an authentication token that has been authenticated with the Team's SAML Single Sign-On provider.
      */
     val enforced: Boolean,
-    /** Information for the SAML Single Sign-On configuration. */
+    /**
+     * Information for the SAML Single Sign-On configuration.
+     */
     val connection: TeamLimitedSamlConnection? = null,
-    /** Information for the Directory Sync configuration. */
-    val directory: TeamLimitedSamlDirectory? = null,
+    /**
+     * Information for the Directory Sync configuration.
+     */
+    val directory: TeamLimitedSamlDirectory? = null
 )

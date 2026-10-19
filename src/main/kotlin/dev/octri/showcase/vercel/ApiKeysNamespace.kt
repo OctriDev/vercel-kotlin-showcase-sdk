@@ -3,21 +3,13 @@
 
 package dev.octri.showcase.vercel
 
+
 class ApiKeysNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Creates an API key with a purpose that restricts how the key can be used. Set `purpose` and
-     * optionally scope the key to a project, assign a name or expiration, or configure AI Gateway
-     * quota settings. Save the returned `apiKeyString` securely because it is provided only in this
-     * response and cannot be retrieved again.
+     * Creates an API key with a purpose that restricts how the key can be used. Set `purpose` and optionally scope the key to a project, assign a name or expiration, or configure AI Gateway quota settings. Save the returned `apiKeyString` securely because it is provided only in this response and cannot be retrieved again.
      */
-    fun create(
-        request: dev.octri.showcase.vercel.methods.ApiKeys.CreateApiKeysRequest,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.ApiKeys.CreateApiKeysResponse {
-        return dev.octri.showcase.vercel.methods.ApiKeys.createApiKeys(
-            clientConfig,
-            request,
-            options,
-        )
+    fun create(request: dev.octri.showcase.vercel.methods.ApiKeys.CreateApiKeysRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.ApiKeys.CreateApiKeysResponse {
+        return dev.octri.showcase.vercel.methods.ApiKeys.createApiKeys(clientConfig, request, options)
     }
+
 }

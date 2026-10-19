@@ -3,68 +3,116 @@
 
 package dev.octri.showcase.vercel.models
 
-/** Required object value serialized in the `error` wire field. */
+/**
+ * Required object value serialized in the `error` wire field.
+ */
 data class VercelBadRequestErrorError(
-    /** Required `string` value serialized in the `code` wire field. */
+    /**
+     * Required `string` value serialized in the `code` wire field.
+     */
     val code: String,
-    /** Required `string` value serialized in the `message` wire field. */
-    val message: String,
+    /**
+     * Required `string` value serialized in the `message` wire field.
+     */
+    val message: String
 )
 
-/** Typed representation of the `VercelBadRequestError` API schema. */
+/**
+ * Typed representation of the `VercelBadRequestError` API schema.
+ */
 data class VercelBadRequestError(
-    /** Required object value serialized in the `error` wire field. */
+    /**
+     * Required object value serialized in the `error` wire field.
+     */
     val error: VercelBadRequestErrorError
 )
 
-/** Typed representation of the `VercelBaseError` API schema. */
+/**
+ * Typed representation of the `VercelBaseError` API schema.
+ */
 data class VercelBaseError(
-    /** Required `string` value serialized in the `code` wire field. */
+    /**
+     * Required `string` value serialized in the `code` wire field.
+     */
     val code: String,
-    /** Required `string` value serialized in the `message` wire field. */
-    val message: String,
+    /**
+     * Required `string` value serialized in the `message` wire field.
+     */
+    val message: String
 )
 
-/** Required object value serialized in the `error` wire field. */
+/**
+ * Required object value serialized in the `error` wire field.
+ */
 data class VercelForbiddenErrorError(
-    /** Required `string` value serialized in the `code` wire field. */
+    /**
+     * Required `string` value serialized in the `code` wire field.
+     */
     val code: String,
-    /** Required `string` value serialized in the `message` wire field. */
-    val message: String,
+    /**
+     * Required `string` value serialized in the `message` wire field.
+     */
+    val message: String
 )
 
-/** Typed representation of the `VercelForbiddenError` API schema. */
+/**
+ * Typed representation of the `VercelForbiddenError` API schema.
+ */
 data class VercelForbiddenError(
-    /** Required object value serialized in the `error` wire field. */
+    /**
+     * Required object value serialized in the `error` wire field.
+     */
     val error: VercelForbiddenErrorError
 )
 
-/** Required object value serialized in the `error` wire field. */
+/**
+ * Required object value serialized in the `error` wire field.
+ */
 data class VercelNotFoundErrorError(
-    /** Required `string` value serialized in the `code` wire field. */
+    /**
+     * Required `string` value serialized in the `code` wire field.
+     */
     val code: String,
-    /** Required `string` value serialized in the `message` wire field. */
-    val message: String,
+    /**
+     * Required `string` value serialized in the `message` wire field.
+     */
+    val message: String
 )
 
-/** Typed representation of the `VercelNotFoundError` API schema. */
+/**
+ * Typed representation of the `VercelNotFoundError` API schema.
+ */
 data class VercelNotFoundError(
-    /** Required object value serialized in the `error` wire field. */
+    /**
+     * Required object value serialized in the `error` wire field.
+     */
     val error: VercelNotFoundErrorError
 )
 
-/** Required object value serialized in the `error` wire field. */
+/**
+ * Required object value serialized in the `error` wire field.
+ */
 data class VercelRateLimitErrorError(
-    /** Required `string` value serialized in the `code` wire field. */
+    /**
+     * Required `string` value serialized in the `code` wire field.
+     */
     val code: String,
-    /** Required `string` value serialized in the `message` wire field. */
+    /**
+     * Required `string` value serialized in the `message` wire field.
+     */
     val message: String,
-    /** Optional object value serialized in the `limit` wire field. */
-    val limit: RateLimitNotice? = null,
+    /**
+     * Optional object value serialized in the `limit` wire field.
+     */
+    val limit: RateLimitNotice? = null
 )
 
-/** Typed representation of the `VercelRateLimitError` API schema. */
+/**
+ * Typed representation of the `VercelRateLimitError` API schema.
+ */
 data class VercelRateLimitError(
-    /** Required object value serialized in the `error` wire field. */
+    /**
+     * Required object value serialized in the `error` wire field.
+     */
     val error: VercelRateLimitErrorError
 )

@@ -3,12 +3,7 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UploadProjectAvatarResponseLinkVariant6(
     val deployHooks: List<UploadProjectAvatarResponseLinkVariant6DeployHooksItem>,
     val gitCredentialId: String,
@@ -19,7 +14,7 @@ data class UploadProjectAvatarResponseLinkVariant6(
     val type: UploadProjectAvatarResponseLinkVariant6TypeEnum,
     val createdAt: Double? = null,
     val sourceless: Boolean? = null,
-    val updatedAt: Double? = null,
+    val updatedAt: Double? = null
 ) : UploadProjectAvatarResponseLink
 
 data class UploadProjectAvatarResponseLinkVariant7DeployHooksItem(
@@ -27,181 +22,129 @@ data class UploadProjectAvatarResponseLinkVariant7DeployHooksItem(
     val name: String,
     val ref: String,
     val url: String,
-    val createdAt: Double? = null,
+    val createdAt: Double? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UploadProjectAvatarResponseLinkVariant7(
     val deployHooks: List<UploadProjectAvatarResponseLinkVariant7DeployHooksItem>,
     val gitCredentialId: String,
-    /** Owner (namespace) slug, e.g. `acme`. */
+    /**
+     * Owner (namespace) slug, e.g. `acme`.
+     */
     val owner: String,
-    /** Origin namespace id (`ns_…`) of the owner. */
+    /**
+     * Origin namespace id (`ns_…`) of the owner.
+     */
     val ownerId: String,
     val productionBranch: String,
     val repo: String,
-    /** Origin repository id. */
+    /**
+     * Origin repository id.
+     */
     val repoId: String,
     val type: UploadProjectAvatarResponseLinkVariant7TypeEnum,
     val createdAt: Double? = null,
     val sourceless: Boolean? = null,
-    val updatedAt: Double? = null,
+    val updatedAt: Double? = null
 ) : UploadProjectAvatarResponseLink
 
-/** Typed representation of the `UploadProjectAvatarResponseLink` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+/**
+ * Typed representation of the `UploadProjectAvatarResponseLink` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UploadProjectAvatarResponseLinkVariant0::class,
-        name = "github",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UploadProjectAvatarResponseLinkVariant1::class,
-        name = "github-limited",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UploadProjectAvatarResponseLinkVariant2::class,
-        name = "github-custom-host",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UploadProjectAvatarResponseLinkVariant3::class,
-        name = "gitlab",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UploadProjectAvatarResponseLinkVariant4::class,
-        name = "bitbucket",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UploadProjectAvatarResponseLinkVariant5::class,
-        name = "vercel",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UploadProjectAvatarResponseLinkVariant6::class,
-        name = "v0",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UploadProjectAvatarResponseLinkVariant7::class,
-        name = "cursor-origin",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseLinkVariant0::class, name = "github"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseLinkVariant1::class, name = "github-limited"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseLinkVariant2::class, name = "github-custom-host"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseLinkVariant3::class, name = "gitlab"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseLinkVariant4::class, name = "bitbucket"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseLinkVariant5::class, name = "vercel"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseLinkVariant6::class, name = "v0"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseLinkVariant7::class, name = "cursor-origin")
 )
 sealed interface UploadProjectAvatarResponseLink
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UploadProjectAvatarResponseMicrofrontendsVariant0(
-    /** Whether microfrontends are enabled for this project. */
+    /**
+     * Whether microfrontends are enabled for this project.
+     */
     val enabled: Boolean,
     /**
-     * The group IDs of microfrontends that this project belongs to. Each microfrontend project must
-     * belong to a microfrontends group that is the set of microfrontends that are used together.
+     * The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
      */
     val groupIds: List<String>,
     val isDefaultApp: Boolean,
-    /** Timestamp when the microfrontends settings were last updated. */
+    /**
+     * Timestamp when the microfrontends settings were last updated.
+     */
     val updatedAt: Double,
     /**
-     * A path that is used to take screenshots and as the default path in preview links when a
-     * domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
+     * A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
      */
     val defaultRoute: String? = null,
     /**
-     * Whether the project was part of the legacy limits for hobby and pro-trial before billing was
-     * added. This field is only set when the team is upgraded to a paid plan and we are backfilling
-     * the subscription status. We cap the subscription to 2 projects and set this field for the 3rd
-     * project. When this field is set, the project is not charged for and we do not call any
-     * billing APIs for this project.
+     * Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
      */
-    val freeProjectForLegacyLimits: Boolean? = null,
+    val freeProjectForLegacyLimits: Boolean? = null
 ) : UploadProjectAvatarResponseMicrofrontends
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UploadProjectAvatarResponseMicrofrontendsVariant1(
-    /** Whether microfrontends are enabled for this project. */
+    /**
+     * Whether microfrontends are enabled for this project.
+     */
     val enabled: Boolean,
     /**
-     * The group IDs of microfrontends that this project belongs to. Each microfrontend project must
-     * belong to a microfrontends group that is the set of microfrontends that are used together.
+     * The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
      */
     val groupIds: List<String>,
-    /** Timestamp when the microfrontends settings were last updated. */
+    /**
+     * Timestamp when the microfrontends settings were last updated.
+     */
     val updatedAt: Double,
     /**
-     * A path that is used to take screenshots and as the default path in preview links when a
-     * domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
+     * A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
      */
     val defaultRoute: String? = null,
     /**
-     * Whether to add microfrontends routing to aliases. This means domains in this project will
-     * route as a microfrontend.
+     * Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
      */
     val doNotRouteWithMicrofrontendsRouting: Boolean? = null,
     /**
-     * Whether the project was part of the legacy limits for hobby and pro-trial before billing was
-     * added. This field is only set when the team is upgraded to a paid plan and we are backfilling
-     * the subscription status. We cap the subscription to 2 projects and set this field for the 3rd
-     * project. When this field is set, the project is not charged for and we do not call any
-     * billing APIs for this project.
+     * Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
      */
     val freeProjectForLegacyLimits: Boolean? = null,
     val isDefaultApp: Boolean? = null,
     /**
      * Whether observability data should be routed to this microfrontend project or a root project.
      */
-    val routeObservabilityToThisProject: Boolean? = null,
+    val routeObservabilityToThisProject: Boolean? = null
 ) : UploadProjectAvatarResponseMicrofrontends
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UploadProjectAvatarResponseMicrofrontendsVariant2(
     val enabled: Boolean,
     val groupIds: List<Any>,
     val updatedAt: Double,
-    val freeProjectForLegacyLimits: Boolean? = null,
+    val freeProjectForLegacyLimits: Boolean? = null
 ) : UploadProjectAvatarResponseMicrofrontends
 
-/** Typed representation of the `UploadProjectAvatarResponseMicrofrontends` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = UploadProjectAvatarResponseMicrofrontends.Deserializer::class
-)
+/**
+ * Typed representation of the `UploadProjectAvatarResponseMicrofrontends` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UploadProjectAvatarResponseMicrofrontends.Deserializer::class)
 sealed interface UploadProjectAvatarResponseMicrofrontends {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<
-            UploadProjectAvatarResponseMicrofrontends
-        >() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UploadProjectAvatarResponseMicrofrontends>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): UploadProjectAvatarResponseMicrofrontends {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                UploadProjectAvatarResponseMicrofrontendsOwnedTypes.firstOrNull { (keys, _) ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = UploadProjectAvatarResponseMicrofrontendsOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -209,80 +152,51 @@ sealed interface UploadProjectAvatarResponseMicrofrontends {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out UploadProjectAvatarResponseMicrofrontends>> =
-                listOf(
-                    UploadProjectAvatarResponseMicrofrontendsVariant0::class.java,
-                    UploadProjectAvatarResponseMicrofrontendsVariant1::class.java,
-                    UploadProjectAvatarResponseMicrofrontendsVariant2::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out UploadProjectAvatarResponseMicrofrontends>> = listOf(UploadProjectAvatarResponseMicrofrontendsVariant0::class.java, UploadProjectAvatarResponseMicrofrontendsVariant1::class.java, UploadProjectAvatarResponseMicrofrontendsVariant2::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        UploadProjectAvatarResponseMicrofrontends::class.java,
-                        "no UploadProjectAvatarResponseMicrofrontends branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, UploadProjectAvatarResponseMicrofrontends::class.java, "no UploadProjectAvatarResponseMicrofrontends branch accepts this payload")
             }
         }
     }
 }
 
-internal val UploadProjectAvatarResponseMicrofrontendsOwnedTypes:
-    List<Pair<List<String>, Class<out UploadProjectAvatarResponseMicrofrontends>>> =
-    listOf(
-        listOf("doNotRouteWithMicrofrontendsRouting", "routeObservabilityToThisProject") to
-            UploadProjectAvatarResponseMicrofrontendsVariant1::class.java
-    )
+internal val UploadProjectAvatarResponseMicrofrontendsOwnedTypes: List<Pair<List<String>, Class<out UploadProjectAvatarResponseMicrofrontends>>> = listOf(
+    listOf("doNotRouteWithMicrofrontendsRouting", "routeObservabilityToThisProject") to UploadProjectAvatarResponseMicrofrontendsVariant1::class.java,
+)
 
 data class UploadProjectAvatarResponseTrustedIpsVariant0AddressesItem(
     @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val note: String? = null,
+    val note: String? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UploadProjectAvatarResponseTrustedIpsVariant0(
     val addresses: List<UploadProjectAvatarResponseTrustedIpsVariant0AddressesItem>,
     val deploymentType: UploadProjectAvatarResponseTrustedIpsVariant0DeploymentTypeEnum,
-    val protectionMode: UploadProjectAvatarResponseTrustedIpsVariant0ProtectionModeEnum,
+    val protectionMode: UploadProjectAvatarResponseTrustedIpsVariant0ProtectionModeEnum
 ) : UploadProjectAvatarResponseTrustedIps
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UploadProjectAvatarResponseTrustedIpsVariant1(
     val deploymentType: UploadProjectAvatarResponseTrustedIpsVariant1DeploymentTypeEnum
 ) : UploadProjectAvatarResponseTrustedIps
 
-/** Typed representation of the `UploadProjectAvatarResponseTrustedIps` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = UploadProjectAvatarResponseTrustedIps.Deserializer::class
-)
+/**
+ * Typed representation of the `UploadProjectAvatarResponseTrustedIps` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UploadProjectAvatarResponseTrustedIps.Deserializer::class)
 sealed interface UploadProjectAvatarResponseTrustedIps {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<UploadProjectAvatarResponseTrustedIps>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UploadProjectAvatarResponseTrustedIps>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): UploadProjectAvatarResponseTrustedIps {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                UploadProjectAvatarResponseTrustedIpsOwnedTypes.firstOrNull { (keys, _) ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = UploadProjectAvatarResponseTrustedIpsOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -290,29 +204,16 @@ sealed interface UploadProjectAvatarResponseTrustedIps {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out UploadProjectAvatarResponseTrustedIps>> =
-                listOf(
-                    UploadProjectAvatarResponseTrustedIpsVariant0::class.java,
-                    UploadProjectAvatarResponseTrustedIpsVariant1::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out UploadProjectAvatarResponseTrustedIps>> = listOf(UploadProjectAvatarResponseTrustedIpsVariant0::class.java, UploadProjectAvatarResponseTrustedIpsVariant1::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        UploadProjectAvatarResponseTrustedIps::class.java,
-                        "no UploadProjectAvatarResponseTrustedIps branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, UploadProjectAvatarResponseTrustedIps::class.java, "no UploadProjectAvatarResponseTrustedIps branch accepts this payload")
             }
         }
     }
 }
 
-internal val UploadProjectAvatarResponseTrustedIpsOwnedTypes:
-    List<Pair<List<String>, Class<out UploadProjectAvatarResponseTrustedIps>>> =
-    listOf(
-        listOf("addresses", "protectionMode") to
-            UploadProjectAvatarResponseTrustedIpsVariant0::class.java
-    )
+internal val UploadProjectAvatarResponseTrustedIpsOwnedTypes: List<Pair<List<String>, Class<out UploadProjectAvatarResponseTrustedIps>>> = listOf(
+    listOf("addresses", "protectionMode") to UploadProjectAvatarResponseTrustedIpsVariant0::class.java,
+)

@@ -3,409 +3,177 @@
 
 package dev.octri.showcase.vercel
 
+
 class DomainsRegistrarNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Searches for domain registration availability and pricing for a batch of exact domain names.
-     * Provide between 1 and 200 valid domain names in `domains`; results are returned in input
-     * order and include registration and renewal prices in USD for available domains. This
-     * operation does not require authentication.
+     * Searches for domain registration availability and pricing for a batch of exact domain names. Provide between 1 and 200 valid domain names in `domains`; results are returned in input order and include registration and renewal prices in USD for available domains. This operation does not require authentication.
      *
-     * Start domain research here. Get registration availability and pricing for 1–200 exact domain
-     * names. Returns results in input order, with registration and renewal prices in USD for
-     * available domains. No authentication required.
+     * Start domain research here. Get registration availability and pricing for 1–200 exact domain names. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.
      */
-    fun searchDomains(
-        domains: List<DomainName>,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.DomainsRegistrar.SearchDomainsResponse {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.searchDomains(
-            clientConfig,
-            domains,
-            teamId,
-            options,
-        )
+    fun searchDomains(domains: List<DomainName>, teamId: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.DomainsRegistrar.SearchDomainsResponse {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.searchDomains(clientConfig, domains, teamId, options)
     }
 
     /**
-     * Lists the top-level domains supported for domain registration. Use this operation to discover
-     * which TLDs are available before requesting TLD metadata or checking domain availability. The
-     * response is an array of TLD names.
+     * Lists the top-level domains supported for domain registration. Use this operation to discover which TLDs are available before requesting TLD metadata or checking domain availability. The response is an array of TLD names.
      *
      * Get a list of TLDs supported by Vercel
      */
     fun getSupportedTlds(teamId: String? = null, options: RequestOptions? = null): List<TldName> {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getSupportedTlds(
-            clientConfig,
-            teamId,
-            options,
-        )
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getSupportedTlds(clientConfig, teamId, options)
     }
 
     /**
-     * Retrieves metadata for a specific top-level domain. Use this operation to find the language
-     * codes supported for the TLD and their corresponding language names. The response contains a
-     * map of supported language codes.
+     * Retrieves metadata for a specific top-level domain. Use this operation to find the language codes supported for the TLD and their corresponding language names. The response contains a map of supported language codes.
      *
      * Get the metadata for a specific TLD.
      */
-    fun getTld(
-        tld: TldName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetTldResponse {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getTld(
-            clientConfig,
-            tld,
-            teamId,
-            options,
-        )
+    fun getTld(tld: TldName, teamId: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetTldResponse {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getTld(clientConfig, tld, teamId, options)
     }
 
     /**
-     * Retrieves base price data for a top-level domain (TLD); premium domains may have different
-     * prices. Use `years` to request a registration term, or omit it to use the TLD's minimum term.
-     * For premium-domain pricing, use the endpoint for getting price data for a domain.
+     * Retrieves base price data for a top-level domain (TLD); premium domains may have different prices. Use `years` to request a registration term, or omit it to use the TLD's minimum term. For premium-domain pricing, use the endpoint for getting price data for a domain.
      *
-     * Get price data for a specific TLD. This only reflects base prices for the given TLD. Premium
-     * domains may have different prices. Use the Get price data for a domain endpoint to get the
-     * price data for a specific domain.
+     * Get price data for a specific TLD. This only reflects base prices for the given TLD. Premium domains may have different prices. Use the Get price data for a domain endpoint to get the price data for a specific domain.
      */
-    fun getTldPrice(
-        tld: TldName,
-        years: String? = null,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetTldPriceResponse {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getTldPrice(
-            clientConfig,
-            tld,
-            years,
-            teamId,
-            options,
-        )
+    fun getTldPrice(tld: TldName, years: String? = null, teamId: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetTldPriceResponse {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getTldPrice(clientConfig, tld, years, teamId, options)
     }
 
     /**
-     * Retrieves the availability status for a specific domain. Use `domain` to check whether the
-     * name is available before attempting to purchase it. If it is available, you can purchase it
-     * through the single-domain or multiple-domain purchase endpoint.
+     * Retrieves the availability status for a specific domain. Use `domain` to check whether the name is available before attempting to purchase it. If it is available, you can purchase it through the single-domain or multiple-domain purchase endpoint.
      *
-     * Get availability for a specific domain. If the domain is available, it can be purchased using
-     * the Buy a domain endpoint or the Buy multiple domains endpoint.
+     * Get availability for a specific domain. If the domain is available, it can be purchased using the Buy a domain endpoint or the Buy multiple domains endpoint.
      */
-    fun getDomainAvailability(
-        domain: DomainName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetDomainAvailabilityResponse {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getDomainAvailability(
-            clientConfig,
-            domain,
-            teamId,
-            options,
-        )
+    fun getDomainAvailability(domain: DomainName, teamId: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetDomainAvailabilityResponse {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getDomainAvailability(clientConfig, domain, teamId, options)
     }
 
     /**
-     * Retrieves price data for a specific domain, including purchase, renewal, and transfer prices.
-     * Use `years` to request pricing for a particular term, or omit it to use the minimum term for
-     * the domain's TLD.
+     * Retrieves price data for a specific domain, including purchase, renewal, and transfer prices. Use `years` to request pricing for a particular term, or omit it to use the minimum term for the domain's TLD.
      *
      * Get price data for a specific domain
      */
-    fun getDomainPrice(
-        domain: DomainName,
-        years: String? = null,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetDomainPriceResponse {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getDomainPrice(
-            clientConfig,
-            domain,
-            years,
-            teamId,
-            options,
-        )
+    fun getDomainPrice(domain: DomainName, years: String? = null, teamId: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetDomainPriceResponse {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getDomainPrice(clientConfig, domain, years, teamId, options)
     }
 
     /**
-     * Retrieves price data for multiple domains in one request. Supply `domains` with the names to
-     * price, and optionally set `years` to request a specific term; omitted terms use the minimum
-     * term for each TLD. Use the returned prices to evaluate domains before purchasing them.
+     * Retrieves price data for multiple domains in one request. Supply `domains` with the names to price, and optionally set `years` to request a specific term; omitted terms use the minimum term for each TLD. Use the returned prices to evaluate domains before purchasing them.
      *
      * Get price data for multiple domains in a single request.
      */
-    fun getBulkPrice(
-        domains: List<DomainName>,
-        teamId: String? = null,
-        years: Double? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetBulkPriceResponse {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getBulkPrice(
-            clientConfig,
-            domains,
-            teamId,
-            years,
-            options,
-        )
+    fun getBulkPrice(domains: List<DomainName>, teamId: String? = null, years: Double? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetBulkPriceResponse {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getBulkPrice(clientConfig, domains, teamId, years, options)
     }
 
     /**
-     * Checks the availability of multiple domains in one request. Supply `domains` with the names
-     * to check, up to 50 per request. If domains are available, you can purchase them through the
-     * single-domain or multiple-domain purchase endpoint.
+     * Checks the availability of multiple domains in one request. Supply `domains` with the names to check, up to 50 per request. If domains are available, you can purchase them through the single-domain or multiple-domain purchase endpoint.
      *
-     * Get availability for multiple domains. If the domains are available, they can be purchased
-     * using the Buy a domain endpoint or the Buy multiple domains endpoint.
+     * Get availability for multiple domains. If the domains are available, they can be purchased using the Buy a domain endpoint or the Buy multiple domains endpoint.
      */
-    fun getBulkAvailability(
-        domains: List<DomainName>,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetBulkAvailabilityResponse {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getBulkAvailability(
-            clientConfig,
-            domains,
-            teamId,
-            options,
-        )
+    fun getBulkAvailability(domains: List<DomainName>, teamId: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetBulkAvailabilityResponse {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getBulkAvailability(clientConfig, domains, teamId, options)
     }
 
     /**
-     * Retrieves the contact information schema for a domain's TLD. Use the schema to identify any
-     * TLD-specific contact fields you need to supply when registering a domain. The required fields
-     * can differ between TLDs.
+     * Retrieves the contact information schema for a domain's TLD. Use the schema to identify any TLD-specific contact fields you need to supply when registering a domain. The required fields can differ between TLDs.
      *
-     * Some TLDs require additional contact information. Use this endpoint to get the schema for the
-     * tld-specific contact information for a domain.
+     * Some TLDs require additional contact information. Use this endpoint to get the schema for the tld-specific contact information for a domain.
      */
-    fun getContactInfoSchema(
-        domain: DomainName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): Map<String, Any> {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getContactInfoSchema(
-            clientConfig,
-            domain,
-            teamId,
-            options,
-        )
+    fun getContactInfoSchema(domain: DomainName, teamId: String? = null, options: RequestOptions? = null): Map<String, Any> {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getContactInfoSchema(clientConfig, domain, teamId, options)
     }
 
     /**
-     * Retrieves the authorization code for a domain registered with the domain registrar. Use this
-     * code when transferring the domain from the registrar to another registrar. The domain must be
-     * eligible for transfer out before its code can be retrieved.
+     * Retrieves the authorization code for a domain registered with the domain registrar. Use this code when transferring the domain from the registrar to another registrar. The domain must be eligible for transfer out before its code can be retrieved.
      *
-     * Get the auth code for a domain. This is required to transfer a domain from Vercel to another
-     * registrar.
+     * Get the auth code for a domain. This is required to transfer a domain from Vercel to another registrar.
      */
-    fun getDomainAuthCode(
-        domain: DomainName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetDomainAuthCodeResponse {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getDomainAuthCode(
-            clientConfig,
-            domain,
-            teamId,
-            options,
-        )
+    fun getDomainAuthCode(domain: DomainName, teamId: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetDomainAuthCodeResponse {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getDomainAuthCode(clientConfig, domain, teamId, options)
     }
 
     /**
-     * Purchases a domain using the supplied registration term, renewal preference, expected price,
-     * and contact information. Provide `contactInformation` with the required registrant details
-     * and use the TLD contact schema to determine whether additional fields are needed. For a
-     * punycode domain, include `languageCode`.
+     * Purchases a domain using the supplied registration term, renewal preference, expected price, and contact information. Provide `contactInformation` with the required registrant details and use the TLD contact schema to determine whether additional fields are needed. For a punycode domain, include `languageCode`.
      *
      * Buy a domain
      */
-    fun buySingleDomain(
-        request: dev.octri.showcase.vercel.methods.DomainsRegistrar.BuySingleDomainRequest,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.DomainsRegistrar.BuySingleDomainResponse {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.buySingleDomain(
-            clientConfig,
-            request,
-            options,
-        )
+    fun buySingleDomain(request: dev.octri.showcase.vercel.methods.DomainsRegistrar.BuySingleDomainRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.DomainsRegistrar.BuySingleDomainResponse {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.buySingleDomain(clientConfig, request, options)
     }
 
     /**
-     * Purchases multiple domains in one order using shared contact information. Supply `domains`
-     * with each domain's renewal preference, term, and expected price, and provide the registrant
-     * details in `contactInformation`. Include `languageCode` for any punycode domain.
+     * Purchases multiple domains in one order using shared contact information. Supply `domains` with each domain's renewal preference, term, and expected price, and provide the registrant details in `contactInformation`. Include `languageCode` for any punycode domain.
      *
      * Buy multiple domains at once
      */
-    fun buyDomains(
-        domains: List<dev.octri.showcase.vercel.methods.DomainsRegistrar.BuyDomainsDomainsItem>,
-        contactInformation:
-            dev.octri.showcase.vercel.methods.DomainsRegistrar.BuyDomainsContactInformation,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.DomainsRegistrar.BuyDomainsResponse {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.buyDomains(
-            clientConfig,
-            domains,
-            contactInformation,
-            teamId,
-            options,
-        )
+    fun buyDomains(domains: List<dev.octri.showcase.vercel.methods.DomainsRegistrar.BuyDomainsDomainsItem>, contactInformation: dev.octri.showcase.vercel.methods.DomainsRegistrar.BuyDomainsContactInformation, teamId: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.DomainsRegistrar.BuyDomainsResponse {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.buyDomains(clientConfig, domains, contactInformation, teamId, options)
     }
 
     /**
-     * Transfers a domain to the account from another registrar. Provide the losing registrar's
-     * `authCode`, the transfer term in `years`, the `expectedPrice`, and registrant
-     * `contactInformation`; set `autoRenew` to control future renewals. A 200 response includes the
-     * transfer order's `orderId` and links for related actions.
+     * Transfers a domain to the account from another registrar. Provide the losing registrar's `authCode`, the transfer term in `years`, the `expectedPrice`, and registrant `contactInformation`; set `autoRenew` to control future renewals. A 200 response includes the transfer order's `orderId` and links for related actions.
      *
      * Transfer a domain in from another registrar
      */
-    fun transferInDomain(
-        request: dev.octri.showcase.vercel.methods.DomainsRegistrar.TransferInDomainRequest,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.DomainsRegistrar.TransferInDomainResponse {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.transferInDomain(
-            clientConfig,
-            request,
-            options,
-        )
+    fun transferInDomain(request: dev.octri.showcase.vercel.methods.DomainsRegistrar.TransferInDomainRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.DomainsRegistrar.TransferInDomainResponse {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.transferInDomain(clientConfig, request, options)
     }
 
     /**
-     * Retrieves the transfer status for a domain. Use the status to check the progress or outcome
-     * of an incoming domain transfer. The response reports the transfer's current state.
+     * Retrieves the transfer status for a domain. Use the status to check the progress or outcome of an incoming domain transfer. The response reports the transfer's current state.
      *
      * Get the transfer status for a domain
      */
-    fun getDomainTransferIn(
-        domain: DomainName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetDomainTransferInResponse {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getDomainTransferIn(
-            clientConfig,
-            domain,
-            teamId,
-            options,
-        )
+    fun getDomainTransferIn(domain: DomainName, teamId: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetDomainTransferInResponse {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getDomainTransferIn(clientConfig, domain, teamId, options)
     }
 
     /**
-     * Renews a domain registered with Vercel for the specified number of years. Provide `years` and
-     * `expectedPrice`, and include `contactInformation` when updating the registrant details as
-     * part of the renewal. A 200 response includes the renewal order's `orderId` and links for
-     * related actions.
+     * Renews a domain registered with Vercel for the specified number of years. Provide `years` and `expectedPrice`, and include `contactInformation` when updating the registrant details as part of the renewal. A 200 response includes the renewal order's `orderId` and links for related actions.
      *
      * Renew a domain
      */
-    fun renewDomain(
-        domain: DomainName,
-        years: Double,
-        expectedPrice: Double,
-        teamId: String? = null,
-        contactInformation:
-            dev.octri.showcase.vercel.methods.DomainsRegistrar.RenewDomainContactInformation? =
-            null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.DomainsRegistrar.RenewDomainResponse {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.renewDomain(
-            clientConfig,
-            domain,
-            years,
-            expectedPrice,
-            teamId,
-            contactInformation,
-            options,
-        )
+    fun renewDomain(domain: DomainName, years: Double, expectedPrice: Double, teamId: String? = null, contactInformation: dev.octri.showcase.vercel.methods.DomainsRegistrar.RenewDomainContactInformation? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.DomainsRegistrar.RenewDomainResponse {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.renewDomain(clientConfig, domain, years, expectedPrice, teamId, contactInformation, options)
     }
 
     /**
-     * Updates whether a domain is set to renew automatically. Set `autoRenew` to `true` or `false`
-     * to enable or disable automatic renewal for the specified domain. A 204 response confirms the
-     * setting was updated and contains no response body.
+     * Updates whether a domain is set to renew automatically. Set `autoRenew` to `true` or `false` to enable or disable automatic renewal for the specified domain. A 204 response confirms the setting was updated and contains no response body.
      *
      * Update the auto-renew setting for a domain
      */
-    fun updateDomainAutoRenew(
-        domain: DomainName,
-        autoRenew: Boolean,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): Unit {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.updateDomainAutoRenew(
-            clientConfig,
-            domain,
-            autoRenew,
-            teamId,
-            options,
-        )
+    fun updateDomainAutoRenew(domain: DomainName, autoRenew: Boolean, teamId: String? = null, options: RequestOptions? = null): Unit {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.updateDomainAutoRenew(clientConfig, domain, autoRenew, teamId, options)
     }
 
     /**
-     * Updates the nameservers assigned to a domain. Provide `nameservers` as an array of valid
-     * nameserver values, or pass an empty array to use Vercel's default nameservers. A 204 response
-     * confirms the change and contains no response body.
+     * Updates the nameservers assigned to a domain. Provide `nameservers` as an array of valid nameserver values, or pass an empty array to use Vercel's default nameservers. A 204 response confirms the change and contains no response body.
      *
      * Update the nameservers for a domain. Pass an empty array to use Vercel's default nameservers.
      */
-    fun updateDomainNameservers(
-        domain: DomainName,
-        nameservers: List<Nameserver>,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): Unit {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.updateDomainNameservers(
-            clientConfig,
-            domain,
-            nameservers,
-            teamId,
-            options,
-        )
+    fun updateDomainNameservers(domain: DomainName, nameservers: List<Nameserver>, teamId: String? = null, options: RequestOptions? = null): Unit {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.updateDomainNameservers(clientConfig, domain, nameservers, teamId, options)
     }
 
     /**
-     * Retrieves the registrant contact verification status for a domain. Use this after purchasing
-     * a domain to check whether its registrant contact has been verified. A 400 is returned if the
-     * domain was bought less than 30 minutes before the request.
+     * Retrieves the registrant contact verification status for a domain. Use this after purchasing a domain to check whether its registrant contact has been verified. A 400 is returned if the domain was bought less than 30 minutes before the request.
      *
-     * Get the registrant contact verification status for a domain. Use this after purchasing a
-     * domain to determine whether the contact has been verified. Note that a bought_too_recently
-     * error will be returned if the domain was bought less than 30 minutes before the request.
+     * Get the registrant contact verification status for a domain. Use this after purchasing a domain to determine whether the contact has been verified. Note that a bought_too_recently error will be returned if the domain was bought less than 30 minutes before the request.
      */
-    fun getDomainContactVerification(
-        domain: DomainName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): GetDomainContactVerificationResponse {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getDomainContactVerification(
-            clientConfig,
-            domain,
-            teamId,
-            options,
-        )
+    fun getDomainContactVerification(domain: DomainName, teamId: String? = null, options: RequestOptions? = null): GetDomainContactVerificationResponse {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getDomainContactVerification(clientConfig, domain, teamId, options)
     }
 
     /**
-     * Retrieves information about a domain order using its order ID. Use the response to inspect
-     * the domains included in the order and its current status. The status is one of `draft`,
-     * `purchasing`, `completed`, or `failed`.
+     * Retrieves information about a domain order using its order ID. Use the response to inspect the domains included in the order and its current status. The status is one of `draft`, `purchasing`, `completed`, or `failed`.
      *
      * Get information about a domain order by its ID
      */
-    fun getOrder(
-        orderId: OrderId,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetOrderResponse {
-        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getOrder(
-            clientConfig,
-            orderId,
-            teamId,
-            options,
-        )
+    fun getOrder(orderId: OrderId, teamId: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.DomainsRegistrar.GetOrderResponse {
+        return dev.octri.showcase.vercel.methods.DomainsRegistrar.getOrder(clientConfig, orderId, teamId, options)
     }
+
 }

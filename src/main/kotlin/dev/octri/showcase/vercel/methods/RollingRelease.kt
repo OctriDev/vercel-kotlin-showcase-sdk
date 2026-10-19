@@ -49,996 +49,1184 @@ import dev.octri.showcase.vercel.UpdateRollingReleaseConfigResponse
 
 object RollingRelease {
 
-    /** The checks to evaluate. An empty array means nothing is evaluated. */
-    data class GetRollingReleaseConfigResponseRollingReleaseGateChecksItem(
-        /** The metric this check evaluates. */
-        val type: GetRollingReleaseConfigResponseRollingReleaseGateChecksItemTypeEnum,
-        /**
-         * Request paths to ignore entirely — dropped from both the numerator (errors) and the
-         * denominator (total requests). Matched exactly against the request path with any query
-         * string removed; no prefix or glob matching. Defaults to `[]` when omitted.
-         */
-        val excludePaths: List<String>? = null,
-        /**
-         * Response status codes to ignore entirely — dropped from both the numerator (errors) and
-         * the denominator (total requests). Defaults to `[]` when omitted.
-         */
-        val excludeStatusCodes: List<Double>? = null,
-        /**
-         * Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so
-         * the check never reads a window that is still filling. Defaults to `30` when omitted.
-         */
-        val ingestWatermarkSeconds: Double? = null,
-        /**
-         * A run fails only when the canary's error rate is higher and its one-sided Fisher p-value
-         * is below this significance level. Defaults to `0.05`; lower values require stronger
-         * evidence.
-         */
-        val significanceLevel: Double? = null,
-    )
+
+/**
+ * The checks to evaluate. An empty array means nothing is evaluated.
+ */
+data class GetRollingReleaseConfigResponseRollingReleaseGateChecksItem(
+    /**
+     * The metric this check evaluates.
+     */
+    val type: GetRollingReleaseConfigResponseRollingReleaseGateChecksItemTypeEnum,
+    /**
+     * Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.
+     */
+    val excludePaths: List<String>? = null,
+    /**
+     * Response status codes to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.
+     */
+    val excludeStatusCodes: List<Double>? = null,
+    /**
+     * Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.
+     */
+    val ingestWatermarkSeconds: Double? = null,
+    /**
+     * A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.
+     */
+    val significanceLevel: Double? = null
+)
+
+/**
+ * Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
+ */
+data class GetRollingReleaseConfigResponseRollingReleaseGate(
+    /**
+     * What to do when the gate trips: pause the rollout, or roll it back.
+     */
+    val action: GetRollingReleaseConfigResponseRollingReleaseGateActionEnum,
+    /**
+     * The checks to evaluate. An empty array means nothing is evaluated.
+     */
+    val checks: List<GetRollingReleaseConfigResponseRollingReleaseGateChecksItem>,
+    /**
+     * When true, a tripped gate is only reported — {@link action} is not taken.
+     */
+    val dryRun: Boolean,
+    /**
+     * Whether automated gating is enabled for this project's rollouts.
+     */
+    val enabled: Boolean,
+    /**
+     * How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3` when omitted.
+     */
+    val failureThreshold: Double? = null,
+    /**
+     * How many of the most recent evaluations {@link failureThreshold} is counted against. Defaults to `5` when omitted.
+     */
+    val windowSize: Double? = null
+)
+
+/**
+ * An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
+ */
+data class GetRollingReleaseConfigResponseRollingReleaseStagesItem(
+    /**
+     * The percentage of traffic to serve to the canary deployment (0-100)
+     */
+    val targetPercentage: Double,
+    /**
+     * Duration in minutes for automatic advancement to the next stage
+     */
+    val duration: Double? = null,
+    /**
+     * Whether to linearly shift traffic over the duration of this stage
+     */
+    val linearShift: Boolean? = null,
+    /**
+     * Whether or not this stage requires manual approval to proceed
+     */
+    val requireApproval: Boolean? = null
+)
+
+/**
+ * Project-level rolling release configuration that defines how deployments should be gradually rolled out
+ */
+data class GetRollingReleaseConfigResponseRollingRelease(
+    /**
+     * The environment that the release targets, currently only supports production. Adding in case we want to configure with alias groups or custom environments.
+     */
+    val target: String,
+    /**
+     * Whether the request served by a canary deployment should return a header indicating a canary was served. Defaults to `false` when omitted.
+     */
+    val canaryResponseHeader: Boolean? = null,
+    /**
+     * Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
+     */
+    val gate: GetRollingReleaseConfigResponseRollingReleaseGate? = null,
+    /**
+     * An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.
+     */
+    val stages: List<GetRollingReleaseConfigResponseRollingReleaseStagesItem>? = null
+)
+
+data class GetRollingReleaseConfigResponse(
+    /**
+     * Project-level rolling release configuration that defines how deployments should be gradually rolled out
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("rollingRelease", required = true) val rollingRelease: GetRollingReleaseConfigResponseRollingRelease?
+)
+
+data class DeleteRollingReleaseConfigResponse(
+    @com.fasterxml.jackson.annotation.JsonProperty("rollingRelease", required = true) val rollingRelease: Any?
+)
+
+/**
+ * The currently active stage, null if the rollout is aborted
+ */
+data class GetRollingReleaseResponseRollingReleaseActiveStage(
+    /**
+     * Duration in seconds for automatic advancement, null for manual stages or the final stage
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true) val duration: Double?,
+    /**
+     * The zero-based index of the stage
+     */
+    val index: Double,
+    /**
+     * Whether or not this stage is the final stage (targetPercentage === 100)
+     */
+    val isFinalStage: Boolean,
+    /**
+     * Whether or not this stage requires manual approval to proceed
+     */
+    val requireApproval: Boolean,
+    /**
+     * The percentage of traffic to serve to the canary deployment (0-100)
+     */
+    val targetPercentage: Double,
+    /**
+     * Whether to linearly shift traffic over the duration of this stage
+     */
+    val linearShift: Boolean? = null
+)
+
+
+
+
+
+
+
+
+
+/**
+ * The canary deployment being rolled out
+ */
+data class GetRollingReleaseResponseRollingReleaseCanaryDeployment(
+    /**
+     * A number containing the date when the deployment was created in milliseconds
+     */
+    val createdAt: Double,
+    /**
+     * A string holding the unique ID of the deployment
+     */
+    val id: String,
+    /**
+     * The name of the project associated with the deployment at the time that the deployment was created
+     */
+    val name: String,
+    /**
+     * The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+     */
+    val readyState: GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum,
+    /**
+     * A string with the unique URL of the deployment
+     */
+    val url: String,
+    val readyStateAt: Double? = null,
+    /**
+     * Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+     */
+    val source: GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum? = null,
+    /**
+     * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+     */
+    val target: GetRollingReleaseResponseRollingReleaseCanaryDeploymentTargetEnum? = null
+)
+
+
+
+
+
+
+
+/**
+ * The current deployment receiving production traffic
+ */
+data class GetRollingReleaseResponseRollingReleaseCurrentDeployment(
+    /**
+     * A number containing the date when the deployment was created in milliseconds
+     */
+    val createdAt: Double,
+    /**
+     * A string holding the unique ID of the deployment
+     */
+    val id: String,
+    /**
+     * The name of the project associated with the deployment at the time that the deployment was created
+     */
+    val name: String,
+    /**
+     * The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+     */
+    val readyState: GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum,
+    /**
+     * A string with the unique URL of the deployment
+     */
+    val url: String,
+    val readyStateAt: Double? = null,
+    /**
+     * Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+     */
+    val source: GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum? = null,
+    /**
+     * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+     */
+    val target: GetRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum? = null
+)
+
+/**
+ * The next stage to be activated, null if not in ACTIVE state
+ */
+data class GetRollingReleaseResponseRollingReleaseNextStage(
+    /**
+     * Duration in seconds for automatic advancement, null for manual stages or the final stage
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true) val duration: Double?,
+    /**
+     * The zero-based index of the stage
+     */
+    val index: Double,
+    /**
+     * Whether or not this stage is the final stage (targetPercentage === 100)
+     */
+    val isFinalStage: Boolean,
+    /**
+     * Whether or not this stage requires manual approval to proceed
+     */
+    val requireApproval: Boolean,
+    /**
+     * The percentage of traffic to serve to the canary deployment (0-100)
+     */
+    val targetPercentage: Double,
+    /**
+     * Whether to linearly shift traffic over the duration of this stage
+     */
+    val linearShift: Boolean? = null
+)
+
+/**
+ * All stages configured for this rolling release
+ */
+data class GetRollingReleaseResponseRollingReleaseStagesItem(
+    /**
+     * Duration in seconds for automatic advancement, null for manual stages or the final stage
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true) val duration: Double?,
+    /**
+     * The zero-based index of the stage
+     */
+    val index: Double,
+    /**
+     * Whether or not this stage is the final stage (targetPercentage === 100)
+     */
+    val isFinalStage: Boolean,
+    /**
+     * Whether or not this stage requires manual approval to proceed
+     */
+    val requireApproval: Boolean,
+    /**
+     * The percentage of traffic to serve to the canary deployment (0-100)
+     */
+    val targetPercentage: Double,
+    /**
+     * Whether to linearly shift traffic over the duration of this stage
+     */
+    val linearShift: Boolean? = null
+)
+
+
+
+
+
+/**
+ * Rolling release information including configuration and document details, or null if no rolling release exists
+ */
+data class GetRollingReleaseResponseRollingRelease(
+    /**
+     * The currently active stage, null if the rollout is aborted
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("activeStage", required = true) val activeStage: GetRollingReleaseResponseRollingReleaseActiveStage?,
+    /**
+     * The advancement type of the rolling release
+     */
+    val advancementType: GetRollingReleaseResponseRollingReleaseAdvancementTypeEnum,
+    /**
+     * The canary deployment being rolled out
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("canaryDeployment", required = true) val canaryDeployment: GetRollingReleaseResponseRollingReleaseCanaryDeployment?,
+    /**
+     * The current deployment receiving production traffic
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("currentDeployment", required = true) val currentDeployment: GetRollingReleaseResponseRollingReleaseCurrentDeployment?,
+    /**
+     * The next stage to be activated, null if not in ACTIVE state
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("nextStage", required = true) val nextStage: GetRollingReleaseResponseRollingReleaseNextStage?,
+    /**
+     * The ID of a deployment queued for the next rolling release
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("queuedDeploymentId", required = true) val queuedDeploymentId: String?,
+    /**
+     * All stages configured for this rolling release
+     */
+    val stages: List<GetRollingReleaseResponseRollingReleaseStagesItem>,
+    /**
+     * Unix timestamp in milliseconds when the rolling release started
+     */
+    val startedAt: Double,
+    /**
+     * The current state of the rolling release
+     */
+    val state: GetRollingReleaseResponseRollingReleaseStateEnum,
+    /**
+     * When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("substate", required = true) val substate: GetRollingReleaseResponseRollingReleaseSubstateEnum?,
+    /**
+     * Unix timestamp in milliseconds when the rolling release was last updated
+     */
+    val updatedAt: Double,
+    /**
+     * When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.
+     */
+    val currentCanaryPercentage: Double? = null
+)
+
+/**
+ * The response format for rolling release endpoints that return rolling release information
+ */
+data class GetRollingReleaseResponse(
+    /**
+     * Rolling release information including configuration and document details, or null if no rolling release exists
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("rollingRelease", required = true) val rollingRelease: GetRollingReleaseResponseRollingRelease?
+)
+
+/**
+ * The currently active stage, null if the rollout is aborted
+ */
+data class ApproveRollingReleaseStageResponseRollingReleaseActiveStage(
+    /**
+     * Duration in seconds for automatic advancement, null for manual stages or the final stage
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true) val duration: Double?,
+    /**
+     * The zero-based index of the stage
+     */
+    val index: Double,
+    /**
+     * Whether or not this stage is the final stage (targetPercentage === 100)
+     */
+    val isFinalStage: Boolean,
+    /**
+     * Whether or not this stage requires manual approval to proceed
+     */
+    val requireApproval: Boolean,
+    /**
+     * The percentage of traffic to serve to the canary deployment (0-100)
+     */
+    val targetPercentage: Double,
+    /**
+     * Whether to linearly shift traffic over the duration of this stage
+     */
+    val linearShift: Boolean? = null
+)
+
+
+
+
+
+
+
+
+
+/**
+ * The canary deployment being rolled out
+ */
+data class ApproveRollingReleaseStageResponseRollingReleaseCanaryDeployment(
+    /**
+     * A number containing the date when the deployment was created in milliseconds
+     */
+    val createdAt: Double,
+    /**
+     * A string holding the unique ID of the deployment
+     */
+    val id: String,
+    /**
+     * The name of the project associated with the deployment at the time that the deployment was created
+     */
+    val name: String,
+    /**
+     * The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+     */
+    val readyState: ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca,
+    /**
+     * A string with the unique URL of the deployment
+     */
+    val url: String,
+    val readyStateAt: Double? = null,
+    /**
+     * Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+     */
+    val source: ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymX3eeebccfe6? = null,
+    /**
+     * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+     */
+    val target: ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXb4daff7160? = null
+)
+
+
+
+
+
+
+
+/**
+ * The current deployment receiving production traffic
+ */
+data class ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployment(
+    /**
+     * A number containing the date when the deployment was created in milliseconds
+     */
+    val createdAt: Double,
+    /**
+     * A string holding the unique ID of the deployment
+     */
+    val id: String,
+    /**
+     * The name of the project associated with the deployment at the time that the deployment was created
+     */
+    val name: String,
+    /**
+     * The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+     */
+    val readyState: ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployXe3698b527c,
+    /**
+     * A string with the unique URL of the deployment
+     */
+    val url: String,
+    val readyStateAt: Double? = null,
+    /**
+     * Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+     */
+    val source: ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployX4fb53b847c? = null,
+    /**
+     * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+     */
+    val target: ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployXcdce005fa9? = null
+)
+
+/**
+ * The next stage to be activated, null if not in ACTIVE state
+ */
+data class ApproveRollingReleaseStageResponseRollingReleaseNextStage(
+    /**
+     * Duration in seconds for automatic advancement, null for manual stages or the final stage
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true) val duration: Double?,
+    /**
+     * The zero-based index of the stage
+     */
+    val index: Double,
+    /**
+     * Whether or not this stage is the final stage (targetPercentage === 100)
+     */
+    val isFinalStage: Boolean,
+    /**
+     * Whether or not this stage requires manual approval to proceed
+     */
+    val requireApproval: Boolean,
+    /**
+     * The percentage of traffic to serve to the canary deployment (0-100)
+     */
+    val targetPercentage: Double,
+    /**
+     * Whether to linearly shift traffic over the duration of this stage
+     */
+    val linearShift: Boolean? = null
+)
+
+/**
+ * All stages configured for this rolling release
+ */
+data class ApproveRollingReleaseStageResponseRollingReleaseStagesItem(
+    /**
+     * Duration in seconds for automatic advancement, null for manual stages or the final stage
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true) val duration: Double?,
+    /**
+     * The zero-based index of the stage
+     */
+    val index: Double,
+    /**
+     * Whether or not this stage is the final stage (targetPercentage === 100)
+     */
+    val isFinalStage: Boolean,
+    /**
+     * Whether or not this stage requires manual approval to proceed
+     */
+    val requireApproval: Boolean,
+    /**
+     * The percentage of traffic to serve to the canary deployment (0-100)
+     */
+    val targetPercentage: Double,
+    /**
+     * Whether to linearly shift traffic over the duration of this stage
+     */
+    val linearShift: Boolean? = null
+)
+
+
+
+
+
+/**
+ * Rolling release information including configuration and document details, or null if no rolling release exists
+ */
+data class ApproveRollingReleaseStageResponseRollingRelease(
+    /**
+     * The currently active stage, null if the rollout is aborted
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("activeStage", required = true) val activeStage: ApproveRollingReleaseStageResponseRollingReleaseActiveStage?,
+    /**
+     * The advancement type of the rolling release
+     */
+    val advancementType: ApproveRollingReleaseStageResponseRollingReleaseAdvancementTypeEnum,
+    /**
+     * The canary deployment being rolled out
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("canaryDeployment", required = true) val canaryDeployment: ApproveRollingReleaseStageResponseRollingReleaseCanaryDeployment?,
+    /**
+     * The current deployment receiving production traffic
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("currentDeployment", required = true) val currentDeployment: ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployment?,
+    /**
+     * The next stage to be activated, null if not in ACTIVE state
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("nextStage", required = true) val nextStage: ApproveRollingReleaseStageResponseRollingReleaseNextStage?,
+    /**
+     * The ID of a deployment queued for the next rolling release
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("queuedDeploymentId", required = true) val queuedDeploymentId: String?,
+    /**
+     * All stages configured for this rolling release
+     */
+    val stages: List<ApproveRollingReleaseStageResponseRollingReleaseStagesItem>,
+    /**
+     * Unix timestamp in milliseconds when the rolling release started
+     */
+    val startedAt: Double,
+    /**
+     * The current state of the rolling release
+     */
+    val state: ApproveRollingReleaseStageResponseRollingReleaseStateEnum,
+    /**
+     * When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("substate", required = true) val substate: ApproveRollingReleaseStageResponseRollingReleaseSubstateEnum?,
+    /**
+     * Unix timestamp in milliseconds when the rolling release was last updated
+     */
+    val updatedAt: Double,
+    /**
+     * When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.
+     */
+    val currentCanaryPercentage: Double? = null
+)
+
+/**
+ * The response format for rolling release endpoints that return rolling release information
+ */
+data class ApproveRollingReleaseStageResponse(
+    /**
+     * Rolling release information including configuration and document details, or null if no rolling release exists
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("rollingRelease", required = true) val rollingRelease: ApproveRollingReleaseStageResponseRollingRelease?
+)
+
+/**
+ * The currently active stage, null if the rollout is aborted
+ */
+data class StartRollingReleaseResponseRollingReleaseActiveStage(
+    /**
+     * Duration in seconds for automatic advancement, null for manual stages or the final stage
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true) val duration: Double?,
+    /**
+     * The zero-based index of the stage
+     */
+    val index: Double,
+    /**
+     * Whether or not this stage is the final stage (targetPercentage === 100)
+     */
+    val isFinalStage: Boolean,
+    /**
+     * Whether or not this stage requires manual approval to proceed
+     */
+    val requireApproval: Boolean,
+    /**
+     * The percentage of traffic to serve to the canary deployment (0-100)
+     */
+    val targetPercentage: Double,
+    /**
+     * Whether to linearly shift traffic over the duration of this stage
+     */
+    val linearShift: Boolean? = null
+)
+
+
+
+
+
+
+
+
+
+/**
+ * The canary deployment being rolled out
+ */
+data class StartRollingReleaseResponseRollingReleaseCanaryDeployment(
+    /**
+     * A number containing the date when the deployment was created in milliseconds
+     */
+    val createdAt: Double,
+    /**
+     * A string holding the unique ID of the deployment
+     */
+    val id: String,
+    /**
+     * The name of the project associated with the deployment at the time that the deployment was created
+     */
+    val name: String,
+    /**
+     * The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+     */
+    val readyState: StartRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum,
+    /**
+     * A string with the unique URL of the deployment
+     */
+    val url: String,
+    val readyStateAt: Double? = null,
+    /**
+     * Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+     */
+    val source: StartRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum? = null,
+    /**
+     * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+     */
+    val target: StartRollingReleaseResponseRollingReleaseCanaryDeploymentTargetEnum? = null
+)
+
+
+
+
+
+
+
+/**
+ * The current deployment receiving production traffic
+ */
+data class StartRollingReleaseResponseRollingReleaseCurrentDeployment(
+    /**
+     * A number containing the date when the deployment was created in milliseconds
+     */
+    val createdAt: Double,
+    /**
+     * A string holding the unique ID of the deployment
+     */
+    val id: String,
+    /**
+     * The name of the project associated with the deployment at the time that the deployment was created
+     */
+    val name: String,
+    /**
+     * The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+     */
+    val readyState: StartRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum,
+    /**
+     * A string with the unique URL of the deployment
+     */
+    val url: String,
+    val readyStateAt: Double? = null,
+    /**
+     * Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+     */
+    val source: StartRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum? = null,
+    /**
+     * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+     */
+    val target: StartRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum? = null
+)
+
+/**
+ * The next stage to be activated, null if not in ACTIVE state
+ */
+data class StartRollingReleaseResponseRollingReleaseNextStage(
+    /**
+     * Duration in seconds for automatic advancement, null for manual stages or the final stage
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true) val duration: Double?,
+    /**
+     * The zero-based index of the stage
+     */
+    val index: Double,
+    /**
+     * Whether or not this stage is the final stage (targetPercentage === 100)
+     */
+    val isFinalStage: Boolean,
+    /**
+     * Whether or not this stage requires manual approval to proceed
+     */
+    val requireApproval: Boolean,
+    /**
+     * The percentage of traffic to serve to the canary deployment (0-100)
+     */
+    val targetPercentage: Double,
+    /**
+     * Whether to linearly shift traffic over the duration of this stage
+     */
+    val linearShift: Boolean? = null
+)
+
+/**
+ * All stages configured for this rolling release
+ */
+data class StartRollingReleaseResponseRollingReleaseStagesItem(
+    /**
+     * Duration in seconds for automatic advancement, null for manual stages or the final stage
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true) val duration: Double?,
+    /**
+     * The zero-based index of the stage
+     */
+    val index: Double,
+    /**
+     * Whether or not this stage is the final stage (targetPercentage === 100)
+     */
+    val isFinalStage: Boolean,
+    /**
+     * Whether or not this stage requires manual approval to proceed
+     */
+    val requireApproval: Boolean,
+    /**
+     * The percentage of traffic to serve to the canary deployment (0-100)
+     */
+    val targetPercentage: Double,
+    /**
+     * Whether to linearly shift traffic over the duration of this stage
+     */
+    val linearShift: Boolean? = null
+)
+
+
+
+
+
+/**
+ * Rolling release information including configuration and document details, or null if no rolling release exists
+ */
+data class StartRollingReleaseResponseRollingRelease(
+    /**
+     * The currently active stage, null if the rollout is aborted
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("activeStage", required = true) val activeStage: StartRollingReleaseResponseRollingReleaseActiveStage?,
+    /**
+     * The advancement type of the rolling release
+     */
+    val advancementType: StartRollingReleaseResponseRollingReleaseAdvancementTypeEnum,
+    /**
+     * The canary deployment being rolled out
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("canaryDeployment", required = true) val canaryDeployment: StartRollingReleaseResponseRollingReleaseCanaryDeployment?,
+    /**
+     * The current deployment receiving production traffic
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("currentDeployment", required = true) val currentDeployment: StartRollingReleaseResponseRollingReleaseCurrentDeployment?,
+    /**
+     * The next stage to be activated, null if not in ACTIVE state
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("nextStage", required = true) val nextStage: StartRollingReleaseResponseRollingReleaseNextStage?,
+    /**
+     * The ID of a deployment queued for the next rolling release
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("queuedDeploymentId", required = true) val queuedDeploymentId: String?,
+    /**
+     * All stages configured for this rolling release
+     */
+    val stages: List<StartRollingReleaseResponseRollingReleaseStagesItem>,
+    /**
+     * Unix timestamp in milliseconds when the rolling release started
+     */
+    val startedAt: Double,
+    /**
+     * The current state of the rolling release
+     */
+    val state: StartRollingReleaseResponseRollingReleaseStateEnum,
+    /**
+     * When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("substate", required = true) val substate: StartRollingReleaseResponseRollingReleaseSubstateEnum?,
+    /**
+     * Unix timestamp in milliseconds when the rolling release was last updated
+     */
+    val updatedAt: Double,
+    /**
+     * When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.
+     */
+    val currentCanaryPercentage: Double? = null
+)
+
+/**
+ * The response format for rolling release endpoints that return rolling release information
+ */
+data class StartRollingReleaseResponse(
+    /**
+     * Rolling release information including configuration and document details, or null if no rolling release exists
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("rollingRelease", required = true) val rollingRelease: StartRollingReleaseResponseRollingRelease?
+)
+
+/**
+ * The currently active stage, null if the rollout is aborted
+ */
+data class CompleteRollingReleaseResponseRollingReleaseActiveStage(
+    /**
+     * Duration in seconds for automatic advancement, null for manual stages or the final stage
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true) val duration: Double?,
+    /**
+     * The zero-based index of the stage
+     */
+    val index: Double,
+    /**
+     * Whether or not this stage is the final stage (targetPercentage === 100)
+     */
+    val isFinalStage: Boolean,
+    /**
+     * Whether or not this stage requires manual approval to proceed
+     */
+    val requireApproval: Boolean,
+    /**
+     * The percentage of traffic to serve to the canary deployment (0-100)
+     */
+    val targetPercentage: Double,
+    /**
+     * Whether to linearly shift traffic over the duration of this stage
+     */
+    val linearShift: Boolean? = null
+)
+
+
+
+
+
+
+
+
+
+/**
+ * The canary deployment being rolled out
+ */
+data class CompleteRollingReleaseResponseRollingReleaseCanaryDeployment(
+    /**
+     * A number containing the date when the deployment was created in milliseconds
+     */
+    val createdAt: Double,
+    /**
+     * A string holding the unique ID of the deployment
+     */
+    val id: String,
+    /**
+     * The name of the project associated with the deployment at the time that the deployment was created
+     */
+    val name: String,
+    /**
+     * The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+     */
+    val readyState: CompleteRollingReleaseResponseRollingReleaseCanaryDeploymentRX8b236e1ff2,
+    /**
+     * A string with the unique URL of the deployment
+     */
+    val url: String,
+    val readyStateAt: Double? = null,
+    /**
+     * Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+     */
+    val source: CompleteRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum? = null,
+    /**
+     * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+     */
+    val target: CompleteRollingReleaseResponseRollingReleaseCanaryDeploymentTargetEnum? = null
+)
+
+
+
+
+
+
+
+/**
+ * The current deployment receiving production traffic
+ */
+data class CompleteRollingReleaseResponseRollingReleaseCurrentDeployment(
+    /**
+     * A number containing the date when the deployment was created in milliseconds
+     */
+    val createdAt: Double,
+    /**
+     * A string holding the unique ID of the deployment
+     */
+    val id: String,
+    /**
+     * The name of the project associated with the deployment at the time that the deployment was created
+     */
+    val name: String,
+    /**
+     * The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+     */
+    val readyState: CompleteRollingReleaseResponseRollingReleaseCurrentDeploymentXa80ed35a08,
+    /**
+     * A string with the unique URL of the deployment
+     */
+    val url: String,
+    val readyStateAt: Double? = null,
+    /**
+     * Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+     */
+    val source: CompleteRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum? = null,
+    /**
+     * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+     */
+    val target: CompleteRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum? = null
+)
+
+/**
+ * The next stage to be activated, null if not in ACTIVE state
+ */
+data class CompleteRollingReleaseResponseRollingReleaseNextStage(
+    /**
+     * Duration in seconds for automatic advancement, null for manual stages or the final stage
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true) val duration: Double?,
+    /**
+     * The zero-based index of the stage
+     */
+    val index: Double,
+    /**
+     * Whether or not this stage is the final stage (targetPercentage === 100)
+     */
+    val isFinalStage: Boolean,
+    /**
+     * Whether or not this stage requires manual approval to proceed
+     */
+    val requireApproval: Boolean,
+    /**
+     * The percentage of traffic to serve to the canary deployment (0-100)
+     */
+    val targetPercentage: Double,
+    /**
+     * Whether to linearly shift traffic over the duration of this stage
+     */
+    val linearShift: Boolean? = null
+)
+
+/**
+ * All stages configured for this rolling release
+ */
+data class CompleteRollingReleaseResponseRollingReleaseStagesItem(
+    /**
+     * Duration in seconds for automatic advancement, null for manual stages or the final stage
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true) val duration: Double?,
+    /**
+     * The zero-based index of the stage
+     */
+    val index: Double,
+    /**
+     * Whether or not this stage is the final stage (targetPercentage === 100)
+     */
+    val isFinalStage: Boolean,
+    /**
+     * Whether or not this stage requires manual approval to proceed
+     */
+    val requireApproval: Boolean,
+    /**
+     * The percentage of traffic to serve to the canary deployment (0-100)
+     */
+    val targetPercentage: Double,
+    /**
+     * Whether to linearly shift traffic over the duration of this stage
+     */
+    val linearShift: Boolean? = null
+)
+
+
+
+
+
+/**
+ * Rolling release information including configuration and document details, or null if no rolling release exists
+ */
+data class CompleteRollingReleaseResponseRollingRelease(
+    /**
+     * The currently active stage, null if the rollout is aborted
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("activeStage", required = true) val activeStage: CompleteRollingReleaseResponseRollingReleaseActiveStage?,
+    /**
+     * The advancement type of the rolling release
+     */
+    val advancementType: CompleteRollingReleaseResponseRollingReleaseAdvancementTypeEnum,
+    /**
+     * The canary deployment being rolled out
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("canaryDeployment", required = true) val canaryDeployment: CompleteRollingReleaseResponseRollingReleaseCanaryDeployment?,
+    /**
+     * The current deployment receiving production traffic
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("currentDeployment", required = true) val currentDeployment: CompleteRollingReleaseResponseRollingReleaseCurrentDeployment?,
+    /**
+     * The next stage to be activated, null if not in ACTIVE state
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("nextStage", required = true) val nextStage: CompleteRollingReleaseResponseRollingReleaseNextStage?,
+    /**
+     * The ID of a deployment queued for the next rolling release
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("queuedDeploymentId", required = true) val queuedDeploymentId: String?,
+    /**
+     * All stages configured for this rolling release
+     */
+    val stages: List<CompleteRollingReleaseResponseRollingReleaseStagesItem>,
+    /**
+     * Unix timestamp in milliseconds when the rolling release started
+     */
+    val startedAt: Double,
+    /**
+     * The current state of the rolling release
+     */
+    val state: CompleteRollingReleaseResponseRollingReleaseStateEnum,
+    /**
+     * When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("substate", required = true) val substate: CompleteRollingReleaseResponseRollingReleaseSubstateEnum?,
+    /**
+     * Unix timestamp in milliseconds when the rolling release was last updated
+     */
+    val updatedAt: Double,
+    /**
+     * When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.
+     */
+    val currentCanaryPercentage: Double? = null
+)
+
+/**
+ * The response format for rolling release endpoints that return rolling release information
+ */
+data class CompleteRollingReleaseResponse(
+    /**
+     * Rolling release information including configuration and document details, or null if no rolling release exists
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("rollingRelease", required = true) val rollingRelease: CompleteRollingReleaseResponseRollingRelease?
+)
 
     /**
-     * Automated gating configuration. Omitted (the default) means no gating is configured, which is
-     * equivalent to `enabled: false`.
+     * Retrieves the rolling release billing status used to determine whether a project can be configured for rolling releases. The response includes available-slot and status information for the team's billing.
      */
-    data class GetRollingReleaseConfigResponseRollingReleaseGate(
-        /** What to do when the gate trips: pause the rollout, or roll it back. */
-        val action: GetRollingReleaseConfigResponseRollingReleaseGateActionEnum,
-        /** The checks to evaluate. An empty array means nothing is evaluated. */
-        val checks: List<GetRollingReleaseConfigResponseRollingReleaseGateChecksItem>,
-        /** When true, a tripped gate is only reported — {@link action} is not taken. */
-        val dryRun: Boolean,
-        /** Whether automated gating is enabled for this project's rollouts. */
-        val enabled: Boolean,
-        /**
-         * How many failing evaluations within {@link windowSize} trip the gate. Defaults to `3`
-         * when omitted.
-         */
-        val failureThreshold: Double? = null,
-        /**
-         * How many of the most recent evaluations {@link failureThreshold} is counted against.
-         * Defaults to `5` when omitted.
-         */
-        val windowSize: Double? = null,
-    )
+    fun getRollingReleaseBillingStatus(clientConfig: ClientConfig, idOrName: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetRollingReleaseBillingStatusResponse =
+        dev.octri.showcase.vercel.methods.RollingReleaseGetRollingReleaseBillingStatusOperation.getRollingReleaseBillingStatus(
+            clientConfig,
+            idOrName,
+            teamId,
+            slug,
+            options,
+        )
 
     /**
-     * An array of all the stages required during a deployment release. Each stage defines a target
-     * percentage and advancement rules. The final stage must always have targetPercentage: 100.
+     * Retrieves the project-level rolling release configuration template. Use this configuration to inspect the settings that will apply to future rolling releases; it does not describe an active rolling release.
      */
-    data class GetRollingReleaseConfigResponseRollingReleaseStagesItem(
-        /** The percentage of traffic to serve to the canary deployment (0-100) */
-        val targetPercentage: Double,
-        /** Duration in minutes for automatic advancement to the next stage */
-        val duration: Double? = null,
-        /** Whether to linearly shift traffic over the duration of this stage */
-        val linearShift: Boolean? = null,
-        /** Whether or not this stage requires manual approval to proceed */
-        val requireApproval: Boolean? = null,
-    )
+    fun getRollingReleaseConfig(clientConfig: ClientConfig, idOrName: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetRollingReleaseConfigResponse =
+        dev.octri.showcase.vercel.methods.RollingReleaseGetRollingReleaseConfigOperation.getRollingReleaseConfig(
+            clientConfig,
+            idOrName,
+            teamId,
+            slug,
+            options,
+        )
 
     /**
-     * Project-level rolling release configuration that defines how deployments should be gradually
-     * rolled out
+     * Deletes a project's rolling release configuration and disables rolling releases for future deployments. Disabling the configuration does not change a rollout that is already in progress. To stop an active rollout as well, use the completion or abort operation after disabling rolling releases.
      */
-    data class GetRollingReleaseConfigResponseRollingRelease(
-        /**
-         * The environment that the release targets, currently only supports production. Adding in
-         * case we want to configure with alias groups or custom environments.
-         */
-        val target: String,
-        /**
-         * Whether the request served by a canary deployment should return a header indicating a
-         * canary was served. Defaults to `false` when omitted.
-         */
-        val canaryResponseHeader: Boolean? = null,
-        /**
-         * Automated gating configuration. Omitted (the default) means no gating is configured,
-         * which is equivalent to `enabled: false`.
-         */
-        val gate: GetRollingReleaseConfigResponseRollingReleaseGate? = null,
-        /**
-         * An array of all the stages required during a deployment release. Each stage defines a
-         * target percentage and advancement rules. The final stage must always have
-         * targetPercentage: 100.
-         */
-        val stages: List<GetRollingReleaseConfigResponseRollingReleaseStagesItem>? = null,
-    )
-
-    data class GetRollingReleaseConfigResponse(
-        /**
-         * Project-level rolling release configuration that defines how deployments should be
-         * gradually rolled out
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("rollingRelease", required = true)
-        val rollingRelease: GetRollingReleaseConfigResponseRollingRelease?
-    )
-
-    data class DeleteRollingReleaseConfigResponse(
-        @com.fasterxml.jackson.annotation.JsonProperty("rollingRelease", required = true)
-        val rollingRelease: Any?
-    )
-
-    /** The currently active stage, null if the rollout is aborted */
-    data class GetRollingReleaseResponseRollingReleaseActiveStage(
-        /**
-         * Duration in seconds for automatic advancement, null for manual stages or the final stage
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true)
-        val duration: Double?,
-        /** The zero-based index of the stage */
-        val index: Double,
-        /** Whether or not this stage is the final stage (targetPercentage === 100) */
-        val isFinalStage: Boolean,
-        /** Whether or not this stage requires manual approval to proceed */
-        val requireApproval: Boolean,
-        /** The percentage of traffic to serve to the canary deployment (0-100) */
-        val targetPercentage: Double,
-        /** Whether to linearly shift traffic over the duration of this stage */
-        val linearShift: Boolean? = null,
-    )
-
-    /** The canary deployment being rolled out */
-    data class GetRollingReleaseResponseRollingReleaseCanaryDeployment(
-        /** A number containing the date when the deployment was created in milliseconds */
-        val createdAt: Double,
-        /** A string holding the unique ID of the deployment */
-        val id: String,
-        /**
-         * The name of the project associated with the deployment at the time that the deployment
-         * was created
-         */
-        val name: String,
-        /**
-         * The state of the deployment depending on the process of deploying, or if it is ready or
-         * in an error state
-         */
-        val readyState: GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum,
-        /** A string with the unique URL of the deployment */
-        val url: String,
-        val readyStateAt: Double? = null,
-        /**
-         * Where was the deployment created from. Best-effort guess for metrics only — not
-         * authoritative; do not gate behavior on it.
-         */
-        val source: GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum? = null,
-        /**
-         * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh`
-         * was assigned upon creation, or `production` if the aliases from `alias` were assigned.
-         * `null` value indicates the "preview" deployment.
-         */
-        val target: GetRollingReleaseResponseRollingReleaseCanaryDeploymentTargetEnum? = null,
-    )
-
-    /** The current deployment receiving production traffic */
-    data class GetRollingReleaseResponseRollingReleaseCurrentDeployment(
-        /** A number containing the date when the deployment was created in milliseconds */
-        val createdAt: Double,
-        /** A string holding the unique ID of the deployment */
-        val id: String,
-        /**
-         * The name of the project associated with the deployment at the time that the deployment
-         * was created
-         */
-        val name: String,
-        /**
-         * The state of the deployment depending on the process of deploying, or if it is ready or
-         * in an error state
-         */
-        val readyState: GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum,
-        /** A string with the unique URL of the deployment */
-        val url: String,
-        val readyStateAt: Double? = null,
-        /**
-         * Where was the deployment created from. Best-effort guess for metrics only — not
-         * authoritative; do not gate behavior on it.
-         */
-        val source: GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum? = null,
-        /**
-         * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh`
-         * was assigned upon creation, or `production` if the aliases from `alias` were assigned.
-         * `null` value indicates the "preview" deployment.
-         */
-        val target: GetRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum? = null,
-    )
-
-    /** The next stage to be activated, null if not in ACTIVE state */
-    data class GetRollingReleaseResponseRollingReleaseNextStage(
-        /**
-         * Duration in seconds for automatic advancement, null for manual stages or the final stage
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true)
-        val duration: Double?,
-        /** The zero-based index of the stage */
-        val index: Double,
-        /** Whether or not this stage is the final stage (targetPercentage === 100) */
-        val isFinalStage: Boolean,
-        /** Whether or not this stage requires manual approval to proceed */
-        val requireApproval: Boolean,
-        /** The percentage of traffic to serve to the canary deployment (0-100) */
-        val targetPercentage: Double,
-        /** Whether to linearly shift traffic over the duration of this stage */
-        val linearShift: Boolean? = null,
-    )
-
-    /** All stages configured for this rolling release */
-    data class GetRollingReleaseResponseRollingReleaseStagesItem(
-        /**
-         * Duration in seconds for automatic advancement, null for manual stages or the final stage
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true)
-        val duration: Double?,
-        /** The zero-based index of the stage */
-        val index: Double,
-        /** Whether or not this stage is the final stage (targetPercentage === 100) */
-        val isFinalStage: Boolean,
-        /** Whether or not this stage requires manual approval to proceed */
-        val requireApproval: Boolean,
-        /** The percentage of traffic to serve to the canary deployment (0-100) */
-        val targetPercentage: Double,
-        /** Whether to linearly shift traffic over the duration of this stage */
-        val linearShift: Boolean? = null,
-    )
+    fun deleteRollingReleaseConfig(clientConfig: ClientConfig, idOrName: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): DeleteRollingReleaseConfigResponse =
+        dev.octri.showcase.vercel.methods.RollingReleaseDeleteRollingReleaseConfigOperation.deleteRollingReleaseConfig(
+            clientConfig,
+            idOrName,
+            teamId,
+            slug,
+            options,
+        )
 
     /**
-     * Rolling release information including configuration and document details, or null if no
-     * rolling release exists
+     * Updates a project's rolling release configuration, including enabling or disabling rolling releases. When disabling, `disableRolloutAction` controls how an active rollout is resolved if the resolve-on-disable feature is enabled; enabling or updating configuration affects the next production deployment, not an in-flight rollout. Enabling rolling releases also enables skew protection with its default value if it was not already configured.
      */
-    data class GetRollingReleaseResponseRollingRelease(
-        /** The currently active stage, null if the rollout is aborted */
-        @com.fasterxml.jackson.annotation.JsonProperty("activeStage", required = true)
-        val activeStage: GetRollingReleaseResponseRollingReleaseActiveStage?,
-        /** The advancement type of the rolling release */
-        val advancementType: GetRollingReleaseResponseRollingReleaseAdvancementTypeEnum,
-        /** The canary deployment being rolled out */
-        @com.fasterxml.jackson.annotation.JsonProperty("canaryDeployment", required = true)
-        val canaryDeployment: GetRollingReleaseResponseRollingReleaseCanaryDeployment?,
-        /** The current deployment receiving production traffic */
-        @com.fasterxml.jackson.annotation.JsonProperty("currentDeployment", required = true)
-        val currentDeployment: GetRollingReleaseResponseRollingReleaseCurrentDeployment?,
-        /** The next stage to be activated, null if not in ACTIVE state */
-        @com.fasterxml.jackson.annotation.JsonProperty("nextStage", required = true)
-        val nextStage: GetRollingReleaseResponseRollingReleaseNextStage?,
-        /** The ID of a deployment queued for the next rolling release */
-        @com.fasterxml.jackson.annotation.JsonProperty("queuedDeploymentId", required = true)
-        val queuedDeploymentId: String?,
-        /** All stages configured for this rolling release */
-        val stages: List<GetRollingReleaseResponseRollingReleaseStagesItem>,
-        /** Unix timestamp in milliseconds when the rolling release started */
-        val startedAt: Double,
-        /** The current state of the rolling release */
-        val state: GetRollingReleaseResponseRollingReleaseStateEnum,
-        /**
-         * When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("substate", required = true)
-        val substate: GetRollingReleaseResponseRollingReleaseSubstateEnum?,
-        /** Unix timestamp in milliseconds when the rolling release was last updated */
-        val updatedAt: Double,
-        /**
-         * When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage
-         * persisted on the rollout document — use for dashboard display when linear shift is
-         * active.
-         */
-        val currentCanaryPercentage: Double? = null,
-    )
-
-    /** The response format for rolling release endpoints that return rolling release information */
-    data class GetRollingReleaseResponse(
-        /**
-         * Rolling release information including configuration and document details, or null if no
-         * rolling release exists
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("rollingRelease", required = true)
-        val rollingRelease: GetRollingReleaseResponseRollingRelease?
-    )
-
-    /** The currently active stage, null if the rollout is aborted */
-    data class ApproveRollingReleaseStageResponseRollingReleaseActiveStage(
-        /**
-         * Duration in seconds for automatic advancement, null for manual stages or the final stage
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true)
-        val duration: Double?,
-        /** The zero-based index of the stage */
-        val index: Double,
-        /** Whether or not this stage is the final stage (targetPercentage === 100) */
-        val isFinalStage: Boolean,
-        /** Whether or not this stage requires manual approval to proceed */
-        val requireApproval: Boolean,
-        /** The percentage of traffic to serve to the canary deployment (0-100) */
-        val targetPercentage: Double,
-        /** Whether to linearly shift traffic over the duration of this stage */
-        val linearShift: Boolean? = null,
-    )
-
-    /** The canary deployment being rolled out */
-    data class ApproveRollingReleaseStageResponseRollingReleaseCanaryDeployment(
-        /** A number containing the date when the deployment was created in milliseconds */
-        val createdAt: Double,
-        /** A string holding the unique ID of the deployment */
-        val id: String,
-        /**
-         * The name of the project associated with the deployment at the time that the deployment
-         * was created
-         */
-        val name: String,
-        /**
-         * The state of the deployment depending on the process of deploying, or if it is ready or
-         * in an error state
-         */
-        val readyState: ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca,
-        /** A string with the unique URL of the deployment */
-        val url: String,
-        val readyStateAt: Double? = null,
-        /**
-         * Where was the deployment created from. Best-effort guess for metrics only — not
-         * authoritative; do not gate behavior on it.
-         */
-        val source: ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymX3eeebccfe6? =
-            null,
-        /**
-         * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh`
-         * was assigned upon creation, or `production` if the aliases from `alias` were assigned.
-         * `null` value indicates the "preview" deployment.
-         */
-        val target: ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXb4daff7160? =
-            null,
-    )
-
-    /** The current deployment receiving production traffic */
-    data class ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployment(
-        /** A number containing the date when the deployment was created in milliseconds */
-        val createdAt: Double,
-        /** A string holding the unique ID of the deployment */
-        val id: String,
-        /**
-         * The name of the project associated with the deployment at the time that the deployment
-         * was created
-         */
-        val name: String,
-        /**
-         * The state of the deployment depending on the process of deploying, or if it is ready or
-         * in an error state
-         */
-        val readyState: ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployXe3698b527c,
-        /** A string with the unique URL of the deployment */
-        val url: String,
-        val readyStateAt: Double? = null,
-        /**
-         * Where was the deployment created from. Best-effort guess for metrics only — not
-         * authoritative; do not gate behavior on it.
-         */
-        val source: ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployX4fb53b847c? =
-            null,
-        /**
-         * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh`
-         * was assigned upon creation, or `production` if the aliases from `alias` were assigned.
-         * `null` value indicates the "preview" deployment.
-         */
-        val target: ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployXcdce005fa9? =
-            null,
-    )
-
-    /** The next stage to be activated, null if not in ACTIVE state */
-    data class ApproveRollingReleaseStageResponseRollingReleaseNextStage(
-        /**
-         * Duration in seconds for automatic advancement, null for manual stages or the final stage
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true)
-        val duration: Double?,
-        /** The zero-based index of the stage */
-        val index: Double,
-        /** Whether or not this stage is the final stage (targetPercentage === 100) */
-        val isFinalStage: Boolean,
-        /** Whether or not this stage requires manual approval to proceed */
-        val requireApproval: Boolean,
-        /** The percentage of traffic to serve to the canary deployment (0-100) */
-        val targetPercentage: Double,
-        /** Whether to linearly shift traffic over the duration of this stage */
-        val linearShift: Boolean? = null,
-    )
-
-    /** All stages configured for this rolling release */
-    data class ApproveRollingReleaseStageResponseRollingReleaseStagesItem(
-        /**
-         * Duration in seconds for automatic advancement, null for manual stages or the final stage
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true)
-        val duration: Double?,
-        /** The zero-based index of the stage */
-        val index: Double,
-        /** Whether or not this stage is the final stage (targetPercentage === 100) */
-        val isFinalStage: Boolean,
-        /** Whether or not this stage requires manual approval to proceed */
-        val requireApproval: Boolean,
-        /** The percentage of traffic to serve to the canary deployment (0-100) */
-        val targetPercentage: Double,
-        /** Whether to linearly shift traffic over the duration of this stage */
-        val linearShift: Boolean? = null,
-    )
+    fun updateRollingReleaseConfig(clientConfig: ClientConfig, idOrName: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): UpdateRollingReleaseConfigResponse =
+        dev.octri.showcase.vercel.methods.RollingReleaseUpdateRollingReleaseConfigOperation.updateRollingReleaseConfig(
+            clientConfig,
+            idOrName,
+            teamId,
+            slug,
+            options,
+        )
 
     /**
-     * Rolling release information including configuration and document details, or null if no
-     * rolling release exists
+     * Retrieves rolling release information for a project, whether its rollout is active, aborted, or complete. Use `state` to filter the result to ACTIVE, COMPLETE, or ABORTED. If rolling releases are enabled but no deployment has occurred, the response contains a null rolling release value.
      */
-    data class ApproveRollingReleaseStageResponseRollingRelease(
-        /** The currently active stage, null if the rollout is aborted */
-        @com.fasterxml.jackson.annotation.JsonProperty("activeStage", required = true)
-        val activeStage: ApproveRollingReleaseStageResponseRollingReleaseActiveStage?,
-        /** The advancement type of the rolling release */
-        val advancementType: ApproveRollingReleaseStageResponseRollingReleaseAdvancementTypeEnum,
-        /** The canary deployment being rolled out */
-        @com.fasterxml.jackson.annotation.JsonProperty("canaryDeployment", required = true)
-        val canaryDeployment: ApproveRollingReleaseStageResponseRollingReleaseCanaryDeployment?,
-        /** The current deployment receiving production traffic */
-        @com.fasterxml.jackson.annotation.JsonProperty("currentDeployment", required = true)
-        val currentDeployment: ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployment?,
-        /** The next stage to be activated, null if not in ACTIVE state */
-        @com.fasterxml.jackson.annotation.JsonProperty("nextStage", required = true)
-        val nextStage: ApproveRollingReleaseStageResponseRollingReleaseNextStage?,
-        /** The ID of a deployment queued for the next rolling release */
-        @com.fasterxml.jackson.annotation.JsonProperty("queuedDeploymentId", required = true)
-        val queuedDeploymentId: String?,
-        /** All stages configured for this rolling release */
-        val stages: List<ApproveRollingReleaseStageResponseRollingReleaseStagesItem>,
-        /** Unix timestamp in milliseconds when the rolling release started */
-        val startedAt: Double,
-        /** The current state of the rolling release */
-        val state: ApproveRollingReleaseStageResponseRollingReleaseStateEnum,
-        /**
-         * When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("substate", required = true)
-        val substate: ApproveRollingReleaseStageResponseRollingReleaseSubstateEnum?,
-        /** Unix timestamp in milliseconds when the rolling release was last updated */
-        val updatedAt: Double,
-        /**
-         * When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage
-         * persisted on the rollout document — use for dashboard display when linear shift is
-         * active.
-         */
-        val currentCanaryPercentage: Double? = null,
-    )
-
-    /** The response format for rolling release endpoints that return rolling release information */
-    data class ApproveRollingReleaseStageResponse(
-        /**
-         * Rolling release information including configuration and document details, or null if no
-         * rolling release exists
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("rollingRelease", required = true)
-        val rollingRelease: ApproveRollingReleaseStageResponseRollingRelease?
-    )
-
-    /** The currently active stage, null if the rollout is aborted */
-    data class StartRollingReleaseResponseRollingReleaseActiveStage(
-        /**
-         * Duration in seconds for automatic advancement, null for manual stages or the final stage
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true)
-        val duration: Double?,
-        /** The zero-based index of the stage */
-        val index: Double,
-        /** Whether or not this stage is the final stage (targetPercentage === 100) */
-        val isFinalStage: Boolean,
-        /** Whether or not this stage requires manual approval to proceed */
-        val requireApproval: Boolean,
-        /** The percentage of traffic to serve to the canary deployment (0-100) */
-        val targetPercentage: Double,
-        /** Whether to linearly shift traffic over the duration of this stage */
-        val linearShift: Boolean? = null,
-    )
-
-    /** The canary deployment being rolled out */
-    data class StartRollingReleaseResponseRollingReleaseCanaryDeployment(
-        /** A number containing the date when the deployment was created in milliseconds */
-        val createdAt: Double,
-        /** A string holding the unique ID of the deployment */
-        val id: String,
-        /**
-         * The name of the project associated with the deployment at the time that the deployment
-         * was created
-         */
-        val name: String,
-        /**
-         * The state of the deployment depending on the process of deploying, or if it is ready or
-         * in an error state
-         */
-        val readyState: StartRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum,
-        /** A string with the unique URL of the deployment */
-        val url: String,
-        val readyStateAt: Double? = null,
-        /**
-         * Where was the deployment created from. Best-effort guess for metrics only — not
-         * authoritative; do not gate behavior on it.
-         */
-        val source: StartRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum? = null,
-        /**
-         * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh`
-         * was assigned upon creation, or `production` if the aliases from `alias` were assigned.
-         * `null` value indicates the "preview" deployment.
-         */
-        val target: StartRollingReleaseResponseRollingReleaseCanaryDeploymentTargetEnum? = null,
-    )
-
-    /** The current deployment receiving production traffic */
-    data class StartRollingReleaseResponseRollingReleaseCurrentDeployment(
-        /** A number containing the date when the deployment was created in milliseconds */
-        val createdAt: Double,
-        /** A string holding the unique ID of the deployment */
-        val id: String,
-        /**
-         * The name of the project associated with the deployment at the time that the deployment
-         * was created
-         */
-        val name: String,
-        /**
-         * The state of the deployment depending on the process of deploying, or if it is ready or
-         * in an error state
-         */
-        val readyState: StartRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum,
-        /** A string with the unique URL of the deployment */
-        val url: String,
-        val readyStateAt: Double? = null,
-        /**
-         * Where was the deployment created from. Best-effort guess for metrics only — not
-         * authoritative; do not gate behavior on it.
-         */
-        val source: StartRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum? = null,
-        /**
-         * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh`
-         * was assigned upon creation, or `production` if the aliases from `alias` were assigned.
-         * `null` value indicates the "preview" deployment.
-         */
-        val target: StartRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum? = null,
-    )
-
-    /** The next stage to be activated, null if not in ACTIVE state */
-    data class StartRollingReleaseResponseRollingReleaseNextStage(
-        /**
-         * Duration in seconds for automatic advancement, null for manual stages or the final stage
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true)
-        val duration: Double?,
-        /** The zero-based index of the stage */
-        val index: Double,
-        /** Whether or not this stage is the final stage (targetPercentage === 100) */
-        val isFinalStage: Boolean,
-        /** Whether or not this stage requires manual approval to proceed */
-        val requireApproval: Boolean,
-        /** The percentage of traffic to serve to the canary deployment (0-100) */
-        val targetPercentage: Double,
-        /** Whether to linearly shift traffic over the duration of this stage */
-        val linearShift: Boolean? = null,
-    )
-
-    /** All stages configured for this rolling release */
-    data class StartRollingReleaseResponseRollingReleaseStagesItem(
-        /**
-         * Duration in seconds for automatic advancement, null for manual stages or the final stage
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true)
-        val duration: Double?,
-        /** The zero-based index of the stage */
-        val index: Double,
-        /** Whether or not this stage is the final stage (targetPercentage === 100) */
-        val isFinalStage: Boolean,
-        /** Whether or not this stage requires manual approval to proceed */
-        val requireApproval: Boolean,
-        /** The percentage of traffic to serve to the canary deployment (0-100) */
-        val targetPercentage: Double,
-        /** Whether to linearly shift traffic over the duration of this stage */
-        val linearShift: Boolean? = null,
-    )
+    fun getRollingRelease(clientConfig: ClientConfig, idOrName: String, state: GetRollingReleaseParameterEnum? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetRollingReleaseResponse =
+        dev.octri.showcase.vercel.methods.RollingReleaseGetRollingReleaseOperation.getRollingRelease(
+            clientConfig,
+            idOrName,
+            state,
+            teamId,
+            slug,
+            options,
+        )
 
     /**
-     * Rolling release information including configuration and document details, or null if no
-     * rolling release exists
+     * Advances a project's active rolling release to a specified stage. Use this operation when the rolling release requires manual approval, and identify the canary deployment and target stage in the request body. The response includes the updated rolling release information.
      */
-    data class StartRollingReleaseResponseRollingRelease(
-        /** The currently active stage, null if the rollout is aborted */
-        @com.fasterxml.jackson.annotation.JsonProperty("activeStage", required = true)
-        val activeStage: StartRollingReleaseResponseRollingReleaseActiveStage?,
-        /** The advancement type of the rolling release */
-        val advancementType: StartRollingReleaseResponseRollingReleaseAdvancementTypeEnum,
-        /** The canary deployment being rolled out */
-        @com.fasterxml.jackson.annotation.JsonProperty("canaryDeployment", required = true)
-        val canaryDeployment: StartRollingReleaseResponseRollingReleaseCanaryDeployment?,
-        /** The current deployment receiving production traffic */
-        @com.fasterxml.jackson.annotation.JsonProperty("currentDeployment", required = true)
-        val currentDeployment: StartRollingReleaseResponseRollingReleaseCurrentDeployment?,
-        /** The next stage to be activated, null if not in ACTIVE state */
-        @com.fasterxml.jackson.annotation.JsonProperty("nextStage", required = true)
-        val nextStage: StartRollingReleaseResponseRollingReleaseNextStage?,
-        /** The ID of a deployment queued for the next rolling release */
-        @com.fasterxml.jackson.annotation.JsonProperty("queuedDeploymentId", required = true)
-        val queuedDeploymentId: String?,
-        /** All stages configured for this rolling release */
-        val stages: List<StartRollingReleaseResponseRollingReleaseStagesItem>,
-        /** Unix timestamp in milliseconds when the rolling release started */
-        val startedAt: Double,
-        /** The current state of the rolling release */
-        val state: StartRollingReleaseResponseRollingReleaseStateEnum,
-        /**
-         * When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("substate", required = true)
-        val substate: StartRollingReleaseResponseRollingReleaseSubstateEnum?,
-        /** Unix timestamp in milliseconds when the rolling release was last updated */
-        val updatedAt: Double,
-        /**
-         * When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage
-         * persisted on the rollout document — use for dashboard display when linear shift is
-         * active.
-         */
-        val currentCanaryPercentage: Double? = null,
-    )
-
-    /** The response format for rolling release endpoints that return rolling release information */
-    data class StartRollingReleaseResponse(
-        /**
-         * Rolling release information including configuration and document details, or null if no
-         * rolling release exists
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("rollingRelease", required = true)
-        val rollingRelease: StartRollingReleaseResponseRollingRelease?
-    )
-
-    /** The currently active stage, null if the rollout is aborted */
-    data class CompleteRollingReleaseResponseRollingReleaseActiveStage(
-        /**
-         * Duration in seconds for automatic advancement, null for manual stages or the final stage
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true)
-        val duration: Double?,
-        /** The zero-based index of the stage */
-        val index: Double,
-        /** Whether or not this stage is the final stage (targetPercentage === 100) */
-        val isFinalStage: Boolean,
-        /** Whether or not this stage requires manual approval to proceed */
-        val requireApproval: Boolean,
-        /** The percentage of traffic to serve to the canary deployment (0-100) */
-        val targetPercentage: Double,
-        /** Whether to linearly shift traffic over the duration of this stage */
-        val linearShift: Boolean? = null,
-    )
-
-    /** The canary deployment being rolled out */
-    data class CompleteRollingReleaseResponseRollingReleaseCanaryDeployment(
-        /** A number containing the date when the deployment was created in milliseconds */
-        val createdAt: Double,
-        /** A string holding the unique ID of the deployment */
-        val id: String,
-        /**
-         * The name of the project associated with the deployment at the time that the deployment
-         * was created
-         */
-        val name: String,
-        /**
-         * The state of the deployment depending on the process of deploying, or if it is ready or
-         * in an error state
-         */
-        val readyState: CompleteRollingReleaseResponseRollingReleaseCanaryDeploymentRX8b236e1ff2,
-        /** A string with the unique URL of the deployment */
-        val url: String,
-        val readyStateAt: Double? = null,
-        /**
-         * Where was the deployment created from. Best-effort guess for metrics only — not
-         * authoritative; do not gate behavior on it.
-         */
-        val source: CompleteRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum? = null,
-        /**
-         * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh`
-         * was assigned upon creation, or `production` if the aliases from `alias` were assigned.
-         * `null` value indicates the "preview" deployment.
-         */
-        val target: CompleteRollingReleaseResponseRollingReleaseCanaryDeploymentTargetEnum? = null,
-    )
-
-    /** The current deployment receiving production traffic */
-    data class CompleteRollingReleaseResponseRollingReleaseCurrentDeployment(
-        /** A number containing the date when the deployment was created in milliseconds */
-        val createdAt: Double,
-        /** A string holding the unique ID of the deployment */
-        val id: String,
-        /**
-         * The name of the project associated with the deployment at the time that the deployment
-         * was created
-         */
-        val name: String,
-        /**
-         * The state of the deployment depending on the process of deploying, or if it is ready or
-         * in an error state
-         */
-        val readyState: CompleteRollingReleaseResponseRollingReleaseCurrentDeploymentXa80ed35a08,
-        /** A string with the unique URL of the deployment */
-        val url: String,
-        val readyStateAt: Double? = null,
-        /**
-         * Where was the deployment created from. Best-effort guess for metrics only — not
-         * authoritative; do not gate behavior on it.
-         */
-        val source: CompleteRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum? = null,
-        /**
-         * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh`
-         * was assigned upon creation, or `production` if the aliases from `alias` were assigned.
-         * `null` value indicates the "preview" deployment.
-         */
-        val target: CompleteRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum? = null,
-    )
-
-    /** The next stage to be activated, null if not in ACTIVE state */
-    data class CompleteRollingReleaseResponseRollingReleaseNextStage(
-        /**
-         * Duration in seconds for automatic advancement, null for manual stages or the final stage
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true)
-        val duration: Double?,
-        /** The zero-based index of the stage */
-        val index: Double,
-        /** Whether or not this stage is the final stage (targetPercentage === 100) */
-        val isFinalStage: Boolean,
-        /** Whether or not this stage requires manual approval to proceed */
-        val requireApproval: Boolean,
-        /** The percentage of traffic to serve to the canary deployment (0-100) */
-        val targetPercentage: Double,
-        /** Whether to linearly shift traffic over the duration of this stage */
-        val linearShift: Boolean? = null,
-    )
-
-    /** All stages configured for this rolling release */
-    data class CompleteRollingReleaseResponseRollingReleaseStagesItem(
-        /**
-         * Duration in seconds for automatic advancement, null for manual stages or the final stage
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("duration", required = true)
-        val duration: Double?,
-        /** The zero-based index of the stage */
-        val index: Double,
-        /** Whether or not this stage is the final stage (targetPercentage === 100) */
-        val isFinalStage: Boolean,
-        /** Whether or not this stage requires manual approval to proceed */
-        val requireApproval: Boolean,
-        /** The percentage of traffic to serve to the canary deployment (0-100) */
-        val targetPercentage: Double,
-        /** Whether to linearly shift traffic over the duration of this stage */
-        val linearShift: Boolean? = null,
-    )
+    fun approveRollingReleaseStage(clientConfig: ClientConfig, idOrName: String, nextStageIndex: Double, canaryDeploymentId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ApproveRollingReleaseStageResponse =
+        dev.octri.showcase.vercel.methods.RollingReleaseApproveRollingReleaseStageOperation.approveRollingReleaseStage(
+            clientConfig,
+            idOrName,
+            nextStageIndex,
+            canaryDeploymentId,
+            teamId,
+            slug,
+            options,
+        )
 
     /**
-     * Rolling release information including configuration and document details, or null if no
-     * rolling release exists
+     * Starts a rolling release for a project's canary deployment. Supply `canaryDeploymentId` to identify the deployment to roll out; if that deployment already has an active rolling release, the endpoint returns its current state without side effects. The response includes the rolling release information.
      */
-    data class CompleteRollingReleaseResponseRollingRelease(
-        /** The currently active stage, null if the rollout is aborted */
-        @com.fasterxml.jackson.annotation.JsonProperty("activeStage", required = true)
-        val activeStage: CompleteRollingReleaseResponseRollingReleaseActiveStage?,
-        /** The advancement type of the rolling release */
-        val advancementType: CompleteRollingReleaseResponseRollingReleaseAdvancementTypeEnum,
-        /** The canary deployment being rolled out */
-        @com.fasterxml.jackson.annotation.JsonProperty("canaryDeployment", required = true)
-        val canaryDeployment: CompleteRollingReleaseResponseRollingReleaseCanaryDeployment?,
-        /** The current deployment receiving production traffic */
-        @com.fasterxml.jackson.annotation.JsonProperty("currentDeployment", required = true)
-        val currentDeployment: CompleteRollingReleaseResponseRollingReleaseCurrentDeployment?,
-        /** The next stage to be activated, null if not in ACTIVE state */
-        @com.fasterxml.jackson.annotation.JsonProperty("nextStage", required = true)
-        val nextStage: CompleteRollingReleaseResponseRollingReleaseNextStage?,
-        /** The ID of a deployment queued for the next rolling release */
-        @com.fasterxml.jackson.annotation.JsonProperty("queuedDeploymentId", required = true)
-        val queuedDeploymentId: String?,
-        /** All stages configured for this rolling release */
-        val stages: List<CompleteRollingReleaseResponseRollingReleaseStagesItem>,
-        /** Unix timestamp in milliseconds when the rolling release started */
-        val startedAt: Double,
-        /** The current state of the rolling release */
-        val state: CompleteRollingReleaseResponseRollingReleaseStateEnum,
-        /**
-         * When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("substate", required = true)
-        val substate: CompleteRollingReleaseResponseRollingReleaseSubstateEnum?,
-        /** Unix timestamp in milliseconds when the rolling release was last updated */
-        val updatedAt: Double,
-        /**
-         * When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage
-         * persisted on the rollout document — use for dashboard display when linear shift is
-         * active.
-         */
-        val currentCanaryPercentage: Double? = null,
-    )
-
-    /** The response format for rolling release endpoints that return rolling release information */
-    data class CompleteRollingReleaseResponse(
-        /**
-         * Rolling release information including configuration and document details, or null if no
-         * rolling release exists
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("rollingRelease", required = true)
-        val rollingRelease: CompleteRollingReleaseResponseRollingRelease?
-    )
+    fun startRollingRelease(clientConfig: ClientConfig, idOrName: String, canaryDeploymentId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): StartRollingReleaseResponse =
+        dev.octri.showcase.vercel.methods.RollingReleaseStartRollingReleaseOperation.startRollingRelease(
+            clientConfig,
+            idOrName,
+            canaryDeploymentId,
+            teamId,
+            slug,
+            options,
+        )
 
     /**
-     * Retrieves the rolling release billing status used to determine whether a project can be
-     * configured for rolling releases. The response includes available-slot and status information
-     * for the team's billing.
+     * Completes a project's rolling release and sends 100% of traffic to the canary deployment. Supply `canaryDeploymentId` to identify the deployment to promote. The response includes the updated rolling release information.
      */
-    fun getRollingReleaseBillingStatus(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): GetRollingReleaseBillingStatusResponse =
-        dev.octri.showcase.vercel.methods.RollingReleaseGetRollingReleaseBillingStatusOperation
-            .getRollingReleaseBillingStatus(
-                clientConfig,
-                idOrName,
-                teamId,
-                slug,
-                options,
-            )
-
-    /**
-     * Retrieves the project-level rolling release configuration template. Use this configuration to
-     * inspect the settings that will apply to future rolling releases; it does not describe an
-     * active rolling release.
-     */
-    fun getRollingReleaseConfig(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): GetRollingReleaseConfigResponse =
-        dev.octri.showcase.vercel.methods.RollingReleaseGetRollingReleaseConfigOperation
-            .getRollingReleaseConfig(
-                clientConfig,
-                idOrName,
-                teamId,
-                slug,
-                options,
-            )
-
-    /**
-     * Deletes a project's rolling release configuration and disables rolling releases for future
-     * deployments. Disabling the configuration does not change a rollout that is already in
-     * progress. To stop an active rollout as well, use the completion or abort operation after
-     * disabling rolling releases.
-     */
-    fun deleteRollingReleaseConfig(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): DeleteRollingReleaseConfigResponse =
-        dev.octri.showcase.vercel.methods.RollingReleaseDeleteRollingReleaseConfigOperation
-            .deleteRollingReleaseConfig(
-                clientConfig,
-                idOrName,
-                teamId,
-                slug,
-                options,
-            )
-
-    /**
-     * Updates a project's rolling release configuration, including enabling or disabling rolling
-     * releases. When disabling, `disableRolloutAction` controls how an active rollout is resolved
-     * if the resolve-on-disable feature is enabled; enabling or updating configuration affects the
-     * next production deployment, not an in-flight rollout. Enabling rolling releases also enables
-     * skew protection with its default value if it was not already configured.
-     */
-    fun updateRollingReleaseConfig(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): UpdateRollingReleaseConfigResponse =
-        dev.octri.showcase.vercel.methods.RollingReleaseUpdateRollingReleaseConfigOperation
-            .updateRollingReleaseConfig(
-                clientConfig,
-                idOrName,
-                teamId,
-                slug,
-                options,
-            )
-
-    /**
-     * Retrieves rolling release information for a project, whether its rollout is active, aborted,
-     * or complete. Use `state` to filter the result to ACTIVE, COMPLETE, or ABORTED. If rolling
-     * releases are enabled but no deployment has occurred, the response contains a null rolling
-     * release value.
-     */
-    fun getRollingRelease(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        state: GetRollingReleaseParameterEnum? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): GetRollingReleaseResponse =
-        dev.octri.showcase.vercel.methods.RollingReleaseGetRollingReleaseOperation
-            .getRollingRelease(
-                clientConfig,
-                idOrName,
-                state,
-                teamId,
-                slug,
-                options,
-            )
-
-    /**
-     * Advances a project's active rolling release to a specified stage. Use this operation when the
-     * rolling release requires manual approval, and identify the canary deployment and target stage
-     * in the request body. The response includes the updated rolling release information.
-     */
-    fun approveRollingReleaseStage(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        nextStageIndex: Double,
-        canaryDeploymentId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): ApproveRollingReleaseStageResponse =
-        dev.octri.showcase.vercel.methods.RollingReleaseApproveRollingReleaseStageOperation
-            .approveRollingReleaseStage(
-                clientConfig,
-                idOrName,
-                nextStageIndex,
-                canaryDeploymentId,
-                teamId,
-                slug,
-                options,
-            )
-
-    /**
-     * Starts a rolling release for a project's canary deployment. Supply `canaryDeploymentId` to
-     * identify the deployment to roll out; if that deployment already has an active rolling
-     * release, the endpoint returns its current state without side effects. The response includes
-     * the rolling release information.
-     */
-    fun startRollingRelease(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        canaryDeploymentId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): StartRollingReleaseResponse =
-        dev.octri.showcase.vercel.methods.RollingReleaseStartRollingReleaseOperation
-            .startRollingRelease(
-                clientConfig,
-                idOrName,
-                canaryDeploymentId,
-                teamId,
-                slug,
-                options,
-            )
-
-    /**
-     * Completes a project's rolling release and sends 100% of traffic to the canary deployment.
-     * Supply `canaryDeploymentId` to identify the deployment to promote. The response includes the
-     * updated rolling release information.
-     */
-    fun completeRollingRelease(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        canaryDeploymentId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): CompleteRollingReleaseResponse =
-        dev.octri.showcase.vercel.methods.RollingReleaseCompleteRollingReleaseOperation
-            .completeRollingRelease(
-                clientConfig,
-                idOrName,
-                canaryDeploymentId,
-                teamId,
-                slug,
-                options,
-            )
+    fun completeRollingRelease(clientConfig: ClientConfig, idOrName: String, canaryDeploymentId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): CompleteRollingReleaseResponse =
+        dev.octri.showcase.vercel.methods.RollingReleaseCompleteRollingReleaseOperation.completeRollingRelease(
+            clientConfig,
+            idOrName,
+            canaryDeploymentId,
+            teamId,
+            slug,
+            options,
+        )
 }

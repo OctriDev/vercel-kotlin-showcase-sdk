@@ -3,23 +3,20 @@
 
 package dev.octri.showcase.vercel.models
 
-/** Typed representation of the `TestDrainRequestDelivery` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = TestDrainRequestDelivery.Deserializer::class
-)
+/**
+ * Typed representation of the `TestDrainRequestDelivery` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = TestDrainRequestDelivery.Deserializer::class)
 sealed interface TestDrainRequestDelivery {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<TestDrainRequestDelivery>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<TestDrainRequestDelivery>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): TestDrainRequestDelivery {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                TestDrainRequestDeliveryOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }
-                    ?.second
+            val ownedType = TestDrainRequestDeliveryOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -27,71 +24,44 @@ sealed interface TestDrainRequestDelivery {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out TestDrainRequestDelivery>> =
-                listOf(
-                    TestDrainRequestDeliveryVariant0::class.java,
-                    TestDrainRequestDeliveryVariant1::class.java,
-                    TestDrainRequestDeliveryVariant2::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out TestDrainRequestDelivery>> = listOf(TestDrainRequestDeliveryVariant0::class.java, TestDrainRequestDeliveryVariant1::class.java, TestDrainRequestDeliveryVariant2::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        TestDrainRequestDelivery::class.java,
-                        "no TestDrainRequestDelivery branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, TestDrainRequestDelivery::class.java, "no TestDrainRequestDelivery branch accepts this payload")
             }
         }
     }
 }
 
-internal val TestDrainRequestDeliveryOwnedTypes:
-    List<Pair<List<String>, Class<out TestDrainRequestDelivery>>> =
-    listOf(
-        listOf("fileStructure", "roleArn", "region", "serverSideEncryption", "objectAcl") to
-            TestDrainRequestDeliveryVariant2::class.java
-    )
+internal val TestDrainRequestDeliveryOwnedTypes: List<Pair<List<String>, Class<out TestDrainRequestDelivery>>> = listOf(
+    listOf("fileStructure", "roleArn", "region", "serverSideEncryption", "objectAcl") to TestDrainRequestDeliveryVariant2::class.java,
+)
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateDrainRequestDeliveryVariant0(
     val type: String,
     val endpoint: String,
     val encoding: UpdateDrainRequestDeliveryVariant0EncodingEnum,
     val headers: Map<String, String>,
     val compression: UpdateDrainRequestDeliveryVariant0CompressionEnum? = null,
-    val secret: String? = null,
+    val secret: String? = null
 ) : UpdateDrainRequestDelivery
 
-data class UpdateDrainRequestDeliveryVariant1Endpoint(val traces: String)
+data class UpdateDrainRequestDeliveryVariant1Endpoint(
+    val traces: String
+)
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateDrainRequestDeliveryVariant1(
     val type: String,
     val endpoint: UpdateDrainRequestDeliveryVariant1Endpoint,
     val encoding: UpdateDrainRequestDeliveryVariant1EncodingEnum,
     val headers: Map<String, String>,
-    val secret: String? = null,
+    val secret: String? = null
 ) : UpdateDrainRequestDelivery
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateDrainRequestDeliveryVariant2(
     val type: String,
     val endpoint: String,
@@ -101,28 +71,23 @@ data class UpdateDrainRequestDeliveryVariant2(
     val roleArn: String,
     val region: String,
     val serverSideEncryption: UpdateDrainRequestDeliveryVariant2ServerSideEncryptionEnum? = null,
-    val objectAcl: UpdateDrainRequestDeliveryVariant2ObjectAclEnum? = null,
+    val objectAcl: UpdateDrainRequestDeliveryVariant2ObjectAclEnum? = null
 ) : UpdateDrainRequestDelivery
 
-/** Typed representation of the `UpdateDrainRequestDelivery` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = UpdateDrainRequestDelivery.Deserializer::class
-)
+/**
+ * Typed representation of the `UpdateDrainRequestDelivery` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UpdateDrainRequestDelivery.Deserializer::class)
 sealed interface UpdateDrainRequestDelivery {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<UpdateDrainRequestDelivery>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UpdateDrainRequestDelivery>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): UpdateDrainRequestDelivery {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                UpdateDrainRequestDeliveryOwnedTypes.firstOrNull { (keys, _) ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = UpdateDrainRequestDeliveryOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -130,85 +95,64 @@ sealed interface UpdateDrainRequestDelivery {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out UpdateDrainRequestDelivery>> =
-                listOf(
-                    UpdateDrainRequestDeliveryVariant0::class.java,
-                    UpdateDrainRequestDeliveryVariant1::class.java,
-                    UpdateDrainRequestDeliveryVariant2::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out UpdateDrainRequestDelivery>> = listOf(UpdateDrainRequestDeliveryVariant0::class.java, UpdateDrainRequestDeliveryVariant1::class.java, UpdateDrainRequestDeliveryVariant2::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        UpdateDrainRequestDelivery::class.java,
-                        "no UpdateDrainRequestDelivery branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, UpdateDrainRequestDelivery::class.java, "no UpdateDrainRequestDelivery branch accepts this payload")
             }
         }
     }
 }
 
-internal val UpdateDrainRequestDeliveryOwnedTypes:
-    List<Pair<List<String>, Class<out UpdateDrainRequestDelivery>>> =
-    listOf(
-        listOf("fileStructure", "roleArn", "region", "serverSideEncryption", "objectAcl") to
-            UpdateDrainRequestDeliveryVariant2::class.java
-    )
+internal val UpdateDrainRequestDeliveryOwnedTypes: List<Pair<List<String>, Class<out UpdateDrainRequestDelivery>>> = listOf(
+    listOf("fileStructure", "roleArn", "region", "serverSideEncryption", "objectAcl") to UpdateDrainRequestDeliveryVariant2::class.java,
+)
 
-data class UpdateDrainRequestFilterVariant1FilterVariant0Project(val ids: List<String>? = null)
+data class UpdateDrainRequestFilterVariant1FilterVariant0Project(
+    val ids: List<String>? = null
+)
 
 data class UpdateDrainRequestFilterVariant1FilterVariant0Log(
     val sources: List<UpdateDrainRequestFilterVariant1FilterVariant0LogSourcesItemEnum>? = null
 )
 
 data class UpdateDrainRequestFilterVariant1FilterVariant0Deployment(
-    val environments:
-        List<UpdateDrainRequestFilterVariant1FilterVariant0DeploymentEnvirXa0614b5d83>? =
-        null
+    val environments: List<UpdateDrainRequestFilterVariant1FilterVariant0DeploymentEnvirXa0614b5d83>? = null
 )
 
 data class UpdateDrainRequestFilterVariant1FilterVariant0(
     val type: String,
     val project: UpdateDrainRequestFilterVariant1FilterVariant0Project? = null,
     val log: UpdateDrainRequestFilterVariant1FilterVariant0Log? = null,
-    val deployment: UpdateDrainRequestFilterVariant1FilterVariant0Deployment? = null,
+    val deployment: UpdateDrainRequestFilterVariant1FilterVariant0Deployment? = null
 )
 
 data class UpdateDrainRequestFilterVariant1FilterVariant1(
     val type: String,
-    val text: String,
+    val text: String
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateDrainRequestFilterVariant1(
     val version: String,
-    val filter: Any,
+    val filter: Any
 ) : UpdateDrainRequestFilter
 
-/** Typed representation of the `UpdateDrainRequestFilter` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = UpdateDrainRequestFilter.Deserializer::class
-)
+/**
+ * Typed representation of the `UpdateDrainRequestFilter` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UpdateDrainRequestFilter.Deserializer::class)
 sealed interface UpdateDrainRequestFilter {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<UpdateDrainRequestFilter>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UpdateDrainRequestFilter>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): UpdateDrainRequestFilter {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out UpdateDrainRequestFilter>> =
-                listOf(UpdateDrainRequestFilterVariant1::class.java)
+            val objectTypes: List<Class<out UpdateDrainRequestFilter>> = listOf(UpdateDrainRequestFilterVariant1::class.java)
             for (objectType in objectTypes) {
                 try {
                     return mapper.convertValue(node, objectType)
@@ -217,89 +161,53 @@ sealed interface UpdateDrainRequestFilter {
                 }
             }
             return when {
-                node.isTextual ->
-                    StringUpdateDrainRequestFilter(
-                        mapper.convertValue(
-                            node,
-                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
-                        )
-                    )
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        UpdateDrainRequestFilter::class.java,
-                        "no UpdateDrainRequestFilter branch accepts this payload",
-                    )
+                node.isTextual -> StringUpdateDrainRequestFilter(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, UpdateDrainRequestFilter::class.java, "no UpdateDrainRequestFilter branch accepts this payload")
             }
         }
     }
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class StringUpdateDrainRequestFilter(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
-) : UpdateDrainRequestFilter
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class StringUpdateDrainRequestFilter(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : UpdateDrainRequestFilter
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateDrainRequestSourceVariant0(
     val externalResourceId: String,
-    val kind: String? = null,
+    val kind: String? = null
 ) : UpdateDrainRequestSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateDrainRequestSourceVariant1(
     val resourceId: String,
-    val kind: String? = null,
+    val kind: String? = null
 ) : UpdateDrainRequestSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class UpdateDrainRequestSourceVariant2(val kind: String) : UpdateDrainRequestSource
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class UpdateDrainRequestSourceVariant2(
+    val kind: String
+) : UpdateDrainRequestSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class UpdateDrainRequestSourceVariant3(val kind: String) : UpdateDrainRequestSource
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class UpdateDrainRequestSourceVariant3(
+    val kind: String
+) : UpdateDrainRequestSource
 
-/** Typed representation of the `UpdateDrainRequestSource` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = UpdateDrainRequestSource.Deserializer::class
-)
+/**
+ * Typed representation of the `UpdateDrainRequestSource` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UpdateDrainRequestSource.Deserializer::class)
 sealed interface UpdateDrainRequestSource {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<UpdateDrainRequestSource>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UpdateDrainRequestSource>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): UpdateDrainRequestSource {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                UpdateDrainRequestSourceOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }
-                    ?.second
+            val ownedType = UpdateDrainRequestSourceOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -307,34 +215,20 @@ sealed interface UpdateDrainRequestSource {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out UpdateDrainRequestSource>> =
-                listOf(
-                    UpdateDrainRequestSourceVariant0::class.java,
-                    UpdateDrainRequestSourceVariant1::class.java,
-                    UpdateDrainRequestSourceVariant2::class.java,
-                    UpdateDrainRequestSourceVariant3::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out UpdateDrainRequestSource>> = listOf(UpdateDrainRequestSourceVariant0::class.java, UpdateDrainRequestSourceVariant1::class.java, UpdateDrainRequestSourceVariant2::class.java, UpdateDrainRequestSourceVariant3::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        UpdateDrainRequestSource::class.java,
-                        "no UpdateDrainRequestSource branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, UpdateDrainRequestSource::class.java, "no UpdateDrainRequestSource branch accepts this payload")
             }
         }
     }
 }
 
-internal val UpdateDrainRequestSourceOwnedTypes:
-    List<Pair<List<String>, Class<out UpdateDrainRequestSource>>> =
-    listOf(
-        listOf("externalResourceId") to UpdateDrainRequestSourceVariant0::class.java,
-        listOf("resourceId") to UpdateDrainRequestSourceVariant1::class.java,
-    )
+internal val UpdateDrainRequestSourceOwnedTypes: List<Pair<List<String>, Class<out UpdateDrainRequestSource>>> = listOf(
+    listOf("externalResourceId") to UpdateDrainRequestSourceVariant0::class.java,
+    listOf("resourceId") to UpdateDrainRequestSourceVariant1::class.java,
+)
 
 data class UpdateDrainResponseVariant0DeliveryVariant0SecretVariant1(
     val kind: UpdateDrainResponseVariant0DeliveryVariant0SecretVariant1KindEnum
@@ -346,10 +240,12 @@ data class UpdateDrainResponseVariant0DeliveryVariant0(
     val headers: Map<String, String>,
     val type: UpdateDrainResponseVariant0DeliveryVariant0TypeEnum,
     val compression: UpdateDrainResponseVariant0DeliveryVariant0CompressionEnum? = null,
-    val secret: Any? = null,
+    val secret: Any? = null
 )
 
-data class UpdateDrainResponseVariant0DeliveryVariant1Endpoint(val traces: String)
+data class UpdateDrainResponseVariant0DeliveryVariant1Endpoint(
+    val traces: String
+)
 
 data class UpdateDrainResponseVariant0DeliveryVariant1SecretVariant1(
     val kind: UpdateDrainResponseVariant0DeliveryVariant1SecretVariant1KindEnum
@@ -360,13 +256,13 @@ data class UpdateDrainResponseVariant0DeliveryVariant1(
     val endpoint: UpdateDrainResponseVariant0DeliveryVariant1Endpoint,
     val headers: Map<String, String>,
     val type: UpdateDrainResponseVariant0DeliveryVariant1TypeEnum,
-    val secret: Any? = null,
+    val secret: Any? = null
 )
 
 data class UpdateDrainResponseVariant0DeliveryVariant2(
     val endpoint: String,
     val table: String,
-    val type: UpdateDrainResponseVariant0DeliveryVariant2TypeEnum,
+    val type: UpdateDrainResponseVariant0DeliveryVariant2TypeEnum
 )
 
 data class UpdateDrainResponseVariant0DeliveryVariant3(
@@ -378,32 +274,30 @@ data class UpdateDrainResponseVariant0DeliveryVariant3(
     val roleArn: String,
     val type: UpdateDrainResponseVariant0DeliveryVariant3TypeEnum,
     val objectAcl: UpdateDrainResponseVariant0DeliveryVariant3ObjectAclEnum? = null,
-    val serverSideEncryption: UpdateDrainResponseVariant0DeliveryVariant3ServerSideEncryptionEnum? =
-        null,
+    val serverSideEncryption: UpdateDrainResponseVariant0DeliveryVariant3ServerSideEncryptionEnum? = null
 )
 
 data class UpdateDrainResponseVariant0DeliveryVariant4(
     val target: UpdateDrainResponseVariant0DeliveryVariant4TargetEnum,
-    val type: UpdateDrainResponseVariant0DeliveryVariant4TypeEnum,
+    val type: UpdateDrainResponseVariant0DeliveryVariant4TypeEnum
 )
 
 data class UpdateDrainResponseVariant0Schemas(
-    @com.fasterxml.jackson.annotation.JsonProperty("ai_gateway")
-    val aiGateway: Map<String, Any>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("ai_gateway") val aiGateway: Map<String, Any>? = null,
     val analytics: Map<String, Any>? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("audit_log")
-    val auditLog: Map<String, Any>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("audit_log") val auditLog: Map<String, Any>? = null,
     val connect: Map<String, Any>? = null,
     val log: Map<String, Any>? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("speed_insights")
-    val speedInsights: Map<String, Any>? = null,
-    val trace: Map<String, Any>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("speed_insights") val speedInsights: Map<String, Any>? = null,
+    val trace: Map<String, Any>? = null
 )
 
 data class UpdateDrainResponseVariant0SourceVariant0(
     val kind: UpdateDrainResponseVariant0SourceVariant0KindEnum,
-    /** Informational marker for a system-owned default drain. */
-    val defaultFor: UpdateDrainResponseVariant0SourceVariant0DefaultForEnum? = null,
+    /**
+     * Informational marker for a system-owned default drain.
+     */
+    val defaultFor: UpdateDrainResponseVariant0SourceVariant0DefaultForEnum? = null
 )
 
 data class UpdateDrainResponseVariant0SourceVariant1(
@@ -411,53 +305,47 @@ data class UpdateDrainResponseVariant0SourceVariant1(
     val integrationId: String,
     val kind: UpdateDrainResponseVariant0SourceVariant1KindEnum,
     val externalResourceId: String? = null,
-    val resourceId: String? = null,
+    val resourceId: String? = null
 )
 
 data class UpdateDrainResponseVariant0SamplingItem(
     val rate: Double,
     val type: UpdateDrainResponseVariant0SamplingItemTypeEnum,
     val env: UpdateDrainResponseVariant0SamplingItemEnvEnum? = null,
-    val requestPath: String? = null,
+    val requestPath: String? = null
 )
 
 data class UpdateDrainResponseVariant0FilterV2FilterVariant0Deployment(
-    val environments:
-        List<UpdateDrainResponseVariant0FilterV2FilterVariant0DeploymentEnX0f57116d4e>? =
-        null
+    val environments: List<UpdateDrainResponseVariant0FilterV2FilterVariant0DeploymentEnX0f57116d4e>? = null
 )
 
 data class UpdateDrainResponseVariant0FilterV2FilterVariant0Log(
-    @com.fasterxml.jackson.annotation.JsonProperty("legacy_excludeCachedStaticAssetLogs")
-    val legacyExcludeCachedStaticAssetLogs: Boolean? = null,
-    val sources: List<UpdateDrainResponseVariant0FilterV2FilterVariant0LogSourcesItemEnum>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("legacy_excludeCachedStaticAssetLogs") val legacyExcludeCachedStaticAssetLogs: Boolean? = null,
+    val sources: List<UpdateDrainResponseVariant0FilterV2FilterVariant0LogSourcesItemEnum>? = null
 )
 
-data class UpdateDrainResponseVariant0FilterV2FilterVariant0Project(val ids: List<String>? = null)
+data class UpdateDrainResponseVariant0FilterV2FilterVariant0Project(
+    val ids: List<String>? = null
+)
 
 data class UpdateDrainResponseVariant0FilterV2FilterVariant0(
     val type: UpdateDrainResponseVariant0FilterV2FilterVariant0TypeEnum,
     val deployment: UpdateDrainResponseVariant0FilterV2FilterVariant0Deployment? = null,
     val log: UpdateDrainResponseVariant0FilterV2FilterVariant0Log? = null,
-    val project: UpdateDrainResponseVariant0FilterV2FilterVariant0Project? = null,
+    val project: UpdateDrainResponseVariant0FilterV2FilterVariant0Project? = null
 )
 
 data class UpdateDrainResponseVariant0FilterV2FilterVariant1(
     val text: String,
-    val type: UpdateDrainResponseVariant0FilterV2FilterVariant1TypeEnum,
+    val type: UpdateDrainResponseVariant0FilterV2FilterVariant1TypeEnum
 )
 
 data class UpdateDrainResponseVariant0FilterV2(
     val filter: Any,
-    val version: UpdateDrainResponseVariant0FilterV2VersionEnum,
+    val version: UpdateDrainResponseVariant0FilterV2VersionEnum
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateDrainResponseVariant0(
     val createdAt: Double,
     val delivery: Any,
@@ -475,7 +363,7 @@ data class UpdateDrainResponseVariant0(
     val sampling: List<UpdateDrainResponseVariant0SamplingItem>? = null,
     val status: UpdateDrainResponseVariant0StatusEnum? = null,
     val teamId: String? = null,
-    val filterV2: UpdateDrainResponseVariant0FilterV2? = null,
+    val filterV2: UpdateDrainResponseVariant0FilterV2? = null
 ) : UpdateDrainResponse
 
 data class UpdateDrainResponseVariant1DeliveryVariant0SecretVariant1(
@@ -488,10 +376,12 @@ data class UpdateDrainResponseVariant1DeliveryVariant0(
     val headers: Map<String, String>,
     val type: UpdateDrainResponseVariant1DeliveryVariant0TypeEnum,
     val compression: UpdateDrainResponseVariant1DeliveryVariant0CompressionEnum? = null,
-    val secret: Any? = null,
+    val secret: Any? = null
 )
 
-data class UpdateDrainResponseVariant1DeliveryVariant1Endpoint(val traces: String)
+data class UpdateDrainResponseVariant1DeliveryVariant1Endpoint(
+    val traces: String
+)
 
 data class UpdateDrainResponseVariant1DeliveryVariant1SecretVariant1(
     val kind: UpdateDrainResponseVariant1DeliveryVariant1SecretVariant1KindEnum
@@ -502,13 +392,13 @@ data class UpdateDrainResponseVariant1DeliveryVariant1(
     val endpoint: UpdateDrainResponseVariant1DeliveryVariant1Endpoint,
     val headers: Map<String, String>,
     val type: UpdateDrainResponseVariant1DeliveryVariant1TypeEnum,
-    val secret: Any? = null,
+    val secret: Any? = null
 )
 
 data class UpdateDrainResponseVariant1DeliveryVariant2(
     val endpoint: String,
     val table: String,
-    val type: UpdateDrainResponseVariant1DeliveryVariant2TypeEnum,
+    val type: UpdateDrainResponseVariant1DeliveryVariant2TypeEnum
 )
 
 data class UpdateDrainResponseVariant1DeliveryVariant3(
@@ -520,32 +410,30 @@ data class UpdateDrainResponseVariant1DeliveryVariant3(
     val roleArn: String,
     val type: UpdateDrainResponseVariant1DeliveryVariant3TypeEnum,
     val objectAcl: UpdateDrainResponseVariant1DeliveryVariant3ObjectAclEnum? = null,
-    val serverSideEncryption: UpdateDrainResponseVariant1DeliveryVariant3ServerSideEncryptionEnum? =
-        null,
+    val serverSideEncryption: UpdateDrainResponseVariant1DeliveryVariant3ServerSideEncryptionEnum? = null
 )
 
 data class UpdateDrainResponseVariant1DeliveryVariant4(
     val target: UpdateDrainResponseVariant1DeliveryVariant4TargetEnum,
-    val type: UpdateDrainResponseVariant1DeliveryVariant4TypeEnum,
+    val type: UpdateDrainResponseVariant1DeliveryVariant4TypeEnum
 )
 
 data class UpdateDrainResponseVariant1Schemas(
-    @com.fasterxml.jackson.annotation.JsonProperty("ai_gateway")
-    val aiGateway: Map<String, Any>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("ai_gateway") val aiGateway: Map<String, Any>? = null,
     val analytics: Map<String, Any>? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("audit_log")
-    val auditLog: Map<String, Any>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("audit_log") val auditLog: Map<String, Any>? = null,
     val connect: Map<String, Any>? = null,
     val log: Map<String, Any>? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("speed_insights")
-    val speedInsights: Map<String, Any>? = null,
-    val trace: Map<String, Any>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("speed_insights") val speedInsights: Map<String, Any>? = null,
+    val trace: Map<String, Any>? = null
 )
 
 data class UpdateDrainResponseVariant1SourceVariant0(
     val kind: UpdateDrainResponseVariant1SourceVariant0KindEnum,
-    /** Informational marker for a system-owned default drain. */
-    val defaultFor: UpdateDrainResponseVariant1SourceVariant0DefaultForEnum? = null,
+    /**
+     * Informational marker for a system-owned default drain.
+     */
+    val defaultFor: UpdateDrainResponseVariant1SourceVariant0DefaultForEnum? = null
 )
 
 data class UpdateDrainResponseVariant1SourceVariant1(
@@ -553,64 +441,58 @@ data class UpdateDrainResponseVariant1SourceVariant1(
     val integrationId: String,
     val kind: UpdateDrainResponseVariant1SourceVariant1KindEnum,
     val externalResourceId: String? = null,
-    val resourceId: String? = null,
+    val resourceId: String? = null
 )
 
 data class UpdateDrainResponseVariant1SamplingItem(
     val rate: Double,
     val type: UpdateDrainResponseVariant1SamplingItemTypeEnum,
     val env: UpdateDrainResponseVariant1SamplingItemEnvEnum? = null,
-    val requestPath: String? = null,
+    val requestPath: String? = null
 )
 
 data class UpdateDrainResponseVariant1FilterV2FilterVariant0Deployment(
-    val environments:
-        List<UpdateDrainResponseVariant1FilterV2FilterVariant0DeploymentEnX166e4e4165>? =
-        null
+    val environments: List<UpdateDrainResponseVariant1FilterV2FilterVariant0DeploymentEnX166e4e4165>? = null
 )
 
 data class UpdateDrainResponseVariant1FilterV2FilterVariant0Log(
-    @com.fasterxml.jackson.annotation.JsonProperty("legacy_excludeCachedStaticAssetLogs")
-    val legacyExcludeCachedStaticAssetLogs: Boolean? = null,
-    val sources: List<UpdateDrainResponseVariant1FilterV2FilterVariant0LogSourcesItemEnum>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("legacy_excludeCachedStaticAssetLogs") val legacyExcludeCachedStaticAssetLogs: Boolean? = null,
+    val sources: List<UpdateDrainResponseVariant1FilterV2FilterVariant0LogSourcesItemEnum>? = null
 )
 
-data class UpdateDrainResponseVariant1FilterV2FilterVariant0Project(val ids: List<String>? = null)
+data class UpdateDrainResponseVariant1FilterV2FilterVariant0Project(
+    val ids: List<String>? = null
+)
 
 data class UpdateDrainResponseVariant1FilterV2FilterVariant0(
     val type: UpdateDrainResponseVariant1FilterV2FilterVariant0TypeEnum,
     val deployment: UpdateDrainResponseVariant1FilterV2FilterVariant0Deployment? = null,
     val log: UpdateDrainResponseVariant1FilterV2FilterVariant0Log? = null,
-    val project: UpdateDrainResponseVariant1FilterV2FilterVariant0Project? = null,
+    val project: UpdateDrainResponseVariant1FilterV2FilterVariant0Project? = null
 )
 
 data class UpdateDrainResponseVariant1FilterV2FilterVariant1(
     val text: String,
-    val type: UpdateDrainResponseVariant1FilterV2FilterVariant1TypeEnum,
+    val type: UpdateDrainResponseVariant1FilterV2FilterVariant1TypeEnum
 )
 
 data class UpdateDrainResponseVariant1FilterV2(
     val filter: Any,
-    val version: UpdateDrainResponseVariant1FilterV2VersionEnum,
+    val version: UpdateDrainResponseVariant1FilterV2VersionEnum
 )
 
 data class UpdateDrainResponseVariant1ProjectAccessVariant0(
     val access: UpdateDrainResponseVariant1ProjectAccessVariant0AccessEnum,
-    val managedBy: UpdateDrainResponseVariant1ProjectAccessVariant0ManagedByEnum,
+    val managedBy: UpdateDrainResponseVariant1ProjectAccessVariant0ManagedByEnum
 )
 
 data class UpdateDrainResponseVariant1ProjectAccessVariant1(
     val access: UpdateDrainResponseVariant1ProjectAccessVariant1AccessEnum,
     val projectIds: List<String>,
-    val managedBy: UpdateDrainResponseVariant1ProjectAccessVariant1ManagedByEnum,
+    val managedBy: UpdateDrainResponseVariant1ProjectAccessVariant1ManagedByEnum
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateDrainResponseVariant1(
     val createdAt: Double,
     val delivery: Any,
@@ -632,13 +514,13 @@ data class UpdateDrainResponseVariant1(
     val integrationConfigurationUri: String? = null,
     val integrationIcon: String? = null,
     val integrationWebsite: String? = null,
-    val projectAccess: Any? = null,
+    val projectAccess: Any? = null
 ) : UpdateDrainResponse
 
-/** Typed representation of the `UpdateDrainResponse` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = UpdateDrainResponse.Deserializer::class
-)
+/**
+ * Typed representation of the `UpdateDrainResponse` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UpdateDrainResponse.Deserializer::class)
 sealed interface UpdateDrainResponse {
     /** Chooses the branch this payload is shaped like. */
     class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UpdateDrainResponse>() {
@@ -648,9 +530,7 @@ sealed interface UpdateDrainResponse {
         ): UpdateDrainResponse {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                UpdateDrainResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }
-                    ?.second
+            val ownedType = UpdateDrainResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -658,33 +538,16 @@ sealed interface UpdateDrainResponse {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out UpdateDrainResponse>> =
-                listOf(
-                    UpdateDrainResponseVariant0::class.java,
-                    UpdateDrainResponseVariant1::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out UpdateDrainResponse>> = listOf(UpdateDrainResponseVariant0::class.java, UpdateDrainResponseVariant1::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        UpdateDrainResponse::class.java,
-                        "no UpdateDrainResponse branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, UpdateDrainResponse::class.java, "no UpdateDrainResponse branch accepts this payload")
             }
         }
     }
 }
 
-internal val UpdateDrainResponseOwnedTypes:
-    List<Pair<List<String>, Class<out UpdateDrainResponse>>> =
-    listOf(
-        listOf(
-            "integrationConfigurationUri",
-            "integrationIcon",
-            "integrationWebsite",
-            "projectAccess",
-        ) to UpdateDrainResponseVariant1::class.java
-    )
+internal val UpdateDrainResponseOwnedTypes: List<Pair<List<String>, Class<out UpdateDrainResponse>>> = listOf(
+    listOf("integrationConfigurationUri", "integrationIcon", "integrationWebsite", "projectAccess") to UpdateDrainResponseVariant1::class.java,
+)

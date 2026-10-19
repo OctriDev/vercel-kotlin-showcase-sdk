@@ -4,168 +4,239 @@
 package dev.octri.showcase.vercel.models
 
 /**
- * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
- * "session" instead of "sandbox" as the response wrapper key.
+ * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
  */
 data class Session(
-    /** The time when the sandbox was created, in milliseconds since the epoch. */
+    /**
+     * The time when the sandbox was created, in milliseconds since the epoch.
+     */
     val createdAt: Double,
-    /** The working directory of the sandbox. */
+    /**
+     * The working directory of the sandbox.
+     */
     val cwd: String,
-    /** The unique identifier of the sandbox. */
+    /**
+     * The unique identifier of the sandbox.
+     */
     val id: String,
-    /** Memory allocated to this sandbox in MB. */
+    /**
+     * Memory allocated to this sandbox in MB.
+     */
     val memory: Double,
-    /** The unique identifier of the project associated with this session. */
+    /**
+     * The unique identifier of the project associated with this session.
+     */
     val projectId: String,
-    /** The region where the sandbox is hosted. */
+    /**
+     * The region where the sandbox is hosted.
+     */
     val region: String,
-    /** The time when the sandbox was requested, in milliseconds since the epoch. */
+    /**
+     * The time when the sandbox was requested, in milliseconds since the epoch.
+     */
     val requestedAt: Double,
-    /** The runtime of the sandbox. */
+    /**
+     * The runtime of the sandbox.
+     */
     val runtime: String,
-    /** The name of the source sandbox. */
+    /**
+     * The name of the source sandbox.
+     */
     val sourceSandboxName: String,
-    /** The status of the sandbox. */
+    /**
+     * The status of the sandbox.
+     */
     val status: SessionStatusEnum,
-    /** The maximum amount of time the sandbox will run for in milliseconds. */
+    /**
+     * The maximum amount of time the sandbox will run for in milliseconds.
+     */
     val timeout: Double,
-    /** The last time the sandbox was updated, in milliseconds since the epoch. */
+    /**
+     * The last time the sandbox was updated, in milliseconds since the epoch.
+     */
     val updatedAt: Double,
-    /** Number of vCPUs allocated to this sandbox. */
+    /**
+     * Number of vCPUs allocated to this sandbox.
+     */
     val vcpus: Double,
-    /** The time when the sandbox was aborted, in milliseconds since the epoch. */
+    /**
+     * The time when the sandbox was aborted, in milliseconds since the epoch.
+     */
     val abortedAt: Double? = null,
     /**
-     * The amount of CPU time the sandbox consumed, if available, in milliseconds. This value is
-     * only available once the sandbox is stopped, and only if it stopped successfully.
+     * The amount of CPU time the sandbox consumed, if available, in milliseconds. This value is only available once the sandbox is stopped, and only if it stopped successfully.
      */
     val activeCpuDurationMs: Double? = null,
-    /** CPU architecture of the sandbox. */
+    /**
+     * CPU architecture of the sandbox.
+     */
     val architecture: SessionArchitectureEnum? = null,
-    /** The duration of the sandbox in milliseconds. */
+    /**
+     * The duration of the sandbox in milliseconds.
+     */
     val duration: Double? = null,
-    /** The network policy applied to this sandbox, if any. */
+    /**
+     * The network policy applied to this sandbox, if any.
+     */
     val networkPolicy: SandboxNetworkPolicy? = null,
     /**
-     * The quantity of data transfered to and from the sandbox, in bytes. This value is only
-     * available once the sandbox is stopped, and only if it stopped successfully.
+     * The quantity of data transfered to and from the sandbox, in bytes. This value is only available once the sandbox is stopped, and only if it stopped successfully.
      */
     val networkTransfer: SessionNetworkTransfer? = null,
-    /** The time when the sandbox was requested to stop, in milliseconds since the epoch. */
+    /**
+     * The time when the sandbox was requested to stop, in milliseconds since the epoch.
+     */
     val requestedStopAt: Double? = null,
-    /** The time when a snapshot was requested, in milliseconds since the epoch. */
+    /**
+     * The time when a snapshot was requested, in milliseconds since the epoch.
+     */
     val snapshottedAt: Double? = null,
-    /** The unique identifier of the snapshot associated with this sandbox, if any. */
+    /**
+     * The unique identifier of the snapshot associated with this sandbox, if any.
+     */
     val sourceSnapshotId: String? = null,
-    /** The time when the sandbox was started, in milliseconds since the epoch. */
+    /**
+     * The time when the sandbox was started, in milliseconds since the epoch.
+     */
     val startedAt: Double? = null,
-    /** The time when the sandbox was stopped, in milliseconds since the epoch. */
+    /**
+     * The time when the sandbox was stopped, in milliseconds since the epoch.
+     */
     val stoppedAt: Double? = null,
-    /** Whether this sandbox is managed by v0 on the customer's behalf. */
-    val v0: Boolean? = null,
+    /**
+     * Whether this sandbox is managed by v0 on the customer's behalf.
+     */
+    val v0: Boolean? = null
 )
 
-/** This object represents a command run in a Vercel Sandbox session (v2 API). */
+/**
+ * This object represents a command run in a Vercel Sandbox session (v2 API).
+ */
 data class SessionCommand(
-    /** The arguments of the command. */
+    /**
+     * The arguments of the command.
+     */
     val args: List<String>,
-    /** The current working directory of the command. */
+    /**
+     * The current working directory of the command.
+     */
     val cwd: String,
-    /** If the command did finish, the exit code. */
-    @com.fasterxml.jackson.annotation.JsonProperty("exitCode", required = true)
-    val exitCode: Double?,
-    /** The ID of the command. */
-    val id: String,
-    /** The name of the command. */
-    val name: String,
-    /** The ID of the session associated with the command. */
-    val sessionId: String,
-    /** When the command was started, in milliseconds since the epoch. */
-    val startedAt: Double,
-    /** Duration of the command execution in milliseconds. */
-    val durationMs: Double? = null,
-)
-
-/** This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API). */
-data class Snapshot(
-    /** The time when the snapshot was created, in milliseconds since the epoch. */
-    val createdAt: Double,
-    /** The unique identifier of the snapshot. */
+    /**
+     * If the command did finish, the exit code.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("exitCode", required = true) val exitCode: Double?,
+    /**
+     * The ID of the command.
+     */
     val id: String,
     /**
-     * The last time the snapshot was used (e.g. to resume or create a sandbox), in milliseconds
-     * since the epoch. Falls back to `createdAt` for older snapshots that predate this field.
+     * The name of the command.
+     */
+    val name: String,
+    /**
+     * The ID of the session associated with the command.
+     */
+    val sessionId: String,
+    /**
+     * When the command was started, in milliseconds since the epoch.
+     */
+    val startedAt: Double,
+    /**
+     * Duration of the command execution in milliseconds.
+     */
+    val durationMs: Double? = null
+)
+
+/**
+ * This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
+ */
+data class Snapshot(
+    /**
+     * The time when the snapshot was created, in milliseconds since the epoch.
+     */
+    val createdAt: Double,
+    /**
+     * The unique identifier of the snapshot.
+     */
+    val id: String,
+    /**
+     * The last time the snapshot was used (e.g. to resume or create a sandbox), in milliseconds since the epoch. Falls back to `createdAt` for older snapshots that predate this field.
      */
     val lastUsedAt: Double,
-    /** The size of the snapshot in bytes. */
+    /**
+     * The size of the snapshot in bytes.
+     */
     val sizeBytes: Double,
-    /** The unique identifier of the session from which the snapshot was created. */
+    /**
+     * The unique identifier of the session from which the snapshot was created.
+     */
     val sourceSessionId: String,
-    /** The status of the snapshot. */
+    /**
+     * The status of the snapshot.
+     */
     val status: SnapshotStatusEnum,
-    /** The last time the snapshot was updated, in milliseconds since the epoch. */
+    /**
+     * The last time the snapshot was updated, in milliseconds since the epoch.
+     */
     val updatedAt: Double,
-    /** CPU architecture required to restore the snapshot. */
+    /**
+     * CPU architecture required to restore the snapshot.
+     */
     val architecture: SnapshotArchitectureEnum? = null,
-    /** The method used to create the snapshot. */
+    /**
+     * The method used to create the snapshot.
+     */
     val creationMethod: SnapshotCreationMethodEnum? = null,
     /**
-     * The time when the snapshot will expire, in milliseconds since the epoch. If not set, the
-     * snapshot does not have any expiration.
+     * The time when the snapshot will expire, in milliseconds since the epoch. If not set, the snapshot does not have any expiration.
      */
     val expiresAt: Double? = null,
     /**
-     * The unique identifier of the parent snapshot, if this snapshot was created from another
-     * snapshot.
+     * The unique identifier of the parent snapshot, if this snapshot was created from another snapshot.
      */
     val parentId: String? = null,
-    /** The region where the snapshot is stored. */
+    /**
+     * The region where the snapshot is stored.
+     */
     val region: String? = null,
-    /** The regions where the snapshot is available. */
+    /**
+     * The regions where the snapshot is available.
+     */
     val regions: List<String>? = null,
-    /** Whether this snapshot is managed by v0 on the customer's behalf. */
-    val v0: Boolean? = null,
+    /**
+     * Whether this snapshot is managed by v0 on the customer's behalf.
+     */
+    val v0: Boolean? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class StopSessionResponseVariant0(
     /**
-     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
-     * "session" instead of "sandbox" as the response wrapper key.
+     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
      */
     val session: Session
 ) : StopSessionResponse
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class StopSessionResponseVariant1(
-    /** This object contains information related to a Vercel NamedSandbox. */
+    /**
+     * This object contains information related to a Vercel NamedSandbox.
+     */
     val sandbox: NamedSandbox,
     /**
-     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
-     * "session" instead of "sandbox" as the response wrapper key.
+     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
      */
     val session: Session,
     /**
      * This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
      */
-    val snapshot: Snapshot,
+    val snapshot: Snapshot
 ) : StopSessionResponse
 
-/** Typed representation of the `StopSessionResponse` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = StopSessionResponse.Deserializer::class
-)
+/**
+ * Typed representation of the `StopSessionResponse` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = StopSessionResponse.Deserializer::class)
 sealed interface StopSessionResponse {
     /** Chooses the branch this payload is shaped like. */
     class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<StopSessionResponse>() {
@@ -175,9 +246,7 @@ sealed interface StopSessionResponse {
         ): StopSessionResponse {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                StopSessionResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }
-                    ?.second
+            val ownedType = StopSessionResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -185,64 +254,50 @@ sealed interface StopSessionResponse {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out StopSessionResponse>> =
-                listOf(
-                    StopSessionResponseVariant0::class.java,
-                    StopSessionResponseVariant1::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out StopSessionResponse>> = listOf(StopSessionResponseVariant0::class.java, StopSessionResponseVariant1::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        StopSessionResponse::class.java,
-                        "no StopSessionResponse branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, StopSessionResponse::class.java, "no StopSessionResponse branch accepts this payload")
             }
         }
     }
 }
 
-internal val StopSessionResponseOwnedTypes:
-    List<Pair<List<String>, Class<out StopSessionResponse>>> =
-    listOf(listOf("sandbox", "snapshot") to StopSessionResponseVariant1::class.java)
+internal val StopSessionResponseOwnedTypes: List<Pair<List<String>, Class<out StopSessionResponse>>> = listOf(
+    listOf("sandbox", "snapshot") to StopSessionResponseVariant1::class.java,
+)
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateSandboxRequestKeepLastSnapshotsVariant1(
-    /** Number of most recent snapshots to keep. */
+    /**
+     * Number of most recent snapshots to keep.
+     */
     val count: Long,
-    /** Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration. */
+    /**
+     * Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration.
+     */
     val expiration: Long? = null,
-    /** Whether to immediately delete evicted snapshots. Defaults to true. */
-    val deleteEvicted: Boolean? = null,
+    /**
+     * Whether to immediately delete evicted snapshots. Defaults to true.
+     */
+    val deleteEvicted: Boolean? = null
 ) : UpdateSandboxRequestKeepLastSnapshots
 
 /**
- * Protect the N most recent snapshots with different expiration/deletion behavior. Set to null to
- * clear.
+ * Protect the N most recent snapshots with different expiration/deletion behavior. Set to null to clear.
  */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = UpdateSandboxRequestKeepLastSnapshots.Deserializer::class
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UpdateSandboxRequestKeepLastSnapshots.Deserializer::class)
 sealed interface UpdateSandboxRequestKeepLastSnapshots {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<UpdateSandboxRequestKeepLastSnapshots>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UpdateSandboxRequestKeepLastSnapshots>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): UpdateSandboxRequestKeepLastSnapshots {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out UpdateSandboxRequestKeepLastSnapshots>> =
-                listOf(UpdateSandboxRequestKeepLastSnapshotsVariant1::class.java)
+            val objectTypes: List<Class<out UpdateSandboxRequestKeepLastSnapshots>> = listOf(UpdateSandboxRequestKeepLastSnapshotsVariant1::class.java)
             for (objectType in objectTypes) {
                 try {
                     return mapper.convertValue(node, objectType)
@@ -251,287 +306,282 @@ sealed interface UpdateSandboxRequestKeepLastSnapshots {
                 }
             }
             return when {
-                node.isTextual ->
-                    StringUpdateSandboxRequestKeepLastSnapshots(
-                        mapper.convertValue(
-                            node,
-                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
-                        )
-                    )
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        UpdateSandboxRequestKeepLastSnapshots::class.java,
-                        "no UpdateSandboxRequestKeepLastSnapshots branch accepts this payload",
-                    )
+                node.isTextual -> StringUpdateSandboxRequestKeepLastSnapshots(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, UpdateSandboxRequestKeepLastSnapshots::class.java, "no UpdateSandboxRequestKeepLastSnapshots branch accepts this payload")
             }
         }
     }
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class StringUpdateSandboxRequestKeepLastSnapshots(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
-) : UpdateSandboxRequestKeepLastSnapshots
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class StringUpdateSandboxRequestKeepLastSnapshots(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : UpdateSandboxRequestKeepLastSnapshots
 
-/** Match on the request path. Comparison is case-sensitive. */
+/**
+ * Match on the request path. Comparison is case-sensitive.
+ */
 data class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPath(
     /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods;
-     * case-insensitive for domains and header keys.
+     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
      */
     val exact: String? = null,
-    /** Match values that start with the given prefix. */
-    val startsWith: String? = null,
-)
-
-/** Matcher for the entry key (header name or query key). */
-data class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5d(
     /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods;
-     * case-insensitive for domains and header keys.
+     * Match values that start with the given prefix.
      */
-    val exact: String? = null,
-    /** Match values that start with the given prefix. */
-    val startsWith: String? = null,
-)
-
-/** Matcher for the entry value. */
-data class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277(
-    /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods;
-     * case-insensitive for domains and header keys.
-     */
-    val exact: String? = null,
-    /** Match values that start with the given prefix. */
-    val startsWith: String? = null,
-)
-
-data class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7(
-    /** Matcher for the entry key (header name or query key). */
-    val key: UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5d? = null,
-    /** Matcher for the entry value. */
-    @com.fasterxml.jackson.annotation.JsonProperty("value")
-    val `value`: UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277? = null,
-)
-
-/** Matcher for the entry key (header name or query key). */
-data class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1(
-    /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods;
-     * case-insensitive for domains and header keys.
-     */
-    val exact: String? = null,
-    /** Match values that start with the given prefix. */
-    val startsWith: String? = null,
-)
-
-/** Matcher for the entry value. */
-data class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4d(
-    /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods;
-     * case-insensitive for domains and header keys.
-     */
-    val exact: String? = null,
-    /** Match values that start with the given prefix. */
-    val startsWith: String? = null,
-)
-
-data class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8(
-    /** Matcher for the entry key (header name or query key). */
-    val key: UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1? = null,
-    /** Matcher for the entry value. */
-    @com.fasterxml.jackson.annotation.JsonProperty("value")
-    val `value`: UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4d? = null,
+    val startsWith: String? = null
 )
 
 /**
- * Optional L7 match. When provided, the injection rule only applies to requests that satisfy every
- * specified dimension. When multiple injection rules target the same domain they are evaluated in
- * order and the first match wins; a rule without `match` matches any request and shadows later
- * rules for the same domain.
+ * Matcher for the entry key (header name or query key).
+ */
+data class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5d(
+    /**
+     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     */
+    val exact: String? = null,
+    /**
+     * Match values that start with the given prefix.
+     */
+    val startsWith: String? = null
+)
+
+/**
+ * Matcher for the entry value.
+ */
+data class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277(
+    /**
+     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     */
+    val exact: String? = null,
+    /**
+     * Match values that start with the given prefix.
+     */
+    val startsWith: String? = null
+)
+
+data class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7(
+    /**
+     * Matcher for the entry key (header name or query key).
+     */
+    val key: UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX3702229f5d? = null,
+    /**
+     * Matcher for the entry value.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX0f7ae38277? = null
+)
+
+/**
+ * Matcher for the entry key (header name or query key).
+ */
+data class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1(
+    /**
+     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     */
+    val exact: String? = null,
+    /**
+     * Match values that start with the given prefix.
+     */
+    val startsWith: String? = null
+)
+
+/**
+ * Matcher for the entry value.
+ */
+data class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4d(
+    /**
+     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     */
+    val exact: String? = null,
+    /**
+     * Match values that start with the given prefix.
+     */
+    val startsWith: String? = null
+)
+
+data class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8(
+    /**
+     * Matcher for the entry key (header name or query key).
+     */
+    val key: UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX84f32877e1? = null,
+    /**
+     * Matcher for the entry value.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc26ac56c4d? = null
+)
+
+/**
+ * Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
  */
 data class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatch(
-    /** Match on the request path. Comparison is case-sensitive. */
+    /**
+     * Match on the request path. Comparison is case-sensitive.
+     */
     val path: UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatchPath? = null,
-    /** HTTP methods to match. Any single match succeeds (OR semantics). */
+    /**
+     * HTTP methods to match. Any single match succeeds (OR semantics).
+     */
     val method: List<String>? = null,
     /**
-     * Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are
-     * both compared case-sensitively (RFC 3986). When a request has multiple values for the same
-     * key, any matching value satisfies the matcher.
+     * Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
      */
-    val queryString:
-        List<UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7>? =
-        null,
+    val queryString: List<UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaXc45a4726f7>? = null,
     /**
-     * Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively
-     * (RFC 9110); header values are compared case-sensitively. When a request has multiple values
-     * for the same header, any matching value satisfies the matcher.
+     * Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
      */
-    val headers: List<UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8>? =
-        null,
+    val headers: List<UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMaX20b9a7f2a8>? = null
 )
 
 data class UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItem(
     /**
-     * The domain (or pattern) of requests to add headers for. Supports wildcards like
-     * *.example.com.
+     * The domain (or pattern) of requests to add headers for. Supports wildcards like *.example.com.
      */
     val domain: String,
     /**
-     * HTTP headers to inject into requests for this domain. Existing headers with the same name
-     * will be overridden.
+     * HTTP headers to inject into requests for this domain. Existing headers with the same name will be overridden.
      */
     val headers: Map<String, String>,
     /**
-     * Optional L7 match. When provided, the injection rule only applies to requests that satisfy
-     * every specified dimension. When multiple injection rules target the same domain they are
-     * evaluated in order and the first match wins; a rule without `match` matches any request and
-     * shadows later rules for the same domain.
+     * Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
      */
-    val match: UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatch? = null,
+    val match: UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItemMatch? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateSandboxRequestNetworkPolicyVariant0(
     /**
-     * The network access policy mode. Use \"allow-all\" to permit all outbound traffic. Use
-     * \"deny-all\" to block all outbound traffic. Use \"custom\" to specify explicit allow/deny
-     * rules.
+     * The network access policy mode. Use \"allow-all\" to permit all outbound traffic. Use \"deny-all\" to block all outbound traffic. Use \"custom\" to specify explicit allow/deny rules.
      */
     val mode: UpdateSandboxRequestNetworkPolicyVariant0ModeEnum,
     /**
-     * List of domain names the sandbox is allowed to connect to. Only applies when mode is
-     * \"custom\". Supports wildcard patterns (e.g., \"*.example.com\" matches all subdomains).
+     * List of domain names the sandbox is allowed to connect to. Only applies when mode is \"custom\". Supports wildcard patterns (e.g., \"*.example.com\" matches all subdomains).
      */
     val allowedDomains: List<String>? = null,
     /**
-     * List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to
-     * these addresses bypasses domain-based restrictions.
+     * List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to these addresses bypasses domain-based restrictions.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("allowedCIDRs")
-    val allowedCidrs: List<String>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("allowedCIDRs") val allowedCidrs: List<String>? = null,
     /**
-     * List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These
-     * rules take precedence over all allowed rules.
+     * List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("deniedCIDRs")
-    val deniedCidrs: List<String>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("deniedCIDRs") val deniedCidrs: List<String>? = null,
     /**
-     * HTTP header injection rules for outgoing requests matching specific domains. Traffic to
-     * matching domains will be intercepted instead of proxied through encrypted connections.
+     * HTTP header injection rules for outgoing requests matching specific domains. Traffic to matching domains will be intercepted instead of proxied through encrypted connections.
      */
-    val injectionRules: List<UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItem>? = null,
+    val injectionRules: List<UpdateSandboxRequestNetworkPolicyVariant0InjectionRulesItem>? = null
 ) : UpdateSandboxRequestNetworkPolicy
 
-/** Match on the request path. Comparison is case-sensitive. */
+/**
+ * Match on the request path. Comparison is case-sensitive.
+ */
 data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItemMatchPath(
     /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods;
-     * case-insensitive for domains and header keys.
+     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
      */
     val exact: String? = null,
-    /** Match values that start with the given prefix. */
-    val startsWith: String? = null,
-)
-
-/** Matcher for the entry key (header name or query key). */
-data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXeee6912d12(
     /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods;
-     * case-insensitive for domains and header keys.
+     * Match values that start with the given prefix.
      */
-    val exact: String? = null,
-    /** Match values that start with the given prefix. */
-    val startsWith: String? = null,
-)
-
-/** Matcher for the entry value. */
-data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItX7b8599b007(
-    /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods;
-     * case-insensitive for domains and header keys.
-     */
-    val exact: String? = null,
-    /** Match values that start with the given prefix. */
-    val startsWith: String? = null,
-)
-
-data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItX29a3a38f03(
-    /** Matcher for the entry key (header name or query key). */
-    val key: UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXeee6912d12? = null,
-    /** Matcher for the entry value. */
-    @com.fasterxml.jackson.annotation.JsonProperty("value")
-    val `value`: UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItX7b8599b007? = null,
-)
-
-/** Matcher for the entry key (header name or query key). */
-data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXc8063ac59a(
-    /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods;
-     * case-insensitive for domains and header keys.
-     */
-    val exact: String? = null,
-    /** Match values that start with the given prefix. */
-    val startsWith: String? = null,
-)
-
-/** Matcher for the entry value. */
-data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXb9b6cbfb55(
-    /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods;
-     * case-insensitive for domains and header keys.
-     */
-    val exact: String? = null,
-    /** Match values that start with the given prefix. */
-    val startsWith: String? = null,
-)
-
-data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXa744754921(
-    /** Matcher for the entry key (header name or query key). */
-    val key: UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXc8063ac59a? = null,
-    /** Matcher for the entry value. */
-    @com.fasterxml.jackson.annotation.JsonProperty("value")
-    val `value`: UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXb9b6cbfb55? = null,
+    val startsWith: String? = null
 )
 
 /**
- * Optional L7 match. When provided, the injection rule only applies to requests that satisfy every
- * specified dimension. When multiple injection rules target the same domain they are evaluated in
- * order and the first match wins; a rule without `match` matches any request and shadows later
- * rules for the same domain.
+ * Matcher for the entry key (header name or query key).
+ */
+data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXeee6912d12(
+    /**
+     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     */
+    val exact: String? = null,
+    /**
+     * Match values that start with the given prefix.
+     */
+    val startsWith: String? = null
+)
+
+/**
+ * Matcher for the entry value.
+ */
+data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItX7b8599b007(
+    /**
+     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     */
+    val exact: String? = null,
+    /**
+     * Match values that start with the given prefix.
+     */
+    val startsWith: String? = null
+)
+
+data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItX29a3a38f03(
+    /**
+     * Matcher for the entry key (header name or query key).
+     */
+    val key: UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXeee6912d12? = null,
+    /**
+     * Matcher for the entry value.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItX7b8599b007? = null
+)
+
+/**
+ * Matcher for the entry key (header name or query key).
+ */
+data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXc8063ac59a(
+    /**
+     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     */
+    val exact: String? = null,
+    /**
+     * Match values that start with the given prefix.
+     */
+    val startsWith: String? = null
+)
+
+/**
+ * Matcher for the entry value.
+ */
+data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXb9b6cbfb55(
+    /**
+     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     */
+    val exact: String? = null,
+    /**
+     * Match values that start with the given prefix.
+     */
+    val startsWith: String? = null
+)
+
+data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXa744754921(
+    /**
+     * Matcher for the entry key (header name or query key).
+     */
+    val key: UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXc8063ac59a? = null,
+    /**
+     * Matcher for the entry value.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXb9b6cbfb55? = null
+)
+
+/**
+ * Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
  */
 data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItemMatch(
-    /** Match on the request path. Comparison is case-sensitive. */
+    /**
+     * Match on the request path. Comparison is case-sensitive.
+     */
     val path: UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItemMatchPath? = null,
-    /** HTTP methods to match. Any single match succeeds (OR semantics). */
+    /**
+     * HTTP methods to match. Any single match succeeds (OR semantics).
+     */
     val method: List<String>? = null,
     /**
-     * Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are
-     * both compared case-sensitively (RFC 3986). When a request has multiple values for the same
-     * key, any matching value satisfies the matcher.
+     * Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
      */
-    val queryString:
-        List<UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItX29a3a38f03>? =
-        null,
+    val queryString: List<UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItX29a3a38f03>? = null,
     /**
-     * Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively
-     * (RFC 9110); header values are compared case-sensitively. When a request has multiple values
-     * for the same header, any matching value satisfies the matcher.
+     * Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
      */
-    val headers: List<UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXa744754921>? =
-        null,
+    val headers: List<UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXa744754921>? = null
 )
 
 data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXf7f6361470(
@@ -539,20 +589,23 @@ data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXf7f6361
 )
 
 /**
- * Answer matching requests from the proxy with this response instead of forwarding them to the
- * origin. Combine with a `match` on an earlier rule to allow one sub-path and reject the rest of a
- * domain.
+ * Answer matching requests from the proxy with this response instead of forwarding them to the origin. Combine with a `match` on an earlier rule to allow one sub-path and reject the rest of a domain.
  */
 data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItemResponse(
-    /** HTTP status code returned to the sandbox. */
+    /**
+     * HTTP status code returned to the sandbox.
+     */
     val statusCode: Long,
     /**
-     * HTTP response headers. Framing and hop-by-hop headers are managed by the proxy and cannot be
-     * set.
+     * HTTP response headers. Framing and hop-by-hop headers are managed by the proxy and cannot be set.
      */
     val headers: Map<String, String>? = null,
-    /** UTF-8 response body. Requires `contentType`. */
+    /**
+     * UTF-8 response body. Requires `contentType`.
+     */
     val body: String? = null,
-    /** Value of the `Content-Type` response header. Required when `body` is set. */
-    val contentType: String? = null,
+    /**
+     * Value of the `Content-Type` response header. Required when `body` is set.
+     */
+    val contentType: String? = null
 )

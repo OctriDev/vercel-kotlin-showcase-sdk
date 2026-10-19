@@ -3,345 +3,159 @@
 
 package dev.octri.showcase.vercel
 
+
 class SecurityNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Updates whether Attack Challenge mode is enabled for a project. Supply `projectId` and
-     * `attackModeEnabled`; include `attackModeActiveUntil` when using the request variant that sets
-     * an active-until time. The response includes the updated setting and its update timestamp.
+     * Updates whether Attack Challenge mode is enabled for a project. Supply `projectId` and `attackModeEnabled`; include `attackModeActiveUntil` when using the request variant that sets an active-until time. The response includes the updated setting and its update timestamp.
      *
      * Update the setting for determining if the project has Attack Challenge mode enabled.
      */
-    fun updateAttackChallengeMode(
-        body: Map<String, Any>,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Security.UpdateAttackChallengeModeResponse {
-        return dev.octri.showcase.vercel.methods.Security.updateAttackChallengeMode(
-            clientConfig,
-            body,
-            teamId,
-            slug,
-            options,
-        )
+    fun updateAttackChallengeMode(body: Map<String, Any>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Security.UpdateAttackChallengeModeResponse {
+        return dev.octri.showcase.vercel.methods.Security.updateAttackChallengeMode(clientConfig, body, teamId, slug, options)
     }
 
     /**
-     * Retrieves the active and draft firewall configurations for a project, along with its
-     * configuration versions. Use this operation to inspect the current WAF settings and review
-     * available versions before changing or activating a configuration.
+     * Retrieves the active and draft firewall configurations for a project, along with its configuration versions. Use this operation to inspect the current WAF settings and review available versions before changing or activating a configuration.
      *
      * Lists WAF configs for a project
      */
-    fun getFirewallConfig(
-        options: RequestOptions? = null
-    ): dev.octri.showcase.vercel.methods.Security.GetSecurityFirewallConfigResponse {
-        return dev.octri.showcase.vercel.methods.Security.getSecurityFirewallConfig(
-            clientConfig,
-            options,
-        )
+    fun getFirewallConfig(options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Security.GetSecurityFirewallConfigResponse {
+        return dev.octri.showcase.vercel.methods.Security.getSecurityFirewallConfig(clientConfig, options)
     }
 
     /**
-     * Replaces the firewall configuration for a project, creating a configuration if one does not
-     * already exist. Supply `firewallEnabled` and any firewall settings you want applied, including
-     * rules, rulesets, IP rules, or managed rules.
+     * Replaces the firewall configuration for a project, creating a configuration if one does not already exist. Supply `firewallEnabled` and any firewall settings you want applied, including rules, rulesets, IP rules, or managed rules.
      *
-     * Set the firewall configuration to provided rules and settings. Creates or overwrite the
-     * existing firewall configuration.
+     * Set the firewall configuration to provided rules and settings. Creates or overwrite the existing firewall configuration.
      */
-    fun putFirewallConfig(
-        request: dev.octri.showcase.vercel.methods.Security.PutFirewallConfigRequest,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Security.PutFirewallConfigResponse {
-        return dev.octri.showcase.vercel.methods.Security.putFirewallConfig(
-            clientConfig,
-            request,
-            options,
-        )
+    fun putFirewallConfig(request: dev.octri.showcase.vercel.methods.Security.PutFirewallConfigRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Security.PutFirewallConfigResponse {
+        return dev.octri.showcase.vercel.methods.Security.putFirewallConfig(clientConfig, request, options)
     }
 
     /**
-     * Updates an existing firewall configuration by applying configuration changes. Supply the
-     * appropriate action and values for each change; the accepted body uses action-specific shapes
-     * for firewall settings and rulesets.
+     * Updates an existing firewall configuration by applying configuration changes. Supply the appropriate action and values for each change; the accepted body uses action-specific shapes for firewall settings and rulesets.
      *
      * Process updates to modify the existing firewall config for a project
      */
-    fun updateFirewallConfig(
-        projectId: String,
-        body: Map<String, Any>,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Map<String, Any> {
-        return dev.octri.showcase.vercel.methods.Security.updateFirewallConfig(
-            clientConfig,
-            projectId,
-            body,
-            teamId,
-            slug,
-            options,
-        )
+    fun updateFirewallConfig(projectId: String, body: Map<String, Any>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Map<String, Any> {
+        return dev.octri.showcase.vercel.methods.Security.updateFirewallConfig(clientConfig, projectId, body, teamId, slug, options)
     }
 
     /**
-     * Retrieves a specific firewall configuration version for a project. Use `configVersion` to
-     * select the version to inspect; the deployed version is identified as `active`.
+     * Retrieves a specific firewall configuration version for a project. Use `configVersion` to select the version to inspect; the deployed version is identified as `active`.
      *
-     * Retrieve the specified firewall configuration for a project. The deployed configVersion will
-     * be `active`
+     * Retrieve the specified firewall configuration for a project. The deployed configVersion will be `active`
      */
-    fun getFirewallConfig2(
-        configVersion: String,
-        projectId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Security.GetFirewallConfigResponse {
-        return dev.octri.showcase.vercel.methods.Security.getFirewallConfig(
-            clientConfig,
-            configVersion,
-            projectId,
-            teamId,
-            slug,
-            options,
-        )
+    fun getFirewallConfig2(configVersion: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Security.GetFirewallConfigResponse {
+        return dev.octri.showcase.vercel.methods.Security.getFirewallConfig(clientConfig, configVersion, projectId, teamId, slug, options)
     }
 
     /**
-     * Deletes a firewall configuration version. Supply `configVersion` to identify the version to
-     * remove; use this operation when that version should no longer be available.
+     * Deletes a firewall configuration version. Supply `configVersion` to identify the version to remove; use this operation when that version should no longer be available.
      *
      * Promotes a draft WAF config to an active config
      */
-    fun deleteFirewallConfigByConfigVersion(
-        configVersion: String,
-        options: RequestOptions? = null,
-    ): Unit {
-        return dev.octri.showcase.vercel.methods.Security
-            .deleteSecurityFirewallConfigByConfigVersion(clientConfig, configVersion, options)
+    fun deleteFirewallConfigByConfigVersion(configVersion: String, options: RequestOptions? = null): Unit {
+        return dev.octri.showcase.vercel.methods.Security.deleteSecurityFirewallConfigByConfigVersion(clientConfig, configVersion, options)
     }
 
     /**
-     * Triggers activation of a draft firewall configuration version. Supply `configVersion` to
-     * select the draft to promote; the response contains the activated configuration.
+     * Triggers activation of a draft firewall configuration version. Supply `configVersion` to select the draft to promote; the response contains the activated configuration.
      *
      * Promotes a draft WAF config to an active config
      */
-    fun createFirewallConfigByConfigVersionActivate(
-        configVersion: String,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Security.CreateSecurityFirewallConfigByConfigVersionActivateResponse {
-        return dev.octri.showcase.vercel.methods.Security
-            .createSecurityFirewallConfigByConfigVersionActivate(
-                clientConfig,
-                configVersion,
-                options,
-            )
+    fun createFirewallConfigByConfigVersionActivate(configVersion: String, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Security.CreateSecurityFirewallConfigByConfigVersionActivateResponse {
+        return dev.octri.showcase.vercel.methods.Security.createSecurityFirewallConfigByConfigVersionActivate(clientConfig, configVersion, options)
     }
 
     /**
-     * Retrieves recent active attack data for a project. Use `since` to set the lookback period in
-     * days; it defaults to one day when omitted.
+     * Retrieves recent active attack data for a project. Use `since` to set the lookback period in days; it defaults to one day when omitted.
      *
      * Retrieve active attack data within the last N days (default: 1 day)
      */
-    fun getActiveAttackStatus(
-        projectId: String,
-        since: Double? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Map<String, Any> {
-        return dev.octri.showcase.vercel.methods.Security.getActiveAttackStatus(
-            clientConfig,
-            projectId,
-            since,
-            teamId,
-            slug,
-            options,
-        )
+    fun getActiveAttackStatus(projectId: String, since: Double? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Map<String, Any> {
+        return dev.octri.showcase.vercel.methods.Security.getActiveAttackStatus(clientConfig, projectId, since, teamId, slug, options)
     }
 
     /**
-     * Lists system bypass rules configured for a project. Filter the results with `sourceIp`,
-     * `domain`, or `projectScope`, and use `offset` and `limit` to page through matching rules.
+     * Lists system bypass rules configured for a project. Filter the results with `sourceIp`, `domain`, or `projectScope`, and use `offset` and `limit` to page through matching rules.
      *
      * Retrieve the system bypass rules configured for the specified project
      */
-    fun getBypassIp(
-        request: dev.octri.showcase.vercel.methods.Security.GetBypassIpRequest,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Security.GetBypassIpResponse {
-        return dev.octri.showcase.vercel.methods.Security.getBypassIp(
-            clientConfig,
-            request,
-            options,
-        )
+    fun getBypassIp(request: dev.octri.showcase.vercel.methods.Security.GetBypassIpRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Security.GetBypassIpResponse {
+        return dev.octri.showcase.vercel.methods.Security.getBypassIp(clientConfig, request, options)
     }
 
     /**
-     * Creates a system bypass rule for a project. Supply either `domain` to scope the rule to a
-     * domain or `projectScope` to apply it across project domains; you can also set a source IP,
-     * expiry, and note.
+     * Creates a system bypass rule for a project. Supply either `domain` to scope the rule to a domain or `projectScope` to apply it across project domains; you can also set a source IP, expiry, and note.
      *
      * Create new system bypass rules
      */
-    fun addBypassIp(
-        request: dev.octri.showcase.vercel.methods.Security.AddBypassIpRequest,
-        options: RequestOptions? = null,
-    ): AddBypassIpResponse {
-        return dev.octri.showcase.vercel.methods.Security.addBypassIp(
-            clientConfig,
-            request,
-            options,
-        )
+    fun addBypassIp(request: dev.octri.showcase.vercel.methods.Security.AddBypassIpRequest, options: RequestOptions? = null): AddBypassIpResponse {
+        return dev.octri.showcase.vercel.methods.Security.addBypassIp(clientConfig, request, options)
     }
 
     /**
-     * Deletes system bypass rules for a project. Specify either `domain` or `projectScope` to
-     * identify the scope of the rules to remove, and optionally narrow the selection with source
-     * details.
+     * Deletes system bypass rules for a project. Specify either `domain` or `projectScope` to identify the scope of the rules to remove, and optionally narrow the selection with source details.
      *
      * Remove system bypass rules
      */
-    fun removeBypassIp(
-        request: dev.octri.showcase.vercel.methods.Security.RemoveBypassIpRequest,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Security.RemoveBypassIpResponse {
-        return dev.octri.showcase.vercel.methods.Security.removeBypassIp(
-            clientConfig,
-            request,
-            options,
-        )
+    fun removeBypassIp(request: dev.octri.showcase.vercel.methods.Security.RemoveBypassIpRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Security.RemoveBypassIpResponse {
+        return dev.octri.showcase.vercel.methods.Security.removeBypassIp(clientConfig, request, options)
     }
 
     /**
-     * Lists conditional firewall bypass rules for a project. Use `projectId` to select the project
-     * and optionally filter by `slug` or `domain`; `limit` and `offset` control the returned
-     * results. The response includes the rules and may include pagination metadata.
+     * Lists conditional firewall bypass rules for a project. Use `projectId` to select the project and optionally filter by `slug` or `domain`; `limit` and `offset` control the returned results. The response includes the rules and may include pagination metadata.
      *
      * Retrieve conditional firewall bypass rules for a project.
      */
-    fun getConditionalBypass(
-        request: dev.octri.showcase.vercel.methods.Security.GetConditionalBypassRequest,
-        options: RequestOptions? = null,
-    ): GetConditionalBypassResponse {
-        return dev.octri.showcase.vercel.methods.Security.getConditionalBypass(
-            clientConfig,
-            request,
-            options,
-        )
+    fun getConditionalBypass(request: dev.octri.showcase.vercel.methods.Security.GetConditionalBypassRequest, options: RequestOptions? = null): GetConditionalBypassResponse {
+        return dev.octri.showcase.vercel.methods.Security.getConditionalBypass(clientConfig, request, options)
     }
 
     /**
-     * Creates a conditional firewall bypass rule for a project domain. Provide the domain and a
-     * `conditionGroup` containing the conditions that determine when the bypass applies. You can
-     * add an optional note to describe the rule.
+     * Creates a conditional firewall bypass rule for a project domain. Provide the domain and a `conditionGroup` containing the conditions that determine when the bypass applies. You can add an optional note to describe the rule.
      *
      * Create a conditional firewall bypass rule for a project domain.
      */
-    fun createConditionalBypass(
-        request: dev.octri.showcase.vercel.methods.Security.CreateConditionalBypassRequest,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Security.CreateConditionalBypassResponse {
-        return dev.octri.showcase.vercel.methods.Security.createConditionalBypass(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createConditionalBypass(request: dev.octri.showcase.vercel.methods.Security.CreateConditionalBypassRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Security.CreateConditionalBypassResponse {
+        return dev.octri.showcase.vercel.methods.Security.createConditionalBypass(clientConfig, request, options)
     }
 
     /**
-     * Deletes a conditional firewall bypass rule for a project domain. Specify the project with
-     * `projectId` and the rule's domain with `domain`. You can use `slug` or `teamId` to perform
-     * the request in a team context.
+     * Deletes a conditional firewall bypass rule for a project domain. Specify the project with `projectId` and the rule's domain with `domain`. You can use `slug` or `teamId` to perform the request in a team context.
      *
      * Delete a conditional firewall bypass rule from a project domain.
      */
-    fun deleteConditionalBypass(
-        projectId: String,
-        domain: String,
-        slug: String? = null,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Security.DeleteConditionalBypassResponse {
-        return dev.octri.showcase.vercel.methods.Security.deleteConditionalBypass(
-            clientConfig,
-            projectId,
-            domain,
-            slug,
-            teamId,
-            options,
-        )
+    fun deleteConditionalBypass(projectId: String, domain: String, slug: String? = null, teamId: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Security.DeleteConditionalBypassResponse {
+        return dev.octri.showcase.vercel.methods.Security.deleteConditionalBypass(clientConfig, projectId, domain, slug, teamId, options)
     }
 
     /**
-     * Lists firewall actions for a project, with optional filters for time, host, IP address,
-     * activity, action, and rule. Filters are combined across parameters and matched as
-     * alternatives within repeated parameters; use the returned pagination cursor to fetch
-     * subsequent results. Rule names reflect the project's current active firewall configuration
-     * and active team rulesets.
+     * Lists firewall actions for a project, with optional filters for time, host, IP address, activity, action, and rule. Filters are combined across parameters and matched as alternatives within repeated parameters; use the returned pagination cursor to fetch subsequent results. Rule names reflect the project's current active firewall configuration and active team rulesets.
      *
-     * Retrieve firewall actions for a project Rule names are resolved against the project's
-     * *current* active firewall configuration and the team's active rulesets, so a rule that has
-     * since been renamed reports its new name and one that has been deleted reports `null`. System
-     * rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always
-     * report `null`. Filters (`ip`, `isActive`, `action`, `actionType`, `ruleKind`, `ruleId`,
-     * `hosts`) are ANDed across params…
+     * Retrieve firewall actions for a project Rule names are resolved against the project's *current* active firewall configuration and the team's active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`. Filters (`ip`, `isActive`, `action`, `actionType`, `ruleKind`, `ruleId`, `hosts`) are ANDed across params…
      */
-    fun getFirewallEvents(
-        request: dev.octri.showcase.vercel.methods.Security.GetSecurityFirewallEventsRequest,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Security.GetSecurityFirewallEventsResponse {
-        return dev.octri.showcase.vercel.methods.Security.getSecurityFirewallEvents(
-            clientConfig,
-            request,
-            options,
-        )
+    fun getFirewallEvents(request: dev.octri.showcase.vercel.methods.Security.GetSecurityFirewallEventsRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Security.GetSecurityFirewallEventsResponse {
+        return dev.octri.showcase.vercel.methods.Security.getSecurityFirewallEvents(clientConfig, request, options)
     }
 
     /**
-     * Returns aggregate counts for firewall actions matching the specified project and filters,
-     * without returning individual action rows. The counts represent policies, including policies
-     * that matched no requests. Use the same filter parameters as the firewall actions listing to
-     * scope the summary.
+     * Returns aggregate counts for firewall actions matching the specified project and filters, without returning individual action rows. The counts represent policies, including policies that matched no requests. Use the same filter parameters as the firewall actions listing to scope the summary.
      *
-     * Aggregate counts over the firewall actions matched by the same filters as `GET
-     * /v1/security/firewall/events`, without fetching any rows. Counts are of policies
-     * (mitigations), including ones that matched no requests.
+     * Aggregate counts over the firewall actions matched by the same filters as `GET /v1/security/firewall/events`, without fetching any rows. Counts are of policies (mitigations), including ones that matched no requests.
      */
-    fun getFirewallEventsSummary(
-        request: dev.octri.showcase.vercel.methods.Security.GetSecurityFirewallEventsSummaryRequest,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Security.GetSecurityFirewallEventsSummaryResponse {
-        return dev.octri.showcase.vercel.methods.Security.getSecurityFirewallEventsSummary(
-            clientConfig,
-            request,
-            options,
-        )
+    fun getFirewallEventsSummary(request: dev.octri.showcase.vercel.methods.Security.GetSecurityFirewallEventsSummaryRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Security.GetSecurityFirewallEventsSummaryResponse {
+        return dev.octri.showcase.vercel.methods.Security.getSecurityFirewallEventsSummary(clientConfig, request, options)
     }
 
     /**
-     * Generates a firewall rule from a natural-language description for the selected project or
-     * team context. Use `projectId`, `teamId`, or `slug` to scope the request, then inspect the
-     * returned `rule` or `error`.
+     * Generates a firewall rule from a natural-language description for the selected project or team context. Use `projectId`, `teamId`, or `slug` to scope the request, then inspect the returned `rule` or `error`.
      *
      * Generate a firewall rule from a natural language description.
      */
-    fun generateFirewallRule(
-        projectId: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Security.GenerateFirewallRuleResponse {
-        return dev.octri.showcase.vercel.methods.Security.generateFirewallRule(
-            clientConfig,
-            projectId,
-            teamId,
-            slug,
-            options,
-        )
+    fun generateFirewallRule(projectId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Security.GenerateFirewallRuleResponse {
+        return dev.octri.showcase.vercel.methods.Security.generateFirewallRule(clientConfig, projectId, teamId, slug, options)
     }
+
 }

@@ -3,31 +3,28 @@
 
 package dev.octri.showcase.vercel.models
 
-data class GetDrainResponseVariant0FilterV2FilterVariant0Project(val ids: List<String>? = null)
+data class GetDrainResponseVariant0FilterV2FilterVariant0Project(
+    val ids: List<String>? = null
+)
 
 data class GetDrainResponseVariant0FilterV2FilterVariant0(
     val type: GetDrainResponseVariant0FilterV2FilterVariant0TypeEnum,
     val deployment: GetDrainResponseVariant0FilterV2FilterVariant0Deployment? = null,
     val log: GetDrainResponseVariant0FilterV2FilterVariant0Log? = null,
-    val project: GetDrainResponseVariant0FilterV2FilterVariant0Project? = null,
+    val project: GetDrainResponseVariant0FilterV2FilterVariant0Project? = null
 )
 
 data class GetDrainResponseVariant0FilterV2FilterVariant1(
     val text: String,
-    val type: GetDrainResponseVariant0FilterV2FilterVariant1TypeEnum,
+    val type: GetDrainResponseVariant0FilterV2FilterVariant1TypeEnum
 )
 
 data class GetDrainResponseVariant0FilterV2(
     val filter: Any,
-    val version: GetDrainResponseVariant0FilterV2VersionEnum,
+    val version: GetDrainResponseVariant0FilterV2VersionEnum
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainResponseVariant0(
     val createdAt: Double,
     val delivery: Any,
@@ -45,7 +42,7 @@ data class GetDrainResponseVariant0(
     val sampling: List<GetDrainResponseVariant0SamplingItem>? = null,
     val status: GetDrainResponseVariant0StatusEnum? = null,
     val teamId: String? = null,
-    val filterV2: GetDrainResponseVariant0FilterV2? = null,
+    val filterV2: GetDrainResponseVariant0FilterV2? = null
 ) : GetDrainResponse
 
 data class GetDrainResponseVariant1DeliveryVariant0SecretVariant1(
@@ -58,10 +55,12 @@ data class GetDrainResponseVariant1DeliveryVariant0(
     val headers: Map<String, String>,
     val type: GetDrainResponseVariant1DeliveryVariant0TypeEnum,
     val compression: GetDrainResponseVariant1DeliveryVariant0CompressionEnum? = null,
-    val secret: Any? = null,
+    val secret: Any? = null
 )
 
-data class GetDrainResponseVariant1DeliveryVariant1Endpoint(val traces: String)
+data class GetDrainResponseVariant1DeliveryVariant1Endpoint(
+    val traces: String
+)
 
 data class GetDrainResponseVariant1DeliveryVariant1SecretVariant1(
     val kind: GetDrainResponseVariant1DeliveryVariant1SecretVariant1KindEnum
@@ -72,13 +71,13 @@ data class GetDrainResponseVariant1DeliveryVariant1(
     val endpoint: GetDrainResponseVariant1DeliveryVariant1Endpoint,
     val headers: Map<String, String>,
     val type: GetDrainResponseVariant1DeliveryVariant1TypeEnum,
-    val secret: Any? = null,
+    val secret: Any? = null
 )
 
 data class GetDrainResponseVariant1DeliveryVariant2(
     val endpoint: String,
     val table: String,
-    val type: GetDrainResponseVariant1DeliveryVariant2TypeEnum,
+    val type: GetDrainResponseVariant1DeliveryVariant2TypeEnum
 )
 
 data class GetDrainResponseVariant1DeliveryVariant3(
@@ -90,32 +89,30 @@ data class GetDrainResponseVariant1DeliveryVariant3(
     val roleArn: String,
     val type: GetDrainResponseVariant1DeliveryVariant3TypeEnum,
     val objectAcl: GetDrainResponseVariant1DeliveryVariant3ObjectAclEnum? = null,
-    val serverSideEncryption: GetDrainResponseVariant1DeliveryVariant3ServerSideEncryptionEnum? =
-        null,
+    val serverSideEncryption: GetDrainResponseVariant1DeliveryVariant3ServerSideEncryptionEnum? = null
 )
 
 data class GetDrainResponseVariant1DeliveryVariant4(
     val target: GetDrainResponseVariant1DeliveryVariant4TargetEnum,
-    val type: GetDrainResponseVariant1DeliveryVariant4TypeEnum,
+    val type: GetDrainResponseVariant1DeliveryVariant4TypeEnum
 )
 
 data class GetDrainResponseVariant1Schemas(
-    @com.fasterxml.jackson.annotation.JsonProperty("ai_gateway")
-    val aiGateway: Map<String, Any>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("ai_gateway") val aiGateway: Map<String, Any>? = null,
     val analytics: Map<String, Any>? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("audit_log")
-    val auditLog: Map<String, Any>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("audit_log") val auditLog: Map<String, Any>? = null,
     val connect: Map<String, Any>? = null,
     val log: Map<String, Any>? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("speed_insights")
-    val speedInsights: Map<String, Any>? = null,
-    val trace: Map<String, Any>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("speed_insights") val speedInsights: Map<String, Any>? = null,
+    val trace: Map<String, Any>? = null
 )
 
 data class GetDrainResponseVariant1SourceVariant0(
     val kind: GetDrainResponseVariant1SourceVariant0KindEnum,
-    /** Informational marker for a system-owned default drain. */
-    val defaultFor: GetDrainResponseVariant1SourceVariant0DefaultForEnum? = null,
+    /**
+     * Informational marker for a system-owned default drain.
+     */
+    val defaultFor: GetDrainResponseVariant1SourceVariant0DefaultForEnum? = null
 )
 
 data class GetDrainResponseVariant1SourceVariant1(
@@ -123,64 +120,58 @@ data class GetDrainResponseVariant1SourceVariant1(
     val integrationId: String,
     val kind: GetDrainResponseVariant1SourceVariant1KindEnum,
     val externalResourceId: String? = null,
-    val resourceId: String? = null,
+    val resourceId: String? = null
 )
 
 data class GetDrainResponseVariant1SamplingItem(
     val rate: Double,
     val type: GetDrainResponseVariant1SamplingItemTypeEnum,
     val env: GetDrainResponseVariant1SamplingItemEnvEnum? = null,
-    val requestPath: String? = null,
+    val requestPath: String? = null
 )
 
 data class GetDrainResponseVariant1FilterV2FilterVariant0Deployment(
-    val environments:
-        List<GetDrainResponseVariant1FilterV2FilterVariant0DeploymentEnvirXc0e4d80e30>? =
-        null
+    val environments: List<GetDrainResponseVariant1FilterV2FilterVariant0DeploymentEnvirXc0e4d80e30>? = null
 )
 
 data class GetDrainResponseVariant1FilterV2FilterVariant0Log(
-    @com.fasterxml.jackson.annotation.JsonProperty("legacy_excludeCachedStaticAssetLogs")
-    val legacyExcludeCachedStaticAssetLogs: Boolean? = null,
-    val sources: List<GetDrainResponseVariant1FilterV2FilterVariant0LogSourcesItemEnum>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("legacy_excludeCachedStaticAssetLogs") val legacyExcludeCachedStaticAssetLogs: Boolean? = null,
+    val sources: List<GetDrainResponseVariant1FilterV2FilterVariant0LogSourcesItemEnum>? = null
 )
 
-data class GetDrainResponseVariant1FilterV2FilterVariant0Project(val ids: List<String>? = null)
+data class GetDrainResponseVariant1FilterV2FilterVariant0Project(
+    val ids: List<String>? = null
+)
 
 data class GetDrainResponseVariant1FilterV2FilterVariant0(
     val type: GetDrainResponseVariant1FilterV2FilterVariant0TypeEnum,
     val deployment: GetDrainResponseVariant1FilterV2FilterVariant0Deployment? = null,
     val log: GetDrainResponseVariant1FilterV2FilterVariant0Log? = null,
-    val project: GetDrainResponseVariant1FilterV2FilterVariant0Project? = null,
+    val project: GetDrainResponseVariant1FilterV2FilterVariant0Project? = null
 )
 
 data class GetDrainResponseVariant1FilterV2FilterVariant1(
     val text: String,
-    val type: GetDrainResponseVariant1FilterV2FilterVariant1TypeEnum,
+    val type: GetDrainResponseVariant1FilterV2FilterVariant1TypeEnum
 )
 
 data class GetDrainResponseVariant1FilterV2(
     val filter: Any,
-    val version: GetDrainResponseVariant1FilterV2VersionEnum,
+    val version: GetDrainResponseVariant1FilterV2VersionEnum
 )
 
 data class GetDrainResponseVariant1ProjectAccessVariant0(
     val access: GetDrainResponseVariant1ProjectAccessVariant0AccessEnum,
-    val managedBy: GetDrainResponseVariant1ProjectAccessVariant0ManagedByEnum,
+    val managedBy: GetDrainResponseVariant1ProjectAccessVariant0ManagedByEnum
 )
 
 data class GetDrainResponseVariant1ProjectAccessVariant1(
     val access: GetDrainResponseVariant1ProjectAccessVariant1AccessEnum,
     val projectIds: List<String>,
-    val managedBy: GetDrainResponseVariant1ProjectAccessVariant1ManagedByEnum,
+    val managedBy: GetDrainResponseVariant1ProjectAccessVariant1ManagedByEnum
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainResponseVariant1(
     val createdAt: Double,
     val delivery: Any,
@@ -202,13 +193,13 @@ data class GetDrainResponseVariant1(
     val integrationConfigurationUri: String? = null,
     val integrationIcon: String? = null,
     val integrationWebsite: String? = null,
-    val projectAccess: Any? = null,
+    val projectAccess: Any? = null
 ) : GetDrainResponse
 
-/** Typed representation of the `GetDrainResponse` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = GetDrainResponse.Deserializer::class
-)
+/**
+ * Typed representation of the `GetDrainResponse` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = GetDrainResponse.Deserializer::class)
 sealed interface GetDrainResponse {
     /** Chooses the branch this payload is shaped like. */
     class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<GetDrainResponse>() {
@@ -218,8 +209,7 @@ sealed interface GetDrainResponse {
         ): GetDrainResponse {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                GetDrainResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType = GetDrainResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -227,90 +217,59 @@ sealed interface GetDrainResponse {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out GetDrainResponse>> =
-                listOf(GetDrainResponseVariant0::class.java, GetDrainResponseVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out GetDrainResponse>> = listOf(GetDrainResponseVariant0::class.java, GetDrainResponseVariant1::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        GetDrainResponse::class.java,
-                        "no GetDrainResponse branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, GetDrainResponse::class.java, "no GetDrainResponse branch accepts this payload")
             }
         }
     }
 }
 
-internal val GetDrainResponseOwnedTypes: List<Pair<List<String>, Class<out GetDrainResponse>>> =
-    listOf(
-        listOf(
-            "integrationConfigurationUri",
-            "integrationIcon",
-            "integrationWebsite",
-            "projectAccess",
-        ) to GetDrainResponseVariant1::class.java
-    )
+internal val GetDrainResponseOwnedTypes: List<Pair<List<String>, Class<out GetDrainResponse>>> = listOf(
+    listOf("integrationConfigurationUri", "integrationIcon", "integrationWebsite", "projectAccess") to GetDrainResponseVariant1::class.java,
+)
 
 data class GetDrainsResponseDrainsItemDeliveryVariant0SecretVariant1(
     val kind: GetDrainsResponseDrainsItemDeliveryVariant0SecretVariant1KindEnum
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemDeliveryVariant0(
     val encoding: GetDrainsResponseDrainsItemDeliveryVariant0EncodingEnum,
     val endpoint: String,
     val headers: Map<String, String>,
     val type: GetDrainsResponseDrainsItemDeliveryVariant0TypeEnum,
     val compression: GetDrainsResponseDrainsItemDeliveryVariant0CompressionEnum? = null,
-    val secret: Any? = null,
+    val secret: Any? = null
 ) : GetDrainsResponseDrainsItemDelivery
 
-data class GetDrainsResponseDrainsItemDeliveryVariant1Endpoint(val traces: String)
+data class GetDrainsResponseDrainsItemDeliveryVariant1Endpoint(
+    val traces: String
+)
 
 data class GetDrainsResponseDrainsItemDeliveryVariant1SecretVariant1(
     val kind: GetDrainsResponseDrainsItemDeliveryVariant1SecretVariant1KindEnum
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemDeliveryVariant1(
     val encoding: GetDrainsResponseDrainsItemDeliveryVariant1EncodingEnum,
     val endpoint: GetDrainsResponseDrainsItemDeliveryVariant1Endpoint,
     val headers: Map<String, String>,
     val type: GetDrainsResponseDrainsItemDeliveryVariant1TypeEnum,
-    val secret: Any? = null,
+    val secret: Any? = null
 ) : GetDrainsResponseDrainsItemDelivery
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemDeliveryVariant2(
     val endpoint: String,
     val table: String,
-    val type: GetDrainsResponseDrainsItemDeliveryVariant2TypeEnum,
+    val type: GetDrainsResponseDrainsItemDeliveryVariant2TypeEnum
 ) : GetDrainsResponseDrainsItemDelivery
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemDeliveryVariant3(
     val compression: GetDrainsResponseDrainsItemDeliveryVariant3CompressionEnum,
     val encoding: GetDrainsResponseDrainsItemDeliveryVariant3EncodingEnum,
@@ -320,48 +279,25 @@ data class GetDrainsResponseDrainsItemDeliveryVariant3(
     val roleArn: String,
     val type: GetDrainsResponseDrainsItemDeliveryVariant3TypeEnum,
     val objectAcl: GetDrainsResponseDrainsItemDeliveryVariant3ObjectAclEnum? = null,
-    val serverSideEncryption: GetDrainsResponseDrainsItemDeliveryVariant3ServerSideEncryptionEnum? =
-        null,
+    val serverSideEncryption: GetDrainsResponseDrainsItemDeliveryVariant3ServerSideEncryptionEnum? = null
 ) : GetDrainsResponseDrainsItemDelivery
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemDeliveryVariant4(
     val target: GetDrainsResponseDrainsItemDeliveryVariant4TargetEnum,
-    val type: GetDrainsResponseDrainsItemDeliveryVariant4TypeEnum,
+    val type: GetDrainsResponseDrainsItemDeliveryVariant4TypeEnum
 ) : GetDrainsResponseDrainsItemDelivery
 
-/** Typed representation of the `GetDrainsResponseDrainsItemDelivery` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+/**
+ * Typed representation of the `GetDrainsResponseDrainsItemDelivery` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemDeliveryVariant0::class,
-        name = "http",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemDeliveryVariant1::class,
-        name = "otlphttp",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemDeliveryVariant2::class,
-        name = "clickhouse",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemDeliveryVariant3::class,
-        name = "s3",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemDeliveryVariant4::class,
-        name = "internal",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemDeliveryVariant0::class, name = "http"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemDeliveryVariant1::class, name = "otlphttp"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemDeliveryVariant2::class, name = "clickhouse"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemDeliveryVariant3::class, name = "s3"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemDeliveryVariant4::class, name = "internal")
 )
 sealed interface GetDrainsResponseDrainsItemDelivery
 
@@ -369,59 +305,41 @@ data class GetDrainsResponseDrainsItemDelivery2Variant0SecretVariant1(
     val kind: GetDrainsResponseDrainsItemDelivery2Variant0SecretVariant1KindEnum
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemDelivery2Variant0(
     val encoding: GetDrainsResponseDrainsItemDelivery2Variant0EncodingEnum,
     val endpoint: String,
     val headers: Map<String, String>,
     val type: GetDrainsResponseDrainsItemDelivery2Variant0TypeEnum,
     val compression: GetDrainsResponseDrainsItemDelivery2Variant0CompressionEnum? = null,
-    val secret: Any? = null,
+    val secret: Any? = null
 ) : GetDrainsResponseDrainsItemDelivery2
 
-data class GetDrainsResponseDrainsItemDelivery2Variant1Endpoint(val traces: String)
+data class GetDrainsResponseDrainsItemDelivery2Variant1Endpoint(
+    val traces: String
+)
 
 data class GetDrainsResponseDrainsItemDelivery2Variant1SecretVariant1(
     val kind: GetDrainsResponseDrainsItemDelivery2Variant1SecretVariant1KindEnum
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemDelivery2Variant1(
     val encoding: GetDrainsResponseDrainsItemDelivery2Variant1EncodingEnum,
     val endpoint: GetDrainsResponseDrainsItemDelivery2Variant1Endpoint,
     val headers: Map<String, String>,
     val type: GetDrainsResponseDrainsItemDelivery2Variant1TypeEnum,
-    val secret: Any? = null,
+    val secret: Any? = null
 ) : GetDrainsResponseDrainsItemDelivery2
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemDelivery2Variant2(
     val endpoint: String,
     val table: String,
-    val type: GetDrainsResponseDrainsItemDelivery2Variant2TypeEnum,
+    val type: GetDrainsResponseDrainsItemDelivery2Variant2TypeEnum
 ) : GetDrainsResponseDrainsItemDelivery2
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemDelivery2Variant3(
     val compression: GetDrainsResponseDrainsItemDelivery2Variant3CompressionEnum,
     val encoding: GetDrainsResponseDrainsItemDelivery2Variant3EncodingEnum,
@@ -431,330 +349,205 @@ data class GetDrainsResponseDrainsItemDelivery2Variant3(
     val roleArn: String,
     val type: GetDrainsResponseDrainsItemDelivery2Variant3TypeEnum,
     val objectAcl: GetDrainsResponseDrainsItemDelivery2Variant3ObjectAclEnum? = null,
-    val serverSideEncryption:
-        GetDrainsResponseDrainsItemDelivery2Variant3ServerSideEncryptionEnum? =
-        null,
+    val serverSideEncryption: GetDrainsResponseDrainsItemDelivery2Variant3ServerSideEncryptionEnum? = null
 ) : GetDrainsResponseDrainsItemDelivery2
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemDelivery2Variant4(
     val target: GetDrainsResponseDrainsItemDelivery2Variant4TargetEnum,
-    val type: GetDrainsResponseDrainsItemDelivery2Variant4TypeEnum,
+    val type: GetDrainsResponseDrainsItemDelivery2Variant4TypeEnum
 ) : GetDrainsResponseDrainsItemDelivery2
 
-/** Typed representation of the `GetDrainsResponseDrainsItemDelivery2` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+/**
+ * Typed representation of the `GetDrainsResponseDrainsItemDelivery2` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemDelivery2Variant0::class,
-        name = "http",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemDelivery2Variant1::class,
-        name = "otlphttp",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemDelivery2Variant2::class,
-        name = "clickhouse",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemDelivery2Variant3::class,
-        name = "s3",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemDelivery2Variant4::class,
-        name = "internal",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemDelivery2Variant0::class, name = "http"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemDelivery2Variant1::class, name = "otlphttp"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemDelivery2Variant2::class, name = "clickhouse"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemDelivery2Variant3::class, name = "s3"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemDelivery2Variant4::class, name = "internal")
 )
 sealed interface GetDrainsResponseDrainsItemDelivery2
 
 data class GetDrainsResponseDrainsItemFilterV2FilterVariant0Deployment(
-    val environments:
-        List<GetDrainsResponseDrainsItemFilterV2FilterVariant0DeploymentEnX070d324dc2>? =
-        null
+    val environments: List<GetDrainsResponseDrainsItemFilterV2FilterVariant0DeploymentEnX070d324dc2>? = null
 )
 
 data class GetDrainsResponseDrainsItemFilterV2FilterVariant0Log(
-    @com.fasterxml.jackson.annotation.JsonProperty("legacy_excludeCachedStaticAssetLogs")
-    val legacyExcludeCachedStaticAssetLogs: Boolean? = null,
-    val sources: List<GetDrainsResponseDrainsItemFilterV2FilterVariant0LogSourcesItemEnum>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("legacy_excludeCachedStaticAssetLogs") val legacyExcludeCachedStaticAssetLogs: Boolean? = null,
+    val sources: List<GetDrainsResponseDrainsItemFilterV2FilterVariant0LogSourcesItemEnum>? = null
 )
 
-data class GetDrainsResponseDrainsItemFilterV2FilterVariant0Project(val ids: List<String>? = null)
+data class GetDrainsResponseDrainsItemFilterV2FilterVariant0Project(
+    val ids: List<String>? = null
+)
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemFilterV2FilterVariant0(
     val type: GetDrainsResponseDrainsItemFilterV2FilterVariant0TypeEnum,
     val deployment: GetDrainsResponseDrainsItemFilterV2FilterVariant0Deployment? = null,
     val log: GetDrainsResponseDrainsItemFilterV2FilterVariant0Log? = null,
-    val project: GetDrainsResponseDrainsItemFilterV2FilterVariant0Project? = null,
+    val project: GetDrainsResponseDrainsItemFilterV2FilterVariant0Project? = null
 ) : GetDrainsResponseDrainsItemFilterV2Filter
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemFilterV2FilterVariant1(
     val text: String,
-    val type: GetDrainsResponseDrainsItemFilterV2FilterVariant1TypeEnum,
+    val type: GetDrainsResponseDrainsItemFilterV2FilterVariant1TypeEnum
 ) : GetDrainsResponseDrainsItemFilterV2Filter
 
-/** Typed representation of the `GetDrainsResponseDrainsItemFilterV2Filter` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+/**
+ * Typed representation of the `GetDrainsResponseDrainsItemFilterV2Filter` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemFilterV2FilterVariant0::class,
-        name = "basic",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemFilterV2FilterVariant1::class,
-        name = "odata",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemFilterV2FilterVariant0::class, name = "basic"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemFilterV2FilterVariant1::class, name = "odata")
 )
 sealed interface GetDrainsResponseDrainsItemFilterV2Filter
 
 data class GetDrainsResponseDrainsItemFilterV2Filter2Variant0Deployment(
-    val environments:
-        List<GetDrainsResponseDrainsItemFilterV2Filter2Variant0DeploymentEXe232ff16e0>? =
-        null
+    val environments: List<GetDrainsResponseDrainsItemFilterV2Filter2Variant0DeploymentEXe232ff16e0>? = null
 )
 
 data class GetDrainsResponseDrainsItemFilterV2Filter2Variant0Log(
-    @com.fasterxml.jackson.annotation.JsonProperty("legacy_excludeCachedStaticAssetLogs")
-    val legacyExcludeCachedStaticAssetLogs: Boolean? = null,
-    val sources: List<GetDrainsResponseDrainsItemFilterV2Filter2Variant0LogSourcesItemEnum>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("legacy_excludeCachedStaticAssetLogs") val legacyExcludeCachedStaticAssetLogs: Boolean? = null,
+    val sources: List<GetDrainsResponseDrainsItemFilterV2Filter2Variant0LogSourcesItemEnum>? = null
 )
 
-data class GetDrainsResponseDrainsItemFilterV2Filter2Variant0Project(val ids: List<String>? = null)
+data class GetDrainsResponseDrainsItemFilterV2Filter2Variant0Project(
+    val ids: List<String>? = null
+)
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemFilterV2Filter2Variant0(
     val type: GetDrainsResponseDrainsItemFilterV2Filter2Variant0TypeEnum,
     val deployment: GetDrainsResponseDrainsItemFilterV2Filter2Variant0Deployment? = null,
     val log: GetDrainsResponseDrainsItemFilterV2Filter2Variant0Log? = null,
-    val project: GetDrainsResponseDrainsItemFilterV2Filter2Variant0Project? = null,
+    val project: GetDrainsResponseDrainsItemFilterV2Filter2Variant0Project? = null
 ) : GetDrainsResponseDrainsItemFilterV2Filter2
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemFilterV2Filter2Variant1(
     val text: String,
-    val type: GetDrainsResponseDrainsItemFilterV2Filter2Variant1TypeEnum,
+    val type: GetDrainsResponseDrainsItemFilterV2Filter2Variant1TypeEnum
 ) : GetDrainsResponseDrainsItemFilterV2Filter2
 
-/** Typed representation of the `GetDrainsResponseDrainsItemFilterV2Filter2` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+/**
+ * Typed representation of the `GetDrainsResponseDrainsItemFilterV2Filter2` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemFilterV2Filter2Variant0::class,
-        name = "basic",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemFilterV2Filter2Variant1::class,
-        name = "odata",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemFilterV2Filter2Variant0::class, name = "basic"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemFilterV2Filter2Variant1::class, name = "odata")
 )
 sealed interface GetDrainsResponseDrainsItemFilterV2Filter2
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemProjectAccessVariant0(
     val access: GetDrainsResponseDrainsItemProjectAccessVariant0AccessEnum,
-    val managedBy: GetDrainsResponseDrainsItemProjectAccessVariant0ManagedByEnum,
+    val managedBy: GetDrainsResponseDrainsItemProjectAccessVariant0ManagedByEnum
 ) : GetDrainsResponseDrainsItemProjectAccess
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemProjectAccessVariant1(
     val access: GetDrainsResponseDrainsItemProjectAccessVariant1AccessEnum,
     val projectIds: List<String>,
-    val managedBy: GetDrainsResponseDrainsItemProjectAccessVariant1ManagedByEnum,
+    val managedBy: GetDrainsResponseDrainsItemProjectAccessVariant1ManagedByEnum
 ) : GetDrainsResponseDrainsItemProjectAccess
 
-/** Typed representation of the `GetDrainsResponseDrainsItemProjectAccess` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "access",
-    visible = true,
-)
+/**
+ * Typed representation of the `GetDrainsResponseDrainsItemProjectAccess` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "access", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemProjectAccessVariant0::class,
-        name = "all",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemProjectAccessVariant1::class,
-        name = "some",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemProjectAccessVariant0::class, name = "all"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemProjectAccessVariant1::class, name = "some")
 )
 sealed interface GetDrainsResponseDrainsItemProjectAccess
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemSourceVariant0(
     val kind: GetDrainsResponseDrainsItemSourceVariant0KindEnum,
-    /** Informational marker for a system-owned default drain. */
-    val defaultFor: GetDrainsResponseDrainsItemSourceVariant0DefaultForEnum? = null,
+    /**
+     * Informational marker for a system-owned default drain.
+     */
+    val defaultFor: GetDrainsResponseDrainsItemSourceVariant0DefaultForEnum? = null
 ) : GetDrainsResponseDrainsItemSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemSourceVariant1(
     val integrationConfigurationId: String,
     val integrationId: String,
     val kind: GetDrainsResponseDrainsItemSourceVariant1KindEnum,
     val externalResourceId: String? = null,
-    val resourceId: String? = null,
+    val resourceId: String? = null
 ) : GetDrainsResponseDrainsItemSource
 
-/** Typed representation of the `GetDrainsResponseDrainsItemSource` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "kind",
-    visible = true,
-)
+/**
+ * Typed representation of the `GetDrainsResponseDrainsItemSource` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "kind", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemSourceVariant0::class,
-        name = "self-served",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemSourceVariant1::class,
-        name = "integration",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemSourceVariant0::class, name = "self-served"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemSourceVariant1::class, name = "integration")
 )
 sealed interface GetDrainsResponseDrainsItemSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemSource2Variant0(
     val kind: GetDrainsResponseDrainsItemSource2Variant0KindEnum,
-    /** Informational marker for a system-owned default drain. */
-    val defaultFor: GetDrainsResponseDrainsItemSource2Variant0DefaultForEnum? = null,
+    /**
+     * Informational marker for a system-owned default drain.
+     */
+    val defaultFor: GetDrainsResponseDrainsItemSource2Variant0DefaultForEnum? = null
 ) : GetDrainsResponseDrainsItemSource2
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetDrainsResponseDrainsItemSource2Variant1(
     val integrationConfigurationId: String,
     val integrationId: String,
     val kind: GetDrainsResponseDrainsItemSource2Variant1KindEnum,
     val externalResourceId: String? = null,
-    val resourceId: String? = null,
+    val resourceId: String? = null
 ) : GetDrainsResponseDrainsItemSource2
 
-/** Typed representation of the `GetDrainsResponseDrainsItemSource2` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "kind",
-    visible = true,
-)
+/**
+ * Typed representation of the `GetDrainsResponseDrainsItemSource2` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "kind", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemSource2Variant0::class,
-        name = "self-served",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetDrainsResponseDrainsItemSource2Variant1::class,
-        name = "integration",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemSource2Variant0::class, name = "self-served"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetDrainsResponseDrainsItemSource2Variant1::class, name = "integration")
 )
 sealed interface GetDrainsResponseDrainsItemSource2
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class TestDrainRequestDeliveryVariant0(
     val type: String,
     val endpoint: String,
     val encoding: TestDrainRequestDeliveryVariant0EncodingEnum,
     val headers: Map<String, String>,
     val compression: TestDrainRequestDeliveryVariant0CompressionEnum? = null,
-    val secret: String? = null,
+    val secret: String? = null
 ) : TestDrainRequestDelivery
 
-data class TestDrainRequestDeliveryVariant1Endpoint(val traces: String)
+data class TestDrainRequestDeliveryVariant1Endpoint(
+    val traces: String
+)
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class TestDrainRequestDeliveryVariant1(
     val type: String,
     val endpoint: TestDrainRequestDeliveryVariant1Endpoint,
     val encoding: TestDrainRequestDeliveryVariant1EncodingEnum,
     val headers: Map<String, String>,
-    val secret: String? = null,
+    val secret: String? = null
 ) : TestDrainRequestDelivery
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class TestDrainRequestDeliveryVariant2(
     val type: String,
     val endpoint: String,
@@ -764,5 +557,5 @@ data class TestDrainRequestDeliveryVariant2(
     val roleArn: String,
     val region: String,
     val serverSideEncryption: TestDrainRequestDeliveryVariant2ServerSideEncryptionEnum? = null,
-    val objectAcl: TestDrainRequestDeliveryVariant2ObjectAclEnum? = null,
+    val objectAcl: TestDrainRequestDeliveryVariant2ObjectAclEnum? = null
 ) : TestDrainRequestDelivery

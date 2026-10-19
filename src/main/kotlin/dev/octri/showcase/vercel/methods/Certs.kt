@@ -10,51 +10,49 @@ import dev.octri.showcase.vercel.SdkClient
 
 object Certs {
 
-    data class GetCertByIdResponse(
-        val autoRenew: Boolean,
-        val cns: List<String>,
-        val createdAt: Double,
-        val expiresAt: Double,
-        val id: String,
-    )
+data class GetCertByIdResponse(
+    val autoRenew: Boolean,
+    val cns: List<String>,
+    val createdAt: Double,
+    val expiresAt: Double,
+    val id: String
+)
 
-    data class GetCertsResponseCertsItem(
-        val autoRenew: Boolean,
-        val cns: List<String>,
-        val createdAt: Double,
-        val expiresAt: Double,
-        val id: String,
-    )
+data class GetCertsResponseCertsItem(
+    val autoRenew: Boolean,
+    val cns: List<String>,
+    val createdAt: Double,
+    val expiresAt: Double,
+    val id: String
+)
 
-    data class GetCertsResponse(
-        val certs: List<GetCertsResponseCertsItem>,
-        /**
-         * This object contains information related to the pagination of the current request,
-         * including the necessary parameters to get the next or previous page of data.
-         */
-        val pagination: Pagination,
-    )
+data class GetCertsResponse(
+    val certs: List<GetCertsResponseCertsItem>,
+    /**
+     * This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
+     */
+    val pagination: Pagination
+)
 
-    data class IssueCertResponse(
-        val autoRenew: Boolean,
-        val cns: List<String>,
-        val createdAt: Double,
-        val expiresAt: Double,
-        val id: String,
-    )
+data class IssueCertResponse(
+    val autoRenew: Boolean,
+    val cns: List<String>,
+    val createdAt: Double,
+    val expiresAt: Double,
+    val id: String
+)
 
-    data class UploadCertResponse(
-        val autoRenew: Boolean,
-        val cns: List<String>,
-        val createdAt: Double,
-        val expiresAt: Double,
-        val id: String,
-    )
+data class UploadCertResponse(
+    val autoRenew: Boolean,
+    val cns: List<String>,
+    val createdAt: Double,
+    val expiresAt: Double,
+    val id: String
+)
+
 
     /**
-     * Retrieves a certificate by its identifier. Use `teamId` or `slug` to specify the team context
-     * for the request. The response includes the certificate's common names, renewal setting, and
-     * creation and expiration timestamps.
+     * Retrieves a certificate by its identifier. Use `teamId` or `slug` to specify the team context for the request. The response includes the certificate's common names, renewal setting, and creation and expiration timestamps.
      *
      * Get cert by id
      *
@@ -62,34 +60,18 @@ object Certs {
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getCertById(
-        clientConfig: ClientConfig,
-        id: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): GetCertByIdResponse {
-        return SdkClient.request<GetCertByIdResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v8/certs/${SdkClient.encodePathSegment(id)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "getCertById",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun getCertById(clientConfig: ClientConfig, id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetCertByIdResponse {
+        return SdkClient.request<GetCertByIdResponse>(SdkClient.RequestSpec("GET", "/v8/certs/${SdkClient.encodePathSegment(id)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getCertById", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
+
+
+
+
+
+
     /**
-     * Deletes a certificate identified by its certificate ID. Use `teamId` or `slug` to scope the
-     * request to a team. The response object confirms the removal.
+     * Deletes a certificate identified by its certificate ID. Use `teamId` or `slug` to scope the request to a team. The response object confirms the removal.
      *
      * Remove cert
      *
@@ -97,69 +79,36 @@ object Certs {
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun removeCert(
-        clientConfig: ClientConfig,
-        id: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Map<String, Any> {
-        return SdkClient.request<Map<String, Any>>(
-                SdkClient.RequestSpec(
-                    "DELETE",
-                    "/v8/certs/${SdkClient.encodePathSegment(id)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "removeCert",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun removeCert(clientConfig: ClientConfig, id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Map<String, Any> {
+        return SdkClient.request<Map<String, Any>>(SdkClient.RequestSpec("DELETE", "/v8/certs/${SdkClient.encodePathSegment(id)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "removeCert", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
+
+
+
+
+
+
     /**
-     * Lists certificates available to the authenticated user or team. Use `teamId` or `slug` to
-     * scope the request to a team. The response includes certificate details and pagination
-     * information.
+     * Lists certificates available to the authenticated user or team. Use `teamId` or `slug` to scope the request to a team. The response includes certificate details and pagination information.
      *
      * Get certs
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getCerts(
-        clientConfig: ClientConfig,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): GetCertsResponse {
-        return SdkClient.request<GetCertsResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v8/certs",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "getCerts",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun getCerts(clientConfig: ClientConfig, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetCertsResponse {
+        return SdkClient.request<GetCertsResponse>(SdkClient.RequestSpec("GET", "/v8/certs", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getCerts", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
+
+
+
+
+
+
     /**
-     * Issues a new certificate for the common names you provide. Supply `cns` to specify the common
-     * names for which the certificate should be issued. The response includes the certificate
-     * identifier, common names, and certificate dates.
+     * Issues a new certificate for the common names you provide. Supply `cns` to specify the common names for which the certificate should be issued. The response includes the certificate identifier, common names, and certificate dates.
      *
      * Issue a new cert
      *
@@ -167,31 +116,15 @@ object Certs {
      * @param slug The Team slug to perform the request on behalf of.
      * @param cns The common names the cert should be issued for
      */
-    fun issueCert(
-        clientConfig: ClientConfig,
-        teamId: String? = null,
-        slug: String? = null,
-        cns: List<String>? = null,
-        options: RequestOptions? = null,
-    ): IssueCertResponse {
-        return SdkClient.request<IssueCertResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v8/certs",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    body = SdkClient.bodyMap("cns" to (SdkClient.omitIfNull(cns))),
-                    operationId = "issueCert",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun issueCert(clientConfig: ClientConfig, teamId: String? = null, slug: String? = null, cns: List<String>? = null, options: RequestOptions? = null): IssueCertResponse {
+        return SdkClient.request<IssueCertResponse>(SdkClient.RequestSpec("POST", "/v8/certs", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("cns" to (SdkClient.omitIfNull(cns))), operationId = "issueCert", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
+
+
+
+
+
 
     /** Parameters for [uploadCert]. */
     data class UploadCertRequest(
@@ -200,13 +133,11 @@ object Certs {
         val cert: String,
         val teamId: String? = null,
         val slug: String? = null,
-        val skipValidation: Boolean? = null,
+        val skipValidation: Boolean? = null
     )
 
     /**
-     * Uploads a certificate using its certificate authority, key, and certificate data. Provide
-     * `ca`, `key`, and `cert` in the request body; you can also set `skipValidation` to control
-     * certificate validation. The response includes the uploaded certificate details.
+     * Uploads a certificate using its certificate authority, key, and certificate data. Provide `ca`, `key`, and `cert` in the request body; you can also set `skipValidation` to control certificate validation. The response includes the uploaded certificate details.
      *
      * Upload a cert
      *
@@ -217,33 +148,16 @@ object Certs {
      * @param slug The Team slug to perform the request on behalf of.
      * @param skipValidation Skip validation of the certificate
      */
-    fun uploadCert(
-        clientConfig: ClientConfig,
-        request: UploadCertRequest,
-        options: RequestOptions? = null,
-    ): UploadCertResponse {
-        return SdkClient.request<UploadCertResponse>(
-                SdkClient.RequestSpec(
-                    "PUT",
-                    "/v8/certs",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    body =
-                        SdkClient.bodyMap(
-                            "ca" to (request.ca),
-                            "key" to (request.key),
-                            "cert" to (request.cert),
-                            "skipValidation" to (SdkClient.omitIfNull(request.skipValidation)),
-                        ),
-                    operationId = "uploadCert",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun uploadCert(clientConfig: ClientConfig, request: UploadCertRequest, options: RequestOptions? = null): UploadCertResponse {
+        return SdkClient.request<UploadCertResponse>(SdkClient.RequestSpec("PUT", "/v8/certs", config = clientConfig, query = mapOf("teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("ca" to (request.ca), "key" to (request.key), "cert" to (request.cert), "skipValidation" to
+    (SdkClient.omitIfNull(request.skipValidation))), operationId = "uploadCert", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
+
+
+
+
+
+
 }

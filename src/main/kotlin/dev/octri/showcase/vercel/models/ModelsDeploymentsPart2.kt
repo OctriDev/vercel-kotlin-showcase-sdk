@@ -5,13 +5,14 @@ package dev.octri.showcase.vercel.models
 
 data class CancelDeploymentResponseRoutesItemVariant0DestinationVariant1(
     val service: String,
-    /** Routing-only path used to select a route inside the target service. */
+    /**
+     * Routing-only path used to select a route inside the target service.
+     */
     val path: String? = null,
     /**
-     * Optional explicit format marker. The destination is identified by the presence of `service`,
-     * so `type` is no longer required.
+     * Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
      */
-    val type: CancelDeploymentResponseRoutesItemVariant0DestinationVariant1TypeEnum? = null,
+    val type: CancelDeploymentResponseRoutesItemVariant0DestinationVariant1TypeEnum? = null
 )
 
 data class CancelDeploymentResponseRoutesItemVariant0HasItemVariant0ValueVariant1(
@@ -25,12 +26,12 @@ data class CancelDeploymentResponseRoutesItemVariant0HasItemVariant0ValueVariant
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CancelDeploymentResponseRoutesItemVariant0HasItemVariant0(
     val type: CancelDeploymentResponseRoutesItemVariant0HasItemVariant0TypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any
 )
 
 data class CancelDeploymentResponseRoutesItemVariant0HasItemVariant1ValueVariant1(
@@ -44,18 +45,18 @@ data class CancelDeploymentResponseRoutesItemVariant0HasItemVariant1ValueVariant
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CancelDeploymentResponseRoutesItemVariant0HasItemVariant1(
     val key: String,
     val type: CancelDeploymentResponseRoutesItemVariant0HasItemVariant1TypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
 )
 
 data class CancelDeploymentResponseRoutesItemVariant0Locale(
     val cookie: String? = null,
-    val redirect: Map<String, String>? = null,
+    val redirect: Map<String, String>? = null
 )
 
 data class CancelDeploymentResponseRoutesItemVariant0MissingItemVariant0X2c77d6dc78(
@@ -69,12 +70,12 @@ data class CancelDeploymentResponseRoutesItemVariant0MissingItemVariant0X2c77d6d
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CancelDeploymentResponseRoutesItemVariant0MissingItemVariant0(
     val type: CancelDeploymentResponseRoutesItemVariant0MissingItemVariant0TypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any
 )
 
 data class CancelDeploymentResponseRoutesItemVariant0MissingItemVariant1Xe0c3026b12(
@@ -88,13 +89,13 @@ data class CancelDeploymentResponseRoutesItemVariant0MissingItemVariant1Xe0c3026
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CancelDeploymentResponseRoutesItemVariant0MissingItemVariant1(
     val key: String,
     val type: CancelDeploymentResponseRoutesItemVariant0MissingItemVariant1TypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
 )
 
 data class CancelDeploymentResponseRoutesItemVariant0Mitigate(
@@ -111,32 +112,29 @@ data class CancelDeploymentResponseRoutesItemVariant0TransformsItemVariaX455bb4b
     val neq: String? = null,
     val ninc: List<String>? = null,
     val pre: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
-data class CancelDeploymentResponseRoutesItemVariant0TransformsItemVariant0Target(val key: Any)
+data class CancelDeploymentResponseRoutesItemVariant0TransformsItemVariant0Target(
+    val key: Any
+)
 
 data class CancelDeploymentResponseRoutesItemVariant0TransformsItemVariant0(
     val op: CancelDeploymentResponseRoutesItemVariant0TransformsItemVariant0OpEnum,
     val target: CancelDeploymentResponseRoutesItemVariant0TransformsItemVariant0Target,
     val type: CancelDeploymentResponseRoutesItemVariant0TransformsItemVariant0TypeEnum,
     val args: Any? = null,
-    val env: List<String>? = null,
+    val env: List<String>? = null
 )
 
 data class CancelDeploymentResponseRoutesItemVariant0TransformsItemVariant1(
     val args: String,
     val op: CancelDeploymentResponseRoutesItemVariant0TransformsItemVariant1OpEnum,
     val type: CancelDeploymentResponseRoutesItemVariant0TransformsItemVariant1TypeEnum,
-    val env: List<String>? = null,
+    val env: List<String>? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CancelDeploymentResponseRoutesItemVariant0(
     val src: String,
     val caseSensitive: Boolean? = null,
@@ -150,77 +148,60 @@ data class CancelDeploymentResponseRoutesItemVariant0(
     val important: Boolean? = null,
     val locale: CancelDeploymentResponseRoutesItemVariant0Locale? = null,
     val methods: List<String>? = null,
-    /** A middleware index in the `middleware` key under the build result */
+    /**
+     * A middleware index in the `middleware` key under the build result
+     */
     val middleware: Double? = null,
     /**
-     * A middleware key within the `output` key under the build result. Overrides a `middleware`
-     * definition.
+     * A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
      */
     val middlewarePath: String? = null,
-    /** The original middleware matchers. */
+    /**
+     * The original middleware matchers.
+     */
     val middlewareRawSrc: List<String>? = null,
     val missing: List<Any>? = null,
     val mitigate: CancelDeploymentResponseRoutesItemVariant0Mitigate? = null,
     @com.fasterxml.jackson.annotation.JsonProperty("override") val `override`: Boolean? = null,
     val respectOriginCacheControl: Boolean? = null,
     /**
-     * Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`,
-     * `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During
-     * normalization, the string forms are converted to their canonical forms (`src`, `dest`,
-     * `status`) and stripped from the route object. `destination` may also be a service-targeted
-     * object, in which case routing is delegated into the named service's internal route table and
-     * the object is preserved…
+     * Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`, `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During normalization, the string forms are converted to their canonical forms (`src`, `dest`, `status`) and stripped from the route object. `destination` may also be a service-targeted object, in which case routing is delegated into the named service's internal route table and the object is preserved…
      */
     val source: String? = null,
     val status: Double? = null,
     val statusCode: Double? = null,
-    val transforms: List<Any>? = null,
+    val transforms: List<Any>? = null
 ) : CancelDeploymentResponseRoutesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CancelDeploymentResponseRoutesItemVariant1(
     val handle: CancelDeploymentResponseRoutesItemVariant1HandleEnum,
     val dest: String? = null,
     val src: String? = null,
-    val status: Double? = null,
+    val status: Double? = null
 ) : CancelDeploymentResponseRoutesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CancelDeploymentResponseRoutesItemVariant2(
     @com.fasterxml.jackson.annotation.JsonProperty("continue") val `continue`: Boolean,
     val middleware: Long,
-    val src: String,
+    val src: String
 ) : CancelDeploymentResponseRoutesItem
 
-/** Typed representation of the `CancelDeploymentResponseRoutesItem` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = CancelDeploymentResponseRoutesItem.Deserializer::class
-)
+/**
+ * Typed representation of the `CancelDeploymentResponseRoutesItem` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = CancelDeploymentResponseRoutesItem.Deserializer::class)
 sealed interface CancelDeploymentResponseRoutesItem {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<CancelDeploymentResponseRoutesItem>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<CancelDeploymentResponseRoutesItem>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): CancelDeploymentResponseRoutesItem {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                CancelDeploymentResponseRoutesItemOwnedTypes.firstOrNull { (keys, _) ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = CancelDeploymentResponseRoutesItemOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -228,52 +209,20 @@ sealed interface CancelDeploymentResponseRoutesItem {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out CancelDeploymentResponseRoutesItem>> =
-                listOf(
-                    CancelDeploymentResponseRoutesItemVariant0::class.java,
-                    CancelDeploymentResponseRoutesItemVariant1::class.java,
-                    CancelDeploymentResponseRoutesItemVariant2::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out CancelDeploymentResponseRoutesItem>> = listOf(CancelDeploymentResponseRoutesItemVariant0::class.java, CancelDeploymentResponseRoutesItemVariant1::class.java, CancelDeploymentResponseRoutesItemVariant2::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        CancelDeploymentResponseRoutesItem::class.java,
-                        "no CancelDeploymentResponseRoutesItem branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, CancelDeploymentResponseRoutesItem::class.java, "no CancelDeploymentResponseRoutesItem branch accepts this payload")
             }
         }
     }
 }
 
-internal val CancelDeploymentResponseRoutesItemOwnedTypes:
-    List<Pair<List<String>, Class<out CancelDeploymentResponseRoutesItem>>> =
-    listOf(
-        listOf(
-            "caseSensitive",
-            "check",
-            "destination",
-            "env",
-            "has",
-            "headers",
-            "important",
-            "locale",
-            "methods",
-            "middlewarePath",
-            "middlewareRawSrc",
-            "missing",
-            "mitigate",
-            "override",
-            "respectOriginCacheControl",
-            "source",
-            "statusCode",
-            "transforms",
-        ) to CancelDeploymentResponseRoutesItemVariant0::class.java,
-        listOf("handle") to CancelDeploymentResponseRoutesItemVariant1::class.java,
-    )
+internal val CancelDeploymentResponseRoutesItemOwnedTypes: List<Pair<List<String>, Class<out CancelDeploymentResponseRoutesItem>>> = listOf(
+    listOf("caseSensitive", "check", "destination", "env", "has", "headers", "important", "locale", "methods", "middlewarePath", "middlewareRawSrc", "missing", "mitigate", "override", "respectOriginCacheControl", "source", "statusCode", "transforms") to CancelDeploymentResponseRoutesItemVariant0::class.java,
+    listOf("handle") to CancelDeploymentResponseRoutesItemVariant1::class.java,
+)
 
 data class CancelDeploymentResponseServicesItemVariant0BuilderConfigDaemX6528aa9ec4(
     val memory: CancelDeploymentResponseServicesItemVariant0BuilderConfigDaemX7d43df46d2
@@ -283,18 +232,24 @@ data class CancelDeploymentResponseServicesItemVariant0BuilderConfigDaemonResour
     val requests: CancelDeploymentResponseServicesItemVariant0BuilderConfigDaemX6528aa9ec4
 )
 
-/** Set when this build produces the named daemon. */
+/**
+ * Set when this build produces the named daemon.
+ */
 data class CancelDeploymentResponseServicesItemVariant0BuilderConfigDaemon(
     val entrypoint: String,
     val root: String,
     val name: String,
     val command: List<String>? = null,
-    /** Instance counts by region. */
+    /**
+     * Instance counts by region.
+     */
     val instances: Map<String, Double>? = null,
-    /** Instance counts by region. */
+    /**
+     * Instance counts by region.
+     */
     val replicas: Map<String, Double>? = null,
     val resources: CancelDeploymentResponseServicesItemVariant0BuilderConfigDaemonResources? = null,
-    val terminationGracePeriodSeconds: Double? = null,
+    val terminationGracePeriodSeconds: Double? = null
 )
 
 data class CancelDeploymentResponseServicesItemVariant0BuilderConfigFuncX1d172c0ff1(
@@ -305,78 +260,76 @@ data class CancelDeploymentResponseServicesItemVariant0BuilderConfigFuncX1d172c0
  * Queue trigger input event for v1beta (from vercel.json config). Requires explicit consumer name.
  */
 data class CancelDeploymentResponseServicesItemVariant0BuilderConfigFuncXb4683230cb(
-    /** Name of the consumer group for this trigger (REQUIRED) */
+    /**
+     * Name of the consumer group for this trigger (REQUIRED)
+     */
     val consumer: String,
-    /** Name of the queue topic to consume from (REQUIRED) */
+    /**
+     * Name of the queue topic to consume from (REQUIRED)
+     */
     val topic: String,
-    /** Event type - must be "queue/v1beta" (REQUIRED) */
+    /**
+     * Event type - must be "queue/v1beta" (REQUIRED)
+     */
     val type: CancelDeploymentResponseServicesItemVariant0BuilderConfigFuncX79f66954ed,
     /**
-     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use
-     * 0 for no initial delay. Behavior when not specified depends on the server's default
-     * configuration.
+     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
      */
     val initialDelaySeconds: Double? = null,
     /**
-     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if
-     * specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxConcurrency: Double? = null,
     /**
-     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the
-     * total number of times a message can be delivered, not the number of retries. Must be at least
-     * 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxDeliveries: Double? = null,
     /**
-     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified
-     * depends on the server's default configuration.
+     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
      */
-    val retryAfterSeconds: Double? = null,
+    val retryAfterSeconds: Double? = null
 )
 
 /**
- * Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly
- * derived from the function path. Only one trigger per function is allowed.
+ * Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed.
  */
 data class CancelDeploymentResponseServicesItemVariant0BuilderConfigFuncXa74b3f43cf(
-    /** Name of the queue topic to consume from (REQUIRED) */
+    /**
+     * Name of the queue topic to consume from (REQUIRED)
+     */
     val topic: String,
-    /** Event type - must be "queue/v2beta" (REQUIRED) */
+    /**
+     * Event type - must be "queue/v2beta" (REQUIRED)
+     */
     val type: CancelDeploymentResponseServicesItemVariant0BuilderConfigFuncX86b6f0cd63,
     /**
-     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use
-     * 0 for no initial delay. Behavior when not specified depends on the server's default
-     * configuration.
+     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
      */
     val initialDelaySeconds: Double? = null,
     /**
-     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if
-     * specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxConcurrency: Double? = null,
     /**
-     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the
-     * total number of times a message can be delivered, not the number of retries. Must be at least
-     * 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxDeliveries: Double? = null,
     /**
-     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified
-     * depends on the server's default configuration.
+     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
      */
-    val retryAfterSeconds: Double? = null,
+    val retryAfterSeconds: Double? = null
 )
 
 data class CancelDeploymentResponseServicesItemVariant0BuilderConfigFuncX3c4b5d9714(
-    /** Event type - must be "schedule/v1beta" (REQUIRED) */
+    /**
+     * Event type - must be "schedule/v1beta" (REQUIRED)
+     */
     val type: CancelDeploymentResponseServicesItemVariant0BuilderConfigFuncXde6b375e32
 )
 
 data class CancelDeploymentResponseServicesItemVariant0BuilderConfigFunctionsValue(
     val affinity: CancelDeploymentResponseServicesItemVariant0BuilderConfigFuncX1d172c0ff1? = null,
-    val architecture: CancelDeploymentResponseServicesItemVariant0BuilderConfigFuncX48088a7f23? =
-        null,
+    val architecture: CancelDeploymentResponseServicesItemVariant0BuilderConfigFuncX48088a7f23? = null,
     val excludeFiles: String? = null,
     val experimentalTriggers: List<Any>? = null,
     val functionFailoverRegions: List<String>? = null,
@@ -386,7 +339,7 @@ data class CancelDeploymentResponseServicesItemVariant0BuilderConfigFunctionsVal
     val memory: Double? = null,
     val regions: List<String>? = null,
     val runtime: String? = null,
-    val supportsCancellation: Boolean? = null,
+    val supportsCancellation: Boolean? = null
 )
 
 data class CancelDeploymentResponseServicesItemVariant0BuilderConfigProjectSettings(
@@ -403,90 +356,97 @@ data class CancelDeploymentResponseServicesItemVariant0BuilderConfigProjectSetti
     val nodeVersion: String? = null,
     val outputDirectory: String? = null,
     val rootDirectory: String? = null,
-    val sourceFilesOutsideRootDirectory: Boolean? = null,
+    val sourceFilesOutsideRootDirectory: Boolean? = null
 )
 
 data class CancelDeploymentResponseServicesItemVariant0BuilderConfigScheXcd923b3e5d(
-    /** Runtime-specific entrypoint locator from `vercel.json`. */
+    /**
+     * Runtime-specific entrypoint locator from `vercel.json`.
+     */
     val entrypoint: String,
-    /** Names of the schedules that dispatch to this entrypoint, in config order. */
+    /**
+     * Names of the schedules that dispatch to this entrypoint, in config order.
+     */
     val scheduleNames: List<String>,
-    /** Project-relative source file that contains the entrypoint. */
-    val sourceFile: String,
+    /**
+     * Project-relative source file that contains the entrypoint.
+     */
+    val sourceFile: String
 )
 
-/** Set when this build produces a function for schedule entrypoints. */
+/**
+ * Set when this build produces a function for schedule entrypoints.
+ */
 data class CancelDeploymentResponseServicesItemVariant0BuilderConfigScheX828811be42(
     val entrypoints: List<CancelDeploymentResponseServicesItemVariant0BuilderConfigScheXcd923b3e5d>,
-    /** Function output path every schedule in this build targets. */
-    val outputPath: String,
+    /**
+     * Function output path every schedule in this build targets.
+     */
+    val outputPath: String
 )
 
 data class CancelDeploymentResponseServicesItemVariant0BuilderConfig(
     val buildCommand: String? = null,
-    /** Buildpack runtime slug (e.g. "ruby"). */
+    /**
+     * Buildpack runtime slug (e.g. "ruby").
+     */
     val buildpack: String? = null,
     val bundle: Boolean? = null,
     val bunVersion: String? = null,
-    /** Set when this build produces the named daemon. */
+    /**
+     * Set when this build produces the named daemon.
+     */
     val daemon: CancelDeploymentResponseServicesItemVariant0BuilderConfigDaemon? = null,
     val debug: Boolean? = null,
     val devCommand: String? = null,
     val excludeFiles: Any? = null,
     val framework: String? = null,
-    val functions:
-        Map<String, CancelDeploymentResponseServicesItemVariant0BuilderConfigFunctionsValue>? =
-        null,
+    val functions: Map<String, CancelDeploymentResponseServicesItemVariant0BuilderConfigFunctionsValue>? = null,
     val helpers: Boolean? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("import")
-    val `import`: Map<String, String>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("import") val `import`: Map<String, String>? = null,
     val includeFiles: Any? = null,
     val installCommand: String? = null,
     val ldsflags: String? = null,
     val maxLambdaSize: String? = null,
     val middleware: Boolean? = null,
     val middlewareMatcher: Any? = null,
-    /** Enforced runtime for explicitly configured Routing Middleware. */
-    val middlewareRuntime:
-        CancelDeploymentResponseServicesItemVariant0BuilderConfigMiddXd1170817a4? =
-        null,
+    /**
+     * Enforced runtime for explicitly configured Routing Middleware.
+     */
+    val middlewareRuntime: CancelDeploymentResponseServicesItemVariant0BuilderConfigMiddXd1170817a4? = null,
     val nodeVersion: String? = null,
     val outputDirectory: String? = null,
-    val projectSettings: CancelDeploymentResponseServicesItemVariant0BuilderConfigProjectSettings? =
-        null,
+    val projectSettings: CancelDeploymentResponseServicesItemVariant0BuilderConfigProjectSettings? = null,
     val rust: String? = null,
-    /** Set when this build produces a function for schedule entrypoints. */
-    val scheduleFunction:
-        CancelDeploymentResponseServicesItemVariant0BuilderConfigScheX828811be42? =
-        null,
-    /** Owning service name; scopes per-function config such as the v2beta consumer. */
+    /**
+     * Set when this build produces a function for schedule entrypoints.
+     */
+    val scheduleFunction: CancelDeploymentResponseServicesItemVariant0BuilderConfigScheX828811be42? = null,
+    /**
+     * Owning service name; scopes per-function config such as the v2beta consumer.
+     */
     val serviceName: String? = null,
-    val zeroConfig: Boolean? = null,
+    val zeroConfig: Boolean? = null
 )
 
 data class CancelDeploymentResponseServicesItemVariant0Builder(
     val use: String,
     val config: CancelDeploymentResponseServicesItemVariant0BuilderConfig? = null,
-    val src: String? = null,
+    val src: String? = null
 )
 
 data class CancelDeploymentResponseServicesItemVariant0EnvValue(
     val service: String,
-    val type: CancelDeploymentResponseServicesItemVariant0EnvValueTypeEnum,
+    val type: CancelDeploymentResponseServicesItemVariant0EnvValueTypeEnum
 )
 
 data class CancelDeploymentResponseServicesItemVariant0TopicsVariant1Item(
     val topic: String,
     val initialDelaySeconds: Double? = null,
-    val retryAfterSeconds: Double? = null,
+    val retryAfterSeconds: Double? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CancelDeploymentResponseServicesItemVariant0(
     val builder: CancelDeploymentResponseServicesItemVariant0Builder,
     val name: String,
@@ -502,13 +462,12 @@ data class CancelDeploymentResponseServicesItemVariant0(
     val installCommand: String? = null,
     val preDeployCommand: String? = null,
     val routePrefix: String? = null,
-    val routePrefixSource: CancelDeploymentResponseServicesItemVariant0RoutePrefixSourceEnum? =
-        null,
+    val routePrefixSource: CancelDeploymentResponseServicesItemVariant0RoutePrefixSourceEnum? = null,
     val runtime: String? = null,
     val schedule: Any? = null,
     val subdomain: String? = null,
     val topics: Any? = null,
-    val trigger: CancelDeploymentResponseServicesItemVariant0TriggerEnum? = null,
+    val trigger: CancelDeploymentResponseServicesItemVariant0TriggerEnum? = null
 ) : CancelDeploymentResponseServicesItem
 
 data class CancelDeploymentResponseServicesItemVariant1BuilderConfigDaemXcf75ec0766(
@@ -519,18 +478,24 @@ data class CancelDeploymentResponseServicesItemVariant1BuilderConfigDaemonResour
     val requests: CancelDeploymentResponseServicesItemVariant1BuilderConfigDaemXcf75ec0766
 )
 
-/** Set when this build produces the named daemon. */
+/**
+ * Set when this build produces the named daemon.
+ */
 data class CancelDeploymentResponseServicesItemVariant1BuilderConfigDaemon(
     val entrypoint: String,
     val root: String,
     val name: String,
     val command: List<String>? = null,
-    /** Instance counts by region. */
+    /**
+     * Instance counts by region.
+     */
     val instances: Map<String, Double>? = null,
-    /** Instance counts by region. */
+    /**
+     * Instance counts by region.
+     */
     val replicas: Map<String, Double>? = null,
     val resources: CancelDeploymentResponseServicesItemVariant1BuilderConfigDaemonResources? = null,
-    val terminationGracePeriodSeconds: Double? = null,
+    val terminationGracePeriodSeconds: Double? = null
 )
 
 data class CancelDeploymentResponseServicesItemVariant1BuilderConfigFuncX2b73bcd4bf(
@@ -541,78 +506,76 @@ data class CancelDeploymentResponseServicesItemVariant1BuilderConfigFuncX2b73bcd
  * Queue trigger input event for v1beta (from vercel.json config). Requires explicit consumer name.
  */
 data class CancelDeploymentResponseServicesItemVariant1BuilderConfigFuncX455719688e(
-    /** Name of the consumer group for this trigger (REQUIRED) */
+    /**
+     * Name of the consumer group for this trigger (REQUIRED)
+     */
     val consumer: String,
-    /** Name of the queue topic to consume from (REQUIRED) */
+    /**
+     * Name of the queue topic to consume from (REQUIRED)
+     */
     val topic: String,
-    /** Event type - must be "queue/v1beta" (REQUIRED) */
+    /**
+     * Event type - must be "queue/v1beta" (REQUIRED)
+     */
     val type: CancelDeploymentResponseServicesItemVariant1BuilderConfigFuncXa95ae08583,
     /**
-     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use
-     * 0 for no initial delay. Behavior when not specified depends on the server's default
-     * configuration.
+     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
      */
     val initialDelaySeconds: Double? = null,
     /**
-     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if
-     * specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxConcurrency: Double? = null,
     /**
-     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the
-     * total number of times a message can be delivered, not the number of retries. Must be at least
-     * 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxDeliveries: Double? = null,
     /**
-     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified
-     * depends on the server's default configuration.
+     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
      */
-    val retryAfterSeconds: Double? = null,
+    val retryAfterSeconds: Double? = null
 )
 
 /**
- * Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly
- * derived from the function path. Only one trigger per function is allowed.
+ * Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed.
  */
 data class CancelDeploymentResponseServicesItemVariant1BuilderConfigFuncXc97163df38(
-    /** Name of the queue topic to consume from (REQUIRED) */
+    /**
+     * Name of the queue topic to consume from (REQUIRED)
+     */
     val topic: String,
-    /** Event type - must be "queue/v2beta" (REQUIRED) */
+    /**
+     * Event type - must be "queue/v2beta" (REQUIRED)
+     */
     val type: CancelDeploymentResponseServicesItemVariant1BuilderConfigFuncX6585e67f6c,
     /**
-     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use
-     * 0 for no initial delay. Behavior when not specified depends on the server's default
-     * configuration.
+     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
      */
     val initialDelaySeconds: Double? = null,
     /**
-     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if
-     * specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxConcurrency: Double? = null,
     /**
-     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the
-     * total number of times a message can be delivered, not the number of retries. Must be at least
-     * 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxDeliveries: Double? = null,
     /**
-     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified
-     * depends on the server's default configuration.
+     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
      */
-    val retryAfterSeconds: Double? = null,
+    val retryAfterSeconds: Double? = null
 )
 
 data class CancelDeploymentResponseServicesItemVariant1BuilderConfigFuncX6910e6f1bf(
-    /** Event type - must be "schedule/v1beta" (REQUIRED) */
+    /**
+     * Event type - must be "schedule/v1beta" (REQUIRED)
+     */
     val type: CancelDeploymentResponseServicesItemVariant1BuilderConfigFuncX57afc5f7c8
 )
 
 data class CancelDeploymentResponseServicesItemVariant1BuilderConfigFunctionsValue(
     val affinity: CancelDeploymentResponseServicesItemVariant1BuilderConfigFuncX2b73bcd4bf? = null,
-    val architecture: CancelDeploymentResponseServicesItemVariant1BuilderConfigFuncXc7ed604dbc? =
-        null,
+    val architecture: CancelDeploymentResponseServicesItemVariant1BuilderConfigFuncXc7ed604dbc? = null,
     val excludeFiles: String? = null,
     val experimentalTriggers: List<Any>? = null,
     val functionFailoverRegions: List<String>? = null,
@@ -622,7 +585,7 @@ data class CancelDeploymentResponseServicesItemVariant1BuilderConfigFunctionsVal
     val memory: Double? = null,
     val regions: List<String>? = null,
     val runtime: String? = null,
-    val supportsCancellation: Boolean? = null,
+    val supportsCancellation: Boolean? = null
 )
 
 data class CancelDeploymentResponseServicesItemVariant1BuilderConfigProjectSettings(
@@ -639,5 +602,5 @@ data class CancelDeploymentResponseServicesItemVariant1BuilderConfigProjectSetti
     val nodeVersion: String? = null,
     val outputDirectory: String? = null,
     val rootDirectory: String? = null,
-    val sourceFilesOutsideRootDirectory: Boolean? = null,
+    val sourceFilesOutsideRootDirectory: Boolean? = null
 )

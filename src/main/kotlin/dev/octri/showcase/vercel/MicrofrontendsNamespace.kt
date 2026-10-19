@@ -3,117 +3,51 @@
 
 package dev.octri.showcase.vercel
 
+
 class MicrofrontendsNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Lists the microfrontends group IDs for a team. Use `teamId` or `slug` to specify which team's
-     * groups to retrieve.
+     * Lists the microfrontends group IDs for a team. Use `teamId` or `slug` to specify which team's groups to retrieve.
      *
      * Get the microfrontends group IDs for a team.
      */
-    fun getGroups(
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Map<String, Any> {
-        return dev.octri.showcase.vercel.methods.Microfrontends.getMicrofrontendsGroups(
-            clientConfig,
-            teamId,
-            slug,
-            options,
-        )
+    fun getGroups(teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Map<String, Any> {
+        return dev.octri.showcase.vercel.methods.Microfrontends.getMicrofrontendsGroups(clientConfig, teamId, slug, options)
     }
 
     /**
-     * Lists the projects in a microfrontends group. Use `groupId` to identify the group, and
-     * optionally use `teamId` or `slug` to specify the team context.
+     * Lists the projects in a microfrontends group. Use `groupId` to identify the group, and optionally use `teamId` or `slug` to specify the team context.
      *
      * Get the microfrontends for a given group ID.
      */
-    fun getInGroup(
-        groupId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Microfrontends.GetMicrofrontendsInGroupResponse {
-        return dev.octri.showcase.vercel.methods.Microfrontends.getMicrofrontendsInGroup(
-            clientConfig,
-            groupId,
-            teamId,
-            slug,
-            options,
-        )
+    fun getInGroup(groupId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Microfrontends.GetMicrofrontendsInGroupResponse {
+        return dev.octri.showcase.vercel.methods.Microfrontends.getMicrofrontendsInGroup(clientConfig, groupId, teamId, slug, options)
     }
 
     /**
-     * Retrieves the microfrontends configuration for a specific deployment. Supply the deployment
-     * identifier and, when needed, `teamId` or `slug` to scope the request to a team.
+     * Retrieves the microfrontends configuration for a specific deployment. Supply the deployment identifier and, when needed, `teamId` or `slug` to scope the request to a team.
      *
      * Get the microfrontends config for a deployment.
      */
-    fun getConfig(
-        deploymentId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Microfrontends.GetMicrofrontendsConfigResponse {
-        return dev.octri.showcase.vercel.methods.Microfrontends.getMicrofrontendsConfig(
-            clientConfig,
-            deploymentId,
-            teamId,
-            slug,
-            options,
-        )
+    fun getConfig(deploymentId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Microfrontends.GetMicrofrontendsConfigResponse {
+        return dev.octri.showcase.vercel.methods.Microfrontends.getMicrofrontendsConfig(clientConfig, deploymentId, teamId, slug, options)
     }
 
     /**
-     * Retrieves the production microfrontends configuration for a project. Identify the project
-     * with `projectIdOrName` and use `teamId` or `slug` to scope the request to a team when needed.
+     * Retrieves the production microfrontends configuration for a project. Identify the project with `projectIdOrName` and use `teamId` or `slug` to scope the request to a team when needed.
      *
      * Get the microfrontends config for a project by ID or name.
      */
-    fun getConfigForProject(
-        projectIdOrName: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Microfrontends.GetMicrofrontendsConfigForProjectResponse {
-        return dev.octri.showcase.vercel.methods.Microfrontends.getMicrofrontendsConfigForProject(
-            clientConfig,
-            projectIdOrName,
-            teamId,
-            slug,
-            options,
-        )
+    fun getConfigForProject(projectIdOrName: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Microfrontends.GetMicrofrontendsConfigForProjectResponse {
+        return dev.octri.showcase.vercel.methods.Microfrontends.getMicrofrontendsConfigForProject(clientConfig, projectIdOrName, teamId, slug, options)
     }
 
     /**
-     * Creates a microfrontends group and attaches multiple projects in one request. Provide
-     * `groupName`, a `defaultApp` with a project ID, and `otherApplications` with the additional
-     * project IDs and optional routes.
+     * Creates a microfrontends group and attaches multiple projects in one request. Provide `groupName`, a `defaultApp` with a project ID, and `otherApplications` with the additional project IDs and optional routes.
      *
      * Creates a microfrontends group and attaches multiple projects in a single request.
      */
-    fun createGroupWithApplications(
-        groupName: String,
-        defaultApp:
-            dev.octri.showcase.vercel.methods.Microfrontends.CreateMicrofrontendsGroupWithApplicationsDefaultApp,
-        otherApplications:
-            List<
-                dev.octri.showcase.vercel.methods.Microfrontends.CreateMicrofrontendsGroupWithApplicationsOtherApplicationsItem
-            >,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Microfrontends.CreateMicrofrontendsGroupWithApplicationsResponse {
-        return dev.octri.showcase.vercel.methods.Microfrontends
-            .createMicrofrontendsGroupWithApplications(
-                clientConfig,
-                groupName,
-                defaultApp,
-                otherApplications,
-                teamId,
-                slug,
-                options,
-            )
+    fun createGroupWithApplications(groupName: String, defaultApp: dev.octri.showcase.vercel.methods.Microfrontends.CreateMicrofrontendsGroupWithApplicationsDefaultApp, otherApplications: List<dev.octri.showcase.vercel.methods.Microfrontends.CreateMicrofrontendsGroupWithApplicationsOtherApplicationsItem>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Microfrontends.CreateMicrofrontendsGroupWithApplicationsResponse {
+        return dev.octri.showcase.vercel.methods.Microfrontends.createMicrofrontendsGroupWithApplications(clientConfig, groupName, defaultApp, otherApplications, teamId, slug, options)
     }
+
 }

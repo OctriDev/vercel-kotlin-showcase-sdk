@@ -3,708 +3,360 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiInvocationResponseInvocationSourceVariant0(
     val type: GetVercelCiInvocationResponseInvocationSourceVariant0TypeEnum
 ) : GetVercelCiInvocationResponseInvocationSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiInvocationResponseInvocationSourceVariant1(
     val type: GetVercelCiInvocationResponseInvocationSourceVariant1TypeEnum,
     val deploymentId: String,
     val projectId: String,
-    val deploymentTargetSlug: String,
+    val deploymentTargetSlug: String
 ) : GetVercelCiInvocationResponseInvocationSource
 
-/** Typed representation of the `GetVercelCiInvocationResponseInvocationSource` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+/**
+ * Typed representation of the `GetVercelCiInvocationResponseInvocationSource` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiInvocationResponseInvocationSourceVariant0::class,
-        name = "vercel-ci",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiInvocationResponseInvocationSourceVariant1::class,
-        name = "vercel-native-checks",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiInvocationResponseInvocationSourceVariant0::class, name = "vercel-ci"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiInvocationResponseInvocationSourceVariant1::class, name = "vercel-native-checks")
 )
 sealed interface GetVercelCiInvocationResponseInvocationSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiInvocationTreeResponseInvocationSourceVariant0(
     val type: GetVercelCiInvocationTreeResponseInvocationSourceVariant0TypeEnum
 ) : GetVercelCiInvocationTreeResponseInvocationSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiInvocationTreeResponseInvocationSourceVariant1(
     val type: GetVercelCiInvocationTreeResponseInvocationSourceVariant1TypeEnum,
     val deploymentId: String,
     val projectId: String,
-    val deploymentTargetSlug: String,
+    val deploymentTargetSlug: String
 ) : GetVercelCiInvocationTreeResponseInvocationSource
 
-/** Typed representation of the `GetVercelCiInvocationTreeResponseInvocationSource` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+/**
+ * Typed representation of the `GetVercelCiInvocationTreeResponseInvocationSource` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiInvocationTreeResponseInvocationSourceVariant0::class,
-        name = "vercel-ci",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiInvocationTreeResponseInvocationSourceVariant1::class,
-        name = "vercel-native-checks",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiInvocationTreeResponseInvocationSourceVariant0::class, name = "vercel-ci"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiInvocationTreeResponseInvocationSourceVariant1::class, name = "vercel-native-checks")
 )
 sealed interface GetVercelCiInvocationTreeResponseInvocationSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusionVariant0(
     val result: GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusiX5681303027
 ) : GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusionVariant1(
     val result: GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusiXdbb54d73cc,
-    val reason: String,
+    val reason: String
 ) : GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusionVariant2(
     val result: GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusiXf82d8d7dca,
-    val reason: String,
+    val reason: String
 ) : GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusion
 
 /**
- * Typed representation of the `GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusion` API
- * schema.
+ * Typed representation of the `GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusion` API schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "result",
-    visible = true,
-)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "result", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusionVariant0::class,
-        name = "succeeded",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusionVariant1::class,
-        name = "failed",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusionVariant2::class,
-        name = "skipped",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusionVariant0::class, name = "succeeded"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusionVariant1::class, name = "failed"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusionVariant2::class, name = "skipped")
 )
 sealed interface GetVercelCiInvocationTreeResponseJobsItemRunCompletedConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOX62afcd517d(
     val kind: GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOXd964ac6d16,
-    val command: String,
+    val command: String
 ) : GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOperation
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOX3662b3d6f3(
     val kind: GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOXc4e05e50ad,
     val projectId: String,
-    val target: GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOX4712f42a5c,
+    val target: GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOX4712f42a5c
 ) : GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOperation
 
 /**
- * Typed representation of the
- * `GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOperation` API schema.
+ * Typed representation of the `GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOperation` API schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "kind",
-    visible = true,
-)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "kind", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOX62afcd517d::class,
-        name = "command",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOX3662b3d6f3::class,
-        name = "deployment",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOX62afcd517d::class, name = "command"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOX3662b3d6f3::class, name = "deployment")
 )
 sealed interface GetVercelCiInvocationTreeResponseJobsItemTasksItemDefinitionOperation
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleteXf3ebed87a2(
     val result: GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleteX686b3cdae7
 ) : GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompletedConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleteX7aef495e47(
     val result: GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleteX1cec24c362
 ) : GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompletedConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleteXa779f366f0(
     val result: GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleteXd21cb66e9d,
-    val reason: String,
+    val reason: String
 ) : GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompletedConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleteX5beb1257fe(
     val result: GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleteX37c4341340,
-    val reason: String,
+    val reason: String
 ) : GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompletedConclusion
 
 /**
- * Typed representation of the
- * `GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompletedConclusion` API schema.
+ * Typed representation of the `GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompletedConclusion` API schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "result",
-    visible = true,
-)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "result", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleteXf3ebed87a2::class,
-        name = "succeeded",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleteX7aef495e47::class,
-        name = "cached",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleteXa779f366f0::class,
-        name = "failed",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleteX5beb1257fe::class,
-        name = "skipped",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleteXf3ebed87a2::class, name = "succeeded"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleteX7aef495e47::class, name = "cached"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleteXa779f366f0::class, name = "failed"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompleteX5beb1257fe::class, name = "skipped")
 )
 sealed interface GetVercelCiInvocationTreeResponseJobsItemTasksItemRunCompletedConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiJobRunResponseJobRunCompletedConclusionVariant0(
     val result: GetVercelCiJobRunResponseJobRunCompletedConclusionVariant0ResultEnum
 ) : GetVercelCiJobRunResponseJobRunCompletedConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiJobRunResponseJobRunCompletedConclusionVariant1(
     val result: GetVercelCiJobRunResponseJobRunCompletedConclusionVariant1ResultEnum,
-    val reason: String,
+    val reason: String
 ) : GetVercelCiJobRunResponseJobRunCompletedConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiJobRunResponseJobRunCompletedConclusionVariant2(
     val result: GetVercelCiJobRunResponseJobRunCompletedConclusionVariant2ResultEnum,
-    val reason: String,
+    val reason: String
 ) : GetVercelCiJobRunResponseJobRunCompletedConclusion
 
-/** Typed representation of the `GetVercelCiJobRunResponseJobRunCompletedConclusion` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "result",
-    visible = true,
-)
+/**
+ * Typed representation of the `GetVercelCiJobRunResponseJobRunCompletedConclusion` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "result", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiJobRunResponseJobRunCompletedConclusionVariant0::class,
-        name = "succeeded",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiJobRunResponseJobRunCompletedConclusionVariant1::class,
-        name = "failed",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiJobRunResponseJobRunCompletedConclusionVariant2::class,
-        name = "skipped",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiJobRunResponseJobRunCompletedConclusionVariant0::class, name = "succeeded"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiJobRunResponseJobRunCompletedConclusionVariant1::class, name = "failed"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiJobRunResponseJobRunCompletedConclusionVariant2::class, name = "skipped")
 )
 sealed interface GetVercelCiJobRunResponseJobRunCompletedConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiTaskLogsResponseTasksItemConclusionVariant0(
     val result: GetVercelCiTaskLogsResponseTasksItemConclusionVariant0ResultEnum
 ) : GetVercelCiTaskLogsResponseTasksItemConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiTaskLogsResponseTasksItemConclusionVariant1(
     val result: GetVercelCiTaskLogsResponseTasksItemConclusionVariant1ResultEnum
 ) : GetVercelCiTaskLogsResponseTasksItemConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiTaskLogsResponseTasksItemConclusionVariant2(
     val result: GetVercelCiTaskLogsResponseTasksItemConclusionVariant2ResultEnum,
-    val reason: String,
+    val reason: String
 ) : GetVercelCiTaskLogsResponseTasksItemConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetVercelCiTaskLogsResponseTasksItemConclusionVariant3(
     val result: GetVercelCiTaskLogsResponseTasksItemConclusionVariant3ResultEnum,
-    val reason: String,
+    val reason: String
 ) : GetVercelCiTaskLogsResponseTasksItemConclusion
 
-/** Typed representation of the `GetVercelCiTaskLogsResponseTasksItemConclusion` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "result",
-    visible = true,
-)
+/**
+ * Typed representation of the `GetVercelCiTaskLogsResponseTasksItemConclusion` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "result", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiTaskLogsResponseTasksItemConclusionVariant0::class,
-        name = "succeeded",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiTaskLogsResponseTasksItemConclusionVariant1::class,
-        name = "cached",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiTaskLogsResponseTasksItemConclusionVariant2::class,
-        name = "failed",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GetVercelCiTaskLogsResponseTasksItemConclusionVariant3::class,
-        name = "skipped",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiTaskLogsResponseTasksItemConclusionVariant0::class, name = "succeeded"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiTaskLogsResponseTasksItemConclusionVariant1::class, name = "cached"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiTaskLogsResponseTasksItemConclusionVariant2::class, name = "failed"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetVercelCiTaskLogsResponseTasksItemConclusionVariant3::class, name = "skipped")
 )
 sealed interface GetVercelCiTaskLogsResponseTasksItemConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListVercelCiInvocationAttemptsResponseAttemptsItemSourceVariant0(
     val type: ListVercelCiInvocationAttemptsResponseAttemptsItemSourceVariant0TypeEnum
 ) : ListVercelCiInvocationAttemptsResponseAttemptsItemSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListVercelCiInvocationAttemptsResponseAttemptsItemSourceVariant1(
     val type: ListVercelCiInvocationAttemptsResponseAttemptsItemSourceVariant1TypeEnum,
     val deploymentId: String,
     val projectId: String,
-    val deploymentTargetSlug: String,
+    val deploymentTargetSlug: String
 ) : ListVercelCiInvocationAttemptsResponseAttemptsItemSource
 
 /**
- * Typed representation of the `ListVercelCiInvocationAttemptsResponseAttemptsItemSource` API
- * schema.
+ * Typed representation of the `ListVercelCiInvocationAttemptsResponseAttemptsItemSource` API schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ListVercelCiInvocationAttemptsResponseAttemptsItemSourceVariant0::class,
-        name = "vercel-ci",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ListVercelCiInvocationAttemptsResponseAttemptsItemSourceVariant1::class,
-        name = "vercel-native-checks",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListVercelCiInvocationAttemptsResponseAttemptsItemSourceVariant0::class, name = "vercel-ci"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListVercelCiInvocationAttemptsResponseAttemptsItemSourceVariant1::class, name = "vercel-native-checks")
 )
 sealed interface ListVercelCiInvocationAttemptsResponseAttemptsItemSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListVercelCiInvocationsResponseInvocationsItemSourceVariant0(
     val type: ListVercelCiInvocationsResponseInvocationsItemSourceVariant0TypeEnum
 ) : ListVercelCiInvocationsResponseInvocationsItemSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListVercelCiInvocationsResponseInvocationsItemSourceVariant1(
     val type: ListVercelCiInvocationsResponseInvocationsItemSourceVariant1TypeEnum,
     val deploymentId: String,
     val projectId: String,
-    val deploymentTargetSlug: String,
+    val deploymentTargetSlug: String
 ) : ListVercelCiInvocationsResponseInvocationsItemSource
 
 /**
  * Typed representation of the `ListVercelCiInvocationsResponseInvocationsItemSource` API schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ListVercelCiInvocationsResponseInvocationsItemSourceVariant0::class,
-        name = "vercel-ci",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ListVercelCiInvocationsResponseInvocationsItemSourceVariant1::class,
-        name = "vercel-native-checks",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListVercelCiInvocationsResponseInvocationsItemSourceVariant0::class, name = "vercel-ci"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListVercelCiInvocationsResponseInvocationsItemSourceVariant1::class, name = "vercel-native-checks")
 )
 sealed interface ListVercelCiInvocationsResponseInvocationsItemSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListVercelCiJobRunsResponseJobRunsItemCompletedConclusionVariant0(
     val result: ListVercelCiJobRunsResponseJobRunsItemCompletedConclusionVariXbc84d4e05a
 ) : ListVercelCiJobRunsResponseJobRunsItemCompletedConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListVercelCiJobRunsResponseJobRunsItemCompletedConclusionVariant1(
     val result: ListVercelCiJobRunsResponseJobRunsItemCompletedConclusionVariX6881a3c67f,
-    val reason: String,
+    val reason: String
 ) : ListVercelCiJobRunsResponseJobRunsItemCompletedConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListVercelCiJobRunsResponseJobRunsItemCompletedConclusionVariant2(
     val result: ListVercelCiJobRunsResponseJobRunsItemCompletedConclusionVariX4f5204dc9e,
-    val reason: String,
+    val reason: String
 ) : ListVercelCiJobRunsResponseJobRunsItemCompletedConclusion
 
 /**
- * Typed representation of the `ListVercelCiJobRunsResponseJobRunsItemCompletedConclusion` API
- * schema.
+ * Typed representation of the `ListVercelCiJobRunsResponseJobRunsItemCompletedConclusion` API schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "result",
-    visible = true,
-)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "result", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ListVercelCiJobRunsResponseJobRunsItemCompletedConclusionVariant0::class,
-        name = "succeeded",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ListVercelCiJobRunsResponseJobRunsItemCompletedConclusionVariant1::class,
-        name = "failed",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ListVercelCiJobRunsResponseJobRunsItemCompletedConclusionVariant2::class,
-        name = "skipped",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListVercelCiJobRunsResponseJobRunsItemCompletedConclusionVariant0::class, name = "succeeded"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListVercelCiJobRunsResponseJobRunsItemCompletedConclusionVariant1::class, name = "failed"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListVercelCiJobRunsResponseJobRunsItemCompletedConclusionVariant2::class, name = "skipped")
 )
 sealed interface ListVercelCiJobRunsResponseJobRunsItemCompletedConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperationVariant0(
     val kind: ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperatiXce44dce649,
-    val command: String,
+    val command: String
 ) : ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperation
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperationVariant1(
     val kind: ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperatiXbded1baba6,
     val projectId: String,
-    val target: ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperatiXe918a24496,
+    val target: ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperatiXe918a24496
 ) : ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperation
 
 /**
- * Typed representation of the `ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperation` API
- * schema.
+ * Typed representation of the `ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperation` API schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "kind",
-    visible = true,
-)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "kind", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperationVariant0::class,
-        name = "command",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperationVariant1::class,
-        name = "deployment",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperationVariant0::class, name = "command"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperationVariant1::class, name = "deployment")
 )
 sealed interface ListVercelCiTaskDefinitionsResponseTaskDefinitionsItemOperation
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVariant0(
     val result: ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaXcef3069611
 ) : ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVariant1(
     val result: ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX80f30e40dd
 ) : ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVariant2(
     val result: ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX2b5a66f75f,
-    val reason: String,
+    val reason: String
 ) : ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVariant3(
     val result: ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVaX4e61644c34,
-    val reason: String,
+    val reason: String
 ) : ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusion
 
 /**
- * Typed representation of the `ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusion` API
- * schema.
+ * Typed representation of the `ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusion` API schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "result",
-    visible = true,
-)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "result", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVariant0::class,
-        name = "succeeded",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVariant1::class,
-        name = "cached",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVariant2::class,
-        name = "failed",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVariant3::class,
-        name = "skipped",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVariant0::class, name = "succeeded"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVariant1::class, name = "cached"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVariant2::class, name = "failed"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusionVariant3::class, name = "skipped")
 )
 sealed interface ListVercelCiTaskRunsResponseTaskRunsItemCompletedConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant0(
     val result: SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX12b4596044
 ) : SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant1(
     val result: SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXc2f970e456
 ) : SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant2(
     val result: SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXf967363179,
-    val reason: String,
+    val reason: String
 ) : SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant3(
     val result: SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXce11734e7f,
-    val reason: String,
+    val reason: String
 ) : SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion
 
 /**
- * Typed representation of the `SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion` API
- * schema.
+ * Typed representation of the `SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion` API schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "result",
-    visible = true,
-)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "result", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant0::class,
-        name = "succeeded",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant1::class,
-        name = "cached",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant2::class,
-        name = "failed",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant3::class,
-        name = "skipped",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant0::class, name = "succeeded"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant1::class, name = "cached"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant2::class, name = "failed"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVariant3::class, name = "skipped")
 )
 sealed interface SearchVercelCiLogsResponseInvocationsItemTasksItemConclusion

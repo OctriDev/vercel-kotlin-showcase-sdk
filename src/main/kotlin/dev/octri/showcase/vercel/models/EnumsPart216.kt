@@ -3,37 +3,33 @@
 
 package dev.octri.showcase.vercel.models
 
-/** Indicates if the deployment encountered an out-of-memory error. */
-class GetDeploymentsResponseDeploymentsItemOomReportEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemOomReportEnum && value == other.value
-
+/**
+ * Indicates if the deployment encountered an out-of-memory error.
+ */
+class GetDeploymentsResponseDeploymentsItemOomReportEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemOomReportEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val OUT_OF_MEMORY = GetDeploymentsResponseDeploymentsItemOomReportEnum("out-of-memory")
+        @JvmField val OUT_OF_MEMORY = GetDeploymentsResponseDeploymentsItemOomReportEnum("out-of-memory")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemOomReportEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemOomReportEnum(value)
     }
 }
 
-/** Whether the value is an opaque identifier or a URL. */
-class GetDeploymentsResponseDeploymentsItemPlatformOriginTypeEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemPlatformOriginTypeEnum && value == other.value
-
+/**
+ * Whether the value is an opaque identifier or a URL.
+ */
+class GetDeploymentsResponseDeploymentsItemPlatformOriginTypeEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemPlatformOriginTypeEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -41,22 +37,16 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val ID = GetDeploymentsResponseDeploymentsItemPlatformOriginTypeEnum("id")
         @JvmField val URL = GetDeploymentsResponseDeploymentsItemPlatformOriginTypeEnum("url")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            GetDeploymentsResponseDeploymentsItemPlatformOriginTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemPlatformOriginTypeEnum(value)
     }
 }
 
-class GetDeploymentsResponseDeploymentsItemPrebuiltEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemPrebuiltEnum && value == other.value
-
+class GetDeploymentsResponseDeploymentsItemPrebuiltEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemPrebuiltEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
@@ -64,313 +54,179 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: B
         @JvmField val FALSE = GetDeploymentsResponseDeploymentsItemPrebuiltEnum(false)
         @JvmField val TRUE = GetDeploymentsResponseDeploymentsItemPrebuiltEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) = GetDeploymentsResponseDeploymentsItemPrebuiltEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetDeploymentsResponseDeploymentsItemPrebuiltEnum(value)
     }
 }
 
-class GetDeploymentsResponseDeploymentsItemProjectSettingsCustomerSXf7d5b1c363
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemProjectSettingsCustomerSXf7d5b1c363 &&
-            value == other.value
-
+class GetDeploymentsResponseDeploymentsItemProjectSettingsCustomerSXf7d5b1c363 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemProjectSettingsCustomerSXf7d5b1c363 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = GetDeploymentsResponseDeploymentsItemProjectSettingsCustomerSXf7d5b1c363(false)
-        @JvmField
-        val TRUE = GetDeploymentsResponseDeploymentsItemProjectSettingsCustomerSXf7d5b1c363(true)
+        @JvmField val FALSE = GetDeploymentsResponseDeploymentsItemProjectSettingsCustomerSXf7d5b1c363(false)
+        @JvmField val TRUE = GetDeploymentsResponseDeploymentsItemProjectSettingsCustomerSXf7d5b1c363(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsCustomerSXf7d5b1c363(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetDeploymentsResponseDeploymentsItemProjectSettingsCustomerSXf7d5b1c363(value)
     }
 }
 
-class GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum &&
-            value == other.value
-
+class GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val ACTIX_WEB =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("actix-web")
-        @JvmField
-        val ANGULAR = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("angular")
+        @JvmField val ACTIX_WEB = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("actix-web")
+        @JvmField val ANGULAR = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("angular")
         @JvmField val ASH = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("ash")
-        @JvmField
-        val ASTRO = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("astro")
-        @JvmField
-        val AXUM = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("axum")
-        @JvmField
-        val BLITZJS = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("blitzjs")
-        @JvmField
-        val BRUNCH = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("brunch")
+        @JvmField val ASTRO = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("astro")
+        @JvmField val AXUM = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("axum")
+        @JvmField val BLITZJS = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("blitzjs")
+        @JvmField val BRUNCH = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("brunch")
         @JvmField val BUN = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("bun")
-        @JvmField
-        val CONTAINER =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("container")
-        @JvmField
-        val CREATE_REACT_APP =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("create-react-app")
-        @JvmField
-        val DJANGO = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("django")
-        @JvmField
-        val DOCUSAURUS =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("docusaurus")
-        @JvmField
-        val DOCUSAURUS_2 =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("docusaurus-2")
-        @JvmField
-        val DOJO = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("dojo")
-        @JvmField
-        val ELEVENTY = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("eleventy")
-        @JvmField
-        val ELYSIA = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("elysia")
-        @JvmField
-        val EMBER = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("ember")
+        @JvmField val CONTAINER = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("container")
+        @JvmField val CREATE_REACT_APP = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("create-react-app")
+        @JvmField val DJANGO = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("django")
+        @JvmField val DOCUSAURUS = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("docusaurus")
+        @JvmField val DOCUSAURUS_2 = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("docusaurus-2")
+        @JvmField val DOJO = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("dojo")
+        @JvmField val ELEVENTY = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("eleventy")
+        @JvmField val ELYSIA = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("elysia")
+        @JvmField val EMBER = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("ember")
         @JvmField val EVE = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("eve")
-        @JvmField
-        val EXPRESS = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("express")
-        @JvmField
-        val FACTORY_EVE =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("factory-eve")
-        @JvmField
-        val FASTAPI = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("fastapi")
-        @JvmField
-        val FASTHTML = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("fasthtml")
-        @JvmField
-        val FASTIFY = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("fastify")
-        @JvmField
-        val FLASK = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("flask")
-        @JvmField
-        val GATSBY = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("gatsby")
+        @JvmField val EXPRESS = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("express")
+        @JvmField val FACTORY_EVE = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("factory-eve")
+        @JvmField val FASTAPI = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("fastapi")
+        @JvmField val FASTHTML = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("fasthtml")
+        @JvmField val FASTIFY = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("fastify")
+        @JvmField val FLASK = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("flask")
+        @JvmField val GATSBY = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("gatsby")
         @JvmField val GO = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("go")
-        @JvmField
-        val GRIDSOME = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("gridsome")
+        @JvmField val GRIDSOME = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("gridsome")
         @JvmField val H3 = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("h3")
-        @JvmField
-        val HEXO = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("hexo")
-        @JvmField
-        val HONO = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("hono")
-        @JvmField
-        val HUGO = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("hugo")
-        @JvmField
-        val HYDROGEN = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("hydrogen")
-        @JvmField
-        val IONIC_ANGULAR =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("ionic-angular")
-        @JvmField
-        val IONIC_REACT =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("ionic-react")
-        @JvmField
-        val JEKYLL = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("jekyll")
+        @JvmField val HEXO = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("hexo")
+        @JvmField val HONO = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("hono")
+        @JvmField val HUGO = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("hugo")
+        @JvmField val HYDROGEN = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("hydrogen")
+        @JvmField val IONIC_ANGULAR = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("ionic-angular")
+        @JvmField val IONIC_REACT = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("ionic-react")
+        @JvmField val JEKYLL = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("jekyll")
         @JvmField val KOA = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("koa")
-        @JvmField
-        val MASTRA = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("mastra")
-        @JvmField
-        val MIDDLEMAN =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("middleman")
-        @JvmField
-        val NESTJS = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("nestjs")
-        @JvmField
-        val NEXTJS = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("nextjs")
-        @JvmField
-        val NITRO = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("nitro")
-        @JvmField
-        val NODE = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("node")
-        @JvmField
-        val NUXTJS = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("nuxtjs")
-        @JvmField
-        val PARCEL = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("parcel")
-        @JvmField
-        val POLYMER = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("polymer")
-        @JvmField
-        val PREACT = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("preact")
-        @JvmField
-        val PYTHON = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("python")
-        @JvmField
-        val REACT_ROUTER =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("react-router")
-        @JvmField
-        val REDWOODJS =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("redwoodjs")
-        @JvmField
-        val REMIX = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("remix")
-        @JvmField
-        val RUBY = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("ruby")
-        @JvmField
-        val RUST = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("rust")
-        @JvmField
-        val SABER = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("saber")
-        @JvmField
-        val SANITY = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("sanity")
-        @JvmField
-        val SANITY_V2 =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("sanity-v2")
-        @JvmField
-        val SAPPER = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("sapper")
-        @JvmField
-        val SCULLY = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("scully")
-        @JvmField
-        val SERVICES = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("services")
-        @JvmField
-        val SOLIDSTART =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("solidstart")
-        @JvmField
-        val SOLIDSTART_1 =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("solidstart-1")
-        @JvmField
-        val STENCIL = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("stencil")
-        @JvmField
-        val STORYBOOK =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("storybook")
-        @JvmField
-        val SVELTE = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("svelte")
-        @JvmField
-        val SVELTEKIT =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("sveltekit")
-        @JvmField
-        val SVELTEKIT_1 =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("sveltekit-1")
-        @JvmField
-        val TANSTACK_START =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("tanstack-start")
-        @JvmField
-        val TANSTACK_START_LOVABLE =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum(
-                "tanstack-start-lovable"
-            )
-        @JvmField
-        val UMIJS = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("umijs")
-        @JvmField
-        val VITE = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("vite")
-        @JvmField
-        val VITEPRESS =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("vitepress")
+        @JvmField val MASTRA = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("mastra")
+        @JvmField val MIDDLEMAN = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("middleman")
+        @JvmField val NESTJS = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("nestjs")
+        @JvmField val NEXTJS = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("nextjs")
+        @JvmField val NITRO = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("nitro")
+        @JvmField val NODE = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("node")
+        @JvmField val NUXTJS = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("nuxtjs")
+        @JvmField val PARCEL = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("parcel")
+        @JvmField val POLYMER = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("polymer")
+        @JvmField val PREACT = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("preact")
+        @JvmField val PYTHON = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("python")
+        @JvmField val REACT_ROUTER = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("react-router")
+        @JvmField val REDWOODJS = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("redwoodjs")
+        @JvmField val REMIX = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("remix")
+        @JvmField val RUBY = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("ruby")
+        @JvmField val RUST = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("rust")
+        @JvmField val SABER = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("saber")
+        @JvmField val SANITY = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("sanity")
+        @JvmField val SANITY_V2 = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("sanity-v2")
+        @JvmField val SAPPER = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("sapper")
+        @JvmField val SCULLY = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("scully")
+        @JvmField val SERVICES = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("services")
+        @JvmField val SOLIDSTART = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("solidstart")
+        @JvmField val SOLIDSTART_1 = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("solidstart-1")
+        @JvmField val STENCIL = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("stencil")
+        @JvmField val STORYBOOK = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("storybook")
+        @JvmField val SVELTE = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("svelte")
+        @JvmField val SVELTEKIT = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("sveltekit")
+        @JvmField val SVELTEKIT_1 = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("sveltekit-1")
+        @JvmField val TANSTACK_START = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("tanstack-start")
+        @JvmField val TANSTACK_START_LOVABLE = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("tanstack-start-lovable")
+        @JvmField val UMIJS = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("umijs")
+        @JvmField val VITE = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("vite")
+        @JvmField val VITEPRESS = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("vitepress")
         @JvmField val VUE = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("vue")
-        @JvmField
-        val VUEPRESS = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("vuepress")
-        @JvmField
-        val XMCP = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("xmcp")
-        @JvmField
-        val ZOLA = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("zola")
+        @JvmField val VUEPRESS = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("vuepress")
+        @JvmField val XMCP = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("xmcp")
+        @JvmField val ZOLA = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum("zola")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemProjectSettingsFrameworkEnum(value)
     }
 }
 
-/** Whether the Vercel bot should comment on commits */
-class GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXd7a18a3287
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXd7a18a3287 &&
-            value == other.value
-
+/**
+ * Whether the Vercel bot should comment on commits
+ */
+class GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXd7a18a3287 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXd7a18a3287 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXd7a18a3287(false)
-        @JvmField
-        val TRUE = GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXd7a18a3287(true)
+        @JvmField val FALSE = GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXd7a18a3287(false)
+        @JvmField val TRUE = GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXd7a18a3287(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXd7a18a3287(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXd7a18a3287(value)
     }
 }
 
-/** Whether the Vercel bot should comment on PRs */
-class GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXf6c157fc73
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXf6c157fc73 &&
-            value == other.value
-
+/**
+ * Whether the Vercel bot should comment on PRs
+ */
+class GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXf6c157fc73 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXf6c157fc73 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXf6c157fc73(false)
-        @JvmField
-        val TRUE = GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXf6c157fc73(true)
+        @JvmField val FALSE = GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXf6c157fc73(false)
+        @JvmField val TRUE = GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXf6c157fc73(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXf6c157fc73(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetDeploymentsResponseDeploymentsItemProjectSettingsGitCommenXf6c157fc73(value)
     }
 }
 
-class GetDeploymentsResponseDeploymentsItemProjectSettingsGitForkPrXc87d2f504a
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemProjectSettingsGitForkPrXc87d2f504a &&
-            value == other.value
-
+class GetDeploymentsResponseDeploymentsItemProjectSettingsGitForkPrXc87d2f504a private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemProjectSettingsGitForkPrXc87d2f504a && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = GetDeploymentsResponseDeploymentsItemProjectSettingsGitForkPrXc87d2f504a(false)
-        @JvmField
-        val TRUE = GetDeploymentsResponseDeploymentsItemProjectSettingsGitForkPrXc87d2f504a(true)
+        @JvmField val FALSE = GetDeploymentsResponseDeploymentsItemProjectSettingsGitForkPrXc87d2f504a(false)
+        @JvmField val TRUE = GetDeploymentsResponseDeploymentsItemProjectSettingsGitForkPrXc87d2f504a(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsGitForkPrXc87d2f504a(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetDeploymentsResponseDeploymentsItemProjectSettingsGitForkPrXc87d2f504a(value)
     }
 }
 
-class GetDeploymentsResponseDeploymentsItemProjectSettingsGitLFSEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemProjectSettingsGitLFSEnum &&
-            value == other.value
-
+class GetDeploymentsResponseDeploymentsItemProjectSettingsGitLFSEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemProjectSettingsGitLFSEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
@@ -378,166 +234,108 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: B
         @JvmField val FALSE = GetDeploymentsResponseDeploymentsItemProjectSettingsGitLFSEnum(false)
         @JvmField val TRUE = GetDeploymentsResponseDeploymentsItemProjectSettingsGitLFSEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsGitLFSEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetDeploymentsResponseDeploymentsItemProjectSettingsGitLFSEnum(value)
     }
 }
 
-class GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum &&
-            value == other.value
-
+class GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val V10_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("10.x")
-        @JvmField
-        val V12_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("12.x")
-        @JvmField
-        val V14_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("14.x")
-        @JvmField
-        val V16_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("16.x")
-        @JvmField
-        val V18_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("18.x")
-        @JvmField
-        val V20_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("20.x")
-        @JvmField
-        val V22_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("22.x")
-        @JvmField
-        val V24_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("24.x")
-        @JvmField
-        val V26_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("26.x")
-        @JvmField
-        val V8_10_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("8.10.x")
+        @JvmField val V10_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("10.x")
+        @JvmField val V12_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("12.x")
+        @JvmField val V14_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("14.x")
+        @JvmField val V16_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("16.x")
+        @JvmField val V18_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("18.x")
+        @JvmField val V20_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("20.x")
+        @JvmField val V22_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("22.x")
+        @JvmField val V24_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("24.x")
+        @JvmField val V26_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("26.x")
+        @JvmField val V8_10_X = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum("8.10.x")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemProjectSettingsNodeVersionEnum(value)
     }
 }
 
-class GetDeploymentsResponseDeploymentsItemProjectSettingsSkipGitCoXa33976adc2
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemProjectSettingsSkipGitCoXa33976adc2 &&
-            value == other.value
-
+class GetDeploymentsResponseDeploymentsItemProjectSettingsSkipGitCoXa33976adc2 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemProjectSettingsSkipGitCoXa33976adc2 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = GetDeploymentsResponseDeploymentsItemProjectSettingsSkipGitCoXa33976adc2(false)
-        @JvmField
-        val TRUE = GetDeploymentsResponseDeploymentsItemProjectSettingsSkipGitCoXa33976adc2(true)
+        @JvmField val FALSE = GetDeploymentsResponseDeploymentsItemProjectSettingsSkipGitCoXa33976adc2(false)
+        @JvmField val TRUE = GetDeploymentsResponseDeploymentsItemProjectSettingsSkipGitCoXa33976adc2(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsSkipGitCoXa33976adc2(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetDeploymentsResponseDeploymentsItemProjectSettingsSkipGitCoXa33976adc2(value)
     }
 }
 
-class GetDeploymentsResponseDeploymentsItemProjectSettingsSourceFilX301fa6e0b5
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemProjectSettingsSourceFilX301fa6e0b5 &&
-            value == other.value
-
+class GetDeploymentsResponseDeploymentsItemProjectSettingsSourceFilX301fa6e0b5 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemProjectSettingsSourceFilX301fa6e0b5 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = GetDeploymentsResponseDeploymentsItemProjectSettingsSourceFilX301fa6e0b5(false)
-        @JvmField
-        val TRUE = GetDeploymentsResponseDeploymentsItemProjectSettingsSourceFilX301fa6e0b5(true)
+        @JvmField val FALSE = GetDeploymentsResponseDeploymentsItemProjectSettingsSourceFilX301fa6e0b5(false)
+        @JvmField val TRUE = GetDeploymentsResponseDeploymentsItemProjectSettingsSourceFilX301fa6e0b5(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsSourceFilX301fa6e0b5(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetDeploymentsResponseDeploymentsItemProjectSettingsSourceFilX301fa6e0b5(value)
     }
 }
 
-class GetDeploymentsResponseDeploymentsItemProjectSettingsSpeedInsiX140796dfab
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemProjectSettingsSpeedInsiX140796dfab &&
-            value == other.value
-
+class GetDeploymentsResponseDeploymentsItemProjectSettingsSpeedInsiX140796dfab private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemProjectSettingsSpeedInsiX140796dfab && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = GetDeploymentsResponseDeploymentsItemProjectSettingsSpeedInsiX140796dfab(false)
-        @JvmField
-        val TRUE = GetDeploymentsResponseDeploymentsItemProjectSettingsSpeedInsiX140796dfab(true)
+        @JvmField val FALSE = GetDeploymentsResponseDeploymentsItemProjectSettingsSpeedInsiX140796dfab(false)
+        @JvmField val TRUE = GetDeploymentsResponseDeploymentsItemProjectSettingsSpeedInsiX140796dfab(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsSpeedInsiX140796dfab(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetDeploymentsResponseDeploymentsItemProjectSettingsSpeedInsiX140796dfab(value)
     }
 }
 
-class GetDeploymentsResponseDeploymentsItemProjectSettingsWebAnalytX4eaa52c8d9
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemProjectSettingsWebAnalytX4eaa52c8d9 &&
-            value == other.value
-
+class GetDeploymentsResponseDeploymentsItemProjectSettingsWebAnalytX4eaa52c8d9 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemProjectSettingsWebAnalytX4eaa52c8d9 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val TRUE = GetDeploymentsResponseDeploymentsItemProjectSettingsWebAnalytX4eaa52c8d9(true)
+        @JvmField val TRUE = GetDeploymentsResponseDeploymentsItemProjectSettingsWebAnalytX4eaa52c8d9(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetDeploymentsResponseDeploymentsItemProjectSettingsWebAnalytX4eaa52c8d9(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetDeploymentsResponseDeploymentsItemProjectSettingsWebAnalytX4eaa52c8d9(value)
     }
 }
 
-class GetDeploymentsResponseDeploymentsItemReadyStateEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemReadyStateEnum && value == other.value
-
+class GetDeploymentsResponseDeploymentsItemReadyStateEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemReadyStateEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -547,31 +345,23 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val CANCELED = GetDeploymentsResponseDeploymentsItemReadyStateEnum("CANCELED")
         @JvmField val DELETED = GetDeploymentsResponseDeploymentsItemReadyStateEnum("DELETED")
         @JvmField val ERROR = GetDeploymentsResponseDeploymentsItemReadyStateEnum("ERROR")
-        @JvmField
-        val INITIALIZING = GetDeploymentsResponseDeploymentsItemReadyStateEnum("INITIALIZING")
+        @JvmField val INITIALIZING = GetDeploymentsResponseDeploymentsItemReadyStateEnum("INITIALIZING")
         @JvmField val QUEUED = GetDeploymentsResponseDeploymentsItemReadyStateEnum("QUEUED")
         @JvmField val READY = GetDeploymentsResponseDeploymentsItemReadyStateEnum("READY")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemReadyStateEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemReadyStateEnum(value)
     }
 }
 
 /**
- * Substate of deployment when readyState is 'READY' Tracks whether or not deployment has seen
- * production traffic: - STAGED: never seen production traffic - ROLLING: in the process of
- * gradually transitioning production traffic - PROMOTED: has seen production traffic
+ * Substate of deployment when readyState is 'READY' Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of gradually transitioning production traffic - PROMOTED: has seen production traffic
  */
-class GetDeploymentsResponseDeploymentsItemReadySubstateEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemReadySubstateEnum && value == other.value
-
+class GetDeploymentsResponseDeploymentsItemReadySubstateEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemReadySubstateEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -580,83 +370,60 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val ROLLING = GetDeploymentsResponseDeploymentsItemReadySubstateEnum("ROLLING")
         @JvmField val STAGED = GetDeploymentsResponseDeploymentsItemReadySubstateEnum("STAGED")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemReadySubstateEnum(value)
-    }
-}
-
-/** The NSNB decision code for the seat block. Future change: We should consolidate block types. */
-class GetDeploymentsResponseDeploymentsItemSeatBlockBlockCodeEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemSeatBlockBlockCodeEnum && value == other.value
-
-    override fun hashCode(): Int = value.hashCode()
-
-    override fun toString(): String = value
-
-    companion object {
-
-        @JvmField
-        val COMMIT_AUTHOR_REQUIRED =
-            GetDeploymentsResponseDeploymentsItemSeatBlockBlockCodeEnum("COMMIT_AUTHOR_REQUIRED")
-        @JvmField
-        val TEAM_ACCESS_REQUIRED =
-            GetDeploymentsResponseDeploymentsItemSeatBlockBlockCodeEnum("TEAM_ACCESS_REQUIRED")
-
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            GetDeploymentsResponseDeploymentsItemSeatBlockBlockCodeEnum(value)
-    }
-}
-
-/** The git provider type associated with gitUserId. */
-class GetDeploymentsResponseDeploymentsItemSeatBlockGitProviderEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemSeatBlockGitProviderEnum &&
-            value == other.value
-
-    override fun hashCode(): Int = value.hashCode()
-
-    override fun toString(): String = value
-
-    companion object {
-
-        @JvmField
-        val BITBUCKET = GetDeploymentsResponseDeploymentsItemSeatBlockGitProviderEnum("bitbucket")
-        @JvmField
-        val GITHUB = GetDeploymentsResponseDeploymentsItemSeatBlockGitProviderEnum("github")
-        @JvmField
-        val GITLAB = GetDeploymentsResponseDeploymentsItemSeatBlockGitProviderEnum("gitlab")
-
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            GetDeploymentsResponseDeploymentsItemSeatBlockGitProviderEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemReadySubstateEnum(value)
     }
 }
 
 /**
- * Determines if the user was verified during the block. In the git integration case, the commit
- * sender was the author.
+ * The NSNB decision code for the seat block. Future change: We should consolidate block types.
  */
-class GetDeploymentsResponseDeploymentsItemSeatBlockIsVerifiedEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemSeatBlockIsVerifiedEnum &&
-            value == other.value
-
+class GetDeploymentsResponseDeploymentsItemSeatBlockBlockCodeEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemSeatBlockBlockCodeEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
+    override fun toString(): String = value
 
+    companion object {
+
+        @JvmField val COMMIT_AUTHOR_REQUIRED = GetDeploymentsResponseDeploymentsItemSeatBlockBlockCodeEnum("COMMIT_AUTHOR_REQUIRED")
+        @JvmField val TEAM_ACCESS_REQUIRED = GetDeploymentsResponseDeploymentsItemSeatBlockBlockCodeEnum("TEAM_ACCESS_REQUIRED")
+
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemSeatBlockBlockCodeEnum(value)
+    }
+}
+
+/**
+ * The git provider type associated with gitUserId.
+ */
+class GetDeploymentsResponseDeploymentsItemSeatBlockGitProviderEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemSeatBlockGitProviderEnum && value == other.value
+    override fun hashCode(): Int = value.hashCode()
+    override fun toString(): String = value
+
+    companion object {
+
+        @JvmField val BITBUCKET = GetDeploymentsResponseDeploymentsItemSeatBlockGitProviderEnum("bitbucket")
+        @JvmField val GITHUB = GetDeploymentsResponseDeploymentsItemSeatBlockGitProviderEnum("github")
+        @JvmField val GITLAB = GetDeploymentsResponseDeploymentsItemSeatBlockGitProviderEnum("gitlab")
+
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemSeatBlockGitProviderEnum(value)
+    }
+}
+
+/**
+ * Determines if the user was verified during the block. In the git integration case, the commit sender was the author.
+ */
+class GetDeploymentsResponseDeploymentsItemSeatBlockIsVerifiedEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemSeatBlockIsVerifiedEnum && value == other.value
+    override fun hashCode(): Int = value.hashCode()
     override fun toString(): String = value.toString()
 
     companion object {
@@ -664,24 +431,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: B
         @JvmField val FALSE = GetDeploymentsResponseDeploymentsItemSeatBlockIsVerifiedEnum(false)
         @JvmField val TRUE = GetDeploymentsResponseDeploymentsItemSeatBlockIsVerifiedEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetDeploymentsResponseDeploymentsItemSeatBlockIsVerifiedEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetDeploymentsResponseDeploymentsItemSeatBlockIsVerifiedEnum(value)
     }
 }
 
-/** Optional flag to indicate if the deployment was soft deleted by retention policy. */
-class GetDeploymentsResponseDeploymentsItemSoftDeletedByRetentionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemSoftDeletedByRetentionEnum &&
-            value == other.value
-
+/**
+ * Optional flag to indicate if the deployment was soft deleted by retention policy.
+ */
+class GetDeploymentsResponseDeploymentsItemSoftDeletedByRetentionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemSoftDeletedByRetentionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
@@ -689,57 +451,47 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: B
         @JvmField val FALSE = GetDeploymentsResponseDeploymentsItemSoftDeletedByRetentionEnum(false)
         @JvmField val TRUE = GetDeploymentsResponseDeploymentsItemSoftDeletedByRetentionEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetDeploymentsResponseDeploymentsItemSoftDeletedByRetentionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetDeploymentsResponseDeploymentsItemSoftDeletedByRetentionEnum(value)
     }
 }
 
-/** The source of the deployment. */
-class GetDeploymentsResponseDeploymentsItemSourceEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemSourceEnum && value == other.value
-
+/**
+ * The source of the deployment.
+ */
+class GetDeploymentsResponseDeploymentsItemSourceEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemSourceEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val API_TRIGGER_GIT_DEPLOY =
-            GetDeploymentsResponseDeploymentsItemSourceEnum("api-trigger-git-deploy")
+        @JvmField val API_TRIGGER_GIT_DEPLOY = GetDeploymentsResponseDeploymentsItemSourceEnum("api-trigger-git-deploy")
         @JvmField val CLI = GetDeploymentsResponseDeploymentsItemSourceEnum("cli")
         @JvmField val CLONE_REPO = GetDeploymentsResponseDeploymentsItemSourceEnum("clone/repo")
         @JvmField val DROP = GetDeploymentsResponseDeploymentsItemSourceEnum("drop")
         @JvmField val GIT = GetDeploymentsResponseDeploymentsItemSourceEnum("git")
-        @JvmField
-        val GIT_DEPLOY_HOOK = GetDeploymentsResponseDeploymentsItemSourceEnum("git-deploy-hook")
+        @JvmField val GIT_DEPLOY_HOOK = GetDeploymentsResponseDeploymentsItemSourceEnum("git-deploy-hook")
         @JvmField val IMPORT = GetDeploymentsResponseDeploymentsItemSourceEnum("import")
         @JvmField val IMPORT_REPO = GetDeploymentsResponseDeploymentsItemSourceEnum("import/repo")
         @JvmField val REDEPLOY = GetDeploymentsResponseDeploymentsItemSourceEnum("redeploy")
         @JvmField val V0_WEB = GetDeploymentsResponseDeploymentsItemSourceEnum("v0-web")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemSourceEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemSourceEnum(value)
     }
 }
 
-/** In which state is the deployment. */
-class GetDeploymentsResponseDeploymentsItemStateEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemStateEnum && value == other.value
-
+/**
+ * In which state is the deployment.
+ */
+class GetDeploymentsResponseDeploymentsItemStateEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemStateEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -753,22 +505,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val QUEUED = GetDeploymentsResponseDeploymentsItemStateEnum("QUEUED")
         @JvmField val READY = GetDeploymentsResponseDeploymentsItemStateEnum("READY")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemStateEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemStateEnum(value)
     }
 }
 
-/** On which environment has the deployment been deployed to. */
-class GetDeploymentsResponseDeploymentsItemTargetEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemTargetEnum && value == other.value
-
+/**
+ * On which environment has the deployment been deployed to.
+ */
+class GetDeploymentsResponseDeploymentsItemTargetEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemTargetEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -776,44 +525,35 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val PRODUCTION = GetDeploymentsResponseDeploymentsItemTargetEnum("production")
         @JvmField val STAGING = GetDeploymentsResponseDeploymentsItemTargetEnum("staging")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemTargetEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemTargetEnum(value)
     }
 }
 
-/** The type of the deployment. */
-class GetDeploymentsResponseDeploymentsItemTypeEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetDeploymentsResponseDeploymentsItemTypeEnum && value == other.value
-
+/**
+ * The type of the deployment.
+ */
+class GetDeploymentsResponseDeploymentsItemTypeEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetDeploymentsResponseDeploymentsItemTypeEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val LAMBDAS = GetDeploymentsResponseDeploymentsItemTypeEnum("LAMBDAS")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetDeploymentsResponseDeploymentsItemTypeEnum(value)
     }
 }
 
-class CreateOrTransferDomainResponseDomainCreatorIsDomainResellerEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is CreateOrTransferDomainResponseDomainCreatorIsDomainResellerEnum &&
-            value == other.value
-
+class CreateOrTransferDomainResponseDomainCreatorIsDomainResellerEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateOrTransferDomainResponseDomainCreatorIsDomainResellerEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
@@ -821,26 +561,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: B
         @JvmField val FALSE = CreateOrTransferDomainResponseDomainCreatorIsDomainResellerEnum(false)
         @JvmField val TRUE = CreateOrTransferDomainResponseDomainCreatorIsDomainResellerEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            CreateOrTransferDomainResponseDomainCreatorIsDomainResellerEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = CreateOrTransferDomainResponseDomainCreatorIsDomainResellerEnum(value)
     }
 }
 
 /**
- * Whether the domain is enrolled in Encrypted Client Hello. `auto` leaves the decision to Vercel,
- * `enabled` always enrolls, and `disabled` never enrolls and opts out of automatic enrollment.
+ * Whether the domain is enrolled in Encrypted Client Hello. `auto` leaves the decision to Vercel, `enabled` always enrolls, and `disabled` never enrolls and opts out of automatic enrollment.
  */
-class CreateOrTransferDomainResponseDomainEchModeEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is CreateOrTransferDomainResponseDomainEchModeEnum && value == other.value
-
+class CreateOrTransferDomainResponseDomainEchModeEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateOrTransferDomainResponseDomainEchModeEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -849,10 +582,7 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val DISABLED = CreateOrTransferDomainResponseDomainEchModeEnum("disabled")
         @JvmField val ENABLED = CreateOrTransferDomainResponseDomainEchModeEnum("enabled")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = CreateOrTransferDomainResponseDomainEchModeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = CreateOrTransferDomainResponseDomainEchModeEnum(value)
     }
 }

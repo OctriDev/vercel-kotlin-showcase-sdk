@@ -3,12 +3,7 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateProjectResponseLinkVariant1(
     val deployHooks: List<CreateProjectResponseLinkVariant1DeployHooksItem>,
     val gitCredentialId: String,
@@ -19,12 +14,11 @@ data class CreateProjectResponseLinkVariant1(
     val repo: String? = null,
     val repoId: Double? = null,
     /**
-     * A new field, should be included in all new project links, is being added just in time when a
-     * deployment is created. This is needed for Protected Git scopes.
+     * A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
      */
     val repoOwnerId: Double? = null,
     val sourceless: Boolean? = null,
-    val updatedAt: Double? = null,
+    val updatedAt: Double? = null
 ) : CreateProjectResponseLink
 
 data class CreateProjectResponseLinkVariant2DeployHooksItem(
@@ -32,15 +26,10 @@ data class CreateProjectResponseLinkVariant2DeployHooksItem(
     val name: String,
     val ref: String,
     val url: String,
-    val createdAt: Double? = null,
+    val createdAt: Double? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateProjectResponseLinkVariant2(
     val deployHooks: List<CreateProjectResponseLinkVariant2DeployHooksItem>,
     val gitCredentialId: String,
@@ -52,12 +41,11 @@ data class CreateProjectResponseLinkVariant2(
     val repo: String? = null,
     val repoId: Double? = null,
     /**
-     * A new field, should be included in all new project links, is being added just in time when a
-     * deployment is created. This is needed for Protected Git scopes.
+     * A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
      */
     val repoOwnerId: Double? = null,
     val sourceless: Boolean? = null,
-    val updatedAt: Double? = null,
+    val updatedAt: Double? = null
 ) : CreateProjectResponseLink
 
 data class CreateProjectResponseLinkVariant3DeployHooksItem(
@@ -65,15 +53,10 @@ data class CreateProjectResponseLinkVariant3DeployHooksItem(
     val name: String,
     val ref: String,
     val url: String,
-    val createdAt: Double? = null,
+    val createdAt: Double? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateProjectResponseLinkVariant3(
     val deployHooks: List<CreateProjectResponseLinkVariant3DeployHooksItem>,
     val gitCredentialId: String,
@@ -86,13 +69,11 @@ data class CreateProjectResponseLinkVariant3(
     val type: CreateProjectResponseLinkVariant3TypeEnum,
     val createdAt: Double? = null,
     /**
-     * A new field, should be included in all new project links, is being added just in time when a
-     * deployment is created. This is needed for Protected Git scopes. This is the id of the top
-     * level group that a namespace belongs to. Gitlab supports group nesting (up to 20 levels).
+     * A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes. This is the id of the top level group that a namespace belongs to. Gitlab supports group nesting (up to 20 levels).
      */
     val projectOwnerId: Double? = null,
     val sourceless: Boolean? = null,
-    val updatedAt: Double? = null,
+    val updatedAt: Double? = null
 ) : CreateProjectResponseLink
 
 data class CreateProjectResponseLinkVariant4DeployHooksItem(
@@ -100,15 +81,10 @@ data class CreateProjectResponseLinkVariant4DeployHooksItem(
     val name: String,
     val ref: String,
     val url: String,
-    val createdAt: Double? = null,
+    val createdAt: Double? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateProjectResponseLinkVariant4(
     val deployHooks: List<CreateProjectResponseLinkVariant4DeployHooksItem>,
     val gitCredentialId: String,
@@ -121,7 +97,7 @@ data class CreateProjectResponseLinkVariant4(
     val workspaceUuid: String,
     val createdAt: Double? = null,
     val sourceless: Boolean? = null,
-    val updatedAt: Double? = null,
+    val updatedAt: Double? = null
 ) : CreateProjectResponseLink
 
 data class CreateProjectResponseLinkVariant5DeployHooksItem(
@@ -129,15 +105,10 @@ data class CreateProjectResponseLinkVariant5DeployHooksItem(
     val name: String,
     val ref: String,
     val url: String,
-    val createdAt: Double? = null,
+    val createdAt: Double? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateProjectResponseLinkVariant5(
     val deployHooks: List<CreateProjectResponseLinkVariant5DeployHooksItem>,
     val gitCredentialId: String,
@@ -148,7 +119,7 @@ data class CreateProjectResponseLinkVariant5(
     val type: CreateProjectResponseLinkVariant5TypeEnum,
     val createdAt: Double? = null,
     val sourceless: Boolean? = null,
-    val updatedAt: Double? = null,
+    val updatedAt: Double? = null
 ) : CreateProjectResponseLink
 
 data class CreateProjectResponseLinkVariant6DeployHooksItem(
@@ -156,15 +127,10 @@ data class CreateProjectResponseLinkVariant6DeployHooksItem(
     val name: String,
     val ref: String,
     val url: String,
-    val createdAt: Double? = null,
+    val createdAt: Double? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateProjectResponseLinkVariant6(
     val deployHooks: List<CreateProjectResponseLinkVariant6DeployHooksItem>,
     val gitCredentialId: String,
@@ -175,7 +141,7 @@ data class CreateProjectResponseLinkVariant6(
     val type: CreateProjectResponseLinkVariant6TypeEnum,
     val createdAt: Double? = null,
     val sourceless: Boolean? = null,
-    val updatedAt: Double? = null,
+    val updatedAt: Double? = null
 ) : CreateProjectResponseLink
 
 data class CreateProjectResponseLinkVariant7DeployHooksItem(
@@ -183,179 +149,129 @@ data class CreateProjectResponseLinkVariant7DeployHooksItem(
     val name: String,
     val ref: String,
     val url: String,
-    val createdAt: Double? = null,
+    val createdAt: Double? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateProjectResponseLinkVariant7(
     val deployHooks: List<CreateProjectResponseLinkVariant7DeployHooksItem>,
     val gitCredentialId: String,
-    /** Owner (namespace) slug, e.g. `acme`. */
+    /**
+     * Owner (namespace) slug, e.g. `acme`.
+     */
     val owner: String,
-    /** Origin namespace id (`ns_…`) of the owner. */
+    /**
+     * Origin namespace id (`ns_…`) of the owner.
+     */
     val ownerId: String,
     val productionBranch: String,
     val repo: String,
-    /** Origin repository id. */
+    /**
+     * Origin repository id.
+     */
     val repoId: String,
     val type: CreateProjectResponseLinkVariant7TypeEnum,
     val createdAt: Double? = null,
     val sourceless: Boolean? = null,
-    val updatedAt: Double? = null,
+    val updatedAt: Double? = null
 ) : CreateProjectResponseLink
 
-/** Typed representation of the `CreateProjectResponseLink` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+/**
+ * Typed representation of the `CreateProjectResponseLink` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateProjectResponseLinkVariant0::class,
-        name = "github",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateProjectResponseLinkVariant1::class,
-        name = "github-limited",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateProjectResponseLinkVariant2::class,
-        name = "github-custom-host",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateProjectResponseLinkVariant3::class,
-        name = "gitlab",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateProjectResponseLinkVariant4::class,
-        name = "bitbucket",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateProjectResponseLinkVariant5::class,
-        name = "vercel",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateProjectResponseLinkVariant6::class,
-        name = "v0",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateProjectResponseLinkVariant7::class,
-        name = "cursor-origin",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateProjectResponseLinkVariant0::class, name = "github"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateProjectResponseLinkVariant1::class, name = "github-limited"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateProjectResponseLinkVariant2::class, name = "github-custom-host"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateProjectResponseLinkVariant3::class, name = "gitlab"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateProjectResponseLinkVariant4::class, name = "bitbucket"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateProjectResponseLinkVariant5::class, name = "vercel"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateProjectResponseLinkVariant6::class, name = "v0"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateProjectResponseLinkVariant7::class, name = "cursor-origin")
 )
 sealed interface CreateProjectResponseLink
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateProjectResponseMicrofrontendsVariant0(
-    /** Whether microfrontends are enabled for this project. */
+    /**
+     * Whether microfrontends are enabled for this project.
+     */
     val enabled: Boolean,
     /**
-     * The group IDs of microfrontends that this project belongs to. Each microfrontend project must
-     * belong to a microfrontends group that is the set of microfrontends that are used together.
+     * The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
      */
     val groupIds: List<String>,
     val isDefaultApp: Boolean,
-    /** Timestamp when the microfrontends settings were last updated. */
+    /**
+     * Timestamp when the microfrontends settings were last updated.
+     */
     val updatedAt: Double,
     /**
-     * A path that is used to take screenshots and as the default path in preview links when a
-     * domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
+     * A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
      */
     val defaultRoute: String? = null,
     /**
-     * Whether the project was part of the legacy limits for hobby and pro-trial before billing was
-     * added. This field is only set when the team is upgraded to a paid plan and we are backfilling
-     * the subscription status. We cap the subscription to 2 projects and set this field for the 3rd
-     * project. When this field is set, the project is not charged for and we do not call any
-     * billing APIs for this project.
+     * Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
      */
-    val freeProjectForLegacyLimits: Boolean? = null,
+    val freeProjectForLegacyLimits: Boolean? = null
 ) : CreateProjectResponseMicrofrontends
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateProjectResponseMicrofrontendsVariant1(
-    /** Whether microfrontends are enabled for this project. */
+    /**
+     * Whether microfrontends are enabled for this project.
+     */
     val enabled: Boolean,
     /**
-     * The group IDs of microfrontends that this project belongs to. Each microfrontend project must
-     * belong to a microfrontends group that is the set of microfrontends that are used together.
+     * The group IDs of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
      */
     val groupIds: List<String>,
-    /** Timestamp when the microfrontends settings were last updated. */
+    /**
+     * Timestamp when the microfrontends settings were last updated.
+     */
     val updatedAt: Double,
     /**
-     * A path that is used to take screenshots and as the default path in preview links when a
-     * domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
+     * A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI. Includes the leading slash, e.g. `/docs`
      */
     val defaultRoute: String? = null,
     /**
-     * Whether to add microfrontends routing to aliases. This means domains in this project will
-     * route as a microfrontend.
+     * Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
      */
     val doNotRouteWithMicrofrontendsRouting: Boolean? = null,
     /**
-     * Whether the project was part of the legacy limits for hobby and pro-trial before billing was
-     * added. This field is only set when the team is upgraded to a paid plan and we are backfilling
-     * the subscription status. We cap the subscription to 2 projects and set this field for the 3rd
-     * project. When this field is set, the project is not charged for and we do not call any
-     * billing APIs for this project.
+     * Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
      */
     val freeProjectForLegacyLimits: Boolean? = null,
     val isDefaultApp: Boolean? = null,
     /**
      * Whether observability data should be routed to this microfrontend project or a root project.
      */
-    val routeObservabilityToThisProject: Boolean? = null,
+    val routeObservabilityToThisProject: Boolean? = null
 ) : CreateProjectResponseMicrofrontends
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateProjectResponseMicrofrontendsVariant2(
     val enabled: Boolean,
     val groupIds: List<Any>,
     val updatedAt: Double,
-    val freeProjectForLegacyLimits: Boolean? = null,
+    val freeProjectForLegacyLimits: Boolean? = null
 ) : CreateProjectResponseMicrofrontends
 
-/** Typed representation of the `CreateProjectResponseMicrofrontends` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = CreateProjectResponseMicrofrontends.Deserializer::class
-)
+/**
+ * Typed representation of the `CreateProjectResponseMicrofrontends` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = CreateProjectResponseMicrofrontends.Deserializer::class)
 sealed interface CreateProjectResponseMicrofrontends {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<CreateProjectResponseMicrofrontends>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<CreateProjectResponseMicrofrontends>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): CreateProjectResponseMicrofrontends {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                CreateProjectResponseMicrofrontendsOwnedTypes.firstOrNull { (keys, _) ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = CreateProjectResponseMicrofrontendsOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -363,80 +279,51 @@ sealed interface CreateProjectResponseMicrofrontends {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out CreateProjectResponseMicrofrontends>> =
-                listOf(
-                    CreateProjectResponseMicrofrontendsVariant0::class.java,
-                    CreateProjectResponseMicrofrontendsVariant1::class.java,
-                    CreateProjectResponseMicrofrontendsVariant2::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out CreateProjectResponseMicrofrontends>> = listOf(CreateProjectResponseMicrofrontendsVariant0::class.java, CreateProjectResponseMicrofrontendsVariant1::class.java, CreateProjectResponseMicrofrontendsVariant2::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        CreateProjectResponseMicrofrontends::class.java,
-                        "no CreateProjectResponseMicrofrontends branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, CreateProjectResponseMicrofrontends::class.java, "no CreateProjectResponseMicrofrontends branch accepts this payload")
             }
         }
     }
 }
 
-internal val CreateProjectResponseMicrofrontendsOwnedTypes:
-    List<Pair<List<String>, Class<out CreateProjectResponseMicrofrontends>>> =
-    listOf(
-        listOf("doNotRouteWithMicrofrontendsRouting", "routeObservabilityToThisProject") to
-            CreateProjectResponseMicrofrontendsVariant1::class.java
-    )
+internal val CreateProjectResponseMicrofrontendsOwnedTypes: List<Pair<List<String>, Class<out CreateProjectResponseMicrofrontends>>> = listOf(
+    listOf("doNotRouteWithMicrofrontendsRouting", "routeObservabilityToThisProject") to CreateProjectResponseMicrofrontendsVariant1::class.java,
+)
 
 data class CreateProjectResponseTrustedIpsVariant0AddressesItem(
     @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val note: String? = null,
+    val note: String? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateProjectResponseTrustedIpsVariant0(
     val addresses: List<CreateProjectResponseTrustedIpsVariant0AddressesItem>,
     val deploymentType: CreateProjectResponseTrustedIpsVariant0DeploymentTypeEnum,
-    val protectionMode: CreateProjectResponseTrustedIpsVariant0ProtectionModeEnum,
+    val protectionMode: CreateProjectResponseTrustedIpsVariant0ProtectionModeEnum
 ) : CreateProjectResponseTrustedIps
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateProjectResponseTrustedIpsVariant1(
     val deploymentType: CreateProjectResponseTrustedIpsVariant1DeploymentTypeEnum
 ) : CreateProjectResponseTrustedIps
 
-/** Typed representation of the `CreateProjectResponseTrustedIps` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = CreateProjectResponseTrustedIps.Deserializer::class
-)
+/**
+ * Typed representation of the `CreateProjectResponseTrustedIps` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = CreateProjectResponseTrustedIps.Deserializer::class)
 sealed interface CreateProjectResponseTrustedIps {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<CreateProjectResponseTrustedIps>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<CreateProjectResponseTrustedIps>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): CreateProjectResponseTrustedIps {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                CreateProjectResponseTrustedIpsOwnedTypes.firstOrNull { (keys, _) ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = CreateProjectResponseTrustedIpsOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -444,28 +331,16 @@ sealed interface CreateProjectResponseTrustedIps {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out CreateProjectResponseTrustedIps>> =
-                listOf(
-                    CreateProjectResponseTrustedIpsVariant0::class.java,
-                    CreateProjectResponseTrustedIpsVariant1::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out CreateProjectResponseTrustedIps>> = listOf(CreateProjectResponseTrustedIpsVariant0::class.java, CreateProjectResponseTrustedIpsVariant1::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        CreateProjectResponseTrustedIps::class.java,
-                        "no CreateProjectResponseTrustedIps branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, CreateProjectResponseTrustedIps::class.java, "no CreateProjectResponseTrustedIps branch accepts this payload")
             }
         }
     }
 }
 
-internal val CreateProjectResponseTrustedIpsOwnedTypes:
-    List<Pair<List<String>, Class<out CreateProjectResponseTrustedIps>>> =
-    listOf(
-        listOf("addresses", "protectionMode") to CreateProjectResponseTrustedIpsVariant0::class.java
-    )
+internal val CreateProjectResponseTrustedIpsOwnedTypes: List<Pair<List<String>, Class<out CreateProjectResponseTrustedIps>>> = listOf(
+    listOf("addresses", "protectionMode") to CreateProjectResponseTrustedIpsVariant0::class.java,
+)

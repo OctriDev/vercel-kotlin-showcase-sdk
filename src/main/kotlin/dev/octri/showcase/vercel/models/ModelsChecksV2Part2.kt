@@ -3,12 +3,7 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListCheckRunsResponseRunsItemVariant0(
     val createdAt: Double,
     val deploymentId: String,
@@ -25,7 +20,9 @@ data class ListCheckRunsResponseRunsItemVariant0(
     val conclusion: ListCheckRunsResponseRunsItemVariant0ConclusionEnum? = null,
     val conclusionText: String? = null,
     val expectationRef: ListCheckRunsResponseRunsItemVariant0ExpectationRef? = null,
-    /** Latest aggregate revision applied to this check run. */
+    /**
+     * Latest aggregate revision applied to this check run.
+     */
     val expectationRevision: Double? = null,
     val externalId: String? = null,
     val externalUrl: String? = null,
@@ -34,44 +31,43 @@ data class ListCheckRunsResponseRunsItemVariant0(
     val requires: ListCheckRunsResponseRunsItemVariant0RequiresEnum? = null,
     val startedAt: Double? = null,
     val targets: List<String>? = null,
-    val taskSummary: ListCheckRunsResponseRunsItemVariant0TaskSummary? = null,
+    val taskSummary: ListCheckRunsResponseRunsItemVariant0TaskSummary? = null
 ) : ListCheckRunsResponseRunsItem
 
-/** Config-driven CI task — check run `source` only (no parent check). */
+/**
+ * Config-driven CI task — check run `source` only (no parent check).
+ */
 data class ListCheckRunsResponseRunsItemVariant1SourceVariant0(
     val invocationId: String,
     val jobDefinitionId: String,
     val origin: ListCheckRunsResponseRunsItemVariant1SourceVariant0OriginEnum,
     val subKind: ListCheckRunsResponseRunsItemVariant1SourceVariant0SubKindEnum,
-    val invocationAttempt: Double? = null,
+    val invocationAttempt: Double? = null
 )
 
-/** CI sentinel — check run `source` only (no parent check). */
+/**
+ * CI sentinel — check run `source` only (no parent check).
+ */
 data class ListCheckRunsResponseRunsItemVariant1SourceVariant1(
     val origin: ListCheckRunsResponseRunsItemVariant1SourceVariant1OriginEnum,
-    val subKind: ListCheckRunsResponseRunsItemVariant1SourceVariant1SubKindEnum,
+    val subKind: ListCheckRunsResponseRunsItemVariant1SourceVariant1SubKindEnum
 )
 
 data class ListCheckRunsResponseRunsItemVariant1ExpectationRef(
     val invocationAttempt: Double,
     val invocationId: String,
     val jobDefinitionId: String,
-    val jobRunAttempt: Double,
+    val jobRunAttempt: Double
 )
 
 data class ListCheckRunsResponseRunsItemVariant1TaskSummary(
     val failed: Double,
     val pending: Double,
     val succeeded: Double,
-    val total: Double,
+    val total: Double
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListCheckRunsResponseRunsItemVariant1(
     val createdAt: Double,
     val deploymentId: String,
@@ -87,7 +83,9 @@ data class ListCheckRunsResponseRunsItemVariant1(
     val conclusion: ListCheckRunsResponseRunsItemVariant1ConclusionEnum? = null,
     val conclusionText: String? = null,
     val expectationRef: ListCheckRunsResponseRunsItemVariant1ExpectationRef? = null,
-    /** Latest aggregate revision applied to this check run. */
+    /**
+     * Latest aggregate revision applied to this check run.
+     */
     val expectationRevision: Double? = null,
     val externalId: String? = null,
     val externalUrl: String? = null,
@@ -96,28 +94,23 @@ data class ListCheckRunsResponseRunsItemVariant1(
     val requires: ListCheckRunsResponseRunsItemVariant1RequiresEnum? = null,
     val startedAt: Double? = null,
     val targets: List<String>? = null,
-    val taskSummary: ListCheckRunsResponseRunsItemVariant1TaskSummary? = null,
+    val taskSummary: ListCheckRunsResponseRunsItemVariant1TaskSummary? = null
 ) : ListCheckRunsResponseRunsItem
 
-/** Typed representation of the `ListCheckRunsResponseRunsItem` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = ListCheckRunsResponseRunsItem.Deserializer::class
-)
+/**
+ * Typed representation of the `ListCheckRunsResponseRunsItem` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = ListCheckRunsResponseRunsItem.Deserializer::class)
 sealed interface ListCheckRunsResponseRunsItem {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<ListCheckRunsResponseRunsItem>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<ListCheckRunsResponseRunsItem>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): ListCheckRunsResponseRunsItem {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                ListCheckRunsResponseRunsItemOwnedTypes.firstOrNull { (keys, _) ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = ListCheckRunsResponseRunsItemOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -125,53 +118,45 @@ sealed interface ListCheckRunsResponseRunsItem {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out ListCheckRunsResponseRunsItem>> =
-                listOf(
-                    ListCheckRunsResponseRunsItemVariant0::class.java,
-                    ListCheckRunsResponseRunsItemVariant1::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out ListCheckRunsResponseRunsItem>> = listOf(ListCheckRunsResponseRunsItemVariant0::class.java, ListCheckRunsResponseRunsItemVariant1::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        ListCheckRunsResponseRunsItem::class.java,
-                        "no ListCheckRunsResponseRunsItem branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, ListCheckRunsResponseRunsItem::class.java, "no ListCheckRunsResponseRunsItem branch accepts this payload")
             }
         }
     }
 }
 
-internal val ListCheckRunsResponseRunsItemOwnedTypes:
-    List<Pair<List<String>, Class<out ListCheckRunsResponseRunsItem>>> =
-    listOf(listOf("checkId") to ListCheckRunsResponseRunsItemVariant0::class.java)
+internal val ListCheckRunsResponseRunsItemOwnedTypes: List<Pair<List<String>, Class<out ListCheckRunsResponseRunsItem>>> = listOf(
+    listOf("checkId") to ListCheckRunsResponseRunsItemVariant0::class.java,
+)
 
 data class ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant0(
     val integrationConfigurationId: String,
     val integrationId: String,
     val kind: ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant0KindEnum,
     val externalResourceId: String? = null,
-    val resourceId: String? = null,
+    val resourceId: String? = null
 )
 
 data class ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant1(
     val kind: ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant1KindEnum,
-    val webhookId: String? = null,
+    val webhookId: String? = null
 )
 
 data class ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant2(
     val externalCheckName: String,
     val kind: ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant2KindEnum,
-    val provider: ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant2X1c8c7c1280,
+    val provider: ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant2X1c8c7c1280
 )
 
-/** Native Vercel checks — check definition and check run `source`. */
+/**
+ * Native Vercel checks — check definition and check run `source`.
+ */
 data class ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant3(
     val origin: ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant3OriginEnum? = null,
-    val subKind: ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant3SubKindEnum? = null,
+    val subKind: ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant3SubKindEnum? = null
 )
 
 data class ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X590bbad359(
@@ -184,7 +169,7 @@ data class ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X3740a48
 
 data class ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X8e50cd0f39(
     val job: String,
-    val kind: ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X1dfc0aaa9a,
+    val kind: ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X1dfc0aaa9a
 )
 
 data class ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xe3ab0c8119(
@@ -192,36 +177,33 @@ data class ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xe3ab0c8
     val job: ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4X2fae3c8004,
     val kind: ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4Xf40ee06a89,
     val task: String,
-    val failIfNoMatch: Boolean? = null,
+    val failIfNoMatch: Boolean? = null
 )
 
-/** Project-defined CI requirement; its selection is frozen on each check run. */
+/**
+ * Project-defined CI requirement; its selection is frozen on each check run.
+ */
 data class ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4(
     val origin: ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4OriginEnum,
     val selection: Any,
-    val subKind: ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4SubKindEnum,
+    val subKind: ListDeploymentCheckRunsResponseRunsItemVariant0SourceVariant4SubKindEnum
 )
 
 data class ListDeploymentCheckRunsResponseRunsItemVariant0ExpectationRef(
     val invocationAttempt: Double,
     val invocationId: String,
     val jobDefinitionId: String,
-    val jobRunAttempt: Double,
+    val jobRunAttempt: Double
 )
 
 data class ListDeploymentCheckRunsResponseRunsItemVariant0TaskSummary(
     val failed: Double,
     val pending: Double,
     val succeeded: Double,
-    val total: Double,
+    val total: Double
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListDeploymentCheckRunsResponseRunsItemVariant0(
     val createdAt: Double,
     val deploymentId: String,
@@ -238,7 +220,9 @@ data class ListDeploymentCheckRunsResponseRunsItemVariant0(
     val conclusion: ListDeploymentCheckRunsResponseRunsItemVariant0ConclusionEnum? = null,
     val conclusionText: String? = null,
     val expectationRef: ListDeploymentCheckRunsResponseRunsItemVariant0ExpectationRef? = null,
-    /** Latest aggregate revision applied to this check run. */
+    /**
+     * Latest aggregate revision applied to this check run.
+     */
     val expectationRevision: Double? = null,
     val externalId: String? = null,
     val externalUrl: String? = null,
@@ -247,44 +231,43 @@ data class ListDeploymentCheckRunsResponseRunsItemVariant0(
     val requires: ListDeploymentCheckRunsResponseRunsItemVariant0RequiresEnum? = null,
     val startedAt: Double? = null,
     val targets: List<String>? = null,
-    val taskSummary: ListDeploymentCheckRunsResponseRunsItemVariant0TaskSummary? = null,
+    val taskSummary: ListDeploymentCheckRunsResponseRunsItemVariant0TaskSummary? = null
 ) : ListDeploymentCheckRunsResponseRunsItem
 
-/** Config-driven CI task — check run `source` only (no parent check). */
+/**
+ * Config-driven CI task — check run `source` only (no parent check).
+ */
 data class ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant0(
     val invocationId: String,
     val jobDefinitionId: String,
     val origin: ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant0OriginEnum,
     val subKind: ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant0SubKindEnum,
-    val invocationAttempt: Double? = null,
+    val invocationAttempt: Double? = null
 )
 
-/** CI sentinel — check run `source` only (no parent check). */
+/**
+ * CI sentinel — check run `source` only (no parent check).
+ */
 data class ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant1(
     val origin: ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant1OriginEnum,
-    val subKind: ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant1SubKindEnum,
+    val subKind: ListDeploymentCheckRunsResponseRunsItemVariant1SourceVariant1SubKindEnum
 )
 
 data class ListDeploymentCheckRunsResponseRunsItemVariant1ExpectationRef(
     val invocationAttempt: Double,
     val invocationId: String,
     val jobDefinitionId: String,
-    val jobRunAttempt: Double,
+    val jobRunAttempt: Double
 )
 
 data class ListDeploymentCheckRunsResponseRunsItemVariant1TaskSummary(
     val failed: Double,
     val pending: Double,
     val succeeded: Double,
-    val total: Double,
+    val total: Double
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListDeploymentCheckRunsResponseRunsItemVariant1(
     val createdAt: Double,
     val deploymentId: String,
@@ -300,7 +283,9 @@ data class ListDeploymentCheckRunsResponseRunsItemVariant1(
     val conclusion: ListDeploymentCheckRunsResponseRunsItemVariant1ConclusionEnum? = null,
     val conclusionText: String? = null,
     val expectationRef: ListDeploymentCheckRunsResponseRunsItemVariant1ExpectationRef? = null,
-    /** Latest aggregate revision applied to this check run. */
+    /**
+     * Latest aggregate revision applied to this check run.
+     */
     val expectationRevision: Double? = null,
     val externalId: String? = null,
     val externalUrl: String? = null,
@@ -309,28 +294,23 @@ data class ListDeploymentCheckRunsResponseRunsItemVariant1(
     val requires: ListDeploymentCheckRunsResponseRunsItemVariant1RequiresEnum? = null,
     val startedAt: Double? = null,
     val targets: List<String>? = null,
-    val taskSummary: ListDeploymentCheckRunsResponseRunsItemVariant1TaskSummary? = null,
+    val taskSummary: ListDeploymentCheckRunsResponseRunsItemVariant1TaskSummary? = null
 ) : ListDeploymentCheckRunsResponseRunsItem
 
-/** Typed representation of the `ListDeploymentCheckRunsResponseRunsItem` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = ListDeploymentCheckRunsResponseRunsItem.Deserializer::class
-)
+/**
+ * Typed representation of the `ListDeploymentCheckRunsResponseRunsItem` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = ListDeploymentCheckRunsResponseRunsItem.Deserializer::class)
 sealed interface ListDeploymentCheckRunsResponseRunsItem {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<ListDeploymentCheckRunsResponseRunsItem>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<ListDeploymentCheckRunsResponseRunsItem>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): ListDeploymentCheckRunsResponseRunsItem {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                ListDeploymentCheckRunsResponseRunsItemOwnedTypes.firstOrNull { (keys, _) ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = ListDeploymentCheckRunsResponseRunsItemOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -338,86 +318,50 @@ sealed interface ListDeploymentCheckRunsResponseRunsItem {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out ListDeploymentCheckRunsResponseRunsItem>> =
-                listOf(
-                    ListDeploymentCheckRunsResponseRunsItemVariant0::class.java,
-                    ListDeploymentCheckRunsResponseRunsItemVariant1::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out ListDeploymentCheckRunsResponseRunsItem>> = listOf(ListDeploymentCheckRunsResponseRunsItemVariant0::class.java, ListDeploymentCheckRunsResponseRunsItemVariant1::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        ListDeploymentCheckRunsResponseRunsItem::class.java,
-                        "no ListDeploymentCheckRunsResponseRunsItem branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, ListDeploymentCheckRunsResponseRunsItem::class.java, "no ListDeploymentCheckRunsResponseRunsItem branch accepts this payload")
             }
         }
     }
 }
 
-internal val ListDeploymentCheckRunsResponseRunsItemOwnedTypes:
-    List<Pair<List<String>, Class<out ListDeploymentCheckRunsResponseRunsItem>>> =
-    listOf(listOf("checkId") to ListDeploymentCheckRunsResponseRunsItemVariant0::class.java)
+internal val ListDeploymentCheckRunsResponseRunsItemOwnedTypes: List<Pair<List<String>, Class<out ListDeploymentCheckRunsResponseRunsItem>>> = listOf(
+    listOf("checkId") to ListDeploymentCheckRunsResponseRunsItemVariant0::class.java,
+)
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListProjectChecksResponseChecksItemSourceVariant0(
     val integrationConfigurationId: String,
     val integrationId: String,
     val kind: ListProjectChecksResponseChecksItemSourceVariant0KindEnum,
     val externalResourceId: String? = null,
-    val resourceId: String? = null,
+    val resourceId: String? = null
 ) : ListProjectChecksResponseChecksItemSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListProjectChecksResponseChecksItemSourceVariant1(
     val kind: ListProjectChecksResponseChecksItemSourceVariant1KindEnum,
-    val webhookId: String? = null,
+    val webhookId: String? = null
 ) : ListProjectChecksResponseChecksItemSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListProjectChecksResponseChecksItemSourceVariant2(
     val externalCheckName: String,
     val kind: ListProjectChecksResponseChecksItemSourceVariant2KindEnum,
-    val provider: ListProjectChecksResponseChecksItemSourceVariant2ProviderEnum,
+    val provider: ListProjectChecksResponseChecksItemSourceVariant2ProviderEnum
 ) : ListProjectChecksResponseChecksItemSource
 
-/** Typed representation of the `ListProjectChecksResponseChecksItemSource` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "kind",
-    visible = true,
-)
+/**
+ * Typed representation of the `ListProjectChecksResponseChecksItemSource` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "kind", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ListProjectChecksResponseChecksItemSourceVariant0::class,
-        name = "integration",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ListProjectChecksResponseChecksItemSourceVariant1::class,
-        name = "webhook",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ListProjectChecksResponseChecksItemSourceVariant2::class,
-        name = "git-provider",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListProjectChecksResponseChecksItemSourceVariant0::class, name = "integration"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListProjectChecksResponseChecksItemSourceVariant1::class, name = "webhook"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListProjectChecksResponseChecksItemSourceVariant2::class, name = "git-provider")
 )
 sealed interface ListProjectChecksResponseChecksItemSource
 
@@ -426,24 +370,26 @@ data class UpdateDeploymentCheckRunResponseVariant0SourceVariant0(
     val integrationId: String,
     val kind: UpdateDeploymentCheckRunResponseVariant0SourceVariant0KindEnum,
     val externalResourceId: String? = null,
-    val resourceId: String? = null,
+    val resourceId: String? = null
 )
 
 data class UpdateDeploymentCheckRunResponseVariant0SourceVariant1(
     val kind: UpdateDeploymentCheckRunResponseVariant0SourceVariant1KindEnum,
-    val webhookId: String? = null,
+    val webhookId: String? = null
 )
 
 data class UpdateDeploymentCheckRunResponseVariant0SourceVariant2(
     val externalCheckName: String,
     val kind: UpdateDeploymentCheckRunResponseVariant0SourceVariant2KindEnum,
-    val provider: UpdateDeploymentCheckRunResponseVariant0SourceVariant2ProviderEnum,
+    val provider: UpdateDeploymentCheckRunResponseVariant0SourceVariant2ProviderEnum
 )
 
-/** Native Vercel checks — check definition and check run `source`. */
+/**
+ * Native Vercel checks — check definition and check run `source`.
+ */
 data class UpdateDeploymentCheckRunResponseVariant0SourceVariant3(
     val origin: UpdateDeploymentCheckRunResponseVariant0SourceVariant3OriginEnum? = null,
-    val subKind: UpdateDeploymentCheckRunResponseVariant0SourceVariant3SubKindEnum? = null,
+    val subKind: UpdateDeploymentCheckRunResponseVariant0SourceVariant3SubKindEnum? = null
 )
 
 data class UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant0(
@@ -456,7 +402,7 @@ data class UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVarian
 
 data class UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant2(
     val job: String,
-    val kind: UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX5849193f03,
+    val kind: UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX5849193f03
 )
 
 data class UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVariant3(
@@ -464,36 +410,33 @@ data class UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectionVarian
     val job: UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX984745a855,
     val kind: UpdateDeploymentCheckRunResponseVariant0SourceVariant4SelectiX4c011b27da,
     val task: String,
-    val failIfNoMatch: Boolean? = null,
+    val failIfNoMatch: Boolean? = null
 )
 
-/** Project-defined CI requirement; its selection is frozen on each check run. */
+/**
+ * Project-defined CI requirement; its selection is frozen on each check run.
+ */
 data class UpdateDeploymentCheckRunResponseVariant0SourceVariant4(
     val origin: UpdateDeploymentCheckRunResponseVariant0SourceVariant4OriginEnum,
     val selection: Any,
-    val subKind: UpdateDeploymentCheckRunResponseVariant0SourceVariant4SubKindEnum,
+    val subKind: UpdateDeploymentCheckRunResponseVariant0SourceVariant4SubKindEnum
 )
 
 data class UpdateDeploymentCheckRunResponseVariant0ExpectationRef(
     val invocationAttempt: Double,
     val invocationId: String,
     val jobDefinitionId: String,
-    val jobRunAttempt: Double,
+    val jobRunAttempt: Double
 )
 
 data class UpdateDeploymentCheckRunResponseVariant0TaskSummary(
     val failed: Double,
     val pending: Double,
     val succeeded: Double,
-    val total: Double,
+    val total: Double
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateDeploymentCheckRunResponseVariant0(
     val createdAt: Double,
     val deploymentId: String,
@@ -510,7 +453,9 @@ data class UpdateDeploymentCheckRunResponseVariant0(
     val conclusion: UpdateDeploymentCheckRunResponseVariant0ConclusionEnum? = null,
     val conclusionText: String? = null,
     val expectationRef: UpdateDeploymentCheckRunResponseVariant0ExpectationRef? = null,
-    /** Latest aggregate revision applied to this check run. */
+    /**
+     * Latest aggregate revision applied to this check run.
+     */
     val expectationRevision: Double? = null,
     val externalId: String? = null,
     val externalUrl: String? = null,
@@ -519,44 +464,43 @@ data class UpdateDeploymentCheckRunResponseVariant0(
     val requires: UpdateDeploymentCheckRunResponseVariant0RequiresEnum? = null,
     val startedAt: Double? = null,
     val targets: List<String>? = null,
-    val taskSummary: UpdateDeploymentCheckRunResponseVariant0TaskSummary? = null,
+    val taskSummary: UpdateDeploymentCheckRunResponseVariant0TaskSummary? = null
 ) : UpdateDeploymentCheckRunResponse
 
-/** Config-driven CI task — check run `source` only (no parent check). */
+/**
+ * Config-driven CI task — check run `source` only (no parent check).
+ */
 data class UpdateDeploymentCheckRunResponseVariant1SourceVariant0(
     val invocationId: String,
     val jobDefinitionId: String,
     val origin: UpdateDeploymentCheckRunResponseVariant1SourceVariant0OriginEnum,
     val subKind: UpdateDeploymentCheckRunResponseVariant1SourceVariant0SubKindEnum,
-    val invocationAttempt: Double? = null,
+    val invocationAttempt: Double? = null
 )
 
-/** CI sentinel — check run `source` only (no parent check). */
+/**
+ * CI sentinel — check run `source` only (no parent check).
+ */
 data class UpdateDeploymentCheckRunResponseVariant1SourceVariant1(
     val origin: UpdateDeploymentCheckRunResponseVariant1SourceVariant1OriginEnum,
-    val subKind: UpdateDeploymentCheckRunResponseVariant1SourceVariant1SubKindEnum,
+    val subKind: UpdateDeploymentCheckRunResponseVariant1SourceVariant1SubKindEnum
 )
 
 data class UpdateDeploymentCheckRunResponseVariant1ExpectationRef(
     val invocationAttempt: Double,
     val invocationId: String,
     val jobDefinitionId: String,
-    val jobRunAttempt: Double,
+    val jobRunAttempt: Double
 )
 
 data class UpdateDeploymentCheckRunResponseVariant1TaskSummary(
     val failed: Double,
     val pending: Double,
     val succeeded: Double,
-    val total: Double,
+    val total: Double
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateDeploymentCheckRunResponseVariant1(
     val createdAt: Double,
     val deploymentId: String,
@@ -572,7 +516,9 @@ data class UpdateDeploymentCheckRunResponseVariant1(
     val conclusion: UpdateDeploymentCheckRunResponseVariant1ConclusionEnum? = null,
     val conclusionText: String? = null,
     val expectationRef: UpdateDeploymentCheckRunResponseVariant1ExpectationRef? = null,
-    /** Latest aggregate revision applied to this check run. */
+    /**
+     * Latest aggregate revision applied to this check run.
+     */
     val expectationRevision: Double? = null,
     val externalId: String? = null,
     val externalUrl: String? = null,
@@ -581,28 +527,23 @@ data class UpdateDeploymentCheckRunResponseVariant1(
     val requires: UpdateDeploymentCheckRunResponseVariant1RequiresEnum? = null,
     val startedAt: Double? = null,
     val targets: List<String>? = null,
-    val taskSummary: UpdateDeploymentCheckRunResponseVariant1TaskSummary? = null,
+    val taskSummary: UpdateDeploymentCheckRunResponseVariant1TaskSummary? = null
 ) : UpdateDeploymentCheckRunResponse
 
-/** Typed representation of the `UpdateDeploymentCheckRunResponse` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = UpdateDeploymentCheckRunResponse.Deserializer::class
-)
+/**
+ * Typed representation of the `UpdateDeploymentCheckRunResponse` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UpdateDeploymentCheckRunResponse.Deserializer::class)
 sealed interface UpdateDeploymentCheckRunResponse {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<UpdateDeploymentCheckRunResponse>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UpdateDeploymentCheckRunResponse>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): UpdateDeploymentCheckRunResponse {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                UpdateDeploymentCheckRunResponseOwnedTypes.firstOrNull { (keys, _) ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = UpdateDeploymentCheckRunResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -610,85 +551,49 @@ sealed interface UpdateDeploymentCheckRunResponse {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out UpdateDeploymentCheckRunResponse>> =
-                listOf(
-                    UpdateDeploymentCheckRunResponseVariant0::class.java,
-                    UpdateDeploymentCheckRunResponseVariant1::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out UpdateDeploymentCheckRunResponse>> = listOf(UpdateDeploymentCheckRunResponseVariant0::class.java, UpdateDeploymentCheckRunResponseVariant1::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        UpdateDeploymentCheckRunResponse::class.java,
-                        "no UpdateDeploymentCheckRunResponse branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, UpdateDeploymentCheckRunResponse::class.java, "no UpdateDeploymentCheckRunResponse branch accepts this payload")
             }
         }
     }
 }
 
-internal val UpdateDeploymentCheckRunResponseOwnedTypes:
-    List<Pair<List<String>, Class<out UpdateDeploymentCheckRunResponse>>> =
-    listOf(listOf("checkId") to UpdateDeploymentCheckRunResponseVariant0::class.java)
+internal val UpdateDeploymentCheckRunResponseOwnedTypes: List<Pair<List<String>, Class<out UpdateDeploymentCheckRunResponse>>> = listOf(
+    listOf("checkId") to UpdateDeploymentCheckRunResponseVariant0::class.java,
+)
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectCheckResponseSourceVariant0(
     val integrationConfigurationId: String,
     val integrationId: String,
     val kind: UpdateProjectCheckResponseSourceVariant0KindEnum,
     val externalResourceId: String? = null,
-    val resourceId: String? = null,
+    val resourceId: String? = null
 ) : UpdateProjectCheckResponseSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectCheckResponseSourceVariant1(
     val kind: UpdateProjectCheckResponseSourceVariant1KindEnum,
-    val webhookId: String? = null,
+    val webhookId: String? = null
 ) : UpdateProjectCheckResponseSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectCheckResponseSourceVariant2(
     val externalCheckName: String,
     val kind: UpdateProjectCheckResponseSourceVariant2KindEnum,
-    val provider: UpdateProjectCheckResponseSourceVariant2ProviderEnum,
+    val provider: UpdateProjectCheckResponseSourceVariant2ProviderEnum
 ) : UpdateProjectCheckResponseSource
 
-/** Typed representation of the `UpdateProjectCheckResponseSource` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "kind",
-    visible = true,
-)
+/**
+ * Typed representation of the `UpdateProjectCheckResponseSource` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "kind", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectCheckResponseSourceVariant0::class,
-        name = "integration",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectCheckResponseSourceVariant1::class,
-        name = "webhook",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectCheckResponseSourceVariant2::class,
-        name = "git-provider",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectCheckResponseSourceVariant0::class, name = "integration"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectCheckResponseSourceVariant1::class, name = "webhook"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectCheckResponseSourceVariant2::class, name = "git-provider")
 )
 sealed interface UpdateProjectCheckResponseSource

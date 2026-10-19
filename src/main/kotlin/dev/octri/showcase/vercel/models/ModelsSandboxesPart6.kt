@@ -5,91 +5,68 @@ package dev.octri.showcase.vercel.models
 
 data class UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItem(
     /**
-     * Optional L7 match. When provided, the injection rule only applies to requests that satisfy
-     * every specified dimension. When multiple injection rules target the same domain they are
-     * evaluated in order and the first match wins; a rule without `match` matches any request and
-     * shadows later rules for the same domain.
+     * Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
      */
     val match: UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItemMatch? = null,
-    val transform: List<UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXf7f6361470>? =
-        null,
+    val transform: List<UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItXf7f6361470>? = null,
     /**
-     * HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string,
-     * or fragment.
+     * HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("forwardURL") val forwardUrl: String? = null,
     /**
-     * Answer matching requests from the proxy with this response instead of forwarding them to the
-     * origin. Combine with a `match` on an earlier rule to allow one sub-path and reject the rest
-     * of a domain.
+     * Answer matching requests from the proxy with this response instead of forwarding them to the origin. Combine with a `match` on an earlier rule to allow one sub-path and reject the rest of a domain.
      */
-    val response: UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItemResponse? = null,
+    val response: UpdateSandboxRequestNetworkPolicyVariant1AllowVariant1ValueItemResponse? = null
 )
 
 data class UpdateSandboxRequestNetworkPolicyVariant1Subnets(
     val allow: List<String>? = null,
-    val deny: List<String>? = null,
+    val deny: List<String>? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateSandboxRequestNetworkPolicyVariant1(
     val allow: Any? = null,
-    val subnets: UpdateSandboxRequestNetworkPolicyVariant1Subnets? = null,
+    val subnets: UpdateSandboxRequestNetworkPolicyVariant1Subnets? = null
 ) : UpdateSandboxRequestNetworkPolicy
 
-/** Typed representation of the `UpdateSandboxRequestNetworkPolicy` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION
-)
+/**
+ * Typed representation of the `UpdateSandboxRequestNetworkPolicy` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateSandboxRequestNetworkPolicyVariant0::class
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateSandboxRequestNetworkPolicyVariant1::class
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateSandboxRequestNetworkPolicyVariant0::class),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateSandboxRequestNetworkPolicyVariant1::class)
 )
 sealed interface UpdateSandboxRequestNetworkPolicy
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateSandboxResponseVariant0(
     val routes: List<SandboxPublicRoute>,
-    /** This object contains information related to a Vercel NamedSandbox. */
-    val sandbox: NamedSandbox,
+    /**
+     * This object contains information related to a Vercel NamedSandbox.
+     */
+    val sandbox: NamedSandbox
 ) : UpdateSandboxResponse
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateSandboxResponseVariant1(
     val resumed: Boolean,
     val routes: List<SandboxPublicRoute>,
-    /** This object contains information related to a Vercel NamedSandbox. */
+    /**
+     * This object contains information related to a Vercel NamedSandbox.
+     */
     val sandbox: NamedSandbox,
     /**
-     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
-     * "session" instead of "sandbox" as the response wrapper key.
+     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
      */
-    val session: Session,
+    val session: Session
 ) : UpdateSandboxResponse
 
-/** Typed representation of the `UpdateSandboxResponse` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = UpdateSandboxResponse.Deserializer::class
-)
+/**
+ * Typed representation of the `UpdateSandboxResponse` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UpdateSandboxResponse.Deserializer::class)
 sealed interface UpdateSandboxResponse {
     /** Chooses the branch this payload is shaped like. */
     class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UpdateSandboxResponse>() {
@@ -99,9 +76,7 @@ sealed interface UpdateSandboxResponse {
         ): UpdateSandboxResponse {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                UpdateSandboxResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }
-                    ?.second
+            val ownedType = UpdateSandboxResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -109,26 +84,16 @@ sealed interface UpdateSandboxResponse {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out UpdateSandboxResponse>> =
-                listOf(
-                    UpdateSandboxResponseVariant0::class.java,
-                    UpdateSandboxResponseVariant1::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out UpdateSandboxResponse>> = listOf(UpdateSandboxResponseVariant0::class.java, UpdateSandboxResponseVariant1::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        UpdateSandboxResponse::class.java,
-                        "no UpdateSandboxResponse branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, UpdateSandboxResponse::class.java, "no UpdateSandboxResponse branch accepts this payload")
             }
         }
     }
 }
 
-internal val UpdateSandboxResponseOwnedTypes:
-    List<Pair<List<String>, Class<out UpdateSandboxResponse>>> =
-    listOf(listOf("resumed", "session") to UpdateSandboxResponseVariant1::class.java)
+internal val UpdateSandboxResponseOwnedTypes: List<Pair<List<String>, Class<out UpdateSandboxResponse>>> = listOf(
+    listOf("resumed", "session") to UpdateSandboxResponseVariant1::class.java,
+)

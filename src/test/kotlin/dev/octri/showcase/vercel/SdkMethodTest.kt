@@ -3,9 +3,10 @@
 
 package dev.octri.showcase.vercel
 
-import com.fasterxml.jackson.databind.DeserializationFeature
+
 import com.fasterxml.jackson.databind.JavaType
 import com.fasterxml.jackson.databind.JsonNode
+import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
 import java.io.File
@@ -51,12 +52,11 @@ class SdkMethodTest {
         value: JsonNode?,
         name: String,
     ): JsonNode? =
-        value?.get(name)
-            ?: value
-                ?.fields()
-                ?.asSequence()
-                ?.firstOrNull { normalized(it.key) == normalized(name) }
-                ?.value
+        value?.get(name) ?: value
+            ?.fields()
+            ?.asSequence()
+            ?.firstOrNull { normalized(it.key) == normalized(name) }
+            ?.value
 
     // A parameter object standing in for the whole argument list, whose fields the
     // fixture states at the top level under no name of its own. It is declared
@@ -73,7 +73,8 @@ class SdkMethodTest {
             java.lang.Integer.TYPE,
             java.lang.Long.TYPE,
             java.lang.Double.TYPE,
-            java.lang.Float.TYPE -> 0
+            java.lang.Float.TYPE,
+            -> 0
             else -> null
         }
 
@@ -126,7 +127,8 @@ class SdkMethodTest {
         val constructor =
             raw.declaredConstructors
                 .filter { !it.isSynthetic && raw !in it.parameterTypes }
-                .maxByOrNull { it.parameterCount } ?: return mapper.convertValue(value, javaType)
+                .maxByOrNull { it.parameterCount }
+                ?: return mapper.convertValue(value, javaType)
         val fields =
             raw.declaredFields.filter {
                 !Modifier.isStatic(it.modifiers) && !it.isSynthetic
@@ -140,8 +142,7 @@ class SdkMethodTest {
             constructor.genericParameterTypes
                 .mapIndexed { index, parameterType ->
                     convert(parameterType, byName(value, fields[index].name))
-                }
-                .toTypedArray()
+                }.toTypedArray()
         val instance = constructor.newInstance(*values)
         // A class past the JVM parameter limit declares the rest of its
         // properties in the body, assigned after construction. A required one is
@@ -161,16 +162,11 @@ class SdkMethodTest {
         }
         // An open model keeps the keys none of its fields name: Jackson hands them
         // to its any-setter.
-        if (
-            fields.none {
-                it.isAnnotationPresent(com.fasterxml.jackson.annotation.JsonAnySetter::class.java)
-            }
-        ) {
+        if (fields.none { it.isAnnotationPresent(com.fasterxml.jackson.annotation.JsonAnySetter::class.java) }) {
             return instance
         }
         val extras = mapper.createObjectNode()
-        value
-            .properties()
+        value.properties()
             .filter { (key) -> fields.none { normalized(it.name) == normalized(key) } }
             .forEach { (key, child) -> extras.set<JsonNode>(key, child) }
         return mapper.updateValue(instance, extras)
@@ -190,9 +186,7 @@ class SdkMethodTest {
                 when (factory.parameterTypes[0]) {
                     ByteArray::class.java -> text.toByteArray(Charsets.UTF_8)
                     String::class.java -> text
-                    else ->
-                        runCatching { convert(factory.genericParameterTypes[0], value) }.getOrNull()
-                            ?: continue
+                    else -> runCatching { convert(factory.genericParameterTypes[0], value) }.getOrNull() ?: continue
                 }
             val body = factory.invoke(companion, argument)
             if (mediaType.invoke(body) == bodyMediaType) return body
@@ -208,18 +202,12 @@ class SdkMethodTest {
         val raw = javaType.rawClass
         return when {
             value == null || value.isNull -> absentValue(raw)
-            bodyMediaType != null &&
-                raw.enclosingClass != null &&
-                raw.simpleName.endsWith("Body") -> bodyUnion(raw, value)
-            raw == ByteArray::class.java && bodyKind == "bytes" && value.isTextual ->
-                value.asText().toByteArray(Charsets.UTF_8)
+            bodyMediaType != null && raw.enclosingClass != null && raw.simpleName.endsWith("Body") -> bodyUnion(raw, value)
+            raw == ByteArray::class.java && bodyKind == "bytes" && value.isTextual -> value.asText().toByteArray(Charsets.UTF_8)
             type is ParameterizedType && raw == List::class.java -> listValue(type, value)
-            raw.isPrimitive ||
-                raw.isEnum ||
-                raw.name.startsWith("java.") ||
-                raw == Any::class.java -> mapper.convertValue(value, javaType)
-            type is ParameterizedType && raw == Map::class.java ->
+            raw.isPrimitive || raw.isEnum || raw.name.startsWith("java.") || raw == Any::class.java ->
                 mapper.convertValue(value, javaType)
+            type is ParameterizedType && raw == Map::class.java -> mapper.convertValue(value, javaType)
             raw.simpleName == "UploadFile" -> uploadFile(raw, value)
             !value.isObject && raw.simpleName != "SdkOptional" ->
                 // Only an object node has properties to match against constructor
@@ -241,14 +229,17 @@ class SdkMethodTest {
         if (actual == null || !actual.isObject) {
             "$path: expected an object, decoded $actual"
         } else {
-            expected.fields().asSequence().firstNotNullOfOrNull { (name, value) ->
-                val child = byName(actual, name)
-                if (child == null) {
-                    "$path.$name: missing from the decoded response"
-                } else {
-                    mismatch(child, value, "$path.$name")
+            expected
+                .fields()
+                .asSequence()
+                .firstNotNullOfOrNull { (name, value) ->
+                    val child = byName(actual, name)
+                    if (child == null) {
+                        "$path.$name: missing from the decoded response"
+                    } else {
+                        mismatch(child, value, "$path.$name")
+                    }
                 }
-            }
         }
 
     private fun arrayMismatch(
@@ -275,8 +266,7 @@ class SdkMethodTest {
             } else {
                 DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC).parse(text, Instant::from)
             }
-        }
-            .getOrNull()
+        }.getOrNull()
     }
 
     private fun mismatch(
@@ -286,8 +276,7 @@ class SdkMethodTest {
     ): String? =
         when {
             expected == null || expected.isNull ->
-                if (actual == null || actual.isNull) null
-                else "$path: expected null, decoded $actual"
+                if (actual == null || actual.isNull) null else "$path: expected null, decoded $actual"
             expected.isObject -> objectMismatch(actual, expected, path)
             expected.isArray -> arrayMismatch(actual, expected, path)
             // A number is compared by value: a field typed as a floating point
@@ -297,39 +286,32 @@ class SdkMethodTest {
                 val same =
                     actual != null &&
                         actual.isNumber &&
-                        (expected.decimalValue().compareTo(actual.decimalValue()) == 0 ||
-                            actual.isFloat && expected.floatValue() == actual.floatValue())
+                        (
+                            expected.decimalValue().compareTo(actual.decimalValue()) == 0 ||
+                                actual.isFloat && expected.floatValue() == actual.floatValue()
+                        )
                 if (same) null else "$path: decoded $actual, the mock states $expected"
             }
             // A timestamp is compared as an instant: the mock states whatever
             // precision the API documents, and the SDK writes its own.
-            expected.isTextual &&
-                actual != null &&
-                actual.isTextual &&
-                instant(expected.asText()).let { it != null && it == instant(actual.asText()) } ->
-                null
+            expected.isTextual && actual != null && actual.isTextual &&
+                instant(expected.asText()).let { it != null && it == instant(actual.asText()) } -> null
             // Decoded bytes stay a binary node; their text is the base64 the mock sent.
             expected.isTextual && actual != null && actual.isBinary ->
-                if (expected.asText() == actual.asText()) null
-                else "$path: decoded $actual, the mock states $expected"
-            else ->
-                if (actual == expected) null
-                else "$path: decoded $actual, the mock states $expected"
+                if (expected.asText() == actual.asText()) null else "$path: decoded $actual, the mock states $expected"
+            else -> if (actual == expected) null else "$path: decoded $actual, the mock states $expected"
         }
 
     // Under the suspending surface (ktor) a method's last parameter is its
     // continuation, and a stream is a coroutine Flow. Both are driven with the
     // standard library, and the Flow is read through the coroutine library by
     // name, so the suite still compiles for the blocking surface, which has none.
-    private val firstOfFlow: Method? = runCatching {
-        Class.forName("kotlinx.coroutines.flow.FlowKt")
-            .getMethod(
-                "firstOrNull",
-                Class.forName("kotlinx.coroutines.flow.Flow"),
-                Continuation::class.java,
-            )
-    }
-        .getOrNull()
+    private val firstOfFlow: Method? =
+        runCatching {
+            Class
+                .forName("kotlinx.coroutines.flow.FlowKt")
+                .getMethod("firstOrNull", Class.forName("kotlinx.coroutines.flow.Flow"), Continuation::class.java)
+        }.getOrNull()
 
     private fun invokeSuspending(
         method: Method,
@@ -342,11 +324,7 @@ class SdkMethodTest {
                 method.invoke(instance, *values.toTypedArray(), continuation)
             }
         }
-        call.startCoroutine(
-            Continuation(EmptyCoroutineContext) {
-                it.fold(result::complete, result::completeExceptionally)
-            }
-        )
+        call.startCoroutine(Continuation(EmptyCoroutineContext) { it.fold(result::complete, result::completeExceptionally) })
         return result.get()
     }
 
@@ -401,18 +379,14 @@ class SdkMethodTest {
                             else -> {
                                 val input =
                                     byName(arguments, method.parameters[index].name)
-                                        ?: order.get(positional++)?.let {
-                                            byName(arguments, it.asText())
-                                        }
+                                        ?: order.get(positional++)?.let { byName(arguments, it.asText()) }
                                 convert(type, input)
                             }
                         }
                     }
             // A stream is read up to its first event, which is when it decodes one.
             val invoke = {
-                val result =
-                    if (suspending) invokeSuspending(method, instance, values)
-                    else method.invoke(instance, *values.toTypedArray())
+                val result = if (suspending) invokeSuspending(method, instance, values) else method.invoke(instance, *values.toTypedArray())
                 if (caseData.get("mode").asText() != "stream") {
                     result
                 } else {
@@ -432,16 +406,14 @@ class SdkMethodTest {
             val response = caseData.get("response")
             val declaredError = response.get("kind").asText() == "error"
             SdkConfig.getConfig().baseUrl =
-                if (declaredError) "$baseUrl/__mockStatus/${response.get("status").asInt()}"
-                else baseUrl
+                if (declaredError) "$baseUrl/__mockStatus/${response.get("status").asInt()}" else baseUrl
             if (declaredError) {
                 assertDeclaredError(caseData, invoke)
                 continue
             }
             if (response.get("kind").asText() == "rejected") {
                 assertTrue(
-                    generateSequence(runCatching(invoke).exceptionOrNull()) { it.cause }
-                        .any { it is SdkResponseDecodeError },
+                    generateSequence(runCatching(invoke).exceptionOrNull()) { it.cause }.any { it is SdkResponseDecodeError },
                     caseData.get("id").asText() + " decoded a body its schema refuses",
                 )
                 continue
@@ -461,15 +433,13 @@ class SdkMethodTest {
                 // SSE data is text: a stream without a schema yields the frame
                 // `data: null` as the text the mock wrote.
                 else ->
-                    if (
-                        actual !is String ||
-                            caseData.get("mode").asText() != "stream" ||
-                            actual != mapper.writeValueAsString(response.get("expected"))
+                    if (actual !is String ||
+                        caseData.get("mode").asText() != "stream" ||
+                        actual != mapper.writeValueAsString(response.get("expected"))
                     ) {
                         assertNull(
                             mismatch(mapper.valueToTree(actual), response.get("expected")),
-                            caseData.get("id").asText() +
-                                " decoded a response that differs from the mock",
+                            caseData.get("id").asText() + " decoded a response that differs from the mock",
                         )
                     }
             }

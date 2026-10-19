@@ -3,25 +3,20 @@
 
 package dev.octri.showcase.vercel.models
 
-/** Typed representation of the `GetProjectsResponseTrustedIps` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = GetProjectsResponseTrustedIps.Deserializer::class
-)
+/**
+ * Typed representation of the `GetProjectsResponseTrustedIps` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = GetProjectsResponseTrustedIps.Deserializer::class)
 sealed interface GetProjectsResponseTrustedIps {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<GetProjectsResponseTrustedIps>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<GetProjectsResponseTrustedIps>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): GetProjectsResponseTrustedIps {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                GetProjectsResponseTrustedIpsOwnedTypes.firstOrNull { (keys, _) ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = GetProjectsResponseTrustedIpsOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -29,28 +24,16 @@ sealed interface GetProjectsResponseTrustedIps {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out GetProjectsResponseTrustedIps>> =
-                listOf(
-                    GetProjectsResponseTrustedIpsVariant0::class.java,
-                    GetProjectsResponseTrustedIpsVariant1::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out GetProjectsResponseTrustedIps>> = listOf(GetProjectsResponseTrustedIpsVariant0::class.java, GetProjectsResponseTrustedIpsVariant1::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        GetProjectsResponseTrustedIps::class.java,
-                        "no GetProjectsResponseTrustedIps branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, GetProjectsResponseTrustedIps::class.java, "no GetProjectsResponseTrustedIps branch accepts this payload")
             }
         }
     }
 }
 
-internal val GetProjectsResponseTrustedIpsOwnedTypes:
-    List<Pair<List<String>, Class<out GetProjectsResponseTrustedIps>>> =
-    listOf(
-        listOf("addresses", "protectionMode") to GetProjectsResponseTrustedIpsVariant0::class.java
-    )
+internal val GetProjectsResponseTrustedIpsOwnedTypes: List<Pair<List<String>, Class<out GetProjectsResponseTrustedIps>>> = listOf(
+    listOf("addresses", "protectionMode") to GetProjectsResponseTrustedIpsVariant0::class.java,
+)

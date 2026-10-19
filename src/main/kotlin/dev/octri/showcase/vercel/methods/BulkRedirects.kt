@@ -14,171 +14,218 @@ import dev.octri.showcase.vercel.Validation
 
 object BulkRedirects {
 
-    data class StageRedirectsRedirectsItem(
-        val source: String,
-        val destination: String,
-        val statusCode: Any? = null,
-        val permanent: Boolean? = null,
-        val caseSensitive: Boolean? = null,
-        val query: Boolean? = null,
-        val preserveQueryParams: Boolean? = null,
-    )
+data class StageRedirectsRedirectsItem(
+    val source: String,
+    val destination: String,
+    val statusCode: Any? = null,
+    val permanent: Boolean? = null,
+    val caseSensitive: Boolean? = null,
+    val query: Boolean? = null,
+    val preserveQueryParams: Boolean? = null
+)
 
-    data class StageRedirectsResponseVersion(
-        val createdBy: String,
-        /** The unique identifier for the version. */
-        val id: String,
-        /**
-         * The key of the version. The key may be duplicated across versions if the contents are the
-         * same as a different version.
-         */
-        val key: String,
-        val lastModified: Double,
-        /** The staging link for previewing redirects in this version. */
-        val alias: String? = null,
-        /** Whether this version is currently live in production. */
-        val isLive: Boolean? = null,
-        /**
-         * Whether this version has not been promoted to production yet and is not serving end
-         * users.
-         */
-        val isStaging: Boolean? = null,
-        /** Optional name for the version. If not provided, defaults to an ISO timestamp string. */
-        val name: String? = null,
-        /** The number of redirects in this version. */
-        val redirectCount: Double? = null,
-    )
+data class StageRedirectsResponseVersion(
+    val createdBy: String,
+    /**
+     * The unique identifier for the version.
+     */
+    val id: String,
+    /**
+     * The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
+     */
+    val key: String,
+    val lastModified: Double,
+    /**
+     * The staging link for previewing redirects in this version.
+     */
+    val alias: String? = null,
+    /**
+     * Whether this version is currently live in production.
+     */
+    val isLive: Boolean? = null,
+    /**
+     * Whether this version has not been promoted to production yet and is not serving end users.
+     */
+    val isStaging: Boolean? = null,
+    /**
+     * Optional name for the version. If not provided, defaults to an ISO timestamp string.
+     */
+    val name: String? = null,
+    /**
+     * The number of redirects in this version.
+     */
+    val redirectCount: Double? = null
+)
 
-    data class StageRedirectsResponse(
-        @com.fasterxml.jackson.annotation.JsonProperty("alias", required = true) val alias: String?,
-        val version: StageRedirectsResponseVersion,
-    )
+data class StageRedirectsResponse(
+    @com.fasterxml.jackson.annotation.JsonProperty("alias", required = true) val alias: String?,
+    val version: StageRedirectsResponseVersion
+)
 
-    /** The redirect object to edit. The source field is used to match the redirect to modify. */
-    data class EditRedirectRedirect(
-        val source: String,
-        val destination: String? = null,
-        val statusCode: Double? = null,
-        val permanent: Boolean? = null,
-        val caseSensitive: Boolean? = null,
-        val query: Boolean? = null,
-        val preserveQueryParams: Boolean? = null,
-    )
+/**
+ * The redirect object to edit. The source field is used to match the redirect to modify.
+ */
+data class EditRedirectRedirect(
+    val source: String,
+    val destination: String? = null,
+    val statusCode: Double? = null,
+    val permanent: Boolean? = null,
+    val caseSensitive: Boolean? = null,
+    val query: Boolean? = null,
+    val preserveQueryParams: Boolean? = null
+)
 
-    data class EditRedirectResponseVersion(
-        val createdBy: String,
-        /** The unique identifier for the version. */
-        val id: String,
-        /**
-         * The key of the version. The key may be duplicated across versions if the contents are the
-         * same as a different version.
-         */
-        val key: String,
-        val lastModified: Double,
-        /** The staging link for previewing redirects in this version. */
-        val alias: String? = null,
-        /** Whether this version is currently live in production. */
-        val isLive: Boolean? = null,
-        /**
-         * Whether this version has not been promoted to production yet and is not serving end
-         * users.
-         */
-        val isStaging: Boolean? = null,
-        /** Optional name for the version. If not provided, defaults to an ISO timestamp string. */
-        val name: String? = null,
-        /** The number of redirects in this version. */
-        val redirectCount: Double? = null,
-    )
+data class EditRedirectResponseVersion(
+    val createdBy: String,
+    /**
+     * The unique identifier for the version.
+     */
+    val id: String,
+    /**
+     * The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
+     */
+    val key: String,
+    val lastModified: Double,
+    /**
+     * The staging link for previewing redirects in this version.
+     */
+    val alias: String? = null,
+    /**
+     * Whether this version is currently live in production.
+     */
+    val isLive: Boolean? = null,
+    /**
+     * Whether this version has not been promoted to production yet and is not serving end users.
+     */
+    val isStaging: Boolean? = null,
+    /**
+     * Optional name for the version. If not provided, defaults to an ISO timestamp string.
+     */
+    val name: String? = null,
+    /**
+     * The number of redirects in this version.
+     */
+    val redirectCount: Double? = null
+)
 
-    data class EditRedirectResponse(
-        @com.fasterxml.jackson.annotation.JsonProperty("alias", required = true) val alias: String?,
-        val version: EditRedirectResponseVersion,
-    )
+data class EditRedirectResponse(
+    @com.fasterxml.jackson.annotation.JsonProperty("alias", required = true) val alias: String?,
+    val version: EditRedirectResponseVersion
+)
 
-    data class RestoreRedirectsResponseVersion(
-        val createdBy: String,
-        /** The unique identifier for the version. */
-        val id: String,
-        /**
-         * The key of the version. The key may be duplicated across versions if the contents are the
-         * same as a different version.
-         */
-        val key: String,
-        val lastModified: Double,
-        /** The staging link for previewing redirects in this version. */
-        val alias: String? = null,
-        /** Whether this version is currently live in production. */
-        val isLive: Boolean? = null,
-        /**
-         * Whether this version has not been promoted to production yet and is not serving end
-         * users.
-         */
-        val isStaging: Boolean? = null,
-        /** Optional name for the version. If not provided, defaults to an ISO timestamp string. */
-        val name: String? = null,
-        /** The number of redirects in this version. */
-        val redirectCount: Double? = null,
-    )
+data class RestoreRedirectsResponseVersion(
+    val createdBy: String,
+    /**
+     * The unique identifier for the version.
+     */
+    val id: String,
+    /**
+     * The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
+     */
+    val key: String,
+    val lastModified: Double,
+    /**
+     * The staging link for previewing redirects in this version.
+     */
+    val alias: String? = null,
+    /**
+     * Whether this version is currently live in production.
+     */
+    val isLive: Boolean? = null,
+    /**
+     * Whether this version has not been promoted to production yet and is not serving end users.
+     */
+    val isStaging: Boolean? = null,
+    /**
+     * Optional name for the version. If not provided, defaults to an ISO timestamp string.
+     */
+    val name: String? = null,
+    /**
+     * The number of redirects in this version.
+     */
+    val redirectCount: Double? = null
+)
 
-    data class RestoreRedirectsResponse(
-        val failedToRestore: List<String>,
-        val restored: List<String>,
-        val version: RestoreRedirectsResponseVersion,
-    )
+data class RestoreRedirectsResponse(
+    val failedToRestore: List<String>,
+    val restored: List<String>,
+    val version: RestoreRedirectsResponseVersion
+)
 
-    data class GetVersionsResponseVersionsItem(
-        val createdBy: String,
-        /** The unique identifier for the version. */
-        val id: String,
-        /**
-         * The key of the version. The key may be duplicated across versions if the contents are the
-         * same as a different version.
-         */
-        val key: String,
-        val lastModified: Double,
-        /** The staging link for previewing redirects in this version. */
-        val alias: String? = null,
-        /** Whether this version is currently live in production. */
-        val isLive: Boolean? = null,
-        /**
-         * Whether this version has not been promoted to production yet and is not serving end
-         * users.
-         */
-        val isStaging: Boolean? = null,
-        /** Optional name for the version. If not provided, defaults to an ISO timestamp string. */
-        val name: String? = null,
-        /** The number of redirects in this version. */
-        val redirectCount: Double? = null,
-    )
+data class GetVersionsResponseVersionsItem(
+    val createdBy: String,
+    /**
+     * The unique identifier for the version.
+     */
+    val id: String,
+    /**
+     * The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
+     */
+    val key: String,
+    val lastModified: Double,
+    /**
+     * The staging link for previewing redirects in this version.
+     */
+    val alias: String? = null,
+    /**
+     * Whether this version is currently live in production.
+     */
+    val isLive: Boolean? = null,
+    /**
+     * Whether this version has not been promoted to production yet and is not serving end users.
+     */
+    val isStaging: Boolean? = null,
+    /**
+     * Optional name for the version. If not provided, defaults to an ISO timestamp string.
+     */
+    val name: String? = null,
+    /**
+     * The number of redirects in this version.
+     */
+    val redirectCount: Double? = null
+)
 
-    data class GetVersionsResponse(val versions: List<GetVersionsResponseVersionsItem>)
+data class GetVersionsResponse(
+    val versions: List<GetVersionsResponseVersionsItem>
+)
 
-    data class UpdateVersionResponseVersion(
-        val createdBy: String,
-        /** The unique identifier for the version. */
-        val id: String,
-        /**
-         * The key of the version. The key may be duplicated across versions if the contents are the
-         * same as a different version.
-         */
-        val key: String,
-        val lastModified: Double,
-        /** The staging link for previewing redirects in this version. */
-        val alias: String? = null,
-        /** Whether this version is currently live in production. */
-        val isLive: Boolean? = null,
-        /**
-         * Whether this version has not been promoted to production yet and is not serving end
-         * users.
-         */
-        val isStaging: Boolean? = null,
-        /** Optional name for the version. If not provided, defaults to an ISO timestamp string. */
-        val name: String? = null,
-        /** The number of redirects in this version. */
-        val redirectCount: Double? = null,
-    )
+data class UpdateVersionResponseVersion(
+    val createdBy: String,
+    /**
+     * The unique identifier for the version.
+     */
+    val id: String,
+    /**
+     * The key of the version. The key may be duplicated across versions if the contents are the same as a different version.
+     */
+    val key: String,
+    val lastModified: Double,
+    /**
+     * The staging link for previewing redirects in this version.
+     */
+    val alias: String? = null,
+    /**
+     * Whether this version is currently live in production.
+     */
+    val isLive: Boolean? = null,
+    /**
+     * Whether this version has not been promoted to production yet and is not serving end users.
+     */
+    val isStaging: Boolean? = null,
+    /**
+     * Optional name for the version. If not provided, defaults to an ISO timestamp string.
+     */
+    val name: String? = null,
+    /**
+     * The number of redirects in this version.
+     */
+    val redirectCount: Double? = null
+)
 
-    data class UpdateVersionResponse(val version: UpdateVersionResponseVersion)
+data class UpdateVersionResponse(
+    val version: UpdateVersionResponseVersion
+)
+
 
     /** Parameters for [stageRedirects]. */
     data class StageRedirectsRequest(
@@ -188,57 +235,35 @@ object BulkRedirects {
         val slug: String? = null,
         val overwrite: Boolean? = null,
         val name: String? = null,
-        val redirects: List<StageRedirectsRedirectsItem>? = null,
+        val redirects: List<StageRedirectsRedirectsItem>? = null
     )
 
     /**
-     * Stages a new version of bulk redirects for a project. Supply `projectId` and `teamId` in the
-     * request body; `redirects` defaults to an empty array when omitted. A successful response
-     * includes the staged version and its alias.
+     * Stages a new version of bulk redirects for a project. Supply `projectId` and `teamId` in the request body; `redirects` defaults to an empty array when omitted. A successful response includes the staged version and its alias.
      *
      * Stages new redirects for a project and returns the new version.
      *
      * @param teamId2 The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun stageRedirects(
-        clientConfig: ClientConfig,
-        request: StageRedirectsRequest,
-        options: RequestOptions? = null,
-    ): StageRedirectsResponse {
+    fun stageRedirects(clientConfig: ClientConfig, request: StageRedirectsRequest, options: RequestOptions? = null): StageRedirectsResponse {
         validateStageRedirectsRequest(request)
 
-        return SdkClient.request<StageRedirectsResponse>(
-                SdkClient.RequestSpec(
-                    "PUT",
-                    "/v1/bulk-redirects",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(request.teamId2, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    body =
-                        SdkClient.bodyMap(
-                            "projectId" to (request.projectId),
-                            "teamId" to (request.teamId),
-                            "overwrite" to (SdkClient.omitIfNull(request.overwrite)),
-                            "name" to (SdkClient.omitIfNull(request.name)),
-                            "redirects" to (SdkClient.omitIfNull(request.redirects)),
-                        ),
-                    operationId = "stageRedirects",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<StageRedirectsResponse>(SdkClient.RequestSpec("PUT", "/v1/bulk-redirects", config = clientConfig, query = mapOf("teamId" to
+    SdkClient.queryValue(request.teamId2, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("projectId" to (request.projectId), "teamId" to (request.teamId), "overwrite" to (SdkClient.omitIfNull(request.overwrite)), "name" to (SdkClient.omitIfNull(request.name)), "redirects" to (SdkClient.omitIfNull(request.redirects))), operationId = "stageRedirects", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
 
     private fun validateStageRedirectsRequest(request: StageRedirectsRequest) {
         if (request.name != null) {
             Validation.validateLength("name", request.name, Validation.LengthOpts(max = 256))
-        }
+}
     }
+
+
+
+
+
 
     /** Parameters for [getRedirects]. */
     data class GetRedirectsRequest(
@@ -251,117 +276,70 @@ object BulkRedirects {
         val sortBy: GetRedirectsParameterEnum? = null,
         val sortOrder: GetRedirectsParameterEnum1c8b1e3f? = null,
         val teamId: String? = null,
-        val slug: String? = null,
+        val slug: String? = null
     )
 
     /**
-     * Lists project-level bulk redirects, with optional filtering and sorting. Use `projectId` to
-     * identify the project, and `page` and `per_page` to paginate the results.
+     * Lists project-level bulk redirects, with optional filtering and sorting. Use `projectId` to identify the project, and `page` and `per_page` to paginate the results.
      *
      * Get the version history for a project's bulk redirects
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getRedirects(
-        clientConfig: ClientConfig,
-        request: GetRedirectsRequest,
-        options: RequestOptions? = null,
-    ): Map<String, Any> {
+    fun getRedirects(clientConfig: ClientConfig, request: GetRedirectsRequest, options: RequestOptions? = null): Map<String, Any> {
         validateGetRedirectsRequest(request)
 
-        return SdkClient.request<Map<String, Any>>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/bulk-redirects",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(request.projectId, "form", true),
-                            "versionId" to SdkClient.queryValue(request.versionId, "form", true),
-                            "q" to SdkClient.queryValue(request.q, "form", true),
-                            "diff" to SdkClient.queryValue(request.diff, "form", true),
-                            "page" to SdkClient.queryValue(request.page, "form", true),
-                            "per_page" to SdkClient.queryValue(request.perPage, "form", true),
-                            "sort_by" to SdkClient.queryValue(request.sortBy, "form", true),
-                            "sort_order" to SdkClient.queryValue(request.sortOrder, "form", true),
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    operationId = "getRedirects",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Map<String, Any>>(SdkClient.RequestSpec("GET", "/v1/bulk-redirects", config = clientConfig, query = mapOf("projectId" to
+    SdkClient.queryValue(request.projectId, "form", true), "versionId" to
+    SdkClient.queryValue(request.versionId, "form", true), "q" to SdkClient.queryValue(request.q, "form", true), "diff" to SdkClient.queryValue(request.diff, "form", true), "page" to SdkClient.queryValue(request.page, "form", true), "per_page" to
+    SdkClient.queryValue(request.perPage, "form", true), "sort_by" to
+    SdkClient.queryValue(request.sortBy, "form", true), "sort_order" to
+    SdkClient.queryValue(request.sortOrder, "form", true), "teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "getRedirects", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
 
     private fun validateGetRedirectsRequest(request: GetRedirectsRequest) {
         if (request.page != null) {
             Validation.validateRange("page", request.page, Validation.RangeOpts(min = 1.0))
-        }
+}
 
         if (request.perPage != null) {
-            Validation.validateRange(
-                "per_page",
-                request.perPage,
-                Validation.RangeOpts(min = 10.0, max = 250.0),
-            )
-        }
+            Validation.validateRange("per_page", request.perPage, Validation.RangeOpts(min = 10.0, max = 250.0))
+}
     }
 
+
+
+
+
+
     /**
-     * Deletes specified redirects from the latest staged version for a project and stages the
-     * resulting changes. Provide the redirect source paths in `redirects`; the response includes
-     * the alias for the new version.
+     * Deletes specified redirects from the latest staged version for a project and stages the resulting changes. Provide the redirect source paths in `redirects`; the response includes the alias for the new version.
      *
-     * Deletes the provided redirects from the latest version of the projects' bulk redirects.
-     * Stages a new change with the new redirects and returns the alias for the new version in the
-     * response.
+     * Deletes the provided redirects from the latest version of the projects' bulk redirects. Stages a new change with the new redirects and returns the alias for the new version in the response.
      *
-     * @param redirects The redirects to delete. The source of the redirect is used to match the
-     *   redirect to delete.
+     * @param redirects The redirects to delete. The source of the redirect is used
+     *   to match the redirect to delete.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun deleteRedirects(
-        clientConfig: ClientConfig,
-        projectId: String,
-        redirects: List<String>,
-        teamId: String? = null,
-        slug: String? = null,
-        name: String? = null,
-        options: RequestOptions? = null,
-    ): DeleteRedirectsResponse {
+    fun deleteRedirects(clientConfig: ClientConfig, projectId: String, redirects: List<String>, teamId: String? = null, slug: String? = null, name: String? = null, options: RequestOptions? = null): DeleteRedirectsResponse {
         Validation.validateItems("redirects", redirects, Validation.LengthOpts(min = 1))
 
         if (name != null) {
             Validation.validateLength("name", name, Validation.LengthOpts(max = 256))
-        }
+}
 
-        return SdkClient.request<DeleteRedirectsResponse>(
-                SdkClient.RequestSpec(
-                    "DELETE",
-                    "/v1/bulk-redirects",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(projectId, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    body =
-                        SdkClient.bodyMap(
-                            "redirects" to (redirects),
-                            "name" to (SdkClient.omitIfNull(name)),
-                        ),
-                    operationId = "deleteRedirects",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<DeleteRedirectsResponse>(SdkClient.RequestSpec("DELETE", "/v1/bulk-redirects", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("redirects" to (redirects), "name" to (SdkClient.omitIfNull(name))), operationId = "deleteRedirects", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
+
+
+
+
+
 
     /** Parameters for [editRedirect]. */
     data class EditRedirectRequest(
@@ -370,147 +348,84 @@ object BulkRedirects {
         val teamId: String? = null,
         val slug: String? = null,
         val name: String? = null,
-        val restore: Boolean? = null,
+        val restore: Boolean? = null
     )
 
     /**
-     * Updates a single staged project redirect by matching its source path, then stages a new
-     * version. Supply the redirect's `source` in the body; use `restore` to restore that redirect
-     * from the latest production version to staging.
+     * Updates a single staged project redirect by matching its source path, then stages a new version. Supply the redirect's `source` in the body; use `restore` to restore that redirect from the latest production version to staging.
      *
-     * Edits a single redirect identified by its source path. Stages a new change with the modified
-     * redirect and returns the alias for the new version in the response.
+     * Edits a single redirect identified by its source path. Stages a new change with the modified redirect and returns the alias for the new version in the response.
      *
-     * @param redirect The redirect object to edit. The source field is used to match the redirect
-     *   to modify.
+     * @param redirect The redirect object to edit. The source field is used to match
+     *   the redirect to modify.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param restore If true, restores the redirect from the latest production version to staging.
+     * @param restore If true, restores the redirect from the latest production
+     *   version to staging.
      */
-    fun editRedirect(
-        clientConfig: ClientConfig,
-        request: EditRedirectRequest,
-        options: RequestOptions? = null,
-    ): EditRedirectResponse {
+    fun editRedirect(clientConfig: ClientConfig, request: EditRedirectRequest, options: RequestOptions? = null): EditRedirectResponse {
         validateEditRedirectRequest(request)
 
-        return SdkClient.request<EditRedirectResponse>(
-                SdkClient.RequestSpec(
-                    "PATCH",
-                    "/v1/bulk-redirects",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(request.projectId, "form", true),
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    body =
-                        SdkClient.bodyMap(
-                            "redirect" to (request.redirect),
-                            "name" to (SdkClient.omitIfNull(request.name)),
-                            "restore" to (SdkClient.omitIfNull(request.restore)),
-                        ),
-                    operationId = "editRedirect",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<EditRedirectResponse>(SdkClient.RequestSpec("PATCH", "/v1/bulk-redirects", config = clientConfig, query = mapOf("projectId" to
+    SdkClient.queryValue(request.projectId, "form", true), "teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("redirect" to (request.redirect), "name" to (SdkClient.omitIfNull(request.name)), "restore" to (SdkClient.omitIfNull(request.restore))), operationId = "editRedirect", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
 
     private fun validateEditRedirectRequest(request: EditRedirectRequest) {
         if (request.name != null) {
             Validation.validateLength("name", request.name, Validation.LengthOpts(max = 256))
-        }
+}
     }
 
+
+
+
+
+
     /**
-     * Restores specified staged redirects to their values in the production version, or removes
-     * them from staging if no production version exists. Provide the redirect source paths in
-     * `redirects`; the response reports which paths were restored and which could not be restored.
+     * Restores specified staged redirects to their values in the production version, or removes them from staging if no production version exists. Provide the redirect source paths in `redirects`; the response reports which paths were restored and which could not be restored.
      *
-     * Restores the provided redirects in the staging version to the value in the production
-     * version. If no production version exists, removes the redirects from staging.
+     * Restores the provided redirects in the staging version to the value in the production version. If no production version exists, removes the redirects from staging.
      *
-     * @param redirects The redirects to restore. The source of the redirect is used to match the
-     *   redirect to restore.
+     * @param redirects The redirects to restore. The source of the redirect is used
+     *   to match the redirect to restore.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun restoreRedirects(
-        clientConfig: ClientConfig,
-        projectId: String,
-        redirects: List<String>,
-        teamId: String? = null,
-        slug: String? = null,
-        name: String? = null,
-        options: RequestOptions? = null,
-    ): RestoreRedirectsResponse {
+    fun restoreRedirects(clientConfig: ClientConfig, projectId: String, redirects: List<String>, teamId: String? = null, slug: String? = null, name: String? = null, options: RequestOptions? = null): RestoreRedirectsResponse {
         Validation.validateItems("redirects", redirects, Validation.LengthOpts(min = 1, max = 100))
 
         if (name != null) {
             Validation.validateLength("name", name, Validation.LengthOpts(max = 256))
-        }
+}
 
-        return SdkClient.request<RestoreRedirectsResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v1/bulk-redirects/restore",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(projectId, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    body =
-                        SdkClient.bodyMap(
-                            "redirects" to (redirects),
-                            "name" to (SdkClient.omitIfNull(name)),
-                        ),
-                    operationId = "restoreRedirects",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<RestoreRedirectsResponse>(SdkClient.RequestSpec("POST", "/v1/bulk-redirects/restore", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("redirects" to (redirects), "name" to (SdkClient.omitIfNull(name))), operationId = "restoreRedirects", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
+
+
+
+
+
+
     /**
-     * Lists the version history for a project's bulk redirects. Supply `projectId` to identify the
-     * project and use the Team parameters to perform the request on behalf of a Team.
+     * Lists the version history for a project's bulk redirects. Supply `projectId` to identify the project and use the Team parameters to perform the request on behalf of a Team.
      *
      * Get the version history for a project's bulk redirects
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getVersions(
-        clientConfig: ClientConfig,
-        projectId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): GetVersionsResponse {
-        return SdkClient.request<GetVersionsResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/bulk-redirects/versions",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(projectId, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "getVersions",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun getVersions(clientConfig: ClientConfig, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetVersionsResponse {
+        return SdkClient.request<GetVersionsResponse>(SdkClient.RequestSpec("GET", "/v1/bulk-redirects/versions", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getVersions", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
+
+
+
+
+
 
     /** Parameters for [updateVersion]. */
     data class UpdateVersionRequest(
@@ -519,55 +434,35 @@ object BulkRedirects {
         val action: UpdateVersionActionEnum,
         val teamId: String? = null,
         val slug: String? = null,
-        val name: String? = null,
+        val name: String? = null
     )
 
     /**
-     * Changes a bulk redirect version by promoting staging, restoring a previous production
-     * version, or discarding a version. Supply the version `id` and an `action`; the response
-     * contains the updated version details.
+     * Changes a bulk redirect version by promoting staging, restoring a previous production version, or discarding a version. Supply the version `id` and an `action`; the response contains the updated version details.
      *
-     * Update a version by promoting staging to production or restoring a previous production
-     * version
+     * Update a version by promoting staging to production or restoring a previous production version
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun updateVersion(
-        clientConfig: ClientConfig,
-        request: UpdateVersionRequest,
-        options: RequestOptions? = null,
-    ): UpdateVersionResponse {
+    fun updateVersion(clientConfig: ClientConfig, request: UpdateVersionRequest, options: RequestOptions? = null): UpdateVersionResponse {
         validateUpdateVersionRequest(request)
 
-        return SdkClient.request<UpdateVersionResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v1/bulk-redirects/versions",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(request.projectId, "form", true),
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    body =
-                        SdkClient.bodyMap(
-                            "id" to (request.id),
-                            "action" to (request.action),
-                            "name" to (SdkClient.omitIfNull(request.name)),
-                        ),
-                    operationId = "updateVersion",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<UpdateVersionResponse>(SdkClient.RequestSpec("POST", "/v1/bulk-redirects/versions", config = clientConfig, query = mapOf("projectId" to
+    SdkClient.queryValue(request.projectId, "form", true), "teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("id" to (request.id), "action" to (request.action), "name" to (SdkClient.omitIfNull(request.name))), operationId = "updateVersion", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
 
     private fun validateUpdateVersionRequest(request: UpdateVersionRequest) {
         if (request.name != null) {
             Validation.validateLength("name", request.name, Validation.LengthOpts(max = 256))
-        }
+}
     }
+
+
+
+
+
+
 }

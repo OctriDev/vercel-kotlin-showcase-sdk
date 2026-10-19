@@ -3,83 +3,64 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectCreateConnectorRequestTriggerDestinationVariant0(
     /**
-     * Project that receives triggers. During connector creation, omit it to use the top-level
-     * projectId.
+     * Project that receives triggers. During connector creation, omit it to use the top-level projectId.
      */
     val projectId: String? = null,
-    /** Route path on the linked project that receives forwarded trigger requests. */
-    val path: String? = null,
+    /**
+     * Route path on the linked project that receives forwarded trigger requests.
+     */
+    val path: String? = null
 ) : ConnectCreateConnectorRequestTriggerDestination
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectCreateConnectorRequestTriggerDestinationVariant1(
-    /** Git branch used to select a preview deployment. */
+    /**
+     * Git branch used to select a preview deployment.
+     */
     val branch: String,
     /**
-     * Project that receives triggers. During connector creation, omit it to use the top-level
-     * projectId.
+     * Project that receives triggers. During connector creation, omit it to use the top-level projectId.
      */
     val projectId: String? = null,
-    /** Route path on the linked project that receives forwarded trigger requests. */
-    val path: String? = null,
+    /**
+     * Route path on the linked project that receives forwarded trigger requests.
+     */
+    val path: String? = null
 ) : ConnectCreateConnectorRequestTriggerDestination
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectCreateConnectorRequestTriggerDestinationVariant2(
-    /** Stable custom environment ID that belongs to the destination project. */
+    /**
+     * Stable custom environment ID that belongs to the destination project.
+     */
     val customEnvironmentId: String,
     /**
-     * Project that receives triggers. During connector creation, omit it to use the top-level
-     * projectId.
+     * Project that receives triggers. During connector creation, omit it to use the top-level projectId.
      */
     val projectId: String? = null,
-    /** Route path on the linked project that receives forwarded trigger requests. */
-    val path: String? = null,
+    /**
+     * Route path on the linked project that receives forwarded trigger requests.
+     */
+    val path: String? = null
 ) : ConnectCreateConnectorRequestTriggerDestination
 
 /**
- * Initial trigger destination. Requires triggers to be enabled and a projectId here or at the top
- * level. Connector responses expose the resulting set as triggerDestinations. Replace the complete
- * set with PATCH /v1/connect/connectors/{connector}/trigger-destinations.
+ * Initial trigger destination. Requires triggers to be enabled and a projectId here or at the top level. Connector responses expose the resulting set as triggerDestinations. Replace the complete set with PATCH /v1/connect/connectors/{connector}/trigger-destinations.
  */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = ConnectCreateConnectorRequestTriggerDestination.Deserializer::class
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = ConnectCreateConnectorRequestTriggerDestination.Deserializer::class)
 sealed interface ConnectCreateConnectorRequestTriggerDestination {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<
-            ConnectCreateConnectorRequestTriggerDestination
-        >() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<ConnectCreateConnectorRequestTriggerDestination>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): ConnectCreateConnectorRequestTriggerDestination {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                ConnectCreateConnectorRequestTriggerDestinationOwnedTypes.firstOrNull { (keys, _) ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = ConnectCreateConnectorRequestTriggerDestinationOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -87,39 +68,25 @@ sealed interface ConnectCreateConnectorRequestTriggerDestination {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out ConnectCreateConnectorRequestTriggerDestination>> =
-                listOf(
-                    ConnectCreateConnectorRequestTriggerDestinationVariant0::class.java,
-                    ConnectCreateConnectorRequestTriggerDestinationVariant1::class.java,
-                    ConnectCreateConnectorRequestTriggerDestinationVariant2::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out ConnectCreateConnectorRequestTriggerDestination>> = listOf(ConnectCreateConnectorRequestTriggerDestinationVariant0::class.java, ConnectCreateConnectorRequestTriggerDestinationVariant1::class.java, ConnectCreateConnectorRequestTriggerDestinationVariant2::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        ConnectCreateConnectorRequestTriggerDestination::class.java,
-                        "no ConnectCreateConnectorRequestTriggerDestination branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, ConnectCreateConnectorRequestTriggerDestination::class.java, "no ConnectCreateConnectorRequestTriggerDestination branch accepts this payload")
             }
         }
     }
 }
 
-internal val ConnectCreateConnectorRequestTriggerDestinationOwnedTypes:
-    List<Pair<List<String>, Class<out ConnectCreateConnectorRequestTriggerDestination>>> =
-    listOf(
-        listOf("branch") to ConnectCreateConnectorRequestTriggerDestinationVariant1::class.java,
-        listOf("customEnvironmentId") to
-            ConnectCreateConnectorRequestTriggerDestinationVariant2::class.java,
-    )
-
-/** A built-in Vercel environment or a stable custom environment ID. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = ConnectEnvironment.Deserializer::class
+internal val ConnectCreateConnectorRequestTriggerDestinationOwnedTypes: List<Pair<List<String>, Class<out ConnectCreateConnectorRequestTriggerDestination>>> = listOf(
+    listOf("branch") to ConnectCreateConnectorRequestTriggerDestinationVariant1::class.java,
+    listOf("customEnvironmentId") to ConnectCreateConnectorRequestTriggerDestinationVariant2::class.java,
 )
+
+/**
+ * A built-in Vercel environment or a stable custom environment ID.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = ConnectEnvironment.Deserializer::class)
 sealed interface ConnectEnvironment {
     /** Chooses the branch this payload is shaped like. */
     class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<ConnectEnvironment>() {
@@ -130,236 +97,269 @@ sealed interface ConnectEnvironment {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
             return when {
-                node.isTextual ->
-                    StringConnectEnvironment(
-                        mapper.convertValue(
-                            node,
-                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
-                        )
-                    )
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        ConnectEnvironment::class.java,
-                        "no ConnectEnvironment branch accepts this payload",
-                    )
+                node.isTextual -> StringConnectEnvironment(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, ConnectEnvironment::class.java, "no ConnectEnvironment branch accepts this payload")
             }
         }
     }
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class StringConnectEnvironment(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
-) : ConnectEnvironment
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class StringConnectEnvironment(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : ConnectEnvironment
 
-/** Error details. */
+/**
+ * Error details.
+ */
 data class ConnectErrorError(
-    /** Stable machine-readable error code. */
+    /**
+     * Stable machine-readable error code.
+     */
     val code: String,
-    /** Human-readable error message. */
-    val message: String,
+    /**
+     * Human-readable error message.
+     */
+    val message: String
 ) {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-/** Error response returned by a Connect API operation. */
+/**
+ * Error response returned by a Connect API operation.
+ */
 data class ConnectError(
-    /** Error details. */
+    /**
+     * Error details.
+     */
     val error: ConnectErrorError
 ) : dev.octri.showcase.vercel.ErrorBody
 
-/** Cursor for the next page. */
+/**
+ * Cursor for the next page.
+ */
 data class ConnectPagination(
-    /** Opaque value to pass as `cursor` on the next request. */
+    /**
+     * Opaque value to pass as `cursor` on the next request.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?
 )
 
 /**
- * Custom environments available on the project. This list can include environments where the
- * connector is not enabled.
+ * Custom environments available on the project. This list can include environments where the connector is not enabled.
  */
 data class ConnectProjectConnectionProjectCustomEnvironmentsItem(
-    /** Stable custom environment ID. */
+    /**
+     * Stable custom environment ID.
+     */
     val id: String,
-    /** Current human-readable custom environment slug. */
-    val slug: String,
+    /**
+     * Current human-readable custom environment slug.
+     */
+    val slug: String
 )
 
-/** Vercel project connected to the connector. */
+/**
+ * Vercel project connected to the connector.
+ */
 data class ConnectProjectConnectionProject(
-    /** Same Vercel project ID as the connection's top-level `projectId`. */
+    /**
+     * Same Vercel project ID as the connection's top-level `projectId`.
+     */
     val id: String,
-    /** Current Vercel project name. */
+    /**
+     * Current Vercel project name.
+     */
     val name: String,
     /**
-     * Custom environments available on the project. This list can include environments where the
-     * connector is not enabled.
+     * Custom environments available on the project. This list can include environments where the connector is not enabled.
      */
-    val customEnvironments: List<ConnectProjectConnectionProjectCustomEnvironmentsItem>? = null,
+    val customEnvironments: List<ConnectProjectConnectionProjectCustomEnvironmentsItem>? = null
 )
 
 /**
- * A connection between a connector and a Vercel project, including the environments where the
- * connector is enabled.
+ * A connection between a connector and a Vercel project, including the environments where the connector is enabled.
  */
 data class ConnectProjectConnection(
-    /** Stable `scl_` connector ID, even when the request used a UID. */
+    /**
+     * Stable `scl_` connector ID, even when the request used a UID.
+     */
     val connectorId: String,
-    /** Time when the project connection was created, in epoch milliseconds. */
+    /**
+     * Time when the project connection was created, in epoch milliseconds.
+     */
     val createdAt: Double,
-    /** Environments where the connector is enabled for the project. */
+    /**
+     * Environments where the connector is enabled for the project.
+     */
     val enabledEnvironments: List<String>,
-    /** Vercel project connected to the connector. */
+    /**
+     * Vercel project connected to the connector.
+     */
     val project: ConnectProjectConnectionProject,
-    /** Time when the project connection was last updated, in epoch milliseconds. */
-    val updatedAt: Double,
-)
-
-/** Page of connectors connected to a project. */
-data class ConnectProjectConnectorConnectionList(
-    /** Connector connections in this page. */
-    val connectors: List<ConnectProjectConnection>,
-    /** Cursor for the next page. */
-    val pagination: ConnectPagination,
+    /**
+     * Time when the project connection was last updated, in epoch milliseconds.
+     */
+    val updatedAt: Double
 )
 
 /**
- * Existing authorizations no longer cover the connector's configured scopes, so they must be
- * re-authorized.
+ * Page of connectors connected to a project.
+ */
+data class ConnectProjectConnectorConnectionList(
+    /**
+     * Connector connections in this page.
+     */
+    val connectors: List<ConnectProjectConnection>,
+    /**
+     * Cursor for the next page.
+     */
+    val pagination: ConnectPagination
+)
+
+/**
+ * Existing authorizations no longer cover the connector's configured scopes, so they must be re-authorized.
  */
 data class ConnectReconsent(
-    /** The affected authorization scope. user means each affected user must authorize again. */
+    /**
+     * The affected authorization scope. user means each affected user must authorize again.
+     */
     val scope: ConnectReconsentScopeEnum
 )
 
-/** Complete replacement set of trigger destinations. */
+/**
+ * Complete replacement set of trigger destinations.
+ */
 data class ConnectReplaceTriggerDestinationsRequest(
     /**
-     * Complete replacement set of trigger destinations. An empty array removes all destinations.
-     * Connector get and list responses expose the saved set as triggerDestinations.
+     * Complete replacement set of trigger destinations. An empty array removes all destinations. Connector get and list responses expose the saved set as triggerDestinations.
      */
     val destinations: List<ConnectTriggerDestinationInput>
 )
 
-/** Provider-side configuration synchronization result. */
+/**
+ * Provider-side configuration synchronization result.
+ */
 data class ConnectServiceSync(
     /**
-     * done means the external service was updated. required means the Vercel update was saved, but
-     * provider-side configuration still needs attention.
+     * done means the external service was updated. required means the Vercel update was saved, but provider-side configuration still needs attention.
      */
     val status: ConnectServiceSyncStatusEnum,
-    /** Provider synchronization errors. Present when serviceSync.status is required. */
-    val errors: List<ConnectServiceSyncError>? = null,
+    /**
+     * Provider synchronization errors. Present when serviceSync.status is required.
+     */
+    val errors: List<ConnectServiceSyncError>? = null
 )
 
-/** Provider synchronization errors, when synchronization is required. */
+/**
+ * Provider synchronization errors, when synchronization is required.
+ */
 data class ConnectServiceSyncError(
-    /** Human-readable provider synchronization error. */
+    /**
+     * Human-readable provider synchronization error.
+     */
     val message: String,
-    /** Connector fields that caused the synchronization error. */
+    /**
+     * Connector fields that caused the synchronization error.
+     */
     val fields: List<String>? = null,
-    /** Provider-specific error details that are safe to expose. */
-    val vendor: Map<String, Any>? = null,
+    /**
+     * Provider-specific error details that are safe to expose.
+     */
+    val vendor: Map<String, Any>? = null
 )
 
-/** Incoming trigger configuration. Only present when enabled. */
+/**
+ * Incoming trigger configuration. Only present when enabled.
+ */
 data class ConnectTriggerConfiguration(
-    /** Whether incoming triggers are enabled for the connector. */
+    /**
+     * Whether incoming triggers are enabled for the connector.
+     */
     val enabled: Boolean
 )
 
 /**
- * Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial
- * destination with `triggerDestination` during creation. Replace the complete set with `PATCH
- * /v1/connect/connectors/{connector}/trigger-destinations`.
+ * Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`.
  */
 data class ConnectTriggerDestination(
-    /** Vercel project that receives matching trigger requests. */
+    /**
+     * Vercel project that receives matching trigger requests.
+     */
     val projectId: String,
-    /** Git branch used to select a preview deployment. */
+    /**
+     * Git branch used to select a preview deployment.
+     */
     val branch: String? = null,
     /**
-     * Stable custom-environment ID to route this destination to. Mutually exclusive with `branch`;
-     * omitted destinations keep the legacy production behavior.
+     * Stable custom-environment ID to route this destination to. Mutually exclusive with `branch`; omitted destinations keep the legacy production behavior.
      */
     val customEnvironmentId: String? = null,
-    /** Route path that receives the forwarded trigger request. */
-    val path: String? = null,
+    /**
+     * Route path that receives the forwarded trigger request.
+     */
+    val path: String? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectTriggerDestinationInputVariant0(
-    /** Project that receives matching trigger requests. */
+    /**
+     * Project that receives matching trigger requests.
+     */
     val projectId: String,
-    /** Route path on the linked project that receives forwarded trigger requests. */
-    val path: String? = null,
+    /**
+     * Route path on the linked project that receives forwarded trigger requests.
+     */
+    val path: String? = null
 ) : ConnectTriggerDestinationInput
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectTriggerDestinationInputVariant1(
-    /** Project that receives matching trigger requests. */
+    /**
+     * Project that receives matching trigger requests.
+     */
     val projectId: String,
-    /** Git branch used to select a preview deployment. */
+    /**
+     * Git branch used to select a preview deployment.
+     */
     val branch: String,
-    /** Route path on the linked project that receives forwarded trigger requests. */
-    val path: String? = null,
+    /**
+     * Route path on the linked project that receives forwarded trigger requests.
+     */
+    val path: String? = null
 ) : ConnectTriggerDestinationInput
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectTriggerDestinationInputVariant2(
-    /** Project that receives matching trigger requests. */
+    /**
+     * Project that receives matching trigger requests.
+     */
     val projectId: String,
-    /** Stable custom environment ID that belongs to the destination project. */
+    /**
+     * Stable custom environment ID that belongs to the destination project.
+     */
     val customEnvironmentId: String,
-    /** Route path on the linked project that receives forwarded trigger requests. */
-    val path: String? = null,
+    /**
+     * Route path on the linked project that receives forwarded trigger requests.
+     */
+    val path: String? = null
 ) : ConnectTriggerDestinationInput
 
 /**
- * A destination in the complete replacement set. Each destination targets the default deployment, a
- * branch, or a custom environment.
+ * A destination in the complete replacement set. Each destination targets the default deployment, a branch, or a custom environment.
  */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = ConnectTriggerDestinationInput.Deserializer::class
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = ConnectTriggerDestinationInput.Deserializer::class)
 sealed interface ConnectTriggerDestinationInput {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<ConnectTriggerDestinationInput>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<ConnectTriggerDestinationInput>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): ConnectTriggerDestinationInput {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                ConnectTriggerDestinationInputOwnedTypes.firstOrNull { (keys, _) ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = ConnectTriggerDestinationInputOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -367,139 +367,124 @@ sealed interface ConnectTriggerDestinationInput {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out ConnectTriggerDestinationInput>> =
-                listOf(
-                    ConnectTriggerDestinationInputVariant0::class.java,
-                    ConnectTriggerDestinationInputVariant1::class.java,
-                    ConnectTriggerDestinationInputVariant2::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out ConnectTriggerDestinationInput>> = listOf(ConnectTriggerDestinationInputVariant0::class.java, ConnectTriggerDestinationInputVariant1::class.java, ConnectTriggerDestinationInputVariant2::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        ConnectTriggerDestinationInput::class.java,
-                        "no ConnectTriggerDestinationInput branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, ConnectTriggerDestinationInput::class.java, "no ConnectTriggerDestinationInput branch accepts this payload")
             }
         }
     }
 }
 
-internal val ConnectTriggerDestinationInputOwnedTypes:
-    List<Pair<List<String>, Class<out ConnectTriggerDestinationInput>>> =
-    listOf(
-        listOf("branch") to ConnectTriggerDestinationInputVariant1::class.java,
-        listOf("customEnvironmentId") to ConnectTriggerDestinationInputVariant2::class.java,
-    )
+internal val ConnectTriggerDestinationInputOwnedTypes: List<Pair<List<String>, Class<out ConnectTriggerDestinationInput>>> = listOf(
+    listOf("branch") to ConnectTriggerDestinationInputVariant1::class.java,
+    listOf("customEnvironmentId") to ConnectTriggerDestinationInputVariant2::class.java,
+)
 
-/** Connector fields to update. */
+/**
+ * Connector fields to update.
+ */
 data class ConnectUpdateConnectorRequest(
-    /** Whether the triggers are enabled for this connector. */
+    /**
+     * Whether the triggers are enabled for this connector.
+     */
     val triggers: Boolean? = null,
     /**
-     * Plaintext verification inputs, validated by the trigger driver and encrypted into stored
-     * triggerData. An empty object makes no changes.
+     * Plaintext verification inputs, validated by the trigger driver and encrypted into stored triggerData. An empty object makes no changes.
      */
     val triggerVerificationInput: Map<String, Any>? = null,
     /**
-     * Additional registration inputs, validated by the trigger driver. Requires triggers: true.
-     * Shared verification credentials are read from triggerData.
+     * Additional registration inputs, validated by the trigger driver. Requires triggers: true. Shared verification credentials are read from triggerData.
      */
     val triggerRegistrationInput: Map<String, Any>? = null,
-    /** Default trigger events for this connector. */
-    val events: List<String>? = null,
-    /** Provider configuration fields to update. */
-    @com.fasterxml.jackson.annotation.JsonProperty("data")
-    val `data`: ConnectConnectorUpdateData? = null,
     /**
-     * SHA-1 digest of a PNG or JPEG icon that is at least 640 by 640 pixels. This field does not
-     * accept a URL or image bytes. First compute the digest and upload the raw image with POST
-     * /v2/files. Send `Content-Length` and the same 40-character digest in `x-vercel-digest`. Then
-     * set `icon` to that digest. ```js import { createHash } from 'node:crypto'; import { readFile
-     * } from 'node:fs/promises'; const VERCEL_TOKEN = process.env.VERCEL_TOKEN; const connectorId =
-     * 'scl_...'; const…
+     * Default trigger events for this connector.
+     */
+    val events: List<String>? = null,
+    /**
+     * Provider configuration fields to update.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("data") val `data`: ConnectConnectorUpdateData? = null,
+    /**
+     * SHA-1 digest of a PNG or JPEG icon that is at least 640 by 640 pixels. This field does not accept a URL or image bytes. First compute the digest and upload the raw image with POST /v2/files. Send `Content-Length` and the same 40-character digest in `x-vercel-digest`. Then set `icon` to that digest. ```js import { createHash } from 'node:crypto'; import { readFile } from 'node:fs/promises'; const VERCEL_TOKEN = process.env.VERCEL_TOKEN; const connectorId = 'scl_...'; const…
      */
     val icon: String? = null,
-    /** Optional `string` value serialized in the `backgroundColor` wire field. */
+    /**
+     * Optional `string` value serialized in the `backgroundColor` wire field.
+     */
     val backgroundColor: String? = null,
-    /** Optional `string` value serialized in the `accentColor` wire field. */
+    /**
+     * Optional `string` value serialized in the `accentColor` wire field.
+     */
     val accentColor: String? = null,
     /**
-     * Full team-scoped UID, such as `slack/my-bot`. It cannot contain whitespace, `%`, `#`, control
-     * characters, or Vercel-owned namespaces. Changing it breaks callers that use the old UID. The
-     * stable connector ID does not change.
+     * Full team-scoped UID, such as `slack/my-bot`. It cannot contain whitespace, `%`, `#`, control characters, or Vercel-owned namespaces. Changing it breaks callers that use the old UID. The stable connector ID does not change.
      */
     val uid: String? = null,
     /**
-     * Display name for the connector. It is trimmed and cannot be empty or contain control
-     * characters.
+     * Display name for the connector. It is trimmed and cannot be empty or contain control characters.
      */
-    val name: String? = null,
+    val name: String? = null
 )
 
-/** Connector fields to update. */
+/**
+ * Connector fields to update.
+ */
 data class ConnectUpdateConnectorRequestRequest(
-    /** Whether the triggers are enabled for this connector. */
+    /**
+     * Whether the triggers are enabled for this connector.
+     */
     val triggers: Boolean? = null,
     /**
-     * Plaintext verification inputs, validated by the trigger driver and encrypted into stored
-     * triggerData. An empty object makes no changes.
+     * Plaintext verification inputs, validated by the trigger driver and encrypted into stored triggerData. An empty object makes no changes.
      */
     val triggerVerificationInput: Map<String, Any>? = null,
     /**
-     * Additional registration inputs, validated by the trigger driver. Requires triggers: true.
-     * Shared verification credentials are read from triggerData.
+     * Additional registration inputs, validated by the trigger driver. Requires triggers: true. Shared verification credentials are read from triggerData.
      */
     val triggerRegistrationInput: Map<String, Any>? = null,
-    /** Default trigger events for this connector. */
-    val events: List<String>? = null,
-    /** Provider configuration fields to update. */
-    @com.fasterxml.jackson.annotation.JsonProperty("data")
-    val `data`: ConnectConnectorUpdateDataRequest? = null,
     /**
-     * SHA-1 digest of a PNG or JPEG icon that is at least 640 by 640 pixels. This field does not
-     * accept a URL or image bytes. First compute the digest and upload the raw image with POST
-     * /v2/files. Send `Content-Length` and the same 40-character digest in `x-vercel-digest`. Then
-     * set `icon` to that digest. ```js import { createHash } from 'node:crypto'; import { readFile
-     * } from 'node:fs/promises'; const VERCEL_TOKEN = process.env.VERCEL_TOKEN; const connectorId =
-     * 'scl_...'; const…
+     * Default trigger events for this connector.
+     */
+    val events: List<String>? = null,
+    /**
+     * Provider configuration fields to update.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("data") val `data`: ConnectConnectorUpdateDataRequest? = null,
+    /**
+     * SHA-1 digest of a PNG or JPEG icon that is at least 640 by 640 pixels. This field does not accept a URL or image bytes. First compute the digest and upload the raw image with POST /v2/files. Send `Content-Length` and the same 40-character digest in `x-vercel-digest`. Then set `icon` to that digest. ```js import { createHash } from 'node:crypto'; import { readFile } from 'node:fs/promises'; const VERCEL_TOKEN = process.env.VERCEL_TOKEN; const connectorId = 'scl_...'; const…
      */
     val icon: String? = null,
-    /** Optional `string` value serialized in the `backgroundColor` wire field. */
+    /**
+     * Optional `string` value serialized in the `backgroundColor` wire field.
+     */
     val backgroundColor: String? = null,
-    /** Optional `string` value serialized in the `accentColor` wire field. */
+    /**
+     * Optional `string` value serialized in the `accentColor` wire field.
+     */
     val accentColor: String? = null,
     /**
-     * Full team-scoped UID, such as `slack/my-bot`. It cannot contain whitespace, `%`, `#`, control
-     * characters, or Vercel-owned namespaces. Changing it breaks callers that use the old UID. The
-     * stable connector ID does not change.
+     * Full team-scoped UID, such as `slack/my-bot`. It cannot contain whitespace, `%`, `#`, control characters, or Vercel-owned namespaces. Changing it breaks callers that use the old UID. The stable connector ID does not change.
      */
     val uid: String? = null,
     /**
-     * Display name for the connector. It is trimmed and cannot be empty or contain control
-     * characters.
+     * Display name for the connector. It is trimmed and cannot be empty or contain control characters.
      */
-    val name: String? = null,
+    val name: String? = null
 )
 
-/** Environments enabled for a connector project connection. */
+/**
+ * Environments enabled for a connector project connection.
+ */
 data class ConnectUpsertProjectConnectionRequest(
     /**
-     * One or more built-in environment names or stable custom environment IDs that belong to the
-     * project. Duplicate values are accepted and removed.
+     * One or more built-in environment names or stable custom environment IDs that belong to the project. Duplicate values are accepted and removed.
      */
     val environments: List<String>
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateConnectorAuthorizationRequestRequestSubjectVariant0(
     val type: CreateConnectorAuthorizationRequestRequestSubjectVariant0TypeEnum
 ) : CreateConnectorAuthorizationRequestRequestSubject {
@@ -508,86 +493,59 @@ data class CreateConnectorAuthorizationRequestRequestSubjectVariant0(
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateConnectorAuthorizationRequestRequestSubjectVariant1(
     val type: CreateConnectorAuthorizationRequestRequestSubjectVariant1TypeEnum,
     val id: String? = null,
-    val issuer: String? = null,
+    val issuer: String? = null
 ) : CreateConnectorAuthorizationRequestRequestSubject {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateConnectorAuthorizationRequestRequestSubjectVariant2(
     val type: CreateConnectorAuthorizationRequestRequestSubjectVariant2TypeEnum,
     val sub: String? = null,
     val iss: String? = null,
     val aud: String? = null,
-    val additionalClaims: Map<String, Any>? = null,
+    val additionalClaims: Map<String, Any>? = null
 ) : CreateConnectorAuthorizationRequestRequestSubject {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateConnectorAuthorizationRequestRequestSubjectVariant3(
     val type: CreateConnectorAuthorizationRequestRequestSubjectVariant3TypeEnum,
-    val token: String,
+    val token: String
 ) : CreateConnectorAuthorizationRequestRequestSubject
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class CreateConnectorAuthorizationRequestRequestSubjectVariant4(val type: String) :
-    CreateConnectorAuthorizationRequestRequestSubject {
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class CreateConnectorAuthorizationRequestRequestSubjectVariant4(
+    val type: String
+) : CreateConnectorAuthorizationRequestRequestSubject {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-/** Typed representation of the `CreateConnectorAuthorizationRequestRequestSubject` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = CreateConnectorAuthorizationRequestRequestSubject.Deserializer::class
-)
+/**
+ * Typed representation of the `CreateConnectorAuthorizationRequestRequestSubject` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = CreateConnectorAuthorizationRequestRequestSubject.Deserializer::class)
 sealed interface CreateConnectorAuthorizationRequestRequestSubject {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<
-            CreateConnectorAuthorizationRequestRequestSubject
-        >() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<CreateConnectorAuthorizationRequestRequestSubject>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): CreateConnectorAuthorizationRequestRequestSubject {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                CreateConnectorAuthorizationRequestRequestSubjectOwnedTypes.firstOrNull { (keys, _)
-                        ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = CreateConnectorAuthorizationRequestRequestSubjectOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -595,45 +553,23 @@ sealed interface CreateConnectorAuthorizationRequestRequestSubject {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out CreateConnectorAuthorizationRequestRequestSubject>> =
-                listOf(
-                    CreateConnectorAuthorizationRequestRequestSubjectVariant0::class.java,
-                    CreateConnectorAuthorizationRequestRequestSubjectVariant1::class.java,
-                    CreateConnectorAuthorizationRequestRequestSubjectVariant2::class.java,
-                    CreateConnectorAuthorizationRequestRequestSubjectVariant3::class.java,
-                    CreateConnectorAuthorizationRequestRequestSubjectVariant4::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out CreateConnectorAuthorizationRequestRequestSubject>> = listOf(CreateConnectorAuthorizationRequestRequestSubjectVariant0::class.java, CreateConnectorAuthorizationRequestRequestSubjectVariant1::class.java, CreateConnectorAuthorizationRequestRequestSubjectVariant2::class.java, CreateConnectorAuthorizationRequestRequestSubjectVariant3::class.java, CreateConnectorAuthorizationRequestRequestSubjectVariant4::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        CreateConnectorAuthorizationRequestRequestSubject::class.java,
-                        "no CreateConnectorAuthorizationRequestRequestSubject branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, CreateConnectorAuthorizationRequestRequestSubject::class.java, "no CreateConnectorAuthorizationRequestRequestSubject branch accepts this payload")
             }
         }
     }
 }
 
-internal val CreateConnectorAuthorizationRequestRequestSubjectOwnedTypes:
-    List<Pair<List<String>, Class<out CreateConnectorAuthorizationRequestRequestSubject>>> =
-    listOf(
-        listOf("id", "issuer") to
-            CreateConnectorAuthorizationRequestRequestSubjectVariant1::class.java,
-        listOf("sub", "iss", "aud", "additionalClaims") to
-            CreateConnectorAuthorizationRequestRequestSubjectVariant2::class.java,
-        listOf("token") to CreateConnectorAuthorizationRequestRequestSubjectVariant3::class.java,
-    )
+internal val CreateConnectorAuthorizationRequestRequestSubjectOwnedTypes: List<Pair<List<String>, Class<out CreateConnectorAuthorizationRequestRequestSubject>>> = listOf(
+    listOf("id", "issuer") to CreateConnectorAuthorizationRequestRequestSubjectVariant1::class.java,
+    listOf("sub", "iss", "aud", "additionalClaims") to CreateConnectorAuthorizationRequestRequestSubjectVariant2::class.java,
+    listOf("token") to CreateConnectorAuthorizationRequestRequestSubjectVariant3::class.java,
+)
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetConnectorTokenRequestSubjectVariant0(
     val type: GetConnectorTokenRequestSubjectVariant0TypeEnum
 ) : GetConnectorTokenRequestSubject {
@@ -642,59 +578,40 @@ data class GetConnectorTokenRequestSubjectVariant0(
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetConnectorTokenRequestSubjectVariant1(
     val type: GetConnectorTokenRequestSubjectVariant1TypeEnum,
     val id: String? = null,
-    val issuer: String? = null,
+    val issuer: String? = null
 ) : GetConnectorTokenRequestSubject {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetConnectorTokenRequestSubjectVariant2(
     val type: GetConnectorTokenRequestSubjectVariant2TypeEnum,
     val sub: String? = null,
     val iss: String? = null,
     val aud: String? = null,
-    val additionalClaims: Map<String, Any>? = null,
+    val additionalClaims: Map<String, Any>? = null
 ) : GetConnectorTokenRequestSubject {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetConnectorTokenRequestSubjectVariant3(
     val type: GetConnectorTokenRequestSubjectVariant3TypeEnum,
-    val token: String,
+    val token: String
 ) : GetConnectorTokenRequestSubject
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class GetConnectorTokenRequestSubjectVariant4(val type: String) :
-    GetConnectorTokenRequestSubject {
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class GetConnectorTokenRequestSubjectVariant4(
+    val type: String
+) : GetConnectorTokenRequestSubject {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()

@@ -32,38 +32,24 @@ import dev.octri.showcase.vercel.Validation
 
 object AiGateway {
 
+
     /**
-     * Creates a virtual model configuration (VMC) for a team. Specify `teamId` or `slug` to perform
-     * the request in that team's context. A 201 response returns the created configuration.
+     * Creates a virtual model configuration (VMC) for a team. Specify `teamId` or `slug` to perform the request in that team's context. A 201 response returns the created configuration.
      *
      * Create a virtual model config (VMC)
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun createAiGatewayVirtualModelConfig(
-        clientConfig: ClientConfig,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayVirtualModelConfig {
-        return SdkClient.request<AiGatewayVirtualModelConfig>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/ai-gateway/virtual-model-configs",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "createAiGatewayVirtualModelConfig",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun createAiGatewayVirtualModelConfig(clientConfig: ClientConfig, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayVirtualModelConfig {
+        return SdkClient.request<AiGatewayVirtualModelConfig>(SdkClient.RequestSpec("POST", "/ai-gateway/virtual-model-configs", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "createAiGatewayVirtualModelConfig", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
+
+
+
+
+
 
     /** Parameters for [getAiGatewayVirtualModelConfig]. */
     data class GetAiGatewayVirtualModelConfigRequest(
@@ -72,89 +58,56 @@ object AiGateway {
         val limit: Long? = null,
         val cursor: String? = null,
         val teamId: String? = null,
-        val slug: String? = null,
+        val slug: String? = null
     )
 
     /**
-     * Retrieves virtual model configuration data for the authenticated team, including active and
-     * archived configurations. Use `virtualModelSlug` to select a configuration or `limit` and
-     * `cursor` to request a page of results.
+     * Retrieves virtual model configuration data for the authenticated team, including active and archived configurations. Use `virtualModelSlug` to select a configuration or `limit` and `cursor` to request a page of results.
      *
      * Get a virtual model config
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getAiGatewayVirtualModelConfig(
-        clientConfig: ClientConfig,
-        request: GetAiGatewayVirtualModelConfigRequest,
-        options: RequestOptions? = null,
-    ): GetAiGatewayVirtualModelConfigResponse {
+    fun getAiGatewayVirtualModelConfig(clientConfig: ClientConfig, request: GetAiGatewayVirtualModelConfigRequest, options: RequestOptions? = null): GetAiGatewayVirtualModelConfigResponse {
         validateGetAiGatewayVirtualModelConfigRequest(request)
 
-        return SdkClient.request<GetAiGatewayVirtualModelConfigResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/ai-gateway/virtual-model-configs",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "ownerId" to SdkClient.queryValue(request.ownerId, "form", true),
-                            "virtualModelSlug" to
-                                SdkClient.queryValue(request.virtualModelSlug, "form", true),
-                            "limit" to SdkClient.queryValue(request.limit, "form", true),
-                            "cursor" to SdkClient.queryValue(request.cursor, "form", true),
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    operationId = "getAiGatewayVirtualModelConfig",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<GetAiGatewayVirtualModelConfigResponse>(SdkClient.RequestSpec("GET", "/ai-gateway/virtual-model-configs", config = clientConfig, query = mapOf("ownerId" to
+    SdkClient.queryValue(request.ownerId, "form", true), "virtualModelSlug" to
+    SdkClient.queryValue(request.virtualModelSlug, "form", true), "limit" to SdkClient.queryValue(request.limit, "form", true), "cursor" to
+    SdkClient.queryValue(request.cursor, "form", true), "teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "getAiGatewayVirtualModelConfig", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
-    private fun validateGetAiGatewayVirtualModelConfigRequest(
-        request: GetAiGatewayVirtualModelConfigRequest
-    ) {
+
+    private fun validateGetAiGatewayVirtualModelConfigRequest(request: GetAiGatewayVirtualModelConfigRequest) {
         if (request.limit != null) {
             Validation.validateRange("limit", request.limit, Validation.RangeOpts(min = 1.0))
-        }
+}
     }
 
+
+
+
+
+
     /**
-     * Updates a virtual model configuration for a team. Specify `teamId` or `slug` to perform the
-     * request in that team's context. A 200 response returns the updated configuration.
+     * Updates a virtual model configuration for a team. Specify `teamId` or `slug` to perform the request in that team's context. A 200 response returns the updated configuration.
      *
      * Update a virtual model config
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun updateAiGatewayVirtualModelConfig(
-        clientConfig: ClientConfig,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayVirtualModelConfig {
-        return SdkClient.request<AiGatewayVirtualModelConfig>(
-                SdkClient.RequestSpec(
-                    "PATCH",
-                    "/ai-gateway/virtual-model-configs",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "updateAiGatewayVirtualModelConfig",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun updateAiGatewayVirtualModelConfig(clientConfig: ClientConfig, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayVirtualModelConfig {
+        return SdkClient.request<AiGatewayVirtualModelConfig>(SdkClient.RequestSpec("PATCH", "/ai-gateway/virtual-model-configs", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "updateAiGatewayVirtualModelConfig", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
+
+
+
+
+
 
     /** Parameters for [deleteAiGatewayVirtualModelConfig]. */
     data class DeleteAiGatewayVirtualModelConfigRequest(
@@ -164,47 +117,32 @@ object AiGateway {
         val actingIp: String? = null,
         val actingUserAgent: String? = null,
         val teamId: String? = null,
-        val slug: String? = null,
+        val slug: String? = null
     )
 
     /**
-     * Deletes a virtual model configuration by its slug using a soft delete. Specify
-     * `virtualModelSlug` to identify the configuration and optionally use `ownerId`, `teamId`, or
-     * `slug` to select the owner context.
+     * Deletes a virtual model configuration by its slug using a soft delete. Specify `virtualModelSlug` to identify the configuration and optionally use `ownerId`, `teamId`, or `slug` to select the owner context.
      *
      * Delete a virtual model config (soft delete)
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun deleteAiGatewayVirtualModelConfig(
-        clientConfig: ClientConfig,
-        request: DeleteAiGatewayVirtualModelConfigRequest,
-        options: RequestOptions? = null,
-    ): Unit {
-        SdkClient.request<Unit>(
-            SdkClient.RequestSpec(
-                "DELETE",
-                "/ai-gateway/virtual-model-configs",
-                config = clientConfig,
-                query =
-                    mapOf(
-                        "virtualModelSlug" to
-                            SdkClient.queryValue(request.virtualModelSlug, "form", true),
-                        "ownerId" to SdkClient.queryValue(request.ownerId, "form", true),
-                        "updatedBy" to SdkClient.queryValue(request.updatedBy, "form", true),
-                        "actingIp" to SdkClient.queryValue(request.actingIp, "form", true),
-                        "actingUserAgent" to
-                            SdkClient.queryValue(request.actingUserAgent, "form", true),
-                        "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                        "slug" to SdkClient.queryValue(request.slug, "form", true),
-                    ),
-                operationId = "deleteAiGatewayVirtualModelConfig",
-                decoder = SdkClient.ResponseDecoder.EMPTY,
-                options = options,
-            )
-        )
+    fun deleteAiGatewayVirtualModelConfig(clientConfig: ClientConfig, request: DeleteAiGatewayVirtualModelConfigRequest, options: RequestOptions? = null): Unit {
+        SdkClient.request<Unit>(SdkClient.RequestSpec("DELETE", "/ai-gateway/virtual-model-configs", config = clientConfig, query = mapOf("virtualModelSlug" to
+    SdkClient.queryValue(request.virtualModelSlug, "form", true), "ownerId" to
+    SdkClient.queryValue(request.ownerId, "form", true), "updatedBy" to
+    SdkClient.queryValue(request.updatedBy, "form", true), "actingIp" to
+    SdkClient.queryValue(request.actingIp, "form", true), "actingUserAgent" to
+    SdkClient.queryValue(request.actingUserAgent, "form", true), "teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "deleteAiGatewayVirtualModelConfig", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
     }
+
+
+
+
+
+
 
     /** Parameters for [listAiGatewayVirtualModelConfigs]. */
     data class ListAiGatewayVirtualModelConfigsRequest(
@@ -213,85 +151,50 @@ object AiGateway {
         val cursor: String? = null,
         val includeArchived: ListAiGatewayVirtualModelConfigsParameterEnum? = null,
         val teamId: String? = null,
-        val slug: String? = null,
+        val slug: String? = null
     )
 
     /**
-     * Lists virtual model configurations for a team or across teams. Use `limit` and `cursor` to
-     * retrieve a page; team results are ordered by `virtualModelSlug`, while cross-team results are
-     * ordered newest first.
+     * Lists virtual model configurations for a team or across teams. Use `limit` and `cursor` to retrieve a page; team results are ordered by `virtualModelSlug`, while cross-team results are ordered newest first.
      *
-     * List virtual model configs. For a team, returns all of its VMCs, or with `limit` or `cursor`
-     * one page ordered by `virtualModelSlug`. Across teams, pages newest-first.
-     * `includeArchived=false` omits archived VMCs.
+     * List virtual model configs. For a team, returns all of its VMCs, or with `limit` or `cursor` one page ordered by `virtualModelSlug`. Across teams, pages newest-first. `includeArchived=false` omits archived VMCs.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listAiGatewayVirtualModelConfigs(
-        clientConfig: ClientConfig,
-        request: ListAiGatewayVirtualModelConfigsRequest,
-        options: RequestOptions? = null,
-    ): AiGatewayVirtualModelConfigList {
+    fun listAiGatewayVirtualModelConfigs(clientConfig: ClientConfig, request: ListAiGatewayVirtualModelConfigsRequest, options: RequestOptions? = null): AiGatewayVirtualModelConfigList {
         validateListAiGatewayVirtualModelConfigsRequest(request)
 
-        return SdkClient.request<AiGatewayVirtualModelConfigList>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/ai-gateway/virtual-model-configs/list",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "ownerId" to SdkClient.queryValue(request.ownerId, "form", true),
-                            "limit" to SdkClient.queryValue(request.limit, "form", true),
-                            "cursor" to SdkClient.queryValue(request.cursor, "form", true),
-                            "includeArchived" to
-                                SdkClient.queryValue(request.includeArchived, "form", true),
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    operationId = "listAiGatewayVirtualModelConfigs",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<AiGatewayVirtualModelConfigList>(SdkClient.RequestSpec("GET", "/ai-gateway/virtual-model-configs/list", config = clientConfig, query = mapOf("ownerId" to
+    SdkClient.queryValue(request.ownerId, "form", true), "limit" to SdkClient.queryValue(request.limit, "form", true), "cursor" to
+    SdkClient.queryValue(request.cursor, "form", true), "includeArchived" to
+    SdkClient.queryValue(request.includeArchived, "form", true), "teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "listAiGatewayVirtualModelConfigs", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
-    private fun validateListAiGatewayVirtualModelConfigsRequest(
-        request: ListAiGatewayVirtualModelConfigsRequest
-    ) {
+
+    private fun validateListAiGatewayVirtualModelConfigsRequest(request: ListAiGatewayVirtualModelConfigsRequest) {
         if (request.limit != null) {
             Validation.validateRange("limit", request.limit, Validation.RangeOpts(min = 1.0))
-        }
+}
     }
 
+
+
+
+
     /**
-     * Lists virtual model configurations for a team or across teams. Use `limit` and `cursor` to
-     * retrieve a page; team results are ordered by `virtualModelSlug`, while cross-team results are
-     * ordered newest first.
+     * Lists virtual model configurations for a team or across teams. Use `limit` and `cursor` to retrieve a page; team results are ordered by `virtualModelSlug`, while cross-team results are ordered newest first.
      *
-     * List virtual model configs. For a team, returns all of its VMCs, or with `limit` or `cursor`
-     * one page ordered by `virtualModelSlug`. Across teams, pages newest-first.
-     * `includeArchived=false` omits archived VMCs.
+     * List virtual model configs. For a team, returns all of its VMCs, or with `limit` or `cursor` one page ordered by `virtualModelSlug`. Across teams, pages newest-first. `includeArchived=false` omits archived VMCs.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listAiGatewayVirtualModelConfigsPaginated(
-        clientConfig: ClientConfig,
-        request: ListAiGatewayVirtualModelConfigsRequest,
-        options: RequestOptions? = null,
-        yieldFn: (AiGatewayVirtualModelConfig) -> Boolean,
-    ) {
+    fun listAiGatewayVirtualModelConfigsPaginated(clientConfig: ClientConfig, request: ListAiGatewayVirtualModelConfigsRequest, options: RequestOptions? = null, yieldFn: (AiGatewayVirtualModelConfig) -> Boolean) {
         var cursor = request.cursor
         while (true) {
-            val page =
-                listAiGatewayVirtualModelConfigs(
-                    clientConfig,
-                    request.copy(cursor = cursor),
-                    options,
-                )
+            val page = listAiGatewayVirtualModelConfigs(clientConfig, request.copy(cursor = cursor), options)
             val items = page.virtualModelConfigs.orEmpty()
             if (items.isEmpty()) return
             for (item in items) {
@@ -308,20 +211,10 @@ object AiGateway {
         val hasMore: Boolean,
     )
 
-    fun listAiGatewayVirtualModelConfigsPages(
-        clientConfig: ClientConfig,
-        request: ListAiGatewayVirtualModelConfigsRequest,
-        options: RequestOptions? = null,
-        yieldPage: (ListAiGatewayVirtualModelConfigsPage) -> Boolean,
-    ) {
+    fun listAiGatewayVirtualModelConfigsPages(clientConfig: ClientConfig, request: ListAiGatewayVirtualModelConfigsRequest, options: RequestOptions? = null, yieldPage: (ListAiGatewayVirtualModelConfigsPage) -> Boolean) {
         var cursor = request.cursor
         while (true) {
-            val page =
-                listAiGatewayVirtualModelConfigs(
-                    clientConfig,
-                    request.copy(cursor = cursor),
-                    options,
-                )
+            val page = listAiGatewayVirtualModelConfigs(clientConfig, request.copy(cursor = cursor), options)
             val items = page.virtualModelConfigs.orEmpty()
             if (items.isEmpty()) return
             val nextCursor = page.cursor
@@ -332,76 +225,43 @@ object AiGateway {
         }
     }
 
+
+
     /**
-     * Retrieves a virtual model configuration by its path slug. Use `ownerId` or the team selectors
-     * `teamId` and `slug` to scope the lookup to the appropriate owner.
+     * Retrieves a virtual model configuration by its path slug. Use `ownerId` or the team selectors `teamId` and `slug` to scope the lookup to the appropriate owner.
      *
      * Get a virtual model config by path slug
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getAiGatewayVirtualModelConfigBySlug(
-        clientConfig: ClientConfig,
-        vmcSlug: String,
-        ownerId: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayVirtualModelConfig {
-        return SdkClient.request<AiGatewayVirtualModelConfig>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/ai-gateway/virtual-model-configs/${SdkClient.encodePathSegment(vmcSlug)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "ownerId" to SdkClient.queryValue(ownerId, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "getAiGatewayVirtualModelConfigBySlug",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun getAiGatewayVirtualModelConfigBySlug(clientConfig: ClientConfig, vmcSlug: String, ownerId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayVirtualModelConfig {
+        return SdkClient.request<AiGatewayVirtualModelConfig>(SdkClient.RequestSpec("GET", "/ai-gateway/virtual-model-configs/${SdkClient.encodePathSegment(vmcSlug)}", config = clientConfig, query = mapOf("ownerId" to SdkClient.queryValue(ownerId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getAiGatewayVirtualModelConfigBySlug", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
+
+
+
+
+
+
     /**
-     * Updates a virtual model configuration identified by its path slug. Specify `teamId` or `slug`
-     * to perform the request in that team's context. A 200 response returns the updated
-     * configuration.
+     * Updates a virtual model configuration identified by its path slug. Specify `teamId` or `slug` to perform the request in that team's context. A 200 response returns the updated configuration.
      *
      * Update a virtual model config by path slug
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun updateAiGatewayVirtualModelConfigBySlug(
-        clientConfig: ClientConfig,
-        vmcSlug: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayVirtualModelConfig {
-        return SdkClient.request<AiGatewayVirtualModelConfig>(
-                SdkClient.RequestSpec(
-                    "PATCH",
-                    "/ai-gateway/virtual-model-configs/${SdkClient.encodePathSegment(vmcSlug)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "updateAiGatewayVirtualModelConfigBySlug",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun updateAiGatewayVirtualModelConfigBySlug(clientConfig: ClientConfig, vmcSlug: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayVirtualModelConfig {
+        return SdkClient.request<AiGatewayVirtualModelConfig>(SdkClient.RequestSpec("PATCH", "/ai-gateway/virtual-model-configs/${SdkClient.encodePathSegment(vmcSlug)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "updateAiGatewayVirtualModelConfigBySlug", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
+
+
+
+
+
 
     /** Parameters for [deleteAiGatewayVirtualModelConfigBySlug]. */
     data class DeleteAiGatewayVirtualModelConfigBySlugRequest(
@@ -411,207 +271,111 @@ object AiGateway {
         val actingIp: String? = null,
         val actingUserAgent: String? = null,
         val teamId: String? = null,
-        val slug: String? = null,
+        val slug: String? = null
     )
 
     /**
-     * Deletes a virtual model configuration identified by its path slug using a soft delete.
-     * Specify `vmcSlug` to select the configuration, and optionally use `ownerId`, `teamId`, or
-     * `slug` to scope the operation.
+     * Deletes a virtual model configuration identified by its path slug using a soft delete. Specify `vmcSlug` to select the configuration, and optionally use `ownerId`, `teamId`, or `slug` to scope the operation.
      *
      * Delete a virtual model config by path slug (soft delete)
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun deleteAiGatewayVirtualModelConfigBySlug(
-        clientConfig: ClientConfig,
-        request: DeleteAiGatewayVirtualModelConfigBySlugRequest,
-        options: RequestOptions? = null,
-    ): Unit {
-        SdkClient.request<Unit>(
-            SdkClient.RequestSpec(
-                "DELETE",
-                "/ai-gateway/virtual-model-configs/${SdkClient.encodePathSegment(request.vmcSlug)}",
-                config = clientConfig,
-                query =
-                    mapOf(
-                        "ownerId" to SdkClient.queryValue(request.ownerId, "form", true),
-                        "updatedBy" to SdkClient.queryValue(request.updatedBy, "form", true),
-                        "actingIp" to SdkClient.queryValue(request.actingIp, "form", true),
-                        "actingUserAgent" to
-                            SdkClient.queryValue(request.actingUserAgent, "form", true),
-                        "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                        "slug" to SdkClient.queryValue(request.slug, "form", true),
-                    ),
-                operationId = "deleteAiGatewayVirtualModelConfigBySlug",
-                decoder = SdkClient.ResponseDecoder.EMPTY,
-                options = options,
-            )
-        )
+    fun deleteAiGatewayVirtualModelConfigBySlug(clientConfig: ClientConfig, request: DeleteAiGatewayVirtualModelConfigBySlugRequest, options: RequestOptions? = null): Unit {
+        SdkClient.request<Unit>(SdkClient.RequestSpec("DELETE", "/ai-gateway/virtual-model-configs/${SdkClient.encodePathSegment(request.vmcSlug)}", config = clientConfig, query = mapOf("ownerId" to
+    SdkClient.queryValue(request.ownerId, "form", true), "updatedBy" to
+    SdkClient.queryValue(request.updatedBy, "form", true), "actingIp" to
+    SdkClient.queryValue(request.actingIp, "form", true), "actingUserAgent" to
+    SdkClient.queryValue(request.actingUserAgent, "form", true), "teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "deleteAiGatewayVirtualModelConfigBySlug", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
     }
 
+
+
+
+
+
+
     /**
-     * Lists the authenticated team's active and archived AI Gateway routers. Public callers select
-     * the team with `teamId` or `slug`; trusted-origin callers can use `ownerId` to scope the list.
+     * Lists the authenticated team's active and archived AI Gateway routers. Public callers select the team with `teamId` or `slug`; trusted-origin callers can use `ownerId` to scope the list.
      *
      * List the authenticated team's active and archived custom routers.
      *
-     * @param ownerId The owner (team) ID to list routers for. Only trusted-origin callers use this.
-     *   Public callers select their team with `teamId` or `slug`, and a supplied ownerId never
-     *   overrides the authenticated team.
+     * @param ownerId The owner (team) ID to list routers for. Only trusted-origin
+     *   callers use this. Public callers select their team with `teamId` or `slug`,
+     *   and a supplied ownerId never overrides the authenticated team.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listAiGatewayRouters(
-        clientConfig: ClientConfig,
-        ownerId: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayRouterList {
-        return SdkClient.request<AiGatewayRouterList>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/ai-gateway/routers",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "ownerId" to SdkClient.queryValue(ownerId, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "listAiGatewayRouters",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun listAiGatewayRouters(clientConfig: ClientConfig, ownerId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayRouterList {
+        return SdkClient.request<AiGatewayRouterList>(SdkClient.RequestSpec("GET", "/v1/ai-gateway/routers", config = clientConfig, query = mapOf("ownerId" to SdkClient.queryValue(ownerId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "listAiGatewayRouters", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
+
+
+
+
+
+
     /**
-     * Creates a routing rule for the authenticated team. Use `teamId` or `slug` to select the team
-     * context when needed. A 201 response returns the created rule, including its identifier and
-     * configuration.
+     * Creates a routing rule for the authenticated team. Use `teamId` or `slug` to select the team context when needed. A 201 response returns the created rule, including its identifier and configuration.
      *
      * Create a routing rule
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun createAiGatewayRule(
-        clientConfig: ClientConfig,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayRule {
-        return SdkClient.request<AiGatewayRule>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/ai-gateway/rules",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "createAiGatewayRule",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun createAiGatewayRule(clientConfig: ClientConfig, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayRule {
+        return SdkClient.request<AiGatewayRule>(SdkClient.RequestSpec("POST", "/ai-gateway/rules", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "createAiGatewayRule", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
+
+
+
+
+
+
     /**
-     * Lists the authenticated team's AI Gateway routing rules, ordered from oldest to newest. Use
-     * `includeDisabled` to control whether disabled rules are included, and use `limit` and
-     * `cursor` to retrieve a page of results. Paged responses include `nextCursor` for the next
-     * request; it is null on the last page.
+     * Lists the authenticated team's AI Gateway routing rules, ordered from oldest to newest. Use `includeDisabled` to control whether disabled rules are included, and use `limit` and `cursor` to retrieve a page of results. Paged responses include `nextCursor` for the next request; it is null on the last page.
      *
-     * List the authenticated team's routing rules, oldest first. Without `limit` or `cursor`,
-     * returns every rule. With either, returns one page and a `nextCursor` for the next page (null
-     * on the last page). Paging reads and sorts the team's rules server-side, which is fine at
-     * current rule counts.
+     * List the authenticated team's routing rules, oldest first. Without `limit` or `cursor`, returns every rule. With either, returns one page and a `nextCursor` for the next page (null on the last page). Paging reads and sorts the team's rules server-side, which is fine at current rule counts.
      *
-     * @param limit Maximum number of rules to return (capped at 200). Enables pagination.
+     * @param limit Maximum number of rules to return (capped at 200). Enables
+     *   pagination.
      * @param cursor Opaque cursor returned by a prior call as nextCursor.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listAiGatewayRules(
-        clientConfig: ClientConfig,
-        includeDisabled: ListAiGatewayRulesParameterEnum? = null,
-        limit: Long? = null,
-        cursor: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayRuleList {
+    fun listAiGatewayRules(clientConfig: ClientConfig, includeDisabled: ListAiGatewayRulesParameterEnum? = null, limit: Long? = null, cursor: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayRuleList {
         if (limit != null) {
             Validation.validateRange("limit", limit, Validation.RangeOpts(min = 1.0))
-        }
+}
 
-        return SdkClient.request<AiGatewayRuleList>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/ai-gateway/rules",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "includeDisabled" to
-                                SdkClient.queryValue(includeDisabled, "form", true),
-                            "limit" to SdkClient.queryValue(limit, "form", true),
-                            "cursor" to SdkClient.queryValue(cursor, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "listAiGatewayRules",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<AiGatewayRuleList>(SdkClient.RequestSpec("GET", "/ai-gateway/rules", config = clientConfig, query = mapOf("includeDisabled" to
+    SdkClient.queryValue(includeDisabled, "form", true), "limit" to SdkClient.queryValue(limit, "form", true), "cursor" to SdkClient.queryValue(cursor, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "listAiGatewayRules", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
+
+
+
+
+
     /**
-     * Lists the authenticated team's AI Gateway routing rules, ordered from oldest to newest. Use
-     * `includeDisabled` to control whether disabled rules are included, and use `limit` and
-     * `cursor` to retrieve a page of results. Paged responses include `nextCursor` for the next
-     * request; it is null on the last page.
+     * Lists the authenticated team's AI Gateway routing rules, ordered from oldest to newest. Use `includeDisabled` to control whether disabled rules are included, and use `limit` and `cursor` to retrieve a page of results. Paged responses include `nextCursor` for the next request; it is null on the last page.
      *
-     * List the authenticated team's routing rules, oldest first. Without `limit` or `cursor`,
-     * returns every rule. With either, returns one page and a `nextCursor` for the next page (null
-     * on the last page). Paging reads and sorts the team's rules server-side, which is fine at
-     * current rule counts.
+     * List the authenticated team's routing rules, oldest first. Without `limit` or `cursor`, returns every rule. With either, returns one page and a `nextCursor` for the next page (null on the last page). Paging reads and sorts the team's rules server-side, which is fine at current rule counts.
      *
-     * @param limit Maximum number of rules to return (capped at 200). Enables pagination.
+     * @param limit Maximum number of rules to return (capped at 200). Enables
+     *   pagination.
      * @param cursor Opaque cursor returned by a prior call as nextCursor.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listAiGatewayRulesPaginated(
-        clientConfig: ClientConfig,
-        includeDisabled: ListAiGatewayRulesParameterEnum? = null,
-        limit: Long? = null,
-        cursor: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-        yieldFn: (AiGatewayRule) -> Boolean,
-    ) {
+    fun listAiGatewayRulesPaginated(clientConfig: ClientConfig, includeDisabled: ListAiGatewayRulesParameterEnum? = null, limit: Long? = null, cursor: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null, yieldFn: (AiGatewayRule) -> Boolean) {
         var cursor = cursor
         while (true) {
-            val page =
-                listAiGatewayRules(
-                    clientConfig,
-                    includeDisabled,
-                    limit,
-                    cursor,
-                    teamId,
-                    slug,
-                    options,
-                )
+            val page = listAiGatewayRules(clientConfig, includeDisabled, limit, cursor, teamId, slug, options)
             val items = page.rules.orEmpty()
             if (items.isEmpty()) return
             for (item in items) {
@@ -628,28 +392,10 @@ object AiGateway {
         val hasMore: Boolean,
     )
 
-    fun listAiGatewayRulesPages(
-        clientConfig: ClientConfig,
-        includeDisabled: ListAiGatewayRulesParameterEnum? = null,
-        limit: Long? = null,
-        cursor: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-        yieldPage: (ListAiGatewayRulesPage) -> Boolean,
-    ) {
+    fun listAiGatewayRulesPages(clientConfig: ClientConfig, includeDisabled: ListAiGatewayRulesParameterEnum? = null, limit: Long? = null, cursor: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null, yieldPage: (ListAiGatewayRulesPage) -> Boolean) {
         var cursor = cursor
         while (true) {
-            val page =
-                listAiGatewayRules(
-                    clientConfig,
-                    includeDisabled,
-                    limit,
-                    cursor,
-                    teamId,
-                    slug,
-                    options,
-                )
+            val page = listAiGatewayRules(clientConfig, includeDisabled, limit, cursor, teamId, slug, options)
             val items = page.rules.orEmpty()
             if (items.isEmpty()) return
             val nextCursor = page.nextCursor
@@ -660,74 +406,43 @@ object AiGateway {
         }
     }
 
+
+
     /**
-     * Updates a routing rule's enabled state, action, or description for the authenticated team.
-     * Use `teamId` or `slug` to select the team context when needed. A 200 response returns the
-     * updated rule and its current configuration.
+     * Updates a routing rule's enabled state, action, or description for the authenticated team. Use `teamId` or `slug` to select the team context when needed. A 200 response returns the updated rule and its current configuration.
      *
      * Update a routing rule (enabled, action, or description)
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun updateAiGatewayRule(
-        clientConfig: ClientConfig,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayRule {
-        return SdkClient.request<AiGatewayRule>(
-                SdkClient.RequestSpec(
-                    "PATCH",
-                    "/ai-gateway/rules",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "updateAiGatewayRule",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun updateAiGatewayRule(clientConfig: ClientConfig, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayRule {
+        return SdkClient.request<AiGatewayRule>(SdkClient.RequestSpec("PATCH", "/ai-gateway/rules", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "updateAiGatewayRule", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
+
+
+
+
+
+
     /**
-     * Deletes a routing rule from the authenticated team's active rules; deletion is soft, so the
-     * rule is not necessarily permanently removed. Supply the rule's `ruleId` and use `teamId` or
-     * `slug` to select the team context when needed.
+     * Deletes a routing rule from the authenticated team's active rules; deletion is soft, so the rule is not necessarily permanently removed. Supply the rule's `ruleId` and use `teamId` or `slug` to select the team context when needed.
      *
      * Delete a routing rule (soft delete)
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun deleteAiGatewayRule(
-        clientConfig: ClientConfig,
-        ruleId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Unit {
-        SdkClient.request<Unit>(
-            SdkClient.RequestSpec(
-                "DELETE",
-                "/ai-gateway/rules",
-                config = clientConfig,
-                query =
-                    mapOf(
-                        "ruleId" to SdkClient.queryValue(ruleId, "form", true),
-                        "teamId" to SdkClient.queryValue(teamId, "form", true),
-                        "slug" to SdkClient.queryValue(slug, "form", true),
-                    ),
-                operationId = "deleteAiGatewayRule",
-                decoder = SdkClient.ResponseDecoder.EMPTY,
-                options = options,
-            )
-        )
+    fun deleteAiGatewayRule(clientConfig: ClientConfig, ruleId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
+        SdkClient.request<Unit>(SdkClient.RequestSpec("DELETE", "/ai-gateway/rules", config = clientConfig, query = mapOf("ruleId" to SdkClient.queryValue(ruleId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "deleteAiGatewayRule", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
     }
+
+
+
+
+
+
 
     /** Parameters for [listAiGatewayBudgets]. */
     data class ListAiGatewayBudgetsRequest(
@@ -736,91 +451,59 @@ object AiGateway {
         val limit: Long? = null,
         val cursor: String? = null,
         val teamId: String? = null,
-        val slug: String? = null,
+        val slug: String? = null
     )
 
     /**
-     * Lists the authenticated team's AI Gateway budgets as a flat list, with optional filtering by
-     * scope. Use `scopeType` to filter by team, project, user, or API key, and use `limit` and
-     * `cursor` to paginate results. Paged responses include `nextCursor` and
-     * `defaultCoveredCounts`.
+     * Lists the authenticated team's AI Gateway budgets as a flat list, with optional filtering by scope. Use `scopeType` to filter by team, project, user, or API key, and use `limit` and `cursor` to paginate results. Paged responses include `nextCursor` and `defaultCoveredCounts`.
      *
-     * List the team's AI Gateway budgets (team/project/user scopes, plus default-covered api-key
-     * spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns
-     * every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor`
-     * (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge
-     * server-side: the gateway meter list it joins has no cursor.
+     * List the team's AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor` (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.
      *
      * @param scopeType Restrict the list to a single budget scope.
-     * @param includeDefaultCovered Whether to include rows inherited from a budget default
-     *   (`source: "default"`). Defaults to true.
-     * @param limit Maximum number of budgets to return (capped at 200). Enables pagination.
+     * @param includeDefaultCovered Whether to include rows inherited from a budget
+     *   default (`source: "default"`). Defaults to true.
+     * @param limit Maximum number of budgets to return (capped at 200). Enables
+     *   pagination.
      * @param cursor Opaque cursor returned by a prior call as nextCursor.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listAiGatewayBudgets(
-        clientConfig: ClientConfig,
-        request: ListAiGatewayBudgetsRequest,
-        options: RequestOptions? = null,
-    ): AiGatewayBudgetList {
+    fun listAiGatewayBudgets(clientConfig: ClientConfig, request: ListAiGatewayBudgetsRequest, options: RequestOptions? = null): AiGatewayBudgetList {
         validateListAiGatewayBudgetsRequest(request)
 
-        return SdkClient.request<AiGatewayBudgetList>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/ai-gateway/budgets/list",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "scopeType" to SdkClient.queryValue(request.scopeType, "form", true),
-                            "includeDefaultCovered" to
-                                SdkClient.queryValue(request.includeDefaultCovered, "form", true),
-                            "limit" to SdkClient.queryValue(request.limit, "form", true),
-                            "cursor" to SdkClient.queryValue(request.cursor, "form", true),
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    operationId = "listAiGatewayBudgets",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<AiGatewayBudgetList>(SdkClient.RequestSpec("GET", "/ai-gateway/budgets/list", config = clientConfig, query = mapOf("scopeType" to
+    SdkClient.queryValue(request.scopeType, "form", true), "includeDefaultCovered" to
+    SdkClient.queryValue(request.includeDefaultCovered, "form", true), "limit" to SdkClient.queryValue(request.limit, "form", true), "cursor" to
+    SdkClient.queryValue(request.cursor, "form", true), "teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "listAiGatewayBudgets", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
 
     private fun validateListAiGatewayBudgetsRequest(request: ListAiGatewayBudgetsRequest) {
         if (request.limit != null) {
             Validation.validateRange("limit", request.limit, Validation.RangeOpts(min = 1.0))
-        }
+}
     }
 
+
+
+
+
     /**
-     * Lists the authenticated team's AI Gateway budgets as a flat list, with optional filtering by
-     * scope. Use `scopeType` to filter by team, project, user, or API key, and use `limit` and
-     * `cursor` to paginate results. Paged responses include `nextCursor` and
-     * `defaultCoveredCounts`.
+     * Lists the authenticated team's AI Gateway budgets as a flat list, with optional filtering by scope. Use `scopeType` to filter by team, project, user, or API key, and use `limit` and `cursor` to paginate results. Paged responses include `nextCursor` and `defaultCoveredCounts`.
      *
-     * List the team's AI Gateway budgets (team/project/user scopes, plus default-covered api-key
-     * spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns
-     * every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor`
-     * (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge
-     * server-side: the gateway meter list it joins has no cursor.
+     * List the team's AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor` (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.
      *
      * @param scopeType Restrict the list to a single budget scope.
-     * @param includeDefaultCovered Whether to include rows inherited from a budget default
-     *   (`source: "default"`). Defaults to true.
-     * @param limit Maximum number of budgets to return (capped at 200). Enables pagination.
+     * @param includeDefaultCovered Whether to include rows inherited from a budget
+     *   default (`source: "default"`). Defaults to true.
+     * @param limit Maximum number of budgets to return (capped at 200). Enables
+     *   pagination.
      * @param cursor Opaque cursor returned by a prior call as nextCursor.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listAiGatewayBudgetsPaginated(
-        clientConfig: ClientConfig,
-        request: ListAiGatewayBudgetsRequest,
-        options: RequestOptions? = null,
-        yieldFn: (AiGatewayBudget) -> Boolean,
-    ) {
+    fun listAiGatewayBudgetsPaginated(clientConfig: ClientConfig, request: ListAiGatewayBudgetsRequest, options: RequestOptions? = null, yieldFn: (AiGatewayBudget) -> Boolean) {
         var cursor = request.cursor
         while (true) {
             val page = listAiGatewayBudgets(clientConfig, request.copy(cursor = cursor), options)
@@ -840,12 +523,7 @@ object AiGateway {
         val hasMore: Boolean,
     )
 
-    fun listAiGatewayBudgetsPages(
-        clientConfig: ClientConfig,
-        request: ListAiGatewayBudgetsRequest,
-        options: RequestOptions? = null,
-        yieldPage: (ListAiGatewayBudgetsPage) -> Boolean,
-    ) {
+    fun listAiGatewayBudgetsPages(clientConfig: ClientConfig, request: ListAiGatewayBudgetsRequest, options: RequestOptions? = null, yieldPage: (ListAiGatewayBudgetsPage) -> Boolean) {
         var cursor = request.cursor
         while (true) {
             val page = listAiGatewayBudgets(clientConfig, request.copy(cursor = cursor), options)
@@ -859,6 +537,8 @@ object AiGateway {
         }
     }
 
+
+
     /** Parameters for [upsertAiGatewayBudget]. */
     data class UpsertAiGatewayBudgetRequest(
         val scopeType: UpsertAiGatewayBudgetScopeTypeEnum,
@@ -869,13 +549,11 @@ object AiGateway {
         val userId: String? = null,
         val refreshPeriod: UpsertAiGatewayBudgetRefreshPeriodEnum? = null,
         val includeByokInQuota: Boolean? = null,
-        val alertThresholds: List<UpsertAiGatewayBudgetAlertThresholdsItemEnum>? = null,
+        val alertThresholds: List<UpsertAiGatewayBudgetAlertThresholdsItemEnum>? = null
     )
 
     /**
-     * Creates or updates an AI Gateway budget for a team, project, or user scope. Supply
-     * `scopeType` and `limitAmount`, and include `projectId` or `userId` when the selected scope
-     * requires it. The response contains the saved budget and its current spend and configuration.
+     * Creates or updates an AI Gateway budget for a team, project, or user scope. Supply `scopeType` and `limitAmount`, and include `projectId` or `userId` when the selected scope requires it. The response contains the saved budget and its current spend and configuration.
      *
      * Create or update a team-, project-, or user-scope AI Gateway budget.
      *
@@ -886,54 +564,28 @@ object AiGateway {
      * @param userId Required when scopeType is "user".
      * @param includeByokInQuota Whether BYOK usage counts toward this budget.
      */
-    fun upsertAiGatewayBudget(
-        clientConfig: ClientConfig,
-        request: UpsertAiGatewayBudgetRequest,
-        options: RequestOptions? = null,
-    ): AiGatewayBudget {
+    fun upsertAiGatewayBudget(clientConfig: ClientConfig, request: UpsertAiGatewayBudgetRequest, options: RequestOptions? = null): AiGatewayBudget {
         validateUpsertAiGatewayBudgetRequest(request)
 
-        return SdkClient.request<AiGatewayBudget>(
-                SdkClient.RequestSpec(
-                    "PUT",
-                    "/ai-gateway/budgets",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    body =
-                        SdkClient.bodyMap(
-                            "scopeType" to (request.scopeType),
-                            "limitAmount" to (request.limitAmount),
-                            "projectId" to (SdkClient.omitIfNull(request.projectId)),
-                            "userId" to (SdkClient.omitIfNull(request.userId)),
-                            "refreshPeriod" to (SdkClient.omitIfNull(request.refreshPeriod)),
-                            "includeByokInQuota" to
-                                (SdkClient.omitIfNull(request.includeByokInQuota)),
-                            "alertThresholds" to (SdkClient.omitIfNull(request.alertThresholds)),
-                        ),
-                    operationId = "upsertAiGatewayBudget",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<AiGatewayBudget>(SdkClient.RequestSpec("PUT", "/ai-gateway/budgets", config = clientConfig, query = mapOf("teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("scopeType" to (request.scopeType), "limitAmount" to (request.limitAmount), "projectId" to (SdkClient.omitIfNull(request.projectId)), "userId" to (SdkClient.omitIfNull(request.userId)), "refreshPeriod" to
+    (SdkClient.omitIfNull(request.refreshPeriod)), "includeByokInQuota" to
+    (SdkClient.omitIfNull(request.includeByokInQuota)), "alertThresholds" to
+    (SdkClient.omitIfNull(request.alertThresholds))), operationId = "upsertAiGatewayBudget", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
 
     private fun validateUpsertAiGatewayBudgetRequest(request: UpsertAiGatewayBudgetRequest) {
-        Validation.validateRange(
-            "limitAmount",
-            request.limitAmount,
-            Validation.RangeOpts(min = 1.0),
-        )
+        Validation.validateRange("limitAmount", request.limitAmount, Validation.RangeOpts(min = 1.0))
     }
 
+
+
+
+
+
     /**
-     * Archives an AI Gateway budget for a team, project, or user scope. Set `scopeType` and include
-     * `projectId` or `userId` when the selected scope requires it. The response returns the
-     * archived budget and its current configuration.
+     * Archives an AI Gateway budget for a team, project, or user scope. Set `scopeType` and include `projectId` or `userId` when the selected scope requires it. The response returns the archived budget and its current configuration.
      *
      * Archive a team-, project-, or user-scope AI Gateway budget.
      *
@@ -943,71 +595,33 @@ object AiGateway {
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun archiveAiGatewayBudget(
-        clientConfig: ClientConfig,
-        scopeType: ArchiveAiGatewayBudgetParameterEnum,
-        projectId: String? = null,
-        userId: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayBudget {
-        return SdkClient.request<AiGatewayBudget>(
-                SdkClient.RequestSpec(
-                    "DELETE",
-                    "/ai-gateway/budgets",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "scopeType" to SdkClient.queryValue(scopeType, "form", true),
-                            "projectId" to SdkClient.queryValue(projectId, "form", true),
-                            "userId" to SdkClient.queryValue(userId, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "archiveAiGatewayBudget",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun archiveAiGatewayBudget(clientConfig: ClientConfig, scopeType: ArchiveAiGatewayBudgetParameterEnum, projectId: String? = null, userId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayBudget {
+        return SdkClient.request<AiGatewayBudget>(SdkClient.RequestSpec("DELETE", "/ai-gateway/budgets", config = clientConfig, query = mapOf("scopeType" to SdkClient.queryValue(scopeType, "form", true), "projectId" to SdkClient.queryValue(projectId, "form", true), "userId" to SdkClient.queryValue(userId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "archiveAiGatewayBudget", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
+
+
+
+
+
+
     /**
-     * Lists the authenticated team's AI Gateway budget defaults as a flat list, with one entry for
-     * each scope that has a default. An empty `defaults` array is a normal result when no defaults
-     * are configured. Use `teamId` or `slug` to select the team context when needed.
+     * Lists the authenticated team's AI Gateway budget defaults as a flat list, with one entry for each scope that has a default. An empty `defaults` array is a normal result when no defaults are configured. Use `teamId` or `slug` to select the team context when needed.
      *
-     * List the team's AI Gateway budget defaults as a flat per-scope list (one row per
-     * team/project/api-key/user scope with a default set). An empty list is a normal state for the
-     * dashboard.
+     * List the team's AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user scope with a default set). An empty list is a normal state for the dashboard.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listAiGatewayBudgetDefaults(
-        clientConfig: ClientConfig,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayBudgetDefaultList {
-        return SdkClient.request<AiGatewayBudgetDefaultList>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/ai-gateway/budgets/defaults/list",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "listAiGatewayBudgetDefaults",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun listAiGatewayBudgetDefaults(clientConfig: ClientConfig, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayBudgetDefaultList {
+        return SdkClient.request<AiGatewayBudgetDefaultList>(SdkClient.RequestSpec("GET", "/ai-gateway/budgets/defaults/list", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "listAiGatewayBudgetDefaults", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
+
+
+
+
+
 
     /** Parameters for [upsertAiGatewayBudgetDefault]. */
     data class UpsertAiGatewayBudgetDefaultRequest(
@@ -1016,67 +630,39 @@ object AiGateway {
         val teamId: String? = null,
         val slug: String? = null,
         val refreshPeriod: UpsertAiGatewayBudgetDefaultRefreshPeriodEnum? = null,
-        val alertThresholds: List<UpsertAiGatewayBudgetDefaultAlertThresholdsItemEnum>? = null,
+        val alertThresholds: List<UpsertAiGatewayBudgetDefaultAlertThresholdsItemEnum>? = null
     )
 
     /**
-     * Creates or updates an AI Gateway budget default for one scope. Supply `scopeType` and
-     * `limitAmount`; only team owners and admins have authority to manage these defaults. The
-     * response returns the saved default configuration.
+     * Creates or updates an AI Gateway budget default for one scope. Supply `scopeType` and `limitAmount`; only team owners and admins have authority to manage these defaults. The response returns the saved default configuration.
      *
-     * Create or update an AI Gateway budget default for one scope. Team-level authority only
-     * (owners/admins).
+     * Create or update an AI Gateway budget default for one scope. Team-level authority only (owners/admins).
      *
      * @param limitAmount Default budget limit in dollars.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun upsertAiGatewayBudgetDefault(
-        clientConfig: ClientConfig,
-        request: UpsertAiGatewayBudgetDefaultRequest,
-        options: RequestOptions? = null,
-    ): AiGatewayBudgetDefault {
+    fun upsertAiGatewayBudgetDefault(clientConfig: ClientConfig, request: UpsertAiGatewayBudgetDefaultRequest, options: RequestOptions? = null): AiGatewayBudgetDefault {
         validateUpsertAiGatewayBudgetDefaultRequest(request)
 
-        return SdkClient.request<AiGatewayBudgetDefault>(
-                SdkClient.RequestSpec(
-                    "PUT",
-                    "/ai-gateway/budgets/defaults",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    body =
-                        SdkClient.bodyMap(
-                            "scopeType" to (request.scopeType),
-                            "limitAmount" to (request.limitAmount),
-                            "refreshPeriod" to (SdkClient.omitIfNull(request.refreshPeriod)),
-                            "alertThresholds" to (SdkClient.omitIfNull(request.alertThresholds)),
-                        ),
-                    operationId = "upsertAiGatewayBudgetDefault",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<AiGatewayBudgetDefault>(SdkClient.RequestSpec("PUT", "/ai-gateway/budgets/defaults", config = clientConfig, query = mapOf("teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("scopeType" to (request.scopeType), "limitAmount" to (request.limitAmount), "refreshPeriod" to
+    (SdkClient.omitIfNull(request.refreshPeriod)), "alertThresholds" to
+    (SdkClient.omitIfNull(request.alertThresholds))), operationId = "upsertAiGatewayBudgetDefault", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
-    private fun validateUpsertAiGatewayBudgetDefaultRequest(
-        request: UpsertAiGatewayBudgetDefaultRequest
-    ) {
-        Validation.validateRange(
-            "limitAmount",
-            request.limitAmount,
-            Validation.RangeOpts(min = 1.0),
-        )
+
+    private fun validateUpsertAiGatewayBudgetDefaultRequest(request: UpsertAiGatewayBudgetDefaultRequest) {
+        Validation.validateRange("limitAmount", request.limitAmount, Validation.RangeOpts(min = 1.0))
     }
+
+
+
+
+
 
     /**
-     * Deletes an AI Gateway budget default for one scope by archiving it. Set `scopeType` to
-     * identify the scope; only team owners and admins have authority to manage budget defaults. A
-     * 204 response confirms the default was archived.
+     * Deletes an AI Gateway budget default for one scope by archiving it. Set `scopeType` to identify the scope; only team owners and admins have authority to manage budget defaults. A 204 response confirms the default was archived.
      *
      * Delete an AI Gateway budget default for one scope. Team-level authority only (owners/admins).
      *
@@ -1084,28 +670,14 @@ object AiGateway {
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun archiveAiGatewayBudgetDefault(
-        clientConfig: ClientConfig,
-        scopeType: ArchiveAiGatewayBudgetDefaultParameterEnum,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Unit {
-        SdkClient.request<Unit>(
-            SdkClient.RequestSpec(
-                "DELETE",
-                "/ai-gateway/budgets/defaults",
-                config = clientConfig,
-                query =
-                    mapOf(
-                        "scopeType" to SdkClient.queryValue(scopeType, "form", true),
-                        "teamId" to SdkClient.queryValue(teamId, "form", true),
-                        "slug" to SdkClient.queryValue(slug, "form", true),
-                    ),
-                operationId = "archiveAiGatewayBudgetDefault",
-                decoder = SdkClient.ResponseDecoder.EMPTY,
-                options = options,
-            )
-        )
+    fun archiveAiGatewayBudgetDefault(clientConfig: ClientConfig, scopeType: ArchiveAiGatewayBudgetDefaultParameterEnum, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
+        SdkClient.request<Unit>(SdkClient.RequestSpec("DELETE", "/ai-gateway/budgets/defaults", config = clientConfig, query = mapOf("scopeType" to SdkClient.queryValue(scopeType, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "archiveAiGatewayBudgetDefault", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
     }
+
+
+
+
+
+
+
 }

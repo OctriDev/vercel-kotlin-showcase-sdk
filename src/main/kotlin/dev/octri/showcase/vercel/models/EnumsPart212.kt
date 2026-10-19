@@ -3,14 +3,14 @@
 
 package dev.octri.showcase.vercel.models
 
-/** The time period to keep errored deployments for */
-class UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum && value == other.value
-
+/**
+ * The time period to keep errored deployments for
+ */
+class UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -23,27 +23,21 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val V2W = UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum("2w")
         @JvmField val V1W = UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum("1w")
         @JvmField val V1D = UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum("1d")
-        @JvmField
-        val UNLIMITED = UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum("unlimited")
+        @JvmField val UNLIMITED = UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum("unlimited")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum(value)
     }
 }
 
-/** The time period to keep production deployments for */
-class UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum &&
-            value == other.value
-
+/**
+ * The time period to keep production deployments for
+ */
+class UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -58,54 +52,40 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val V2W = UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum("2w")
         @JvmField val V1W = UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum("1w")
         @JvmField val V1D = UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum("1d")
-        @JvmField
-        val UNLIMITED = UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum("unlimited")
+        @JvmField val UNLIMITED = UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum("unlimited")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum(value)
     }
 }
 
-class UpdateTeamsDefaultPassportDeploymentTypeEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateTeamsDefaultPassportDeploymentTypeEnum && value == other.value
-
+class UpdateTeamsDefaultPassportDeploymentTypeEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateTeamsDefaultPassportDeploymentTypeEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val ALL = UpdateTeamsDefaultPassportDeploymentTypeEnum("all")
         @JvmField val PREVIEW = UpdateTeamsDefaultPassportDeploymentTypeEnum("preview")
-        @JvmField
-        val PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS =
-            UpdateTeamsDefaultPassportDeploymentTypeEnum("prod_deployment_urls_and_all_previews")
-        @JvmField
-        val ALL_EXCEPT_CUSTOM_DOMAINS =
-            UpdateTeamsDefaultPassportDeploymentTypeEnum("all_except_custom_domains")
+        @JvmField val PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = UpdateTeamsDefaultPassportDeploymentTypeEnum("prod_deployment_urls_and_all_previews")
+        @JvmField val ALL_EXCEPT_CUSTOM_DOMAINS = UpdateTeamsDefaultPassportDeploymentTypeEnum("all_except_custom_domains")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateTeamsDefaultPassportDeploymentTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateTeamsDefaultPassportDeploymentTypeEnum(value)
     }
 }
 
-/** Controls who can request access to protected deployments. */
-class UpdateTeamsDpAccessRequestsModeEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateTeamsDpAccessRequestsModeEnum && value == other.value
-
+/**
+ * Controls who can request access to protected deployments.
+ */
+class UpdateTeamsDpAccessRequestsModeEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateTeamsDpAccessRequestsModeEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -114,22 +94,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val NONE = UpdateTeamsDpAccessRequestsModeEnum("none")
         @JvmField val EMAIL_DOMAIN = UpdateTeamsDpAccessRequestsModeEnum("email-domain")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateTeamsDpAccessRequestsModeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateTeamsDpAccessRequestsModeEnum(value)
     }
 }
 
-/** Default build machine type for new builds: standard, enhanced, turbo, or elastic. */
-class UpdateTeamsResourceConfigBuildMachineDefaultEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateTeamsResourceConfigBuildMachineDefaultEnum && value == other.value
-
+/**
+ * Default build machine type for new builds: standard, enhanced, turbo, or elastic.
+ */
+class UpdateTeamsResourceConfigBuildMachineDefaultEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateTeamsResourceConfigBuildMachineDefaultEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -140,21 +117,16 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val STANDARD = UpdateTeamsResourceConfigBuildMachineDefaultEnum("standard")
         @JvmField val ELASTIC = UpdateTeamsResourceConfigBuildMachineDefaultEnum("elastic")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateTeamsResourceConfigBuildMachineDefaultEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateTeamsResourceConfigBuildMachineDefaultEnum(value)
     }
 }
 
-class UpdateTeamsSamlRolesValueVariant0Enum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateTeamsSamlRolesValueVariant0Enum && value == other.value
-
+class UpdateTeamsSamlRolesValueVariant0Enum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateTeamsSamlRolesValueVariant0Enum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -168,22 +140,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val VIEWER_FOR_PLUS = UpdateTeamsSamlRolesValueVariant0Enum("VIEWER_FOR_PLUS")
         @JvmField val CONTRIBUTOR = UpdateTeamsSamlRolesValueVariant0Enum("CONTRIBUTOR")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateTeamsSamlRolesValueVariant0Enum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateTeamsSamlRolesValueVariant0Enum(value)
     }
 }
 
-/** The state of the flags to retrieve. Defaults to `active`. */
-class ListTeamFlagsV2ParameterEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is ListTeamFlagsV2ParameterEnum && value == other.value
-
+/**
+ * The state of the flags to retrieve. Defaults to `active`.
+ */
+class ListTeamFlagsV2ParameterEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is ListTeamFlagsV2ParameterEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -191,22 +160,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val ACTIVE = ListTeamFlagsV2ParameterEnum("active")
         @JvmField val ARCHIVED = ListTeamFlagsV2ParameterEnum("archived")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = ListTeamFlagsV2ParameterEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = ListTeamFlagsV2ParameterEnum(value)
     }
 }
 
-/** The kind of flags to retrieve. */
-class ListTeamFlagsV2ParameterEnumcc4b87d2
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is ListTeamFlagsV2ParameterEnumcc4b87d2 && value == other.value
-
+/**
+ * The kind of flags to retrieve.
+ */
+class ListTeamFlagsV2ParameterEnumcc4b87d2 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is ListTeamFlagsV2ParameterEnumcc4b87d2 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -216,48 +182,41 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val NUMBER = ListTeamFlagsV2ParameterEnumcc4b87d2("number")
         @JvmField val JSON = ListTeamFlagsV2ParameterEnumcc4b87d2("json")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = ListTeamFlagsV2ParameterEnumcc4b87d2(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = ListTeamFlagsV2ParameterEnumcc4b87d2(value)
     }
 }
 
-/** Sets the project roles for the invited user */
-class InviteUserToTeamItemProjectsItemRoleEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is InviteUserToTeamItemProjectsItemRoleEnum && value == other.value
-
+/**
+ * Sets the project roles for the invited user
+ */
+class InviteUserToTeamItemProjectsItemRoleEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is InviteUserToTeamItemProjectsItemRoleEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val ADMIN = InviteUserToTeamItemProjectsItemRoleEnum("ADMIN")
         @JvmField val PROJECT_VIEWER = InviteUserToTeamItemProjectsItemRoleEnum("PROJECT_VIEWER")
-        @JvmField
-        val PROJECT_DEVELOPER = InviteUserToTeamItemProjectsItemRoleEnum("PROJECT_DEVELOPER")
+        @JvmField val PROJECT_DEVELOPER = InviteUserToTeamItemProjectsItemRoleEnum("PROJECT_DEVELOPER")
         @JvmField val PROJECT_GUEST = InviteUserToTeamItemProjectsItemRoleEnum("PROJECT_GUEST")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = InviteUserToTeamItemProjectsItemRoleEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = InviteUserToTeamItemProjectsItemRoleEnum(value)
     }
 }
 
-/** The role of the user to invite */
-class InviteUserToTeamItemRoleEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is InviteUserToTeamItemRoleEnum && value == other.value
-
+/**
+ * The role of the user to invite
+ */
+class InviteUserToTeamItemRoleEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is InviteUserToTeamItemRoleEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -271,22 +230,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val VIEWER_FOR_PLUS = InviteUserToTeamItemRoleEnum("VIEWER_FOR_PLUS")
         @JvmField val CONTRIBUTOR = InviteUserToTeamItemRoleEnum("CONTRIBUTOR")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = InviteUserToTeamItemRoleEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = InviteUserToTeamItemRoleEnum(value)
     }
 }
 
-/** Repository provider (e.g., \"github\"). */
-class ListVercelCiInvocationsParameterEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is ListVercelCiInvocationsParameterEnum && value == other.value
-
+/**
+ * Repository provider (e.g., \"github\").
+ */
+class ListVercelCiInvocationsParameterEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is ListVercelCiInvocationsParameterEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -296,21 +252,16 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val BITBUCKET = ListVercelCiInvocationsParameterEnum("bitbucket")
         @JvmField val VERCEL = ListVercelCiInvocationsParameterEnum("vercel")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = ListVercelCiInvocationsParameterEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = ListVercelCiInvocationsParameterEnum(value)
     }
 }
 
-class ListVercelCiInvocationsParameterItemEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is ListVercelCiInvocationsParameterItemEnum && value == other.value
-
+class ListVercelCiInvocationsParameterItemEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is ListVercelCiInvocationsParameterItemEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -318,39 +269,26 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val NEW = ListVercelCiInvocationsParameterItemEnum("new")
         @JvmField val SKIPPED = ListVercelCiInvocationsParameterItemEnum("skipped")
         @JvmField val BOOTSTRAPPING = ListVercelCiInvocationsParameterItemEnum("bootstrapping")
-        @JvmField
-        val BOOTSTRAPPING_FAILED = ListVercelCiInvocationsParameterItemEnum("bootstrapping_failed")
+        @JvmField val BOOTSTRAPPING_FAILED = ListVercelCiInvocationsParameterItemEnum("bootstrapping_failed")
         @JvmField val SNAPSHOTTED = ListVercelCiInvocationsParameterItemEnum("snapshotted")
         @JvmField val SANDBOX_NAMED = ListVercelCiInvocationsParameterItemEnum("sandbox_named")
-        @JvmField
-        val JOBS_ON_HIVE_CLONE_DISPATCHED =
-            ListVercelCiInvocationsParameterItemEnum("jobs_on_hive_clone_dispatched")
-        @JvmField
-        val JOBS_ON_HIVE_DISPATCHED =
-            ListVercelCiInvocationsParameterItemEnum("jobs_on_hive_dispatched")
-        @JvmField
-        val JOBS_ON_HIVE_COMPLETED =
-            ListVercelCiInvocationsParameterItemEnum("jobs_on_hive_completed")
-        @JvmField
-        val JOBS_ON_HIVE_FAILED = ListVercelCiInvocationsParameterItemEnum("jobs_on_hive_failed")
+        @JvmField val JOBS_ON_HIVE_CLONE_DISPATCHED = ListVercelCiInvocationsParameterItemEnum("jobs_on_hive_clone_dispatched")
+        @JvmField val JOBS_ON_HIVE_DISPATCHED = ListVercelCiInvocationsParameterItemEnum("jobs_on_hive_dispatched")
+        @JvmField val JOBS_ON_HIVE_COMPLETED = ListVercelCiInvocationsParameterItemEnum("jobs_on_hive_completed")
+        @JvmField val JOBS_ON_HIVE_FAILED = ListVercelCiInvocationsParameterItemEnum("jobs_on_hive_failed")
         @JvmField val AWAITING_JOBS = ListVercelCiInvocationsParameterItemEnum("awaiting_jobs")
         @JvmField val COMPLETED = ListVercelCiInvocationsParameterItemEnum("completed")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = ListVercelCiInvocationsParameterItemEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = ListVercelCiInvocationsParameterItemEnum(value)
     }
 }
 
-class ListVercelCiInvocationsParameterItemEnum8e5bc303
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is ListVercelCiInvocationsParameterItemEnum8e5bc303 && value == other.value
-
+class ListVercelCiInvocationsParameterItemEnum8e5bc303 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is ListVercelCiInvocationsParameterItemEnum8e5bc303 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -359,41 +297,29 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val FAILED = ListVercelCiInvocationsParameterItemEnum8e5bc303("failed")
         @JvmField val SKIPPED = ListVercelCiInvocationsParameterItemEnum8e5bc303("skipped")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = ListVercelCiInvocationsParameterItemEnum8e5bc303(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = ListVercelCiInvocationsParameterItemEnum8e5bc303(value)
     }
 }
 
-class ListVercelCiInvocationsParameterItemEnum3854c11d
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is ListVercelCiInvocationsParameterItemEnum3854c11d && value == other.value
-
+class ListVercelCiInvocationsParameterItemEnum3854c11d private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is ListVercelCiInvocationsParameterItemEnum3854c11d && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val VERCEL_CI = ListVercelCiInvocationsParameterItemEnum3854c11d("vercel-ci")
-        @JvmField
-        val VERCEL_NATIVE_CHECKS =
-            ListVercelCiInvocationsParameterItemEnum3854c11d("vercel-native-checks")
+        @JvmField val VERCEL_NATIVE_CHECKS = ListVercelCiInvocationsParameterItemEnum3854c11d("vercel-native-checks")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = ListVercelCiInvocationsParameterItemEnum3854c11d(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = ListVercelCiInvocationsParameterItemEnum3854c11d(value)
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemCompletedConcluXa38c158910(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemCompletedConcluXa38c158910(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SUCCEEDED("succeeded");
 
     override fun toString() = value
@@ -401,15 +327,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemCompletedConcluXa38c158
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemCompletedConcluX941686c8b5(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemCompletedConcluX941686c8b5(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     FAILED("failed");
 
     override fun toString() = value
@@ -417,15 +340,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemCompletedConcluX941686c
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemCompletedConcluXf46b76dc8f(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemCompletedConcluXf46b76dc8f(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SKIPPED("skipped");
 
     override fun toString() = value
@@ -433,15 +353,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemCompletedConcluXf46b76d
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCXbc64f50e23(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCXbc64f50e23(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     TURBO_JSON("turbo-json");
 
     override fun toString() = value
@@ -449,15 +366,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCXbc64f50
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCXbb8d932824(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCXbb8d932824(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     VERCEL_CI_CONFIG("vercel-ci-config");
 
     override fun toString() = value
@@ -465,15 +379,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCXbb8d932
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCXd232f10a41(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCXd232f10a41(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     PROJECT_SETTINGS("project-settings");
 
     override fun toString() = value
@@ -481,15 +392,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemJobDefinitionsCXd232f10
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemRunConclusionReX9d1b292c01(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemRunConclusionReX9d1b292c01(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SUCCEEDED("succeeded");
 
     override fun toString() = value
@@ -497,15 +405,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemRunConclusionReX9d1b292
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemRunConclusionReX0740ec6262(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemRunConclusionReX0740ec6262(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     FAILED("failed");
 
     override fun toString() = value
@@ -513,15 +418,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemRunConclusionReX0740ec6
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemRunConclusionReX8c11411f65(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemRunConclusionReX8c11411f65(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SKIPPED("skipped");
 
     override fun toString() = value
@@ -529,15 +431,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemRunConclusionReX8c11411
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemSetupConclusionX6bfa1bf388(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemSetupConclusionX6bfa1bf388(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SUCCEEDED("succeeded");
 
     override fun toString() = value
@@ -545,15 +444,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemSetupConclusionX6bfa1bf
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemSetupConclusionX58d45443fa(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemSetupConclusionX58d45443fa(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     FAILED("failed");
 
     override fun toString() = value
@@ -561,15 +457,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemSetupConclusionX58d4544
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemSetupConclusionXf8105fcb4d(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemSetupConclusionXf8105fcb4d(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SKIPPED("skipped");
 
     override fun toString() = value
@@ -577,15 +470,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemSetupConclusionXf8105fc
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant0Enum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant0Enum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     NEW("new");
 
     override fun toString() = value
@@ -593,15 +483,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant0Enum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant1Enum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant1Enum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SKIPPED("skipped");
 
     override fun toString() = value
@@ -609,15 +496,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant1Enum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant10Enum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant10Enum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     AWAITING_JOBS("awaiting_jobs");
 
     override fun toString() = value
@@ -625,15 +509,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant10Enum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant11Enum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant11Enum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     COMPLETED("completed");
 
     override fun toString() = value
@@ -641,15 +522,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant11Enum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant2Enum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant2Enum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     BOOTSTRAPPING("bootstrapping");
 
     override fun toString() = value
@@ -657,15 +535,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant2Enum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant3Enum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant3Enum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     BOOTSTRAPPING_FAILED("bootstrapping_failed");
 
     override fun toString() = value
@@ -673,15 +548,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant3Enum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant4Enum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant4Enum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SNAPSHOTTED("snapshotted");
 
     override fun toString() = value
@@ -689,15 +561,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant4Enum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant5Enum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant5Enum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SANDBOX_NAMED("sandbox_named");
 
     override fun toString() = value
@@ -705,15 +574,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant5Enum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant6Enum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant6Enum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     JOBS_ON_HIVE_CLONE_DISPATCHED("jobs_on_hive_clone_dispatched");
 
     override fun toString() = value
@@ -721,15 +587,12 @@ enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant6Enum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant7Enum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant7Enum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     JOBS_ON_HIVE_DISPATCHED("jobs_on_hive_dispatched");
 
     override fun toString() = value
@@ -737,8 +600,7 @@ enum class ListVercelCiInvocationsResponseInvocationsItemStatusVariant7Enum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }

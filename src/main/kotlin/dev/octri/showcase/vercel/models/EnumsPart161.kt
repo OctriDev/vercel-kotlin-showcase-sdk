@@ -3,672 +3,307 @@
 
 package dev.octri.showcase.vercel.models
 
-class UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9 &&
-            value == other.value
-
+class UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val HOST = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("host")
-        @JvmField
-        val PATH = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("path")
-        @JvmField
-        val METHOD =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("method")
-        @JvmField
-        val HEADER =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("header")
-        @JvmField
-        val QUERY =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("query")
-        @JvmField
-        val COOKIE =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("cookie")
-        @JvmField
-        val TARGET_PATH =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("target_path")
-        @JvmField
-        val ROUTE =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("route")
-        @JvmField
-        val RAW_PATH =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("raw_path")
-        @JvmField
-        val IP_ADDRESS =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("ip_address")
-        @JvmField
-        val REGION =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("region")
-        @JvmField
-        val PROTOCOL =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("protocol")
-        @JvmField
-        val SCHEME =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("scheme")
-        @JvmField
-        val ENVIRONMENT =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("environment")
-        @JvmField
-        val DOMAIN_ENVIRONMENT =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9(
-                "domain_environment"
-            )
-        @JvmField
-        val USER_AGENT =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("user_agent")
-        @JvmField
-        val GEO_CONTINENT =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9(
-                "geo_continent"
-            )
-        @JvmField
-        val GEO_COUNTRY =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("geo_country")
-        @JvmField
-        val GEO_COUNTRY_REGION =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9(
-                "geo_country_region"
-            )
-        @JvmField
-        val GEO_CITY =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("geo_city")
-        @JvmField
-        val GEO_AS_NUMBER =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9(
-                "geo_as_number"
-            )
-        @JvmField
-        val JA4_DIGEST =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("ja4_digest")
-        @JvmField
-        val JA3_DIGEST =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("ja3_digest")
-        @JvmField
-        val RATE_LIMIT_API_ID =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9(
-                "rate_limit_api_id"
-            )
-        @JvmField
-        val SERVER_ACTION =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9(
-                "server_action"
-            )
-        @JvmField
-        val BOT_NAME =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("bot_name")
-        @JvmField
-        val BOT_CATEGORY =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("bot_category")
-        @JvmField
-        val BOT_STATUS =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("bot_status")
-        @JvmField
-        val BOT_PROTECTION =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9(
-                "bot_protection"
-            )
-        @JvmField
-        val SHARED_CONDITION =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9(
-                "shared_condition"
-            )
-        @JvmField
-        val TRAFFIC_SOURCE =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9(
-                "traffic_source"
-            )
-        @JvmField
-        val RULESET =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("ruleset")
-        @JvmField
-        val RESPONSE_CODE =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9(
-                "response_code"
-            )
+        @JvmField val HOST = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("host")
+        @JvmField val PATH = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("path")
+        @JvmField val METHOD = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("method")
+        @JvmField val HEADER = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("header")
+        @JvmField val QUERY = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("query")
+        @JvmField val COOKIE = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("cookie")
+        @JvmField val TARGET_PATH = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("target_path")
+        @JvmField val ROUTE = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("route")
+        @JvmField val RAW_PATH = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("raw_path")
+        @JvmField val IP_ADDRESS = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("ip_address")
+        @JvmField val REGION = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("region")
+        @JvmField val PROTOCOL = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("protocol")
+        @JvmField val SCHEME = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("scheme")
+        @JvmField val ENVIRONMENT = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("environment")
+        @JvmField val DOMAIN_ENVIRONMENT = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("domain_environment")
+        @JvmField val USER_AGENT = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("user_agent")
+        @JvmField val GEO_CONTINENT = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("geo_continent")
+        @JvmField val GEO_COUNTRY = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("geo_country")
+        @JvmField val GEO_COUNTRY_REGION = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("geo_country_region")
+        @JvmField val GEO_CITY = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("geo_city")
+        @JvmField val GEO_AS_NUMBER = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("geo_as_number")
+        @JvmField val JA4_DIGEST = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("ja4_digest")
+        @JvmField val JA3_DIGEST = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("ja3_digest")
+        @JvmField val RATE_LIMIT_API_ID = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("rate_limit_api_id")
+        @JvmField val SERVER_ACTION = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("server_action")
+        @JvmField val BOT_NAME = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("bot_name")
+        @JvmField val BOT_CATEGORY = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("bot_category")
+        @JvmField val BOT_STATUS = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("bot_status")
+        @JvmField val BOT_PROTECTION = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("bot_protection")
+        @JvmField val SHARED_CONDITION = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("shared_condition")
+        @JvmField val TRAFFIC_SOURCE = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("traffic_source")
+        @JvmField val RULESET = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("ruleset")
+        @JvmField val RESPONSE_CODE = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9("response_code")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant1ValueConditionGroupItemConditionsXbf954ae2d9(value)
     }
 }
 
-class UpdateFirewallConfigVariant10ActionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant10ActionEnum && value == other.value
-
+class UpdateFirewallConfigVariant10ActionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant10ActionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val MANAGEDRULES_UPDATE = UpdateFirewallConfigVariant10ActionEnum("managedRules.update")
+        @JvmField val MANAGEDRULES_UPDATE = UpdateFirewallConfigVariant10ActionEnum("managedRules.update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateFirewallConfigVariant10ActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant10ActionEnum(value)
     }
 }
 
-class UpdateFirewallConfigVariant10ValueActionMitigateActionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant10ValueActionMitigateActionEnum && value == other.value
-
+class UpdateFirewallConfigVariant10ValueActionMitigateActionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant10ValueActionMitigateActionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val LOG = UpdateFirewallConfigVariant10ValueActionMitigateActionEnum("log")
-        @JvmField
-        val CHALLENGE = UpdateFirewallConfigVariant10ValueActionMitigateActionEnum("challenge")
+        @JvmField val CHALLENGE = UpdateFirewallConfigVariant10ValueActionMitigateActionEnum("challenge")
         @JvmField val DENY = UpdateFirewallConfigVariant10ValueActionMitigateActionEnum("deny")
         @JvmField val BYPASS = UpdateFirewallConfigVariant10ValueActionMitigateActionEnum("bypass")
-        @JvmField
-        val RATE_LIMIT = UpdateFirewallConfigVariant10ValueActionMitigateActionEnum("rate_limit")
-        @JvmField
-        val REDIRECT = UpdateFirewallConfigVariant10ValueActionMitigateActionEnum("redirect")
+        @JvmField val RATE_LIMIT = UpdateFirewallConfigVariant10ValueActionMitigateActionEnum("rate_limit")
+        @JvmField val REDIRECT = UpdateFirewallConfigVariant10ValueActionMitigateActionEnum("redirect")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateFirewallConfigVariant10ValueActionMitigateActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant10ValueActionMitigateActionEnum(value)
     }
 }
 
-class UpdateFirewallConfigVariant10ValueActionMitigateRateLimitVariX8d756f3918
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant10ValueActionMitigateRateLimitVariX8d756f3918 &&
-            value == other.value
-
+class UpdateFirewallConfigVariant10ValueActionMitigateRateLimitVariX8d756f3918 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant10ValueActionMitigateRateLimitVariX8d756f3918 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val FIXED_WINDOW =
-            UpdateFirewallConfigVariant10ValueActionMitigateRateLimitVariX8d756f3918("fixed_window")
-        @JvmField
-        val TOKEN_BUCKET =
-            UpdateFirewallConfigVariant10ValueActionMitigateRateLimitVariX8d756f3918("token_bucket")
+        @JvmField val FIXED_WINDOW = UpdateFirewallConfigVariant10ValueActionMitigateRateLimitVariX8d756f3918("fixed_window")
+        @JvmField val TOKEN_BUCKET = UpdateFirewallConfigVariant10ValueActionMitigateRateLimitVariX8d756f3918("token_bucket")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateFirewallConfigVariant10ValueActionMitigateRateLimitVariX8d756f3918(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant10ValueActionMitigateRateLimitVariX8d756f3918(value)
     }
 }
 
-class UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum &&
-            value == other.value
-
+class UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val RE = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("re")
-        @JvmField
-        val EQ = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("eq")
-        @JvmField
-        val NEQ = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("neq")
-        @JvmField
-        val EX = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("ex")
-        @JvmField
-        val NEX = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("nex")
-        @JvmField
-        val INC = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("inc")
-        @JvmField
-        val NINC = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("ninc")
-        @JvmField
-        val PRE = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("pre")
-        @JvmField
-        val SUF = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("suf")
-        @JvmField
-        val SUB = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("sub")
-        @JvmField
-        val GT = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("gt")
-        @JvmField
-        val GTE = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("gte")
-        @JvmField
-        val LT = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("lt")
-        @JvmField
-        val LTE = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("lte")
-        @JvmField
-        val LIST = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("list")
+        @JvmField val RE = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("re")
+        @JvmField val EQ = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("eq")
+        @JvmField val NEQ = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("neq")
+        @JvmField val EX = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("ex")
+        @JvmField val NEX = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("nex")
+        @JvmField val INC = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("inc")
+        @JvmField val NINC = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("ninc")
+        @JvmField val PRE = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("pre")
+        @JvmField val SUF = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("suf")
+        @JvmField val SUB = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("sub")
+        @JvmField val GT = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("gt")
+        @JvmField val GTE = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("gte")
+        @JvmField val LT = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("lt")
+        @JvmField val LTE = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("lte")
+        @JvmField val LIST = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum("list")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionsItemOpEnum(value)
     }
 }
 
-class UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9 &&
-            value == other.value
-
+class UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val HOST = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("host")
-        @JvmField
-        val PATH = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("path")
-        @JvmField
-        val METHOD =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("method")
-        @JvmField
-        val HEADER =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("header")
-        @JvmField
-        val QUERY =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("query")
-        @JvmField
-        val COOKIE =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("cookie")
-        @JvmField
-        val TARGET_PATH =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("target_path")
-        @JvmField
-        val ROUTE =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("route")
-        @JvmField
-        val RAW_PATH =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("raw_path")
-        @JvmField
-        val IP_ADDRESS =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("ip_address")
-        @JvmField
-        val REGION =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("region")
-        @JvmField
-        val PROTOCOL =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("protocol")
-        @JvmField
-        val SCHEME =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("scheme")
-        @JvmField
-        val ENVIRONMENT =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("environment")
-        @JvmField
-        val DOMAIN_ENVIRONMENT =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9(
-                "domain_environment"
-            )
-        @JvmField
-        val USER_AGENT =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("user_agent")
-        @JvmField
-        val GEO_CONTINENT =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9(
-                "geo_continent"
-            )
-        @JvmField
-        val GEO_COUNTRY =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("geo_country")
-        @JvmField
-        val GEO_COUNTRY_REGION =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9(
-                "geo_country_region"
-            )
-        @JvmField
-        val GEO_CITY =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("geo_city")
-        @JvmField
-        val GEO_AS_NUMBER =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9(
-                "geo_as_number"
-            )
-        @JvmField
-        val JA4_DIGEST =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("ja4_digest")
-        @JvmField
-        val JA3_DIGEST =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("ja3_digest")
-        @JvmField
-        val RATE_LIMIT_API_ID =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9(
-                "rate_limit_api_id"
-            )
-        @JvmField
-        val SERVER_ACTION =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9(
-                "server_action"
-            )
-        @JvmField
-        val BOT_NAME =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("bot_name")
-        @JvmField
-        val BOT_CATEGORY =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("bot_category")
-        @JvmField
-        val BOT_STATUS =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("bot_status")
-        @JvmField
-        val BOT_PROTECTION =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9(
-                "bot_protection"
-            )
-        @JvmField
-        val SHARED_CONDITION =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9(
-                "shared_condition"
-            )
-        @JvmField
-        val TRAFFIC_SOURCE =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9(
-                "traffic_source"
-            )
-        @JvmField
-        val RULESET =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("ruleset")
-        @JvmField
-        val RESPONSE_CODE =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9(
-                "response_code"
-            )
+        @JvmField val HOST = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("host")
+        @JvmField val PATH = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("path")
+        @JvmField val METHOD = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("method")
+        @JvmField val HEADER = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("header")
+        @JvmField val QUERY = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("query")
+        @JvmField val COOKIE = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("cookie")
+        @JvmField val TARGET_PATH = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("target_path")
+        @JvmField val ROUTE = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("route")
+        @JvmField val RAW_PATH = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("raw_path")
+        @JvmField val IP_ADDRESS = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("ip_address")
+        @JvmField val REGION = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("region")
+        @JvmField val PROTOCOL = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("protocol")
+        @JvmField val SCHEME = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("scheme")
+        @JvmField val ENVIRONMENT = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("environment")
+        @JvmField val DOMAIN_ENVIRONMENT = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("domain_environment")
+        @JvmField val USER_AGENT = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("user_agent")
+        @JvmField val GEO_CONTINENT = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("geo_continent")
+        @JvmField val GEO_COUNTRY = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("geo_country")
+        @JvmField val GEO_COUNTRY_REGION = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("geo_country_region")
+        @JvmField val GEO_CITY = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("geo_city")
+        @JvmField val GEO_AS_NUMBER = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("geo_as_number")
+        @JvmField val JA4_DIGEST = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("ja4_digest")
+        @JvmField val JA3_DIGEST = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("ja3_digest")
+        @JvmField val RATE_LIMIT_API_ID = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("rate_limit_api_id")
+        @JvmField val SERVER_ACTION = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("server_action")
+        @JvmField val BOT_NAME = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("bot_name")
+        @JvmField val BOT_CATEGORY = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("bot_category")
+        @JvmField val BOT_STATUS = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("bot_status")
+        @JvmField val BOT_PROTECTION = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("bot_protection")
+        @JvmField val SHARED_CONDITION = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("shared_condition")
+        @JvmField val TRAFFIC_SOURCE = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("traffic_source")
+        @JvmField val RULESET = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("ruleset")
+        @JvmField val RESPONSE_CODE = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9("response_code")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant10ValueConditionGroupItemConditionX68e1d277c9(value)
     }
 }
 
-class UpdateFirewallConfigVariant11ValueActionMitigateActionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant11ValueActionMitigateActionEnum && value == other.value
-
+class UpdateFirewallConfigVariant11ValueActionMitigateActionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant11ValueActionMitigateActionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val LOG = UpdateFirewallConfigVariant11ValueActionMitigateActionEnum("log")
-        @JvmField
-        val CHALLENGE = UpdateFirewallConfigVariant11ValueActionMitigateActionEnum("challenge")
+        @JvmField val CHALLENGE = UpdateFirewallConfigVariant11ValueActionMitigateActionEnum("challenge")
         @JvmField val DENY = UpdateFirewallConfigVariant11ValueActionMitigateActionEnum("deny")
         @JvmField val BYPASS = UpdateFirewallConfigVariant11ValueActionMitigateActionEnum("bypass")
-        @JvmField
-        val RATE_LIMIT = UpdateFirewallConfigVariant11ValueActionMitigateActionEnum("rate_limit")
-        @JvmField
-        val REDIRECT = UpdateFirewallConfigVariant11ValueActionMitigateActionEnum("redirect")
+        @JvmField val RATE_LIMIT = UpdateFirewallConfigVariant11ValueActionMitigateActionEnum("rate_limit")
+        @JvmField val REDIRECT = UpdateFirewallConfigVariant11ValueActionMitigateActionEnum("redirect")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateFirewallConfigVariant11ValueActionMitigateActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant11ValueActionMitigateActionEnum(value)
     }
 }
 
-class UpdateFirewallConfigVariant11ValueActionMitigateRateLimitVariX83a8da7ad3
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant11ValueActionMitigateRateLimitVariX83a8da7ad3 &&
-            value == other.value
-
+class UpdateFirewallConfigVariant11ValueActionMitigateRateLimitVariX83a8da7ad3 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant11ValueActionMitigateRateLimitVariX83a8da7ad3 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val FIXED_WINDOW =
-            UpdateFirewallConfigVariant11ValueActionMitigateRateLimitVariX83a8da7ad3("fixed_window")
-        @JvmField
-        val TOKEN_BUCKET =
-            UpdateFirewallConfigVariant11ValueActionMitigateRateLimitVariX83a8da7ad3("token_bucket")
+        @JvmField val FIXED_WINDOW = UpdateFirewallConfigVariant11ValueActionMitigateRateLimitVariX83a8da7ad3("fixed_window")
+        @JvmField val TOKEN_BUCKET = UpdateFirewallConfigVariant11ValueActionMitigateRateLimitVariX83a8da7ad3("token_bucket")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateFirewallConfigVariant11ValueActionMitigateRateLimitVariX83a8da7ad3(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant11ValueActionMitigateRateLimitVariX83a8da7ad3(value)
     }
 }
 
-class UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum &&
-            value == other.value
-
+class UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val RE = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("re")
-        @JvmField
-        val EQ = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("eq")
-        @JvmField
-        val NEQ = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("neq")
-        @JvmField
-        val EX = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("ex")
-        @JvmField
-        val NEX = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("nex")
-        @JvmField
-        val INC = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("inc")
-        @JvmField
-        val NINC = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("ninc")
-        @JvmField
-        val PRE = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("pre")
-        @JvmField
-        val SUF = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("suf")
-        @JvmField
-        val SUB = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("sub")
-        @JvmField
-        val GT = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("gt")
-        @JvmField
-        val GTE = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("gte")
-        @JvmField
-        val LT = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("lt")
-        @JvmField
-        val LTE = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("lte")
-        @JvmField
-        val LIST = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("list")
+        @JvmField val RE = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("re")
+        @JvmField val EQ = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("eq")
+        @JvmField val NEQ = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("neq")
+        @JvmField val EX = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("ex")
+        @JvmField val NEX = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("nex")
+        @JvmField val INC = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("inc")
+        @JvmField val NINC = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("ninc")
+        @JvmField val PRE = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("pre")
+        @JvmField val SUF = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("suf")
+        @JvmField val SUB = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("sub")
+        @JvmField val GT = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("gt")
+        @JvmField val GTE = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("gte")
+        @JvmField val LT = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("lt")
+        @JvmField val LTE = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("lte")
+        @JvmField val LIST = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum("list")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionsItemOpEnum(value)
     }
 }
 
-class UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb &&
-            value == other.value
-
+class UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val HOST = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("host")
-        @JvmField
-        val PATH = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("path")
-        @JvmField
-        val METHOD =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("method")
-        @JvmField
-        val HEADER =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("header")
-        @JvmField
-        val QUERY =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("query")
-        @JvmField
-        val COOKIE =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("cookie")
-        @JvmField
-        val TARGET_PATH =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("target_path")
-        @JvmField
-        val ROUTE =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("route")
-        @JvmField
-        val RAW_PATH =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("raw_path")
-        @JvmField
-        val IP_ADDRESS =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("ip_address")
-        @JvmField
-        val REGION =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("region")
-        @JvmField
-        val PROTOCOL =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("protocol")
-        @JvmField
-        val SCHEME =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("scheme")
-        @JvmField
-        val ENVIRONMENT =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("environment")
-        @JvmField
-        val DOMAIN_ENVIRONMENT =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb(
-                "domain_environment"
-            )
-        @JvmField
-        val USER_AGENT =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("user_agent")
-        @JvmField
-        val GEO_CONTINENT =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb(
-                "geo_continent"
-            )
-        @JvmField
-        val GEO_COUNTRY =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("geo_country")
-        @JvmField
-        val GEO_COUNTRY_REGION =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb(
-                "geo_country_region"
-            )
-        @JvmField
-        val GEO_CITY =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("geo_city")
-        @JvmField
-        val GEO_AS_NUMBER =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb(
-                "geo_as_number"
-            )
-        @JvmField
-        val JA4_DIGEST =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("ja4_digest")
-        @JvmField
-        val JA3_DIGEST =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("ja3_digest")
-        @JvmField
-        val RATE_LIMIT_API_ID =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb(
-                "rate_limit_api_id"
-            )
-        @JvmField
-        val SERVER_ACTION =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb(
-                "server_action"
-            )
-        @JvmField
-        val BOT_NAME =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("bot_name")
-        @JvmField
-        val BOT_CATEGORY =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("bot_category")
-        @JvmField
-        val BOT_STATUS =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("bot_status")
-        @JvmField
-        val BOT_PROTECTION =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb(
-                "bot_protection"
-            )
-        @JvmField
-        val SHARED_CONDITION =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb(
-                "shared_condition"
-            )
-        @JvmField
-        val TRAFFIC_SOURCE =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb(
-                "traffic_source"
-            )
-        @JvmField
-        val RULESET =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("ruleset")
-        @JvmField
-        val RESPONSE_CODE =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb(
-                "response_code"
-            )
+        @JvmField val HOST = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("host")
+        @JvmField val PATH = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("path")
+        @JvmField val METHOD = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("method")
+        @JvmField val HEADER = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("header")
+        @JvmField val QUERY = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("query")
+        @JvmField val COOKIE = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("cookie")
+        @JvmField val TARGET_PATH = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("target_path")
+        @JvmField val ROUTE = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("route")
+        @JvmField val RAW_PATH = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("raw_path")
+        @JvmField val IP_ADDRESS = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("ip_address")
+        @JvmField val REGION = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("region")
+        @JvmField val PROTOCOL = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("protocol")
+        @JvmField val SCHEME = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("scheme")
+        @JvmField val ENVIRONMENT = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("environment")
+        @JvmField val DOMAIN_ENVIRONMENT = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("domain_environment")
+        @JvmField val USER_AGENT = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("user_agent")
+        @JvmField val GEO_CONTINENT = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("geo_continent")
+        @JvmField val GEO_COUNTRY = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("geo_country")
+        @JvmField val GEO_COUNTRY_REGION = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("geo_country_region")
+        @JvmField val GEO_CITY = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("geo_city")
+        @JvmField val GEO_AS_NUMBER = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("geo_as_number")
+        @JvmField val JA4_DIGEST = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("ja4_digest")
+        @JvmField val JA3_DIGEST = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("ja3_digest")
+        @JvmField val RATE_LIMIT_API_ID = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("rate_limit_api_id")
+        @JvmField val SERVER_ACTION = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("server_action")
+        @JvmField val BOT_NAME = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("bot_name")
+        @JvmField val BOT_CATEGORY = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("bot_category")
+        @JvmField val BOT_STATUS = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("bot_status")
+        @JvmField val BOT_PROTECTION = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("bot_protection")
+        @JvmField val SHARED_CONDITION = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("shared_condition")
+        @JvmField val TRAFFIC_SOURCE = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("traffic_source")
+        @JvmField val RULESET = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("ruleset")
+        @JvmField val RESPONSE_CODE = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb("response_code")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant11ValueConditionGroupItemConditionXb07e4b3deb(value)
     }
 }
 
-class UpdateFirewallConfigVariant14IdEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant14IdEnum && value == other.value
-
+class UpdateFirewallConfigVariant14IdEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant14IdEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -685,21 +320,16 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val SF = UpdateFirewallConfigVariant14IdEnum("sf")
         @JvmField val JAVA = UpdateFirewallConfigVariant14IdEnum("java")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateFirewallConfigVariant14IdEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant14IdEnum(value)
     }
 }
 
-class UpdateFirewallConfigVariant14ValueActionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant14ValueActionEnum && value == other.value
-
+class UpdateFirewallConfigVariant14ValueActionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant14ValueActionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -707,21 +337,16 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val DENY = UpdateFirewallConfigVariant14ValueActionEnum("deny")
         @JvmField val LOG = UpdateFirewallConfigVariant14ValueActionEnum("log")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateFirewallConfigVariant14ValueActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant14ValueActionEnum(value)
     }
 }
 
-class UpdateFirewallConfigVariant16ValueActionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant16ValueActionEnum && value == other.value
-
+class UpdateFirewallConfigVariant16ValueActionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant16ValueActionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -731,21 +356,16 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val LOG = UpdateFirewallConfigVariant16ValueActionEnum("log")
         @JvmField val BYPASS = UpdateFirewallConfigVariant16ValueActionEnum("bypass")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateFirewallConfigVariant16ValueActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant16ValueActionEnum(value)
     }
 }
 
-class UpdateFirewallConfigVariant17ValueActionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant17ValueActionEnum && value == other.value
-
+class UpdateFirewallConfigVariant17ValueActionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant17ValueActionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -755,21 +375,16 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val LOG = UpdateFirewallConfigVariant17ValueActionEnum("log")
         @JvmField val BYPASS = UpdateFirewallConfigVariant17ValueActionEnum("bypass")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateFirewallConfigVariant17ValueActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant17ValueActionEnum(value)
     }
 }
 
-class UpdateFirewallConfigVariant19IdEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant19IdEnum && value == other.value
-
+class UpdateFirewallConfigVariant19IdEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant19IdEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -781,21 +396,16 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val VERCEL_RULESET = UpdateFirewallConfigVariant19IdEnum("vercel_ruleset")
         @JvmField val OWASP = UpdateFirewallConfigVariant19IdEnum("owasp")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateFirewallConfigVariant19IdEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant19IdEnum(value)
     }
 }
 
-class UpdateFirewallConfigVariant19ValueActionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant19ValueActionEnum && value == other.value
-
+class UpdateFirewallConfigVariant19ValueActionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant19ValueActionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -804,42 +414,32 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val CHALLENGE = UpdateFirewallConfigVariant19ValueActionEnum("challenge")
         @JvmField val DENY = UpdateFirewallConfigVariant19ValueActionEnum("deny")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateFirewallConfigVariant19ValueActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant19ValueActionEnum(value)
     }
 }
 
-class UpdateFirewallConfigVariant2ActionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant2ActionEnum && value == other.value
-
+class UpdateFirewallConfigVariant2ActionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant2ActionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val RULES_UPDATE = UpdateFirewallConfigVariant2ActionEnum("rules.update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateFirewallConfigVariant2ActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant2ActionEnum(value)
     }
 }
 
-class UpdateFirewallConfigVariant20IdEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant20IdEnum && value == other.value
-
+class UpdateFirewallConfigVariant20IdEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant20IdEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -851,21 +451,16 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val VERCEL_RULESET = UpdateFirewallConfigVariant20IdEnum("vercel_ruleset")
         @JvmField val OWASP = UpdateFirewallConfigVariant20IdEnum("owasp")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateFirewallConfigVariant20IdEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant20IdEnum(value)
     }
 }
 
-class UpdateFirewallConfigVariant20ValueValueActionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant20ValueValueActionEnum && value == other.value
-
+class UpdateFirewallConfigVariant20ValueValueActionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant20ValueValueActionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -874,264 +469,133 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val CHALLENGE = UpdateFirewallConfigVariant20ValueValueActionEnum("challenge")
         @JvmField val DENY = UpdateFirewallConfigVariant20ValueValueActionEnum("deny")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateFirewallConfigVariant20ValueValueActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant20ValueValueActionEnum(value)
     }
 }
 
-class UpdateFirewallConfigVariant3ActionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant3ActionEnum && value == other.value
-
+class UpdateFirewallConfigVariant3ActionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant3ActionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val RULES_REMOVE = UpdateFirewallConfigVariant3ActionEnum("rules.remove")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateFirewallConfigVariant3ActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant3ActionEnum(value)
     }
 }
 
-class UpdateFirewallConfigVariant4ActionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant4ActionEnum && value == other.value
-
+class UpdateFirewallConfigVariant4ActionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant4ActionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val RULES_PRIORITY = UpdateFirewallConfigVariant4ActionEnum("rules.priority")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateFirewallConfigVariant4ActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant4ActionEnum(value)
     }
 }
 
-class UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum &&
-            value == other.value
-
+class UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val RE = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("re")
-        @JvmField
-        val EQ = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("eq")
-        @JvmField
-        val NEQ = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("neq")
-        @JvmField
-        val EX = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("ex")
-        @JvmField
-        val NEX = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("nex")
-        @JvmField
-        val INC = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("inc")
-        @JvmField
-        val NINC = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("ninc")
-        @JvmField
-        val PRE = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("pre")
-        @JvmField
-        val SUF = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("suf")
-        @JvmField
-        val SUB = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("sub")
-        @JvmField
-        val GT = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("gt")
-        @JvmField
-        val GTE = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("gte")
-        @JvmField
-        val LT = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("lt")
-        @JvmField
-        val LTE = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("lte")
-        @JvmField
-        val LIST = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("list")
+        @JvmField val RE = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("re")
+        @JvmField val EQ = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("eq")
+        @JvmField val NEQ = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("neq")
+        @JvmField val EX = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("ex")
+        @JvmField val NEX = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("nex")
+        @JvmField val INC = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("inc")
+        @JvmField val NINC = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("ninc")
+        @JvmField val PRE = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("pre")
+        @JvmField val SUF = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("suf")
+        @JvmField val SUB = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("sub")
+        @JvmField val GT = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("gt")
+        @JvmField val GTE = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("gte")
+        @JvmField val LT = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("lt")
+        @JvmField val LTE = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("lte")
+        @JvmField val LIST = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum("list")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsItemOpEnum(value)
     }
 }
 
-class UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a &&
-            value == other.value
-
+class UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val HOST = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("host")
-        @JvmField
-        val PATH = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("path")
-        @JvmField
-        val METHOD =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("method")
-        @JvmField
-        val HEADER =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("header")
-        @JvmField
-        val QUERY =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("query")
-        @JvmField
-        val COOKIE =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("cookie")
-        @JvmField
-        val TARGET_PATH =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("target_path")
-        @JvmField
-        val ROUTE =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("route")
-        @JvmField
-        val RAW_PATH =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("raw_path")
-        @JvmField
-        val IP_ADDRESS =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("ip_address")
-        @JvmField
-        val REGION =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("region")
-        @JvmField
-        val PROTOCOL =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("protocol")
-        @JvmField
-        val SCHEME =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("scheme")
-        @JvmField
-        val ENVIRONMENT =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("environment")
-        @JvmField
-        val DOMAIN_ENVIRONMENT =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a(
-                "domain_environment"
-            )
-        @JvmField
-        val USER_AGENT =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("user_agent")
-        @JvmField
-        val GEO_CONTINENT =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a(
-                "geo_continent"
-            )
-        @JvmField
-        val GEO_COUNTRY =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("geo_country")
-        @JvmField
-        val GEO_COUNTRY_REGION =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a(
-                "geo_country_region"
-            )
-        @JvmField
-        val GEO_CITY =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("geo_city")
-        @JvmField
-        val GEO_AS_NUMBER =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a(
-                "geo_as_number"
-            )
-        @JvmField
-        val JA4_DIGEST =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("ja4_digest")
-        @JvmField
-        val JA3_DIGEST =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("ja3_digest")
-        @JvmField
-        val RATE_LIMIT_API_ID =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a(
-                "rate_limit_api_id"
-            )
-        @JvmField
-        val SERVER_ACTION =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a(
-                "server_action"
-            )
-        @JvmField
-        val BOT_NAME =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("bot_name")
-        @JvmField
-        val BOT_CATEGORY =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("bot_category")
-        @JvmField
-        val BOT_STATUS =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("bot_status")
-        @JvmField
-        val BOT_PROTECTION =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a(
-                "bot_protection"
-            )
-        @JvmField
-        val SHARED_CONDITION =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a(
-                "shared_condition"
-            )
-        @JvmField
-        val TRAFFIC_SOURCE =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a(
-                "traffic_source"
-            )
-        @JvmField
-        val RULESET =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("ruleset")
-        @JvmField
-        val RESPONSE_CODE =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a(
-                "response_code"
-            )
+        @JvmField val HOST = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("host")
+        @JvmField val PATH = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("path")
+        @JvmField val METHOD = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("method")
+        @JvmField val HEADER = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("header")
+        @JvmField val QUERY = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("query")
+        @JvmField val COOKIE = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("cookie")
+        @JvmField val TARGET_PATH = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("target_path")
+        @JvmField val ROUTE = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("route")
+        @JvmField val RAW_PATH = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("raw_path")
+        @JvmField val IP_ADDRESS = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("ip_address")
+        @JvmField val REGION = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("region")
+        @JvmField val PROTOCOL = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("protocol")
+        @JvmField val SCHEME = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("scheme")
+        @JvmField val ENVIRONMENT = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("environment")
+        @JvmField val DOMAIN_ENVIRONMENT = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("domain_environment")
+        @JvmField val USER_AGENT = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("user_agent")
+        @JvmField val GEO_CONTINENT = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("geo_continent")
+        @JvmField val GEO_COUNTRY = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("geo_country")
+        @JvmField val GEO_COUNTRY_REGION = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("geo_country_region")
+        @JvmField val GEO_CITY = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("geo_city")
+        @JvmField val GEO_AS_NUMBER = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("geo_as_number")
+        @JvmField val JA4_DIGEST = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("ja4_digest")
+        @JvmField val JA3_DIGEST = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("ja3_digest")
+        @JvmField val RATE_LIMIT_API_ID = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("rate_limit_api_id")
+        @JvmField val SERVER_ACTION = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("server_action")
+        @JvmField val BOT_NAME = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("bot_name")
+        @JvmField val BOT_CATEGORY = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("bot_category")
+        @JvmField val BOT_STATUS = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("bot_status")
+        @JvmField val BOT_PROTECTION = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("bot_protection")
+        @JvmField val SHARED_CONDITION = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("shared_condition")
+        @JvmField val TRAFFIC_SOURCE = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("traffic_source")
+        @JvmField val RULESET = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("ruleset")
+        @JvmField val RESPONSE_CODE = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a("response_code")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant4ValueConditionGroupItemConditionsXb413db001a(value)
     }
 }
 
-class UpdateFirewallConfigVariant5ActionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateFirewallConfigVariant5ActionEnum && value == other.value
-
+class UpdateFirewallConfigVariant5ActionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateFirewallConfigVariant5ActionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val CRS_UPDATE = UpdateFirewallConfigVariant5ActionEnum("crs.update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateFirewallConfigVariant5ActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateFirewallConfigVariant5ActionEnum(value)
     }
 }
