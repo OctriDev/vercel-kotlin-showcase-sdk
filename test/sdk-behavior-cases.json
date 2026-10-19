@@ -16460,7 +16460,9 @@
           "environmentVariables": [
             {
               "key": "key",
-              "target": "production",
+              "target": [
+                "production"
+              ],
               "gitBranch": "gitBranch",
               "type": "system",
               "value": "value"
@@ -16534,7 +16536,7 @@
         "headers": {
           "content-type": "application/json"
         },
-        "bodyText": "{\"enablePreviewFeedback\":false,\"enableProductionFeedback\":false,\"previewDeploymentsDisabled\":false,\"previewDeploymentSuffix\":\"previewDeploymentSuffix\",\"buildCommand\":\"buildCommand\",\"commandForIgnoringBuildStep\":\"commandForIgnoringBuildStep\",\"devCommand\":\"devCommand\",\"environmentVariables\":[{\"key\":\"key\",\"target\":\"production\",\"gitBranch\":\"gitBranch\",\"type\":\"system\",\"value\":\"value\"}],\"gitRepository\":{\"repo\":\"repo\",\"type\":\"github\"},\"installCommand\":\"installCommand\",\"name\":\"a-project-name\",\"skipGitConnectDuringLink\":false,\"ssoProtection\":{\"deploymentType\":\"all\"},\"sandbox\":{\"region\":\"iad1\",\"failoverRegions\":[\"sfo1\",\"cle1\"]},\"outputDirectory\":\"outputDirectory\",\"publicSource\":false,\"rootDirectory\":\"rootDirectory\",\"serverlessFunctionRegion\":\"serv\",\"serverlessFunctionZeroConfigFailover\":false,\"oidcTokenConfig\":{\"enabled\":true,\"issuerMode\":\"team\"},\"enableAffectedProjectsDeployments\":false,\"resourceConfig\":{\"buildMachineType\":\"basic\",\"fluid\":false,\"functionDefaultRegions\":[\"func\"],\"functionDefaultTimeout\":1,\"functionDefaultMemoryType\":\"standard_legacy\",\"functionZeroConfigFailover\":false,\"elasticConcurrencyEnabled\":false,\"buildMachineSelection\":\"elastic\",\"buildMachineElasticLastUpdated\":1,\"buildMachineElasticReason\":\"oom-failure\",\"buildMachineElasticTransition\":{\"at\":1,\"direction\":\"upgrade\",\"algorithmVersion\":\"algorithmVersion\"},\"isNSNBDisabled\":false,\"buildQueue\":{\"configuration\":\"SKIP_NAMESPACE_QUEUE\"},\"enableFunctionsBeta\":false}}",
+        "bodyText": "{\"enablePreviewFeedback\":false,\"enableProductionFeedback\":false,\"previewDeploymentsDisabled\":false,\"previewDeploymentSuffix\":\"previewDeploymentSuffix\",\"buildCommand\":\"buildCommand\",\"commandForIgnoringBuildStep\":\"commandForIgnoringBuildStep\",\"devCommand\":\"devCommand\",\"environmentVariables\":[{\"key\":\"key\",\"target\":[\"production\"],\"gitBranch\":\"gitBranch\",\"type\":\"system\",\"value\":\"value\"}],\"gitRepository\":{\"repo\":\"repo\",\"type\":\"github\"},\"installCommand\":\"installCommand\",\"name\":\"a-project-name\",\"skipGitConnectDuringLink\":false,\"ssoProtection\":{\"deploymentType\":\"all\"},\"sandbox\":{\"region\":\"iad1\",\"failoverRegions\":[\"sfo1\",\"cle1\"]},\"outputDirectory\":\"outputDirectory\",\"publicSource\":false,\"rootDirectory\":\"rootDirectory\",\"serverlessFunctionRegion\":\"serv\",\"serverlessFunctionZeroConfigFailover\":false,\"oidcTokenConfig\":{\"enabled\":true,\"issuerMode\":\"team\"},\"enableAffectedProjectsDeployments\":false,\"resourceConfig\":{\"buildMachineType\":\"basic\",\"fluid\":false,\"functionDefaultRegions\":[\"func\"],\"functionDefaultTimeout\":1,\"functionDefaultMemoryType\":\"standard_legacy\",\"functionZeroConfigFailover\":false,\"elasticConcurrencyEnabled\":false,\"buildMachineSelection\":\"elastic\",\"buildMachineElasticLastUpdated\":1,\"buildMachineElasticReason\":\"oom-failure\",\"buildMachineElasticTransition\":{\"at\":1,\"direction\":\"upgrade\",\"algorithmVersion\":\"algorithmVersion\"},\"isNSNBDisabled\":false,\"buildQueue\":{\"configuration\":\"SKIP_NAMESPACE_QUEUE\"},\"enableFunctionsBeta\":false}}",
         "multipartFields": null
       },
       "response": {
@@ -25993,7 +25995,9 @@
                   },
                   "actionDuration": "actionDuration",
                   "bypassSystem": false,
-                  "logHeaders": "logHeaders"
+                  "logHeaders": [
+                    "logHeaders"
+                  ]
                 }
               },
               "valid": false,
@@ -26042,7 +26046,9 @@
             }
           ],
           "botIdEnabled": false,
-          "logHeaders": "logHeaders"
+          "logHeaders": [
+            "logHeaders"
+          ]
         },
         "bodyKind": "json",
         "contentType": "application/json",
@@ -26060,7 +26066,7 @@
         "headers": {
           "content-type": "application/json"
         },
-        "bodyText": "{\"firewallEnabled\":false,\"managedRules\":{},\"crs\":{\"sd\":{\"active\":false,\"action\":\"deny\"},\"ma\":{\"active\":false,\"action\":\"deny\"},\"lfi\":{\"active\":false,\"action\":\"deny\"},\"rfi\":{\"active\":false,\"action\":\"deny\"},\"rce\":{\"active\":false,\"action\":\"deny\"},\"php\":{\"active\":false,\"action\":\"deny\"},\"gen\":{\"active\":false,\"action\":\"deny\"},\"xss\":{\"active\":false,\"action\":\"deny\"},\"sqli\":{\"active\":false,\"action\":\"deny\"},\"sf\":{\"active\":false,\"action\":\"deny\"},\"java\":{\"active\":false,\"action\":\"deny\"}},\"rules\":[{\"id\":\"id-1\",\"name\":\"Example Name\",\"description\":\"example text\",\"active\":false,\"conditionGroup\":[{\"conditions\":[{\"type\":\"host\",\"op\":\"re\",\"neg\":false,\"key\":\"key\",\"value\":\"value\"}]}],\"action\":{\"mitigate\":{\"action\":\"log\",\"rateLimit\":{\"algo\":\"fixed_window\",\"window\":1,\"limit\":1,\"keys\":[\"keys\"],\"action\":\"log\"},\"redirect\":{\"location\":\"location\",\"permanent\":false},\"actionDuration\":\"actionDuration\",\"bypassSystem\":false,\"logHeaders\":\"logHeaders\"}},\"valid\":false,\"validationErrors\":[\"validationErrors\"]}],\"rulesets\":[{\"id\":\"id-1\",\"name\":\"Example Name\",\"description\":\"example text\",\"active\":false,\"conditionGroup\":[{\"conditions\":[{\"type\":\"host\",\"op\":\"re\",\"neg\":false,\"key\":\"key\",\"value\":\"value\"}]}],\"action\":{\"mitigate\":{\"action\":\"deny\"}},\"valid\":false,\"validationErrors\":[\"validationErrors\"]}],\"ips\":[{\"id\":\"id-1\",\"hostname\":\"Example Name\",\"ip\":\"ip\",\"notes\":\"notes\",\"action\":\"deny\"}],\"botIdEnabled\":false,\"logHeaders\":\"logHeaders\"}",
+        "bodyText": "{\"firewallEnabled\":false,\"managedRules\":{},\"crs\":{\"sd\":{\"active\":false,\"action\":\"deny\"},\"ma\":{\"active\":false,\"action\":\"deny\"},\"lfi\":{\"active\":false,\"action\":\"deny\"},\"rfi\":{\"active\":false,\"action\":\"deny\"},\"rce\":{\"active\":false,\"action\":\"deny\"},\"php\":{\"active\":false,\"action\":\"deny\"},\"gen\":{\"active\":false,\"action\":\"deny\"},\"xss\":{\"active\":false,\"action\":\"deny\"},\"sqli\":{\"active\":false,\"action\":\"deny\"},\"sf\":{\"active\":false,\"action\":\"deny\"},\"java\":{\"active\":false,\"action\":\"deny\"}},\"rules\":[{\"id\":\"id-1\",\"name\":\"Example Name\",\"description\":\"example text\",\"active\":false,\"conditionGroup\":[{\"conditions\":[{\"type\":\"host\",\"op\":\"re\",\"neg\":false,\"key\":\"key\",\"value\":\"value\"}]}],\"action\":{\"mitigate\":{\"action\":\"log\",\"rateLimit\":{\"algo\":\"fixed_window\",\"window\":1,\"limit\":1,\"keys\":[\"keys\"],\"action\":\"log\"},\"redirect\":{\"location\":\"location\",\"permanent\":false},\"actionDuration\":\"actionDuration\",\"bypassSystem\":false,\"logHeaders\":[\"logHeaders\"]}},\"valid\":false,\"validationErrors\":[\"validationErrors\"]}],\"rulesets\":[{\"id\":\"id-1\",\"name\":\"Example Name\",\"description\":\"example text\",\"active\":false,\"conditionGroup\":[{\"conditions\":[{\"type\":\"host\",\"op\":\"re\",\"neg\":false,\"key\":\"key\",\"value\":\"value\"}]}],\"action\":{\"mitigate\":{\"action\":\"deny\"}},\"valid\":false,\"validationErrors\":[\"validationErrors\"]}],\"ips\":[{\"id\":\"id-1\",\"hostname\":\"Example Name\",\"ip\":\"ip\",\"notes\":\"notes\",\"action\":\"deny\"}],\"botIdEnabled\":false,\"logHeaders\":[\"logHeaders\"]}",
         "multipartFields": null
       },
       "response": {

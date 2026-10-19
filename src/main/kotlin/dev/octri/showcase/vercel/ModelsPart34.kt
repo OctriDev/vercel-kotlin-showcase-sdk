@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias ListProjectsResponseVariant2ProjectsItemTrustedIpsVariant1DepX95f22b75bb =
-    dev.octri.showcase.vercel.models.ListProjectsResponseVariant2ProjectsItemTrustedIpsVariant1DepX95f22b75bb
-
 typealias ListProjectsResponseVariant2ProjectsItemTrustedSourcesEnableVX2a632f2939 =
     dev.octri.showcase.vercel.models.ListProjectsResponseVariant2ProjectsItemTrustedSourcesEnableVX2a632f2939
 
@@ -619,3 +616,6 @@ typealias PutFirewallConfigResponseActiveCrsRfiActionEnum =
 
 typealias PutFirewallConfigResponseActiveCrsRfiActiveEnum =
     dev.octri.showcase.vercel.models.PutFirewallConfigResponseActiveCrsRfiActiveEnum
+
+typealias PutFirewallConfigResponseActiveCrsSdActionEnum =
+    dev.octri.showcase.vercel.models.PutFirewallConfigResponseActiveCrsSdActionEnum

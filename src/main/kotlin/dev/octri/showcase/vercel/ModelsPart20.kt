@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias GetDeploymentResponseVariant1ServicesItemVariant1RedirectsIteX41db11430b =
-    dev.octri.showcase.vercel.models.GetDeploymentResponseVariant1ServicesItemVariant1RedirectsIteX41db11430b
-
 typealias GetDeploymentResponseVariant1ServicesItemVariant1RedirectsIteX5429e37819 =
     dev.octri.showcase.vercel.models.GetDeploymentResponseVariant1ServicesItemVariant1RedirectsIteX5429e37819
 
@@ -651,3 +648,6 @@ typealias GetDrainResponseVariant0DeliveryVariant0SecretVariant1 =
 
 typealias GetDrainResponseVariant0DeliveryVariant0SecretVariant1KindEnum =
     dev.octri.showcase.vercel.models.GetDrainResponseVariant0DeliveryVariant0SecretVariant1KindEnum
+
+typealias GetDrainResponseVariant0DeliveryVariant0TypeEnum =
+    dev.octri.showcase.vercel.models.GetDrainResponseVariant0DeliveryVariant0TypeEnum

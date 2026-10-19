@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias UploadProjectAvatarResponseOidcTokenConfigEnabledEnum =
-    dev.octri.showcase.vercel.models.UploadProjectAvatarResponseOidcTokenConfigEnabledEnum
-
 typealias UploadProjectAvatarResponseOidcTokenConfigIssuerModeEnum =
     dev.octri.showcase.vercel.models.UploadProjectAvatarResponseOidcTokenConfigIssuerModeEnum
 
@@ -625,3 +622,6 @@ typealias UserEventPayloadVariant120JobVariant3GitCommentsOnCommitEnum =
 
 typealias UserEventPayloadVariant120JobVariant3GitCommentsOnPullRequestEnum =
     dev.octri.showcase.vercel.models.UserEventPayloadVariant120JobVariant3GitCommentsOnPullRequestEnum
+
+typealias UserEventPayloadVariant120JobVariant3GitHashtagVercelItemEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant120JobVariant3GitHashtagVercelItemEnum

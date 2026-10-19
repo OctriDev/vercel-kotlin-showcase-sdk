@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias GetDeploymentResponseVariant1GitSourceVariant18TypeEnum =
-    dev.octri.showcase.vercel.models.GetDeploymentResponseVariant1GitSourceVariant18TypeEnum
-
 typealias GetDeploymentResponseVariant1GitSourceVariant1TypeEnum =
     dev.octri.showcase.vercel.models.GetDeploymentResponseVariant1GitSourceVariant1TypeEnum
 
@@ -653,3 +650,6 @@ typealias GetDeploymentResponseVariant1ServicesItemVariant1RedirectsIteX172a6954
 
 typealias GetDeploymentResponseVariant1ServicesItemVariant1RedirectsIteX2facc331be =
     dev.octri.showcase.vercel.models.GetDeploymentResponseVariant1ServicesItemVariant1RedirectsIteX2facc331be
+
+typealias GetDeploymentResponseVariant1ServicesItemVariant1RedirectsIteX41db11430b =
+    dev.octri.showcase.vercel.models.GetDeploymentResponseVariant1ServicesItemVariant1RedirectsIteX41db11430b

@@ -14149,8 +14149,8 @@
           },
           {
             "wireName": "logHeaders",
-            "repeated": false,
-            "partKind": "json",
+            "repeated": true,
+            "partKind": "scalar",
             "contentType": null
           }
         ],
@@ -14240,7 +14240,9 @@
                   },
                   "actionDuration": "actionDuration",
                   "bypassSystem": false,
-                  "logHeaders": "logHeaders"
+                  "logHeaders": [
+                    "logHeaders"
+                  ]
                 }
               },
               "valid": false,
@@ -14289,7 +14291,9 @@
             }
           ],
           "botIdEnabled": false,
-          "logHeaders": "logHeaders"
+          "logHeaders": [
+            "logHeaders"
+          ]
         },
         "expectsArray": false
       }
@@ -38996,8 +39000,8 @@
           },
           {
             "wireName": "tags",
-            "repeated": false,
-            "partKind": "json",
+            "repeated": true,
+            "partKind": "scalar",
             "contentType": null
           },
           {
@@ -39601,8 +39605,8 @@
         "fields": [
           {
             "wireName": "tags",
-            "repeated": false,
-            "partKind": "json",
+            "repeated": true,
+            "partKind": "scalar",
             "contentType": null
           },
           {
@@ -89675,7 +89679,9 @@
           "environmentVariables": [
             {
               "key": "key",
-              "target": "production",
+              "target": [
+                "production"
+              ],
               "gitBranch": "gitBranch",
               "type": "system",
               "value": "value"

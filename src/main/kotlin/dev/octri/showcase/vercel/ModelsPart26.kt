@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias GetProjectsResponseInternalRoutesItemVariant1HasItemVariant1Value =
-    dev.octri.showcase.vercel.models.GetProjectsResponseInternalRoutesItemVariant1HasItemVariant1Value
-
 typealias GetProjectsResponseInternalRoutesItemVariant1Mitigate =
     dev.octri.showcase.vercel.models.GetProjectsResponseInternalRoutesItemVariant1Mitigate
 
@@ -648,3 +645,6 @@ typealias GetRollingReleaseResponseRollingReleaseCanaryDeploymentTargetEnum =
 
 typealias GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum =
     dev.octri.showcase.vercel.models.GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum
+
+typealias GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum =
+    dev.octri.showcase.vercel.models.GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum

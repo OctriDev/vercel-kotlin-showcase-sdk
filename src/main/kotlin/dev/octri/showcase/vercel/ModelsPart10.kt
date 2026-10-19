@@ -93,11 +93,8 @@ typealias CreateProjectCheckResponseSourceVariant2KindEnum =
 typealias CreateProjectCheckResponseSourceVariant2ProviderEnum =
     dev.octri.showcase.vercel.models.CreateProjectCheckResponseSourceVariant2ProviderEnum
 
-typealias CreateProjectEnvironmentVariablesItemTargetVariant0Enum =
-    dev.octri.showcase.vercel.models.CreateProjectEnvironmentVariablesItemTargetVariant0Enum
-
-typealias CreateProjectEnvironmentVariablesItemTargetVariant1ItemEnum =
-    dev.octri.showcase.vercel.models.CreateProjectEnvironmentVariablesItemTargetVariant1ItemEnum
+typealias CreateProjectEnvironmentVariablesItemTargetItemEnum =
+    dev.octri.showcase.vercel.models.CreateProjectEnvironmentVariablesItemTargetItemEnum
 
 typealias CreateProjectEnvironmentVariablesItemTypeEnum =
     dev.octri.showcase.vercel.models.CreateProjectEnvironmentVariablesItemTypeEnum
@@ -652,3 +649,6 @@ typealias CreateProjectResponseEnvItemContentHintVariant11 =
 
 typealias CreateProjectResponseEnvItemContentHintVariant11TypeEnum =
     dev.octri.showcase.vercel.models.CreateProjectResponseEnvItemContentHintVariant11TypeEnum
+
+typealias CreateProjectResponseEnvItemContentHintVariant12 =
+    dev.octri.showcase.vercel.models.CreateProjectResponseEnvItemContentHintVariant12

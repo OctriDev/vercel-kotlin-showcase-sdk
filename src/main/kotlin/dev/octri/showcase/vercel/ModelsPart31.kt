@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias ListProjectsResponseItemEnvItemContentHintVariant0 =
-    dev.octri.showcase.vercel.models.ListProjectsResponseItemEnvItemContentHintVariant0
-
 typealias ListProjectsResponseItemEnvItemContentHintVariant0TypeEnum =
     dev.octri.showcase.vercel.models.ListProjectsResponseItemEnvItemContentHintVariant0TypeEnum
 
@@ -653,3 +650,6 @@ typealias ListProjectsResponseVariant0ItemTargetsValueReadySubstateEnum =
 
 typealias ListProjectsResponseVariant0ItemTargetsValueTypeEnum =
     dev.octri.showcase.vercel.models.ListProjectsResponseVariant0ItemTargetsValueTypeEnum
+
+typealias ListProjectsResponseVariant0ItemTargetsValueWithCacheEnum =
+    dev.octri.showcase.vercel.models.ListProjectsResponseVariant0ItemTargetsValueWithCacheEnum

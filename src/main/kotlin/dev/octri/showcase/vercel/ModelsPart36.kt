@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias RunSessionCommandResponseVariant0DataCodeEnum =
-    dev.octri.showcase.vercel.models.RunSessionCommandResponseVariant0DataCodeEnum
-
 typealias RunSessionCommandResponseVariant0DataMessageEnum =
     dev.octri.showcase.vercel.models.RunSessionCommandResponseVariant0DataMessageEnum
 
@@ -603,3 +600,5 @@ typealias TeamLimitedMembershipTeamPermissionsItemEnum =
 
 typealias TeamLimitedMembershipTeamRolesItemEnum =
     dev.octri.showcase.vercel.models.TeamLimitedMembershipTeamRolesItemEnum
+
+typealias TeamLimitedSaml = dev.octri.showcase.vercel.models.TeamLimitedSaml

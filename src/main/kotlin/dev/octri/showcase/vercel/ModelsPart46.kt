@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0 =
-    dev.octri.showcase.vercel.models.UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0
-
 typealias UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0TypeEnum =
     dev.octri.showcase.vercel.models.UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0TypeEnum
 
@@ -581,3 +578,6 @@ typealias UserEventPayloadVariant238NextNewResourceBlockingPolicyEnum =
 
 typealias UserEventPayloadVariant238NextOmitScriptNonceEnum =
     dev.octri.showcase.vercel.models.UserEventPayloadVariant238NextOmitScriptNonceEnum
+
+typealias UserEventPayloadVariant238Previous =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant238Previous

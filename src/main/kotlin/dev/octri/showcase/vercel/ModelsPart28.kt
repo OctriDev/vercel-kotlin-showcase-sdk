@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActiveEnum =
-    dev.octri.showcase.vercel.models.GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActiveEnum
-
 typealias GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActX2ff134a148 =
     dev.octri.showcase.vercel.models.GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActX2ff134a148
 
@@ -652,3 +649,6 @@ typealias GetVercelCiInvocationResponseInvocationStatusVariant2Enum =
 
 typealias GetVercelCiInvocationResponseInvocationStatusVariant3Enum =
     dev.octri.showcase.vercel.models.GetVercelCiInvocationResponseInvocationStatusVariant3Enum
+
+typealias GetVercelCiInvocationResponseInvocationStatusVariant4Enum =
+    dev.octri.showcase.vercel.models.GetVercelCiInvocationResponseInvocationStatusVariant4Enum

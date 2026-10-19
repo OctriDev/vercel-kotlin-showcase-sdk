@@ -15,7 +15,7 @@ class EdgeCacheNamespace(private val clientConfig: ClientConfig) {
      */
     fun invalidateByTags(
         projectIdOrName: String,
-        tags: Any,
+        tags: List<String>,
         teamId: String? = null,
         slug: String? = null,
         target: InvalidateByTagsTargetEnum? = null,

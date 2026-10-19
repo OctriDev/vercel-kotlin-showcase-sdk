@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias GetMicrofrontendsInGroupResponseProjectsItemEnablePreviewFeedbackEnum =
-    dev.octri.showcase.vercel.models.GetMicrofrontendsInGroupResponseProjectsItemEnablePreviewFeedbackEnum
-
 typealias GetMicrofrontendsInGroupResponseProjectsItemEnableProductionFeedbackEnum =
     dev.octri.showcase.vercel.models.GetMicrofrontendsInGroupResponseProjectsItemEnableProductionFeedbackEnum
 
@@ -653,3 +650,6 @@ typealias GetMicrofrontendsInGroupResponseProjectsItemTargetsValueTypeEnum =
 
 typealias GetMicrofrontendsInGroupResponseProjectsItemTargetsValueWithCacheEnum =
     dev.octri.showcase.vercel.models.GetMicrofrontendsInGroupResponseProjectsItemTargetsValueWithCacheEnum
+
+typealias GetMicrofrontendsInGroupResponseProjectsItemTierEnum =
+    dev.octri.showcase.vercel.models.GetMicrofrontendsInGroupResponseProjectsItemTierEnum

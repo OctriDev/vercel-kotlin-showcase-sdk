@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias DeleteProjectAvatarResponseTrustedSourcesOidcProvidersValueItXcbf5e227da =
-    dev.octri.showcase.vercel.models.DeleteProjectAvatarResponseTrustedSourcesOidcProvidersValueItXcbf5e227da
-
 typealias DeleteProjectAvatarResponseTrustedSourcesProjectsValueCustomAX25fa53cdcb =
     dev.octri.showcase.vercel.models.DeleteProjectAvatarResponseTrustedSourcesProjectsValueCustomAX25fa53cdcb
 
@@ -615,3 +612,6 @@ typealias FilterProjectEnvsResponseVariant0ContentHintVariant5TypeEnum =
 
 typealias FilterProjectEnvsResponseVariant0ContentHintVariant6 =
     dev.octri.showcase.vercel.models.FilterProjectEnvsResponseVariant0ContentHintVariant6
+
+typealias FilterProjectEnvsResponseVariant0ContentHintVariant6TypeEnum =
+    dev.octri.showcase.vercel.models.FilterProjectEnvsResponseVariant0ContentHintVariant6TypeEnum

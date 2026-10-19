@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias CreateProjectResponseEnvItemContentHintVariant12 =
-    dev.octri.showcase.vercel.models.CreateProjectResponseEnvItemContentHintVariant12
-
 typealias CreateProjectResponseEnvItemContentHintVariant12TypeEnum =
     dev.octri.showcase.vercel.models.CreateProjectResponseEnvItemContentHintVariant12TypeEnum
 
@@ -652,3 +649,6 @@ typealias CreateProjectResponseTrustedIpsVariant1DeploymentTypeEnum =
 
 typealias CreateProjectResponseTrustedSourcesEnableVercelCiSameRepositoryEnum =
     dev.octri.showcase.vercel.models.CreateProjectResponseTrustedSourcesEnableVercelCiSameRepositoryEnum
+
+typealias CreateProjectResponseTrustedSourcesOidcProvidersValueItemToVaX29abd9efbe =
+    dev.octri.showcase.vercel.models.CreateProjectResponseTrustedSourcesOidcProvidersValueItemToVaX29abd9efbe

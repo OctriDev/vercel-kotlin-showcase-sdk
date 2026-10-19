@@ -3,8 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias UserEventPayloadVariant454 = dev.octri.showcase.vercel.models.UserEventPayloadVariant454
-
 typealias UserEventPayloadVariant454AllowedMethodsItemEnum =
     dev.octri.showcase.vercel.models.UserEventPayloadVariant454AllowedMethodsItemEnum
 
@@ -590,3 +588,6 @@ typealias UserEventPayloadVariant66ResourcesProjectIdsItems =
 
 typealias UserEventPayloadVariant66ResourcesProjectIdsItemsTypeEnum =
     dev.octri.showcase.vercel.models.UserEventPayloadVariant66ResourcesProjectIdsItemsTypeEnum
+
+typealias UserEventPayloadVariant66ResourcesProjectIdsRequiredEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant66ResourcesProjectIdsRequiredEnum

@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias GetConnectorTokenRequestSubject =
-    dev.octri.showcase.vercel.models.GetConnectorTokenRequestSubject
-
 typealias GetConnectorTokenRequestSubjectVariant0 =
     dev.octri.showcase.vercel.models.GetConnectorTokenRequestSubjectVariant0
 
@@ -652,3 +649,6 @@ typealias GetDeploymentResponseVariant1GitSourceVariant17TypeEnum =
 
 typealias GetDeploymentResponseVariant1GitSourceVariant18 =
     dev.octri.showcase.vercel.models.GetDeploymentResponseVariant1GitSourceVariant18
+
+typealias GetDeploymentResponseVariant1GitSourceVariant18TypeEnum =
+    dev.octri.showcase.vercel.models.GetDeploymentResponseVariant1GitSourceVariant18TypeEnum
