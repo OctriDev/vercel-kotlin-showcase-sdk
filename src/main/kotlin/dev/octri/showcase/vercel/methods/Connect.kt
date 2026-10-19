@@ -21,94 +21,89 @@ import dev.octri.showcase.vercel.ListConnectorsParameterEnum
 import dev.octri.showcase.vercel.RequestOptions
 
 object Connect {
-data class GetConnectorTokenAuthorizationDetailsItem(
-    val type: String? = null
-) {
-    @field:com.fasterxml.jackson.annotation.JsonAnySetter
-    @get:com.fasterxml.jackson.annotation.JsonAnyGetter
-    val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
-}
+    data class GetConnectorTokenAuthorizationDetailsItem(val type: String? = null) {
+        @field:com.fasterxml.jackson.annotation.JsonAnySetter
+        @get:com.fasterxml.jackson.annotation.JsonAnyGetter
+        val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
+    }
 
-data class GetConnectorTokenResponseConnector(
-    val id: String,
-    val type: String,
-    val uid: String
-)
+    data class GetConnectorTokenResponseConnector(
+        val id: String,
+        val type: String,
+        val uid: String,
+    )
 
-data class GetConnectorTokenResponse(
-    val connector: GetConnectorTokenResponseConnector,
-    val expiresAt: Double,
-    val token: String,
-    val tokenId: String,
-    /**
-     * Stable id correlating all tokens (including refreshes) back to the original authorization.
-     */
-    val authorizationId: String? = null,
-    /**
-     * Claims extracted from the provider's tokens per the connector's `ForwardedClaims` allow-list. Currently sourced from the OIDC id_token only.
-     */
-    val claims: Map<String, Any>? = null,
-    val externalSubject: String? = null,
-    val installationId: String? = null,
-    /**
-     * Driver-specific metadata (e.g., botUserId for Slack).
-     */
-    val metadata: Map<String, Any>? = null,
-    val name: String? = null,
-    val tenantId: String? = null,
-    /**
-     * Stable id that groups all tokens with the same parameters across refreshes.
-     */
-    val tokenGroupId: String? = null
-)
+    data class GetConnectorTokenResponse(
+        val connector: GetConnectorTokenResponseConnector,
+        val expiresAt: Double,
+        val token: String,
+        val tokenId: String,
+        /**
+         * Stable id correlating all tokens (including refreshes) back to the original
+         * authorization.
+         */
+        val authorizationId: String? = null,
+        /**
+         * Claims extracted from the provider's tokens per the connector's `ForwardedClaims`
+         * allow-list. Currently sourced from the OIDC id_token only.
+         */
+        val claims: Map<String, Any>? = null,
+        val externalSubject: String? = null,
+        val installationId: String? = null,
+        /** Driver-specific metadata (e.g., botUserId for Slack). */
+        val metadata: Map<String, Any>? = null,
+        val name: String? = null,
+        val tenantId: String? = null,
+        /** Stable id that groups all tokens with the same parameters across refreshes. */
+        val tokenGroupId: String? = null,
+    )
 
-data class CreateConnectorAuthorizationRequestAuthorizationDetailsItem(
-    val type: String? = null
-) {
-    @field:com.fasterxml.jackson.annotation.JsonAnySetter
-    @get:com.fasterxml.jackson.annotation.JsonAnyGetter
-    val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
-}
+    data class CreateConnectorAuthorizationRequestAuthorizationDetailsItem(
+        val type: String? = null
+    ) {
+        @field:com.fasterxml.jackson.annotation.JsonAnySetter
+        @get:com.fasterxml.jackson.annotation.JsonAnyGetter
+        val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
+    }
 
-data class CreateConnectorAuthorizationRequestResponseConnector(
-    /**
-     * Provider-facing display name when the connector type exposes one, falling back to the stored connector name.
-     */
-    val displayName: String,
-    /**
-     * Client id (e.g. `scl_…`).
-     */
-    val id: String,
-    /**
-     * The connector's own name: the operator-given client name, falling back to the client type's name for legacy rows without one.
-     */
-    val name: String,
-    /**
-     * Client type (e.g. `oauth`, `salesforce`).
-     */
-    val type: String,
-    /**
-     * Client uid (e.g. `salesforce/my-org`).
-     */
-    val uid: String,
-    /**
-     * Resolved service id when known (e.g. `salesforce`), following the `stored.service ?? typeDef.service ?? stored.type` convention.
-     */
-    val service: String? = null,
-    /**
-     * Curated display name of the resolved service (e.g. "Salesforce"), present when the service is a known service. Suited for end-user surfaces like "Sign in with {serviceName}".
-     */
-    val serviceName: String? = null
-)
+    data class CreateConnectorAuthorizationRequestResponseConnector(
+        /**
+         * Provider-facing display name when the connector type exposes one, falling back to the
+         * stored connector name.
+         */
+        val displayName: String,
+        /** Client id (e.g. `scl_…`). */
+        val id: String,
+        /**
+         * The connector's own name: the operator-given client name, falling back to the client
+         * type's name for legacy rows without one.
+         */
+        val name: String,
+        /** Client type (e.g. `oauth`, `salesforce`). */
+        val type: String,
+        /** Client uid (e.g. `salesforce/my-org`). */
+        val uid: String,
+        /**
+         * Resolved service id when known (e.g. `salesforce`), following the `stored.service ??
+         * typeDef.service ?? stored.type` convention.
+         */
+        val service: String? = null,
+        /**
+         * Curated display name of the resolved service (e.g. "Salesforce"), present when the
+         * service is a known service. Suited for end-user surfaces like "Sign in with
+         * {serviceName}".
+         */
+        val serviceName: String? = null,
+    )
 
-data class CreateConnectorAuthorizationRequestResponse(
-    val connector: CreateConnectorAuthorizationRequestResponseConnector,
-    val expiresAt: Double,
-    val request: String,
-    val url: String,
-    val verifier: String,
-    val deviceCode: String? = null
-)
+    data class CreateConnectorAuthorizationRequestResponse(
+        val connector: CreateConnectorAuthorizationRequestResponseConnector,
+        val expiresAt: Double,
+        val request: String,
+        val url: String,
+        val verifier: String,
+        val deviceCode: String? = null,
+    )
 
     /** Parameters for [listConnectors]. */
     data class ListConnectorsRequest(
@@ -120,7 +115,7 @@ data class CreateConnectorAuthorizationRequestResponse(
         val service: String? = null,
         val sort: ListConnectorsParameterEnum? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [createConnector]. */
@@ -145,7 +140,7 @@ data class CreateConnectorAuthorizationRequestResponse(
         val triggerVerificationInput: Map<String, Any>? = null,
         val triggerRegistrationInput: Map<String, Any>? = null,
         val triggerDestination: ConnectCreateConnectorRequestTriggerDestination? = null,
-        val events: List<String>? = null
+        val events: List<String>? = null,
     )
 
     /** Parameters for [updateConnector]. */
@@ -162,7 +157,7 @@ data class CreateConnectorAuthorizationRequestResponse(
         val backgroundColor: String? = null,
         val accentColor: String? = null,
         val uid: String? = null,
-        val name: String? = null
+        val name: String? = null,
     )
 
     /** Parameters for [getConnectorToken]. */
@@ -174,7 +169,7 @@ data class CreateConnectorAuthorizationRequestResponse(
         val scopes: List<String>? = null,
         val resources: List<String>? = null,
         val authorizationDetails: List<GetConnectorTokenAuthorizationDetailsItem>? = null,
-        val validityBufferMs: Double? = null
+        val validityBufferMs: Double? = null,
     )
 
     /** Parameters for [createConnectorAuthorizationRequest]. */
@@ -185,20 +180,28 @@ data class CreateConnectorAuthorizationRequestResponse(
         val audience: List<String>? = null,
         val scopes: List<String>? = null,
         val resources: List<String>? = null,
-        val authorizationDetails: List<CreateConnectorAuthorizationRequestAuthorizationDetailsItem>? = null,
+        val authorizationDetails:
+            List<CreateConnectorAuthorizationRequestAuthorizationDetailsItem>? =
+            null,
         val validityBufferMs: Double? = null,
         val returnUrl: String? = null,
         val webhook: String? = null,
         val prompt: String? = null,
         val deviceCode: Boolean? = null,
         val expiresInMs: Double? = null,
-        val additionalParams: Map<String, String>? = null
+        val additionalParams: Map<String, String>? = null,
     )
 
     /**
-     * Lists connectors that belong to a team and returns them in cursor-paginated pages. Use filters such as `projectId`, `type`, and `service` to narrow the results, and pass the returned `pagination.next` cursor to retrieve another page.
+     * Lists connectors that belong to a team and returns them in cursor-paginated pages. Use
+     * filters such as `projectId`, `type`, and `service` to narrow the results, and pass the
+     * returned `pagination.next` cursor to retrieve another page.
      */
-    fun listConnectors(clientConfig: ClientConfig, request: ListConnectorsRequest, options: RequestOptions? = null): ConnectConnectorList =
+    fun listConnectors(
+        clientConfig: ClientConfig,
+        request: ListConnectorsRequest,
+        options: RequestOptions? = null,
+    ): ConnectConnectorList =
         dev.octri.showcase.vercel.methods.ConnectListConnectorsOperation.listConnectors(
             clientConfig,
             request,
@@ -206,9 +209,17 @@ data class CreateConnectorAuthorizationRequestResponse(
         )
 
     /**
-     * Retrieves a connector by its stable ID or team-scoped UID. Use a dashboard or team requester, or a deployment's project OIDC token; project requesters can read only connectors linked to their project and environment.
+     * Retrieves a connector by its stable ID or team-scoped UID. Use a dashboard or team requester,
+     * or a deployment's project OIDC token; project requesters can read only connectors linked to
+     * their project and environment.
      */
-    fun getConnector(clientConfig: ClientConfig, connector: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ConnectConnector =
+    fun getConnector(
+        clientConfig: ClientConfig,
+        connector: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ConnectConnector =
         dev.octri.showcase.vercel.methods.ConnectGetConnectorOperation.getConnector(
             clientConfig,
             connector,
@@ -218,9 +229,17 @@ data class CreateConnectorAuthorizationRequestResponse(
         )
 
     /**
-     * Deletes a connector and its project connections and installation records. Use this operation when you want to remove the connector and its associated connections and installations from the team.
+     * Deletes a connector and its project connections and installation records. Use this operation
+     * when you want to remove the connector and its associated connections and installations from
+     * the team.
      */
-    fun deleteConnector(clientConfig: ClientConfig, connector: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit =
+    fun deleteConnector(
+        clientConfig: ClientConfig,
+        connector: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit =
         dev.octri.showcase.vercel.methods.ConnectDeleteConnectorOperation.deleteConnector(
             clientConfig,
             connector,
@@ -230,9 +249,16 @@ data class CreateConnectorAuthorizationRequestResponse(
         )
 
     /**
-     * Creates a connector with provider configuration or a service connection method, and can optionally link it to a project. Choose either full configuration with `type` or preset configuration with `service` and `connectionMethod`; supply `data` for the provider configuration.
+     * Creates a connector with provider configuration or a service connection method, and can
+     * optionally link it to a project. Choose either full configuration with `type` or preset
+     * configuration with `service` and `connectionMethod`; supply `data` for the provider
+     * configuration.
      */
-    fun createConnector(clientConfig: ClientConfig, request: CreateConnectorRequest, options: RequestOptions? = null): ConnectConnectorCreateResult =
+    fun createConnector(
+        clientConfig: ClientConfig,
+        request: CreateConnectorRequest,
+        options: RequestOptions? = null,
+    ): ConnectConnectorCreateResult =
         dev.octri.showcase.vercel.methods.ConnectCreateConnectorOperation.createConnector(
             clientConfig,
             request,
@@ -240,9 +266,15 @@ data class CreateConnectorAuthorizationRequestResponse(
         )
 
     /**
-     * Updates connector configuration, trigger settings, or display details and returns any provider-side follow-up signals. Supply only the fields you want to change, and handle any reconsent, reinstall, or service synchronization information in the response.
+     * Updates connector configuration, trigger settings, or display details and returns any
+     * provider-side follow-up signals. Supply only the fields you want to change, and handle any
+     * reconsent, reinstall, or service synchronization information in the response.
      */
-    fun updateConnector(clientConfig: ClientConfig, request: UpdateConnectorRequest, options: RequestOptions? = null): ConnectConnectorUpdateResult =
+    fun updateConnector(
+        clientConfig: ClientConfig,
+        request: UpdateConnectorRequest,
+        options: RequestOptions? = null,
+    ): ConnectConnectorUpdateResult =
         dev.octri.showcase.vercel.methods.ConnectUpdateConnectorOperation.updateConnector(
             clientConfig,
             request,
@@ -250,101 +282,172 @@ data class CreateConnectorAuthorizationRequestResponse(
         )
 
     /**
-     * Replaces the complete set of trigger destinations for a connector. Submit all destinations you want to retain in `destinations`; an empty array removes every destination, and the replacement can contain at most three entries.
+     * Replaces the complete set of trigger destinations for a connector. Submit all destinations
+     * you want to retain in `destinations`; an empty array removes every destination, and the
+     * replacement can contain at most three entries.
      */
-    fun replaceConnectorTriggerDestinations(clientConfig: ClientConfig, connector: String, destinations: List<ConnectTriggerDestinationInput>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ConnectConnector =
-        dev.octri.showcase.vercel.methods.ConnectReplaceConnectorTriggerDestinationsOperation.replaceConnectorTriggerDestinations(
-            clientConfig,
-            connector,
-            destinations,
-            teamId,
-            slug,
-            options,
-        )
+    fun replaceConnectorTriggerDestinations(
+        clientConfig: ClientConfig,
+        connector: String,
+        destinations: List<ConnectTriggerDestinationInput>,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ConnectConnector =
+        dev.octri.showcase.vercel.methods.ConnectReplaceConnectorTriggerDestinationsOperation
+            .replaceConnectorTriggerDestinations(
+                clientConfig,
+                connector,
+                destinations,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Disconnects a managed connector from its provider-side manager. Use this operation when you want the connector to stop being managed by that provider.
+     * Disconnects a managed connector from its provider-side manager. Use this operation when you
+     * want the connector to stop being managed by that provider.
      */
-    fun ejectManagedConnector(clientConfig: ClientConfig, connector: String, slug: String? = null, options: RequestOptions? = null): ConnectConnector =
-        dev.octri.showcase.vercel.methods.ConnectEjectManagedConnectorOperation.ejectManagedConnector(
-            clientConfig,
-            connector,
-            slug,
-            options,
-        )
+    fun ejectManagedConnector(
+        clientConfig: ClientConfig,
+        connector: String,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ConnectConnector =
+        dev.octri.showcase.vercel.methods.ConnectEjectManagedConnectorOperation
+            .ejectManagedConnector(
+                clientConfig,
+                connector,
+                slug,
+                options,
+            )
 
     /**
-     * List the projects connected to a connector and the environments where each connection is available.
+     * List the projects connected to a connector and the environments where each connection is
+     * available.
      */
-    fun listConnectorProjectConnections(clientConfig: ClientConfig, connector: String, limit: Long? = null, cursor: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ConnectConnectorProjectConnectionList =
-        dev.octri.showcase.vercel.methods.ConnectListConnectorProjectConnectionsOperation.listConnectorProjectConnections(
-            clientConfig,
-            connector,
-            limit,
-            cursor,
-            teamId,
-            slug,
-            options,
-        )
+    fun listConnectorProjectConnections(
+        clientConfig: ClientConfig,
+        connector: String,
+        limit: Long? = null,
+        cursor: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ConnectConnectorProjectConnectionList =
+        dev.octri.showcase.vercel.methods.ConnectListConnectorProjectConnectionsOperation
+            .listConnectorProjectConnections(
+                clientConfig,
+                connector,
+                limit,
+                cursor,
+                teamId,
+                slug,
+                options,
+            )
+
+    /** Get the configuration that connects a connector to a project. */
+    fun getConnectorProjectConnection(
+        clientConfig: ClientConfig,
+        connector: String,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ConnectProjectConnection =
+        dev.octri.showcase.vercel.methods.ConnectGetConnectorProjectConnectionOperation
+            .getConnectorProjectConnection(
+                clientConfig,
+                connector,
+                projectId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Get the configuration that connects a connector to a project.
+     * Connect a connector to a project, or replace the environments on an existing project
+     * connection.
      */
-    fun getConnectorProjectConnection(clientConfig: ClientConfig, connector: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ConnectProjectConnection =
-        dev.octri.showcase.vercel.methods.ConnectGetConnectorProjectConnectionOperation.getConnectorProjectConnection(
-            clientConfig,
-            connector,
-            projectId,
-            teamId,
-            slug,
-            options,
-        )
+    fun upsertConnectorProjectConnection(
+        clientConfig: ClientConfig,
+        connector: String,
+        projectId: String,
+        environments: List<String>,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ConnectProjectConnection =
+        dev.octri.showcase.vercel.methods.ConnectUpsertConnectorProjectConnectionOperation
+            .upsertConnectorProjectConnection(
+                clientConfig,
+                connector,
+                projectId,
+                environments,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Connect a connector to a project, or replace the environments on an existing project connection.
+     * Deletes the connection between a connector and a project. Supply the connector identifier or
+     * URL-encoded team-scoped UID in `connector` and the Vercel project ID in `projectId`. Use
+     * `teamId` or `slug` to select a team when the token or authenticated user's default team
+     * should not be used.
      */
-    fun upsertConnectorProjectConnection(clientConfig: ClientConfig, connector: String, projectId: String, environments: List<String>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ConnectProjectConnection =
-        dev.octri.showcase.vercel.methods.ConnectUpsertConnectorProjectConnectionOperation.upsertConnectorProjectConnection(
-            clientConfig,
-            connector,
-            projectId,
-            environments,
-            teamId,
-            slug,
-            options,
-        )
+    fun deleteConnectorProjectConnection(
+        clientConfig: ClientConfig,
+        connector: String,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods.ConnectDeleteConnectorProjectConnectionOperation
+            .deleteConnectorProjectConnection(
+                clientConfig,
+                connector,
+                projectId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Deletes the connection between a connector and a project. Supply the connector identifier or URL-encoded team-scoped UID in `connector` and the Vercel project ID in `projectId`. Use `teamId` or `slug` to select a team when the token or authenticated user's default team should not be used.
+     * List the connectors connected to a project and the environments where each connection is
+     * available.
      */
-    fun deleteConnectorProjectConnection(clientConfig: ClientConfig, connector: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.ConnectDeleteConnectorProjectConnectionOperation.deleteConnectorProjectConnection(
-            clientConfig,
-            connector,
-            projectId,
-            teamId,
-            slug,
-            options,
-        )
+    fun listProjectConnectorConnections(
+        clientConfig: ClientConfig,
+        projectId: String,
+        limit: Long? = null,
+        cursor: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ConnectProjectConnectorConnectionList =
+        dev.octri.showcase.vercel.methods.ConnectListProjectConnectorConnectionsOperation
+            .listProjectConnectorConnections(
+                clientConfig,
+                projectId,
+                limit,
+                cursor,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * List the connectors connected to a project and the environments where each connection is available.
+     * Retrieves an access token for a connector, scoped to the authenticated user or another
+     * subject specified in the request body. Supply the connector identifier in the path and
+     * optionally provide token settings such as `scopes`, `resources`, or `audience`. Use the
+     * returned token and expiration details to access the connector.
      */
-    fun listProjectConnectorConnections(clientConfig: ClientConfig, projectId: String, limit: Long? = null, cursor: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ConnectProjectConnectorConnectionList =
-        dev.octri.showcase.vercel.methods.ConnectListProjectConnectorConnectionsOperation.listProjectConnectorConnections(
-            clientConfig,
-            projectId,
-            limit,
-            cursor,
-            teamId,
-            slug,
-            options,
-        )
-
-    /**
-     * Retrieves an access token for a connector, scoped to the authenticated user or another subject specified in the request body. Supply the connector identifier in the path and optionally provide token settings such as `scopes`, `resources`, or `audience`. Use the returned token and expiration details to access the connector.
-     */
-    fun getConnectorToken(clientConfig: ClientConfig, request: GetConnectorTokenRequest, options: RequestOptions? = null): GetConnectorTokenResponse =
+    fun getConnectorToken(
+        clientConfig: ClientConfig,
+        request: GetConnectorTokenRequest,
+        options: RequestOptions? = null,
+    ): GetConnectorTokenResponse =
         dev.octri.showcase.vercel.methods.ConnectGetConnectorTokenOperation.getConnectorToken(
             clientConfig,
             request,
@@ -352,12 +455,20 @@ data class CreateConnectorAuthorizationRequestResponse(
         )
 
     /**
-     * Creates an authorization request for a connector and returns the URL and verifier details needed to complete the authorization flow. Supply the connector identifier and, if needed, settings such as `subject`, `scopes`, `returnUrl`, or `deviceCode`. Use the returned `url` and `verifier` to continue the connector authorization flow.
+     * Creates an authorization request for a connector and returns the URL and verifier details
+     * needed to complete the authorization flow. Supply the connector identifier and, if needed,
+     * settings such as `subject`, `scopes`, `returnUrl`, or `deviceCode`. Use the returned `url`
+     * and `verifier` to continue the connector authorization flow.
      */
-    fun createConnectorAuthorizationRequest(clientConfig: ClientConfig, request: CreateConnectorAuthorizationRequestRequest, options: RequestOptions? = null): CreateConnectorAuthorizationRequestResponse =
-        dev.octri.showcase.vercel.methods.ConnectCreateConnectorAuthorizationRequestOperation.createConnectorAuthorizationRequest(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createConnectorAuthorizationRequest(
+        clientConfig: ClientConfig,
+        request: CreateConnectorAuthorizationRequestRequest,
+        options: RequestOptions? = null,
+    ): CreateConnectorAuthorizationRequestResponse =
+        dev.octri.showcase.vercel.methods.ConnectCreateConnectorAuthorizationRequestOperation
+            .createConnectorAuthorizationRequest(
+                clientConfig,
+                request,
+                options,
+            )
 }

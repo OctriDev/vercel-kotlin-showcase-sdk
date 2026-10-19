@@ -3,69 +3,110 @@
 
 package dev.octri.showcase.vercel.models
 
-class UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX4f0d8a81cf private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX4f0d8a81cf && value == other.value
+class UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX4f0d8a81cf
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX4f0d8a81cf &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX4f0d8a81cf(false)
-        @JvmField val TRUE = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX4f0d8a81cf(true)
+        @JvmField
+        val FALSE = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX4f0d8a81cf(false)
+        @JvmField
+        val TRUE = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX4f0d8a81cf(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX4f0d8a81cf(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX4f0d8a81cf(value)
     }
 }
 
 /**
- * Customer-configurable deployment sources. Every deploy classifies to exactly one. JSON schema in `packages/deployment-policy/schemas/body.ts` enumerates exactly these values. - `'git'` — git provider webhook. - `'cli'` — Vercel CLI (legacy classic-token CLI and SIWV CLI both). - `'rest-api'` — direct user/team-token REST upload. Does NOT cover deploy hooks, Marketplace integrations, or first-party app tokens. - `'deploy-hook'` — project deploy-hook URL. The URL is the…
+ * Customer-configurable deployment sources. Every deploy classifies to exactly one. JSON schema in
+ * `packages/deployment-policy/schemas/body.ts` enumerates exactly these values. - `'git'` — git
+ * provider webhook. - `'cli'` — Vercel CLI (legacy classic-token CLI and SIWV CLI both). -
+ * `'rest-api'` — direct user/team-token REST upload. Does NOT cover deploy hooks, Marketplace
+ * integrations, or first-party app tokens. - `'deploy-hook'` — project deploy-hook URL. The URL is
+ * the…
  */
-class UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28 && value == other.value
+class UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CLI = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28("cli")
-        @JvmField val DEPLOY_HOOK = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28("deploy-hook")
-        @JvmField val GIT = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28("git")
-        @JvmField val INTEGRATION = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28("integration")
-        @JvmField val REST_API = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28("rest-api")
-        @JvmField val V0 = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28("v0")
+        @JvmField
+        val CLI = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28("cli")
+        @JvmField
+        val DEPLOY_HOOK =
+            UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28("deploy-hook")
+        @JvmField
+        val GIT = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28("git")
+        @JvmField
+        val INTEGRATION =
+            UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28("integration")
+        @JvmField
+        val REST_API =
+            UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28("rest-api")
+        @JvmField
+        val V0 = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28("v0")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX2b67779f28(value)
     }
 }
 
-class UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnabledEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnabledEnum && value == other.value
+class UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnabledEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnabledEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnabledEnum(false)
-        @JvmField val TRUE = UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnabledEnum(true)
+        @JvmField
+        val FALSE = UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnabledEnum(false)
+        @JvmField
+        val TRUE = UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnabledEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnabledEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnabledEnum(value)
     }
 }
 
-class UploadProjectAvatarResponseDirectoryListingEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseDirectoryListingEnum && value == other.value
+class UploadProjectAvatarResponseDirectoryListingEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseDirectoryListingEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -73,16 +114,21 @@ class UploadProjectAvatarResponseDirectoryListingEnum private constructor(
         @JvmField val FALSE = UploadProjectAvatarResponseDirectoryListingEnum(false)
         @JvmField val TRUE = UploadProjectAvatarResponseDirectoryListingEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseDirectoryListingEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = UploadProjectAvatarResponseDirectoryListingEnum(value)
     }
 }
 
-class UploadProjectAvatarResponseDismissedToastsItemActionEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseDismissedToastsItemActionEnum && value == other.value
+class UploadProjectAvatarResponseDismissedToastsItemActionEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseDismissedToastsItemActionEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -91,33 +137,47 @@ class UploadProjectAvatarResponseDismissedToastsItemActionEnum private construct
         @JvmField val CANCEL = UploadProjectAvatarResponseDismissedToastsItemActionEnum("cancel")
         @JvmField val DELETE = UploadProjectAvatarResponseDismissedToastsItemActionEnum("delete")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UploadProjectAvatarResponseDismissedToastsItemActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            UploadProjectAvatarResponseDismissedToastsItemActionEnum(value)
     }
 }
 
-class UploadProjectAvatarResponseEnableAffectedProjectsDeploymentsEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseEnableAffectedProjectsDeploymentsEnum && value == other.value
+class UploadProjectAvatarResponseEnableAffectedProjectsDeploymentsEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseEnableAffectedProjectsDeploymentsEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = UploadProjectAvatarResponseEnableAffectedProjectsDeploymentsEnum(false)
+        @JvmField
+        val FALSE = UploadProjectAvatarResponseEnableAffectedProjectsDeploymentsEnum(false)
         @JvmField val TRUE = UploadProjectAvatarResponseEnableAffectedProjectsDeploymentsEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseEnableAffectedProjectsDeploymentsEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UploadProjectAvatarResponseEnableAffectedProjectsDeploymentsEnum(value)
     }
 }
 
-class UploadProjectAvatarResponseEnableExternalRewriteCachingEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseEnableExternalRewriteCachingEnum && value == other.value
+class UploadProjectAvatarResponseEnableExternalRewriteCachingEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseEnableExternalRewriteCachingEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -125,16 +185,22 @@ class UploadProjectAvatarResponseEnableExternalRewriteCachingEnum private constr
         @JvmField val FALSE = UploadProjectAvatarResponseEnableExternalRewriteCachingEnum(false)
         @JvmField val TRUE = UploadProjectAvatarResponseEnableExternalRewriteCachingEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseEnableExternalRewriteCachingEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UploadProjectAvatarResponseEnableExternalRewriteCachingEnum(value)
     }
 }
 
-class UploadProjectAvatarResponseEnablePreviewFeedbackEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseEnablePreviewFeedbackEnum && value == other.value
+class UploadProjectAvatarResponseEnablePreviewFeedbackEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseEnablePreviewFeedbackEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -142,16 +208,21 @@ class UploadProjectAvatarResponseEnablePreviewFeedbackEnum private constructor(
         @JvmField val FALSE = UploadProjectAvatarResponseEnablePreviewFeedbackEnum(false)
         @JvmField val TRUE = UploadProjectAvatarResponseEnablePreviewFeedbackEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseEnablePreviewFeedbackEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = UploadProjectAvatarResponseEnablePreviewFeedbackEnum(value)
     }
 }
 
-class UploadProjectAvatarResponseEnableProductionFeedbackEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseEnableProductionFeedbackEnum && value == other.value
+class UploadProjectAvatarResponseEnableProductionFeedbackEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseEnableProductionFeedbackEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -159,16 +230,22 @@ class UploadProjectAvatarResponseEnableProductionFeedbackEnum private constructo
         @JvmField val FALSE = UploadProjectAvatarResponseEnableProductionFeedbackEnum(false)
         @JvmField val TRUE = UploadProjectAvatarResponseEnableProductionFeedbackEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseEnableProductionFeedbackEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UploadProjectAvatarResponseEnableProductionFeedbackEnum(value)
     }
 }
 
-class UploadProjectAvatarResponseEnvItemDecryptedEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseEnvItemDecryptedEnum && value == other.value
+class UploadProjectAvatarResponseEnvItemDecryptedEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseEnvItemDecryptedEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -176,68 +253,97 @@ class UploadProjectAvatarResponseEnvItemDecryptedEnum private constructor(
         @JvmField val FALSE = UploadProjectAvatarResponseEnvItemDecryptedEnum(false)
         @JvmField val TRUE = UploadProjectAvatarResponseEnvItemDecryptedEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseEnvItemDecryptedEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = UploadProjectAvatarResponseEnvItemDecryptedEnum(value)
     }
 }
 
-class UploadProjectAvatarResponseEnvItemInternalContentHintTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseEnvItemInternalContentHintTypeEnum && value == other.value
+class UploadProjectAvatarResponseEnvItemInternalContentHintTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseEnvItemInternalContentHintTypeEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val FLAGS_SECRET = UploadProjectAvatarResponseEnvItemInternalContentHintTypeEnum("flags-secret")
+        @JvmField
+        val FLAGS_SECRET =
+            UploadProjectAvatarResponseEnvItemInternalContentHintTypeEnum("flags-secret")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UploadProjectAvatarResponseEnvItemInternalContentHintTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            UploadProjectAvatarResponseEnvItemInternalContentHintTypeEnum(value)
     }
 }
 
-class UploadProjectAvatarResponseEnvItemTargetVariant0ItemEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseEnvItemTargetVariant0ItemEnum && value == other.value
+class UploadProjectAvatarResponseEnvItemTargetVariant0ItemEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseEnvItemTargetVariant0ItemEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val DEVELOPMENT = UploadProjectAvatarResponseEnvItemTargetVariant0ItemEnum("development")
+        @JvmField
+        val DEVELOPMENT = UploadProjectAvatarResponseEnvItemTargetVariant0ItemEnum("development")
         @JvmField val PREVIEW = UploadProjectAvatarResponseEnvItemTargetVariant0ItemEnum("preview")
-        @JvmField val PRODUCTION = UploadProjectAvatarResponseEnvItemTargetVariant0ItemEnum("production")
+        @JvmField
+        val PRODUCTION = UploadProjectAvatarResponseEnvItemTargetVariant0ItemEnum("production")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UploadProjectAvatarResponseEnvItemTargetVariant0ItemEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            UploadProjectAvatarResponseEnvItemTargetVariant0ItemEnum(value)
     }
 }
 
-class UploadProjectAvatarResponseEnvItemTargetVariant1Enum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseEnvItemTargetVariant1Enum && value == other.value
+class UploadProjectAvatarResponseEnvItemTargetVariant1Enum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseEnvItemTargetVariant1Enum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val DEVELOPMENT = UploadProjectAvatarResponseEnvItemTargetVariant1Enum("development")
+        @JvmField
+        val DEVELOPMENT = UploadProjectAvatarResponseEnvItemTargetVariant1Enum("development")
         @JvmField val PREVIEW = UploadProjectAvatarResponseEnvItemTargetVariant1Enum("preview")
-        @JvmField val PRODUCTION = UploadProjectAvatarResponseEnvItemTargetVariant1Enum("production")
+        @JvmField
+        val PRODUCTION = UploadProjectAvatarResponseEnvItemTargetVariant1Enum("production")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UploadProjectAvatarResponseEnvItemTargetVariant1Enum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = UploadProjectAvatarResponseEnvItemTargetVariant1Enum(value)
     }
 }
 
-class UploadProjectAvatarResponseEnvItemTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseEnvItemTypeEnum && value == other.value
+class UploadProjectAvatarResponseEnvItemTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseEnvItemTypeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -248,19 +354,25 @@ class UploadProjectAvatarResponseEnvItemTypeEnum private constructor(
         @JvmField val SENSITIVE = UploadProjectAvatarResponseEnvItemTypeEnum("sensitive")
         @JvmField val SYSTEM = UploadProjectAvatarResponseEnvItemTypeEnum("system")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UploadProjectAvatarResponseEnvItemTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = UploadProjectAvatarResponseEnvItemTypeEnum(value)
     }
 }
 
 /**
- * User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
+ * User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit
+ * this field and callers fall back to existing `type` behavior.
  */
-class UploadProjectAvatarResponseEnvItemVisibilityEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseEnvItemVisibilityEnum && value == other.value
+class UploadProjectAvatarResponseEnvItemVisibilityEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseEnvItemVisibilityEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -268,16 +380,21 @@ class UploadProjectAvatarResponseEnvItemVisibilityEnum private constructor(
         @JvmField val CONFIG = UploadProjectAvatarResponseEnvItemVisibilityEnum("config")
         @JvmField val SECRET = UploadProjectAvatarResponseEnvItemVisibilityEnum("secret")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UploadProjectAvatarResponseEnvItemVisibilityEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = UploadProjectAvatarResponseEnvItemVisibilityEnum(value)
     }
 }
 
-class UploadProjectAvatarResponseFeaturesWebAnalyticsEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseFeaturesWebAnalyticsEnum && value == other.value
+class UploadProjectAvatarResponseFeaturesWebAnalyticsEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseFeaturesWebAnalyticsEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -285,16 +402,21 @@ class UploadProjectAvatarResponseFeaturesWebAnalyticsEnum private constructor(
         @JvmField val FALSE = UploadProjectAvatarResponseFeaturesWebAnalyticsEnum(false)
         @JvmField val TRUE = UploadProjectAvatarResponseFeaturesWebAnalyticsEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseFeaturesWebAnalyticsEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = UploadProjectAvatarResponseFeaturesWebAnalyticsEnum(value)
     }
 }
 
-class UploadProjectAvatarResponseFrameworkEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseFrameworkEnum && value == other.value
+class UploadProjectAvatarResponseFrameworkEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseFrameworkEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -308,7 +430,8 @@ class UploadProjectAvatarResponseFrameworkEnum private constructor(
         @JvmField val BRUNCH = UploadProjectAvatarResponseFrameworkEnum("brunch")
         @JvmField val BUN = UploadProjectAvatarResponseFrameworkEnum("bun")
         @JvmField val CONTAINER = UploadProjectAvatarResponseFrameworkEnum("container")
-        @JvmField val CREATE_REACT_APP = UploadProjectAvatarResponseFrameworkEnum("create-react-app")
+        @JvmField
+        val CREATE_REACT_APP = UploadProjectAvatarResponseFrameworkEnum("create-react-app")
         @JvmField val DJANGO = UploadProjectAvatarResponseFrameworkEnum("django")
         @JvmField val DOCUSAURUS = UploadProjectAvatarResponseFrameworkEnum("docusaurus")
         @JvmField val DOCUSAURUS_2 = UploadProjectAvatarResponseFrameworkEnum("docusaurus-2")
@@ -365,7 +488,9 @@ class UploadProjectAvatarResponseFrameworkEnum private constructor(
         @JvmField val SVELTEKIT = UploadProjectAvatarResponseFrameworkEnum("sveltekit")
         @JvmField val SVELTEKIT_1 = UploadProjectAvatarResponseFrameworkEnum("sveltekit-1")
         @JvmField val TANSTACK_START = UploadProjectAvatarResponseFrameworkEnum("tanstack-start")
-        @JvmField val TANSTACK_START_LOVABLE = UploadProjectAvatarResponseFrameworkEnum("tanstack-start-lovable")
+        @JvmField
+        val TANSTACK_START_LOVABLE =
+            UploadProjectAvatarResponseFrameworkEnum("tanstack-start-lovable")
         @JvmField val UMIJS = UploadProjectAvatarResponseFrameworkEnum("umijs")
         @JvmField val VITE = UploadProjectAvatarResponseFrameworkEnum("vite")
         @JvmField val VITEPRESS = UploadProjectAvatarResponseFrameworkEnum("vitepress")
@@ -374,19 +499,22 @@ class UploadProjectAvatarResponseFrameworkEnum private constructor(
         @JvmField val XMCP = UploadProjectAvatarResponseFrameworkEnum("xmcp")
         @JvmField val ZOLA = UploadProjectAvatarResponseFrameworkEnum("zola")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UploadProjectAvatarResponseFrameworkEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = UploadProjectAvatarResponseFrameworkEnum(value)
     }
 }
 
-/**
- * Whether the Vercel bot should comment on commits
- */
-class UploadProjectAvatarResponseGitCommentsOnCommitEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseGitCommentsOnCommitEnum && value == other.value
+/** Whether the Vercel bot should comment on commits */
+class UploadProjectAvatarResponseGitCommentsOnCommitEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseGitCommentsOnCommitEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -394,19 +522,22 @@ class UploadProjectAvatarResponseGitCommentsOnCommitEnum private constructor(
         @JvmField val FALSE = UploadProjectAvatarResponseGitCommentsOnCommitEnum(false)
         @JvmField val TRUE = UploadProjectAvatarResponseGitCommentsOnCommitEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseGitCommentsOnCommitEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = UploadProjectAvatarResponseGitCommentsOnCommitEnum(value)
     }
 }
 
-/**
- * Whether the Vercel bot should comment on PRs
- */
-class UploadProjectAvatarResponseGitCommentsOnPullRequestEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseGitCommentsOnPullRequestEnum && value == other.value
+/** Whether the Vercel bot should comment on PRs */
+class UploadProjectAvatarResponseGitCommentsOnPullRequestEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseGitCommentsOnPullRequestEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -414,16 +545,22 @@ class UploadProjectAvatarResponseGitCommentsOnPullRequestEnum private constructo
         @JvmField val FALSE = UploadProjectAvatarResponseGitCommentsOnPullRequestEnum(false)
         @JvmField val TRUE = UploadProjectAvatarResponseGitCommentsOnPullRequestEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseGitCommentsOnPullRequestEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UploadProjectAvatarResponseGitCommentsOnPullRequestEnum(value)
     }
 }
 
-class UploadProjectAvatarResponseGitForkProtectionEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseGitForkProtectionEnum && value == other.value
+class UploadProjectAvatarResponseGitForkProtectionEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseGitForkProtectionEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -431,16 +568,21 @@ class UploadProjectAvatarResponseGitForkProtectionEnum private constructor(
         @JvmField val FALSE = UploadProjectAvatarResponseGitForkProtectionEnum(false)
         @JvmField val TRUE = UploadProjectAvatarResponseGitForkProtectionEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseGitForkProtectionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = UploadProjectAvatarResponseGitForkProtectionEnum(value)
     }
 }
 
-class UploadProjectAvatarResponseGitLFSEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseGitLFSEnum && value == other.value
+class UploadProjectAvatarResponseGitLFSEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseGitLFSEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -448,136 +590,200 @@ class UploadProjectAvatarResponseGitLFSEnum private constructor(
         @JvmField val FALSE = UploadProjectAvatarResponseGitLFSEnum(false)
         @JvmField val TRUE = UploadProjectAvatarResponseGitLFSEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseGitLFSEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = UploadProjectAvatarResponseGitLFSEnum(value)
     }
 }
 
-/**
- * Whether consolidated commit status is enabled.
- */
-class UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX9791a4cdf8 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX9791a4cdf8 && value == other.value
+/** Whether consolidated commit status is enabled. */
+class UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX9791a4cdf8
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX9791a4cdf8 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX9791a4cdf8(false)
-        @JvmField val TRUE = UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX9791a4cdf8(true)
+        @JvmField
+        val FALSE = UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX9791a4cdf8(false)
+        @JvmField
+        val TRUE = UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX9791a4cdf8(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX9791a4cdf8(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX9791a4cdf8(value)
     }
 }
 
-/**
- * Whether to propagate individual deployment failures to the consolidated status.
- */
-class UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX30b9604aa8 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX30b9604aa8 && value == other.value
+/** Whether to propagate individual deployment failures to the consolidated status. */
+class UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX30b9604aa8
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX30b9604aa8 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX30b9604aa8(false)
-        @JvmField val TRUE = UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX30b9604aa8(true)
+        @JvmField
+        val FALSE = UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX30b9604aa8(false)
+        @JvmField
+        val TRUE = UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX30b9604aa8(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX30b9604aa8(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UploadProjectAvatarResponseGitProviderOptionsConsolidatedGitCX30b9604aa8(value)
     }
 }
 
 /**
- * Whether the Vercel bot should automatically create GitHub deployments docs.github.com NOTE: repository-dispatch events should be used instead
+ * Whether the Vercel bot should automatically create GitHub deployments docs.github.com NOTE:
+ * repository-dispatch events should be used instead
  */
-class UploadProjectAvatarResponseGitProviderOptionsCreateDeploymentsEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseGitProviderOptionsCreateDeploymentsEnum && value == other.value
+class UploadProjectAvatarResponseGitProviderOptionsCreateDeploymentsEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseGitProviderOptionsCreateDeploymentsEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val DISABLED = UploadProjectAvatarResponseGitProviderOptionsCreateDeploymentsEnum("disabled")
-        @JvmField val ENABLED = UploadProjectAvatarResponseGitProviderOptionsCreateDeploymentsEnum("enabled")
+        @JvmField
+        val DISABLED =
+            UploadProjectAvatarResponseGitProviderOptionsCreateDeploymentsEnum("disabled")
+        @JvmField
+        val ENABLED = UploadProjectAvatarResponseGitProviderOptionsCreateDeploymentsEnum("enabled")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UploadProjectAvatarResponseGitProviderOptionsCreateDeploymentsEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            UploadProjectAvatarResponseGitProviderOptionsCreateDeploymentsEnum(value)
     }
 }
 
 /**
- * Whether the Vercel bot should not automatically create GitHub repository-dispatch events on deployment events. vercel.com - `true`: disable repository-dispatch events for this project (explicit override of the team setting). - `false`: enable repository-dispatch events for this project (explicit override of the team setting). - absent: inherit from `team.disableRepositoryDispatchEvents`.
+ * Whether the Vercel bot should not automatically create GitHub repository-dispatch events on
+ * deployment events. vercel.com - `true`: disable repository-dispatch events for this project
+ * (explicit override of the team setting). - `false`: enable repository-dispatch events for this
+ * project (explicit override of the team setting). - absent: inherit from
+ * `team.disableRepositoryDispatchEvents`.
  */
-class UploadProjectAvatarResponseGitProviderOptionsDisableRepositorX71072bf95b private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseGitProviderOptionsDisableRepositorX71072bf95b && value == other.value
+class UploadProjectAvatarResponseGitProviderOptionsDisableRepositorX71072bf95b
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseGitProviderOptionsDisableRepositorX71072bf95b &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = UploadProjectAvatarResponseGitProviderOptionsDisableRepositorX71072bf95b(false)
-        @JvmField val TRUE = UploadProjectAvatarResponseGitProviderOptionsDisableRepositorX71072bf95b(true)
+        @JvmField
+        val FALSE = UploadProjectAvatarResponseGitProviderOptionsDisableRepositorX71072bf95b(false)
+        @JvmField
+        val TRUE = UploadProjectAvatarResponseGitProviderOptionsDisableRepositorX71072bf95b(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseGitProviderOptionsDisableRepositorX71072bf95b(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UploadProjectAvatarResponseGitProviderOptionsDisableRepositorX71072bf95b(value)
     }
 }
 
 /**
- * Whether Vercel should post commit statuses for this project. When omitted, commit statuses remain enabled.
+ * Whether Vercel should post commit statuses for this project. When omitted, commit statuses remain
+ * enabled.
  */
-class UploadProjectAvatarResponseGitProviderOptionsGitCommitStatusEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseGitProviderOptionsGitCommitStatusEnum && value == other.value
+class UploadProjectAvatarResponseGitProviderOptionsGitCommitStatusEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseGitProviderOptionsGitCommitStatusEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = UploadProjectAvatarResponseGitProviderOptionsGitCommitStatusEnum(false)
+        @JvmField
+        val FALSE = UploadProjectAvatarResponseGitProviderOptionsGitCommitStatusEnum(false)
         @JvmField val TRUE = UploadProjectAvatarResponseGitProviderOptionsGitCommitStatusEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseGitProviderOptionsGitCommitStatusEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UploadProjectAvatarResponseGitProviderOptionsGitCommitStatusEnum(value)
     }
 }
 
 /**
- * Whether the project requires commits to be signed & verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`.
+ * Whether the project requires commits to be signed & verified before deployments will be
+ * created. - `true`: require verified commits for this project (explicit override of the team
+ * setting). - `false`: do not require verified commits (explicit override of the team setting). -
+ * absent: inherit from `team.requireVerifiedCommits`.
  */
-class UploadProjectAvatarResponseGitProviderOptionsRequireVerifiedCommitsEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseGitProviderOptionsRequireVerifiedCommitsEnum && value == other.value
+class UploadProjectAvatarResponseGitProviderOptionsRequireVerifiedCommitsEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseGitProviderOptionsRequireVerifiedCommitsEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = UploadProjectAvatarResponseGitProviderOptionsRequireVerifiedCommitsEnum(false)
-        @JvmField val TRUE = UploadProjectAvatarResponseGitProviderOptionsRequireVerifiedCommitsEnum(true)
+        @JvmField
+        val FALSE = UploadProjectAvatarResponseGitProviderOptionsRequireVerifiedCommitsEnum(false)
+        @JvmField
+        val TRUE = UploadProjectAvatarResponseGitProviderOptionsRequireVerifiedCommitsEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseGitProviderOptionsRequireVerifiedCommitsEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UploadProjectAvatarResponseGitProviderOptionsRequireVerifiedCommitsEnum(value)
     }
 }
 
-class UploadProjectAvatarResponseHasActiveBranchesEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseHasActiveBranchesEnum && value == other.value
+class UploadProjectAvatarResponseHasActiveBranchesEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseHasActiveBranchesEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -585,7 +791,10 @@ class UploadProjectAvatarResponseHasActiveBranchesEnum private constructor(
         @JvmField val FALSE = UploadProjectAvatarResponseHasActiveBranchesEnum(false)
         @JvmField val TRUE = UploadProjectAvatarResponseHasActiveBranchesEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UploadProjectAvatarResponseHasActiveBranchesEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = UploadProjectAvatarResponseHasActiveBranchesEnum(value)
     }
 }

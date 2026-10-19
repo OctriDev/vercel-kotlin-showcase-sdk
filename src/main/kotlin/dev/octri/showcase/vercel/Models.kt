@@ -3,143 +3,206 @@
 
 package dev.octri.showcase.vercel
 
-typealias AcceptProjectTransferRequestResponsePartnerCallsItemResultStatusEnum = dev.octri.showcase.vercel.models.AcceptProjectTransferRequestResponsePartnerCallsItemResultStatusEnum
+typealias AcceptProjectTransferRequestResponsePartnerCallsItemResultStatusEnum =
+    dev.octri.showcase.vercel.models.AcceptProjectTransferRequestResponsePartnerCallsItemResultStatusEnum
 
 typealias ACLAction = dev.octri.showcase.vercel.models.ACLAction
 
-typealias ActivateKmsSigningKeyResponseStatusEnum = dev.octri.showcase.vercel.models.ActivateKmsSigningKeyResponseStatusEnum
+typealias ActivateKmsSigningKeyResponseStatusEnum =
+    dev.octri.showcase.vercel.models.ActivateKmsSigningKeyResponseStatusEnum
 
 typealias AddBypassIpResponse = dev.octri.showcase.vercel.models.AddBypassIpResponse
 
 typealias AddBypassIpResponseVariant0 = dev.octri.showcase.vercel.models.AddBypassIpResponseVariant0
 
-typealias AddBypassIpResponseVariant0OkEnum = dev.octri.showcase.vercel.models.AddBypassIpResponseVariant0OkEnum
+typealias AddBypassIpResponseVariant0OkEnum =
+    dev.octri.showcase.vercel.models.AddBypassIpResponseVariant0OkEnum
 
-typealias AddBypassIpResponseVariant0ResultItem = dev.octri.showcase.vercel.models.AddBypassIpResponseVariant0ResultItem
+typealias AddBypassIpResponseVariant0ResultItem =
+    dev.octri.showcase.vercel.models.AddBypassIpResponseVariant0ResultItem
 
-typealias AddBypassIpResponseVariant0ResultItemIsProjectRuleEnum = dev.octri.showcase.vercel.models.AddBypassIpResponseVariant0ResultItemIsProjectRuleEnum
+typealias AddBypassIpResponseVariant0ResultItemIsProjectRuleEnum =
+    dev.octri.showcase.vercel.models.AddBypassIpResponseVariant0ResultItemIsProjectRuleEnum
 
 typealias AddBypassIpResponseVariant1 = dev.octri.showcase.vercel.models.AddBypassIpResponseVariant1
 
-typealias AddBypassIpResponseVariant1OkEnum = dev.octri.showcase.vercel.models.AddBypassIpResponseVariant1OkEnum
+typealias AddBypassIpResponseVariant1OkEnum =
+    dev.octri.showcase.vercel.models.AddBypassIpResponseVariant1OkEnum
 
-typealias AddBypassIpResponseVariant1ResultItem = dev.octri.showcase.vercel.models.AddBypassIpResponseVariant1ResultItem
+typealias AddBypassIpResponseVariant1ResultItem =
+    dev.octri.showcase.vercel.models.AddBypassIpResponseVariant1ResultItem
 
-typealias AddBypassIpResponseVariant1ResultItemActionEnum = dev.octri.showcase.vercel.models.AddBypassIpResponseVariant1ResultItemActionEnum
+typealias AddBypassIpResponseVariant1ResultItemActionEnum =
+    dev.octri.showcase.vercel.models.AddBypassIpResponseVariant1ResultItemActionEnum
 
-typealias AddBypassIpResponseVariant1ResultItemIsProjectRuleEnum = dev.octri.showcase.vercel.models.AddBypassIpResponseVariant1ResultItemIsProjectRuleEnum
+typealias AddBypassIpResponseVariant1ResultItemIsProjectRuleEnum =
+    dev.octri.showcase.vercel.models.AddBypassIpResponseVariant1ResultItemIsProjectRuleEnum
 
-typealias AdditionalContactInfoRequired = dev.octri.showcase.vercel.models.AdditionalContactInfoRequired
+typealias AdditionalContactInfoRequired =
+    dev.octri.showcase.vercel.models.AdditionalContactInfoRequired
 
-typealias AdditionalContactInfoRequiredCodeEnum = dev.octri.showcase.vercel.models.AdditionalContactInfoRequiredCodeEnum
+typealias AdditionalContactInfoRequiredCodeEnum =
+    dev.octri.showcase.vercel.models.AdditionalContactInfoRequiredCodeEnum
 
-typealias AdditionalContactInfoRequiredStatusEnum = dev.octri.showcase.vercel.models.AdditionalContactInfoRequiredStatusEnum
+typealias AdditionalContactInfoRequiredStatusEnum =
+    dev.octri.showcase.vercel.models.AdditionalContactInfoRequiredStatusEnum
 
-typealias AddProjectDomainRedirectStatusCodeEnum = dev.octri.showcase.vercel.models.AddProjectDomainRedirectStatusCodeEnum
+typealias AddProjectDomainRedirectStatusCodeEnum =
+    dev.octri.showcase.vercel.models.AddProjectDomainRedirectStatusCodeEnum
 
-typealias AddProjectDomainResponseRedirectStatusCodeEnum = dev.octri.showcase.vercel.models.AddProjectDomainResponseRedirectStatusCodeEnum
+typealias AddProjectDomainResponseRedirectStatusCodeEnum =
+    dev.octri.showcase.vercel.models.AddProjectDomainResponseRedirectStatusCodeEnum
 
-typealias AddProjectDomainResponseVerifiedEnum = dev.octri.showcase.vercel.models.AddProjectDomainResponseVerifiedEnum
+typealias AddProjectDomainResponseVerifiedEnum =
+    dev.octri.showcase.vercel.models.AddProjectDomainResponseVerifiedEnum
 
 typealias AddProjectMemberRoleEnum = dev.octri.showcase.vercel.models.AddProjectMemberRoleEnum
 
-typealias AddRoutePositionPlacementEnum = dev.octri.showcase.vercel.models.AddRoutePositionPlacementEnum
+typealias AddRoutePositionPlacementEnum =
+    dev.octri.showcase.vercel.models.AddRoutePositionPlacementEnum
 
-typealias AddRouteResponseRouteEnabledEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteEnabledEnum
+typealias AddRouteResponseRouteEnabledEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteEnabledEnum
 
-typealias AddRouteResponseRouteRouteCaseSensitiveEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteCaseSensitiveEnum
+typealias AddRouteResponseRouteRouteCaseSensitiveEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteCaseSensitiveEnum
 
-typealias AddRouteResponseRouteRouteCheckEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteCheckEnum
+typealias AddRouteResponseRouteRouteCheckEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteCheckEnum
 
-typealias AddRouteResponseRouteRouteContinueEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteContinueEnum
+typealias AddRouteResponseRouteRouteContinueEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteContinueEnum
 
-typealias AddRouteResponseRouteRouteDestination = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteDestination
+typealias AddRouteResponseRouteRouteDestination =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteDestination
 
-typealias AddRouteResponseRouteRouteDestinationVariant1 = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteDestinationVariant1
+typealias AddRouteResponseRouteRouteDestinationVariant1 =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteDestinationVariant1
 
-typealias AddRouteResponseRouteRouteDestinationVariant1TypeEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteDestinationVariant1TypeEnum
+typealias AddRouteResponseRouteRouteDestinationVariant1TypeEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteDestinationVariant1TypeEnum
 
-typealias AddRouteResponseRouteRouteHasItem = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteHasItem
+typealias AddRouteResponseRouteRouteHasItem =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteHasItem
 
-typealias AddRouteResponseRouteRouteHasItemVariant0 = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteHasItemVariant0
+typealias AddRouteResponseRouteRouteHasItemVariant0 =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteHasItemVariant0
 
-typealias AddRouteResponseRouteRouteHasItemVariant0TypeEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteHasItemVariant0TypeEnum
+typealias AddRouteResponseRouteRouteHasItemVariant0TypeEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteHasItemVariant0TypeEnum
 
-typealias AddRouteResponseRouteRouteHasItemVariant0ValueVariant1 = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteHasItemVariant0ValueVariant1
+typealias AddRouteResponseRouteRouteHasItemVariant0ValueVariant1 =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteHasItemVariant0ValueVariant1
 
-typealias AddRouteResponseRouteRouteHasItemVariant1 = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteHasItemVariant1
+typealias AddRouteResponseRouteRouteHasItemVariant1 =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteHasItemVariant1
 
-typealias AddRouteResponseRouteRouteHasItemVariant1TypeEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteHasItemVariant1TypeEnum
+typealias AddRouteResponseRouteRouteHasItemVariant1TypeEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteHasItemVariant1TypeEnum
 
-typealias AddRouteResponseRouteRouteHasItemVariant1ValueVariant1 = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteHasItemVariant1ValueVariant1
+typealias AddRouteResponseRouteRouteHasItemVariant1ValueVariant1 =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteHasItemVariant1ValueVariant1
 
-typealias AddRouteResponseRouteRouteImportantEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteImportantEnum
+typealias AddRouteResponseRouteRouteImportantEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteImportantEnum
 
-typealias AddRouteResponseRouteRouteMissingItem = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteMissingItem
+typealias AddRouteResponseRouteRouteMissingItem =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteMissingItem
 
-typealias AddRouteResponseRouteRouteMissingItemVariant0 = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteMissingItemVariant0
+typealias AddRouteResponseRouteRouteMissingItemVariant0 =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteMissingItemVariant0
 
-typealias AddRouteResponseRouteRouteMissingItemVariant0TypeEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteMissingItemVariant0TypeEnum
+typealias AddRouteResponseRouteRouteMissingItemVariant0TypeEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteMissingItemVariant0TypeEnum
 
-typealias AddRouteResponseRouteRouteMissingItemVariant0ValueVariant1 = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteMissingItemVariant0ValueVariant1
+typealias AddRouteResponseRouteRouteMissingItemVariant0ValueVariant1 =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteMissingItemVariant0ValueVariant1
 
-typealias AddRouteResponseRouteRouteMissingItemVariant1 = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteMissingItemVariant1
+typealias AddRouteResponseRouteRouteMissingItemVariant1 =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteMissingItemVariant1
 
-typealias AddRouteResponseRouteRouteMissingItemVariant1TypeEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteMissingItemVariant1TypeEnum
+typealias AddRouteResponseRouteRouteMissingItemVariant1TypeEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteMissingItemVariant1TypeEnum
 
-typealias AddRouteResponseRouteRouteMissingItemVariant1ValueVariant1 = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteMissingItemVariant1ValueVariant1
+typealias AddRouteResponseRouteRouteMissingItemVariant1ValueVariant1 =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteMissingItemVariant1ValueVariant1
 
-typealias AddRouteResponseRouteRouteMitigateActionEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteMitigateActionEnum
+typealias AddRouteResponseRouteRouteMitigateActionEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteMitigateActionEnum
 
-typealias AddRouteResponseRouteRouteOverrideEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteOverrideEnum
+typealias AddRouteResponseRouteRouteOverrideEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteOverrideEnum
 
-typealias AddRouteResponseRouteRouteRespectOriginCacheControlEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteRespectOriginCacheControlEnum
+typealias AddRouteResponseRouteRouteRespectOriginCacheControlEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteRespectOriginCacheControlEnum
 
-typealias AddRouteResponseRouteRouteTransformsItem = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItem
+typealias AddRouteResponseRouteRouteTransformsItem =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItem
 
-typealias AddRouteResponseRouteRouteTransformsItemVariant0 = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItemVariant0
+typealias AddRouteResponseRouteRouteTransformsItemVariant0 =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItemVariant0
 
-typealias AddRouteResponseRouteRouteTransformsItemVariant0OpEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItemVariant0OpEnum
+typealias AddRouteResponseRouteRouteTransformsItemVariant0OpEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItemVariant0OpEnum
 
-typealias AddRouteResponseRouteRouteTransformsItemVariant0Target = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItemVariant0Target
+typealias AddRouteResponseRouteRouteTransformsItemVariant0Target =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItemVariant0Target
 
-typealias AddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1 = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1
+typealias AddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1 =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1
 
-typealias AddRouteResponseRouteRouteTransformsItemVariant0TypeEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItemVariant0TypeEnum
+typealias AddRouteResponseRouteRouteTransformsItemVariant0TypeEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItemVariant0TypeEnum
 
-typealias AddRouteResponseRouteRouteTransformsItemVariant1 = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItemVariant1
+typealias AddRouteResponseRouteRouteTransformsItemVariant1 =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItemVariant1
 
-typealias AddRouteResponseRouteRouteTransformsItemVariant1OpEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItemVariant1OpEnum
+typealias AddRouteResponseRouteRouteTransformsItemVariant1OpEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItemVariant1OpEnum
 
-typealias AddRouteResponseRouteRouteTransformsItemVariant1TypeEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItemVariant1TypeEnum
+typealias AddRouteResponseRouteRouteTransformsItemVariant1TypeEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTransformsItemVariant1TypeEnum
 
-typealias AddRouteResponseRouteRouteTypeEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTypeEnum
+typealias AddRouteResponseRouteRouteTypeEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteRouteTypeEnum
 
-typealias AddRouteResponseRouteSrcSyntaxEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteSrcSyntaxEnum
+typealias AddRouteResponseRouteSrcSyntaxEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteSrcSyntaxEnum
 
-typealias AddRouteResponseRouteStagedEnum = dev.octri.showcase.vercel.models.AddRouteResponseRouteStagedEnum
+typealias AddRouteResponseRouteStagedEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseRouteStagedEnum
 
-typealias AddRouteResponseVersionIsLiveEnum = dev.octri.showcase.vercel.models.AddRouteResponseVersionIsLiveEnum
+typealias AddRouteResponseVersionIsLiveEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseVersionIsLiveEnum
 
-typealias AddRouteResponseVersionIsStagingEnum = dev.octri.showcase.vercel.models.AddRouteResponseVersionIsStagingEnum
+typealias AddRouteResponseVersionIsStagingEnum =
+    dev.octri.showcase.vercel.models.AddRouteResponseVersionIsStagingEnum
 
-typealias AddRouteRouteRouteHasItemTypeEnum = dev.octri.showcase.vercel.models.AddRouteRouteRouteHasItemTypeEnum
+typealias AddRouteRouteRouteHasItemTypeEnum =
+    dev.octri.showcase.vercel.models.AddRouteRouteRouteHasItemTypeEnum
 
-typealias AddRouteRouteRouteMissingItemTypeEnum = dev.octri.showcase.vercel.models.AddRouteRouteRouteMissingItemTypeEnum
+typealias AddRouteRouteRouteMissingItemTypeEnum =
+    dev.octri.showcase.vercel.models.AddRouteRouteRouteMissingItemTypeEnum
 
-typealias AddRouteRouteRouteTransformsItemOpEnum = dev.octri.showcase.vercel.models.AddRouteRouteRouteTransformsItemOpEnum
+typealias AddRouteRouteRouteTransformsItemOpEnum =
+    dev.octri.showcase.vercel.models.AddRouteRouteRouteTransformsItemOpEnum
 
-typealias AddRouteRouteRouteTransformsItemTypeEnum = dev.octri.showcase.vercel.models.AddRouteRouteRouteTransformsItemTypeEnum
+typealias AddRouteRouteRouteTransformsItemTypeEnum =
+    dev.octri.showcase.vercel.models.AddRouteRouteRouteTransformsItemTypeEnum
 
 typealias AddRouteRouteSrcSyntaxEnum = dev.octri.showcase.vercel.models.AddRouteRouteSrcSyntaxEnum
 
-typealias AggregateEventsParameterItemVariant0Enum = dev.octri.showcase.vercel.models.AggregateEventsParameterItemVariant0Enum
+typealias AggregateEventsParameterItemVariant0Enum =
+    dev.octri.showcase.vercel.models.AggregateEventsParameterItemVariant0Enum
 
-typealias AggregateEventsResponseQueryGroupByItemVariant1Enum = dev.octri.showcase.vercel.models.AggregateEventsResponseQueryGroupByItemVariant1Enum
+typealias AggregateEventsResponseQueryGroupByItemVariant1Enum =
+    dev.octri.showcase.vercel.models.AggregateEventsResponseQueryGroupByItemVariant1Enum
 
-typealias AggregatePageviewsParameterItemVariant0Enum = dev.octri.showcase.vercel.models.AggregatePageviewsParameterItemVariant0Enum
+typealias AggregatePageviewsParameterItemVariant0Enum =
+    dev.octri.showcase.vercel.models.AggregatePageviewsParameterItemVariant0Enum
 
-typealias AggregatePageviewsResponseQueryGroupByItemVariant1Enum = dev.octri.showcase.vercel.models.AggregatePageviewsResponseQueryGroupByItemVariant1Enum
+typealias AggregatePageviewsResponseQueryGroupByItemVariant1Enum =
+    dev.octri.showcase.vercel.models.AggregatePageviewsResponseQueryGroupByItemVariant1Enum
 
 typealias AiGatewayBudget = dev.octri.showcase.vercel.models.AiGatewayBudget
 
@@ -149,45 +212,60 @@ typealias AiGatewayBudgetArchivedEnum = dev.octri.showcase.vercel.models.AiGatew
 
 typealias AiGatewayBudgetDefault = dev.octri.showcase.vercel.models.AiGatewayBudgetDefault
 
-typealias AiGatewayBudgetDefaultActiveEnum = dev.octri.showcase.vercel.models.AiGatewayBudgetDefaultActiveEnum
+typealias AiGatewayBudgetDefaultActiveEnum =
+    dev.octri.showcase.vercel.models.AiGatewayBudgetDefaultActiveEnum
 
 typealias AiGatewayBudgetDefaultList = dev.octri.showcase.vercel.models.AiGatewayBudgetDefaultList
 
-typealias AiGatewayBudgetDefaultRefreshPeriodEnum = dev.octri.showcase.vercel.models.AiGatewayBudgetDefaultRefreshPeriodEnum
+typealias AiGatewayBudgetDefaultRefreshPeriodEnum =
+    dev.octri.showcase.vercel.models.AiGatewayBudgetDefaultRefreshPeriodEnum
 
-typealias AiGatewayBudgetDefaultScopeTypeEnum = dev.octri.showcase.vercel.models.AiGatewayBudgetDefaultScopeTypeEnum
+typealias AiGatewayBudgetDefaultScopeTypeEnum =
+    dev.octri.showcase.vercel.models.AiGatewayBudgetDefaultScopeTypeEnum
 
-typealias AiGatewayBudgetIncludeByokInQuotaEnum = dev.octri.showcase.vercel.models.AiGatewayBudgetIncludeByokInQuotaEnum
+typealias AiGatewayBudgetIncludeByokInQuotaEnum =
+    dev.octri.showcase.vercel.models.AiGatewayBudgetIncludeByokInQuotaEnum
 
 typealias AiGatewayBudgetList = dev.octri.showcase.vercel.models.AiGatewayBudgetList
 
-typealias AiGatewayBudgetListDefaultCoveredCounts = dev.octri.showcase.vercel.models.AiGatewayBudgetListDefaultCoveredCounts
+typealias AiGatewayBudgetListDefaultCoveredCounts =
+    dev.octri.showcase.vercel.models.AiGatewayBudgetListDefaultCoveredCounts
 
-typealias AiGatewayBudgetRefreshPeriodEnum = dev.octri.showcase.vercel.models.AiGatewayBudgetRefreshPeriodEnum
+typealias AiGatewayBudgetRefreshPeriodEnum =
+    dev.octri.showcase.vercel.models.AiGatewayBudgetRefreshPeriodEnum
 
-typealias AiGatewayBudgetScopeTypeEnum = dev.octri.showcase.vercel.models.AiGatewayBudgetScopeTypeEnum
+typealias AiGatewayBudgetScopeTypeEnum =
+    dev.octri.showcase.vercel.models.AiGatewayBudgetScopeTypeEnum
 
 typealias AiGatewayBudgetSourceEnum = dev.octri.showcase.vercel.models.AiGatewayBudgetSourceEnum
 
-typealias AiGatewayEvaluationFallbackCondition = dev.octri.showcase.vercel.models.AiGatewayEvaluationFallbackCondition
+typealias AiGatewayEvaluationFallbackCondition =
+    dev.octri.showcase.vercel.models.AiGatewayEvaluationFallbackCondition
 
-typealias AiGatewayEvaluationFallbackConditionVariant0 = dev.octri.showcase.vercel.models.AiGatewayEvaluationFallbackConditionVariant0
+typealias AiGatewayEvaluationFallbackConditionVariant0 =
+    dev.octri.showcase.vercel.models.AiGatewayEvaluationFallbackConditionVariant0
 
-typealias AiGatewayEvaluationFallbackConditionVariant1 = dev.octri.showcase.vercel.models.AiGatewayEvaluationFallbackConditionVariant1
+typealias AiGatewayEvaluationFallbackConditionVariant1 =
+    dev.octri.showcase.vercel.models.AiGatewayEvaluationFallbackConditionVariant1
 
-typealias AiGatewayEvaluationFallbackConditionVariant2 = dev.octri.showcase.vercel.models.AiGatewayEvaluationFallbackConditionVariant2
+typealias AiGatewayEvaluationFallbackConditionVariant2 =
+    dev.octri.showcase.vercel.models.AiGatewayEvaluationFallbackConditionVariant2
 
-typealias AiGatewayEvaluationFallbackConditionVariant3 = dev.octri.showcase.vercel.models.AiGatewayEvaluationFallbackConditionVariant3
+typealias AiGatewayEvaluationFallbackConditionVariant3 =
+    dev.octri.showcase.vercel.models.AiGatewayEvaluationFallbackConditionVariant3
 
-typealias AiGatewayEvaluationFallbackConditionVariant4 = dev.octri.showcase.vercel.models.AiGatewayEvaluationFallbackConditionVariant4
+typealias AiGatewayEvaluationFallbackConditionVariant4 =
+    dev.octri.showcase.vercel.models.AiGatewayEvaluationFallbackConditionVariant4
 
-typealias AiGatewayEvaluationFallbackConditionVariant4AtLeast = dev.octri.showcase.vercel.models.AiGatewayEvaluationFallbackConditionVariant4AtLeast
+typealias AiGatewayEvaluationFallbackConditionVariant4AtLeast =
+    dev.octri.showcase.vercel.models.AiGatewayEvaluationFallbackConditionVariant4AtLeast
 
 typealias AiGatewayProviderOptionBag = dev.octri.showcase.vercel.models.AiGatewayProviderOptionBag
 
 typealias AiGatewayRouterList = dev.octri.showcase.vercel.models.AiGatewayRouterList
 
-typealias AiGatewayRouterSelectorOptionBag = dev.octri.showcase.vercel.models.AiGatewayRouterSelectorOptionBag
+typealias AiGatewayRouterSelectorOptionBag =
+    dev.octri.showcase.vercel.models.AiGatewayRouterSelectorOptionBag
 
 typealias AiGatewayRule = dev.octri.showcase.vercel.models.AiGatewayRule
 
@@ -205,91 +283,132 @@ typealias AiGatewayRuleTypeEnum = dev.octri.showcase.vercel.models.AiGatewayRule
 
 typealias AiGatewayVirtualModelConfig = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfig
 
-typealias AiGatewayVirtualModelConfigAllowFallbackFromFastEnum = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigAllowFallbackFromFastEnum
+typealias AiGatewayVirtualModelConfigAllowFallbackFromFastEnum =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigAllowFallbackFromFastEnum
 
-typealias AiGatewayVirtualModelConfigCachingEnum = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigCachingEnum
+typealias AiGatewayVirtualModelConfigCachingEnum =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigCachingEnum
 
-typealias AiGatewayVirtualModelConfigDeletedEnum = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigDeletedEnum
+typealias AiGatewayVirtualModelConfigDeletedEnum =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigDeletedEnum
 
-typealias AiGatewayVirtualModelConfigDisallowPromptTrainingEnum = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigDisallowPromptTrainingEnum
+typealias AiGatewayVirtualModelConfigDisallowPromptTrainingEnum =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigDisallowPromptTrainingEnum
 
-typealias AiGatewayVirtualModelConfigHasItemEnum = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigHasItemEnum
+typealias AiGatewayVirtualModelConfigHasItemEnum =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigHasItemEnum
 
-typealias AiGatewayVirtualModelConfigHipaaCompliantEnum = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigHipaaCompliantEnum
+typealias AiGatewayVirtualModelConfigHipaaCompliantEnum =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigHipaaCompliantEnum
 
-typealias AiGatewayVirtualModelConfigInferenceRegion = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigInferenceRegion
+typealias AiGatewayVirtualModelConfigInferenceRegion =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigInferenceRegion
 
-typealias AiGatewayVirtualModelConfigInferenceRegionProvidersValue = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigInferenceRegionProvidersValue
+typealias AiGatewayVirtualModelConfigInferenceRegionProvidersValue =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigInferenceRegionProvidersValue
 
-typealias AiGatewayVirtualModelConfigInferenceRegionProvidersValueScopeEnum = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigInferenceRegionProvidersValueScopeEnum
+typealias AiGatewayVirtualModelConfigInferenceRegionProvidersValueScopeEnum =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigInferenceRegionProvidersValueScopeEnum
 
-typealias AiGatewayVirtualModelConfigInferenceRegionScopeEnum = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigInferenceRegionScopeEnum
+typealias AiGatewayVirtualModelConfigInferenceRegionScopeEnum =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigInferenceRegionScopeEnum
 
-typealias AiGatewayVirtualModelConfigList = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigList
+typealias AiGatewayVirtualModelConfigList =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigList
 
-typealias AiGatewayVirtualModelConfigModelsItem = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigModelsItem
+typealias AiGatewayVirtualModelConfigModelsItem =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigModelsItem
 
-typealias AiGatewayVirtualModelConfigModelsItemVariant1 = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigModelsItemVariant1
+typealias AiGatewayVirtualModelConfigModelsItemVariant1 =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigModelsItemVariant1
 
-typealias AiGatewayVirtualModelConfigModelsItemVariant2 = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigModelsItemVariant2
+typealias AiGatewayVirtualModelConfigModelsItemVariant2 =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigModelsItemVariant2
 
-typealias AiGatewayVirtualModelConfigProviderTimeouts = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigProviderTimeouts
+typealias AiGatewayVirtualModelConfigProviderTimeouts =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigProviderTimeouts
 
-typealias AiGatewayVirtualModelConfigSelectorEnum = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigSelectorEnum
+typealias AiGatewayVirtualModelConfigSelectorEnum =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigSelectorEnum
 
-typealias AiGatewayVirtualModelConfigSelectorOptions = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigSelectorOptions
+typealias AiGatewayVirtualModelConfigSelectorOptions =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigSelectorOptions
 
-typealias AiGatewayVirtualModelConfigServiceTierEnum = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigServiceTierEnum
+typealias AiGatewayVirtualModelConfigServiceTierEnum =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigServiceTierEnum
 
-typealias AiGatewayVirtualModelConfigSortEnum = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigSortEnum
+typealias AiGatewayVirtualModelConfigSortEnum =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigSortEnum
 
-typealias AiGatewayVirtualModelConfigSpeedEnum = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigSpeedEnum
+typealias AiGatewayVirtualModelConfigSpeedEnum =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigSpeedEnum
 
-typealias AiGatewayVirtualModelConfigZeroDataRetentionEnum = dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigZeroDataRetentionEnum
+typealias AiGatewayVirtualModelConfigZeroDataRetentionEnum =
+    dev.octri.showcase.vercel.models.AiGatewayVirtualModelConfigZeroDataRetentionEnum
 
 typealias APIKey = dev.octri.showcase.vercel.models.APIKey
 
 typealias APIKeyQuota = dev.octri.showcase.vercel.models.APIKeyQuota
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseActiveStageIsX3d0762927f = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseActiveStageIsX3d0762927f
+typealias ApproveRollingReleaseStageResponseRollingReleaseActiveStageIsX3d0762927f =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseActiveStageIsX3d0762927f
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseActiveStageLiX03c5deb0db = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseActiveStageLiX03c5deb0db
+typealias ApproveRollingReleaseStageResponseRollingReleaseActiveStageLiX03c5deb0db =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseActiveStageLiX03c5deb0db
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseActiveStageReX4a4c1f59da = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseActiveStageReX4a4c1f59da
+typealias ApproveRollingReleaseStageResponseRollingReleaseActiveStageReX4a4c1f59da =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseActiveStageReX4a4c1f59da
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseAdvancementTypeEnum = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseAdvancementTypeEnum
+typealias ApproveRollingReleaseStageResponseRollingReleaseAdvancementTypeEnum =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseAdvancementTypeEnum
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymX3eeebccfe6 = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymX3eeebccfe6
+typealias ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymX3eeebccfe6 =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymX3eeebccfe6
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXb4daff7160 = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXb4daff7160
+typealias ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXb4daff7160 =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXb4daff7160
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca
+typealias ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployX4fb53b847c = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployX4fb53b847c
+typealias ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployX4fb53b847c =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployX4fb53b847c
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployXcdce005fa9 = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployXcdce005fa9
+typealias ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployXcdce005fa9 =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployXcdce005fa9
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployXe3698b527c = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployXe3698b527c
+typealias ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployXe3698b527c =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseCurrentDeployXe3698b527c
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseNextStageIsFiXe53d66722b = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseNextStageIsFiXe53d66722b
+typealias ApproveRollingReleaseStageResponseRollingReleaseNextStageIsFiXe53d66722b =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseNextStageIsFiXe53d66722b
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseNextStageLinearShiftEnum = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseNextStageLinearShiftEnum
+typealias ApproveRollingReleaseStageResponseRollingReleaseNextStageLinearShiftEnum =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseNextStageLinearShiftEnum
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseNextStageRequX409b34431b = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseNextStageRequX409b34431b
+typealias ApproveRollingReleaseStageResponseRollingReleaseNextStageRequX409b34431b =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseNextStageRequX409b34431b
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseStagesItemIsFX2f9cb34c66 = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseStagesItemIsFX2f9cb34c66
+typealias ApproveRollingReleaseStageResponseRollingReleaseStagesItemIsFX2f9cb34c66 =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseStagesItemIsFX2f9cb34c66
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseStagesItemLinX4b78b27d03 = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseStagesItemLinX4b78b27d03
+typealias ApproveRollingReleaseStageResponseRollingReleaseStagesItemLinX4b78b27d03 =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseStagesItemLinX4b78b27d03
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseStagesItemReqX1d1ec4e1a6 = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseStagesItemReqX1d1ec4e1a6
+typealias ApproveRollingReleaseStageResponseRollingReleaseStagesItemReqX1d1ec4e1a6 =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseStagesItemReqX1d1ec4e1a6
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseStateEnum = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseStateEnum
+typealias ApproveRollingReleaseStageResponseRollingReleaseStateEnum =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseStateEnum
 
-typealias ApproveRollingReleaseStageResponseRollingReleaseSubstateEnum = dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseSubstateEnum
+typealias ApproveRollingReleaseStageResponseRollingReleaseSubstateEnum =
+    dev.octri.showcase.vercel.models.ApproveRollingReleaseStageResponseRollingReleaseSubstateEnum
 
-typealias ArchiveAiGatewayBudgetDefaultParameterEnum = dev.octri.showcase.vercel.models.ArchiveAiGatewayBudgetDefaultParameterEnum
+typealias ArchiveAiGatewayBudgetDefaultParameterEnum =
+    dev.octri.showcase.vercel.models.ArchiveAiGatewayBudgetDefaultParameterEnum
 
-typealias ArchiveAiGatewayBudgetParameterEnum = dev.octri.showcase.vercel.models.ArchiveAiGatewayBudgetParameterEnum
+typealias ArchiveAiGatewayBudgetParameterEnum =
+    dev.octri.showcase.vercel.models.ArchiveAiGatewayBudgetParameterEnum
 
 typealias AuthToken = dev.octri.showcase.vercel.models.AuthToken
 
@@ -297,103 +416,142 @@ typealias AuthTokenScopesItem = dev.octri.showcase.vercel.models.AuthTokenScopes
 
 typealias AuthTokenScopesItemVariant0 = dev.octri.showcase.vercel.models.AuthTokenScopesItemVariant0
 
-typealias AuthTokenScopesItemVariant0OriginEnum = dev.octri.showcase.vercel.models.AuthTokenScopesItemVariant0OriginEnum
+typealias AuthTokenScopesItemVariant0OriginEnum =
+    dev.octri.showcase.vercel.models.AuthTokenScopesItemVariant0OriginEnum
 
-typealias AuthTokenScopesItemVariant0Sudo = dev.octri.showcase.vercel.models.AuthTokenScopesItemVariant0Sudo
+typealias AuthTokenScopesItemVariant0Sudo =
+    dev.octri.showcase.vercel.models.AuthTokenScopesItemVariant0Sudo
 
-typealias AuthTokenScopesItemVariant0SudoOriginEnum = dev.octri.showcase.vercel.models.AuthTokenScopesItemVariant0SudoOriginEnum
+typealias AuthTokenScopesItemVariant0SudoOriginEnum =
+    dev.octri.showcase.vercel.models.AuthTokenScopesItemVariant0SudoOriginEnum
 
-typealias AuthTokenScopesItemVariant0TypeEnum = dev.octri.showcase.vercel.models.AuthTokenScopesItemVariant0TypeEnum
+typealias AuthTokenScopesItemVariant0TypeEnum =
+    dev.octri.showcase.vercel.models.AuthTokenScopesItemVariant0TypeEnum
 
 typealias AuthTokenScopesItemVariant1 = dev.octri.showcase.vercel.models.AuthTokenScopesItemVariant1
 
-typealias AuthTokenScopesItemVariant1OriginEnum = dev.octri.showcase.vercel.models.AuthTokenScopesItemVariant1OriginEnum
+typealias AuthTokenScopesItemVariant1OriginEnum =
+    dev.octri.showcase.vercel.models.AuthTokenScopesItemVariant1OriginEnum
 
-typealias AuthTokenScopesItemVariant1TypeEnum = dev.octri.showcase.vercel.models.AuthTokenScopesItemVariant1TypeEnum
+typealias AuthTokenScopesItemVariant1TypeEnum =
+    dev.octri.showcase.vercel.models.AuthTokenScopesItemVariant1TypeEnum
 
 typealias AuthUser = dev.octri.showcase.vercel.models.AuthUser
 
-typealias AuthUserAccountUpdateContext = dev.octri.showcase.vercel.models.AuthUserAccountUpdateContext
+typealias AuthUserAccountUpdateContext =
+    dev.octri.showcase.vercel.models.AuthUserAccountUpdateContext
 
-typealias AuthUserAccountUpdateContextCanOptOutEnum = dev.octri.showcase.vercel.models.AuthUserAccountUpdateContextCanOptOutEnum
+typealias AuthUserAccountUpdateContextCanOptOutEnum =
+    dev.octri.showcase.vercel.models.AuthUserAccountUpdateContextCanOptOutEnum
 
-typealias AuthUserAccountUpdateContextManagedTeamsItem = dev.octri.showcase.vercel.models.AuthUserAccountUpdateContextManagedTeamsItem
+typealias AuthUserAccountUpdateContextManagedTeamsItem =
+    dev.octri.showcase.vercel.models.AuthUserAccountUpdateContextManagedTeamsItem
 
-typealias AuthUserAccountUpdateContextOrganization = dev.octri.showcase.vercel.models.AuthUserAccountUpdateContextOrganization
+typealias AuthUserAccountUpdateContextOrganization =
+    dev.octri.showcase.vercel.models.AuthUserAccountUpdateContextOrganization
 
-typealias AuthUserActiveDashboardViewsItem = dev.octri.showcase.vercel.models.AuthUserActiveDashboardViewsItem
+typealias AuthUserActiveDashboardViewsItem =
+    dev.octri.showcase.vercel.models.AuthUserActiveDashboardViewsItem
 
-typealias AuthUserActiveDashboardViewsItemFavoritesViewPreferenceEnum = dev.octri.showcase.vercel.models.AuthUserActiveDashboardViewsItemFavoritesViewPreferenceEnum
+typealias AuthUserActiveDashboardViewsItemFavoritesViewPreferenceEnum =
+    dev.octri.showcase.vercel.models.AuthUserActiveDashboardViewsItemFavoritesViewPreferenceEnum
 
-typealias AuthUserActiveDashboardViewsItemRecentsViewPreferenceEnum = dev.octri.showcase.vercel.models.AuthUserActiveDashboardViewsItemRecentsViewPreferenceEnum
+typealias AuthUserActiveDashboardViewsItemRecentsViewPreferenceEnum =
+    dev.octri.showcase.vercel.models.AuthUserActiveDashboardViewsItemRecentsViewPreferenceEnum
 
-typealias AuthUserActiveDashboardViewsItemViewPreferenceEnum = dev.octri.showcase.vercel.models.AuthUserActiveDashboardViewsItemViewPreferenceEnum
+typealias AuthUserActiveDashboardViewsItemViewPreferenceEnum =
+    dev.octri.showcase.vercel.models.AuthUserActiveDashboardViewsItemViewPreferenceEnum
 
 typealias AuthUserDataCache = dev.octri.showcase.vercel.models.AuthUserDataCache
 
-typealias AuthUserDataCacheExcessBillingEnabledEnum = dev.octri.showcase.vercel.models.AuthUserDataCacheExcessBillingEnabledEnum
+typealias AuthUserDataCacheExcessBillingEnabledEnum =
+    dev.octri.showcase.vercel.models.AuthUserDataCacheExcessBillingEnabledEnum
 
 typealias AuthUserDismissedToastsItem = dev.octri.showcase.vercel.models.AuthUserDismissedToastsItem
 
-typealias AuthUserDismissedToastsItemDismissalsItem = dev.octri.showcase.vercel.models.AuthUserDismissedToastsItemDismissalsItem
+typealias AuthUserDismissedToastsItemDismissalsItem =
+    dev.octri.showcase.vercel.models.AuthUserDismissedToastsItemDismissalsItem
 
-typealias AuthUserFavoriteProjectsAndSpacesItem = dev.octri.showcase.vercel.models.AuthUserFavoriteProjectsAndSpacesItem
+typealias AuthUserFavoriteProjectsAndSpacesItem =
+    dev.octri.showcase.vercel.models.AuthUserFavoriteProjectsAndSpacesItem
 
 typealias AuthUserFeatureBlocks = dev.octri.showcase.vercel.models.AuthUserFeatureBlocks
 
-typealias AuthUserFeatureBlocksSpeedInsightsFree = dev.octri.showcase.vercel.models.AuthUserFeatureBlocksSpeedInsightsFree
+typealias AuthUserFeatureBlocksSpeedInsightsFree =
+    dev.octri.showcase.vercel.models.AuthUserFeatureBlocksSpeedInsightsFree
 
-typealias AuthUserFeatureBlocksSpeedInsightsFreeBlockReasonEnum = dev.octri.showcase.vercel.models.AuthUserFeatureBlocksSpeedInsightsFreeBlockReasonEnum
+typealias AuthUserFeatureBlocksSpeedInsightsFreeBlockReasonEnum =
+    dev.octri.showcase.vercel.models.AuthUserFeatureBlocksSpeedInsightsFreeBlockReasonEnum
 
-typealias AuthUserFeatureBlocksSpeedInsightsFreeIsCurrentlyBlockedEnum = dev.octri.showcase.vercel.models.AuthUserFeatureBlocksSpeedInsightsFreeIsCurrentlyBlockedEnum
+typealias AuthUserFeatureBlocksSpeedInsightsFreeIsCurrentlyBlockedEnum =
+    dev.octri.showcase.vercel.models.AuthUserFeatureBlocksSpeedInsightsFreeIsCurrentlyBlockedEnum
 
-typealias AuthUserFeatureBlocksWebAnalytics = dev.octri.showcase.vercel.models.AuthUserFeatureBlocksWebAnalytics
+typealias AuthUserFeatureBlocksWebAnalytics =
+    dev.octri.showcase.vercel.models.AuthUserFeatureBlocksWebAnalytics
 
-typealias AuthUserFeatureBlocksWebAnalyticsIsCurrentlyBlockedEnum = dev.octri.showcase.vercel.models.AuthUserFeatureBlocksWebAnalyticsIsCurrentlyBlockedEnum
+typealias AuthUserFeatureBlocksWebAnalyticsIsCurrentlyBlockedEnum =
+    dev.octri.showcase.vercel.models.AuthUserFeatureBlocksWebAnalyticsIsCurrentlyBlockedEnum
 
-typealias AuthUserHasTrialAvailableEnum = dev.octri.showcase.vercel.models.AuthUserHasTrialAvailableEnum
+typealias AuthUserHasTrialAvailableEnum =
+    dev.octri.showcase.vercel.models.AuthUserHasTrialAvailableEnum
 
-typealias AuthUserImportFlowGitProviderEnum = dev.octri.showcase.vercel.models.AuthUserImportFlowGitProviderEnum
+typealias AuthUserImportFlowGitProviderEnum =
+    dev.octri.showcase.vercel.models.AuthUserImportFlowGitProviderEnum
 
-typealias AuthUserIsAccountUpdateRequiredEnum = dev.octri.showcase.vercel.models.AuthUserIsAccountUpdateRequiredEnum
+typealias AuthUserIsAccountUpdateRequiredEnum =
+    dev.octri.showcase.vercel.models.AuthUserIsAccountUpdateRequiredEnum
 
-typealias AuthUserIsEnterpriseManagedEnum = dev.octri.showcase.vercel.models.AuthUserIsEnterpriseManagedEnum
+typealias AuthUserIsEnterpriseManagedEnum =
+    dev.octri.showcase.vercel.models.AuthUserIsEnterpriseManagedEnum
 
 typealias AuthUserLimited = dev.octri.showcase.vercel.models.AuthUserLimited
 
-typealias AuthUserLimitedIsEnterpriseManagedEnum = dev.octri.showcase.vercel.models.AuthUserLimitedIsEnterpriseManagedEnum
+typealias AuthUserLimitedIsEnterpriseManagedEnum =
+    dev.octri.showcase.vercel.models.AuthUserLimitedIsEnterpriseManagedEnum
 
 typealias AuthUserLimitedLimitedEnum = dev.octri.showcase.vercel.models.AuthUserLimitedLimitedEnum
 
-typealias AuthUserLimitedShouldShowEnterpriseManagedWelcomeEnum = dev.octri.showcase.vercel.models.AuthUserLimitedShouldShowEnterpriseManagedWelcomeEnum
+typealias AuthUserLimitedShouldShowEnterpriseManagedWelcomeEnum =
+    dev.octri.showcase.vercel.models.AuthUserLimitedShouldShowEnterpriseManagedWelcomeEnum
 
-typealias AuthUserPreferredScopesAndGitNamespacesItem = dev.octri.showcase.vercel.models.AuthUserPreferredScopesAndGitNamespacesItem
+typealias AuthUserPreferredScopesAndGitNamespacesItem =
+    dev.octri.showcase.vercel.models.AuthUserPreferredScopesAndGitNamespacesItem
 
 typealias AuthUserRemoteCaching = dev.octri.showcase.vercel.models.AuthUserRemoteCaching
 
-typealias AuthUserRemoteCachingEnabledEnum = dev.octri.showcase.vercel.models.AuthUserRemoteCachingEnabledEnum
+typealias AuthUserRemoteCachingEnabledEnum =
+    dev.octri.showcase.vercel.models.AuthUserRemoteCachingEnabledEnum
 
 typealias AuthUserResourceConfig = dev.octri.showcase.vercel.models.AuthUserResourceConfig
 
-typealias AuthUserResourceConfigBuildEntitlements = dev.octri.showcase.vercel.models.AuthUserResourceConfigBuildEntitlements
+typealias AuthUserResourceConfigBuildEntitlements =
+    dev.octri.showcase.vercel.models.AuthUserResourceConfigBuildEntitlements
 
-typealias AuthUserResourceConfigBuildEntitlementsEnhancedBuildsEnum = dev.octri.showcase.vercel.models.AuthUserResourceConfigBuildEntitlementsEnhancedBuildsEnum
+typealias AuthUserResourceConfigBuildEntitlementsEnhancedBuildsEnum =
+    dev.octri.showcase.vercel.models.AuthUserResourceConfigBuildEntitlementsEnhancedBuildsEnum
 
-typealias AuthUserResourceConfigBuildQueue = dev.octri.showcase.vercel.models.AuthUserResourceConfigBuildQueue
+typealias AuthUserResourceConfigBuildQueue =
+    dev.octri.showcase.vercel.models.AuthUserResourceConfigBuildQueue
 
-typealias AuthUserResourceConfigBuildQueueConfigurationEnum = dev.octri.showcase.vercel.models.AuthUserResourceConfigBuildQueueConfigurationEnum
+typealias AuthUserResourceConfigBuildQueueConfigurationEnum =
+    dev.octri.showcase.vercel.models.AuthUserResourceConfigBuildQueueConfigurationEnum
 
-typealias AuthUserResourceConfigElasticConcurrencyEnabledEnum = dev.octri.showcase.vercel.models.AuthUserResourceConfigElasticConcurrencyEnabledEnum
+typealias AuthUserResourceConfigElasticConcurrencyEnabledEnum =
+    dev.octri.showcase.vercel.models.AuthUserResourceConfigElasticConcurrencyEnabledEnum
 
-typealias AuthUserResourceConfigFlagsExplorerUnlimitedOverridesEnum = dev.octri.showcase.vercel.models.AuthUserResourceConfigFlagsExplorerUnlimitedOverridesEnum
+typealias AuthUserResourceConfigFlagsExplorerUnlimitedOverridesEnum =
+    dev.octri.showcase.vercel.models.AuthUserResourceConfigFlagsExplorerUnlimitedOverridesEnum
 
-typealias AuthUserResourceConfigSecurity = dev.octri.showcase.vercel.models.AuthUserResourceConfigSecurity
+typealias AuthUserResourceConfigSecurity =
+    dev.octri.showcase.vercel.models.AuthUserResourceConfigSecurity
 
-typealias AuthUserShouldShowEnterpriseManagedWelcomeEnum = dev.octri.showcase.vercel.models.AuthUserShouldShowEnterpriseManagedWelcomeEnum
+typealias AuthUserShouldShowEnterpriseManagedWelcomeEnum =
+    dev.octri.showcase.vercel.models.AuthUserShouldShowEnterpriseManagedWelcomeEnum
 
 typealias AuthUserSoftBlock = dev.octri.showcase.vercel.models.AuthUserSoftBlock
 
-typealias AuthUserSoftBlockBlockedDueToOverageTypeEnum = dev.octri.showcase.vercel.models.AuthUserSoftBlockBlockedDueToOverageTypeEnum
+typealias AuthUserSoftBlockBlockedDueToOverageTypeEnum =
+    dev.octri.showcase.vercel.models.AuthUserSoftBlockBlockedDueToOverageTypeEnum
 
 typealias AuthUserSoftBlockReasonEnum = dev.octri.showcase.vercel.models.AuthUserSoftBlockReasonEnum
 
@@ -403,36 +561,52 @@ typealias BadRequestCodeEnum = dev.octri.showcase.vercel.models.BadRequestCodeEn
 
 typealias BadRequestStatusEnum = dev.octri.showcase.vercel.models.BadRequestStatusEnum
 
-typealias BooleanCreateFlagSegmentRequestDataRulesItemConditionsItemRhs = dev.octri.showcase.vercel.models.BooleanCreateFlagSegmentRequestDataRulesItemConditionsItemRhs
+typealias BooleanCreateFlagSegmentRequestDataRulesItemConditionsItemRhs =
+    dev.octri.showcase.vercel.models.BooleanCreateFlagSegmentRequestDataRulesItemConditionsItemRhs
 
-typealias BooleanCreateFlagSegmentResponseDataRulesItemConditionsItemRhs = dev.octri.showcase.vercel.models.BooleanCreateFlagSegmentResponseDataRulesItemConditionsItemRhs
+typealias BooleanCreateFlagSegmentResponseDataRulesItemConditionsItemRhs =
+    dev.octri.showcase.vercel.models.BooleanCreateFlagSegmentResponseDataRulesItemConditionsItemRhs
 
-typealias BooleanCreateIntegrationStoreDirectResponseStoreCapabilitiesSecretRotation = dev.octri.showcase.vercel.models.BooleanCreateIntegrationStoreDirectResponseStoreCapabilitiesSecretRotation
+typealias BooleanCreateIntegrationStoreDirectResponseStoreCapabilitiesSecretRotation =
+    dev.octri.showcase.vercel.models.BooleanCreateIntegrationStoreDirectResponseStoreCapabilitiesSecretRotation
 
-typealias BooleanCreateIntegrationStoreDirectResponseStoreProductCapabilitiesSX1e94c1908a = dev.octri.showcase.vercel.models.BooleanCreateIntegrationStoreDirectResponseStoreProductCapabilitiesSX1e94c1908a
+typealias BooleanCreateIntegrationStoreDirectResponseStoreProductCapabilitiesSX1e94c1908a =
+    dev.octri.showcase.vercel.models.BooleanCreateIntegrationStoreDirectResponseStoreProductCapabilitiesSX1e94c1908a
 
-typealias BooleanCreateIntegrationStoreDirectResponseStoreProductIntegrationCaXfd0e7053ec = dev.octri.showcase.vercel.models.BooleanCreateIntegrationStoreDirectResponseStoreProductIntegrationCaXfd0e7053ec
+typealias BooleanCreateIntegrationStoreDirectResponseStoreProductIntegrationCaXfd0e7053ec =
+    dev.octri.showcase.vercel.models.BooleanCreateIntegrationStoreDirectResponseStoreProductIntegrationCaXfd0e7053ec
 
-typealias BooleanCreateProjectResponseDismissedToastsItemValue = dev.octri.showcase.vercel.models.BooleanCreateProjectResponseDismissedToastsItemValue
+typealias BooleanCreateProjectResponseDismissedToastsItemValue =
+    dev.octri.showcase.vercel.models.BooleanCreateProjectResponseDismissedToastsItemValue
 
-typealias BooleanDeleteProjectAvatarResponseDismissedToastsItemValue = dev.octri.showcase.vercel.models.BooleanDeleteProjectAvatarResponseDismissedToastsItemValue
+typealias BooleanDeleteProjectAvatarResponseDismissedToastsItemValue =
+    dev.octri.showcase.vercel.models.BooleanDeleteProjectAvatarResponseDismissedToastsItemValue
 
 typealias BooleanFlagJSONValue = dev.octri.showcase.vercel.models.BooleanFlagJSONValue
 
-typealias BooleanGetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItemValue = dev.octri.showcase.vercel.models.BooleanGetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItemValue
+typealias BooleanGetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItemValue =
+    dev.octri.showcase.vercel.models.BooleanGetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItemValue
 
-typealias BooleanGetProjectsResponseDismissedToastsItemValue = dev.octri.showcase.vercel.models.BooleanGetProjectsResponseDismissedToastsItemValue
+typealias BooleanGetProjectsResponseDismissedToastsItemValue =
+    dev.octri.showcase.vercel.models.BooleanGetProjectsResponseDismissedToastsItemValue
 
-typealias BooleanGlobalConfigItemValue = dev.octri.showcase.vercel.models.BooleanGlobalConfigItemValue
+typealias BooleanGlobalConfigItemValue =
+    dev.octri.showcase.vercel.models.BooleanGlobalConfigItemValue
 
-typealias BooleanSegmentDataRulesItemConditionsItemRhs = dev.octri.showcase.vercel.models.BooleanSegmentDataRulesItemConditionsItemRhs
+typealias BooleanSegmentDataRulesItemConditionsItemRhs =
+    dev.octri.showcase.vercel.models.BooleanSegmentDataRulesItemConditionsItemRhs
 
-typealias BooleanUpdateFlagSegmentRequestDataRulesItemConditionsItemRhs = dev.octri.showcase.vercel.models.BooleanUpdateFlagSegmentRequestDataRulesItemConditionsItemRhs
+typealias BooleanUpdateFlagSegmentRequestDataRulesItemConditionsItemRhs =
+    dev.octri.showcase.vercel.models.BooleanUpdateFlagSegmentRequestDataRulesItemConditionsItemRhs
 
-typealias BooleanUpdateMicrofrontendsResponseDismissedToastsItemValue = dev.octri.showcase.vercel.models.BooleanUpdateMicrofrontendsResponseDismissedToastsItemValue
+typealias BooleanUpdateMicrofrontendsResponseDismissedToastsItemValue =
+    dev.octri.showcase.vercel.models.BooleanUpdateMicrofrontendsResponseDismissedToastsItemValue
 
-typealias BooleanUpdateProjectRequestDismissedToastsItemValue = dev.octri.showcase.vercel.models.BooleanUpdateProjectRequestDismissedToastsItemValue
+typealias BooleanUpdateProjectRequestDismissedToastsItemValue =
+    dev.octri.showcase.vercel.models.BooleanUpdateProjectRequestDismissedToastsItemValue
 
-typealias BooleanUpdateProjectResponseDismissedToastsItemValue = dev.octri.showcase.vercel.models.BooleanUpdateProjectResponseDismissedToastsItemValue
+typealias BooleanUpdateProjectResponseDismissedToastsItemValue =
+    dev.octri.showcase.vercel.models.BooleanUpdateProjectResponseDismissedToastsItemValue
 
-typealias BooleanUploadProjectAvatarResponseDismissedToastsItemValue = dev.octri.showcase.vercel.models.BooleanUploadProjectAvatarResponseDismissedToastsItemValue
+typealias BooleanUploadProjectAvatarResponseDismissedToastsItemValue =
+    dev.octri.showcase.vercel.models.BooleanUploadProjectAvatarResponseDismissedToastsItemValue

@@ -4,7 +4,6 @@
 package dev.octri.showcase.vercel.methods
 
 import com.fasterxml.jackson.annotation.JsonProperty as JacksonJsonProperty
-
 import dev.octri.showcase.vercel.ClientConfig
 import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreBillingPlanScopeEnum
 import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreBillingPlanTypeEnum
@@ -16,7 +15,6 @@ import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreProduc
 import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX9bb712bc31
 import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXfd0e7053ec
 import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreProductLogDrainStatusEnum
-import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreProductMetadataSchemaTypeEnum
 import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX1260fcf7cb
 import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX3d8856f849
 import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4867751e59
@@ -45,6 +43,7 @@ import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreProduc
 import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXe9af46d508
 import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXeed1fcaad2
 import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXfba8ce5983
+import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreProductMetadataSchemaTypeEnum
 import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum
 import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b
 import dev.octri.showcase.vercel.CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c
@@ -110,2067 +109,1848 @@ import dev.octri.showcase.vercel.SdkClient
 import dev.octri.showcase.vercel.SearchRepoParameterEnum
 
 object Integrations {
-data class GitNamespacesResponseItemViewer(
-    val canCreateApp: Boolean? = null,
-    val role: Any? = null
-)
-
-data class GitNamespacesResponseItem(
-    val id: Any,
-    val ownerType: String,
-    val provider: String,
-    val slug: String,
-    val installationId: Double? = null,
-    val isAccessRestricted: Boolean? = null,
-    val name: String? = null,
-    val requireReauth: Boolean? = null,
-    val viewer: GitNamespacesResponseItemViewer? = null
-)
-
-
-
-
-
-data class GetBillingPlansResponsePlansItemDetailsItem(
-    val label: String,
-    @JacksonJsonProperty("value") val `value`: String? = null
-)
-
-data class GetBillingPlansResponsePlansItemHighlightedDetailsItem(
-    val label: String,
-    @JacksonJsonProperty("value") val `value`: String? = null
-)
-
-data class GetBillingPlansResponsePlansItemQuoteItem(
-    val amount: String,
-    val line: String
-)
-
-data class GetBillingPlansResponsePlansItem(
-    val description: String,
-    val id: String,
-    val name: String,
-    val paymentMethodRequired: Boolean,
-    val scope: GetBillingPlansResponsePlansItemScopeEnum,
-    val type: GetBillingPlansResponsePlansItemTypeEnum,
-    val cost: String? = null,
-    val details: List<GetBillingPlansResponsePlansItemDetailsItem>? = null,
-    val disabled: Boolean? = null,
-    val effectiveDate: String? = null,
-    val highlightedDetails: List<GetBillingPlansResponsePlansItemHighlightedDetailsItem>? = null,
-    val initialCharge: String? = null,
-    val maximumAmount: String? = null,
-    val maximumAmountAutoPurchasePerPeriod: String? = null,
-    val minimumAmount: String? = null,
-    val preauthorizationAmount: Double? = null,
-    val quote: List<GetBillingPlansResponsePlansItemQuoteItem>? = null
-)
-
-data class GetBillingPlansResponse(
-    val plans: List<GetBillingPlansResponsePlansItem>
-)
-
-data class GetConfigurationProductsResponseConfiguration(
-    val id: String
-)
-
-data class GetConfigurationProductsResponseIntegration(
-    val id: String,
-    val name: String,
-    val slug: String
-)
-
-
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXad02f6d746(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXfd8446d7f5(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX76bec61b1b(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX7abeea7f79(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX32ae88da64(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX032174e57f(
-    val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProX04b0c12d47,
-    @JacksonJsonProperty("ui:control") val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProX99a23a157a,
-    val default: String? = null,
-    val description: String? = null,
-    val maxLength: Double? = null,
-    val minLength: Double? = null,
-    val pattern: String? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: GetConfigurationProductsResponseProductsItemMetadataSchemaProX76bec61b1b? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX22109e96d6(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX658a10e532(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX1d8cc567b2(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXcdf5cc1d02(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX3f5b0f43e8(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX5bcd3e410a(
-    val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProX9af0aefc37,
-    @JacksonJsonProperty("ui:control") val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProX9bc735fe7c,
-    val default: Double? = null,
-    val description: String? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: GetConfigurationProductsResponseProductsItemMetadataSchemaProX1d8cc567b2? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX5c30e28cf6(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX4b5518e6b4(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXba2036b9f9(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc2c1ed6186(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX87b0417c20(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX1308c0ecd7(
-    val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXbe9f4bd015,
-    @JacksonJsonProperty("ui:control") val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProX406a0d6b1d,
-    val default: Boolean? = null,
-    val description: String? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: GetConfigurationProductsResponseProductsItemMetadataSchemaProXba2036b9f9? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX3ccc74125e(
-    val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProX4a8c6fdaf1,
-    val default: Double? = null,
-    val description: String? = null
-)
-
-
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXaed16cbe03(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX673ac9bb8b(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX6d29560888(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX823b2d017e(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX8afe38bd17(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX703cea82fe(
-    val items: GetConfigurationProductsResponseProductsItemMetadataSchemaProX3ccc74125e,
-    val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXa58325d287,
-    @JacksonJsonProperty("ui:control") val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProXa7cfdfa8e7,
-    @JacksonJsonProperty("ui:steps") val uiSteps: List<Double>,
-    val default: List<Double>? = null,
-    val description: String? = null,
-    val maxItems: Double? = null,
-    val minItems: Double? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: GetConfigurationProductsResponseProductsItemMetadataSchemaProX6d29560888? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXa4c96d2997(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXd9ba69cb86(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX2a15392619(
-    val label: String,
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX1ec64e5fdb(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXa36d061aff(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXff95a98ecd(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc43dd79867(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXb52a71fab5(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX3116487756(
-    val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProX1e61e3646f,
-    @JacksonJsonProperty("ui:control") val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProX184b2f9e93,
-    @JacksonJsonProperty("ui:options") val uiOptions: List<GetConfigurationProductsResponseProductsItemMetadataSchemaProX2a15392619>,
-    val default: String? = null,
-    val description: String? = null,
-    val maxLength: Double? = null,
-    val minLength: Double? = null,
-    val pattern: String? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: GetConfigurationProductsResponseProductsItemMetadataSchemaProXff95a98ecd? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX570955433b(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc2d9d9154d(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX88d085ac92(
-    val label: String,
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX9b78438b4e(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX6f5be70cf5(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX815d8a8d40(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc4b32af67e(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXef56979a83(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX3624047e88(
-    val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXd58618bafb,
-    @JacksonJsonProperty("ui:control") val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProXe22ef0e617,
-    @JacksonJsonProperty("ui:options") val uiOptions: List<GetConfigurationProductsResponseProductsItemMetadataSchemaProX88d085ac92>,
-    val default: String? = null,
-    val description: String? = null,
-    val maxLength: Double? = null,
-    val minLength: Double? = null,
-    val pattern: String? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: GetConfigurationProductsResponseProductsItemMetadataSchemaProX815d8a8d40? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX2fd759621b(
-    val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXc9abcdaacc,
-    val default: String? = null,
-    val description: String? = null,
-    val maxLength: Double? = null,
-    val minLength: Double? = null,
-    val pattern: String? = null
-)
-
-
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX59b8ee9dee(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX996f896fbf(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX494f7ccfb9(
-    val label: String,
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXb25738dd79(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX4ba21ed9a3(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX4bb21ec9a9(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX83bdb40380(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXf51b0647d5(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXec0a2ce1de(
-    val items: GetConfigurationProductsResponseProductsItemMetadataSchemaProX2fd759621b,
-    val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProX15d6c1bbb1,
-    @JacksonJsonProperty("ui:control") val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProXdbee118882,
-    @JacksonJsonProperty("ui:options") val uiOptions: List<GetConfigurationProductsResponseProductsItemMetadataSchemaProX494f7ccfb9>,
-    val default: List<String>? = null,
-    val description: String? = null,
-    val example: List<String>? = null,
-    val maxItems: Double? = null,
-    val minItems: Double? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: GetConfigurationProductsResponseProductsItemMetadataSchemaProX4bb21ec9a9? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXf5dd52fdf6(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX329e03d2ad(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX1d6f586bbe(
-    val label: String,
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXb012224cd1(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX48d238fdec(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX493f4a1bc6(
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX920149be00(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXe9ff303701(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXba7d3d8cbc(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXa07a04b641(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX46f2b95b58(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX03ec874879(
-    val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProX8c9bcb4967,
-    @JacksonJsonProperty("ui:control") val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProX7b314c216c,
-    @JacksonJsonProperty("ui:options") val uiOptions: List<Any>,
-    val default: String? = null,
-    val description: String? = null,
-    val maxLength: Double? = null,
-    val minLength: Double? = null,
-    val pattern: String? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: GetConfigurationProductsResponseProductsItemMetadataSchemaProXba7d3d8cbc? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX440a49725e(
-    val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXf6f089fba6,
-    val default: String? = null,
-    val description: String? = null,
-    val maxLength: Double? = null,
-    val minLength: Double? = null,
-    val pattern: String? = null
-)
-
-
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX3e2758e99a(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX64b4202639(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX25218fbd6f(
-    val label: String,
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXe8dee9432c(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX2ef14f9ab8(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXe6d67028fb(
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX657c6439de(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX6a619bf684(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX2cc0b016aa(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXed9a92a74d(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX2f6f70a701(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc75c4d5136(
-    val items: GetConfigurationProductsResponseProductsItemMetadataSchemaProX440a49725e,
-    val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXa3c9fe1dd0,
-    @JacksonJsonProperty("ui:control") val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProXb8b702bb6d,
-    @JacksonJsonProperty("ui:options") val uiOptions: List<Any>,
-    val default: List<String>? = null,
-    val description: String? = null,
-    val example: List<String>? = null,
-    val maxItems: Double? = null,
-    val minItems: Double? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: GetConfigurationProductsResponseProductsItemMetadataSchemaProX2cc0b016aa? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX9200892dac(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX4f3d000cf7(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX49d31f9682(
-    val label: String,
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXa456e76e6d(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX99351889cb(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX31c06d8f0a(
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX8c099688d9(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX42ebfe94c9(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXd31dbfb015(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX62c68a057a(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXa7bb8f7075(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX43a0ecc7c9(
-    val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXda82c6db85,
-    @JacksonJsonProperty("ui:control") val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProX9e89b493c5,
-    @JacksonJsonProperty("ui:options") val uiOptions: List<Any>,
-    val default: String? = null,
-    val description: String? = null,
-    val maxLength: Double? = null,
-    val minLength: Double? = null,
-    val pattern: String? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: GetConfigurationProductsResponseProductsItemMetadataSchemaProXd31dbfb015? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX5a55e47b50(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX4b1d9fe794(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXd27ac6f508(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX1012d8d94e(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXb6d36704d0(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXf752d5020b(
-    val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXf74e4204fa,
-    @JacksonJsonProperty("ui:control") val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProX1d5fcc2574,
-    val default: String? = null,
-    val description: String? = null,
-    val maxLength: Double? = null,
-    val minLength: Double? = null,
-    val pattern: String? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: GetConfigurationProductsResponseProductsItemMetadataSchemaProXd27ac6f508? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc388236216(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc9b9d8a040(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX59b7805f5d(
-    val expr: String
-)
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXfbfbc45e04(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX1bccba987f(
-    val expr: String
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXab08719c20(
-    val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXa8a5eb736d,
-    @JacksonJsonProperty("ui:control") val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProXfcd0d1a688,
-    val description: String? = null,
-    @JacksonJsonProperty("git:providers") val gitProviders: List<GetConfigurationProductsResponseProductsItemMetadataSchemaProX97206eac5a>? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: GetConfigurationProductsResponseProductsItemMetadataSchemaProX59b7805f5d? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemMetadataSchema(
-    val properties: Map<String, Any>,
-    val type: GetConfigurationProductsResponseProductsItemMetadataSchemaTypeEnum,
-    val required: List<String>? = null,
-    @JacksonJsonProperty("ui:order") val uiOrder: List<String>? = null
-)
-
-data class GetConfigurationProductsResponseProductsItemProtocolsAi(
-    val status: GetConfigurationProductsResponseProductsItemProtocolsAiStatusEnum
-)
-
-data class GetConfigurationProductsResponseProductsItemProtocolsAuthentication(
-    val status: GetConfigurationProductsResponseProductsItemProtocolsAuthentiX8db0db0d3d,
-    /**
-     * The partner accepts Vercel-managed app URLs via `protocolSettings.authentication.appUrls` on provision-resource and update-resource, and reconciles them into its trusted-origin / redirect-URL allowlist. When absent, consumers surface the URL for a one-time manual registration instead.
-     */
-    val appUrlRegistrationSupport: Boolean? = null
-)
-
-data class GetConfigurationProductsResponseProductsItemProtocolsChecks(
-    val status: GetConfigurationProductsResponseProductsItemProtocolsChecksStatusEnum
-)
-
-data class GetConfigurationProductsResponseProductsItemProtocolsExperimentation(
-    val status: GetConfigurationProductsResponseProductsItemProtocolsExperimeX3e9597977a,
-    val edgeConfigSyncingSupport: Boolean? = null
-)
-
-
-
-
-
-data class GetConfigurationProductsResponseProductsItemProtocolsLogDrain(
-    val status: GetConfigurationProductsResponseProductsItemProtocolsLogDrainStatusEnum,
-    val endpoint: String,
-    val format: GetConfigurationProductsResponseProductsItemProtocolsLogDrainFormatEnum,
-    val headers: Map<String, String>? = null
-)
-
-data class GetConfigurationProductsResponseProductsItemProtocolsMessaging(
-    val status: GetConfigurationProductsResponseProductsItemProtocolsMessagingStatusEnum
-)
-
-data class GetConfigurationProductsResponseProductsItemProtocolsObservability(
-    val status: GetConfigurationProductsResponseProductsItemProtocolsObservabXb03af18f0b
-)
-
-data class GetConfigurationProductsResponseProductsItemProtocolsOther(
-    val status: GetConfigurationProductsResponseProductsItemProtocolsOtherStatusEnum
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItemProtocolsStorageRepl(
-    val enabled: Boolean,
-    val supportsReadOnlyMode: Boolean,
-    val welcomeMessage: String? = null
-)
-
-data class GetConfigurationProductsResponseProductsItemProtocolsStorage(
-    val status: GetConfigurationProductsResponseProductsItemProtocolsStorageStatusEnum,
-    val repl: GetConfigurationProductsResponseProductsItemProtocolsStorageRepl? = null
-)
-
-
-
-
-
-data class GetConfigurationProductsResponseProductsItemProtocolsTraceDrain(
-    val status: GetConfigurationProductsResponseProductsItemProtocolsTraceDraX0dd5b2de9b,
-    val endpoint: String,
-    val format: GetConfigurationProductsResponseProductsItemProtocolsTraceDraXa43a6c2f6c,
-    val headers: Map<String, String>? = null
-)
-
-data class GetConfigurationProductsResponseProductsItemProtocolsVideo(
-    val status: GetConfigurationProductsResponseProductsItemProtocolsVideoStatusEnum
-)
-
-data class GetConfigurationProductsResponseProductsItemProtocolsWorkflow(
-    val status: GetConfigurationProductsResponseProductsItemProtocolsWorkflowStatusEnum
-)
-
-data class GetConfigurationProductsResponseProductsItemProtocols(
-    val ai: GetConfigurationProductsResponseProductsItemProtocolsAi? = null,
-    val authentication: GetConfigurationProductsResponseProductsItemProtocolsAuthentication? = null,
-    val checks: GetConfigurationProductsResponseProductsItemProtocolsChecks? = null,
-    val experimentation: GetConfigurationProductsResponseProductsItemProtocolsExperimentation? = null,
-    val logDrain: GetConfigurationProductsResponseProductsItemProtocolsLogDrain? = null,
-    val messaging: GetConfigurationProductsResponseProductsItemProtocolsMessaging? = null,
-    val observability: GetConfigurationProductsResponseProductsItemProtocolsObservability? = null,
-    val other: GetConfigurationProductsResponseProductsItemProtocolsOther? = null,
-    val storage: GetConfigurationProductsResponseProductsItemProtocolsStorage? = null,
-    val traceDrain: GetConfigurationProductsResponseProductsItemProtocolsTraceDrain? = null,
-    val video: GetConfigurationProductsResponseProductsItemProtocolsVideo? = null,
-    val workflow: GetConfigurationProductsResponseProductsItemProtocolsWorkflow? = null
-)
-
-
-
-data class GetConfigurationProductsResponseProductsItem(
-    val id: String,
-    val metadataSchema: GetConfigurationProductsResponseProductsItemMetadataSchema,
-    val name: String,
-    val protocols: GetConfigurationProductsResponseProductsItemProtocols,
-    val slug: String,
-    val primaryProtocol: GetConfigurationProductsResponseProductsItemPrimaryProtocolEnum? = null
-)
-
-data class GetConfigurationProductsResponse(
-    val configuration: GetConfigurationProductsResponseConfiguration,
-    val integration: GetConfigurationProductsResponseIntegration,
-    val products: List<GetConfigurationProductsResponseProductsItem>
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX3cadc7f7f1(
-    val environments: List<String>,
-    val slug: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemDeployments(
-    val actions: List<CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX3cadc7f7f1>,
-    val required: Boolean
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProjectsMetadataItem(
-    val environments: List<String>,
-    val environmentVariables: List<String>,
-    @JacksonJsonProperty("envVarPrefix", required = true) val envVarPrefix: String?,
-    val id: String,
-    val name: String,
-    val projectId: String,
-    val deployments: CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemDeployments? = null,
-    val framework: CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0? = null,
-    val latestDeployment: String? = null,
-    val makeEnvVarsSensitive: Boolean? = null
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductIntegrationCapabilities(
-    val billable: Boolean? = null,
-    val checks: Boolean? = null,
-    val connectedImportResource: Boolean? = null,
-    val connectedProvisioning: Boolean? = null,
-    val flexCommitEligible: Boolean? = null,
-    val importResource: Boolean? = null,
-    val maxAllowedTeams: Double? = null,
-    val mcp: Boolean? = null,
-    val mcpConfiguration: Boolean? = null,
-    val mcpReadonly: Boolean? = null,
-    val nativeImportResource: Boolean? = null,
-    val provisioning: Boolean? = null,
-    val requiresBrowserInstall: Boolean? = null,
-    /**
-     * Typed representation of the `CreateIntegrationStoreDirectResponseStoreProductIntegrationCapabilitiesSecretRotation` API schema.
-     */
-    val secretRotation: CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXfd0e7053ec? = null,
-    val sso: Boolean? = null,
-    val templateCloneOnly: Boolean? = null,
-    val transferable: Boolean? = null,
-    val updateConfiguration: Boolean? = null,
-    val v0Flavors: Boolean? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductIntegration(
-    val icon: String,
-    val id: String,
-    val name: String,
-    val slug: String,
-    val capabilities: CreateIntegrationStoreDirectResponseStoreProductIntegrationCapabilities? = null,
-    val flags: List<String>? = null,
-    val supportsInstallationBillingPlans: Boolean? = null
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductCapabilities(
-    val agentTools: Boolean? = null,
-    val autoSensitive: Boolean? = null,
-    val billable: Boolean? = null,
-    val connectedImportResource: Boolean? = null,
-    @JacksonJsonProperty("databaseUI") val databaseUi: Boolean? = null,
-    val importResource: Boolean? = null,
-    val linking: Boolean? = null,
-    val mcp: Boolean? = null,
-    val mcpReadonly: Boolean? = null,
-    val nativeImportResource: Boolean? = null,
-    val projects: Boolean? = null,
-    val sandbox: Boolean? = null,
-    /**
-     * Typed representation of the `CreateIntegrationStoreDirectResponseStoreProductCapabilitiesSecretRotation` API schema.
-     */
-    val secretRotation: CreateIntegrationStoreDirectResponseStoreProductCapabilitiesSX1e94c1908a? = null,
-    val secretsSync: Boolean? = null,
-    val sso: Boolean? = null,
-    val transferable: Boolean? = null,
-    val v0: Boolean? = null,
-    val v0Flavors: Boolean? = null
-)
-
-
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX42a09a07fc(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2f2c9a185f(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX30d2bb070d(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb20c17417b(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXc20a34fe5a(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX15f9b98724(
-    val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5dda8ddccb,
-    @JacksonJsonProperty("ui:control") val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX1260fcf7cb,
-    val default: String? = null,
-    val description: String? = null,
-    val maxLength: Double? = null,
-    val minLength: Double? = null,
-    val pattern: String? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX30d2bb070d? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX96513a1e0c(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXae7d3ee2ef(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5f72bc1558(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb4b066b9d2(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4f6b7073f5(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXcb665a874e(
-    val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX623dc851df,
-    @JacksonJsonProperty("ui:control") val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX645b52116b,
-    val default: Double? = null,
-    val description: String? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5f72bc1558? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXcedc720580(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX9668d0e4a5(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX146b6e4910(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb88b5a4e7b(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXae042fcce3(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4a03a14d08(
-    val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbc67963fa6,
-    @JacksonJsonProperty("ui:control") val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXc9927172a7,
-    val default: Boolean? = null,
-    val description: String? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX146b6e4910? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX213ab4c57d(
-    val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXeed1fcaad2,
-    val default: Double? = null,
-    val description: String? = null
-)
-
-
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX34a613da4c(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX9914896a93(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2836327069(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX3fe447b03f(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb9fae5bf38(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXf0c4382bb3(
-    val items: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX213ab4c57d,
-    val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb4a289f2e1,
-    @JacksonJsonProperty("ui:control") val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5fa81f6ea5,
-    @JacksonJsonProperty("ui:steps") val uiSteps: List<Double>,
-    val default: List<Double>? = null,
-    val description: String? = null,
-    val maxItems: Double? = null,
-    val minItems: Double? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2836327069? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbbc4b65852(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX9e961dc91d(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX53a9e6bfa7(
-    val label: String,
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX99eba91d57(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX831ed136e5(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7b8b4cb431(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb97eb3f91c(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXc8474c9651(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXdfcc9534d1(
-    val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXaf4dd689c5,
-    @JacksonJsonProperty("ui:control") val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX8167b23e35,
-    @JacksonJsonProperty("ui:options") val uiOptions: List<CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX53a9e6bfa7>,
-    val default: String? = null,
-    val description: String? = null,
-    val maxLength: Double? = null,
-    val minLength: Double? = null,
-    val pattern: String? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7b8b4cb431? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2831d29458(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXc562f02f2f(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4f34b99c24(
-    val label: String,
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX152d59b118(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXddde184a83(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7d8cb55f32(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX80145b69ed(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7204a276a1(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX3b88ff9a73(
-    val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4b923b56a2,
-    @JacksonJsonProperty("ui:control") val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXcd7f86cbd2,
-    @JacksonJsonProperty("ui:options") val uiOptions: List<CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4f34b99c24>,
-    val default: String? = null,
-    val description: String? = null,
-    val maxLength: Double? = null,
-    val minLength: Double? = null,
-    val pattern: String? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7d8cb55f32? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX38a95d02b9(
-    val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXe9af46d508,
-    val default: String? = null,
-    val description: String? = null,
-    val maxLength: Double? = null,
-    val minLength: Double? = null,
-    val pattern: String? = null
-)
-
-
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX46a11e7e9c(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXba7a04ce5d(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa5ed9766aa(
-    val label: String,
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX25752a140c(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX0d30bd1115(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXaa0a3dfb58(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5e02725634(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2d42e4d6f6(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2471c3d226(
-    val items: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX38a95d02b9,
-    val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX934695ba81,
-    @JacksonJsonProperty("ui:control") val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa119121ecc,
-    @JacksonJsonProperty("ui:options") val uiOptions: List<CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa5ed9766aa>,
-    val default: List<String>? = null,
-    val description: String? = null,
-    val example: List<String>? = null,
-    val maxItems: Double? = null,
-    val minItems: Double? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXaa0a3dfb58? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX8e958a912a(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX52170a9fea(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXf281d6425f(
-    val label: String,
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX614fbd0dac(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX20ef7bf0fe(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb955c7b899(
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb972e9d079(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXc44787854c(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX484cea23ff(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXd533df4d71(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa5ccec8078(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbfeb03ed74(
-    val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX71a2c33bff,
-    @JacksonJsonProperty("ui:control") val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb179f79ade,
-    @JacksonJsonProperty("ui:options") val uiOptions: List<Any>,
-    val default: String? = null,
-    val description: String? = null,
-    val maxLength: Double? = null,
-    val minLength: Double? = null,
-    val pattern: String? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX484cea23ff? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX8a35018d04(
-    val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX73e2a134b6,
-    val default: String? = null,
-    val description: String? = null,
-    val maxLength: Double? = null,
-    val minLength: Double? = null,
-    val pattern: String? = null
-)
-
-
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX55b8845f20(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2130b85db3(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX8059fdb79c(
-    val label: String,
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX89f5ffd41b(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX441a2de1a7(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX49d43e6f54(
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX0328ebd122(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4f6bb23181(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa519d03c91(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXe9399904ea(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX561a22c8a2(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX22790af955(
-    val items: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX8a35018d04,
-    val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4867751e59,
-    @JacksonJsonProperty("ui:control") val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXfba8ce5983,
-    @JacksonJsonProperty("ui:options") val uiOptions: List<Any>,
-    val default: List<String>? = null,
-    val description: String? = null,
-    val example: List<String>? = null,
-    val maxItems: Double? = null,
-    val minItems: Double? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa519d03c91? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX565fe071c0(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX8656d6a42f(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa67dfcf609(
-    val label: String,
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7dff927c83(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX1ee213218e(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2eaa3b89b0(
-    @JacksonJsonProperty("value") val `value`: String,
-    val description: String? = null,
-    val disabled: Any? = null,
-    val hidden: Any? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb6bf9ad267(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXc60afbb37e(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX9d4ef267ef(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX61525efa85(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX412f59e720(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXfe42910a76(
-    val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX54a725c4cb,
-    @JacksonJsonProperty("ui:control") val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX87e1ce4bfc,
-    @JacksonJsonProperty("ui:options") val uiOptions: List<Any>,
-    val default: String? = null,
-    val description: String? = null,
-    val maxLength: Double? = null,
-    val minLength: Double? = null,
-    val pattern: String? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX9d4ef267ef? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXc936ec45a8(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXe47fbfbf5d(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXf623e2c6a5(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4645c8bede(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXf2d5a44080(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4af6dabe69(
-    val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX80879fedc6,
-    @JacksonJsonProperty("ui:control") val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXdadbbcc2e2,
-    val default: String? = null,
-    val description: String? = null,
-    val maxLength: Double? = null,
-    val minLength: Double? = null,
-    val pattern: String? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXf623e2c6a5? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5b3a01111f(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbaf6b9d30e(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX6c84bcaf16(
-    val expr: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX45bd93234a(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX6f34608831(
-    val expr: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXe7de463786(
-    val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX3d8856f849,
-    @JacksonJsonProperty("ui:control") val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXcff96302d9,
-    val description: String? = null,
-    @JacksonJsonProperty("git:providers") val gitProviders: List<CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX852034cea4>? = null,
-    @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
-    @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
-    @JacksonJsonProperty("ui:formatted-value") val uiFormattedValue: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX6c84bcaf16? = null,
-    @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
-    @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
-    @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
-    @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
-    @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchema(
-    val properties: Map<String, Any>,
-    val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemaTypeEnum,
-    val required: List<String>? = null,
-    @JacksonJsonProperty("ui:order") val uiOrder: List<String>? = null
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductResourceLinksItem(
-    val href: String,
-    val title: String
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProductRepl(
-    val enabled: Boolean,
-    val supportsReadOnlyMode: Boolean,
-    val welcomeMessage: String? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX301930ebf0(
-    val type: CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX9bb712bc31
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductGuidesItemStepsItem(
-    val content: String,
-    val title: String,
-    val actions: List<CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX301930ebf0>? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProductGuidesItem(
-    val framework: String,
-    val steps: List<CreateIntegrationStoreDirectResponseStoreProductGuidesItemStepsItem>,
-    val title: String
-)
-
-
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProduct(
-    val integration: CreateIntegrationStoreDirectResponseStoreProductIntegration,
-    val integrationConfigurationId: String,
-    val supportedProtocols: List<CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c>,
-    /**
-     * URLs to skills/guides for how AI agents should use this product. Providers can specify these to help agents understand how to interact with their integration.
-     */
-    val agentSkills: List<String>? = null,
-    val capabilities: CreateIntegrationStoreDirectResponseStoreProductCapabilities? = null,
-    val disableResourceRenaming: Boolean? = null,
-    val iconUrl: String? = null,
-    val id: String? = null,
-    val metadataSchema: CreateIntegrationStoreDirectResponseStoreProductMetadataSchema? = null,
-    val name: String? = null,
-    val projectConnectionScopes: List<CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b>? = null,
-    val resourceLinks: List<CreateIntegrationStoreDirectResponseStoreProductResourceLinksItem>? = null,
-    /**
-     * Custom resource title to display during installation and configuration. If not provided, defaults to protocol-based defaults.
-     */
-    val resourceTitle: String? = null,
-    val shortDescription: String? = null,
-    @JacksonJsonProperty("showSSOLinkOnProjectConnection") val showSsoLinkOnProjectConnection: Boolean? = null,
-    val slug: String? = null,
-    val tags: List<CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum>? = null,
-    val repl: CreateIntegrationStoreDirectResponseStoreProductRepl? = null,
-    val guides: List<CreateIntegrationStoreDirectResponseStoreProductGuidesItem>? = null,
-    val logDrainStatus: CreateIntegrationStoreDirectResponseStoreProductLogDrainStatusEnum? = null,
-    val primaryProtocol: CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreSecretsItem(
-    val length: Double,
-    val name: String,
-    val frameworkPublishable: Boolean? = null,
-    val nonSensitive: Boolean? = null
-)
-
-
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProjectFilterGit(
-    val providers: Any,
-    val owners: List<String>? = null,
-    val repos: List<String>? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProjectFilter(
-    val git: CreateIntegrationStoreDirectResponseStoreProjectFilterGit? = null
-)
-
-
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreBillingPlanDetailsItem(
-    val label: String,
-    @JacksonJsonProperty("value") val `value`: String? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreBillingPlanHighlightX15b4790fd5(
-    val label: String,
-    @JacksonJsonProperty("value") val `value`: String? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreBillingPlanQuoteItem(
-    val amount: String,
-    val line: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreBillingPlan(
-    val description: String,
-    val id: String,
-    val name: String,
-    val paymentMethodRequired: Boolean,
-    val scope: CreateIntegrationStoreDirectResponseStoreBillingPlanScopeEnum,
-    val type: CreateIntegrationStoreDirectResponseStoreBillingPlanTypeEnum,
-    val cost: String? = null,
-    val details: List<CreateIntegrationStoreDirectResponseStoreBillingPlanDetailsItem>? = null,
-    val disabled: Boolean? = null,
-    val effectiveDate: String? = null,
-    val highlightedDetails: List<CreateIntegrationStoreDirectResponseStoreBillingPlanHighlightX15b4790fd5>? = null,
-    val initialCharge: String? = null,
-    val maximumAmount: String? = null,
-    val maximumAmountAutoPurchasePerPeriod: String? = null,
-    val minimumAmount: String? = null,
-    val preauthorizationAmount: Double? = null,
-    val quote: List<CreateIntegrationStoreDirectResponseStoreBillingPlanQuoteItem>? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreCapabilities(
-    val agentTools: Boolean? = null,
-    val autoSensitive: Boolean? = null,
-    val billable: Boolean? = null,
-    val mcp: Boolean? = null,
-    val mcpReadonly: Boolean? = null,
-    val projects: Boolean? = null,
-    /**
-     * Typed representation of the `CreateIntegrationStoreDirectResponseStoreCapabilitiesSecretRotation` API schema.
-     */
-    val secretRotation: CreateIntegrationStoreDirectResponseStoreCapabilitiesSecretRotation? = null,
-    val secretsSync: Boolean? = null,
-    val sso: Boolean? = null,
-    val transferable: Boolean? = null,
-    val v0: Boolean? = null
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreNotification(
-    val level: CreateIntegrationStoreDirectResponseStoreNotificationLevelEnum,
-    val title: String,
-    val href: String? = null,
-    val message: String? = null
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX5041b94583(
-    val target: CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX2d9db9798c,
-    val url: String
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthentication(
-    val appUrls: List<CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX5041b94583>? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProtocolSettingsExperimentation(
-    val edgeConfigId: String? = null,
-    val edgeConfigSyncingEnabled: Boolean? = null,
-    val edgeConfigTokenId: String? = null,
-    val globalConfigId: String? = null,
-    val globalConfigSyncingEnabled: Boolean? = null
-)
-
-data class CreateIntegrationStoreDirectResponseStoreProtocolSettings(
-    val authentication: CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthentication? = null,
-    val experimentation: CreateIntegrationStoreDirectResponseStoreProtocolSettingsExperimentation? = null
-)
-
-
-
-data class CreateIntegrationStoreDirectResponseStore(
-    val projectsMetadata: List<CreateIntegrationStoreDirectResponseStoreProjectsMetadataItem>,
-    @JacksonJsonProperty("status", required = true) val status: CreateIntegrationStoreDirectResponseStoreStatusEnum?,
-    val usageQuotaExceeded: Boolean,
-    val externalResourceId: String,
-    val product: CreateIntegrationStoreDirectResponseStoreProduct,
-    val secrets: List<CreateIntegrationStoreDirectResponseStoreSecretsItem>,
-    val projectFilter: CreateIntegrationStoreDirectResponseStoreProjectFilter? = null,
-    val totalConnectedProjects: Double? = null,
-    val billingPlan: CreateIntegrationStoreDirectResponseStoreBillingPlan? = null,
-    val capabilities: CreateIntegrationStoreDirectResponseStoreCapabilities? = null,
-    val directPartnerConsoleUrl: String? = null,
-    val externalResourceStatus: CreateIntegrationStoreDirectResponseStoreExternalResourceStatusEnum? = null,
-    val metadata: Map<String, Any>? = null,
-    val notification: CreateIntegrationStoreDirectResponseStoreNotification? = null,
-    val ownership: CreateIntegrationStoreDirectResponseStoreOwnershipEnum? = null,
-    /**
-     * The ID of the parent resource. Used to establish a parent-child relationship between resources, such as sandbox resources linking to their owner account resource.
-     */
-    val parentId: String? = null,
-    val protocolSettings: CreateIntegrationStoreDirectResponseStoreProtocolSettings? = null,
-    /**
-     * The timestamp when secret rotation was completed.
-     */
-    val secretRotationCompletedAt: Double? = null,
-    /**
-     * The timestamp when secret rotation was requested.
-     */
-    val secretRotationRequestedAt: Double? = null,
-    /**
-     * The ID of the user/team who requested the secret rotation.
-     */
-    val secretRotationRequestedBy: String? = null,
-    /**
-     * The reason for the secret rotation request.
-     */
-    val secretRotationRequestedReason: String? = null,
-    /**
-     * The deployment targets that this resource is available for.
-     */
-    val targets: List<CreateIntegrationStoreDirectResponseStoreTargetsItemEnum>? = null
-)
-
-data class CreateIntegrationStoreDirectResponse(
-    @JacksonJsonProperty("store", required = true) val store: CreateIntegrationStoreDirectResponseStore?
-)
+    data class GitNamespacesResponseItemViewer(
+        val canCreateApp: Boolean? = null,
+        val role: Any? = null,
+    )
+
+    data class GitNamespacesResponseItem(
+        val id: Any,
+        val ownerType: String,
+        val provider: String,
+        val slug: String,
+        val installationId: Double? = null,
+        val isAccessRestricted: Boolean? = null,
+        val name: String? = null,
+        val requireReauth: Boolean? = null,
+        val viewer: GitNamespacesResponseItemViewer? = null,
+    )
+
+    data class GetBillingPlansResponsePlansItemDetailsItem(
+        val label: String,
+        @JacksonJsonProperty("value") val `value`: String? = null,
+    )
+
+    data class GetBillingPlansResponsePlansItemHighlightedDetailsItem(
+        val label: String,
+        @JacksonJsonProperty("value") val `value`: String? = null,
+    )
+
+    data class GetBillingPlansResponsePlansItemQuoteItem(
+        val amount: String,
+        val line: String,
+    )
+
+    data class GetBillingPlansResponsePlansItem(
+        val description: String,
+        val id: String,
+        val name: String,
+        val paymentMethodRequired: Boolean,
+        val scope: GetBillingPlansResponsePlansItemScopeEnum,
+        val type: GetBillingPlansResponsePlansItemTypeEnum,
+        val cost: String? = null,
+        val details: List<GetBillingPlansResponsePlansItemDetailsItem>? = null,
+        val disabled: Boolean? = null,
+        val effectiveDate: String? = null,
+        val highlightedDetails: List<GetBillingPlansResponsePlansItemHighlightedDetailsItem>? =
+            null,
+        val initialCharge: String? = null,
+        val maximumAmount: String? = null,
+        val maximumAmountAutoPurchasePerPeriod: String? = null,
+        val minimumAmount: String? = null,
+        val preauthorizationAmount: Double? = null,
+        val quote: List<GetBillingPlansResponsePlansItemQuoteItem>? = null,
+    )
+
+    data class GetBillingPlansResponse(val plans: List<GetBillingPlansResponsePlansItem>)
+
+    data class GetConfigurationProductsResponseConfiguration(val id: String)
+
+    data class GetConfigurationProductsResponseIntegration(
+        val id: String,
+        val name: String,
+        val slug: String,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXad02f6d746(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXfd8446d7f5(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX76bec61b1b(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX7abeea7f79(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX32ae88da64(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX032174e57f(
+        val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProX04b0c12d47,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProX99a23a157a,
+        val default: String? = null,
+        val description: String? = null,
+        val maxLength: Double? = null,
+        val minLength: Double? = null,
+        val pattern: String? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX76bec61b1b? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX22109e96d6(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX658a10e532(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX1d8cc567b2(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXcdf5cc1d02(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX3f5b0f43e8(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX5bcd3e410a(
+        val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProX9af0aefc37,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProX9bc735fe7c,
+        val default: Double? = null,
+        val description: String? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX1d8cc567b2? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX5c30e28cf6(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX4b5518e6b4(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXba2036b9f9(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc2c1ed6186(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX87b0417c20(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX1308c0ecd7(
+        val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXbe9f4bd015,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProX406a0d6b1d,
+        val default: Boolean? = null,
+        val description: String? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXba2036b9f9? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX3ccc74125e(
+        val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProX4a8c6fdaf1,
+        val default: Double? = null,
+        val description: String? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXaed16cbe03(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX673ac9bb8b(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX6d29560888(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX823b2d017e(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX8afe38bd17(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX703cea82fe(
+        val items: GetConfigurationProductsResponseProductsItemMetadataSchemaProX3ccc74125e,
+        val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXa58325d287,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProXa7cfdfa8e7,
+        @JacksonJsonProperty("ui:steps") val uiSteps: List<Double>,
+        val default: List<Double>? = null,
+        val description: String? = null,
+        val maxItems: Double? = null,
+        val minItems: Double? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX6d29560888? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXa4c96d2997(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXd9ba69cb86(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX2a15392619(
+        val label: String,
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX1ec64e5fdb(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXa36d061aff(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXff95a98ecd(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc43dd79867(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXb52a71fab5(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX3116487756(
+        val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProX1e61e3646f,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProX184b2f9e93,
+        @JacksonJsonProperty("ui:options")
+        val uiOptions:
+            List<GetConfigurationProductsResponseProductsItemMetadataSchemaProX2a15392619>,
+        val default: String? = null,
+        val description: String? = null,
+        val maxLength: Double? = null,
+        val minLength: Double? = null,
+        val pattern: String? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXff95a98ecd? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX570955433b(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc2d9d9154d(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX88d085ac92(
+        val label: String,
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX9b78438b4e(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX6f5be70cf5(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX815d8a8d40(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc4b32af67e(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXef56979a83(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX3624047e88(
+        val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXd58618bafb,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProXe22ef0e617,
+        @JacksonJsonProperty("ui:options")
+        val uiOptions:
+            List<GetConfigurationProductsResponseProductsItemMetadataSchemaProX88d085ac92>,
+        val default: String? = null,
+        val description: String? = null,
+        val maxLength: Double? = null,
+        val minLength: Double? = null,
+        val pattern: String? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX815d8a8d40? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX2fd759621b(
+        val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXc9abcdaacc,
+        val default: String? = null,
+        val description: String? = null,
+        val maxLength: Double? = null,
+        val minLength: Double? = null,
+        val pattern: String? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX59b8ee9dee(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX996f896fbf(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX494f7ccfb9(
+        val label: String,
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXb25738dd79(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX4ba21ed9a3(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX4bb21ec9a9(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX83bdb40380(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXf51b0647d5(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXec0a2ce1de(
+        val items: GetConfigurationProductsResponseProductsItemMetadataSchemaProX2fd759621b,
+        val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProX15d6c1bbb1,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProXdbee118882,
+        @JacksonJsonProperty("ui:options")
+        val uiOptions:
+            List<GetConfigurationProductsResponseProductsItemMetadataSchemaProX494f7ccfb9>,
+        val default: List<String>? = null,
+        val description: String? = null,
+        val example: List<String>? = null,
+        val maxItems: Double? = null,
+        val minItems: Double? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX4bb21ec9a9? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXf5dd52fdf6(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX329e03d2ad(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX1d6f586bbe(
+        val label: String,
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXb012224cd1(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX48d238fdec(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX493f4a1bc6(
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX920149be00(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXe9ff303701(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXba7d3d8cbc(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXa07a04b641(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX46f2b95b58(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX03ec874879(
+        val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProX8c9bcb4967,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProX7b314c216c,
+        @JacksonJsonProperty("ui:options") val uiOptions: List<Any>,
+        val default: String? = null,
+        val description: String? = null,
+        val maxLength: Double? = null,
+        val minLength: Double? = null,
+        val pattern: String? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXba7d3d8cbc? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX440a49725e(
+        val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXf6f089fba6,
+        val default: String? = null,
+        val description: String? = null,
+        val maxLength: Double? = null,
+        val minLength: Double? = null,
+        val pattern: String? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX3e2758e99a(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX64b4202639(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX25218fbd6f(
+        val label: String,
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXe8dee9432c(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX2ef14f9ab8(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXe6d67028fb(
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX657c6439de(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX6a619bf684(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX2cc0b016aa(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXed9a92a74d(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX2f6f70a701(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc75c4d5136(
+        val items: GetConfigurationProductsResponseProductsItemMetadataSchemaProX440a49725e,
+        val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXa3c9fe1dd0,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProXb8b702bb6d,
+        @JacksonJsonProperty("ui:options") val uiOptions: List<Any>,
+        val default: List<String>? = null,
+        val description: String? = null,
+        val example: List<String>? = null,
+        val maxItems: Double? = null,
+        val minItems: Double? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX2cc0b016aa? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX9200892dac(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX4f3d000cf7(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX49d31f9682(
+        val label: String,
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXa456e76e6d(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX99351889cb(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX31c06d8f0a(
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX8c099688d9(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX42ebfe94c9(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXd31dbfb015(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX62c68a057a(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXa7bb8f7075(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX43a0ecc7c9(
+        val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXda82c6db85,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProX9e89b493c5,
+        @JacksonJsonProperty("ui:options") val uiOptions: List<Any>,
+        val default: String? = null,
+        val description: String? = null,
+        val maxLength: Double? = null,
+        val minLength: Double? = null,
+        val pattern: String? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXd31dbfb015? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX5a55e47b50(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX4b1d9fe794(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXd27ac6f508(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX1012d8d94e(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXb6d36704d0(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXf752d5020b(
+        val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXf74e4204fa,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProX1d5fcc2574,
+        val default: String? = null,
+        val description: String? = null,
+        val maxLength: Double? = null,
+        val minLength: Double? = null,
+        val pattern: String? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProXd27ac6f508? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc388236216(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXc9b9d8a040(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX59b7805f5d(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXfbfbc45e04(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProX1bccba987f(
+        val expr: String
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchemaProXab08719c20(
+        val type: GetConfigurationProductsResponseProductsItemMetadataSchemaProXa8a5eb736d,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: GetConfigurationProductsResponseProductsItemMetadataSchemaProXfcd0d1a688,
+        val description: String? = null,
+        @JacksonJsonProperty("git:providers")
+        val gitProviders:
+            List<GetConfigurationProductsResponseProductsItemMetadataSchemaProX97206eac5a>? =
+            null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            GetConfigurationProductsResponseProductsItemMetadataSchemaProX59b7805f5d? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemMetadataSchema(
+        val properties: Map<String, Any>,
+        val type: GetConfigurationProductsResponseProductsItemMetadataSchemaTypeEnum,
+        val required: List<String>? = null,
+        @JacksonJsonProperty("ui:order") val uiOrder: List<String>? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemProtocolsAi(
+        val status: GetConfigurationProductsResponseProductsItemProtocolsAiStatusEnum
+    )
+
+    data class GetConfigurationProductsResponseProductsItemProtocolsAuthentication(
+        val status: GetConfigurationProductsResponseProductsItemProtocolsAuthentiX8db0db0d3d,
+        /**
+         * The partner accepts Vercel-managed app URLs via `protocolSettings.authentication.appUrls`
+         * on provision-resource and update-resource, and reconciles them into its trusted-origin /
+         * redirect-URL allowlist. When absent, consumers surface the URL for a one-time manual
+         * registration instead.
+         */
+        val appUrlRegistrationSupport: Boolean? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemProtocolsChecks(
+        val status: GetConfigurationProductsResponseProductsItemProtocolsChecksStatusEnum
+    )
+
+    data class GetConfigurationProductsResponseProductsItemProtocolsExperimentation(
+        val status: GetConfigurationProductsResponseProductsItemProtocolsExperimeX3e9597977a,
+        val edgeConfigSyncingSupport: Boolean? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemProtocolsLogDrain(
+        val status: GetConfigurationProductsResponseProductsItemProtocolsLogDrainStatusEnum,
+        val endpoint: String,
+        val format: GetConfigurationProductsResponseProductsItemProtocolsLogDrainFormatEnum,
+        val headers: Map<String, String>? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemProtocolsMessaging(
+        val status: GetConfigurationProductsResponseProductsItemProtocolsMessagingStatusEnum
+    )
+
+    data class GetConfigurationProductsResponseProductsItemProtocolsObservability(
+        val status: GetConfigurationProductsResponseProductsItemProtocolsObservabXb03af18f0b
+    )
+
+    data class GetConfigurationProductsResponseProductsItemProtocolsOther(
+        val status: GetConfigurationProductsResponseProductsItemProtocolsOtherStatusEnum
+    )
+
+    data class GetConfigurationProductsResponseProductsItemProtocolsStorageRepl(
+        val enabled: Boolean,
+        val supportsReadOnlyMode: Boolean,
+        val welcomeMessage: String? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemProtocolsStorage(
+        val status: GetConfigurationProductsResponseProductsItemProtocolsStorageStatusEnum,
+        val repl: GetConfigurationProductsResponseProductsItemProtocolsStorageRepl? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemProtocolsTraceDrain(
+        val status: GetConfigurationProductsResponseProductsItemProtocolsTraceDraX0dd5b2de9b,
+        val endpoint: String,
+        val format: GetConfigurationProductsResponseProductsItemProtocolsTraceDraXa43a6c2f6c,
+        val headers: Map<String, String>? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItemProtocolsVideo(
+        val status: GetConfigurationProductsResponseProductsItemProtocolsVideoStatusEnum
+    )
+
+    data class GetConfigurationProductsResponseProductsItemProtocolsWorkflow(
+        val status: GetConfigurationProductsResponseProductsItemProtocolsWorkflowStatusEnum
+    )
+
+    data class GetConfigurationProductsResponseProductsItemProtocols(
+        val ai: GetConfigurationProductsResponseProductsItemProtocolsAi? = null,
+        val authentication: GetConfigurationProductsResponseProductsItemProtocolsAuthentication? =
+            null,
+        val checks: GetConfigurationProductsResponseProductsItemProtocolsChecks? = null,
+        val experimentation: GetConfigurationProductsResponseProductsItemProtocolsExperimentation? =
+            null,
+        val logDrain: GetConfigurationProductsResponseProductsItemProtocolsLogDrain? = null,
+        val messaging: GetConfigurationProductsResponseProductsItemProtocolsMessaging? = null,
+        val observability: GetConfigurationProductsResponseProductsItemProtocolsObservability? =
+            null,
+        val other: GetConfigurationProductsResponseProductsItemProtocolsOther? = null,
+        val storage: GetConfigurationProductsResponseProductsItemProtocolsStorage? = null,
+        val traceDrain: GetConfigurationProductsResponseProductsItemProtocolsTraceDrain? = null,
+        val video: GetConfigurationProductsResponseProductsItemProtocolsVideo? = null,
+        val workflow: GetConfigurationProductsResponseProductsItemProtocolsWorkflow? = null,
+    )
+
+    data class GetConfigurationProductsResponseProductsItem(
+        val id: String,
+        val metadataSchema: GetConfigurationProductsResponseProductsItemMetadataSchema,
+        val name: String,
+        val protocols: GetConfigurationProductsResponseProductsItemProtocols,
+        val slug: String,
+        val primaryProtocol: GetConfigurationProductsResponseProductsItemPrimaryProtocolEnum? =
+            null,
+    )
+
+    data class GetConfigurationProductsResponse(
+        val configuration: GetConfigurationProductsResponseConfiguration,
+        val integration: GetConfigurationProductsResponseIntegration,
+        val products: List<GetConfigurationProductsResponseProductsItem>,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX3cadc7f7f1(
+        val environments: List<String>,
+        val slug: String,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemDeployments(
+        val actions: List<CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX3cadc7f7f1>,
+        val required: Boolean,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProjectsMetadataItem(
+        val environments: List<String>,
+        val environmentVariables: List<String>,
+        @JacksonJsonProperty("envVarPrefix", required = true) val envVarPrefix: String?,
+        val id: String,
+        val name: String,
+        val projectId: String,
+        val deployments: CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemDeployments? =
+            null,
+        val framework: CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0? =
+            null,
+        val latestDeployment: String? = null,
+        val makeEnvVarsSensitive: Boolean? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductIntegrationCapabilities(
+        val billable: Boolean? = null,
+        val checks: Boolean? = null,
+        val connectedImportResource: Boolean? = null,
+        val connectedProvisioning: Boolean? = null,
+        val flexCommitEligible: Boolean? = null,
+        val importResource: Boolean? = null,
+        val maxAllowedTeams: Double? = null,
+        val mcp: Boolean? = null,
+        val mcpConfiguration: Boolean? = null,
+        val mcpReadonly: Boolean? = null,
+        val nativeImportResource: Boolean? = null,
+        val provisioning: Boolean? = null,
+        val requiresBrowserInstall: Boolean? = null,
+        /**
+         * Typed representation of the
+         * `CreateIntegrationStoreDirectResponseStoreProductIntegrationCapabilitiesSecretRotation`
+         * API schema.
+         */
+        val secretRotation:
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXfd0e7053ec? =
+            null,
+        val sso: Boolean? = null,
+        val templateCloneOnly: Boolean? = null,
+        val transferable: Boolean? = null,
+        val updateConfiguration: Boolean? = null,
+        val v0Flavors: Boolean? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductIntegration(
+        val icon: String,
+        val id: String,
+        val name: String,
+        val slug: String,
+        val capabilities: CreateIntegrationStoreDirectResponseStoreProductIntegrationCapabilities? =
+            null,
+        val flags: List<String>? = null,
+        val supportsInstallationBillingPlans: Boolean? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductCapabilities(
+        val agentTools: Boolean? = null,
+        val autoSensitive: Boolean? = null,
+        val billable: Boolean? = null,
+        val connectedImportResource: Boolean? = null,
+        @JacksonJsonProperty("databaseUI") val databaseUi: Boolean? = null,
+        val importResource: Boolean? = null,
+        val linking: Boolean? = null,
+        val mcp: Boolean? = null,
+        val mcpReadonly: Boolean? = null,
+        val nativeImportResource: Boolean? = null,
+        val projects: Boolean? = null,
+        val sandbox: Boolean? = null,
+        /**
+         * Typed representation of the
+         * `CreateIntegrationStoreDirectResponseStoreProductCapabilitiesSecretRotation` API schema.
+         */
+        val secretRotation:
+            CreateIntegrationStoreDirectResponseStoreProductCapabilitiesSX1e94c1908a? =
+            null,
+        val secretsSync: Boolean? = null,
+        val sso: Boolean? = null,
+        val transferable: Boolean? = null,
+        val v0: Boolean? = null,
+        val v0Flavors: Boolean? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX42a09a07fc(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2f2c9a185f(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX30d2bb070d(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb20c17417b(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXc20a34fe5a(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX15f9b98724(
+        val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5dda8ddccb,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX1260fcf7cb,
+        val default: String? = null,
+        val description: String? = null,
+        val maxLength: Double? = null,
+        val minLength: Double? = null,
+        val pattern: String? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX30d2bb070d? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX96513a1e0c(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXae7d3ee2ef(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5f72bc1558(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb4b066b9d2(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4f6b7073f5(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXcb665a874e(
+        val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX623dc851df,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX645b52116b,
+        val default: Double? = null,
+        val description: String? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5f72bc1558? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXcedc720580(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX9668d0e4a5(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX146b6e4910(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb88b5a4e7b(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXae042fcce3(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4a03a14d08(
+        val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbc67963fa6,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXc9927172a7,
+        val default: Boolean? = null,
+        val description: String? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX146b6e4910? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX213ab4c57d(
+        val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXeed1fcaad2,
+        val default: Double? = null,
+        val description: String? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX34a613da4c(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX9914896a93(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2836327069(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX3fe447b03f(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb9fae5bf38(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXf0c4382bb3(
+        val items: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX213ab4c57d,
+        val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb4a289f2e1,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5fa81f6ea5,
+        @JacksonJsonProperty("ui:steps") val uiSteps: List<Double>,
+        val default: List<Double>? = null,
+        val description: String? = null,
+        val maxItems: Double? = null,
+        val minItems: Double? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2836327069? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbbc4b65852(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX9e961dc91d(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX53a9e6bfa7(
+        val label: String,
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX99eba91d57(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX831ed136e5(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7b8b4cb431(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb97eb3f91c(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXc8474c9651(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXdfcc9534d1(
+        val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXaf4dd689c5,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX8167b23e35,
+        @JacksonJsonProperty("ui:options")
+        val uiOptions:
+            List<CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX53a9e6bfa7>,
+        val default: String? = null,
+        val description: String? = null,
+        val maxLength: Double? = null,
+        val minLength: Double? = null,
+        val pattern: String? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7b8b4cb431? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2831d29458(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXc562f02f2f(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4f34b99c24(
+        val label: String,
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX152d59b118(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXddde184a83(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7d8cb55f32(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX80145b69ed(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7204a276a1(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX3b88ff9a73(
+        val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4b923b56a2,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXcd7f86cbd2,
+        @JacksonJsonProperty("ui:options")
+        val uiOptions:
+            List<CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4f34b99c24>,
+        val default: String? = null,
+        val description: String? = null,
+        val maxLength: Double? = null,
+        val minLength: Double? = null,
+        val pattern: String? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7d8cb55f32? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX38a95d02b9(
+        val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXe9af46d508,
+        val default: String? = null,
+        val description: String? = null,
+        val maxLength: Double? = null,
+        val minLength: Double? = null,
+        val pattern: String? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX46a11e7e9c(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXba7a04ce5d(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa5ed9766aa(
+        val label: String,
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX25752a140c(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX0d30bd1115(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXaa0a3dfb58(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5e02725634(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2d42e4d6f6(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2471c3d226(
+        val items: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX38a95d02b9,
+        val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX934695ba81,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa119121ecc,
+        @JacksonJsonProperty("ui:options")
+        val uiOptions:
+            List<CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa5ed9766aa>,
+        val default: List<String>? = null,
+        val description: String? = null,
+        val example: List<String>? = null,
+        val maxItems: Double? = null,
+        val minItems: Double? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXaa0a3dfb58? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX8e958a912a(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX52170a9fea(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXf281d6425f(
+        val label: String,
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX614fbd0dac(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX20ef7bf0fe(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb955c7b899(
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb972e9d079(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXc44787854c(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX484cea23ff(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXd533df4d71(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa5ccec8078(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbfeb03ed74(
+        val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX71a2c33bff,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb179f79ade,
+        @JacksonJsonProperty("ui:options") val uiOptions: List<Any>,
+        val default: String? = null,
+        val description: String? = null,
+        val maxLength: Double? = null,
+        val minLength: Double? = null,
+        val pattern: String? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX484cea23ff? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX8a35018d04(
+        val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX73e2a134b6,
+        val default: String? = null,
+        val description: String? = null,
+        val maxLength: Double? = null,
+        val minLength: Double? = null,
+        val pattern: String? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX55b8845f20(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2130b85db3(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX8059fdb79c(
+        val label: String,
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX89f5ffd41b(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX441a2de1a7(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX49d43e6f54(
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX0328ebd122(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4f6bb23181(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa519d03c91(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXe9399904ea(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX561a22c8a2(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX22790af955(
+        val items: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX8a35018d04,
+        val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4867751e59,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXfba8ce5983,
+        @JacksonJsonProperty("ui:options") val uiOptions: List<Any>,
+        val default: List<String>? = null,
+        val description: String? = null,
+        val example: List<String>? = null,
+        val maxItems: Double? = null,
+        val minItems: Double? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa519d03c91? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX565fe071c0(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX8656d6a42f(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa67dfcf609(
+        val label: String,
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7dff927c83(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX1ee213218e(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2eaa3b89b0(
+        @JacksonJsonProperty("value") val `value`: String,
+        val description: String? = null,
+        val disabled: Any? = null,
+        val hidden: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXb6bf9ad267(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXc60afbb37e(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX9d4ef267ef(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX61525efa85(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX412f59e720(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXfe42910a76(
+        val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX54a725c4cb,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX87e1ce4bfc,
+        @JacksonJsonProperty("ui:options") val uiOptions: List<Any>,
+        val default: String? = null,
+        val description: String? = null,
+        val maxLength: Double? = null,
+        val minLength: Double? = null,
+        val pattern: String? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX9d4ef267ef? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXc936ec45a8(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXe47fbfbf5d(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXf623e2c6a5(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4645c8bede(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXf2d5a44080(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX4af6dabe69(
+        val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX80879fedc6,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXdadbbcc2e2,
+        val default: String? = null,
+        val description: String? = null,
+        val maxLength: Double? = null,
+        val minLength: Double? = null,
+        val pattern: String? = null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXf623e2c6a5? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5b3a01111f(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbaf6b9d30e(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX6c84bcaf16(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX45bd93234a(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX6f34608831(
+        val expr: String
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXe7de463786(
+        val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX3d8856f849,
+        @JacksonJsonProperty("ui:control")
+        val uiControl: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXcff96302d9,
+        val description: String? = null,
+        @JacksonJsonProperty("git:providers")
+        val gitProviders:
+            List<CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX852034cea4>? =
+            null,
+        @JacksonJsonProperty("ui:description") val uiDescription: Any? = null,
+        @JacksonJsonProperty("ui:disabled") val uiDisabled: Any? = null,
+        @JacksonJsonProperty("ui:formatted-value")
+        val uiFormattedValue:
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX6c84bcaf16? =
+            null,
+        @JacksonJsonProperty("ui:hidden") val uiHidden: Any? = null,
+        @JacksonJsonProperty("ui:label") val uiLabel: String? = null,
+        @JacksonJsonProperty("ui:paid-only") val uiPaidOnly: Boolean? = null,
+        @JacksonJsonProperty("ui:placeholder") val uiPlaceholder: String? = null,
+        @JacksonJsonProperty("ui:read-only") val uiReadOnly: Any? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductMetadataSchema(
+        val properties: Map<String, Any>,
+        val type: CreateIntegrationStoreDirectResponseStoreProductMetadataSchemaTypeEnum,
+        val required: List<String>? = null,
+        @JacksonJsonProperty("ui:order") val uiOrder: List<String>? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductResourceLinksItem(
+        val href: String,
+        val title: String,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductRepl(
+        val enabled: Boolean,
+        val supportsReadOnlyMode: Boolean,
+        val welcomeMessage: String? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX301930ebf0(
+        val type: CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX9bb712bc31
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductGuidesItemStepsItem(
+        val content: String,
+        val title: String,
+        val actions:
+            List<CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX301930ebf0>? =
+            null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProductGuidesItem(
+        val framework: String,
+        val steps: List<CreateIntegrationStoreDirectResponseStoreProductGuidesItemStepsItem>,
+        val title: String,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProduct(
+        val integration: CreateIntegrationStoreDirectResponseStoreProductIntegration,
+        val integrationConfigurationId: String,
+        val supportedProtocols:
+            List<CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c>,
+        /**
+         * URLs to skills/guides for how AI agents should use this product. Providers can specify
+         * these to help agents understand how to interact with their integration.
+         */
+        val agentSkills: List<String>? = null,
+        val capabilities: CreateIntegrationStoreDirectResponseStoreProductCapabilities? = null,
+        val disableResourceRenaming: Boolean? = null,
+        val iconUrl: String? = null,
+        val id: String? = null,
+        val metadataSchema: CreateIntegrationStoreDirectResponseStoreProductMetadataSchema? = null,
+        val name: String? = null,
+        val projectConnectionScopes:
+            List<CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b>? =
+            null,
+        val resourceLinks:
+            List<CreateIntegrationStoreDirectResponseStoreProductResourceLinksItem>? =
+            null,
+        /**
+         * Custom resource title to display during installation and configuration. If not provided,
+         * defaults to protocol-based defaults.
+         */
+        val resourceTitle: String? = null,
+        val shortDescription: String? = null,
+        @JacksonJsonProperty("showSSOLinkOnProjectConnection")
+        val showSsoLinkOnProjectConnection: Boolean? = null,
+        val slug: String? = null,
+        val tags: List<CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum>? = null,
+        val repl: CreateIntegrationStoreDirectResponseStoreProductRepl? = null,
+        val guides: List<CreateIntegrationStoreDirectResponseStoreProductGuidesItem>? = null,
+        val logDrainStatus: CreateIntegrationStoreDirectResponseStoreProductLogDrainStatusEnum? =
+            null,
+        val primaryProtocol: CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum? =
+            null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreSecretsItem(
+        val length: Double,
+        val name: String,
+        val frameworkPublishable: Boolean? = null,
+        val nonSensitive: Boolean? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProjectFilterGit(
+        val providers: Any,
+        val owners: List<String>? = null,
+        val repos: List<String>? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProjectFilter(
+        val git: CreateIntegrationStoreDirectResponseStoreProjectFilterGit? = null
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreBillingPlanDetailsItem(
+        val label: String,
+        @JacksonJsonProperty("value") val `value`: String? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreBillingPlanHighlightX15b4790fd5(
+        val label: String,
+        @JacksonJsonProperty("value") val `value`: String? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreBillingPlanQuoteItem(
+        val amount: String,
+        val line: String,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreBillingPlan(
+        val description: String,
+        val id: String,
+        val name: String,
+        val paymentMethodRequired: Boolean,
+        val scope: CreateIntegrationStoreDirectResponseStoreBillingPlanScopeEnum,
+        val type: CreateIntegrationStoreDirectResponseStoreBillingPlanTypeEnum,
+        val cost: String? = null,
+        val details: List<CreateIntegrationStoreDirectResponseStoreBillingPlanDetailsItem>? = null,
+        val disabled: Boolean? = null,
+        val effectiveDate: String? = null,
+        val highlightedDetails:
+            List<CreateIntegrationStoreDirectResponseStoreBillingPlanHighlightX15b4790fd5>? =
+            null,
+        val initialCharge: String? = null,
+        val maximumAmount: String? = null,
+        val maximumAmountAutoPurchasePerPeriod: String? = null,
+        val minimumAmount: String? = null,
+        val preauthorizationAmount: Double? = null,
+        val quote: List<CreateIntegrationStoreDirectResponseStoreBillingPlanQuoteItem>? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreCapabilities(
+        val agentTools: Boolean? = null,
+        val autoSensitive: Boolean? = null,
+        val billable: Boolean? = null,
+        val mcp: Boolean? = null,
+        val mcpReadonly: Boolean? = null,
+        val projects: Boolean? = null,
+        /**
+         * Typed representation of the
+         * `CreateIntegrationStoreDirectResponseStoreCapabilitiesSecretRotation` API schema.
+         */
+        val secretRotation: CreateIntegrationStoreDirectResponseStoreCapabilitiesSecretRotation? =
+            null,
+        val secretsSync: Boolean? = null,
+        val sso: Boolean? = null,
+        val transferable: Boolean? = null,
+        val v0: Boolean? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreNotification(
+        val level: CreateIntegrationStoreDirectResponseStoreNotificationLevelEnum,
+        val title: String,
+        val href: String? = null,
+        val message: String? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX5041b94583(
+        val target: CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX2d9db9798c,
+        val url: String,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthentication(
+        val appUrls:
+            List<CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX5041b94583>? =
+            null
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProtocolSettingsExperimentation(
+        val edgeConfigId: String? = null,
+        val edgeConfigSyncingEnabled: Boolean? = null,
+        val edgeConfigTokenId: String? = null,
+        val globalConfigId: String? = null,
+        val globalConfigSyncingEnabled: Boolean? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStoreProtocolSettings(
+        val authentication:
+            CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthentication? =
+            null,
+        val experimentation:
+            CreateIntegrationStoreDirectResponseStoreProtocolSettingsExperimentation? =
+            null,
+    )
+
+    data class CreateIntegrationStoreDirectResponseStore(
+        val projectsMetadata: List<CreateIntegrationStoreDirectResponseStoreProjectsMetadataItem>,
+        @JacksonJsonProperty("status", required = true)
+        val status: CreateIntegrationStoreDirectResponseStoreStatusEnum?,
+        val usageQuotaExceeded: Boolean,
+        val externalResourceId: String,
+        val product: CreateIntegrationStoreDirectResponseStoreProduct,
+        val secrets: List<CreateIntegrationStoreDirectResponseStoreSecretsItem>,
+        val projectFilter: CreateIntegrationStoreDirectResponseStoreProjectFilter? = null,
+        val totalConnectedProjects: Double? = null,
+        val billingPlan: CreateIntegrationStoreDirectResponseStoreBillingPlan? = null,
+        val capabilities: CreateIntegrationStoreDirectResponseStoreCapabilities? = null,
+        val directPartnerConsoleUrl: String? = null,
+        val externalResourceStatus:
+            CreateIntegrationStoreDirectResponseStoreExternalResourceStatusEnum? =
+            null,
+        val metadata: Map<String, Any>? = null,
+        val notification: CreateIntegrationStoreDirectResponseStoreNotification? = null,
+        val ownership: CreateIntegrationStoreDirectResponseStoreOwnershipEnum? = null,
+        /**
+         * The ID of the parent resource. Used to establish a parent-child relationship between
+         * resources, such as sandbox resources linking to their owner account resource.
+         */
+        val parentId: String? = null,
+        val protocolSettings: CreateIntegrationStoreDirectResponseStoreProtocolSettings? = null,
+        /** The timestamp when secret rotation was completed. */
+        val secretRotationCompletedAt: Double? = null,
+        /** The timestamp when secret rotation was requested. */
+        val secretRotationRequestedAt: Double? = null,
+        /** The ID of the user/team who requested the secret rotation. */
+        val secretRotationRequestedBy: String? = null,
+        /** The reason for the secret rotation request. */
+        val secretRotationRequestedReason: String? = null,
+        /** The deployment targets that this resource is available for. */
+        val targets: List<CreateIntegrationStoreDirectResponseStoreTargetsItemEnum>? = null,
+    )
+
+    data class CreateIntegrationStoreDirectResponse(
+        @JacksonJsonProperty("store", required = true)
+        val store: CreateIntegrationStoreDirectResponseStore?
+    )
 
     /** Parameters for [searchRepo]. */
     data class SearchRepoRequest(
@@ -2180,7 +1960,7 @@ data class CreateIntegrationStoreDirectResponse(
         val installationId: String? = null,
         val host: String? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [getBillingPlans]. */
@@ -2191,7 +1971,7 @@ data class CreateIntegrationStoreDirectResponse(
         val metadata: String? = null,
         val source: GetBillingPlansParameterEnum? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [connectIntegrationResourceToProject]. */
@@ -2202,7 +1982,7 @@ data class CreateIntegrationStoreDirectResponse(
         val teamId: String? = null,
         val slug: String? = null,
         val envVarEnvironments: List<String>? = null,
-        val makeEnvVarsSensitive: Boolean? = null
+        val makeEnvVarsSensitive: Boolean? = null,
     )
 
     /** Parameters for [createIntegrationStoreDirect]. */
@@ -2218,13 +1998,21 @@ data class CreateIntegrationStoreDirectResponse(
         val source: CreateIntegrationStoreDirectSourceEnum? = null,
         val billingPlanId: String? = null,
         val paymentMethodId: String? = null,
-        val prepaymentAmountCents: Double? = null
+        val prepaymentAmountCents: Double? = null,
     )
 
     /**
-     * Lists Git namespaces for a supported provider. Use `provider` to select a provider, or omit it to let the API infer the provider from the authenticated user; provide `host` when using a custom Git host. Set `viewerMetadata` to include viewer information for each namespace.
+     * Lists Git namespaces for a supported provider. Use `provider` to select a provider, or omit
+     * it to let the API infer the provider from the authenticated user; provide `host` when using a
+     * custom Git host. Set `viewerMetadata` to include viewer information for each namespace.
      */
-    fun gitNamespaces(clientConfig: ClientConfig, host: String? = null, provider: GitNamespacesParameterEnum? = null, viewerMetadata: Boolean? = null, options: RequestOptions? = null): List<GitNamespacesResponseItem> =
+    fun gitNamespaces(
+        clientConfig: ClientConfig,
+        host: String? = null,
+        provider: GitNamespacesParameterEnum? = null,
+        viewerMetadata: Boolean? = null,
+        options: RequestOptions? = null,
+    ): List<GitNamespacesResponseItem> =
         dev.octri.showcase.vercel.methods.IntegrationsGitNamespacesOperation.gitNamespaces(
             clientConfig,
             host,
@@ -2234,9 +2022,16 @@ data class CreateIntegrationStoreDirectResponse(
         )
 
     /**
-     * Searches for Git repositories linked to a namespace for a supported provider. Use `namespaceId` and `provider` to narrow the search, or omit them to let the API infer values from the authenticated user; `query` can filter the repositories. Supply `host` when using a custom Git host.
+     * Searches for Git repositories linked to a namespace for a supported provider. Use
+     * `namespaceId` and `provider` to narrow the search, or omit them to let the API infer values
+     * from the authenticated user; `query` can filter the repositories. Supply `host` when using a
+     * custom Git host.
      */
-    fun searchRepo(clientConfig: ClientConfig, request: SearchRepoRequest, options: RequestOptions? = null): Map<String, Any> =
+    fun searchRepo(
+        clientConfig: ClientConfig,
+        request: SearchRepoRequest,
+        options: RequestOptions? = null,
+    ): Map<String, Any> =
         dev.octri.showcase.vercel.methods.IntegrationsSearchRepoOperation.searchRepo(
             clientConfig,
             request,
@@ -2244,9 +2039,15 @@ data class CreateIntegrationStoreDirectResponse(
         )
 
     /**
-     * Lists billing plans for an integration and product. Use `integrationIdOrSlug` and `productIdOrSlug` to identify them, and use `source` to filter by the source of the request. You can also provide `integrationConfigurationId` or `metadata` to scope the plan lookup.
+     * Lists billing plans for an integration and product. Use `integrationIdOrSlug` and
+     * `productIdOrSlug` to identify them, and use `source` to filter by the source of the request.
+     * You can also provide `integrationConfigurationId` or `metadata` to scope the plan lookup.
      */
-    fun getBillingPlans(clientConfig: ClientConfig, request: GetBillingPlansRequest, options: RequestOptions? = null): GetBillingPlansResponse =
+    fun getBillingPlans(
+        clientConfig: ClientConfig,
+        request: GetBillingPlansRequest,
+        options: RequestOptions? = null,
+    ): GetBillingPlansResponse =
         dev.octri.showcase.vercel.methods.IntegrationsGetBillingPlansOperation.getBillingPlans(
             clientConfig,
             request,
@@ -2254,19 +2055,38 @@ data class CreateIntegrationStoreDirectResponse(
         )
 
     /**
-     * Connects a provisioned integration resource to a project. Supply `projectId` in the request body to establish the connection, and optionally choose which environments receive environment variables or mark those variables as sensitive. Use this operation for a resource that has already been provisioned through an integration.
+     * Connects a provisioned integration resource to a project. Supply `projectId` in the request
+     * body to establish the connection, and optionally choose which environments receive
+     * environment variables or mark those variables as sensitive. Use this operation for a resource
+     * that has already been provisioned through an integration.
      */
-    fun connectIntegrationResourceToProject(clientConfig: ClientConfig, request: ConnectIntegrationResourceToProjectRequest, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.IntegrationsConnectIntegrationResourceToProjectOperation.connectIntegrationResourceToProject(
-            clientConfig,
-            request,
-            options,
-        )
+    fun connectIntegrationResourceToProject(
+        clientConfig: ClientConfig,
+        request: ConnectIntegrationResourceToProjectRequest,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods.IntegrationsConnectIntegrationResourceToProjectOperation
+            .connectIntegrationResourceToProject(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Lists integration configurations for the authenticated user or team. Set `view` to `account` or `project` to choose the configuration scope, and use the optional filters to narrow results by installation type, integration, or team. The `project` view excludes configurations generated for the authorization flow.
+     * Lists integration configurations for the authenticated user or team. Set `view` to `account`
+     * or `project` to choose the configuration scope, and use the optional filters to narrow
+     * results by installation type, integration, or team. The `project` view excludes
+     * configurations generated for the authorization flow.
      */
-    fun getConfigurations(clientConfig: ClientConfig, view: GetConfigurationsParameterEnum, installationType: GetConfigurationsParameterEnuma99a7642? = null, integrationIdOrSlug: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): List<Map<String, Any>> =
+    fun getConfigurations(
+        clientConfig: ClientConfig,
+        view: GetConfigurationsParameterEnum,
+        installationType: GetConfigurationsParameterEnuma99a7642? = null,
+        integrationIdOrSlug: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): List<Map<String, Any>> =
         dev.octri.showcase.vercel.methods.IntegrationsGetConfigurationsOperation.getConfigurations(
             clientConfig,
             view,
@@ -2278,9 +2098,17 @@ data class CreateIntegrationStoreDirectResponse(
         )
 
     /**
-     * Retrieves an integration configuration by its identifier. Use `teamId` or `slug` to make the request on behalf of a team, and access is limited to the configuration's owner. The response contains the configuration details.
+     * Retrieves an integration configuration by its identifier. Use `teamId` or `slug` to make the
+     * request on behalf of a team, and access is limited to the configuration's owner. The response
+     * contains the configuration details.
      */
-    fun getConfiguration(clientConfig: ClientConfig, id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetConfigurationResponse =
+    fun getConfiguration(
+        clientConfig: ClientConfig,
+        id: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetConfigurationResponse =
         dev.octri.showcase.vercel.methods.IntegrationsGetConfigurationOperation.getConfiguration(
             clientConfig,
             id,
@@ -2290,36 +2118,62 @@ data class CreateIntegrationStoreDirectResponse(
         )
 
     /**
-     * Deletes an integration configuration and all resources associated with it. Use `id` to identify the configuration and `teamId` or `slug` to make the request on behalf of a team. Deletion also removes associated webhooks, log drains, and project environment variables.
+     * Deletes an integration configuration and all resources associated with it. Use `id` to
+     * identify the configuration and `teamId` or `slug` to make the request on behalf of a team.
+     * Deletion also removes associated webhooks, log drains, and project environment variables.
      */
-    fun deleteConfiguration(clientConfig: ClientConfig, id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.IntegrationsDeleteConfigurationOperation.deleteConfiguration(
-            clientConfig,
-            id,
-            teamId,
-            slug,
-            options,
-        )
+    fun deleteConfiguration(
+        clientConfig: ClientConfig,
+        id: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods.IntegrationsDeleteConfigurationOperation
+            .deleteConfiguration(
+                clientConfig,
+                id,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Lists the products available for an integration configuration. Use `id` to select the configuration, and use `teamId` or `slug` when making the request on behalf of a team. Each product includes a `metadataSchema` describing its required and optional metadata fields.
+     * Lists the products available for an integration configuration. Use `id` to select the
+     * configuration, and use `teamId` or `slug` when making the request on behalf of a team. Each
+     * product includes a `metadataSchema` describing its required and optional metadata fields.
      */
-    fun getConfigurationProducts(clientConfig: ClientConfig, id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetConfigurationProductsResponse =
-        dev.octri.showcase.vercel.methods.IntegrationsGetConfigurationProductsOperation.getConfigurationProducts(
-            clientConfig,
-            id,
-            teamId,
-            slug,
-            options,
-        )
+    fun getConfigurationProducts(
+        clientConfig: ClientConfig,
+        id: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetConfigurationProductsResponse =
+        dev.octri.showcase.vercel.methods.IntegrationsGetConfigurationProductsOperation
+            .getConfigurationProducts(
+                clientConfig,
+                id,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Creates an integration store and handles free or paid billing plans. Supply `name`, `integrationConfigurationId`, and `integrationProductIdOrSlug`; omit `billingPlanId` to discover a free plan or provide one for a paid resource. Use `paymentMethodId` when you need to select a payment method other than the default.
+     * Creates an integration store and handles free or paid billing plans. Supply `name`,
+     * `integrationConfigurationId`, and `integrationProductIdOrSlug`; omit `billingPlanId` to
+     * discover a free plan or provide one for a paid resource. Use `paymentMethodId` when you need
+     * to select a payment method other than the default.
      */
-    fun createIntegrationStoreDirect(clientConfig: ClientConfig, request: CreateIntegrationStoreDirectRequest, options: RequestOptions? = null): CreateIntegrationStoreDirectResponse =
-        dev.octri.showcase.vercel.methods.IntegrationsCreateIntegrationStoreDirectOperation.createIntegrationStoreDirect(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createIntegrationStoreDirect(
+        clientConfig: ClientConfig,
+        request: CreateIntegrationStoreDirectRequest,
+        options: RequestOptions? = null,
+    ): CreateIntegrationStoreDirectResponse =
+        dev.octri.showcase.vercel.methods.IntegrationsCreateIntegrationStoreDirectOperation
+            .createIntegrationStoreDirect(
+                clientConfig,
+                request,
+                options,
+            )
 }

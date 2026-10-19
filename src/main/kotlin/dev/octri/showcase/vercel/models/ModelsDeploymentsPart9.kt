@@ -13,14 +13,19 @@ data class GetDeploymentEventsResponseItemVariant0Payload(
     val proxy: GetDeploymentEventsResponseItemVariant0PayloadProxy? = null,
     val requestId: String? = null,
     val statusCode: Double? = null,
-    val text: String? = null
+    val text: String? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetDeploymentEventsResponseItemVariant0(
     val created: Double,
     val payload: GetDeploymentEventsResponseItemVariant0Payload,
-    val type: GetDeploymentEventsResponseItemVariant0TypeEnum
+    val type: GetDeploymentEventsResponseItemVariant0TypeEnum,
 ) : GetDeploymentEventsResponseItem
 
 data class GetDeploymentEventsResponseItemVariant1Info(
@@ -30,10 +35,15 @@ data class GetDeploymentEventsResponseItemVariant1Info(
     val path: String? = null,
     val readyState: String? = null,
     val serviceName: String? = null,
-    val step: String? = null
+    val step: String? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetDeploymentEventsResponseItemVariant1(
     val created: Double,
     val date: Double,
@@ -43,7 +53,7 @@ data class GetDeploymentEventsResponseItemVariant1(
     val serial: String,
     val type: GetDeploymentEventsResponseItemVariant1TypeEnum,
     val level: GetDeploymentEventsResponseItemVariant1LevelEnum? = null,
-    val text: String? = null
+    val text: String? = null,
 ) : GetDeploymentEventsResponseItem
 
 data class GetDeploymentEventsResponseItemVariant2PayloadInfo(
@@ -53,7 +63,7 @@ data class GetDeploymentEventsResponseItemVariant2PayloadInfo(
     val path: String? = null,
     val readyState: String? = null,
     val serviceName: String? = null,
-    val step: String? = null
+    val step: String? = null,
 )
 
 data class GetDeploymentEventsResponseItemVariant2PayloadProxy(
@@ -75,7 +85,7 @@ data class GetDeploymentEventsResponseItemVariant2PayloadProxy(
     val vercelCache: GetDeploymentEventsResponseItemVariant2PayloadProxyVercelCacheEnum? = null,
     val vercelId: String? = null,
     val wafAction: GetDeploymentEventsResponseItemVariant2PayloadProxyWafActionEnum? = null,
-    val wafRuleId: String? = null
+    val wafRuleId: String? = null,
 )
 
 data class GetDeploymentEventsResponseItemVariant2Payload(
@@ -88,14 +98,19 @@ data class GetDeploymentEventsResponseItemVariant2Payload(
     val proxy: GetDeploymentEventsResponseItemVariant2PayloadProxy? = null,
     val requestId: String? = null,
     val statusCode: Double? = null,
-    val text: String? = null
+    val text: String? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetDeploymentEventsResponseItemVariant2(
     val created: Double,
     val payload: GetDeploymentEventsResponseItemVariant2Payload,
-    val type: GetDeploymentEventsResponseItemVariant2TypeEnum
+    val type: GetDeploymentEventsResponseItemVariant2TypeEnum,
 ) : GetDeploymentEventsResponseItem
 
 data class GetDeploymentEventsResponseItemVariant3Info(
@@ -105,10 +120,15 @@ data class GetDeploymentEventsResponseItemVariant3Info(
     val path: String? = null,
     val readyState: String? = null,
     val serviceName: String? = null,
-    val step: String? = null
+    val step: String? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetDeploymentEventsResponseItemVariant3(
     val created: Double,
     val date: Double,
@@ -118,45 +138,57 @@ data class GetDeploymentEventsResponseItemVariant3(
     val serial: String,
     val type: GetDeploymentEventsResponseItemVariant3TypeEnum,
     val level: GetDeploymentEventsResponseItemVariant3LevelEnum? = null,
-    val text: String? = null
+    val text: String? = null,
 ) : GetDeploymentEventsResponseItem
 
 data class GetDeploymentEventsResponseItemVariant4AliasError(
     val code: String,
-    val message: String
+    val message: String,
 )
 
 data class GetDeploymentEventsResponseItemVariant4AliasWarning(
     val code: String,
     val message: String,
     val action: String? = null,
-    val link: String? = null
+    val link: String? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetDeploymentEventsResponseItemVariant4(
     val date: Double,
     val deploymentId: String,
     val type: GetDeploymentEventsResponseItemVariant4TypeEnum,
     val alias: List<String>,
-    @com.fasterxml.jackson.annotation.JsonProperty("aliasError", required = true) val aliasError: GetDeploymentEventsResponseItemVariant4AliasError?,
-    @com.fasterxml.jackson.annotation.JsonProperty("aliasWarning", required = true) val aliasWarning: GetDeploymentEventsResponseItemVariant4AliasWarning?
+    @com.fasterxml.jackson.annotation.JsonProperty("aliasError", required = true)
+    val aliasError: GetDeploymentEventsResponseItemVariant4AliasError?,
+    @com.fasterxml.jackson.annotation.JsonProperty("aliasWarning", required = true)
+    val aliasWarning: GetDeploymentEventsResponseItemVariant4AliasWarning?,
 ) : GetDeploymentEventsResponseItem
 
-/**
- * Typed representation of the `GetDeploymentEventsResponseItem` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = GetDeploymentEventsResponseItem.Deserializer::class)
+/** Typed representation of the `GetDeploymentEventsResponseItem` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = GetDeploymentEventsResponseItem.Deserializer::class
+)
 sealed interface GetDeploymentEventsResponseItem {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<GetDeploymentEventsResponseItem>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<GetDeploymentEventsResponseItem>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): GetDeploymentEventsResponseItem {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = GetDeploymentEventsResponseItemOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                GetDeploymentEventsResponseItemOwnedTypes.firstOrNull { (keys, _) ->
+                        keys.any(node::has)
+                    }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -164,160 +196,170 @@ sealed interface GetDeploymentEventsResponseItem {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out GetDeploymentEventsResponseItem>> = listOf(GetDeploymentEventsResponseItemVariant0::class.java, GetDeploymentEventsResponseItemVariant1::class.java, GetDeploymentEventsResponseItemVariant2::class.java, GetDeploymentEventsResponseItemVariant3::class.java, GetDeploymentEventsResponseItemVariant4::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out GetDeploymentEventsResponseItem>> =
+                listOf(
+                    GetDeploymentEventsResponseItemVariant0::class.java,
+                    GetDeploymentEventsResponseItemVariant1::class.java,
+                    GetDeploymentEventsResponseItemVariant2::class.java,
+                    GetDeploymentEventsResponseItemVariant3::class.java,
+                    GetDeploymentEventsResponseItemVariant4::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, GetDeploymentEventsResponseItem::class.java, "no GetDeploymentEventsResponseItem branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        GetDeploymentEventsResponseItem::class.java,
+                        "no GetDeploymentEventsResponseItem branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val GetDeploymentEventsResponseItemOwnedTypes: List<Pair<List<String>, Class<out GetDeploymentEventsResponseItem>>> = listOf(
-    listOf("alias", "aliasError", "aliasWarning") to GetDeploymentEventsResponseItemVariant4::class.java,
-)
+internal val GetDeploymentEventsResponseItemOwnedTypes:
+    List<Pair<List<String>, Class<out GetDeploymentEventsResponseItem>>> =
+    listOf(
+        listOf("alias", "aliasError", "aliasWarning") to
+            GetDeploymentEventsResponseItemVariant4::class.java
+    )
 
 data class GetDeploymentResponseVariant0Duration(
-    /**
-     * Unix timestamp in milliseconds when the build container exited.
-     */
+    /** Unix timestamp in milliseconds when the build container exited. */
     val endTime: Double? = null,
     /**
      * Build-container exit Unix timestamp in milliseconds, capped at 45 minutes after `startTime`.
      */
     val endTimeCapped: Double? = null,
-    /**
-     * Unix timestamp in milliseconds when the deployment entered BUILDING.
-     */
+    /** Unix timestamp in milliseconds when the deployment entered BUILDING. */
     val startTime: Double? = null,
     /**
-     * Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a whole minute, with a one-minute minimum.
+     * Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a
+     * whole minute, with a one-minute minimum.
      */
     val timeForBilling: Double? = null,
     /**
-     * Milliseconds from entering BUILDING until the build container exited, without the billing cap.
+     * Milliseconds from entering BUILDING until the build container exited, without the billing
+     * cap.
      */
     val timeToContainerExit: Double? = null,
     /**
      * Build-container duration in milliseconds, capped at 45 minutes and without billing rounding.
      */
     val timeToContainerExitCapped: Double? = null,
-    /**
-     * Milliseconds from entering BUILDING until the deployment reached its current ready state.
-     */
-    val timeToReady: Double? = null
+    /** Milliseconds from entering BUILDING until the deployment reached its current ready state. */
+    val timeToReady: Double? = null,
 )
 
 /**
- * An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
+ * An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value
+ * will be `null`
  */
 data class GetDeploymentResponseVariant0AliasError(
     val code: String,
-    val message: String
+    val message: String,
 )
 
 data class GetDeploymentResponseVariant0AliasWarning(
     val code: String,
     val message: String,
     val action: String? = null,
-    val link: String? = null
+    val link: String? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetDeploymentResponseVariant0(
     val aliasAssigned: Boolean,
     val duration: GetDeploymentResponseVariant0Duration,
-    /**
-     * A string holding the unique ID of the deployment
-     */
+    /** A string holding the unique ID of the deployment */
     val id: String,
     /**
-     * The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+     * The state of the deployment depending on the process of deploying, or if it is ready or in an
+     * error state
      */
     val readyState: GetDeploymentResponseVariant0ReadyStateEnum,
     val alias: List<String>? = null,
     /**
-     * An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
+     * An object that will contain a `code` and a `message` when the aliasing fails, otherwise the
+     * value will be `null`
      */
     val aliasError: GetDeploymentResponseVariant0AliasError? = null,
     val aliasWarning: GetDeploymentResponseVariant0AliasWarning? = null,
     val errorCode: String? = null,
     val errorMessage: String? = null,
     /**
-     * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
+     * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was
+     * assigned upon creation, or `production` if the aliases from `alias` were assigned. `null`
+     * value indicates the "preview" deployment.
      */
-    val target: GetDeploymentResponseVariant0TargetEnum? = null
+    val target: GetDeploymentResponseVariant0TargetEnum? = null,
 ) : GetDeploymentResponse
 
-data class GetDeploymentResponseVariant1Build(
-    val env: List<String>
-)
+data class GetDeploymentResponseVariant1Build(val env: List<String>)
 
-/**
- * Information about the deployment creator
- */
+/** Information about the deployment creator */
 data class GetDeploymentResponseVariant1Creator(
     /**
-     * Stable creator id across principal types (user id, app id, integration configuration id, or `system`).
+     * Stable creator id across principal types (user id, app id, integration configuration id, or
+     * `system`).
      */
     val uid: String,
-    /**
-     * The avatar of the user that created the deployment
-     */
+    /** The avatar of the user that created the deployment */
     val avatar: String? = null,
-    /**
-     * Principal type of the deployment creator.
-     */
+    /** Principal type of the deployment creator. */
     val type: GetDeploymentResponseVariant1CreatorTypeEnum? = null,
-    /**
-     * The username of the user that created the deployment
-     */
-    val username: String? = null
+    /** The username of the user that created the deployment */
+    val username: String? = null,
 )
 
 data class GetDeploymentResponseVariant1Duration(
-    /**
-     * Unix timestamp in milliseconds when the build container exited.
-     */
+    /** Unix timestamp in milliseconds when the build container exited. */
     val endTime: Double? = null,
     /**
      * Build-container exit Unix timestamp in milliseconds, capped at 45 minutes after `startTime`.
      */
     val endTimeCapped: Double? = null,
-    /**
-     * Unix timestamp in milliseconds when the deployment entered BUILDING.
-     */
+    /** Unix timestamp in milliseconds when the deployment entered BUILDING. */
     val startTime: Double? = null,
     /**
-     * Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a whole minute, with a one-minute minimum.
+     * Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a
+     * whole minute, with a one-minute minimum.
      */
     val timeForBilling: Double? = null,
     /**
-     * Milliseconds from entering BUILDING until the build container exited, without the billing cap.
+     * Milliseconds from entering BUILDING until the build container exited, without the billing
+     * cap.
      */
     val timeToContainerExit: Double? = null,
     /**
      * Build-container duration in milliseconds, capped at 45 minutes and without billing rounding.
      */
     val timeToContainerExitCapped: Double? = null,
-    /**
-     * Milliseconds from entering BUILDING until the deployment reached its current ready state.
-     */
-    val timeToReady: Double? = null
+    /** Milliseconds from entering BUILDING until the deployment reached its current ready state. */
+    val timeToReady: Double? = null,
 )
 
 data class GetDeploymentResponseVariant1ProjectSettingsSpeedInsights(
     val id: String,
     val canceledAt: Double? = null,
     /**
-     * When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads "first free data point observed", not necessarily "first ever".
+     * When the first free (not Speed Insights Plus) production data point was observed, in ms. Set
+     * once by subscriber-analytics-events; projects that already had data before this field shipped
+     * get it backfilled on their next batch, so it reads "first free data point observed", not
+     * necessarily "first ever".
      */
     val dataReceivedAt: Double? = null,
     val disabledAt: Double? = null,
     val enabledAt: Double? = null,
     val hasData: Boolean? = null,
-    val paidAt: Double? = null
+    val paidAt: Double? = null,
 )
 
 data class GetDeploymentResponseVariant1ProjectSettingsWebAnalytics(
@@ -325,7 +367,7 @@ data class GetDeploymentResponseVariant1ProjectSettingsWebAnalytics(
     val canceledAt: Double? = null,
     val disabledAt: Double? = null,
     val enabledAt: Double? = null,
-    val hasData: Boolean? = null
+    val hasData: Boolean? = null,
 )
 
 data class GetDeploymentResponseVariant1ProjectSettings(
@@ -337,19 +379,18 @@ data class GetDeploymentResponseVariant1ProjectSettings(
     val nodeVersion: GetDeploymentResponseVariant1ProjectSettingsNodeVersionEnum? = null,
     val outputDirectory: String? = null,
     val speedInsights: GetDeploymentResponseVariant1ProjectSettingsSpeedInsights? = null,
-    val webAnalytics: GetDeploymentResponseVariant1ProjectSettingsWebAnalytics? = null
+    val webAnalytics: GetDeploymentResponseVariant1ProjectSettingsWebAnalytics? = null,
 )
 
 data class GetDeploymentResponseVariant1RoutesItemVariant0DestinationVariant1(
     val service: String,
-    /**
-     * Routing-only path used to select a route inside the target service.
-     */
+    /** Routing-only path used to select a route inside the target service. */
     val path: String? = null,
     /**
-     * Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
+     * Optional explicit format marker. The destination is identified by the presence of `service`,
+     * so `type` is no longer required.
      */
-    val type: GetDeploymentResponseVariant1RoutesItemVariant0DestinationVarX303cc6cb65? = null
+    val type: GetDeploymentResponseVariant1RoutesItemVariant0DestinationVarX303cc6cb65? = null,
 )
 
 data class GetDeploymentResponseVariant1RoutesItemVariant0HasItemVariantXaadd8233b3(
@@ -363,12 +404,12 @@ data class GetDeploymentResponseVariant1RoutesItemVariant0HasItemVariantXaadd823
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null
+    val suf: String? = null,
 )
 
 data class GetDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0(
     val type: GetDeploymentResponseVariant1RoutesItemVariant0HasItemVariant0TypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
 )
 
 data class GetDeploymentResponseVariant1RoutesItemVariant0HasItemVariantXe4d359deb0(
@@ -382,18 +423,18 @@ data class GetDeploymentResponseVariant1RoutesItemVariant0HasItemVariantXe4d359d
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null
+    val suf: String? = null,
 )
 
 data class GetDeploymentResponseVariant1RoutesItemVariant0HasItemVariant1(
     val key: String,
     val type: GetDeploymentResponseVariant1RoutesItemVariant0HasItemVariant1TypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
 )
 
 data class GetDeploymentResponseVariant1RoutesItemVariant0Locale(
     val cookie: String? = null,
-    val redirect: Map<String, String>? = null
+    val redirect: Map<String, String>? = null,
 )
 
 data class GetDeploymentResponseVariant1RoutesItemVariant0MissingItemVarX868639fde4(
@@ -407,12 +448,12 @@ data class GetDeploymentResponseVariant1RoutesItemVariant0MissingItemVarX868639f
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null
+    val suf: String? = null,
 )
 
 data class GetDeploymentResponseVariant1RoutesItemVariant0MissingItemVariant0(
     val type: GetDeploymentResponseVariant1RoutesItemVariant0MissingItemVarX22fc5edcd9,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
 )
 
 data class GetDeploymentResponseVariant1RoutesItemVariant0MissingItemVarX30b54dbf5e(
@@ -426,13 +467,13 @@ data class GetDeploymentResponseVariant1RoutesItemVariant0MissingItemVarX30b54db
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null
+    val suf: String? = null,
 )
 
 data class GetDeploymentResponseVariant1RoutesItemVariant0MissingItemVariant1(
     val key: String,
     val type: GetDeploymentResponseVariant1RoutesItemVariant0MissingItemVarX860a130e66,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
 )
 
 data class GetDeploymentResponseVariant1RoutesItemVariant0Mitigate(
@@ -449,26 +490,24 @@ data class GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemX6b620a8
     val neq: String? = null,
     val ninc: List<String>? = null,
     val pre: String? = null,
-    val suf: String? = null
+    val suf: String? = null,
 )
 
-data class GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemXf594ee56ed(
-    val key: Any
-)
+data class GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemXf594ee56ed(val key: Any)
 
 data class GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemVariant0(
     val op: GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemX2416033ca3,
     val target: GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemXf594ee56ed,
     val type: GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemXc7cff37034,
     val args: Any? = null,
-    val env: List<String>? = null
+    val env: List<String>? = null,
 )
 
 data class GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemVariant1(
     val args: String,
     val op: GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemXcfafd359e9,
     val type: GetDeploymentResponseVariant1RoutesItemVariant0TransformsItemX034520cde7,
-    val env: List<String>? = null
+    val env: List<String>? = null,
 )
 
 data class GetDeploymentResponseVariant1RoutesItemVariant0(
@@ -484,108 +523,93 @@ data class GetDeploymentResponseVariant1RoutesItemVariant0(
     val important: Boolean? = null,
     val locale: GetDeploymentResponseVariant1RoutesItemVariant0Locale? = null,
     val methods: List<String>? = null,
-    /**
-     * A middleware index in the `middleware` key under the build result
-     */
+    /** A middleware index in the `middleware` key under the build result */
     val middleware: Double? = null,
     /**
-     * A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
+     * A middleware key within the `output` key under the build result. Overrides a `middleware`
+     * definition.
      */
     val middlewarePath: String? = null,
-    /**
-     * The original middleware matchers.
-     */
+    /** The original middleware matchers. */
     val middlewareRawSrc: List<String>? = null,
     val missing: List<Any>? = null,
     val mitigate: GetDeploymentResponseVariant1RoutesItemVariant0Mitigate? = null,
     @com.fasterxml.jackson.annotation.JsonProperty("override") val `override`: Boolean? = null,
     val respectOriginCacheControl: Boolean? = null,
     /**
-     * Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`, `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During normalization, the string forms are converted to their canonical forms (`src`, `dest`, `status`) and stripped from the route object. `destination` may also be a service-targeted object, in which case routing is delegated into the named service's internal route table and the object is preserved…
+     * Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`,
+     * `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During
+     * normalization, the string forms are converted to their canonical forms (`src`, `dest`,
+     * `status`) and stripped from the route object. `destination` may also be a service-targeted
+     * object, in which case routing is delegated into the named service's internal route table and
+     * the object is preserved…
      */
     val source: String? = null,
     val status: Double? = null,
     val statusCode: Double? = null,
-    val transforms: List<Any>? = null
+    val transforms: List<Any>? = null,
 )
 
 data class GetDeploymentResponseVariant1RoutesItemVariant1(
     val handle: GetDeploymentResponseVariant1RoutesItemVariant1HandleEnum,
     val dest: String? = null,
     val src: String? = null,
-    val status: Double? = null
+    val status: Double? = null,
 )
 
 data class GetDeploymentResponseVariant1RoutesItemVariant2(
     @com.fasterxml.jackson.annotation.JsonProperty("continue") val `continue`: Boolean,
     val middleware: Long,
-    val src: String
+    val src: String,
 )
 
 /**
- * An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
+ * An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value
+ * will be `null`
  */
 data class GetDeploymentResponseVariant1AliasError(
     val code: String,
-    val message: String
+    val message: String,
 )
 
 data class GetDeploymentResponseVariant1AliasWarning(
     val code: String,
     val message: String,
     val action: String? = null,
-    val link: String? = null
+    val link: String? = null,
 )
 
-data class GetDeploymentResponseVariant1AtprotoVariant0(
-    val enabled: Boolean
-)
+data class GetDeploymentResponseVariant1AtprotoVariant0(val enabled: Boolean)
 
 data class GetDeploymentResponseVariant1AtprotoVariant1Subscription(
     val collections: List<String>,
     val path: String,
     val dids: List<String>? = null,
-    val kinds: List<GetDeploymentResponseVariant1AtprotoVariant1SubscriptionKindsItemEnum>? = null
+    val kinds: List<GetDeploymentResponseVariant1AtprotoVariant1SubscriptionKindsItemEnum>? = null,
 )
 
 data class GetDeploymentResponseVariant1AtprotoVariant1(
     val enabled: Boolean,
-    val subscription: GetDeploymentResponseVariant1AtprotoVariant1Subscription
+    val subscription: GetDeploymentResponseVariant1AtprotoVariant1Subscription,
 )
 
-/**
- * Commit metadata from the git commit author
- */
+/** Commit metadata from the git commit author */
 data class GetDeploymentResponseVariant1AttributionCommitMeta(
-    /**
-     * Email from git commit author
-     */
+    /** Email from git commit author */
     val email: String? = null,
-    /**
-     * Whether the commit was signed/verified (GitHub only, others return undefined)
-     */
+    /** Whether the commit was signed/verified (GitHub only, others return undefined) */
     val isVerified: Boolean? = null,
-    /**
-     * Name from git commit author
-     */
-    val name: String? = null
+    /** Name from git commit author */
+    val name: String? = null,
 )
 
-/**
- * Git provider user associated with the commit author email (only set if resolved)
- */
+/** Git provider user associated with the commit author email (only set if resolved) */
 data class GetDeploymentResponseVariant1AttributionGitUser(
     val id: Any,
-    /**
-     * Git provider username/login
-     */
+    /** Git provider username/login */
     val login: String,
-    /**
-     * The git provider (github, gitlab, bitbucket)
-     */
+    /** The git provider (github, gitlab, bitbucket) */
     val provider: String? = null,
-    /**
-     * User type
-     */
-    val type: String? = null
+    /** User type */
+    val type: String? = null,
 )

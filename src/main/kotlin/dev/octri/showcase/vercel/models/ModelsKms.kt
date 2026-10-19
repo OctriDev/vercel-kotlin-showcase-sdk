@@ -3,277 +3,440 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateKmsIssuerPolicyResponseVariant0(
     val createdAt: String,
     /**
-     * Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (`production`, `preview`, `development`) or a custom environment ID (prefixed `env_`). Custom environments are matched against the token's `custom_environment_id` claim (the stable ID); system environments against its `environment` claim.
+     * Environments whose OIDC tokens this grant authorizes. Each entry is either a system
+     * environment slug (`production`, `preview`, `development`) or a custom environment ID
+     * (prefixed `env_`). Custom environments are matched against the token's
+     * `custom_environment_id` claim (the stable ID); system environments against its `environment`
+     * claim.
      */
     val environments: List<String>,
     val kind: CreateKmsIssuerPolicyResponseVariant0KindEnum,
     val projectId: String,
     val teamId: String,
     val updatedAt: String,
-    val tokenClaims: Map<String, Any>? = null
+    val tokenClaims: Map<String, Any>? = null,
 ) : CreateKmsIssuerPolicyResponse
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateKmsIssuerPolicyResponseVariant1(
     val clientId: String,
     val createdAt: String,
     val kind: CreateKmsIssuerPolicyResponseVariant1KindEnum,
     val updatedAt: String,
-    val tokenClaims: Map<String, Any>? = null
+    val tokenClaims: Map<String, Any>? = null,
 ) : CreateKmsIssuerPolicyResponse
 
-/**
- * Typed representation of the `CreateKmsIssuerPolicyResponse` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "kind", visible = true)
+/** Typed representation of the `CreateKmsIssuerPolicyResponse` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "kind",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateKmsIssuerPolicyResponseVariant0::class, name = "project-grant"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateKmsIssuerPolicyResponseVariant1::class, name = "connex-grant")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateKmsIssuerPolicyResponseVariant0::class,
+        name = "project-grant",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateKmsIssuerPolicyResponseVariant1::class,
+        name = "connex-grant",
+    ),
 )
 sealed interface CreateKmsIssuerPolicyResponse
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateKmsIssuerRequestPolicyVariant0(
     val kind: CreateKmsIssuerRequestPolicyVariant0KindEnum,
-    /**
-     * The team ID for the project grant policy.
-     */
+    /** The team ID for the project grant policy. */
     val teamId: String,
-    /**
-     * The project ID for the project grant policy.
-     */
+    /** The project ID for the project grant policy. */
     val projectId: String,
     /**
-     * The environments for the project grant policy. Each entry is a system environment (production, preview, development) or a custom environment ID (env_...).
+     * The environments for the project grant policy. Each entry is a system environment
+     * (production, preview, development) or a custom environment ID (env_...).
      */
     val environments: List<String>,
-    /**
-     * The claims that KMS should include in signed JWTs for this policy.
-     */
-    val tokenClaims: Map<String, Any>? = null
+    /** The claims that KMS should include in signed JWTs for this policy. */
+    val tokenClaims: Map<String, Any>? = null,
 ) : CreateKmsIssuerRequestPolicy
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateKmsIssuerRequestPolicyVariant1(
     val kind: CreateKmsIssuerRequestPolicyVariant1KindEnum,
-    /**
-     * The Connex client ID for the Connex grant policy.
-     */
+    /** The Connex client ID for the Connex grant policy. */
     val clientId: String,
-    /**
-     * The claims that KMS should include in signed JWTs for this policy.
-     */
-    val tokenClaims: Map<String, Any>? = null
+    /** The claims that KMS should include in signed JWTs for this policy. */
+    val tokenClaims: Map<String, Any>? = null,
 ) : CreateKmsIssuerRequestPolicy
 
-/**
- * Typed representation of the `CreateKmsIssuerRequestPolicy` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "kind", visible = true)
+/** Typed representation of the `CreateKmsIssuerRequestPolicy` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "kind",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateKmsIssuerRequestPolicyVariant0::class, name = "project-grant"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateKmsIssuerRequestPolicyVariant1::class, name = "connex-grant")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateKmsIssuerRequestPolicyVariant0::class,
+        name = "project-grant",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateKmsIssuerRequestPolicyVariant1::class,
+        name = "connex-grant",
+    ),
 )
 sealed interface CreateKmsIssuerRequestPolicy
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateKmsIssuerResponsePoliciesItemVariant0(
     val createdAt: String,
     /**
-     * Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (`production`, `preview`, `development`) or a custom environment ID (prefixed `env_`). Custom environments are matched against the token's `custom_environment_id` claim (the stable ID); system environments against its `environment` claim.
+     * Environments whose OIDC tokens this grant authorizes. Each entry is either a system
+     * environment slug (`production`, `preview`, `development`) or a custom environment ID
+     * (prefixed `env_`). Custom environments are matched against the token's
+     * `custom_environment_id` claim (the stable ID); system environments against its `environment`
+     * claim.
      */
     val environments: List<String>,
     val kind: CreateKmsIssuerResponsePoliciesItemVariant0KindEnum,
     val projectId: String,
     val teamId: String,
     val updatedAt: String,
-    val tokenClaims: Map<String, Any>? = null
+    val tokenClaims: Map<String, Any>? = null,
 ) : CreateKmsIssuerResponsePoliciesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateKmsIssuerResponsePoliciesItemVariant1(
     val clientId: String,
     val createdAt: String,
     val kind: CreateKmsIssuerResponsePoliciesItemVariant1KindEnum,
     val updatedAt: String,
-    val tokenClaims: Map<String, Any>? = null
+    val tokenClaims: Map<String, Any>? = null,
 ) : CreateKmsIssuerResponsePoliciesItem
 
-/**
- * Typed representation of the `CreateKmsIssuerResponsePoliciesItem` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "kind", visible = true)
+/** Typed representation of the `CreateKmsIssuerResponsePoliciesItem` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "kind",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateKmsIssuerResponsePoliciesItemVariant0::class, name = "project-grant"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateKmsIssuerResponsePoliciesItemVariant1::class, name = "connex-grant")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateKmsIssuerResponsePoliciesItemVariant0::class,
+        name = "project-grant",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateKmsIssuerResponsePoliciesItemVariant1::class,
+        name = "connex-grant",
+    ),
 )
 sealed interface CreateKmsIssuerResponsePoliciesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetKmsIssuerResponsePoliciesItemVariant0(
     val createdAt: String,
     /**
-     * Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (`production`, `preview`, `development`) or a custom environment ID (prefixed `env_`). Custom environments are matched against the token's `custom_environment_id` claim (the stable ID); system environments against its `environment` claim.
+     * Environments whose OIDC tokens this grant authorizes. Each entry is either a system
+     * environment slug (`production`, `preview`, `development`) or a custom environment ID
+     * (prefixed `env_`). Custom environments are matched against the token's
+     * `custom_environment_id` claim (the stable ID); system environments against its `environment`
+     * claim.
      */
     val environments: List<String>,
     val kind: GetKmsIssuerResponsePoliciesItemVariant0KindEnum,
     val projectId: String,
     val teamId: String,
     val updatedAt: String,
-    val tokenClaims: Map<String, Any>? = null
+    val tokenClaims: Map<String, Any>? = null,
 ) : GetKmsIssuerResponsePoliciesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetKmsIssuerResponsePoliciesItemVariant1(
     val clientId: String,
     val createdAt: String,
     val kind: GetKmsIssuerResponsePoliciesItemVariant1KindEnum,
     val updatedAt: String,
-    val tokenClaims: Map<String, Any>? = null
+    val tokenClaims: Map<String, Any>? = null,
 ) : GetKmsIssuerResponsePoliciesItem
 
-/**
- * Typed representation of the `GetKmsIssuerResponsePoliciesItem` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "kind", visible = true)
+/** Typed representation of the `GetKmsIssuerResponsePoliciesItem` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "kind",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetKmsIssuerResponsePoliciesItemVariant0::class, name = "project-grant"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetKmsIssuerResponsePoliciesItemVariant1::class, name = "connex-grant")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GetKmsIssuerResponsePoliciesItemVariant0::class,
+        name = "project-grant",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GetKmsIssuerResponsePoliciesItemVariant1::class,
+        name = "connex-grant",
+    ),
 )
 sealed interface GetKmsIssuerResponsePoliciesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ListKmsIssuersResponseIssuersItemPoliciesItemVariant0(
     val createdAt: String,
     /**
-     * Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (`production`, `preview`, `development`) or a custom environment ID (prefixed `env_`). Custom environments are matched against the token's `custom_environment_id` claim (the stable ID); system environments against its `environment` claim.
+     * Environments whose OIDC tokens this grant authorizes. Each entry is either a system
+     * environment slug (`production`, `preview`, `development`) or a custom environment ID
+     * (prefixed `env_`). Custom environments are matched against the token's
+     * `custom_environment_id` claim (the stable ID); system environments against its `environment`
+     * claim.
      */
     val environments: List<String>,
     val kind: ListKmsIssuersResponseIssuersItemPoliciesItemVariant0KindEnum,
     val projectId: String,
     val teamId: String,
     val updatedAt: String,
-    val tokenClaims: Map<String, Any>? = null
+    val tokenClaims: Map<String, Any>? = null,
 ) : ListKmsIssuersResponseIssuersItemPoliciesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ListKmsIssuersResponseIssuersItemPoliciesItemVariant1(
     val clientId: String,
     val createdAt: String,
     val kind: ListKmsIssuersResponseIssuersItemPoliciesItemVariant1KindEnum,
     val updatedAt: String,
-    val tokenClaims: Map<String, Any>? = null
+    val tokenClaims: Map<String, Any>? = null,
 ) : ListKmsIssuersResponseIssuersItemPoliciesItem
 
-/**
- * Typed representation of the `ListKmsIssuersResponseIssuersItemPoliciesItem` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "kind", visible = true)
+/** Typed representation of the `ListKmsIssuersResponseIssuersItemPoliciesItem` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "kind",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListKmsIssuersResponseIssuersItemPoliciesItemVariant0::class, name = "project-grant"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListKmsIssuersResponseIssuersItemPoliciesItemVariant1::class, name = "connex-grant")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ListKmsIssuersResponseIssuersItemPoliciesItemVariant0::class,
+        name = "project-grant",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ListKmsIssuersResponseIssuersItemPoliciesItemVariant1::class,
+        name = "connex-grant",
+    ),
 )
 sealed interface ListKmsIssuersResponseIssuersItemPoliciesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class RevokeKmsSigningKeyResponsePoliciesItemVariant0(
     val createdAt: String,
     /**
-     * Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (`production`, `preview`, `development`) or a custom environment ID (prefixed `env_`). Custom environments are matched against the token's `custom_environment_id` claim (the stable ID); system environments against its `environment` claim.
+     * Environments whose OIDC tokens this grant authorizes. Each entry is either a system
+     * environment slug (`production`, `preview`, `development`) or a custom environment ID
+     * (prefixed `env_`). Custom environments are matched against the token's
+     * `custom_environment_id` claim (the stable ID); system environments against its `environment`
+     * claim.
      */
     val environments: List<String>,
     val kind: RevokeKmsSigningKeyResponsePoliciesItemVariant0KindEnum,
     val projectId: String,
     val teamId: String,
     val updatedAt: String,
-    val tokenClaims: Map<String, Any>? = null
+    val tokenClaims: Map<String, Any>? = null,
 ) : RevokeKmsSigningKeyResponsePoliciesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class RevokeKmsSigningKeyResponsePoliciesItemVariant1(
     val clientId: String,
     val createdAt: String,
     val kind: RevokeKmsSigningKeyResponsePoliciesItemVariant1KindEnum,
     val updatedAt: String,
-    val tokenClaims: Map<String, Any>? = null
+    val tokenClaims: Map<String, Any>? = null,
 ) : RevokeKmsSigningKeyResponsePoliciesItem
 
-/**
- * Typed representation of the `RevokeKmsSigningKeyResponsePoliciesItem` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "kind", visible = true)
+/** Typed representation of the `RevokeKmsSigningKeyResponsePoliciesItem` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "kind",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = RevokeKmsSigningKeyResponsePoliciesItemVariant0::class, name = "project-grant"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = RevokeKmsSigningKeyResponsePoliciesItemVariant1::class, name = "connex-grant")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = RevokeKmsSigningKeyResponsePoliciesItemVariant0::class,
+        name = "project-grant",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = RevokeKmsSigningKeyResponsePoliciesItemVariant1::class,
+        name = "connex-grant",
+    ),
 )
 sealed interface RevokeKmsSigningKeyResponsePoliciesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UpdateKmsIssuerPolicyResponseVariant0(
     val createdAt: String,
     /**
-     * Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (`production`, `preview`, `development`) or a custom environment ID (prefixed `env_`). Custom environments are matched against the token's `custom_environment_id` claim (the stable ID); system environments against its `environment` claim.
+     * Environments whose OIDC tokens this grant authorizes. Each entry is either a system
+     * environment slug (`production`, `preview`, `development`) or a custom environment ID
+     * (prefixed `env_`). Custom environments are matched against the token's
+     * `custom_environment_id` claim (the stable ID); system environments against its `environment`
+     * claim.
      */
     val environments: List<String>,
     val kind: UpdateKmsIssuerPolicyResponseVariant0KindEnum,
     val projectId: String,
     val teamId: String,
     val updatedAt: String,
-    val tokenClaims: Map<String, Any>? = null
+    val tokenClaims: Map<String, Any>? = null,
 ) : UpdateKmsIssuerPolicyResponse
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UpdateKmsIssuerPolicyResponseVariant1(
     val clientId: String,
     val createdAt: String,
     val kind: UpdateKmsIssuerPolicyResponseVariant1KindEnum,
     val updatedAt: String,
-    val tokenClaims: Map<String, Any>? = null
+    val tokenClaims: Map<String, Any>? = null,
 ) : UpdateKmsIssuerPolicyResponse
 
-/**
- * Typed representation of the `UpdateKmsIssuerPolicyResponse` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "kind", visible = true)
+/** Typed representation of the `UpdateKmsIssuerPolicyResponse` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "kind",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateKmsIssuerPolicyResponseVariant0::class, name = "project-grant"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateKmsIssuerPolicyResponseVariant1::class, name = "connex-grant")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateKmsIssuerPolicyResponseVariant0::class,
+        name = "project-grant",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateKmsIssuerPolicyResponseVariant1::class,
+        name = "connex-grant",
+    ),
 )
 sealed interface UpdateKmsIssuerPolicyResponse
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UpdateKmsIssuerResponsePoliciesItemVariant0(
     val createdAt: String,
     /**
-     * Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (`production`, `preview`, `development`) or a custom environment ID (prefixed `env_`). Custom environments are matched against the token's `custom_environment_id` claim (the stable ID); system environments against its `environment` claim.
+     * Environments whose OIDC tokens this grant authorizes. Each entry is either a system
+     * environment slug (`production`, `preview`, `development`) or a custom environment ID
+     * (prefixed `env_`). Custom environments are matched against the token's
+     * `custom_environment_id` claim (the stable ID); system environments against its `environment`
+     * claim.
      */
     val environments: List<String>,
     val kind: UpdateKmsIssuerResponsePoliciesItemVariant0KindEnum,
     val projectId: String,
     val teamId: String,
     val updatedAt: String,
-    val tokenClaims: Map<String, Any>? = null
+    val tokenClaims: Map<String, Any>? = null,
 ) : UpdateKmsIssuerResponsePoliciesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UpdateKmsIssuerResponsePoliciesItemVariant1(
     val clientId: String,
     val createdAt: String,
     val kind: UpdateKmsIssuerResponsePoliciesItemVariant1KindEnum,
     val updatedAt: String,
-    val tokenClaims: Map<String, Any>? = null
+    val tokenClaims: Map<String, Any>? = null,
 ) : UpdateKmsIssuerResponsePoliciesItem
 
-/**
- * Typed representation of the `UpdateKmsIssuerResponsePoliciesItem` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "kind", visible = true)
+/** Typed representation of the `UpdateKmsIssuerResponsePoliciesItem` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "kind",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateKmsIssuerResponsePoliciesItemVariant0::class, name = "project-grant"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateKmsIssuerResponsePoliciesItemVariant1::class, name = "connex-grant")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateKmsIssuerResponsePoliciesItemVariant0::class,
+        name = "project-grant",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateKmsIssuerResponsePoliciesItemVariant1::class,
+        name = "connex-grant",
+    ),
 )
 sealed interface UpdateKmsIssuerResponsePoliciesItem

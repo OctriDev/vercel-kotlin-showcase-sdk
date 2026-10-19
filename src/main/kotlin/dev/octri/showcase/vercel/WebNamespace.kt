@@ -3,13 +3,21 @@
 
 package dev.octri.showcase.vercel
 
-
 class WebNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Updates the Web Insights setting for a project. Supply `projectId` and the `value` to set the toggle to true or false. The response returns the resulting toggle value.
+     * Updates the Web Insights setting for a project. Supply `projectId` and the `value` to set the
+     * toggle to true or false. The response returns the resulting toggle value.
      */
-    fun createInsightsToggle(projectId: String, value: Boolean, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Web.CreateWebInsightsToggleResponse {
-        return dev.octri.showcase.vercel.methods.Web.createWebInsightsToggle(clientConfig, projectId, value, options)
+    fun createInsightsToggle(
+        projectId: String,
+        value: Boolean,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Web.CreateWebInsightsToggleResponse {
+        return dev.octri.showcase.vercel.methods.Web.createWebInsightsToggle(
+            clientConfig,
+            projectId,
+            value,
+            options,
+        )
     }
-
 }

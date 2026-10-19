@@ -28,8 +28,8 @@ import dev.octri.showcase.vercel.SubmitBillingDataUsageItemTypeEnum
 import dev.octri.showcase.vercel.SubmitInvoiceTestResultEnum
 import dev.octri.showcase.vercel.UpdateInstallationBillingPlanTypeEnum
 import dev.octri.showcase.vercel.UpdateInstallationRequestNotification
-import dev.octri.showcase.vercel.UpdateInstallationsByIntegrationConfigurationIdResourcesByResX8a54a139ff
 import dev.octri.showcase.vercel.UpdateInstallationStatusEnum
+import dev.octri.showcase.vercel.UpdateInstallationsByIntegrationConfigurationIdResourcesByResX8a54a139ff
 import dev.octri.showcase.vercel.UpdateInvoiceActionEnum
 import dev.octri.showcase.vercel.UpdateResourceBillingPlanTypeEnum
 import dev.octri.showcase.vercel.UpdateResourceOwnershipEnum
@@ -39,815 +39,675 @@ import java.time.OffsetDateTime
 
 object Marketplace {
 
+    data class UpdateInstallationBillingPlanDetailsItem(
+        val label: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    )
 
-data class UpdateInstallationBillingPlanDetailsItem(
-    val label: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-)
+    data class UpdateInstallationBillingPlanHighlightedDetailsItem(
+        val label: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    )
 
-data class UpdateInstallationBillingPlanHighlightedDetailsItem(
-    val label: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-)
+    data class UpdateInstallationBillingPlan(
+        val id: String,
+        val type: UpdateInstallationBillingPlanTypeEnum,
+        val name: String,
+        val description: String? = null,
+        val paymentMethodRequired: Boolean? = null,
+        val cost: String? = null,
+        val details: List<UpdateInstallationBillingPlanDetailsItem>? = null,
+        val highlightedDetails: List<UpdateInstallationBillingPlanHighlightedDetailsItem>? = null,
+        val effectiveDate: String? = null,
+    ) {
+        @field:com.fasterxml.jackson.annotation.JsonAnySetter
+        @get:com.fasterxml.jackson.annotation.JsonAnyGetter
+        val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
+    }
 
-data class UpdateInstallationBillingPlan(
-    val id: String,
-    val type: UpdateInstallationBillingPlanTypeEnum,
-    val name: String,
-    val description: String? = null,
-    val paymentMethodRequired: Boolean? = null,
-    val cost: String? = null,
-    val details: List<UpdateInstallationBillingPlanDetailsItem>? = null,
-    val highlightedDetails: List<UpdateInstallationBillingPlanHighlightedDetailsItem>? = null,
-    val effectiveDate: String? = null
-) {
-    @field:com.fasterxml.jackson.annotation.JsonAnySetter
-    @get:com.fasterxml.jackson.annotation.JsonAnyGetter
-    val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
-}
-
-/**
- * The best contact for the integration, which can change as team members and their roles change.
- */
-data class GetAccountInfoResponseContact(
-    val email: String,
-    val name: String? = null
-)
-
-data class GetAccountInfoResponse(
     /**
-     * The best contact for the integration, which can change as team members and their roles change.
+     * The best contact for the integration, which can change as team members and their roles
+     * change.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("contact", required = true) val contact: GetAccountInfoResponseContact?,
-    /**
-     * A URL linking to the installation in the Vercel Dashboard.
-     */
-    val url: String,
-    /**
-     * The name of the team the installation is tied to.
-     */
-    val name: String? = null
-)
+    data class GetAccountInfoResponseContact(
+        val email: String,
+        val name: String? = null,
+    )
 
-data class GetMemberResponse(
-    val id: String,
-    /**
-     * "The `ADMIN` role, by default, is provided to users capable of installing integrations, while the `USER` role can be granted to Vercel users with the Vercel `Billing` or Vercel `Viewer` role, which are considered to be Read-Only roles."
-     */
-    val role: GetMemberResponseRoleEnum,
-    val globalUserId: String? = null,
-    val userEmail: String? = null
-)
+    data class GetAccountInfoResponse(
+        /**
+         * The best contact for the integration, which can change as team members and their roles
+         * change.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("contact", required = true)
+        val contact: GetAccountInfoResponseContact?,
+        /** A URL linking to the installation in the Vercel Dashboard. */
+        val url: String,
+        /** The name of the team the installation is tied to. */
+        val name: String? = null,
+    )
 
-data class RotateInstallationCredentialResponse(
-    @com.fasterxml.jackson.annotation.JsonProperty("access_token") val accessToken: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("expires_in") val expiresIn: Double,
-    val scope: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("token_type") val tokenType: RotateInstallationCredentialResponseTokenTypeEnum
-)
+    data class GetMemberResponse(
+        val id: String,
+        /**
+         * "The `ADMIN` role, by default, is provided to users capable of installing integrations,
+         * while the `USER` role can be granted to Vercel users with the Vercel `Billing` or Vercel
+         * `Viewer` role, which are considered to be Read-Only roles."
+         */
+        val role: GetMemberResponseRoleEnum,
+        val globalUserId: String? = null,
+        val userEmail: String? = null,
+    )
 
-data class RevokeInstallationCredentialResponse(
-    @com.fasterxml.jackson.annotation.JsonProperty("already_revoked") val alreadyRevoked: Boolean,
-    val revoked: Boolean
-)
+    data class RotateInstallationCredentialResponse(
+        @com.fasterxml.jackson.annotation.JsonProperty("access_token") val accessToken: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("expires_in") val expiresIn: Double,
+        val scope: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("token_type")
+        val tokenType: RotateInstallationCredentialResponseTokenTypeEnum,
+    )
 
-/**
- * The notification, if set, displayed to the user when viewing the resource in Vercel
- */
-data class GetIntegrationResourcesResponseResourcesItemNotification(
-    val level: GetIntegrationResourcesResponseResourcesItemNotificationLevelEnum,
-    val title: String,
-    val href: String? = null,
-    val message: String? = null
-)
+    data class RevokeInstallationCredentialResponse(
+        @com.fasterxml.jackson.annotation.JsonProperty("already_revoked")
+        val alreadyRevoked: Boolean,
+        val revoked: Boolean,
+    )
 
-data class GetIntegrationResourcesResponseResourcesItemProtocolSettingsAX38e96669cb(
-    val target: GetIntegrationResourcesResponseResourcesItemProtocolSettingsAXfbea93752c,
-    val url: String
-)
+    /** The notification, if set, displayed to the user when viewing the resource in Vercel */
+    data class GetIntegrationResourcesResponseResourcesItemNotification(
+        val level: GetIntegrationResourcesResponseResourcesItemNotificationLevelEnum,
+        val title: String,
+        val href: String? = null,
+        val message: String? = null,
+    )
 
-data class GetIntegrationResourcesResponseResourcesItemProtocolSettingsAXed0f6c9c6c(
-    val appUrls: List<GetIntegrationResourcesResponseResourcesItemProtocolSettingsAX38e96669cb>? = null
-)
+    data class GetIntegrationResourcesResponseResourcesItemProtocolSettingsAX38e96669cb(
+        val target: GetIntegrationResourcesResponseResourcesItemProtocolSettingsAXfbea93752c,
+        val url: String,
+    )
 
-data class GetIntegrationResourcesResponseResourcesItemProtocolSettingsEX7eadae2495(
-    val edgeConfigId: String? = null,
-    val edgeConfigSyncingEnabled: Boolean? = null,
-    val edgeConfigTokenId: String? = null,
-    val globalConfigId: String? = null,
-    val globalConfigSyncingEnabled: Boolean? = null
-)
+    data class GetIntegrationResourcesResponseResourcesItemProtocolSettingsAXed0f6c9c6c(
+        val appUrls:
+            List<GetIntegrationResourcesResponseResourcesItemProtocolSettingsAX38e96669cb>? =
+            null
+    )
 
-/**
- * Any settings provided for the resource to support its product's protocols
- */
-data class GetIntegrationResourcesResponseResourcesItemProtocolSettings(
-    val authentication: GetIntegrationResourcesResponseResourcesItemProtocolSettingsAXed0f6c9c6c? = null,
-    val experimentation: GetIntegrationResourcesResponseResourcesItemProtocolSettingsEX7eadae2495? = null
-)
+    data class GetIntegrationResourcesResponseResourcesItemProtocolSettingsEX7eadae2495(
+        val edgeConfigId: String? = null,
+        val edgeConfigSyncingEnabled: Boolean? = null,
+        val edgeConfigTokenId: String? = null,
+        val globalConfigId: String? = null,
+        val globalConfigSyncingEnabled: Boolean? = null,
+    )
 
+    /** Any settings provided for the resource to support its product's protocols */
+    data class GetIntegrationResourcesResponseResourcesItemProtocolSettings(
+        val authentication:
+            GetIntegrationResourcesResponseResourcesItemProtocolSettingsAXed0f6c9c6c? =
+            null,
+        val experimentation:
+            GetIntegrationResourcesResponseResourcesItemProtocolSettingsEX7eadae2495? =
+            null,
+    )
 
+    data class GetIntegrationResourcesResponseResourcesItem(
+        /** The ID assigned by Vercel for the given resource */
+        val internalId: String,
+        /** The name of the resource as it is recorded in Vercel */
+        val name: String,
+        /** The ID provided by the partner for the given resource */
+        val partnerId: String,
+        /** The ID of the product the resource is derived from */
+        val productId: String,
+        /** The ID of the billing plan the resource is subscribed to, if applicable */
+        val billingPlanId: String? = null,
+        /** The configured metadata for the resource as defined by its product's Metadata Schema */
+        val metadata: Map<String, Any>? = null,
+        /** The notification, if set, displayed to the user when viewing the resource in Vercel */
+        val notification: GetIntegrationResourcesResponseResourcesItemNotification? = null,
+        /** Any settings provided for the resource to support its product's protocols */
+        val protocolSettings: GetIntegrationResourcesResponseResourcesItemProtocolSettings? = null,
+        /** The current status of the resource */
+        val status: GetIntegrationResourcesResponseResourcesItemStatusEnum? = null,
+    )
 
-data class GetIntegrationResourcesResponseResourcesItem(
-    /**
-     * The ID assigned by Vercel for the given resource
-     */
-    val internalId: String,
-    /**
-     * The name of the resource as it is recorded in Vercel
-     */
-    val name: String,
-    /**
-     * The ID provided by the partner for the given resource
-     */
-    val partnerId: String,
-    /**
-     * The ID of the product the resource is derived from
-     */
-    val productId: String,
-    /**
-     * The ID of the billing plan the resource is subscribed to, if applicable
-     */
-    val billingPlanId: String? = null,
-    /**
-     * The configured metadata for the resource as defined by its product's Metadata Schema
-     */
-    val metadata: Map<String, Any>? = null,
-    /**
-     * The notification, if set, displayed to the user when viewing the resource in Vercel
-     */
-    val notification: GetIntegrationResourcesResponseResourcesItemNotification? = null,
-    /**
-     * Any settings provided for the resource to support its product's protocols
-     */
-    val protocolSettings: GetIntegrationResourcesResponseResourcesItemProtocolSettings? = null,
-    /**
-     * The current status of the resource
-     */
-    val status: GetIntegrationResourcesResponseResourcesItemStatusEnum? = null
-)
+    data class GetIntegrationResourcesResponse(
+        val resources: List<GetIntegrationResourcesResponseResourcesItem>
+    )
 
-data class GetIntegrationResourcesResponse(
-    val resources: List<GetIntegrationResourcesResponseResourcesItem>
-)
+    data class GetIntegrationResourceResponseCustomClaimsClaimRulesItemWhen(
+        val environment: List<String>? = null,
+        val role: List<String>? = null,
+    )
 
-data class GetIntegrationResourceResponseCustomClaimsClaimRulesItemWhen(
-    val environment: List<String>? = null,
-    val role: List<String>? = null
-)
+    data class GetIntegrationResourceResponseCustomClaimsClaimRulesItem(
+        val claims: Map<String, Any>,
+        @com.fasterxml.jackson.annotation.JsonProperty("when")
+        val `when`: GetIntegrationResourceResponseCustomClaimsClaimRulesItemWhen? = null,
+    )
 
-data class GetIntegrationResourceResponseCustomClaimsClaimRulesItem(
-    val claims: Map<String, Any>,
-    @com.fasterxml.jackson.annotation.JsonProperty("when") val `when`: GetIntegrationResourceResponseCustomClaimsClaimRulesItemWhen? = null
-)
-
-/**
- * The roles and claim rules Vercel resolves into the resource tokens it mints for this resource
- */
-data class GetIntegrationResourceResponseCustomClaims(
-    val claimRules: List<GetIntegrationResourceResponseCustomClaimsClaimRulesItem>? = null,
-    val defaultRole: String? = null,
-    val roles: List<String>? = null
-)
-
-/**
- * The notification, if set, displayed to the user when viewing the resource in Vercel
- */
-data class GetIntegrationResourceResponseNotification(
-    val level: GetIntegrationResourceResponseNotificationLevelEnum,
-    val title: String,
-    val href: String? = null,
-    val message: String? = null
-)
-
-data class GetIntegrationResourceResponseProtocolSettingsAuthenticationAppUrlsItem(
-    val target: GetIntegrationResourceResponseProtocolSettingsAuthenticationAX78150947d3,
-    val url: String
-)
-
-data class GetIntegrationResourceResponseProtocolSettingsAuthentication(
-    val appUrls: List<GetIntegrationResourceResponseProtocolSettingsAuthenticationAppUrlsItem>? = null
-)
-
-data class GetIntegrationResourceResponseProtocolSettingsExperimentation(
-    val edgeConfigId: String? = null,
-    val globalConfigId: String? = null
-)
-
-/**
- * Any settings provided for the resource to support its product's protocols
- */
-data class GetIntegrationResourceResponseProtocolSettings(
-    val authentication: GetIntegrationResourceResponseProtocolSettingsAuthentication? = null,
-    val experimentation: GetIntegrationResourceResponseProtocolSettingsExperimentation? = null
-)
-
-
-
-data class GetIntegrationResourceResponse(
-    /**
-     * The ID provided by the 3rd party provider for the given resource
-     */
-    val id: String,
-    /**
-     * The ID assigned by Vercel for the given resource
-     */
-    val internalId: String,
-    /**
-     * The name of the resource as it is recorded in Vercel
-     */
-    val name: String,
-    /**
-     * The ID of the product the resource is derived from
-     */
-    val productId: String,
-    /**
-     * The ID of the billing plan the resource is subscribed to, if applicable
-     */
-    val billingPlanId: String? = null,
     /**
      * The roles and claim rules Vercel resolves into the resource tokens it mints for this resource
      */
-    val customClaims: GetIntegrationResourceResponseCustomClaims? = null,
-    /**
-     * The configured metadata for the resource as defined by its product's Metadata Schema
-     */
-    val metadata: Map<String, Any>? = null,
-    /**
-     * The notification, if set, displayed to the user when viewing the resource in Vercel
-     */
-    val notification: GetIntegrationResourceResponseNotification? = null,
-    /**
-     * Any settings provided for the resource to support its product's protocols
-     */
-    val protocolSettings: GetIntegrationResourceResponseProtocolSettings? = null,
-    /**
-     * The current status of the resource
-     */
-    val status: GetIntegrationResourceResponseStatusEnum? = null
-)
+    data class GetIntegrationResourceResponseCustomClaims(
+        val claimRules: List<GetIntegrationResourceResponseCustomClaimsClaimRulesItem>? = null,
+        val defaultRole: String? = null,
+        val roles: List<String>? = null,
+    )
 
+    /** The notification, if set, displayed to the user when viewing the resource in Vercel */
+    data class GetIntegrationResourceResponseNotification(
+        val level: GetIntegrationResourceResponseNotificationLevelEnum,
+        val title: String,
+        val href: String? = null,
+        val message: String? = null,
+    )
 
+    data class GetIntegrationResourceResponseProtocolSettingsAuthenticationAppUrlsItem(
+        val target: GetIntegrationResourceResponseProtocolSettingsAuthenticationAX78150947d3,
+        val url: String,
+    )
 
-data class ImportResourceBillingPlanDetailsItem(
-    val label: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-)
+    data class GetIntegrationResourceResponseProtocolSettingsAuthentication(
+        val appUrls:
+            List<GetIntegrationResourceResponseProtocolSettingsAuthenticationAppUrlsItem>? =
+            null
+    )
 
-data class ImportResourceBillingPlanHighlightedDetailsItem(
-    val label: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-)
+    data class GetIntegrationResourceResponseProtocolSettingsExperimentation(
+        val edgeConfigId: String? = null,
+        val globalConfigId: String? = null,
+    )
 
-data class ImportResourceBillingPlan(
-    val id: String,
-    val type: ImportResourceBillingPlanTypeEnum,
-    val name: String,
-    val description: String? = null,
-    val paymentMethodRequired: Boolean? = null,
-    val cost: String? = null,
-    val details: List<ImportResourceBillingPlanDetailsItem>? = null,
-    val highlightedDetails: List<ImportResourceBillingPlanHighlightedDetailsItem>? = null,
-    val effectiveDate: String? = null
-) {
-    @field:com.fasterxml.jackson.annotation.JsonAnySetter
-    @get:com.fasterxml.jackson.annotation.JsonAnyGetter
-    val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
-}
+    /** Any settings provided for the resource to support its product's protocols */
+    data class GetIntegrationResourceResponseProtocolSettings(
+        val authentication: GetIntegrationResourceResponseProtocolSettingsAuthentication? = null,
+        val experimentation: GetIntegrationResourceResponseProtocolSettingsExperimentation? = null,
+    )
 
-data class ImportResourceNotification(
-    val level: ImportResourceNotificationLevelEnum,
-    val title: String,
-    val message: String? = null,
-    val href: String? = null
-)
+    data class GetIntegrationResourceResponse(
+        /** The ID provided by the 3rd party provider for the given resource */
+        val id: String,
+        /** The ID assigned by Vercel for the given resource */
+        val internalId: String,
+        /** The name of the resource as it is recorded in Vercel */
+        val name: String,
+        /** The ID of the product the resource is derived from */
+        val productId: String,
+        /** The ID of the billing plan the resource is subscribed to, if applicable */
+        val billingPlanId: String? = null,
+        /**
+         * The roles and claim rules Vercel resolves into the resource tokens it mints for this
+         * resource
+         */
+        val customClaims: GetIntegrationResourceResponseCustomClaims? = null,
+        /** The configured metadata for the resource as defined by its product's Metadata Schema */
+        val metadata: Map<String, Any>? = null,
+        /** The notification, if set, displayed to the user when viewing the resource in Vercel */
+        val notification: GetIntegrationResourceResponseNotification? = null,
+        /** Any settings provided for the resource to support its product's protocols */
+        val protocolSettings: GetIntegrationResourceResponseProtocolSettings? = null,
+        /** The current status of the resource */
+        val status: GetIntegrationResourceResponseStatusEnum? = null,
+    )
 
-/**
- * A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.
- */
-data class ImportResourceSecretsItemEnvironmentOverrides(
-    /**
-     * Value used for development environment.
-     */
-    val development: String? = null,
-    /**
-     * Value used for preview environment.
-     */
-    val preview: String? = null,
-    /**
-     * Value used for production environment.
-     */
-    val production: String? = null
-)
+    data class ImportResourceBillingPlanDetailsItem(
+        val label: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    )
 
-data class ImportResourceSecretsItem(
-    val name: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val prefix: String? = null,
-    /**
-     * A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.
-     */
-    val environmentOverrides: ImportResourceSecretsItemEnvironmentOverrides? = null
-)
+    data class ImportResourceBillingPlanHighlightedDetailsItem(
+        val label: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    )
 
-data class ImportResourceCustomClaimsClaimRulesItemWhen(
-    /**
-     * Applies only when the token is minted for one of these roles.
-     */
-    val role: List<String>? = null,
-    /**
-     * Applies only when the token is minted for one of these environments: `production`, `preview`, `development`, or a custom environment slug. A custom environment also matches `preview`.
-     */
-    val environment: List<String>? = null
-)
+    data class ImportResourceBillingPlan(
+        val id: String,
+        val type: ImportResourceBillingPlanTypeEnum,
+        val name: String,
+        val description: String? = null,
+        val paymentMethodRequired: Boolean? = null,
+        val cost: String? = null,
+        val details: List<ImportResourceBillingPlanDetailsItem>? = null,
+        val highlightedDetails: List<ImportResourceBillingPlanHighlightedDetailsItem>? = null,
+        val effectiveDate: String? = null,
+    ) {
+        @field:com.fasterxml.jackson.annotation.JsonAnySetter
+        @get:com.fasterxml.jackson.annotation.JsonAnyGetter
+        val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
+    }
 
-data class ImportResourceCustomClaimsClaimRulesItem(
-    /**
-     * Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
-     */
-    val claims: Map<String, Any>,
-    @com.fasterxml.jackson.annotation.JsonProperty("when") val `when`: ImportResourceCustomClaimsClaimRulesItemWhen? = null
-)
+    data class ImportResourceNotification(
+        val level: ImportResourceNotificationLevelEnum,
+        val title: String,
+        val message: String? = null,
+        val href: String? = null,
+    )
 
-/**
- * Custom claims embedded in the resource tokens Vercel mints for this resource.
- */
-data class ImportResourceCustomClaims(
     /**
-     * Roles a deployment may request when minting a token. The selected role becomes the `sub` claim.
+     * A map of environments to override values for the secret, used for setting different values
+     * across deployments in production, preview, and development environments. Note: the same value
+     * will be used for all deployments in the given environment.
      */
-    val roles: List<String>? = null,
-    /**
-     * Role used when the deployment does not request one. Required when `roles` is set.
-     */
-    val defaultRole: String? = null,
-    /**
-     * Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones.
-     */
-    val claimRules: List<ImportResourceCustomClaimsClaimRulesItem>? = null
-)
+    data class ImportResourceSecretsItemEnvironmentOverrides(
+        /** Value used for development environment. */
+        val development: String? = null,
+        /** Value used for preview environment. */
+        val preview: String? = null,
+        /** Value used for production environment. */
+        val production: String? = null,
+    )
 
-data class ImportResourceResponse(
-    val name: String
-)
+    data class ImportResourceSecretsItem(
+        val name: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+        val prefix: String? = null,
+        /**
+         * A map of environments to override values for the secret, used for setting different
+         * values across deployments in production, preview, and development environments. Note: the
+         * same value will be used for all deployments in the given environment.
+         */
+        val environmentOverrides: ImportResourceSecretsItemEnvironmentOverrides? = null,
+    )
 
+    data class ImportResourceCustomClaimsClaimRulesItemWhen(
+        /** Applies only when the token is minted for one of these roles. */
+        val role: List<String>? = null,
+        /**
+         * Applies only when the token is minted for one of these environments: `production`,
+         * `preview`, `development`, or a custom environment slug. A custom environment also matches
+         * `preview`.
+         */
+        val environment: List<String>? = null,
+    )
 
+    data class ImportResourceCustomClaimsClaimRulesItem(
+        /**
+         * Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier
+         * rules and over the default claims. `null` removes a claim. Reserved claims cannot be set;
+         * `aud` and `sub` can be overridden with a string but not removed.
+         */
+        val claims: Map<String, Any>,
+        @com.fasterxml.jackson.annotation.JsonProperty("when")
+        val `when`: ImportResourceCustomClaimsClaimRulesItemWhen? = null,
+    )
 
-data class UpdateResourceBillingPlanDetailsItem(
-    val label: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-)
+    /** Custom claims embedded in the resource tokens Vercel mints for this resource. */
+    data class ImportResourceCustomClaims(
+        /**
+         * Roles a deployment may request when minting a token. The selected role becomes the `sub`
+         * claim.
+         */
+        val roles: List<String>? = null,
+        /** Role used when the deployment does not request one. Required when `roles` is set. */
+        val defaultRole: String? = null,
+        /**
+         * Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones.
+         */
+        val claimRules: List<ImportResourceCustomClaimsClaimRulesItem>? = null,
+    )
 
-data class UpdateResourceBillingPlanHighlightedDetailsItem(
-    val label: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-)
+    data class ImportResourceResponse(val name: String)
 
-data class UpdateResourceBillingPlan(
-    val id: String,
-    val type: UpdateResourceBillingPlanTypeEnum,
-    val name: String,
-    val description: String? = null,
-    val paymentMethodRequired: Boolean? = null,
-    val cost: String? = null,
-    val details: List<UpdateResourceBillingPlanDetailsItem>? = null,
-    val highlightedDetails: List<UpdateResourceBillingPlanHighlightedDetailsItem>? = null,
-    val effectiveDate: String? = null
-) {
-    @field:com.fasterxml.jackson.annotation.JsonAnySetter
-    @get:com.fasterxml.jackson.annotation.JsonAnyGetter
-    val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
-}
+    data class UpdateResourceBillingPlanDetailsItem(
+        val label: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    )
 
-data class UpdateResourceCustomClaimsClaimRulesItemWhen(
-    /**
-     * Applies only when the token is minted for one of these roles.
-     */
-    val role: List<String>? = null,
-    /**
-     * Applies only when the token is minted for one of these environments: `production`, `preview`, `development`, or a custom environment slug. A custom environment also matches `preview`.
-     */
-    val environment: List<String>? = null
-)
+    data class UpdateResourceBillingPlanHighlightedDetailsItem(
+        val label: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    )
 
-data class UpdateResourceCustomClaimsClaimRulesItem(
-    /**
-     * Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
-     */
-    val claims: Map<String, Any>,
-    @com.fasterxml.jackson.annotation.JsonProperty("when") val `when`: UpdateResourceCustomClaimsClaimRulesItemWhen? = null
-)
+    data class UpdateResourceBillingPlan(
+        val id: String,
+        val type: UpdateResourceBillingPlanTypeEnum,
+        val name: String,
+        val description: String? = null,
+        val paymentMethodRequired: Boolean? = null,
+        val cost: String? = null,
+        val details: List<UpdateResourceBillingPlanDetailsItem>? = null,
+        val highlightedDetails: List<UpdateResourceBillingPlanHighlightedDetailsItem>? = null,
+        val effectiveDate: String? = null,
+    ) {
+        @field:com.fasterxml.jackson.annotation.JsonAnySetter
+        @get:com.fasterxml.jackson.annotation.JsonAnyGetter
+        val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
+    }
 
-/**
- * Custom claims embedded in the resource tokens Vercel mints for this resource.
- */
-data class UpdateResourceCustomClaims(
-    /**
-     * Roles a deployment may request when minting a token. The selected role becomes the `sub` claim.
-     */
-    val roles: List<String>? = null,
-    /**
-     * Role used when the deployment does not request one. Required when `roles` is set.
-     */
-    val defaultRole: String? = null,
-    /**
-     * Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones.
-     */
-    val claimRules: List<UpdateResourceCustomClaimsClaimRulesItem>? = null
-)
+    data class UpdateResourceCustomClaimsClaimRulesItemWhen(
+        /** Applies only when the token is minted for one of these roles. */
+        val role: List<String>? = null,
+        /**
+         * Applies only when the token is minted for one of these environments: `production`,
+         * `preview`, `development`, or a custom environment slug. A custom environment also matches
+         * `preview`.
+         */
+        val environment: List<String>? = null,
+    )
 
-data class UpdateResourceResponse(
-    val name: String
-)
+    data class UpdateResourceCustomClaimsClaimRulesItem(
+        /**
+         * Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier
+         * rules and over the default claims. `null` removes a claim. Reserved claims cannot be set;
+         * `aud` and `sub` can be overridden with a string but not removed.
+         */
+        val claims: Map<String, Any>,
+        @com.fasterxml.jackson.annotation.JsonProperty("when")
+        val `when`: UpdateResourceCustomClaimsClaimRulesItemWhen? = null,
+    )
 
-/**
- * Period for the billing cycle. The period end date cannot be older than 24 hours earlier than our current server's time.
- */
-data class SubmitBillingDataPeriod(
-    val start: OffsetDateTime,
-    val end: OffsetDateTime
-)
+    /** Custom claims embedded in the resource tokens Vercel mints for this resource. */
+    data class UpdateResourceCustomClaims(
+        /**
+         * Roles a deployment may request when minting a token. The selected role becomes the `sub`
+         * claim.
+         */
+        val roles: List<String>? = null,
+        /** Role used when the deployment does not request one. Required when `roles` is set. */
+        val defaultRole: String? = null,
+        /**
+         * Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones.
+         */
+        val claimRules: List<UpdateResourceCustomClaimsClaimRulesItem>? = null,
+    )
 
-data class SubmitBillingDataUsageItem(
-    /**
-     * Metric name.
-     */
-    val name: String,
-    /**
-     * Type of the metric. - total: measured total value, such as Database size - interval: usage during the period, such as i/o or number of queries. - rate: rate of usage, such as queries per second.
-     */
-    val type: SubmitBillingDataUsageItemTypeEnum,
-    /**
-     * Metric units. Example: "GB"
-     */
-    val units: String,
-    /**
-     * Metric value for the day. Could be a final or an interim value for the day.
-     */
-    val dayValue: Double,
-    /**
-     * Metric value for the billing period. Could be a final or an interim value for the period.
-     */
-    val periodValue: Double,
-    /**
-     * Partner's resource ID.
-     */
-    val resourceId: String? = null,
-    /**
-     * The limit value of the metric for a billing period, if a limit is defined by the plan.
-     */
-    val planValue: Double? = null
-)
+    data class UpdateResourceResponse(val name: String)
 
-/**
- * Subscription period for this billing cycle.
- */
-data class SubmitInvoicePeriod(
-    val start: OffsetDateTime,
-    val end: OffsetDateTime
-)
+    /**
+     * Period for the billing cycle. The period end date cannot be older than 24 hours earlier than
+     * our current server's time.
+     */
+    data class SubmitBillingDataPeriod(
+        val start: OffsetDateTime,
+        val end: OffsetDateTime,
+    )
 
-data class SubmitInvoiceItemsItem(
-    /**
-     * Partner's billing plan ID.
-     */
-    val billingPlanId: String,
-    val name: String,
-    /**
-     * Currency amount as a decimal string.
-     */
-    val price: String,
-    val quantity: Double,
-    val units: String,
-    /**
-     * Currency amount as a decimal string.
-     */
-    val total: String,
-    /**
-     * Partner's resource ID.
-     */
-    val resourceId: String? = null,
-    /**
-     * Start and end are only needed if different from the period's start/end.
-     */
-    val start: OffsetDateTime? = null,
-    /**
-     * Start and end are only needed if different from the period's start/end.
-     */
-    val end: OffsetDateTime? = null,
-    val details: String? = null
-)
+    data class SubmitBillingDataUsageItem(
+        /** Metric name. */
+        val name: String,
+        /**
+         * Type of the metric. - total: measured total value, such as Database size - interval:
+         * usage during the period, such as i/o or number of queries. - rate: rate of usage, such as
+         * queries per second.
+         */
+        val type: SubmitBillingDataUsageItemTypeEnum,
+        /** Metric units. Example: "GB" */
+        val units: String,
+        /** Metric value for the day. Could be a final or an interim value for the day. */
+        val dayValue: Double,
+        /**
+         * Metric value for the billing period. Could be a final or an interim value for the period.
+         */
+        val periodValue: Double,
+        /** Partner's resource ID. */
+        val resourceId: String? = null,
+        /**
+         * The limit value of the metric for a billing period, if a limit is defined by the plan.
+         */
+        val planValue: Double? = null,
+    )
 
-data class SubmitInvoiceDiscountsItem(
-    /**
-     * Partner's billing plan ID.
-     */
-    val billingPlanId: String,
-    val name: String,
-    /**
-     * Currency amount as a decimal string.
-     */
-    val amount: String,
-    /**
-     * Partner's resource ID.
-     */
-    val resourceId: String? = null,
-    /**
-     * Start and end are only needed if different from the period's start/end.
-     */
-    val start: OffsetDateTime? = null,
-    /**
-     * Start and end are only needed if different from the period's start/end.
-     */
-    val end: OffsetDateTime? = null,
-    val details: String? = null
-)
+    /** Subscription period for this billing cycle. */
+    data class SubmitInvoicePeriod(
+        val start: OffsetDateTime,
+        val end: OffsetDateTime,
+    )
 
-/**
- * Test mode
- */
-data class SubmitInvoiceTest(
-    val validate: Boolean? = null,
-    val result: SubmitInvoiceTestResultEnum? = null
-)
+    data class SubmitInvoiceItemsItem(
+        /** Partner's billing plan ID. */
+        val billingPlanId: String,
+        val name: String,
+        /** Currency amount as a decimal string. */
+        val price: String,
+        val quantity: Double,
+        val units: String,
+        /** Currency amount as a decimal string. */
+        val total: String,
+        /** Partner's resource ID. */
+        val resourceId: String? = null,
+        /** Start and end are only needed if different from the period's start/end. */
+        val start: OffsetDateTime? = null,
+        /** Start and end are only needed if different from the period's start/end. */
+        val end: OffsetDateTime? = null,
+        val details: String? = null,
+    )
 
-data class SubmitInvoiceResponse(
-    val invoiceId: String? = null,
-    val test: Boolean? = null,
-    val validationErrors: List<String>? = null
-)
+    data class SubmitInvoiceDiscountsItem(
+        /** Partner's billing plan ID. */
+        val billingPlanId: String,
+        val name: String,
+        /** Currency amount as a decimal string. */
+        val amount: String,
+        /** Partner's resource ID. */
+        val resourceId: String? = null,
+        /** Start and end are only needed if different from the period's start/end. */
+        val start: OffsetDateTime? = null,
+        /** Start and end are only needed if different from the period's start/end. */
+        val end: OffsetDateTime? = null,
+        val details: String? = null,
+    )
 
-/**
- * Invoice items.
- */
-data class GetInvoiceResponseItemsItem(
-    /**
-     * Partner's billing plan ID.
-     */
-    val billingPlanId: String,
-    /**
-     * Invoice item name.
-     */
-    val name: String,
-    /**
-     * Item price. A dollar-based decimal string.
-     */
-    val price: String,
-    /**
-     * Item quantity.
-     */
-    val quantity: Double,
-    /**
-     * Item total. A dollar-based decimal string.
-     */
-    val total: String,
-    /**
-     * Units for item's quantity.
-     */
-    val units: String,
-    /**
-     * Additional item details.
-     */
-    val details: String? = null,
-    /**
-     * Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.
-     */
-    val end: String? = null,
-    /**
-     * Partner's resource ID. If not specified, indicates installation-wide item.
-     */
-    val resourceId: String? = null,
-    /**
-     * Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.
-     */
-    val start: String? = null
-)
+    /** Test mode */
+    data class SubmitInvoiceTest(
+        val validate: Boolean? = null,
+        val result: SubmitInvoiceTestResultEnum? = null,
+    )
 
-/**
- * Subscription period for this billing cycle. ISO 8601 timestamps.
- */
-data class GetInvoiceResponsePeriod(
-    val end: String,
-    val start: String
-)
+    data class SubmitInvoiceResponse(
+        val invoiceId: String? = null,
+        val test: Boolean? = null,
+        val validationErrors: List<String>? = null,
+    )
 
+    /** Invoice items. */
+    data class GetInvoiceResponseItemsItem(
+        /** Partner's billing plan ID. */
+        val billingPlanId: String,
+        /** Invoice item name. */
+        val name: String,
+        /** Item price. A dollar-based decimal string. */
+        val price: String,
+        /** Item quantity. */
+        val quantity: Double,
+        /** Item total. A dollar-based decimal string. */
+        val total: String,
+        /** Units for item's quantity. */
+        val units: String,
+        /** Additional item details. */
+        val details: String? = null,
+        /**
+         * Start and end are only needed if different from the period's start/end. ISO 8601
+         * timestamp.
+         */
+        val end: String? = null,
+        /** Partner's resource ID. If not specified, indicates installation-wide item. */
+        val resourceId: String? = null,
+        /**
+         * Start and end are only needed if different from the period's start/end. ISO 8601
+         * timestamp.
+         */
+        val start: String? = null,
+    )
 
+    /** Subscription period for this billing cycle. ISO 8601 timestamps. */
+    data class GetInvoiceResponsePeriod(
+        val end: String,
+        val start: String,
+    )
 
-/**
- * Invoice discounts.
- */
-data class GetInvoiceResponseDiscountsItem(
-    /**
-     * Discount amount. A dollar-based decimal string.
-     */
-    val amount: String,
-    /**
-     * Partner's billing plan ID.
-     */
-    val billingPlanId: String,
-    /**
-     * Discount name.
-     */
-    val name: String,
-    /**
-     * Additional discount details.
-     */
-    val details: String? = null,
-    /**
-     * Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.
-     */
-    val end: String? = null,
-    /**
-     * Partner's resource ID. If not specified, indicates installation-wide discount.
-     */
-    val resourceId: String? = null,
-    /**
-     * Start and end are only needed if different from the period's start/end. ISO 8601 timestamp.
-     */
-    val start: String? = null
-)
+    /** Invoice discounts. */
+    data class GetInvoiceResponseDiscountsItem(
+        /** Discount amount. A dollar-based decimal string. */
+        val amount: String,
+        /** Partner's billing plan ID. */
+        val billingPlanId: String,
+        /** Discount name. */
+        val name: String,
+        /** Additional discount details. */
+        val details: String? = null,
+        /**
+         * Start and end are only needed if different from the period's start/end. ISO 8601
+         * timestamp.
+         */
+        val end: String? = null,
+        /** Partner's resource ID. If not specified, indicates installation-wide discount. */
+        val resourceId: String? = null,
+        /**
+         * Start and end are only needed if different from the period's start/end. ISO 8601
+         * timestamp.
+         */
+        val start: String? = null,
+    )
 
-data class GetInvoiceResponse(
-    /**
-     * System creation date. ISO 8601 timestamp.
-     */
-    val created: String,
-    /**
-     * Invoice date. ISO 8601 timestamp.
-     */
-    val invoiceDate: String,
-    /**
-     * Vercel Marketplace Invoice ID.
-     */
-    val invoiceId: String,
-    /**
-     * Invoice items.
-     */
-    val items: List<GetInvoiceResponseItemsItem>,
-    /**
-     * Subscription period for this billing cycle. ISO 8601 timestamps.
-     */
-    val period: GetInvoiceResponsePeriod,
-    /**
-     * Invoice state.
-     */
-    val state: GetInvoiceResponseStateEnum,
-    /**
-     * Invoice total amount. A dollar-based decimal string.
-     */
-    val total: String,
-    /**
-     * System update date. ISO 8601 timestamp.
-     */
-    val updated: String,
-    /**
-     * Invoice discounts.
-     */
-    val discounts: List<GetInvoiceResponseDiscountsItem>? = null,
-    /**
-     * Partner-supplied Invoice ID, if applicable.
-     */
-    val externalId: String? = null,
-    /**
-     * User-readable invoice number.
-     */
-    val invoiceNumber: String? = null,
-    /**
-     * Additional memo for the invoice.
-     */
-    val memo: String? = null,
-    /**
-     * Moment the invoice was paid. ISO 8601 timestamp.
-     */
-    val paidAt: String? = null,
-    /**
-     * Most recent moment the invoice was refunded. ISO 8601 timestamp.
-     */
-    val refundedAt: String? = null,
-    /**
-     * The reason for refund. Only applicable for states "refunded" or "refund_request".
-     */
-    val refundReason: String? = null,
-    /**
-     * Refund amount. Only applicable for states "refunded" or "refund_request". A dollar-based decimal string.
-     */
-    val refundTotal: String? = null,
-    /**
-     * Whether the invoice is in the testmode (no real transaction created).
-     */
-    val test: Boolean? = null
-)
+    data class GetInvoiceResponse(
+        /** System creation date. ISO 8601 timestamp. */
+        val created: String,
+        /** Invoice date. ISO 8601 timestamp. */
+        val invoiceDate: String,
+        /** Vercel Marketplace Invoice ID. */
+        val invoiceId: String,
+        /** Invoice items. */
+        val items: List<GetInvoiceResponseItemsItem>,
+        /** Subscription period for this billing cycle. ISO 8601 timestamps. */
+        val period: GetInvoiceResponsePeriod,
+        /** Invoice state. */
+        val state: GetInvoiceResponseStateEnum,
+        /** Invoice total amount. A dollar-based decimal string. */
+        val total: String,
+        /** System update date. ISO 8601 timestamp. */
+        val updated: String,
+        /** Invoice discounts. */
+        val discounts: List<GetInvoiceResponseDiscountsItem>? = null,
+        /** Partner-supplied Invoice ID, if applicable. */
+        val externalId: String? = null,
+        /** User-readable invoice number. */
+        val invoiceNumber: String? = null,
+        /** Additional memo for the invoice. */
+        val memo: String? = null,
+        /** Moment the invoice was paid. ISO 8601 timestamp. */
+        val paidAt: String? = null,
+        /** Most recent moment the invoice was refunded. ISO 8601 timestamp. */
+        val refundedAt: String? = null,
+        /** The reason for refund. Only applicable for states "refunded" or "refund_request". */
+        val refundReason: String? = null,
+        /**
+         * Refund amount. Only applicable for states "refunded" or "refund_request". A dollar-based
+         * decimal string.
+         */
+        val refundTotal: String? = null,
+        /** Whether the invoice is in the testmode (no real transaction created). */
+        val test: Boolean? = null,
+    )
 
-/**
- * A credit balance for a particular token type
- */
-data class SubmitPrepaymentBalancesBalancesItem(
-    /**
-     * The dollar value of the credit balance, in USD and provided in cents, which is used to trigger automatic purchase thresholds.
-     */
-    val currencyValueInCents: Double,
-    /**
-     * Partner's resource ID, exclude if credits are tied to the installation and not an individual resource.
-     */
-    val resourceId: String? = null,
-    /**
-     * A human-readable description of the credits the user currently has, e.g. "2,000 Tokens"
-     */
-    val credit: String? = null,
-    /**
-     * The name of the credits, for display purposes, e.g. "Tokens"
-     */
-    val nameLabel: String? = null
-)
+    /** A credit balance for a particular token type */
+    data class SubmitPrepaymentBalancesBalancesItem(
+        /**
+         * The dollar value of the credit balance, in USD and provided in cents, which is used to
+         * trigger automatic purchase thresholds.
+         */
+        val currencyValueInCents: Double,
+        /**
+         * Partner's resource ID, exclude if credits are tied to the installation and not an
+         * individual resource.
+         */
+        val resourceId: String? = null,
+        /**
+         * A human-readable description of the credits the user currently has, e.g. "2,000 Tokens"
+         */
+        val credit: String? = null,
+        /** The name of the credits, for display purposes, e.g. "Tokens" */
+        val nameLabel: String? = null,
+    )
 
-/**
- * A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.
- */
-data class UpdateResourceSecretsSecretsItemEnvironmentOverrides(
     /**
-     * Value used for development environment.
+     * A map of environments to override values for the secret, used for setting different values
+     * across deployments in production, preview, and development environments. Note: the same value
+     * will be used for all deployments in the given environment.
      */
-    val development: String? = null,
-    /**
-     * Value used for preview environment.
-     */
-    val preview: String? = null,
-    /**
-     * Value used for production environment.
-     */
-    val production: String? = null
-)
+    data class UpdateResourceSecretsSecretsItemEnvironmentOverrides(
+        /** Value used for development environment. */
+        val development: String? = null,
+        /** Value used for preview environment. */
+        val preview: String? = null,
+        /** Value used for production environment. */
+        val production: String? = null,
+    )
 
-data class UpdateResourceSecretsSecretsItem(
-    val name: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val prefix: String? = null,
+    data class UpdateResourceSecretsSecretsItem(
+        val name: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+        val prefix: String? = null,
+        /**
+         * A map of environments to override values for the secret, used for setting different
+         * values across deployments in production, preview, and development environments. Note: the
+         * same value will be used for all deployments in the given environment.
+         */
+        val environmentOverrides: UpdateResourceSecretsSecretsItemEnvironmentOverrides? = null,
+    )
+
     /**
-     * A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.
+     * A map of environments to override values for the secret, used for setting different values
+     * across deployments in production, preview, and development environments. Note: the same value
+     * will be used for all deployments in the given environment.
      */
-    val environmentOverrides: UpdateResourceSecretsSecretsItemEnvironmentOverrides? = null
-)
+    data class UpdateResourceSecretsByIdSecretsItemEnvironmentOverrides(
+        /** Value used for development environment. */
+        val development: String? = null,
+        /** Value used for preview environment. */
+        val preview: String? = null,
+        /** Value used for production environment. */
+        val production: String? = null,
+    )
 
-/**
- * A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.
- */
-data class UpdateResourceSecretsByIdSecretsItemEnvironmentOverrides(
-    /**
-     * Value used for development environment.
-     */
-    val development: String? = null,
-    /**
-     * Value used for preview environment.
-     */
-    val preview: String? = null,
-    /**
-     * Value used for production environment.
-     */
-    val production: String? = null
-)
+    data class UpdateResourceSecretsByIdSecretsItem(
+        val name: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+        val prefix: String? = null,
+        /**
+         * A map of environments to override values for the secret, used for setting different
+         * values across deployments in production, preview, and development environments. Note: the
+         * same value will be used for all deployments in the given environment.
+         */
+        val environmentOverrides: UpdateResourceSecretsByIdSecretsItemEnvironmentOverrides? = null,
+    )
 
-data class UpdateResourceSecretsByIdSecretsItem(
-    val name: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val prefix: String? = null,
-    /**
-     * A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.
-     */
-    val environmentOverrides: UpdateResourceSecretsByIdSecretsItemEnvironmentOverrides? = null
-)
+    data class CreateInstallationsByIntegrationConfigurationIdResourcesByResX71e74b42bd(
+        val id: String,
+        val slug: String,
+        val origin: String,
+        val category: CreateInstallationsByIntegrationConfigurationIdResourcesByResX6bfb63a0c1? =
+            null,
+        val name: String? = null,
+        val description: String? = null,
+        val isArchived: Boolean? = null,
+        val createdAt: Double? = null,
+        val updatedAt: Double? = null,
+    )
 
-data class CreateInstallationsByIntegrationConfigurationIdResourcesByResX71e74b42bd(
-    val id: String,
-    val slug: String,
-    val origin: String,
-    val category: CreateInstallationsByIntegrationConfigurationIdResourcesByResX6bfb63a0c1? = null,
-    val name: String? = null,
-    val description: String? = null,
-    val isArchived: Boolean? = null,
-    val createdAt: Double? = null,
-    val updatedAt: Double? = null
-)
+    data class HeadInstallationsByIntegrationConfigurationIdResourcesByResouXf7ec779c48(
+        val digest: String,
+        val items: Map<String, GlobalConfigItemValue>,
+        val updatedAt: Double,
+        val purpose: HeadInstallationsByIntegrationConfigurationIdResourcesByResouX0b8aa51bc9? =
+            null,
+    )
 
-data class HeadInstallationsByIntegrationConfigurationIdResourcesByResouXf7ec779c48(
-    val digest: String,
-    val items: Map<String, GlobalConfigItemValue>,
-    val updatedAt: Double,
-    val purpose: HeadInstallationsByIntegrationConfigurationIdResourcesByResouX0b8aa51bc9? = null
-)
+    data class GetInstallationsByIntegrationConfigurationIdResourcesByResourX5dfbcfa520(
+        val digest: String,
+        val items: Map<String, GlobalConfigItemValue>,
+        val updatedAt: Double,
+        val purpose: GetInstallationsByIntegrationConfigurationIdResourcesByResourX20c5ed9370? =
+            null,
+    )
 
-data class GetInstallationsByIntegrationConfigurationIdResourcesByResourX5dfbcfa520(
-    val digest: String,
-    val items: Map<String, GlobalConfigItemValue>,
-    val updatedAt: Double,
-    val purpose: GetInstallationsByIntegrationConfigurationIdResourcesByResourX20c5ed9370? = null
-)
-
-data class ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c03db(
-    val digest: String,
-    val items: Map<String, GlobalConfigItemValue>,
-    val updatedAt: Double,
-    val purpose: ReplaceInstallationsByIntegrationConfigurationIdResourcesByReX4e98122ca4? = null
-)
+    data class ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c03db(
+        val digest: String,
+        val items: Map<String, GlobalConfigItemValue>,
+        val updatedAt: Double,
+        val purpose: ReplaceInstallationsByIntegrationConfigurationIdResourcesByReX4e98122ca4? =
+            null,
+    )
 
     /** Parameters for [importResource]. */
     data class ImportResourceRequest(
@@ -862,7 +722,7 @@ data class ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c0
         val notification: ImportResourceNotification? = null,
         val extras: Map<String, Any>? = null,
         val secrets: List<ImportResourceSecretsItem>? = null,
-        val customClaims: ImportResourceCustomClaims? = null
+        val customClaims: ImportResourceCustomClaims? = null,
     )
 
     /** Parameters for [updateResource]. */
@@ -877,7 +737,7 @@ data class ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c0
         val notification: UpdateResourceRequestNotification? = null,
         val extras: Map<String, Any>? = null,
         val secrets: Any? = null,
-        val customClaims: UpdateResourceCustomClaims? = null
+        val customClaims: UpdateResourceCustomClaims? = null,
     )
 
     /** Parameters for [submitBillingData]. */
@@ -887,7 +747,7 @@ data class ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c0
         val eod: OffsetDateTime,
         val period: SubmitBillingDataPeriod,
         val billing: Any,
-        val usage: List<SubmitBillingDataUsageItem>
+        val usage: List<SubmitBillingDataUsageItem>,
     )
 
     /** Parameters for [submitInvoice]. */
@@ -900,10 +760,13 @@ data class ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c0
         val memo: String? = null,
         val discounts: List<SubmitInvoiceDiscountsItem>? = null,
         val final: Boolean? = null,
-        val test: SubmitInvoiceTest? = null
+        val test: SubmitInvoiceTest? = null,
     )
 
-    /** Parameters for [updateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId]. */
+    /**
+     * Parameters for
+     * [updateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId].
+     */
     data class UpdateInstallationsByIntegrationConfigurationIdResourcesByResX5235ac8d4aRequest(
         val integrationConfigurationId: String,
         val resourceId: String,
@@ -911,17 +774,28 @@ data class ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c0
         val slug: String,
         val origin: String,
         val name: String? = null,
-        val category: UpdateInstallationsByIntegrationConfigurationIdResourcesByResX8a54a139ff? = null,
+        val category: UpdateInstallationsByIntegrationConfigurationIdResourcesByResX8a54a139ff? =
+            null,
         val description: String? = null,
         val isArchived: Boolean? = null,
         val createdAt: Double? = null,
-        val updatedAt: Double? = null
+        val updatedAt: Double? = null,
     )
 
     /**
-     * Updates an integration installation's status, external identifier, billing plan, or notification. Supply only the fields you want to change; `status` must use one of the listed installation states, and sending `null` for `notification` clears it.
+     * Updates an integration installation's status, external identifier, billing plan, or
+     * notification. Supply only the fields you want to change; `status` must use one of the listed
+     * installation states, and sending `null` for `notification` clears it.
      */
-    fun updateInstallation(clientConfig: ClientConfig, integrationConfigurationId: String, status: UpdateInstallationStatusEnum? = null, externalId: String? = null, billingPlan: UpdateInstallationBillingPlan? = null, notification: UpdateInstallationRequestNotification? = null, options: RequestOptions? = null): Unit =
+    fun updateInstallation(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        status: UpdateInstallationStatusEnum? = null,
+        externalId: String? = null,
+        billingPlan: UpdateInstallationBillingPlan? = null,
+        notification: UpdateInstallationRequestNotification? = null,
+        options: RequestOptions? = null,
+    ): Unit =
         dev.octri.showcase.vercel.methods.MarketplaceUpdateInstallationOperation.updateInstallation(
             clientConfig,
             integrationConfigurationId,
@@ -933,9 +807,15 @@ data class ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c0
         )
 
     /**
-     * Retrieves account contact information and the team name associated with an integration installation. Use the installation identifier to look up the best available contact, which can change as team members and their roles change.
+     * Retrieves account contact information and the team name associated with an integration
+     * installation. Use the installation identifier to look up the best available contact, which
+     * can change as team members and their roles change.
      */
-    fun getAccountInfo(clientConfig: ClientConfig, integrationConfigurationId: String, options: RequestOptions? = null): GetAccountInfoResponse =
+    fun getAccountInfo(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        options: RequestOptions? = null,
+    ): GetAccountInfoResponse =
         dev.octri.showcase.vercel.methods.MarketplaceGetAccountInfoOperation.getAccountInfo(
             clientConfig,
             integrationConfigurationId,
@@ -943,9 +823,16 @@ data class ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c0
         )
 
     /**
-     * Retrieves the role and other available information for a member of an integration installation. Use the member's user ID from the SSO OIDC token's `user_id` claim to identify the member.
+     * Retrieves the role and other available information for a member of an integration
+     * installation. Use the member's user ID from the SSO OIDC token's `user_id` claim to identify
+     * the member.
      */
-    fun getMember(clientConfig: ClientConfig, integrationConfigurationId: String, memberId: String, options: RequestOptions? = null): GetMemberResponse =
+    fun getMember(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        memberId: String,
+        options: RequestOptions? = null,
+    ): GetMemberResponse =
         dev.octri.showcase.vercel.methods.MarketplaceGetMemberOperation.getMember(
             clientConfig,
             integrationConfigurationId,
@@ -954,34 +841,62 @@ data class ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c0
         )
 
     /**
-     * Rotates an installation credential by issuing a replacement access token. Authenticate with the credential being replaced and the integration's client secret; the previous credential remains valid until you explicitly revoke it, so store the replacement before completing that step.
+     * Rotates an installation credential by issuing a replacement access token. Authenticate with
+     * the credential being replaced and the integration's client secret; the previous credential
+     * remains valid until you explicitly revoke it, so store the replacement before completing that
+     * step.
      */
-    fun rotateInstallationCredential(clientConfig: ClientConfig, integrationConfigurationId: String, clientSecret: String, clientId: String? = null, options: RequestOptions? = null): RotateInstallationCredentialResponse =
-        dev.octri.showcase.vercel.methods.MarketplaceRotateInstallationCredentialOperation.rotateInstallationCredential(
-            clientConfig,
-            integrationConfigurationId,
-            clientSecret,
-            clientId,
-            options,
-        )
+    fun rotateInstallationCredential(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        clientSecret: String,
+        clientId: String? = null,
+        options: RequestOptions? = null,
+    ): RotateInstallationCredentialResponse =
+        dev.octri.showcase.vercel.methods.MarketplaceRotateInstallationCredentialOperation
+            .rotateInstallationCredential(
+                clientConfig,
+                integrationConfigurationId,
+                clientSecret,
+                clientId,
+                options,
+            )
 
     /**
-     * Revokes a superseded credential for an integration installation after you have rotated it. Authenticate with a live installation credential and the integration's client secret, then name the old credential in the request body; the last live credential cannot be revoked.
+     * Revokes a superseded credential for an integration installation after you have rotated it.
+     * Authenticate with a live installation credential and the integration's client secret, then
+     * name the old credential in the request body; the last live credential cannot be revoked.
      */
-    fun revokeInstallationCredential(clientConfig: ClientConfig, integrationConfigurationId: String, token: String, clientSecret: String, clientId: String? = null, options: RequestOptions? = null): RevokeInstallationCredentialResponse =
-        dev.octri.showcase.vercel.methods.MarketplaceRevokeInstallationCredentialOperation.revokeInstallationCredential(
-            clientConfig,
-            integrationConfigurationId,
-            token,
-            clientSecret,
-            clientId,
-            options,
-        )
+    fun revokeInstallationCredential(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        token: String,
+        clientSecret: String,
+        clientId: String? = null,
+        options: RequestOptions? = null,
+    ): RevokeInstallationCredentialResponse =
+        dev.octri.showcase.vercel.methods.MarketplaceRevokeInstallationCredentialOperation
+            .revokeInstallationCredential(
+                clientConfig,
+                integrationConfigurationId,
+                token,
+                clientSecret,
+                clientId,
+                options,
+            )
 
     /**
-     * Submits an event to notify Vercel about a change to an installation or one of its resources. Send an installation update when its billing plan changes outside Vercel, or a resource update when a linked resource's state changes; Vercel uses its read APIs to retrieve the updated state.
+     * Submits an event to notify Vercel about a change to an installation or one of its resources.
+     * Send an installation update when its billing plan changes outside Vercel, or a resource
+     * update when a linked resource's state changes; Vercel uses its read APIs to retrieve the
+     * updated state.
      */
-    fun createEvent(clientConfig: ClientConfig, integrationConfigurationId: String, event: CreateEventRequestEvent, options: RequestOptions? = null): Unit =
+    fun createEvent(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        event: CreateEventRequestEvent,
+        options: RequestOptions? = null,
+    ): Unit =
         dev.octri.showcase.vercel.methods.MarketplaceCreateEventOperation.createEvent(
             clientConfig,
             integrationConfigurationId,
@@ -990,41 +905,70 @@ data class ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c0
         )
 
     /**
-     * Lists the resources associated with an integration installation. Use the installation identifier to retrieve its resources, including each resource's partner and product identifiers and its name.
+     * Lists the resources associated with an integration installation. Use the installation
+     * identifier to retrieve its resources, including each resource's partner and product
+     * identifiers and its name.
      */
-    fun getIntegrationResources(clientConfig: ClientConfig, integrationConfigurationId: String, options: RequestOptions? = null): GetIntegrationResourcesResponse =
-        dev.octri.showcase.vercel.methods.MarketplaceGetIntegrationResourcesOperation.getIntegrationResources(
-            clientConfig,
-            integrationConfigurationId,
-            options,
-        )
+    fun getIntegrationResources(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        options: RequestOptions? = null,
+    ): GetIntegrationResourcesResponse =
+        dev.octri.showcase.vercel.methods.MarketplaceGetIntegrationResourcesOperation
+            .getIntegrationResources(
+                clientConfig,
+                integrationConfigurationId,
+                options,
+            )
 
     /**
-     * Retrieves a resource associated with an integration installation by its partner-provided ID. Use both path identifiers to scope the lookup to the installation that owns the resource.
+     * Retrieves a resource associated with an integration installation by its partner-provided ID.
+     * Use both path identifiers to scope the lookup to the installation that owns the resource.
      */
-    fun getIntegrationResource(clientConfig: ClientConfig, integrationConfigurationId: String, resourceId: String, options: RequestOptions? = null): GetIntegrationResourceResponse =
-        dev.octri.showcase.vercel.methods.MarketplaceGetIntegrationResourceOperation.getIntegrationResource(
-            clientConfig,
-            integrationConfigurationId,
-            resourceId,
-            options,
-        )
+    fun getIntegrationResource(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        resourceId: String,
+        options: RequestOptions? = null,
+    ): GetIntegrationResourceResponse =
+        dev.octri.showcase.vercel.methods.MarketplaceGetIntegrationResourceOperation
+            .getIntegrationResource(
+                clientConfig,
+                integrationConfigurationId,
+                resourceId,
+                options,
+            )
 
     /**
-     * Deletes a resource owned by an installation. Use `integrationConfigurationId` and `resourceId` to identify the installation and resource to remove. A 204 response confirms the deletion without returning a response body.
+     * Deletes a resource owned by an installation. Use `integrationConfigurationId` and
+     * `resourceId` to identify the installation and resource to remove. A 204 response confirms the
+     * deletion without returning a response body.
      */
-    fun deleteIntegrationResource(clientConfig: ClientConfig, integrationConfigurationId: String, resourceId: String, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.MarketplaceDeleteIntegrationResourceOperation.deleteIntegrationResource(
-            clientConfig,
-            integrationConfigurationId,
-            resourceId,
-            options,
-        )
+    fun deleteIntegrationResource(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        resourceId: String,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods.MarketplaceDeleteIntegrationResourceOperation
+            .deleteIntegrationResource(
+                clientConfig,
+                integrationConfigurationId,
+                resourceId,
+                options,
+            )
 
     /**
-     * Imports or upserts a resource into an integration installation, including resources created independently in the provider's system. Use this operation to synchronize an existing resource to Vercel; for a user-initiated import, call it before redirecting the user back to Vercel.
+     * Imports or upserts a resource into an integration installation, including resources created
+     * independently in the provider's system. Use this operation to synchronize an existing
+     * resource to Vercel; for a user-initiated import, call it before redirecting the user back to
+     * Vercel.
      */
-    fun importResource(clientConfig: ClientConfig, request: ImportResourceRequest, options: RequestOptions? = null): ImportResourceResponse =
+    fun importResource(
+        clientConfig: ClientConfig,
+        request: ImportResourceRequest,
+        options: RequestOptions? = null,
+    ): ImportResourceResponse =
         dev.octri.showcase.vercel.methods.MarketplaceImportResourceOperation.importResource(
             clientConfig,
             request,
@@ -1032,9 +976,15 @@ data class ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c0
         )
 
     /**
-     * Updates selected properties of an existing resource in an integration installation. Send only the fields you want to change; use the path identifiers to target the resource within its installation.
+     * Updates selected properties of an existing resource in an integration installation. Send only
+     * the fields you want to change; use the path identifiers to target the resource within its
+     * installation.
      */
-    fun updateResource(clientConfig: ClientConfig, request: UpdateResourceRequest, options: RequestOptions? = null): UpdateResourceResponse =
+    fun updateResource(
+        clientConfig: ClientConfig,
+        request: UpdateResourceRequest,
+        options: RequestOptions? = null,
+    ): UpdateResourceResponse =
         dev.octri.showcase.vercel.methods.MarketplaceUpdateResourceOperation.updateResource(
             clientConfig,
             request,
@@ -1042,9 +992,15 @@ data class ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c0
         )
 
     /**
-     * Submits billing and usage data for an installation. Send the latest data at least daily, and ideally hourly, using the installation's billing period, billing entries, and usage metrics. Authorize the request with the installation's `credentials.access_token`.
+     * Submits billing and usage data for an installation. Send the latest data at least daily, and
+     * ideally hourly, using the installation's billing period, billing entries, and usage metrics.
+     * Authorize the request with the installation's `credentials.access_token`.
      */
-    fun submitBillingData(clientConfig: ClientConfig, request: SubmitBillingDataRequest, options: RequestOptions? = null): Unit =
+    fun submitBillingData(
+        clientConfig: ClientConfig,
+        request: SubmitBillingDataRequest,
+        options: RequestOptions? = null,
+    ): Unit =
         dev.octri.showcase.vercel.methods.MarketplaceSubmitBillingDataOperation.submitBillingData(
             clientConfig,
             request,
@@ -1052,9 +1008,16 @@ data class ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c0
         )
 
     /**
-     * Submits an invoice for an installation to the billing system for delivery to the customer. Include the invoice date, billing period, and invoice items; the resource must be eligible for the selected active subscription plan during that period. Send interim subscription usage data hourly before submitting the invoice.
+     * Submits an invoice for an installation to the billing system for delivery to the customer.
+     * Include the invoice date, billing period, and invoice items; the resource must be eligible
+     * for the selected active subscription plan during that period. Send interim subscription usage
+     * data hourly before submitting the invoice.
      */
-    fun submitInvoice(clientConfig: ClientConfig, request: SubmitInvoiceRequest, options: RequestOptions? = null): SubmitInvoiceResponse =
+    fun submitInvoice(
+        clientConfig: ClientConfig,
+        request: SubmitInvoiceRequest,
+        options: RequestOptions? = null,
+    ): SubmitInvoiceResponse =
         dev.octri.showcase.vercel.methods.MarketplaceSubmitInvoiceOperation.submitInvoice(
             clientConfig,
             request,
@@ -1062,19 +1025,35 @@ data class ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c0
         )
 
     /**
-     * Finalizes an installation after a customer requests uninstall and you have submitted any remaining invoices. Finalization indicates that you will submit no further invoices and allows uninstall to proceed after outstanding invoices are paid. Authorize the request with the installation's `credentials.access_token`.
+     * Finalizes an installation after a customer requests uninstall and you have submitted any
+     * remaining invoices. Finalization indicates that you will submit no further invoices and
+     * allows uninstall to proceed after outstanding invoices are paid. Authorize the request with
+     * the installation's `credentials.access_token`.
      */
-    fun finalizeInstallation(clientConfig: ClientConfig, integrationConfigurationId: String, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.MarketplaceFinalizeInstallationOperation.finalizeInstallation(
-            clientConfig,
-            integrationConfigurationId,
-            options,
-        )
+    fun finalizeInstallation(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods.MarketplaceFinalizeInstallationOperation
+            .finalizeInstallation(
+                clientConfig,
+                integrationConfigurationId,
+                options,
+            )
 
     /**
-     * Retrieves invoice details and status for an installation. Use the installation and invoice identifiers to select the invoice, and use the returned state and timestamps to track its billing lifecycle. Consult billing events through webhooks when you need invoice event notifications.
+     * Retrieves invoice details and status for an installation. Use the installation and invoice
+     * identifiers to select the invoice, and use the returned state and timestamps to track its
+     * billing lifecycle. Consult billing events through webhooks when you need invoice event
+     * notifications.
      */
-    fun getInvoice(clientConfig: ClientConfig, integrationConfigurationId: String, invoiceId: String, options: RequestOptions? = null): GetInvoiceResponse =
+    fun getInvoice(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        invoiceId: String,
+        options: RequestOptions? = null,
+    ): GetInvoiceResponse =
         dev.octri.showcase.vercel.methods.MarketplaceGetInvoiceOperation.getInvoice(
             clientConfig,
             integrationConfigurationId,
@@ -1083,9 +1062,19 @@ data class ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c0
         )
 
     /**
-     * Submits a refund request for an invoice previously created through the invoice submission operation. Provide the refund reason and amount along with the `refund` action. The requested amount cannot exceed the invoice total.
+     * Submits a refund request for an invoice previously created through the invoice submission
+     * operation. Provide the refund reason and amount along with the `refund` action. The requested
+     * amount cannot exceed the invoice total.
      */
-    fun updateInvoice(clientConfig: ClientConfig, integrationConfigurationId: String, invoiceId: String, action: UpdateInvoiceActionEnum, reason: String, total: String, options: RequestOptions? = null): Unit =
+    fun updateInvoice(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        invoiceId: String,
+        action: UpdateInvoiceActionEnum,
+        reason: String,
+        total: String,
+        options: RequestOptions? = null,
+    ): Unit =
         dev.octri.showcase.vercel.methods.MarketplaceUpdateInvoiceOperation.updateInvoice(
             clientConfig,
             integrationConfigurationId,
@@ -1097,112 +1086,200 @@ data class ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c0
         )
 
     /**
-     * Submits prepayment credit balances for an installation. Send the latest balances at least daily, and ideally hourly, so the billing system can use their USD values to evaluate automatic purchase thresholds. Authorize the request with the installation's `credentials.access_token`.
+     * Submits prepayment credit balances for an installation. Send the latest balances at least
+     * daily, and ideally hourly, so the billing system can use their USD values to evaluate
+     * automatic purchase thresholds. Authorize the request with the installation's
+     * `credentials.access_token`.
      */
-    fun submitPrepaymentBalances(clientConfig: ClientConfig, integrationConfigurationId: String, timestamp: OffsetDateTime, balances: List<SubmitPrepaymentBalancesBalancesItem>, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.MarketplaceSubmitPrepaymentBalancesOperation.submitPrepaymentBalances(
-            clientConfig,
-            integrationConfigurationId,
-            timestamp,
-            balances,
-            options,
-        )
+    fun submitPrepaymentBalances(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        timestamp: OffsetDateTime,
+        balances: List<SubmitPrepaymentBalancesBalancesItem>,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods.MarketplaceSubmitPrepaymentBalancesOperation
+            .submitPrepaymentBalances(
+                clientConfig,
+                integrationConfigurationId,
+                timestamp,
+                balances,
+                options,
+            )
 
     /**
-     * Replaces the secrets for a resource connected to an installation. This operation is deprecated and has been replaced by PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets; existing connected projects may continue using old secrets until you redeploy them. Use `partial` to update only the supplied secrets instead of replacing the full set.
+     * Replaces the secrets for a resource connected to an installation. This operation is
+     * deprecated and has been replaced by PUT
+     * /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets; existing
+     * connected projects may continue using old secrets until you redeploy them. Use `partial` to
+     * update only the supplied secrets instead of replacing the full set.
      *
-     * @deprecated This operation is deprecated and may be removed in a future
-     *   release.
+     * @deprecated This operation is deprecated and may be removed in a future release.
      */
-    fun updateResourceSecrets(clientConfig: ClientConfig, integrationConfigurationId: String, integrationProductIdOrSlug: String, resourceId: String, secrets: List<UpdateResourceSecretsSecretsItem>, partial: Boolean? = null, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.MarketplaceUpdateResourceSecretsOperation.updateResourceSecrets(
-            clientConfig,
-            integrationConfigurationId,
-            integrationProductIdOrSlug,
-            resourceId,
-            secrets,
-            partial,
-            options,
-        )
+    fun updateResourceSecrets(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        integrationProductIdOrSlug: String,
+        resourceId: String,
+        secrets: List<UpdateResourceSecretsSecretsItem>,
+        partial: Boolean? = null,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods.MarketplaceUpdateResourceSecretsOperation
+            .updateResourceSecrets(
+                clientConfig,
+                integrationConfigurationId,
+                integrationProductIdOrSlug,
+                resourceId,
+                secrets,
+                partial,
+                options,
+            )
 
     /**
-     * Replaces the secrets for a resource connected to an installation. Existing connected projects may continue using old secrets because they are not redeployed automatically, while new project connections use the updated secrets. Set `partial` to `true` to overwrite only the supplied secrets rather than replacing all secrets.
+     * Replaces the secrets for a resource connected to an installation. Existing connected projects
+     * may continue using old secrets because they are not redeployed automatically, while new
+     * project connections use the updated secrets. Set `partial` to `true` to overwrite only the
+     * supplied secrets rather than replacing all secrets.
      */
-    fun updateResourceSecretsById(clientConfig: ClientConfig, integrationConfigurationId: String, resourceId: String, secrets: List<UpdateResourceSecretsByIdSecretsItem>, partial: Boolean? = null, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.MarketplaceUpdateResourceSecretsByIdOperation.updateResourceSecretsById(
-            clientConfig,
-            integrationConfigurationId,
-            resourceId,
-            secrets,
-            partial,
-            options,
-        )
+    fun updateResourceSecretsById(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        resourceId: String,
+        secrets: List<UpdateResourceSecretsByIdSecretsItem>,
+        partial: Boolean? = null,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods.MarketplaceUpdateResourceSecretsByIdOperation
+            .updateResourceSecretsById(
+                clientConfig,
+                integrationConfigurationId,
+                resourceId,
+                secrets,
+                partial,
+                options,
+            )
 
     /**
-     * Creates one or more experimentation items for an integration resource. Supply an `items` array whose entries identify each item with `id`, `slug`, and `origin`; each item can also include category and descriptive metadata.
+     * Creates one or more experimentation items for an integration resource. Supply an `items`
+     * array whose entries identify each item with `id`, `slug`, and `origin`; each item can also
+     * include category and descriptive metadata.
      */
-    fun createInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems(clientConfig: ClientConfig, integrationConfigurationId: String, resourceId: String, items: List<CreateInstallationsByIntegrationConfigurationIdResourcesByResX71e74b42bd>, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.MarketplaceCreateInstallationsByIntegrationConfigurationIdResX9f149c6e47.createInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems(
-            clientConfig,
-            integrationConfigurationId,
-            resourceId,
-            items,
-            options,
-        )
+    fun createInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        resourceId: String,
+        items: List<CreateInstallationsByIntegrationConfigurationIdResourcesByResX71e74b42bd>,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods
+            .MarketplaceCreateInstallationsByIntegrationConfigurationIdResX9f149c6e47
+            .createInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems(
+                clientConfig,
+                integrationConfigurationId,
+                resourceId,
+                items,
+                options,
+            )
 
     /**
-     * Updates an existing experimentation item for an integration resource. Identify the item with `itemId` and provide its required `slug` and `origin`, along with any other fields you want to change.
+     * Updates an existing experimentation item for an integration resource. Identify the item with
+     * `itemId` and provide its required `slug` and `origin`, along with any other fields you want
+     * to change.
      */
-    fun updateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(clientConfig: ClientConfig, request: UpdateInstallationsByIntegrationConfigurationIdResourcesByResX5235ac8d4aRequest, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.MarketplaceUpdateInstallationsByIntegrationConfigurationIdResX6bce601965.updateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(
-            clientConfig,
-            request,
-            options,
-        )
+    fun updateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(
+        clientConfig: ClientConfig,
+        request: UpdateInstallationsByIntegrationConfigurationIdResourcesByResX5235ac8d4aRequest,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods
+            .MarketplaceUpdateInstallationsByIntegrationConfigurationIdResX6bce601965
+            .updateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Deletes an experimentation item from an integration resource. Use `integrationConfigurationId`, `resourceId`, and `itemId` to identify the item to remove.
+     * Deletes an experimentation item from an integration resource. Use
+     * `integrationConfigurationId`, `resourceId`, and `itemId` to identify the item to remove.
      */
-    fun deleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(clientConfig: ClientConfig, integrationConfigurationId: String, resourceId: String, itemId: String, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.MarketplaceDeleteInstallationsByIntegrationConfigurationIdResX6dd1548c78.deleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(
-            clientConfig,
-            integrationConfigurationId,
-            resourceId,
-            itemId,
-            options,
-        )
+    fun deleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        resourceId: String,
+        itemId: String,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods
+            .MarketplaceDeleteInstallationsByIntegrationConfigurationIdResX6dd1548c78
+            .deleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(
+                clientConfig,
+                integrationConfigurationId,
+                resourceId,
+                itemId,
+                options,
+            )
 
     /**
-     * Retrieves response metadata for a user-provided Global Config associated with an integration resource. Use this endpoint when the user has enabled Global Config syncing and you need to check the configuration without requesting its contents.
+     * Retrieves response metadata for a user-provided Global Config associated with an integration
+     * resource. Use this endpoint when the user has enabled Global Config syncing and you need to
+     * check the configuration without requesting its contents.
      */
-    fun headInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(clientConfig: ClientConfig, integrationConfigurationId: String, resourceId: String, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.MarketplaceHeadInstallationsByIntegrationConfigurationIdResouXac3e5127a0.headInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(
-            clientConfig,
-            integrationConfigurationId,
-            resourceId,
-            options,
-        )
+    fun headInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        resourceId: String,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods
+            .MarketplaceHeadInstallationsByIntegrationConfigurationIdResouXac3e5127a0
+            .headInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(
+                clientConfig,
+                integrationConfigurationId,
+                resourceId,
+                options,
+            )
 
     /**
-     * Retrieves the contents of a user-provided Global Config for an integration resource. Use this endpoint when the user has enabled Global Config syncing; the response includes the configuration items, digest, and update time.
+     * Retrieves the contents of a user-provided Global Config for an integration resource. Use this
+     * endpoint when the user has enabled Global Config syncing; the response includes the
+     * configuration items, digest, and update time.
      */
-    fun getInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(clientConfig: ClientConfig, integrationConfigurationId: String, resourceId: String, options: RequestOptions? = null): GetInstallationsByIntegrationConfigurationIdResourcesByResourX5dfbcfa520 =
-        dev.octri.showcase.vercel.methods.MarketplaceGetInstallationsByIntegrationConfigurationIdResourXfa99fa09d4.getInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(
-            clientConfig,
-            integrationConfigurationId,
-            resourceId,
-            options,
-        )
+    fun getInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        resourceId: String,
+        options: RequestOptions? = null,
+    ): GetInstallationsByIntegrationConfigurationIdResourcesByResourX5dfbcfa520 =
+        dev.octri.showcase.vercel.methods
+            .MarketplaceGetInstallationsByIntegrationConfigurationIdResourXfa99fa09d4
+            .getInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(
+                clientConfig,
+                integrationConfigurationId,
+                resourceId,
+                options,
+            )
 
     /**
-     * Replaces the data in a user-provided Global Config for an integration resource. Use this endpoint to push configuration data when the user has enabled Global Config syncing, and provide the new value in `data`.
+     * Replaces the data in a user-provided Global Config for an integration resource. Use this
+     * endpoint to push configuration data when the user has enabled Global Config syncing, and
+     * provide the new value in `data`.
      */
-    fun replaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(clientConfig: ClientConfig, integrationConfigurationId: String, resourceId: String, data: Map<String, Any>, options: RequestOptions? = null): ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c03db =
-        dev.octri.showcase.vercel.methods.MarketplaceReplaceInstallationsByIntegrationConfigurationIdReX1db4727493.replaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(
-            clientConfig,
-            integrationConfigurationId,
-            resourceId,
-            data,
-            options,
-        )
+    fun replaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        resourceId: String,
+        data: Map<String, Any>,
+        options: RequestOptions? = null,
+    ): ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c03db =
+        dev.octri.showcase.vercel.methods
+            .MarketplaceReplaceInstallationsByIntegrationConfigurationIdReX1db4727493
+            .replaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(
+                clientConfig,
+                integrationConfigurationId,
+                resourceId,
+                data,
+                options,
+            )
 }

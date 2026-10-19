@@ -3,209 +3,347 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditProjectEnvResponseContentHintVariant0(
     val storeId: String,
-    val type: EditProjectEnvResponseContentHintVariant0TypeEnum
+    val type: EditProjectEnvResponseContentHintVariant0TypeEnum,
 ) : EditProjectEnvResponseContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditProjectEnvResponseContentHintVariant1(
     val storeId: String,
-    val type: EditProjectEnvResponseContentHintVariant1TypeEnum
+    val type: EditProjectEnvResponseContentHintVariant1TypeEnum,
 ) : EditProjectEnvResponseContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditProjectEnvResponseContentHintVariant2(
     val storeId: String,
-    val type: EditProjectEnvResponseContentHintVariant2TypeEnum
+    val type: EditProjectEnvResponseContentHintVariant2TypeEnum,
 ) : EditProjectEnvResponseContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditProjectEnvResponseContentHintVariant3(
     val storeId: String,
-    val type: EditProjectEnvResponseContentHintVariant3TypeEnum
+    val type: EditProjectEnvResponseContentHintVariant3TypeEnum,
 ) : EditProjectEnvResponseContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditProjectEnvResponseContentHintVariant4(
     val storeId: String,
-    val type: EditProjectEnvResponseContentHintVariant4TypeEnum
+    val type: EditProjectEnvResponseContentHintVariant4TypeEnum,
 ) : EditProjectEnvResponseContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditProjectEnvResponseContentHintVariant5(
     val storeId: String,
-    val type: EditProjectEnvResponseContentHintVariant5TypeEnum
+    val type: EditProjectEnvResponseContentHintVariant5TypeEnum,
 ) : EditProjectEnvResponseContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditProjectEnvResponseContentHintVariant6(
     val storeId: String,
-    val type: EditProjectEnvResponseContentHintVariant6TypeEnum
+    val type: EditProjectEnvResponseContentHintVariant6TypeEnum,
 ) : EditProjectEnvResponseContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditProjectEnvResponseContentHintVariant7(
     val storeId: String,
-    val type: EditProjectEnvResponseContentHintVariant7TypeEnum
+    val type: EditProjectEnvResponseContentHintVariant7TypeEnum,
 ) : EditProjectEnvResponseContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditProjectEnvResponseContentHintVariant8(
     val storeId: String,
-    val type: EditProjectEnvResponseContentHintVariant8TypeEnum
+    val type: EditProjectEnvResponseContentHintVariant8TypeEnum,
 ) : EditProjectEnvResponseContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditProjectEnvResponseContentHintVariant9(
     val storeId: String,
-    val type: EditProjectEnvResponseContentHintVariant9TypeEnum
+    val type: EditProjectEnvResponseContentHintVariant9TypeEnum,
 ) : EditProjectEnvResponseContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditProjectEnvResponseContentHintVariant10(
     val storeId: String,
-    val type: EditProjectEnvResponseContentHintVariant10TypeEnum
+    val type: EditProjectEnvResponseContentHintVariant10TypeEnum,
 ) : EditProjectEnvResponseContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditProjectEnvResponseContentHintVariant11(
     val storeId: String,
-    val type: EditProjectEnvResponseContentHintVariant11TypeEnum
+    val type: EditProjectEnvResponseContentHintVariant11TypeEnum,
 ) : EditProjectEnvResponseContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditProjectEnvResponseContentHintVariant12(
     val storeId: String,
-    val type: EditProjectEnvResponseContentHintVariant12TypeEnum
+    val type: EditProjectEnvResponseContentHintVariant12TypeEnum,
 ) : EditProjectEnvResponseContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditProjectEnvResponseContentHintVariant13(
     val storeId: String,
-    val type: EditProjectEnvResponseContentHintVariant13TypeEnum
+    val type: EditProjectEnvResponseContentHintVariant13TypeEnum,
 ) : EditProjectEnvResponseContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditProjectEnvResponseContentHintVariant14(
     val storeId: String,
-    val type: EditProjectEnvResponseContentHintVariant14TypeEnum
+    val type: EditProjectEnvResponseContentHintVariant14TypeEnum,
 ) : EditProjectEnvResponseContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditProjectEnvResponseContentHintVariant15(
     val integrationConfigurationId: String,
     val integrationId: String,
     val integrationProductId: String,
     val storeId: String,
-    val type: EditProjectEnvResponseContentHintVariant15TypeEnum
+    val type: EditProjectEnvResponseContentHintVariant15TypeEnum,
 ) : EditProjectEnvResponseContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditProjectEnvResponseContentHintVariant16(
     val projectId: String,
-    val type: EditProjectEnvResponseContentHintVariant16TypeEnum
+    val type: EditProjectEnvResponseContentHintVariant16TypeEnum,
 ) : EditProjectEnvResponseContentHint
 
-/**
- * Typed representation of the `EditProjectEnvResponseContentHint` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
+/** Typed representation of the `EditProjectEnvResponseContentHint` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "type",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = EditProjectEnvResponseContentHintVariant0::class, name = "redis-url"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = EditProjectEnvResponseContentHintVariant1::class, name = "redis-rest-api-url"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = EditProjectEnvResponseContentHintVariant2::class, name = "redis-rest-api-token"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = EditProjectEnvResponseContentHintVariant3::class, name = "redis-rest-api-read-only-token"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = EditProjectEnvResponseContentHintVariant4::class, name = "blob-read-write-token"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = EditProjectEnvResponseContentHintVariant5::class, name = "blob-store-id"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = EditProjectEnvResponseContentHintVariant6::class, name = "blob-webhook-public-key"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = EditProjectEnvResponseContentHintVariant7::class, name = "postgres-url"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = EditProjectEnvResponseContentHintVariant8::class, name = "postgres-url-non-pooling"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = EditProjectEnvResponseContentHintVariant9::class, name = "postgres-prisma-url"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = EditProjectEnvResponseContentHintVariant10::class, name = "postgres-user"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = EditProjectEnvResponseContentHintVariant11::class, name = "postgres-host"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = EditProjectEnvResponseContentHintVariant12::class, name = "postgres-password"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = EditProjectEnvResponseContentHintVariant13::class, name = "postgres-database"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = EditProjectEnvResponseContentHintVariant14::class, name = "postgres-url-no-ssl"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = EditProjectEnvResponseContentHintVariant15::class, name = "integration-store-secret"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = EditProjectEnvResponseContentHintVariant16::class, name = "flags-connection-string")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EditProjectEnvResponseContentHintVariant0::class,
+        name = "redis-url",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EditProjectEnvResponseContentHintVariant1::class,
+        name = "redis-rest-api-url",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EditProjectEnvResponseContentHintVariant2::class,
+        name = "redis-rest-api-token",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EditProjectEnvResponseContentHintVariant3::class,
+        name = "redis-rest-api-read-only-token",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EditProjectEnvResponseContentHintVariant4::class,
+        name = "blob-read-write-token",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EditProjectEnvResponseContentHintVariant5::class,
+        name = "blob-store-id",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EditProjectEnvResponseContentHintVariant6::class,
+        name = "blob-webhook-public-key",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EditProjectEnvResponseContentHintVariant7::class,
+        name = "postgres-url",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EditProjectEnvResponseContentHintVariant8::class,
+        name = "postgres-url-non-pooling",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EditProjectEnvResponseContentHintVariant9::class,
+        name = "postgres-prisma-url",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EditProjectEnvResponseContentHintVariant10::class,
+        name = "postgres-user",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EditProjectEnvResponseContentHintVariant11::class,
+        name = "postgres-host",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EditProjectEnvResponseContentHintVariant12::class,
+        name = "postgres-password",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EditProjectEnvResponseContentHintVariant13::class,
+        name = "postgres-database",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EditProjectEnvResponseContentHintVariant14::class,
+        name = "postgres-url-no-ssl",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EditProjectEnvResponseContentHintVariant15::class,
+        name = "integration-store-secret",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EditProjectEnvResponseContentHintVariant16::class,
+        name = "flags-connection-string",
+    ),
 )
 sealed interface EditProjectEnvResponseContentHint
 
 data class FilterProjectEnvsResponseVariant0ContentHintVariant0(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant0ContentHintVariant0TypeEnum
+    val type: FilterProjectEnvsResponseVariant0ContentHintVariant0TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant0ContentHintVariant1(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant0ContentHintVariant1TypeEnum
+    val type: FilterProjectEnvsResponseVariant0ContentHintVariant1TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant0ContentHintVariant2(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant0ContentHintVariant2TypeEnum
+    val type: FilterProjectEnvsResponseVariant0ContentHintVariant2TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant0ContentHintVariant3(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant0ContentHintVariant3TypeEnum
+    val type: FilterProjectEnvsResponseVariant0ContentHintVariant3TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant0ContentHintVariant4(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant0ContentHintVariant4TypeEnum
+    val type: FilterProjectEnvsResponseVariant0ContentHintVariant4TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant0ContentHintVariant5(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant0ContentHintVariant5TypeEnum
+    val type: FilterProjectEnvsResponseVariant0ContentHintVariant5TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant0ContentHintVariant6(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant0ContentHintVariant6TypeEnum
+    val type: FilterProjectEnvsResponseVariant0ContentHintVariant6TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant0ContentHintVariant7(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant0ContentHintVariant7TypeEnum
+    val type: FilterProjectEnvsResponseVariant0ContentHintVariant7TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant0ContentHintVariant8(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant0ContentHintVariant8TypeEnum
+    val type: FilterProjectEnvsResponseVariant0ContentHintVariant8TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant0ContentHintVariant9(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant0ContentHintVariant9TypeEnum
+    val type: FilterProjectEnvsResponseVariant0ContentHintVariant9TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant0ContentHintVariant10(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant0ContentHintVariant10TypeEnum
+    val type: FilterProjectEnvsResponseVariant0ContentHintVariant10TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant0ContentHintVariant11(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant0ContentHintVariant11TypeEnum
+    val type: FilterProjectEnvsResponseVariant0ContentHintVariant11TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant0ContentHintVariant12(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant0ContentHintVariant12TypeEnum
+    val type: FilterProjectEnvsResponseVariant0ContentHintVariant12TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant0ContentHintVariant13(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant0ContentHintVariant13TypeEnum
+    val type: FilterProjectEnvsResponseVariant0ContentHintVariant13TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant0ContentHintVariant14(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant0ContentHintVariant14TypeEnum
+    val type: FilterProjectEnvsResponseVariant0ContentHintVariant14TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant0ContentHintVariant15(
@@ -213,15 +351,20 @@ data class FilterProjectEnvsResponseVariant0ContentHintVariant15(
     val integrationId: String,
     val integrationProductId: String,
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant0ContentHintVariant15TypeEnum
+    val type: FilterProjectEnvsResponseVariant0ContentHintVariant15TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant0ContentHintVariant16(
     val projectId: String,
-    val type: FilterProjectEnvsResponseVariant0ContentHintVariant16TypeEnum
+    val type: FilterProjectEnvsResponseVariant0ContentHintVariant16TypeEnum,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class FilterProjectEnvsResponseVariant0(
     val key: String,
     val securityIssues: List<FilterProjectEnvsResponseVariant0SecurityIssuesItemEnum>,
@@ -238,93 +381,92 @@ data class FilterProjectEnvsResponseVariant0(
     val edgeConfigTokenId: String? = null,
     val gitBranch: String? = null,
     val id: String? = null,
-    /**
-     * This is used to identify variables that have been migrated from type secret to sensitive.
-     */
+    /** This is used to identify variables that have been migrated from type secret to sensitive. */
     val sunsetSecretId: String? = null,
     val system: Boolean? = null,
     val target: Any? = null,
     val updatedAt: Double? = null,
     val updatedBy: String? = null,
     /**
-     * User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
+     * User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit
+     * this field and callers fall back to existing `type` behavior.
      */
-    val visibility: FilterProjectEnvsResponseVariant0VisibilityEnum? = null
+    val visibility: FilterProjectEnvsResponseVariant0VisibilityEnum? = null,
 ) : FilterProjectEnvsResponse
 
 data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant0(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant0TypeEnum
+    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant0TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant1(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant1TypeEnum
+    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant1TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant2(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant2TypeEnum
+    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant2TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant3(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant3TypeEnum
+    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant3TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant4(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant4TypeEnum
+    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant4TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant5(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant5TypeEnum
+    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant5TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant6(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant6TypeEnum
+    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant6TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant7(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant7TypeEnum
+    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant7TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant8(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant8TypeEnum
+    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant8TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant9(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant9TypeEnum
+    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant9TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant10(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant10TypeEnum
+    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant10TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant11(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant11TypeEnum
+    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant11TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant12(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant12TypeEnum
+    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant12TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant13(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant13TypeEnum
+    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant13TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant14(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant14TypeEnum
+    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant14TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant15(
@@ -332,12 +474,12 @@ data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant15(
     val integrationId: String,
     val integrationProductId: String,
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant15TypeEnum
+    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant15TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant16(
     val projectId: String,
-    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant16TypeEnum
+    val type: FilterProjectEnvsResponseVariant1EnvsItemContentHintVariant16TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant1EnvsItem(
@@ -356,102 +498,107 @@ data class FilterProjectEnvsResponseVariant1EnvsItem(
     val edgeConfigTokenId: String? = null,
     val gitBranch: String? = null,
     val id: String? = null,
-    /**
-     * This is used to identify variables that have been migrated from type secret to sensitive.
-     */
+    /** This is used to identify variables that have been migrated from type secret to sensitive. */
     val sunsetSecretId: String? = null,
     val system: Boolean? = null,
     val target: Any? = null,
     val updatedAt: Double? = null,
     val updatedBy: String? = null,
     /**
-     * User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
+     * User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit
+     * this field and callers fall back to existing `type` behavior.
      */
-    val visibility: FilterProjectEnvsResponseVariant1EnvsItemVisibilityEnum? = null
+    val visibility: FilterProjectEnvsResponseVariant1EnvsItemVisibilityEnum? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class FilterProjectEnvsResponseVariant1(
     val envs: List<FilterProjectEnvsResponseVariant1EnvsItem>,
     /**
-     * This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
+     * This object contains information related to the pagination of the current request, including
+     * the necessary parameters to get the next or previous page of data.
      */
-    val pagination: Pagination
+    val pagination: Pagination,
 ) : FilterProjectEnvsResponse
 
 data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant0(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant0TypeEnum
+    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant0TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant1(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant1TypeEnum
+    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant1TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant2(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant2TypeEnum
+    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant2TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant3(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant3TypeEnum
+    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant3TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4TypeEnum
+    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant4TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5TypeEnum
+    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant5TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6TypeEnum
+    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant6TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7TypeEnum
+    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant7TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8TypeEnum
+    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant8TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9TypeEnum
+    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant9TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10TypeEnum
+    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant10TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11TypeEnum
+    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant11TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12TypeEnum
+    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant12TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13TypeEnum
+    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant13TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14(
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14TypeEnum
+    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant14TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15(
@@ -459,12 +606,12 @@ data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15(
     val integrationId: String,
     val integrationProductId: String,
     val storeId: String,
-    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15TypeEnum
+    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant15TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16(
     val projectId: String,
-    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16TypeEnum
+    val type: FilterProjectEnvsResponseVariant2EnvsItemContentHintVariant16TypeEnum,
 )
 
 data class FilterProjectEnvsResponseVariant2EnvsItem(
@@ -483,87 +630,142 @@ data class FilterProjectEnvsResponseVariant2EnvsItem(
     val edgeConfigTokenId: String? = null,
     val gitBranch: String? = null,
     val id: String? = null,
-    /**
-     * This is used to identify variables that have been migrated from type secret to sensitive.
-     */
+    /** This is used to identify variables that have been migrated from type secret to sensitive. */
     val sunsetSecretId: String? = null,
     val system: Boolean? = null,
     val target: Any? = null,
     val updatedAt: Double? = null,
     val updatedBy: String? = null,
     /**
-     * User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
+     * User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit
+     * this field and callers fall back to existing `type` behavior.
      */
-    val visibility: FilterProjectEnvsResponseVariant2EnvsItemVisibilityEnum? = null
+    val visibility: FilterProjectEnvsResponseVariant2EnvsItemVisibilityEnum? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class FilterProjectEnvsResponseVariant2(
     val envs: List<FilterProjectEnvsResponseVariant2EnvsItem>,
-    val hiddenProductionEnvCount: Double
+    val hiddenProductionEnvCount: Double,
 ) : FilterProjectEnvsResponse
 
-/**
- * Typed representation of the `FilterProjectEnvsResponse` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION)
+/** Typed representation of the `FilterProjectEnvsResponse` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = FilterProjectEnvsResponseVariant0::class),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = FilterProjectEnvsResponseVariant1::class),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = FilterProjectEnvsResponseVariant2::class)
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = FilterProjectEnvsResponseVariant0::class
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = FilterProjectEnvsResponseVariant1::class
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = FilterProjectEnvsResponseVariant2::class
+    ),
 )
 sealed interface FilterProjectEnvsResponse
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class RemoveProjectEnvResponseItemContentHintVariant0(
     val storeId: String,
-    val type: RemoveProjectEnvResponseItemContentHintVariant0TypeEnum
+    val type: RemoveProjectEnvResponseItemContentHintVariant0TypeEnum,
 ) : RemoveProjectEnvResponseItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class RemoveProjectEnvResponseItemContentHintVariant1(
     val storeId: String,
-    val type: RemoveProjectEnvResponseItemContentHintVariant1TypeEnum
+    val type: RemoveProjectEnvResponseItemContentHintVariant1TypeEnum,
 ) : RemoveProjectEnvResponseItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class RemoveProjectEnvResponseItemContentHintVariant2(
     val storeId: String,
-    val type: RemoveProjectEnvResponseItemContentHintVariant2TypeEnum
+    val type: RemoveProjectEnvResponseItemContentHintVariant2TypeEnum,
 ) : RemoveProjectEnvResponseItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class RemoveProjectEnvResponseItemContentHintVariant3(
     val storeId: String,
-    val type: RemoveProjectEnvResponseItemContentHintVariant3TypeEnum
+    val type: RemoveProjectEnvResponseItemContentHintVariant3TypeEnum,
 ) : RemoveProjectEnvResponseItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class RemoveProjectEnvResponseItemContentHintVariant4(
     val storeId: String,
-    val type: RemoveProjectEnvResponseItemContentHintVariant4TypeEnum
+    val type: RemoveProjectEnvResponseItemContentHintVariant4TypeEnum,
 ) : RemoveProjectEnvResponseItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class RemoveProjectEnvResponseItemContentHintVariant5(
     val storeId: String,
-    val type: RemoveProjectEnvResponseItemContentHintVariant5TypeEnum
+    val type: RemoveProjectEnvResponseItemContentHintVariant5TypeEnum,
 ) : RemoveProjectEnvResponseItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class RemoveProjectEnvResponseItemContentHintVariant6(
     val storeId: String,
-    val type: RemoveProjectEnvResponseItemContentHintVariant6TypeEnum
+    val type: RemoveProjectEnvResponseItemContentHintVariant6TypeEnum,
 ) : RemoveProjectEnvResponseItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class RemoveProjectEnvResponseItemContentHintVariant7(
     val storeId: String,
-    val type: RemoveProjectEnvResponseItemContentHintVariant7TypeEnum
+    val type: RemoveProjectEnvResponseItemContentHintVariant7TypeEnum,
 ) : RemoveProjectEnvResponseItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class RemoveProjectEnvResponseItemContentHintVariant8(
     val storeId: String,
-    val type: RemoveProjectEnvResponseItemContentHintVariant8TypeEnum
+    val type: RemoveProjectEnvResponseItemContentHintVariant8TypeEnum,
 ) : RemoveProjectEnvResponseItemContentHint

@@ -3,27 +3,34 @@
 
 package dev.octri.showcase.vercel.models
 
-class CancelDeploymentResponseFunctionsValueAffinityModeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseFunctionsValueAffinityModeEnum && value == other.value
+class CancelDeploymentResponseFunctionsValueAffinityModeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseFunctionsValueAffinityModeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val STRICT = CancelDeploymentResponseFunctionsValueAffinityModeEnum("strict")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CancelDeploymentResponseFunctionsValueAffinityModeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = CancelDeploymentResponseFunctionsValueAffinityModeEnum(value)
     }
 }
 
-class CancelDeploymentResponseFunctionsValueArchitectureEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseFunctionsValueArchitectureEnum && value == other.value
+class CancelDeploymentResponseFunctionsValueArchitectureEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseFunctionsValueArchitectureEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -31,15 +38,18 @@ class CancelDeploymentResponseFunctionsValueArchitectureEnum private constructor
         @JvmField val ARM64 = CancelDeploymentResponseFunctionsValueArchitectureEnum("arm64")
         @JvmField val X86_64 = CancelDeploymentResponseFunctionsValueArchitectureEnum("x86_64")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CancelDeploymentResponseFunctionsValueArchitectureEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = CancelDeploymentResponseFunctionsValueArchitectureEnum(value)
     }
 }
 
-/**
- * Event type - must be "queue/v1beta" (REQUIRED)
- */
-enum class CancelDeploymentResponseFunctionsValueExperimentalTriggersIteX69242c5a46(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/** Event type - must be "queue/v1beta" (REQUIRED) */
+enum class CancelDeploymentResponseFunctionsValueExperimentalTriggersIteX69242c5a46(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     QUEUE_V1BETA("queue/v1beta");
 
     override fun toString() = value
@@ -47,15 +57,16 @@ enum class CancelDeploymentResponseFunctionsValueExperimentalTriggersIteX69242c5
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/**
- * Event type - must be "queue/v2beta" (REQUIRED)
- */
-enum class CancelDeploymentResponseFunctionsValueExperimentalTriggersIteX32b7655430(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/** Event type - must be "queue/v2beta" (REQUIRED) */
+enum class CancelDeploymentResponseFunctionsValueExperimentalTriggersIteX32b7655430(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     QUEUE_V2BETA("queue/v2beta");
 
     override fun toString() = value
@@ -63,15 +74,16 @@ enum class CancelDeploymentResponseFunctionsValueExperimentalTriggersIteX32b7655
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/**
- * Event type - must be "schedule/v1beta" (REQUIRED)
- */
-enum class CancelDeploymentResponseFunctionsValueExperimentalTriggersIteXee81121eff(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/** Event type - must be "schedule/v1beta" (REQUIRED) */
+enum class CancelDeploymentResponseFunctionsValueExperimentalTriggersIteXee81121eff(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     SCHEDULE_V1BETA("schedule/v1beta");
 
     override fun toString() = value
@@ -79,32 +91,43 @@ enum class CancelDeploymentResponseFunctionsValueExperimentalTriggersIteXee81121
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class CancelDeploymentResponseFunctionsValueMaxDurationVariant1Enum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseFunctionsValueMaxDurationVariant1Enum && value == other.value
+class CancelDeploymentResponseFunctionsValueMaxDurationVariant1Enum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseFunctionsValueMaxDurationVariant1Enum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val MAX = CancelDeploymentResponseFunctionsValueMaxDurationVariant1Enum("max")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CancelDeploymentResponseFunctionsValueMaxDurationVariant1Enum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CancelDeploymentResponseFunctionsValueMaxDurationVariant1Enum(value)
     }
 }
 
-class CancelDeploymentResponseFunctionsValueSupportsCancellationEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseFunctionsValueSupportsCancellationEnum && value == other.value
+class CancelDeploymentResponseFunctionsValueSupportsCancellationEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseFunctionsValueSupportsCancellationEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -112,33 +135,46 @@ class CancelDeploymentResponseFunctionsValueSupportsCancellationEnum private con
         @JvmField val FALSE = CancelDeploymentResponseFunctionsValueSupportsCancellationEnum(false)
         @JvmField val TRUE = CancelDeploymentResponseFunctionsValueSupportsCancellationEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CancelDeploymentResponseFunctionsValueSupportsCancellationEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CancelDeploymentResponseFunctionsValueSupportsCancellationEnum(value)
     }
 }
 
-class CancelDeploymentResponseImagesContentDispositionTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseImagesContentDispositionTypeEnum && value == other.value
+class CancelDeploymentResponseImagesContentDispositionTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseImagesContentDispositionTypeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val ATTACHMENT = CancelDeploymentResponseImagesContentDispositionTypeEnum("attachment")
+        @JvmField
+        val ATTACHMENT = CancelDeploymentResponseImagesContentDispositionTypeEnum("attachment")
         @JvmField val INLINE = CancelDeploymentResponseImagesContentDispositionTypeEnum("inline")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CancelDeploymentResponseImagesContentDispositionTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CancelDeploymentResponseImagesContentDispositionTypeEnum(value)
     }
 }
 
-class CancelDeploymentResponseImagesDangerouslyAllowSVGEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseImagesDangerouslyAllowSVGEnum && value == other.value
+class CancelDeploymentResponseImagesDangerouslyAllowSVGEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseImagesDangerouslyAllowSVGEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -146,16 +182,21 @@ class CancelDeploymentResponseImagesDangerouslyAllowSVGEnum private constructor(
         @JvmField val FALSE = CancelDeploymentResponseImagesDangerouslyAllowSVGEnum(false)
         @JvmField val TRUE = CancelDeploymentResponseImagesDangerouslyAllowSVGEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CancelDeploymentResponseImagesDangerouslyAllowSVGEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = CancelDeploymentResponseImagesDangerouslyAllowSVGEnum(value)
     }
 }
 
-class CancelDeploymentResponseImagesFormatsItemEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseImagesFormatsItemEnum && value == other.value
+class CancelDeploymentResponseImagesFormatsItemEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseImagesFormatsItemEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -163,19 +204,23 @@ class CancelDeploymentResponseImagesFormatsItemEnum private constructor(
         @JvmField val IMAGE_AVIF = CancelDeploymentResponseImagesFormatsItemEnum("image/avif")
         @JvmField val IMAGE_WEBP = CancelDeploymentResponseImagesFormatsItemEnum("image/webp")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CancelDeploymentResponseImagesFormatsItemEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = CancelDeploymentResponseImagesFormatsItemEnum(value)
     }
 }
 
-/**
- * Must be `http` or `https`.
- */
-class CancelDeploymentResponseImagesRemotePatternsItemProtocolEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseImagesRemotePatternsItemProtocolEnum && value == other.value
+/** Must be `http` or `https`. */
+class CancelDeploymentResponseImagesRemotePatternsItemProtocolEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseImagesRemotePatternsItemProtocolEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -183,16 +228,22 @@ class CancelDeploymentResponseImagesRemotePatternsItemProtocolEnum private const
         @JvmField val HTTP = CancelDeploymentResponseImagesRemotePatternsItemProtocolEnum("http")
         @JvmField val HTTPS = CancelDeploymentResponseImagesRemotePatternsItemProtocolEnum("https")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CancelDeploymentResponseImagesRemotePatternsItemProtocolEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CancelDeploymentResponseImagesRemotePatternsItemProtocolEnum(value)
     }
 }
 
-class CancelDeploymentResponseIntegrationsStatusEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseIntegrationsStatusEnum && value == other.value
+class CancelDeploymentResponseIntegrationsStatusEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseIntegrationsStatusEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -203,16 +254,21 @@ class CancelDeploymentResponseIntegrationsStatusEnum private constructor(
         @JvmField val SKIPPED = CancelDeploymentResponseIntegrationsStatusEnum("skipped")
         @JvmField val TIMEOUT = CancelDeploymentResponseIntegrationsStatusEnum("timeout")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CancelDeploymentResponseIntegrationsStatusEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = CancelDeploymentResponseIntegrationsStatusEnum(value)
     }
 }
 
-class CancelDeploymentResponseIsFirstBranchDeploymentEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseIsFirstBranchDeploymentEnum && value == other.value
+class CancelDeploymentResponseIsFirstBranchDeploymentEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseIsFirstBranchDeploymentEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -220,16 +276,21 @@ class CancelDeploymentResponseIsFirstBranchDeploymentEnum private constructor(
         @JvmField val FALSE = CancelDeploymentResponseIsFirstBranchDeploymentEnum(false)
         @JvmField val TRUE = CancelDeploymentResponseIsFirstBranchDeploymentEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CancelDeploymentResponseIsFirstBranchDeploymentEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = CancelDeploymentResponseIsFirstBranchDeploymentEnum(value)
     }
 }
 
-class CancelDeploymentResponseIsInConcurrentBuildsQueueEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseIsInConcurrentBuildsQueueEnum && value == other.value
+class CancelDeploymentResponseIsInConcurrentBuildsQueueEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseIsInConcurrentBuildsQueueEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -237,19 +298,22 @@ class CancelDeploymentResponseIsInConcurrentBuildsQueueEnum private constructor(
         @JvmField val FALSE = CancelDeploymentResponseIsInConcurrentBuildsQueueEnum(false)
         @JvmField val TRUE = CancelDeploymentResponseIsInConcurrentBuildsQueueEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CancelDeploymentResponseIsInConcurrentBuildsQueueEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = CancelDeploymentResponseIsInConcurrentBuildsQueueEnum(value)
     }
 }
 
-/**
- * Whether this deployment completed through the instant static fast path.
- */
-class CancelDeploymentResponseIsInstantStaticEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseIsInstantStaticEnum && value == other.value
+/** Whether this deployment completed through the instant static fast path. */
+class CancelDeploymentResponseIsInstantStaticEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseIsInstantStaticEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -257,16 +321,21 @@ class CancelDeploymentResponseIsInstantStaticEnum private constructor(
         @JvmField val FALSE = CancelDeploymentResponseIsInstantStaticEnum(false)
         @JvmField val TRUE = CancelDeploymentResponseIsInstantStaticEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CancelDeploymentResponseIsInstantStaticEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = CancelDeploymentResponseIsInstantStaticEnum(value)
     }
 }
 
-class CancelDeploymentResponseIsInSystemBuildsQueueEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseIsInSystemBuildsQueueEnum && value == other.value
+class CancelDeploymentResponseIsInSystemBuildsQueueEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseIsInSystemBuildsQueueEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -274,38 +343,47 @@ class CancelDeploymentResponseIsInSystemBuildsQueueEnum private constructor(
         @JvmField val FALSE = CancelDeploymentResponseIsInSystemBuildsQueueEnum(false)
         @JvmField val TRUE = CancelDeploymentResponseIsInSystemBuildsQueueEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CancelDeploymentResponseIsInSystemBuildsQueueEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = CancelDeploymentResponseIsInSystemBuildsQueueEnum(value)
     }
 }
 
-class CancelDeploymentResponseLambdasItemReadyStateEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseLambdasItemReadyStateEnum && value == other.value
+class CancelDeploymentResponseLambdasItemReadyStateEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseLambdasItemReadyStateEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val BUILDING = CancelDeploymentResponseLambdasItemReadyStateEnum("BUILDING")
         @JvmField val ERROR = CancelDeploymentResponseLambdasItemReadyStateEnum("ERROR")
-        @JvmField val INITIALIZING = CancelDeploymentResponseLambdasItemReadyStateEnum("INITIALIZING")
+        @JvmField
+        val INITIALIZING = CancelDeploymentResponseLambdasItemReadyStateEnum("INITIALIZING")
         @JvmField val READY = CancelDeploymentResponseLambdasItemReadyStateEnum("READY")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CancelDeploymentResponseLambdasItemReadyStateEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = CancelDeploymentResponseLambdasItemReadyStateEnum(value)
     }
 }
 
-/**
- * Current provisioning state
- */
-class CancelDeploymentResponseManualProvisioningStateEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseManualProvisioningStateEnum && value == other.value
+/** Current provisioning state */
+class CancelDeploymentResponseManualProvisioningStateEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseManualProvisioningStateEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -314,19 +392,22 @@ class CancelDeploymentResponseManualProvisioningStateEnum private constructor(
         @JvmField val PENDING = CancelDeploymentResponseManualProvisioningStateEnum("PENDING")
         @JvmField val TIMEOUT = CancelDeploymentResponseManualProvisioningStateEnum("TIMEOUT")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CancelDeploymentResponseManualProvisioningStateEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = CancelDeploymentResponseManualProvisioningStateEnum(value)
     }
 }
 
-/**
- * If set it overrides the `projectSettings.nodeVersion` for this deployment.
- */
-class CancelDeploymentResponseNodeVersionEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseNodeVersionEnum && value == other.value
+/** If set it overrides the `projectSettings.nodeVersion` for this deployment. */
+class CancelDeploymentResponseNodeVersionEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseNodeVersionEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -342,32 +423,42 @@ class CancelDeploymentResponseNodeVersionEnum private constructor(
         @JvmField val V26_X = CancelDeploymentResponseNodeVersionEnum("26.x")
         @JvmField val V8_10_X = CancelDeploymentResponseNodeVersionEnum("8.10.x")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CancelDeploymentResponseNodeVersionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = CancelDeploymentResponseNodeVersionEnum(value)
     }
 }
 
-class CancelDeploymentResponseOomReportEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseOomReportEnum && value == other.value
+class CancelDeploymentResponseOomReportEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseOomReportEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val OUT_OF_MEMORY = CancelDeploymentResponseOomReportEnum("out-of-memory")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CancelDeploymentResponseOomReportEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = CancelDeploymentResponseOomReportEnum(value)
     }
 }
 
-class CancelDeploymentResponsePlanEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponsePlanEnum && value == other.value
+class CancelDeploymentResponsePlanEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponsePlanEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -376,19 +467,22 @@ class CancelDeploymentResponsePlanEnum private constructor(
         @JvmField val HOBBY = CancelDeploymentResponsePlanEnum("hobby")
         @JvmField val PRO = CancelDeploymentResponsePlanEnum("pro")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CancelDeploymentResponsePlanEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = CancelDeploymentResponsePlanEnum(value)
     }
 }
 
-/**
- * Whether the value is an opaque identifier or a URL.
- */
-class CancelDeploymentResponsePlatformOriginTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponsePlatformOriginTypeEnum && value == other.value
+/** Whether the value is an opaque identifier or a URL. */
+class CancelDeploymentResponsePlatformOriginTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponsePlatformOriginTypeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -396,16 +490,21 @@ class CancelDeploymentResponsePlatformOriginTypeEnum private constructor(
         @JvmField val ID = CancelDeploymentResponsePlatformOriginTypeEnum("id")
         @JvmField val URL = CancelDeploymentResponsePlatformOriginTypeEnum("url")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CancelDeploymentResponsePlatformOriginTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = CancelDeploymentResponsePlatformOriginTypeEnum(value)
     }
 }
 
-class CancelDeploymentResponsePrebuiltEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponsePrebuiltEnum && value == other.value
+class CancelDeploymentResponsePrebuiltEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponsePrebuiltEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -413,19 +512,22 @@ class CancelDeploymentResponsePrebuiltEnum private constructor(
         @JvmField val FALSE = CancelDeploymentResponsePrebuiltEnum(false)
         @JvmField val TRUE = CancelDeploymentResponsePrebuiltEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CancelDeploymentResponsePrebuiltEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = CancelDeploymentResponsePrebuiltEnum(value)
     }
 }
 
-/**
- * Whether or not preview comments are enabled for the deployment
- */
-class CancelDeploymentResponsePreviewCommentsEnabledEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponsePreviewCommentsEnabledEnum && value == other.value
+/** Whether or not preview comments are enabled for the deployment */
+class CancelDeploymentResponsePreviewCommentsEnabledEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponsePreviewCommentsEnabledEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -433,16 +535,21 @@ class CancelDeploymentResponsePreviewCommentsEnabledEnum private constructor(
         @JvmField val FALSE = CancelDeploymentResponsePreviewCommentsEnabledEnum(false)
         @JvmField val TRUE = CancelDeploymentResponsePreviewCommentsEnabledEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CancelDeploymentResponsePreviewCommentsEnabledEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = CancelDeploymentResponsePreviewCommentsEnabledEnum(value)
     }
 }
 
-class CancelDeploymentResponseProjectSettingsFrameworkEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseProjectSettingsFrameworkEnum && value == other.value
+class CancelDeploymentResponseProjectSettingsFrameworkEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseProjectSettingsFrameworkEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -456,17 +563,22 @@ class CancelDeploymentResponseProjectSettingsFrameworkEnum private constructor(
         @JvmField val BRUNCH = CancelDeploymentResponseProjectSettingsFrameworkEnum("brunch")
         @JvmField val BUN = CancelDeploymentResponseProjectSettingsFrameworkEnum("bun")
         @JvmField val CONTAINER = CancelDeploymentResponseProjectSettingsFrameworkEnum("container")
-        @JvmField val CREATE_REACT_APP = CancelDeploymentResponseProjectSettingsFrameworkEnum("create-react-app")
+        @JvmField
+        val CREATE_REACT_APP =
+            CancelDeploymentResponseProjectSettingsFrameworkEnum("create-react-app")
         @JvmField val DJANGO = CancelDeploymentResponseProjectSettingsFrameworkEnum("django")
-        @JvmField val DOCUSAURUS = CancelDeploymentResponseProjectSettingsFrameworkEnum("docusaurus")
-        @JvmField val DOCUSAURUS_2 = CancelDeploymentResponseProjectSettingsFrameworkEnum("docusaurus-2")
+        @JvmField
+        val DOCUSAURUS = CancelDeploymentResponseProjectSettingsFrameworkEnum("docusaurus")
+        @JvmField
+        val DOCUSAURUS_2 = CancelDeploymentResponseProjectSettingsFrameworkEnum("docusaurus-2")
         @JvmField val DOJO = CancelDeploymentResponseProjectSettingsFrameworkEnum("dojo")
         @JvmField val ELEVENTY = CancelDeploymentResponseProjectSettingsFrameworkEnum("eleventy")
         @JvmField val ELYSIA = CancelDeploymentResponseProjectSettingsFrameworkEnum("elysia")
         @JvmField val EMBER = CancelDeploymentResponseProjectSettingsFrameworkEnum("ember")
         @JvmField val EVE = CancelDeploymentResponseProjectSettingsFrameworkEnum("eve")
         @JvmField val EXPRESS = CancelDeploymentResponseProjectSettingsFrameworkEnum("express")
-        @JvmField val FACTORY_EVE = CancelDeploymentResponseProjectSettingsFrameworkEnum("factory-eve")
+        @JvmField
+        val FACTORY_EVE = CancelDeploymentResponseProjectSettingsFrameworkEnum("factory-eve")
         @JvmField val FASTAPI = CancelDeploymentResponseProjectSettingsFrameworkEnum("fastapi")
         @JvmField val FASTHTML = CancelDeploymentResponseProjectSettingsFrameworkEnum("fasthtml")
         @JvmField val FASTIFY = CancelDeploymentResponseProjectSettingsFrameworkEnum("fastify")
@@ -479,8 +591,10 @@ class CancelDeploymentResponseProjectSettingsFrameworkEnum private constructor(
         @JvmField val HONO = CancelDeploymentResponseProjectSettingsFrameworkEnum("hono")
         @JvmField val HUGO = CancelDeploymentResponseProjectSettingsFrameworkEnum("hugo")
         @JvmField val HYDROGEN = CancelDeploymentResponseProjectSettingsFrameworkEnum("hydrogen")
-        @JvmField val IONIC_ANGULAR = CancelDeploymentResponseProjectSettingsFrameworkEnum("ionic-angular")
-        @JvmField val IONIC_REACT = CancelDeploymentResponseProjectSettingsFrameworkEnum("ionic-react")
+        @JvmField
+        val IONIC_ANGULAR = CancelDeploymentResponseProjectSettingsFrameworkEnum("ionic-angular")
+        @JvmField
+        val IONIC_REACT = CancelDeploymentResponseProjectSettingsFrameworkEnum("ionic-react")
         @JvmField val JEKYLL = CancelDeploymentResponseProjectSettingsFrameworkEnum("jekyll")
         @JvmField val KOA = CancelDeploymentResponseProjectSettingsFrameworkEnum("koa")
         @JvmField val MASTRA = CancelDeploymentResponseProjectSettingsFrameworkEnum("mastra")
@@ -494,7 +608,8 @@ class CancelDeploymentResponseProjectSettingsFrameworkEnum private constructor(
         @JvmField val POLYMER = CancelDeploymentResponseProjectSettingsFrameworkEnum("polymer")
         @JvmField val PREACT = CancelDeploymentResponseProjectSettingsFrameworkEnum("preact")
         @JvmField val PYTHON = CancelDeploymentResponseProjectSettingsFrameworkEnum("python")
-        @JvmField val REACT_ROUTER = CancelDeploymentResponseProjectSettingsFrameworkEnum("react-router")
+        @JvmField
+        val REACT_ROUTER = CancelDeploymentResponseProjectSettingsFrameworkEnum("react-router")
         @JvmField val REDWOODJS = CancelDeploymentResponseProjectSettingsFrameworkEnum("redwoodjs")
         @JvmField val REMIX = CancelDeploymentResponseProjectSettingsFrameworkEnum("remix")
         @JvmField val RUBY = CancelDeploymentResponseProjectSettingsFrameworkEnum("ruby")
@@ -505,15 +620,21 @@ class CancelDeploymentResponseProjectSettingsFrameworkEnum private constructor(
         @JvmField val SAPPER = CancelDeploymentResponseProjectSettingsFrameworkEnum("sapper")
         @JvmField val SCULLY = CancelDeploymentResponseProjectSettingsFrameworkEnum("scully")
         @JvmField val SERVICES = CancelDeploymentResponseProjectSettingsFrameworkEnum("services")
-        @JvmField val SOLIDSTART = CancelDeploymentResponseProjectSettingsFrameworkEnum("solidstart")
-        @JvmField val SOLIDSTART_1 = CancelDeploymentResponseProjectSettingsFrameworkEnum("solidstart-1")
+        @JvmField
+        val SOLIDSTART = CancelDeploymentResponseProjectSettingsFrameworkEnum("solidstart")
+        @JvmField
+        val SOLIDSTART_1 = CancelDeploymentResponseProjectSettingsFrameworkEnum("solidstart-1")
         @JvmField val STENCIL = CancelDeploymentResponseProjectSettingsFrameworkEnum("stencil")
         @JvmField val STORYBOOK = CancelDeploymentResponseProjectSettingsFrameworkEnum("storybook")
         @JvmField val SVELTE = CancelDeploymentResponseProjectSettingsFrameworkEnum("svelte")
         @JvmField val SVELTEKIT = CancelDeploymentResponseProjectSettingsFrameworkEnum("sveltekit")
-        @JvmField val SVELTEKIT_1 = CancelDeploymentResponseProjectSettingsFrameworkEnum("sveltekit-1")
-        @JvmField val TANSTACK_START = CancelDeploymentResponseProjectSettingsFrameworkEnum("tanstack-start")
-        @JvmField val TANSTACK_START_LOVABLE = CancelDeploymentResponseProjectSettingsFrameworkEnum("tanstack-start-lovable")
+        @JvmField
+        val SVELTEKIT_1 = CancelDeploymentResponseProjectSettingsFrameworkEnum("sveltekit-1")
+        @JvmField
+        val TANSTACK_START = CancelDeploymentResponseProjectSettingsFrameworkEnum("tanstack-start")
+        @JvmField
+        val TANSTACK_START_LOVABLE =
+            CancelDeploymentResponseProjectSettingsFrameworkEnum("tanstack-start-lovable")
         @JvmField val UMIJS = CancelDeploymentResponseProjectSettingsFrameworkEnum("umijs")
         @JvmField val VITE = CancelDeploymentResponseProjectSettingsFrameworkEnum("vite")
         @JvmField val VITEPRESS = CancelDeploymentResponseProjectSettingsFrameworkEnum("vitepress")
@@ -522,16 +643,21 @@ class CancelDeploymentResponseProjectSettingsFrameworkEnum private constructor(
         @JvmField val XMCP = CancelDeploymentResponseProjectSettingsFrameworkEnum("xmcp")
         @JvmField val ZOLA = CancelDeploymentResponseProjectSettingsFrameworkEnum("zola")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CancelDeploymentResponseProjectSettingsFrameworkEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = CancelDeploymentResponseProjectSettingsFrameworkEnum(value)
     }
 }
 
-class CancelDeploymentResponseProjectSettingsNodeVersionEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseProjectSettingsNodeVersionEnum && value == other.value
+class CancelDeploymentResponseProjectSettingsNodeVersionEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseProjectSettingsNodeVersionEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -547,16 +673,22 @@ class CancelDeploymentResponseProjectSettingsNodeVersionEnum private constructor
         @JvmField val V26_X = CancelDeploymentResponseProjectSettingsNodeVersionEnum("26.x")
         @JvmField val V8_10_X = CancelDeploymentResponseProjectSettingsNodeVersionEnum("8.10.x")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CancelDeploymentResponseProjectSettingsNodeVersionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = CancelDeploymentResponseProjectSettingsNodeVersionEnum(value)
     }
 }
 
-class CancelDeploymentResponseProjectSettingsSpeedInsightsHasDataEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseProjectSettingsSpeedInsightsHasDataEnum && value == other.value
+class CancelDeploymentResponseProjectSettingsSpeedInsightsHasDataEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseProjectSettingsSpeedInsightsHasDataEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -564,23 +696,34 @@ class CancelDeploymentResponseProjectSettingsSpeedInsightsHasDataEnum private co
         @JvmField val FALSE = CancelDeploymentResponseProjectSettingsSpeedInsightsHasDataEnum(false)
         @JvmField val TRUE = CancelDeploymentResponseProjectSettingsSpeedInsightsHasDataEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CancelDeploymentResponseProjectSettingsSpeedInsightsHasDataEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CancelDeploymentResponseProjectSettingsSpeedInsightsHasDataEnum(value)
     }
 }
 
-class CancelDeploymentResponseProjectSettingsWebAnalyticsHasDataEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CancelDeploymentResponseProjectSettingsWebAnalyticsHasDataEnum && value == other.value
+class CancelDeploymentResponseProjectSettingsWebAnalyticsHasDataEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CancelDeploymentResponseProjectSettingsWebAnalyticsHasDataEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
         @JvmField val TRUE = CancelDeploymentResponseProjectSettingsWebAnalyticsHasDataEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CancelDeploymentResponseProjectSettingsWebAnalyticsHasDataEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CancelDeploymentResponseProjectSettingsWebAnalyticsHasDataEnum(value)
     }
 }
