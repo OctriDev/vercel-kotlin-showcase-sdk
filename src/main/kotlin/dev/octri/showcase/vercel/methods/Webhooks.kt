@@ -13,158 +13,205 @@ import dev.octri.showcase.vercel.Validation
 
 object Webhooks {
 
-data class CreateWebhookResponse(
-    /**
-     * A number containing the date when the webhook was created in in milliseconds
-     */
-    val createdAt: Double,
-    /**
-     * The webhooks events
-     */
-    val events: List<CreateWebhookResponseEventsItemEnum>,
-    /**
-     * The webhook id
-     */
-    val id: String,
-    /**
-     * The unique ID of the team the webhook belongs to
-     */
-    val ownerId: String,
-    /**
-     * The webhook secret used to sign the payload
-     */
-    val secret: String,
-    /**
-     * A number containing the date when the webhook was updated in in milliseconds
-     */
-    val updatedAt: Double,
-    /**
-     * A string with the URL of the webhook
-     */
-    val url: String,
-    val alertRuleIds: List<String>? = null,
-    /**
-     * The ID of the projects the webhook is associated with
-     */
-    val projectIds: List<String>? = null
-)
+    data class CreateWebhookResponse(
+        /** A number containing the date when the webhook was created in in milliseconds */
+        val createdAt: Double,
+        /** The webhooks events */
+        val events: List<CreateWebhookResponseEventsItemEnum>,
+        /** The webhook id */
+        val id: String,
+        /** The unique ID of the team the webhook belongs to */
+        val ownerId: String,
+        /** The webhook secret used to sign the payload */
+        val secret: String,
+        /** A number containing the date when the webhook was updated in in milliseconds */
+        val updatedAt: Double,
+        /** A string with the URL of the webhook */
+        val url: String,
+        val alertRuleIds: List<String>? = null,
+        /** The ID of the projects the webhook is associated with */
+        val projectIds: List<String>? = null,
+    )
 
-data class GetWebhookResponse(
-    /**
-     * A number containing the date when the webhook was created in in milliseconds
-     */
-    val createdAt: Double,
-    /**
-     * The webhooks events
-     */
-    val events: List<GetWebhookResponseEventsItemEnum>,
-    /**
-     * The webhook id
-     */
-    val id: String,
-    /**
-     * The unique ID of the team the webhook belongs to
-     */
-    val ownerId: String,
-    /**
-     * A number containing the date when the webhook was updated in in milliseconds
-     */
-    val updatedAt: Double,
-    /**
-     * A string with the URL of the webhook
-     */
-    val url: String,
-    val alertRuleIds: List<String>? = null,
-    /**
-     * The ID of the projects the webhook is associated with
-     */
-    val projectIds: List<String>? = null
-)
-
+    data class GetWebhookResponse(
+        /** A number containing the date when the webhook was created in in milliseconds */
+        val createdAt: Double,
+        /** The webhooks events */
+        val events: List<GetWebhookResponseEventsItemEnum>,
+        /** The webhook id */
+        val id: String,
+        /** The unique ID of the team the webhook belongs to */
+        val ownerId: String,
+        /** A number containing the date when the webhook was updated in in milliseconds */
+        val updatedAt: Double,
+        /** A string with the URL of the webhook */
+        val url: String,
+        val alertRuleIds: List<String>? = null,
+        /** The ID of the projects the webhook is associated with */
+        val projectIds: List<String>? = null,
+    )
 
     /**
-     * Creates a webhook that sends selected events to a URL. Provide an HTTP or HTTPS `url` and at least one event in `events`; you can optionally associate the webhook with 1 to 50 `projectIds`. The response includes the webhook ID and secret used to sign payloads.
+     * Creates a webhook that sends selected events to a URL. Provide an HTTP or HTTPS `url` and at
+     * least one event in `events`; you can optionally associate the webhook with 1 to 50
+     * `projectIds`. The response includes the webhook ID and secret used to sign payloads.
      *
      * Creates a webhook
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun createWebhook(clientConfig: ClientConfig, url: String, events: List<CreateWebhookEventsItemEnum>, teamId: String? = null, slug: String? = null, projectIds: List<String>? = null, options: RequestOptions? = null): CreateWebhookResponse {
+    fun createWebhook(
+        clientConfig: ClientConfig,
+        url: String,
+        events: List<CreateWebhookEventsItemEnum>,
+        teamId: String? = null,
+        slug: String? = null,
+        projectIds: List<String>? = null,
+        options: RequestOptions? = null,
+    ): CreateWebhookResponse {
         Validation.validatePattern("url", url, "^https?://")
         Validation.validateUri("url", url)
 
         Validation.validateItems("events", events, Validation.LengthOpts(min = 1))
 
         if (projectIds != null) {
-            Validation.validateItems("projectIds", projectIds, Validation.LengthOpts(min = 1, max = 50))
-}
+            Validation.validateItems(
+                "projectIds",
+                projectIds,
+                Validation.LengthOpts(min = 1, max = 50),
+            )
+        }
 
-        return SdkClient.request<CreateWebhookResponse>(SdkClient.RequestSpec("POST", "/v1/webhooks", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("url" to (url), "events" to (events), "projectIds" to (SdkClient.omitIfNull(projectIds))), operationId = "createWebhook", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<CreateWebhookResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v1/webhooks",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body =
+                        SdkClient.bodyMap(
+                            "url" to (url),
+                            "events" to (events),
+                            "projectIds" to (SdkClient.omitIfNull(projectIds)),
+                        ),
+                    operationId = "createWebhook",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Lists webhooks, optionally scoped to a project. Use `projectId` to retrieve webhooks associated with a specific project; omit it to list webhooks without that project filter. The project identifier must match the documented character pattern.
+     * Lists webhooks, optionally scoped to a project. Use `projectId` to retrieve webhooks
+     * associated with a specific project; omit it to list webhooks without that project filter. The
+     * project identifier must match the documented character pattern.
      *
      * Get a list of webhooks
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getWebhooks(clientConfig: ClientConfig, projectId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): List<Map<String, Any>> {
+    fun getWebhooks(
+        clientConfig: ClientConfig,
+        projectId: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): List<Map<String, Any>> {
         if (projectId != null) {
             Validation.validatePattern("projectId", projectId, "^[a-zA-z0-9_]+$")
-}
+        }
 
-        return SdkClient.request<List<Map<String, Any>>>(SdkClient.RequestSpec("GET", "/v1/webhooks", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getWebhooks", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<List<Map<String, Any>>>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/webhooks",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "projectId" to SdkClient.queryValue(projectId, "form", true),
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getWebhooks",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Retrieves a webhook by its identifier. Use `teamId` or `slug` to specify the team context for the request. The response includes the webhook URL, subscribed events, associated project IDs, and timestamps.
+     * Retrieves a webhook by its identifier. Use `teamId` or `slug` to specify the team context for
+     * the request. The response includes the webhook URL, subscribed events, associated project
+     * IDs, and timestamps.
      *
      * Get a webhook
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getWebhook(clientConfig: ClientConfig, id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetWebhookResponse {
-        return SdkClient.request<GetWebhookResponse>(SdkClient.RequestSpec("GET", "/v1/webhooks/${SdkClient.encodePathSegment(id)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getWebhook", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getWebhook(
+        clientConfig: ClientConfig,
+        id: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetWebhookResponse {
+        return SdkClient.request<GetWebhookResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/webhooks/${SdkClient.encodePathSegment(id)}",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getWebhook",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Deletes a webhook by its identifier. Use `teamId` or `slug` to specify the team context for the request. The operation returns no response body when the deletion succeeds.
+     * Deletes a webhook by its identifier. Use `teamId` or `slug` to specify the team context for
+     * the request. The operation returns no response body when the deletion succeeds.
      *
      * Deletes a webhook
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun deleteWebhook(clientConfig: ClientConfig, id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
-        SdkClient.request<Unit>(SdkClient.RequestSpec("DELETE", "/v1/webhooks/${SdkClient.encodePathSegment(id)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "deleteWebhook", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+    fun deleteWebhook(
+        clientConfig: ClientConfig,
+        id: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "DELETE",
+                "/v1/webhooks/${SdkClient.encodePathSegment(id)}",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "teamId" to SdkClient.queryValue(teamId, "form", true),
+                        "slug" to SdkClient.queryValue(slug, "form", true),
+                    ),
+                operationId = "deleteWebhook",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
-
-
-
-
-
-
-
 }

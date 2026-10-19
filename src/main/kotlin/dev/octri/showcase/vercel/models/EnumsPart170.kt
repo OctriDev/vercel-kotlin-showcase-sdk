@@ -3,577 +3,898 @@
 
 package dev.octri.showcase.vercel.models
 
-class CreateIntegrationStoreDirectResponseStoreProductCapabilitiesV0Enum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductCapabilitiesV0Enum && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductCapabilitiesV0Enum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductCapabilitiesV0Enum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductCapabilitiesV0Enum(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductCapabilitiesV0Enum(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductCapabilitiesV0Enum(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductCapabilitiesV0Enum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductCapabilitiesV0Enum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductCapabilitiesV0Enum(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductCapabilitiesVXae410035fc private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductCapabilitiesVXae410035fc && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductCapabilitiesVXae410035fc
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductCapabilitiesVXae410035fc &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductCapabilitiesVXae410035fc(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductCapabilitiesVXae410035fc(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductCapabilitiesVXae410035fc(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductCapabilitiesVXae410035fc(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductCapabilitiesVXae410035fc(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductCapabilitiesVXae410035fc(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductDisableResourX5871246ba5 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductDisableResourX5871246ba5 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductDisableResourX5871246ba5
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductDisableResourX5871246ba5 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductDisableResourX5871246ba5(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductDisableResourX5871246ba5(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductDisableResourX5871246ba5(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductDisableResourX5871246ba5(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductDisableResourX5871246ba5(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductDisableResourX5871246ba5(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX9bb712bc31 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX9bb712bc31 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX9bb712bc31
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX9bb712bc31 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val ADD_DRAIN = CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX9bb712bc31("add_drain")
-        @JvmField val CONFIGURE_PROJECT_CONNECTIONS = CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX9bb712bc31("configure_project_connections")
-        @JvmField val CONNECT_TO_PROJECT = CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX9bb712bc31("connect_to_project")
+        @JvmField
+        val ADD_DRAIN =
+            CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX9bb712bc31("add_drain")
+        @JvmField
+        val CONFIGURE_PROJECT_CONNECTIONS =
+            CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX9bb712bc31(
+                "configure_project_connections"
+            )
+        @JvmField
+        val CONNECT_TO_PROJECT =
+            CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX9bb712bc31(
+                "connect_to_project"
+            )
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX9bb712bc31(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProductGuidesItemSteX9bb712bc31(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX0ac885897d private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX0ac885897d && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX0ac885897d
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX0ac885897d &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX0ac885897d(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX0ac885897d(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX0ac885897d(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX0ac885897d(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX0ac885897d(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX0ac885897d(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXe0fc38011d private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXe0fc38011d && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXe0fc38011d
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXe0fc38011d &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXe0fc38011d(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXe0fc38011d(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXe0fc38011d(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXe0fc38011d(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXe0fc38011d(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXe0fc38011d(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXdb1f4aa45e private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXdb1f4aa45e && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXdb1f4aa45e
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXdb1f4aa45e &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXdb1f4aa45e(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXdb1f4aa45e(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXdb1f4aa45e(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXdb1f4aa45e(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXdb1f4aa45e(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXdb1f4aa45e(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX98b716f0b1 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX98b716f0b1 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX98b716f0b1
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX98b716f0b1 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX98b716f0b1(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX98b716f0b1(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX98b716f0b1(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX98b716f0b1(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX98b716f0b1(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX98b716f0b1(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9a24f67638 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9a24f67638 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9a24f67638
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9a24f67638 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9a24f67638(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9a24f67638(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9a24f67638(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9a24f67638(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9a24f67638(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9a24f67638(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX6b487e6731 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX6b487e6731 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX6b487e6731
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX6b487e6731 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX6b487e6731(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX6b487e6731(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX6b487e6731(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX6b487e6731(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX6b487e6731(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX6b487e6731(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9909f72a85 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9909f72a85 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9909f72a85
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9909f72a85 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9909f72a85(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9909f72a85(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9909f72a85(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9909f72a85(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9909f72a85(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9909f72a85(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX3097c6a221 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX3097c6a221 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX3097c6a221
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX3097c6a221 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX3097c6a221(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX3097c6a221(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX3097c6a221(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX3097c6a221(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX3097c6a221(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX3097c6a221(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXfd8e0a2491 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXfd8e0a2491 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXfd8e0a2491
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXfd8e0a2491 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXfd8e0a2491(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXfd8e0a2491(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXfd8e0a2491(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXfd8e0a2491(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXfd8e0a2491(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXfd8e0a2491(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX5c3423834f private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX5c3423834f && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX5c3423834f
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX5c3423834f &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX5c3423834f(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX5c3423834f(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX5c3423834f(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX5c3423834f(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX5c3423834f(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX5c3423834f(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX163c092653 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX163c092653 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX163c092653
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX163c092653 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX163c092653(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX163c092653(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX163c092653(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX163c092653(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX163c092653(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX163c092653(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX53e422c5c9 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX53e422c5c9 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX53e422c5c9
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX53e422c5c9 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX53e422c5c9(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX53e422c5c9(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX53e422c5c9(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX53e422c5c9(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX53e422c5c9(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX53e422c5c9(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX81f653fb6e private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX81f653fb6e && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX81f653fb6e
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX81f653fb6e &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX81f653fb6e(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX81f653fb6e(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX81f653fb6e(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX81f653fb6e(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX81f653fb6e(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX81f653fb6e(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9dd49385b6 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9dd49385b6 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9dd49385b6
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9dd49385b6 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9dd49385b6(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9dd49385b6(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9dd49385b6(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9dd49385b6(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9dd49385b6(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX9dd49385b6(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX468b8d8364 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX468b8d8364 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX468b8d8364
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX468b8d8364 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX468b8d8364(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX468b8d8364(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX468b8d8364(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX468b8d8364(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX468b8d8364(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaX468b8d8364(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXf0590f1d77 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXf0590f1d77 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXf0590f1d77
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXf0590f1d77 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXf0590f1d77(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXf0590f1d77(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXf0590f1d77(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXf0590f1d77(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXf0590f1d77(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXf0590f1d77(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXbf6f9e417e private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXbf6f9e417e && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXbf6f9e417e
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXbf6f9e417e &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXbf6f9e417e(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXbf6f9e417e(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXbf6f9e417e(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXbf6f9e417e(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXbf6f9e417e(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationCaXbf6f9e417e(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductIntegrationSuX2faec976f5 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductIntegrationSuX2faec976f5 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductIntegrationSuX2faec976f5
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductIntegrationSuX2faec976f5 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationSuX2faec976f5(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationSuX2faec976f5(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductIntegrationSuX2faec976f5(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductIntegrationSuX2faec976f5(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductIntegrationSuX2faec976f5(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductIntegrationSuX2faec976f5(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductLogDrainStatusEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductLogDrainStatusEnum && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductLogDrainStatusEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductLogDrainStatusEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val DISABLED = CreateIntegrationStoreDirectResponseStoreProductLogDrainStatusEnum("disabled")
-        @JvmField val ENABLED = CreateIntegrationStoreDirectResponseStoreProductLogDrainStatusEnum("enabled")
+        @JvmField
+        val DISABLED =
+            CreateIntegrationStoreDirectResponseStoreProductLogDrainStatusEnum("disabled")
+        @JvmField
+        val ENABLED = CreateIntegrationStoreDirectResponseStoreProductLogDrainStatusEnum("enabled")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProductLogDrainStatusEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProductLogDrainStatusEnum(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5dda8ddccb private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5dda8ddccb && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5dda8ddccb
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5dda8ddccb &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val STRING = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5dda8ddccb("string")
+        @JvmField
+        val STRING =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5dda8ddccb("string")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5dda8ddccb(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX5dda8ddccb(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX1260fcf7cb private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX1260fcf7cb && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX1260fcf7cb
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX1260fcf7cb &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val INPUT = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX1260fcf7cb("input")
+        @JvmField
+        val INPUT =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX1260fcf7cb("input")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX1260fcf7cb(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX1260fcf7cb(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX435def423c private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX435def423c && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX435def423c
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX435def423c &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX435def423c(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX435def423c(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX435def423c(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX435def423c(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX435def423c(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX435def423c(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2b94e75e45 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2b94e75e45 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2b94e75e45
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2b94e75e45 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CREATE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2b94e75e45("create")
-        @JvmField val UPDATE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2b94e75e45("update")
+        @JvmField
+        val CREATE =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2b94e75e45("create")
+        @JvmField
+        val UPDATE =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2b94e75e45("update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2b94e75e45(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX2b94e75e45(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX210c67c701 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX210c67c701 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX210c67c701
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX210c67c701 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX210c67c701(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX210c67c701(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX210c67c701(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX210c67c701(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX210c67c701(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX210c67c701(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX0ef9528465 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX0ef9528465 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX0ef9528465
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX0ef9528465 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CREATE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX0ef9528465("create")
-        @JvmField val UPDATE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX0ef9528465("update")
+        @JvmField
+        val CREATE =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX0ef9528465("create")
+        @JvmField
+        val UPDATE =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX0ef9528465("update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX0ef9528465(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX0ef9528465(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX581f082f43 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX581f082f43 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX581f082f43
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX581f082f43 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX581f082f43(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX581f082f43(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX581f082f43(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX581f082f43(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX581f082f43(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX581f082f43(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa1a0231a77 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa1a0231a77 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa1a0231a77
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa1a0231a77 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa1a0231a77(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa1a0231a77(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa1a0231a77(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa1a0231a77(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa1a0231a77(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXa1a0231a77(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7f8387b454 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7f8387b454 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7f8387b454
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7f8387b454 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CREATE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7f8387b454("create")
-        @JvmField val UPDATE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7f8387b454("update")
+        @JvmField
+        val CREATE =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7f8387b454("create")
+        @JvmField
+        val UPDATE =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7f8387b454("update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7f8387b454(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX7f8387b454(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX623dc851df private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX623dc851df && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX623dc851df
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX623dc851df &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val NUMBER = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX623dc851df("number")
+        @JvmField
+        val NUMBER =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX623dc851df("number")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX623dc851df(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX623dc851df(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX645b52116b private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX645b52116b && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX645b52116b
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX645b52116b &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val INPUT = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX645b52116b("input")
+        @JvmField
+        val INPUT =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX645b52116b("input")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX645b52116b(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX645b52116b(value)
     }
 }

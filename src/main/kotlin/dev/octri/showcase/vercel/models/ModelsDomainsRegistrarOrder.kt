@@ -5,20 +5,12 @@ package dev.octri.showcase.vercel.models
 
 typealias OrderId = String
 
-/**
- * The total price of the order is too high.
- */
+/** The total price of the order is too high. */
 data class OrderTooExpensive(
-    /**
-     * Required enumerated value serialized in the `status` wire field.
-     */
+    /** Required enumerated value serialized in the `status` wire field. */
     val status: Long,
-    /**
-     * Required enumerated value serialized in the `code` wire field.
-     */
+    /** Required enumerated value serialized in the `code` wire field. */
     val code: OrderTooExpensiveCodeEnum,
-    /**
-     * Required `string` value serialized in the `message` wire field.
-     */
-    val message: String
+    /** Required `string` value serialized in the `message` wire field. */
+    val message: String,
 )

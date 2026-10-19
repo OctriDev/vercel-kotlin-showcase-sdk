@@ -16,152 +16,125 @@ data class CreateDeploymentResponseVariant1RoutesItemVariant0(
     val important: Boolean? = null,
     val locale: CreateDeploymentResponseVariant1RoutesItemVariant0Locale? = null,
     val methods: List<String>? = null,
-    /**
-     * A middleware index in the `middleware` key under the build result
-     */
+    /** A middleware index in the `middleware` key under the build result */
     val middleware: Double? = null,
     /**
-     * A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
+     * A middleware key within the `output` key under the build result. Overrides a `middleware`
+     * definition.
      */
     val middlewarePath: String? = null,
-    /**
-     * The original middleware matchers.
-     */
+    /** The original middleware matchers. */
     val middlewareRawSrc: List<String>? = null,
     val missing: List<Any>? = null,
     val mitigate: CreateDeploymentResponseVariant1RoutesItemVariant0Mitigate? = null,
     @com.fasterxml.jackson.annotation.JsonProperty("override") val `override`: Boolean? = null,
     val respectOriginCacheControl: Boolean? = null,
     /**
-     * Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`, `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During normalization, the string forms are converted to their canonical forms (`src`, `dest`, `status`) and stripped from the route object. `destination` may also be a service-targeted object, in which case routing is delegated into the named service's internal route table and the object is preserved…
+     * Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`,
+     * `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During
+     * normalization, the string forms are converted to their canonical forms (`src`, `dest`,
+     * `status`) and stripped from the route object. `destination` may also be a service-targeted
+     * object, in which case routing is delegated into the named service's internal route table and
+     * the object is preserved…
      */
     val source: String? = null,
     val status: Double? = null,
     val statusCode: Double? = null,
-    val transforms: List<Any>? = null
+    val transforms: List<Any>? = null,
 )
 
 data class CreateDeploymentResponseVariant1RoutesItemVariant1(
     val handle: CreateDeploymentResponseVariant1RoutesItemVariant1HandleEnum,
     val dest: String? = null,
     val src: String? = null,
-    val status: Double? = null
+    val status: Double? = null,
 )
 
 data class CreateDeploymentResponseVariant1RoutesItemVariant2(
     @com.fasterxml.jackson.annotation.JsonProperty("continue") val `continue`: Boolean,
     val middleware: Long,
-    val src: String
+    val src: String,
 )
 
 /**
- * An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`
+ * An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value
+ * will be `null`
  */
 data class CreateDeploymentResponseVariant1AliasError(
     val code: String,
-    val message: String
+    val message: String,
 )
 
 data class CreateDeploymentResponseVariant1AliasWarning(
     val code: String,
     val message: String,
     val action: String? = null,
-    val link: String? = null
+    val link: String? = null,
 )
 
-data class CreateDeploymentResponseVariant1AtprotoVariant0(
-    val enabled: Boolean
-)
+data class CreateDeploymentResponseVariant1AtprotoVariant0(val enabled: Boolean)
 
 data class CreateDeploymentResponseVariant1AtprotoVariant1Subscription(
     val collections: List<String>,
     val path: String,
     val dids: List<String>? = null,
-    val kinds: List<CreateDeploymentResponseVariant1AtprotoVariant1SubscriptionKindsItemEnum>? = null
+    val kinds: List<CreateDeploymentResponseVariant1AtprotoVariant1SubscriptionKindsItemEnum>? =
+        null,
 )
 
 data class CreateDeploymentResponseVariant1AtprotoVariant1(
     val enabled: Boolean,
-    val subscription: CreateDeploymentResponseVariant1AtprotoVariant1Subscription
+    val subscription: CreateDeploymentResponseVariant1AtprotoVariant1Subscription,
 )
 
-/**
- * Commit metadata from the git commit author
- */
+/** Commit metadata from the git commit author */
 data class CreateDeploymentResponseVariant1AttributionCommitMeta(
-    /**
-     * Email from git commit author
-     */
+    /** Email from git commit author */
     val email: String? = null,
-    /**
-     * Whether the commit was signed/verified (GitHub only, others return undefined)
-     */
+    /** Whether the commit was signed/verified (GitHub only, others return undefined) */
     val isVerified: Boolean? = null,
-    /**
-     * Name from git commit author
-     */
-    val name: String? = null
+    /** Name from git commit author */
+    val name: String? = null,
 )
 
-/**
- * Git provider user associated with the commit author email (only set if resolved)
- */
+/** Git provider user associated with the commit author email (only set if resolved) */
 data class CreateDeploymentResponseVariant1AttributionGitUser(
     val id: Any,
-    /**
-     * Git provider username/login
-     */
+    /** Git provider username/login */
     val login: String,
-    /**
-     * The git provider (github, gitlab, bitbucket)
-     */
+    /** The git provider (github, gitlab, bitbucket) */
     val provider: String? = null,
-    /**
-     * User type
-     */
-    val type: String? = null
+    /** User type */
+    val type: String? = null,
 )
 
-/**
- * Vercel user linked to the git provider account (only set if resolved)
- */
+/** Vercel user linked to the git provider account (only set if resolved) */
 data class CreateDeploymentResponseVariant1AttributionVercelUser(
-    /**
-     * Vercel user ID
-     */
+    /** Vercel user ID */
     val id: String,
-    /**
-     * Vercel username
-     */
+    /** Vercel username */
     val username: String,
-    /**
-     * Team roles at time of deployment
-     */
-    val teamRoles: List<String>? = null
+    /** Team roles at time of deployment */
+    val teamRoles: List<String>? = null,
 )
 
 /**
- * Attribution metadata for the deployment, linking commit author to git and Vercel users. Only populated when the `enable-deployment-attribution` flag is enabled.
+ * Attribution metadata for the deployment, linking commit author to git and Vercel users. Only
+ * populated when the `enable-deployment-attribution` flag is enabled.
  */
 data class CreateDeploymentResponseVariant1Attribution(
-    /**
-     * Commit metadata from the git commit author
-     */
+    /** Commit metadata from the git commit author */
     val commitMeta: CreateDeploymentResponseVariant1AttributionCommitMeta? = null,
-    /**
-     * Git provider user associated with the commit author email (only set if resolved)
-     */
+    /** Git provider user associated with the commit author email (only set if resolved) */
     val gitUser: CreateDeploymentResponseVariant1AttributionGitUser? = null,
-    /**
-     * Vercel user linked to the git provider account (only set if resolved)
-     */
-    val vercelUser: CreateDeploymentResponseVariant1AttributionVercelUser? = null
+    /** Vercel user linked to the git provider account (only set if resolved) */
+    val vercelUser: CreateDeploymentResponseVariant1AttributionVercelUser? = null,
 )
 
 data class CreateDeploymentResponseVariant1BuildsItem(
     val use: String,
     val config: Map<String, Any>? = null,
-    val src: String? = null
+    val src: String? = null,
 )
 
 /**
@@ -170,103 +143,103 @@ data class CreateDeploymentResponseVariant1BuildsItem(
 data class CreateDeploymentResponseVariant1ChecksDeploymentAlias(
     val startedAt: Double,
     val state: CreateDeploymentResponseVariant1ChecksDeploymentAliasStateEnum,
-    val completedAt: Double? = null
+    val completedAt: Double? = null,
 )
 
 data class CreateDeploymentResponseVariant1Checks(
     /**
-     * Condensed check data. Retrieve individual check and check run data using api-checks v2 routes.
+     * Condensed check data. Retrieve individual check and check run data using api-checks v2
+     * routes.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("deployment-alias") val deploymentAlias: CreateDeploymentResponseVariant1ChecksDeploymentAlias
+    @com.fasterxml.jackson.annotation.JsonProperty("deployment-alias")
+    val deploymentAlias: CreateDeploymentResponseVariant1ChecksDeploymentAlias
 )
 
-/**
- * Build resource configuration snapshot for this deployment.
- */
+/** Build resource configuration snapshot for this deployment. */
 data class CreateDeploymentResponseVariant1ConfigResourceConfigBuildQueue(
-    /**
-     * Build resource configuration snapshot for this deployment.
-     */
-    val configuration: CreateDeploymentResponseVariant1ConfigResourceConfigBuildQueuX84ba7e1476? = null
+    /** Build resource configuration snapshot for this deployment. */
+    val configuration: CreateDeploymentResponseVariant1ConfigResourceConfigBuildQueuX84ba7e1476? =
+        null
 )
 
 data class CreateDeploymentResponseVariant1ConfigResourceConfigBuildMachine(
-    /**
-     * Machine type that was used for the build.
-     */
-    val purchaseType: CreateDeploymentResponseVariant1ConfigResourceConfigBuildMachXcc2fc5b308? = null
+    /** Machine type that was used for the build. */
+    val purchaseType: CreateDeploymentResponseVariant1ConfigResourceConfigBuildMachXcc2fc5b308? =
+        null
 )
 
-/**
- * Build resource configuration snapshot for this deployment.
- */
+/** Build resource configuration snapshot for this deployment. */
 data class CreateDeploymentResponseVariant1ConfigResourceConfig(
-    /**
-     * Build resource configuration snapshot for this deployment.
-     */
+    /** Build resource configuration snapshot for this deployment. */
     val buildQueue: CreateDeploymentResponseVariant1ConfigResourceConfigBuildQueue? = null,
     /**
-     * When elastic concurrency is used for this deployment, a value is set. The value tells the reason where the setting was coming from. - TEAM_SETTING: Inherited from team settings - PROJECT_SETTING: Inherited from project settings - SKIP_QUEUE: Manually triggered by user to skip the queues
+     * When elastic concurrency is used for this deployment, a value is set. The value tells the
+     * reason where the setting was coming from. - TEAM_SETTING: Inherited from team settings -
+     * PROJECT_SETTING: Inherited from project settings - SKIP_QUEUE: Manually triggered by user to
+     * skip the queues
      */
-    val elasticConcurrency: CreateDeploymentResponseVariant1ConfigResourceConfigElasticCoX538942af8b? = null,
-    val buildMachine: CreateDeploymentResponseVariant1ConfigResourceConfigBuildMachine? = null
+    val elasticConcurrency:
+        CreateDeploymentResponseVariant1ConfigResourceConfigElasticCoX538942af8b? =
+        null,
+    val buildMachine: CreateDeploymentResponseVariant1ConfigResourceConfigBuildMachine? = null,
 )
 
 /**
- * Since February 2025 the configuration must include snapshot data at the time of deployment creation to capture properties for the /deployments/:id/config endpoint utilized for displaying Deployment Configuration on the frontend This is optional because older deployments may not have this data captured
+ * Since February 2025 the configuration must include snapshot data at the time of deployment
+ * creation to capture properties for the /deployments/:id/config endpoint utilized for displaying
+ * Deployment Configuration on the frontend This is optional because older deployments may not have
+ * this data captured
  */
 data class CreateDeploymentResponseVariant1Config(
     val functionMemoryType: CreateDeploymentResponseVariant1ConfigFunctionMemoryTypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("functionTimeout", required = true) val functionTimeout: Double?,
+    @com.fasterxml.jackson.annotation.JsonProperty("functionTimeout", required = true)
+    val functionTimeout: Double?,
     val functionType: CreateDeploymentResponseVariant1ConfigFunctionTypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("secureComputeFallbackRegion", required = true) val secureComputeFallbackRegion: String?,
-    @com.fasterxml.jackson.annotation.JsonProperty("secureComputePrimaryRegion", required = true) val secureComputePrimaryRegion: String?,
-    @com.fasterxml.jackson.annotation.JsonProperty("isUsingActiveCPU") val isUsingActiveCpu: Boolean? = null,
-    /**
-     * Build resource configuration snapshot for this deployment.
-     */
+    @com.fasterxml.jackson.annotation.JsonProperty("secureComputeFallbackRegion", required = true)
+    val secureComputeFallbackRegion: String?,
+    @com.fasterxml.jackson.annotation.JsonProperty("secureComputePrimaryRegion", required = true)
+    val secureComputePrimaryRegion: String?,
+    @com.fasterxml.jackson.annotation.JsonProperty("isUsingActiveCPU")
+    val isUsingActiveCpu: Boolean? = null,
+    /** Build resource configuration snapshot for this deployment. */
     val resourceConfig: CreateDeploymentResponseVariant1ConfigResourceConfig? = null,
-    val version: Double? = null
+    val version: Double? = null,
 )
 
 data class CreateDeploymentResponseVariant1CronsItem(
     val path: String,
-    val schedule: String
+    val schedule: String,
 )
 
-/**
- * Configuration for matching git branches to this environment
- */
+/** Configuration for matching git branches to this environment */
 data class CreateDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcher(
-    /**
-     * The pattern to match against branch names
-     */
+    /** The pattern to match against branch names */
     val pattern: String,
-    /**
-     * The type of matching to perform
-     */
-    val type: CreateDeploymentResponseVariant1CustomEnvironmentVariant0BranX18c04eb84e
+    /** The type of matching to perform */
+    val type: CreateDeploymentResponseVariant1CustomEnvironmentVariant0BranX18c04eb84e,
 )
 
 /**
- * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+ * A list of verification challenges, one of which must be completed to verify the domain for use on
+ * the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to
+ * verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain`
+ * will be checked for a TXT record matching `verification.value`.
  */
 data class CreateDeploymentResponseVariant1CustomEnvironmentVariant0DomaXad6ef23605(
     val domain: String,
     val reason: String,
     val type: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
 )
 
-/**
- * List of domains associated with this environment
- */
+/** List of domains associated with this environment */
 data class CreateDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItem(
     val apexName: String,
     val name: String,
     val projectId: String,
     /**
-     * `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+     * `true` if the domain is verified for use with the project. If `false` it will not be used as
+     * an alias on this project until the challenge in `verification` is completed.
      */
     val verified: Boolean,
     val createdAt: Double? = null,
@@ -276,73 +249,65 @@ data class CreateDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItem(
     val redirectStatusCode: Double? = null,
     val updatedAt: Double? = null,
     /**
-     * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+     * A list of verification challenges, one of which must be completed to verify the domain for
+     * use on the project. After the challenge is complete `POST
+     * /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If
+     * `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching
+     * `verification.value`.
      */
-    val verification: List<CreateDeploymentResponseVariant1CustomEnvironmentVariant0DomaXad6ef23605>? = null
+    val verification:
+        List<CreateDeploymentResponseVariant1CustomEnvironmentVariant0DomaXad6ef23605>? =
+        null,
 )
 
 /**
- * If the deployment was created using a Custom Environment, then this property contains information regarding the environment used.
+ * If the deployment was created using a Custom Environment, then this property contains information
+ * regarding the environment used.
  */
 data class CreateDeploymentResponseVariant1CustomEnvironmentVariant0(
-    /**
-     * Timestamp when the environment was created
-     */
+    /** Timestamp when the environment was created */
     val createdAt: Double,
-    /**
-     * Unique identifier for the custom environment (format: env_*)
-     */
+    /** Unique identifier for the custom environment (format: env_*) */
     val id: String,
-    /**
-     * URL-friendly name of the environment
-     */
+    /** URL-friendly name of the environment */
     val slug: String,
-    /**
-     * The type of environment (production, preview, or development)
-     */
+    /** The type of environment (production, preview, or development) */
     val type: CreateDeploymentResponseVariant1CustomEnvironmentVariant0TypeEnum,
-    /**
-     * Timestamp when the environment was last updated
-     */
+    /** Timestamp when the environment was last updated */
     val updatedAt: Double,
-    /**
-     * Configuration for matching git branches to this environment
-     */
-    val branchMatcher: CreateDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcher? = null,
-    /**
-     * List of aliases for the current deployment
-     */
+    /** Configuration for matching git branches to this environment */
+    val branchMatcher: CreateDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcher? =
+        null,
+    /** List of aliases for the current deployment */
     val currentDeploymentAliases: List<String>? = null,
-    /**
-     * Optional description of the environment's purpose
-     */
+    /** Optional description of the environment's purpose */
     val description: String? = null,
-    /**
-     * List of domains associated with this environment
-     */
-    val domains: List<CreateDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItem>? = null
+    /** List of domains associated with this environment */
+    val domains: List<CreateDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItem>? = null,
 )
 
 /**
- * If the deployment was created using a Custom Environment, then this property contains information regarding the environment used.
+ * If the deployment was created using a Custom Environment, then this property contains information
+ * regarding the environment used.
  */
-data class CreateDeploymentResponseVariant1CustomEnvironmentVariant1(
-    val id: String
-)
+data class CreateDeploymentResponseVariant1CustomEnvironmentVariant1(val id: String)
 
 data class CreateDeploymentResponseVariant1FlagsVariant0DefinitionsValueOptionsItem(
-    @com.fasterxml.jackson.annotation.JsonProperty("value", required = true) val `value`: FlagJSONValue?,
-    val label: String? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("value", required = true)
+    val `value`: FlagJSONValue?,
+    val label: String? = null,
 )
 
 data class CreateDeploymentResponseVariant1FlagsVariant0DefinitionsValue(
     val description: String? = null,
-    val options: List<CreateDeploymentResponseVariant1FlagsVariant0DefinitionsValueOptionsItem>? = null,
-    val url: String? = null
+    val options: List<CreateDeploymentResponseVariant1FlagsVariant0DefinitionsValueOptionsItem>? =
+        null,
+    val url: String? = null,
 )
 
 /**
- * Flags defined in the Build Output API, used by this deployment. Primarily used by the Toolbar to know about the used flags.
+ * Flags defined in the Build Output API, used by this deployment. Primarily used by the Toolbar to
+ * know about the used flags.
  */
 data class CreateDeploymentResponseVariant1FlagsVariant0(
     val definitions: Map<String, CreateDeploymentResponseVariant1FlagsVariant0DefinitionsValue>
@@ -356,70 +321,71 @@ data class CreateDeploymentResponseVariant1FunctionsValueAffinity(
  * Queue trigger input event for v1beta (from vercel.json config). Requires explicit consumer name.
  */
 data class CreateDeploymentResponseVariant1FunctionsValueExperimentalTriX894112fb93(
-    /**
-     * Name of the consumer group for this trigger (REQUIRED)
-     */
+    /** Name of the consumer group for this trigger (REQUIRED) */
     val consumer: String,
-    /**
-     * Name of the queue topic to consume from (REQUIRED)
-     */
+    /** Name of the queue topic to consume from (REQUIRED) */
     val topic: String,
-    /**
-     * Event type - must be "queue/v1beta" (REQUIRED)
-     */
+    /** Event type - must be "queue/v1beta" (REQUIRED) */
     val type: CreateDeploymentResponseVariant1FunctionsValueExperimentalTriX5af56f047a,
     /**
-     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
+     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use
+     * 0 for no initial delay. Behavior when not specified depends on the server's default
+     * configuration.
      */
     val initialDelaySeconds: Double? = null,
     /**
-     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if
+     * specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxConcurrency: Double? = null,
     /**
-     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the
+     * total number of times a message can be delivered, not the number of retries. Must be at least
+     * 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxDeliveries: Double? = null,
     /**
-     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
+     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified
+     * depends on the server's default configuration.
      */
-    val retryAfterSeconds: Double? = null
+    val retryAfterSeconds: Double? = null,
 )
 
 /**
- * Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed.
+ * Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly
+ * derived from the function path. Only one trigger per function is allowed.
  */
 data class CreateDeploymentResponseVariant1FunctionsValueExperimentalTriX0f2e192ed9(
-    /**
-     * Name of the queue topic to consume from (REQUIRED)
-     */
+    /** Name of the queue topic to consume from (REQUIRED) */
     val topic: String,
-    /**
-     * Event type - must be "queue/v2beta" (REQUIRED)
-     */
+    /** Event type - must be "queue/v2beta" (REQUIRED) */
     val type: CreateDeploymentResponseVariant1FunctionsValueExperimentalTriX6804af7977,
     /**
-     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
+     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use
+     * 0 for no initial delay. Behavior when not specified depends on the server's default
+     * configuration.
      */
     val initialDelaySeconds: Double? = null,
     /**
-     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if
+     * specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxConcurrency: Double? = null,
     /**
-     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the
+     * total number of times a message can be delivered, not the number of retries. Must be at least
+     * 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxDeliveries: Double? = null,
     /**
-     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
+     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified
+     * depends on the server's default configuration.
      */
-    val retryAfterSeconds: Double? = null
+    val retryAfterSeconds: Double? = null,
 )
 
 data class CreateDeploymentResponseVariant1FunctionsValueExperimentalTriX5d023fa925(
-    /**
-     * Event type - must be "schedule/v1beta" (REQUIRED)
-     */
+    /** Event type - must be "schedule/v1beta" (REQUIRED) */
     val type: CreateDeploymentResponseVariant1FunctionsValueExperimentalTriX10a8d3b7c9
 )
 
@@ -435,7 +401,7 @@ data class CreateDeploymentResponseVariant1FunctionsValue(
     val memory: Double? = null,
     val regions: List<String>? = null,
     val runtime: String? = null,
-    val supportsCancellation: Boolean? = null
+    val supportsCancellation: Boolean? = null,
 )
 
 data class CreateDeploymentResponseVariant1GitRepoVariant0(
@@ -447,7 +413,7 @@ data class CreateDeploymentResponseVariant1GitRepoVariant0(
     @com.fasterxml.jackson.annotation.JsonProperty("private") val `private`: Boolean,
     val projectId: Double,
     val type: CreateDeploymentResponseVariant1GitRepoVariant0TypeEnum,
-    val url: String
+    val url: String,
 )
 
 data class CreateDeploymentResponseVariant1GitRepoVariant1(
@@ -460,7 +426,7 @@ data class CreateDeploymentResponseVariant1GitRepoVariant1(
     val repo: String,
     val repoId: Double,
     val repoOwnerId: Double,
-    val type: CreateDeploymentResponseVariant1GitRepoVariant1TypeEnum
+    val type: CreateDeploymentResponseVariant1GitRepoVariant1TypeEnum,
 )
 
 data class CreateDeploymentResponseVariant1GitRepoVariant2(
@@ -473,7 +439,7 @@ data class CreateDeploymentResponseVariant1GitRepoVariant2(
     val repoUuid: String,
     val slug: String,
     val type: CreateDeploymentResponseVariant1GitRepoVariant2TypeEnum,
-    val workspaceUuid: String
+    val workspaceUuid: String,
 )
 
 data class CreateDeploymentResponseVariant1GitRepoVariant3(
@@ -484,25 +450,21 @@ data class CreateDeploymentResponseVariant1GitRepoVariant3(
     val path: String,
     @com.fasterxml.jackson.annotation.JsonProperty("private") val `private`: Boolean,
     val repo: String,
-    val type: CreateDeploymentResponseVariant1GitRepoVariant3TypeEnum
+    val type: CreateDeploymentResponseVariant1GitRepoVariant3TypeEnum,
 )
 
 data class CreateDeploymentResponseVariant1GitRepoVariant4(
     val defaultBranch: String,
     val name: String,
-    /**
-     * Owner (namespace) slug.
-     */
+    /** Owner (namespace) slug. */
     val owner: String,
     val ownerType: CreateDeploymentResponseVariant1GitRepoVariant4OwnerTypeEnum,
     val path: String,
     @com.fasterxml.jackson.annotation.JsonProperty("private") val `private`: Boolean,
     val repo: String,
-    /**
-     * Origin repository id.
-     */
+    /** Origin repository id. */
     val repoId: String,
-    val type: CreateDeploymentResponseVariant1GitRepoVariant4TypeEnum
+    val type: CreateDeploymentResponseVariant1GitRepoVariant4TypeEnum,
 )
 
 data class CreateDeploymentResponseVariant1GitSourceVariant0(
@@ -510,7 +472,7 @@ data class CreateDeploymentResponseVariant1GitSourceVariant0(
     val type: CreateDeploymentResponseVariant1GitSourceVariant0TypeEnum,
     val prId: Double? = null,
     val ref: String? = null,
-    val sha: String? = null
+    val sha: String? = null,
 )
 
 data class CreateDeploymentResponseVariant1GitSourceVariant1(
@@ -519,7 +481,7 @@ data class CreateDeploymentResponseVariant1GitSourceVariant1(
     val type: CreateDeploymentResponseVariant1GitSourceVariant1TypeEnum,
     val prId: Double? = null,
     val ref: String? = null,
-    val sha: String? = null
+    val sha: String? = null,
 )
 
 data class CreateDeploymentResponseVariant1GitSourceVariant2(
@@ -528,7 +490,7 @@ data class CreateDeploymentResponseVariant1GitSourceVariant2(
     val type: CreateDeploymentResponseVariant1GitSourceVariant2TypeEnum,
     val prId: Double? = null,
     val ref: String? = null,
-    val sha: String? = null
+    val sha: String? = null,
 )
 
 data class CreateDeploymentResponseVariant1GitSourceVariant3(
@@ -538,7 +500,7 @@ data class CreateDeploymentResponseVariant1GitSourceVariant3(
     val type: CreateDeploymentResponseVariant1GitSourceVariant3TypeEnum,
     val prId: Double? = null,
     val ref: String? = null,
-    val sha: String? = null
+    val sha: String? = null,
 )
 
 data class CreateDeploymentResponseVariant1GitSourceVariant4(
@@ -546,7 +508,7 @@ data class CreateDeploymentResponseVariant1GitSourceVariant4(
     val type: CreateDeploymentResponseVariant1GitSourceVariant4TypeEnum,
     val prId: Double? = null,
     val ref: String? = null,
-    val sha: String? = null
+    val sha: String? = null,
 )
 
 data class CreateDeploymentResponseVariant1GitSourceVariant5(
@@ -555,7 +517,7 @@ data class CreateDeploymentResponseVariant1GitSourceVariant5(
     val type: CreateDeploymentResponseVariant1GitSourceVariant5TypeEnum,
     val prId: Double? = null,
     val ref: String? = null,
-    val sha: String? = null
+    val sha: String? = null,
 )
 
 data class CreateDeploymentResponseVariant1GitSourceVariant6(
@@ -563,7 +525,7 @@ data class CreateDeploymentResponseVariant1GitSourceVariant6(
     val type: CreateDeploymentResponseVariant1GitSourceVariant6TypeEnum,
     val prId: Double? = null,
     val ref: String? = null,
-    val sha: String? = null
+    val sha: String? = null,
 )
 
 data class CreateDeploymentResponseVariant1GitSourceVariant7(
@@ -572,7 +534,7 @@ data class CreateDeploymentResponseVariant1GitSourceVariant7(
     val prId: Double? = null,
     val ref: String? = null,
     val sha: String? = null,
-    val workspaceUuid: String? = null
+    val workspaceUuid: String? = null,
 )
 
 data class CreateDeploymentResponseVariant1GitSourceVariant8(
@@ -581,23 +543,23 @@ data class CreateDeploymentResponseVariant1GitSourceVariant8(
     val type: CreateDeploymentResponseVariant1GitSourceVariant8TypeEnum,
     val prId: Double? = null,
     val ref: String? = null,
-    val sha: String? = null
+    val sha: String? = null,
 )
 
 data class CreateDeploymentResponseVariant1GitSourceVariant9CommitMetadataAuthor(
     val date: String,
     val email: String,
-    val name: String
+    val name: String,
 )
 
 data class CreateDeploymentResponseVariant1GitSourceVariant9CommitMetadataCommitter(
     val date: String,
     val email: String,
-    val name: String
+    val name: String,
 )
 
 data class CreateDeploymentResponseVariant1GitSourceVariant9CommitMetadata(
     val author: CreateDeploymentResponseVariant1GitSourceVariant9CommitMetadataAuthor,
     val committer: CreateDeploymentResponseVariant1GitSourceVariant9CommitMetadataCommitter,
-    val message: String
+    val message: String,
 )

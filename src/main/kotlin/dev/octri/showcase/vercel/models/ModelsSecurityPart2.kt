@@ -5,7 +5,7 @@ package dev.octri.showcase.vercel.models
 
 data class GetSecurityFirewallConfigResponseDraftRulesItemVariant0ActionXc294bbfcbe(
     val location: String,
-    val permanent: Boolean
+    val permanent: Boolean,
 )
 
 data class GetSecurityFirewallConfigResponseDraftRulesItemVariant0ActionMitigate(
@@ -14,7 +14,7 @@ data class GetSecurityFirewallConfigResponseDraftRulesItemVariant0ActionMitigate
     val bypassSystem: Boolean? = null,
     val logHeaders: Any? = null,
     val rateLimit: GetSecurityFirewallConfigResponseDraftRulesItemVariant0ActionXda6418a534? = null,
-    val redirect: GetSecurityFirewallConfigResponseDraftRulesItemVariant0ActionXc294bbfcbe? = null
+    val redirect: GetSecurityFirewallConfigResponseDraftRulesItemVariant0ActionXc294bbfcbe? = null,
 )
 
 data class GetSecurityFirewallConfigResponseDraftRulesItemVariant0Action(
@@ -26,23 +26,30 @@ data class GetSecurityFirewallConfigResponseDraftRulesItemVariant0ConditX034bf3a
     val type: GetSecurityFirewallConfigResponseDraftRulesItemVariant0ConditX4751ad37fa,
     val key: String? = null,
     val neg: Boolean? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
 )
 
 data class GetSecurityFirewallConfigResponseDraftRulesItemVariant0ConditXbb0714bdf2(
     val conditions: List<GetSecurityFirewallConfigResponseDraftRulesItemVariant0ConditX034bf3a34f>
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetSecurityFirewallConfigResponseDraftRulesItemVariant0(
     val action: GetSecurityFirewallConfigResponseDraftRulesItemVariant0Action,
     val active: Boolean,
-    val conditionGroup: List<GetSecurityFirewallConfigResponseDraftRulesItemVariant0ConditXbb0714bdf2>,
+    val conditionGroup:
+        List<GetSecurityFirewallConfigResponseDraftRulesItemVariant0ConditXbb0714bdf2>,
     val id: String,
     val name: String,
     val valid: Boolean,
-    @com.fasterxml.jackson.annotation.JsonProperty("validationErrors", required = true) val validationErrors: Any?,
-    val description: String? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("validationErrors", required = true)
+    val validationErrors: Any?,
+    val description: String? = null,
 ) : GetSecurityFirewallConfigResponseDraftRulesItem
 
 data class GetSecurityFirewallConfigResponseDraftRulesItemVariant1ActionX0aea972ef3(
@@ -50,12 +57,12 @@ data class GetSecurityFirewallConfigResponseDraftRulesItemVariant1ActionX0aea972
     val keys: List<String>,
     val limit: Double,
     val window: Double,
-    val action: GetSecurityFirewallConfigResponseDraftRulesItemVariant1ActionXa6845581e1? = null
+    val action: GetSecurityFirewallConfigResponseDraftRulesItemVariant1ActionXa6845581e1? = null,
 )
 
 data class GetSecurityFirewallConfigResponseDraftRulesItemVariant1ActionX71654032af(
     val location: String,
-    val permanent: Boolean
+    val permanent: Boolean,
 )
 
 data class GetSecurityFirewallConfigResponseDraftRulesItemVariant1ActionMitigate(
@@ -64,7 +71,7 @@ data class GetSecurityFirewallConfigResponseDraftRulesItemVariant1ActionMitigate
     val bypassSystem: Boolean? = null,
     val logHeaders: Any? = null,
     val rateLimit: GetSecurityFirewallConfigResponseDraftRulesItemVariant1ActionX0aea972ef3? = null,
-    val redirect: GetSecurityFirewallConfigResponseDraftRulesItemVariant1ActionX71654032af? = null
+    val redirect: GetSecurityFirewallConfigResponseDraftRulesItemVariant1ActionX71654032af? = null,
 )
 
 data class GetSecurityFirewallConfigResponseDraftRulesItemVariant1Action(
@@ -76,43 +83,62 @@ data class GetSecurityFirewallConfigResponseDraftRulesItemVariant1ConditX1765d7e
     val type: GetSecurityFirewallConfigResponseDraftRulesItemVariant1ConditXe599134fa5,
     val key: String? = null,
     val neg: Boolean? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
 )
 
 data class GetSecurityFirewallConfigResponseDraftRulesItemVariant1ConditXcef6e929cb(
     val conditions: List<GetSecurityFirewallConfigResponseDraftRulesItemVariant1ConditX1765d7e39d>
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetSecurityFirewallConfigResponseDraftRulesItemVariant1(
     val action: GetSecurityFirewallConfigResponseDraftRulesItemVariant1Action,
     val active: Boolean,
-    val conditionGroup: List<GetSecurityFirewallConfigResponseDraftRulesItemVariant1ConditXcef6e929cb>,
+    val conditionGroup:
+        List<GetSecurityFirewallConfigResponseDraftRulesItemVariant1ConditXcef6e929cb>,
     val id: String,
     val name: String,
     val valid: Boolean,
     val validationErrors: List<String>,
-    val description: String? = null
+    val description: String? = null,
 ) : GetSecurityFirewallConfigResponseDraftRulesItem
 
-/**
- * Typed representation of the `GetSecurityFirewallConfigResponseDraftRulesItem` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = GetSecurityFirewallConfigResponseDraftRulesItem.Deserializer::class)
+/** Typed representation of the `GetSecurityFirewallConfigResponseDraftRulesItem` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = GetSecurityFirewallConfigResponseDraftRulesItem.Deserializer::class
+)
 sealed interface GetSecurityFirewallConfigResponseDraftRulesItem {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<GetSecurityFirewallConfigResponseDraftRulesItem>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<
+            GetSecurityFirewallConfigResponseDraftRulesItem
+        >() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): GetSecurityFirewallConfigResponseDraftRulesItem {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out GetSecurityFirewallConfigResponseDraftRulesItem>> = listOf(GetSecurityFirewallConfigResponseDraftRulesItemVariant0::class.java, GetSecurityFirewallConfigResponseDraftRulesItemVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out GetSecurityFirewallConfigResponseDraftRulesItem>> =
+                listOf(
+                    GetSecurityFirewallConfigResponseDraftRulesItemVariant0::class.java,
+                    GetSecurityFirewallConfigResponseDraftRulesItemVariant1::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, GetSecurityFirewallConfigResponseDraftRulesItem::class.java, "no GetSecurityFirewallConfigResponseDraftRulesItem branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        GetSecurityFirewallConfigResponseDraftRulesItem::class.java,
+                        "no GetSecurityFirewallConfigResponseDraftRulesItem branch accepts this payload",
+                    )
             }
         }
     }
@@ -123,12 +149,12 @@ data class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3808610
     val keys: List<String>,
     val limit: Double,
     val window: Double,
-    val action: GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX10865deaae? = null
+    val action: GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX10865deaae? = null,
 )
 
 data class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75a2527d23(
     val location: String,
-    val permanent: Boolean
+    val permanent: Boolean,
 )
 
 data class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX1dafbb384e(
@@ -137,7 +163,7 @@ data class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX1dafbb3
     val bypassSystem: Boolean? = null,
     val logHeaders: Any? = null,
     val rateLimit: GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3808610696? = null,
-    val redirect: GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75a2527d23? = null
+    val redirect: GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX75a2527d23? = null,
 )
 
 data class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Action(
@@ -149,23 +175,30 @@ data class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd7c87fa
     val type: GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXb228ee3575,
     val key: String? = null,
     val neg: Boolean? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
 )
 
 data class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6fa64e3f3d(
     val conditions: List<GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd7c87fa4b2>
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0(
     val action: GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0Action,
     val active: Boolean,
-    val conditionGroup: List<GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6fa64e3f3d>,
+    val conditionGroup:
+        List<GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX6fa64e3f3d>,
     val id: String,
     val name: String,
     val valid: Boolean,
-    @com.fasterxml.jackson.annotation.JsonProperty("validationErrors", required = true) val validationErrors: Any?,
-    val description: String? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("validationErrors", required = true)
+    val validationErrors: Any?,
+    val description: String? = null,
 ) : GetSecurityFirewallConfigResponseVersionsItemRulesItem
 
 data class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3942e35eb6(
@@ -173,12 +206,12 @@ data class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3942e35
     val keys: List<String>,
     val limit: Double,
     val window: Double,
-    val action: GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd4ec0784fa? = null
+    val action: GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd4ec0784fa? = null,
 )
 
 data class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX488ad82849(
     val location: String,
-    val permanent: Boolean
+    val permanent: Boolean,
 )
 
 data class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc4380055be(
@@ -187,7 +220,7 @@ data class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc438005
     val bypassSystem: Boolean? = null,
     val logHeaders: Any? = null,
     val rateLimit: GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX3942e35eb6? = null,
-    val redirect: GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX488ad82849? = null
+    val redirect: GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX488ad82849? = null,
 )
 
 data class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant1Action(
@@ -199,43 +232,65 @@ data class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc001bc0
     val type: GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXd4821667d7,
     val key: String? = null,
     val neg: Boolean? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
 )
 
 data class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX9ec69cc9dc(
     val conditions: List<GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantXc001bc0920>
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant1(
     val action: GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant1Action,
     val active: Boolean,
-    val conditionGroup: List<GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX9ec69cc9dc>,
+    val conditionGroup:
+        List<GetSecurityFirewallConfigResponseVersionsItemRulesItemVariantX9ec69cc9dc>,
     val id: String,
     val name: String,
     val valid: Boolean,
     val validationErrors: List<String>,
-    val description: String? = null
+    val description: String? = null,
 ) : GetSecurityFirewallConfigResponseVersionsItemRulesItem
 
 /**
  * Typed representation of the `GetSecurityFirewallConfigResponseVersionsItemRulesItem` API schema.
  */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = GetSecurityFirewallConfigResponseVersionsItemRulesItem.Deserializer::class)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = GetSecurityFirewallConfigResponseVersionsItemRulesItem.Deserializer::class
+)
 sealed interface GetSecurityFirewallConfigResponseVersionsItemRulesItem {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<GetSecurityFirewallConfigResponseVersionsItemRulesItem>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<
+            GetSecurityFirewallConfigResponseVersionsItemRulesItem
+        >() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): GetSecurityFirewallConfigResponseVersionsItemRulesItem {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out GetSecurityFirewallConfigResponseVersionsItemRulesItem>> = listOf(GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0::class.java, GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes:
+                List<Class<out GetSecurityFirewallConfigResponseVersionsItemRulesItem>> =
+                listOf(
+                    GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant0::class.java,
+                    GetSecurityFirewallConfigResponseVersionsItemRulesItemVariant1::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, GetSecurityFirewallConfigResponseVersionsItemRulesItem::class.java, "no GetSecurityFirewallConfigResponseVersionsItemRulesItem branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        GetSecurityFirewallConfigResponseVersionsItemRulesItem::class.java,
+                        "no GetSecurityFirewallConfigResponseVersionsItemRulesItem branch accepts this payload",
+                    )
             }
         }
     }
@@ -246,12 +301,12 @@ data class PutFirewallConfigResponseActiveRulesItemVariant0ActionMitigateRateLim
     val keys: List<String>,
     val limit: Double,
     val window: Double,
-    val action: PutFirewallConfigResponseActiveRulesItemVariant0ActionMitigatXf58084f7cb? = null
+    val action: PutFirewallConfigResponseActiveRulesItemVariant0ActionMitigatXf58084f7cb? = null,
 )
 
 data class PutFirewallConfigResponseActiveRulesItemVariant0ActionMitigateRedirect(
     val location: String,
-    val permanent: Boolean
+    val permanent: Boolean,
 )
 
 data class PutFirewallConfigResponseActiveRulesItemVariant0ActionMitigate(
@@ -260,7 +315,7 @@ data class PutFirewallConfigResponseActiveRulesItemVariant0ActionMitigate(
     val bypassSystem: Boolean? = null,
     val logHeaders: Any? = null,
     val rateLimit: PutFirewallConfigResponseActiveRulesItemVariant0ActionMitigateRateLimit? = null,
-    val redirect: PutFirewallConfigResponseActiveRulesItemVariant0ActionMitigateRedirect? = null
+    val redirect: PutFirewallConfigResponseActiveRulesItemVariant0ActionMitigateRedirect? = null,
 )
 
 data class PutFirewallConfigResponseActiveRulesItemVariant0Action(
@@ -272,14 +327,19 @@ data class PutFirewallConfigResponseActiveRulesItemVariant0ConditionGrouXab1abc8
     val type: PutFirewallConfigResponseActiveRulesItemVariant0ConditionGrouX5be4529ed3,
     val key: String? = null,
     val neg: Boolean? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
 )
 
 data class PutFirewallConfigResponseActiveRulesItemVariant0ConditionGroupItem(
     val conditions: List<PutFirewallConfigResponseActiveRulesItemVariant0ConditionGrouXab1abc8961>
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class PutFirewallConfigResponseActiveRulesItemVariant0(
     val action: PutFirewallConfigResponseActiveRulesItemVariant0Action,
     val active: Boolean,
@@ -287,8 +347,9 @@ data class PutFirewallConfigResponseActiveRulesItemVariant0(
     val id: String,
     val name: String,
     val valid: Boolean,
-    @com.fasterxml.jackson.annotation.JsonProperty("validationErrors", required = true) val validationErrors: Any?,
-    val description: String? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("validationErrors", required = true)
+    val validationErrors: Any?,
+    val description: String? = null,
 ) : PutFirewallConfigResponseActiveRulesItem
 
 data class PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigateRateLimit(
@@ -296,12 +357,12 @@ data class PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigateRateLim
     val keys: List<String>,
     val limit: Double,
     val window: Double,
-    val action: PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX7a1d6c4572? = null
+    val action: PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigatX7a1d6c4572? = null,
 )
 
 data class PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigateRedirect(
     val location: String,
-    val permanent: Boolean
+    val permanent: Boolean,
 )
 
 data class PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigate(
@@ -310,7 +371,7 @@ data class PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigate(
     val bypassSystem: Boolean? = null,
     val logHeaders: Any? = null,
     val rateLimit: PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigateRateLimit? = null,
-    val redirect: PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigateRedirect? = null
+    val redirect: PutFirewallConfigResponseActiveRulesItemVariant1ActionMitigateRedirect? = null,
 )
 
 data class PutFirewallConfigResponseActiveRulesItemVariant1Action(
@@ -322,14 +383,19 @@ data class PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouX9be5e79
     val type: PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouXc4a87d6ed6,
     val key: String? = null,
     val neg: Boolean? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
 )
 
 data class PutFirewallConfigResponseActiveRulesItemVariant1ConditionGroupItem(
     val conditions: List<PutFirewallConfigResponseActiveRulesItemVariant1ConditionGrouX9be5e79f8d>
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class PutFirewallConfigResponseActiveRulesItemVariant1(
     val action: PutFirewallConfigResponseActiveRulesItemVariant1Action,
     val active: Boolean,
@@ -338,27 +404,40 @@ data class PutFirewallConfigResponseActiveRulesItemVariant1(
     val name: String,
     val valid: Boolean,
     val validationErrors: List<String>,
-    val description: String? = null
+    val description: String? = null,
 ) : PutFirewallConfigResponseActiveRulesItem
 
-/**
- * Typed representation of the `PutFirewallConfigResponseActiveRulesItem` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = PutFirewallConfigResponseActiveRulesItem.Deserializer::class)
+/** Typed representation of the `PutFirewallConfigResponseActiveRulesItem` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = PutFirewallConfigResponseActiveRulesItem.Deserializer::class
+)
 sealed interface PutFirewallConfigResponseActiveRulesItem {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<PutFirewallConfigResponseActiveRulesItem>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<
+            PutFirewallConfigResponseActiveRulesItem
+        >() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): PutFirewallConfigResponseActiveRulesItem {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out PutFirewallConfigResponseActiveRulesItem>> = listOf(PutFirewallConfigResponseActiveRulesItemVariant0::class.java, PutFirewallConfigResponseActiveRulesItemVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out PutFirewallConfigResponseActiveRulesItem>> =
+                listOf(
+                    PutFirewallConfigResponseActiveRulesItemVariant0::class.java,
+                    PutFirewallConfigResponseActiveRulesItemVariant1::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, PutFirewallConfigResponseActiveRulesItem::class.java, "no PutFirewallConfigResponseActiveRulesItem branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        PutFirewallConfigResponseActiveRulesItem::class.java,
+                        "no PutFirewallConfigResponseActiveRulesItem branch accepts this payload",
+                    )
             }
         }
     }

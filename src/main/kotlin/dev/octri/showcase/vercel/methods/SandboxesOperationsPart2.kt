@@ -12,77 +12,125 @@ import dev.octri.showcase.vercel.Validation
 
 internal object SandboxesWriteSessionCommandStdinOperation {
     /**
-     * Writes data to a running command's stdin and can close stdin after the write. The command must have started with `attachStdin` enabled; send writes one at a time to preserve order, and use `offset` to make retries safe when the response includes `bytesWritten`.
+     * Writes data to a running command's stdin and can close stdin after the write. The command
+     * must have started with `attachStdin` enabled; send writes one at a time to preserve order,
+     * and use `offset` to make retries safe when the response includes `bytesWritten`.
      *
-     * Writes data to the stdin of a running command, and optionally closes it. The command must have been started with `attachStdin` set to true. Writes are applied in the order they are received. Send them one at a time to keep the data in order. A write returns once the command has accepted the data, and fails with a 504 after 30 seconds if the command is not reading stdin. Each write counts against the sandbox control plane rate limit, so batch small writes where possible. Set…
+     * Writes data to the stdin of a running command, and optionally closes it. The command must
+     * have been started with `attachStdin` set to true. Writes are applied in the order they are
+     * received. Send them one at a time to keep the data in order. A write returns once the command
+     * has accepted the data, and fails with a 504 after 30 seconds if the command is not reading
+     * stdin. Each write counts against the sandbox control plane rate limit, so batch small writes
+     * where possible. Set…
      *
      * @param cmdId The unique identifier of the command to write to.
      * @param sessionId The unique identifier of the session containing the command.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param data Base64-encoded bytes to write to the command stdin. The request
-     *   body is limited to 1 MB, so send at most about 700 KB of data per request.
-     * @param offset The position in the command stdin where `data` starts. Bytes
-     *   before the total already written are skipped, so a resent request does not
-     *   write them twice. Fails with 409 if it is past the bytes written so far.
-     *   Without it, `data` is appended.
-     * @param close If true, closes the command stdin after writing `data`. Use this
-     *   for commands that wait for end of input.
+     * @param data Base64-encoded bytes to write to the command stdin. The request body is limited
+     *   to 1 MB, so send at most about 700 KB of data per request.
+     * @param offset The position in the command stdin where `data` starts. Bytes before the total
+     *   already written are skipped, so a resent request does not write them twice. Fails with 409
+     *   if it is past the bytes written so far. Without it, `data` is appended.
+     * @param close If true, closes the command stdin after writing `data`. Use this for commands
+     *   that wait for end of input.
      */
-    fun writeSessionCommandStdin(clientConfig: ClientConfig, request: Sandboxes.WriteSessionCommandStdinRequest, options: RequestOptions? = null): Sandboxes.WriteSessionCommandStdinResponse {
+    fun writeSessionCommandStdin(
+        clientConfig: ClientConfig,
+        request: Sandboxes.WriteSessionCommandStdinRequest,
+        options: RequestOptions? = null,
+    ): Sandboxes.WriteSessionCommandStdinResponse {
         validateWriteSessionCommandStdinRequest(request)
 
-        return SdkClient.request<Sandboxes.WriteSessionCommandStdinResponse>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(request.sessionId)}/cmd/${SdkClient.encodePathSegment(request.cmdId)}/stdin", config = clientConfig, query = mapOf("teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("data" to (SdkClient.omitIfNull(request.data)), "offset" to (SdkClient.omitIfNull(request.offset)), "close" to (SdkClient.omitIfNull(request.close))), operationId = "writeSessionCommandStdin", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<Sandboxes.WriteSessionCommandStdinResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(request.sessionId)}/cmd/${SdkClient.encodePathSegment(request.cmdId)}/stdin",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    body =
+                        SdkClient.bodyMap(
+                            "data" to (SdkClient.omitIfNull(request.data)),
+                            "offset" to (SdkClient.omitIfNull(request.offset)),
+                            "close" to (SdkClient.omitIfNull(request.close)),
+                        ),
+                    operationId = "writeSessionCommandStdin",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-    private fun validateWriteSessionCommandStdinRequest(request: Sandboxes.WriteSessionCommandStdinRequest) {
+    private fun validateWriteSessionCommandStdinRequest(
+        request: Sandboxes.WriteSessionCommandStdinRequest
+    ) {
         if (request.data != null) {
             Validation.validateLength("data", request.data, Validation.LengthOpts(max = 1000000))
-}
+        }
 
         if (request.offset != null) {
             Validation.validateRange("offset", request.offset, Validation.RangeOpts(min = 0.0))
-}
+        }
     }
 }
 
 internal object SandboxesGetSessionCommandLogsOperation {
     /**
-     * Streams command output in real time as newline-delimited JSON (ND-JSON). Each stream entry includes output data and a stream type such as `stdout`, `stderr`, or `error`.
+     * Streams command output in real time as newline-delimited JSON (ND-JSON). Each stream entry
+     * includes output data and a stream type such as `stdout`, `stderr`, or `error`.
      *
-     * Streams the output of a command in real-time using newline-delimited JSON (ND-JSON). Each entry includes the output data and stream type. Stream types include `stdout`, `stderr`, and `error` (for stream failures).
+     * Streams the output of a command in real-time using newline-delimited JSON (ND-JSON). Each
+     * entry includes the output data and stream type. Stream types include `stdout`, `stderr`, and
+     * `error` (for stream failures).
      *
      * @param sessionId The unique identifier of the session containing the command.
      * @param cmdId The unique identifier of the command to stream logs for.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getSessionCommandLogs(clientConfig: ClientConfig, sessionId: String, cmdId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Sequence<GetSessionCommandLogsResponse> {
+    fun getSessionCommandLogs(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        cmdId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Sequence<GetSessionCommandLogsResponse> {
         return sequence {
-            for (_ev in SdkClient.stream(
-            SdkClient.RequestSpec(
-                "GET",
-                "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/cmd/${SdkClient.encodePathSegment(cmdId)}/logs",
-                config = clientConfig,
-                query = mapOf(
-            "teamId" to SdkClient.queryValue(teamId, "form", true),
-            "slug" to SdkClient.queryValue(slug, "form", true)
-        ),
-                operationId = "getSessionCommandLogs",
-                streamFormat = "ndjson",
-                streamMediaType = "application/x-ndjson",
-                chunkDomain = "bytes",
-                options = options
-            )
-        )) {
+            for (_ev in
+                SdkClient.stream(
+                    SdkClient.RequestSpec(
+                        "GET",
+                        "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/cmd/${SdkClient.encodePathSegment(cmdId)}/logs",
+                        config = clientConfig,
+                        query =
+                            mapOf(
+                                "teamId" to SdkClient.queryValue(teamId, "form", true),
+                                "slug" to SdkClient.queryValue(slug, "form", true),
+                            ),
+                        operationId = "getSessionCommandLogs",
+                        streamFormat = "ndjson",
+                        streamMediaType = "application/x-ndjson",
+                        chunkDomain = "bytes",
+                        options = options,
+                    )
+                )) {
                 if (_ev.data == "[DONE]") return@sequence
-                yield(try {
-                    SdkClient.mapper.readValue(_ev.data, GetSessionCommandLogsResponse::class.java)
-                } catch (error: com.fasterxml.jackson.core.JsonProcessingException) {
-                    SdkClient.rethrowEventDecode(error, _ev.data)
-                })
+                yield(
+                    try {
+                        SdkClient.mapper.readValue(
+                            _ev.data,
+                            GetSessionCommandLogsResponse::class.java,
+                        )
+                    } catch (error: com.fasterxml.jackson.core.JsonProcessingException) {
+                        SdkClient.rethrowEventDecode(error, _ev.data)
+                    }
+                )
             }
         }
     }
@@ -90,233 +138,465 @@ internal object SandboxesGetSessionCommandLogsOperation {
 
 internal object SandboxesStopSessionOperation {
     /**
-     * Stops a running session and releases its allocated resources, terminating all processes within it. This action cannot be undone, and the stopped session cannot be restarted.
+     * Stops a running session and releases its allocated resources, terminating all processes
+     * within it. This action cannot be undone, and the stopped session cannot be restarted.
      *
-     * Stops a running session and releases its allocated resources. All running processes within the session will be terminated. This action cannot be undone. A stopped session cannot be restarted.
+     * Stops a running session and releases its allocated resources. All running processes within
+     * the session will be terminated. This action cannot be undone. A stopped session cannot be
+     * restarted.
      *
      * @param sessionId The unique identifier of the session to stop.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun stopSession(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): StopSessionResponse {
-        return SdkClient.request<StopSessionResponse>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/stop", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "stopSession", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun stopSession(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): StopSessionResponse {
+        return SdkClient.request<StopSessionResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/stop",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "stopSession",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesExtendSessionTimeoutOperation {
     /**
-     * Extends the maximum execution time of a running session. Supply the additional duration in milliseconds; the session must be active, and the resulting timeout cannot exceed your account's maximum allowed limit.
+     * Extends the maximum execution time of a running session. Supply the additional duration in
+     * milliseconds; the session must be active, and the resulting timeout cannot exceed your
+     * account's maximum allowed limit.
      *
-     * Extends the maximum execution time of a running session. The session must be active and able to accept commands. The total timeout cannot exceed the maximum allowed limit for your account.
+     * Extends the maximum execution time of a running session. The session must be active and able
+     * to accept commands. The total timeout cannot exceed the maximum allowed limit for your
+     * account.
      *
-     * @param sessionId The unique identifier of the session to extend the timeout
-     *   for.
-     * @param duration The amount of time in milliseconds to add to the current
-     *   timeout. Must be at least 1000ms (1 second).
+     * @param sessionId The unique identifier of the session to extend the timeout for.
+     * @param duration The amount of time in milliseconds to add to the current timeout. Must be at
+     *   least 1000ms (1 second).
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun extendSessionTimeout(clientConfig: ClientConfig, sessionId: String, duration: Double, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Sandboxes.ExtendSessionTimeoutResponse {
+    fun extendSessionTimeout(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        duration: Double,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Sandboxes.ExtendSessionTimeoutResponse {
         Validation.validateRange("duration", duration, Validation.RangeOpts(min = 1000.0))
 
-        return SdkClient.request<Sandboxes.ExtendSessionTimeoutResponse>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/extend-timeout", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("duration" to (duration)), operationId = "extendSessionTimeout", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<Sandboxes.ExtendSessionTimeoutResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/extend-timeout",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body = SdkClient.bodyMap("duration" to (duration)),
+                    operationId = "extendSessionTimeout",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesUpdateSessionNetworkPolicyOperation {
     /**
-     * Replaces the network access policy for a running session, controlling which external hosts it can reach. This is a full replacement, so any previously configured network rules are overwritten; choose the policy mode and rules for the complete configuration you want applied.
+     * Replaces the network access policy for a running session, controlling which external hosts it
+     * can reach. This is a full replacement, so any previously configured network rules are
+     * overwritten; choose the policy mode and rules for the complete configuration you want
+     * applied.
      *
-     * Replaces the network access policy of a running session. Use this to control which external hosts the session can communicate with. This is a full replacement. Any previously configured network rules will be overwritten.
+     * Replaces the network access policy of a running session. Use this to control which external
+     * hosts the session can communicate with. This is a full replacement. Any previously configured
+     * network rules will be overwritten.
      *
-     * @param sessionId The unique identifier of the session to update the network
-     *   policy for.
+     * @param sessionId The unique identifier of the session to update the network policy for.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun updateSessionNetworkPolicy(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, body: Map<String, Any>? = null, options: RequestOptions? = null): Sandboxes.UpdateSessionNetworkPolicyResponse {
-        return SdkClient.request<Sandboxes.UpdateSessionNetworkPolicyResponse>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/network-policy", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = body, operationId = "updateSessionNetworkPolicy", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun updateSessionNetworkPolicy(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        body: Map<String, Any>? = null,
+        options: RequestOptions? = null,
+    ): Sandboxes.UpdateSessionNetworkPolicyResponse {
+        return SdkClient.request<Sandboxes.UpdateSessionNetworkPolicyResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/network-policy",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body = body,
+                    operationId = "updateSessionNetworkPolicy",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesReadSessionFileOperation {
     /**
-     * Retrieves a file from a session's filesystem. Supply `path` to identify the file and optionally use `cwd` to resolve a relative path from a different base directory. The file is returned as a binary stream for download.
+     * Retrieves a file from a session's filesystem. Supply `path` to identify the file and
+     * optionally use `cwd` to resolve a relative path from a different base directory. The file is
+     * returned as a binary stream for download.
      *
-     * Downloads the contents of a file from a session's filesystem. The file content is returned as a binary stream with appropriate Content-Disposition headers for file download.
+     * Downloads the contents of a file from a session's filesystem. The file content is returned as
+     * a binary stream with appropriate Content-Disposition headers for file download.
      *
      * @param sessionId The unique identifier of the session to read the file from.
-     * @param path The path of the file to read. Can be absolute or relative to the
-     *   working directory.
+     * @param path The path of the file to read. Can be absolute or relative to the working
+     *   directory.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param cwd The base directory for resolving relative paths. If not specified,
-     *   paths are resolved from the sandbox home directory.
+     * @param cwd The base directory for resolving relative paths. If not specified, paths are
+     *   resolved from the sandbox home directory.
      */
-    fun readSessionFile(clientConfig: ClientConfig, sessionId: String, path: String, teamId: String? = null, slug: String? = null, cwd: String? = null, options: RequestOptions? = null): ByteArray {
-        return SdkClient.request<ByteArray>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/fs/read", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("path" to (path), "cwd" to (SdkClient.omitIfNull(cwd))), operationId = "readSessionFile", decoder = SdkClient.ResponseDecoder.BYTES, options = options)).data
+    fun readSessionFile(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        path: String,
+        teamId: String? = null,
+        slug: String? = null,
+        cwd: String? = null,
+        options: RequestOptions? = null,
+    ): ByteArray {
+        return SdkClient.request<ByteArray>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/fs/read",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body =
+                        SdkClient.bodyMap("path" to (path), "cwd" to (SdkClient.omitIfNull(cwd))),
+                    operationId = "readSessionFile",
+                    decoder = SdkClient.ResponseDecoder.BYTES,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesCreateSessionDirectoryOperation {
     /**
-     * Creates a directory in a session's filesystem. Supply `path` for the directory location and use `cwd` to resolve a relative path from a different base directory. Parent directories are created recursively by default; set `recursive` to false to require them to exist.
+     * Creates a directory in a session's filesystem. Supply `path` for the directory location and
+     * use `cwd` to resolve a relative path from a different base directory. Parent directories are
+     * created recursively by default; set `recursive` to false to require them to exist.
      *
-     * Creates a new directory in a session's filesystem. By default, parent directories are created recursively if they don't exist (similar to `mkdir -p`).
+     * Creates a new directory in a session's filesystem. By default, parent directories are created
+     * recursively if they don't exist (similar to `mkdir -p`).
      *
-     * @param sessionId The unique identifier of the session to create the directory
-     *   in.
-     * @param path The path of the directory to create. Can be absolute or relative
-     *   to the working directory.
+     * @param sessionId The unique identifier of the session to create the directory in.
+     * @param path The path of the directory to create. Can be absolute or relative to the working
+     *   directory.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param cwd The base directory for resolving relative paths. If not specified,
-     *   paths are resolved from the sandbox home directory.
-     * @param recursive If true, creates parent directories as needed (like `mkdir
-     *   -p`). If false, fails if parent directories do not exist.
+     * @param cwd The base directory for resolving relative paths. If not specified, paths are
+     *   resolved from the sandbox home directory.
+     * @param recursive If true, creates parent directories as needed (like `mkdir -p`). If false,
+     *   fails if parent directories do not exist.
      */
-    fun createSessionDirectory(clientConfig: ClientConfig, request: Sandboxes.CreateSessionDirectoryRequest, options: RequestOptions? = null): Map<String, Any> {
-        return SdkClient.request<Map<String, Any>>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(request.sessionId)}/fs/mkdir", config = clientConfig, query = mapOf("teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("path" to (request.path), "cwd" to (SdkClient.omitIfNull(request.cwd)), "recursive" to (SdkClient.omitIfNull(request.recursive))), operationId = "createSessionDirectory", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun createSessionDirectory(
+        clientConfig: ClientConfig,
+        request: Sandboxes.CreateSessionDirectoryRequest,
+        options: RequestOptions? = null,
+    ): Map<String, Any> {
+        return SdkClient.request<Map<String, Any>>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(request.sessionId)}/fs/mkdir",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    body =
+                        SdkClient.bodyMap(
+                            "path" to (request.path),
+                            "cwd" to (SdkClient.omitIfNull(request.cwd)),
+                            "recursive" to (SdkClient.omitIfNull(request.recursive)),
+                        ),
+                    operationId = "createSessionDirectory",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesWriteSessionFilesOperation {
     /**
-     * Writes files to a session's filesystem by uploading and extracting a gzipped tarball. Send the archive with `Content-Type: application/gzip`; use `x-cwd` to choose an extraction directory. When `x-cwd` is omitted, files are extracted to the sandbox home directory.
+     * Writes files to a session's filesystem by uploading and extracting a gzipped tarball. Send
+     * the archive with `Content-Type: application/gzip`; use `x-cwd` to choose an extraction
+     * directory. When `x-cwd` is omitted, files are extracted to the sandbox home directory.
      *
-     * Uploads and extracts files to a session's filesystem. Files must be uploaded as a gzipped tarball (`.tar.gz`) with the `Content-Type` header set to `application/gzip`. The tarball contents are extracted to the session's working directory, or to a custom directory specified via the `x-cwd` header.
+     * Uploads and extracts files to a session's filesystem. Files must be uploaded as a gzipped
+     * tarball (`.tar.gz`) with the `Content-Type` header set to `application/gzip`. The tarball
+     * contents are extracted to the session's working directory, or to a custom directory specified
+     * via the `x-cwd` header.
      *
      * @param sessionId The unique identifier of the session to write files to.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param xCwd The target directory where the tarball contents will be extracted.
-     *   If not specified, files are extracted to the sandbox home directory.
+     * @param xCwd The target directory where the tarball contents will be extracted. If not
+     *   specified, files are extracted to the sandbox home directory.
      */
-    fun writeSessionFiles(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, xCwd: String? = null, options: RequestOptions? = null): Map<String, Any> {
-        return SdkClient.request<Map<String, Any>>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/fs/write", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "writeSessionFiles", decoder = SdkClient.ResponseDecoder.JSON, extraHeaders = SdkClient.headers("x-cwd" to SdkClient.headerValue(xCwd, false)), options = options)).data
+    fun writeSessionFiles(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        xCwd: String? = null,
+        options: RequestOptions? = null,
+    ): Map<String, Any> {
+        return SdkClient.request<Map<String, Any>>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/fs/write",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "writeSessionFiles",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    extraHeaders = SdkClient.headers("x-cwd" to SdkClient.headerValue(xCwd, false)),
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesCreateSandboxesSessionsBySessionIdSnapshotV2Operation {
     /**
-     * Creates a point-in-time snapshot of a running session's filesystem. Use a snapshot to restore the filesystem later or initialize another session with the same environment; the session must be running and able to accept commands. The source session is terminated after the snapshot is created.
+     * Creates a point-in-time snapshot of a running session's filesystem. Use a snapshot to restore
+     * the filesystem later or initialize another session with the same environment; the session
+     * must be running and able to accept commands. The source session is terminated after the
+     * snapshot is created.
      *
-     * Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created.
+     * Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to
+     * quickly restore a session to a previous state or to create new sessions with pre-configured
+     * environments. The session must be running and able to accept commands for a snapshot to be
+     * created. The session will be terminated after the snapshot is created.
      *
      * @param sessionId The unique identifier of the session to snapshot.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param expiration The number of milliseconds after which the snapshot will
-     *   expire and be deleted. Use 0 for no expiration.
+     * @param expiration The number of milliseconds after which the snapshot will expire and be
+     *   deleted. Use 0 for no expiration.
      */
-    fun createSandboxesSessionsBySessionIdSnapshotV2(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, expiration: SdkClient.SdkOptional<Long?>? = null, options: RequestOptions? = null): Sandboxes.CreateSandboxesSessionsBySessionIdSnapshotV2Response {
-        return SdkClient.request<Sandboxes.CreateSandboxesSessionsBySessionIdSnapshotV2Response>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/snapshot", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("expiration" to
-    (expiration ?: SdkClient.SdkOptional.Omitted)), operationId = "createSandboxesSessionsBySessionIdSnapshotV2", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun createSandboxesSessionsBySessionIdSnapshotV2(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        expiration: SdkClient.SdkOptional<Long?>? = null,
+        options: RequestOptions? = null,
+    ): Sandboxes.CreateSandboxesSessionsBySessionIdSnapshotV2Response {
+        return SdkClient.request<Sandboxes.CreateSandboxesSessionsBySessionIdSnapshotV2Response>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/snapshot",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body =
+                        SdkClient.bodyMap(
+                            "expiration" to (expiration ?: SdkClient.SdkOptional.Omitted)
+                        ),
+                    operationId = "createSandboxesSessionsBySessionIdSnapshotV2",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesCreateSandboxesByNameForkV2Operation {
     /**
-     * Forks a named sandbox into a new named sandbox, copying its configuration and environment variables. Supply `name` to identify the source and `projectId` unless you authenticate with an OIDC token; request fields override values copied from the source. If the source has a snapshot, the fork starts from it; otherwise, it starts from the source runtime or image.
+     * Forks a named sandbox into a new named sandbox, copying its configuration and environment
+     * variables. Supply `name` to identify the source and `projectId` unless you authenticate with
+     * an OIDC token; request fields override values copied from the source. If the source has a
+     * snapshot, the fork starts from it; otherwise, it starts from the source runtime or image.
      *
-     * Forks a named sandbox, creating a new named sandbox from the source's configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source's runtime/image. Any field provided in the request body overrides the…
+     * Forks a named sandbox, creating a new named sandbox from the source's configuration.
+     * Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence,
+     * snapshot settings and — unlike the SDK-side fork — environment variables are copied from the
+     * source automatically (`interactive` is not). When the source has a snapshot the fork starts
+     * from it; otherwise it starts from the source's runtime/image. Any field provided in the
+     * request body overrides the…
      *
      * @param name Name of the source sandbox to fork.
-     * @param projectId The ID of the project the source sandbox belongs to. Required
-     *   unless authenticating with an OIDC token.
+     * @param projectId The ID of the project the source sandbox belongs to. Required unless
+     *   authenticating with an OIDC token.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      * @param networkPolicy Typed representation of the
      *   `CreateSandboxesByNameForkV2RequestNetworkPolicy` API schema.
      * @param resources Resources to define the VM
-     * @param ports List of ports to expose from the sandbox. Each port will be
-     *   accessible via a unique URL. Maximum of 15 ports can be exposed.
+     * @param ports List of ports to expose from the sandbox. Each port will be accessible via a
+     *   unique URL. Maximum of 15 ports can be exposed.
      * @param image Image to use for the sandbox.
-     * @param timeout Maximum duration in milliseconds that the sandbox can run
-     *   before being automatically stopped.
-     * @param env Default environment variables for the sandbox. These are inherited
-     *   by all commands unless overridden.
+     * @param timeout Maximum duration in milliseconds that the sandbox can run before being
+     *   automatically stopped.
+     * @param env Default environment variables for the sandbox. These are inherited by all commands
+     *   unless overridden.
      * @param mounts List of drives to mount to the sandbox at the provided path.
      * @param region The Vercel region in which to create the sandbox.
-     * @param failoverRegions The regions the sandbox falls back to when it cannot be
-     *   created in `region`.
-     * @param networkId The Connect network id for the target Secure Compute private
-     *   network.
-     * @param name2 Name for the forked sandbox. Must be unique per project and
-     *   URL-safe (alphanumeric, hyphens, underscores). A random name is generated when
-     *   omitted.
-     * @param persistent Whether the sandbox persists its state across restarts via
-     *   automatic snapshots. Defaults to the source sandbox setting.
-     * @param snapshotExpiration Default snapshot expiration time in milliseconds.
-     *   Set to 0 to disable expiration. When set, this value is used as the default
-     *   expiration for all snapshots created for this sandbox.
+     * @param failoverRegions The regions the sandbox falls back to when it cannot be created in
+     *   `region`.
+     * @param networkId The Connect network id for the target Secure Compute private network.
+     * @param name2 Name for the forked sandbox. Must be unique per project and URL-safe
+     *   (alphanumeric, hyphens, underscores). A random name is generated when omitted.
+     * @param persistent Whether the sandbox persists its state across restarts via automatic
+     *   snapshots. Defaults to the source sandbox setting.
+     * @param snapshotExpiration Default snapshot expiration time in milliseconds. Set to 0 to
+     *   disable expiration. When set, this value is used as the default expiration for all
+     *   snapshots created for this sandbox.
      * @param keepLastSnapshots Protect the N most recent snapshots with different
      *   expiration/deletion behavior.
      * @param tags Key-value tags to associate with the sandbox. Maximum 5 tags.
      */
-    fun createSandboxesByNameForkV2(clientConfig: ClientConfig, request: Sandboxes.CreateSandboxesByNameForkV2Request, options: RequestOptions? = null): Sandboxes.CreateSandboxesByNameForkV2Response {
+    fun createSandboxesByNameForkV2(
+        clientConfig: ClientConfig,
+        request: Sandboxes.CreateSandboxesByNameForkV2Request,
+        options: RequestOptions? = null,
+    ): Sandboxes.CreateSandboxesByNameForkV2Response {
         validateCreateSandboxesByNameForkV2Request(request)
 
-        return SdkClient.request<Sandboxes.CreateSandboxesByNameForkV2Response>(SdkClient.RequestSpec("POST", "/v2/sandboxes/${SdkClient.encodePathSegment(request.name)}/fork", config = clientConfig, query = mapOf("projectId" to
-    SdkClient.queryValue(request.projectId, "form", true), "teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = buildCreateSandboxesByNameForkV2Body(request), operationId = "createSandboxesByNameForkV2", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<Sandboxes.CreateSandboxesByNameForkV2Response>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/${SdkClient.encodePathSegment(request.name)}/fork",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "projectId" to SdkClient.queryValue(request.projectId, "form", true),
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    body = buildCreateSandboxesByNameForkV2Body(request),
+                    operationId = "createSandboxesByNameForkV2",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-    private fun validateCreateSandboxesByNameForkV2Request(request: Sandboxes.CreateSandboxesByNameForkV2Request) {
+    private fun validateCreateSandboxesByNameForkV2Request(
+        request: Sandboxes.CreateSandboxesByNameForkV2Request
+    ) {
         validateCreateSandboxesByNameForkV2RequestPart1(request)
         validateCreateSandboxesByNameForkV2RequestPart2(request)
     }
 
-    private fun validateCreateSandboxesByNameForkV2RequestPart1(request: Sandboxes.CreateSandboxesByNameForkV2Request) {
+    private fun validateCreateSandboxesByNameForkV2RequestPart1(
+        request: Sandboxes.CreateSandboxesByNameForkV2Request
+    ) {
         Validation.validateLength("name", request.name, Validation.LengthOpts(max = 128))
         Validation.validatePattern("name", request.name, "^[a-zA-Z0-9_-]+$")
 
         if (request.projectId != null) {
-            Validation.validateLength("projectId", request.projectId, Validation.LengthOpts(max = 128))
-}
+            Validation.validateLength(
+                "projectId",
+                request.projectId,
+                Validation.LengthOpts(max = 128),
+            )
+        }
 
         if (request.ports != null) {
             Validation.validateItems("ports", request.ports, Validation.LengthOpts(max = 15))
-}
+        }
 
         if (request.image != null) {
             Validation.validateLength("image", request.image, Validation.LengthOpts(max = 255))
-}
+        }
 
         if (request.timeout != null) {
             Validation.validateRange("timeout", request.timeout, Validation.RangeOpts(min = 1000.0))
-}
+        }
     }
 
-    private fun validateCreateSandboxesByNameForkV2RequestPart2(request: Sandboxes.CreateSandboxesByNameForkV2Request) {
+    private fun validateCreateSandboxesByNameForkV2RequestPart2(
+        request: Sandboxes.CreateSandboxesByNameForkV2Request
+    ) {
         if (request.failoverRegions != null) {
-            Validation.validateItems("failoverRegions", request.failoverRegions, Validation.LengthOpts(max = 19))
-}
+            Validation.validateItems(
+                "failoverRegions",
+                request.failoverRegions,
+                Validation.LengthOpts(max = 19),
+            )
+        }
 
         if (request.networkId != null) {
-            Validation.validateLength("networkId", request.networkId, Validation.LengthOpts(max = 255))
-}
+            Validation.validateLength(
+                "networkId",
+                request.networkId,
+                Validation.LengthOpts(max = 255),
+            )
+        }
 
         if (request.name2 != null) {
             Validation.validateLength("name", request.name2, Validation.LengthOpts(max = 128))
             Validation.validatePattern("name", request.name2, "^[a-zA-Z0-9_-]+$")
-}
+        }
     }
 
+    private fun buildCreateSandboxesByNameForkV2Body(
+        request: Sandboxes.CreateSandboxesByNameForkV2Request
+    ): Map<String, Any?> = buildMap {
+        putAll(buildCreateSandboxesByNameForkV2BodyPart1(request))
+        putAll(buildCreateSandboxesByNameForkV2BodyPart2(request))
+    }
 
-
-    private fun buildCreateSandboxesByNameForkV2Body(request: Sandboxes.CreateSandboxesByNameForkV2Request): Map<String, Any?> =
-        buildMap {
-            putAll(buildCreateSandboxesByNameForkV2BodyPart1(request))
-            putAll(buildCreateSandboxesByNameForkV2BodyPart2(request))
-        }
-
-    private fun buildCreateSandboxesByNameForkV2BodyPart1(request: Sandboxes.CreateSandboxesByNameForkV2Request): Map<String, Any?> =
+    private fun buildCreateSandboxesByNameForkV2BodyPart1(
+        request: Sandboxes.CreateSandboxesByNameForkV2Request
+    ): Map<String, Any?> =
         SdkClient.bodyMap(
-            "networkPolicy" to
-    (SdkClient.omitIfNull(request.networkPolicy)),
+            "networkPolicy" to (SdkClient.omitIfNull(request.networkPolicy)),
             "resources" to (SdkClient.omitIfNull(request.resources)),
             "ports" to (SdkClient.omitIfNull(request.ports)),
             "image" to (SdkClient.omitIfNull(request.image)),
@@ -324,72 +604,93 @@ internal object SandboxesCreateSandboxesByNameForkV2Operation {
             "env" to (SdkClient.omitIfNull(request.env)),
             "mounts" to (SdkClient.omitIfNull(request.mounts)),
             "region" to (SdkClient.omitIfNull(request.region)),
-            "failoverRegions" to
-    (SdkClient.omitIfNull(request.failoverRegions)),
+            "failoverRegions" to (SdkClient.omitIfNull(request.failoverRegions)),
             "networkId" to (SdkClient.omitIfNull(request.networkId)),
             "name" to (SdkClient.omitIfNull(request.name2)),
             "persistent" to (SdkClient.omitIfNull(request.persistent)),
         )
 
-    private fun buildCreateSandboxesByNameForkV2BodyPart2(request: Sandboxes.CreateSandboxesByNameForkV2Request): Map<String, Any?> =
+    private fun buildCreateSandboxesByNameForkV2BodyPart2(
+        request: Sandboxes.CreateSandboxesByNameForkV2Request
+    ): Map<String, Any?> =
         SdkClient.bodyMap(
-            "snapshotExpiration" to
-    (request.snapshotExpiration ?: SdkClient.SdkOptional.Omitted),
-            "keepLastSnapshots" to
-    (SdkClient.omitIfNull(request.keepLastSnapshots)),
+            "snapshotExpiration" to (request.snapshotExpiration ?: SdkClient.SdkOptional.Omitted),
+            "keepLastSnapshots" to (SdkClient.omitIfNull(request.keepLastSnapshots)),
             "tags" to (SdkClient.omitIfNull(request.tags)),
         )
 }
 
 internal object SandboxesCreateSandboxesV3Operation {
     /**
-     * Creates a named sandbox environment with automatic snapshotting on shutdown. Configure its resources, source, networking, and other settings in the request body; when `image` and a snapshot source are both absent, the sandbox uses the default universal image. This API version does not accept a `runtime` parameter.
+     * Creates a named sandbox environment with automatic snapshotting on shutdown. Configure its
+     * resources, source, networking, and other settings in the request body; when `image` and a
+     * snapshot source are both absent, the sandbox uses the default universal image. This API
+     * version does not accept a `runtime` parameter.
      *
-     * Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown. Unlike v2, this version has no `runtime` parameter: when no `image` is provided (and the sandbox is not restored from a snapshot), the sandbox is created from the default universal image.
+     * Creates a named sandbox environment. Named sandboxes have a unique name within a project and
+     * support automatic snapshotting on shutdown. Unlike v2, this version has no `runtime`
+     * parameter: when no `image` is provided (and the sandbox is not restored from a snapshot), the
+     * sandbox is created from the default universal image.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param networkPolicy Typed representation of the
-     *   `CreateSandboxesV3RequestNetworkPolicy` API schema.
-     * @param architecture CPU architecture. Inherits a snapshot or single image
-     *   manifest when omitted. Image indexes default to amd64. Must match the source.
-     *   ARM64 creation requires API v3 or v4 without runtime and team access.
+     * @param networkPolicy Typed representation of the `CreateSandboxesV3RequestNetworkPolicy` API
+     *   schema.
+     * @param architecture CPU architecture. Inherits a snapshot or single image manifest when
+     *   omitted. Image indexes default to amd64. Must match the source. ARM64 creation requires API
+     *   v3 or v4 without runtime and team access.
      * @param resources Resources to define the VM
-     * @param source The source from which to initialize the sandbox filesystem. Can
-     *   be a Git repository, a tarball URL, or an existing snapshot.
-     * @param projectId The target project slug or ID in which the sandbox will be
-     *   assigned to.
-     * @param ports List of ports to expose from the sandbox. Each port will be
-     *   accessible via a unique URL. Maximum of 15 ports can be exposed.
+     * @param source The source from which to initialize the sandbox filesystem. Can be a Git
+     *   repository, a tarball URL, or an existing snapshot.
+     * @param projectId The target project slug or ID in which the sandbox will be assigned to.
+     * @param ports List of ports to expose from the sandbox. Each port will be accessible via a
+     *   unique URL. Maximum of 15 ports can be exposed.
      * @param image Image to use for the sandbox.
-     * @param timeout Maximum duration in milliseconds that the sandbox can run
-     *   before being automatically stopped.
-     * @param env Default environment variables for the sandbox. These are inherited
-     *   by all commands unless overridden.
+     * @param timeout Maximum duration in milliseconds that the sandbox can run before being
+     *   automatically stopped.
+     * @param env Default environment variables for the sandbox. These are inherited by all commands
+     *   unless overridden.
      * @param mounts List of drives to mount to the sandbox at the provided path.
      * @param region The Vercel region in which to create the sandbox.
-     * @param failoverRegions The regions the sandbox falls back to when it cannot be
-     *   created in `region`.
-     * @param networkId The Connect network id for the target Secure Compute private
-     *   network.
-     * @param name Name for the sandbox. Must be unique per project and URL-safe
-     *   (alphanumeric, hyphens, underscores).
-     * @param persistent Whether the sandbox persists its state across restarts via
-     *   automatic snapshots. Defaults to true.
-     * @param snapshotExpiration Default snapshot expiration time in milliseconds.
-     *   Set to 0 to disable expiration. When set, this value is used as the default
-     *   expiration for all snapshots created for this sandbox.
+     * @param failoverRegions The regions the sandbox falls back to when it cannot be created in
+     *   `region`.
+     * @param networkId The Connect network id for the target Secure Compute private network.
+     * @param name Name for the sandbox. Must be unique per project and URL-safe (alphanumeric,
+     *   hyphens, underscores).
+     * @param persistent Whether the sandbox persists its state across restarts via automatic
+     *   snapshots. Defaults to true.
+     * @param snapshotExpiration Default snapshot expiration time in milliseconds. Set to 0 to
+     *   disable expiration. When set, this value is used as the default expiration for all
+     *   snapshots created for this sandbox.
      * @param keepLastSnapshots Protect the N most recent snapshots with different
      *   expiration/deletion behavior.
      * @param tags Key-value tags to associate with the sandbox. Maximum 5 tags.
      */
-    fun createSandboxesV3(clientConfig: ClientConfig, request: Sandboxes.CreateSandboxesV3Request, options: RequestOptions? = null): Sandboxes.CreateSandboxesV3Response {
+    fun createSandboxesV3(
+        clientConfig: ClientConfig,
+        request: Sandboxes.CreateSandboxesV3Request,
+        options: RequestOptions? = null,
+    ): Sandboxes.CreateSandboxesV3Response {
         validateCreateSandboxesV3Request(request)
 
-        return SdkClient.request<Sandboxes.CreateSandboxesV3Response>(SdkClient.RequestSpec("POST", "/v3/sandboxes", config = clientConfig, query = mapOf("teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = buildCreateSandboxesV3Body(request), operationId = "createSandboxesV3", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<Sandboxes.CreateSandboxesV3Response>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v3/sandboxes",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    body = buildCreateSandboxesV3Body(request),
+                    operationId = "createSandboxesV3",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
-
 
     private fun validateCreateSandboxesV3Request(request: Sandboxes.CreateSandboxesV3Request) {
         validateCreateSandboxesV3RequestPart1(request)
@@ -399,46 +700,53 @@ internal object SandboxesCreateSandboxesV3Operation {
     private fun validateCreateSandboxesV3RequestPart1(request: Sandboxes.CreateSandboxesV3Request) {
         if (request.ports != null) {
             Validation.validateItems("ports", request.ports, Validation.LengthOpts(max = 15))
-}
+        }
 
         if (request.image != null) {
             Validation.validateLength("image", request.image, Validation.LengthOpts(max = 255))
-}
+        }
 
         if (request.timeout != null) {
             Validation.validateRange("timeout", request.timeout, Validation.RangeOpts(min = 1000.0))
-}
+        }
 
         if (request.failoverRegions != null) {
-            Validation.validateItems("failoverRegions", request.failoverRegions, Validation.LengthOpts(max = 19))
-}
+            Validation.validateItems(
+                "failoverRegions",
+                request.failoverRegions,
+                Validation.LengthOpts(max = 19),
+            )
+        }
 
         if (request.networkId != null) {
-            Validation.validateLength("networkId", request.networkId, Validation.LengthOpts(max = 255))
-}
+            Validation.validateLength(
+                "networkId",
+                request.networkId,
+                Validation.LengthOpts(max = 255),
+            )
+        }
     }
 
     private fun validateCreateSandboxesV3RequestPart2(request: Sandboxes.CreateSandboxesV3Request) {
         if (request.name != null) {
             Validation.validateLength("name", request.name, Validation.LengthOpts(max = 128))
             Validation.validatePattern("name", request.name, "^[a-zA-Z0-9_-]+$")
-}
+        }
     }
 
+    private fun buildCreateSandboxesV3Body(
+        request: Sandboxes.CreateSandboxesV3Request
+    ): Map<String, Any?> = buildMap {
+        putAll(buildCreateSandboxesV3BodyPart1(request))
+        putAll(buildCreateSandboxesV3BodyPart2(request))
+    }
 
-
-    private fun buildCreateSandboxesV3Body(request: Sandboxes.CreateSandboxesV3Request): Map<String, Any?> =
-        buildMap {
-            putAll(buildCreateSandboxesV3BodyPart1(request))
-            putAll(buildCreateSandboxesV3BodyPart2(request))
-        }
-
-    private fun buildCreateSandboxesV3BodyPart1(request: Sandboxes.CreateSandboxesV3Request): Map<String, Any?> =
+    private fun buildCreateSandboxesV3BodyPart1(
+        request: Sandboxes.CreateSandboxesV3Request
+    ): Map<String, Any?> =
         SdkClient.bodyMap(
-            "networkPolicy" to
-    (SdkClient.omitIfNull(request.networkPolicy)),
-            "architecture" to
-    (SdkClient.omitIfNull(request.architecture)),
+            "networkPolicy" to (SdkClient.omitIfNull(request.networkPolicy)),
+            "architecture" to (SdkClient.omitIfNull(request.architecture)),
             "resources" to (SdkClient.omitIfNull(request.resources)),
             "source" to (SdkClient.omitIfNull(request.source)),
             "projectId" to (SdkClient.omitIfNull(request.projectId)),
@@ -448,145 +756,220 @@ internal object SandboxesCreateSandboxesV3Operation {
             "env" to (SdkClient.omitIfNull(request.env)),
             "mounts" to (SdkClient.omitIfNull(request.mounts)),
             "region" to (SdkClient.omitIfNull(request.region)),
-            "failoverRegions" to
-    (SdkClient.omitIfNull(request.failoverRegions)),
+            "failoverRegions" to (SdkClient.omitIfNull(request.failoverRegions)),
         )
 
-    private fun buildCreateSandboxesV3BodyPart2(request: Sandboxes.CreateSandboxesV3Request): Map<String, Any?> =
+    private fun buildCreateSandboxesV3BodyPart2(
+        request: Sandboxes.CreateSandboxesV3Request
+    ): Map<String, Any?> =
         SdkClient.bodyMap(
             "networkId" to (SdkClient.omitIfNull(request.networkId)),
             "name" to (SdkClient.omitIfNull(request.name)),
             "persistent" to (SdkClient.omitIfNull(request.persistent)),
-            "snapshotExpiration" to
-    (request.snapshotExpiration ?: SdkClient.SdkOptional.Omitted),
-            "keepLastSnapshots" to
-    (SdkClient.omitIfNull(request.keepLastSnapshots)),
+            "snapshotExpiration" to (request.snapshotExpiration ?: SdkClient.SdkOptional.Omitted),
+            "keepLastSnapshots" to (SdkClient.omitIfNull(request.keepLastSnapshots)),
             "tags" to (SdkClient.omitIfNull(request.tags)),
         )
 }
 
 internal object SandboxesCreateSandboxesSessionsBySessionIdSnapshotV3Operation {
     /**
-     * Creates a point-in-time snapshot of a running session's filesystem. Use a snapshot to restore the filesystem later or initialize another session with the same environment; the session must be running and able to accept commands. The source session is terminated after the snapshot is created, and snapshots default to a seven-day expiration when neither the request nor sandbox configuration sets one.
+     * Creates a point-in-time snapshot of a running session's filesystem. Use a snapshot to restore
+     * the filesystem later or initialize another session with the same environment; the session
+     * must be running and able to accept commands. The source session is terminated after the
+     * snapshot is created, and snapshots default to a seven-day expiration when neither the request
+     * nor sandbox configuration sets one.
      *
-     * Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created. Unlike v2, snapshots expire after 7 days when neither the request nor the sandbox configuration specifies an expiration.
+     * Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to
+     * quickly restore a session to a previous state or to create new sessions with pre-configured
+     * environments. The session must be running and able to accept commands for a snapshot to be
+     * created. The session will be terminated after the snapshot is created. Unlike v2, snapshots
+     * expire after 7 days when neither the request nor the sandbox configuration specifies an
+     * expiration.
      *
      * @param sessionId The unique identifier of the session to snapshot.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param expiration The number of milliseconds after which the snapshot will
-     *   expire and be deleted. Defaults to 7 days when neither this field nor the
-     *   sandbox configuration specifies an expiration. Use 0 for no expiration.
+     * @param expiration The number of milliseconds after which the snapshot will expire and be
+     *   deleted. Defaults to 7 days when neither this field nor the sandbox configuration specifies
+     *   an expiration. Use 0 for no expiration.
      */
-    fun createSandboxesSessionsBySessionIdSnapshotV3(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, expiration: SdkClient.SdkOptional<Long?>? = null, options: RequestOptions? = null): Sandboxes.CreateSandboxesSessionsBySessionIdSnapshotV3Response {
-        return SdkClient.request<Sandboxes.CreateSandboxesSessionsBySessionIdSnapshotV3Response>(SdkClient.RequestSpec("POST", "/v3/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/snapshot", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("expiration" to
-    (expiration ?: SdkClient.SdkOptional.Omitted)), operationId = "createSandboxesSessionsBySessionIdSnapshotV3", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun createSandboxesSessionsBySessionIdSnapshotV3(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        expiration: SdkClient.SdkOptional<Long?>? = null,
+        options: RequestOptions? = null,
+    ): Sandboxes.CreateSandboxesSessionsBySessionIdSnapshotV3Response {
+        return SdkClient.request<Sandboxes.CreateSandboxesSessionsBySessionIdSnapshotV3Response>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v3/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/snapshot",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body =
+                        SdkClient.bodyMap(
+                            "expiration" to (expiration ?: SdkClient.SdkOptional.Omitted)
+                        ),
+                    operationId = "createSandboxesSessionsBySessionIdSnapshotV3",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesCreateSandboxesByNameForkV3Operation {
     /**
-     * Forks a named sandbox into a new named sandbox, copying its configuration and environment variables. Supply `name` to identify the source and `projectId` unless you authenticate with an OIDC token; request fields override values copied from the source. If the source has a snapshot, the fork starts from it; otherwise, it starts from the source runtime or image, with seven-day snapshot expiration and a one-snapshot retention limit by default.
+     * Forks a named sandbox into a new named sandbox, copying its configuration and environment
+     * variables. Supply `name` to identify the source and `projectId` unless you authenticate with
+     * an OIDC token; request fields override values copied from the source. If the source has a
+     * snapshot, the fork starts from it; otherwise, it starts from the source runtime or image,
+     * with seven-day snapshot expiration and a one-snapshot retention limit by default.
      *
-     * Forks a named sandbox, creating a new named sandbox from the source's configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source's runtime/image. Any field provided in the request body overrides the…
+     * Forks a named sandbox, creating a new named sandbox from the source's configuration.
+     * Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence,
+     * snapshot settings and — unlike the SDK-side fork — environment variables are copied from the
+     * source automatically (`interactive` is not). When the source has a snapshot the fork starts
+     * from it; otherwise it starts from the source's runtime/image. Any field provided in the
+     * request body overrides the…
      *
      * @param name Name of the source sandbox to fork.
-     * @param projectId The ID of the project the source sandbox belongs to. Required
-     *   unless authenticating with an OIDC token.
+     * @param projectId The ID of the project the source sandbox belongs to. Required unless
+     *   authenticating with an OIDC token.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      * @param networkPolicy Typed representation of the
      *   `CreateSandboxesByNameForkV3RequestNetworkPolicy` API schema.
      * @param resources Resources to define the VM
-     * @param ports List of ports to expose from the sandbox. Each port will be
-     *   accessible via a unique URL. Maximum of 15 ports can be exposed.
+     * @param ports List of ports to expose from the sandbox. Each port will be accessible via a
+     *   unique URL. Maximum of 15 ports can be exposed.
      * @param image Image to use for the sandbox.
-     * @param timeout Maximum duration in milliseconds that the sandbox can run
-     *   before being automatically stopped.
-     * @param env Default environment variables for the sandbox. These are inherited
-     *   by all commands unless overridden.
+     * @param timeout Maximum duration in milliseconds that the sandbox can run before being
+     *   automatically stopped.
+     * @param env Default environment variables for the sandbox. These are inherited by all commands
+     *   unless overridden.
      * @param mounts List of drives to mount to the sandbox at the provided path.
      * @param region The Vercel region in which to create the sandbox.
-     * @param failoverRegions The regions the sandbox falls back to when it cannot be
-     *   created in `region`.
-     * @param networkId The Connect network id for the target Secure Compute private
-     *   network.
-     * @param name2 Name for the forked sandbox. Must be unique per project and
-     *   URL-safe (alphanumeric, hyphens, underscores). A random name is generated when
-     *   omitted.
-     * @param persistent Whether the sandbox persists its state across restarts via
-     *   automatic snapshots. Defaults to the source sandbox setting.
-     * @param snapshotExpiration Default snapshot expiration time in milliseconds.
-     *   Defaults to 7 days. Set to 0 to disable expiration. When set, this value is
-     *   used as the default expiration for all snapshots created for this sandbox.
+     * @param failoverRegions The regions the sandbox falls back to when it cannot be created in
+     *   `region`.
+     * @param networkId The Connect network id for the target Secure Compute private network.
+     * @param name2 Name for the forked sandbox. Must be unique per project and URL-safe
+     *   (alphanumeric, hyphens, underscores). A random name is generated when omitted.
+     * @param persistent Whether the sandbox persists its state across restarts via automatic
+     *   snapshots. Defaults to the source sandbox setting.
+     * @param snapshotExpiration Default snapshot expiration time in milliseconds. Defaults to 7
+     *   days. Set to 0 to disable expiration. When set, this value is used as the default
+     *   expiration for all snapshots created for this sandbox.
      * @param keepLastSnapshots Protect the N most recent snapshots with different
-     *   expiration/deletion behavior. Persistent sandboxes default to keeping only the
-     *   last snapshot (evicted snapshots are deleted). Set to null to disable the
-     *   limit.
+     *   expiration/deletion behavior. Persistent sandboxes default to keeping only the last
+     *   snapshot (evicted snapshots are deleted). Set to null to disable the limit.
      * @param tags Key-value tags to associate with the sandbox. Maximum 5 tags.
      */
-    fun createSandboxesByNameForkV3(clientConfig: ClientConfig, request: Sandboxes.CreateSandboxesByNameForkV3Request, options: RequestOptions? = null): Sandboxes.CreateSandboxesByNameForkV3Response {
+    fun createSandboxesByNameForkV3(
+        clientConfig: ClientConfig,
+        request: Sandboxes.CreateSandboxesByNameForkV3Request,
+        options: RequestOptions? = null,
+    ): Sandboxes.CreateSandboxesByNameForkV3Response {
         validateCreateSandboxesByNameForkV3Request(request)
 
-        return SdkClient.request<Sandboxes.CreateSandboxesByNameForkV3Response>(SdkClient.RequestSpec("POST", "/v3/sandboxes/${SdkClient.encodePathSegment(request.name)}/fork", config = clientConfig, query = mapOf("projectId" to
-    SdkClient.queryValue(request.projectId, "form", true), "teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = buildCreateSandboxesByNameForkV3Body(request), operationId = "createSandboxesByNameForkV3", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<Sandboxes.CreateSandboxesByNameForkV3Response>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v3/sandboxes/${SdkClient.encodePathSegment(request.name)}/fork",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "projectId" to SdkClient.queryValue(request.projectId, "form", true),
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    body = buildCreateSandboxesByNameForkV3Body(request),
+                    operationId = "createSandboxesByNameForkV3",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-    private fun validateCreateSandboxesByNameForkV3Request(request: Sandboxes.CreateSandboxesByNameForkV3Request) {
+    private fun validateCreateSandboxesByNameForkV3Request(
+        request: Sandboxes.CreateSandboxesByNameForkV3Request
+    ) {
         validateCreateSandboxesByNameForkV3RequestPart1(request)
         validateCreateSandboxesByNameForkV3RequestPart2(request)
     }
 
-    private fun validateCreateSandboxesByNameForkV3RequestPart1(request: Sandboxes.CreateSandboxesByNameForkV3Request) {
+    private fun validateCreateSandboxesByNameForkV3RequestPart1(
+        request: Sandboxes.CreateSandboxesByNameForkV3Request
+    ) {
         Validation.validateLength("name", request.name, Validation.LengthOpts(max = 128))
         Validation.validatePattern("name", request.name, "^[a-zA-Z0-9_-]+$")
 
         if (request.projectId != null) {
-            Validation.validateLength("projectId", request.projectId, Validation.LengthOpts(max = 128))
-}
+            Validation.validateLength(
+                "projectId",
+                request.projectId,
+                Validation.LengthOpts(max = 128),
+            )
+        }
 
         if (request.ports != null) {
             Validation.validateItems("ports", request.ports, Validation.LengthOpts(max = 15))
-}
+        }
 
         if (request.image != null) {
             Validation.validateLength("image", request.image, Validation.LengthOpts(max = 255))
-}
+        }
 
         if (request.timeout != null) {
             Validation.validateRange("timeout", request.timeout, Validation.RangeOpts(min = 1000.0))
-}
+        }
     }
 
-    private fun validateCreateSandboxesByNameForkV3RequestPart2(request: Sandboxes.CreateSandboxesByNameForkV3Request) {
+    private fun validateCreateSandboxesByNameForkV3RequestPart2(
+        request: Sandboxes.CreateSandboxesByNameForkV3Request
+    ) {
         if (request.failoverRegions != null) {
-            Validation.validateItems("failoverRegions", request.failoverRegions, Validation.LengthOpts(max = 19))
-}
+            Validation.validateItems(
+                "failoverRegions",
+                request.failoverRegions,
+                Validation.LengthOpts(max = 19),
+            )
+        }
 
         if (request.networkId != null) {
-            Validation.validateLength("networkId", request.networkId, Validation.LengthOpts(max = 255))
-}
+            Validation.validateLength(
+                "networkId",
+                request.networkId,
+                Validation.LengthOpts(max = 255),
+            )
+        }
 
         if (request.name2 != null) {
             Validation.validateLength("name", request.name2, Validation.LengthOpts(max = 128))
             Validation.validatePattern("name", request.name2, "^[a-zA-Z0-9_-]+$")
-}
+        }
     }
 
+    private fun buildCreateSandboxesByNameForkV3Body(
+        request: Sandboxes.CreateSandboxesByNameForkV3Request
+    ): Map<String, Any?> = buildMap {
+        putAll(buildCreateSandboxesByNameForkV3BodyPart1(request))
+        putAll(buildCreateSandboxesByNameForkV3BodyPart2(request))
+    }
 
-
-    private fun buildCreateSandboxesByNameForkV3Body(request: Sandboxes.CreateSandboxesByNameForkV3Request): Map<String, Any?> =
-        buildMap {
-            putAll(buildCreateSandboxesByNameForkV3BodyPart1(request))
-            putAll(buildCreateSandboxesByNameForkV3BodyPart2(request))
-        }
-
-    private fun buildCreateSandboxesByNameForkV3BodyPart1(request: Sandboxes.CreateSandboxesByNameForkV3Request): Map<String, Any?> =
+    private fun buildCreateSandboxesByNameForkV3BodyPart1(
+        request: Sandboxes.CreateSandboxesByNameForkV3Request
+    ): Map<String, Any?> =
         SdkClient.bodyMap(
-            "networkPolicy" to
-    (SdkClient.omitIfNull(request.networkPolicy)),
+            "networkPolicy" to (SdkClient.omitIfNull(request.networkPolicy)),
             "resources" to (SdkClient.omitIfNull(request.resources)),
             "ports" to (SdkClient.omitIfNull(request.ports)),
             "image" to (SdkClient.omitIfNull(request.image)),
@@ -594,74 +977,97 @@ internal object SandboxesCreateSandboxesByNameForkV3Operation {
             "env" to (SdkClient.omitIfNull(request.env)),
             "mounts" to (SdkClient.omitIfNull(request.mounts)),
             "region" to (SdkClient.omitIfNull(request.region)),
-            "failoverRegions" to
-    (SdkClient.omitIfNull(request.failoverRegions)),
+            "failoverRegions" to (SdkClient.omitIfNull(request.failoverRegions)),
             "networkId" to (SdkClient.omitIfNull(request.networkId)),
             "name" to (SdkClient.omitIfNull(request.name2)),
             "persistent" to (SdkClient.omitIfNull(request.persistent)),
         )
 
-    private fun buildCreateSandboxesByNameForkV3BodyPart2(request: Sandboxes.CreateSandboxesByNameForkV3Request): Map<String, Any?> =
+    private fun buildCreateSandboxesByNameForkV3BodyPart2(
+        request: Sandboxes.CreateSandboxesByNameForkV3Request
+    ): Map<String, Any?> =
         SdkClient.bodyMap(
-            "snapshotExpiration" to
-    (request.snapshotExpiration ?: SdkClient.SdkOptional.Omitted),
-            "keepLastSnapshots" to
-    (SdkClient.omitIfNull(request.keepLastSnapshots)),
+            "snapshotExpiration" to (request.snapshotExpiration ?: SdkClient.SdkOptional.Omitted),
+            "keepLastSnapshots" to (SdkClient.omitIfNull(request.keepLastSnapshots)),
             "tags" to (SdkClient.omitIfNull(request.tags)),
         )
 }
 
 internal object SandboxesCreateSandboxesV4Operation {
     /**
-     * Creates a named sandbox environment with automatic snapshotting on shutdown. Configure its resources, source, networking, and other settings in the request body; when `image` and a snapshot source are both absent, the sandbox uses the default universal image. Persistent sandboxes keep only their most recent snapshot by default, and snapshots expire after seven days unless configured otherwise.
+     * Creates a named sandbox environment with automatic snapshotting on shutdown. Configure its
+     * resources, source, networking, and other settings in the request body; when `image` and a
+     * snapshot source are both absent, the sandbox uses the default universal image. Persistent
+     * sandboxes keep only their most recent snapshot by default, and snapshots expire after seven
+     * days unless configured otherwise.
      *
-     * Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown. When no `image` is provided (and the sandbox is not restored from a snapshot), the sandbox is created from the default universal image. Unlike v3, snapshots expire after 7 days by default and persistent sandboxes keep only their most recent snapshot unless `keepLastSnapshots` is configured otherwise (or set to `null` to disable the limit).
+     * Creates a named sandbox environment. Named sandboxes have a unique name within a project and
+     * support automatic snapshotting on shutdown. When no `image` is provided (and the sandbox is
+     * not restored from a snapshot), the sandbox is created from the default universal image.
+     * Unlike v3, snapshots expire after 7 days by default and persistent sandboxes keep only their
+     * most recent snapshot unless `keepLastSnapshots` is configured otherwise (or set to `null` to
+     * disable the limit).
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param networkPolicy Typed representation of the
-     *   `CreateSandboxesV4RequestNetworkPolicy` API schema.
-     * @param architecture CPU architecture. Inherits a snapshot or single image
-     *   manifest when omitted. Image indexes default to amd64. Must match the source.
-     *   ARM64 creation requires API v3 or v4 without runtime and team access.
+     * @param networkPolicy Typed representation of the `CreateSandboxesV4RequestNetworkPolicy` API
+     *   schema.
+     * @param architecture CPU architecture. Inherits a snapshot or single image manifest when
+     *   omitted. Image indexes default to amd64. Must match the source. ARM64 creation requires API
+     *   v3 or v4 without runtime and team access.
      * @param resources Resources to define the VM
-     * @param source The source from which to initialize the sandbox filesystem. Can
-     *   be a Git repository, a tarball URL, or an existing snapshot.
-     * @param projectId The target project slug or ID in which the sandbox will be
-     *   assigned to.
-     * @param ports List of ports to expose from the sandbox. Each port will be
-     *   accessible via a unique URL. Maximum of 15 ports can be exposed.
+     * @param source The source from which to initialize the sandbox filesystem. Can be a Git
+     *   repository, a tarball URL, or an existing snapshot.
+     * @param projectId The target project slug or ID in which the sandbox will be assigned to.
+     * @param ports List of ports to expose from the sandbox. Each port will be accessible via a
+     *   unique URL. Maximum of 15 ports can be exposed.
      * @param image Image to use for the sandbox.
-     * @param timeout Maximum duration in milliseconds that the sandbox can run
-     *   before being automatically stopped.
-     * @param env Default environment variables for the sandbox. These are inherited
-     *   by all commands unless overridden.
+     * @param timeout Maximum duration in milliseconds that the sandbox can run before being
+     *   automatically stopped.
+     * @param env Default environment variables for the sandbox. These are inherited by all commands
+     *   unless overridden.
      * @param mounts List of drives to mount to the sandbox at the provided path.
      * @param region The Vercel region in which to create the sandbox.
-     * @param failoverRegions The regions the sandbox falls back to when it cannot be
-     *   created in `region`.
-     * @param networkId The Connect network id for the target Secure Compute private
-     *   network.
-     * @param name Name for the sandbox. Must be unique per project and URL-safe
-     *   (alphanumeric, hyphens, underscores).
-     * @param persistent Whether the sandbox persists its state across restarts via
-     *   automatic snapshots. Defaults to true.
-     * @param snapshotExpiration Default snapshot expiration time in milliseconds.
-     *   Defaults to 7 days. Set to 0 to disable expiration. When set, this value is
-     *   used as the default expiration for all snapshots created for this sandbox.
+     * @param failoverRegions The regions the sandbox falls back to when it cannot be created in
+     *   `region`.
+     * @param networkId The Connect network id for the target Secure Compute private network.
+     * @param name Name for the sandbox. Must be unique per project and URL-safe (alphanumeric,
+     *   hyphens, underscores).
+     * @param persistent Whether the sandbox persists its state across restarts via automatic
+     *   snapshots. Defaults to true.
+     * @param snapshotExpiration Default snapshot expiration time in milliseconds. Defaults to 7
+     *   days. Set to 0 to disable expiration. When set, this value is used as the default
+     *   expiration for all snapshots created for this sandbox.
      * @param keepLastSnapshots Protect the N most recent snapshots with different
-     *   expiration/deletion behavior. Persistent sandboxes default to keeping only the
-     *   last snapshot (evicted snapshots are deleted). Set to null to disable the
-     *   limit.
+     *   expiration/deletion behavior. Persistent sandboxes default to keeping only the last
+     *   snapshot (evicted snapshots are deleted). Set to null to disable the limit.
      * @param tags Key-value tags to associate with the sandbox. Maximum 5 tags.
      */
-    fun createSandboxesV4(clientConfig: ClientConfig, request: Sandboxes.CreateSandboxesV4Request, options: RequestOptions? = null): Sandboxes.CreateSandboxesV4Response {
+    fun createSandboxesV4(
+        clientConfig: ClientConfig,
+        request: Sandboxes.CreateSandboxesV4Request,
+        options: RequestOptions? = null,
+    ): Sandboxes.CreateSandboxesV4Response {
         validateCreateSandboxesV4Request(request)
 
-        return SdkClient.request<Sandboxes.CreateSandboxesV4Response>(SdkClient.RequestSpec("POST", "/v4/sandboxes", config = clientConfig, query = mapOf("teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = buildCreateSandboxesV4Body(request), operationId = "createSandboxesV4", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<Sandboxes.CreateSandboxesV4Response>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v4/sandboxes",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    body = buildCreateSandboxesV4Body(request),
+                    operationId = "createSandboxesV4",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
-
 
     private fun validateCreateSandboxesV4Request(request: Sandboxes.CreateSandboxesV4Request) {
         validateCreateSandboxesV4RequestPart1(request)
@@ -671,46 +1077,53 @@ internal object SandboxesCreateSandboxesV4Operation {
     private fun validateCreateSandboxesV4RequestPart1(request: Sandboxes.CreateSandboxesV4Request) {
         if (request.ports != null) {
             Validation.validateItems("ports", request.ports, Validation.LengthOpts(max = 15))
-}
+        }
 
         if (request.image != null) {
             Validation.validateLength("image", request.image, Validation.LengthOpts(max = 255))
-}
+        }
 
         if (request.timeout != null) {
             Validation.validateRange("timeout", request.timeout, Validation.RangeOpts(min = 1000.0))
-}
+        }
 
         if (request.failoverRegions != null) {
-            Validation.validateItems("failoverRegions", request.failoverRegions, Validation.LengthOpts(max = 19))
-}
+            Validation.validateItems(
+                "failoverRegions",
+                request.failoverRegions,
+                Validation.LengthOpts(max = 19),
+            )
+        }
 
         if (request.networkId != null) {
-            Validation.validateLength("networkId", request.networkId, Validation.LengthOpts(max = 255))
-}
+            Validation.validateLength(
+                "networkId",
+                request.networkId,
+                Validation.LengthOpts(max = 255),
+            )
+        }
     }
 
     private fun validateCreateSandboxesV4RequestPart2(request: Sandboxes.CreateSandboxesV4Request) {
         if (request.name != null) {
             Validation.validateLength("name", request.name, Validation.LengthOpts(max = 128))
             Validation.validatePattern("name", request.name, "^[a-zA-Z0-9_-]+$")
-}
+        }
     }
 
+    private fun buildCreateSandboxesV4Body(
+        request: Sandboxes.CreateSandboxesV4Request
+    ): Map<String, Any?> = buildMap {
+        putAll(buildCreateSandboxesV4BodyPart1(request))
+        putAll(buildCreateSandboxesV4BodyPart2(request))
+    }
 
-
-    private fun buildCreateSandboxesV4Body(request: Sandboxes.CreateSandboxesV4Request): Map<String, Any?> =
-        buildMap {
-            putAll(buildCreateSandboxesV4BodyPart1(request))
-            putAll(buildCreateSandboxesV4BodyPart2(request))
-        }
-
-    private fun buildCreateSandboxesV4BodyPart1(request: Sandboxes.CreateSandboxesV4Request): Map<String, Any?> =
+    private fun buildCreateSandboxesV4BodyPart1(
+        request: Sandboxes.CreateSandboxesV4Request
+    ): Map<String, Any?> =
         SdkClient.bodyMap(
-            "networkPolicy" to
-    (SdkClient.omitIfNull(request.networkPolicy)),
-            "architecture" to
-    (SdkClient.omitIfNull(request.architecture)),
+            "networkPolicy" to (SdkClient.omitIfNull(request.networkPolicy)),
+            "architecture" to (SdkClient.omitIfNull(request.architecture)),
             "resources" to (SdkClient.omitIfNull(request.resources)),
             "source" to (SdkClient.omitIfNull(request.source)),
             "projectId" to (SdkClient.omitIfNull(request.projectId)),
@@ -720,19 +1133,18 @@ internal object SandboxesCreateSandboxesV4Operation {
             "env" to (SdkClient.omitIfNull(request.env)),
             "mounts" to (SdkClient.omitIfNull(request.mounts)),
             "region" to (SdkClient.omitIfNull(request.region)),
-            "failoverRegions" to
-    (SdkClient.omitIfNull(request.failoverRegions)),
+            "failoverRegions" to (SdkClient.omitIfNull(request.failoverRegions)),
         )
 
-    private fun buildCreateSandboxesV4BodyPart2(request: Sandboxes.CreateSandboxesV4Request): Map<String, Any?> =
+    private fun buildCreateSandboxesV4BodyPart2(
+        request: Sandboxes.CreateSandboxesV4Request
+    ): Map<String, Any?> =
         SdkClient.bodyMap(
             "networkId" to (SdkClient.omitIfNull(request.networkId)),
             "name" to (SdkClient.omitIfNull(request.name)),
             "persistent" to (SdkClient.omitIfNull(request.persistent)),
-            "snapshotExpiration" to
-    (request.snapshotExpiration ?: SdkClient.SdkOptional.Omitted),
-            "keepLastSnapshots" to
-    (SdkClient.omitIfNull(request.keepLastSnapshots)),
+            "snapshotExpiration" to (request.snapshotExpiration ?: SdkClient.SdkOptional.Omitted),
+            "keepLastSnapshots" to (SdkClient.omitIfNull(request.keepLastSnapshots)),
             "tags" to (SdkClient.omitIfNull(request.tags)),
         )
 }

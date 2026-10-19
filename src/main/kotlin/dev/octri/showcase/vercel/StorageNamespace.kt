@@ -3,27 +3,62 @@
 
 package dev.octri.showcase.vercel
 
-
 class StorageNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Retrieves a storage store by its identifier. Use `skip-metadata` to control whether project metadata is included and `include-guides` to control whether guides are included in the response.
+     * Retrieves a storage store by its identifier. Use `skip-metadata` to control whether project
+     * metadata is included and `include-guides` to control whether guides are included in the
+     * response.
      */
-    fun getStoresById(id: String, skipMetadata: Boolean? = null, includeGuides: Boolean? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Storage.GetStorageStoresByIdResponse {
-        return dev.octri.showcase.vercel.methods.Storage.getStorageStoresById(clientConfig, id, skipMetadata, includeGuides, options)
+    fun getStoresById(
+        id: String,
+        skipMetadata: Boolean? = null,
+        includeGuides: Boolean? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Storage.GetStorageStoresByIdResponse {
+        return dev.octri.showcase.vercel.methods.Storage.getStorageStoresById(
+            clientConfig,
+            id,
+            skipMetadata,
+            includeGuides,
+            options,
+        )
     }
 
     /**
-     * Creates a Blob store with a name and optional region, access setting, and project association. Choose a supported region and set `access` to `public` or `private`; access defaults to public when omitted. The response includes the created store and its configuration.
+     * Creates a Blob store with a name and optional region, access setting, and project
+     * association. Choose a supported region and set `access` to `public` or `private`; access
+     * defaults to public when omitted. The response includes the created store and its
+     * configuration.
      */
-    fun createStoresBlob(name: String, region: CreateStorageStoresBlobRegionEnum? = null, access: CreateStorageStoresBlobAccessEnum? = null, projectId: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Storage.CreateStorageStoresBlobResponse {
-        return dev.octri.showcase.vercel.methods.Storage.createStorageStoresBlob(clientConfig, name, region, access, projectId, options)
+    fun createStoresBlob(
+        name: String,
+        region: CreateStorageStoresBlobRegionEnum? = null,
+        access: CreateStorageStoresBlobAccessEnum? = null,
+        projectId: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Storage.CreateStorageStoresBlobResponse {
+        return dev.octri.showcase.vercel.methods.Storage.createStorageStoresBlob(
+            clientConfig,
+            name,
+            region,
+            access,
+            projectId,
+            options,
+        )
     }
 
     /**
-     * Deletes a Blob store by its identifier. Use the returned identifier to confirm which store was deleted. The store must be accessible to the authenticated user.
+     * Deletes a Blob store by its identifier. Use the returned identifier to confirm which store
+     * was deleted. The store must be accessible to the authenticated user.
      */
-    fun deleteStoresBlobById(id: String, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Storage.DeleteStorageStoresBlobByIdResponse {
-        return dev.octri.showcase.vercel.methods.Storage.deleteStorageStoresBlobById(clientConfig, id, options)
+    fun deleteStoresBlobById(
+        id: String,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Storage.DeleteStorageStoresBlobByIdResponse {
+        return dev.octri.showcase.vercel.methods.Storage.deleteStorageStoresBlobById(
+            clientConfig,
+            id,
+            options,
+        )
     }
-
 }
