@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias UserEventPayloadVariant379BudgetPauseProjectsEnum =
-    dev.octri.showcase.vercel.models.UserEventPayloadVariant379BudgetPauseProjectsEnum
-
 typealias UserEventPayloadVariant379BudgetPricingPlanEnum =
     dev.octri.showcase.vercel.models.UserEventPayloadVariant379BudgetPricingPlanEnum
 
@@ -570,3 +567,5 @@ typealias UserEventPayloadVariant453 = dev.octri.showcase.vercel.models.UserEven
 
 typealias UserEventPayloadVariant453MethodEnum =
     dev.octri.showcase.vercel.models.UserEventPayloadVariant453MethodEnum
+
+typealias UserEventPayloadVariant454 = dev.octri.showcase.vercel.models.UserEventPayloadVariant454

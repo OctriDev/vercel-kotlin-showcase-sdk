@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum =
-    dev.octri.showcase.vercel.models.GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum
-
 typealias GetRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum =
     dev.octri.showcase.vercel.models.GetRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum
 
@@ -652,3 +649,6 @@ typealias GetSecurityFirewallConfigResponseDraftManagedRulesVercelRulesXb6dd0a19
 
 typealias GetSecurityFirewallConfigResponseDraftManagedRulesVercelRulesXe1dc5b684a =
     dev.octri.showcase.vercel.models.GetSecurityFirewallConfigResponseDraftManagedRulesVercelRulesXe1dc5b684a
+
+typealias GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActiveEnum =
+    dev.octri.showcase.vercel.models.GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActiveEnum

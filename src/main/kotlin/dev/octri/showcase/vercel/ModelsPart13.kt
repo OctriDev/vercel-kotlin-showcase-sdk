@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias CreateSecurityFirewallConfigByConfigVersionActivateResponseCrXde12d8973b =
-    dev.octri.showcase.vercel.models.CreateSecurityFirewallConfigByConfigVersionActivateResponseCrXde12d8973b
-
 typealias CreateSecurityFirewallConfigByConfigVersionActivateResponseCrXe23f3e1897 =
     dev.octri.showcase.vercel.models.CreateSecurityFirewallConfigByConfigVersionActivateResponseCrXe23f3e1897
 
@@ -651,3 +648,6 @@ typealias DeleteProjectAvatarResponseEnvItemContentHintVariant11TypeEnum =
 
 typealias DeleteProjectAvatarResponseEnvItemContentHintVariant12 =
     dev.octri.showcase.vercel.models.DeleteProjectAvatarResponseEnvItemContentHintVariant12
+
+typealias DeleteProjectAvatarResponseEnvItemContentHintVariant12TypeEnum =
+    dev.octri.showcase.vercel.models.DeleteProjectAvatarResponseEnvItemContentHintVariant12TypeEnum

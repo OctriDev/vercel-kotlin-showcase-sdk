@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias UploadProjectAvatarResponseAliasItemDeploymentWithCacheEnum =
-    dev.octri.showcase.vercel.models.UploadProjectAvatarResponseAliasItemDeploymentWithCacheEnum
-
 typealias UploadProjectAvatarResponseAliasItemEnvironmentEnum =
     dev.octri.showcase.vercel.models.UploadProjectAvatarResponseAliasItemEnvironmentEnum
 
@@ -653,3 +650,6 @@ typealias UploadProjectAvatarResponseMicrofrontendsVariant2FreeProjectFX802b5c4f
 
 typealias UploadProjectAvatarResponseNodeVersionEnum =
     dev.octri.showcase.vercel.models.UploadProjectAvatarResponseNodeVersionEnum
+
+typealias UploadProjectAvatarResponseOidcTokenConfigEnabledEnum =
+    dev.octri.showcase.vercel.models.UploadProjectAvatarResponseOidcTokenConfigEnabledEnum

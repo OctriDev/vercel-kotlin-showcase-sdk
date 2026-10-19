@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias GetConfigurableLogDrainResponseProjectsMetadataItemFrameworkEnum =
-    dev.octri.showcase.vercel.models.GetConfigurableLogDrainResponseProjectsMetadataItemFrameworkEnum
-
 typealias GetConfigurationProductsResponseProductsItemMetadataSchemaProX0226d44573 =
     dev.octri.showcase.vercel.models.GetConfigurationProductsResponseProductsItemMetadataSchemaProX0226d44573
 
@@ -652,3 +649,6 @@ typealias GetConfigurationsResponseVariant1ItemStatusEnum =
 
 typealias GetConfigurationsResponseVariant1ItemTypeEnum =
     dev.octri.showcase.vercel.models.GetConfigurationsResponseVariant1ItemTypeEnum
+
+typealias GetConnectorTokenRequestSubject =
+    dev.octri.showcase.vercel.models.GetConnectorTokenRequestSubject

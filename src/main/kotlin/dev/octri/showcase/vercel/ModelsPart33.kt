@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias ListProjectsResponseVariant2ProjectsItemConnectConfigurationsX9a6df9398d =
-    dev.octri.showcase.vercel.models.ListProjectsResponseVariant2ProjectsItemConnectConfigurationsX9a6df9398d
-
 typealias ListProjectsResponseVariant2ProjectsItemCreatorVariant0TypeEnum =
     dev.octri.showcase.vercel.models.ListProjectsResponseVariant2ProjectsItemCreatorVariant0TypeEnum
 
@@ -653,3 +650,6 @@ typealias ListProjectsResponseVariant2ProjectsItemTrustedIpsVariant0DepX4d402532
 
 typealias ListProjectsResponseVariant2ProjectsItemTrustedIpsVariant0ProX4a799fbafd =
     dev.octri.showcase.vercel.models.ListProjectsResponseVariant2ProjectsItemTrustedIpsVariant0ProX4a799fbafd
+
+typealias ListProjectsResponseVariant2ProjectsItemTrustedIpsVariant1DepX95f22b75bb =
+    dev.octri.showcase.vercel.models.ListProjectsResponseVariant2ProjectsItemTrustedIpsVariant1DepX95f22b75bb

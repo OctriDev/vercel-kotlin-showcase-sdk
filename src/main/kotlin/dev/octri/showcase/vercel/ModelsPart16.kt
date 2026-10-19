@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias FilterProjectEnvsResponseVariant0ContentHintVariant6TypeEnum =
-    dev.octri.showcase.vercel.models.FilterProjectEnvsResponseVariant0ContentHintVariant6TypeEnum
-
 typealias FilterProjectEnvsResponseVariant0ContentHintVariant7 =
     dev.octri.showcase.vercel.models.FilterProjectEnvsResponseVariant0ContentHintVariant7
 
@@ -634,3 +631,6 @@ typealias GetConditionalBypassResponseVariant1ResultItemConditionGroupIXd8e23c8b
 
 typealias GetConditionalBypassResponseVariant1ResultItemConditionGroupIXf654c5004f =
     dev.octri.showcase.vercel.models.GetConditionalBypassResponseVariant1ResultItemConditionGroupIXf654c5004f
+
+typealias GetConfigurableLogDrainResponseProjectsMetadataItemFrameworkEnum =
+    dev.octri.showcase.vercel.models.GetConfigurableLogDrainResponseProjectsMetadataItemFrameworkEnum

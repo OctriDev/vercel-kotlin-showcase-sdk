@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias UpdateProjectResponseCreatorVariant3 =
-    dev.octri.showcase.vercel.models.UpdateProjectResponseCreatorVariant3
-
 typealias UpdateProjectResponseCreatorVariant3TypeEnum =
     dev.octri.showcase.vercel.models.UpdateProjectResponseCreatorVariant3TypeEnum
 
@@ -652,3 +649,6 @@ typealias UpdateProjectResponseRollingReleaseGateEnabledEnum =
 
 typealias UpdateProjectResponseRollingReleaseStagesItemLinearShiftEnum =
     dev.octri.showcase.vercel.models.UpdateProjectResponseRollingReleaseStagesItemLinearShiftEnum
+
+typealias UpdateProjectResponseRollingReleaseStagesItemRequireApprovalEnum =
+    dev.octri.showcase.vercel.models.UpdateProjectResponseRollingReleaseStagesItemRequireApprovalEnum

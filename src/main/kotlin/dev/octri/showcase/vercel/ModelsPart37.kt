@@ -3,8 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias TeamLimitedSaml = dev.octri.showcase.vercel.models.TeamLimitedSaml
-
 typealias TeamLimitedSamlConnection = dev.octri.showcase.vercel.models.TeamLimitedSamlConnection
 
 typealias TeamLimitedSamlConnectionSyncStateEnum =
@@ -608,3 +606,6 @@ typealias UpdateDrainResponseVariant0DeliveryVariant4TargetEnum =
 
 typealias UpdateDrainResponseVariant0DeliveryVariant4TypeEnum =
     dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DeliveryVariant4TypeEnum
+
+typealias UpdateDrainResponseVariant0DisabledReasonEnum =
+    dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DisabledReasonEnum

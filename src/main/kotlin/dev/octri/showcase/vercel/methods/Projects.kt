@@ -32,6 +32,7 @@ import dev.octri.showcase.vercel.CreateProjectEnvResponseCreatedVariant0Visibili
 import dev.octri.showcase.vercel.CreateProjectEnvResponseCreatedVariant1ItemInternalContentHintTypeEnum
 import dev.octri.showcase.vercel.CreateProjectEnvResponseCreatedVariant1ItemTypeEnum
 import dev.octri.showcase.vercel.CreateProjectEnvResponseCreatedVariant1ItemVisibilityEnum
+import dev.octri.showcase.vercel.CreateProjectEnvironmentVariablesItemTargetItemEnum
 import dev.octri.showcase.vercel.CreateProjectEnvironmentVariablesItemTypeEnum
 import dev.octri.showcase.vercel.CreateProjectGitRepositoryTypeEnum
 import dev.octri.showcase.vercel.CreateProjectOidcTokenConfigIssuerModeEnum
@@ -703,7 +704,7 @@ object Projects {
         /** Name of the ENV variable */
         val key: String,
         /** Deployment Target or Targets in which the ENV variable will be used */
-        val target: Any,
+        val target: List<CreateProjectEnvironmentVariablesItemTargetItemEnum>,
         /** Value for the ENV variable */
         @JacksonJsonProperty("value") val `value`: String,
         /** If defined, the git branch of the environment variable (must have target=preview) */

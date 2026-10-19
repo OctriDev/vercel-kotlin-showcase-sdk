@@ -27,12 +27,14 @@ object EdgeCache {
     fun invalidateByTags(
         clientConfig: ClientConfig,
         projectIdOrName: String,
-        tags: Any,
+        tags: List<String>,
         teamId: String? = null,
         slug: String? = null,
         target: InvalidateByTagsTargetEnum? = null,
         options: RequestOptions? = null,
     ): Unit {
+        Validation.validateItems("tags", tags, Validation.LengthOpts(min = 1, max = 16))
+
         SdkClient.request<Unit>(
             SdkClient.RequestSpec(
                 "POST",
@@ -56,7 +58,7 @@ object EdgeCache {
     /** Parameters for [dangerouslyDeleteByTags]. */
     data class DangerouslyDeleteByTagsRequest(
         val projectIdOrName: String,
-        val tags: Any,
+        val tags: List<String>,
         val teamId: String? = null,
         val slug: String? = null,
         val revalidationDeadlineSeconds: Long? = null,
@@ -113,6 +115,8 @@ object EdgeCache {
     }
 
     private fun validateDangerouslyDeleteByTagsRequest(request: DangerouslyDeleteByTagsRequest) {
+        Validation.validateItems("tags", request.tags, Validation.LengthOpts(min = 1, max = 16))
+
         if (request.revalidationDeadlineSeconds != null) {
             Validation.validateRange(
                 "revalidationDeadlineSeconds",

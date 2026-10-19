@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias GetMicrofrontendsInGroupResponseProjectsItemTierEnum =
-    dev.octri.showcase.vercel.models.GetMicrofrontendsInGroupResponseProjectsItemTierEnum
-
 typealias GetMicrofrontendsInGroupResponseProjectsItemTracingSamplingRuX7580e2556e =
     dev.octri.showcase.vercel.models.GetMicrofrontendsInGroupResponseProjectsItemTracingSamplingRuX7580e2556e
 
@@ -648,3 +645,6 @@ typealias GetProjectEnvResponseVariant1ContentHintVariant6TypeEnum =
 
 typealias GetProjectEnvResponseVariant1ContentHintVariant7 =
     dev.octri.showcase.vercel.models.GetProjectEnvResponseVariant1ContentHintVariant7
+
+typealias GetProjectEnvResponseVariant1ContentHintVariant7TypeEnum =
+    dev.octri.showcase.vercel.models.GetProjectEnvResponseVariant1ContentHintVariant7TypeEnum

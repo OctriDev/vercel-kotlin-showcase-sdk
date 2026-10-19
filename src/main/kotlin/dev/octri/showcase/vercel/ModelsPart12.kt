@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias CreateProjectResponseTrustedSourcesOidcProvidersValueItemToVaX29abd9efbe =
-    dev.octri.showcase.vercel.models.CreateProjectResponseTrustedSourcesOidcProvidersValueItemToVaX29abd9efbe
-
 typealias CreateProjectResponseTrustedSourcesOidcProvidersValueItemToVaXd630e2a635 =
     dev.octri.showcase.vercel.models.CreateProjectResponseTrustedSourcesOidcProvidersValueItemToVaXd630e2a635
 
@@ -646,3 +643,6 @@ typealias CreateSecurityFirewallConfigByConfigVersionActivateResponseCrXacd48a57
 
 typealias CreateSecurityFirewallConfigByConfigVersionActivateResponseCrXd290e87431 =
     dev.octri.showcase.vercel.models.CreateSecurityFirewallConfigByConfigVersionActivateResponseCrXd290e87431
+
+typealias CreateSecurityFirewallConfigByConfigVersionActivateResponseCrXde12d8973b =
+    dev.octri.showcase.vercel.models.CreateSecurityFirewallConfigByConfigVersionActivateResponseCrXde12d8973b

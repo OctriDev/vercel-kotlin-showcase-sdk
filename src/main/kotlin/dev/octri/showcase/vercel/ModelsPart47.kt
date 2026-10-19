@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias UserEventPayloadVariant238Previous =
-    dev.octri.showcase.vercel.models.UserEventPayloadVariant238Previous
-
 typealias UserEventPayloadVariant238PreviousAllowUnsafeScriptSrcKeywordsEnum =
     dev.octri.showcase.vercel.models.UserEventPayloadVariant238PreviousAllowUnsafeScriptSrcKeywordsEnum
 
@@ -579,3 +576,6 @@ typealias UserEventPayloadVariant303RequireVerifiedCommitsEnum =
     dev.octri.showcase.vercel.models.UserEventPayloadVariant303RequireVerifiedCommitsEnum
 
 typealias UserEventPayloadVariant304 = dev.octri.showcase.vercel.models.UserEventPayloadVariant304
+
+typealias UserEventPayloadVariant304RequireVerifiedCommitsEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant304RequireVerifiedCommitsEnum

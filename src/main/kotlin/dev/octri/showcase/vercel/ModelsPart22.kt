@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias GetFirewallConfigResponseCrsJavaActiveEnum =
-    dev.octri.showcase.vercel.models.GetFirewallConfigResponseCrsJavaActiveEnum
-
 typealias GetFirewallConfigResponseCrsLfiActionEnum =
     dev.octri.showcase.vercel.models.GetFirewallConfigResponseCrsLfiActionEnum
 
@@ -650,3 +647,6 @@ typealias GetMicrofrontendsInGroupResponseProjectsItemEnableAffectedProX045e9357
 
 typealias GetMicrofrontendsInGroupResponseProjectsItemEnableExternalRewX367ab1d6f9 =
     dev.octri.showcase.vercel.models.GetMicrofrontendsInGroupResponseProjectsItemEnableExternalRewX367ab1d6f9
+
+typealias GetMicrofrontendsInGroupResponseProjectsItemEnablePreviewFeedbackEnum =
+    dev.octri.showcase.vercel.models.GetMicrofrontendsInGroupResponseProjectsItemEnablePreviewFeedbackEnum

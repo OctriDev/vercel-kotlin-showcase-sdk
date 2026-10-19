@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias GetProjectEnvResponseVariant1ContentHintVariant7TypeEnum =
-    dev.octri.showcase.vercel.models.GetProjectEnvResponseVariant1ContentHintVariant7TypeEnum
-
 typealias GetProjectEnvResponseVariant1ContentHintVariant8 =
     dev.octri.showcase.vercel.models.GetProjectEnvResponseVariant1ContentHintVariant8
 
@@ -652,3 +649,6 @@ typealias GetProjectsResponseInternalRoutesItemVariant1HasItemVariant1 =
 
 typealias GetProjectsResponseInternalRoutesItemVariant1HasItemVariant1TypeEnum =
     dev.octri.showcase.vercel.models.GetProjectsResponseInternalRoutesItemVariant1HasItemVariant1TypeEnum
+
+typealias GetProjectsResponseInternalRoutesItemVariant1HasItemVariant1Value =
+    dev.octri.showcase.vercel.models.GetProjectsResponseInternalRoutesItemVariant1HasItemVariant1Value

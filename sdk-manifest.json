@@ -31321,8 +31321,8 @@
             {
               "name": "tags",
               "required": true,
-              "repeated": false,
-              "partKind": "json",
+              "repeated": true,
+              "partKind": "scalar",
               "contentType": null
             },
             {
@@ -31475,8 +31475,8 @@
           "in": "body",
           "required": true,
           "nullable": false,
-          "type": "oneOf",
-          "wireType": null,
+          "type": "array",
+          "wireType": "array",
           "declaredValue": null,
           "mediaTypes": [
             "application/json"
@@ -31523,8 +31523,8 @@
           "in": "body",
           "required": true,
           "nullable": false,
-          "type": "oneOf",
-          "wireType": null,
+          "type": "array",
+          "wireType": "array",
           "declaredValue": null,
           "mediaTypes": [
             "application/json"
@@ -77328,8 +77328,8 @@
             {
               "name": "tags",
               "required": true,
-              "repeated": false,
-              "partKind": "json",
+              "repeated": true,
+              "partKind": "scalar",
               "contentType": null
             },
             {
@@ -77470,8 +77470,8 @@
           "in": "body",
           "required": true,
           "nullable": false,
-          "type": "oneOf",
-          "wireType": null,
+          "type": "array",
+          "wireType": "array",
           "declaredValue": null,
           "mediaTypes": [
             "application/json"
@@ -77518,8 +77518,8 @@
           "in": "body",
           "required": true,
           "nullable": false,
-          "type": "oneOf",
-          "wireType": null,
+          "type": "array",
+          "wireType": "array",
           "declaredValue": null,
           "mediaTypes": [
             "application/json"
@@ -96379,8 +96379,8 @@
             {
               "name": "logHeaders",
               "required": false,
-              "repeated": false,
-              "partKind": "json",
+              "repeated": true,
+              "partKind": "scalar",
               "contentType": null
             }
           ]
@@ -96573,8 +96573,8 @@
           "in": "body",
           "required": false,
           "nullable": false,
-          "type": "oneOf",
-          "wireType": null,
+          "type": "array",
+          "wireType": "array",
           "declaredValue": null,
           "mediaTypes": [
             "application/json"
@@ -96773,8 +96773,8 @@
           "in": "body",
           "required": false,
           "nullable": false,
-          "type": "oneOf",
-          "wireType": null,
+          "type": "array",
+          "wireType": "array",
           "declaredValue": null,
           "mediaTypes": [
             "application/json"

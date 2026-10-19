@@ -3,9 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias UpdateProjectResponseRollingReleaseStagesItemRequireApprovalEnum =
-    dev.octri.showcase.vercel.models.UpdateProjectResponseRollingReleaseStagesItemRequireApprovalEnum
-
 typealias UpdateProjectResponseSandboxFailoverRegionsItemEnum =
     dev.octri.showcase.vercel.models.UpdateProjectResponseSandboxFailoverRegionsItemEnum
 
@@ -644,3 +641,6 @@ typealias UploadProjectAvatarResponseAliasItemDeploymentReadySubstateEnum =
 
 typealias UploadProjectAvatarResponseAliasItemDeploymentTypeEnum =
     dev.octri.showcase.vercel.models.UploadProjectAvatarResponseAliasItemDeploymentTypeEnum
+
+typealias UploadProjectAvatarResponseAliasItemDeploymentWithCacheEnum =
+    dev.octri.showcase.vercel.models.UploadProjectAvatarResponseAliasItemDeploymentWithCacheEnum
