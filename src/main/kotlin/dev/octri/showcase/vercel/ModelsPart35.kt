@@ -3,8 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias PutFirewallConfigResponseActiveCrsSdActionEnum = dev.octri.showcase.vercel.models.PutFirewallConfigResponseActiveCrsSdActionEnum
-
 typealias PutFirewallConfigResponseActiveCrsSdActiveEnum = dev.octri.showcase.vercel.models.PutFirewallConfigResponseActiveCrsSdActiveEnum
 
 typealias PutFirewallConfigResponseActiveCrsSfActionEnum = dev.octri.showcase.vercel.models.PutFirewallConfigResponseActiveCrsSfActionEnum
@@ -436,3 +434,5 @@ typealias RevokeKmsSigningKeyResponsePoliciesItemVariant1KindEnum = dev.octri.sh
 typealias RevokeKmsSigningKeyResponseSigningKeysItemStatusEnum = dev.octri.showcase.vercel.models.RevokeKmsSigningKeyResponseSigningKeysItemStatusEnum
 
 typealias RotateInstallationCredentialResponseTokenTypeEnum = dev.octri.showcase.vercel.models.RotateInstallationCredentialResponseTokenTypeEnum
+
+typealias RunSessionCommandResponseVariant0DataCodeEnum = dev.octri.showcase.vercel.models.RunSessionCommandResponseVariant0DataCodeEnum

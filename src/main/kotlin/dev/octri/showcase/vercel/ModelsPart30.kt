@@ -3,8 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias ListDeploymentCheckRunsResponseRunsItemVariant0ConclusionEnum = dev.octri.showcase.vercel.models.ListDeploymentCheckRunsResponseRunsItemVariant0ConclusionEnum
-
 typealias ListDeploymentCheckRunsResponseRunsItemVariant0ExpectationRef = dev.octri.showcase.vercel.models.ListDeploymentCheckRunsResponseRunsItemVariant0ExpectationRef
 
 typealias ListDeploymentCheckRunsResponseRunsItemVariant0RequiresEnum = dev.octri.showcase.vercel.models.ListDeploymentCheckRunsResponseRunsItemVariant0RequiresEnum
@@ -436,3 +434,5 @@ typealias ListProjectsResponseItemCreatorVariant3 = dev.octri.showcase.vercel.mo
 typealias ListProjectsResponseItemCreatorVariant3TypeEnum = dev.octri.showcase.vercel.models.ListProjectsResponseItemCreatorVariant3TypeEnum
 
 typealias ListProjectsResponseItemEnvItemContentHint = dev.octri.showcase.vercel.models.ListProjectsResponseItemEnvItemContentHint
+
+typealias ListProjectsResponseItemEnvItemContentHintVariant0 = dev.octri.showcase.vercel.models.ListProjectsResponseItemEnvItemContentHintVariant0

@@ -3,8 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias UpdateMicrofrontendsResponseLinkVariant6TypeEnum = dev.octri.showcase.vercel.models.UpdateMicrofrontendsResponseLinkVariant6TypeEnum
-
 typealias UpdateMicrofrontendsResponseLinkVariant7 = dev.octri.showcase.vercel.models.UpdateMicrofrontendsResponseLinkVariant7
 
 typealias UpdateMicrofrontendsResponseLinkVariant7DeployHooksItem = dev.octri.showcase.vercel.models.UpdateMicrofrontendsResponseLinkVariant7DeployHooksItem
@@ -436,3 +434,5 @@ typealias UpdateProjectResponseCreatorVariant2 = dev.octri.showcase.vercel.model
 typealias UpdateProjectResponseCreatorVariant2Integration = dev.octri.showcase.vercel.models.UpdateProjectResponseCreatorVariant2Integration
 
 typealias UpdateProjectResponseCreatorVariant2TypeEnum = dev.octri.showcase.vercel.models.UpdateProjectResponseCreatorVariant2TypeEnum
+
+typealias UpdateProjectResponseCreatorVariant3 = dev.octri.showcase.vercel.models.UpdateProjectResponseCreatorVariant3

@@ -3,8 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias UserEventPayloadVariant304RequireVerifiedCommitsEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant304RequireVerifiedCommitsEnum
-
 typealias UserEventPayloadVariant305 = dev.octri.showcase.vercel.models.UserEventPayloadVariant305
 
 typealias UserEventPayloadVariant305DisableRepositoryDispatchEventsEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant305DisableRepositoryDispatchEventsEnum
@@ -436,3 +434,5 @@ typealias UserEventPayloadVariant379 = dev.octri.showcase.vercel.models.UserEven
 typealias UserEventPayloadVariant379Budget = dev.octri.showcase.vercel.models.UserEventPayloadVariant379Budget
 
 typealias UserEventPayloadVariant379BudgetIsActiveEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant379BudgetIsActiveEnum
+
+typealias UserEventPayloadVariant379BudgetPauseProjectsEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant379BudgetPauseProjectsEnum

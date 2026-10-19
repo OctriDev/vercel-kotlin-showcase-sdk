@@ -3,8 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias UpdateDrainResponseVariant0DisabledReasonEnum = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0DisabledReasonEnum
-
 typealias UpdateDrainResponseVariant0FilterV2 = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0FilterV2
 
 typealias UpdateDrainResponseVariant0FilterV2FilterVariant0 = dev.octri.showcase.vercel.models.UpdateDrainResponseVariant0FilterV2FilterVariant0
@@ -436,3 +434,5 @@ typealias UpdateKmsIssuerPolicyResponseVariant1 = dev.octri.showcase.vercel.mode
 typealias UpdateKmsIssuerPolicyResponseVariant1KindEnum = dev.octri.showcase.vercel.models.UpdateKmsIssuerPolicyResponseVariant1KindEnum
 
 typealias UpdateKmsIssuerResponseAlgorithmEnum = dev.octri.showcase.vercel.models.UpdateKmsIssuerResponseAlgorithmEnum
+
+typealias UpdateKmsIssuerResponseOriginEnum = dev.octri.showcase.vercel.models.UpdateKmsIssuerResponseOriginEnum

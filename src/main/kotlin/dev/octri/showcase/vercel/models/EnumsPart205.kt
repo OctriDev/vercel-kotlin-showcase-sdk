@@ -3,23 +3,6 @@
 
 package dev.octri.showcase.vercel.models
 
-class CreateProjectResponseSecurityRulesetsValueBypassSystemEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateProjectResponseSecurityRulesetsValueBypassSystemEnum && value == other.value
-    override fun hashCode(): Int = value.hashCode()
-    override fun toString(): String = value.toString()
-
-    companion object {
-
-        @JvmField val FALSE = CreateProjectResponseSecurityRulesetsValueBypassSystemEnum(false)
-        @JvmField val TRUE = CreateProjectResponseSecurityRulesetsValueBypassSystemEnum(true)
-
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateProjectResponseSecurityRulesetsValueBypassSystemEnum(value)
-    }
-}
-
 class CreateProjectResponseSecurityRulesetsValueLogHeadersVariant1Enum private constructor(
     @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
 ) {

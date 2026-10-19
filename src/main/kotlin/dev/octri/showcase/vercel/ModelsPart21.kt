@@ -3,8 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias GetDrainResponseVariant0DeliveryVariant0TypeEnum = dev.octri.showcase.vercel.models.GetDrainResponseVariant0DeliveryVariant0TypeEnum
-
 typealias GetDrainResponseVariant0DeliveryVariant1 = dev.octri.showcase.vercel.models.GetDrainResponseVariant0DeliveryVariant1
 
 typealias GetDrainResponseVariant0DeliveryVariant1EncodingEnum = dev.octri.showcase.vercel.models.GetDrainResponseVariant0DeliveryVariant1EncodingEnum
@@ -436,3 +434,5 @@ typealias GetFirewallConfigResponseCrsGenActionEnum = dev.octri.showcase.vercel.
 typealias GetFirewallConfigResponseCrsGenActiveEnum = dev.octri.showcase.vercel.models.GetFirewallConfigResponseCrsGenActiveEnum
 
 typealias GetFirewallConfigResponseCrsJavaActionEnum = dev.octri.showcase.vercel.models.GetFirewallConfigResponseCrsJavaActionEnum
+
+typealias GetFirewallConfigResponseCrsJavaActiveEnum = dev.octri.showcase.vercel.models.GetFirewallConfigResponseCrsJavaActiveEnum

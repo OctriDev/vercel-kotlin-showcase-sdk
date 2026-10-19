@@ -21,7 +21,9 @@ object EdgeCache {
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun invalidateByTags(clientConfig: ClientConfig, projectIdOrName: String, tags: Any, teamId: String? = null, slug: String? = null, target: InvalidateByTagsTargetEnum? = null, options: RequestOptions? = null): Unit {
+    fun invalidateByTags(clientConfig: ClientConfig, projectIdOrName: String, tags: List<String>, teamId: String? = null, slug: String? = null, target: InvalidateByTagsTargetEnum? = null, options: RequestOptions? = null): Unit {
+        Validation.validateItems("tags", tags, Validation.LengthOpts(min = 1, max = 16))
+
         SdkClient.request<Unit>(SdkClient.RequestSpec("POST", "/v1/edge-cache/invalidate-by-tags", config = clientConfig, query = mapOf("projectIdOrName" to
     SdkClient.queryValue(projectIdOrName, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("tags" to (tags), "target" to (SdkClient.omitIfNull(target))), operationId = "invalidateByTags", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
     }
@@ -35,7 +37,7 @@ object EdgeCache {
     /** Parameters for [dangerouslyDeleteByTags]. */
     data class DangerouslyDeleteByTagsRequest(
         val projectIdOrName: String,
-        val tags: Any,
+        val tags: List<String>,
         val teamId: String? = null,
         val slug: String? = null,
         val revalidationDeadlineSeconds: Long? = null,
@@ -61,6 +63,8 @@ object EdgeCache {
 
 
     private fun validateDangerouslyDeleteByTagsRequest(request: DangerouslyDeleteByTagsRequest) {
+        Validation.validateItems("tags", request.tags, Validation.LengthOpts(min = 1, max = 16))
+
         if (request.revalidationDeadlineSeconds != null) {
             Validation.validateRange("revalidationDeadlineSeconds", request.revalidationDeadlineSeconds, Validation.RangeOpts(min = 0.0, max = 31536000.0))
 }

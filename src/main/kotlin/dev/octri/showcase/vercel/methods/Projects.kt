@@ -9,6 +9,7 @@ import dev.octri.showcase.vercel.AcceptProjectTransferRequestResponsePartnerCall
 import dev.octri.showcase.vercel.ACLAction
 import dev.octri.showcase.vercel.AddProjectDomainRedirectStatusCodeEnum
 import dev.octri.showcase.vercel.ClientConfig
+import dev.octri.showcase.vercel.CreateProjectEnvironmentVariablesItemTargetItemEnum
 import dev.octri.showcase.vercel.CreateProjectEnvironmentVariablesItemTypeEnum
 import dev.octri.showcase.vercel.CreateProjectEnvResponseCreatedItemContentHint
 import dev.octri.showcase.vercel.CreateProjectEnvResponseCreatedVariant0ContentHintVariant0TypeEnum
@@ -706,8 +707,6 @@ data class GetProjectTraceResponse(
 
 
 
-
-
 data class CreateProjectEnvironmentVariablesItem(
     /**
      * Name of the ENV variable
@@ -716,7 +715,7 @@ data class CreateProjectEnvironmentVariablesItem(
     /**
      * Deployment Target or Targets in which the ENV variable will be used
      */
-    val target: Any,
+    val target: List<CreateProjectEnvironmentVariablesItemTargetItemEnum>,
     /**
      * Value for the ENV variable
      */

@@ -3,8 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias UserEventPayloadVariant120JobVariant3GitHashtagVercelItemEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant120JobVariant3GitHashtagVercelItemEnum
-
 typealias UserEventPayloadVariant120JobVariant3HeadInfo = dev.octri.showcase.vercel.models.UserEventPayloadVariant120JobVariant3HeadInfo
 
 typealias UserEventPayloadVariant120JobVariant3IsManualGitDeployEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant120JobVariant3IsManualGitDeployEnum
@@ -436,3 +434,5 @@ typealias UserEventPayloadVariant173OldEnvVar = dev.octri.showcase.vercel.models
 typealias UserEventPayloadVariant173OldEnvVarApplyToAllCustomEnvironmentsEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant173OldEnvVarApplyToAllCustomEnvironmentsEnum
 
 typealias UserEventPayloadVariant173OldEnvVarDecryptedEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant173OldEnvVarDecryptedEnum
+
+typealias UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0 = dev.octri.showcase.vercel.models.UserEventPayloadVariant173OldEnvVarLastEditedByPrincipalVariant0

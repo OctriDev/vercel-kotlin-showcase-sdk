@@ -1172,7 +1172,7 @@ data class PutFirewallConfigRulesItemActionMitigate(
     val redirect: PutFirewallConfigRulesItemActionMitigateRedirectVariant0? = null,
     val actionDuration: String? = null,
     val bypassSystem: Boolean? = null,
-    val logHeaders: Any? = null
+    val logHeaders: List<String>? = null
 )
 
 data class PutFirewallConfigRulesItemAction(
@@ -1187,7 +1187,7 @@ data class PutFirewallConfigRulesItem(
     val id: String? = null,
     val description: String? = null,
     val valid: Boolean? = null,
-    val validationErrors: Any? = null
+    val validationErrors: List<String>? = null
 )
 
 data class PutFirewallConfigIpsItem(
@@ -2286,7 +2286,7 @@ data class GenerateFirewallRuleResponse(
         val rulesets: Any? = null,
         val ips: List<PutFirewallConfigIpsItem>? = null,
         val botIdEnabled: Boolean? = null,
-        val logHeaders: Any? = null
+        val logHeaders: List<String>? = null
     )
 
     /** Parameters for [getBypassIp]. */

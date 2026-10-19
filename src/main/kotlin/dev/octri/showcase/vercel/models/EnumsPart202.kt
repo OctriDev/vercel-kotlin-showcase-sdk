@@ -3,23 +3,6 @@
 
 package dev.octri.showcase.vercel.models
 
-class CreateProjectResponseEnableProductionFeedbackEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateProjectResponseEnableProductionFeedbackEnum && value == other.value
-    override fun hashCode(): Int = value.hashCode()
-    override fun toString(): String = value.toString()
-
-    companion object {
-
-        @JvmField val FALSE = CreateProjectResponseEnableProductionFeedbackEnum(false)
-        @JvmField val TRUE = CreateProjectResponseEnableProductionFeedbackEnum(true)
-
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateProjectResponseEnableProductionFeedbackEnum(value)
-    }
-}
-
 class CreateProjectResponseEnvItemDecryptedEnum private constructor(
     @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
 ) {
@@ -589,5 +572,22 @@ class CreateProjectResponseLatestDeploymentsItemChecksStateEnum private construc
 
         @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
         @JvmStatic fun fromValue(value: String) = CreateProjectResponseLatestDeploymentsItemChecksStateEnum(value)
+    }
+}
+
+class CreateProjectResponseLatestDeploymentsItemConnectBuildsEnabledEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateProjectResponseLatestDeploymentsItemConnectBuildsEnabledEnum && value == other.value
+    override fun hashCode(): Int = value.hashCode()
+    override fun toString(): String = value.toString()
+
+    companion object {
+
+        @JvmField val FALSE = CreateProjectResponseLatestDeploymentsItemConnectBuildsEnabledEnum(false)
+        @JvmField val TRUE = CreateProjectResponseLatestDeploymentsItemConnectBuildsEnabledEnum(true)
+
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = CreateProjectResponseLatestDeploymentsItemConnectBuildsEnabledEnum(value)
     }
 }

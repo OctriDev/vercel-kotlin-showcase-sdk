@@ -10,7 +10,7 @@ class EdgeCacheNamespace(private val clientConfig: ClientConfig) {
      *
      * Marks a cache tag as stale, causing cache entries associated with that tag to be revalidated in the background on the next request.
      */
-    fun invalidateByTags(projectIdOrName: String, tags: Any, teamId: String? = null, slug: String? = null, target: InvalidateByTagsTargetEnum? = null, options: RequestOptions? = null): Unit {
+    fun invalidateByTags(projectIdOrName: String, tags: List<String>, teamId: String? = null, slug: String? = null, target: InvalidateByTagsTargetEnum? = null, options: RequestOptions? = null): Unit {
         return dev.octri.showcase.vercel.methods.EdgeCache.invalidateByTags(clientConfig, projectIdOrName, tags, teamId, slug, target, options)
     }
 

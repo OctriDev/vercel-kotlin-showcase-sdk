@@ -3,8 +3,6 @@
 
 package dev.octri.showcase.vercel
 
-typealias UpdateKmsIssuerResponseOriginEnum = dev.octri.showcase.vercel.models.UpdateKmsIssuerResponseOriginEnum
-
 typealias UpdateKmsIssuerResponsePoliciesItem = dev.octri.showcase.vercel.models.UpdateKmsIssuerResponsePoliciesItem
 
 typealias UpdateKmsIssuerResponsePoliciesItemVariant0 = dev.octri.showcase.vercel.models.UpdateKmsIssuerResponsePoliciesItemVariant0
@@ -436,3 +434,5 @@ typealias UpdateMicrofrontendsResponseLinkVariant6 = dev.octri.showcase.vercel.m
 typealias UpdateMicrofrontendsResponseLinkVariant6DeployHooksItem = dev.octri.showcase.vercel.models.UpdateMicrofrontendsResponseLinkVariant6DeployHooksItem
 
 typealias UpdateMicrofrontendsResponseLinkVariant6SourcelessEnum = dev.octri.showcase.vercel.models.UpdateMicrofrontendsResponseLinkVariant6SourcelessEnum
+
+typealias UpdateMicrofrontendsResponseLinkVariant6TypeEnum = dev.octri.showcase.vercel.models.UpdateMicrofrontendsResponseLinkVariant6TypeEnum
