@@ -3,6 +3,7 @@
 
 package dev.octri.showcase.vercel.methods
 
+import com.fasterxml.jackson.core.type.TypeReference
 import dev.octri.showcase.vercel.ClientConfig
 import dev.octri.showcase.vercel.GetSessionCommandLogsResponse
 import dev.octri.showcase.vercel.GetSessionCommandParameterEnum
@@ -10,184 +11,314 @@ import dev.octri.showcase.vercel.RequestOptions
 import dev.octri.showcase.vercel.SdkClient
 import dev.octri.showcase.vercel.StopSessionResponse
 import dev.octri.showcase.vercel.Validation
-import com.fasterxml.jackson.core.type.TypeReference
 
 internal object SandboxesListSessionsOperation {
     /**
-     * Lists sessions for a sandbox, with results paginated by an opaque cursor and sorted by creation time. Filter by project and sandbox name, and use `limit`, `cursor`, and `sortOrder` to shape the results. The response includes session records and pagination metadata.
+     * Lists sessions for a sandbox, with results paginated by an opaque cursor and sorted by
+     * creation time. Filter by project and sandbox name, and use `limit`, `cursor`, and `sortOrder`
+     * to shape the results. The response includes session records and pagination metadata.
      *
-     * Retrieves a paginated list of sessions belonging to a specific sandbox. Results are sorted by creation time and paginated using an opaque cursor.
+     * Retrieves a paginated list of sessions belonging to a specific sandbox. Results are sorted by
+     * creation time and paginated using an opaque cursor.
      *
-     * @param project The unique identifier or name of the project to list sessions
-     *   for.
-     * @param name Filter sessions by sandbox name. Only sessions belonging to the
-     *   specified sandbox are returned.
-     * @param limit Maximum number of sessions to return in the response. Used for
-     *   pagination.
+     * @param project The unique identifier or name of the project to list sessions for.
+     * @param name Filter sessions by sandbox name. Only sessions belonging to the specified sandbox
+     *   are returned.
+     * @param limit Maximum number of sessions to return in the response. Used for pagination.
      * @param cursor Opaque pagination cursor from a previous response.
      * @param sortOrder Sort direction for results by creation time.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listSessions(clientConfig: ClientConfig, request: Sandboxes.ListSessionsRequest, options: RequestOptions? = null): Map<String, Any> {
+    fun listSessions(
+        clientConfig: ClientConfig,
+        request: Sandboxes.ListSessionsRequest,
+        options: RequestOptions? = null,
+    ): Map<String, Any> {
         validateListSessionsRequest(request)
 
-        return SdkClient.request<Map<String, Any>>(SdkClient.RequestSpec("GET", "/v2/sandboxes/sessions", config = clientConfig, query = mapOf("project" to
-    SdkClient.queryValue(request.project, "form", true), "name" to SdkClient.queryValue(request.name, "form", true), "limit" to SdkClient.queryValue(request.limit, "form", true), "cursor" to
-    SdkClient.queryValue(request.cursor, "form", true), "sortOrder" to
-    SdkClient.queryValue(request.sortOrder, "form", true), "teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "listSessions", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<Map<String, Any>>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v2/sandboxes/sessions",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "project" to SdkClient.queryValue(request.project, "form", true),
+                            "name" to SdkClient.queryValue(request.name, "form", true),
+                            "limit" to SdkClient.queryValue(request.limit, "form", true),
+                            "cursor" to SdkClient.queryValue(request.cursor, "form", true),
+                            "sortOrder" to SdkClient.queryValue(request.sortOrder, "form", true),
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    operationId = "listSessions",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
-
 
     private fun validateListSessionsRequest(request: Sandboxes.ListSessionsRequest) {
         if (request.name != null) {
             Validation.validateLength("name", request.name, Validation.LengthOpts(max = 128))
             Validation.validatePattern("name", request.name, "^[a-zA-Z0-9_-]+$")
-}
+        }
 
         if (request.limit != null) {
-            Validation.validateRange("limit", request.limit, Validation.RangeOpts(min = 1.0, max = 50.0))
-}
+            Validation.validateRange(
+                "limit",
+                request.limit,
+                Validation.RangeOpts(min = 1.0, max = 50.0),
+            )
+        }
     }
 }
 
 internal object SandboxesGetSessionOperation {
     /**
-     * Retrieves details for a specific sandbox session, including its status, resource configuration, and exposed routes. Use `sessionId` to identify the session to inspect. The response includes the session object and its routes.
+     * Retrieves details for a specific sandbox session, including its status, resource
+     * configuration, and exposed routes. Use `sessionId` to identify the session to inspect. The
+     * response includes the session object and its routes.
      *
-     * Retrieves detailed information about a specific session, including its current status, resource configuration, and exposed routes.
+     * Retrieves detailed information about a specific session, including its current status,
+     * resource configuration, and exposed routes.
      *
      * @param sessionId The unique identifier of the session to retrieve.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getSession(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Sandboxes.GetSessionResponse {
-        return SdkClient.request<Sandboxes.GetSessionResponse>(SdkClient.RequestSpec("GET", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getSession", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getSession(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Sandboxes.GetSessionResponse {
+        return SdkClient.request<Sandboxes.GetSessionResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getSession",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesListSessionCommandsOperation {
     /**
-     * Lists commands executed in a session, including their current status, exit codes, and execution times. Use `sessionId` to select the session; results are ordered from most recent to oldest.
+     * Lists commands executed in a session, including their current status, exit codes, and
+     * execution times. Use `sessionId` to select the session; results are ordered from most recent
+     * to oldest.
      *
-     * Retrieves a list of all commands that have been executed in a session, including their current status, exit codes, and execution times, ordered from the most recent to the oldest.
+     * Retrieves a list of all commands that have been executed in a session, including their
+     * current status, exit codes, and execution times, ordered from the most recent to the oldest.
      *
      * @param sessionId The unique identifier of the session to list commands for.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listSessionCommands(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Sandboxes.ListSessionCommandsResponse {
-        return SdkClient.request<Sandboxes.ListSessionCommandsResponse>(SdkClient.RequestSpec("GET", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/cmd", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "listSessionCommands", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun listSessionCommands(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Sandboxes.ListSessionCommandsResponse {
+        return SdkClient.request<Sandboxes.ListSessionCommandsResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/cmd",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "listSessionCommands",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesRunSessionCommandOperation {
     /**
-     * Submits a shell command for execution in a session and returns a command ID for tracking its progress. Use `wait` to stream status updates until the command finishes; set `logs` as well to stream execution output in real time.
+     * Submits a shell command for execution in a session and returns a command ID for tracking its
+     * progress. Use `wait` to stream status updates until the command finishes; set `logs` as well
+     * to stream execution output in real time.
      *
-     * Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion.
+     * Executes a shell command inside a running session. The command runs asynchronously and
+     * returns immediately with a command ID that can be used to track its progress and retrieve its
+     * output. Optionally, use the `wait` parameter to stream the command status until completion.
      *
-     * @param sessionId The unique identifier of the session in which to execute the
-     *   command.
+     * @param sessionId The unique identifier of the session in which to execute the command.
      * @param cmdId The unique identifier of the command to stream logs for.
-     * @param command The executable or shell command to run. This is the program
-     *   name without arguments.
+     * @param command The executable or shell command to run. This is the program name without
+     *   arguments.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param args Arguments to pass to the command. Each argument should be a
-     *   separate array element.
-     * @param cwd The working directory in which to execute the command. Defaults to
-     *   the sandbox home directory if not specified.
-     * @param env Additional environment variables to set for this command. These are
-     *   merged with the sandbox environment.
+     * @param args Arguments to pass to the command. Each argument should be a separate array
+     *   element.
+     * @param cwd The working directory in which to execute the command. Defaults to the sandbox
+     *   home directory if not specified.
+     * @param env Additional environment variables to set for this command. These are merged with
+     *   the sandbox environment.
      * @param sudo Execute the command with root (superuser) privileges.
-     * @param wait If true, returns an ND-JSON stream that emits the command status
-     *   when started and again when finished. Useful for synchronously waiting for
-     *   command completion.
-     * @param logs If true, stream the logs of the command execution in real-time via
-     *   ND-JSON. This is only applicable if `wait` is also true.
-     * @param timeout Maximum duration in milliseconds the command may run before it
-     *   is killed with SIGKILL, up to 5 hours. Enforced at exec time, independently of
-     *   `wait`.
-     * @param attachStdin If true, keeps the command stdin open so it can be written
-     *   to with the stdin endpoint while the command runs. When false, the command
-     *   reads from an empty stdin.
+     * @param wait If true, returns an ND-JSON stream that emits the command status when started and
+     *   again when finished. Useful for synchronously waiting for command completion.
+     * @param logs If true, stream the logs of the command execution in real-time via ND-JSON. This
+     *   is only applicable if `wait` is also true.
+     * @param timeout Maximum duration in milliseconds the command may run before it is killed with
+     *   SIGKILL, up to 5 hours. Enforced at exec time, independently of `wait`.
+     * @param attachStdin If true, keeps the command stdin open so it can be written to with the
+     *   stdin endpoint while the command runs. When false, the command reads from an empty stdin.
      */
-    fun runSessionCommand(clientConfig: ClientConfig, request: Sandboxes.RunSessionCommandRequest, options: RequestOptions? = null): Sandboxes.RunSessionCommandResponse {
+    fun runSessionCommand(
+        clientConfig: ClientConfig,
+        request: Sandboxes.RunSessionCommandRequest,
+        options: RequestOptions? = null,
+    ): Sandboxes.RunSessionCommandResponse {
         validateRunSessionCommandRequest(request)
 
-        return SdkClient.request<Sandboxes.RunSessionCommandResponse>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(request.sessionId)}/cmd", config = clientConfig, query = mapOf("cmdId" to SdkClient.queryValue(request.cmdId, "form", true), "teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("command" to (request.command), "args" to (SdkClient.omitIfNull(request.args)), "cwd" to (SdkClient.omitIfNull(request.cwd)), "env" to (SdkClient.omitIfNull(request.env)), "sudo" to (SdkClient.omitIfNull(request.sudo)), "wait" to (SdkClient.omitIfNull(request.wait)), "logs" to (SdkClient.omitIfNull(request.logs)), "timeout" to (SdkClient.omitIfNull(request.timeout)), "attachStdin" to (SdkClient.omitIfNull(request.attachStdin))), operationId = "runSessionCommand", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<Sandboxes.RunSessionCommandResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(request.sessionId)}/cmd",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "cmdId" to SdkClient.queryValue(request.cmdId, "form", true),
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    body =
+                        SdkClient.bodyMap(
+                            "command" to (request.command),
+                            "args" to (SdkClient.omitIfNull(request.args)),
+                            "cwd" to (SdkClient.omitIfNull(request.cwd)),
+                            "env" to (SdkClient.omitIfNull(request.env)),
+                            "sudo" to (SdkClient.omitIfNull(request.sudo)),
+                            "wait" to (SdkClient.omitIfNull(request.wait)),
+                            "logs" to (SdkClient.omitIfNull(request.logs)),
+                            "timeout" to (SdkClient.omitIfNull(request.timeout)),
+                            "attachStdin" to (SdkClient.omitIfNull(request.attachStdin)),
+                        ),
+                    operationId = "runSessionCommand",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
-
 
     private fun validateRunSessionCommandRequest(request: Sandboxes.RunSessionCommandRequest) {
         if (request.timeout != null) {
-            Validation.validateRange("timeout", request.timeout, Validation.RangeOpts(min = 100.0, max = 18000000.0))
-}
+            Validation.validateRange(
+                "timeout",
+                request.timeout,
+                Validation.RangeOpts(min = 100.0, max = 18000000.0),
+            )
+        }
     }
 }
 
 internal object SandboxesRunSessionCommandStreamOperation {
     /**
-     * Submits a shell command for execution in a session and returns a command ID for tracking its progress. Use `wait` to stream status updates until the command finishes; set `logs` as well to stream execution output in real time.
+     * Submits a shell command for execution in a session and returns a command ID for tracking its
+     * progress. Use `wait` to stream status updates until the command finishes; set `logs` as well
+     * to stream execution output in real time.
      *
-     * Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion.
+     * Executes a shell command inside a running session. The command runs asynchronously and
+     * returns immediately with a command ID that can be used to track its progress and retrieve its
+     * output. Optionally, use the `wait` parameter to stream the command status until completion.
      *
-     * @param sessionId The unique identifier of the session in which to execute the
-     *   command.
+     * @param sessionId The unique identifier of the session in which to execute the command.
      * @param cmdId The unique identifier of the command to stream logs for.
-     * @param command The executable or shell command to run. This is the program
-     *   name without arguments.
+     * @param command The executable or shell command to run. This is the program name without
+     *   arguments.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param args Arguments to pass to the command. Each argument should be a
-     *   separate array element.
-     * @param cwd The working directory in which to execute the command. Defaults to
-     *   the sandbox home directory if not specified.
-     * @param env Additional environment variables to set for this command. These are
-     *   merged with the sandbox environment.
+     * @param args Arguments to pass to the command. Each argument should be a separate array
+     *   element.
+     * @param cwd The working directory in which to execute the command. Defaults to the sandbox
+     *   home directory if not specified.
+     * @param env Additional environment variables to set for this command. These are merged with
+     *   the sandbox environment.
      * @param sudo Execute the command with root (superuser) privileges.
-     * @param wait If true, returns an ND-JSON stream that emits the command status
-     *   when started and again when finished. Useful for synchronously waiting for
-     *   command completion.
-     * @param logs If true, stream the logs of the command execution in real-time via
-     *   ND-JSON. This is only applicable if `wait` is also true.
-     * @param timeout Maximum duration in milliseconds the command may run before it
-     *   is killed with SIGKILL, up to 5 hours. Enforced at exec time, independently of
-     *   `wait`.
-     * @param attachStdin If true, keeps the command stdin open so it can be written
-     *   to with the stdin endpoint while the command runs. When false, the command
-     *   reads from an empty stdin.
+     * @param wait If true, returns an ND-JSON stream that emits the command status when started and
+     *   again when finished. Useful for synchronously waiting for command completion.
+     * @param logs If true, stream the logs of the command execution in real-time via ND-JSON. This
+     *   is only applicable if `wait` is also true.
+     * @param timeout Maximum duration in milliseconds the command may run before it is killed with
+     *   SIGKILL, up to 5 hours. Enforced at exec time, independently of `wait`.
+     * @param attachStdin If true, keeps the command stdin open so it can be written to with the
+     *   stdin endpoint while the command runs. When false, the command reads from an empty stdin.
      */
-    fun runSessionCommandStream(clientConfig: ClientConfig, request: Sandboxes.RunSessionCommandStreamRequest, options: RequestOptions? = null): Sequence<Map<String, Any>> {
+    fun runSessionCommandStream(
+        clientConfig: ClientConfig,
+        request: Sandboxes.RunSessionCommandStreamRequest,
+        options: RequestOptions? = null,
+    ): Sequence<Map<String, Any>> {
         return sequence {
-            for (_ev in SdkClient.stream(
-            SdkClient.RequestSpec(
-                "POST",
-                "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(request.sessionId)}/cmd",
-                config = clientConfig,
-                query = mapOf(
-            "cmdId" to SdkClient.queryValue(request.cmdId, "form", true),
-            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-            "slug" to SdkClient.queryValue(request.slug, "form", true)
-        ),
-                body = SdkClient.bodyMap("command" to (request.command), "args" to (SdkClient.omitIfNull(request.args)), "cwd" to (SdkClient.omitIfNull(request.cwd)), "env" to (SdkClient.omitIfNull(request.env)), "sudo" to (SdkClient.omitIfNull(request.sudo)), "wait" to (SdkClient.omitIfNull(request.wait)), "logs" to (SdkClient.omitIfNull(request.logs)), "timeout" to (SdkClient.omitIfNull(request.timeout)), "attachStdin" to (SdkClient.omitIfNull(request.attachStdin))),
-                contentType = "application/json",
-                operationId = "runSessionCommandStream",
-                streamFormat = "ndjson",
-                streamMediaType = "application/x-ndjson",
-                chunkDomain = "bytes",
-                options = options
-            )
-        )) {
+            for (_ev in
+                SdkClient.stream(
+                    SdkClient.RequestSpec(
+                        "POST",
+                        "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(request.sessionId)}/cmd",
+                        config = clientConfig,
+                        query =
+                            mapOf(
+                                "cmdId" to SdkClient.queryValue(request.cmdId, "form", true),
+                                "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                                "slug" to SdkClient.queryValue(request.slug, "form", true),
+                            ),
+                        body =
+                            SdkClient.bodyMap(
+                                "command" to (request.command),
+                                "args" to (SdkClient.omitIfNull(request.args)),
+                                "cwd" to (SdkClient.omitIfNull(request.cwd)),
+                                "env" to (SdkClient.omitIfNull(request.env)),
+                                "sudo" to (SdkClient.omitIfNull(request.sudo)),
+                                "wait" to (SdkClient.omitIfNull(request.wait)),
+                                "logs" to (SdkClient.omitIfNull(request.logs)),
+                                "timeout" to (SdkClient.omitIfNull(request.timeout)),
+                                "attachStdin" to (SdkClient.omitIfNull(request.attachStdin)),
+                            ),
+                        contentType = "application/json",
+                        operationId = "runSessionCommandStream",
+                        streamFormat = "ndjson",
+                        streamMediaType = "application/x-ndjson",
+                        chunkDomain = "bytes",
+                        options = options,
+                    )
+                )) {
                 if (_ev.data == "[DONE]") return@sequence
-                yield(try {
-                    SdkClient.mapper.readValue(_ev.data, object : com.fasterxml.jackson.core.type.TypeReference<Map<String, Any>>() {})
-                } catch (error: com.fasterxml.jackson.core.JsonProcessingException) {
-                    SdkClient.rethrowEventDecode(error, _ev.data)
-                })
+                yield(
+                    try {
+                        SdkClient.mapper.readValue(
+                            _ev.data,
+                            object :
+                                com.fasterxml.jackson.core.type.TypeReference<
+                                    Map<String, Any>
+                                >() {},
+                        )
+                    } catch (error: com.fasterxml.jackson.core.JsonProcessingException) {
+                        SdkClient.rethrowEventDecode(error, _ev.data)
+                    }
+                )
             }
         }
     }
@@ -195,113 +326,215 @@ internal object SandboxesRunSessionCommandStreamOperation {
 
 internal object SandboxesGetSessionCommandOperation {
     /**
-     * Retrieves the status and details of a command executed in a session, including its exit code if it has finished. Set `wait` to true to block the request until the command finishes.
+     * Retrieves the status and details of a command executed in a session, including its exit code
+     * if it has finished. Set `wait` to true to block the request until the command finishes.
      *
-     * Retrieves the current status and details of a command executed in a session. Use the `wait` parameter to block until the command finishes execution.
+     * Retrieves the current status and details of a command executed in a session. Use the `wait`
+     * parameter to block until the command finishes execution.
      *
      * @param sessionId The unique identifier of the session containing the command.
      * @param cmdId The unique identifier of the command to retrieve.
-     * @param wait If set to "true", the request will block until the command
-     *   finishes execution. Useful for synchronously waiting for command completion.
+     * @param wait If set to "true", the request will block until the command finishes execution.
+     *   Useful for synchronously waiting for command completion.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getSessionCommand(clientConfig: ClientConfig, sessionId: String, cmdId: String, wait: GetSessionCommandParameterEnum? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Sandboxes.GetSessionCommandResponse {
-        return SdkClient.request<Sandboxes.GetSessionCommandResponse>(SdkClient.RequestSpec("GET", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/cmd/${SdkClient.encodePathSegment(cmdId)}", config = clientConfig, query = mapOf("wait" to SdkClient.queryValue(wait, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getSessionCommand", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getSessionCommand(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        cmdId: String,
+        wait: GetSessionCommandParameterEnum? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Sandboxes.GetSessionCommandResponse {
+        return SdkClient.request<Sandboxes.GetSessionCommandResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/cmd/${SdkClient.encodePathSegment(cmdId)}",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "wait" to SdkClient.queryValue(wait, "form", true),
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getSessionCommand",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesKillSessionCommandOperation {
     /**
-     * Triggers termination of a running command in a session by sending it a signal. Use signal 15 (SIGTERM) for graceful termination or signal 9 (SIGKILL) to forcefully stop the process; the command must still be running.
+     * Triggers termination of a running command in a session by sending it a signal. Use signal 15
+     * (SIGTERM) for graceful termination or signal 9 (SIGKILL) to forcefully stop the process; the
+     * command must still be running.
      *
-     * Sends a signal to terminate a running command in a session. The signal can be used to gracefully stop (SIGTERM) or forcefully kill (SIGKILL) the process. The command must still be running for this operation to succeed.
+     * Sends a signal to terminate a running command in a session. The signal can be used to
+     * gracefully stop (SIGTERM) or forcefully kill (SIGKILL) the process. The command must still be
+     * running for this operation to succeed.
      *
      * @param cmdId The unique identifier of the command to terminate.
      * @param sessionId The unique identifier of the session containing the command.
-     * @param signal The POSIX signal number to send to the process. Common values:
-     *   15 (SIGTERM) for graceful termination, 9 (SIGKILL) for forced termination.
+     * @param signal The POSIX signal number to send to the process. Common values: 15 (SIGTERM) for
+     *   graceful termination, 9 (SIGKILL) for forced termination.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun killSessionCommand(clientConfig: ClientConfig, cmdId: String, sessionId: String, signal: Double, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Sandboxes.KillSessionCommandResponse {
-        return SdkClient.request<Sandboxes.KillSessionCommandResponse>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/cmd/${SdkClient.encodePathSegment(cmdId)}/kill", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("signal" to (signal)), operationId = "killSessionCommand", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun killSessionCommand(
+        clientConfig: ClientConfig,
+        cmdId: String,
+        sessionId: String,
+        signal: Double,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Sandboxes.KillSessionCommandResponse {
+        return SdkClient.request<Sandboxes.KillSessionCommandResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/cmd/${SdkClient.encodePathSegment(cmdId)}/kill",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body = SdkClient.bodyMap("signal" to (signal)),
+                    operationId = "killSessionCommand",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesWriteSessionCommandStdinOperation {
     /**
-     * Writes data to a running command's stdin and can close stdin after the write. The command must have started with `attachStdin` enabled; send writes one at a time to preserve order, and use `offset` to make retries safe when the response includes `bytesWritten`.
+     * Writes data to a running command's stdin and can close stdin after the write. The command
+     * must have started with `attachStdin` enabled; send writes one at a time to preserve order,
+     * and use `offset` to make retries safe when the response includes `bytesWritten`.
      *
-     * Writes data to the stdin of a running command, and optionally closes it. The command must have been started with `attachStdin` set to true. Writes are applied in the order they are received. Send them one at a time to keep the data in order. A write returns once the command has accepted the data, and fails with a 504 after 30 seconds if the command is not reading stdin. Each write counts against the sandbox control plane rate limit, so batch small writes where possible. Set…
+     * Writes data to the stdin of a running command, and optionally closes it. The command must
+     * have been started with `attachStdin` set to true. Writes are applied in the order they are
+     * received. Send them one at a time to keep the data in order. A write returns once the command
+     * has accepted the data, and fails with a 504 after 30 seconds if the command is not reading
+     * stdin. Each write counts against the sandbox control plane rate limit, so batch small writes
+     * where possible. Set…
      *
      * @param cmdId The unique identifier of the command to write to.
      * @param sessionId The unique identifier of the session containing the command.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param data Base64-encoded bytes to write to the command stdin. The request
-     *   body is limited to 1 MB, so send at most about 700 KB of data per request.
-     * @param offset The position in the command stdin where `data` starts. Bytes
-     *   before the total already written are skipped, so a resent request does not
-     *   write them twice. Fails with 409 if it is past the bytes written so far.
-     *   Without it, `data` is appended.
-     * @param close If true, closes the command stdin after writing `data`. Use this
-     *   for commands that wait for end of input.
+     * @param data Base64-encoded bytes to write to the command stdin. The request body is limited
+     *   to 1 MB, so send at most about 700 KB of data per request.
+     * @param offset The position in the command stdin where `data` starts. Bytes before the total
+     *   already written are skipped, so a resent request does not write them twice. Fails with 409
+     *   if it is past the bytes written so far. Without it, `data` is appended.
+     * @param close If true, closes the command stdin after writing `data`. Use this for commands
+     *   that wait for end of input.
      */
-    fun writeSessionCommandStdin(clientConfig: ClientConfig, request: Sandboxes.WriteSessionCommandStdinRequest, options: RequestOptions? = null): Sandboxes.WriteSessionCommandStdinResponse {
+    fun writeSessionCommandStdin(
+        clientConfig: ClientConfig,
+        request: Sandboxes.WriteSessionCommandStdinRequest,
+        options: RequestOptions? = null,
+    ): Sandboxes.WriteSessionCommandStdinResponse {
         validateWriteSessionCommandStdinRequest(request)
 
-        return SdkClient.request<Sandboxes.WriteSessionCommandStdinResponse>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(request.sessionId)}/cmd/${SdkClient.encodePathSegment(request.cmdId)}/stdin", config = clientConfig, query = mapOf("teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("data" to (SdkClient.omitIfNull(request.data)), "offset" to (SdkClient.omitIfNull(request.offset)), "close" to (SdkClient.omitIfNull(request.close))), operationId = "writeSessionCommandStdin", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<Sandboxes.WriteSessionCommandStdinResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(request.sessionId)}/cmd/${SdkClient.encodePathSegment(request.cmdId)}/stdin",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    body =
+                        SdkClient.bodyMap(
+                            "data" to (SdkClient.omitIfNull(request.data)),
+                            "offset" to (SdkClient.omitIfNull(request.offset)),
+                            "close" to (SdkClient.omitIfNull(request.close)),
+                        ),
+                    operationId = "writeSessionCommandStdin",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-    private fun validateWriteSessionCommandStdinRequest(request: Sandboxes.WriteSessionCommandStdinRequest) {
+    private fun validateWriteSessionCommandStdinRequest(
+        request: Sandboxes.WriteSessionCommandStdinRequest
+    ) {
         if (request.data != null) {
             Validation.validateLength("data", request.data, Validation.LengthOpts(max = 1000000))
-}
+        }
 
         if (request.offset != null) {
             Validation.validateRange("offset", request.offset, Validation.RangeOpts(min = 0.0))
-}
+        }
     }
 }
 
 internal object SandboxesGetSessionCommandLogsOperation {
     /**
-     * Streams command output in real time as newline-delimited JSON (ND-JSON). Each stream entry includes output data and a stream type such as `stdout`, `stderr`, or `error`.
+     * Streams command output in real time as newline-delimited JSON (ND-JSON). Each stream entry
+     * includes output data and a stream type such as `stdout`, `stderr`, or `error`.
      *
-     * Streams the output of a command in real-time using newline-delimited JSON (ND-JSON). Each entry includes the output data and stream type. Stream types include `stdout`, `stderr`, and `error` (for stream failures).
+     * Streams the output of a command in real-time using newline-delimited JSON (ND-JSON). Each
+     * entry includes the output data and stream type. Stream types include `stdout`, `stderr`, and
+     * `error` (for stream failures).
      *
      * @param sessionId The unique identifier of the session containing the command.
      * @param cmdId The unique identifier of the command to stream logs for.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getSessionCommandLogs(clientConfig: ClientConfig, sessionId: String, cmdId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Sequence<GetSessionCommandLogsResponse> {
+    fun getSessionCommandLogs(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        cmdId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Sequence<GetSessionCommandLogsResponse> {
         return sequence {
-            for (_ev in SdkClient.stream(
-            SdkClient.RequestSpec(
-                "GET",
-                "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/cmd/${SdkClient.encodePathSegment(cmdId)}/logs",
-                config = clientConfig,
-                query = mapOf(
-            "teamId" to SdkClient.queryValue(teamId, "form", true),
-            "slug" to SdkClient.queryValue(slug, "form", true)
-        ),
-                operationId = "getSessionCommandLogs",
-                streamFormat = "ndjson",
-                streamMediaType = "application/x-ndjson",
-                chunkDomain = "bytes",
-                options = options
-            )
-        )) {
+            for (_ev in
+                SdkClient.stream(
+                    SdkClient.RequestSpec(
+                        "GET",
+                        "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/cmd/${SdkClient.encodePathSegment(cmdId)}/logs",
+                        config = clientConfig,
+                        query =
+                            mapOf(
+                                "teamId" to SdkClient.queryValue(teamId, "form", true),
+                                "slug" to SdkClient.queryValue(slug, "form", true),
+                            ),
+                        operationId = "getSessionCommandLogs",
+                        streamFormat = "ndjson",
+                        streamMediaType = "application/x-ndjson",
+                        chunkDomain = "bytes",
+                        options = options,
+                    )
+                )) {
                 if (_ev.data == "[DONE]") return@sequence
-                yield(try {
-                    SdkClient.mapper.readValue(_ev.data, GetSessionCommandLogsResponse::class.java)
-                } catch (error: com.fasterxml.jackson.core.JsonProcessingException) {
-                    SdkClient.rethrowEventDecode(error, _ev.data)
-                })
+                yield(
+                    try {
+                        SdkClient.mapper.readValue(
+                            _ev.data,
+                            GetSessionCommandLogsResponse::class.java,
+                        )
+                    } catch (error: com.fasterxml.jackson.core.JsonProcessingException) {
+                        SdkClient.rethrowEventDecode(error, _ev.data)
+                    }
+                )
             }
         }
     }
@@ -309,147 +542,371 @@ internal object SandboxesGetSessionCommandLogsOperation {
 
 internal object SandboxesStopSessionOperation {
     /**
-     * Stops a running session and releases its allocated resources, terminating all processes within it. This action cannot be undone, and the stopped session cannot be restarted.
+     * Stops a running session and releases its allocated resources, terminating all processes
+     * within it. This action cannot be undone, and the stopped session cannot be restarted.
      *
-     * Stops a running session and releases its allocated resources. All running processes within the session will be terminated. This action cannot be undone. A stopped session cannot be restarted.
+     * Stops a running session and releases its allocated resources. All running processes within
+     * the session will be terminated. This action cannot be undone. A stopped session cannot be
+     * restarted.
      *
      * @param sessionId The unique identifier of the session to stop.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun stopSession(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): StopSessionResponse {
-        return SdkClient.request<StopSessionResponse>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/stop", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "stopSession", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun stopSession(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): StopSessionResponse {
+        return SdkClient.request<StopSessionResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/stop",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "stopSession",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesExtendSessionTimeoutOperation {
     /**
-     * Extends the maximum execution time of a running session. Supply the additional duration in milliseconds; the session must be active, and the resulting timeout cannot exceed your account's maximum allowed limit.
+     * Extends the maximum execution time of a running session. Supply the additional duration in
+     * milliseconds; the session must be active, and the resulting timeout cannot exceed your
+     * account's maximum allowed limit.
      *
-     * Extends the maximum execution time of a running session. The session must be active and able to accept commands. The total timeout cannot exceed the maximum allowed limit for your account.
+     * Extends the maximum execution time of a running session. The session must be active and able
+     * to accept commands. The total timeout cannot exceed the maximum allowed limit for your
+     * account.
      *
-     * @param sessionId The unique identifier of the session to extend the timeout
-     *   for.
-     * @param duration The amount of time in milliseconds to add to the current
-     *   timeout. Must be at least 1000ms (1 second).
+     * @param sessionId The unique identifier of the session to extend the timeout for.
+     * @param duration The amount of time in milliseconds to add to the current timeout. Must be at
+     *   least 1000ms (1 second).
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun extendSessionTimeout(clientConfig: ClientConfig, sessionId: String, duration: Double, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Sandboxes.ExtendSessionTimeoutResponse {
+    fun extendSessionTimeout(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        duration: Double,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Sandboxes.ExtendSessionTimeoutResponse {
         Validation.validateRange("duration", duration, Validation.RangeOpts(min = 1000.0))
 
-        return SdkClient.request<Sandboxes.ExtendSessionTimeoutResponse>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/extend-timeout", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("duration" to (duration)), operationId = "extendSessionTimeout", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<Sandboxes.ExtendSessionTimeoutResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/extend-timeout",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body = SdkClient.bodyMap("duration" to (duration)),
+                    operationId = "extendSessionTimeout",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesUpdateSessionNetworkPolicyOperation {
     /**
-     * Replaces the network access policy for a running session, controlling which external hosts it can reach. This is a full replacement, so any previously configured network rules are overwritten; choose the policy mode and rules for the complete configuration you want applied.
+     * Replaces the network access policy for a running session, controlling which external hosts it
+     * can reach. This is a full replacement, so any previously configured network rules are
+     * overwritten; choose the policy mode and rules for the complete configuration you want
+     * applied.
      *
-     * Replaces the network access policy of a running session. Use this to control which external hosts the session can communicate with. This is a full replacement. Any previously configured network rules will be overwritten.
+     * Replaces the network access policy of a running session. Use this to control which external
+     * hosts the session can communicate with. This is a full replacement. Any previously configured
+     * network rules will be overwritten.
      *
-     * @param sessionId The unique identifier of the session to update the network
-     *   policy for.
+     * @param sessionId The unique identifier of the session to update the network policy for.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun updateSessionNetworkPolicy(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, body: Map<String, Any>? = null, options: RequestOptions? = null): Sandboxes.UpdateSessionNetworkPolicyResponse {
-        return SdkClient.request<Sandboxes.UpdateSessionNetworkPolicyResponse>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/network-policy", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = body, operationId = "updateSessionNetworkPolicy", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun updateSessionNetworkPolicy(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        body: Map<String, Any>? = null,
+        options: RequestOptions? = null,
+    ): Sandboxes.UpdateSessionNetworkPolicyResponse {
+        return SdkClient.request<Sandboxes.UpdateSessionNetworkPolicyResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/network-policy",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body = body,
+                    operationId = "updateSessionNetworkPolicy",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesReadSessionFileOperation {
     /**
-     * Retrieves a file from a session's filesystem. Supply `path` to identify the file and optionally use `cwd` to resolve a relative path from a different base directory. The file is returned as a binary stream for download.
+     * Retrieves a file from a session's filesystem. Supply `path` to identify the file and
+     * optionally use `cwd` to resolve a relative path from a different base directory. The file is
+     * returned as a binary stream for download.
      *
-     * Downloads the contents of a file from a session's filesystem. The file content is returned as a binary stream with appropriate Content-Disposition headers for file download.
+     * Downloads the contents of a file from a session's filesystem. The file content is returned as
+     * a binary stream with appropriate Content-Disposition headers for file download.
      *
      * @param sessionId The unique identifier of the session to read the file from.
-     * @param path The path of the file to read. Can be absolute or relative to the
-     *   working directory.
+     * @param path The path of the file to read. Can be absolute or relative to the working
+     *   directory.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param cwd The base directory for resolving relative paths. If not specified,
-     *   paths are resolved from the sandbox home directory.
+     * @param cwd The base directory for resolving relative paths. If not specified, paths are
+     *   resolved from the sandbox home directory.
      */
-    fun readSessionFile(clientConfig: ClientConfig, sessionId: String, path: String, teamId: String? = null, slug: String? = null, cwd: String? = null, options: RequestOptions? = null): ByteArray {
-        return SdkClient.request<ByteArray>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/fs/read", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("path" to (path), "cwd" to (SdkClient.omitIfNull(cwd))), operationId = "readSessionFile", decoder = SdkClient.ResponseDecoder.BYTES, options = options)).data
+    fun readSessionFile(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        path: String,
+        teamId: String? = null,
+        slug: String? = null,
+        cwd: String? = null,
+        options: RequestOptions? = null,
+    ): ByteArray {
+        return SdkClient.request<ByteArray>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/fs/read",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body =
+                        SdkClient.bodyMap("path" to (path), "cwd" to (SdkClient.omitIfNull(cwd))),
+                    operationId = "readSessionFile",
+                    decoder = SdkClient.ResponseDecoder.BYTES,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesCreateSessionDirectoryOperation {
     /**
-     * Creates a directory in a session's filesystem. Supply `path` for the directory location and use `cwd` to resolve a relative path from a different base directory. Parent directories are created recursively by default; set `recursive` to false to require them to exist.
+     * Creates a directory in a session's filesystem. Supply `path` for the directory location and
+     * use `cwd` to resolve a relative path from a different base directory. Parent directories are
+     * created recursively by default; set `recursive` to false to require them to exist.
      *
-     * Creates a new directory in a session's filesystem. By default, parent directories are created recursively if they don't exist (similar to `mkdir -p`).
+     * Creates a new directory in a session's filesystem. By default, parent directories are created
+     * recursively if they don't exist (similar to `mkdir -p`).
      *
-     * @param sessionId The unique identifier of the session to create the directory
-     *   in.
-     * @param path The path of the directory to create. Can be absolute or relative
-     *   to the working directory.
+     * @param sessionId The unique identifier of the session to create the directory in.
+     * @param path The path of the directory to create. Can be absolute or relative to the working
+     *   directory.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param cwd The base directory for resolving relative paths. If not specified,
-     *   paths are resolved from the sandbox home directory.
-     * @param recursive If true, creates parent directories as needed (like `mkdir
-     *   -p`). If false, fails if parent directories do not exist.
+     * @param cwd The base directory for resolving relative paths. If not specified, paths are
+     *   resolved from the sandbox home directory.
+     * @param recursive If true, creates parent directories as needed (like `mkdir -p`). If false,
+     *   fails if parent directories do not exist.
      */
-    fun createSessionDirectory(clientConfig: ClientConfig, request: Sandboxes.CreateSessionDirectoryRequest, options: RequestOptions? = null): Map<String, Any> {
-        return SdkClient.request<Map<String, Any>>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(request.sessionId)}/fs/mkdir", config = clientConfig, query = mapOf("teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("path" to (request.path), "cwd" to (SdkClient.omitIfNull(request.cwd)), "recursive" to (SdkClient.omitIfNull(request.recursive))), operationId = "createSessionDirectory", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun createSessionDirectory(
+        clientConfig: ClientConfig,
+        request: Sandboxes.CreateSessionDirectoryRequest,
+        options: RequestOptions? = null,
+    ): Map<String, Any> {
+        return SdkClient.request<Map<String, Any>>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(request.sessionId)}/fs/mkdir",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    body =
+                        SdkClient.bodyMap(
+                            "path" to (request.path),
+                            "cwd" to (SdkClient.omitIfNull(request.cwd)),
+                            "recursive" to (SdkClient.omitIfNull(request.recursive)),
+                        ),
+                    operationId = "createSessionDirectory",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesWriteSessionFilesOperation {
     /**
-     * Writes files to a session's filesystem by uploading and extracting a gzipped tarball. Send the archive with `Content-Type: application/gzip`; use `x-cwd` to choose an extraction directory. When `x-cwd` is omitted, files are extracted to the sandbox home directory.
+     * Writes files to a session's filesystem by uploading and extracting a gzipped tarball. Send
+     * the archive with `Content-Type: application/gzip`; use `x-cwd` to choose an extraction
+     * directory. When `x-cwd` is omitted, files are extracted to the sandbox home directory.
      *
-     * Uploads and extracts files to a session's filesystem. Files must be uploaded as a gzipped tarball (`.tar.gz`) with the `Content-Type` header set to `application/gzip`. The tarball contents are extracted to the session's working directory, or to a custom directory specified via the `x-cwd` header.
+     * Uploads and extracts files to a session's filesystem. Files must be uploaded as a gzipped
+     * tarball (`.tar.gz`) with the `Content-Type` header set to `application/gzip`. The tarball
+     * contents are extracted to the session's working directory, or to a custom directory specified
+     * via the `x-cwd` header.
      *
      * @param sessionId The unique identifier of the session to write files to.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param xCwd The target directory where the tarball contents will be extracted.
-     *   If not specified, files are extracted to the sandbox home directory.
+     * @param xCwd The target directory where the tarball contents will be extracted. If not
+     *   specified, files are extracted to the sandbox home directory.
      */
-    fun writeSessionFiles(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, xCwd: String? = null, options: RequestOptions? = null): Map<String, Any> {
-        return SdkClient.request<Map<String, Any>>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/fs/write", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "writeSessionFiles", decoder = SdkClient.ResponseDecoder.JSON, extraHeaders = SdkClient.headers("x-cwd" to SdkClient.headerValue(xCwd, false)), options = options)).data
+    fun writeSessionFiles(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        xCwd: String? = null,
+        options: RequestOptions? = null,
+    ): Map<String, Any> {
+        return SdkClient.request<Map<String, Any>>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/fs/write",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "writeSessionFiles",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    extraHeaders = SdkClient.headers("x-cwd" to SdkClient.headerValue(xCwd, false)),
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesCreateSandboxesSessionsBySessionIdSnapshotV2Operation {
     /**
-     * Creates a point-in-time snapshot of a running session's filesystem. Use a snapshot to restore the filesystem later or initialize another session with the same environment; the session must be running and able to accept commands. The source session is terminated after the snapshot is created.
+     * Creates a point-in-time snapshot of a running session's filesystem. Use a snapshot to restore
+     * the filesystem later or initialize another session with the same environment; the session
+     * must be running and able to accept commands. The source session is terminated after the
+     * snapshot is created.
      *
-     * Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created.
+     * Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to
+     * quickly restore a session to a previous state or to create new sessions with pre-configured
+     * environments. The session must be running and able to accept commands for a snapshot to be
+     * created. The session will be terminated after the snapshot is created.
      *
      * @param sessionId The unique identifier of the session to snapshot.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param expiration The number of milliseconds after which the snapshot will
-     *   expire and be deleted. Use 0 for no expiration.
+     * @param expiration The number of milliseconds after which the snapshot will expire and be
+     *   deleted. Use 0 for no expiration.
      */
-    fun createSandboxesSessionsBySessionIdSnapshotV2(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, expiration: SdkClient.SdkOptional<Long?>? = null, options: RequestOptions? = null): Sandboxes.CreateSandboxesSessionsBySessionIdSnapshotV2Response {
-        return SdkClient.request<Sandboxes.CreateSandboxesSessionsBySessionIdSnapshotV2Response>(SdkClient.RequestSpec("POST", "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/snapshot", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("expiration" to
-    (expiration ?: SdkClient.SdkOptional.Omitted)), operationId = "createSandboxesSessionsBySessionIdSnapshotV2", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun createSandboxesSessionsBySessionIdSnapshotV2(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        expiration: SdkClient.SdkOptional<Long?>? = null,
+        options: RequestOptions? = null,
+    ): Sandboxes.CreateSandboxesSessionsBySessionIdSnapshotV2Response {
+        return SdkClient.request<Sandboxes.CreateSandboxesSessionsBySessionIdSnapshotV2Response>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/snapshot",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body =
+                        SdkClient.bodyMap(
+                            "expiration" to (expiration ?: SdkClient.SdkOptional.Omitted)
+                        ),
+                    operationId = "createSandboxesSessionsBySessionIdSnapshotV2",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object SandboxesCreateSandboxesSessionsBySessionIdSnapshotV3Operation {
     /**
-     * Creates a point-in-time snapshot of a running session's filesystem. Use a snapshot to restore the filesystem later or initialize another session with the same environment; the session must be running and able to accept commands. The source session is terminated after the snapshot is created, and snapshots default to a seven-day expiration when neither the request nor sandbox configuration sets one.
+     * Creates a point-in-time snapshot of a running session's filesystem. Use a snapshot to restore
+     * the filesystem later or initialize another session with the same environment; the session
+     * must be running and able to accept commands. The source session is terminated after the
+     * snapshot is created, and snapshots default to a seven-day expiration when neither the request
+     * nor sandbox configuration sets one.
      *
-     * Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created. Unlike v2, snapshots expire after 7 days when neither the request nor the sandbox configuration specifies an expiration.
+     * Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to
+     * quickly restore a session to a previous state or to create new sessions with pre-configured
+     * environments. The session must be running and able to accept commands for a snapshot to be
+     * created. The session will be terminated after the snapshot is created. Unlike v2, snapshots
+     * expire after 7 days when neither the request nor the sandbox configuration specifies an
+     * expiration.
      *
      * @param sessionId The unique identifier of the session to snapshot.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param expiration The number of milliseconds after which the snapshot will
-     *   expire and be deleted. Defaults to 7 days when neither this field nor the
-     *   sandbox configuration specifies an expiration. Use 0 for no expiration.
+     * @param expiration The number of milliseconds after which the snapshot will expire and be
+     *   deleted. Defaults to 7 days when neither this field nor the sandbox configuration specifies
+     *   an expiration. Use 0 for no expiration.
      */
-    fun createSandboxesSessionsBySessionIdSnapshotV3(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, expiration: SdkClient.SdkOptional<Long?>? = null, options: RequestOptions? = null): Sandboxes.CreateSandboxesSessionsBySessionIdSnapshotV3Response {
-        return SdkClient.request<Sandboxes.CreateSandboxesSessionsBySessionIdSnapshotV3Response>(SdkClient.RequestSpec("POST", "/v3/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/snapshot", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("expiration" to
-    (expiration ?: SdkClient.SdkOptional.Omitted)), operationId = "createSandboxesSessionsBySessionIdSnapshotV3", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun createSandboxesSessionsBySessionIdSnapshotV3(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        expiration: SdkClient.SdkOptional<Long?>? = null,
+        options: RequestOptions? = null,
+    ): Sandboxes.CreateSandboxesSessionsBySessionIdSnapshotV3Response {
+        return SdkClient.request<Sandboxes.CreateSandboxesSessionsBySessionIdSnapshotV3Response>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v3/sandboxes/sessions/${SdkClient.encodePathSegment(sessionId)}/snapshot",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body =
+                        SdkClient.bodyMap(
+                            "expiration" to (expiration ?: SdkClient.SdkOptional.Omitted)
+                        ),
+                    operationId = "createSandboxesSessionsBySessionIdSnapshotV3",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }

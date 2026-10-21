@@ -3,32 +3,18 @@
 
 package dev.octri.showcase.vercel.models
 
-/**
- * The member was successfully added to the team.
- */
+/** The member was successfully added to the team. */
 data class InvitedTeamMember(
-    /**
-     * The email of the invited user.
-     */
+    /** The email of the invited user. */
     val email: String,
-    /**
-     * The role used for the invitation
-     */
+    /** The role used for the invitation */
     val role: InvitedTeamMemberRoleEnum,
-    /**
-     * The ID of the invited user
-     */
+    /** The ID of the invited user */
     val uid: String,
-    /**
-     * The username of the invited user
-     */
+    /** The username of the invited user */
     val username: String,
-    /**
-     * The team permissions of the user
-     */
+    /** The team permissions of the user */
     val teamPermissions: List<InvitedTeamMemberTeamPermissionsItemEnum>? = null,
-    /**
-     * The team roles of the user
-     */
-    val teamRoles: List<InvitedTeamMemberTeamRolesItemEnum>? = null
+    /** The team roles of the user */
+    val teamRoles: List<InvitedTeamMemberTeamRolesItemEnum>? = null,
 )

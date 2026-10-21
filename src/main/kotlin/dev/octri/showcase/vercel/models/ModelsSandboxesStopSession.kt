@@ -3,34 +3,44 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class StopSessionResponseVariant0(
     /**
-     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
+     * "session" instead of "sandbox" as the response wrapper key.
      */
     val session: Session
 ) : StopSessionResponse
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class StopSessionResponseVariant1(
-    /**
-     * This object contains information related to a Vercel NamedSandbox.
-     */
+    /** This object contains information related to a Vercel NamedSandbox. */
     val sandbox: NamedSandbox,
     /**
-     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
+     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
+     * "session" instead of "sandbox" as the response wrapper key.
      */
     val session: Session,
     /**
      * This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
      */
-    val snapshot: Snapshot
+    val snapshot: Snapshot,
 ) : StopSessionResponse
 
-/**
- * Typed representation of the `StopSessionResponse` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = StopSessionResponse.Deserializer::class)
+/** Typed representation of the `StopSessionResponse` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = StopSessionResponse.Deserializer::class
+)
 sealed interface StopSessionResponse {
     /** Chooses the branch this payload is shaped like. */
     class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<StopSessionResponse>() {
@@ -40,7 +50,9 @@ sealed interface StopSessionResponse {
         ): StopSessionResponse {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = StopSessionResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                StopSessionResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -48,16 +60,26 @@ sealed interface StopSessionResponse {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out StopSessionResponse>> = listOf(StopSessionResponseVariant0::class.java, StopSessionResponseVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out StopSessionResponse>> =
+                listOf(
+                    StopSessionResponseVariant0::class.java,
+                    StopSessionResponseVariant1::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, StopSessionResponse::class.java, "no StopSessionResponse branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        StopSessionResponse::class.java,
+                        "no StopSessionResponse branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val StopSessionResponseOwnedTypes: List<Pair<List<String>, Class<out StopSessionResponse>>> = listOf(
-    listOf("sandbox", "snapshot") to StopSessionResponseVariant1::class.java,
-)
+internal val StopSessionResponseOwnedTypes:
+    List<Pair<List<String>, Class<out StopSessionResponse>>> =
+    listOf(listOf("sandbox", "snapshot") to StopSessionResponseVariant1::class.java)

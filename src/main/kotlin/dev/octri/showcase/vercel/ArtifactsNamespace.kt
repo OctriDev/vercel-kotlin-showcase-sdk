@@ -3,69 +3,168 @@
 
 package dev.octri.showcase.vercel
 
-
 class ArtifactsNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Records artifact cache usage events for a team or user. Send an array of events, each with a `sessionId`, `source`, `hash`, and `event`; include `duration` for `HIT` events. Use the client headers to identify the CI environment and whether the client is interactive.
+     * Records artifact cache usage events for a team or user. Send an array of events, each with a
+     * `sessionId`, `source`, `hash`, and `event`; include `duration` for `HIT` events. Use the
+     * client headers to identify the CI environment and whether the client is interactive.
      *
-     * Records an artifacts cache usage event. The body of this request is an array of cache usage events. The supported event types are `HIT` and `MISS`. The source is either `LOCAL` the cache event was on the users filesystem cache or `REMOTE` if the cache event is for a remote cache. When the event is a `HIT` the request also accepts a number `duration` which is the time taken to generate the artifact in the cache.
+     * Records an artifacts cache usage event. The body of this request is an array of cache usage
+     * events. The supported event types are `HIT` and `MISS`. The source is either `LOCAL` the
+     * cache event was on the users filesystem cache or `REMOTE` if the cache event is for a remote
+     * cache. When the event is a `HIT` the request also accepts a number `duration` which is the
+     * time taken to generate the artifact in the cache.
      */
-    fun recordEvents(body: List<dev.octri.showcase.vercel.methods.Artifacts.RecordEventsItem>, teamId: String? = null, slug: String? = null, xArtifactClientCi: String? = null, xArtifactClientInteractive: Long? = null, options: RequestOptions? = null): Unit {
-        return dev.octri.showcase.vercel.methods.Artifacts.recordEvents(clientConfig, body, teamId, slug, xArtifactClientCi, xArtifactClientInteractive, options)
+    fun recordEvents(
+        body: List<dev.octri.showcase.vercel.methods.Artifacts.RecordEventsItem>,
+        teamId: String? = null,
+        slug: String? = null,
+        xArtifactClientCi: String? = null,
+        xArtifactClientInteractive: Long? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        return dev.octri.showcase.vercel.methods.Artifacts.recordEvents(
+            clientConfig,
+            body,
+            teamId,
+            slug,
+            xArtifactClientCi,
+            xArtifactClientInteractive,
+            options,
+        )
     }
 
     /**
-     * Retrieves the Remote Caching status for a team or user. Use `teamId` or `slug` to make the request on behalf of a team; the response indicates whether Remote Caching is enabled, disabled, or disabled due to usage limits.
+     * Retrieves the Remote Caching status for a team or user. Use `teamId` or `slug` to make the
+     * request on behalf of a team; the response indicates whether Remote Caching is enabled,
+     * disabled, or disabled due to usage limits.
      *
-     * Check the status of Remote Caching for this principal. Returns a JSON-encoded status indicating if Remote Caching is enabled, disabled, or disabled due to usage limits.
+     * Check the status of Remote Caching for this principal. Returns a JSON-encoded status
+     * indicating if Remote Caching is enabled, disabled, or disabled due to usage limits.
      */
-    fun status(teamId: String? = null, slug: String? = null, options: RequestOptions? = null): StatusResponse {
-        return dev.octri.showcase.vercel.methods.Artifacts.status(clientConfig, teamId, slug, options)
+    fun status(
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): StatusResponse {
+        return dev.octri.showcase.vercel.methods.Artifacts.status(
+            clientConfig,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Uploads an artifact to the cache using its hash. Send the artifact as an octet-stream body and provide its size in the `Content-Length` header. The uploaded artifact can then be downloaded using the same hash.
+     * Uploads an artifact to the cache using its hash. Send the artifact as an octet-stream body
+     * and provide its size in the `Content-Length` header. The uploaded artifact can then be
+     * downloaded using the same hash.
      *
-     * Uploads a cache artifact identified by the `hash` specified on the path. The cache artifact can then be downloaded with the provided `hash`.
+     * Uploads a cache artifact identified by the `hash` specified on the path. The cache artifact
+     * can then be downloaded with the provided `hash`.
      */
-    fun upload(request: dev.octri.showcase.vercel.methods.Artifacts.UploadArtifactRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Artifacts.UploadArtifactResponse {
-        return dev.octri.showcase.vercel.methods.Artifacts.uploadArtifact(clientConfig, request, options)
+    fun upload(
+        request: dev.octri.showcase.vercel.methods.Artifacts.UploadArtifactRequest,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Artifacts.UploadArtifactResponse {
+        return dev.octri.showcase.vercel.methods.Artifacts.uploadArtifact(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Retrieves an artifact from the cache by its hash. Use `hash` to identify the artifact and check the response content length and body when downloading the octet-stream data. You can use the client headers to identify the CI environment and whether the client is interactive.
+     * Retrieves an artifact from the cache by its hash. Use `hash` to identify the artifact and
+     * check the response content length and body when downloading the octet-stream data. You can
+     * use the client headers to identify the CI environment and whether the client is interactive.
      *
-     * Downloads a cache artifact indentified by its `hash` specified on the request path. The artifact is downloaded as an octet-stream. The client should verify the content-length header and response body.
+     * Downloads a cache artifact indentified by its `hash` specified on the request path. The
+     * artifact is downloaded as an octet-stream. The client should verify the content-length header
+     * and response body.
      */
-    fun download(hash: String, teamId: String? = null, slug: String? = null, xArtifactClientCi: String? = null, xArtifactClientInteractive: Long? = null, options: RequestOptions? = null): ByteArray {
-        return dev.octri.showcase.vercel.methods.Artifacts.downloadArtifact(clientConfig, hash, teamId, slug, xArtifactClientCi, xArtifactClientInteractive, options)
+    fun download(
+        hash: String,
+        teamId: String? = null,
+        slug: String? = null,
+        xArtifactClientCi: String? = null,
+        xArtifactClientInteractive: Long? = null,
+        options: RequestOptions? = null,
+    ): ByteArray {
+        return dev.octri.showcase.vercel.methods.Artifacts.downloadArtifact(
+            clientConfig,
+            hash,
+            teamId,
+            slug,
+            xArtifactClientCi,
+            xArtifactClientInteractive,
+            options,
+        )
     }
 
     /**
-     * Checks whether an artifact with the specified hash exists in the cache. Use `hash` to identify the artifact; the response contains headers only and no body. The request otherwise has the same behavior as a `GET` request to the artifact path.
+     * Checks whether an artifact with the specified hash exists in the cache. Use `hash` to
+     * identify the artifact; the response contains headers only and no body. The request otherwise
+     * has the same behavior as a `GET` request to the artifact path.
      *
-     * Check that a cache artifact with the given `hash` exists. This request returns response headers only and is equivalent to a `GET` request to this endpoint where the response contains no body.
+     * Check that a cache artifact with the given `hash` exists. This request returns response
+     * headers only and is equivalent to a `GET` request to this endpoint where the response
+     * contains no body.
      */
-    fun exists(hash: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
-        return dev.octri.showcase.vercel.methods.Artifacts.artifactExists(clientConfig, hash, teamId, slug, options)
+    fun exists(
+        hash: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        return dev.octri.showcase.vercel.methods.Artifacts.artifactExists(
+            clientConfig,
+            hash,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Retrieves cache information for multiple artifacts. Supply the artifact hashes in the `hashes` array to query information about each one. Use `teamId` or `slug` to make the request on behalf of a team.
+     * Retrieves cache information for multiple artifacts. Supply the artifact hashes in the
+     * `hashes` array to query information about each one. Use `teamId` or `slug` to make the
+     * request on behalf of a team.
      *
      * Query information about an array of artifacts.
      */
-    fun query(hashes: List<String>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Map<String, Map<String, Any>> {
-        return dev.octri.showcase.vercel.methods.Artifacts.artifactQuery(clientConfig, hashes, teamId, slug, options)
+    fun query(
+        hashes: List<String>,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Map<String, Map<String, Any>> {
+        return dev.octri.showcase.vercel.methods.Artifacts.artifactQuery(
+            clientConfig,
+            hashes,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Deletes all cache artifacts stored for the authenticated team or user, clearing the Remote Cache. Use `teamId` or `slug` to select a team; subsequent builds repopulate the cache.
+     * Deletes all cache artifacts stored for the authenticated team or user, clearing the Remote
+     * Cache. Use `teamId` or `slug` to select a team; subsequent builds repopulate the cache.
      *
-     * Deletes all cache artifacts stored for the authenticated team or user, clearing the Remote Cache. Subsequent builds will re-populate the cache.
+     * Deletes all cache artifacts stored for the authenticated team or user, clearing the Remote
+     * Cache. Subsequent builds will re-populate the cache.
      */
-    fun deleteAll(teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Artifacts.DeleteAllArtifactsResponse {
-        return dev.octri.showcase.vercel.methods.Artifacts.deleteAllArtifacts(clientConfig, teamId, slug, options)
+    fun deleteAll(
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Artifacts.DeleteAllArtifactsResponse {
+        return dev.octri.showcase.vercel.methods.Artifacts.deleteAllArtifacts(
+            clientConfig,
+            teamId,
+            slug,
+            options,
+        )
     }
-
 }

@@ -3,64 +3,83 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ConnectCreateConnectorRequestTriggerDestinationVariant0(
     /**
-     * Project that receives triggers. During connector creation, omit it to use the top-level projectId.
+     * Project that receives triggers. During connector creation, omit it to use the top-level
+     * projectId.
      */
     val projectId: String? = null,
-    /**
-     * Route path on the linked project that receives forwarded trigger requests.
-     */
-    val path: String? = null
+    /** Route path on the linked project that receives forwarded trigger requests. */
+    val path: String? = null,
 ) : ConnectCreateConnectorRequestTriggerDestination
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ConnectCreateConnectorRequestTriggerDestinationVariant1(
-    /**
-     * Git branch used to select a preview deployment.
-     */
+    /** Git branch used to select a preview deployment. */
     val branch: String,
     /**
-     * Project that receives triggers. During connector creation, omit it to use the top-level projectId.
+     * Project that receives triggers. During connector creation, omit it to use the top-level
+     * projectId.
      */
     val projectId: String? = null,
-    /**
-     * Route path on the linked project that receives forwarded trigger requests.
-     */
-    val path: String? = null
+    /** Route path on the linked project that receives forwarded trigger requests. */
+    val path: String? = null,
 ) : ConnectCreateConnectorRequestTriggerDestination
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ConnectCreateConnectorRequestTriggerDestinationVariant2(
-    /**
-     * Stable custom environment ID that belongs to the destination project.
-     */
+    /** Stable custom environment ID that belongs to the destination project. */
     val customEnvironmentId: String,
     /**
-     * Project that receives triggers. During connector creation, omit it to use the top-level projectId.
+     * Project that receives triggers. During connector creation, omit it to use the top-level
+     * projectId.
      */
     val projectId: String? = null,
-    /**
-     * Route path on the linked project that receives forwarded trigger requests.
-     */
-    val path: String? = null
+    /** Route path on the linked project that receives forwarded trigger requests. */
+    val path: String? = null,
 ) : ConnectCreateConnectorRequestTriggerDestination
 
 /**
- * Initial trigger destination. Requires triggers to be enabled and a projectId here or at the top level. Connector responses expose the resulting set as triggerDestinations. Replace the complete set with PATCH /v1/connect/connectors/{connector}/trigger-destinations.
+ * Initial trigger destination. Requires triggers to be enabled and a projectId here or at the top
+ * level. Connector responses expose the resulting set as triggerDestinations. Replace the complete
+ * set with PATCH /v1/connect/connectors/{connector}/trigger-destinations.
  */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = ConnectCreateConnectorRequestTriggerDestination.Deserializer::class)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = ConnectCreateConnectorRequestTriggerDestination.Deserializer::class
+)
 sealed interface ConnectCreateConnectorRequestTriggerDestination {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<ConnectCreateConnectorRequestTriggerDestination>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<
+            ConnectCreateConnectorRequestTriggerDestination
+        >() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): ConnectCreateConnectorRequestTriggerDestination {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = ConnectCreateConnectorRequestTriggerDestinationOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                ConnectCreateConnectorRequestTriggerDestinationOwnedTypes.firstOrNull { (keys, _) ->
+                        keys.any(node::has)
+                    }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -68,17 +87,31 @@ sealed interface ConnectCreateConnectorRequestTriggerDestination {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out ConnectCreateConnectorRequestTriggerDestination>> = listOf(ConnectCreateConnectorRequestTriggerDestinationVariant0::class.java, ConnectCreateConnectorRequestTriggerDestinationVariant1::class.java, ConnectCreateConnectorRequestTriggerDestinationVariant2::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out ConnectCreateConnectorRequestTriggerDestination>> =
+                listOf(
+                    ConnectCreateConnectorRequestTriggerDestinationVariant0::class.java,
+                    ConnectCreateConnectorRequestTriggerDestinationVariant1::class.java,
+                    ConnectCreateConnectorRequestTriggerDestinationVariant2::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, ConnectCreateConnectorRequestTriggerDestination::class.java, "no ConnectCreateConnectorRequestTriggerDestination branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        ConnectCreateConnectorRequestTriggerDestination::class.java,
+                        "no ConnectCreateConnectorRequestTriggerDestination branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val ConnectCreateConnectorRequestTriggerDestinationOwnedTypes: List<Pair<List<String>, Class<out ConnectCreateConnectorRequestTriggerDestination>>> = listOf(
-    listOf("branch") to ConnectCreateConnectorRequestTriggerDestinationVariant1::class.java,
-    listOf("customEnvironmentId") to ConnectCreateConnectorRequestTriggerDestinationVariant2::class.java,
-)
+internal val ConnectCreateConnectorRequestTriggerDestinationOwnedTypes:
+    List<Pair<List<String>, Class<out ConnectCreateConnectorRequestTriggerDestination>>> =
+    listOf(
+        listOf("branch") to ConnectCreateConnectorRequestTriggerDestinationVariant1::class.java,
+        listOf("customEnvironmentId") to
+            ConnectCreateConnectorRequestTriggerDestinationVariant2::class.java,
+    )

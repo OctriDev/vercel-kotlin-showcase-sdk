@@ -3,36 +3,43 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateSandboxesByNameForkV3RequestKeepLastSnapshotsVariant1(
-    /**
-     * Number of most recent snapshots to keep.
-     */
+    /** Number of most recent snapshots to keep. */
     val count: Long,
-    /**
-     * Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration.
-     */
+    /** Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration. */
     val expiration: Long? = null,
-    /**
-     * Whether to immediately delete evicted snapshots. Defaults to true.
-     */
-    val deleteEvicted: Boolean? = null
+    /** Whether to immediately delete evicted snapshots. Defaults to true. */
+    val deleteEvicted: Boolean? = null,
 ) : CreateSandboxesByNameForkV3RequestKeepLastSnapshots
 
 /**
- * Protect the N most recent snapshots with different expiration/deletion behavior. Persistent sandboxes default to keeping only the last snapshot (evicted snapshots are deleted). Set to null to disable the limit.
+ * Protect the N most recent snapshots with different expiration/deletion behavior. Persistent
+ * sandboxes default to keeping only the last snapshot (evicted snapshots are deleted). Set to null
+ * to disable the limit.
  */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = CreateSandboxesByNameForkV3RequestKeepLastSnapshots.Deserializer::class)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = CreateSandboxesByNameForkV3RequestKeepLastSnapshots.Deserializer::class
+)
 sealed interface CreateSandboxesByNameForkV3RequestKeepLastSnapshots {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<CreateSandboxesByNameForkV3RequestKeepLastSnapshots>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<
+            CreateSandboxesByNameForkV3RequestKeepLastSnapshots
+        >() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): CreateSandboxesByNameForkV3RequestKeepLastSnapshots {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out CreateSandboxesByNameForkV3RequestKeepLastSnapshots>> = listOf(CreateSandboxesByNameForkV3RequestKeepLastSnapshotsVariant1::class.java)
+            val objectTypes: List<Class<out CreateSandboxesByNameForkV3RequestKeepLastSnapshots>> =
+                listOf(CreateSandboxesByNameForkV3RequestKeepLastSnapshotsVariant1::class.java)
             for (objectType in objectTypes) {
                 try {
                     return mapper.convertValue(node, objectType)
@@ -41,282 +48,289 @@ sealed interface CreateSandboxesByNameForkV3RequestKeepLastSnapshots {
                 }
             }
             return when {
-                node.isTextual -> StringCreateSandboxesByNameForkV3RequestKeepLastSnapshots(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, CreateSandboxesByNameForkV3RequestKeepLastSnapshots::class.java, "no CreateSandboxesByNameForkV3RequestKeepLastSnapshots branch accepts this payload")
+                node.isTextual ->
+                    StringCreateSandboxesByNameForkV3RequestKeepLastSnapshots(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
+                        )
+                    )
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        CreateSandboxesByNameForkV3RequestKeepLastSnapshots::class.java,
+                        "no CreateSandboxesByNameForkV3RequestKeepLastSnapshots branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class StringCreateSandboxesByNameForkV3RequestKeepLastSnapshots(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : CreateSandboxesByNameForkV3RequestKeepLastSnapshots
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class StringCreateSandboxesByNameForkV3RequestKeepLastSnapshots(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
+) : CreateSandboxesByNameForkV3RequestKeepLastSnapshots
 
-/**
- * Match on the request path. Comparison is case-sensitive.
- */
+/** Match on the request path. Comparison is case-sensitive. */
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXe7618d7b51(
     /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     * Match the value exactly. Case-sensitive for paths, header values, and methods;
+     * case-insensitive for domains and header keys.
      */
     val exact: String? = null,
-    /**
-     * Match values that start with the given prefix.
-     */
-    val startsWith: String? = null
+    /** Match values that start with the given prefix. */
+    val startsWith: String? = null,
 )
 
-/**
- * Matcher for the entry key (header name or query key).
- */
+/** Matcher for the entry key (header name or query key). */
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXd85192fead(
     /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     * Match the value exactly. Case-sensitive for paths, header values, and methods;
+     * case-insensitive for domains and header keys.
      */
     val exact: String? = null,
-    /**
-     * Match values that start with the given prefix.
-     */
-    val startsWith: String? = null
+    /** Match values that start with the given prefix. */
+    val startsWith: String? = null,
 )
 
-/**
- * Matcher for the entry value.
- */
+/** Matcher for the entry value. */
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectX464bdc9f38(
     /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     * Match the value exactly. Case-sensitive for paths, header values, and methods;
+     * case-insensitive for domains and header keys.
      */
     val exact: String? = null,
-    /**
-     * Match values that start with the given prefix.
-     */
-    val startsWith: String? = null
+    /** Match values that start with the given prefix. */
+    val startsWith: String? = null,
 )
 
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXcf257c3003(
-    /**
-     * Matcher for the entry key (header name or query key).
-     */
+    /** Matcher for the entry key (header name or query key). */
     val key: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXd85192fead? = null,
-    /**
-     * Matcher for the entry value.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectX464bdc9f38? = null
+    /** Matcher for the entry value. */
+    @com.fasterxml.jackson.annotation.JsonProperty("value")
+    val `value`: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectX464bdc9f38? = null,
 )
 
-/**
- * Matcher for the entry key (header name or query key).
- */
+/** Matcher for the entry key (header name or query key). */
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectX9d6b4bc409(
     /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     * Match the value exactly. Case-sensitive for paths, header values, and methods;
+     * case-insensitive for domains and header keys.
      */
     val exact: String? = null,
-    /**
-     * Match values that start with the given prefix.
-     */
-    val startsWith: String? = null
+    /** Match values that start with the given prefix. */
+    val startsWith: String? = null,
 )
 
-/**
- * Matcher for the entry value.
- */
+/** Matcher for the entry value. */
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXda05836820(
     /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     * Match the value exactly. Case-sensitive for paths, header values, and methods;
+     * case-insensitive for domains and header keys.
      */
     val exact: String? = null,
-    /**
-     * Match values that start with the given prefix.
-     */
-    val startsWith: String? = null
+    /** Match values that start with the given prefix. */
+    val startsWith: String? = null,
 )
 
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXd1eecf2e8e(
-    /**
-     * Matcher for the entry key (header name or query key).
-     */
+    /** Matcher for the entry key (header name or query key). */
     val key: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectX9d6b4bc409? = null,
-    /**
-     * Matcher for the entry value.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXda05836820? = null
+    /** Matcher for the entry value. */
+    @com.fasterxml.jackson.annotation.JsonProperty("value")
+    val `value`: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXda05836820? = null,
 )
 
 /**
- * Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
+ * Optional L7 match. When provided, the injection rule only applies to requests that satisfy every
+ * specified dimension. When multiple injection rules target the same domain they are evaluated in
+ * order and the first match wins; a rule without `match` matches any request and shadows later
+ * rules for the same domain.
  */
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXce6e976e39(
-    /**
-     * Match on the request path. Comparison is case-sensitive.
-     */
+    /** Match on the request path. Comparison is case-sensitive. */
     val path: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXe7618d7b51? = null,
-    /**
-     * HTTP methods to match. Any single match succeeds (OR semantics).
-     */
+    /** HTTP methods to match. Any single match succeeds (OR semantics). */
     val method: List<String>? = null,
     /**
-     * Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
+     * Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are
+     * both compared case-sensitively (RFC 3986). When a request has multiple values for the same
+     * key, any matching value satisfies the matcher.
      */
-    val queryString: List<CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXcf257c3003>? = null,
+    val queryString:
+        List<CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXcf257c3003>? =
+        null,
     /**
-     * Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
+     * Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively
+     * (RFC 9110); header values are compared case-sensitively. When a request has multiple values
+     * for the same header, any matching value satisfies the matcher.
      */
-    val headers: List<CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXd1eecf2e8e>? = null
+    val headers: List<CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXd1eecf2e8e>? =
+        null,
 )
 
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXb37a6717ab(
     /**
-     * The domain (or pattern) of requests to add headers for. Supports wildcards like *.example.com.
+     * The domain (or pattern) of requests to add headers for. Supports wildcards like
+     * *.example.com.
      */
     val domain: String,
     /**
-     * HTTP headers to inject into requests for this domain. Existing headers with the same name will be overridden.
+     * HTTP headers to inject into requests for this domain. Existing headers with the same name
+     * will be overridden.
      */
     val headers: Map<String, String>,
     /**
-     * Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
+     * Optional L7 match. When provided, the injection rule only applies to requests that satisfy
+     * every specified dimension. When multiple injection rules target the same domain they are
+     * evaluated in order and the first match wins; a rule without `match` matches any request and
+     * shadows later rules for the same domain.
      */
-    val match: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXce6e976e39? = null
+    val match: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXce6e976e39? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0(
     /**
-     * The network access policy mode. Use \"allow-all\" to permit all outbound traffic. Use \"deny-all\" to block all outbound traffic. Use \"custom\" to specify explicit allow/deny rules.
+     * The network access policy mode. Use \"allow-all\" to permit all outbound traffic. Use
+     * \"deny-all\" to block all outbound traffic. Use \"custom\" to specify explicit allow/deny
+     * rules.
      */
     val mode: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0ModeEnum,
     /**
-     * List of domain names the sandbox is allowed to connect to. Only applies when mode is \"custom\". Supports wildcard patterns (e.g., \"*.example.com\" matches all subdomains).
+     * List of domain names the sandbox is allowed to connect to. Only applies when mode is
+     * \"custom\". Supports wildcard patterns (e.g., \"*.example.com\" matches all subdomains).
      */
     val allowedDomains: List<String>? = null,
     /**
-     * List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to these addresses bypasses domain-based restrictions.
+     * List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to
+     * these addresses bypasses domain-based restrictions.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("allowedCIDRs") val allowedCidrs: List<String>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("allowedCIDRs")
+    val allowedCidrs: List<String>? = null,
     /**
-     * List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
+     * List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These
+     * rules take precedence over all allowed rules.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("deniedCIDRs") val deniedCidrs: List<String>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("deniedCIDRs")
+    val deniedCidrs: List<String>? = null,
     /**
-     * HTTP header injection rules for outgoing requests matching specific domains. Traffic to matching domains will be intercepted instead of proxied through encrypted connections.
+     * HTTP header injection rules for outgoing requests matching specific domains. Traffic to
+     * matching domains will be intercepted instead of proxied through encrypted connections.
      */
-    val injectionRules: List<CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXb37a6717ab>? = null
+    val injectionRules:
+        List<CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0InjectXb37a6717ab>? =
+        null,
 ) : CreateSandboxesByNameForkV3RequestNetworkPolicy
 
-/**
- * Match on the request path. Comparison is case-sensitive.
- */
+/** Match on the request path. Comparison is case-sensitive. */
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVXe67a082dd0(
     /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     * Match the value exactly. Case-sensitive for paths, header values, and methods;
+     * case-insensitive for domains and header keys.
      */
     val exact: String? = null,
-    /**
-     * Match values that start with the given prefix.
-     */
-    val startsWith: String? = null
+    /** Match values that start with the given prefix. */
+    val startsWith: String? = null,
 )
 
-/**
- * Matcher for the entry key (header name or query key).
- */
+/** Matcher for the entry key (header name or query key). */
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX68f20891ef(
     /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     * Match the value exactly. Case-sensitive for paths, header values, and methods;
+     * case-insensitive for domains and header keys.
      */
     val exact: String? = null,
-    /**
-     * Match values that start with the given prefix.
-     */
-    val startsWith: String? = null
+    /** Match values that start with the given prefix. */
+    val startsWith: String? = null,
 )
 
-/**
- * Matcher for the entry value.
- */
+/** Matcher for the entry value. */
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX7f07fd844f(
     /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     * Match the value exactly. Case-sensitive for paths, header values, and methods;
+     * case-insensitive for domains and header keys.
      */
     val exact: String? = null,
-    /**
-     * Match values that start with the given prefix.
-     */
-    val startsWith: String? = null
+    /** Match values that start with the given prefix. */
+    val startsWith: String? = null,
 )
 
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX52a06ac068(
-    /**
-     * Matcher for the entry key (header name or query key).
-     */
+    /** Matcher for the entry key (header name or query key). */
     val key: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX68f20891ef? = null,
-    /**
-     * Matcher for the entry value.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX7f07fd844f? = null
+    /** Matcher for the entry value. */
+    @com.fasterxml.jackson.annotation.JsonProperty("value")
+    val `value`: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX7f07fd844f? = null,
 )
 
-/**
- * Matcher for the entry key (header name or query key).
- */
+/** Matcher for the entry key (header name or query key). */
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX782ef284af(
     /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     * Match the value exactly. Case-sensitive for paths, header values, and methods;
+     * case-insensitive for domains and header keys.
      */
     val exact: String? = null,
-    /**
-     * Match values that start with the given prefix.
-     */
-    val startsWith: String? = null
+    /** Match values that start with the given prefix. */
+    val startsWith: String? = null,
 )
 
-/**
- * Matcher for the entry value.
- */
+/** Matcher for the entry value. */
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX9a4d063b92(
     /**
-     * Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys.
+     * Match the value exactly. Case-sensitive for paths, header values, and methods;
+     * case-insensitive for domains and header keys.
      */
     val exact: String? = null,
-    /**
-     * Match values that start with the given prefix.
-     */
-    val startsWith: String? = null
+    /** Match values that start with the given prefix. */
+    val startsWith: String? = null,
 )
 
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX8f81c39f2a(
-    /**
-     * Matcher for the entry key (header name or query key).
-     */
+    /** Matcher for the entry key (header name or query key). */
     val key: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX782ef284af? = null,
-    /**
-     * Matcher for the entry value.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX9a4d063b92? = null
+    /** Matcher for the entry value. */
+    @com.fasterxml.jackson.annotation.JsonProperty("value")
+    val `value`: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX9a4d063b92? = null,
 )
 
 /**
- * Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
+ * Optional L7 match. When provided, the injection rule only applies to requests that satisfy every
+ * specified dimension. When multiple injection rules target the same domain they are evaluated in
+ * order and the first match wins; a rule without `match` matches any request and shadows later
+ * rules for the same domain.
  */
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX4d4db44e50(
-    /**
-     * Match on the request path. Comparison is case-sensitive.
-     */
+    /** Match on the request path. Comparison is case-sensitive. */
     val path: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVXe67a082dd0? = null,
-    /**
-     * HTTP methods to match. Any single match succeeds (OR semantics).
-     */
+    /** HTTP methods to match. Any single match succeeds (OR semantics). */
     val method: List<String>? = null,
     /**
-     * Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.
+     * Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are
+     * both compared case-sensitively (RFC 3986). When a request has multiple values for the same
+     * key, any matching value satisfies the matcher.
      */
-    val queryString: List<CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX52a06ac068>? = null,
+    val queryString:
+        List<CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX52a06ac068>? =
+        null,
     /**
-     * Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.
+     * Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively
+     * (RFC 9110); header values are compared case-sensitively. When a request has multiple values
+     * for the same header, any matching value satisfies the matcher.
      */
-    val headers: List<CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX8f81c39f2a>? = null
+    val headers: List<CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX8f81c39f2a>? =
+        null,
 )
 
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVXeaa6df755d(
@@ -324,60 +338,73 @@ data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVXeaa6df7
 )
 
 /**
- * Answer matching requests from the proxy with this response instead of forwarding them to the origin. Combine with a `match` on an earlier rule to allow one sub-path and reject the rest of a domain.
+ * Answer matching requests from the proxy with this response instead of forwarding them to the
+ * origin. Combine with a `match` on an earlier rule to allow one sub-path and reject the rest of a
+ * domain.
  */
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVXa07dc33c85(
-    /**
-     * HTTP status code returned to the sandbox.
-     */
+    /** HTTP status code returned to the sandbox. */
     val statusCode: Long,
     /**
-     * HTTP response headers. Framing and hop-by-hop headers are managed by the proxy and cannot be set.
+     * HTTP response headers. Framing and hop-by-hop headers are managed by the proxy and cannot be
+     * set.
      */
     val headers: Map<String, String>? = null,
-    /**
-     * UTF-8 response body. Requires `contentType`.
-     */
+    /** UTF-8 response body. Requires `contentType`. */
     val body: String? = null,
-    /**
-     * Value of the `Content-Type` response header. Required when `body` is set.
-     */
-    val contentType: String? = null
+    /** Value of the `Content-Type` response header. Required when `body` is set. */
+    val contentType: String? = null,
 )
 
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX8987031fef(
     /**
-     * Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.
+     * Optional L7 match. When provided, the injection rule only applies to requests that satisfy
+     * every specified dimension. When multiple injection rules target the same domain they are
+     * evaluated in order and the first match wins; a rule without `match` matches any request and
+     * shadows later rules for the same domain.
      */
     val match: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVX4d4db44e50? = null,
-    val transform: List<CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVXeaa6df755d>? = null,
+    val transform: List<CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVXeaa6df755d>? =
+        null,
     /**
-     * HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment.
+     * HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string,
+     * or fragment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("forwardURL") val forwardUrl: String? = null,
     /**
-     * Answer matching requests from the proxy with this response instead of forwarding them to the origin. Combine with a `match` on an earlier rule to allow one sub-path and reject the rest of a domain.
+     * Answer matching requests from the proxy with this response instead of forwarding them to the
+     * origin. Combine with a `match` on an earlier rule to allow one sub-path and reject the rest
+     * of a domain.
      */
-    val response: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVXa07dc33c85? = null
+    val response: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1AllowVXa07dc33c85? = null,
 )
 
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1Subnets(
     val allow: List<String>? = null,
-    val deny: List<String>? = null
+    val deny: List<String>? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1(
     val allow: Any? = null,
-    val subnets: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1Subnets? = null
+    val subnets: CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1Subnets? = null,
 ) : CreateSandboxesByNameForkV3RequestNetworkPolicy
 
-/**
- * Typed representation of the `CreateSandboxesByNameForkV3RequestNetworkPolicy` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION)
+/** Typed representation of the `CreateSandboxesByNameForkV3RequestNetworkPolicy` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0::class),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1::class)
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateSandboxesByNameForkV3RequestNetworkPolicyVariant0::class
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateSandboxesByNameForkV3RequestNetworkPolicyVariant1::class
+    ),
 )
 sealed interface CreateSandboxesByNameForkV3RequestNetworkPolicy

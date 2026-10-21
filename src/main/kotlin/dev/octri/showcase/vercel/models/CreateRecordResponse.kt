@@ -3,24 +3,32 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateRecordResponseVariant0(
     val updated: Double,
-    val uid: String? = null
+    val uid: String? = null,
 ) : CreateRecordResponse
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateRecordResponseVariant1(
-    /**
-     * The id of the newly created DNS record
-     */
+    /** The id of the newly created DNS record */
     val uid: String
 ) : CreateRecordResponse
 
-/**
- * Typed representation of the `CreateRecordResponse` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = CreateRecordResponse.Deserializer::class)
+/** Typed representation of the `CreateRecordResponse` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = CreateRecordResponse.Deserializer::class
+)
 sealed interface CreateRecordResponse {
     /** Chooses the branch this payload is shaped like. */
     class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<CreateRecordResponse>() {
@@ -30,7 +38,9 @@ sealed interface CreateRecordResponse {
         ): CreateRecordResponse {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = CreateRecordResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                CreateRecordResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -38,16 +48,26 @@ sealed interface CreateRecordResponse {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out CreateRecordResponse>> = listOf(CreateRecordResponseVariant0::class.java, CreateRecordResponseVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out CreateRecordResponse>> =
+                listOf(
+                    CreateRecordResponseVariant0::class.java,
+                    CreateRecordResponseVariant1::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, CreateRecordResponse::class.java, "no CreateRecordResponse branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        CreateRecordResponse::class.java,
+                        "no CreateRecordResponse branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val CreateRecordResponseOwnedTypes: List<Pair<List<String>, Class<out CreateRecordResponse>>> = listOf(
-    listOf("updated") to CreateRecordResponseVariant0::class.java,
-)
+internal val CreateRecordResponseOwnedTypes:
+    List<Pair<List<String>, Class<out CreateRecordResponse>>> =
+    listOf(listOf("updated") to CreateRecordResponseVariant0::class.java)

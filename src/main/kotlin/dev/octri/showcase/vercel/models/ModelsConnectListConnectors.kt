@@ -3,16 +3,10 @@
 
 package dev.octri.showcase.vercel.models
 
-/**
- * Page of connectors.
- */
+/** Page of connectors. */
 data class ConnectConnectorList(
-    /**
-     * Connectors in this page.
-     */
+    /** Connectors in this page. */
     val connectors: List<ConnectConnector>,
-    /**
-     * Cursor for the next page.
-     */
-    val pagination: ConnectPagination
+    /** Cursor for the next page. */
+    val pagination: ConnectPagination,
 )

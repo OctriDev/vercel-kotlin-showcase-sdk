@@ -3,14 +3,14 @@
 
 package dev.octri.showcase.vercel.models
 
-/**
- * Optional enumerated value serialized in the `enhancedBuilds` wire field.
- */
-class TeamResourceConfigBuildEntitlementsEnhancedBuildsEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamResourceConfigBuildEntitlementsEnhancedBuildsEnum && value == other.value
+/** Optional enumerated value serialized in the `enhancedBuilds` wire field. */
+class TeamResourceConfigBuildEntitlementsEnhancedBuildsEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamResourceConfigBuildEntitlementsEnhancedBuildsEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -18,19 +18,22 @@ class TeamResourceConfigBuildEntitlementsEnhancedBuildsEnum private constructor(
         @JvmField val FALSE = TeamResourceConfigBuildEntitlementsEnhancedBuildsEnum(false)
         @JvmField val TRUE = TeamResourceConfigBuildEntitlementsEnhancedBuildsEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = TeamResourceConfigBuildEntitlementsEnhancedBuildsEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = TeamResourceConfigBuildEntitlementsEnhancedBuildsEnum(value)
     }
 }
 
-/**
- * Default build machine type for new builds
- */
-class TeamResourceConfigBuildMachineDefaultEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamResourceConfigBuildMachineDefaultEnum && value == other.value
+/** Default build machine type for new builds */
+class TeamResourceConfigBuildMachineDefaultEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamResourceConfigBuildMachineDefaultEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -41,19 +44,22 @@ class TeamResourceConfigBuildMachineDefaultEnum private constructor(
         @JvmField val STANDARD = TeamResourceConfigBuildMachineDefaultEnum("standard")
         @JvmField val TURBO = TeamResourceConfigBuildMachineDefaultEnum("turbo")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = TeamResourceConfigBuildMachineDefaultEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = TeamResourceConfigBuildMachineDefaultEnum(value)
     }
 }
 
-/**
- * Whether every build for this team / user has elastic concurrency enabled automatically.
- */
-class TeamResourceConfigElasticConcurrencyEnabledEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamResourceConfigElasticConcurrencyEnabledEnum && value == other.value
+/** Whether every build for this team / user has elastic concurrency enabled automatically. */
+class TeamResourceConfigElasticConcurrencyEnabledEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamResourceConfigElasticConcurrencyEnabledEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -61,19 +67,27 @@ class TeamResourceConfigElasticConcurrencyEnabledEnum private constructor(
         @JvmField val FALSE = TeamResourceConfigElasticConcurrencyEnabledEnum(false)
         @JvmField val TRUE = TeamResourceConfigElasticConcurrencyEnabledEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = TeamResourceConfigElasticConcurrencyEnabledEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = TeamResourceConfigElasticConcurrencyEnabledEnum(value)
     }
 }
 
 /**
- * Controls whether directory sync events are processed. - 'SETUP': Directory connected but role mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as 'ACTIVE' for backwards compatibility.
+ * Controls whether directory sync events are processed. - 'SETUP': Directory connected but role
+ * mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully
+ * configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as
+ * 'ACTIVE' for backwards compatibility.
  */
-class TeamSamlConnectionSyncStateEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamSamlConnectionSyncStateEnum && value == other.value
+class TeamSamlConnectionSyncStateEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamSamlConnectionSyncStateEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -81,19 +95,22 @@ class TeamSamlConnectionSyncStateEnum private constructor(
         @JvmField val ACTIVE = TeamSamlConnectionSyncStateEnum("ACTIVE")
         @JvmField val SETUP = TeamSamlConnectionSyncStateEnum("SETUP")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = TeamSamlConnectionSyncStateEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = TeamSamlConnectionSyncStateEnum(value)
     }
 }
 
-/**
- * The default redirect URI to use after successful SAML authentication.
- */
-class TeamSamlDefaultRedirectUriEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamSamlDefaultRedirectUriEnum && value == other.value
+/** The default redirect URI to use after successful SAML authentication. */
+class TeamSamlDefaultRedirectUriEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamSamlDefaultRedirectUriEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -102,19 +119,27 @@ class TeamSamlDefaultRedirectUriEnum private constructor(
         @JvmField val V0_DEV = TeamSamlDefaultRedirectUriEnum("v0.dev")
         @JvmField val VERCEL_COM = TeamSamlDefaultRedirectUriEnum("vercel.com")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = TeamSamlDefaultRedirectUriEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = TeamSamlDefaultRedirectUriEnum(value)
     }
 }
 
 /**
- * Controls whether directory sync events are processed. - 'SETUP': Directory connected but role mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as 'ACTIVE' for backwards compatibility.
+ * Controls whether directory sync events are processed. - 'SETUP': Directory connected but role
+ * mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully
+ * configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as
+ * 'ACTIVE' for backwards compatibility.
  */
-class TeamSamlDirectorySyncStateEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamSamlDirectorySyncStateEnum && value == other.value
+class TeamSamlDirectorySyncStateEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamSamlDirectorySyncStateEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -122,19 +147,25 @@ class TeamSamlDirectorySyncStateEnum private constructor(
         @JvmField val ACTIVE = TeamSamlDirectorySyncStateEnum("ACTIVE")
         @JvmField val SETUP = TeamSamlDirectorySyncStateEnum("SETUP")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = TeamSamlDirectorySyncStateEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = TeamSamlDirectorySyncStateEnum(value)
     }
 }
 
 /**
- * When `true`, interactions with the Team **must** be done with an authentication token that has been authenticated with the Team's SAML Single Sign-On provider.
+ * When `true`, interactions with the Team **must** be done with an authentication token that has
+ * been authenticated with the Team's SAML Single Sign-On provider.
  */
-class TeamSamlEnforcedEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamSamlEnforcedEnum && value == other.value
+class TeamSamlEnforcedEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamSamlEnforcedEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -142,50 +173,82 @@ class TeamSamlEnforcedEnum private constructor(
         @JvmField val FALSE = TeamSamlEnforcedEnum(false)
         @JvmField val TRUE = TeamSamlEnforcedEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = TeamSamlEnforcedEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = TeamSamlEnforcedEnum(value)
     }
 }
 
-class TeamSamlRolesValueVariant1TeamPermissionsItemEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamSamlRolesValueVariant1TeamPermissionsItemEnum && value == other.value
+class TeamSamlRolesValueVariant1TeamPermissionsItemEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamSamlRolesValueVariant1TeamPermissionsItemEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val AIGATEWAYBUDGETMANAGER = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("AiGatewayBudgetManager")
-        @JvmField val AIGATEWAYCREDITS = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("AiGatewayCredits")
-        @JvmField val AIGATEWAYSETTINGS = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("AiGatewaySettings")
-        @JvmField val AIGATEWAYTRANSCRIPTSMANAGER = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("AiGatewayTranscriptsManager")
-        @JvmField val AIGATEWAYTRANSCRIPTSVIEWER = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("AiGatewayTranscriptsViewer")
-        @JvmField val AIGATEWAYUSER = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("AiGatewayUser")
-        @JvmField val CONNECTORMANAGER = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("ConnectorManager")
-        @JvmField val CREATEPROJECT = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("CreateProject")
-        @JvmField val ENVVARIABLEMANAGER = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("EnvVariableManager")
-        @JvmField val ENVIRONMENTMANAGER = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("EnvironmentManager")
-        @JvmField val FULLPRODUCTIONDEPLOYMENT = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("FullProductionDeployment")
-        @JvmField val INTEGRATIONMANAGER = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("IntegrationManager")
+        @JvmField
+        val AIGATEWAYBUDGETMANAGER =
+            TeamSamlRolesValueVariant1TeamPermissionsItemEnum("AiGatewayBudgetManager")
+        @JvmField
+        val AIGATEWAYCREDITS = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("AiGatewayCredits")
+        @JvmField
+        val AIGATEWAYSETTINGS =
+            TeamSamlRolesValueVariant1TeamPermissionsItemEnum("AiGatewaySettings")
+        @JvmField
+        val AIGATEWAYTRANSCRIPTSMANAGER =
+            TeamSamlRolesValueVariant1TeamPermissionsItemEnum("AiGatewayTranscriptsManager")
+        @JvmField
+        val AIGATEWAYTRANSCRIPTSVIEWER =
+            TeamSamlRolesValueVariant1TeamPermissionsItemEnum("AiGatewayTranscriptsViewer")
+        @JvmField
+        val AIGATEWAYUSER = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("AiGatewayUser")
+        @JvmField
+        val CONNECTORMANAGER = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("ConnectorManager")
+        @JvmField
+        val CREATEPROJECT = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("CreateProject")
+        @JvmField
+        val ENVVARIABLEMANAGER =
+            TeamSamlRolesValueVariant1TeamPermissionsItemEnum("EnvVariableManager")
+        @JvmField
+        val ENVIRONMENTMANAGER =
+            TeamSamlRolesValueVariant1TeamPermissionsItemEnum("EnvironmentManager")
+        @JvmField
+        val FULLPRODUCTIONDEPLOYMENT =
+            TeamSamlRolesValueVariant1TeamPermissionsItemEnum("FullProductionDeployment")
+        @JvmField
+        val INTEGRATIONMANAGER =
+            TeamSamlRolesValueVariant1TeamPermissionsItemEnum("IntegrationManager")
         @JvmField val ORGADMIN = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("OrgAdmin")
         @JvmField val ORGVIEWER = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("OrgViewer")
         @JvmField val USAGEVIEWER = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("UsageViewer")
         @JvmField val V0BUILDER = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("V0Builder")
         @JvmField val V0CHATTER = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("V0Chatter")
         @JvmField val V0VIEWER = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("V0Viewer")
-        @JvmField val WORKFLOWDECRYPTOR = TeamSamlRolesValueVariant1TeamPermissionsItemEnum("WorkflowDecryptor")
+        @JvmField
+        val WORKFLOWDECRYPTOR =
+            TeamSamlRolesValueVariant1TeamPermissionsItemEnum("WorkflowDecryptor")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = TeamSamlRolesValueVariant1TeamPermissionsItemEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = TeamSamlRolesValueVariant1TeamPermissionsItemEnum(value)
     }
 }
 
-class TeamSamlRolesValueVariant1TeamRolesItemEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamSamlRolesValueVariant1TeamRolesItemEnum && value == other.value
+class TeamSamlRolesValueVariant1TeamRolesItemEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamSamlRolesValueVariant1TeamRolesItemEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -197,18 +260,24 @@ class TeamSamlRolesValueVariant1TeamRolesItemEnum private constructor(
         @JvmField val OWNER = TeamSamlRolesValueVariant1TeamRolesItemEnum("OWNER")
         @JvmField val SECURITY = TeamSamlRolesValueVariant1TeamRolesItemEnum("SECURITY")
         @JvmField val VIEWER = TeamSamlRolesValueVariant1TeamRolesItemEnum("VIEWER")
-        @JvmField val VIEWER_FOR_PLUS = TeamSamlRolesValueVariant1TeamRolesItemEnum("VIEWER_FOR_PLUS")
+        @JvmField
+        val VIEWER_FOR_PLUS = TeamSamlRolesValueVariant1TeamRolesItemEnum("VIEWER_FOR_PLUS")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = TeamSamlRolesValueVariant1TeamRolesItemEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = TeamSamlRolesValueVariant1TeamRolesItemEnum(value)
     }
 }
 
-class TeamSamlRolesValueVariant2Enum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamSamlRolesValueVariant2Enum && value == other.value
+class TeamSamlRolesValueVariant2Enum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamSamlRolesValueVariant2Enum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -222,19 +291,22 @@ class TeamSamlRolesValueVariant2Enum private constructor(
         @JvmField val VIEWER = TeamSamlRolesValueVariant2Enum("VIEWER")
         @JvmField val VIEWER_FOR_PLUS = TeamSamlRolesValueVariant2Enum("VIEWER_FOR_PLUS")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = TeamSamlRolesValueVariant2Enum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = TeamSamlRolesValueVariant2Enum(value)
     }
 }
 
-/**
- * Sensitive environment variable policy for this team
- */
-class TeamSensitiveEnvironmentVariablePolicyEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamSensitiveEnvironmentVariablePolicyEnum && value == other.value
+/** Sensitive environment variable policy for this team */
+class TeamSensitiveEnvironmentVariablePolicyEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamSensitiveEnvironmentVariablePolicyEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -243,19 +315,22 @@ class TeamSensitiveEnvironmentVariablePolicyEnum private constructor(
         @JvmField val OFF = TeamSensitiveEnvironmentVariablePolicyEnum("off")
         @JvmField val ON = TeamSensitiveEnvironmentVariablePolicyEnum("on")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = TeamSensitiveEnvironmentVariablePolicyEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = TeamSensitiveEnvironmentVariablePolicyEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `enabled` wire field.
- */
-class TeamStrictConnectorsEnabledEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamStrictConnectorsEnabledEnum && value == other.value
+/** Required enumerated value serialized in the `enabled` wire field. */
+class TeamStrictConnectorsEnabledEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamStrictConnectorsEnabledEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -263,19 +338,22 @@ class TeamStrictConnectorsEnabledEnum private constructor(
         @JvmField val FALSE = TeamStrictConnectorsEnabledEnum(false)
         @JvmField val TRUE = TeamStrictConnectorsEnabledEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = TeamStrictConnectorsEnabledEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = TeamStrictConnectorsEnabledEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `enabled` wire field.
- */
-class TeamStrictDeploymentProtectionSettingsEnabledEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamStrictDeploymentProtectionSettingsEnabledEnum && value == other.value
+/** Required enumerated value serialized in the `enabled` wire field. */
+class TeamStrictDeploymentProtectionSettingsEnabledEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamStrictDeploymentProtectionSettingsEnabledEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -283,19 +361,22 @@ class TeamStrictDeploymentProtectionSettingsEnabledEnum private constructor(
         @JvmField val FALSE = TeamStrictDeploymentProtectionSettingsEnabledEnum(false)
         @JvmField val TRUE = TeamStrictDeploymentProtectionSettingsEnabledEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = TeamStrictDeploymentProtectionSettingsEnabledEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = TeamStrictDeploymentProtectionSettingsEnabledEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `enabled` wire field.
- */
-class TeamStrictPasswordProtectionSettingsEnabledEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamStrictPasswordProtectionSettingsEnabledEnum && value == other.value
+/** Required enumerated value serialized in the `enabled` wire field. */
+class TeamStrictPasswordProtectionSettingsEnabledEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamStrictPasswordProtectionSettingsEnabledEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -303,19 +384,22 @@ class TeamStrictPasswordProtectionSettingsEnabledEnum private constructor(
         @JvmField val FALSE = TeamStrictPasswordProtectionSettingsEnabledEnum(false)
         @JvmField val TRUE = TeamStrictPasswordProtectionSettingsEnabledEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = TeamStrictPasswordProtectionSettingsEnabledEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = TeamStrictPasswordProtectionSettingsEnabledEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `enabled` wire field.
- */
-class TeamStrictShareableLinksEnabledEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamStrictShareableLinksEnabledEnum && value == other.value
+/** Required enumerated value serialized in the `enabled` wire field. */
+class TeamStrictShareableLinksEnabledEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamStrictShareableLinksEnabledEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -323,35 +407,47 @@ class TeamStrictShareableLinksEnabledEnum private constructor(
         @JvmField val FALSE = TeamStrictShareableLinksEnabledEnum(false)
         @JvmField val TRUE = TeamStrictShareableLinksEnabledEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = TeamStrictShareableLinksEnabledEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = TeamStrictShareableLinksEnabledEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `target` wire field.
- */
-class TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX700fb69d00 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX700fb69d00 && value == other.value
+/** Required enumerated value serialized in the `target` wire field. */
+class TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX700fb69d00
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX700fb69d00 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val PREVIEW = TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX700fb69d00("preview")
-        @JvmField val PRODUCTION = TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX700fb69d00("production")
+        @JvmField
+        val PREVIEW =
+            TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX700fb69d00("preview")
+        @JvmField
+        val PRODUCTION =
+            TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX700fb69d00("production")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX700fb69d00(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX700fb69d00(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `type` wire field.
- */
-enum class TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX59192ae249(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/** Required enumerated value serialized in the `type` wire field. */
+enum class TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX59192ae249(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     SYSTEM("system");
 
     override fun toString() = value
@@ -359,15 +455,16 @@ enum class TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX59192ae
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/**
- * Required enumerated value serialized in the `type` wire field.
- */
-enum class TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX01a59e6bfe(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/** Required enumerated value serialized in the `type` wire field. */
+enum class TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX01a59e6bfe(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     CUSTOM("custom");
 
     override fun toString() = value
@@ -375,35 +472,45 @@ enum class TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItemVariX01a59e6
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/**
- * Required enumerated value serialized in the `target` wire field.
- */
-class TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0TargetEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0TargetEnum && value == other.value
+/** Required enumerated value serialized in the `target` wire field. */
+class TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0TargetEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0TargetEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val PREVIEW = TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0TargetEnum("preview")
-        @JvmField val PRODUCTION = TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0TargetEnum("production")
+        @JvmField
+        val PREVIEW =
+            TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0TargetEnum("preview")
+        @JvmField
+        val PRODUCTION =
+            TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0TargetEnum("production")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0TargetEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0TargetEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `type` wire field.
- */
-enum class TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/** Required enumerated value serialized in the `type` wire field. */
+enum class TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     SYSTEM("system");
 
     override fun toString() = value
@@ -411,15 +518,16 @@ enum class TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant0TypeEnum(@c
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/**
- * Required enumerated value serialized in the `type` wire field.
- */
-enum class TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant1TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/** Required enumerated value serialized in the `type` wire field. */
+enum class TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant1TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     CUSTOM("custom");
 
     override fun toString() = value
@@ -427,52 +535,70 @@ enum class TeamDeploymentPolicyGitSourcesItemEnvironmentsItemVariant1TypeEnum(@c
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/**
- * Required enumerated value serialized in the `provider` wire field.
- */
-class TeamDeploymentPolicyGitSourcesItemSourcesItemVariant0ProviderEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamDeploymentPolicyGitSourcesItemSourcesItemVariant0ProviderEnum && value == other.value
+/** Required enumerated value serialized in the `provider` wire field. */
+class TeamDeploymentPolicyGitSourcesItemSourcesItemVariant0ProviderEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamDeploymentPolicyGitSourcesItemSourcesItemVariant0ProviderEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val BITBUCKET = TeamDeploymentPolicyGitSourcesItemSourcesItemVariant0ProviderEnum("bitbucket")
-        @JvmField val GITHUB = TeamDeploymentPolicyGitSourcesItemSourcesItemVariant0ProviderEnum("github")
+        @JvmField
+        val BITBUCKET =
+            TeamDeploymentPolicyGitSourcesItemSourcesItemVariant0ProviderEnum("bitbucket")
+        @JvmField
+        val GITHUB = TeamDeploymentPolicyGitSourcesItemSourcesItemVariant0ProviderEnum("github")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = TeamDeploymentPolicyGitSourcesItemSourcesItemVariant0ProviderEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            TeamDeploymentPolicyGitSourcesItemSourcesItemVariant0ProviderEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `provider` wire field.
- */
-class TeamDeploymentPolicyGitSourcesItemSourcesItemVariant1ProviderEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamDeploymentPolicyGitSourcesItemSourcesItemVariant1ProviderEnum && value == other.value
+/** Required enumerated value serialized in the `provider` wire field. */
+class TeamDeploymentPolicyGitSourcesItemSourcesItemVariant1ProviderEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamDeploymentPolicyGitSourcesItemSourcesItemVariant1ProviderEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val GITLAB = TeamDeploymentPolicyGitSourcesItemSourcesItemVariant1ProviderEnum("gitlab")
+        @JvmField
+        val GITLAB = TeamDeploymentPolicyGitSourcesItemSourcesItemVariant1ProviderEnum("gitlab")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = TeamDeploymentPolicyGitSourcesItemSourcesItemVariant1ProviderEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            TeamDeploymentPolicyGitSourcesItemSourcesItemVariant1ProviderEnum(value)
     }
 }
 
 /**
- * Property indicating that this Team data contains only limited information, due to the authentication token missing privileges to read the full Team data or due to team having MFA enforced and the user not having MFA enabled. Re-login with the Team's configured SAML Single Sign-On provider in order to upgrade the authentication token with the necessary privileges.
+ * Property indicating that this Team data contains only limited information, due to the
+ * authentication token missing privileges to read the full Team data or due to team having MFA
+ * enforced and the user not having MFA enabled. Re-login with the Team's configured SAML Single
+ * Sign-On provider in order to upgrade the authentication token with the necessary privileges.
  */
 enum class TeamLimitedLimitedEnum(@com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
     TRUE(true);
@@ -482,19 +608,20 @@ enum class TeamLimitedLimitedEnum(@com.fasterxml.jackson.annotation.JsonValue va
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: Boolean) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: Boolean) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/**
- * Required enumerated value serialized in the `limitedBy[]` wire field.
- */
-class TeamLimitedLimitedByItemEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamLimitedLimitedByItemEnum && value == other.value
+/** Required enumerated value serialized in the `limitedBy[]` wire field. */
+class TeamLimitedLimitedByItemEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamLimitedLimitedByItemEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -503,38 +630,44 @@ class TeamLimitedLimitedByItemEnum private constructor(
         @JvmField val MFA = TeamLimitedLimitedByItemEnum("mfa")
         @JvmField val SCOPE = TeamLimitedLimitedByItemEnum("scope")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = TeamLimitedLimitedByItemEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = TeamLimitedLimitedByItemEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `confirmed` wire field.
- */
-class TeamLimitedMembershipConfirmedEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamLimitedMembershipConfirmedEnum && value == other.value
+/** Required enumerated value serialized in the `confirmed` wire field. */
+class TeamLimitedMembershipConfirmedEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamLimitedMembershipConfirmedEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
         @JvmField val TRUE = TeamLimitedMembershipConfirmedEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = TeamLimitedMembershipConfirmedEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = TeamLimitedMembershipConfirmedEnum(value)
     }
 }
 
-/**
- * Optional enumerated value serialized in the `isOrgBackingTeamMembership` wire field.
- */
-class TeamLimitedMembershipIsOrgBackingTeamMembershipEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamLimitedMembershipIsOrgBackingTeamMembershipEnum && value == other.value
+/** Optional enumerated value serialized in the `isOrgBackingTeamMembership` wire field. */
+class TeamLimitedMembershipIsOrgBackingTeamMembershipEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamLimitedMembershipIsOrgBackingTeamMembershipEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -542,19 +675,22 @@ class TeamLimitedMembershipIsOrgBackingTeamMembershipEnum private constructor(
         @JvmField val FALSE = TeamLimitedMembershipIsOrgBackingTeamMembershipEnum(false)
         @JvmField val TRUE = TeamLimitedMembershipIsOrgBackingTeamMembershipEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = TeamLimitedMembershipIsOrgBackingTeamMembershipEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = TeamLimitedMembershipIsOrgBackingTeamMembershipEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `origin` wire field.
- */
-class TeamLimitedMembershipJoinedFromOriginEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is TeamLimitedMembershipJoinedFromOriginEnum && value == other.value
+/** Required enumerated value serialized in the `origin` wire field. */
+class TeamLimitedMembershipJoinedFromOriginEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is TeamLimitedMembershipJoinedFromOriginEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -568,18 +704,28 @@ class TeamLimitedMembershipJoinedFromOriginEnum private constructor(
         @JvmField val IMPORT = TeamLimitedMembershipJoinedFromOriginEnum("import")
         @JvmField val LINK = TeamLimitedMembershipJoinedFromOriginEnum("link")
         @JvmField val MAIL = TeamLimitedMembershipJoinedFromOriginEnum("mail")
-        @JvmField val NSNB_AUTO_APPROVE = TeamLimitedMembershipJoinedFromOriginEnum("nsnb-auto-approve")
-        @JvmField val NSNB_HOBBY_UPGRADE = TeamLimitedMembershipJoinedFromOriginEnum("nsnb-hobby-upgrade")
+        @JvmField
+        val NSNB_AUTO_APPROVE = TeamLimitedMembershipJoinedFromOriginEnum("nsnb-auto-approve")
+        @JvmField
+        val NSNB_HOBBY_UPGRADE = TeamLimitedMembershipJoinedFromOriginEnum("nsnb-hobby-upgrade")
         @JvmField val NSNB_INVITE = TeamLimitedMembershipJoinedFromOriginEnum("nsnb-invite")
         @JvmField val NSNB_REDEPLOY = TeamLimitedMembershipJoinedFromOriginEnum("nsnb-redeploy")
-        @JvmField val NSNB_REDEPLOY_ATTRIBUTION_CARD = TeamLimitedMembershipJoinedFromOriginEnum("nsnb-redeploy-attribution-card")
-        @JvmField val NSNB_REQUEST_ACCESS = TeamLimitedMembershipJoinedFromOriginEnum("nsnb-request-access")
-        @JvmField val NSNB_VIEWER_UPGRADE = TeamLimitedMembershipJoinedFromOriginEnum("nsnb-viewer-upgrade")
-        @JvmField val ORGANIZATION_TEAMS = TeamLimitedMembershipJoinedFromOriginEnum("organization-teams")
+        @JvmField
+        val NSNB_REDEPLOY_ATTRIBUTION_CARD =
+            TeamLimitedMembershipJoinedFromOriginEnum("nsnb-redeploy-attribution-card")
+        @JvmField
+        val NSNB_REQUEST_ACCESS = TeamLimitedMembershipJoinedFromOriginEnum("nsnb-request-access")
+        @JvmField
+        val NSNB_VIEWER_UPGRADE = TeamLimitedMembershipJoinedFromOriginEnum("nsnb-viewer-upgrade")
+        @JvmField
+        val ORGANIZATION_TEAMS = TeamLimitedMembershipJoinedFromOriginEnum("organization-teams")
         @JvmField val SAML = TeamLimitedMembershipJoinedFromOriginEnum("saml")
         @JvmField val TEAMS = TeamLimitedMembershipJoinedFromOriginEnum("teams")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = TeamLimitedMembershipJoinedFromOriginEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = TeamLimitedMembershipJoinedFromOriginEnum(value)
     }
 }

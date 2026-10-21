@@ -10,112 +10,254 @@ import dev.octri.showcase.vercel.Validation
 
 internal object VcrReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByRX89448400af {
     /**
-     * Uploads an image manifest to a Docker repository and associates it with the specified tag or digest reference. Use this operation to push a manifest after uploading its referenced blobs. The server computes the manifest digest and returns it in the `Docker-Content-Digest` header.
+     * Uploads an image manifest to a Docker repository and associates it with the specified tag or
+     * digest reference. Use this operation to push a manifest after uploading its referenced blobs.
+     * The server computes the manifest digest and returns it in the `Docker-Content-Digest` header.
      *
-     * PUT /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Upload an image manifest. The digest is computed from the body and returned in the Docker-Content-Digest header.
+     * PUT /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Upload an image manifest.
+     * The digest is computed from the body and returned in the Docker-Content-Digest header.
      *
      * @param teamSlug Single Docker repository team slug component.
      * @param projectSlug Single Docker repository project slug component.
      * @param repositoryName Single Docker repository name component.
      * @param reference Manifest reference: a tag or digest.
      */
-    fun replaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, reference: String, options: RequestOptions? = null): Any {
+    fun replaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        reference: String,
+        options: RequestOptions? = null,
+    ): Any {
         Validation.validateLength("teamSlug", teamSlug, Validation.LengthOpts(max = 255))
         Validation.validatePattern("teamSlug", teamSlug, "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$")
 
         Validation.validateLength("projectSlug", projectSlug, Validation.LengthOpts(max = 255))
-        Validation.validatePattern("projectSlug", projectSlug, "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$")
+        Validation.validatePattern(
+            "projectSlug",
+            projectSlug,
+            "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+        )
 
-        Validation.validateLength("repositoryName", repositoryName, Validation.LengthOpts(max = 255))
-        Validation.validatePattern("repositoryName", repositoryName, "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$")
+        Validation.validateLength(
+            "repositoryName",
+            repositoryName,
+            Validation.LengthOpts(max = 255),
+        )
+        Validation.validatePattern(
+            "repositoryName",
+            repositoryName,
+            "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+        )
 
         Validation.validateLength("reference", reference, Validation.LengthOpts(max = 255))
-        Validation.validatePattern("reference", reference, "^(?:[a-zA-Z0-9_][a-zA-Z0-9._-]{0,127}|[A-Za-z0-9_+.-]+:[A-Fa-f0-9]+)$")
+        Validation.validatePattern(
+            "reference",
+            reference,
+            "^(?:[a-zA-Z0-9_][a-zA-Z0-9._-]{0,127}|[A-Za-z0-9_+.-]+:[A-Fa-f0-9]+)$",
+        )
 
-        return SdkClient.request<Any>(SdkClient.RequestSpec("PUT", "/v2/${SdkClient.encodePathSegment(teamSlug)}/${SdkClient.encodePathSegment(projectSlug)}/${SdkClient.encodePathSegment(repositoryName)}/manifests/${SdkClient.encodePathSegment(reference)}", config = clientConfig, operationId = "replaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<Any>(
+                SdkClient.RequestSpec(
+                    "PUT",
+                    "/v2/${SdkClient.encodePathSegment(teamSlug)}/${SdkClient.encodePathSegment(projectSlug)}/${SdkClient.encodePathSegment(repositoryName)}/manifests/${SdkClient.encodePathSegment(reference)}",
+                    config = clientConfig,
+                    operationId =
+                        "replaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VcrHeadByTeamSlugByProjectSlugByRepositoryNameManifestsByRefeX05ff18007c {
     /**
-     * Checks whether a manifest exists in a Docker repository by its tag or digest reference. Docker clients use this check during a push to determine whether the manifest or a referenced config blob is already present. Supply the repository components and a valid `reference`.
+     * Checks whether a manifest exists in a Docker repository by its tag or digest reference.
+     * Docker clients use this check during a push to determine whether the manifest or a referenced
+     * config blob is already present. Supply the repository components and a valid `reference`.
      *
-     * HEAD /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Check whether a manifest exists. Used by Docker client during push to determine if a manifest (or config blob referenced by digest) is already present.
+     * HEAD /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Check whether a manifest
+     * exists. Used by Docker client during push to determine if a manifest (or config blob
+     * referenced by digest) is already present.
      *
      * @param teamSlug Single Docker repository team slug component.
      * @param projectSlug Single Docker repository project slug component.
      * @param repositoryName Single Docker repository name component.
      * @param reference Manifest reference: a tag or digest.
      */
-    fun headByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, reference: String, options: RequestOptions? = null): Unit {
+    fun headByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        reference: String,
+        options: RequestOptions? = null,
+    ): Unit {
         Validation.validateLength("teamSlug", teamSlug, Validation.LengthOpts(max = 255))
         Validation.validatePattern("teamSlug", teamSlug, "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$")
 
         Validation.validateLength("projectSlug", projectSlug, Validation.LengthOpts(max = 255))
-        Validation.validatePattern("projectSlug", projectSlug, "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$")
+        Validation.validatePattern(
+            "projectSlug",
+            projectSlug,
+            "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+        )
 
-        Validation.validateLength("repositoryName", repositoryName, Validation.LengthOpts(max = 255))
-        Validation.validatePattern("repositoryName", repositoryName, "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$")
+        Validation.validateLength(
+            "repositoryName",
+            repositoryName,
+            Validation.LengthOpts(max = 255),
+        )
+        Validation.validatePattern(
+            "repositoryName",
+            repositoryName,
+            "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+        )
 
         Validation.validateLength("reference", reference, Validation.LengthOpts(max = 255))
-        Validation.validatePattern("reference", reference, "^(?:[a-zA-Z0-9_][a-zA-Z0-9._-]{0,127}|[A-Za-z0-9_+.-]+:[A-Fa-f0-9]+)$")
+        Validation.validatePattern(
+            "reference",
+            reference,
+            "^(?:[a-zA-Z0-9_][a-zA-Z0-9._-]{0,127}|[A-Za-z0-9_+.-]+:[A-Fa-f0-9]+)$",
+        )
 
-        SdkClient.request<Unit>(SdkClient.RequestSpec("HEAD", "/v2/${SdkClient.encodePathSegment(teamSlug)}/${SdkClient.encodePathSegment(projectSlug)}/${SdkClient.encodePathSegment(repositoryName)}/manifests/${SdkClient.encodePathSegment(reference)}", config = clientConfig, operationId = "headByTeamSlugByProjectSlugByRepositoryNameManifestsByReference", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "HEAD",
+                "/v2/${SdkClient.encodePathSegment(teamSlug)}/${SdkClient.encodePathSegment(projectSlug)}/${SdkClient.encodePathSegment(repositoryName)}/manifests/${SdkClient.encodePathSegment(reference)}",
+                config = clientConfig,
+                operationId = "headByTeamSlugByProjectSlugByRepositoryNameManifestsByReference",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 }
 
 internal object VcrGetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferX40ebc5cb22 {
     /**
-     * Retrieves an image manifest from a Docker repository using its tag or digest as the reference. Use this operation when you need to fetch the manifest associated with a repository reference. Supply a valid `reference` along with the repository components.
+     * Retrieves an image manifest from a Docker repository using its tag or digest as the
+     * reference. Use this operation when you need to fetch the manifest associated with a
+     * repository reference. Supply a valid `reference` along with the repository components.
      *
-     * GET /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Fetch a manifest by tag or digest.
+     * GET /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Fetch a manifest by tag
+     * or digest.
      *
      * @param teamSlug Single Docker repository team slug component.
      * @param projectSlug Single Docker repository project slug component.
      * @param repositoryName Single Docker repository name component.
      * @param reference Manifest reference: a tag or digest.
      */
-    fun getByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, reference: String, options: RequestOptions? = null): Any {
+    fun getByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        reference: String,
+        options: RequestOptions? = null,
+    ): Any {
         Validation.validateLength("teamSlug", teamSlug, Validation.LengthOpts(max = 255))
         Validation.validatePattern("teamSlug", teamSlug, "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$")
 
         Validation.validateLength("projectSlug", projectSlug, Validation.LengthOpts(max = 255))
-        Validation.validatePattern("projectSlug", projectSlug, "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$")
+        Validation.validatePattern(
+            "projectSlug",
+            projectSlug,
+            "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+        )
 
-        Validation.validateLength("repositoryName", repositoryName, Validation.LengthOpts(max = 255))
-        Validation.validatePattern("repositoryName", repositoryName, "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$")
+        Validation.validateLength(
+            "repositoryName",
+            repositoryName,
+            Validation.LengthOpts(max = 255),
+        )
+        Validation.validatePattern(
+            "repositoryName",
+            repositoryName,
+            "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+        )
 
         Validation.validateLength("reference", reference, Validation.LengthOpts(max = 255))
-        Validation.validatePattern("reference", reference, "^(?:[a-zA-Z0-9_][a-zA-Z0-9._-]{0,127}|[A-Za-z0-9_+.-]+:[A-Fa-f0-9]+)$")
+        Validation.validatePattern(
+            "reference",
+            reference,
+            "^(?:[a-zA-Z0-9_][a-zA-Z0-9._-]{0,127}|[A-Za-z0-9_+.-]+:[A-Fa-f0-9]+)$",
+        )
 
-        return SdkClient.request<Any>(SdkClient.RequestSpec("GET", "/v2/${SdkClient.encodePathSegment(teamSlug)}/${SdkClient.encodePathSegment(projectSlug)}/${SdkClient.encodePathSegment(repositoryName)}/manifests/${SdkClient.encodePathSegment(reference)}", config = clientConfig, operationId = "getByTeamSlugByProjectSlugByRepositoryNameManifestsByReference", decoder = SdkClient.ResponseDecoder.EMPTY, options = options)).data
+        return SdkClient.request<Any>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v2/${SdkClient.encodePathSegment(teamSlug)}/${SdkClient.encodePathSegment(projectSlug)}/${SdkClient.encodePathSegment(repositoryName)}/manifests/${SdkClient.encodePathSegment(reference)}",
+                    config = clientConfig,
+                    operationId = "getByTeamSlugByProjectSlugByRepositoryNameManifestsByReference",
+                    decoder = SdkClient.ResponseDecoder.EMPTY,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VcrDeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReXee84afc947 {
     /**
-     * Deletes an image manifest from a Docker repository by its content-addressable digest. Use this operation to remove a manifest by digest rather than by tag. Supply the repository components and a digest-form `reference`.
+     * Deletes an image manifest from a Docker repository by its content-addressable digest. Use
+     * this operation to remove a manifest by digest rather than by tag. Supply the repository
+     * components and a digest-form `reference`.
      *
-     * DELETE /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Reference must be a digest.
+     * DELETE /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Reference must be a
+     * digest.
      *
      * @param teamSlug Single Docker repository team slug component.
      * @param projectSlug Single Docker repository project slug component.
      * @param repositoryName Single Docker repository name component.
      * @param reference Content-addressable digest (algorithm:hex).
      */
-    fun deleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, reference: String, options: RequestOptions? = null): Any {
+    fun deleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        reference: String,
+        options: RequestOptions? = null,
+    ): Any {
         Validation.validateLength("teamSlug", teamSlug, Validation.LengthOpts(max = 255))
         Validation.validatePattern("teamSlug", teamSlug, "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$")
 
         Validation.validateLength("projectSlug", projectSlug, Validation.LengthOpts(max = 255))
-        Validation.validatePattern("projectSlug", projectSlug, "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$")
+        Validation.validatePattern(
+            "projectSlug",
+            projectSlug,
+            "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+        )
 
-        Validation.validateLength("repositoryName", repositoryName, Validation.LengthOpts(max = 255))
-        Validation.validatePattern("repositoryName", repositoryName, "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$")
+        Validation.validateLength(
+            "repositoryName",
+            repositoryName,
+            Validation.LengthOpts(max = 255),
+        )
+        Validation.validatePattern(
+            "repositoryName",
+            repositoryName,
+            "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+        )
 
         Validation.validateLength("reference", reference, Validation.LengthOpts(max = 255))
         Validation.validatePattern("reference", reference, "^[A-Za-z0-9_+.-]+:[A-Fa-f0-9]+$")
 
-        return SdkClient.request<Any>(SdkClient.RequestSpec("DELETE", "/v2/${SdkClient.encodePathSegment(teamSlug)}/${SdkClient.encodePathSegment(projectSlug)}/${SdkClient.encodePathSegment(repositoryName)}/manifests/${SdkClient.encodePathSegment(reference)}", config = clientConfig, operationId = "deleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<Any>(
+                SdkClient.RequestSpec(
+                    "DELETE",
+                    "/v2/${SdkClient.encodePathSegment(teamSlug)}/${SdkClient.encodePathSegment(projectSlug)}/${SdkClient.encodePathSegment(repositoryName)}/manifests/${SdkClient.encodePathSegment(reference)}",
+                    config = clientConfig,
+                    operationId =
+                        "deleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }

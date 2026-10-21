@@ -3,68 +3,115 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateProjectCheckRequestSourceVariant0(
     val kind: String? = null,
     val integrationId: String? = null,
     val integrationConfigurationId: String? = null,
     val resourceId: String? = null,
-    val externalResourceId: String? = null
+    val externalResourceId: String? = null,
 ) : CreateProjectCheckRequestSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateProjectCheckRequestSourceVariant1(
     val kind: String,
-    val webhookId: String? = null
+    val webhookId: String? = null,
 ) : CreateProjectCheckRequestSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateProjectCheckRequestSourceVariant2(
     val kind: String,
     val externalCheckName: String,
-    val provider: CreateProjectCheckRequestSourceVariant2ProviderEnum
+    val provider: CreateProjectCheckRequestSourceVariant2ProviderEnum,
 ) : CreateProjectCheckRequestSource
 
-/**
- * Typed representation of the `CreateProjectCheckRequestSource` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION)
+/** Typed representation of the `CreateProjectCheckRequestSource` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateProjectCheckRequestSourceVariant0::class),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateProjectCheckRequestSourceVariant1::class),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateProjectCheckRequestSourceVariant2::class)
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateProjectCheckRequestSourceVariant0::class
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateProjectCheckRequestSourceVariant1::class
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateProjectCheckRequestSourceVariant2::class
+    ),
 )
 sealed interface CreateProjectCheckRequestSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateProjectCheckResponseSourceVariant0(
     val integrationConfigurationId: String,
     val integrationId: String,
     val kind: CreateProjectCheckResponseSourceVariant0KindEnum,
     val externalResourceId: String? = null,
-    val resourceId: String? = null
+    val resourceId: String? = null,
 ) : CreateProjectCheckResponseSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateProjectCheckResponseSourceVariant1(
     val kind: CreateProjectCheckResponseSourceVariant1KindEnum,
-    val webhookId: String? = null
+    val webhookId: String? = null,
 ) : CreateProjectCheckResponseSource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateProjectCheckResponseSourceVariant2(
     val externalCheckName: String,
     val kind: CreateProjectCheckResponseSourceVariant2KindEnum,
-    val provider: CreateProjectCheckResponseSourceVariant2ProviderEnum
+    val provider: CreateProjectCheckResponseSourceVariant2ProviderEnum,
 ) : CreateProjectCheckResponseSource
 
-/**
- * Typed representation of the `CreateProjectCheckResponseSource` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "kind", visible = true)
+/** Typed representation of the `CreateProjectCheckResponseSource` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "kind",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateProjectCheckResponseSourceVariant0::class, name = "integration"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateProjectCheckResponseSourceVariant1::class, name = "webhook"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateProjectCheckResponseSourceVariant2::class, name = "git-provider")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateProjectCheckResponseSourceVariant0::class,
+        name = "integration",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateProjectCheckResponseSourceVariant1::class,
+        name = "webhook",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateProjectCheckResponseSourceVariant2::class,
+        name = "git-provider",
+    ),
 )
 sealed interface CreateProjectCheckResponseSource

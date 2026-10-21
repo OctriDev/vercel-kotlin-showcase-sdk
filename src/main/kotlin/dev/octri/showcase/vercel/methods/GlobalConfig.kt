@@ -15,463 +15,758 @@ import dev.octri.showcase.vercel.Validation
 
 object GlobalConfig {
 
-/**
- * A Global Config
- */
-data class GetEdgeConfigsResponseItem(
-    val createdAt: Double,
-    val digest: String,
-    val id: String,
-    val itemCount: Double,
-    val ownerId: String,
-    val sizeInBytes: Double,
-    /**
-     * Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
-     */
-    val slug: String,
-    val updatedAt: Double,
-    /**
-     * The ID of the user who created the Global Config, optional because it is not always set.
-     */
-    val createdBy: String? = null
-)
+    /** A Global Config */
+    data class GetEdgeConfigsResponseItem(
+        val createdAt: Double,
+        val digest: String,
+        val id: String,
+        val itemCount: Double,
+        val ownerId: String,
+        val sizeInBytes: Double,
+        /**
+         * Name for the Global Config Names are not unique. Must start with an alphabetic character
+         * and can contain only alphanumeric characters and underscores).
+         */
+        val slug: String,
+        val updatedAt: Double,
+        /**
+         * The ID of the user who created the Global Config, optional because it is not always set.
+         */
+        val createdBy: String? = null,
+    )
 
-/**
- * A Global Config
- */
-data class CreateEdgeConfigResponse(
-    val createdAt: Double,
-    val digest: String,
-    val id: String,
-    val itemCount: Double,
-    val ownerId: String,
-    val sizeInBytes: Double,
-    /**
-     * Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
-     */
-    val slug: String,
-    val updatedAt: Double,
-    /**
-     * The ID of the user who created the Global Config, optional because it is not always set.
-     */
-    val createdBy: String? = null
-)
+    /** A Global Config */
+    data class CreateEdgeConfigResponse(
+        val createdAt: Double,
+        val digest: String,
+        val id: String,
+        val itemCount: Double,
+        val ownerId: String,
+        val sizeInBytes: Double,
+        /**
+         * Name for the Global Config Names are not unique. Must start with an alphabetic character
+         * and can contain only alphanumeric characters and underscores).
+         */
+        val slug: String,
+        val updatedAt: Double,
+        /**
+         * The ID of the user who created the Global Config, optional because it is not always set.
+         */
+        val createdBy: String? = null,
+    )
 
-/**
- * The Global Config.
- */
-data class GetEdgeConfigResponse(
-    val createdAt: Double,
-    val digest: String,
-    val id: String,
-    val itemCount: Double,
-    val ownerId: String,
-    val sizeInBytes: Double,
-    /**
-     * Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
-     */
-    val slug: String,
-    val updatedAt: Double,
-    /**
-     * The ID of the user who created the Global Config, optional because it is not always set.
-     */
-    val createdBy: String? = null
-)
+    /** The Global Config. */
+    data class GetEdgeConfigResponse(
+        val createdAt: Double,
+        val digest: String,
+        val id: String,
+        val itemCount: Double,
+        val ownerId: String,
+        val sizeInBytes: Double,
+        /**
+         * Name for the Global Config Names are not unique. Must start with an alphabetic character
+         * and can contain only alphanumeric characters and underscores).
+         */
+        val slug: String,
+        val updatedAt: Double,
+        /**
+         * The ID of the user who created the Global Config, optional because it is not always set.
+         */
+        val createdBy: String? = null,
+    )
 
-/**
- * A Global Config
- */
-data class UpdateEdgeConfigResponse(
-    val createdAt: Double,
-    val digest: String,
-    val id: String,
-    val itemCount: Double,
-    val ownerId: String,
-    val sizeInBytes: Double,
-    /**
-     * Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).
-     */
-    val slug: String,
-    val updatedAt: Double,
-    /**
-     * The ID of the user who created the Global Config, optional because it is not always set.
-     */
-    val createdBy: String? = null
-)
+    /** A Global Config */
+    data class UpdateEdgeConfigResponse(
+        val createdAt: Double,
+        val digest: String,
+        val id: String,
+        val itemCount: Double,
+        val ownerId: String,
+        val sizeInBytes: Double,
+        /**
+         * Name for the Global Config Names are not unique. Must start with an alphabetic character
+         * and can contain only alphanumeric characters and underscores).
+         */
+        val slug: String,
+        val updatedAt: Double,
+        /**
+         * The ID of the user who created the Global Config, optional because it is not always set.
+         */
+        val createdBy: String? = null,
+    )
 
-data class PatchEdgeConfigItemsResponse(
-    val status: String
-)
+    data class PatchEdgeConfigItemsResponse(val status: String)
 
-data class CreateEdgeConfigTokenResponse(
-    val id: String,
-    val token: String
-)
+    data class CreateEdgeConfigTokenResponse(
+        val id: String,
+        val token: String,
+    )
 
-data class RestoreEdgeConfigBackupResponse(
-    val digest: String,
-    val previousDigest: String,
-    val restoredFrom: String,
-    val status: RestoreEdgeConfigBackupResponseStatusEnum
-)
+    data class RestoreEdgeConfigBackupResponse(
+        val digest: String,
+        val previousDigest: String,
+        val restoredFrom: String,
+        val status: RestoreEdgeConfigBackupResponseStatusEnum,
+    )
 
-data class GetEdgeConfigBackupsResponseBackupsItemMetadata(
-    val itemsBytes: Double? = null,
-    val itemsCount: Double? = null,
-    val updatedAt: String? = null,
-    val updatedBy: String? = null
-)
+    data class GetEdgeConfigBackupsResponseBackupsItemMetadata(
+        val itemsBytes: Double? = null,
+        val itemsCount: Double? = null,
+        val updatedAt: String? = null,
+        val updatedBy: String? = null,
+    )
 
-data class GetEdgeConfigBackupsResponseBackupsItem(
-    val id: String,
-    val lastModified: Double,
-    val metadata: GetEdgeConfigBackupsResponseBackupsItemMetadata? = null
-)
+    data class GetEdgeConfigBackupsResponseBackupsItem(
+        val id: String,
+        val lastModified: Double,
+        val metadata: GetEdgeConfigBackupsResponseBackupsItemMetadata? = null,
+    )
 
-data class GetEdgeConfigBackupsResponsePagination(
-    val hasNext: Boolean,
-    val next: String? = null
-)
+    data class GetEdgeConfigBackupsResponsePagination(
+        val hasNext: Boolean,
+        val next: String? = null,
+    )
 
-data class GetEdgeConfigBackupsResponse(
-    val backups: List<GetEdgeConfigBackupsResponseBackupsItem>,
-    val pagination: GetEdgeConfigBackupsResponsePagination
-)
-
+    data class GetEdgeConfigBackupsResponse(
+        val backups: List<GetEdgeConfigBackupsResponseBackupsItem>,
+        val pagination: GetEdgeConfigBackupsResponsePagination,
+    )
 
     /**
-     * Lists all Global Configs available to the authenticated user. Use `teamId` or `slug` to perform the request on behalf of a team. Each result includes its identifier, name, digest, item count, size, and timestamps.
+     * Lists all Global Configs available to the authenticated user. Use `teamId` or `slug` to
+     * perform the request on behalf of a team. Each result includes its identifier, name, digest,
+     * item count, size, and timestamps.
      *
      * Returns all Global Configs.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getEdgeConfigs(clientConfig: ClientConfig, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): List<GetEdgeConfigsResponseItem> {
-        return SdkClient.request<List<GetEdgeConfigsResponseItem>>(SdkClient.RequestSpec("GET", "/v1/global-config", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getEdgeConfigs", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getEdgeConfigs(
+        clientConfig: ClientConfig,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): List<GetEdgeConfigsResponseItem> {
+        return SdkClient.request<List<GetEdgeConfigsResponseItem>>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/global-config",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getEdgeConfigs",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Creates a Global Config for the authenticated user or specified team. Supply a `slug` that is at most 64 characters and contains only letters, numbers, underscores, or hyphens; you can also provide initial `items`.
+     * Creates a Global Config for the authenticated user or specified team. Supply a `slug` that is
+     * at most 64 characters and contains only letters, numbers, underscores, or hyphens; you can
+     * also provide initial `items`.
      *
      * Creates a Global Config.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug2 The Team slug to perform the request on behalf of.
      */
-    fun createEdgeConfig(clientConfig: ClientConfig, slug: String, teamId: String? = null, slug2: String? = null, items: Map<String, Any>? = null, options: RequestOptions? = null): CreateEdgeConfigResponse {
+    fun createEdgeConfig(
+        clientConfig: ClientConfig,
+        slug: String,
+        teamId: String? = null,
+        slug2: String? = null,
+        items: Map<String, Any>? = null,
+        options: RequestOptions? = null,
+    ): CreateEdgeConfigResponse {
         Validation.validateLength("slug", slug, Validation.LengthOpts(max = 64))
         Validation.validatePattern("slug", slug, "^[\\w-]+$")
 
-        return SdkClient.request<CreateEdgeConfigResponse>(SdkClient.RequestSpec("POST", "/v1/global-config", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug2, "form", true)), body = SdkClient.bodyMap("slug" to (slug), "items" to (SdkClient.omitIfNull(items))), operationId = "createEdgeConfig", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<CreateEdgeConfigResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v1/global-config",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug2, "form", true),
+                        ),
+                    body =
+                        SdkClient.bodyMap(
+                            "slug" to (slug),
+                            "items" to (SdkClient.omitIfNull(items)),
+                        ),
+                    operationId = "createEdgeConfig",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Retrieves a Global Config by its identifier. Use `teamId` or `slug` to make the request on behalf of a team when needed.
+     * Retrieves a Global Config by its identifier. Use `teamId` or `slug` to make the request on
+     * behalf of a team when needed.
      *
      * Returns a Global Config.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getEdgeConfig(clientConfig: ClientConfig, edgeConfigId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetEdgeConfigResponse {
-        return SdkClient.request<GetEdgeConfigResponse>(SdkClient.RequestSpec("GET", "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getEdgeConfig", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getEdgeConfig(
+        clientConfig: ClientConfig,
+        edgeConfigId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetEdgeConfigResponse {
+        return SdkClient.request<GetEdgeConfigResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getEdgeConfig",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Replaces a Global Config's name. Supply the required `slug` in the request body; use `teamId` or `slug` to make the request on behalf of a team when needed.
+     * Replaces a Global Config's name. Supply the required `slug` in the request body; use `teamId`
+     * or `slug` to make the request on behalf of a team when needed.
      *
      * Updates a Global Config.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug2 The Team slug to perform the request on behalf of.
      */
-    fun updateEdgeConfig(clientConfig: ClientConfig, edgeConfigId: String, slug: String, teamId: String? = null, slug2: String? = null, options: RequestOptions? = null): UpdateEdgeConfigResponse {
+    fun updateEdgeConfig(
+        clientConfig: ClientConfig,
+        edgeConfigId: String,
+        slug: String,
+        teamId: String? = null,
+        slug2: String? = null,
+        options: RequestOptions? = null,
+    ): UpdateEdgeConfigResponse {
         Validation.validateLength("slug", slug, Validation.LengthOpts(max = 64))
         Validation.validatePattern("slug", slug, "^[\\w-]+$")
 
-        return SdkClient.request<UpdateEdgeConfigResponse>(SdkClient.RequestSpec("PUT", "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug2, "form", true)), body = SdkClient.bodyMap("slug" to (slug)), operationId = "updateEdgeConfig", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<UpdateEdgeConfigResponse>(
+                SdkClient.RequestSpec(
+                    "PUT",
+                    "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug2, "form", true),
+                        ),
+                    body = SdkClient.bodyMap("slug" to (slug)),
+                    operationId = "updateEdgeConfig",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Deletes a Global Config by its identifier. Use `teamId` or `slug` to make the request on behalf of a team when needed; deletion removes the specified Global Config.
+     * Deletes a Global Config by its identifier. Use `teamId` or `slug` to make the request on
+     * behalf of a team when needed; deletion removes the specified Global Config.
      *
      * Delete a Global Config by id.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun deleteEdgeConfig(clientConfig: ClientConfig, edgeConfigId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
-        SdkClient.request<Unit>(SdkClient.RequestSpec("DELETE", "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "deleteEdgeConfig", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+    fun deleteEdgeConfig(
+        clientConfig: ClientConfig,
+        edgeConfigId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "DELETE",
+                "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "teamId" to SdkClient.queryValue(teamId, "form", true),
+                        "slug" to SdkClient.queryValue(slug, "form", true),
+                    ),
+                operationId = "deleteEdgeConfig",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 
-
-
-
-
-
-
     /**
-     * Lists all items in a Global Config. Use the `edgeConfigId` path parameter to select the config; it must begin with the `ecfg_` prefix.
+     * Lists all items in a Global Config. Use the `edgeConfigId` path parameter to select the
+     * config; it must begin with the `ecfg_` prefix.
      *
      * Returns all items of a Global Config.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getEdgeConfigItems(clientConfig: ClientConfig, edgeConfigId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): List<GlobalConfigItem> {
+    fun getEdgeConfigItems(
+        clientConfig: ClientConfig,
+        edgeConfigId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): List<GlobalConfigItem> {
         Validation.validatePattern("edgeConfigId", edgeConfigId, "^ecfg_")
 
-        return SdkClient.request<List<GlobalConfigItem>>(SdkClient.RequestSpec("GET", "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/items", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getEdgeConfigItems", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<List<GlobalConfigItem>>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/items",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getEdgeConfigItems",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Updates multiple items in a Global Config in one request. Supply the required `items` array with the item operations to apply; the `edgeConfigId` must begin with the `ecfg_` prefix.
+     * Updates multiple items in a Global Config in one request. Supply the required `items` array
+     * with the item operations to apply; the `edgeConfigId` must begin with the `ecfg_` prefix.
      *
      * Update multiple Global Config Items in batch.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun patchEdgeConfigItems(clientConfig: ClientConfig, edgeConfigId: String, items: List<PatchEdgeConfigItemsRequestItemsItem>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): PatchEdgeConfigItemsResponse {
+    fun patchEdgeConfigItems(
+        clientConfig: ClientConfig,
+        edgeConfigId: String,
+        items: List<PatchEdgeConfigItemsRequestItemsItem>,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): PatchEdgeConfigItemsResponse {
         Validation.validatePattern("edgeConfigId", edgeConfigId, "^ecfg_")
 
-        return SdkClient.request<PatchEdgeConfigItemsResponse>(SdkClient.RequestSpec("PATCH", "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/items", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("items" to (items)), operationId = "patchEdgeConfigItems", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<PatchEdgeConfigItemsResponse>(
+                SdkClient.RequestSpec(
+                    "PATCH",
+                    "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/items",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body = SdkClient.bodyMap("items" to (items)),
+                    operationId = "patchEdgeConfigItems",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Retrieves the schema associated with a Global Config. Use `edgeConfigId` to select the config and `teamId` or `slug` to make the request on behalf of a team when needed.
+     * Retrieves the schema associated with a Global Config. Use `edgeConfigId` to select the config
+     * and `teamId` or `slug` to make the request on behalf of a team when needed.
      *
      * Returns the schema of a Global Config.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getEdgeConfigSchema(clientConfig: ClientConfig, edgeConfigId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Map<String, Any> {
-        return SdkClient.request<Map<String, Any>>(SdkClient.RequestSpec("GET", "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/schema", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getEdgeConfigSchema", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getEdgeConfigSchema(
+        clientConfig: ClientConfig,
+        edgeConfigId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Map<String, Any> {
+        return SdkClient.request<Map<String, Any>>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/schema",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getEdgeConfigSchema",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Updates the schema for a Global Config. Supply the required `definition` object; use `dryRun` to request a schema update without applying it, if supported by the API.
+     * Updates the schema for a Global Config. Supply the required `definition` object; use `dryRun`
+     * to request a schema update without applying it, if supported by the API.
      *
      * Update a Global Config's schema.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun patchEdgeConfigSchema(clientConfig: ClientConfig, edgeConfigId: String, definition: Any, dryRun: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Map<String, Any> {
-        return SdkClient.request<Map<String, Any>>(SdkClient.RequestSpec("POST", "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/schema", config = clientConfig, query = mapOf("dryRun" to SdkClient.queryValue(dryRun, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("definition" to (definition)), operationId = "patchEdgeConfigSchema", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun patchEdgeConfigSchema(
+        clientConfig: ClientConfig,
+        edgeConfigId: String,
+        definition: Any,
+        dryRun: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Map<String, Any> {
+        return SdkClient.request<Map<String, Any>>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/schema",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "dryRun" to SdkClient.queryValue(dryRun, "form", true),
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body = SdkClient.bodyMap("definition" to (definition)),
+                    operationId = "patchEdgeConfigSchema",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Deletes the schema associated with a Global Config. Use `edgeConfigId` to select the config and `teamId` or `slug` to make the request on behalf of a team when needed.
+     * Deletes the schema associated with a Global Config. Use `edgeConfigId` to select the config
+     * and `teamId` or `slug` to make the request on behalf of a team when needed.
      *
      * Deletes the schema of existing Global Config.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun deleteEdgeConfigSchema(clientConfig: ClientConfig, edgeConfigId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
-        SdkClient.request<Unit>(SdkClient.RequestSpec("DELETE", "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/schema", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "deleteEdgeConfigSchema", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+    fun deleteEdgeConfigSchema(
+        clientConfig: ClientConfig,
+        edgeConfigId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "DELETE",
+                "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/schema",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "teamId" to SdkClient.queryValue(teamId, "form", true),
+                        "slug" to SdkClient.queryValue(slug, "form", true),
+                    ),
+                operationId = "deleteEdgeConfigSchema",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 
-
-
-
-
-
-
     /**
-     * Retrieves a specific item from a Global Config. Supply the config identifier and item key to select the item; the config identifier must begin with the `ecfg_` prefix.
+     * Retrieves a specific item from a Global Config. Supply the config identifier and item key to
+     * select the item; the config identifier must begin with the `ecfg_` prefix.
      *
      * Returns a specific Global Config Item.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getEdgeConfigItem(clientConfig: ClientConfig, edgeConfigId: String, edgeConfigItemKey: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GlobalConfigItem {
+    fun getEdgeConfigItem(
+        clientConfig: ClientConfig,
+        edgeConfigId: String,
+        edgeConfigItemKey: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GlobalConfigItem {
         Validation.validatePattern("edgeConfigId", edgeConfigId, "^ecfg_")
 
-        return SdkClient.request<GlobalConfigItem>(SdkClient.RequestSpec("GET", "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/item/${SdkClient.encodePathSegment(edgeConfigItemKey)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getEdgeConfigItem", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<GlobalConfigItem>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/item/${SdkClient.encodePathSegment(edgeConfigItemKey)}",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getEdgeConfigItem",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Lists the tokens associated with a Global Config. Use `edgeConfigId` to select the Global Config and optionally `teamId` or `slug` to make the request on behalf of a team. The response includes token metadata and a masked token representation.
+     * Lists the tokens associated with a Global Config. Use `edgeConfigId` to select the Global
+     * Config and optionally `teamId` or `slug` to make the request on behalf of a team. The
+     * response includes token metadata and a masked token representation.
      *
      * Returns all tokens of a Global Config.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getEdgeConfigTokens(clientConfig: ClientConfig, edgeConfigId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): List<GlobalConfigToken> {
-        return SdkClient.request<List<GlobalConfigToken>>(SdkClient.RequestSpec("GET", "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/tokens", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getEdgeConfigTokens", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getEdgeConfigTokens(
+        clientConfig: ClientConfig,
+        edgeConfigId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): List<GlobalConfigToken> {
+        return SdkClient.request<List<GlobalConfigToken>>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/tokens",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getEdgeConfigTokens",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Deletes one or more tokens from an existing Global Config. Provide token values or token IDs in the request body to choose which tokens to delete. Each supplied list must contain at least one item.
+     * Deletes one or more tokens from an existing Global Config. Provide token values or token IDs
+     * in the request body to choose which tokens to delete. Each supplied list must contain at
+     * least one item.
      *
      * Deletes one or more tokens of an existing Global Config.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun deleteEdgeConfigTokens(clientConfig: ClientConfig, edgeConfigId: String, teamId: String? = null, slug: String? = null, tokens: List<String>? = null, ids: List<String>? = null, options: RequestOptions? = null): Unit {
+    fun deleteEdgeConfigTokens(
+        clientConfig: ClientConfig,
+        edgeConfigId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        tokens: List<String>? = null,
+        ids: List<String>? = null,
+        options: RequestOptions? = null,
+    ): Unit {
         Validation.validatePattern("edgeConfigId", edgeConfigId, "^ecfg_")
 
         if (tokens != null) {
             Validation.validateItems("tokens", tokens, Validation.LengthOpts(min = 1))
-}
+        }
 
         if (ids != null) {
             Validation.validateItems("ids", ids, Validation.LengthOpts(min = 1))
-}
+        }
 
-        SdkClient.request<Unit>(SdkClient.RequestSpec("DELETE", "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/tokens", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("tokens" to (SdkClient.omitIfNull(tokens)), "ids" to (SdkClient.omitIfNull(ids))), operationId = "deleteEdgeConfigTokens", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "DELETE",
+                "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/tokens",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "teamId" to SdkClient.queryValue(teamId, "form", true),
+                        "slug" to SdkClient.queryValue(slug, "form", true),
+                    ),
+                body =
+                    SdkClient.bodyMap(
+                        "tokens" to (SdkClient.omitIfNull(tokens)),
+                        "ids" to (SdkClient.omitIfNull(ids)),
+                    ),
+                operationId = "deleteEdgeConfigTokens",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 
-
-
-
-
-
-
     /**
-     * Retrieves metadata for a specific Global Config token. Use `edgeConfigId` and `token` to identify the token whose metadata you need. The response includes a partially masked token representation and may include the full token for backwards compatibility.
+     * Retrieves metadata for a specific Global Config token. Use `edgeConfigId` and `token` to
+     * identify the token whose metadata you need. The response includes a partially masked token
+     * representation and may include the full token for backwards compatibility.
      *
      * Return meta data about a Global Config token.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getEdgeConfigToken(clientConfig: ClientConfig, edgeConfigId: String, token: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GlobalConfigToken {
-        return SdkClient.request<GlobalConfigToken>(SdkClient.RequestSpec("GET", "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/token/${SdkClient.encodePathSegment(token)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getEdgeConfigToken", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getEdgeConfigToken(
+        clientConfig: ClientConfig,
+        edgeConfigId: String,
+        token: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GlobalConfigToken {
+        return SdkClient.request<GlobalConfigToken>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/token/${SdkClient.encodePathSegment(token)}",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getEdgeConfigToken",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Creates a token for an existing Global Config. Provide a `label` to identify the token, with a maximum length of 52 characters. The 201 response includes the new token and its ID.
+     * Creates a token for an existing Global Config. Provide a `label` to identify the token, with
+     * a maximum length of 52 characters. The 201 response includes the new token and its ID.
      *
      * Adds a token to an existing Global Config.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun createEdgeConfigToken(clientConfig: ClientConfig, edgeConfigId: String, label: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): CreateEdgeConfigTokenResponse {
+    fun createEdgeConfigToken(
+        clientConfig: ClientConfig,
+        edgeConfigId: String,
+        label: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): CreateEdgeConfigTokenResponse {
         Validation.validatePattern("edgeConfigId", edgeConfigId, "^ecfg_")
 
         Validation.validateLength("label", label, Validation.LengthOpts(max = 52))
 
-        return SdkClient.request<CreateEdgeConfigTokenResponse>(SdkClient.RequestSpec("POST", "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/token", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("label" to (label)), operationId = "createEdgeConfigToken", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<CreateEdgeConfigTokenResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/token",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body = SdkClient.bodyMap("label" to (label)),
+                    operationId = "createEdgeConfigToken",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Retrieves a specific version of a Global Config from backup storage. Use `edgeConfigId` and `edgeConfigBackupVersionId` to select the Global Config and backup version. The response contains the backup data and its associated metadata.
+     * Retrieves a specific version of a Global Config from backup storage. Use `edgeConfigId` and
+     * `edgeConfigBackupVersionId` to select the Global Config and backup version. The response
+     * contains the backup data and its associated metadata.
      *
      * Retrieves a specific version of a Global Config from backup storage.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getEdgeConfigBackup(clientConfig: ClientConfig, edgeConfigId: String, edgeConfigBackupVersionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetEdgeConfigBackupResponse {
-        return SdkClient.request<GetEdgeConfigBackupResponse>(SdkClient.RequestSpec("GET", "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/backups/${SdkClient.encodePathSegment(edgeConfigBackupVersionId)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getEdgeConfigBackup", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getEdgeConfigBackup(
+        clientConfig: ClientConfig,
+        edgeConfigId: String,
+        edgeConfigBackupVersionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetEdgeConfigBackupResponse {
+        return SdkClient.request<GetEdgeConfigBackupResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/backups/${SdkClient.encodePathSegment(edgeConfigBackupVersionId)}",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getEdgeConfigBackup",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Restores a specific backup version of a Global Config. Use `edgeConfigId` and `edgeConfigBackupVersionId` to select the Global Config and the version to restore. The response reports the resulting digest, previous digest, restored backup version, and status.
+     * Restores a specific backup version of a Global Config. Use `edgeConfigId` and
+     * `edgeConfigBackupVersionId` to select the Global Config and the version to restore. The
+     * response reports the resulting digest, previous digest, restored backup version, and status.
      *
      * Restores a Global Config backup.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun restoreEdgeConfigBackup(clientConfig: ClientConfig, edgeConfigId: String, edgeConfigBackupVersionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): RestoreEdgeConfigBackupResponse {
+    fun restoreEdgeConfigBackup(
+        clientConfig: ClientConfig,
+        edgeConfigId: String,
+        edgeConfigBackupVersionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): RestoreEdgeConfigBackupResponse {
         Validation.validatePattern("edgeConfigId", edgeConfigId, "^ecfg_")
 
-        return SdkClient.request<RestoreEdgeConfigBackupResponse>(SdkClient.RequestSpec("POST", "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/backups/${SdkClient.encodePathSegment(edgeConfigBackupVersionId)}/restore", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "restoreEdgeConfigBackup", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<RestoreEdgeConfigBackupResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v1/global-config/${SdkClient.encodePathSegment(edgeConfigId)}/backups/${SdkClient.encodePathSegment(edgeConfigBackupVersionId)}/restore",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "restoreEdgeConfigBackup",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
-
-
-
-
-
-
 
     /** Parameters for [getEdgeConfigBackups]. */
     data class GetEdgeConfigBackupsRequest(
@@ -480,35 +775,54 @@ data class GetEdgeConfigBackupsResponse(
         val limit: Double? = null,
         val metadata: String? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /**
-     * Lists backups of a Global Config. Use `next` to continue from a pagination cursor, `limit` to control the number of results, and `metadata` to filter the backups. The response includes backup records and pagination information.
+     * Lists backups of a Global Config. Use `next` to continue from a pagination cursor, `limit` to
+     * control the number of results, and `metadata` to filter the backups. The response includes
+     * backup records and pagination information.
      *
      * Returns backups of a Global Config.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getEdgeConfigBackups(clientConfig: ClientConfig, request: GetEdgeConfigBackupsRequest, options: RequestOptions? = null): GetEdgeConfigBackupsResponse {
+    fun getEdgeConfigBackups(
+        clientConfig: ClientConfig,
+        request: GetEdgeConfigBackupsRequest,
+        options: RequestOptions? = null,
+    ): GetEdgeConfigBackupsResponse {
         validateGetEdgeConfigBackupsRequest(request)
 
-        return SdkClient.request<GetEdgeConfigBackupsResponse>(SdkClient.RequestSpec("GET", "/v1/global-config/${SdkClient.encodePathSegment(request.edgeConfigId)}/backups", config = clientConfig, query = mapOf("next" to SdkClient.queryValue(request.next, "form", true), "limit" to SdkClient.queryValue(request.limit, "form", true), "metadata" to
-    SdkClient.queryValue(request.metadata, "form", true), "teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "getEdgeConfigBackups", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<GetEdgeConfigBackupsResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/global-config/${SdkClient.encodePathSegment(request.edgeConfigId)}/backups",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "next" to SdkClient.queryValue(request.next, "form", true),
+                            "limit" to SdkClient.queryValue(request.limit, "form", true),
+                            "metadata" to SdkClient.queryValue(request.metadata, "form", true),
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    operationId = "getEdgeConfigBackups",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
-
 
     private fun validateGetEdgeConfigBackupsRequest(request: GetEdgeConfigBackupsRequest) {
         if (request.limit != null) {
-            Validation.validateRange("limit", request.limit, Validation.RangeOpts(min = 0.0, max = 50.0))
-}
+            Validation.validateRange(
+                "limit",
+                request.limit,
+                Validation.RangeOpts(min = 0.0, max = 50.0),
+            )
+        }
     }
-
-
-
-
-
-
 }

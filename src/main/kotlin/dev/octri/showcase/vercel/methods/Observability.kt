@@ -10,66 +10,84 @@ import dev.octri.showcase.vercel.SdkClient
 
 object Observability {
 
-data class GetObservabilityConfigurationProjectsResponseDisabledProjectsItem(
-    val disabledAt: Double,
-    val id: String,
-    val name: String? = null
-)
+    data class GetObservabilityConfigurationProjectsResponseDisabledProjectsItem(
+        val disabledAt: Double,
+        val id: String,
+        val name: String? = null,
+    )
 
-data class GetObservabilityConfigurationProjectsResponse(
-    val disabledProjects: List<GetObservabilityConfigurationProjectsResponseDisabledProjectsItem>
-)
+    data class GetObservabilityConfigurationProjectsResponse(
+        val disabledProjects:
+            List<GetObservabilityConfigurationProjectsResponseDisabledProjectsItem>
+    )
 
-data class UpdateObservabilityConfigurationProjectResponse(
-    val id: String,
-    val disabledAt: Double? = null
-)
+    data class UpdateObservabilityConfigurationProjectResponse(
+        val id: String,
+        val disabledAt: Double? = null,
+    )
 
-data class GetObservabilitySchemaResponseMetricsItem(
-    val description: String,
-    val id: String
-)
+    data class GetObservabilitySchemaResponseMetricsItem(
+        val description: String,
+        val id: String,
+    )
 
-data class GetObservabilitySchemaResponse(
-    val metrics: List<GetObservabilitySchemaResponseMetricsItem>
-)
+    data class GetObservabilitySchemaResponse(
+        val metrics: List<GetObservabilitySchemaResponseMetricsItem>
+    )
 
-data class GetObservabilitySchemaByMetricIdResponseItemDimensionsItem(
-    val label: String,
-    val name: String,
-    val description: String? = null
-)
+    data class GetObservabilitySchemaByMetricIdResponseItemDimensionsItem(
+        val label: String,
+        val name: String,
+        val description: String? = null,
+    )
 
-data class GetObservabilitySchemaByMetricIdResponseItem(
-    val aggregations: List<String>,
-    val defaultAggregation: String,
-    val description: String,
-    val dimensions: List<GetObservabilitySchemaByMetricIdResponseItemDimensionsItem>,
-    val id: String,
-    val unit: String
-)
-
+    data class GetObservabilitySchemaByMetricIdResponseItem(
+        val aggregations: List<String>,
+        val defaultAggregation: String,
+        val description: String,
+        val dimensions: List<GetObservabilitySchemaByMetricIdResponseItemDimensionsItem>,
+        val id: String,
+        val unit: String,
+    )
 
     /**
-     * Lists the projects currently configured as disabled for Observability Plus on a team. Use this request to review which projects have the disabled setting and when that setting was applied.
+     * Lists the projects currently configured as disabled for Observability Plus on a team. Use
+     * this request to review which projects have the disabled setting and when that setting was
+     * applied.
      *
-     * Lists the projects that are currently configured as disabled for Observability Plus on a team.
+     * Lists the projects that are currently configured as disabled for Observability Plus on a
+     * team.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getObservabilityConfigurationProjects(clientConfig: ClientConfig, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetObservabilityConfigurationProjectsResponse {
-        return SdkClient.request<GetObservabilityConfigurationProjectsResponse>(SdkClient.RequestSpec("GET", "/v1/observability/manage/configuration/projects", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getObservabilityConfigurationProjects", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getObservabilityConfigurationProjects(
+        clientConfig: ClientConfig,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetObservabilityConfigurationProjectsResponse {
+        return SdkClient.request<GetObservabilityConfigurationProjectsResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/observability/manage/configuration/projects",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getObservabilityConfigurationProjects",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Updates whether Observability Plus is disabled for a project. Identify the project with `projectIdOrName` and set `disabled` to the desired boolean value.
+     * Updates whether Observability Plus is disabled for a project. Identify the project with
+     * `projectIdOrName` and set `disabled` to the desired boolean value.
      *
      * Updates whether Observability Plus is disabled for a single project.
      *
@@ -78,15 +96,32 @@ data class GetObservabilitySchemaByMetricIdResponseItem(
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun updateObservabilityConfigurationProject(clientConfig: ClientConfig, projectIdOrName: String, disabled: Boolean, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): UpdateObservabilityConfigurationProjectResponse {
-        return SdkClient.request<UpdateObservabilityConfigurationProjectResponse>(SdkClient.RequestSpec("PUT", "/v1/observability/manage/configuration/projects/${SdkClient.encodePathSegment(projectIdOrName)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("disabled" to (disabled)), operationId = "updateObservabilityConfigurationProject", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun updateObservabilityConfigurationProject(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        disabled: Boolean,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): UpdateObservabilityConfigurationProjectResponse {
+        return SdkClient.request<UpdateObservabilityConfigurationProjectResponse>(
+                SdkClient.RequestSpec(
+                    "PUT",
+                    "/v1/observability/manage/configuration/projects/${SdkClient.encodePathSegment(projectIdOrName)}",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body = SdkClient.bodyMap("disabled" to (disabled)),
+                    operationId = "updateObservabilityConfigurationProject",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
-
-
-
-
-
-
 
     /** Parameters for [createObservabilityQuery]. */
     data class CreateObservabilityQueryRequest(
@@ -101,54 +136,67 @@ data class GetObservabilitySchemaByMetricIdResponseItem(
         val granularity: Map<String, Any>? = null,
         val startTime: String? = null,
         val endTime: String? = null,
-        val bucketTimezone: String? = null
+        val bucketTimezone: String? = null,
     )
 
     /**
-     * Runs an Observability query for a metric and an owner or project scope. Provide `metric` and `scope`, then use optional aggregation, grouping, filtering, and time settings to shape the results.
+     * Runs an Observability query for a metric and an owner or project scope. Provide `metric` and
+     * `scope`, then use optional aggregation, grouping, filtering, and time settings to shape the
+     * results.
      *
      * @param metric Metric id
      * @param scope Owner or project scope for the query
-     * @param aggregation Aggregation function to apply. Some aggregations require a
-     *   dimension: use <agg>/<dimension>, for example unique/visitor_id.
-     * @param groupBy Dimensions to group results by. JSON dimensions support nested
-     *   refs, for example event_data/checkout_step. Nested keys containing characters
-     *   that OData cannot parse as an identifier, such as '-', spaces, quotes, or '/',
-     *   must be wrapped in single quotes (escape embedded single quotes by doubling
-     *   them), for example flags/'enable-comments-view' or event_data/'some
-     *   property''s/value'.
-     * @param filter Filter to apply to the query. JSON dimensions support nested
-     *   refs, for example event_data/checkout_step eq 'payment'. Nested keys
-     *   containing characters that OData cannot parse as an identifier, such as '-',
-     *   spaces, quotes, or '/', must be wrapped in single quotes (escape embedded
-     *   single quotes by doubling them), for example flags/'enable-comments-view' eq
-     *   true or event_data/'some property''s/value' eq true.
+     * @param aggregation Aggregation function to apply. Some aggregations require a dimension: use
+     *   <agg>/<dimension>, for example unique/visitor_id.
+     * @param groupBy Dimensions to group results by. JSON dimensions support nested refs, for
+     *   example event_data/checkout_step. Nested keys containing characters that OData cannot parse
+     *   as an identifier, such as '-', spaces, quotes, or '/', must be wrapped in single quotes
+     *   (escape embedded single quotes by doubling them), for example flags/'enable-comments-view'
+     *   or event_data/'some property''s/value'.
+     * @param filter Filter to apply to the query. JSON dimensions support nested refs, for example
+     *   event_data/checkout_step eq 'payment'. Nested keys containing characters that OData cannot
+     *   parse as an identifier, such as '-', spaces, quotes, or '/', must be wrapped in single
+     *   quotes (escape embedded single quotes by doubling them), for example
+     *   flags/'enable-comments-view' eq true or event_data/'some property''s/value' eq true.
      * @param limit Maximum number of results
-     * @param orderBy Rollup column to order grouped results by. Use the generated
-     *   rollup key for the requested metric and aggregation. Defaults to the query
-     *   engine count rollup.
+     * @param orderBy Rollup column to order grouped results by. Use the generated rollup key for
+     *   the requested metric and aggregation. Defaults to the query engine count rollup.
      * @param orderDirection Direction to order grouped results by. Defaults to desc.
      * @param granularity Time bucket size
      * @param startTime Start timestamp
      * @param endTime End timestamp
-     * @param bucketTimezone IANA timezone (e.g. Europe/Paris) used only to align
-     *   calendar buckets (1d/1mo) to that zone's day/month boundaries.
-     *   startTime/endTime and all output timestamps are always UTC. No effect on
-     *   sub-day granularities.
+     * @param bucketTimezone IANA timezone (e.g. Europe/Paris) used only to align calendar buckets
+     *   (1d/1mo) to that zone's day/month boundaries. startTime/endTime and all output timestamps
+     *   are always UTC. No effect on sub-day granularities.
      */
-    fun createObservabilityQuery(clientConfig: ClientConfig, request: CreateObservabilityQueryRequest, options: RequestOptions? = null): Map<String, Any> {
-        return SdkClient.request<Map<String, Any>>(SdkClient.RequestSpec("POST", "/v2/observability/query", config = clientConfig, body = buildCreateObservabilityQueryBody(request), operationId = "createObservabilityQuery", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun createObservabilityQuery(
+        clientConfig: ClientConfig,
+        request: CreateObservabilityQueryRequest,
+        options: RequestOptions? = null,
+    ): Map<String, Any> {
+        return SdkClient.request<Map<String, Any>>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/observability/query",
+                    config = clientConfig,
+                    body = buildCreateObservabilityQueryBody(request),
+                    operationId = "createObservabilityQuery",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
+    private fun buildCreateObservabilityQueryBody(
+        request: CreateObservabilityQueryRequest
+    ): Map<String, Any?> = buildMap {
+        putAll(buildCreateObservabilityQueryBodyPart1(request))
+    }
 
-
-
-    private fun buildCreateObservabilityQueryBody(request: CreateObservabilityQueryRequest): Map<String, Any?> =
-        buildMap {
-            putAll(buildCreateObservabilityQueryBodyPart1(request))
-        }
-
-    private fun buildCreateObservabilityQueryBodyPart1(request: CreateObservabilityQueryRequest): Map<String, Any?> =
+    private fun buildCreateObservabilityQueryBodyPart1(
+        request: CreateObservabilityQueryRequest
+    ): Map<String, Any?> =
         SdkClient.bodyMap(
             "metric" to (request.metric),
             "scope" to (request.scope),
@@ -157,42 +205,53 @@ data class GetObservabilitySchemaByMetricIdResponseItem(
             "filter" to (SdkClient.omitIfNull(request.filter)),
             "limit" to (SdkClient.omitIfNull(request.limit)),
             "orderBy" to (SdkClient.omitIfNull(request.orderBy)),
-            "orderDirection" to
-    (SdkClient.omitIfNull(request.orderDirection)),
+            "orderDirection" to (SdkClient.omitIfNull(request.orderDirection)),
             "granularity" to (SdkClient.omitIfNull(request.granularity)),
             "startTime" to (SdkClient.omitIfNull(request.startTime)),
             "endTime" to (SdkClient.omitIfNull(request.endTime)),
-            "bucketTimezone" to
-    (SdkClient.omitIfNull(request.bucketTimezone)),
+            "bucketTimezone" to (SdkClient.omitIfNull(request.bucketTimezone)),
         )
 
-
-
-
     /**
-     * Retrieves the available Observability metrics schema. Use the metric IDs and descriptions in the returned list to identify metrics for querying.
+     * Retrieves the available Observability metrics schema. Use the metric IDs and descriptions in
+     * the returned list to identify metrics for querying.
      */
-    fun getObservabilitySchema(clientConfig: ClientConfig, options: RequestOptions? = null): GetObservabilitySchemaResponse {
-        return SdkClient.request<GetObservabilitySchemaResponse>(SdkClient.RequestSpec("GET", "/v2/observability/schema", config = clientConfig, operationId = "getObservabilitySchema", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getObservabilitySchema(
+        clientConfig: ClientConfig,
+        options: RequestOptions? = null,
+    ): GetObservabilitySchemaResponse {
+        return SdkClient.request<GetObservabilitySchemaResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v2/observability/schema",
+                    config = clientConfig,
+                    operationId = "getObservabilitySchema",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-
-
-
-
-
     /**
-     * Retrieves the Observability schema for a specific metric. Supply `metricId` to get the metric's supported aggregations, dimensions, unit, and default aggregation.
+     * Retrieves the Observability schema for a specific metric. Supply `metricId` to get the
+     * metric's supported aggregations, dimensions, unit, and default aggregation.
      */
-    fun getObservabilitySchemaByMetricId(clientConfig: ClientConfig, metricId: String, options: RequestOptions? = null): List<GetObservabilitySchemaByMetricIdResponseItem> {
-        return SdkClient.request<List<GetObservabilitySchemaByMetricIdResponseItem>>(SdkClient.RequestSpec("GET", "/v2/observability/schema/${SdkClient.encodePathSegment(metricId)}", config = clientConfig, operationId = "getObservabilitySchemaByMetricId", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getObservabilitySchemaByMetricId(
+        clientConfig: ClientConfig,
+        metricId: String,
+        options: RequestOptions? = null,
+    ): List<GetObservabilitySchemaByMetricIdResponseItem> {
+        return SdkClient.request<List<GetObservabilitySchemaByMetricIdResponseItem>>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v2/observability/schema/${SdkClient.encodePathSegment(metricId)}",
+                    config = clientConfig,
+                    operationId = "getObservabilitySchemaByMetricId",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
-
-
-
-
-
-
-
 }

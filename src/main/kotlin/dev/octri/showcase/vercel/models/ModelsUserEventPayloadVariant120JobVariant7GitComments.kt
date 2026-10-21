@@ -4,633 +4,443 @@
 package dev.octri.showcase.vercel.models
 
 /**
- * Since June 2023 Determines if comments should be posted to the git host. Replaces `github.silent` in the vercel.json.
+ * Since June 2023 Determines if comments should be posted to the git host. Replaces `github.silent`
+ * in the vercel.json.
  */
 data class UserEventPayloadVariant120JobVariant7GitComments(
-    /**
-     * Required enumerated value serialized in the `onCommit` wire field.
-     */
+    /** Required enumerated value serialized in the `onCommit` wire field. */
     val onCommit: Boolean,
-    /**
-     * Required enumerated value serialized in the `onPullRequest` wire field.
-     */
-    val onPullRequest: Boolean
+    /** Required enumerated value serialized in the `onPullRequest` wire field. */
+    val onPullRequest: Boolean,
 )
 
 /**
- * Since March 2026 Records a successful NSNB auto-add result so later GitHub PR comments can deterministically explain why this SHA was allowed to deploy.
+ * Since March 2026 Records a successful NSNB auto-add result so later GitHub PR comments can
+ * deterministically explain why this SHA was allowed to deploy.
  */
 data class UserEventPayloadVariant120JobVariant7NsnbSideEffect(
-    /**
-     * Required enumerated value serialized in the `action` wire field.
-     */
+    /** Required enumerated value serialized in the `action` wire field. */
     val action: UserEventPayloadVariant120JobVariant7NsnbSideEffectActionEnum,
-    /**
-     * Required `string` value serialized in the `gitUserLogin` wire field.
-     */
-    val gitUserLogin: String
+    /** Required `string` value serialized in the `gitUserLogin` wire field. */
+    val gitUserLogin: String,
 )
 
-/**
- * Required object value serialized in the `job` wire field.
- */
+/** Required object value serialized in the `job` wire field. */
 data class UserEventPayloadVariant120JobVariant7(
-    /**
-     * Vercel
-     */
+    /** Vercel */
     val headInfo: UserEventPayloadVariant120JobVariant7HeadInfo,
-    /**
-     * Required `string` value serialized in the `org` wire field.
-     */
+    /** Required `string` value serialized in the `org` wire field. */
     val org: String,
-    /**
-     * Required enumerated value serialized in the `provider` wire field.
-     */
+    /** Required enumerated value serialized in the `provider` wire field. */
     val provider: UserEventPayloadVariant120JobVariant7ProviderEnum,
-    /**
-     * Required `string` value serialized in the `ref` wire field.
-     */
+    /** Required `string` value serialized in the `ref` wire field. */
     val ref: String,
-    /**
-     * Required `string` value serialized in the `repo` wire field.
-     */
+    /** Required `string` value serialized in the `repo` wire field. */
     val repo: String,
-    /**
-     * Required `string` value serialized in the `repoId` wire field.
-     */
+    /** Required `string` value serialized in the `repoId` wire field. */
     val repoId: String,
-    /**
-     * Required `string` value serialized in the `sha` wire field.
-     */
+    /** Required `string` value serialized in the `sha` wire field. */
     val sha: String,
-    /**
-     * Required enumerated value serialized in the `type` wire field.
-     */
+    /** Required enumerated value serialized in the `type` wire field. */
     val type: UserEventPayloadVariant120JobVariant7TypeEnum,
-    /**
-     * Optional enumerated value serialized in the `authorized` wire field.
-     */
+    /** Optional enumerated value serialized in the `authorized` wire field. */
     val authorized: Boolean? = null,
-    /**
-     * Optional `string` value serialized in the `authorizedBy` wire field.
-     */
+    /** Optional `string` value serialized in the `authorizedBy` wire field. */
     val authorizedBy: String? = null,
     /**
-     * Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
+     * Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is
+     * verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification
+     * status is unknown or not supported
      */
     val commitVerification: UserEventPayloadVariant120JobVariant7CommitVerificationEnum? = null,
     /**
-     * Since April 2023 Cached count of how many projects are connected to the repo. Saves a few Cosmos queries down the road in the main flow.
+     * Since April 2023 Cached count of how many projects are connected to the repo. Saves a few
+     * Cosmos queries down the road in the main flow.
      */
     val connectedProjectCount: Double? = null,
-    /**
-     * Optional `string` value serialized in the `customEnvId` wire field.
-     */
+    /** Optional `string` value serialized in the `customEnvId` wire field. */
     val customEnvId: String? = null,
-    /**
-     * Optional object value serialized in the `deployHook` wire field.
-     */
+    /** Optional object value serialized in the `deployHook` wire field. */
     val deployHook: UserEventPayloadVariant120JobVariant7DeployHook? = null,
-    /**
-     * Optional `string` value serialized in the `deploymentId` wire field.
-     */
+    /** Optional `string` value serialized in the `deploymentId` wire field. */
     val deploymentId: String? = null,
     /**
-     * Since June 2023 Determines if comments should be posted to the git host. Replaces `github.silent` in the vercel.json.
+     * Since June 2023 Determines if comments should be posted to the git host. Replaces
+     * `github.silent` in the vercel.json.
      */
     val gitComments: UserEventPayloadVariant120JobVariant7GitComments? = null,
     /**
-     * Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
+     * Since February 2022 All the hashtag-vercel tags found in the commit message triggering the
+     * deploy. For example, #VERCEL_DO_SOMETHING
      */
-    val gitHashtagVercel: List<UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum>? = null,
+    val gitHashtagVercel: List<UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum>? =
+        null,
     /**
-     * Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
+     * Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git
+     * deployment
      */
     val isManualGitDeploy: Boolean? = null,
-    /**
-     * Since December 2022 Pairs of projects and owner ids to build for this build request.
-     */
+    /** Since December 2022 Pairs of projects and owner ids to build for this build request. */
     val jobPairs: List<List<String>>? = null,
     /**
-     * Since December 2022 All project ids associated to this job. Think monorepo. This job will be for one of these project.
+     * Since December 2022 All project ids associated to this job. Think monorepo. This job will be
+     * for one of these project.
      */
     val jobProjectIds: List<String>? = null,
-    /**
-     * Optional `string` value serialized in the `linkedProjectId` wire field.
-     */
+    /** Optional `string` value serialized in the `linkedProjectId` wire field. */
     val linkedProjectId: String? = null,
     /**
-     * Since March 2026 Records a successful NSNB auto-add result so later GitHub PR comments can deterministically explain why this SHA was allowed to deploy.
+     * Since March 2026 Records a successful NSNB auto-add result so later GitHub PR comments can
+     * deterministically explain why this SHA was allowed to deploy.
      */
     val nsnbSideEffect: UserEventPayloadVariant120JobVariant7NsnbSideEffect? = null,
-    /**
-     * Optional `number` value serialized in the `prId` wire field.
-     */
+    /** Optional `number` value serialized in the `prId` wire field. */
     val prId: Double? = null,
     /**
-     * Since April 2023 If set then it is a cached result of asking the remote for the PR ID the commit that triggered this Job. Or zero if it was not a PR. This prevents a few git round trips by the git updater.
+     * Since April 2023 If set then it is a cached result of asking the remote for the PR ID the
+     * commit that triggered this Job. Or zero if it was not a PR. This prevents a few git round
+     * trips by the git updater.
      */
     val prIdOrZero: Double? = null,
-    /**
-     * Optional `string` value serialized in the `projectId` wire field.
-     */
+    /** Optional `string` value serialized in the `projectId` wire field. */
     val projectId: String? = null,
-    /**
-     * Optional `number` value serialized in the `repoPushedAt` wire field.
-     */
+    /** Optional `number` value serialized in the `repoPushedAt` wire field. */
     val repoPushedAt: Double? = null,
     /**
-     * Since June 2024 Pairs of projects and owner ids to immediately finish (without building) because we want to create them in a skipped state.
+     * Since June 2024 Pairs of projects and owner ids to immediately finish (without building)
+     * because we want to create them in a skipped state.
      */
     val skippedJobPairs: List<List<String>>? = null,
-    /**
-     * Optional `string` value serialized in the `target` wire field.
-     */
+    /** Optional `string` value serialized in the `target` wire field. */
     val target: String? = null,
-    /**
-     * Optional `string` value serialized in the `url` wire field.
-     */
-    val url: String? = null
+    /** Optional `string` value serialized in the `url` wire field. */
+    val url: String? = null,
 )
 
-/**
- * Cursor Origin
- */
+/** Cursor Origin */
 data class UserEventPayloadVariant120JobVariant8HeadInfo(
-    /**
-     * Owner (namespace) slug, e.g. `acme`.
-     */
+    /** Owner (namespace) slug, e.g. `acme`. */
     val owner: String,
-    /**
-     * Origin namespace id (`ns_…`).
-     */
+    /** Origin namespace id (`ns_…`). */
     val ownerId: String,
-    /**
-     * Required `string` value serialized in the `ref` wire field.
-     */
+    /** Required `string` value serialized in the `ref` wire field. */
     val ref: String,
-    /**
-     * Repository name, e.g. `api`.
-     */
+    /** Repository name, e.g. `api`. */
     val repo: String,
-    /**
-     * Origin repository id.
-     */
+    /** Origin repository id. */
     val repoId: String,
-    /**
-     * Required `string` value serialized in the `sha` wire field.
-     */
-    val sha: String
+    /** Required `string` value serialized in the `sha` wire field. */
+    val sha: String,
 )
 
-/**
- * Optional object value serialized in the `deployHook` wire field.
- */
+/** Optional object value serialized in the `deployHook` wire field. */
 data class UserEventPayloadVariant120JobVariant8DeployHook(
-    /**
-     * Required `number` value serialized in the `createdAt` wire field.
-     */
+    /** Required `number` value serialized in the `createdAt` wire field. */
     val createdAt: Double,
-    /**
-     * Required `string` value serialized in the `id` wire field.
-     */
+    /** Required `string` value serialized in the `id` wire field. */
     val id: String,
-    /**
-     * Required `string` value serialized in the `name` wire field.
-     */
+    /** Required `string` value serialized in the `name` wire field. */
     val name: String,
-    /**
-     * Required `string` value serialized in the `ref` wire field.
-     */
-    val ref: String
+    /** Required `string` value serialized in the `ref` wire field. */
+    val ref: String,
 )
 
 /**
- * Since June 2023 Determines if comments should be posted to the git host. Replaces `github.silent` in the vercel.json.
+ * Since June 2023 Determines if comments should be posted to the git host. Replaces `github.silent`
+ * in the vercel.json.
  */
 data class UserEventPayloadVariant120JobVariant8GitComments(
-    /**
-     * Required enumerated value serialized in the `onCommit` wire field.
-     */
+    /** Required enumerated value serialized in the `onCommit` wire field. */
     val onCommit: Boolean,
-    /**
-     * Required enumerated value serialized in the `onPullRequest` wire field.
-     */
-    val onPullRequest: Boolean
+    /** Required enumerated value serialized in the `onPullRequest` wire field. */
+    val onPullRequest: Boolean,
 )
 
 /**
- * Since March 2026 Records a successful NSNB auto-add result so later GitHub PR comments can deterministically explain why this SHA was allowed to deploy.
+ * Since March 2026 Records a successful NSNB auto-add result so later GitHub PR comments can
+ * deterministically explain why this SHA was allowed to deploy.
  */
 data class UserEventPayloadVariant120JobVariant8NsnbSideEffect(
-    /**
-     * Required enumerated value serialized in the `action` wire field.
-     */
+    /** Required enumerated value serialized in the `action` wire field. */
     val action: UserEventPayloadVariant120JobVariant8NsnbSideEffectActionEnum,
-    /**
-     * Required `string` value serialized in the `gitUserLogin` wire field.
-     */
-    val gitUserLogin: String
+    /** Required `string` value serialized in the `gitUserLogin` wire field. */
+    val gitUserLogin: String,
 )
 
-/**
- * Required object value serialized in the `job` wire field.
- */
+/** Required object value serialized in the `job` wire field. */
 class UserEventPayloadVariant120JobVariant8(
-    /**
-     * Cursor Origin
-     */
+    /** Cursor Origin */
     val headInfo: UserEventPayloadVariant120JobVariant8HeadInfo,
-    /**
-     * Origin installation id (`i_…`) used to resolve the credential.
-     */
+    /** Origin installation id (`i_…`) used to resolve the credential. */
     val installationId: String,
-    /**
-     * Required `string` value serialized in the `owner` wire field.
-     */
+    /** Required `string` value serialized in the `owner` wire field. */
     val owner: String,
-    /**
-     * Required enumerated value serialized in the `provider` wire field.
-     */
+    /** Required enumerated value serialized in the `provider` wire field. */
     val provider: UserEventPayloadVariant120JobVariant8ProviderEnum,
-    /**
-     * Required `string` value serialized in the `ref` wire field.
-     */
+    /** Required `string` value serialized in the `ref` wire field. */
     val ref: String,
-    /**
-     * Required `string` value serialized in the `repo` wire field.
-     */
+    /** Required `string` value serialized in the `repo` wire field. */
     val repo: String,
-    /**
-     * Required `string` value serialized in the `repoId` wire field.
-     */
+    /** Required `string` value serialized in the `repoId` wire field. */
     val repoId: String,
-    /**
-     * Required `string` value serialized in the `sha` wire field.
-     */
+    /** Required `string` value serialized in the `sha` wire field. */
     val sha: String,
-    /**
-     * Required enumerated value serialized in the `type` wire field.
-     */
+    /** Required enumerated value serialized in the `type` wire field. */
     val type: UserEventPayloadVariant120JobVariant8TypeEnum,
-    /**
-     * Optional enumerated value serialized in the `authorized` wire field.
-     */
+    /** Optional enumerated value serialized in the `authorized` wire field. */
     val authorized: Boolean? = null,
-    /**
-     * Optional `string` value serialized in the `authorizedBy` wire field.
-     */
+    /** Optional `string` value serialized in the `authorizedBy` wire field. */
     val authorizedBy: String? = null,
-    /**
-     * Optional `string` value serialized in the `beforeSha` wire field.
-     */
+    /** Optional `string` value serialized in the `beforeSha` wire field. */
     val beforeSha: String? = null,
     /**
-     * Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
+     * Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is
+     * verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification
+     * status is unknown or not supported
      */
     val commitVerification: UserEventPayloadVariant120JobVariant8CommitVerificationEnum? = null,
     /**
-     * Since April 2023 Cached count of how many projects are connected to the repo. Saves a few Cosmos queries down the road in the main flow.
+     * Since April 2023 Cached count of how many projects are connected to the repo. Saves a few
+     * Cosmos queries down the road in the main flow.
      */
     val connectedProjectCount: Double? = null,
-    /**
-     * Optional `number` value serialized in the `createdAt` wire field.
-     */
+    /** Optional `number` value serialized in the `createdAt` wire field. */
     val createdAt: Double? = null,
-    /**
-     * Optional `string` value serialized in the `customEnvId` wire field.
-     */
+    /** Optional `string` value serialized in the `customEnvId` wire field. */
     val customEnvId: String? = null,
-    /**
-     * Optional `string` value serialized in the `defaultBranch` wire field.
-     */
+    /** Optional `string` value serialized in the `defaultBranch` wire field. */
     val defaultBranch: String? = null,
-    /**
-     * Optional object value serialized in the `deployHook` wire field.
-     */
+    /** Optional object value serialized in the `deployHook` wire field. */
     val deployHook: UserEventPayloadVariant120JobVariant8DeployHook? = null,
-    /**
-     * Optional `string` value serialized in the `deploymentId` wire field.
-     */
+    /** Optional `string` value serialized in the `deploymentId` wire field. */
     val deploymentId: String? = null,
-    /**
-     * Optional enumerated value serialized in the `eventful` wire field.
-     */
+    /** Optional enumerated value serialized in the `eventful` wire field. */
     val eventful: Boolean? = null,
-    /**
-     * Optional enumerated value serialized in the `forced` wire field.
-     */
+    /** Optional enumerated value serialized in the `forced` wire field. */
     val forced: Boolean? = null,
-    /**
-     * Optional enumerated value serialized in the `forceNew` wire field.
-     */
+    /** Optional enumerated value serialized in the `forceNew` wire field. */
     val forceNew: Boolean? = null,
     /**
-     * Since June 2023 Determines if comments should be posted to the git host. Replaces `github.silent` in the vercel.json.
+     * Since June 2023 Determines if comments should be posted to the git host. Replaces
+     * `github.silent` in the vercel.json.
      */
     val gitComments: UserEventPayloadVariant120JobVariant8GitComments? = null,
     /**
-     * Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
+     * Since February 2022 All the hashtag-vercel tags found in the commit message triggering the
+     * deploy. For example, #VERCEL_DO_SOMETHING
      */
-    val gitHashtagVercel: List<UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum>? = null,
+    val gitHashtagVercel: List<UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum>? =
+        null,
     /**
-     * Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
+     * Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git
+     * deployment
      */
     val isManualGitDeploy: Boolean? = null,
-    /**
-     * Since December 2022 Pairs of projects and owner ids to build for this build request.
-     */
+    /** Since December 2022 Pairs of projects and owner ids to build for this build request. */
     val jobPairs: List<List<String>>? = null,
     /**
-     * Since December 2022 All project ids associated to this job. Think monorepo. This job will be for one of these project.
+     * Since December 2022 All project ids associated to this job. Think monorepo. This job will be
+     * for one of these project.
      */
     val jobProjectIds: List<String>? = null,
-    /**
-     * Optional `string` value serialized in the `linkedProjectId` wire field.
-     */
+    /** Optional `string` value serialized in the `linkedProjectId` wire field. */
     val linkedProjectId: String? = null,
     /**
-     * Since March 2026 Records a successful NSNB auto-add result so later GitHub PR comments can deterministically explain why this SHA was allowed to deploy.
+     * Since March 2026 Records a successful NSNB auto-add result so later GitHub PR comments can
+     * deterministically explain why this SHA was allowed to deploy.
      */
     val nsnbSideEffect: UserEventPayloadVariant120JobVariant8NsnbSideEffect? = null,
-    /**
-     * Optional `number` value serialized in the `prId` wire field.
-     */
+    /** Optional `number` value serialized in the `prId` wire field. */
     val prId: Double? = null,
     /**
-     * Since April 2023 If set then it is a cached result of asking the remote for the PR ID the commit that triggered this Job. Or zero if it was not a PR. This prevents a few git round trips by the git updater.
+     * Since April 2023 If set then it is a cached result of asking the remote for the PR ID the
+     * commit that triggered this Job. Or zero if it was not a PR. This prevents a few git round
+     * trips by the git updater.
      */
     val prIdOrZero: Double? = null,
-    /**
-     * Optional `string` value serialized in the `projectId` wire field.
-     */
+    /** Optional `string` value serialized in the `projectId` wire field. */
     val projectId: String? = null,
-    /**
-     * Optional `number` value serialized in the `repoPushedAt` wire field.
-     */
+    /** Optional `number` value serialized in the `repoPushedAt` wire field. */
     val repoPushedAt: Double? = null,
     /**
-     * Since June 2024 Pairs of projects and owner ids to immediately finish (without building) because we want to create them in a skipped state.
+     * Since June 2024 Pairs of projects and owner ids to immediately finish (without building)
+     * because we want to create them in a skipped state.
      */
     val skippedJobPairs: List<List<String>>? = null,
-    /**
-     * Optional `string` value serialized in the `target` wire field.
-     */
+    /** Optional `string` value serialized in the `target` wire field. */
     val target: String? = null,
-    /**
-     * Optional `string` value serialized in the `url` wire field.
-     */
-    val url: String? = null
+    /** Optional `string` value serialized in the `url` wire field. */
+    val url: String? = null,
 )
 
-/**
- * Cursor Origin
- */
+/** Cursor Origin */
 data class UserEventPayloadVariant120JobVariant9HeadInfo(
-    /**
-     * Owner (namespace) slug, e.g. `acme`.
-     */
+    /** Owner (namespace) slug, e.g. `acme`. */
     val owner: String,
-    /**
-     * Origin namespace id (`ns_…`).
-     */
+    /** Origin namespace id (`ns_…`). */
     val ownerId: String,
-    /**
-     * Required `string` value serialized in the `ref` wire field.
-     */
+    /** Required `string` value serialized in the `ref` wire field. */
     val ref: String,
-    /**
-     * Repository name, e.g. `api`.
-     */
+    /** Repository name, e.g. `api`. */
     val repo: String,
-    /**
-     * Origin repository id.
-     */
+    /** Origin repository id. */
     val repoId: String,
-    /**
-     * Required `string` value serialized in the `sha` wire field.
-     */
-    val sha: String
+    /** Required `string` value serialized in the `sha` wire field. */
+    val sha: String,
 )
 
-/**
- * Optional object value serialized in the `gitComments` wire field.
- */
+/** Optional object value serialized in the `gitComments` wire field. */
 data class UserEventPayloadVariant120JobVariant9GitComments(
-    /**
-     * Required enumerated value serialized in the `onCommit` wire field.
-     */
+    /** Required enumerated value serialized in the `onCommit` wire field. */
     val onCommit: Boolean,
-    /**
-     * Required enumerated value serialized in the `onPullRequest` wire field.
-     */
-    val onPullRequest: Boolean
+    /** Required enumerated value serialized in the `onPullRequest` wire field. */
+    val onPullRequest: Boolean,
 )
 
-/**
- * Required object value serialized in the `job` wire field.
- */
+/** Required object value serialized in the `job` wire field. */
 data class UserEventPayloadVariant120JobVariant9(
-    /**
-     * Cursor Origin
-     */
+    /** Cursor Origin */
     val headInfo: UserEventPayloadVariant120JobVariant9HeadInfo,
-    /**
-     * Origin installation id (`i_…`) used to resolve the credential.
-     */
+    /** Origin installation id (`i_…`) used to resolve the credential. */
     val installationId: String,
-    /**
-     * Required `string` value serialized in the `owner` wire field.
-     */
+    /** Required `string` value serialized in the `owner` wire field. */
     val owner: String,
-    /**
-     * Required `number` value serialized in the `prId` wire field.
-     */
+    /** Required `number` value serialized in the `prId` wire field. */
     val prId: Double,
-    /**
-     * Required API value serialized in the `projectId` wire field.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("projectId", required = true) val projectId: Any?,
-    /**
-     * Required enumerated value serialized in the `provider` wire field.
-     */
+    /** Required API value serialized in the `projectId` wire field. */
+    @com.fasterxml.jackson.annotation.JsonProperty("projectId", required = true)
+    val projectId: Any?,
+    /** Required enumerated value serialized in the `provider` wire field. */
     val provider: UserEventPayloadVariant120JobVariant9ProviderEnum,
-    /**
-     * Required `string` value serialized in the `repo` wire field.
-     */
+    /** Required `string` value serialized in the `repo` wire field. */
     val repo: String,
-    /**
-     * Required `string` value serialized in the `repoId` wire field.
-     */
+    /** Required `string` value serialized in the `repoId` wire field. */
     val repoId: String,
-    /**
-     * Required enumerated value serialized in the `type` wire field.
-     */
+    /** Required enumerated value serialized in the `type` wire field. */
     val type: UserEventPayloadVariant120JobVariant9TypeEnum,
-    /**
-     * Optional `number` value serialized in the `createdAt` wire field.
-     */
+    /** Optional `number` value serialized in the `createdAt` wire field. */
     val createdAt: Double? = null,
-    /**
-     * Optional API value serialized in the `customEnvId` wire field.
-     */
+    /** Optional API value serialized in the `customEnvId` wire field. */
     val customEnvId: Any? = null,
-    /**
-     * Optional enumerated value serialized in the `eventful` wire field.
-     */
+    /** Optional enumerated value serialized in the `eventful` wire field. */
     val eventful: Boolean? = null,
-    /**
-     * Optional object value serialized in the `gitComments` wire field.
-     */
+    /** Optional object value serialized in the `gitComments` wire field. */
     val gitComments: UserEventPayloadVariant120JobVariant9GitComments? = null,
-    /**
-     * Optional `string` value serialized in the `linkedProjectId` wire field.
-     */
-    val linkedProjectId: String? = null
+    /** Optional `string` value serialized in the `linkedProjectId` wire field. */
+    val linkedProjectId: String? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UserEventPayloadVariant120(
-    /**
-     * Required API value serialized in the `job` wire field.
-     */
+    /** Required API value serialized in the `job` wire field. */
     val job: Any
 ) : UserEventPayload
 
-/**
- * Optional object value serialized in the `newTeam` wire field.
- */
+/** Optional object value serialized in the `newTeam` wire field. */
 data class UserEventPayloadVariant121NewTeam(
-    /**
-     * Required `string` value serialized in the `name` wire field.
-     */
+    /** Required `string` value serialized in the `name` wire field. */
     val name: String
 )
 
-/**
- * Optional object value serialized in the `oldTeam` wire field.
- */
+/** Optional object value serialized in the `oldTeam` wire field. */
 data class UserEventPayloadVariant121OldTeam(
-    /**
-     * Required `string` value serialized in the `name` wire field.
-     */
+    /** Required `string` value serialized in the `name` wire field. */
     val name: String
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UserEventPayloadVariant121(
-    /**
-     * Required `string` value serialized in the `url` wire field.
-     */
+    /** Required `string` value serialized in the `url` wire field. */
     val url: String,
-    /**
-     * Optional object value serialized in the `newTeam` wire field.
-     */
+    /** Optional object value serialized in the `newTeam` wire field. */
     val newTeam: UserEventPayloadVariant121NewTeam? = null,
-    /**
-     * Optional object value serialized in the `oldTeam` wire field.
-     */
-    val oldTeam: UserEventPayloadVariant121OldTeam? = null
+    /** Optional object value serialized in the `oldTeam` wire field. */
+    val oldTeam: UserEventPayloadVariant121OldTeam? = null,
 ) : UserEventPayload
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UserEventPayloadVariant122(
-    /**
-     * Required `string` value serialized in the `gitCommitterName` wire field.
-     */
+    /** Required `string` value serialized in the `gitCommitterName` wire field. */
     val gitCommitterName: String,
-    /**
-     * Required `string` value serialized in the `gitUserPlatform` wire field.
-     */
+    /** Required `string` value serialized in the `gitUserPlatform` wire field. */
     val gitUserPlatform: String,
-    /**
-     * Required `string` value serialized in the `projectName` wire field.
-     */
+    /** Required `string` value serialized in the `projectName` wire field. */
     val projectName: String,
-    /**
-     * Required `string` value serialized in the `sha` wire field.
-     */
+    /** Required `string` value serialized in the `sha` wire field. */
     val sha: String,
-    /**
-     * Required `string` value serialized in the `source` wire field.
-     */
+    /** Required `string` value serialized in the `source` wire field. */
     val source: String,
-    /**
-     * Optional `string` value serialized in the `projectId` wire field.
-     */
+    /** Optional `string` value serialized in the `projectId` wire field. */
     val projectId: String? = null,
-    /**
-     * Optional enumerated value serialized in the `reason` wire field.
-     */
-    val reason: UserEventPayloadVariant122ReasonEnum? = null
+    /** Optional enumerated value serialized in the `reason` wire field. */
+    val reason: UserEventPayloadVariant122ReasonEnum? = null,
 ) : UserEventPayload
 
-/**
- * Required object value serialized in the `deployment` wire field.
- */
+/** Required object value serialized in the `deployment` wire field. */
 data class UserEventPayloadVariant123Deployment(
-    /**
-     * Required `string` value serialized in the `id` wire field.
-     */
+    /** Required `string` value serialized in the `id` wire field. */
     val id: String,
-    /**
-     * Required object value serialized in the `meta` wire field.
-     */
+    /** Required object value serialized in the `meta` wire field. */
     val meta: Map<String, String>,
-    /**
-     * Required `string` value serialized in the `name` wire field.
-     */
+    /** Required `string` value serialized in the `name` wire field. */
     val name: String,
-    /**
-     * Required `string` value serialized in the `url` wire field.
-     */
-    val url: String
+    /** Required `string` value serialized in the `url` wire field. */
+    val url: String,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UserEventPayloadVariant123(
-    /**
-     * Required object value serialized in the `deployment` wire field.
-     */
+    /** Required object value serialized in the `deployment` wire field. */
     val deployment: UserEventPayloadVariant123Deployment,
-    /**
-     * Required `string` value serialized in the `deploymentId` wire field.
-     */
+    /** Required `string` value serialized in the `deploymentId` wire field. */
     val deploymentId: String,
-    /**
-     * Required `string` value serialized in the `url` wire field.
-     */
+    /** Required `string` value serialized in the `url` wire field. */
     val url: String,
-    /**
-     * Optional `string` value serialized in the `projectId` wire field.
-     */
-    val projectId: String? = null
+    /** Optional `string` value serialized in the `projectId` wire field. */
+    val projectId: String? = null,
 ) : UserEventPayload
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UserEventPayloadVariant124(
-    /**
-     * Required `string` value serialized in the `projectName` wire field.
-     */
+    /** Required `string` value serialized in the `projectName` wire field. */
     val projectName: String,
-    /**
-     * Which rule blocked the deploy.
-     */
+    /** Which rule blocked the deploy. */
     val ruleName: UserEventPayloadVariant124RuleNameEnum,
-    /**
-     * Team-level or project-level rule.
-     */
+    /** Team-level or project-level rule. */
     val ruleProvenance: UserEventPayloadVariant124RuleProvenanceEnum,
-    /**
-     * Classified deploy source, e.g. 'cli', 'git', 'integration'.
-     */
+    /** Classified deploy source, e.g. 'cli', 'git', 'integration'. */
     val source: String,
     /**
-     * The blocked deployment's id (e.g. `dpl_…`). When present, the message links it to the deployment details (inspector) page. Optional so events emitted before this field was added still render.
+     * The blocked deployment's id (e.g. `dpl_…`). When present, the message links it to the
+     * deployment details (inspector) page. Optional so events emitted before this field was added
+     * still render.
      */
     val deploymentId: String? = null,
-    /**
-     * Optional `string` value serialized in the `projectId` wire field.
-     */
-    val projectId: String? = null
+    /** Optional `string` value serialized in the `projectId` wire field. */
+    val projectId: String? = null,
 ) : UserEventPayload

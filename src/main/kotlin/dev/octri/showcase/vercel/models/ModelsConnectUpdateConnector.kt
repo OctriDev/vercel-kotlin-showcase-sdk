@@ -4,39 +4,25 @@
 package dev.octri.showcase.vercel.models
 
 data class ConnectConnectorUpdateDataRequestVariant0ServerConfigJwksKeysItem(
-    /**
-     * JSON Web Key type.
-     */
+    /** JSON Web Key type. */
     val kty: String,
-    /**
-     * JSON Web Key identifier.
-     */
+    /** JSON Web Key identifier. */
     val kid: String? = null,
-    /**
-     * Intended key use: signing or encryption.
-     */
+    /** Intended key use: signing or encryption. */
     val use: ConnectConnectorUpdateDataRequestVariant0ServerConfigJwksKeysItemUseEnum? = null,
-    /**
-     * Operations permitted for this key.
-     */
+    /** Operations permitted for this key. */
     @com.fasterxml.jackson.annotation.JsonProperty("key_ops") val keyOps: List<String>? = null,
-    /**
-     * Algorithm intended for this key.
-     */
-    val alg: String? = null
+    /** Algorithm intended for this key. */
+    val alg: String? = null,
 ) {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-/**
- * Inline authorization server JSON Web Key Set.
- */
+/** Inline authorization server JSON Web Key Set. */
 data class ConnectConnectorUpdateDataRequestVariant0ServerConfigJwks(
-    /**
-     * JSON Web Keys published by the authorization server.
-     */
+    /** JSON Web Keys published by the authorization server. */
     val keys: List<ConnectConnectorUpdateDataRequestVariant0ServerConfigJwksKeysItem>
 ) {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
@@ -45,587 +31,410 @@ data class ConnectConnectorUpdateDataRequestVariant0ServerConfigJwks(
 }
 
 /**
- * Authorization server metadata. Values override discovered metadata. Empty known string fields remove their stored overrides.
+ * Authorization server metadata. Values override discovered metadata. Empty known string fields
+ * remove their stored overrides.
  */
 class ConnectConnectorUpdateDataRequestVariant0ServerConfig(
-    /**
-     * Authorization server issuer URL.
-     */
+    /** Authorization server issuer URL. */
     val issuer: String? = null,
-    /**
-     * OAuth authorization endpoint URL.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("authorization_endpoint") val authorizationEndpoint: String? = null,
-    /**
-     * OAuth token endpoint URL.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("token_endpoint") val tokenEndpoint: String? = null,
-    /**
-     * OpenID Connect UserInfo endpoint URL.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("userinfo_endpoint") val userinfoEndpoint: String? = null,
-    /**
-     * URL of the authorization server JSON Web Key Set.
-     */
+    /** OAuth authorization endpoint URL. */
+    @com.fasterxml.jackson.annotation.JsonProperty("authorization_endpoint")
+    val authorizationEndpoint: String? = null,
+    /** OAuth token endpoint URL. */
+    @com.fasterxml.jackson.annotation.JsonProperty("token_endpoint")
+    val tokenEndpoint: String? = null,
+    /** OpenID Connect UserInfo endpoint URL. */
+    @com.fasterxml.jackson.annotation.JsonProperty("userinfo_endpoint")
+    val userinfoEndpoint: String? = null,
+    /** URL of the authorization server JSON Web Key Set. */
     @com.fasterxml.jackson.annotation.JsonProperty("jwks_uri") val jwksUri: String? = null,
-    /**
-     * Inline authorization server JSON Web Key Set.
-     */
+    /** Inline authorization server JSON Web Key Set. */
     val jwks: ConnectConnectorUpdateDataRequestVariant0ServerConfigJwks? = null,
+    /** OAuth token revocation endpoint URL. */
+    @com.fasterxml.jackson.annotation.JsonProperty("revocation_endpoint")
+    val revocationEndpoint: String? = null,
+    /** OAuth token introspection endpoint URL. */
+    @com.fasterxml.jackson.annotation.JsonProperty("introspection_endpoint")
+    val introspectionEndpoint: String? = null,
+    /** OpenID Connect session termination endpoint URL. */
+    @com.fasterxml.jackson.annotation.JsonProperty("end_session_endpoint")
+    val endSessionEndpoint: String? = null,
+    /** OAuth device authorization endpoint URL. */
+    @com.fasterxml.jackson.annotation.JsonProperty("device_authorization_endpoint")
+    val deviceAuthorizationEndpoint: String? = null,
+    /** OAuth dynamic client registration endpoint URL. */
+    @com.fasterxml.jackson.annotation.JsonProperty("registration_endpoint")
+    val registrationEndpoint: String? = null,
+    /** OAuth response types supported by the server. */
+    @com.fasterxml.jackson.annotation.JsonProperty("response_types_supported")
+    val responseTypesSupported: List<String>? = null,
+    /** Token endpoint client authentication methods supported by the server. */
+    @com.fasterxml.jackson.annotation.JsonProperty("token_endpoint_auth_methods_supported")
+    val tokenEndpointAuthMethodsSupported: List<String>? = null,
+    /** Signing algorithms supported for token endpoint authentication. */
+    @com.fasterxml.jackson.annotation.JsonProperty(
+        "token_endpoint_auth_signing_alg_values_supported"
+    )
+    val tokenEndpointAuthSigningAlgValuesSupported: List<String>? = null,
+    /** OAuth scopes supported by the server. */
+    @com.fasterxml.jackson.annotation.JsonProperty("scopes_supported")
+    val scopesSupported: List<String>? = null,
+    /** OAuth grant types supported by the server. */
+    @com.fasterxml.jackson.annotation.JsonProperty("grant_types_supported")
+    val grantTypesSupported: List<String>? = null,
     /**
-     * OAuth token revocation endpoint URL.
+     * Supported authorization grant profiles. urn:ietf:params:oauth:grant-profile:id-jag advertises
+     * XAA resource support.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("revocation_endpoint") val revocationEndpoint: String? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("authorization_grant_profiles_supported")
+    val authorizationGrantProfilesSupported: List<String>? = null,
     /**
-     * OAuth token introspection endpoint URL.
+     * Token types supported for identity chaining. urn:ietf:params:oauth:token-type:id-jag
+     * advertises XAA IdP support.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("introspection_endpoint") val introspectionEndpoint: String? = null,
-    /**
-     * OpenID Connect session termination endpoint URL.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("end_session_endpoint") val endSessionEndpoint: String? = null,
-    /**
-     * OAuth device authorization endpoint URL.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("device_authorization_endpoint") val deviceAuthorizationEndpoint: String? = null,
-    /**
-     * OAuth dynamic client registration endpoint URL.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("registration_endpoint") val registrationEndpoint: String? = null,
-    /**
-     * OAuth response types supported by the server.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("response_types_supported") val responseTypesSupported: List<String>? = null,
-    /**
-     * Token endpoint client authentication methods supported by the server.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("token_endpoint_auth_methods_supported") val tokenEndpointAuthMethodsSupported: List<String>? = null,
-    /**
-     * Signing algorithms supported for token endpoint authentication.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("token_endpoint_auth_signing_alg_values_supported") val tokenEndpointAuthSigningAlgValuesSupported: List<String>? = null,
-    /**
-     * OAuth scopes supported by the server.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("scopes_supported") val scopesSupported: List<String>? = null,
-    /**
-     * OAuth grant types supported by the server.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("grant_types_supported") val grantTypesSupported: List<String>? = null,
-    /**
-     * Supported authorization grant profiles. urn:ietf:params:oauth:grant-profile:id-jag advertises XAA resource support.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("authorization_grant_profiles_supported") val authorizationGrantProfilesSupported: List<String>? = null,
-    /**
-     * Token types supported for identity chaining. urn:ietf:params:oauth:token-type:id-jag advertises XAA IdP support.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("identity_chaining_requested_token_types_supported") val identityChainingRequestedTokenTypesSupported: List<String>? = null,
-    /**
-     * OAuth response modes supported by the server.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("response_modes_supported") val responseModesSupported: List<String>? = null,
-    /**
-     * OpenID Connect subject identifier types supported by the server.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("subject_types_supported") val subjectTypesSupported: List<String>? = null,
-    /**
-     * Signing algorithms supported for ID tokens.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("id_token_signing_alg_values_supported") val idTokenSigningAlgValuesSupported: List<String>? = null,
-    /**
-     * Key management algorithms supported for encrypted ID tokens.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("id_token_encryption_alg_values_supported") val idTokenEncryptionAlgValuesSupported: List<String>? = null,
-    /**
-     * Content encryption algorithms supported for encrypted ID tokens.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("id_token_encryption_enc_values_supported") val idTokenEncryptionEncValuesSupported: List<String>? = null,
-    /**
-     * OpenID Connect claim value types supported by the server.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("claim_types_supported") val claimTypesSupported: List<String>? = null,
-    /**
-     * Claims that the authorization server can return.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("claims_supported") val claimsSupported: List<String>? = null,
-    /**
-     * PKCE code challenge methods supported by the server.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("code_challenge_methods_supported") val codeChallengeMethodsSupported: List<String>? = null,
-    /**
-     * Authorization prompt values supported by the server.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("prompt_values_supported") val promptValuesSupported: List<String>? = null,
-    /**
-     * Whether authorization requests can use the claims parameter.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("claims_parameter_supported") val claimsParameterSupported: Boolean? = null,
-    /**
-     * Whether authorization requests can use signed request objects.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("request_parameter_supported") val requestParameterSupported: Boolean? = null,
-    /**
-     * Whether authorization requests can use request_uri.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("request_uri_parameter_supported") val requestUriParameterSupported: Boolean? = null,
-    /**
-     * Whether request_uri values must be registered in advance.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("require_request_uri_registration") val requireRequestUriRegistration: Boolean? = null,
-    /**
-     * Authorization server documentation URL.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("service_documentation") val serviceDocumentation: String? = null,
-    /**
-     * Authorization server privacy policy URL.
-     */
+    @com.fasterxml.jackson.annotation.JsonProperty(
+        "identity_chaining_requested_token_types_supported"
+    )
+    val identityChainingRequestedTokenTypesSupported: List<String>? = null,
+    /** OAuth response modes supported by the server. */
+    @com.fasterxml.jackson.annotation.JsonProperty("response_modes_supported")
+    val responseModesSupported: List<String>? = null,
+    /** OpenID Connect subject identifier types supported by the server. */
+    @com.fasterxml.jackson.annotation.JsonProperty("subject_types_supported")
+    val subjectTypesSupported: List<String>? = null,
+    /** Signing algorithms supported for ID tokens. */
+    @com.fasterxml.jackson.annotation.JsonProperty("id_token_signing_alg_values_supported")
+    val idTokenSigningAlgValuesSupported: List<String>? = null,
+    /** Key management algorithms supported for encrypted ID tokens. */
+    @com.fasterxml.jackson.annotation.JsonProperty("id_token_encryption_alg_values_supported")
+    val idTokenEncryptionAlgValuesSupported: List<String>? = null,
+    /** Content encryption algorithms supported for encrypted ID tokens. */
+    @com.fasterxml.jackson.annotation.JsonProperty("id_token_encryption_enc_values_supported")
+    val idTokenEncryptionEncValuesSupported: List<String>? = null,
+    /** OpenID Connect claim value types supported by the server. */
+    @com.fasterxml.jackson.annotation.JsonProperty("claim_types_supported")
+    val claimTypesSupported: List<String>? = null,
+    /** Claims that the authorization server can return. */
+    @com.fasterxml.jackson.annotation.JsonProperty("claims_supported")
+    val claimsSupported: List<String>? = null,
+    /** PKCE code challenge methods supported by the server. */
+    @com.fasterxml.jackson.annotation.JsonProperty("code_challenge_methods_supported")
+    val codeChallengeMethodsSupported: List<String>? = null,
+    /** Authorization prompt values supported by the server. */
+    @com.fasterxml.jackson.annotation.JsonProperty("prompt_values_supported")
+    val promptValuesSupported: List<String>? = null,
+    /** Whether authorization requests can use the claims parameter. */
+    @com.fasterxml.jackson.annotation.JsonProperty("claims_parameter_supported")
+    val claimsParameterSupported: Boolean? = null,
+    /** Whether authorization requests can use signed request objects. */
+    @com.fasterxml.jackson.annotation.JsonProperty("request_parameter_supported")
+    val requestParameterSupported: Boolean? = null,
+    /** Whether authorization requests can use request_uri. */
+    @com.fasterxml.jackson.annotation.JsonProperty("request_uri_parameter_supported")
+    val requestUriParameterSupported: Boolean? = null,
+    /** Whether request_uri values must be registered in advance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("require_request_uri_registration")
+    val requireRequestUriRegistration: Boolean? = null,
+    /** Authorization server documentation URL. */
+    @com.fasterxml.jackson.annotation.JsonProperty("service_documentation")
+    val serviceDocumentation: String? = null,
+    /** Authorization server privacy policy URL. */
     @com.fasterxml.jackson.annotation.JsonProperty("op_policy_uri") val opPolicyUri: String? = null,
-    /**
-     * Authorization server terms of service URL.
-     */
+    /** Authorization server terms of service URL. */
     @com.fasterxml.jackson.annotation.JsonProperty("op_tos_uri") val opTosUri: String? = null,
-    /**
-     * Authorization server logo URL.
-     */
+    /** Authorization server logo URL. */
     @com.fasterxml.jackson.annotation.JsonProperty("logo_uri") val logoUri: String? = null,
-    /**
-     * Whether the server supports OAuth client ID metadata documents.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("client_id_metadata_document_supported") val clientIdMetadataDocumentSupported: Boolean? = null,
-    /**
-     * OAuth authorization-detail types supported by the server.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("authorization_details_types_supported") val authorizationDetailsTypesSupported: List<String>? = null
+    /** Whether the server supports OAuth client ID metadata documents. */
+    @com.fasterxml.jackson.annotation.JsonProperty("client_id_metadata_document_supported")
+    val clientIdMetadataDocumentSupported: Boolean? = null,
+    /** OAuth authorization-detail types supported by the server. */
+    @com.fasterxml.jackson.annotation.JsonProperty("authorization_details_types_supported")
+    val authorizationDetailsTypesSupported: List<String>? = null,
 ) {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-/**
- * User authorization grant settings.
- */
+/** User authorization grant settings. */
 data class ConnectConnectorUpdateDataRequestVariant0UserAuthorization(
-    /**
-     * Whether this OAuth grant is enabled.
-     */
+    /** Whether this OAuth grant is enabled. */
     val enabled: Boolean,
-    /**
-     * Default scopes to request when token params specify scopes: \[\"*\"\].
-     */
-    val scopes: List<String>? = null
+    /** Default scopes to request when token params specify scopes: \[\"*\"\]. */
+    val scopes: List<String>? = null,
 )
 
-/**
- * Refresh token settings.
- */
+/** Refresh token settings. */
 data class ConnectConnectorUpdateDataRequestVariant0RefreshTokens(
-    /**
-     * Whether this OAuth grant is enabled.
-     */
+    /** Whether this OAuth grant is enabled. */
     val enabled: Boolean
 )
 
-/**
- * Client credentials grant settings.
- */
+/** Client credentials grant settings. */
 data class ConnectConnectorUpdateDataRequestVariant0ClientCredentials(
-    /**
-     * Whether this OAuth grant is enabled.
-     */
+    /** Whether this OAuth grant is enabled. */
     val enabled: Boolean,
-    /**
-     * Default scopes to request when token params specify scopes: \[\"*\"\].
-     */
-    val scopes: List<String>? = null
+    /** Default scopes to request when token params specify scopes: \[\"*\"\]. */
+    val scopes: List<String>? = null,
 )
 
 /**
- * Allow-list of extra claims to propagate, keyed by source (idToken). Only claims named here and present in that source are exposed.
+ * Allow-list of extra claims to propagate, keyed by source (idToken). Only claims named here and
+ * present in that source are exposed.
  */
 data class ConnectConnectorUpdateDataRequestVariant0ForwardedClaims(
-    /**
-     * ID token claim names that Connect can expose.
-     */
+    /** ID token claim names that Connect can expose. */
     val idToken: List<String>? = null
 )
 
-/**
- * JWT bearer grant settings.
- */
+/** JWT bearer grant settings. */
 data class ConnectConnectorUpdateDataRequestVariant0JwtBearer(
-    /**
-     * Whether JWT bearer grants are enabled.
-     */
+    /** Whether JWT bearer grants are enabled. */
     val enabled: Boolean? = null,
-    /**
-     * Default scopes to request when token params specify scopes: \[\"*\"\].
-     */
+    /** Default scopes to request when token params specify scopes: \[\"*\"\]. */
     val scopes: List<String>? = null,
-    /**
-     * Default JWT subject claim.
-     */
+    /** Default JWT subject claim. */
     val sub: String? = null,
-    /**
-     * Default JWT issuer claim.
-     */
+    /** Default JWT issuer claim. */
     val iss: String? = null,
-    /**
-     * Default JWT audience claim.
-     */
+    /** Default JWT audience claim. */
     val aud: String? = null,
-    /**
-     * Additional claims included in generated JWT assertions.
-     */
+    /** Additional claims included in generated JWT assertions. */
     val additionalClaims: Map<String, Any>? = null,
-    /**
-     * JWT lifetime in seconds.
-     */
+    /** JWT lifetime in seconds. */
     val ttl: Double? = null,
-    /**
-     * Whether JWT bearer requests also use client credentials.
-     */
-    val useClientCredentials: Boolean? = null
+    /** Whether JWT bearer requests also use client credentials. */
+    val useClientCredentials: Boolean? = null,
 )
 
-/**
- * `private_key_jwt` client assertion settings.
- */
+/** `private_key_jwt` client assertion settings. */
 data class ConnectConnectorUpdateDataRequestVariant0ClientAssertion(
     /**
-     * OAuth client assertion type. Defaults to urn:ietf:params:oauth:client-assertion-type:jwt-bearer. An empty string clears the configured type.
+     * OAuth client assertion type. Defaults to
+     * urn:ietf:params:oauth:client-assertion-type:jwt-bearer. An empty string clears the configured
+     * type.
      */
     val type: String? = null,
-    /**
-     * Client assertion lifetime in seconds.
-     */
+    /** Client assertion lifetime in seconds. */
     val ttl: Double? = null,
-    /**
-     * Additional claims included in the client assertion.
-     */
-    val claims: Map<String, Any>? = null
+    /** Additional claims included in the client assertion. */
+    val claims: Map<String, Any>? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ConnectConnectorUpdateDataRequestVariant0(
-    /**
-     * Authorization server base URL used for discovery.
-     */
+    /** Authorization server base URL used for discovery. */
     val serverUrl: String? = null,
     /**
-     * Authorization server metadata. Values override discovered metadata. Empty known string fields remove their stored overrides.
+     * Authorization server metadata. Values override discovered metadata. Empty known string fields
+     * remove their stored overrides.
      */
     val serverConfig: ConnectConnectorUpdateDataRequestVariant0ServerConfig? = null,
-    /**
-     * OAuth client ID.
-     */
+    /** OAuth client ID. */
     val clientId: String? = null,
-    /**
-     * OAuth client name.
-     */
+    /** OAuth client name. */
     val clientName: String? = null,
-    /**
-     * OAuth client secret.
-     */
+    /** OAuth client secret. */
     val clientSecret: String? = null,
     /**
-     * OAuth token endpoint authentication method. Common values are client_secret_post, client_secret_basic, none, and private_key_jwt. If omitted, Vercel selects a supported method from serverConfig and otherwise uses client_secret_post.
+     * OAuth token endpoint authentication method. Common values are client_secret_post,
+     * client_secret_basic, none, and private_key_jwt. If omitted, Vercel selects a supported method
+     * from serverConfig and otherwise uses client_secret_post.
      */
     val tokenEndpointAuthMethod: String? = null,
     /**
-     * OAuth authorization response type. Defaults to code. Other provider-supported values are accepted. An empty string clears the configured type.
+     * OAuth authorization response type. Defaults to code. Other provider-supported values are
+     * accepted. An empty string clears the configured type.
      */
     val responseType: String? = null,
-    /**
-     * Whether user authorization must use PKCE.
-     */
+    /** Whether user authorization must use PKCE. */
     val pkceRequired: Boolean? = null,
     /**
-     * PKCE code challenge method. Supported values are S256 and plain. Vercel prefers S256 when the provider supports it. An empty string clears the configured method.
+     * PKCE code challenge method. Supported values are S256 and plain. Vercel prefers S256 when the
+     * provider supports it. An empty string clears the configured method.
      */
     val codeChallengeMethod: String? = null,
-    /**
-     * User authorization grant settings.
-     */
+    /** User authorization grant settings. */
     val userAuthorization: ConnectConnectorUpdateDataRequestVariant0UserAuthorization? = null,
-    /**
-     * Refresh token settings.
-     */
+    /** Refresh token settings. */
     val refreshTokens: ConnectConnectorUpdateDataRequestVariant0RefreshTokens? = null,
-    /**
-     * Client credentials grant settings.
-     */
+    /** Client credentials grant settings. */
     val clientCredentials: ConnectConnectorUpdateDataRequestVariant0ClientCredentials? = null,
     /**
-     * Allow-list of extra claims to propagate, keyed by source (idToken). Only claims named here and present in that source are exposed.
+     * Allow-list of extra claims to propagate, keyed by source (idToken). Only claims named here
+     * and present in that source are exposed.
      */
     val forwardedClaims: ConnectConnectorUpdateDataRequestVariant0ForwardedClaims? = null,
-    /**
-     * Default audience used when a token request omits one. An empty string clears the default.
-     */
+    /** Default audience used when a token request omits one. An empty string clears the default. */
     val defaultAudience: String? = null,
     /**
-     * Default RFC 8707 resource sent on authorization and token requests when a token request omits one. An empty string clears the default.
+     * Default RFC 8707 resource sent on authorization and token requests when a token request omits
+     * one. An empty string clears the default.
      */
     val defaultResource: String? = null,
-    /**
-     * Default token lifetime in seconds to use when the token response omits expires_in.
-     */
+    /** Default token lifetime in seconds to use when the token response omits expires_in. */
     val defaultTokenExpiresIn: Double? = null,
-    /**
-     * Extra query parameters added to authorization URLs.
-     */
+    /** Extra query parameters added to authorization URLs. */
     val authorizationUrlParams: Map<String, String>? = null,
-    /**
-     * JWT bearer grant settings.
-     */
+    /** JWT bearer grant settings. */
     val jwtBearer: ConnectConnectorUpdateDataRequestVariant0JwtBearer? = null,
-    /**
-     * `private_key_jwt` client assertion settings.
-     */
-    val clientAssertion: ConnectConnectorUpdateDataRequestVariant0ClientAssertion? = null
+    /** `private_key_jwt` client assertion settings. */
+    val clientAssertion: ConnectConnectorUpdateDataRequestVariant0ClientAssertion? = null,
 ) : ConnectConnectorUpdateDataRequest
 
 data class ConnectConnectorUpdateDataRequestVariant1ToAddItem(
-    /**
-     * API key value.
-     */
+    /** API key value. */
     @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    /**
-     * Optional scope associated with the API key value.
-     */
+    /** Optional scope associated with the API key value. */
     val scope: String? = null,
-    /**
-     * The timestamp when the API key value expires in milliseconds.
-     */
-    val expiresAt: Long? = null
+    /** The timestamp when the API key value expires in milliseconds. */
+    val expiresAt: Long? = null,
 )
 
 data class ConnectConnectorUpdateDataRequestVariant1ToUpdateItem(
-    /**
-     * Stored API key value ID.
-     */
+    /** Stored API key value ID. */
     val id: String,
-    /**
-     * Replacement API key value. Use null to keep the stored value.
-     */
+    /** Replacement API key value. Use null to keep the stored value. */
     @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
-    /**
-     * Replacement scope. Use null to remove the scope.
-     */
+    /** Replacement scope. Use null to remove the scope. */
     val scope: String? = null,
-    /**
-     * The timestamp when the API key value expires in milliseconds.
-     */
-    val expiresAt: Any? = null
+    /** The timestamp when the API key value expires in milliseconds. */
+    val expiresAt: Any? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ConnectConnectorUpdateDataRequestVariant1(
-    /**
-     * Stored API key value IDs to delete.
-     */
+    /** Stored API key value IDs to delete. */
     val toDelete: List<String>? = null,
-    /**
-     * API key values to add.
-     */
+    /** API key values to add. */
     val toAdd: List<ConnectConnectorUpdateDataRequestVariant1ToAddItem>? = null,
-    /**
-     * Existing API key values to update.
-     */
+    /** Existing API key values to update. */
     val toUpdate: List<ConnectConnectorUpdateDataRequestVariant1ToUpdateItem>? = null,
     /**
-     * Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste.
+     * Markdown instructions shown to each user on the authorization screen, explaining how to
+     * obtain the key they should paste.
      */
-    val instructions: String? = null
+    val instructions: String? = null,
 ) : ConnectConnectorUpdateDataRequest
 
-/**
- * GitHub App owner.
- */
+/** GitHub App owner. */
 data class ConnectConnectorUpdateDataRequestVariant2Owner(
-    /**
-     * GitHub App owner type.
-     */
+    /** GitHub App owner type. */
     val type: ConnectConnectorUpdateDataRequestVariant2OwnerTypeEnum,
-    /**
-     * GitHub App owner numeric ID.
-     */
+    /** GitHub App owner numeric ID. */
     val id: Long,
-    /**
-     * GitHub App owner login.
-     */
+    /** GitHub App owner login. */
     val slug: String,
-    /**
-     * GitHub App owner display name.
-     */
-    val name: String? = null
+    /** GitHub App owner display name. */
+    val name: String? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ConnectConnectorUpdateDataRequestVariant2(
-    /**
-     * GitHub App numeric ID.
-     */
+    /** GitHub App numeric ID. */
     val appId: Long? = null,
-    /**
-     * GitHub App slug.
-     */
+    /** GitHub App slug. */
     val appSlug: String? = null,
-    /**
-     * GitHub App display name.
-     */
+    /** GitHub App display name. */
     val appName: String? = null,
-    /**
-     * GitHub App OAuth client ID.
-     */
+    /** GitHub App OAuth client ID. */
     val clientId: String? = null,
-    /**
-     * GitHub App owner.
-     */
+    /** GitHub App owner. */
     val owner: ConnectConnectorUpdateDataRequestVariant2Owner? = null,
-    /**
-     * GitHub App OAuth client secret.
-     */
+    /** GitHub App OAuth client secret. */
     val clientSecret: String? = null,
-    /**
-     * GitHub App private key in PEM format.
-     */
+    /** GitHub App private key in PEM format. */
     val privateKeyPem: String? = null,
-    /**
-     * GitHub App webhook secret.
-     */
+    /** GitHub App webhook secret. */
     val webhookSecret: String? = null,
-    /**
-     * Additional provider metadata stored with the connector.
-     */
-    val extras: Map<String, Any>? = null
+    /** Additional provider metadata stored with the connector. */
+    val extras: Map<String, Any>? = null,
 ) : ConnectConnectorUpdateDataRequest
 
-/**
- * Linear organization that owns the OAuth application.
- */
+/** Linear organization that owns the OAuth application. */
 data class ConnectConnectorUpdateDataRequestVariant3OwnerOrganization(
-    /**
-     * Linear organization ID.
-     */
+    /** Linear organization ID. */
     val id: String,
-    /**
-     * Linear organization slug.
-     */
+    /** Linear organization slug. */
     val slug: String,
-    /**
-     * Linear organization name.
-     */
+    /** Linear organization name. */
     val name: String,
-    /**
-     * Linear organization logo URL.
-     */
-    val logoUrl: String? = null
+    /** Linear organization logo URL. */
+    val logoUrl: String? = null,
 )
 
-/**
- * Linear OAuth application metadata.
- */
+/** Linear OAuth application metadata. */
 data class ConnectConnectorUpdateDataRequestVariant3Application(
-    /**
-     * Linear OAuth application ID.
-     */
+    /** Linear OAuth application ID. */
     val id: String,
-    /**
-     * Linear OAuth client ID.
-     */
+    /** Linear OAuth client ID. */
     val clientId: String,
-    /**
-     * Linear OAuth application name.
-     */
+    /** Linear OAuth application name. */
     val name: String,
-    /**
-     * Linear OAuth application description.
-     */
+    /** Linear OAuth application description. */
     val description: String? = null,
-    /**
-     * Linear OAuth application developer name.
-     */
+    /** Linear OAuth application developer name. */
     val developer: String? = null,
-    /**
-     * Linear OAuth application developer URL.
-     */
+    /** Linear OAuth application developer URL. */
     val developerUrl: String? = null,
-    /**
-     * Linear OAuth application image URL.
-     */
+    /** Linear OAuth application image URL. */
     val imageUrl: String? = null,
-    /**
-     * Registered redirect URIs for the Linear OAuth application.
-     */
+    /** Registered redirect URIs for the Linear OAuth application. */
     val redirectUris: List<String>? = null,
-    /**
-     * Linear OAuth application distribution mode.
-     */
+    /** Linear OAuth application distribution mode. */
     val distribution: String? = null,
-    /**
-     * Linear resource types delivered to the webhook.
-     */
+    /** Linear resource types delivered to the webhook. */
     val webhookResourceTypes: List<String>? = null,
-    /**
-     * Linear webhook URL.
-     */
+    /** Linear webhook URL. */
     val webhookUrl: String? = null,
-    /**
-     * Whether the Linear webhook is enabled.
-     */
+    /** Whether the Linear webhook is enabled. */
     val webhookEnabled: Boolean? = null,
-    /**
-     * Linear OAuth application creation timestamp.
-     */
+    /** Linear OAuth application creation timestamp. */
     val createdAt: String? = null,
-    /**
-     * Linear OAuth application update timestamp.
-     */
-    val updatedAt: String? = null
+    /** Linear OAuth application update timestamp. */
+    val updatedAt: String? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ConnectConnectorUpdateDataRequestVariant3(
-    /**
-     * Linear application ID.
-     */
+    /** Linear application ID. */
     val appId: String? = null,
-    /**
-     * Linear application name.
-     */
+    /** Linear application name. */
     val appName: String? = null,
-    /**
-     * Linear OAuth client ID.
-     */
+    /** Linear OAuth client ID. */
     val clientId: String? = null,
-    /**
-     * Linear OAuth client secret.
-     */
+    /** Linear OAuth client secret. */
     val clientSecret: String? = null,
-    /**
-     * Linear webhook verification secret.
-     */
+    /** Linear webhook verification secret. */
     val webhookSecret: String? = null,
-    /**
-     * OAuth scopes requested for Linear application tokens.
-     */
+    /** OAuth scopes requested for Linear application tokens. */
     val appScopes: List<String>? = null,
-    /**
-     * OAuth scopes requested for Linear user tokens.
-     */
+    /** OAuth scopes requested for Linear user tokens. */
     val userScopes: List<String>? = null,
-    /**
-     * Linear organization that owns the OAuth application.
-     */
+    /** Linear organization that owns the OAuth application. */
     val ownerOrganization: ConnectConnectorUpdateDataRequestVariant3OwnerOrganization? = null,
-    /**
-     * Linear OAuth application metadata.
-     */
+    /** Linear OAuth application metadata. */
     val application: ConnectConnectorUpdateDataRequestVariant3Application? = null,
-    /**
-     * Additional provider metadata stored with the connector.
-     */
-    val extras: Map<String, Any>? = null
+    /** Additional provider metadata stored with the connector. */
+    val extras: Map<String, Any>? = null,
 ) : ConnectConnectorUpdateDataRequest

@@ -9,11 +9,25 @@ import dev.octri.showcase.vercel.SdkClient
 
 internal object VcrGetRootOperation {
     /**
-     * Checks whether the Docker Registry API v2 is supported. Send valid credentials in the `Authorization` header to receive a successful response and proceed with registry requests. Without credentials, the registry returns an authentication challenge for the Docker client.
+     * Checks whether the Docker Registry API v2 is supported. Send valid credentials in the
+     * `Authorization` header to receive a successful response and proceed with registry requests.
+     * Without credentials, the registry returns an authentication challenge for the Docker client.
      *
-     * GET /v2/ Docker Registry v2 version check. Returns a 401 challenge when no credentials are provided, prompting the Docker client to send auth. With valid credentials, returns 200 so the client can proceed.
+     * GET /v2/ Docker Registry v2 version check. Returns a 401 challenge when no credentials are
+     * provided, prompting the Docker client to send auth. With valid credentials, returns 200 so
+     * the client can proceed.
      */
     fun getRoot(clientConfig: ClientConfig, options: RequestOptions? = null): Map<String, Any> {
-        return SdkClient.request<Map<String, Any>>(SdkClient.RequestSpec("GET", "/v2/", config = clientConfig, operationId = "getRoot", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<Map<String, Any>>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v2/",
+                    config = clientConfig,
+                    operationId = "getRoot",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }

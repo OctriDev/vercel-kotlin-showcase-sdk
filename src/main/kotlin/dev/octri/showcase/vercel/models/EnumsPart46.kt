@@ -3,91 +3,200 @@
 
 package dev.octri.showcase.vercel.models
 
-class GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479 && value == other.value
+class GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val BOT_CATEGORY = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("bot_category")
-        @JvmField val BOT_NAME = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("bot_name")
-        @JvmField val BOT_PROTECTION = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("bot_protection")
-        @JvmField val BOT_STATUS = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("bot_status")
-        @JvmField val COOKIE = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("cookie")
-        @JvmField val DOMAIN_ENVIRONMENT = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("domain_environment")
-        @JvmField val ENVIRONMENT = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("environment")
-        @JvmField val GEO_AS_NUMBER = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("geo_as_number")
-        @JvmField val GEO_CITY = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("geo_city")
-        @JvmField val GEO_CONTINENT = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("geo_continent")
-        @JvmField val GEO_COUNTRY = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("geo_country")
-        @JvmField val GEO_COUNTRY_REGION = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("geo_country_region")
-        @JvmField val HEADER = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("header")
-        @JvmField val HOST = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("host")
-        @JvmField val IP_ADDRESS = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("ip_address")
-        @JvmField val JA3_DIGEST = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("ja3_digest")
-        @JvmField val JA4_DIGEST = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("ja4_digest")
-        @JvmField val METHOD = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("method")
-        @JvmField val PATH = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("path")
-        @JvmField val PROTOCOL = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("protocol")
-        @JvmField val QUERY = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("query")
-        @JvmField val RATE_LIMIT_API_ID = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("rate_limit_api_id")
-        @JvmField val RAW_PATH = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("raw_path")
-        @JvmField val REGION = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("region")
-        @JvmField val RESPONSE_CODE = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("response_code")
-        @JvmField val ROUTE = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("route")
-        @JvmField val RULESET = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("ruleset")
-        @JvmField val SCHEME = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("scheme")
-        @JvmField val SERVER_ACTION = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("server_action")
-        @JvmField val SHARED_CONDITION = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("shared_condition")
-        @JvmField val TARGET_PATH = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("target_path")
-        @JvmField val TRAFFIC_SOURCE = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("traffic_source")
-        @JvmField val TRUSTED_SOURCE = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("trusted_source")
-        @JvmField val USER_AGENT = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("user_agent")
+        @JvmField
+        val BOT_CATEGORY =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("bot_category")
+        @JvmField
+        val BOT_NAME =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("bot_name")
+        @JvmField
+        val BOT_PROTECTION =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479(
+                "bot_protection"
+            )
+        @JvmField
+        val BOT_STATUS =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("bot_status")
+        @JvmField
+        val COOKIE =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("cookie")
+        @JvmField
+        val DOMAIN_ENVIRONMENT =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479(
+                "domain_environment"
+            )
+        @JvmField
+        val ENVIRONMENT =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("environment")
+        @JvmField
+        val GEO_AS_NUMBER =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479(
+                "geo_as_number"
+            )
+        @JvmField
+        val GEO_CITY =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("geo_city")
+        @JvmField
+        val GEO_CONTINENT =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479(
+                "geo_continent"
+            )
+        @JvmField
+        val GEO_COUNTRY =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("geo_country")
+        @JvmField
+        val GEO_COUNTRY_REGION =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479(
+                "geo_country_region"
+            )
+        @JvmField
+        val HEADER =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("header")
+        @JvmField
+        val HOST = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("host")
+        @JvmField
+        val IP_ADDRESS =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("ip_address")
+        @JvmField
+        val JA3_DIGEST =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("ja3_digest")
+        @JvmField
+        val JA4_DIGEST =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("ja4_digest")
+        @JvmField
+        val METHOD =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("method")
+        @JvmField
+        val PATH = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("path")
+        @JvmField
+        val PROTOCOL =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("protocol")
+        @JvmField
+        val QUERY =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("query")
+        @JvmField
+        val RATE_LIMIT_API_ID =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479(
+                "rate_limit_api_id"
+            )
+        @JvmField
+        val RAW_PATH =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("raw_path")
+        @JvmField
+        val REGION =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("region")
+        @JvmField
+        val RESPONSE_CODE =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479(
+                "response_code"
+            )
+        @JvmField
+        val ROUTE =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("route")
+        @JvmField
+        val RULESET =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("ruleset")
+        @JvmField
+        val SCHEME =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("scheme")
+        @JvmField
+        val SERVER_ACTION =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479(
+                "server_action"
+            )
+        @JvmField
+        val SHARED_CONDITION =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479(
+                "shared_condition"
+            )
+        @JvmField
+        val TARGET_PATH =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("target_path")
+        @JvmField
+        val TRAFFIC_SOURCE =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479(
+                "traffic_source"
+            )
+        @JvmField
+        val TRUSTED_SOURCE =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479(
+                "trusted_source"
+            )
+        @JvmField
+        val USER_AGENT =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479("user_agent")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetFirewallConfigResponseRulesItemVariant1ConditionGroupItemCX15fa83c479(value)
     }
 }
 
-class GetFirewallConfigResponseRulesItemVariant1ValidEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetFirewallConfigResponseRulesItemVariant1ValidEnum && value == other.value
+class GetFirewallConfigResponseRulesItemVariant1ValidEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetFirewallConfigResponseRulesItemVariant1ValidEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
         @JvmField val FALSE = GetFirewallConfigResponseRulesItemVariant1ValidEnum(false)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetFirewallConfigResponseRulesItemVariant1ValidEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = GetFirewallConfigResponseRulesItemVariant1ValidEnum(value)
     }
 }
 
-/**
- * Informational marker for a system-owned default drain.
- */
-class GetIntegrationLogDrainsResponseItemSourceVariant0DefaultForEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetIntegrationLogDrainsResponseItemSourceVariant0DefaultForEnum && value == other.value
+/** Informational marker for a system-owned default drain. */
+class GetIntegrationLogDrainsResponseItemSourceVariant0DefaultForEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetIntegrationLogDrainsResponseItemSourceVariant0DefaultForEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val EVE_TRACING = GetIntegrationLogDrainsResponseItemSourceVariant0DefaultForEnum("eve-tracing")
+        @JvmField
+        val EVE_TRACING =
+            GetIntegrationLogDrainsResponseItemSourceVariant0DefaultForEnum("eve-tracing")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetIntegrationLogDrainsResponseItemSourceVariant0DefaultForEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetIntegrationLogDrainsResponseItemSourceVariant0DefaultForEnum(value)
     }
 }
 
-enum class GetIntegrationLogDrainsResponseItemSourceVariant0KindEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetIntegrationLogDrainsResponseItemSourceVariant0KindEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     SELF_SERVED("self-served");
 
     override fun toString() = value
@@ -95,12 +204,15 @@ enum class GetIntegrationLogDrainsResponseItemSourceVariant0KindEnum(@com.faster
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetIntegrationLogDrainsResponseItemSourceVariant1KindEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetIntegrationLogDrainsResponseItemSourceVariant1KindEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     INTEGRATION("integration");
 
     override fun toString() = value
@@ -108,12 +220,15 @@ enum class GetIntegrationLogDrainsResponseItemSourceVariant1KindEnum(@com.faster
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetKmsIssuerResponsePoliciesItemVariant0KindEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetKmsIssuerResponsePoliciesItemVariant0KindEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     PROJECT_GRANT("project-grant");
 
     override fun toString() = value
@@ -121,12 +236,15 @@ enum class GetKmsIssuerResponsePoliciesItemVariant0KindEnum(@com.fasterxml.jacks
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetKmsIssuerResponsePoliciesItemVariant1KindEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetKmsIssuerResponsePoliciesItemVariant1KindEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     CONNEX_GRANT("connex-grant");
 
     override fun toString() = value
@@ -134,12 +252,15 @@ enum class GetKmsIssuerResponsePoliciesItemVariant1KindEnum(@com.fasterxml.jacks
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant0TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant0TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     USER("user");
 
     override fun toString() = value
@@ -147,12 +268,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant0TypeEnum(@
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant0ViX0a8dd4141d(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant0ViX0a8dd4141d(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     APP("app");
 
     override fun toString() = value
@@ -160,12 +284,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant0ViX0a8dd41
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant0ViXe9617cbd44(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant0ViXe9617cbd44(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     INTEGRATION("integration");
 
     override fun toString() = value
@@ -173,12 +300,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant0ViXe9617cb
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant1TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant1TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     APP("app");
 
     override fun toString() = value
@@ -186,12 +316,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant1TypeEnum(@
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant2TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant2TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     INTEGRATION("integration");
 
     override fun toString() = value
@@ -199,12 +332,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant2TypeEnum(@
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant3TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant3TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     SYSTEM("system");
 
     override fun toString() = value
@@ -212,29 +348,43 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemCreatorVariant3TypeEnum(@
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyDX0556f5b577 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyDX0556f5b577 && value == other.value
+class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyDX0556f5b577
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyDX0556f5b577 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val PREVIEW = GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyDX0556f5b577("preview")
-        @JvmField val PRODUCTION = GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyDX0556f5b577("production")
+        @JvmField
+        val PREVIEW =
+            GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyDX0556f5b577("preview")
+        @JvmField
+        val PRODUCTION =
+            GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyDX0556f5b577("production")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyDX0556f5b577(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyDX0556f5b577(value)
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyDXaf87fb6c19(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyDXaf87fb6c19(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     SYSTEM("system");
 
     override fun toString() = value
@@ -242,12 +392,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyDXaf87fb6
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyDX1ac4f1e0c2(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyDX1ac4f1e0c2(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     CUSTOM("custom");
 
     override fun toString() = value
@@ -255,29 +408,43 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyDX1ac4f1e
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1baf22ce47 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1baf22ce47 && value == other.value
+class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1baf22ce47
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1baf22ce47 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val PREVIEW = GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1baf22ce47("preview")
-        @JvmField val PRODUCTION = GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1baf22ce47("production")
+        @JvmField
+        val PREVIEW =
+            GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1baf22ce47("preview")
+        @JvmField
+        val PRODUCTION =
+            GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1baf22ce47("production")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1baf22ce47(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1baf22ce47(value)
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX772ffd7942(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX772ffd7942(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     SYSTEM("system");
 
     override fun toString() = value
@@ -285,12 +452,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX772ffd7
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGXd7fcfb2e2b(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGXd7fcfb2e2b(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     CUSTOM("custom");
 
     override fun toString() = value
@@ -298,96 +468,146 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGXd7fcfb2
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1596f2520e private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1596f2520e && value == other.value
+class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1596f2520e
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1596f2520e &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val BITBUCKET = GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1596f2520e("bitbucket")
-        @JvmField val GITHUB = GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1596f2520e("github")
+        @JvmField
+        val BITBUCKET =
+            GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1596f2520e("bitbucket")
+        @JvmField
+        val GITHUB =
+            GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1596f2520e("github")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1596f2520e(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGX1596f2520e(value)
     }
 }
 
-class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGXa361a7eadd private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGXa361a7eadd && value == other.value
+class GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGXa361a7eadd
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGXa361a7eadd &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val GITLAB = GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGXa361a7eadd("gitlab")
+        @JvmField
+        val GITLAB =
+            GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGXa361a7eadd("gitlab")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGXa361a7eadd(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetMicrofrontendsInGroupResponseProjectsItemDeploymentPolicyGXa361a7eadd(value)
     }
 }
 
-class GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXc274e96b3e private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXc274e96b3e && value == other.value
+class GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXc274e96b3e
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXc274e96b3e &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXc274e96b3e(false)
-        @JvmField val TRUE = GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXc274e96b3e(true)
+        @JvmField
+        val FALSE = GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXc274e96b3e(false)
+        @JvmField
+        val TRUE = GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXc274e96b3e(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXc274e96b3e(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXc274e96b3e(value)
     }
 }
 
-class GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItX60bbf8acdc private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItX60bbf8acdc && value == other.value
+class GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItX60bbf8acdc
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItX60bbf8acdc &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItX60bbf8acdc(false)
-        @JvmField val TRUE = GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItX60bbf8acdc(true)
+        @JvmField
+        val FALSE = GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItX60bbf8acdc(false)
+        @JvmField
+        val TRUE = GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItX60bbf8acdc(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItX60bbf8acdc(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItX60bbf8acdc(value)
     }
 }
 
-class GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXedfb08e0c1 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXedfb08e0c1 && value == other.value
+class GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXedfb08e0c1
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXedfb08e0c1 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXedfb08e0c1(false)
-        @JvmField val TRUE = GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXedfb08e0c1(true)
+        @JvmField
+        val FALSE = GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXedfb08e0c1(false)
+        @JvmField
+        val TRUE = GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXedfb08e0c1(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXedfb08e0c1(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetMicrofrontendsInGroupResponseProjectsItemDismissedToastsItXedfb08e0c1(value)
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX371a4c2a93(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX371a4c2a93(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     REDIS_URL("redis-url");
 
     override fun toString() = value
@@ -395,12 +615,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX371a4c2
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXbe8c54da2a(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXbe8c54da2a(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     REDIS_REST_API_URL("redis-rest-api-url");
 
     override fun toString() = value
@@ -408,12 +631,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXbe8c54d
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXe0d9f369fe(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXe0d9f369fe(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_USER("postgres-user");
 
     override fun toString() = value
@@ -421,12 +647,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXe0d9f36
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXd9fb43b540(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXd9fb43b540(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_HOST("postgres-host");
 
     override fun toString() = value
@@ -434,12 +663,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXd9fb43b
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX31206978e3(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX31206978e3(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_PASSWORD("postgres-password");
 
     override fun toString() = value
@@ -447,12 +679,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX3120697
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2f20ea9ae6(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2f20ea9ae6(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_DATABASE("postgres-database");
 
     override fun toString() = value
@@ -460,12 +695,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX2f20ea9
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX5f23ff54b9(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX5f23ff54b9(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_URL_NO_SSL("postgres-url-no-ssl");
 
     override fun toString() = value
@@ -473,12 +711,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX5f23ff5
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfdf5760b70(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfdf5760b70(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     INTEGRATION_STORE_SECRET("integration-store-secret");
 
     override fun toString() = value
@@ -486,12 +727,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXfdf5760
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb1ab9a51cb(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb1ab9a51cb(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     FLAGS_CONNECTION_STRING("flags-connection-string");
 
     override fun toString() = value
@@ -499,12 +743,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXb1ab9a5
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX04ca255c05(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX04ca255c05(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     REDIS_REST_API_TOKEN("redis-rest-api-token");
 
     override fun toString() = value
@@ -512,12 +759,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX04ca255
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0464900a02(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0464900a02(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     REDIS_REST_API_READ_ONLY_TOKEN("redis-rest-api-read-only-token");
 
     override fun toString() = value
@@ -525,12 +775,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX0464900
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX6bdc8474a3(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX6bdc8474a3(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     BLOB_READ_WRITE_TOKEN("blob-read-write-token");
 
     override fun toString() = value
@@ -538,12 +791,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX6bdc847
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXd17656c3a9(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXd17656c3a9(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     BLOB_STORE_ID("blob-store-id");
 
     override fun toString() = value
@@ -551,12 +807,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXd17656c
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXe1cab9744b(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXe1cab9744b(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     BLOB_WEBHOOK_PUBLIC_KEY("blob-webhook-public-key");
 
     override fun toString() = value
@@ -564,12 +823,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXe1cab97
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXd3ef10e4b9(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXd3ef10e4b9(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_URL("postgres-url");
 
     override fun toString() = value
@@ -577,12 +839,15 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinXd3ef10e
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX39e5204004(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX39e5204004(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_URL_NON_POOLING("postgres-url-non-pooling");
 
     override fun toString() = value
@@ -590,7 +855,8 @@ enum class GetMicrofrontendsInGroupResponseProjectsItemEnvItemContentHinX39e5204
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }

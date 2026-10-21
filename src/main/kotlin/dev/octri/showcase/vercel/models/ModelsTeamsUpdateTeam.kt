@@ -3,34 +3,37 @@
 
 package dev.octri.showcase.vercel.models
 
-data class UpdateTeamRequestDefaultProjectJobsVariant0Lint(
-    val targets: List<String>
-)
+data class UpdateTeamRequestDefaultProjectJobsVariant0Lint(val targets: List<String>)
 
-data class UpdateTeamRequestDefaultProjectJobsVariant0Typecheck(
-    val targets: List<String>
-)
+data class UpdateTeamRequestDefaultProjectJobsVariant0Typecheck(val targets: List<String>)
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UpdateTeamRequestDefaultProjectJobsVariant0(
     val lint: UpdateTeamRequestDefaultProjectJobsVariant0Lint? = null,
-    val typecheck: UpdateTeamRequestDefaultProjectJobsVariant0Typecheck? = null
+    val typecheck: UpdateTeamRequestDefaultProjectJobsVariant0Typecheck? = null,
 ) : UpdateTeamRequestDefaultProjectJobs
 
-/**
- * Typed representation of the `UpdateTeamRequestDefaultProjectJobs` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UpdateTeamRequestDefaultProjectJobs.Deserializer::class)
+/** Typed representation of the `UpdateTeamRequestDefaultProjectJobs` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = UpdateTeamRequestDefaultProjectJobs.Deserializer::class
+)
 sealed interface UpdateTeamRequestDefaultProjectJobs {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UpdateTeamRequestDefaultProjectJobs>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<UpdateTeamRequestDefaultProjectJobs>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): UpdateTeamRequestDefaultProjectJobs {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out UpdateTeamRequestDefaultProjectJobs>> = listOf(UpdateTeamRequestDefaultProjectJobsVariant0::class.java)
+            val objectTypes: List<Class<out UpdateTeamRequestDefaultProjectJobs>> =
+                listOf(UpdateTeamRequestDefaultProjectJobsVariant0::class.java)
             for (objectType in objectTypes) {
                 try {
                     return mapper.convertValue(node, objectType)
@@ -39,81 +42,108 @@ sealed interface UpdateTeamRequestDefaultProjectJobs {
                 }
             }
             return when {
-                node.isTextual -> StringUpdateTeamRequestDefaultProjectJobs(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, UpdateTeamRequestDefaultProjectJobs::class.java, "no UpdateTeamRequestDefaultProjectJobs branch accepts this payload")
+                node.isTextual ->
+                    StringUpdateTeamRequestDefaultProjectJobs(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
+                        )
+                    )
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        UpdateTeamRequestDefaultProjectJobs::class.java,
+                        "no UpdateTeamRequestDefaultProjectJobs branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class StringUpdateTeamRequestDefaultProjectJobs(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : UpdateTeamRequestDefaultProjectJobs
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class StringUpdateTeamRequestDefaultProjectJobs(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
+) : UpdateTeamRequestDefaultProjectJobs
 
 data class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX48e2d04b8e(
     val type: UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX29ee34b686,
-    val target: UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX4465cd9f67
+    val target: UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX4465cd9f67,
 )
 
 data class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX01d5dd705b(
     val type: UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX379c02c6b1,
-    val environmentId: String
+    val environmentId: String,
 )
 
 data class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX46a4a480fb(
     val provider: UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX177a1b945c,
     val org: String,
-    val repo: String? = null
+    val repo: String? = null,
 )
 
 data class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXd6ad927605(
     val provider: UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXa6321df9da,
     val namespace: String,
-    val project: String? = null
+    val project: String? = null,
 )
 
 data class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0Item(
     val enabled: Boolean,
     val environments: List<Any>,
-    val sources: List<Any>
+    val sources: List<Any>,
 )
 
 data class UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1c34075c8b(
     val type: UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX5f2f28aacd,
-    val target: UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1185fdfc75
+    val target: UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1185fdfc75,
 )
 
 data class UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX5b071ed950(
     val type: UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarXad2652a4f2,
-    val environmentId: String
+    val environmentId: String,
 )
 
 data class UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVariant0Item(
     val enabled: Boolean,
     val environments: List<Any>,
-    val sources: List<UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX3c2a75f114>
+    val sources: List<UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX3c2a75f114>,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UpdateTeamRequestDeploymentPolicyVariant0(
     val gitSources: Any? = null,
-    val deploymentSources: Any? = null
+    val deploymentSources: Any? = null,
 ) : UpdateTeamRequestDeploymentPolicy
 
-/**
- * Typed representation of the `UpdateTeamRequestDeploymentPolicy` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UpdateTeamRequestDeploymentPolicy.Deserializer::class)
+/** Typed representation of the `UpdateTeamRequestDeploymentPolicy` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = UpdateTeamRequestDeploymentPolicy.Deserializer::class
+)
 sealed interface UpdateTeamRequestDeploymentPolicy {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UpdateTeamRequestDeploymentPolicy>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<UpdateTeamRequestDeploymentPolicy>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): UpdateTeamRequestDeploymentPolicy {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = UpdateTeamRequestDeploymentPolicyOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                UpdateTeamRequestDeploymentPolicyOwnedTypes.firstOrNull { (keys, _) ->
+                        keys.any(node::has)
+                    }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -121,7 +151,8 @@ sealed interface UpdateTeamRequestDeploymentPolicy {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out UpdateTeamRequestDeploymentPolicy>> = listOf(UpdateTeamRequestDeploymentPolicyVariant0::class.java)
+            val objectTypes: List<Class<out UpdateTeamRequestDeploymentPolicy>> =
+                listOf(UpdateTeamRequestDeploymentPolicyVariant0::class.java)
             for (objectType in objectTypes) {
                 try {
                     return mapper.convertValue(node, objectType)
@@ -130,43 +161,71 @@ sealed interface UpdateTeamRequestDeploymentPolicy {
                 }
             }
             return when {
-                node.isTextual -> StringUpdateTeamRequestDeploymentPolicy(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, UpdateTeamRequestDeploymentPolicy::class.java, "no UpdateTeamRequestDeploymentPolicy branch accepts this payload")
+                node.isTextual ->
+                    StringUpdateTeamRequestDeploymentPolicy(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
+                        )
+                    )
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        UpdateTeamRequestDeploymentPolicy::class.java,
+                        "no UpdateTeamRequestDeploymentPolicy branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val UpdateTeamRequestDeploymentPolicyOwnedTypes: List<Pair<List<String>, Class<out UpdateTeamRequestDeploymentPolicy>>> = listOf(
-    listOf("gitSources", "deploymentSources") to UpdateTeamRequestDeploymentPolicyVariant0::class.java,
+internal val UpdateTeamRequestDeploymentPolicyOwnedTypes:
+    List<Pair<List<String>, Class<out UpdateTeamRequestDeploymentPolicy>>> =
+    listOf(
+        listOf("gitSources", "deploymentSources") to
+            UpdateTeamRequestDeploymentPolicyVariant0::class.java
+    )
+
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
 )
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class StringUpdateTeamRequestDeploymentPolicy(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
+) : UpdateTeamRequestDeploymentPolicy
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class StringUpdateTeamRequestDeploymentPolicy(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : UpdateTeamRequestDeploymentPolicy
-
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UpdateTeamRequestNsnbConfigVariant0(
-    /**
-     * The NSNB preference for the team.
-     */
+    /** The NSNB preference for the team. */
     val preference: UpdateTeamRequestNsnbConfigVariant0PreferenceEnum
 ) : UpdateTeamRequestNsnbConfig
 
-/**
- * Typed representation of the `UpdateTeamRequestNsnbConfig` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UpdateTeamRequestNsnbConfig.Deserializer::class)
+/** Typed representation of the `UpdateTeamRequestNsnbConfig` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = UpdateTeamRequestNsnbConfig.Deserializer::class
+)
 sealed interface UpdateTeamRequestNsnbConfig {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UpdateTeamRequestNsnbConfig>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<UpdateTeamRequestNsnbConfig>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): UpdateTeamRequestNsnbConfig {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = UpdateTeamRequestNsnbConfigOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                UpdateTeamRequestNsnbConfigOwnedTypes.firstOrNull { (keys, _) ->
+                        keys.any(node::has)
+                    }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -174,7 +233,8 @@ sealed interface UpdateTeamRequestNsnbConfig {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out UpdateTeamRequestNsnbConfig>> = listOf(UpdateTeamRequestNsnbConfigVariant0::class.java)
+            val objectTypes: List<Class<out UpdateTeamRequestNsnbConfig>> =
+                listOf(UpdateTeamRequestNsnbConfigVariant0::class.java)
             for (objectType in objectTypes) {
                 try {
                     return mapper.convertValue(node, objectType)
@@ -183,17 +243,34 @@ sealed interface UpdateTeamRequestNsnbConfig {
                 }
             }
             return when {
-                node.isTextual -> StringUpdateTeamRequestNsnbConfig(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, UpdateTeamRequestNsnbConfig::class.java, "no UpdateTeamRequestNsnbConfig branch accepts this payload")
+                node.isTextual ->
+                    StringUpdateTeamRequestNsnbConfig(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
+                        )
+                    )
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        UpdateTeamRequestNsnbConfig::class.java,
+                        "no UpdateTeamRequestNsnbConfig branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val UpdateTeamRequestNsnbConfigOwnedTypes: List<Pair<List<String>, Class<out UpdateTeamRequestNsnbConfig>>> = listOf(
-    listOf("preference") to UpdateTeamRequestNsnbConfigVariant0::class.java,
-)
+internal val UpdateTeamRequestNsnbConfigOwnedTypes:
+    List<Pair<List<String>, Class<out UpdateTeamRequestNsnbConfig>>> =
+    listOf(listOf("preference") to UpdateTeamRequestNsnbConfigVariant0::class.java)
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class StringUpdateTeamRequestNsnbConfig(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : UpdateTeamRequestNsnbConfig
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class StringUpdateTeamRequestNsnbConfig(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
+) : UpdateTeamRequestNsnbConfig

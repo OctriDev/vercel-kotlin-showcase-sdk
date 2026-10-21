@@ -26,533 +26,381 @@ import dev.octri.showcase.vercel.SdkClient
 import java.time.OffsetDateTime
 
 object Aliases {
-/**
- * The protection bypass for the alias
- */
-data class ListAliasesForDeploymentResponseAliasesItemProtectionBypassValueVariant0(
-    val createdAt: Double,
-    val createdBy: String,
-    val scope: ListAliasesForDeploymentResponseAliasesItemProtectionBypassVaXa086312f20,
-    val expires: Double? = null
-)
+    /** The protection bypass for the alias */
+    data class ListAliasesForDeploymentResponseAliasesItemProtectionBypassValueVariant0(
+        val createdAt: Double,
+        val createdBy: String,
+        val scope: ListAliasesForDeploymentResponseAliasesItemProtectionBypassVaXa086312f20,
+        val expires: Double? = null,
+    )
 
+    /** The protection bypass for the alias */
+    data class ListAliasesForDeploymentResponseAliasesItemProtectionBypassValueVariant1(
+        val access: ListAliasesForDeploymentResponseAliasesItemProtectionBypassVaXbfd726268e,
+        val createdAt: Double,
+        val lastUpdatedAt: Double,
+        val lastUpdatedBy: String,
+        val scope: ListAliasesForDeploymentResponseAliasesItemProtectionBypassVaXe481a65a5d,
+    )
 
+    /** The protection bypass for the alias */
+    data class ListAliasesForDeploymentResponseAliasesItemProtectionBypassValueVariant2(
+        val createdAt: Double,
+        val createdBy: String,
+        val scope: ListAliasesForDeploymentResponseAliasesItemProtectionBypassVaXbc568c6e72,
+    )
 
+    /** The protection bypass for the alias */
+    data class ListAliasesForDeploymentResponseAliasesItemProtectionBypassValueVariant3(
+        val createdAt: Double,
+        val lastUpdatedAt: Double,
+        val lastUpdatedBy: String,
+        val scope: ListAliasesForDeploymentResponseAliasesItemProtectionBypassVaX6c708d7161,
+    )
 
+    /** A list of the aliases assigned to the deployment */
+    data class ListAliasesForDeploymentResponseAliasesItem(
+        /** The alias name, it could be a `.vercel.app` subdomain or a custom domain */
+        val alias: String,
+        /** The date when the alias was created */
+        val created: OffsetDateTime,
+        /** The unique identifier of the alias */
+        val uid: String,
+        /** The protection bypass for the alias */
+        val protectionBypass: Map<String, Any>? = null,
+        /** Target destination domain for redirect when the alias is a redirect */
+        val redirect: String? = null,
+    )
 
-/**
- * The protection bypass for the alias
- */
-data class ListAliasesForDeploymentResponseAliasesItemProtectionBypassValueVariant1(
-    val access: ListAliasesForDeploymentResponseAliasesItemProtectionBypassVaXbfd726268e,
-    val createdAt: Double,
-    val lastUpdatedAt: Double,
-    val lastUpdatedBy: String,
-    val scope: ListAliasesForDeploymentResponseAliasesItemProtectionBypassVaXe481a65a5d
-)
+    data class ListAliasesForDeploymentResponse(
+        /** A list of the aliases assigned to the deployment */
+        val aliases: List<ListAliasesForDeploymentResponseAliasesItem>
+    )
 
-/**
- * The protection bypass for the alias
- */
-data class ListAliasesForDeploymentResponseAliasesItemProtectionBypassValueVariant2(
-    val createdAt: Double,
-    val createdBy: String,
-    val scope: ListAliasesForDeploymentResponseAliasesItemProtectionBypassVaXbc568c6e72
-)
+    data class AssignAliasResponse(
+        /** The assigned alias name */
+        val alias: String,
+        /** The date when the alias was created */
+        val created: OffsetDateTime,
+        /** The unique identifier of the alias */
+        val uid: String,
+        /**
+         * The unique identifier of the previously aliased deployment, only received when the alias
+         * was used before
+         */
+        val oldDeploymentId: String? = null,
+    )
 
-/**
- * The protection bypass for the alias
- */
-data class ListAliasesForDeploymentResponseAliasesItemProtectionBypassValueVariant3(
-    val createdAt: Double,
-    val lastUpdatedAt: Double,
-    val lastUpdatedBy: String,
-    val scope: ListAliasesForDeploymentResponseAliasesItemProtectionBypassVaX6c708d7161
-)
+    /** Information of the user who created the alias */
+    data class ListAliasesResponseAliasesItemCreator(
+        /** ID of the user who created the alias */
+        val uid: String,
+        /** Email of the user who created the alias */
+        val email: String? = null,
+        /** Username of the user who created the alias */
+        val username: String? = null,
+    )
 
-/**
- * A list of the aliases assigned to the deployment
- */
-data class ListAliasesForDeploymentResponseAliasesItem(
-    /**
-     * The alias name, it could be a `.vercel.app` subdomain or a custom domain
-     */
-    val alias: String,
-    /**
-     * The date when the alias was created
-     */
-    val created: OffsetDateTime,
-    /**
-     * The unique identifier of the alias
-     */
-    val uid: String,
-    /**
-     * The protection bypass for the alias
-     */
-    val protectionBypass: Map<String, Any>? = null,
-    /**
-     * Target destination domain for redirect when the alias is a redirect
-     */
-    val redirect: String? = null
-)
+    /** A map with the deployment ID, URL and metadata */
+    data class ListAliasesResponseAliasesItemDeployment(
+        /** The deployment unique identifier */
+        val id: String,
+        /** The deployment metadata */
+        val meta: String? = null,
+        /** The deployment unique URL */
+        val url: String? = null,
+    )
 
-data class ListAliasesForDeploymentResponse(
-    /**
-     * A list of the aliases assigned to the deployment
-     */
-    val aliases: List<ListAliasesForDeploymentResponseAliasesItem>
-)
+    /** A list of the deployment routing information for each project. */
+    data class ListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant0Item(
+        /**
+         * This is always set. In production it is used as a pointer to each apps production
+         * deployment. For pre-production, it's used as the fallback if there is no deployment for
+         * the branch.
+         */
+        val fallbackHost: String,
+        /** The project ID of the microfrontends application. */
+        val projectId: String,
+    )
 
-data class AssignAliasResponse(
-    /**
-     * The assigned alias name
-     */
-    val alias: String,
-    /**
-     * The date when the alias was created
-     */
-    val created: OffsetDateTime,
-    /**
-     * The unique identifier of the alias
-     */
-    val uid: String,
-    /**
-     * The unique identifier of the previously aliased deployment, only received when the alias was used before
-     */
-    val oldDeploymentId: String? = null
-)
+    /** A list of the deployment routing information for each project. */
+    data class ListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant1Item(
+        /**
+         * Could point to a branch without a deployment if the project was never deployed. The proxy
+         * will fallback to the fallbackHost if there is no deployment.
+         */
+        val branchAlias: String,
+        /**
+         * This is always set. For branch aliases, it's used as the fallback if there is no
+         * deployment for the branch.
+         */
+        val fallbackHost: String,
+        /** The project ID of the microfrontends application. */
+        val projectId: String,
+    )
 
-/**
- * Information of the user who created the alias
- */
-data class ListAliasesResponseAliasesItemCreator(
-    /**
-     * ID of the user who created the alias
-     */
-    val uid: String,
-    /**
-     * Email of the user who created the alias
-     */
-    val email: String? = null,
-    /**
-     * Username of the user who created the alias
-     */
-    val username: String? = null
-)
+    /** A list of the deployment routing information for each project. */
+    data class ListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant2Item(
+        /** The project ID of the microfrontends application. */
+        val projectId: String,
+        val branchAlias: String? = null,
+        /**
+         * This is the latest non-cancelled deployment of the branch alias at the time the commit
+         * alias was created. It is possible there is no deployment for the branch, or this was set
+         * before the deployment was canceled, in which case this will point to a cancelled
+         * deployment, in either case the proxy will fallback to the fallbackDeploymentId.
+         */
+        val branchDeploymentId: String? = null,
+        /**
+         * This is the deployment for the same commit, it could be a cancelled deployment. The proxy
+         * will fallback to the branchDeploymentId and then the fallbackDeploymentId.
+         */
+        val deploymentId: String? = null,
+        /**
+         * This is the deployment of the fallback host at the time the commit alias was created. It
+         * is possible for this to be a deleted deployment, in which case the proxy will show that
+         * the deployment is deleted. It will not use the fallbackHost, as a future deployment on
+         * the fallback host could be invalid for this deployment, and it could lead to confusion /
+         * incorrect behavior for the commit alias.
+         */
+        val fallbackDeploymentId: String? = null,
+        /** Temporary for backwards compatibility. Can remove when metadata change is released */
+        val fallbackHost: String? = null,
+    )
 
-/**
- * A map with the deployment ID, URL and metadata
- */
-data class ListAliasesResponseAliasesItemDeployment(
-    /**
-     * The deployment unique identifier
-     */
-    val id: String,
-    /**
-     * The deployment metadata
-     */
-    val meta: String? = null,
-    /**
-     * The deployment unique URL
-     */
-    val url: String? = null
-)
+    data class ListAliasesResponseAliasesItemMicrofrontendsDefaultApp(val projectId: String)
 
-/**
- * A list of the deployment routing information for each project.
- */
-data class ListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant0Item(
-    /**
-     * This is always set. In production it is used as a pointer to each apps production deployment. For pre-production, it's used as the fallback if there is no deployment for the branch.
-     */
-    val fallbackHost: String,
-    /**
-     * The project ID of the microfrontends application.
-     */
-    val projectId: String
-)
+    /** The microfrontends for the alias including the routing configuration */
+    data class ListAliasesResponseAliasesItemMicrofrontends(
+        val applications: Any,
+        val defaultApp: ListAliasesResponseAliasesItemMicrofrontendsDefaultApp,
+    )
 
-/**
- * A list of the deployment routing information for each project.
- */
-data class ListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant1Item(
-    /**
-     * Could point to a branch without a deployment if the project was never deployed. The proxy will fallback to the fallbackHost if there is no deployment.
-     */
-    val branchAlias: String,
-    /**
-     * This is always set. For branch aliases, it's used as the fallback if there is no deployment for the branch.
-     */
-    val fallbackHost: String,
-    /**
-     * The project ID of the microfrontends application.
-     */
-    val projectId: String
-)
+    /** The protection bypass for the alias */
+    data class ListAliasesResponseAliasesItemProtectionBypassValueVariant0(
+        val createdAt: Double,
+        val createdBy: String,
+        val scope: ListAliasesResponseAliasesItemProtectionBypassValueVariant0ScopeEnum,
+        val expires: Double? = null,
+    )
 
-/**
- * A list of the deployment routing information for each project.
- */
-data class ListAliasesResponseAliasesItemMicrofrontendsApplicationsVariant2Item(
-    /**
-     * The project ID of the microfrontends application.
-     */
-    val projectId: String,
-    val branchAlias: String? = null,
-    /**
-     * This is the latest non-cancelled deployment of the branch alias at the time the commit alias was created. It is possible there is no deployment for the branch, or this was set before the deployment was canceled, in which case this will point to a cancelled deployment, in either case the proxy will fallback to the fallbackDeploymentId.
-     */
-    val branchDeploymentId: String? = null,
-    /**
-     * This is the deployment for the same commit, it could be a cancelled deployment. The proxy will fallback to the branchDeploymentId and then the fallbackDeploymentId.
-     */
-    val deploymentId: String? = null,
-    /**
-     * This is the deployment of the fallback host at the time the commit alias was created. It is possible for this to be a deleted deployment, in which case the proxy will show that the deployment is deleted. It will not use the fallbackHost, as a future deployment on the fallback host could be invalid for this deployment, and it could lead to confusion / incorrect behavior for the commit alias.
-     */
-    val fallbackDeploymentId: String? = null,
-    /**
-     * Temporary for backwards compatibility. Can remove when metadata change is released
-     */
-    val fallbackHost: String? = null
-)
+    /** The protection bypass for the alias */
+    data class ListAliasesResponseAliasesItemProtectionBypassValueVariant1(
+        val access: ListAliasesResponseAliasesItemProtectionBypassValueVariant1AccessEnum,
+        val createdAt: Double,
+        val lastUpdatedAt: Double,
+        val lastUpdatedBy: String,
+        val scope: ListAliasesResponseAliasesItemProtectionBypassValueVariant1ScopeEnum,
+    )
 
-data class ListAliasesResponseAliasesItemMicrofrontendsDefaultApp(
-    val projectId: String
-)
+    /** The protection bypass for the alias */
+    data class ListAliasesResponseAliasesItemProtectionBypassValueVariant2(
+        val createdAt: Double,
+        val createdBy: String,
+        val scope: ListAliasesResponseAliasesItemProtectionBypassValueVariant2ScopeEnum,
+    )
 
-/**
- * The microfrontends for the alias including the routing configuration
- */
-data class ListAliasesResponseAliasesItemMicrofrontends(
-    val applications: Any,
-    val defaultApp: ListAliasesResponseAliasesItemMicrofrontendsDefaultApp
-)
+    /** The protection bypass for the alias */
+    data class ListAliasesResponseAliasesItemProtectionBypassValueVariant3(
+        val createdAt: Double,
+        val lastUpdatedAt: Double,
+        val lastUpdatedBy: String,
+        val scope: ListAliasesResponseAliasesItemProtectionBypassValueVariant3ScopeEnum,
+    )
 
-/**
- * The protection bypass for the alias
- */
-data class ListAliasesResponseAliasesItemProtectionBypassValueVariant0(
-    val createdAt: Double,
-    val createdBy: String,
-    val scope: ListAliasesResponseAliasesItemProtectionBypassValueVariant0ScopeEnum,
-    val expires: Double? = null
-)
+    data class ListAliasesResponseAliasesItem(
+        /** The alias name, it could be a `.vercel.app` subdomain or a custom domain */
+        val alias: String,
+        /** The date when the alias was created */
+        val created: OffsetDateTime,
+        /** The deployment ID */
+        @com.fasterxml.jackson.annotation.JsonProperty("deploymentId", required = true)
+        val deploymentId: String?,
+        /** The unique identifier of the project */
+        @com.fasterxml.jackson.annotation.JsonProperty("projectId", required = true)
+        val projectId: String?,
+        /** The unique identifier of the alias */
+        val uid: String,
+        /** The date when the alias was created in milliseconds since the UNIX epoch */
+        val createdAt: Double? = null,
+        /** Information of the user who created the alias */
+        val creator: ListAliasesResponseAliasesItemCreator? = null,
+        /** The date when the alias was deleted in milliseconds since the UNIX epoch */
+        val deletedAt: Double? = null,
+        /** A map with the deployment ID, URL and metadata */
+        val deployment: ListAliasesResponseAliasesItemDeployment? = null,
+        /** The microfrontends for the alias including the routing configuration */
+        val microfrontends: ListAliasesResponseAliasesItemMicrofrontends? = null,
+        /** The protection bypass for the alias */
+        val protectionBypass: Map<String, Any>? = null,
+        /** Target destination domain for redirect when the alias is a redirect */
+        val redirect: String? = null,
+        /** Status code to be used on redirect */
+        val redirectStatusCode: Double? = null,
+        /** The date when the alias was updated in milliseconds since the UNIX epoch */
+        val updatedAt: Double? = null,
+    )
 
+    data class ListAliasesResponse(
+        val aliases: List<ListAliasesResponseAliasesItem>,
+        /**
+         * This object contains information related to the pagination of the current request,
+         * including the necessary parameters to get the next or previous page of data.
+         */
+        val pagination: Pagination,
+    )
 
+    /** Information of the user who created the alias */
+    data class GetAliasResponseCreator(
+        /** ID of the user who created the alias */
+        val uid: String,
+        /** Email of the user who created the alias */
+        val email: String? = null,
+        /** Username of the user who created the alias */
+        val username: String? = null,
+    )
 
+    /** A map with the deployment ID, URL and metadata */
+    data class GetAliasResponseDeployment(
+        /** The deployment unique identifier */
+        val id: String,
+        /** The deployment metadata */
+        val meta: String? = null,
+        /** The deployment unique URL */
+        val url: String? = null,
+    )
 
+    /** A list of the deployment routing information for each project. */
+    data class GetAliasResponseMicrofrontendsApplicationsVariant0Item(
+        /**
+         * This is always set. In production it is used as a pointer to each apps production
+         * deployment. For pre-production, it's used as the fallback if there is no deployment for
+         * the branch.
+         */
+        val fallbackHost: String,
+        /** The project ID of the microfrontends application. */
+        val projectId: String,
+    )
 
-/**
- * The protection bypass for the alias
- */
-data class ListAliasesResponseAliasesItemProtectionBypassValueVariant1(
-    val access: ListAliasesResponseAliasesItemProtectionBypassValueVariant1AccessEnum,
-    val createdAt: Double,
-    val lastUpdatedAt: Double,
-    val lastUpdatedBy: String,
-    val scope: ListAliasesResponseAliasesItemProtectionBypassValueVariant1ScopeEnum
-)
+    /** A list of the deployment routing information for each project. */
+    data class GetAliasResponseMicrofrontendsApplicationsVariant1Item(
+        /**
+         * Could point to a branch without a deployment if the project was never deployed. The proxy
+         * will fallback to the fallbackHost if there is no deployment.
+         */
+        val branchAlias: String,
+        /**
+         * This is always set. For branch aliases, it's used as the fallback if there is no
+         * deployment for the branch.
+         */
+        val fallbackHost: String,
+        /** The project ID of the microfrontends application. */
+        val projectId: String,
+    )
 
-/**
- * The protection bypass for the alias
- */
-data class ListAliasesResponseAliasesItemProtectionBypassValueVariant2(
-    val createdAt: Double,
-    val createdBy: String,
-    val scope: ListAliasesResponseAliasesItemProtectionBypassValueVariant2ScopeEnum
-)
+    /** A list of the deployment routing information for each project. */
+    data class GetAliasResponseMicrofrontendsApplicationsVariant2Item(
+        /** The project ID of the microfrontends application. */
+        val projectId: String,
+        val branchAlias: String? = null,
+        /**
+         * This is the latest non-cancelled deployment of the branch alias at the time the commit
+         * alias was created. It is possible there is no deployment for the branch, or this was set
+         * before the deployment was canceled, in which case this will point to a cancelled
+         * deployment, in either case the proxy will fallback to the fallbackDeploymentId.
+         */
+        val branchDeploymentId: String? = null,
+        /**
+         * This is the deployment for the same commit, it could be a cancelled deployment. The proxy
+         * will fallback to the branchDeploymentId and then the fallbackDeploymentId.
+         */
+        val deploymentId: String? = null,
+        /**
+         * This is the deployment of the fallback host at the time the commit alias was created. It
+         * is possible for this to be a deleted deployment, in which case the proxy will show that
+         * the deployment is deleted. It will not use the fallbackHost, as a future deployment on
+         * the fallback host could be invalid for this deployment, and it could lead to confusion /
+         * incorrect behavior for the commit alias.
+         */
+        val fallbackDeploymentId: String? = null,
+        /** Temporary for backwards compatibility. Can remove when metadata change is released */
+        val fallbackHost: String? = null,
+    )
 
-/**
- * The protection bypass for the alias
- */
-data class ListAliasesResponseAliasesItemProtectionBypassValueVariant3(
-    val createdAt: Double,
-    val lastUpdatedAt: Double,
-    val lastUpdatedBy: String,
-    val scope: ListAliasesResponseAliasesItemProtectionBypassValueVariant3ScopeEnum
-)
+    data class GetAliasResponseMicrofrontendsDefaultApp(val projectId: String)
 
-data class ListAliasesResponseAliasesItem(
-    /**
-     * The alias name, it could be a `.vercel.app` subdomain or a custom domain
-     */
-    val alias: String,
-    /**
-     * The date when the alias was created
-     */
-    val created: OffsetDateTime,
-    /**
-     * The deployment ID
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("deploymentId", required = true) val deploymentId: String?,
-    /**
-     * The unique identifier of the project
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("projectId", required = true) val projectId: String?,
-    /**
-     * The unique identifier of the alias
-     */
-    val uid: String,
-    /**
-     * The date when the alias was created in milliseconds since the UNIX epoch
-     */
-    val createdAt: Double? = null,
-    /**
-     * Information of the user who created the alias
-     */
-    val creator: ListAliasesResponseAliasesItemCreator? = null,
-    /**
-     * The date when the alias was deleted in milliseconds since the UNIX epoch
-     */
-    val deletedAt: Double? = null,
-    /**
-     * A map with the deployment ID, URL and metadata
-     */
-    val deployment: ListAliasesResponseAliasesItemDeployment? = null,
-    /**
-     * The microfrontends for the alias including the routing configuration
-     */
-    val microfrontends: ListAliasesResponseAliasesItemMicrofrontends? = null,
-    /**
-     * The protection bypass for the alias
-     */
-    val protectionBypass: Map<String, Any>? = null,
-    /**
-     * Target destination domain for redirect when the alias is a redirect
-     */
-    val redirect: String? = null,
-    /**
-     * Status code to be used on redirect
-     */
-    val redirectStatusCode: Double? = null,
-    /**
-     * The date when the alias was updated in milliseconds since the UNIX epoch
-     */
-    val updatedAt: Double? = null
-)
+    /** The microfrontends for the alias including the routing configuration */
+    data class GetAliasResponseMicrofrontends(
+        val applications: Any,
+        val defaultApp: GetAliasResponseMicrofrontendsDefaultApp,
+    )
 
-data class ListAliasesResponse(
-    val aliases: List<ListAliasesResponseAliasesItem>,
-    /**
-     * This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
-     */
-    val pagination: Pagination
-)
+    /** The protection bypass for the alias */
+    data class GetAliasResponseProtectionBypassValueVariant0(
+        val createdAt: Double,
+        val createdBy: String,
+        val scope: GetAliasResponseProtectionBypassValueVariant0ScopeEnum,
+        val expires: Double? = null,
+    )
 
-/**
- * Information of the user who created the alias
- */
-data class GetAliasResponseCreator(
-    /**
-     * ID of the user who created the alias
-     */
-    val uid: String,
-    /**
-     * Email of the user who created the alias
-     */
-    val email: String? = null,
-    /**
-     * Username of the user who created the alias
-     */
-    val username: String? = null
-)
+    /** The protection bypass for the alias */
+    data class GetAliasResponseProtectionBypassValueVariant1(
+        val access: GetAliasResponseProtectionBypassValueVariant1AccessEnum,
+        val createdAt: Double,
+        val lastUpdatedAt: Double,
+        val lastUpdatedBy: String,
+        val scope: GetAliasResponseProtectionBypassValueVariant1ScopeEnum,
+    )
 
-/**
- * A map with the deployment ID, URL and metadata
- */
-data class GetAliasResponseDeployment(
-    /**
-     * The deployment unique identifier
-     */
-    val id: String,
-    /**
-     * The deployment metadata
-     */
-    val meta: String? = null,
-    /**
-     * The deployment unique URL
-     */
-    val url: String? = null
-)
+    /** The protection bypass for the alias */
+    data class GetAliasResponseProtectionBypassValueVariant2(
+        val createdAt: Double,
+        val createdBy: String,
+        val scope: GetAliasResponseProtectionBypassValueVariant2ScopeEnum,
+    )
 
-/**
- * A list of the deployment routing information for each project.
- */
-data class GetAliasResponseMicrofrontendsApplicationsVariant0Item(
-    /**
-     * This is always set. In production it is used as a pointer to each apps production deployment. For pre-production, it's used as the fallback if there is no deployment for the branch.
-     */
-    val fallbackHost: String,
-    /**
-     * The project ID of the microfrontends application.
-     */
-    val projectId: String
-)
+    /** The protection bypass for the alias */
+    data class GetAliasResponseProtectionBypassValueVariant3(
+        val createdAt: Double,
+        val lastUpdatedAt: Double,
+        val lastUpdatedBy: String,
+        val scope: GetAliasResponseProtectionBypassValueVariant3ScopeEnum,
+    )
 
-/**
- * A list of the deployment routing information for each project.
- */
-data class GetAliasResponseMicrofrontendsApplicationsVariant1Item(
-    /**
-     * Could point to a branch without a deployment if the project was never deployed. The proxy will fallback to the fallbackHost if there is no deployment.
-     */
-    val branchAlias: String,
-    /**
-     * This is always set. For branch aliases, it's used as the fallback if there is no deployment for the branch.
-     */
-    val fallbackHost: String,
-    /**
-     * The project ID of the microfrontends application.
-     */
-    val projectId: String
-)
+    data class GetAliasResponse(
+        /** The alias name, it could be a `.vercel.app` subdomain or a custom domain */
+        val alias: String,
+        /** The date when the alias was created */
+        val created: OffsetDateTime,
+        /** The deployment ID */
+        @com.fasterxml.jackson.annotation.JsonProperty("deploymentId", required = true)
+        val deploymentId: String?,
+        /** The unique identifier of the project */
+        @com.fasterxml.jackson.annotation.JsonProperty("projectId", required = true)
+        val projectId: String?,
+        /** The unique identifier of the alias */
+        val uid: String,
+        /** The date when the alias was created in milliseconds since the UNIX epoch */
+        val createdAt: Double? = null,
+        /** Information of the user who created the alias */
+        val creator: GetAliasResponseCreator? = null,
+        /** The date when the alias was deleted in milliseconds since the UNIX epoch */
+        val deletedAt: Double? = null,
+        /** A map with the deployment ID, URL and metadata */
+        val deployment: GetAliasResponseDeployment? = null,
+        /** The microfrontends for the alias including the routing configuration */
+        val microfrontends: GetAliasResponseMicrofrontends? = null,
+        /** The protection bypass for the alias */
+        val protectionBypass: Map<String, Any>? = null,
+        /** Target destination domain for redirect when the alias is a redirect */
+        val redirect: String? = null,
+        /** Status code to be used on redirect */
+        val redirectStatusCode: Double? = null,
+        /** The date when the alias was updated in milliseconds since the UNIX epoch */
+        val updatedAt: Double? = null,
+    )
 
-/**
- * A list of the deployment routing information for each project.
- */
-data class GetAliasResponseMicrofrontendsApplicationsVariant2Item(
-    /**
-     * The project ID of the microfrontends application.
-     */
-    val projectId: String,
-    val branchAlias: String? = null,
-    /**
-     * This is the latest non-cancelled deployment of the branch alias at the time the commit alias was created. It is possible there is no deployment for the branch, or this was set before the deployment was canceled, in which case this will point to a cancelled deployment, in either case the proxy will fallback to the fallbackDeploymentId.
-     */
-    val branchDeploymentId: String? = null,
-    /**
-     * This is the deployment for the same commit, it could be a cancelled deployment. The proxy will fallback to the branchDeploymentId and then the fallbackDeploymentId.
-     */
-    val deploymentId: String? = null,
-    /**
-     * This is the deployment of the fallback host at the time the commit alias was created. It is possible for this to be a deleted deployment, in which case the proxy will show that the deployment is deleted. It will not use the fallbackHost, as a future deployment on the fallback host could be invalid for this deployment, and it could lead to confusion / incorrect behavior for the commit alias.
-     */
-    val fallbackDeploymentId: String? = null,
-    /**
-     * Temporary for backwards compatibility. Can remove when metadata change is released
-     */
-    val fallbackHost: String? = null
-)
-
-data class GetAliasResponseMicrofrontendsDefaultApp(
-    val projectId: String
-)
-
-/**
- * The microfrontends for the alias including the routing configuration
- */
-data class GetAliasResponseMicrofrontends(
-    val applications: Any,
-    val defaultApp: GetAliasResponseMicrofrontendsDefaultApp
-)
-
-/**
- * The protection bypass for the alias
- */
-data class GetAliasResponseProtectionBypassValueVariant0(
-    val createdAt: Double,
-    val createdBy: String,
-    val scope: GetAliasResponseProtectionBypassValueVariant0ScopeEnum,
-    val expires: Double? = null
-)
-
-
-
-
-
-/**
- * The protection bypass for the alias
- */
-data class GetAliasResponseProtectionBypassValueVariant1(
-    val access: GetAliasResponseProtectionBypassValueVariant1AccessEnum,
-    val createdAt: Double,
-    val lastUpdatedAt: Double,
-    val lastUpdatedBy: String,
-    val scope: GetAliasResponseProtectionBypassValueVariant1ScopeEnum
-)
-
-/**
- * The protection bypass for the alias
- */
-data class GetAliasResponseProtectionBypassValueVariant2(
-    val createdAt: Double,
-    val createdBy: String,
-    val scope: GetAliasResponseProtectionBypassValueVariant2ScopeEnum
-)
-
-/**
- * The protection bypass for the alias
- */
-data class GetAliasResponseProtectionBypassValueVariant3(
-    val createdAt: Double,
-    val lastUpdatedAt: Double,
-    val lastUpdatedBy: String,
-    val scope: GetAliasResponseProtectionBypassValueVariant3ScopeEnum
-)
-
-data class GetAliasResponse(
-    /**
-     * The alias name, it could be a `.vercel.app` subdomain or a custom domain
-     */
-    val alias: String,
-    /**
-     * The date when the alias was created
-     */
-    val created: OffsetDateTime,
-    /**
-     * The deployment ID
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("deploymentId", required = true) val deploymentId: String?,
-    /**
-     * The unique identifier of the project
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("projectId", required = true) val projectId: String?,
-    /**
-     * The unique identifier of the alias
-     */
-    val uid: String,
-    /**
-     * The date when the alias was created in milliseconds since the UNIX epoch
-     */
-    val createdAt: Double? = null,
-    /**
-     * Information of the user who created the alias
-     */
-    val creator: GetAliasResponseCreator? = null,
-    /**
-     * The date when the alias was deleted in milliseconds since the UNIX epoch
-     */
-    val deletedAt: Double? = null,
-    /**
-     * A map with the deployment ID, URL and metadata
-     */
-    val deployment: GetAliasResponseDeployment? = null,
-    /**
-     * The microfrontends for the alias including the routing configuration
-     */
-    val microfrontends: GetAliasResponseMicrofrontends? = null,
-    /**
-     * The protection bypass for the alias
-     */
-    val protectionBypass: Map<String, Any>? = null,
-    /**
-     * Target destination domain for redirect when the alias is a redirect
-     */
-    val redirect: String? = null,
-    /**
-     * Status code to be used on redirect
-     */
-    val redirectStatusCode: Double? = null,
-    /**
-     * The date when the alias was updated in milliseconds since the UNIX epoch
-     */
-    val updatedAt: Double? = null
-)
-
-data class DeleteAliasResponse(
-    val status: DeleteAliasResponseStatusEnum
-)
+    data class DeleteAliasResponse(val status: DeleteAliasResponseStatusEnum)
 
     /** Parameters for [listAliases]. */
     data class ListAliasesRequest(
@@ -564,7 +412,7 @@ data class DeleteAliasResponse(
         val until: Double? = null,
         val rollbackDeploymentId: String? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [getAlias]. */
@@ -575,25 +423,45 @@ data class DeleteAliasResponse(
         val since: Double? = null,
         val until: Double? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /**
-     * Lists aliases assigned to a deployment. Use `teamId` or `slug` to specify the team context, and provide the deployment ID in `id`. The authenticated user or team must own the deployment.
+     * Lists aliases assigned to a deployment. Use `teamId` or `slug` to specify the team context,
+     * and provide the deployment ID in `id`. The authenticated user or team must own the
+     * deployment.
      */
-    fun listAliasesForDeployment(clientConfig: ClientConfig, id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ListAliasesForDeploymentResponse =
-        dev.octri.showcase.vercel.methods.AliasesListAliasesForDeploymentOperation.listAliasesForDeployment(
-            clientConfig,
-            id,
-            teamId,
-            slug,
-            options,
-        )
+    fun listAliasesForDeployment(
+        clientConfig: ClientConfig,
+        id: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ListAliasesForDeploymentResponse =
+        dev.octri.showcase.vercel.methods.AliasesListAliasesForDeploymentOperation
+            .listAliasesForDeployment(
+                clientConfig,
+                id,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Creates an alias for the deployment identified by a deployment or alias ID or URL. Provide the alias name in `alias`, and optionally set `redirect` to route the alias to another hostname with a 307 status code. If the alias is already assigned to another deployment, it is removed from that deployment and assigned to this one.
+     * Creates an alias for the deployment identified by a deployment or alias ID or URL. Provide
+     * the alias name in `alias`, and optionally set `redirect` to route the alias to another
+     * hostname with a 307 status code. If the alias is already assigned to another deployment, it
+     * is removed from that deployment and assigned to this one.
      */
-    fun assignAlias(clientConfig: ClientConfig, id: String, teamId: String? = null, slug: String? = null, alias: String? = null, redirect: SdkClient.SdkOptional<String?>? = null, options: RequestOptions? = null): AssignAliasResponse =
+    fun assignAlias(
+        clientConfig: ClientConfig,
+        id: String,
+        teamId: String? = null,
+        slug: String? = null,
+        alias: String? = null,
+        redirect: SdkClient.SdkOptional<String?>? = null,
+        options: RequestOptions? = null,
+    ): AssignAliasResponse =
         dev.octri.showcase.vercel.methods.AliasesAssignAliasOperation.assignAlias(
             clientConfig,
             id,
@@ -605,9 +473,15 @@ data class DeleteAliasResponse(
         )
 
     /**
-     * Lists aliases for the authenticated user or team, with optional filters for domain, project, creation time, or rollback deployment. Use `limit` to control the number of aliases returned, and inspect `pagination` for the previous and next page values.
+     * Lists aliases for the authenticated user or team, with optional filters for domain, project,
+     * creation time, or rollback deployment. Use `limit` to control the number of aliases returned,
+     * and inspect `pagination` for the previous and next page values.
      */
-    fun listAliases(clientConfig: ClientConfig, request: ListAliasesRequest, options: RequestOptions? = null): ListAliasesResponse =
+    fun listAliases(
+        clientConfig: ClientConfig,
+        request: ListAliasesRequest,
+        options: RequestOptions? = null,
+    ): ListAliasesResponse =
         dev.octri.showcase.vercel.methods.AliasesListAliasesOperation.listAliases(
             clientConfig,
             request,
@@ -615,9 +489,14 @@ data class DeleteAliasResponse(
         )
 
     /**
-     * Retrieves an alias by its hostname or alias ID. Use `projectId` to restrict the result to an alias assigned to a specific project, or use `since` and `until` to filter by creation time.
+     * Retrieves an alias by its hostname or alias ID. Use `projectId` to restrict the result to an
+     * alias assigned to a specific project, or use `since` and `until` to filter by creation time.
      */
-    fun getAlias(clientConfig: ClientConfig, request: GetAliasRequest, options: RequestOptions? = null): GetAliasResponse =
+    fun getAlias(
+        clientConfig: ClientConfig,
+        request: GetAliasRequest,
+        options: RequestOptions? = null,
+    ): GetAliasResponse =
         dev.octri.showcase.vercel.methods.AliasesGetAliasOperation.getAlias(
             clientConfig,
             request,
@@ -625,9 +504,16 @@ data class DeleteAliasResponse(
         )
 
     /**
-     * Deletes an alias by its ID or alias name. Use `teamId` or `slug` to specify the team context for the request. A successful response confirms that the alias was removed.
+     * Deletes an alias by its ID or alias name. Use `teamId` or `slug` to specify the team context
+     * for the request. A successful response confirms that the alias was removed.
      */
-    fun deleteAlias(clientConfig: ClientConfig, aliasId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): DeleteAliasResponse =
+    fun deleteAlias(
+        clientConfig: ClientConfig,
+        aliasId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): DeleteAliasResponse =
         dev.octri.showcase.vercel.methods.AliasesDeleteAliasOperation.deleteAlias(
             clientConfig,
             aliasId,
@@ -637,15 +523,25 @@ data class DeleteAliasResponse(
         )
 
     /**
-     * Updates protection-bypass settings for an alias or deployment URL. Use the request body to configure a shareable link, user-scoped access, or an override for access behavior. The `ttl` value for a shareable link cannot exceed 63,072,000 seconds.
+     * Updates protection-bypass settings for an alias or deployment URL. Use the request body to
+     * configure a shareable link, user-scoped access, or an override for access behavior. The `ttl`
+     * value for a shareable link cannot exceed 63,072,000 seconds.
      */
-    fun patchUrlProtectionBypass(clientConfig: ClientConfig, id: String, teamId: String? = null, slug: String? = null, body: Map<String, Any>? = null, options: RequestOptions? = null): Map<String, Any> =
-        dev.octri.showcase.vercel.methods.AliasesPatchUrlProtectionBypassOperation.patchUrlProtectionBypass(
-            clientConfig,
-            id,
-            teamId,
-            slug,
-            body,
-            options,
-        )
+    fun patchUrlProtectionBypass(
+        clientConfig: ClientConfig,
+        id: String,
+        teamId: String? = null,
+        slug: String? = null,
+        body: Map<String, Any>? = null,
+        options: RequestOptions? = null,
+    ): Map<String, Any> =
+        dev.octri.showcase.vercel.methods.AliasesPatchUrlProtectionBypassOperation
+            .patchUrlProtectionBypass(
+                clientConfig,
+                id,
+                teamId,
+                slug,
+                body,
+                options,
+            )
 }

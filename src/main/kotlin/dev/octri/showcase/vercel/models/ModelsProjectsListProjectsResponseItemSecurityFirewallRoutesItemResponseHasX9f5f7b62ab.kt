@@ -3,7 +3,12 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b62ab(
     val eq: String? = null,
     val gt: Double? = null,
@@ -16,23 +21,39 @@ data class ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b6
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null
+    val suf: String? = null,
 ) : ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue
 
 /**
- * Typed representation of the `ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue` API schema.
+ * Typed representation of the
+ * `ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue` API schema.
  */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue.Deserializer::class)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using =
+        ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue.Deserializer::class
+)
 sealed interface ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<
+            ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue
+        >() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue>> = listOf(ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b62ab::class.java)
+            val objectTypes:
+                List<
+                    Class<
+                        out ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue
+                    >
+                > =
+                listOf(
+                    ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasX9f5f7b62ab::class
+                        .java
+                )
             for (objectType in objectTypes) {
                 try {
                     return mapper.convertValue(node, objectType)
@@ -41,18 +62,41 @@ sealed interface ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasIt
                 }
             }
             return when {
-                node.isTextual -> StringListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue::class.java, "no ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue branch accepts this payload")
+                node.isTextual ->
+                    StringListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
+                        )
+                    )
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue::class
+                            .java,
+                        "no ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class StringListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class StringListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
+) : ListProjectsResponseItemSecurityFirewallRoutesItemResponseHasItemValue
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1(
     val eq: String? = null,
     val gt: Double? = null,
@@ -65,23 +109,30 @@ data class ListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1(
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null
+    val suf: String? = null,
 ) : ListProjectsResponseItemSecurityFirewallRoutesItemSrc
 
 /**
  * Typed representation of the `ListProjectsResponseItemSecurityFirewallRoutesItemSrc` API schema.
  */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = ListProjectsResponseItemSecurityFirewallRoutesItemSrc.Deserializer::class)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = ListProjectsResponseItemSecurityFirewallRoutesItemSrc.Deserializer::class
+)
 sealed interface ListProjectsResponseItemSecurityFirewallRoutesItemSrc {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<ListProjectsResponseItemSecurityFirewallRoutesItemSrc>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<
+            ListProjectsResponseItemSecurityFirewallRoutesItemSrc
+        >() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): ListProjectsResponseItemSecurityFirewallRoutesItemSrc {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out ListProjectsResponseItemSecurityFirewallRoutesItemSrc>> = listOf(ListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1::class.java)
+            val objectTypes:
+                List<Class<out ListProjectsResponseItemSecurityFirewallRoutesItemSrc>> =
+                listOf(ListProjectsResponseItemSecurityFirewallRoutesItemSrcVariant1::class.java)
             for (objectType in objectTypes) {
                 try {
                     return mapper.convertValue(node, objectType)
@@ -90,13 +141,30 @@ sealed interface ListProjectsResponseItemSecurityFirewallRoutesItemSrc {
                 }
             }
             return when {
-                node.isTextual -> StringListProjectsResponseItemSecurityFirewallRoutesItemSrc(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, ListProjectsResponseItemSecurityFirewallRoutesItemSrc::class.java, "no ListProjectsResponseItemSecurityFirewallRoutesItemSrc branch accepts this payload")
+                node.isTextual ->
+                    StringListProjectsResponseItemSecurityFirewallRoutesItemSrc(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
+                        )
+                    )
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        ListProjectsResponseItemSecurityFirewallRoutesItemSrc::class.java,
+                        "no ListProjectsResponseItemSecurityFirewallRoutesItemSrc branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class StringListProjectsResponseItemSecurityFirewallRoutesItemSrc(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : ListProjectsResponseItemSecurityFirewallRoutesItemSrc
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class StringListProjectsResponseItemSecurityFirewallRoutesItemSrc(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
+) : ListProjectsResponseItemSecurityFirewallRoutesItemSrc
