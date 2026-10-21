@@ -3,32 +3,52 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0(
     @com.fasterxml.jackson.annotation.JsonProperty("type", required = true) val type: Any?
 ) : CreateFlagSegmentRequestDataRulesItemConditionsItemLhs
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1(
     @com.fasterxml.jackson.annotation.JsonProperty("type", required = true) val type: Any?,
     val kind: String,
-    val attribute: String
+    val attribute: String,
 ) : CreateFlagSegmentRequestDataRulesItemConditionsItemLhs
 
 /**
  * Typed representation of the `CreateFlagSegmentRequestDataRulesItemConditionsItemLhs` API schema.
  */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = CreateFlagSegmentRequestDataRulesItemConditionsItemLhs.Deserializer::class)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = CreateFlagSegmentRequestDataRulesItemConditionsItemLhs.Deserializer::class
+)
 sealed interface CreateFlagSegmentRequestDataRulesItemConditionsItemLhs {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<CreateFlagSegmentRequestDataRulesItemConditionsItemLhs>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<
+            CreateFlagSegmentRequestDataRulesItemConditionsItemLhs
+        >() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): CreateFlagSegmentRequestDataRulesItemConditionsItemLhs {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = CreateFlagSegmentRequestDataRulesItemConditionsItemLhsOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                CreateFlagSegmentRequestDataRulesItemConditionsItemLhsOwnedTypes.firstOrNull {
+                        (keys, _) ->
+                        keys.any(node::has)
+                    }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -36,59 +56,93 @@ sealed interface CreateFlagSegmentRequestDataRulesItemConditionsItemLhs {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out CreateFlagSegmentRequestDataRulesItemConditionsItemLhs>> = listOf(CreateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0::class.java, CreateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes:
+                List<Class<out CreateFlagSegmentRequestDataRulesItemConditionsItemLhs>> =
+                listOf(
+                    CreateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant0::class.java,
+                    CreateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, CreateFlagSegmentRequestDataRulesItemConditionsItemLhs::class.java, "no CreateFlagSegmentRequestDataRulesItemConditionsItemLhs branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        CreateFlagSegmentRequestDataRulesItemConditionsItemLhs::class.java,
+                        "no CreateFlagSegmentRequestDataRulesItemConditionsItemLhs branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val CreateFlagSegmentRequestDataRulesItemConditionsItemLhsOwnedTypes: List<Pair<List<String>, Class<out CreateFlagSegmentRequestDataRulesItemConditionsItemLhs>>> = listOf(
-    listOf("kind", "attribute") to CreateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1::class.java,
-)
+internal val CreateFlagSegmentRequestDataRulesItemConditionsItemLhsOwnedTypes:
+    List<Pair<List<String>, Class<out CreateFlagSegmentRequestDataRulesItemConditionsItemLhs>>> =
+    listOf(
+        listOf("kind", "attribute") to
+            CreateFlagSegmentRequestDataRulesItemConditionsItemLhsVariant1::class.java
+    )
 
 data class CreateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantXf66be3bd8a(
     @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Double,
     val label: String? = null,
-    val note: String? = null
+    val note: String? = null,
 )
 
 data class CreateFlagSegmentRequestDataRulesItemConditionsItemRhsVariantXe556a5abef(
     @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
     val label: String? = null,
-    val note: String? = null
+    val note: String? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0(
     val type: CreateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0TypeEnum,
-    val items: List<Any>
+    val items: List<Any>,
 ) : CreateFlagSegmentRequestDataRulesItemConditionsItemRhs
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1(
     @com.fasterxml.jackson.annotation.JsonProperty("type", required = true) val type: Any?,
     val pattern: String,
-    val flags: String
+    val flags: String,
 ) : CreateFlagSegmentRequestDataRulesItemConditionsItemRhs
 
 /**
  * Typed representation of the `CreateFlagSegmentRequestDataRulesItemConditionsItemRhs` API schema.
  */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = CreateFlagSegmentRequestDataRulesItemConditionsItemRhs.Deserializer::class)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = CreateFlagSegmentRequestDataRulesItemConditionsItemRhs.Deserializer::class
+)
 sealed interface CreateFlagSegmentRequestDataRulesItemConditionsItemRhs {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<CreateFlagSegmentRequestDataRulesItemConditionsItemRhs>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<
+            CreateFlagSegmentRequestDataRulesItemConditionsItemRhs
+        >() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): CreateFlagSegmentRequestDataRulesItemConditionsItemRhs {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = CreateFlagSegmentRequestDataRulesItemConditionsItemRhsOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                CreateFlagSegmentRequestDataRulesItemConditionsItemRhsOwnedTypes.firstOrNull {
+                        (keys, _) ->
+                        keys.any(node::has)
+                    }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -96,34 +150,93 @@ sealed interface CreateFlagSegmentRequestDataRulesItemConditionsItemRhs {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out CreateFlagSegmentRequestDataRulesItemConditionsItemRhs>> = listOf(CreateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0::class.java, CreateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes:
+                List<Class<out CreateFlagSegmentRequestDataRulesItemConditionsItemRhs>> =
+                listOf(
+                    CreateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0::class.java,
+                    CreateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                node.isTextual -> StringCreateFlagSegmentRequestDataRulesItemConditionsItemRhs(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
-                node.isNumber -> DoubleCreateFlagSegmentRequestDataRulesItemConditionsItemRhs(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Double>() {}))
-                node.isBoolean -> BooleanCreateFlagSegmentRequestDataRulesItemConditionsItemRhs(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {}))
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, CreateFlagSegmentRequestDataRulesItemConditionsItemRhs::class.java, "no CreateFlagSegmentRequestDataRulesItemConditionsItemRhs branch accepts this payload")
+                node.isTextual ->
+                    StringCreateFlagSegmentRequestDataRulesItemConditionsItemRhs(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
+                        )
+                    )
+                node.isNumber ->
+                    DoubleCreateFlagSegmentRequestDataRulesItemConditionsItemRhs(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<Double>() {},
+                        )
+                    )
+                node.isBoolean ->
+                    BooleanCreateFlagSegmentRequestDataRulesItemConditionsItemRhs(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {},
+                        )
+                    )
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        CreateFlagSegmentRequestDataRulesItemConditionsItemRhs::class.java,
+                        "no CreateFlagSegmentRequestDataRulesItemConditionsItemRhs branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val CreateFlagSegmentRequestDataRulesItemConditionsItemRhsOwnedTypes: List<Pair<List<String>, Class<out CreateFlagSegmentRequestDataRulesItemConditionsItemRhs>>> = listOf(
-    listOf("items") to CreateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0::class.java,
-    listOf("pattern", "flags") to CreateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1::class.java,
+internal val CreateFlagSegmentRequestDataRulesItemConditionsItemRhsOwnedTypes:
+    List<Pair<List<String>, Class<out CreateFlagSegmentRequestDataRulesItemConditionsItemRhs>>> =
+    listOf(
+        listOf("items") to
+            CreateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant0::class.java,
+        listOf("pattern", "flags") to
+            CreateFlagSegmentRequestDataRulesItemConditionsItemRhsVariant1::class.java,
+    )
+
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
 )
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class StringCreateFlagSegmentRequestDataRulesItemConditionsItemRhs(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
+) : CreateFlagSegmentRequestDataRulesItemConditionsItemRhs
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class StringCreateFlagSegmentRequestDataRulesItemConditionsItemRhs(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : CreateFlagSegmentRequestDataRulesItemConditionsItemRhs
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class DoubleCreateFlagSegmentRequestDataRulesItemConditionsItemRhs(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Double
+) : CreateFlagSegmentRequestDataRulesItemConditionsItemRhs
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class DoubleCreateFlagSegmentRequestDataRulesItemConditionsItemRhs(@get:com.fasterxml.jackson.annotation.JsonValue val value: Double) : CreateFlagSegmentRequestDataRulesItemConditionsItemRhs
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class BooleanCreateFlagSegmentRequestDataRulesItemConditionsItemRhs(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean
+) : CreateFlagSegmentRequestDataRulesItemConditionsItemRhs
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class BooleanCreateFlagSegmentRequestDataRulesItemConditionsItemRhs(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) : CreateFlagSegmentRequestDataRulesItemConditionsItemRhs
-
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateFlagSegmentRequestDataRulesItemOutcomeVariant0(
     @com.fasterxml.jackson.annotation.JsonProperty("type", required = true) val type: Any?
 ) : CreateFlagSegmentRequestDataRulesItemOutcome
@@ -131,30 +244,42 @@ data class CreateFlagSegmentRequestDataRulesItemOutcomeVariant0(
 data class CreateFlagSegmentRequestDataRulesItemOutcomeVariant1Base(
     @com.fasterxml.jackson.annotation.JsonProperty("type", required = true) val type: Any?,
     val kind: String,
-    val attribute: String
+    val attribute: String,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateFlagSegmentRequestDataRulesItemOutcomeVariant1(
     @com.fasterxml.jackson.annotation.JsonProperty("type", required = true) val type: Any?,
     val base: CreateFlagSegmentRequestDataRulesItemOutcomeVariant1Base,
-    val passPromille: Double
+    val passPromille: Double,
 ) : CreateFlagSegmentRequestDataRulesItemOutcome
 
-/**
- * Typed representation of the `CreateFlagSegmentRequestDataRulesItemOutcome` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = CreateFlagSegmentRequestDataRulesItemOutcome.Deserializer::class)
+/** Typed representation of the `CreateFlagSegmentRequestDataRulesItemOutcome` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = CreateFlagSegmentRequestDataRulesItemOutcome.Deserializer::class
+)
 sealed interface CreateFlagSegmentRequestDataRulesItemOutcome {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<CreateFlagSegmentRequestDataRulesItemOutcome>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<
+            CreateFlagSegmentRequestDataRulesItemOutcome
+        >() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): CreateFlagSegmentRequestDataRulesItemOutcome {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = CreateFlagSegmentRequestDataRulesItemOutcomeOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                CreateFlagSegmentRequestDataRulesItemOutcomeOwnedTypes.firstOrNull { (keys, _) ->
+                        keys.any(node::has)
+                    }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -162,103 +287,206 @@ sealed interface CreateFlagSegmentRequestDataRulesItemOutcome {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out CreateFlagSegmentRequestDataRulesItemOutcome>> = listOf(CreateFlagSegmentRequestDataRulesItemOutcomeVariant0::class.java, CreateFlagSegmentRequestDataRulesItemOutcomeVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out CreateFlagSegmentRequestDataRulesItemOutcome>> =
+                listOf(
+                    CreateFlagSegmentRequestDataRulesItemOutcomeVariant0::class.java,
+                    CreateFlagSegmentRequestDataRulesItemOutcomeVariant1::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, CreateFlagSegmentRequestDataRulesItemOutcome::class.java, "no CreateFlagSegmentRequestDataRulesItemOutcome branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        CreateFlagSegmentRequestDataRulesItemOutcome::class.java,
+                        "no CreateFlagSegmentRequestDataRulesItemOutcome branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val CreateFlagSegmentRequestDataRulesItemOutcomeOwnedTypes: List<Pair<List<String>, Class<out CreateFlagSegmentRequestDataRulesItemOutcome>>> = listOf(
-    listOf("base", "passPromille") to CreateFlagSegmentRequestDataRulesItemOutcomeVariant1::class.java,
-)
+internal val CreateFlagSegmentRequestDataRulesItemOutcomeOwnedTypes:
+    List<Pair<List<String>, Class<out CreateFlagSegmentRequestDataRulesItemOutcome>>> =
+    listOf(
+        listOf("base", "passPromille") to
+            CreateFlagSegmentRequestDataRulesItemOutcomeVariant1::class.java
+    )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateFlagSegmentResponseDataRulesItemConditionsItemLhsVariant0(
     val type: CreateFlagSegmentResponseDataRulesItemConditionsItemLhsVariant0TypeEnum
 ) : CreateFlagSegmentResponseDataRulesItemConditionsItemLhs
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateFlagSegmentResponseDataRulesItemConditionsItemLhsVariant1(
     val attribute: String,
     val kind: String,
-    val type: CreateFlagSegmentResponseDataRulesItemConditionsItemLhsVariant1TypeEnum
+    val type: CreateFlagSegmentResponseDataRulesItemConditionsItemLhsVariant1TypeEnum,
 ) : CreateFlagSegmentResponseDataRulesItemConditionsItemLhs
 
 /**
  * Typed representation of the `CreateFlagSegmentResponseDataRulesItemConditionsItemLhs` API schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "type",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateFlagSegmentResponseDataRulesItemConditionsItemLhsVariant0::class, name = "segment"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateFlagSegmentResponseDataRulesItemConditionsItemLhsVariant1::class, name = "entity")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateFlagSegmentResponseDataRulesItemConditionsItemLhsVariant0::class,
+        name = "segment",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateFlagSegmentResponseDataRulesItemConditionsItemLhsVariant1::class,
+        name = "entity",
+    ),
 )
 sealed interface CreateFlagSegmentResponseDataRulesItemConditionsItemLhs
 
 data class CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVarianX3173f7e6c6(
     @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Double,
     val label: String? = null,
-    val note: String? = null
+    val note: String? = null,
 )
 
 data class CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVarianXfecc41a39e(
     @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
     val label: String? = null,
-    val note: String? = null
+    val note: String? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVariant2(
     val items: List<Any>,
-    val type: CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVariant2TypeEnum
+    val type: CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVariant2TypeEnum,
 ) : CreateFlagSegmentResponseDataRulesItemConditionsItemRhs
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVariant3(
     val flags: String,
     val pattern: String,
-    val type: CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVariant3TypeEnum
+    val type: CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVariant3TypeEnum,
 ) : CreateFlagSegmentResponseDataRulesItemConditionsItemRhs
 
 /**
  * Typed representation of the `CreateFlagSegmentResponseDataRulesItemConditionsItemRhs` API schema.
  */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = CreateFlagSegmentResponseDataRulesItemConditionsItemRhs.Deserializer::class)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = CreateFlagSegmentResponseDataRulesItemConditionsItemRhs.Deserializer::class
+)
 sealed interface CreateFlagSegmentResponseDataRulesItemConditionsItemRhs {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<CreateFlagSegmentResponseDataRulesItemConditionsItemRhs>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<
+            CreateFlagSegmentResponseDataRulesItemConditionsItemRhs
+        >() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): CreateFlagSegmentResponseDataRulesItemConditionsItemRhs {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out CreateFlagSegmentResponseDataRulesItemConditionsItemRhs>> = listOf(CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVariant2::class.java, CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVariant3::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes:
+                List<Class<out CreateFlagSegmentResponseDataRulesItemConditionsItemRhs>> =
+                listOf(
+                    CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVariant2::class.java,
+                    CreateFlagSegmentResponseDataRulesItemConditionsItemRhsVariant3::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                node.isTextual -> StringCreateFlagSegmentResponseDataRulesItemConditionsItemRhs(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
-                node.isNumber -> DoubleCreateFlagSegmentResponseDataRulesItemConditionsItemRhs(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Double>() {}))
-                node.isBoolean -> BooleanCreateFlagSegmentResponseDataRulesItemConditionsItemRhs(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {}))
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, CreateFlagSegmentResponseDataRulesItemConditionsItemRhs::class.java, "no CreateFlagSegmentResponseDataRulesItemConditionsItemRhs branch accepts this payload")
+                node.isTextual ->
+                    StringCreateFlagSegmentResponseDataRulesItemConditionsItemRhs(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
+                        )
+                    )
+                node.isNumber ->
+                    DoubleCreateFlagSegmentResponseDataRulesItemConditionsItemRhs(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<Double>() {},
+                        )
+                    )
+                node.isBoolean ->
+                    BooleanCreateFlagSegmentResponseDataRulesItemConditionsItemRhs(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {},
+                        )
+                    )
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        CreateFlagSegmentResponseDataRulesItemConditionsItemRhs::class.java,
+                        "no CreateFlagSegmentResponseDataRulesItemConditionsItemRhs branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class StringCreateFlagSegmentResponseDataRulesItemConditionsItemRhs(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : CreateFlagSegmentResponseDataRulesItemConditionsItemRhs
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class StringCreateFlagSegmentResponseDataRulesItemConditionsItemRhs(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
+) : CreateFlagSegmentResponseDataRulesItemConditionsItemRhs
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class DoubleCreateFlagSegmentResponseDataRulesItemConditionsItemRhs(@get:com.fasterxml.jackson.annotation.JsonValue val value: Double) : CreateFlagSegmentResponseDataRulesItemConditionsItemRhs
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class DoubleCreateFlagSegmentResponseDataRulesItemConditionsItemRhs(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Double
+) : CreateFlagSegmentResponseDataRulesItemConditionsItemRhs
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class BooleanCreateFlagSegmentResponseDataRulesItemConditionsItemRhs(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) : CreateFlagSegmentResponseDataRulesItemConditionsItemRhs
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class BooleanCreateFlagSegmentResponseDataRulesItemConditionsItemRhs(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean
+) : CreateFlagSegmentResponseDataRulesItemConditionsItemRhs
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateFlagSegmentResponseDataRulesItemOutcomeVariant0(
     val type: CreateFlagSegmentResponseDataRulesItemOutcomeVariant0TypeEnum
 ) : CreateFlagSegmentResponseDataRulesItemOutcome
@@ -266,53 +494,66 @@ data class CreateFlagSegmentResponseDataRulesItemOutcomeVariant0(
 data class CreateFlagSegmentResponseDataRulesItemOutcomeVariant1Base(
     val attribute: String,
     val kind: String,
-    val type: CreateFlagSegmentResponseDataRulesItemOutcomeVariant1BaseTypeEnum
+    val type: CreateFlagSegmentResponseDataRulesItemOutcomeVariant1BaseTypeEnum,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateFlagSegmentResponseDataRulesItemOutcomeVariant1(
     val base: CreateFlagSegmentResponseDataRulesItemOutcomeVariant1Base,
     val passPromille: Double,
-    val type: CreateFlagSegmentResponseDataRulesItemOutcomeVariant1TypeEnum
+    val type: CreateFlagSegmentResponseDataRulesItemOutcomeVariant1TypeEnum,
 ) : CreateFlagSegmentResponseDataRulesItemOutcome
 
-/**
- * Typed representation of the `CreateFlagSegmentResponseDataRulesItemOutcome` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
+/** Typed representation of the `CreateFlagSegmentResponseDataRulesItemOutcome` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "type",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateFlagSegmentResponseDataRulesItemOutcomeVariant0::class, name = "all"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateFlagSegmentResponseDataRulesItemOutcomeVariant1::class, name = "split")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateFlagSegmentResponseDataRulesItemOutcomeVariant0::class,
+        name = "all",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateFlagSegmentResponseDataRulesItemOutcomeVariant1::class,
+        name = "split",
+    ),
 )
 sealed interface CreateFlagSegmentResponseDataRulesItemOutcome
 
 data class FlagEnvironmentsValueFallthroughVariant0(
     val type: FlagEnvironmentsValueFallthroughVariant0TypeEnum,
-    val variantId: String
+    val variantId: String,
 )
 
 data class FlagEnvironmentsValueFallthroughVariant1Base(
     val attribute: String,
     val kind: String,
-    val type: FlagEnvironmentsValueFallthroughVariant1BaseTypeEnum
+    val type: FlagEnvironmentsValueFallthroughVariant1BaseTypeEnum,
 )
 
 data class FlagEnvironmentsValueFallthroughVariant1(
     val base: FlagEnvironmentsValueFallthroughVariant1Base,
     val defaultVariantId: String,
     val type: FlagEnvironmentsValueFallthroughVariant1TypeEnum,
-    val weights: Map<String, Double>
+    val weights: Map<String, Double>,
 )
 
 data class FlagEnvironmentsValueFallthroughVariant2Base(
     val attribute: String,
     val kind: String,
-    val type: FlagEnvironmentsValueFallthroughVariant2BaseTypeEnum
+    val type: FlagEnvironmentsValueFallthroughVariant2BaseTypeEnum,
 )
 
 data class FlagEnvironmentsValueFallthroughVariant2SlotsItem(
     val durationMs: Double,
-    val promille: Double
+    val promille: Double,
 )
 
 data class FlagEnvironmentsValueFallthroughVariant2(
@@ -323,7 +564,7 @@ data class FlagEnvironmentsValueFallthroughVariant2(
     val slots: List<FlagEnvironmentsValueFallthroughVariant2SlotsItem>,
     val startTimestamp: Double,
     val type: FlagEnvironmentsValueFallthroughVariant2TypeEnum,
-    val finalPromille: Double? = null
+    val finalPromille: Double? = null,
 )
 
 data class FlagEnvironmentsValueFallthroughVariant3(
@@ -332,7 +573,7 @@ data class FlagEnvironmentsValueFallthroughVariant3(
 
 data class FlagEnvironmentsValuePausedOutcome(
     val type: FlagEnvironmentsValuePausedOutcomeTypeEnum,
-    val variantId: String
+    val variantId: String,
 )
 
 data class FlagEnvironmentsValueRulesItemConditionsItemLhsVariant0(
@@ -342,70 +583,68 @@ data class FlagEnvironmentsValueRulesItemConditionsItemLhsVariant0(
 data class FlagEnvironmentsValueRulesItemConditionsItemLhsVariant1(
     val attribute: String,
     val kind: String,
-    val type: FlagEnvironmentsValueRulesItemConditionsItemLhsVariant1TypeEnum
+    val type: FlagEnvironmentsValueRulesItemConditionsItemLhsVariant1TypeEnum,
 )
 
-data class FlagEnvironmentsValueRulesItemConditionsItemCmpOptions(
-    val ignoreCase: Boolean? = null
-)
+data class FlagEnvironmentsValueRulesItemConditionsItemCmpOptions(val ignoreCase: Boolean? = null)
 
 data class FlagEnvironmentsValueRulesItemConditionsItemRhsVariant2ItemsItemVariant0(
     @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Double,
     val label: String? = null,
-    val note: String? = null
+    val note: String? = null,
 )
 
 data class FlagEnvironmentsValueRulesItemConditionsItemRhsVariant2ItemsItemVariant1(
     @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
     val label: String? = null,
-    val note: String? = null
+    val note: String? = null,
 )
 
 data class FlagEnvironmentsValueRulesItemConditionsItemRhsVariant2(
     val items: List<Any>,
-    val type: FlagEnvironmentsValueRulesItemConditionsItemRhsVariant2TypeEnum
+    val type: FlagEnvironmentsValueRulesItemConditionsItemRhsVariant2TypeEnum,
 )
 
 data class FlagEnvironmentsValueRulesItemConditionsItemRhsVariant3(
     val flags: String,
     val pattern: String,
-    val type: FlagEnvironmentsValueRulesItemConditionsItemRhsVariant3TypeEnum
+    val type: FlagEnvironmentsValueRulesItemConditionsItemRhsVariant3TypeEnum,
 )
 
 data class FlagEnvironmentsValueRulesItemConditionsItem(
     val cmp: FlagEnvironmentsValueRulesItemConditionsItemCmpEnum,
     val lhs: Any,
     val cmpOptions: FlagEnvironmentsValueRulesItemConditionsItemCmpOptions? = null,
-    val rhs: Any? = null
+    val rhs: Any? = null,
 )
 
 data class FlagEnvironmentsValueRulesItemOutcomeVariant0(
     val type: FlagEnvironmentsValueRulesItemOutcomeVariant0TypeEnum,
-    val variantId: String
+    val variantId: String,
 )
 
 data class FlagEnvironmentsValueRulesItemOutcomeVariant1Base(
     val attribute: String,
     val kind: String,
-    val type: FlagEnvironmentsValueRulesItemOutcomeVariant1BaseTypeEnum
+    val type: FlagEnvironmentsValueRulesItemOutcomeVariant1BaseTypeEnum,
 )
 
 data class FlagEnvironmentsValueRulesItemOutcomeVariant1(
     val base: FlagEnvironmentsValueRulesItemOutcomeVariant1Base,
     val defaultVariantId: String,
     val type: FlagEnvironmentsValueRulesItemOutcomeVariant1TypeEnum,
-    val weights: Map<String, Double>
+    val weights: Map<String, Double>,
 )
 
 data class FlagEnvironmentsValueRulesItemOutcomeVariant2Base(
     val attribute: String,
     val kind: String,
-    val type: FlagEnvironmentsValueRulesItemOutcomeVariant2BaseTypeEnum
+    val type: FlagEnvironmentsValueRulesItemOutcomeVariant2BaseTypeEnum,
 )
 
 data class FlagEnvironmentsValueRulesItemOutcomeVariant2SlotsItem(
     val durationMs: Double,
-    val promille: Double
+    val promille: Double,
 )
 
 data class FlagEnvironmentsValueRulesItemOutcomeVariant2(
@@ -416,7 +655,7 @@ data class FlagEnvironmentsValueRulesItemOutcomeVariant2(
     val slots: List<FlagEnvironmentsValueRulesItemOutcomeVariant2SlotsItem>,
     val startTimestamp: Double,
     val type: FlagEnvironmentsValueRulesItemOutcomeVariant2TypeEnum,
-    val finalPromille: Double? = null
+    val finalPromille: Double? = null,
 )
 
 data class FlagEnvironmentsValueRulesItemOutcomeVariant3(
@@ -426,17 +665,17 @@ data class FlagEnvironmentsValueRulesItemOutcomeVariant3(
 data class FlagEnvironmentsValueRulesItem(
     val conditions: List<FlagEnvironmentsValueRulesItemConditionsItem>,
     val id: String,
-    val outcome: Any
+    val outcome: Any,
 )
 
 data class FlagEnvironmentsValueReuse(
     val active: Boolean,
-    val environment: String
+    val environment: String,
 )
 
 data class FlagEnvironmentsValueTargetsValueValueValueItem(
     @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val note: String? = null
+    val note: String? = null,
 )
 
 data class FlagEnvironmentsValue(
@@ -446,142 +685,88 @@ data class FlagEnvironmentsValue(
     val rules: List<FlagEnvironmentsValueRulesItem>,
     val reuse: FlagEnvironmentsValueReuse? = null,
     val revision: Double? = null,
-    val targets: Map<String, Map<String, Map<String, List<FlagEnvironmentsValueTargetsValueValueValueItem>>>>? = null
+    val targets:
+        Map<
+            String,
+            Map<String, Map<String, List<FlagEnvironmentsValueTargetsValueValueValueItem>>>,
+        >? =
+        null,
 )
 
-/**
- * Required object value serialized in the `variants[]` wire field.
- */
+/** Required object value serialized in the `variants[]` wire field. */
 data class FlagVariantsItem(
-    /**
-     * Required `string` value serialized in the `id` wire field.
-     */
+    /** Required `string` value serialized in the `id` wire field. */
     val id: String,
-    /**
-     * Required API value serialized in the `value` wire field.
-     */
+    /** Required API value serialized in the `value` wire field. */
     @com.fasterxml.jackson.annotation.JsonProperty("value", required = true) val `value`: Any?,
-    /**
-     * Optional `string` value serialized in the `description` wire field.
-     */
+    /** Optional `string` value serialized in the `description` wire field. */
     val description: String? = null,
-    /**
-     * Optional `string` value serialized in the `label` wire field.
-     */
-    val label: String? = null
+    /** Optional `string` value serialized in the `label` wire field. */
+    val label: String? = null,
 )
 
-/**
- * Optional object value serialized in the `creator` wire field.
- */
+/** Optional object value serialized in the `creator` wire field. */
 data class FlagMetadataCreator(
-    /**
-     * Required `string` value serialized in the `id` wire field.
-     */
+    /** Required `string` value serialized in the `id` wire field. */
     val id: String,
-    /**
-     * Required `string` value serialized in the `name` wire field.
-     */
-    val name: String
+    /** Required `string` value serialized in the `name` wire field. */
+    val name: String,
 )
 
-/**
- * Optional object value serialized in the `metadata` wire field.
- */
+/** Optional object value serialized in the `metadata` wire field. */
 data class FlagMetadata(
-    /**
-     * Optional object value serialized in the `creator` wire field.
-     */
+    /** Optional object value serialized in the `creator` wire field. */
     val creator: FlagMetadataCreator? = null
 )
 
-/**
- * Typed representation of the `Flag` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+/** Typed representation of the `Flag` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class Flag(
-    /**
-     * Required `number` value serialized in the `createdAt` wire field.
-     */
+    /** Required `number` value serialized in the `createdAt` wire field. */
     val createdAt: Double,
-    /**
-     * Required `string` value serialized in the `createdBy` wire field.
-     */
+    /** Required `string` value serialized in the `createdBy` wire field. */
     val createdBy: String,
-    /**
-     * Required object value serialized in the `environments` wire field.
-     */
+    /** Required object value serialized in the `environments` wire field. */
     val environments: Map<String, FlagEnvironmentsValue>,
-    /**
-     * Required `string` value serialized in the `id` wire field.
-     */
+    /** Required `string` value serialized in the `id` wire field. */
     val id: String,
-    /**
-     * Required enumerated value serialized in the `kind` wire field.
-     */
+    /** Required enumerated value serialized in the `kind` wire field. */
     val kind: FlagKindEnum,
-    /**
-     * Required `string` value serialized in the `ownerId` wire field.
-     */
+    /** Required `string` value serialized in the `ownerId` wire field. */
     val ownerId: String,
-    /**
-     * Required `string` value serialized in the `projectId` wire field.
-     */
+    /** Required `string` value serialized in the `projectId` wire field. */
     val projectId: String,
-    /**
-     * Required `number` value serialized in the `revision` wire field.
-     */
+    /** Required `number` value serialized in the `revision` wire field. */
     val revision: Double,
-    /**
-     * Required `number` value serialized in the `seed` wire field.
-     */
+    /** Required `number` value serialized in the `seed` wire field. */
     val seed: Double,
-    /**
-     * Required `string` value serialized in the `slug` wire field.
-     */
+    /** Required `string` value serialized in the `slug` wire field. */
     val slug: String,
-    /**
-     * Required enumerated value serialized in the `state` wire field.
-     */
+    /** Required enumerated value serialized in the `state` wire field. */
     val state: FlagStateEnum,
-    /**
-     * Required enumerated value serialized in the `typeName` wire field.
-     */
+    /** Required enumerated value serialized in the `typeName` wire field. */
     val typeName: FlagTypeNameEnum,
-    /**
-     * Required `number` value serialized in the `updatedAt` wire field.
-     */
+    /** Required `number` value serialized in the `updatedAt` wire field. */
     val updatedAt: Double,
-    /**
-     * Required array value serialized in the `variants` wire field.
-     */
+    /** Required array value serialized in the `variants` wire field. */
     val variants: List<FlagVariantsItem>,
-    /**
-     * Optional `string` value serialized in the `description` wire field.
-     */
+    /** Optional `string` value serialized in the `description` wire field. */
     val description: String? = null,
-    /**
-     * Optional array value serialized in the `maintainerIds` wire field.
-     */
+    /** Optional array value serialized in the `maintainerIds` wire field. */
     val maintainerIds: List<String>? = null,
-    /**
-     * Optional enumerated value serialized in the `permanent` wire field.
-     */
+    /** Optional enumerated value serialized in the `permanent` wire field. */
     val permanent: Boolean? = null,
-    /**
-     * Optional enumerated value serialized in the `seenInProduction` wire field.
-     */
+    /** Optional enumerated value serialized in the `seenInProduction` wire field. */
     val seenInProduction: Boolean? = null,
-    /**
-     * Optional array value serialized in the `tags` wire field.
-     */
+    /** Optional array value serialized in the `tags` wire field. */
     val tags: List<String>? = null,
-    /**
-     * Optional `string` value serialized in the `updatedBy` wire field.
-     */
+    /** Optional `string` value serialized in the `updatedBy` wire field. */
     val updatedBy: String? = null,
-    /**
-     * Optional object value serialized in the `metadata` wire field.
-     */
-    val metadata: FlagMetadata? = null
+    /** Optional object value serialized in the `metadata` wire field. */
+    val metadata: FlagMetadata? = null,
 ) : ListFlagsV2ResponseDataItem, ListTeamFlagsV2ResponseDataItem

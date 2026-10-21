@@ -9,15 +9,40 @@ import dev.octri.showcase.vercel.SdkClient
 
 internal object ProjectsPauseProjectOperation {
     /**
-     * Pauses a project identified by its project ID. Use `teamId` or `slug` to select the team context when needed. When the project disables automatic assignment of custom production domains, pausing also blocks its active production deployment.
+     * Pauses a project identified by its project ID. Use `teamId` or `slug` to select the team
+     * context when needed. When the project disables automatic assignment of custom production
+     * domains, pausing also blocks its active production deployment.
      *
-     * Pause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project disables auto assigning custom production domains and blocks the active Production Deployment then the request will return with 200 status code.
+     * Pause a project by passing its project `id` in the URL. If the project does not exist given
+     * the id then the request will fail with 400 status code. If the project disables auto
+     * assigning custom production domains and blocks the active Production Deployment then the
+     * request will return with 200 status code.
      *
      * @param projectId The unique project identifier
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun pauseProject(clientConfig: ClientConfig, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
-        SdkClient.request<Unit>(SdkClient.RequestSpec("POST", "/v1/projects/${SdkClient.encodePathSegment(projectId)}/pause", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "pauseProject", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+    fun pauseProject(
+        clientConfig: ClientConfig,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "POST",
+                "/v1/projects/${SdkClient.encodePathSegment(projectId)}/pause",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "teamId" to SdkClient.queryValue(teamId, "form", true),
+                        "slug" to SdkClient.queryValue(slug, "form", true),
+                    ),
+                operationId = "pauseProject",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 }

@@ -4,13 +4,16 @@
 package dev.octri.showcase.vercel.models
 
 /**
- * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+ * A list of verification challenges, one of which must be completed to verify the domain for use on
+ * the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to
+ * verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain`
+ * will be checked for a TXT record matching `verification.value`.
  */
 data class ListProjectsDomainsResponseVariant0DomainsItemVerificationItem(
     val domain: String,
     val reason: String,
     val type: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
 )
 
 data class ListProjectsDomainsResponseVariant0DomainsItem(
@@ -18,7 +21,8 @@ data class ListProjectsDomainsResponseVariant0DomainsItem(
     val name: String,
     val projectId: String,
     /**
-     * `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+     * `true` if the domain is verified for use with the project. If `false` it will not be used as
+     * an alias on this project until the challenge in `verification` is completed.
      */
     val verified: Boolean,
     val createdAt: Double? = null,
@@ -28,31 +32,43 @@ data class ListProjectsDomainsResponseVariant0DomainsItem(
     val redirectStatusCode: Double? = null,
     val updatedAt: Double? = null,
     /**
-     * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+     * A list of verification challenges, one of which must be completed to verify the domain for
+     * use on the project. After the challenge is complete `POST
+     * /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If
+     * `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching
+     * `verification.value`.
      */
-    val verification: List<ListProjectsDomainsResponseVariant0DomainsItemVerificationItem>? = null
+    val verification: List<ListProjectsDomainsResponseVariant0DomainsItemVerificationItem>? = null,
 )
 
 data class ListProjectsDomainsResponseVariant0Pagination(
     val count: Double,
     @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: Double?,
-    @com.fasterxml.jackson.annotation.JsonProperty("prev", required = true) val prev: Double?
+    @com.fasterxml.jackson.annotation.JsonProperty("prev", required = true) val prev: Double?,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ListProjectsDomainsResponseVariant0(
     val domains: List<ListProjectsDomainsResponseVariant0DomainsItem>,
-    val pagination: ListProjectsDomainsResponseVariant0Pagination
+    val pagination: ListProjectsDomainsResponseVariant0Pagination,
 ) : ListProjectsDomainsResponse
 
 /**
- * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+ * A list of verification challenges, one of which must be completed to verify the domain for use on
+ * the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to
+ * verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain`
+ * will be checked for a TXT record matching `verification.value`.
  */
 data class ListProjectsDomainsResponseVariant1DomainsItemVerificationItem(
     val domain: String,
     val reason: String,
     val type: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
 )
 
 data class ListProjectsDomainsResponseVariant1DomainsItem(
@@ -60,7 +76,8 @@ data class ListProjectsDomainsResponseVariant1DomainsItem(
     val name: String,
     val projectId: String,
     /**
-     * `true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.
+     * `true` if the domain is verified for use with the project. If `false` it will not be used as
+     * an alias on this project until the challenge in `verification` is completed.
      */
     val verified: Boolean,
     val createdAt: Double? = null,
@@ -70,38 +87,59 @@ data class ListProjectsDomainsResponseVariant1DomainsItem(
     val redirectStatusCode: Double? = null,
     val updatedAt: Double? = null,
     /**
-     * A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.
+     * A list of verification challenges, one of which must be completed to verify the domain for
+     * use on the project. After the challenge is complete `POST
+     * /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If
+     * `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching
+     * `verification.value`.
      */
-    val verification: List<ListProjectsDomainsResponseVariant1DomainsItemVerificationItem>? = null
+    val verification: List<ListProjectsDomainsResponseVariant1DomainsItemVerificationItem>? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ListProjectsDomainsResponseVariant1(
     val domains: List<ListProjectsDomainsResponseVariant1DomainsItem>,
     /**
-     * This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
+     * This object contains information related to the pagination of the current request, including
+     * the necessary parameters to get the next or previous page of data.
      */
-    val pagination: Pagination
+    val pagination: Pagination,
 ) : ListProjectsDomainsResponse
 
-/**
- * Typed representation of the `ListProjectsDomainsResponse` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = ListProjectsDomainsResponse.Deserializer::class)
+/** Typed representation of the `ListProjectsDomainsResponse` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = ListProjectsDomainsResponse.Deserializer::class
+)
 sealed interface ListProjectsDomainsResponse {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<ListProjectsDomainsResponse>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<ListProjectsDomainsResponse>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): ListProjectsDomainsResponse {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out ListProjectsDomainsResponse>> = listOf(ListProjectsDomainsResponseVariant0::class.java, ListProjectsDomainsResponseVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out ListProjectsDomainsResponse>> =
+                listOf(
+                    ListProjectsDomainsResponseVariant0::class.java,
+                    ListProjectsDomainsResponseVariant1::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, ListProjectsDomainsResponse::class.java, "no ListProjectsDomainsResponse branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        ListProjectsDomainsResponse::class.java,
+                        "no ListProjectsDomainsResponse branch accepts this payload",
+                    )
             }
         }
     }

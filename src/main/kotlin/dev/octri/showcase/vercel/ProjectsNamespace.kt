@@ -3,303 +3,757 @@
 
 package dev.octri.showcase.vercel
 
-
 class ProjectsNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Lists projects belonging to the authenticated user or a team, with pagination and filters for project updates, repositories, configuration, and build settings. Use `from`, `since`, and `until` to filter by update time, or `search` to match project names. The `teamId` or `slug` query parameter scopes the request to a team.
+     * Lists projects belonging to the authenticated user or a team, with pagination and filters for
+     * project updates, repositories, configuration, and build settings. Use `from`, `since`, and
+     * `until` to filter by update time, or `search` to match project names. The `teamId` or `slug`
+     * query parameter scopes the request to a team.
      *
-     * Allows to retrieve the list of projects of the authenticated user or team. The list will be paginated and the provided query parameters allow filtering the returned projects.
+     * Allows to retrieve the list of projects of the authenticated user or team. The list will be
+     * paginated and the provided query parameters allow filtering the returned projects.
      */
-    fun list(request: dev.octri.showcase.vercel.methods.Projects.ListProjectsRequest, options: RequestOptions? = null): Any {
-        return dev.octri.showcase.vercel.methods.Projects.listProjects(clientConfig, request, options)
+    fun list(
+        request: dev.octri.showcase.vercel.methods.Projects.ListProjectsRequest,
+        options: RequestOptions? = null,
+    ): Any {
+        return dev.octri.showcase.vercel.methods.Projects.listProjects(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Retrieves the OpenTelemetry trace associated with a Vercel CLI request. Provide the project identifier and request identifier to locate the trace. The response includes the trace spans and identifier, and may include resource data and a root span identifier.
+     * Retrieves the OpenTelemetry trace associated with a Vercel CLI request. Provide the project
+     * identifier and request identifier to locate the trace. The response includes the trace spans
+     * and identifier, and may include resource data and a root span identifier.
      *
      * Returns the OTEL trace for a given Vercel CLI request.
      */
-    fun getTrace(projectId: String, requestId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.GetProjectTraceResponse {
-        return dev.octri.showcase.vercel.methods.Projects.getProjectTrace(clientConfig, projectId, requestId, teamId, slug, options)
+    fun getTrace(
+        projectId: String,
+        requestId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.GetProjectTraceResponse {
+        return dev.octri.showcase.vercel.methods.Projects.getProjectTrace(
+            clientConfig,
+            projectId,
+            requestId,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Creates a project with a required `name` and optional settings for its framework, build commands, environment variables, Git connection, and sandbox regions. Supply only the settings you want to configure; supported build and install commands can be detected automatically when set to `null`. A 200 response returns the created project object.
+     * Creates a project with a required `name` and optional settings for its framework, build
+     * commands, environment variables, Git connection, and sandbox regions. Supply only the
+     * settings you want to configure; supported build and install commands can be detected
+     * automatically when set to `null`. A 200 response returns the created project object.
      *
-     * Allows to create a new project with the provided configuration. It only requires the project `name` but more configuration can be provided to override the defaults.
+     * Allows to create a new project with the provided configuration. It only requires the project
+     * `name` but more configuration can be provided to override the defaults.
      */
-    fun create(request: dev.octri.showcase.vercel.methods.Projects.CreateProjectRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.CreateProjectResponse {
-        return dev.octri.showcase.vercel.methods.Projects.createProject(clientConfig, request, options)
+    fun create(
+        request: dev.octri.showcase.vercel.methods.Projects.CreateProjectRequest,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.CreateProjectResponse {
+        return dev.octri.showcase.vercel.methods.Projects.createProject(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Creates an OIDC token for a project identified by its ID or name. Provide the project identifier and optionally specify a `source` to identify what is calling the endpoint. The response contains the generated token.
+     * Creates an OIDC token for a project identified by its ID or name. Provide the project
+     * identifier and optionally specify a `source` to identify what is calling the endpoint. The
+     * response contains the generated token.
      *
      * Generates an OIDC token for the project and returns it.
      */
-    fun getToken(idOrName: String, teamId: String? = null, slug: String? = null, source: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.GetProjectTokenResponse {
-        return dev.octri.showcase.vercel.methods.Projects.getProjectToken(clientConfig, idOrName, teamId, slug, source, options)
+    fun getToken(
+        idOrName: String,
+        teamId: String? = null,
+        slug: String? = null,
+        source: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.GetProjectTokenResponse {
+        return dev.octri.showcase.vercel.methods.Projects.getProjectToken(
+            clientConfig,
+            idOrName,
+            teamId,
+            slug,
+            source,
+            options,
+        )
     }
 
     /**
-     * Creates a short-lived HS256 JWT scoped to a deployment hostname. Supply the project identifier and deployment hostname in the request body to define the token scope. The Vercel CLI presents the token to the proxy with requests it wants traced.
+     * Creates a short-lived HS256 JWT scoped to a deployment hostname. Supply the project
+     * identifier and deployment hostname in the request body to define the token scope. The Vercel
+     * CLI presents the token to the proxy with requests it wants traced.
      *
-     * Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI presents this JWT to the Vercel proxy on requests it wants traced.
+     * Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI presents this
+     * JWT to the Vercel proxy on requests it wants traced.
      */
-    fun createTraceSession(projectId: String, hostname: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.CreateTraceSessionResponse {
-        return dev.octri.showcase.vercel.methods.Projects.createTraceSession(clientConfig, projectId, hostname, teamId, slug, options)
+    fun createTraceSession(
+        projectId: String,
+        hostname: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.CreateTraceSessionResponse {
+        return dev.octri.showcase.vercel.methods.Projects.createTraceSession(
+            clientConfig,
+            projectId,
+            hostname,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Retrieves project information using the project's ID or name. Use the `teamId` or `slug` query parameter to make the request on behalf of a team.
+     * Retrieves project information using the project's ID or name. Use the `teamId` or `slug`
+     * query parameter to make the request on behalf of a team.
      *
-     * Get the information for a specific project by passing either the project `id` or `name` in the URL.
+     * Get the information for a specific project by passing either the project `id` or `name` in
+     * the URL.
      */
-    fun get(idOrName: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.GetProjectsResponse {
-        return dev.octri.showcase.vercel.methods.Projects.getProjects(clientConfig, idOrName, teamId, slug, options)
+    fun get(
+        idOrName: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.GetProjectsResponse {
+        return dev.octri.showcase.vercel.methods.Projects.getProjects(
+            clientConfig,
+            idOrName,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Updates configuration fields for a project identified by its ID or name. Submit the settings you want to change; supported build and install commands can be set to `null` for automatic detection. The response contains the updated project object.
+     * Updates configuration fields for a project identified by its ID or name. Submit the settings
+     * you want to change; supported build and install commands can be set to `null` for automatic
+     * detection. The response contains the updated project object.
      *
      * Update the fields of a project using either its `name` or `id`.
      */
-    fun update(request: dev.octri.showcase.vercel.methods.Projects.UpdateProjectRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.UpdateProjectResponse {
-        return dev.octri.showcase.vercel.methods.Projects.updateProject(clientConfig, request, options)
+    fun update(
+        request: dev.octri.showcase.vercel.methods.Projects.UpdateProjectRequest,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.UpdateProjectResponse {
+        return dev.octri.showcase.vercel.methods.Projects.updateProject(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Deletes a project identified by its ID or name. Use the `teamId` or `slug` query parameter to make the request on behalf of a team. A 204 response confirms the project was removed.
+     * Deletes a project identified by its ID or name. Use the `teamId` or `slug` query parameter to
+     * make the request on behalf of a team. A 204 response confirms the project was removed.
      *
      * Delete a specific project by passing either the project `id` or `name` in the URL.
      */
-    fun delete(idOrName: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
-        return dev.octri.showcase.vercel.methods.Projects.deleteProject(clientConfig, idOrName, teamId, slug, options)
+    fun delete(
+        idOrName: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        return dev.octri.showcase.vercel.methods.Projects.deleteProject(
+            clientConfig,
+            idOrName,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Uploads an image to use as the avatar for a project identified by its ID or name. Send the raw image bytes and declare the image type with the `Content-Type` header; accepted formats are JPG, PNG, and SVG. SVG images are sanitized and optimized before storage, and the response returns the updated project.
+     * Uploads an image to use as the avatar for a project identified by its ID or name. Send the
+     * raw image bytes and declare the image type with the `Content-Type` header; accepted formats
+     * are JPG, PNG, and SVG. SVG images are sanitized and optimized before storage, and the
+     * response returns the updated project.
      *
-     * Upload an image as the avatar of the project identified by `idOrName`. The request body is the raw bytes of a JPG, PNG, or SVG image; the `Content-Type` header must declare which. SVG payloads are sanitized and optimized server-side before storage. The final SHA-1 of the stored bytes becomes the project's `avatar` value. The actual upload pipeline (validation, sanitization, S3 write, conditional `updateProject`, and event emission) lives in the shared…
+     * Upload an image as the avatar of the project identified by `idOrName`. The request body is
+     * the raw bytes of a JPG, PNG, or SVG image; the `Content-Type` header must declare which. SVG
+     * payloads are sanitized and optimized server-side before storage. The final SHA-1 of the
+     * stored bytes becomes the project's `avatar` value. The actual upload pipeline (validation,
+     * sanitization, S3 write, conditional `updateProject`, and event emission) lives in the shared…
      */
-    fun uploadAvatar(idOrName: String, teamId: String? = null, slug: String? = null, body: ByteArray? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.UploadProjectAvatarResponse {
-        return dev.octri.showcase.vercel.methods.Projects.uploadProjectAvatar(clientConfig, idOrName, teamId, slug, body, options)
+    fun uploadAvatar(
+        idOrName: String,
+        teamId: String? = null,
+        slug: String? = null,
+        body: ByteArray? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.UploadProjectAvatarResponse {
+        return dev.octri.showcase.vercel.methods.Projects.uploadProjectAvatar(
+            clientConfig,
+            idOrName,
+            teamId,
+            slug,
+            body,
+            options,
+        )
     }
 
     /**
-     * Removes the avatar assignment from a project identified by its ID or name. This clears the project's avatar field so a later production deployment can run avatar auto-detection again, but it does not delete the stored image. The response returns the updated project.
+     * Removes the avatar assignment from a project identified by its ID or name. This clears the
+     * project's avatar field so a later production deployment can run avatar auto-detection again,
+     * but it does not delete the stored image. The response returns the updated project.
      *
-     * Remove the avatar of the project identified by `idOrName`. Deletes the chosen avatar field so the next production deploy can run auto-detection again. Does not delete the stored image.
+     * Remove the avatar of the project identified by `idOrName`. Deletes the chosen avatar field so
+     * the next production deploy can run auto-detection again. Does not delete the stored image.
      */
-    fun deleteAvatar(idOrName: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.DeleteProjectAvatarResponse {
-        return dev.octri.showcase.vercel.methods.Projects.deleteProjectAvatar(clientConfig, idOrName, teamId, slug, options)
+    fun deleteAvatar(
+        idOrName: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.DeleteProjectAvatarResponse {
+        return dev.octri.showcase.vercel.methods.Projects.deleteProjectAvatar(
+            clientConfig,
+            idOrName,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Lists domains associated with a project. Use the query parameters to filter by environment, branch, redirect, or verification status, and to control the result limit and sort order.
+     * Lists domains associated with a project. Use the query parameters to filter by environment,
+     * branch, redirect, or verification status, and to control the result limit and sort order.
      *
-     * Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.
+     * Retrieve the domains associated with a given project by passing either the project `id` or
+     * `name` in the URL.
      */
-    fun listDomains(request: dev.octri.showcase.vercel.methods.Projects.ListProjectsDomainsRequest, options: RequestOptions? = null): ListProjectsDomainsResponse {
-        return dev.octri.showcase.vercel.methods.Projects.listProjectsDomains(clientConfig, request, options)
+    fun listDomains(
+        request: dev.octri.showcase.vercel.methods.Projects.ListProjectsDomainsRequest,
+        options: RequestOptions? = null,
+    ): ListProjectsDomainsResponse {
+        return dev.octri.showcase.vercel.methods.Projects.listProjectsDomains(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Retrieves a domain associated with a project. Use the project identifier or name and the domain name to identify the domain and inspect its configuration and verification status.
+     * Retrieves a domain associated with a project. Use the project identifier or name and the
+     * domain name to identify the domain and inspect its configuration and verification status.
      *
      * Get project domain by project id/name and domain name.
      */
-    fun getDomain(idOrName: String, domain: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.GetProjectDomainResponse {
-        return dev.octri.showcase.vercel.methods.Projects.getProjectDomain(clientConfig, idOrName, domain, teamId, slug, options)
+    fun getDomain(
+        idOrName: String,
+        domain: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.GetProjectDomainResponse {
+        return dev.octri.showcase.vercel.methods.Projects.getProjectDomain(
+            clientConfig,
+            idOrName,
+            domain,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Updates a project domain’s configuration, including its Git branch association and redirect settings. Supply only the configuration fields you want to change; `redirectStatusCode` accepts 301, 302, 307, 308, or null.
+     * Updates a project domain’s configuration, including its Git branch association and redirect
+     * settings. Supply only the configuration fields you want to change; `redirectStatusCode`
+     * accepts 301, 302, 307, 308, or null.
      *
-     * Update a project domain's configuration, including the name, git branch and redirect of the domain.
+     * Update a project domain's configuration, including the name, git branch and redirect of the
+     * domain.
      */
-    fun updateDomain(request: dev.octri.showcase.vercel.methods.Projects.UpdateProjectDomainRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.UpdateProjectDomainResponse {
-        return dev.octri.showcase.vercel.methods.Projects.updateProjectDomain(clientConfig, request, options)
+    fun updateDomain(
+        request: dev.octri.showcase.vercel.methods.Projects.UpdateProjectDomainRequest,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.UpdateProjectDomainResponse {
+        return dev.octri.showcase.vercel.methods.Projects.updateProjectDomain(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Removes a domain from a project. Set `removeRedirects` to also remove project domains that redirect to the domain being deleted.
+     * Removes a domain from a project. Set `removeRedirects` to also remove project domains that
+     * redirect to the domain being deleted.
      *
-     * Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
+     * Remove a domain from a project by passing the domain name and by specifying the project by
+     * either passing the project `id` or `name` in the URL.
      */
-    fun removeDomain(idOrName: String, domain: String, teamId: String? = null, slug: String? = null, removeRedirects: Boolean? = null, options: RequestOptions? = null): Map<String, Any> {
-        return dev.octri.showcase.vercel.methods.Projects.removeProjectDomain(clientConfig, idOrName, domain, teamId, slug, removeRedirects, options)
+    fun removeDomain(
+        idOrName: String,
+        domain: String,
+        teamId: String? = null,
+        slug: String? = null,
+        removeRedirects: Boolean? = null,
+        options: RequestOptions? = null,
+    ): Map<String, Any> {
+        return dev.octri.showcase.vercel.methods.Projects.removeProjectDomain(
+            clientConfig,
+            idOrName,
+            domain,
+            teamId,
+            slug,
+            removeRedirects,
+            options,
+        )
     }
 
     /**
-     * Creates a project-domain association for a project. Provide the domain name and optionally configure its Git branch, custom environment, or redirect; an unverified domain must complete the returned verification challenge before it can be used as an alias.
+     * Creates a project-domain association for a project. Provide the domain name and optionally
+     * configure its Git branch, custom environment, or redirect; an unverified domain must complete
+     * the returned verification challenge before it can be used as an alias.
      *
-     * Add a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code.
+     * Add a domain to the project by passing its domain name and by specifying the project by
+     * either passing the project `id` or `name` in the URL. If the domain is not yet verified to be
+     * used on this project, the request will return `verified = false`, and the domain will need to
+     * be verified according to the `verification` challenge via `POST
+     * /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the
+     * request will fail with a `400` status code.
      */
-    fun addDomain(request: dev.octri.showcase.vercel.methods.Projects.AddProjectDomainRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.AddProjectDomainResponse {
-        return dev.octri.showcase.vercel.methods.Projects.addProjectDomain(clientConfig, request, options)
+    fun addDomain(
+        request: dev.octri.showcase.vercel.methods.Projects.AddProjectDomainRequest,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.AddProjectDomainResponse {
+        return dev.octri.showcase.vercel.methods.Projects.addProjectDomain(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Moves a domain from one project to another and can move the domain's redirects with it. Supply the target `projectId`; optionally set `gitBranch`, `redirect`, or `redirectStatusCode` to configure the domain on the destination project.
+     * Moves a domain from one project to another and can move the domain's redirects with it.
+     * Supply the target `projectId`; optionally set `gitBranch`, `redirect`, or
+     * `redirectStatusCode` to configure the domain on the destination project.
      *
-     * Move one project's domain to another project. Also allows the move of all redirects pointed to that domain in the same project.
+     * Move one project's domain to another project. Also allows the move of all redirects pointed
+     * to that domain in the same project.
      */
-    fun moveDomain(request: dev.octri.showcase.vercel.methods.Projects.MoveProjectDomainRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.MoveProjectDomainResponse {
-        return dev.octri.showcase.vercel.methods.Projects.moveProjectDomain(clientConfig, request, options)
+    fun moveDomain(
+        request: dev.octri.showcase.vercel.methods.Projects.MoveProjectDomainRequest,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.MoveProjectDomainResponse {
+        return dev.octri.showcase.vercel.methods.Projects.moveProjectDomain(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Verifies a project domain by checking its verification challenge when the domain is not yet verified. Use this operation after completing one of the challenges associated with the domain.
+     * Verifies a project domain by checking its verification challenge when the domain is not yet
+     * verified. Use this operation after completing one of the challenges associated with the
+     * domain.
      *
-     * Attempts to verify a project domain with `verified = false` by checking the correctness of the project domain's `verification` challenge.
+     * Attempts to verify a project domain with `verified = false` by checking the correctness of
+     * the project domain's `verification` challenge.
      */
-    fun verifyDomain(idOrName: String, domain: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.VerifyProjectDomainResponse {
-        return dev.octri.showcase.vercel.methods.Projects.verifyProjectDomain(clientConfig, idOrName, domain, teamId, slug, options)
+    fun verifyDomain(
+        idOrName: String,
+        domain: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.VerifyProjectDomainResponse {
+        return dev.octri.showcase.vercel.methods.Projects.verifyProjectDomain(
+            clientConfig,
+            idOrName,
+            domain,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Lists environment variables for a project, identified by its project ID or name. Use `gitBranch` to filter preview-target variables by branch, or select a custom environment with `customEnvironmentId` or `customEnvironmentSlug`.
+     * Lists environment variables for a project, identified by its project ID or name. Use
+     * `gitBranch` to filter preview-target variables by branch, or select a custom environment with
+     * `customEnvironmentId` or `customEnvironmentSlug`.
      *
-     * Retrieve the environment variables for a given project by passing either the project `id` or `name` in the URL.
+     * Retrieve the environment variables for a given project by passing either the project `id` or
+     * `name` in the URL.
      */
-    fun filterEnvs(request: dev.octri.showcase.vercel.methods.Projects.FilterProjectEnvsRequest, options: RequestOptions? = null): FilterProjectEnvsResponse {
-        return dev.octri.showcase.vercel.methods.Projects.filterProjectEnvs(clientConfig, request, options)
+    fun filterEnvs(
+        request: dev.octri.showcase.vercel.methods.Projects.FilterProjectEnvsRequest,
+        options: RequestOptions? = null,
+    ): FilterProjectEnvsResponse {
+        return dev.octri.showcase.vercel.methods.Projects.filterProjectEnvs(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Creates one or more environment variables for a project. Provide `key`, `value`, and `type`, and specify either `target` or `customEnvironmentIds`; use `upsert` to update an existing variable instead of creating a duplicate.
+     * Creates one or more environment variables for a project. Provide `key`, `value`, and `type`,
+     * and specify either `target` or `customEnvironmentIds`; use `upsert` to update an existing
+     * variable instead of creating a duplicate.
      *
-     * Create one or more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL. If you include `upsert=true` as a query parameter, a new environment variable will not be created if it already exists but, the existing variable's value will be updated.
+     * Create one or more environment variables for a project by passing its `key`, `value`, `type`
+     * and `target` and by specifying the project by either passing the project `id` or `name` in
+     * the URL. If you include `upsert=true` as a query parameter, a new environment variable will
+     * not be created if it already exists but, the existing variable's value will be updated.
      */
-    fun createEnv(idOrName: String, body: Any, upsert: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.CreateProjectEnvResponse {
-        return dev.octri.showcase.vercel.methods.Projects.createProjectEnv(clientConfig, idOrName, body, upsert, teamId, slug, options)
+    fun createEnv(
+        idOrName: String,
+        body: Any,
+        upsert: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.CreateProjectEnvResponse {
+        return dev.octri.showcase.vercel.methods.Projects.createProjectEnv(
+            clientConfig,
+            idOrName,
+            body,
+            upsert,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Retrieves an environment variable for a project, including its decrypted value when available. Use the project identifier or name together with the environment variable's unique ID to select the variable.
+     * Retrieves an environment variable for a project, including its decrypted value when
+     * available. Use the project identifier or name together with the environment variable's unique
+     * ID to select the variable.
      *
      * Retrieve the environment variable for a given project.
      */
-    fun getEnv(idOrName: String, id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetProjectEnvResponse {
-        return dev.octri.showcase.vercel.methods.Projects.getProjectEnv(clientConfig, idOrName, id, teamId, slug, options)
+    fun getEnv(
+        idOrName: String,
+        id: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetProjectEnvResponse {
+        return dev.octri.showcase.vercel.methods.Projects.getProjectEnv(
+            clientConfig,
+            idOrName,
+            id,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Deletes a specific environment variable from a project. Identify the project and variable in the path, and use `customEnvironmentId` when the removal applies to a particular custom environment.
+     * Deletes a specific environment variable from a project. Identify the project and variable in
+     * the path, and use `customEnvironmentId` when the removal applies to a particular custom
+     * environment.
      *
-     * Delete a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
+     * Delete a specific environment variable for a given project by passing the environment
+     * variable identifier and either passing the project `id` or `name` in the URL.
      */
-    fun removeEnv(idOrName: String, id: String, customEnvironmentId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Any {
-        return dev.octri.showcase.vercel.methods.Projects.removeProjectEnv(clientConfig, idOrName, id, customEnvironmentId, teamId, slug, options)
+    fun removeEnv(
+        idOrName: String,
+        id: String,
+        customEnvironmentId: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Any {
+        return dev.octri.showcase.vercel.methods.Projects.removeProjectEnv(
+            clientConfig,
+            idOrName,
+            id,
+            customEnvironmentId,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Updates an environment variable belonging to a project. Send only the properties you want to change, such as `value`, `target`, or `comment`; the schema does not require any particular body property.
+     * Updates an environment variable belonging to a project. Send only the properties you want to
+     * change, such as `value`, `target`, or `comment`; the schema does not require any particular
+     * body property.
      *
-     * Edit a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.
+     * Edit a specific environment variable for a given project by passing the environment variable
+     * identifier and either passing the project `id` or `name` in the URL.
      */
-    fun editEnv(request: dev.octri.showcase.vercel.methods.Projects.EditProjectEnvRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.EditProjectEnvResponse {
-        return dev.octri.showcase.vercel.methods.Projects.editProjectEnv(clientConfig, request, options)
+    fun editEnv(
+        request: dev.octri.showcase.vercel.methods.Projects.EditProjectEnvRequest,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.EditProjectEnvResponse {
+        return dev.octri.showcase.vercel.methods.Projects.editProjectEnv(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Deletes multiple environment variables from a project in one request. Provide their IDs in the `ids` array, which must contain between 1 and 1,000 entries.
+     * Deletes multiple environment variables from a project in one request. Provide their IDs in
+     * the `ids` array, which must contain between 1 and 1,000 entries.
      *
      * Delete multiple environment variables for a given project in a single batch operation.
      */
-    fun batchRemoveEnv(idOrName: String, ids: List<String>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.BatchRemoveProjectEnvResponse {
-        return dev.octri.showcase.vercel.methods.Projects.batchRemoveProjectEnv(clientConfig, idOrName, ids, teamId, slug, options)
+    fun batchRemoveEnv(
+        idOrName: String,
+        ids: List<String>,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.BatchRemoveProjectEnvResponse {
+        return dev.octri.showcase.vercel.methods.Projects.batchRemoveProjectEnv(
+            clientConfig,
+            idOrName,
+            ids,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Creates a request to transfer a project from one team to another. Use `idOrName` to identify the project, and optionally provide callback details to receive a signed webhook when the transfer is accepted. The response includes a transfer code that remains valid for 24 hours and can be used by another team to accept the request.
+     * Creates a request to transfer a project from one team to another. Use `idOrName` to identify
+     * the project, and optionally provide callback details to receive a signed webhook when the
+     * transfer is accepted. The response includes a transfer code that remains valid for 24 hours
+     * and can be used by another team to accept the request.
      *
-     * Initiates a project transfer request from one team to another. Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. Users can also accept the project transfer request using the claim URL: `vercel.com &returnUrl=<returnUrl>`. The `code` parameter specifies the project transfer request code generated using this endpoint. The `returnUrl` parameter redirects…
+     * Initiates a project transfer request from one team to another. Returns a `code` that remains
+     * valid for 24 hours and can be used to accept the transfer request by another team using the
+     * `PUT /projects/transfer-request/:code` endpoint. Users can also accept the project transfer
+     * request using the claim URL: `vercel.com &returnUrl=<returnUrl>`. The `code` parameter
+     * specifies the project transfer request code generated using this endpoint. The `returnUrl`
+     * parameter redirects…
      */
-    fun createTransferRequest(idOrName: String, teamId: String? = null, slug: String? = null, callbackUrl: String? = null, callbackSecret: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.CreateProjectTransferRequestResponse {
-        return dev.octri.showcase.vercel.methods.Projects.createProjectTransferRequest(clientConfig, idOrName, teamId, slug, callbackUrl, callbackSecret, options)
+    fun createTransferRequest(
+        idOrName: String,
+        teamId: String? = null,
+        slug: String? = null,
+        callbackUrl: String? = null,
+        callbackSecret: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.CreateProjectTransferRequestResponse {
+        return dev.octri.showcase.vercel.methods.Projects.createProjectTransferRequest(
+            clientConfig,
+            idOrName,
+            teamId,
+            slug,
+            callbackUrl,
+            callbackSecret,
+            options,
+        )
     }
 
     /**
-     * Accepts a project transfer request initiated by another team. Use the `code` from the transfer request and optionally set the new project name, paid features, or accepted policies. The transfer response includes the project name and details about partner calls, resource transfer errors, and transferred stores.
+     * Accepts a project transfer request initiated by another team. Use the `code` from the
+     * transfer request and optionally set the new project name, paid features, or accepted
+     * policies. The transfer response includes the project name and details about partner calls,
+     * resource transfer errors, and transferred stores.
      *
-     * Accept a project transfer request initated by another team. The `code` is generated using the `POST /projects/:idOrName/transfer-request` endpoint.
+     * Accept a project transfer request initated by another team. The `code` is generated using the
+     * `POST /projects/:idOrName/transfer-request` endpoint.
      */
-    fun acceptTransferRequest(request: dev.octri.showcase.vercel.methods.Projects.AcceptProjectTransferRequestRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.AcceptProjectTransferRequestResponse {
-        return dev.octri.showcase.vercel.methods.Projects.acceptProjectTransferRequest(clientConfig, request, options)
+    fun acceptTransferRequest(
+        request: dev.octri.showcase.vercel.methods.Projects.AcceptProjectTransferRequestRequest,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.AcceptProjectTransferRequestResponse {
+        return dev.octri.showcase.vercel.methods.Projects.acceptProjectTransferRequest(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Updates a project's deployment protection automation bypass settings. Use `generate` to create a bypass, `revoke` to revoke one and optionally regenerate it, or `update` to change an existing bypass. If none of these actions is provided, the API generates a new random secret.
+     * Updates a project's deployment protection automation bypass settings. Use `generate` to
+     * create a bypass, `revoke` to revoke one and optionally regenerate it, or `update` to change
+     * an existing bypass. If none of these actions is provided, the API generates a new random
+     * secret.
      *
      * Update the deployment protection automation bypass for a project
      */
-    fun updateProtectionBypass(request: dev.octri.showcase.vercel.methods.Projects.UpdateProjectProtectionBypassRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.UpdateProjectProtectionBypassResponse {
-        return dev.octri.showcase.vercel.methods.Projects.updateProjectProtectionBypass(clientConfig, request, options)
+    fun updateProtectionBypass(
+        request: dev.octri.showcase.vercel.methods.Projects.UpdateProjectProtectionBypassRequest,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.UpdateProjectProtectionBypassResponse {
+        return dev.octri.showcase.vercel.methods.Projects.updateProjectProtectionBypass(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Requests a rollback that points production traffic to a previous production deployment. Use `projectId` to identify the project and `deploymentId` to select the deployment to roll back to; optionally provide `description` to record the reason. A successful response confirms that the rollback request was created.
+     * Requests a rollback that points production traffic to a previous production deployment. Use
+     * `projectId` to identify the project and `deploymentId` to select the deployment to roll back
+     * to; optionally provide `description` to record the reason. A successful response confirms
+     * that the rollback request was created.
      *
      * Allows users to rollback to a deployment.
      */
-    fun requestRollback(projectId: String, deploymentId: String, description: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
-        return dev.octri.showcase.vercel.methods.Projects.requestRollback(clientConfig, projectId, deploymentId, description, teamId, slug, options)
+    fun requestRollback(
+        projectId: String,
+        deploymentId: String,
+        description: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        return dev.octri.showcase.vercel.methods.Projects.requestRollback(
+            clientConfig,
+            projectId,
+            deploymentId,
+            description,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Updates the reason recorded for a project rollback without changing its status. Supply the `description` field in the request body and identify the project and deployment in the path. The request body is optional.
+     * Updates the reason recorded for a project rollback without changing its status. Supply the
+     * `description` field in the request body and identify the project and deployment in the path.
+     * The request body is optional.
      *
      * Updates the reason for a rollback, without changing the rollback status itself.
      */
-    fun updateRollbackDescription(projectId: String, deploymentId: String, description: String? = null, options: RequestOptions? = null): Unit {
-        return dev.octri.showcase.vercel.methods.Projects.updateProjectsRollbackDescription(clientConfig, projectId, deploymentId, description, options)
+    fun updateRollbackDescription(
+        projectId: String,
+        deploymentId: String,
+        description: String? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        return dev.octri.showcase.vercel.methods.Projects.updateProjectsRollbackDescription(
+            clientConfig,
+            projectId,
+            deploymentId,
+            description,
+            options,
+        )
     }
 
     /**
-     * Updates the microfrontends settings for a project. Use the optional fields to change the project's group, enablement, default application, route, or observability routing configuration. The two routing options can only be set for child applications.
+     * Updates the microfrontends settings for a project. Use the optional fields to change the
+     * project's group, enablement, default application, route, or observability routing
+     * configuration. The two routing options can only be set for child applications.
      *
      * Update the microfrontends settings for a project.
      */
-    fun updateMicrofrontends(request: dev.octri.showcase.vercel.methods.Projects.UpdateMicrofrontendsRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Projects.UpdateMicrofrontendsResponse {
-        return dev.octri.showcase.vercel.methods.Projects.updateMicrofrontends(clientConfig, request, options)
+    fun updateMicrofrontends(
+        request: dev.octri.showcase.vercel.methods.Projects.UpdateMicrofrontendsRequest,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Projects.UpdateMicrofrontendsResponse {
+        return dev.octri.showcase.vercel.methods.Projects.updateMicrofrontends(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Triggers a production promotion for a deployment in a project. Identify the project and deployment in the path, and use `teamId` or `slug` to select the team context when needed. Promotion does not rebuild the deployment; use the deployment creation operation when a rebuild is required.
+     * Triggers a production promotion for a deployment in a project. Identify the project and
+     * deployment in the path, and use `teamId` or `slug` to select the team context when needed.
+     * Promotion does not rebuild the deployment; use the deployment creation operation when a
+     * rebuild is required.
      *
-     * Allows users to promote a deployment to production. Note: This does NOT rebuild the deployment. If you need that, then call create-deployments endpoint.
+     * Allows users to promote a deployment to production. Note: This does NOT rebuild the
+     * deployment. If you need that, then call create-deployments endpoint.
      */
-    fun requestPromote(projectId: String, deploymentId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
-        return dev.octri.showcase.vercel.methods.Projects.requestPromote(clientConfig, projectId, deploymentId, teamId, slug, options)
+    fun requestPromote(
+        projectId: String,
+        deploymentId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        return dev.octri.showcase.vercel.methods.Projects.requestPromote(
+            clientConfig,
+            projectId,
+            deploymentId,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Lists aliases associated with the latest promotion request for a project and their mapping status. Use `since` and `until` to filter by creation time, and `failedOnly` to limit results to aliases that failed to map to the requested deployment. Use `limit` to cap the number of aliases returned.
+     * Lists aliases associated with the latest promotion request for a project and their mapping
+     * status. Use `since` and `until` to filter by creation time, and `failedOnly` to limit results
+     * to aliases that failed to map to the requested deployment. Use `limit` to cap the number of
+     * aliases returned.
      *
      * Get a list of aliases related to the last promote request with their mapping status
      */
-    fun listPromoteAliases(request: dev.octri.showcase.vercel.methods.Projects.ListPromoteAliasesRequest, options: RequestOptions? = null): Map<String, Any> {
-        return dev.octri.showcase.vercel.methods.Projects.listPromoteAliases(clientConfig, request, options)
+    fun listPromoteAliases(
+        request: dev.octri.showcase.vercel.methods.Projects.ListPromoteAliasesRequest,
+        options: RequestOptions? = null,
+    ): Map<String, Any> {
+        return dev.octri.showcase.vercel.methods.Projects.listPromoteAliases(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Pauses a project identified by its project ID. Use `teamId` or `slug` to select the team context when needed. When the project disables automatic assignment of custom production domains, pausing also blocks its active production deployment.
+     * Pauses a project identified by its project ID. Use `teamId` or `slug` to select the team
+     * context when needed. When the project disables automatic assignment of custom production
+     * domains, pausing also blocks its active production deployment.
      *
-     * Pause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project disables auto assigning custom production domains and blocks the active Production Deployment then the request will return with 200 status code.
+     * Pause a project by passing its project `id` in the URL. If the project does not exist given
+     * the id then the request will fail with 400 status code. If the project disables auto
+     * assigning custom production domains and blocks the active Production Deployment then the
+     * request will return with 200 status code.
      */
-    fun pause(projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
-        return dev.octri.showcase.vercel.methods.Projects.pauseProject(clientConfig, projectId, teamId, slug, options)
+    fun pause(
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        return dev.octri.showcase.vercel.methods.Projects.pauseProject(
+            clientConfig,
+            projectId,
+            teamId,
+            slug,
+            options,
+        )
     }
 
     /**
-     * Unpauses a project identified by its project ID. Use `teamId` or `slug` to select the team context when needed. When the project enables automatic assignment of custom production domains, unpausing also unblocks its active production deployment.
+     * Unpauses a project identified by its project ID. Use `teamId` or `slug` to select the team
+     * context when needed. When the project enables automatic assignment of custom production
+     * domains, unpausing also unblocks its active production deployment.
      *
-     * Unpause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project enables auto assigning custom production domains and unblocks the active Production Deployment then the request will return with 200 status code.
+     * Unpause a project by passing its project `id` in the URL. If the project does not exist given
+     * the id then the request will fail with 400 status code. If the project enables auto assigning
+     * custom production domains and unblocks the active Production Deployment then the request will
+     * return with 200 status code.
      */
-    fun unpause(projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
-        return dev.octri.showcase.vercel.methods.Projects.unpauseProject(clientConfig, projectId, teamId, slug, options)
+    fun unpause(
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        return dev.octri.showcase.vercel.methods.Projects.unpauseProject(
+            clientConfig,
+            projectId,
+            teamId,
+            slug,
+            options,
+        )
     }
-
 }

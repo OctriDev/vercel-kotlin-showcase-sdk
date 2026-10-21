@@ -3,607 +3,387 @@
 
 package dev.octri.showcase.vercel.models
 
-/**
- * The team's billing plan.
- */
+/** The team's billing plan. */
 data class TeamBilling(
-    /**
-     * Required enumerated value serialized in the `plan` wire field.
-     */
+    /** Required enumerated value serialized in the `plan` wire field. */
     val plan: TeamBillingPlanEnum
 )
 
-/**
- * Optional object value serialized in the `connect` wire field.
- */
+/** Optional object value serialized in the `connect` wire field. */
 data class TeamConnect(
-    /**
-     * Optional enumerated value serialized in the `enabled` wire field.
-     */
+    /** Optional enumerated value serialized in the `enabled` wire field. */
     val enabled: Boolean? = null
 )
 
-/**
- * Optional object value serialized in the `passwordProtection` wire field.
- */
+/** Optional object value serialized in the `passwordProtection` wire field. */
 data class TeamDefaultDeploymentProtectionPasswordProtection(
-    /**
-     * Required `string` value serialized in the `deploymentType` wire field.
-     */
+    /** Required `string` value serialized in the `deploymentType` wire field. */
     val deploymentType: String
 )
 
-/**
- * Optional object value serialized in the `ssoProtection` wire field.
- */
+/** Optional object value serialized in the `ssoProtection` wire field. */
 data class TeamDefaultDeploymentProtectionSsoProtection(
-    /**
-     * Required `string` value serialized in the `deploymentType` wire field.
-     */
+    /** Required `string` value serialized in the `deploymentType` wire field. */
     val deploymentType: String
 )
 
-/**
- * Default deployment protection for this team null indicates protection is disabled
- */
+/** Default deployment protection for this team null indicates protection is disabled */
 data class TeamDefaultDeploymentProtection(
-    /**
-     * Optional object value serialized in the `passwordProtection` wire field.
-     */
+    /** Optional object value serialized in the `passwordProtection` wire field. */
     val passwordProtection: TeamDefaultDeploymentProtectionPasswordProtection? = null,
-    /**
-     * Optional object value serialized in the `ssoProtection` wire field.
-     */
-    val ssoProtection: TeamDefaultDeploymentProtectionSsoProtection? = null
+    /** Optional object value serialized in the `ssoProtection` wire field. */
+    val ssoProtection: TeamDefaultDeploymentProtectionSsoProtection? = null,
 )
 
-/**
- * Default deployment expiration settings for this team
- */
+/** Default deployment expiration settings for this team */
 data class TeamDefaultExpirationSettings(
     /**
-     * Minimum number of production deployments to keep for this project, even if they are over the production expiration limit.
+     * Minimum number of production deployments to keep for this project, even if they are over the
+     * production expiration limit.
      */
     val deploymentsToKeep: Double? = null,
     /**
-     * Number of days to keep non-production deployments (mostly preview deployments) before soft deletion.
+     * Number of days to keep non-production deployments (mostly preview deployments) before soft
+     * deletion.
      */
     val expirationDays: Double? = null,
-    /**
-     * Number of days to keep canceled deployments before soft deletion.
-     */
+    /** Number of days to keep canceled deployments before soft deletion. */
     val expirationDaysCanceled: Double? = null,
-    /**
-     * Number of days to keep errored deployments before soft deletion.
-     */
+    /** Number of days to keep errored deployments before soft deletion. */
     val expirationDaysErrored: Double? = null,
-    /**
-     * Number of days to keep production deployments before soft deletion.
-     */
-    val expirationDaysProduction: Double? = null
+    /** Number of days to keep production deployments before soft deletion. */
+    val expirationDaysProduction: Double? = null,
 )
 
-/**
- * Default Passport configuration for new projects in this team.
- */
+/** Default Passport configuration for new projects in this team. */
 data class TeamDefaultPassport(
-    /**
-     * Default Passport configuration for new projects in this team.
-     */
+    /** Default Passport configuration for new projects in this team. */
     val connectorId: String,
-    /**
-     * Default Passport configuration for new projects in this team.
-     */
-    val deploymentType: TeamDefaultPassportDeploymentTypeEnum
+    /** Default Passport configuration for new projects in this team. */
+    val deploymentType: TeamDefaultPassportDeploymentTypeEnum,
 )
 
-/**
- * Default job configuration applied to new projects created in this team.
- */
+/** Default job configuration applied to new projects created in this team. */
 data class TeamDefaultProjectJobsFlagDefinitionsPresent(
-    /**
-     * Default job configuration applied to new projects created in this team.
-     */
+    /** Default job configuration applied to new projects created in this team. */
     val targets: List<String>
 )
 
-/**
- * Default job configuration applied to new projects created in this team.
- */
+/** Default job configuration applied to new projects created in this team. */
 data class TeamDefaultProjectJobsLint(
-    /**
-     * Default job configuration applied to new projects created in this team.
-     */
+    /** Default job configuration applied to new projects created in this team. */
     val targets: List<String>
 )
 
-/**
- * Default job configuration applied to new projects created in this team.
- */
+/** Default job configuration applied to new projects created in this team. */
 data class TeamDefaultProjectJobsMfeConfigPresent(
-    /**
-     * Default job configuration applied to new projects created in this team.
-     */
+    /** Default job configuration applied to new projects created in this team. */
     val targets: List<String>
 )
 
-/**
- * Default job configuration applied to new projects created in this team.
- */
+/** Default job configuration applied to new projects created in this team. */
 data class TeamDefaultProjectJobsTypecheck(
-    /**
-     * Default job configuration applied to new projects created in this team.
-     */
+    /** Default job configuration applied to new projects created in this team. */
     val targets: List<String>
 )
 
-/**
- * Default job configuration applied to new projects created in this team.
- */
+/** Default job configuration applied to new projects created in this team. */
 data class TeamDefaultProjectJobs(
-    /**
-     * Default job configuration applied to new projects created in this team.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("flag-definitions-present") val flagDefinitionsPresent: TeamDefaultProjectJobsFlagDefinitionsPresent? = null,
-    /**
-     * Default job configuration applied to new projects created in this team.
-     */
+    /** Default job configuration applied to new projects created in this team. */
+    @com.fasterxml.jackson.annotation.JsonProperty("flag-definitions-present")
+    val flagDefinitionsPresent: TeamDefaultProjectJobsFlagDefinitionsPresent? = null,
+    /** Default job configuration applied to new projects created in this team. */
     val lint: TeamDefaultProjectJobsLint? = null,
-    /**
-     * Default job configuration applied to new projects created in this team.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("mfe-config-present") val mfeConfigPresent: TeamDefaultProjectJobsMfeConfigPresent? = null,
-    /**
-     * Default job configuration applied to new projects created in this team.
-     */
-    val typecheck: TeamDefaultProjectJobsTypecheck? = null
+    /** Default job configuration applied to new projects created in this team. */
+    @com.fasterxml.jackson.annotation.JsonProperty("mfe-config-present")
+    val mfeConfigPresent: TeamDefaultProjectJobsMfeConfigPresent? = null,
+    /** Default job configuration applied to new projects created in this team. */
+    val typecheck: TeamDefaultProjectJobsTypecheck? = null,
 )
 
-/**
- * Default roles for the team.
- */
+/** Default roles for the team. */
 data class TeamDefaultRoles(
-    /**
-     * Optional array value serialized in the `teamPermissions` wire field.
-     */
+    /** Optional array value serialized in the `teamPermissions` wire field. */
     val teamPermissions: List<TeamDefaultRolesTeamPermissionsItemEnum>? = null,
-    /**
-     * Optional array value serialized in the `teamRoles` wire field.
-     */
-    val teamRoles: List<TeamDefaultRolesTeamRolesItemEnum>? = null
+    /** Optional array value serialized in the `teamRoles` wire field. */
+    val teamRoles: List<TeamDefaultRolesTeamRolesItemEnum>? = null,
 )
 
-/**
- * `enabled: true` with empty `sources` is deny-all.
- */
+/** `enabled: true` with empty `sources` is deny-all. */
 data class TeamDeploymentPolicyDeploymentSourcesItem(
-    /**
-     * Required enumerated value serialized in the `enabled` wire field.
-     */
+    /** Required enumerated value serialized in the `enabled` wire field. */
     val enabled: Boolean,
-    /**
-     * Required array value serialized in the `environments` wire field.
-     */
+    /** Required array value serialized in the `environments` wire field. */
     val environments: List<TeamDeploymentPolicyDeploymentSourcesItemEnvironmentsItem>,
-    /**
-     * Required array value serialized in the `sources` wire field.
-     */
-    val sources: List<TeamDeploymentPolicyDeploymentSourcesItemSourcesItemEnum>
+    /** Required array value serialized in the `sources` wire field. */
+    val sources: List<TeamDeploymentPolicyDeploymentSourcesItemSourcesItemEnum>,
 )
 
-/**
- * `enabled: true` with empty `sources` is deny-all.
- */
+/** `enabled: true` with empty `sources` is deny-all. */
 data class TeamDeploymentPolicyGitSourcesItem(
-    /**
-     * Required enumerated value serialized in the `enabled` wire field.
-     */
+    /** Required enumerated value serialized in the `enabled` wire field. */
     val enabled: Boolean,
-    /**
-     * Required array value serialized in the `environments` wire field.
-     */
+    /** Required array value serialized in the `environments` wire field. */
     val environments: List<TeamDeploymentPolicyGitSourcesItemEnvironmentsItem>,
-    /**
-     * Required array value serialized in the `sources` wire field.
-     */
-    val sources: List<TeamDeploymentPolicyGitSourcesItemSourcesItem>
+    /** Required array value serialized in the `sources` wire field. */
+    val sources: List<TeamDeploymentPolicyGitSourcesItemSourcesItem>,
 )
 
 /**
- * Composable deployment-time policy for the team. Used as the default for every project on the team, with optional per-project overrides on `project.deploymentPolicy`.
+ * Composable deployment-time policy for the team. Used as the default for every project on the
+ * team, with optional per-project overrides on `project.deploymentPolicy`.
  */
 data class TeamDeploymentPolicy(
-    /**
-     * Optional array value serialized in the `deploymentSources` wire field.
-     */
+    /** Optional array value serialized in the `deploymentSources` wire field. */
     val deploymentSources: List<TeamDeploymentPolicyDeploymentSourcesItem>? = null,
-    /**
-     * Optional array value serialized in the `gitSources` wire field.
-     */
-    val gitSources: List<TeamDeploymentPolicyGitSourcesItem>? = null
+    /** Optional array value serialized in the `gitSources` wire field. */
+    val gitSources: List<TeamDeploymentPolicyGitSourcesItem>? = null,
 )
 
 /**
- * Pro deployment-storage pricing rollout cohort and milestones. Absent when the team has not been placed in a rollout cohort yet.
+ * Pro deployment-storage pricing rollout cohort and milestones. Absent when the team has not been
+ * placed in a rollout cohort yet.
  */
 data class TeamDeploymentStorageRollout(
-    /**
-     * Required enumerated value serialized in the `cohort` wire field.
-     */
+    /** Required enumerated value serialized in the `cohort` wire field. */
     val cohort: TeamDeploymentStorageRolloutCohortEnum,
-    /**
-     * When team-wide metering was recorded for this rollout.
-     */
+    /** When team-wide metering was recorded for this rollout. */
     val meteredAt: Double? = null,
-    /**
-     * Optional enumerated value serialized in the `meterReason` wire field.
-     */
+    /** Optional enumerated value serialized in the `meterReason` wire field. */
     val meterReason: TeamDeploymentStorageRolloutMeterReasonEnum? = null,
-    /**
-     * When the calendar retention-reduce migration applied 30d retention.
-     */
+    /** When the calendar retention-reduce migration applied 30d retention. */
     val retentionAppliedAt: Double? = null,
-    /**
-     * When the customer chose "keep my retention" before reduce day.
-     */
-    val retentionOptOutAt: Double? = null
+    /** When the customer chose "keep my retention" before reduce day. */
+    val retentionOptOutAt: Double? = null,
 )
 
-/**
- * Required object value serialized in the `ipBuckets[]` wire field.
- */
+/** Required object value serialized in the `ipBuckets[]` wire field. */
 data class TeamIpBucketsItem(
-    /**
-     * Required `string` value serialized in the `bucket` wire field.
-     */
+    /** Required `string` value serialized in the `bucket` wire field. */
     val bucket: String,
-    /**
-     * Optional enumerated value serialized in the `default` wire field.
-     */
+    /** Optional enumerated value serialized in the `default` wire field. */
     val default: Boolean? = null,
-    /**
-     * Optional `number` value serialized in the `supportUntil` wire field.
-     */
-    val supportUntil: Double? = null
+    /** Optional `number` value serialized in the `supportUntil` wire field. */
+    val supportUntil: Double? = null,
 )
 
-/**
- * Required object value serialized in the `entitlements[]` wire field.
- */
+/** Required object value serialized in the `entitlements[]` wire field. */
 data class TeamMembershipEntitlementsItem(
-    /**
-     * Required `string` value serialized in the `entitlement` wire field.
-     */
+    /** Required `string` value serialized in the `entitlement` wire field. */
     val entitlement: String
 )
 
-/**
- * Optional object value serialized in the `joinedFrom` wire field.
- */
+/** Optional object value serialized in the `joinedFrom` wire field. */
 data class TeamMembershipJoinedFrom(
-    /**
-     * Required enumerated value serialized in the `origin` wire field.
-     */
+    /** Required enumerated value serialized in the `origin` wire field. */
     val origin: TeamMembershipJoinedFromOriginEnum,
-    /**
-     * Optional `string` value serialized in the `commitId` wire field.
-     */
+    /** Optional `string` value serialized in the `commitId` wire field. */
     val commitId: String? = null,
-    /**
-     * Optional `number` value serialized in the `dsyncConnectedAt` wire field.
-     */
+    /** Optional `number` value serialized in the `dsyncConnectedAt` wire field. */
     val dsyncConnectedAt: Double? = null,
-    /**
-     * Optional `string` value serialized in the `dsyncUserId` wire field.
-     */
+    /** Optional `string` value serialized in the `dsyncUserId` wire field. */
     val dsyncUserId: String? = null,
-    /**
-     * Optional API value serialized in the `gitUserId` wire field.
-     */
+    /** Optional API value serialized in the `gitUserId` wire field. */
     val gitUserId: Any? = null,
-    /**
-     * Optional `string` value serialized in the `gitUserLogin` wire field.
-     */
+    /** Optional `string` value serialized in the `gitUserLogin` wire field. */
     val gitUserLogin: String? = null,
-    /**
-     * Optional `string` value serialized in the `idpUserId` wire field.
-     */
+    /** Optional `string` value serialized in the `idpUserId` wire field. */
     val idpUserId: String? = null,
-    /**
-     * Optional `string` value serialized in the `repoId` wire field.
-     */
+    /** Optional `string` value serialized in the `repoId` wire field. */
     val repoId: String? = null,
-    /**
-     * Optional `string` value serialized in the `repoPath` wire field.
-     */
+    /** Optional `string` value serialized in the `repoPath` wire field. */
     val repoPath: String? = null,
-    /**
-     * Optional `number` value serialized in the `ssoConnectedAt` wire field.
-     */
+    /** Optional `number` value serialized in the `ssoConnectedAt` wire field. */
     val ssoConnectedAt: Double? = null,
-    /**
-     * Optional `string` value serialized in the `ssoUserId` wire field.
-     */
-    val ssoUserId: String? = null
+    /** Optional `string` value serialized in the `ssoUserId` wire field. */
+    val ssoUserId: String? = null,
 )
 
-/**
- * The membership of the authenticated User in relation to the Team.
- */
+/** The membership of the authenticated User in relation to the Team. */
 data class TeamMembership(
-    /**
-     * Required enumerated value serialized in the `confirmed` wire field.
-     */
+    /** Required enumerated value serialized in the `confirmed` wire field. */
     val confirmed: Boolean,
-    /**
-     * Required `number` value serialized in the `created` wire field.
-     */
+    /** Required `number` value serialized in the `created` wire field. */
     val created: Double,
-    /**
-     * Required `number` value serialized in the `createdAt` wire field.
-     */
+    /** Required `number` value serialized in the `createdAt` wire field. */
     val createdAt: Double,
-    /**
-     * Required enumerated value serialized in the `role` wire field.
-     */
+    /** Required enumerated value serialized in the `role` wire field. */
     val role: TeamMembershipRoleEnum,
-    /**
-     * Optional `number` value serialized in the `accessRequestedAt` wire field.
-     */
+    /** Optional `number` value serialized in the `accessRequestedAt` wire field. */
     val accessRequestedAt: Double? = null,
-    /**
-     * Optional array value serialized in the `entitlements` wire field.
-     */
+    /** Optional array value serialized in the `entitlements` wire field. */
     val entitlements: List<TeamMembershipEntitlementsItem>? = null,
-    /**
-     * Optional enumerated value serialized in the `isOrgBackingTeamMembership` wire field.
-     */
+    /** Optional enumerated value serialized in the `isOrgBackingTeamMembership` wire field. */
     val isOrgBackingTeamMembership: Boolean? = null,
-    /**
-     * Optional object value serialized in the `joinedFrom` wire field.
-     */
+    /** Optional object value serialized in the `joinedFrom` wire field. */
     val joinedFrom: TeamMembershipJoinedFrom? = null,
-    /**
-     * Optional `string` value serialized in the `organizationId` wire field.
-     */
+    /** Optional `string` value serialized in the `organizationId` wire field. */
     val organizationId: String? = null,
-    /**
-     * Optional `string` value serialized in the `teamId` wire field.
-     */
+    /** Optional `string` value serialized in the `teamId` wire field. */
     val teamId: String? = null,
-    /**
-     * Optional array value serialized in the `teamPermissions` wire field.
-     */
+    /** Optional array value serialized in the `teamPermissions` wire field. */
     val teamPermissions: List<TeamMembershipTeamPermissionsItemEnum>? = null,
-    /**
-     * Optional array value serialized in the `teamRoles` wire field.
-     */
+    /** Optional array value serialized in the `teamRoles` wire field. */
     val teamRoles: List<TeamMembershipTeamRolesItemEnum>? = null,
-    /**
-     * Optional `string` value serialized in the `uid` wire field.
-     */
-    val uid: String? = null
+    /** Optional `string` value serialized in the `uid` wire field. */
+    val uid: String? = null,
 )
 
-/**
- * NSNB configuration for the team.
- */
+/** NSNB configuration for the team. */
 data class TeamNsnbConfig(
-    /**
-     * Required enumerated value serialized in the `preference` wire field.
-     */
+    /** Required enumerated value serialized in the `preference` wire field. */
     val preference: TeamNsnbConfigPreferenceEnum
 )
 
-/**
- * Is remote caching enabled for this team
- */
+/** Is remote caching enabled for this team */
 data class TeamRemoteCaching(
-    /**
-     * Optional enumerated value serialized in the `enabled` wire field.
-     */
+    /** Optional enumerated value serialized in the `enabled` wire field. */
     val enabled: Boolean? = null
 )
 
-/**
- * Optional object value serialized in the `buildEntitlements` wire field.
- */
+/** Optional object value serialized in the `buildEntitlements` wire field. */
 data class TeamResourceConfigBuildEntitlements(
-    /**
-     * Optional enumerated value serialized in the `enhancedBuilds` wire field.
-     */
+    /** Optional enumerated value serialized in the `enhancedBuilds` wire field. */
     val enhancedBuilds: Boolean? = null
 )
 
-/**
- * Build machine configuration
- */
+/** Build machine configuration */
 data class TeamResourceConfigBuildMachine(
-    /**
-     * Default build machine type for new builds
-     */
+    /** Default build machine type for new builds */
     val default: TeamResourceConfigBuildMachineDefaultEnum? = null
 )
 
-/**
- * Optional object value serialized in the `resourceConfig` wire field.
- */
+/** Optional object value serialized in the `resourceConfig` wire field. */
 data class TeamResourceConfig(
-    /**
-     * The maximum number of blob stores an account can create.
-     */
+    /** The maximum number of blob stores an account can create. */
     val blobStores: Double? = null,
-    /**
-     * Optional object value serialized in the `buildEntitlements` wire field.
-     */
+    /** Optional object value serialized in the `buildEntitlements` wire field. */
     val buildEntitlements: TeamResourceConfigBuildEntitlements? = null,
-    /**
-     * Build machine configuration
-     */
+    /** Build machine configuration */
     val buildMachine: TeamResourceConfigBuildMachine? = null,
-    /**
-     * The total amount of concurrent builds that can be used.
-     */
+    /** The total amount of concurrent builds that can be used. */
     val concurrentBuilds: Double? = null,
-    /**
-     * The maximum number of custom environments allowed per project.
-     */
+    /** The maximum number of custom environments allowed per project. */
     val customEnvironmentsPerProject: Double? = null,
-    /**
-     * The maximum number of edge configs an account can create.
-     */
+    /** The maximum number of edge configs an account can create. */
     val edgeConfigs: Double? = null,
     /**
      * The maximum size in kilobytes of a Global Config. Only specified if a custom limit is set.
      */
     val edgeConfigSize: Double? = null,
-    /**
-     * Whether every build for this team / user has elastic concurrency enabled automatically.
-     */
+    /** Whether every build for this team / user has elastic concurrency enabled automatically. */
     val elasticConcurrencyEnabled: Boolean? = null,
-    /**
-     * The maximum number of kv databases an account can create.
-     */
+    /** The maximum number of kv databases an account can create. */
     val kvDatabases: Double? = null,
-    /**
-     * The maximum number of postgres databases an account can create.
-     */
+    /** The maximum number of postgres databases an account can create. */
     val postgresDatabases: Double? = null,
     /**
-     * The maximum memory size (in MB) for a serverless function. Only specified if a custom limit is set.
+     * The maximum memory size (in MB) for a serverless function. Only specified if a custom limit
+     * is set.
      */
-    val serverlessFunctionMaxMemorySize: Double? = null
+    val serverlessFunctionMaxMemorySize: Double? = null,
 )
 
-/**
- * Information for the SAML Single Sign-On configuration.
- */
+/** Information for the SAML Single Sign-On configuration. */
 data class TeamSamlConnection(
-    /**
-     * Timestamp (in milliseconds) of when the configuration was connected.
-     */
+    /** Timestamp (in milliseconds) of when the configuration was connected. */
     val connectedAt: Double,
-    /**
-     * Current state of the connection.
-     */
+    /** Current state of the connection. */
     val state: String,
-    /**
-     * The Identity Provider "type", for example Okta.
-     */
+    /** The Identity Provider "type", for example Okta. */
     val type: String,
-    /**
-     * Required `string` value serialized in the `status` wire field.
-     */
+    /** Required `string` value serialized in the `status` wire field. */
     val status: String,
-    /**
-     * Timestamp (in milliseconds) of when the last webhook event was received from WorkOS.
-     */
+    /** Timestamp (in milliseconds) of when the last webhook event was received from WorkOS. */
     val lastReceivedWebhookEvent: Double? = null,
-    /**
-     * Timestamp (in milliseconds) of when the last directory sync was performed.
-     */
+    /** Timestamp (in milliseconds) of when the last directory sync was performed. */
     val lastSyncedAt: Double? = null,
     /**
-     * Controls whether directory sync events are processed. - 'SETUP': Directory connected but role mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as 'ACTIVE' for backwards compatibility.
+     * Controls whether directory sync events are processed. - 'SETUP': Directory connected but role
+     * mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully
+     * configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat
+     * as 'ACTIVE' for backwards compatibility.
      */
-    val syncState: TeamSamlConnectionSyncStateEnum? = null
+    val syncState: TeamSamlConnectionSyncStateEnum? = null,
 )
 
-/**
- * Information for the Directory Sync configuration.
- */
+/** Information for the Directory Sync configuration. */
 data class TeamSamlDirectory(
-    /**
-     * Timestamp (in milliseconds) of when the configuration was connected.
-     */
+    /** Timestamp (in milliseconds) of when the configuration was connected. */
     val connectedAt: Double,
-    /**
-     * Current state of the connection.
-     */
+    /** Current state of the connection. */
     val state: String,
-    /**
-     * The Identity Provider "type", for example Okta.
-     */
+    /** The Identity Provider "type", for example Okta. */
     val type: String,
-    /**
-     * Timestamp (in milliseconds) of when the last webhook event was received from WorkOS.
-     */
+    /** Timestamp (in milliseconds) of when the last webhook event was received from WorkOS. */
     val lastReceivedWebhookEvent: Double? = null,
-    /**
-     * Timestamp (in milliseconds) of when the last directory sync was performed.
-     */
+    /** Timestamp (in milliseconds) of when the last directory sync was performed. */
     val lastSyncedAt: Double? = null,
     /**
-     * Controls whether directory sync events are processed. - 'SETUP': Directory connected but role mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as 'ACTIVE' for backwards compatibility.
+     * Controls whether directory sync events are processed. - 'SETUP': Directory connected but role
+     * mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully
+     * configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat
+     * as 'ACTIVE' for backwards compatibility.
      */
-    val syncState: TeamSamlDirectorySyncStateEnum? = null
+    val syncState: TeamSamlDirectorySyncStateEnum? = null,
 )
 
 /**
- * When "Directory Sync" is configured, this object contains a mapping of which Directory Group (by ID) should be assigned to which Vercel Team roles and permissions, or an access group. Bare team roles are deprecated in favor of DirectorySyncRolesMapping.
+ * When "Directory Sync" is configured, this object contains a mapping of which Directory Group (by
+ * ID) should be assigned to which Vercel Team roles and permissions, or an access group. Bare team
+ * roles are deprecated in favor of DirectorySyncRolesMapping.
  */
-data class TeamSamlRolesValueVariant0(
-    val accessGroupId: String
-)
+data class TeamSamlRolesValueVariant0(val accessGroupId: String)
 
 /**
- * When "Directory Sync" is configured, this object contains a mapping of which Directory Group (by ID) should be assigned to which Vercel Team roles and permissions, or an access group. Bare team roles are deprecated in favor of DirectorySyncRolesMapping.
+ * When "Directory Sync" is configured, this object contains a mapping of which Directory Group (by
+ * ID) should be assigned to which Vercel Team roles and permissions, or an access group. Bare team
+ * roles are deprecated in favor of DirectorySyncRolesMapping.
  */
 data class TeamSamlRolesValueVariant1(
     val teamRoles: List<TeamSamlRolesValueVariant1TeamRolesItemEnum>,
-    val teamPermissions: List<TeamSamlRolesValueVariant1TeamPermissionsItemEnum>? = null
+    val teamPermissions: List<TeamSamlRolesValueVariant1TeamPermissionsItemEnum>? = null,
 )
 
 /**
- * When "Single Sign-On (SAML)" is configured, this object contains information regarding the configuration of the Identity Provider (IdP).
+ * When "Single Sign-On (SAML)" is configured, this object contains information regarding the
+ * configuration of the Identity Provider (IdP).
  */
 data class TeamSaml(
     /**
-     * When `true`, interactions with the Team **must** be done with an authentication token that has been authenticated with the Team's SAML Single Sign-On provider.
+     * When `true`, interactions with the Team **must** be done with an authentication token that
+     * has been authenticated with the Team's SAML Single Sign-On provider.
      */
     val enforced: Boolean,
-    /**
-     * Information for the SAML Single Sign-On configuration.
-     */
+    /** Information for the SAML Single Sign-On configuration. */
     val connection: TeamSamlConnection? = null,
-    /**
-     * The default redirect URI to use after successful SAML authentication.
-     */
+    /** The default redirect URI to use after successful SAML authentication. */
     val defaultRedirectUri: TeamSamlDefaultRedirectUriEnum? = null,
-    /**
-     * Information for the Directory Sync configuration.
-     */
+    /** Information for the Directory Sync configuration. */
     val directory: TeamSamlDirectory? = null,
     /**
-     * When "Directory Sync" is configured, this object contains a mapping of which Directory Group (by ID) should be assigned to which Vercel Team roles and permissions, or an access group. Bare team roles are deprecated in favor of DirectorySyncRolesMapping.
+     * When "Directory Sync" is configured, this object contains a mapping of which Directory Group
+     * (by ID) should be assigned to which Vercel Team roles and permissions, or an access group.
+     * Bare team roles are deprecated in favor of DirectorySyncRolesMapping.
      */
-    val roles: Map<String, Any>? = null
+    val roles: Map<String, Any>? = null,
 )
 
 /**
- * When enabled, creating and managing connectors requires Owner role or the ConnectorManager permission.
+ * When enabled, creating and managing connectors requires Owner role or the ConnectorManager
+ * permission.
  */
 data class TeamStrictConnectors(
-    /**
-     * Required enumerated value serialized in the `enabled` wire field.
-     */
+    /** Required enumerated value serialized in the `enabled` wire field. */
     val enabled: Boolean,
-    /**
-     * Required `number` value serialized in the `updatedAt` wire field.
-     */
-    val updatedAt: Double
+    /** Required `number` value serialized in the `updatedAt` wire field. */
+    val updatedAt: Double,
 )
 
-/**
- * When enabled, deployment protection settings require stricter permissions (owner-only).
- */
+/** When enabled, deployment protection settings require stricter permissions (owner-only). */
 data class TeamStrictDeploymentProtectionSettings(
-    /**
-     * Required enumerated value serialized in the `enabled` wire field.
-     */
+    /** Required enumerated value serialized in the `enabled` wire field. */
     val enabled: Boolean,
-    /**
-     * Required `number` value serialized in the `updatedAt` wire field.
-     */
-    val updatedAt: Double
+    /** Required `number` value serialized in the `updatedAt` wire field. */
+    val updatedAt: Double,
 )

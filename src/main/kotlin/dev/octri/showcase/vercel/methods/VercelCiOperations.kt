@@ -14,41 +14,93 @@ import dev.octri.showcase.vercel.Validation
 
 internal object VercelCiGetVercelCiRepositorySettingsOperation {
     /**
-     * Retrieves Vercel CI settings for a connected repository. Identify the repository with `provider`, `organizationId`, and `repository`; use `teamId` or `slug` to make the request on behalf of a team. The response includes whether Vercel CI is enabled and the associated timestamps.
+     * Retrieves Vercel CI settings for a connected repository. Identify the repository with
+     * `provider`, `organizationId`, and `repository`; use `teamId` or `slug` to make the request on
+     * behalf of a team. The response includes whether Vercel CI is enabled and the associated
+     * timestamps.
      *
      * Get Repository Settings
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getVercelCiRepositorySettings(clientConfig: ClientConfig, provider: GetVercelCiRepositorySettingsParameterEnum, organizationId: String, repository: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): VercelCi.GetVercelCiRepositorySettingsResponse {
-        return SdkClient.request<VercelCi.GetVercelCiRepositorySettingsResponse>(SdkClient.RequestSpec("GET", "/v1/vercel-ci/repository-settings", config = clientConfig, query = mapOf("provider" to SdkClient.queryValue(provider, "form", true), "organizationId" to
-    SdkClient.queryValue(organizationId, "form", true), "repository" to
-    SdkClient.queryValue(repository, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getVercelCiRepositorySettings", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getVercelCiRepositorySettings(
+        clientConfig: ClientConfig,
+        provider: GetVercelCiRepositorySettingsParameterEnum,
+        organizationId: String,
+        repository: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): VercelCi.GetVercelCiRepositorySettingsResponse {
+        return SdkClient.request<VercelCi.GetVercelCiRepositorySettingsResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/vercel-ci/repository-settings",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "provider" to SdkClient.queryValue(provider, "form", true),
+                            "organizationId" to SdkClient.queryValue(organizationId, "form", true),
+                            "repository" to SdkClient.queryValue(repository, "form", true),
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getVercelCiRepositorySettings",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiUpdateVercelCiRepositorySettingsOperation {
     /**
-     * Updates the Vercel CI enabled state for a connected repository. Identify the repository with `provider`, `organizationId`, and `repository`, then set `ciEnabled` in the request body. Use `teamId` or `slug` to perform the request on behalf of a team.
+     * Updates the Vercel CI enabled state for a connected repository. Identify the repository with
+     * `provider`, `organizationId`, and `repository`, then set `ciEnabled` in the request body. Use
+     * `teamId` or `slug` to perform the request on behalf of a team.
      *
      * Update Repository Settings
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun updateVercelCiRepositorySettings(clientConfig: ClientConfig, request: VercelCi.UpdateVercelCiRepositorySettingsRequest, options: RequestOptions? = null): VercelCi.UpdateVercelCiRepositorySettingsResponse {
-        return SdkClient.request<VercelCi.UpdateVercelCiRepositorySettingsResponse>(SdkClient.RequestSpec("PATCH", "/v1/vercel-ci/repository-settings", config = clientConfig, query = mapOf("provider" to
-    SdkClient.queryValue(request.provider, "form", true), "organizationId" to
-    SdkClient.queryValue(request.organizationId, "form", true), "repository" to
-    SdkClient.queryValue(request.repository, "form", true), "teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("ciEnabled" to (request.ciEnabled)), operationId = "updateVercelCiRepositorySettings", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun updateVercelCiRepositorySettings(
+        clientConfig: ClientConfig,
+        request: VercelCi.UpdateVercelCiRepositorySettingsRequest,
+        options: RequestOptions? = null,
+    ): VercelCi.UpdateVercelCiRepositorySettingsResponse {
+        return SdkClient.request<VercelCi.UpdateVercelCiRepositorySettingsResponse>(
+                SdkClient.RequestSpec(
+                    "PATCH",
+                    "/v1/vercel-ci/repository-settings",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "provider" to SdkClient.queryValue(request.provider, "form", true),
+                            "organizationId" to
+                                SdkClient.queryValue(request.organizationId, "form", true),
+                            "repository" to SdkClient.queryValue(request.repository, "form", true),
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    body = SdkClient.bodyMap("ciEnabled" to (request.ciEnabled)),
+                    operationId = "updateVercelCiRepositorySettings",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiListVercelCiInvocationsOperation {
     /**
-     * Lists Vercel CI invocations for a team, with optional filters for repository, branch, commit, status, conclusion, source, author, and creation time. Use `cursor` to continue from a previous response and `limit` to set the page size. The response includes invocation records, repository details, and pagination metadata.
+     * Lists Vercel CI invocations for a team, with optional filters for repository, branch, commit,
+     * status, conclusion, source, author, and creation time. Use `cursor` to continue from a
+     * previous response and `limit` to set the page size. The response includes invocation records,
+     * repository details, and pagination metadata.
      *
      * List Invocations
      *
@@ -62,309 +114,690 @@ internal object VercelCiListVercelCiInvocationsOperation {
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listVercelCiInvocations(clientConfig: ClientConfig, request: VercelCi.ListVercelCiInvocationsRequest, options: RequestOptions? = null): VercelCi.ListVercelCiInvocationsResponse {
+    fun listVercelCiInvocations(
+        clientConfig: ClientConfig,
+        request: VercelCi.ListVercelCiInvocationsRequest,
+        options: RequestOptions? = null,
+    ): VercelCi.ListVercelCiInvocationsResponse {
         validateListVercelCiInvocationsRequest(request)
 
-        return SdkClient.request<VercelCi.ListVercelCiInvocationsResponse>(SdkClient.RequestSpec("GET", "/v2/vercel-ci/invocations", config = clientConfig, query = buildListVercelCiInvocationsQuery(request), operationId = "listVercelCiInvocations", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<VercelCi.ListVercelCiInvocationsResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v2/vercel-ci/invocations",
+                    config = clientConfig,
+                    query = buildListVercelCiInvocationsQuery(request),
+                    operationId = "listVercelCiInvocations",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-    private fun validateListVercelCiInvocationsRequest(request: VercelCi.ListVercelCiInvocationsRequest) {
+    private fun validateListVercelCiInvocationsRequest(
+        request: VercelCi.ListVercelCiInvocationsRequest
+    ) {
         if (request.status != null) {
             Validation.validateItems("status", request.status, Validation.LengthOpts(min = 1))
-}
+        }
 
         if (request.conclusion != null) {
-            Validation.validateItems("conclusion", request.conclusion, Validation.LengthOpts(min = 1))
-}
+            Validation.validateItems(
+                "conclusion",
+                request.conclusion,
+                Validation.LengthOpts(min = 1),
+            )
+        }
 
         if (request.source != null) {
             Validation.validateItems("source", request.source, Validation.LengthOpts(min = 1))
-}
+        }
     }
 
+    private fun buildListVercelCiInvocationsQuery(
+        request: VercelCi.ListVercelCiInvocationsRequest
+    ): Map<String, Any?> = buildMap {
+        putAll(buildListVercelCiInvocationsQueryPart1(request))
+        putAll(buildListVercelCiInvocationsQueryPart2(request))
+    }
 
-    private fun buildListVercelCiInvocationsQuery(request: VercelCi.ListVercelCiInvocationsRequest): Map<String, Any?> =
-        buildMap {
-            putAll(buildListVercelCiInvocationsQueryPart1(request))
-            putAll(buildListVercelCiInvocationsQueryPart2(request))
-        }
-
-    private fun buildListVercelCiInvocationsQueryPart1(request: VercelCi.ListVercelCiInvocationsRequest): Map<String, Any?> =
+    private fun buildListVercelCiInvocationsQueryPart1(
+        request: VercelCi.ListVercelCiInvocationsRequest
+    ): Map<String, Any?> =
         mapOf(
-            "provider" to
-    SdkClient.queryValue(request.provider, "form", true),
-            "repository" to
-    SdkClient.queryValue(request.repository, "form", true),
-            "branchName" to
-    SdkClient.queryValue(request.branchName, "form", true),
-            "snapshot" to
-    SdkClient.queryValue(request.snapshot, "form", true),
-            "status" to
-    SdkClient.queryValue(request.status, "form", true),
-            "conclusion" to
-    SdkClient.queryValue(request.conclusion, "form", true),
-            "source" to
-    SdkClient.queryValue(request.source, "form", true),
-            "authorGitHubId" to
-    SdkClient.queryValue(request.authorGitHubId, "form", true),
-            "author" to
-    SdkClient.queryValue(request.author, "form", true),
-            "createdAfter" to
-    SdkClient.queryValue(request.createdAfter, "form", true),
-            "createdBefore" to
-    SdkClient.queryValue(request.createdBefore, "form", true),
+            "provider" to SdkClient.queryValue(request.provider, "form", true),
+            "repository" to SdkClient.queryValue(request.repository, "form", true),
+            "branchName" to SdkClient.queryValue(request.branchName, "form", true),
+            "snapshot" to SdkClient.queryValue(request.snapshot, "form", true),
+            "status" to SdkClient.queryValue(request.status, "form", true),
+            "conclusion" to SdkClient.queryValue(request.conclusion, "form", true),
+            "source" to SdkClient.queryValue(request.source, "form", true),
+            "authorGitHubId" to SdkClient.queryValue(request.authorGitHubId, "form", true),
+            "author" to SdkClient.queryValue(request.author, "form", true),
+            "createdAfter" to SdkClient.queryValue(request.createdAfter, "form", true),
+            "createdBefore" to SdkClient.queryValue(request.createdBefore, "form", true),
             "limit" to SdkClient.queryValue(request.limit, "form", true),
         )
 
-    private fun buildListVercelCiInvocationsQueryPart2(request: VercelCi.ListVercelCiInvocationsRequest): Map<String, Any?> =
+    private fun buildListVercelCiInvocationsQueryPart2(
+        request: VercelCi.ListVercelCiInvocationsRequest
+    ): Map<String, Any?> =
         mapOf(
-            "cursor" to
-    SdkClient.queryValue(request.cursor, "form", true),
-            "teamId" to
-    SdkClient.queryValue(request.teamId, "form", true),
+            "cursor" to SdkClient.queryValue(request.cursor, "form", true),
+            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
             "slug" to SdkClient.queryValue(request.slug, "form", true),
         )
 }
 
 internal object VercelCiListVercelCiBranchesOperation {
     /**
-     * Lists Vercel CI branch suggestions for a team. Use `query` to filter the suggestions and `limit` to control how many results are returned. The response contains branch names and their counts.
+     * Lists Vercel CI branch suggestions for a team. Use `query` to filter the suggestions and
+     * `limit` to control how many results are returned. The response contains branch names and
+     * their counts.
      *
      * List branches
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listVercelCiBranches(clientConfig: ClientConfig, query: String? = null, limit: Double? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): VercelCi.ListVercelCiBranchesResponse {
+    fun listVercelCiBranches(
+        clientConfig: ClientConfig,
+        query: String? = null,
+        limit: Double? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): VercelCi.ListVercelCiBranchesResponse {
         if (query != null) {
             Validation.validateLength("query", query, Validation.LengthOpts(max = 100))
-}
+        }
 
         if (limit != null) {
             Validation.validateRange("limit", limit, Validation.RangeOpts(min = 1.0, max = 50.0))
-}
+        }
 
-        return SdkClient.request<VercelCi.ListVercelCiBranchesResponse>(SdkClient.RequestSpec("GET", "/v2/vercel-ci/branches", config = clientConfig, query = mapOf("query" to SdkClient.queryValue(query, "form", true), "limit" to SdkClient.queryValue(limit, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "listVercelCiBranches", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<VercelCi.ListVercelCiBranchesResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v2/vercel-ci/branches",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "query" to SdkClient.queryValue(query, "form", true),
+                            "limit" to SdkClient.queryValue(limit, "form", true),
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "listVercelCiBranches",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiCreateVercelCiTaskAnalysisOperation {
     /**
-     * Starts an asynchronous Vercel CI task analysis for a repository. Supply the repository `owner` and `repo` in the request body, and use `teamId` or `slug` to perform the request on behalf of a team. A 202 response confirms acceptance and provides an `analysisId` to check the analysis status.
+     * Starts an asynchronous Vercel CI task analysis for a repository. Supply the repository
+     * `owner` and `repo` in the request body, and use `teamId` or `slug` to perform the request on
+     * behalf of a team. A 202 response confirms acceptance and provides an `analysisId` to check
+     * the analysis status.
      *
      * Create task analysis
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun createVercelCiTaskAnalysis(clientConfig: ClientConfig, owner: String, repo: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): VercelCi.CreateVercelCiTaskAnalysisResponse {
+    fun createVercelCiTaskAnalysis(
+        clientConfig: ClientConfig,
+        owner: String,
+        repo: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): VercelCi.CreateVercelCiTaskAnalysisResponse {
         Validation.validateLength("owner", owner, Validation.LengthOpts(max = 100))
 
         Validation.validateLength("repo", repo, Validation.LengthOpts(max = 100))
 
-        return SdkClient.request<VercelCi.CreateVercelCiTaskAnalysisResponse>(SdkClient.RequestSpec("POST", "/v1/vercel-ci/task-analyses", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("owner" to (owner), "repo" to (repo)), operationId = "createVercelCiTaskAnalysis", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<VercelCi.CreateVercelCiTaskAnalysisResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v1/vercel-ci/task-analyses",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body = SdkClient.bodyMap("owner" to (owner), "repo" to (repo)),
+                    operationId = "createVercelCiTaskAnalysis",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiGetVercelCiTaskAnalysisOperation {
     /**
-     * Retrieves the current status of a Vercel CI task analysis. Use `analysisId` to identify the analysis and optionally pass `teamId` or `slug` to make the request on behalf of a team. The response includes a failure reason when one is available.
+     * Retrieves the current status of a Vercel CI task analysis. Use `analysisId` to identify the
+     * analysis and optionally pass `teamId` or `slug` to make the request on behalf of a team. The
+     * response includes a failure reason when one is available.
      *
      * Get task analysis
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getVercelCiTaskAnalysis(clientConfig: ClientConfig, analysisId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): VercelCi.GetVercelCiTaskAnalysisResponse {
-        return SdkClient.request<VercelCi.GetVercelCiTaskAnalysisResponse>(SdkClient.RequestSpec("GET", "/v1/vercel-ci/task-analyses/${SdkClient.encodePathSegment(analysisId)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getVercelCiTaskAnalysis", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getVercelCiTaskAnalysis(
+        clientConfig: ClientConfig,
+        analysisId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): VercelCi.GetVercelCiTaskAnalysisResponse {
+        return SdkClient.request<VercelCi.GetVercelCiTaskAnalysisResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/vercel-ci/task-analyses/${SdkClient.encodePathSegment(analysisId)}",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getVercelCiTaskAnalysis",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiCreateVercelCiTaskConfigurationPullRequestOperation {
     /**
-     * Creates a GitHub pull request that adds Vercel CI tags for tasks discovered in a completed analysis. Identify the analysis with `analysisId` and provide the tasks and configuration paths in the request body. The response includes the pull request URL and the names of changed tasks.
+     * Creates a GitHub pull request that adds Vercel CI tags for tasks discovered in a completed
+     * analysis. Identify the analysis with `analysisId` and provide the tasks and configuration
+     * paths in the request body. The response includes the pull request URL and the names of
+     * changed tasks.
      *
      * Create task configuration pull request
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun createVercelCiTaskConfigurationPullRequest(clientConfig: ClientConfig, analysisId: String, tasks: List<VercelCi.CreateVercelCiTaskConfigurationPullRequestTasksItem>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): VercelCi.CreateVercelCiTaskConfigurationPullRequestResponse {
+    fun createVercelCiTaskConfigurationPullRequest(
+        clientConfig: ClientConfig,
+        analysisId: String,
+        tasks: List<VercelCi.CreateVercelCiTaskConfigurationPullRequestTasksItem>,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): VercelCi.CreateVercelCiTaskConfigurationPullRequestResponse {
         Validation.validateItems("tasks", tasks, Validation.LengthOpts(min = 1, max = 100))
 
-        return SdkClient.request<VercelCi.CreateVercelCiTaskConfigurationPullRequestResponse>(SdkClient.RequestSpec("POST", "/v1/vercel-ci/task-analyses/${SdkClient.encodePathSegment(analysisId)}/pull-request", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("tasks" to (tasks)), operationId = "createVercelCiTaskConfigurationPullRequest", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<VercelCi.CreateVercelCiTaskConfigurationPullRequestResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v1/vercel-ci/task-analyses/${SdkClient.encodePathSegment(analysisId)}/pull-request",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body = SdkClient.bodyMap("tasks" to (tasks)),
+                    operationId = "createVercelCiTaskConfigurationPullRequest",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiListVercelCiTaskAnalysisTasksOperation {
     /**
-     * Lists tasks discovered by a completed Vercel CI task analysis. Identify the analysis with `analysisId`, and use `cursor` and `limit` to retrieve task results in pages. Each task includes its configuration path and recommendation reasons.
+     * Lists tasks discovered by a completed Vercel CI task analysis. Identify the analysis with
+     * `analysisId`, and use `cursor` and `limit` to retrieve task results in pages. Each task
+     * includes its configuration path and recommendation reasons.
      *
      * List task analysis tasks
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listVercelCiTaskAnalysisTasks(clientConfig: ClientConfig, analysisId: String, cursor: String? = null, limit: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): VercelCi.ListVercelCiTaskAnalysisTasksResponse {
-        return SdkClient.request<VercelCi.ListVercelCiTaskAnalysisTasksResponse>(SdkClient.RequestSpec("GET", "/v1/vercel-ci/task-analyses/${SdkClient.encodePathSegment(analysisId)}/tasks", config = clientConfig, query = mapOf("cursor" to SdkClient.queryValue(cursor, "form", true), "limit" to SdkClient.queryValue(limit, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "listVercelCiTaskAnalysisTasks", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun listVercelCiTaskAnalysisTasks(
+        clientConfig: ClientConfig,
+        analysisId: String,
+        cursor: String? = null,
+        limit: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): VercelCi.ListVercelCiTaskAnalysisTasksResponse {
+        return SdkClient.request<VercelCi.ListVercelCiTaskAnalysisTasksResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/vercel-ci/task-analyses/${SdkClient.encodePathSegment(analysisId)}/tasks",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "cursor" to SdkClient.queryValue(cursor, "form", true),
+                            "limit" to SdkClient.queryValue(limit, "form", true),
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "listVercelCiTaskAnalysisTasks",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiListVercelCiInvocationAttemptsOperation {
     /**
-     * Lists all attempts for a Vercel CI invocation. Use `invocationId` to identify the invocation and optionally pass `teamId` or `slug` to make the request on behalf of a team. The response includes attempt records and repository details.
+     * Lists all attempts for a Vercel CI invocation. Use `invocationId` to identify the invocation
+     * and optionally pass `teamId` or `slug` to make the request on behalf of a team. The response
+     * includes attempt records and repository details.
      *
      * List Invocation Attempts
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listVercelCiInvocationAttempts(clientConfig: ClientConfig, invocationId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): VercelCi.ListVercelCiInvocationAttemptsResponse {
-        return SdkClient.request<VercelCi.ListVercelCiInvocationAttemptsResponse>(SdkClient.RequestSpec("GET", "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(invocationId)}/attempts", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "listVercelCiInvocationAttempts", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun listVercelCiInvocationAttempts(
+        clientConfig: ClientConfig,
+        invocationId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): VercelCi.ListVercelCiInvocationAttemptsResponse {
+        return SdkClient.request<VercelCi.ListVercelCiInvocationAttemptsResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(invocationId)}/attempts",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "listVercelCiInvocationAttempts",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiGetVercelCiInvocationTreeOperation {
     /**
-     * Retrieves an invocation attempt with its job definitions, latest job runs, and task definitions and active task runs. Use `attempt` to select an attempt, or omit it to use the latest; set `follow` to `1` to receive newline-delimited JSON updates until the attempt finishes or the stream times out.
+     * Retrieves an invocation attempt with its job definitions, latest job runs, and task
+     * definitions and active task runs. Use `attempt` to select an attempt, or omit it to use the
+     * latest; set `follow` to `1` to receive newline-delimited JSON updates until the attempt
+     * finishes or the stream times out.
      *
-     * Returns an invocation attempt together with every job definition, its latest job run, and the task definitions and active task runs of that job run. Defaults to the latest attempt when `attempt` is omitted. With `follow=1` the response is a newline-delimited JSON stream: a `{"type":"tree", ...}` event with the full tree is sent immediately and again whenever it changes, and a final `{"type":"end","reason":...}` event is sent when the attempt finishes (`completed`) or the…
+     * Returns an invocation attempt together with every job definition, its latest job run, and the
+     * task definitions and active task runs of that job run. Defaults to the latest attempt when
+     * `attempt` is omitted. With `follow=1` the response is a newline-delimited JSON stream: a
+     * `{"type":"tree", ...}` event with the full tree is sent immediately and again whenever it
+     * changes, and a final `{"type":"end","reason":...}` event is sent when the attempt finishes
+     * (`completed`) or the…
      *
      * @param attempt Invocation attempt to return. Defaults to the latest attempt.
-     * @param follow When 1, stream the tree as newline-delimited JSON until the
-     *   attempt finishes.
+     * @param follow When 1, stream the tree as newline-delimited JSON until the attempt finishes.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getVercelCiInvocationTree(clientConfig: ClientConfig, invocationId: String, attempt: String? = null, follow: GetVercelCiInvocationTreeParameterEnum? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): VercelCi.GetVercelCiInvocationTreeResponse {
+    fun getVercelCiInvocationTree(
+        clientConfig: ClientConfig,
+        invocationId: String,
+        attempt: String? = null,
+        follow: GetVercelCiInvocationTreeParameterEnum? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): VercelCi.GetVercelCiInvocationTreeResponse {
         if (attempt != null) {
             Validation.validatePattern("attempt", attempt, "^[1-9][0-9]*$")
-}
+        }
 
-        return SdkClient.request<VercelCi.GetVercelCiInvocationTreeResponse>(SdkClient.RequestSpec("GET", "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(invocationId)}/tree", config = clientConfig, query = mapOf("attempt" to SdkClient.queryValue(attempt, "form", true), "follow" to SdkClient.queryValue(follow, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getVercelCiInvocationTree", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<VercelCi.GetVercelCiInvocationTreeResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(invocationId)}/tree",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "attempt" to SdkClient.queryValue(attempt, "form", true),
+                            "follow" to SdkClient.queryValue(follow, "form", true),
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getVercelCiInvocationTree",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiGetVercelCiInvocationOperation {
     /**
-     * Retrieves a specific invocation attempt and its repository details. Use `invocationId` and `attempt` to identify the attempt you want to inspect. The response includes the invocation record and associated repositories.
+     * Retrieves a specific invocation attempt and its repository details. Use `invocationId` and
+     * `attempt` to identify the attempt you want to inspect. The response includes the invocation
+     * record and associated repositories.
      *
      * Get Invocation
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getVercelCiInvocation(clientConfig: ClientConfig, invocationId: String, attempt: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): VercelCi.GetVercelCiInvocationResponse {
-        return SdkClient.request<VercelCi.GetVercelCiInvocationResponse>(SdkClient.RequestSpec("GET", "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(invocationId)}/attempts/${SdkClient.encodePathSegment(attempt)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getVercelCiInvocation", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getVercelCiInvocation(
+        clientConfig: ClientConfig,
+        invocationId: String,
+        attempt: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): VercelCi.GetVercelCiInvocationResponse {
+        return SdkClient.request<VercelCi.GetVercelCiInvocationResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(invocationId)}/attempts/${SdkClient.encodePathSegment(attempt)}",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getVercelCiInvocation",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiRetryVercelCiInvocationOperation {
     /**
-     * Triggers a retry of a terminal Vercel CI invocation attempt. Use `invocationId` and `attempt` to identify the attempt to retry. The response confirms that the retry was scheduled and provides the new attempt number.
+     * Triggers a retry of a terminal Vercel CI invocation attempt. Use `invocationId` and `attempt`
+     * to identify the attempt to retry. The response confirms that the retry was scheduled and
+     * provides the new attempt number.
      *
      * Retry Invocation
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun retryVercelCiInvocation(clientConfig: ClientConfig, invocationId: String, attempt: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): VercelCi.RetryVercelCiInvocationResponse {
-        return SdkClient.request<VercelCi.RetryVercelCiInvocationResponse>(SdkClient.RequestSpec("POST", "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(invocationId)}/attempts/${SdkClient.encodePathSegment(attempt)}/retry", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "retryVercelCiInvocation", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun retryVercelCiInvocation(
+        clientConfig: ClientConfig,
+        invocationId: String,
+        attempt: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): VercelCi.RetryVercelCiInvocationResponse {
+        return SdkClient.request<VercelCi.RetryVercelCiInvocationResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(invocationId)}/attempts/${SdkClient.encodePathSegment(attempt)}/retry",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "retryVercelCiInvocation",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiListVercelCiJobDefinitionsOperation {
     /**
-     * Lists the job definitions associated with an invocation attempt. Use `invocationId` and `attempt` to select the attempt whose jobs you want to inspect. Each result includes the job definition's identifier, kind, name, command, and creation time.
+     * Lists the job definitions associated with an invocation attempt. Use `invocationId` and
+     * `attempt` to select the attempt whose jobs you want to inspect. Each result includes the job
+     * definition's identifier, kind, name, command, and creation time.
      *
      * List Job Definitions
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listVercelCiJobDefinitions(clientConfig: ClientConfig, invocationId: String, attempt: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): VercelCi.ListVercelCiJobDefinitionsResponse {
-        return SdkClient.request<VercelCi.ListVercelCiJobDefinitionsResponse>(SdkClient.RequestSpec("GET", "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(invocationId)}/attempts/${SdkClient.encodePathSegment(attempt)}/job-definitions", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "listVercelCiJobDefinitions", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun listVercelCiJobDefinitions(
+        clientConfig: ClientConfig,
+        invocationId: String,
+        attempt: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): VercelCi.ListVercelCiJobDefinitionsResponse {
+        return SdkClient.request<VercelCi.ListVercelCiJobDefinitionsResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(invocationId)}/attempts/${SdkClient.encodePathSegment(attempt)}/job-definitions",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "listVercelCiJobDefinitions",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiGetVercelCiJobDefinitionOperation {
     /**
-     * Retrieves a specific job definition for an invocation attempt. Use `invocationId`, `attempt`, and `jobDefinitionId` to identify the definition. The response contains the job definition's kind, name, command, and creation time.
+     * Retrieves a specific job definition for an invocation attempt. Use `invocationId`, `attempt`,
+     * and `jobDefinitionId` to identify the definition. The response contains the job definition's
+     * kind, name, command, and creation time.
      *
      * Get Job Definition
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getVercelCiJobDefinition(clientConfig: ClientConfig, invocationId: String, attempt: String, jobDefinitionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): VercelCi.GetVercelCiJobDefinitionResponse {
-        return SdkClient.request<VercelCi.GetVercelCiJobDefinitionResponse>(SdkClient.RequestSpec("GET", "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(invocationId)}/attempts/${SdkClient.encodePathSegment(attempt)}/job-definitions/${SdkClient.encodePathSegment(jobDefinitionId)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getVercelCiJobDefinition", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getVercelCiJobDefinition(
+        clientConfig: ClientConfig,
+        invocationId: String,
+        attempt: String,
+        jobDefinitionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): VercelCi.GetVercelCiJobDefinitionResponse {
+        return SdkClient.request<VercelCi.GetVercelCiJobDefinitionResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(invocationId)}/attempts/${SdkClient.encodePathSegment(attempt)}/job-definitions/${SdkClient.encodePathSegment(jobDefinitionId)}",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getVercelCiJobDefinition",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiListVercelCiJobRunsOperation {
     /**
-     * Lists the runs for a job definition in a specific invocation attempt. Use `invocationId`, `attempt`, and `jobDefinitionId` to select the job whose run history you want to inspect. Each result includes the run attempt number and creation time, with start and completion details when available.
+     * Lists the runs for a job definition in a specific invocation attempt. Use `invocationId`,
+     * `attempt`, and `jobDefinitionId` to select the job whose run history you want to inspect.
+     * Each result includes the run attempt number and creation time, with start and completion
+     * details when available.
      *
      * List Job Runs
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listVercelCiJobRuns(clientConfig: ClientConfig, invocationId: String, attempt: String, jobDefinitionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): VercelCi.ListVercelCiJobRunsResponse {
-        return SdkClient.request<VercelCi.ListVercelCiJobRunsResponse>(SdkClient.RequestSpec("GET", "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(invocationId)}/attempts/${SdkClient.encodePathSegment(attempt)}/job-definitions/${SdkClient.encodePathSegment(jobDefinitionId)}/runs", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "listVercelCiJobRuns", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun listVercelCiJobRuns(
+        clientConfig: ClientConfig,
+        invocationId: String,
+        attempt: String,
+        jobDefinitionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): VercelCi.ListVercelCiJobRunsResponse {
+        return SdkClient.request<VercelCi.ListVercelCiJobRunsResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(invocationId)}/attempts/${SdkClient.encodePathSegment(attempt)}/job-definitions/${SdkClient.encodePathSegment(jobDefinitionId)}/runs",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "listVercelCiJobRuns",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiGetVercelCiJobRunOperation {
     /**
-     * Retrieves a specific run attempt for a job definition. Use `invocationId`, `attempt`, `jobDefinitionId`, and `runAttempt` to identify the run. The response contains the run's creation time and any available start and completion details.
+     * Retrieves a specific run attempt for a job definition. Use `invocationId`, `attempt`,
+     * `jobDefinitionId`, and `runAttempt` to identify the run. The response contains the run's
+     * creation time and any available start and completion details.
      *
      * Get Job Run
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getVercelCiJobRun(clientConfig: ClientConfig, request: VercelCi.GetVercelCiJobRunRequest, options: RequestOptions? = null): VercelCi.GetVercelCiJobRunResponse {
-        return SdkClient.request<VercelCi.GetVercelCiJobRunResponse>(SdkClient.RequestSpec("GET", "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(request.invocationId)}/attempts/${SdkClient.encodePathSegment(request.attempt)}/job-definitions/${SdkClient.encodePathSegment(request.jobDefinitionId)}/runs/${SdkClient.encodePathSegment(request.runAttempt)}", config = clientConfig, query = mapOf("teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "getVercelCiJobRun", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getVercelCiJobRun(
+        clientConfig: ClientConfig,
+        request: VercelCi.GetVercelCiJobRunRequest,
+        options: RequestOptions? = null,
+    ): VercelCi.GetVercelCiJobRunResponse {
+        return SdkClient.request<VercelCi.GetVercelCiJobRunResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(request.invocationId)}/attempts/${SdkClient.encodePathSegment(request.attempt)}/job-definitions/${SdkClient.encodePathSegment(request.jobDefinitionId)}/runs/${SdkClient.encodePathSegment(request.runAttempt)}",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    operationId = "getVercelCiJobRun",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiListVercelCiTaskDefinitionsOperation {
     /**
-     * Lists the task definitions associated with a job run. Use `invocationId`, `attempt`, `jobDefinitionId`, and `runAttempt` to select the run. Each result includes its task definition identifier, name, operation, dependencies, and creation time.
+     * Lists the task definitions associated with a job run. Use `invocationId`, `attempt`,
+     * `jobDefinitionId`, and `runAttempt` to select the run. Each result includes its task
+     * definition identifier, name, operation, dependencies, and creation time.
      *
      * List Task Definitions
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listVercelCiTaskDefinitions(clientConfig: ClientConfig, request: VercelCi.ListVercelCiTaskDefinitionsRequest, options: RequestOptions? = null): VercelCi.ListVercelCiTaskDefinitionsResponse {
-        return SdkClient.request<VercelCi.ListVercelCiTaskDefinitionsResponse>(SdkClient.RequestSpec("GET", "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(request.invocationId)}/attempts/${SdkClient.encodePathSegment(request.attempt)}/job-definitions/${SdkClient.encodePathSegment(request.jobDefinitionId)}/runs/${SdkClient.encodePathSegment(request.runAttempt)}/task-definitions", config = clientConfig, query = mapOf("teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "listVercelCiTaskDefinitions", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun listVercelCiTaskDefinitions(
+        clientConfig: ClientConfig,
+        request: VercelCi.ListVercelCiTaskDefinitionsRequest,
+        options: RequestOptions? = null,
+    ): VercelCi.ListVercelCiTaskDefinitionsResponse {
+        return SdkClient.request<VercelCi.ListVercelCiTaskDefinitionsResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(request.invocationId)}/attempts/${SdkClient.encodePathSegment(request.attempt)}/job-definitions/${SdkClient.encodePathSegment(request.jobDefinitionId)}/runs/${SdkClient.encodePathSegment(request.runAttempt)}/task-definitions",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    operationId = "listVercelCiTaskDefinitions",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiListVercelCiTaskRunsOperation {
     /**
-     * Lists the task runs for a job run. Use `invocationId`, `attempt`, `jobDefinitionId`, and `runAttempt` to select the job run, and use `taskRunAttempt` to filter the results by task run attempt. Each result includes task identifiers, the attempt number, creation time, and available start, completion, and deployment binding details.
+     * Lists the task runs for a job run. Use `invocationId`, `attempt`, `jobDefinitionId`, and
+     * `runAttempt` to select the job run, and use `taskRunAttempt` to filter the results by task
+     * run attempt. Each result includes task identifiers, the attempt number, creation time, and
+     * available start, completion, and deployment binding details.
      *
      * List Task Runs
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listVercelCiTaskRuns(clientConfig: ClientConfig, request: VercelCi.ListVercelCiTaskRunsRequest, options: RequestOptions? = null): VercelCi.ListVercelCiTaskRunsResponse {
-        return SdkClient.request<VercelCi.ListVercelCiTaskRunsResponse>(SdkClient.RequestSpec("GET", "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(request.invocationId)}/attempts/${SdkClient.encodePathSegment(request.attempt)}/job-definitions/${SdkClient.encodePathSegment(request.jobDefinitionId)}/runs/${SdkClient.encodePathSegment(request.runAttempt)}/task-runs", config = clientConfig, query = mapOf("taskRunAttempt" to
-    SdkClient.queryValue(request.taskRunAttempt, "form", true), "teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "listVercelCiTaskRuns", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun listVercelCiTaskRuns(
+        clientConfig: ClientConfig,
+        request: VercelCi.ListVercelCiTaskRunsRequest,
+        options: RequestOptions? = null,
+    ): VercelCi.ListVercelCiTaskRunsResponse {
+        return SdkClient.request<VercelCi.ListVercelCiTaskRunsResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(request.invocationId)}/attempts/${SdkClient.encodePathSegment(request.attempt)}/job-definitions/${SdkClient.encodePathSegment(request.jobDefinitionId)}/runs/${SdkClient.encodePathSegment(request.runAttempt)}/task-runs",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "taskRunAttempt" to
+                                SdkClient.queryValue(request.taskRunAttempt, "form", true),
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    operationId = "listVercelCiTaskRuns",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiGetVercelCiInvocationLogsOperation {
     /**
-     * Retrieves log lines for a specific invocation attempt. Use `level` to filter the results to one or more log levels, such as `warn` or `error`. Each returned line includes its level, timestamp, and message.
+     * Retrieves log lines for a specific invocation attempt. Use `level` to filter the results to
+     * one or more log levels, such as `warn` or `error`. Each returned line includes its level,
+     * timestamp, and message.
      *
      * Get Invocation Logs
      *
@@ -372,90 +805,174 @@ internal object VercelCiGetVercelCiInvocationLogsOperation {
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getVercelCiInvocationLogs(clientConfig: ClientConfig, invocationId: String, attempt: String, level: List<GetVercelCiInvocationLogsParameterItemEnum>? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): VercelCi.GetVercelCiInvocationLogsResponse {
+    fun getVercelCiInvocationLogs(
+        clientConfig: ClientConfig,
+        invocationId: String,
+        attempt: String,
+        level: List<GetVercelCiInvocationLogsParameterItemEnum>? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): VercelCi.GetVercelCiInvocationLogsResponse {
         if (level != null) {
             Validation.validateItems("level", level, Validation.LengthOpts(min = 1))
-}
+        }
 
-        return SdkClient.request<VercelCi.GetVercelCiInvocationLogsResponse>(SdkClient.RequestSpec("GET", "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(invocationId)}/attempts/${SdkClient.encodePathSegment(attempt)}/logs", config = clientConfig, query = mapOf("level" to SdkClient.queryValue(level, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getVercelCiInvocationLogs", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<VercelCi.GetVercelCiInvocationLogsResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(invocationId)}/attempts/${SdkClient.encodePathSegment(attempt)}/logs",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "level" to SdkClient.queryValue(level, "form", true),
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getVercelCiInvocationLogs",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiGetVercelCiTaskLogsOperation {
     /**
-     * Lists log lines for tasks in a specific invocation attempt, grouped by task. Use `task`, `conclusion`, and `level` to filter the results, or use `search` to return only tasks with matching lines. Search returns at most 1,000 matching lines and ignores `limit`.
+     * Lists log lines for tasks in a specific invocation attempt, grouped by task. Use `task`,
+     * `conclusion`, and `level` to filter the results, or use `search` to return only tasks with
+     * matching lines. Search returns at most 1,000 matching lines and ignores `limit`.
      *
-     * Returns log lines for the tasks of an invocation attempt in a single request, grouped by task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to fetch only the logs of failed tasks. With `search`, every matching task is searched at once and only tasks with matching lines are returned.
+     * Returns log lines for the tasks of an invocation attempt in a single request, grouped by
+     * task. Tasks can be narrowed by name and by conclusion, for example `conclusion=failed` to
+     * fetch only the logs of failed tasks. With `search`, every matching task is searched at once
+     * and only tasks with matching lines are returned.
      *
      * @param task Only return tasks with one of these names (e.g., \"web#test\").
      * @param conclusion Only return completed tasks with one of these conclusions.
      * @param level Only return log lines with one of these levels.
-     * @param search Only return log lines containing this text, ignoring case. Tasks
-     *   without matching lines are left out, `limit` is ignored, and at most 1000
-     *   lines are returned.
+     * @param search Only return log lines containing this text, ignoring case. Tasks without
+     *   matching lines are left out, `limit` is ignored, and at most 1000 lines are returned.
      * @param limit Maximum number of tasks to return (default: 10, max: 25).
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getVercelCiTaskLogs(clientConfig: ClientConfig, request: VercelCi.GetVercelCiTaskLogsRequest, options: RequestOptions? = null): VercelCi.GetVercelCiTaskLogsResponse {
+    fun getVercelCiTaskLogs(
+        clientConfig: ClientConfig,
+        request: VercelCi.GetVercelCiTaskLogsRequest,
+        options: RequestOptions? = null,
+    ): VercelCi.GetVercelCiTaskLogsResponse {
         validateGetVercelCiTaskLogsRequest(request)
 
-        return SdkClient.request<VercelCi.GetVercelCiTaskLogsResponse>(SdkClient.RequestSpec("GET", "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(request.invocationId)}/attempts/${SdkClient.encodePathSegment(request.attempt)}/task-logs", config = clientConfig, query = mapOf("task" to SdkClient.queryValue(request.task, "form", true), "conclusion" to
-    SdkClient.queryValue(request.conclusion, "form", true), "level" to SdkClient.queryValue(request.level, "form", true), "search" to
-    SdkClient.queryValue(request.search, "form", true), "limit" to SdkClient.queryValue(request.limit, "form", true), "teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "getVercelCiTaskLogs", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<VercelCi.GetVercelCiTaskLogsResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(request.invocationId)}/attempts/${SdkClient.encodePathSegment(request.attempt)}/task-logs",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "task" to SdkClient.queryValue(request.task, "form", true),
+                            "conclusion" to SdkClient.queryValue(request.conclusion, "form", true),
+                            "level" to SdkClient.queryValue(request.level, "form", true),
+                            "search" to SdkClient.queryValue(request.search, "form", true),
+                            "limit" to SdkClient.queryValue(request.limit, "form", true),
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    operationId = "getVercelCiTaskLogs",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
-
 
     private fun validateGetVercelCiTaskLogsRequest(request: VercelCi.GetVercelCiTaskLogsRequest) {
         if (request.task != null) {
             Validation.validateItems("task", request.task, Validation.LengthOpts(min = 1))
-}
+        }
 
         if (request.conclusion != null) {
-            Validation.validateItems("conclusion", request.conclusion, Validation.LengthOpts(min = 1))
-}
+            Validation.validateItems(
+                "conclusion",
+                request.conclusion,
+                Validation.LengthOpts(min = 1),
+            )
+        }
 
         if (request.level != null) {
             Validation.validateItems("level", request.level, Validation.LengthOpts(min = 1))
-}
+        }
 
         if (request.search != null) {
             Validation.validateLength("search", request.search, Validation.LengthOpts(max = 256))
-}
+        }
     }
 }
 
 internal object VercelCiSearchVercelCiLogsOperation {
     /**
-     * Searches task logs across multiple invocation attempts and returns only invocations and tasks with matching lines. Supply up to 50 unique invocation attempts in `invocation` and a search string in `search`; matching is case-insensitive. When more than 1,000 lines match, the response keeps the newest lines.
+     * Searches task logs across multiple invocation attempts and returns only invocations and tasks
+     * with matching lines. Supply up to 50 unique invocation attempts in `invocation` and a search
+     * string in `search`; matching is case-insensitive. When more than 1,000 lines match, the
+     * response keeps the newest lines.
      *
-     * Searches the task logs of up to 50 invocation attempts at once, for example the most recent runs of a branch from `GET /v2/vercel-ci/invocations`. Only invocations and tasks with matching lines are returned. When more than 1000 lines match, the newest are kept.
+     * Searches the task logs of up to 50 invocation attempts at once, for example the most recent
+     * runs of a branch from `GET /v2/vercel-ci/invocations`. Only invocations and tasks with
+     * matching lines are returned. When more than 1000 lines match, the newest are kept.
      *
-     * @param invocation Invocation attempts to search, as
-     *   \"<invocationId>:<attempt>\" (at most 50).
+     * @param invocation Invocation attempts to search, as \"<invocationId>:<attempt>\" (at most
+     *   50).
      * @param search Only return log lines containing this text, ignoring case.
      * @param level Only return log lines with one of these levels.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun searchVercelCiLogs(clientConfig: ClientConfig, invocation: List<String>, search: String, level: List<SearchVercelCiLogsParameterItemEnum>? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): VercelCi.SearchVercelCiLogsResponse {
+    fun searchVercelCiLogs(
+        clientConfig: ClientConfig,
+        invocation: List<String>,
+        search: String,
+        level: List<SearchVercelCiLogsParameterItemEnum>? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): VercelCi.SearchVercelCiLogsResponse {
         Validation.validateItems("invocation", invocation, Validation.LengthOpts(min = 1, max = 50))
 
         Validation.validateLength("search", search, Validation.LengthOpts(max = 256))
 
         if (level != null) {
             Validation.validateItems("level", level, Validation.LengthOpts(min = 1))
-}
+        }
 
-        return SdkClient.request<VercelCi.SearchVercelCiLogsResponse>(SdkClient.RequestSpec("GET", "/v1/vercel-ci/log-search", config = clientConfig, query = mapOf("invocation" to
-    SdkClient.queryValue(invocation, "form", true), "search" to SdkClient.queryValue(search, "form", true), "level" to SdkClient.queryValue(level, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "searchVercelCiLogs", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<VercelCi.SearchVercelCiLogsResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/vercel-ci/log-search",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "invocation" to SdkClient.queryValue(invocation, "form", true),
+                            "search" to SdkClient.queryValue(search, "form", true),
+                            "level" to SdkClient.queryValue(level, "form", true),
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "searchVercelCiLogs",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object VercelCiGetVercelCiJobRunLogsOperation {
     /**
-     * Retrieves log lines for a specific job run attempt. Use `level` to filter the returned lines, or provide `since` to retrieve lines from a specified point. Set `follow` to 1 to request ongoing log output.
+     * Retrieves log lines for a specific job run attempt. Use `level` to filter the returned lines,
+     * or provide `since` to retrieve lines from a specified point. Set `follow` to 1 to request
+     * ongoing log output.
      *
      * Get Job Run Logs
      *
@@ -463,46 +980,92 @@ internal object VercelCiGetVercelCiJobRunLogsOperation {
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getVercelCiJobRunLogs(clientConfig: ClientConfig, request: VercelCi.GetVercelCiJobRunLogsRequest, options: RequestOptions? = null): VercelCi.GetVercelCiJobRunLogsResponse {
+    fun getVercelCiJobRunLogs(
+        clientConfig: ClientConfig,
+        request: VercelCi.GetVercelCiJobRunLogsRequest,
+        options: RequestOptions? = null,
+    ): VercelCi.GetVercelCiJobRunLogsResponse {
         validateGetVercelCiJobRunLogsRequest(request)
 
-        return SdkClient.request<VercelCi.GetVercelCiJobRunLogsResponse>(SdkClient.RequestSpec("GET", "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(request.invocationId)}/attempts/${SdkClient.encodePathSegment(request.attempt)}/job-definitions/${SdkClient.encodePathSegment(request.jobDefinitionId)}/runs/${SdkClient.encodePathSegment(request.runAttempt)}/logs", config = clientConfig, query = mapOf("follow" to
-    SdkClient.queryValue(request.follow, "form", true), "since" to SdkClient.queryValue(request.since, "form", true), "level" to SdkClient.queryValue(request.level, "form", true), "teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "getVercelCiJobRunLogs", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<VercelCi.GetVercelCiJobRunLogsResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(request.invocationId)}/attempts/${SdkClient.encodePathSegment(request.attempt)}/job-definitions/${SdkClient.encodePathSegment(request.jobDefinitionId)}/runs/${SdkClient.encodePathSegment(request.runAttempt)}/logs",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "follow" to SdkClient.queryValue(request.follow, "form", true),
+                            "since" to SdkClient.queryValue(request.since, "form", true),
+                            "level" to SdkClient.queryValue(request.level, "form", true),
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    operationId = "getVercelCiJobRunLogs",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-    private fun validateGetVercelCiJobRunLogsRequest(request: VercelCi.GetVercelCiJobRunLogsRequest) {
+    private fun validateGetVercelCiJobRunLogsRequest(
+        request: VercelCi.GetVercelCiJobRunLogsRequest
+    ) {
         if (request.level != null) {
             Validation.validateItems("level", request.level, Validation.LengthOpts(min = 1))
-}
+        }
     }
 }
 
 internal object VercelCiGetVercelCiTaskRunLogsOperation {
     /**
-     * Retrieves log lines for a specific task run attempt. Use `level` to filter the returned lines, or provide `since` to retrieve lines from a specified point. Set `follow` to 1 to stream newline-delimited JSON log lines until the task run finishes or the stream reaches its maximum duration.
+     * Retrieves log lines for a specific task run attempt. Use `level` to filter the returned
+     * lines, or provide `since` to retrieve lines from a specified point. Set `follow` to 1 to
+     * stream newline-delimited JSON log lines until the task run finishes or the stream reaches its
+     * maximum duration.
      *
-     * Get Task Run Logs With `follow=1` the response is a newline-delimited JSON stream of log lines that ends once the task run has finished and its logs are flushed, or when the stream reaches its maximum duration.
+     * Get Task Run Logs With `follow=1` the response is a newline-delimited JSON stream of log
+     * lines that ends once the task run has finished and its logs are flushed, or when the stream
+     * reaches its maximum duration.
      *
-     * @param follow When 1, stream log lines as newline-delimited JSON until the
-     *   task run finishes.
+     * @param follow When 1, stream log lines as newline-delimited JSON until the task run finishes.
      * @param level Only return log lines with one of these levels.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getVercelCiTaskRunLogs(clientConfig: ClientConfig, request: VercelCi.GetVercelCiTaskRunLogsRequest, options: RequestOptions? = null): VercelCi.GetVercelCiTaskRunLogsResponse {
+    fun getVercelCiTaskRunLogs(
+        clientConfig: ClientConfig,
+        request: VercelCi.GetVercelCiTaskRunLogsRequest,
+        options: RequestOptions? = null,
+    ): VercelCi.GetVercelCiTaskRunLogsResponse {
         validateGetVercelCiTaskRunLogsRequest(request)
 
-        return SdkClient.request<VercelCi.GetVercelCiTaskRunLogsResponse>(SdkClient.RequestSpec("GET", "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(request.invocationId)}/attempts/${SdkClient.encodePathSegment(request.attempt)}/job-definitions/${SdkClient.encodePathSegment(request.jobDefinitionId)}/runs/${SdkClient.encodePathSegment(request.runAttempt)}/task-definitions/${SdkClient.encodePathSegment(request.taskDefinitionId)}/runs/${SdkClient.encodePathSegment(request.taskRunAttempt)}/logs", config = clientConfig, query = mapOf("follow" to
-    SdkClient.queryValue(request.follow, "form", true), "since" to SdkClient.queryValue(request.since, "form", true), "level" to SdkClient.queryValue(request.level, "form", true), "teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "getVercelCiTaskRunLogs", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<VercelCi.GetVercelCiTaskRunLogsResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/vercel-ci/invocations/${SdkClient.encodePathSegment(request.invocationId)}/attempts/${SdkClient.encodePathSegment(request.attempt)}/job-definitions/${SdkClient.encodePathSegment(request.jobDefinitionId)}/runs/${SdkClient.encodePathSegment(request.runAttempt)}/task-definitions/${SdkClient.encodePathSegment(request.taskDefinitionId)}/runs/${SdkClient.encodePathSegment(request.taskRunAttempt)}/logs",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "follow" to SdkClient.queryValue(request.follow, "form", true),
+                            "since" to SdkClient.queryValue(request.since, "form", true),
+                            "level" to SdkClient.queryValue(request.level, "form", true),
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    operationId = "getVercelCiTaskRunLogs",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 
-
-    private fun validateGetVercelCiTaskRunLogsRequest(request: VercelCi.GetVercelCiTaskRunLogsRequest) {
+    private fun validateGetVercelCiTaskRunLogsRequest(
+        request: VercelCi.GetVercelCiTaskRunLogsRequest
+    ) {
         if (request.level != null) {
             Validation.validateItems("level", request.level, Validation.LengthOpts(min = 1))
-}
+        }
     }
 }

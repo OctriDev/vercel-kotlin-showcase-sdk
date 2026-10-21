@@ -3,51 +3,112 @@
 
 package dev.octri.showcase.vercel
 
-
 class AuthenticationNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Exchanges an integration authorization code or refresh token for an OIDC token response. Use the authorization-code flow after receiving a `code`, or the refresh flow with a `refresh_token`; each flow requires its corresponding `grant_type` and client credentials. Do not persist the returned `id_token`, because it expires.
+     * Exchanges an integration authorization code or refresh token for an OIDC token response. Use
+     * the authorization-code flow after receiving a `code`, or the refresh flow with a
+     * `refresh_token`; each flow requires its corresponding `grant_type` and client credentials. Do
+     * not persist the returned `id_token`, because it expires.
      *
-     * During the autorization process, Vercel sends the user to the provider redirectLoginUrl, that includes the OAuth authorization `code` parameter. The provider then calls the SSO Token Exchange endpoint with the sent code and receives the OIDC token. They log the user in based on this token and redirects the user back to the Vercel account using deep-link parameters included the redirectLoginUrl. Providers should not persist the returned `id_token` in a database since the…
+     * During the autorization process, Vercel sends the user to the provider redirectLoginUrl, that
+     * includes the OAuth authorization `code` parameter. The provider then calls the SSO Token
+     * Exchange endpoint with the sent code and receives the OIDC token. They log the user in based
+     * on this token and redirects the user back to the Vercel account using deep-link parameters
+     * included the redirectLoginUrl. Providers should not persist the returned `id_token` in a
+     * database since the…
      */
-    fun exchangeSsoToken(body: Map<String, Any>, options: RequestOptions? = null): ExchangeSsoTokenResponse {
-        return dev.octri.showcase.vercel.methods.Authentication.exchangeSsoToken(clientConfig, body, options)
+    fun exchangeSsoToken(
+        body: Map<String, Any>,
+        options: RequestOptions? = null,
+    ): ExchangeSsoTokenResponse {
+        return dev.octri.showcase.vercel.methods.Authentication.exchangeSsoToken(
+            clientConfig,
+            body,
+            options,
+        )
     }
 
     /**
-     * Lists authentication tokens for the authenticated user. The response includes token records and pagination metadata for reviewing the user's tokens.
+     * Lists authentication tokens for the authenticated user. The response includes token records
+     * and pagination metadata for reviewing the user's tokens.
      *
      * Retrieve a list of the current User's authentication tokens.
      */
     fun listAuthTokens(options: RequestOptions? = null): ListAuthTokensResponse {
-        return dev.octri.showcase.vercel.methods.Authentication.listAuthTokens(clientConfig, options)
+        return dev.octri.showcase.vercel.methods.Authentication.listAuthTokens(
+            clientConfig,
+            options,
+        )
     }
 
     /**
-     * Creates an authentication token for the authenticated user, optionally scoped to a team or project and with an optional expiration time. Supply `name` to identify the token. Save the returned `bearerToken` when you create it, because the API provides its value only in this response.
+     * Creates an authentication token for the authenticated user, optionally scoped to a team or
+     * project and with an optional expiration time. Supply `name` to identify the token. Save the
+     * returned `bearerToken` when you create it, because the API provides its value only in this
+     * response.
      *
-     * Creates and returns a new authentication token for the currently authenticated User. The `bearerToken` property is only provided once, in the response body, so be sure to save it on the client for use with API requests.
+     * Creates and returns a new authentication token for the currently authenticated User. The
+     * `bearerToken` property is only provided once, in the response body, so be sure to save it on
+     * the client for use with API requests.
      */
-    fun createAuthToken(name: String, teamId: String? = null, slug: String? = null, expiresAt: Double? = null, projectId: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Authentication.CreateAuthTokenResponse {
-        return dev.octri.showcase.vercel.methods.Authentication.createAuthToken(clientConfig, name, teamId, slug, expiresAt, projectId, options)
+    fun createAuthToken(
+        name: String,
+        teamId: String? = null,
+        slug: String? = null,
+        expiresAt: Double? = null,
+        projectId: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Authentication.CreateAuthTokenResponse {
+        return dev.octri.showcase.vercel.methods.Authentication.createAuthToken(
+            clientConfig,
+            name,
+            teamId,
+            slug,
+            expiresAt,
+            projectId,
+            options,
+        )
     }
 
     /**
-     * Retrieves metadata for an authentication token belonging to the authenticated user. Use `tokenId` to identify the token, or pass `current` to retrieve metadata for the token used to authenticate the request.
+     * Retrieves metadata for an authentication token belonging to the authenticated user. Use
+     * `tokenId` to identify the token, or pass `current` to retrieve metadata for the token used to
+     * authenticate the request.
      *
-     * Retrieve metadata about an authentication token belonging to the currently authenticated User.
+     * Retrieve metadata about an authentication token belonging to the currently authenticated
+     * User.
      */
-    fun getAuthToken(tokenId: String, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Authentication.GetAuthTokenResponse {
-        return dev.octri.showcase.vercel.methods.Authentication.getAuthToken(clientConfig, tokenId, options)
+    fun getAuthToken(
+        tokenId: String,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Authentication.GetAuthTokenResponse {
+        return dev.octri.showcase.vercel.methods.Authentication.getAuthToken(
+            clientConfig,
+            tokenId,
+            options,
+        )
     }
 
     /**
-     * Deletes an authentication token, invalidating it for future HTTP requests. Pass `current` as `tokenId` to invalidate the token used to authenticate the request; the logout parameters apply only when deleting that token.
+     * Deletes an authentication token, invalidating it for future HTTP requests. Pass `current` as
+     * `tokenId` to invalidate the token used to authenticate the request; the logout parameters
+     * apply only when deleting that token.
      *
-     * Invalidate an authentication token, such that it will no longer be valid for future HTTP requests.
+     * Invalidate an authentication token, such that it will no longer be valid for future HTTP
+     * requests.
      */
-    fun deleteAuthToken(tokenId: String, reason: DeleteAuthTokenParameterEnum? = null, logoutSource: DeleteAuthTokenParameterEnum053ef8ae? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Authentication.DeleteAuthTokenResponse {
-        return dev.octri.showcase.vercel.methods.Authentication.deleteAuthToken(clientConfig, tokenId, reason, logoutSource, options)
+    fun deleteAuthToken(
+        tokenId: String,
+        reason: DeleteAuthTokenParameterEnum? = null,
+        logoutSource: DeleteAuthTokenParameterEnum053ef8ae? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Authentication.DeleteAuthTokenResponse {
+        return dev.octri.showcase.vercel.methods.Authentication.deleteAuthToken(
+            clientConfig,
+            tokenId,
+            reason,
+            logoutSource,
+            options,
+        )
     }
-
 }

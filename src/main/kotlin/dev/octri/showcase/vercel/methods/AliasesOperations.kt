@@ -9,43 +9,105 @@ import dev.octri.showcase.vercel.SdkClient
 
 internal object AliasesListAliasesForDeploymentOperation {
     /**
-     * Lists aliases assigned to a deployment. Use `teamId` or `slug` to specify the team context, and provide the deployment ID in `id`. The authenticated user or team must own the deployment.
+     * Lists aliases assigned to a deployment. Use `teamId` or `slug` to specify the team context,
+     * and provide the deployment ID in `id`. The authenticated user or team must own the
+     * deployment.
      *
-     * Retrieves all Aliases for the Deployment with the given ID. The authenticated user or team must own the deployment.
+     * Retrieves all Aliases for the Deployment with the given ID. The authenticated user or team
+     * must own the deployment.
      *
      * @param id The ID of the deployment the aliases should be listed for
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listAliasesForDeployment(clientConfig: ClientConfig, id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Aliases.ListAliasesForDeploymentResponse {
-        return SdkClient.request<Aliases.ListAliasesForDeploymentResponse>(SdkClient.RequestSpec("GET", "/v2/deployments/${SdkClient.encodePathSegment(id)}/aliases", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "listAliasesForDeployment", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun listAliasesForDeployment(
+        clientConfig: ClientConfig,
+        id: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Aliases.ListAliasesForDeploymentResponse {
+        return SdkClient.request<Aliases.ListAliasesForDeploymentResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v2/deployments/${SdkClient.encodePathSegment(id)}/aliases",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "listAliasesForDeployment",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object AliasesAssignAliasOperation {
     /**
-     * Creates an alias for the deployment identified by a deployment or alias ID or URL. Provide the alias name in `alias`, and optionally set `redirect` to route the alias to another hostname with a 307 status code. If the alias is already assigned to another deployment, it is removed from that deployment and assigned to this one.
+     * Creates an alias for the deployment identified by a deployment or alias ID or URL. Provide
+     * the alias name in `alias`, and optionally set `redirect` to route the alias to another
+     * hostname with a 307 status code. If the alias is already assigned to another deployment, it
+     * is removed from that deployment and assigned to this one.
      *
-     * Creates a new alias for the deployment resolved from the given deployment or alias ID or URL. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
+     * Creates a new alias for the deployment resolved from the given deployment or alias ID or URL.
+     * The authenticated user or team must own this deployment. If the desired alias is already
+     * assigned to another deployment, then it will be removed from the old deployment and assigned
+     * to the new one.
      *
      * @param id The deployment or alias ID or URL to assign from
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      * @param alias The alias we want to assign to the deployment defined in the URL
-     * @param redirect The redirect property will take precedence over the deployment
-     *   id from the URL and consists of a hostname (like test.com) to which the alias
-     *   should redirect using status code 307
+     * @param redirect The redirect property will take precedence over the deployment id from the
+     *   URL and consists of a hostname (like test.com) to which the alias should redirect using
+     *   status code 307
      */
-    fun assignAlias(clientConfig: ClientConfig, id: String, teamId: String? = null, slug: String? = null, alias: String? = null, redirect: SdkClient.SdkOptional<String?>? = null, options: RequestOptions? = null): Aliases.AssignAliasResponse {
-        return SdkClient.request<Aliases.AssignAliasResponse>(SdkClient.RequestSpec("POST", "/v2/deployments/${SdkClient.encodePathSegment(id)}/aliases", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("alias" to (SdkClient.omitIfNull(alias)), "redirect" to (redirect ?: SdkClient.SdkOptional.Omitted)), operationId = "assignAlias", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun assignAlias(
+        clientConfig: ClientConfig,
+        id: String,
+        teamId: String? = null,
+        slug: String? = null,
+        alias: String? = null,
+        redirect: SdkClient.SdkOptional<String?>? = null,
+        options: RequestOptions? = null,
+    ): Aliases.AssignAliasResponse {
+        return SdkClient.request<Aliases.AssignAliasResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v2/deployments/${SdkClient.encodePathSegment(id)}/aliases",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body =
+                        SdkClient.bodyMap(
+                            "alias" to (SdkClient.omitIfNull(alias)),
+                            "redirect" to (redirect ?: SdkClient.SdkOptional.Omitted),
+                        ),
+                    operationId = "assignAlias",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object AliasesListAliasesOperation {
     /**
-     * Lists aliases for the authenticated user or team, with optional filters for domain, project, creation time, or rollback deployment. Use `limit` to control the number of aliases returned, and inspect `pagination` for the previous and next page values.
+     * Lists aliases for the authenticated user or team, with optional filters for domain, project,
+     * creation time, or rollback deployment. Use `limit` to control the number of aliases returned,
+     * and inspect `pagination` for the previous and next page values.
      *
-     * Retrieves a list of aliases for the authenticated User or Team. When `domain` is provided, only aliases for that domain will be returned. When `projectId` is provided, it will only return the given project aliases.
+     * Retrieves a list of aliases for the authenticated User or Team. When `domain` is provided,
+     * only aliases for that domain will be returned. When `projectId` is provided, it will only
+     * return the given project aliases.
      *
      * @param domain Get only aliases of the given domain name
      * @param from Get only aliases created after the provided timestamp
@@ -53,47 +115,89 @@ internal object AliasesListAliasesOperation {
      * @param projectId Filter aliases from the given `projectId`
      * @param since Get aliases created after this JavaScript timestamp
      * @param until Get aliases created before this JavaScript timestamp
-     * @param rollbackDeploymentId Get aliases that would be rolled back for the
-     *   given deployment
+     * @param rollbackDeploymentId Get aliases that would be rolled back for the given deployment
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listAliases(clientConfig: ClientConfig, request: Aliases.ListAliasesRequest, options: RequestOptions? = null): Aliases.ListAliasesResponse {
-        return SdkClient.request<Aliases.ListAliasesResponse>(SdkClient.RequestSpec("GET", "/v4/aliases", config = clientConfig, query = mapOf("domain" to
-    SdkClient.queryValue(request.domain, "form", true), "from" to SdkClient.queryValue(request.from, "form", true), "limit" to SdkClient.queryValue(request.limit, "form", true), "projectId" to
-    SdkClient.queryValue(request.projectId, "form", true), "since" to SdkClient.queryValue(request.since, "form", true), "until" to SdkClient.queryValue(request.until, "form", true), "rollbackDeploymentId" to
-    SdkClient.queryValue(request.rollbackDeploymentId, "form", true), "teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "listAliases", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun listAliases(
+        clientConfig: ClientConfig,
+        request: Aliases.ListAliasesRequest,
+        options: RequestOptions? = null,
+    ): Aliases.ListAliasesResponse {
+        return SdkClient.request<Aliases.ListAliasesResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v4/aliases",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "domain" to SdkClient.queryValue(request.domain, "form", true),
+                            "from" to SdkClient.queryValue(request.from, "form", true),
+                            "limit" to SdkClient.queryValue(request.limit, "form", true),
+                            "projectId" to SdkClient.queryValue(request.projectId, "form", true),
+                            "since" to SdkClient.queryValue(request.since, "form", true),
+                            "until" to SdkClient.queryValue(request.until, "form", true),
+                            "rollbackDeploymentId" to
+                                SdkClient.queryValue(request.rollbackDeploymentId, "form", true),
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    operationId = "listAliases",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object AliasesGetAliasOperation {
     /**
-     * Retrieves an alias by its hostname or alias ID. Use `projectId` to restrict the result to an alias assigned to a specific project, or use `since` and `until` to filter by creation time.
+     * Retrieves an alias by its hostname or alias ID. Use `projectId` to restrict the result to an
+     * alias assigned to a specific project, or use `since` and `until` to filter by creation time.
      *
      * Retrieves an Alias for the given host name or alias ID.
      *
      * @param idOrAlias The alias or alias ID to be retrieved
      * @param from Get the alias only if it was created after the provided timestamp
-     * @param projectId Get the alias only if it is assigned to the provided project
-     *   ID
-     * @param since Get the alias only if it was created after this JavaScript
-     *   timestamp
-     * @param until Get the alias only if it was created before this JavaScript
-     *   timestamp
+     * @param projectId Get the alias only if it is assigned to the provided project ID
+     * @param since Get the alias only if it was created after this JavaScript timestamp
+     * @param until Get the alias only if it was created before this JavaScript timestamp
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getAlias(clientConfig: ClientConfig, request: Aliases.GetAliasRequest, options: RequestOptions? = null): Aliases.GetAliasResponse {
-        return SdkClient.request<Aliases.GetAliasResponse>(SdkClient.RequestSpec("GET", "/v4/aliases/${SdkClient.encodePathSegment(request.idOrAlias)}", config = clientConfig, query = mapOf("from" to SdkClient.queryValue(request.from, "form", true), "projectId" to
-    SdkClient.queryValue(request.projectId, "form", true), "since" to SdkClient.queryValue(request.since, "form", true), "until" to SdkClient.queryValue(request.until, "form", true), "teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "getAlias", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getAlias(
+        clientConfig: ClientConfig,
+        request: Aliases.GetAliasRequest,
+        options: RequestOptions? = null,
+    ): Aliases.GetAliasResponse {
+        return SdkClient.request<Aliases.GetAliasResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v4/aliases/${SdkClient.encodePathSegment(request.idOrAlias)}",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "from" to SdkClient.queryValue(request.from, "form", true),
+                            "projectId" to SdkClient.queryValue(request.projectId, "form", true),
+                            "since" to SdkClient.queryValue(request.since, "form", true),
+                            "until" to SdkClient.queryValue(request.until, "form", true),
+                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                            "slug" to SdkClient.queryValue(request.slug, "form", true),
+                        ),
+                    operationId = "getAlias",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object AliasesDeleteAliasOperation {
     /**
-     * Deletes an alias by its ID or alias name. Use `teamId` or `slug` to specify the team context for the request. A successful response confirms that the alias was removed.
+     * Deletes an alias by its ID or alias name. Use `teamId` or `slug` to specify the team context
+     * for the request. A successful response confirms that the alias was removed.
      *
      * Delete an Alias with the specified ID.
      *
@@ -101,22 +205,71 @@ internal object AliasesDeleteAliasOperation {
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun deleteAlias(clientConfig: ClientConfig, aliasId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Aliases.DeleteAliasResponse {
-        return SdkClient.request<Aliases.DeleteAliasResponse>(SdkClient.RequestSpec("DELETE", "/v2/aliases/${SdkClient.encodePathSegment(aliasId)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "deleteAlias", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun deleteAlias(
+        clientConfig: ClientConfig,
+        aliasId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Aliases.DeleteAliasResponse {
+        return SdkClient.request<Aliases.DeleteAliasResponse>(
+                SdkClient.RequestSpec(
+                    "DELETE",
+                    "/v2/aliases/${SdkClient.encodePathSegment(aliasId)}",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "deleteAlias",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object AliasesPatchUrlProtectionBypassOperation {
     /**
-     * Updates protection-bypass settings for an alias or deployment URL. Use the request body to configure a shareable link, user-scoped access, or an override for access behavior. The `ttl` value for a shareable link cannot exceed 63,072,000 seconds.
+     * Updates protection-bypass settings for an alias or deployment URL. Use the request body to
+     * configure a shareable link, user-scoped access, or an override for access behavior. The `ttl`
+     * value for a shareable link cannot exceed 63,072,000 seconds.
      *
-     * Update the protection bypass for the alias or deployment URL (used for user access & comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).
+     * Update the protection bypass for the alias or deployment URL (used for user access & comment
+     * access for deployments). Used as shareable links and user scoped access for Vercel
+     * Authentication and also to allow external (logged in) people to comment on previews for
+     * Preview Comments (next-live-mode).
      *
      * @param id The alias or deployment ID
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun patchUrlProtectionBypass(clientConfig: ClientConfig, id: String, teamId: String? = null, slug: String? = null, body: Map<String, Any>? = null, options: RequestOptions? = null): Map<String, Any> {
-        return SdkClient.request<Map<String, Any>>(SdkClient.RequestSpec("PATCH", "/aliases/${SdkClient.encodePathSegment(id)}/protection-bypass", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = body, operationId = "patchUrlProtectionBypass", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun patchUrlProtectionBypass(
+        clientConfig: ClientConfig,
+        id: String,
+        teamId: String? = null,
+        slug: String? = null,
+        body: Map<String, Any>? = null,
+        options: RequestOptions? = null,
+    ): Map<String, Any> {
+        return SdkClient.request<Map<String, Any>>(
+                SdkClient.RequestSpec(
+                    "PATCH",
+                    "/aliases/${SdkClient.encodePathSegment(id)}/protection-bypass",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body = body,
+                    operationId = "patchUrlProtectionBypass",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }

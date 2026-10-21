@@ -3,74 +3,80 @@
 
 package dev.octri.showcase.vercel.models
 
-/**
- * Complete replacement set of trigger destinations.
- */
+/** Complete replacement set of trigger destinations. */
 data class ConnectReplaceTriggerDestinationsRequest(
     /**
-     * Complete replacement set of trigger destinations. An empty array removes all destinations. Connector get and list responses expose the saved set as triggerDestinations.
+     * Complete replacement set of trigger destinations. An empty array removes all destinations.
+     * Connector get and list responses expose the saved set as triggerDestinations.
      */
     val destinations: List<ConnectTriggerDestinationInput>
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ConnectTriggerDestinationInputVariant0(
-    /**
-     * Project that receives matching trigger requests.
-     */
+    /** Project that receives matching trigger requests. */
     val projectId: String,
-    /**
-     * Route path on the linked project that receives forwarded trigger requests.
-     */
-    val path: String? = null
+    /** Route path on the linked project that receives forwarded trigger requests. */
+    val path: String? = null,
 ) : ConnectTriggerDestinationInput
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ConnectTriggerDestinationInputVariant1(
-    /**
-     * Project that receives matching trigger requests.
-     */
+    /** Project that receives matching trigger requests. */
     val projectId: String,
-    /**
-     * Git branch used to select a preview deployment.
-     */
+    /** Git branch used to select a preview deployment. */
     val branch: String,
-    /**
-     * Route path on the linked project that receives forwarded trigger requests.
-     */
-    val path: String? = null
+    /** Route path on the linked project that receives forwarded trigger requests. */
+    val path: String? = null,
 ) : ConnectTriggerDestinationInput
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ConnectTriggerDestinationInputVariant2(
-    /**
-     * Project that receives matching trigger requests.
-     */
+    /** Project that receives matching trigger requests. */
     val projectId: String,
-    /**
-     * Stable custom environment ID that belongs to the destination project.
-     */
+    /** Stable custom environment ID that belongs to the destination project. */
     val customEnvironmentId: String,
-    /**
-     * Route path on the linked project that receives forwarded trigger requests.
-     */
-    val path: String? = null
+    /** Route path on the linked project that receives forwarded trigger requests. */
+    val path: String? = null,
 ) : ConnectTriggerDestinationInput
 
 /**
- * A destination in the complete replacement set. Each destination targets the default deployment, a branch, or a custom environment.
+ * A destination in the complete replacement set. Each destination targets the default deployment, a
+ * branch, or a custom environment.
  */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = ConnectTriggerDestinationInput.Deserializer::class)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = ConnectTriggerDestinationInput.Deserializer::class
+)
 sealed interface ConnectTriggerDestinationInput {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<ConnectTriggerDestinationInput>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<ConnectTriggerDestinationInput>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): ConnectTriggerDestinationInput {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = ConnectTriggerDestinationInputOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                ConnectTriggerDestinationInputOwnedTypes.firstOrNull { (keys, _) ->
+                        keys.any(node::has)
+                    }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -78,17 +84,30 @@ sealed interface ConnectTriggerDestinationInput {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out ConnectTriggerDestinationInput>> = listOf(ConnectTriggerDestinationInputVariant0::class.java, ConnectTriggerDestinationInputVariant1::class.java, ConnectTriggerDestinationInputVariant2::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out ConnectTriggerDestinationInput>> =
+                listOf(
+                    ConnectTriggerDestinationInputVariant0::class.java,
+                    ConnectTriggerDestinationInputVariant1::class.java,
+                    ConnectTriggerDestinationInputVariant2::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, ConnectTriggerDestinationInput::class.java, "no ConnectTriggerDestinationInput branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        ConnectTriggerDestinationInput::class.java,
+                        "no ConnectTriggerDestinationInput branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val ConnectTriggerDestinationInputOwnedTypes: List<Pair<List<String>, Class<out ConnectTriggerDestinationInput>>> = listOf(
-    listOf("branch") to ConnectTriggerDestinationInputVariant1::class.java,
-    listOf("customEnvironmentId") to ConnectTriggerDestinationInputVariant2::class.java,
-)
+internal val ConnectTriggerDestinationInputOwnedTypes:
+    List<Pair<List<String>, Class<out ConnectTriggerDestinationInput>>> =
+    listOf(
+        listOf("branch") to ConnectTriggerDestinationInputVariant1::class.java,
+        listOf("customEnvironmentId") to ConnectTriggerDestinationInputVariant2::class.java,
+    )

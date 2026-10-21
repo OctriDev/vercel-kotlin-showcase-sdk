@@ -3,21 +3,28 @@
 
 package dev.octri.showcase.vercel
 
-typealias UserEventPayloadVariant238PreviousAllowUnsafeScriptSrcKeywordsEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant238PreviousAllowUnsafeScriptSrcKeywordsEnum
+typealias UserEventPayloadVariant238PreviousAllowUnsafeScriptSrcKeywordsEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant238PreviousAllowUnsafeScriptSrcKeywordsEnum
 
-typealias UserEventPayloadVariant238PreviousConnectSrcNotificationsEnabledEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant238PreviousConnectSrcNotificationsEnabledEnum
+typealias UserEventPayloadVariant238PreviousConnectSrcNotificationsEnabledEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant238PreviousConnectSrcNotificationsEnabledEnum
 
-typealias UserEventPayloadVariant238PreviousEnabledEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant238PreviousEnabledEnum
+typealias UserEventPayloadVariant238PreviousEnabledEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant238PreviousEnabledEnum
 
-typealias UserEventPayloadVariant238PreviousEnforcementScopeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant238PreviousEnforcementScopeEnum
+typealias UserEventPayloadVariant238PreviousEnforcementScopeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant238PreviousEnforcementScopeEnum
 
-typealias UserEventPayloadVariant238PreviousNewResourceBlockingPolicyEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant238PreviousNewResourceBlockingPolicyEnum
+typealias UserEventPayloadVariant238PreviousNewResourceBlockingPolicyEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant238PreviousNewResourceBlockingPolicyEnum
 
-typealias UserEventPayloadVariant238PreviousOmitScriptNonceEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant238PreviousOmitScriptNonceEnum
+typealias UserEventPayloadVariant238PreviousOmitScriptNonceEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant238PreviousOmitScriptNonceEnum
 
 typealias UserEventPayloadVariant239 = dev.octri.showcase.vercel.models.UserEventPayloadVariant239
 
-typealias UserEventPayloadVariant23ApiKey = dev.octri.showcase.vercel.models.UserEventPayloadVariant23ApiKey
+typealias UserEventPayloadVariant23ApiKey =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant23ApiKey
 
 typealias UserEventPayloadVariant24 = dev.octri.showcase.vercel.models.UserEventPayloadVariant24
 
@@ -25,29 +32,36 @@ typealias UserEventPayloadVariant240 = dev.octri.showcase.vercel.models.UserEven
 
 typealias UserEventPayloadVariant241 = dev.octri.showcase.vercel.models.UserEventPayloadVariant241
 
-typealias UserEventPayloadVariant241ConnectSrcNormalizationRulesClearedEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant241ConnectSrcNormalizationRulesClearedEnum
+typealias UserEventPayloadVariant241ConnectSrcNormalizationRulesClearedEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant241ConnectSrcNormalizationRulesClearedEnum
 
 typealias UserEventPayloadVariant242 = dev.octri.showcase.vercel.models.UserEventPayloadVariant242
 
-typealias UserEventPayloadVariant242ApprovalScopeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant242ApprovalScopeEnum
+typealias UserEventPayloadVariant242ApprovalScopeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant242ApprovalScopeEnum
 
-typealias UserEventPayloadVariant242KindEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant242KindEnum
+typealias UserEventPayloadVariant242KindEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant242KindEnum
 
 typealias UserEventPayloadVariant243 = dev.octri.showcase.vercel.models.UserEventPayloadVariant243
 
-typealias UserEventPayloadVariant243TypeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant243TypeEnum
+typealias UserEventPayloadVariant243TypeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant243TypeEnum
 
 typealias UserEventPayloadVariant244 = dev.octri.showcase.vercel.models.UserEventPayloadVariant244
 
-typealias UserEventPayloadVariant244TypeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant244TypeEnum
+typealias UserEventPayloadVariant244TypeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant244TypeEnum
 
 typealias UserEventPayloadVariant245 = dev.octri.showcase.vercel.models.UserEventPayloadVariant245
 
-typealias UserEventPayloadVariant245TypeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant245TypeEnum
+typealias UserEventPayloadVariant245TypeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant245TypeEnum
 
 typealias UserEventPayloadVariant246 = dev.octri.showcase.vercel.models.UserEventPayloadVariant246
 
-typealias UserEventPayloadVariant246KindEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant246KindEnum
+typealias UserEventPayloadVariant246KindEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant246KindEnum
 
 typealias UserEventPayloadVariant247 = dev.octri.showcase.vercel.models.UserEventPayloadVariant247
 
@@ -55,249 +69,338 @@ typealias UserEventPayloadVariant248 = dev.octri.showcase.vercel.models.UserEven
 
 typealias UserEventPayloadVariant249 = dev.octri.showcase.vercel.models.UserEventPayloadVariant249
 
-typealias UserEventPayloadVariant249EmailVerifiedEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant249EmailVerifiedEnum
+typealias UserEventPayloadVariant249EmailVerifiedEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant249EmailVerifiedEnum
 
-typealias UserEventPayloadVariant24ApiKey = dev.octri.showcase.vercel.models.UserEventPayloadVariant24ApiKey
+typealias UserEventPayloadVariant24ApiKey =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant24ApiKey
 
-typealias UserEventPayloadVariant24Budget = dev.octri.showcase.vercel.models.UserEventPayloadVariant24Budget
+typealias UserEventPayloadVariant24Budget =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant24Budget
 
-typealias UserEventPayloadVariant24BudgetRefreshPeriodEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant24BudgetRefreshPeriodEnum
+typealias UserEventPayloadVariant24BudgetRefreshPeriodEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant24BudgetRefreshPeriodEnum
 
-typealias UserEventPayloadVariant24ChangeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant24ChangeEnum
+typealias UserEventPayloadVariant24ChangeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant24ChangeEnum
 
 typealias UserEventPayloadVariant25 = dev.octri.showcase.vercel.models.UserEventPayloadVariant25
 
 typealias UserEventPayloadVariant250 = dev.octri.showcase.vercel.models.UserEventPayloadVariant250
 
-typealias UserEventPayloadVariant250Next = dev.octri.showcase.vercel.models.UserEventPayloadVariant250Next
+typealias UserEventPayloadVariant250Next =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant250Next
 
-typealias UserEventPayloadVariant250NextPassport = dev.octri.showcase.vercel.models.UserEventPayloadVariant250NextPassport
+typealias UserEventPayloadVariant250NextPassport =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant250NextPassport
 
-typealias UserEventPayloadVariant250NextPassportDeploymentTypeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant250NextPassportDeploymentTypeEnum
+typealias UserEventPayloadVariant250NextPassportDeploymentTypeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant250NextPassportDeploymentTypeEnum
 
-typealias UserEventPayloadVariant250Previous = dev.octri.showcase.vercel.models.UserEventPayloadVariant250Previous
+typealias UserEventPayloadVariant250Previous =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant250Previous
 
-typealias UserEventPayloadVariant250PreviousPassport = dev.octri.showcase.vercel.models.UserEventPayloadVariant250PreviousPassport
+typealias UserEventPayloadVariant250PreviousPassport =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant250PreviousPassport
 
-typealias UserEventPayloadVariant250PreviousPassportDeploymentTypeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant250PreviousPassportDeploymentTypeEnum
+typealias UserEventPayloadVariant250PreviousPassportDeploymentTypeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant250PreviousPassportDeploymentTypeEnum
 
 typealias UserEventPayloadVariant251 = dev.octri.showcase.vercel.models.UserEventPayloadVariant251
 
-typealias UserEventPayloadVariant251Next = dev.octri.showcase.vercel.models.UserEventPayloadVariant251Next
+typealias UserEventPayloadVariant251Next =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant251Next
 
-typealias UserEventPayloadVariant251NextPassport = dev.octri.showcase.vercel.models.UserEventPayloadVariant251NextPassport
+typealias UserEventPayloadVariant251NextPassport =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant251NextPassport
 
-typealias UserEventPayloadVariant251NextPassportDeploymentTypeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant251NextPassportDeploymentTypeEnum
+typealias UserEventPayloadVariant251NextPassportDeploymentTypeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant251NextPassportDeploymentTypeEnum
 
-typealias UserEventPayloadVariant251Previous = dev.octri.showcase.vercel.models.UserEventPayloadVariant251Previous
+typealias UserEventPayloadVariant251Previous =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant251Previous
 
-typealias UserEventPayloadVariant251PreviousPassport = dev.octri.showcase.vercel.models.UserEventPayloadVariant251PreviousPassport
+typealias UserEventPayloadVariant251PreviousPassport =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant251PreviousPassport
 
-typealias UserEventPayloadVariant251PreviousPassportDeploymentTypeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant251PreviousPassportDeploymentTypeEnum
+typealias UserEventPayloadVariant251PreviousPassportDeploymentTypeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant251PreviousPassportDeploymentTypeEnum
 
 typealias UserEventPayloadVariant252 = dev.octri.showcase.vercel.models.UserEventPayloadVariant252
 
-typealias UserEventPayloadVariant252AutomatedEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant252AutomatedEnum
+typealias UserEventPayloadVariant252AutomatedEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant252AutomatedEnum
 
-typealias UserEventPayloadVariant252IsDowngradeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant252IsDowngradeEnum
+typealias UserEventPayloadVariant252IsDowngradeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant252IsDowngradeEnum
 
-typealias UserEventPayloadVariant252IsReactivateEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant252IsReactivateEnum
+typealias UserEventPayloadVariant252IsReactivateEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant252IsReactivateEnum
 
-typealias UserEventPayloadVariant252IsTrialUpgradeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant252IsTrialUpgradeEnum
+typealias UserEventPayloadVariant252IsTrialUpgradeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant252IsTrialUpgradeEnum
 
-typealias UserEventPayloadVariant252RemovedUsersValue = dev.octri.showcase.vercel.models.UserEventPayloadVariant252RemovedUsersValue
+typealias UserEventPayloadVariant252RemovedUsersValue =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant252RemovedUsersValue
 
-typealias UserEventPayloadVariant252RemovedUsersValueConfirmedEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant252RemovedUsersValueConfirmedEnum
+typealias UserEventPayloadVariant252RemovedUsersValueConfirmedEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant252RemovedUsersValueConfirmedEnum
 
-typealias UserEventPayloadVariant252RemovedUsersValueJoinedFrom = dev.octri.showcase.vercel.models.UserEventPayloadVariant252RemovedUsersValueJoinedFrom
+typealias UserEventPayloadVariant252RemovedUsersValueJoinedFrom =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant252RemovedUsersValueJoinedFrom
 
-typealias UserEventPayloadVariant252RemovedUsersValueJoinedFromOriginEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant252RemovedUsersValueJoinedFromOriginEnum
+typealias UserEventPayloadVariant252RemovedUsersValueJoinedFromOriginEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant252RemovedUsersValueJoinedFromOriginEnum
 
-typealias UserEventPayloadVariant252RemovedUsersValueRoleEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant252RemovedUsersValueRoleEnum
+typealias UserEventPayloadVariant252RemovedUsersValueRoleEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant252RemovedUsersValueRoleEnum
 
 typealias UserEventPayloadVariant253 = dev.octri.showcase.vercel.models.UserEventPayloadVariant253
 
-typealias UserEventPayloadVariant253ActorTypeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant253ActorTypeEnum
+typealias UserEventPayloadVariant253ActorTypeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant253ActorTypeEnum
 
-typealias UserEventPayloadVariant253AutomatedEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant253AutomatedEnum
+typealias UserEventPayloadVariant253AutomatedEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant253AutomatedEnum
 
-typealias UserEventPayloadVariant253IsDowngradeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant253IsDowngradeEnum
+typealias UserEventPayloadVariant253IsDowngradeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant253IsDowngradeEnum
 
-typealias UserEventPayloadVariant253IsReactivateEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant253IsReactivateEnum
+typealias UserEventPayloadVariant253IsReactivateEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant253IsReactivateEnum
 
-typealias UserEventPayloadVariant253IsTrialUpgradeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant253IsTrialUpgradeEnum
+typealias UserEventPayloadVariant253IsTrialUpgradeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant253IsTrialUpgradeEnum
 
-typealias UserEventPayloadVariant253RemovedUsersValue = dev.octri.showcase.vercel.models.UserEventPayloadVariant253RemovedUsersValue
+typealias UserEventPayloadVariant253RemovedUsersValue =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant253RemovedUsersValue
 
-typealias UserEventPayloadVariant253RemovedUsersValueConfirmedEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant253RemovedUsersValueConfirmedEnum
+typealias UserEventPayloadVariant253RemovedUsersValueConfirmedEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant253RemovedUsersValueConfirmedEnum
 
-typealias UserEventPayloadVariant253RemovedUsersValueJoinedFrom = dev.octri.showcase.vercel.models.UserEventPayloadVariant253RemovedUsersValueJoinedFrom
+typealias UserEventPayloadVariant253RemovedUsersValueJoinedFrom =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant253RemovedUsersValueJoinedFrom
 
-typealias UserEventPayloadVariant253RemovedUsersValueJoinedFromOriginEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant253RemovedUsersValueJoinedFromOriginEnum
+typealias UserEventPayloadVariant253RemovedUsersValueJoinedFromOriginEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant253RemovedUsersValueJoinedFromOriginEnum
 
-typealias UserEventPayloadVariant253RemovedUsersValueRoleEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant253RemovedUsersValueRoleEnum
+typealias UserEventPayloadVariant253RemovedUsersValueRoleEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant253RemovedUsersValueRoleEnum
 
 typealias UserEventPayloadVariant254 = dev.octri.showcase.vercel.models.UserEventPayloadVariant254
 
-typealias UserEventPayloadVariant254EnabledEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant254EnabledEnum
+typealias UserEventPayloadVariant254EnabledEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant254EnabledEnum
 
 typealias UserEventPayloadVariant255 = dev.octri.showcase.vercel.models.UserEventPayloadVariant255
 
 typealias UserEventPayloadVariant256 = dev.octri.showcase.vercel.models.UserEventPayloadVariant256
 
-typealias UserEventPayloadVariant256ActorTypeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant256ActorTypeEnum
+typealias UserEventPayloadVariant256ActorTypeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant256ActorTypeEnum
 
 typealias UserEventPayloadVariant257 = dev.octri.showcase.vercel.models.UserEventPayloadVariant257
 
-typealias UserEventPayloadVariant257Endpoint = dev.octri.showcase.vercel.models.UserEventPayloadVariant257Endpoint
+typealias UserEventPayloadVariant257Endpoint =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant257Endpoint
 
-typealias UserEventPayloadVariant257ScopeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant257ScopeEnum
+typealias UserEventPayloadVariant257ScopeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant257ScopeEnum
 
 typealias UserEventPayloadVariant258 = dev.octri.showcase.vercel.models.UserEventPayloadVariant258
 
-typealias UserEventPayloadVariant258Endpoint = dev.octri.showcase.vercel.models.UserEventPayloadVariant258Endpoint
+typealias UserEventPayloadVariant258Endpoint =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant258Endpoint
 
-typealias UserEventPayloadVariant258ScopeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant258ScopeEnum
+typealias UserEventPayloadVariant258ScopeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant258ScopeEnum
 
 typealias UserEventPayloadVariant259 = dev.octri.showcase.vercel.models.UserEventPayloadVariant259
 
-typealias UserEventPayloadVariant259PrivateLinkEndpoint = dev.octri.showcase.vercel.models.UserEventPayloadVariant259PrivateLinkEndpoint
+typealias UserEventPayloadVariant259PrivateLinkEndpoint =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant259PrivateLinkEndpoint
 
-typealias UserEventPayloadVariant259ScopeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant259ScopeEnum
+typealias UserEventPayloadVariant259ScopeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant259ScopeEnum
 
-typealias UserEventPayloadVariant25ChangeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant25ChangeEnum
+typealias UserEventPayloadVariant25ChangeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant25ChangeEnum
 
-typealias UserEventPayloadVariant25Commitment = dev.octri.showcase.vercel.models.UserEventPayloadVariant25Commitment
+typealias UserEventPayloadVariant25Commitment =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant25Commitment
 
-typealias UserEventPayloadVariant25Previous = dev.octri.showcase.vercel.models.UserEventPayloadVariant25Previous
+typealias UserEventPayloadVariant25Previous =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant25Previous
 
-typealias UserEventPayloadVariant25Settings = dev.octri.showcase.vercel.models.UserEventPayloadVariant25Settings
+typealias UserEventPayloadVariant25Settings =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant25Settings
 
 typealias UserEventPayloadVariant26 = dev.octri.showcase.vercel.models.UserEventPayloadVariant26
 
 typealias UserEventPayloadVariant260 = dev.octri.showcase.vercel.models.UserEventPayloadVariant260
 
-typealias UserEventPayloadVariant260Current = dev.octri.showcase.vercel.models.UserEventPayloadVariant260Current
+typealias UserEventPayloadVariant260Current =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant260Current
 
-typealias UserEventPayloadVariant260Prev = dev.octri.showcase.vercel.models.UserEventPayloadVariant260Prev
+typealias UserEventPayloadVariant260Prev =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant260Prev
 
-typealias UserEventPayloadVariant260ScopeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant260ScopeEnum
+typealias UserEventPayloadVariant260ScopeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant260ScopeEnum
 
 typealias UserEventPayloadVariant261 = dev.octri.showcase.vercel.models.UserEventPayloadVariant261
 
-typealias UserEventPayloadVariant261Current = dev.octri.showcase.vercel.models.UserEventPayloadVariant261Current
+typealias UserEventPayloadVariant261Current =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant261Current
 
-typealias UserEventPayloadVariant261Prev = dev.octri.showcase.vercel.models.UserEventPayloadVariant261Prev
+typealias UserEventPayloadVariant261Prev =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant261Prev
 
-typealias UserEventPayloadVariant261ScopeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant261ScopeEnum
+typealias UserEventPayloadVariant261ScopeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant261ScopeEnum
 
 typealias UserEventPayloadVariant262 = dev.octri.showcase.vercel.models.UserEventPayloadVariant262
 
-typealias UserEventPayloadVariant262PreviousEndpoint = dev.octri.showcase.vercel.models.UserEventPayloadVariant262PreviousEndpoint
+typealias UserEventPayloadVariant262PreviousEndpoint =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant262PreviousEndpoint
 
-typealias UserEventPayloadVariant262PrivateLinkEndpoint = dev.octri.showcase.vercel.models.UserEventPayloadVariant262PrivateLinkEndpoint
+typealias UserEventPayloadVariant262PrivateLinkEndpoint =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant262PrivateLinkEndpoint
 
-typealias UserEventPayloadVariant262ScopeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant262ScopeEnum
+typealias UserEventPayloadVariant262ScopeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant262ScopeEnum
 
 typealias UserEventPayloadVariant263 = dev.octri.showcase.vercel.models.UserEventPayloadVariant263
 
 typealias UserEventPayloadVariant264 = dev.octri.showcase.vercel.models.UserEventPayloadVariant264
 
-typealias UserEventPayloadVariant264DirectoryListingEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant264DirectoryListingEnum
+typealias UserEventPayloadVariant264DirectoryListingEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant264DirectoryListingEnum
 
 typealias UserEventPayloadVariant265 = dev.octri.showcase.vercel.models.UserEventPayloadVariant265
 
-typealias UserEventPayloadVariant265PrevProjectAnalytics = dev.octri.showcase.vercel.models.UserEventPayloadVariant265PrevProjectAnalytics
+typealias UserEventPayloadVariant265PrevProjectAnalytics =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant265PrevProjectAnalytics
 
-typealias UserEventPayloadVariant265ProjectAnalytics = dev.octri.showcase.vercel.models.UserEventPayloadVariant265ProjectAnalytics
+typealias UserEventPayloadVariant265ProjectAnalytics =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant265ProjectAnalytics
 
 typealias UserEventPayloadVariant266 = dev.octri.showcase.vercel.models.UserEventPayloadVariant266
 
 typealias UserEventPayloadVariant267 = dev.octri.showcase.vercel.models.UserEventPayloadVariant267
 
-typealias UserEventPayloadVariant267ActionEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant267ActionEnum
+typealias UserEventPayloadVariant267ActionEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant267ActionEnum
 
-typealias UserEventPayloadVariant267IsEnvVarEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant267IsEnvVarEnum
+typealias UserEventPayloadVariant267IsEnvVarEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant267IsEnvVarEnum
 
 typealias UserEventPayloadVariant268 = dev.octri.showcase.vercel.models.UserEventPayloadVariant268
 
 typealias UserEventPayloadVariant269 = dev.octri.showcase.vercel.models.UserEventPayloadVariant269
 
-typealias UserEventPayloadVariant26Budget = dev.octri.showcase.vercel.models.UserEventPayloadVariant26Budget
+typealias UserEventPayloadVariant26Budget =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant26Budget
 
-typealias UserEventPayloadVariant26BudgetRefreshPeriodEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant26BudgetRefreshPeriodEnum
+typealias UserEventPayloadVariant26BudgetRefreshPeriodEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant26BudgetRefreshPeriodEnum
 
-typealias UserEventPayloadVariant26ChangeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant26ChangeEnum
+typealias UserEventPayloadVariant26ChangeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant26ChangeEnum
 
-typealias UserEventPayloadVariant26ScopeTypeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant26ScopeTypeEnum
+typealias UserEventPayloadVariant26ScopeTypeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant26ScopeTypeEnum
 
 typealias UserEventPayloadVariant27 = dev.octri.showcase.vercel.models.UserEventPayloadVariant27
 
 typealias UserEventPayloadVariant270 = dev.octri.showcase.vercel.models.UserEventPayloadVariant270
 
-typealias UserEventPayloadVariant270EnableAffectedProjectsDeploymentsEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant270EnableAffectedProjectsDeploymentsEnum
+typealias UserEventPayloadVariant270EnableAffectedProjectsDeploymentsEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant270EnableAffectedProjectsDeploymentsEnum
 
 typealias UserEventPayloadVariant271 = dev.octri.showcase.vercel.models.UserEventPayloadVariant271
 
-typealias UserEventPayloadVariant271EnableExternalRewriteCachingEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant271EnableExternalRewriteCachingEnum
+typealias UserEventPayloadVariant271EnableExternalRewriteCachingEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant271EnableExternalRewriteCachingEnum
 
 typealias UserEventPayloadVariant272 = dev.octri.showcase.vercel.models.UserEventPayloadVariant272
 
 typealias UserEventPayloadVariant273 = dev.octri.showcase.vercel.models.UserEventPayloadVariant273
 
-typealias UserEventPayloadVariant273ProductionDeploymentsFastLaneEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant273ProductionDeploymentsFastLaneEnum
+typealias UserEventPayloadVariant273ProductionDeploymentsFastLaneEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant273ProductionDeploymentsFastLaneEnum
 
 typealias UserEventPayloadVariant274 = dev.octri.showcase.vercel.models.UserEventPayloadVariant274
 
-typealias UserEventPayloadVariant274SourceFilesOutsideRootDirectoryEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant274SourceFilesOutsideRootDirectoryEnum
+typealias UserEventPayloadVariant274SourceFilesOutsideRootDirectoryEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant274SourceFilesOutsideRootDirectoryEnum
 
 typealias UserEventPayloadVariant275 = dev.octri.showcase.vercel.models.UserEventPayloadVariant275
 
-typealias UserEventPayloadVariant275IsSystemInitiatedEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant275IsSystemInitiatedEnum
+typealias UserEventPayloadVariant275IsSystemInitiatedEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant275IsSystemInitiatedEnum
 
 typealias UserEventPayloadVariant276 = dev.octri.showcase.vercel.models.UserEventPayloadVariant276
 
-typealias UserEventPayloadVariant276WidgetEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant276WidgetEnum
+typealias UserEventPayloadVariant276WidgetEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant276WidgetEnum
 
 typealias UserEventPayloadVariant277 = dev.octri.showcase.vercel.models.UserEventPayloadVariant277
 
 typealias UserEventPayloadVariant278 = dev.octri.showcase.vercel.models.UserEventPayloadVariant278
 
-typealias UserEventPayloadVariant278UpdatedEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant278UpdatedEnum
+typealias UserEventPayloadVariant278UpdatedEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant278UpdatedEnum
 
 typealias UserEventPayloadVariant279 = dev.octri.showcase.vercel.models.UserEventPayloadVariant279
 
-typealias UserEventPayloadVariant279Project = dev.octri.showcase.vercel.models.UserEventPayloadVariant279Project
+typealias UserEventPayloadVariant279Project =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant279Project
 
-typealias UserEventPayloadVariant279ProjectNewConnectConfigurationsItem = dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectNewConnectConfigurationsItem
+typealias UserEventPayloadVariant279ProjectNewConnectConfigurationsItem =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectNewConnectConfigurationsItem
 
-typealias UserEventPayloadVariant279ProjectNewConnectConfigurationsItemAws = dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectNewConnectConfigurationsItemAws
+typealias UserEventPayloadVariant279ProjectNewConnectConfigurationsItemAws =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectNewConnectConfigurationsItemAws
 
-typealias UserEventPayloadVariant279ProjectNewConnectConfigurationsItemPassiveEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectNewConnectConfigurationsItemPassiveEnum
+typealias UserEventPayloadVariant279ProjectNewConnectConfigurationsItemPassiveEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectNewConnectConfigurationsItemPassiveEnum
 
-typealias UserEventPayloadVariant279ProjectNewConnectConfigurationsItemX549eeb98f8 = dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectNewConnectConfigurationsItemX549eeb98f8
+typealias UserEventPayloadVariant279ProjectNewConnectConfigurationsItemX549eeb98f8 =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectNewConnectConfigurationsItemX549eeb98f8
 
-typealias UserEventPayloadVariant279ProjectNewConnectConfigurationsItemX6b079b129d = dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectNewConnectConfigurationsItemX6b079b129d
+typealias UserEventPayloadVariant279ProjectNewConnectConfigurationsItemX6b079b129d =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectNewConnectConfigurationsItemX6b079b129d
 
-typealias UserEventPayloadVariant279ProjectOldConnectConfigurationsItem = dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectOldConnectConfigurationsItem
+typealias UserEventPayloadVariant279ProjectOldConnectConfigurationsItem =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectOldConnectConfigurationsItem
 
-typealias UserEventPayloadVariant279ProjectOldConnectConfigurationsItemAws = dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectOldConnectConfigurationsItemAws
+typealias UserEventPayloadVariant279ProjectOldConnectConfigurationsItemAws =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectOldConnectConfigurationsItemAws
 
-typealias UserEventPayloadVariant279ProjectOldConnectConfigurationsItemPassiveEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectOldConnectConfigurationsItemPassiveEnum
+typealias UserEventPayloadVariant279ProjectOldConnectConfigurationsItemPassiveEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectOldConnectConfigurationsItemPassiveEnum
 
-typealias UserEventPayloadVariant279ProjectOldConnectConfigurationsItemX33d6648470 = dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectOldConnectConfigurationsItemX33d6648470
+typealias UserEventPayloadVariant279ProjectOldConnectConfigurationsItemX33d6648470 =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectOldConnectConfigurationsItemX33d6648470
 
-typealias UserEventPayloadVariant279ProjectOldConnectConfigurationsItemX99444d99a8 = dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectOldConnectConfigurationsItemX99444d99a8
+typealias UserEventPayloadVariant279ProjectOldConnectConfigurationsItemX99444d99a8 =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant279ProjectOldConnectConfigurationsItemX99444d99a8
 
-typealias UserEventPayloadVariant279Team = dev.octri.showcase.vercel.models.UserEventPayloadVariant279Team
+typealias UserEventPayloadVariant279Team =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant279Team
 
-typealias UserEventPayloadVariant27Budget = dev.octri.showcase.vercel.models.UserEventPayloadVariant27Budget
+typealias UserEventPayloadVariant27Budget =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant27Budget
 
-typealias UserEventPayloadVariant27BudgetRefreshPeriodEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant27BudgetRefreshPeriodEnum
+typealias UserEventPayloadVariant27BudgetRefreshPeriodEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant27BudgetRefreshPeriodEnum
 
-typealias UserEventPayloadVariant27ChangeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant27ChangeEnum
+typealias UserEventPayloadVariant27ChangeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant27ChangeEnum
 
-typealias UserEventPayloadVariant27ScopeTypeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant27ScopeTypeEnum
+typealias UserEventPayloadVariant27ScopeTypeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant27ScopeTypeEnum
 
 typealias UserEventPayloadVariant28 = dev.octri.showcase.vercel.models.UserEventPayloadVariant28
 
@@ -305,87 +408,114 @@ typealias UserEventPayloadVariant280 = dev.octri.showcase.vercel.models.UserEven
 
 typealias UserEventPayloadVariant281 = dev.octri.showcase.vercel.models.UserEventPayloadVariant281
 
-typealias UserEventPayloadVariant281ActionEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant281ActionEnum
+typealias UserEventPayloadVariant281ActionEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant281ActionEnum
 
 typealias UserEventPayloadVariant282 = dev.octri.showcase.vercel.models.UserEventPayloadVariant282
 
 typealias UserEventPayloadVariant283 = dev.octri.showcase.vercel.models.UserEventPayloadVariant283
 
-typealias UserEventPayloadVariant283BuildQueueConfigurationEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant283BuildQueueConfigurationEnum
+typealias UserEventPayloadVariant283BuildQueueConfigurationEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant283BuildQueueConfigurationEnum
 
-typealias UserEventPayloadVariant283ElasticConcurrencyEnabledEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant283ElasticConcurrencyEnabledEnum
+typealias UserEventPayloadVariant283ElasticConcurrencyEnabledEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant283ElasticConcurrencyEnabledEnum
 
-typealias UserEventPayloadVariant283OldBuildQueueConfigurationEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant283OldBuildQueueConfigurationEnum
+typealias UserEventPayloadVariant283OldBuildQueueConfigurationEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant283OldBuildQueueConfigurationEnum
 
-typealias UserEventPayloadVariant283OldElasticConcurrencyEnabledEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant283OldElasticConcurrencyEnabledEnum
+typealias UserEventPayloadVariant283OldElasticConcurrencyEnabledEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant283OldElasticConcurrencyEnabledEnum
 
 typealias UserEventPayloadVariant284 = dev.octri.showcase.vercel.models.UserEventPayloadVariant284
 
-typealias UserEventPayloadVariant284AutoAssignCustomDomainsEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant284AutoAssignCustomDomainsEnum
+typealias UserEventPayloadVariant284AutoAssignCustomDomainsEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant284AutoAssignCustomDomainsEnum
 
 typealias UserEventPayloadVariant285 = dev.octri.showcase.vercel.models.UserEventPayloadVariant285
 
-typealias UserEventPayloadVariant285PreviewDeploymentsEnabledEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant285PreviewDeploymentsEnabledEnum
+typealias UserEventPayloadVariant285PreviewDeploymentsEnabledEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant285PreviewDeploymentsEnabledEnum
 
 typealias UserEventPayloadVariant286 = dev.octri.showcase.vercel.models.UserEventPayloadVariant286
 
-typealias UserEventPayloadVariant286Next = dev.octri.showcase.vercel.models.UserEventPayloadVariant286Next
+typealias UserEventPayloadVariant286Next =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant286Next
 
-typealias UserEventPayloadVariant286NextBranchMatcher = dev.octri.showcase.vercel.models.UserEventPayloadVariant286NextBranchMatcher
+typealias UserEventPayloadVariant286NextBranchMatcher =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant286NextBranchMatcher
 
-typealias UserEventPayloadVariant286NextBranchMatcherTypeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant286NextBranchMatcherTypeEnum
+typealias UserEventPayloadVariant286NextBranchMatcherTypeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant286NextBranchMatcherTypeEnum
 
-typealias UserEventPayloadVariant286Previous = dev.octri.showcase.vercel.models.UserEventPayloadVariant286Previous
+typealias UserEventPayloadVariant286Previous =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant286Previous
 
-typealias UserEventPayloadVariant286PreviousBranchMatcher = dev.octri.showcase.vercel.models.UserEventPayloadVariant286PreviousBranchMatcher
+typealias UserEventPayloadVariant286PreviousBranchMatcher =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant286PreviousBranchMatcher
 
-typealias UserEventPayloadVariant286PreviousBranchMatcherTypeEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant286PreviousBranchMatcherTypeEnum
+typealias UserEventPayloadVariant286PreviousBranchMatcherTypeEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant286PreviousBranchMatcherTypeEnum
 
 typealias UserEventPayloadVariant287 = dev.octri.showcase.vercel.models.UserEventPayloadVariant287
 
-typealias UserEventPayloadVariant287EnableSchedulesByDefaultEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant287EnableSchedulesByDefaultEnum
+typealias UserEventPayloadVariant287EnableSchedulesByDefaultEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant287EnableSchedulesByDefaultEnum
 
 typealias UserEventPayloadVariant288 = dev.octri.showcase.vercel.models.UserEventPayloadVariant288
 
-typealias UserEventPayloadVariant288EnableSchedulesByDefaultEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant288EnableSchedulesByDefaultEnum
+typealias UserEventPayloadVariant288EnableSchedulesByDefaultEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant288EnableSchedulesByDefaultEnum
 
 typealias UserEventPayloadVariant289 = dev.octri.showcase.vercel.models.UserEventPayloadVariant289
 
-typealias UserEventPayloadVariant28Credential = dev.octri.showcase.vercel.models.UserEventPayloadVariant28Credential
+typealias UserEventPayloadVariant28Credential =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant28Credential
 
 typealias UserEventPayloadVariant29 = dev.octri.showcase.vercel.models.UserEventPayloadVariant29
 
 typealias UserEventPayloadVariant290 = dev.octri.showcase.vercel.models.UserEventPayloadVariant290
 
-typealias UserEventPayloadVariant290EnableFunctionsBetaEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant290EnableFunctionsBetaEnum
+typealias UserEventPayloadVariant290EnableFunctionsBetaEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant290EnableFunctionsBetaEnum
 
 typealias UserEventPayloadVariant291 = dev.octri.showcase.vercel.models.UserEventPayloadVariant291
 
-typealias UserEventPayloadVariant291Next = dev.octri.showcase.vercel.models.UserEventPayloadVariant291Next
+typealias UserEventPayloadVariant291Next =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant291Next
 
-typealias UserEventPayloadVariant291Previous = dev.octri.showcase.vercel.models.UserEventPayloadVariant291Previous
+typealias UserEventPayloadVariant291Previous =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant291Previous
 
 typealias UserEventPayloadVariant292 = dev.octri.showcase.vercel.models.UserEventPayloadVariant292
 
-typealias UserEventPayloadVariant292Next = dev.octri.showcase.vercel.models.UserEventPayloadVariant292Next
+typealias UserEventPayloadVariant292Next =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant292Next
 
-typealias UserEventPayloadVariant292Previous = dev.octri.showcase.vercel.models.UserEventPayloadVariant292Previous
+typealias UserEventPayloadVariant292Previous =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant292Previous
 
 typealias UserEventPayloadVariant293 = dev.octri.showcase.vercel.models.UserEventPayloadVariant293
 
-typealias UserEventPayloadVariant293Next = dev.octri.showcase.vercel.models.UserEventPayloadVariant293Next
+typealias UserEventPayloadVariant293Next =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant293Next
 
-typealias UserEventPayloadVariant293Previous = dev.octri.showcase.vercel.models.UserEventPayloadVariant293Previous
+typealias UserEventPayloadVariant293Previous =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant293Previous
 
 typealias UserEventPayloadVariant294 = dev.octri.showcase.vercel.models.UserEventPayloadVariant294
 
-typealias UserEventPayloadVariant294Next = dev.octri.showcase.vercel.models.UserEventPayloadVariant294Next
+typealias UserEventPayloadVariant294Next =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant294Next
 
-typealias UserEventPayloadVariant294NextFunctionZeroConfigFailoverEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant294NextFunctionZeroConfigFailoverEnum
+typealias UserEventPayloadVariant294NextFunctionZeroConfigFailoverEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant294NextFunctionZeroConfigFailoverEnum
 
-typealias UserEventPayloadVariant294Previous = dev.octri.showcase.vercel.models.UserEventPayloadVariant294Previous
+typealias UserEventPayloadVariant294Previous =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant294Previous
 
-typealias UserEventPayloadVariant294PreviousFunctionZeroConfigFailoverEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant294PreviousFunctionZeroConfigFailoverEnum
+typealias UserEventPayloadVariant294PreviousFunctionZeroConfigFailoverEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant294PreviousFunctionZeroConfigFailoverEnum
 
 typealias UserEventPayloadVariant295 = dev.octri.showcase.vercel.models.UserEventPayloadVariant295
 
@@ -393,25 +523,33 @@ typealias UserEventPayloadVariant296 = dev.octri.showcase.vercel.models.UserEven
 
 typealias UserEventPayloadVariant297 = dev.octri.showcase.vercel.models.UserEventPayloadVariant297
 
-typealias UserEventPayloadVariant297Next = dev.octri.showcase.vercel.models.UserEventPayloadVariant297Next
+typealias UserEventPayloadVariant297Next =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant297Next
 
-typealias UserEventPayloadVariant297NextGitProviderEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant297NextGitProviderEnum
+typealias UserEventPayloadVariant297NextGitProviderEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant297NextGitProviderEnum
 
-typealias UserEventPayloadVariant297Previous = dev.octri.showcase.vercel.models.UserEventPayloadVariant297Previous
+typealias UserEventPayloadVariant297Previous =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant297Previous
 
-typealias UserEventPayloadVariant297PreviousGitProviderEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant297PreviousGitProviderEnum
+typealias UserEventPayloadVariant297PreviousGitProviderEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant297PreviousGitProviderEnum
 
 typealias UserEventPayloadVariant298 = dev.octri.showcase.vercel.models.UserEventPayloadVariant298
 
-typealias UserEventPayloadVariant298GitProviderEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant298GitProviderEnum
+typealias UserEventPayloadVariant298GitProviderEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant298GitProviderEnum
 
 typealias UserEventPayloadVariant299 = dev.octri.showcase.vercel.models.UserEventPayloadVariant299
 
-typealias UserEventPayloadVariant299OnPullRequestEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant299OnPullRequestEnum
+typealias UserEventPayloadVariant299OnPullRequestEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant299OnPullRequestEnum
 
-typealias UserEventPayloadVariant29Credential = dev.octri.showcase.vercel.models.UserEventPayloadVariant29Credential
+typealias UserEventPayloadVariant29Credential =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant29Credential
 
-typealias UserEventPayloadVariant2ActionEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant2ActionEnum
+typealias UserEventPayloadVariant2ActionEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant2ActionEnum
 
 typealias UserEventPayloadVariant3 = dev.octri.showcase.vercel.models.UserEventPayloadVariant3
 
@@ -419,20 +557,25 @@ typealias UserEventPayloadVariant30 = dev.octri.showcase.vercel.models.UserEvent
 
 typealias UserEventPayloadVariant300 = dev.octri.showcase.vercel.models.UserEventPayloadVariant300
 
-typealias UserEventPayloadVariant300OnCommitEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant300OnCommitEnum
+typealias UserEventPayloadVariant300OnCommitEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant300OnCommitEnum
 
 typealias UserEventPayloadVariant301 = dev.octri.showcase.vercel.models.UserEventPayloadVariant301
 
-typealias UserEventPayloadVariant301DisableRepositoryDispatchEventsEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant301DisableRepositoryDispatchEventsEnum
+typealias UserEventPayloadVariant301DisableRepositoryDispatchEventsEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant301DisableRepositoryDispatchEventsEnum
 
 typealias UserEventPayloadVariant302 = dev.octri.showcase.vercel.models.UserEventPayloadVariant302
 
-typealias UserEventPayloadVariant302CreateDeploymentsEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant302CreateDeploymentsEnum
+typealias UserEventPayloadVariant302CreateDeploymentsEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant302CreateDeploymentsEnum
 
 typealias UserEventPayloadVariant303 = dev.octri.showcase.vercel.models.UserEventPayloadVariant303
 
-typealias UserEventPayloadVariant303RequireVerifiedCommitsEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant303RequireVerifiedCommitsEnum
+typealias UserEventPayloadVariant303RequireVerifiedCommitsEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant303RequireVerifiedCommitsEnum
 
 typealias UserEventPayloadVariant304 = dev.octri.showcase.vercel.models.UserEventPayloadVariant304
 
-typealias UserEventPayloadVariant304RequireVerifiedCommitsEnum = dev.octri.showcase.vercel.models.UserEventPayloadVariant304RequireVerifiedCommitsEnum
+typealias UserEventPayloadVariant304RequireVerifiedCommitsEnum =
+    dev.octri.showcase.vercel.models.UserEventPayloadVariant304RequireVerifiedCommitsEnum

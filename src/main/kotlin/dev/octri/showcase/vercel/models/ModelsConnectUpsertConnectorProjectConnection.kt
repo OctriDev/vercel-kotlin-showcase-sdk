@@ -3,12 +3,11 @@
 
 package dev.octri.showcase.vercel.models
 
-/**
- * Environments enabled for a connector project connection.
- */
+/** Environments enabled for a connector project connection. */
 data class ConnectUpsertProjectConnectionRequest(
     /**
-     * One or more built-in environment names or stable custom environment IDs that belong to the project. Duplicate values are accepted and removed.
+     * One or more built-in environment names or stable custom environment IDs that belong to the
+     * project. Duplicate values are accepted and removed.
      */
     val environments: List<String>
 )

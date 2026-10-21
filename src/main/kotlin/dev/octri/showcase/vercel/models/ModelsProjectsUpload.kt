@@ -4,181 +4,283 @@
 package dev.octri.showcase.vercel.models
 
 data class UploadProjectAvatarResponseCreatorVariant0ViaVariant0App(
-    /**
-     * The internal ID of the Vercel App backing this principal.
-     */
+    /** The internal ID of the Vercel App backing this principal. */
     val id: String,
     /**
-     * The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
+     * The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata
+     * Documents (CIMD) are used.
      */
-    val clientId: String? = null
+    val clientId: String? = null,
 )
 
 /**
- * Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
+ * Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented
+ * OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for
+ * impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
  */
 data class UploadProjectAvatarResponseCreatorVariant0ViaVariant0(
     val app: UploadProjectAvatarResponseCreatorVariant0ViaVariant0App,
-    val type: UploadProjectAvatarResponseCreatorVariant0ViaVariant0TypeEnum
+    val type: UploadProjectAvatarResponseCreatorVariant0ViaVariant0TypeEnum,
 )
 
 data class UploadProjectAvatarResponseCreatorVariant0ViaVariant1Integration(
     val configurationId: String,
-    val integrationId: String
+    val integrationId: String,
 )
 
 /**
- * Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
+ * Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented
+ * OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for
+ * impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
  */
 data class UploadProjectAvatarResponseCreatorVariant0ViaVariant1(
     val integration: UploadProjectAvatarResponseCreatorVariant0ViaVariant1Integration,
-    val type: UploadProjectAvatarResponseCreatorVariant0ViaVariant1TypeEnum
+    val type: UploadProjectAvatarResponseCreatorVariant0ViaVariant1TypeEnum,
 )
 
-data class UploadProjectAvatarResponseCreatorVariant0User(
-    val id: String
-)
+data class UploadProjectAvatarResponseCreatorVariant0User(val id: String)
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseCreatorVariant0(
     val type: UploadProjectAvatarResponseCreatorVariant0TypeEnum,
     @com.fasterxml.jackson.annotation.JsonProperty("via", required = true) val via: Any?,
-    val user: UploadProjectAvatarResponseCreatorVariant0User
+    val user: UploadProjectAvatarResponseCreatorVariant0User,
 ) : UploadProjectAvatarResponseCreator
 
 data class UploadProjectAvatarResponseCreatorVariant1App(
-    /**
-     * The internal ID of the Vercel App backing this principal.
-     */
+    /** The internal ID of the Vercel App backing this principal. */
     val id: String,
     /**
-     * The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
+     * The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata
+     * Documents (CIMD) are used.
      */
-    val clientId: String? = null
+    val clientId: String? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseCreatorVariant1(
     val app: UploadProjectAvatarResponseCreatorVariant1App,
-    val type: UploadProjectAvatarResponseCreatorVariant1TypeEnum
+    val type: UploadProjectAvatarResponseCreatorVariant1TypeEnum,
 ) : UploadProjectAvatarResponseCreator
 
 data class UploadProjectAvatarResponseCreatorVariant2Integration(
     val configurationId: String,
-    val integrationId: String
+    val integrationId: String,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseCreatorVariant2(
     val integration: UploadProjectAvatarResponseCreatorVariant2Integration,
-    val type: UploadProjectAvatarResponseCreatorVariant2TypeEnum
+    val type: UploadProjectAvatarResponseCreatorVariant2TypeEnum,
 ) : UploadProjectAvatarResponseCreator
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseCreatorVariant3(
     val type: UploadProjectAvatarResponseCreatorVariant3TypeEnum
 ) : UploadProjectAvatarResponseCreator
 
-/**
- * Typed representation of the `UploadProjectAvatarResponseCreator` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
+/** Typed representation of the `UploadProjectAvatarResponseCreator` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "type",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseCreatorVariant0::class, name = "user"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseCreatorVariant1::class, name = "app"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseCreatorVariant2::class, name = "integration"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseCreatorVariant3::class, name = "system")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseCreatorVariant0::class,
+        name = "user",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseCreatorVariant1::class,
+        name = "app",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseCreatorVariant2::class,
+        name = "integration",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseCreatorVariant3::class,
+        name = "system",
+    ),
 )
 sealed interface UploadProjectAvatarResponseCreator
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8322d5ec3b(
     val target: UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8666df38bf,
-    val type: UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8d6fccb17b
+    val type: UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8d6fccb17b,
 ) : UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXa42748d8c8
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb4660b7563(
     val environmentId: String,
-    val type: UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX0e7481a539
+    val type: UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX0e7481a539,
 ) : UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXa42748d8c8
 
 /**
- * Typed representation of the `UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesItemEnvironmentsItem` API schema.
+ * Typed representation of the
+ * `UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesItemEnvironmentsItem` API schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "type",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8322d5ec3b::class, name = "system"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb4660b7563::class, name = "custom")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIX8322d5ec3b::class,
+        name = "system",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXb4660b7563::class,
+        name = "custom",
+    ),
 )
 sealed interface UploadProjectAvatarResponseDeploymentPolicyDeploymentSourcesIXa42748d8c8
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX24bcaf5991(
     val target: UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX5ed31339ac,
-    val type: UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviXd2200d6391
+    val type: UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviXd2200d6391,
 ) : UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX9e29202ba0
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX2782763ceb(
     val environmentId: String,
-    val type: UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX742ecab72b
+    val type: UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX742ecab72b,
 ) : UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX9e29202ba0
 
 /**
- * Typed representation of the `UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnvironmentsItem` API schema.
+ * Typed representation of the
+ * `UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnvironmentsItem` API schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "type",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX24bcaf5991::class, name = "system"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX2782763ceb::class, name = "custom")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX24bcaf5991::class,
+        name = "system",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX2782763ceb::class,
+        name = "custom",
+    ),
 )
 sealed interface UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemEnviX9e29202ba0
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX668e3a8f26(
     val org: String,
     val provider: UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX58f428643b,
-    val repo: String? = null
+    val repo: String? = null,
 ) : UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourcesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourXc4b5f9e83b(
     val namespace: String,
     val provider: UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX2e6580d097,
-    val project: String? = null
+    val project: String? = null,
 ) : UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourcesItem
 
 /**
- * Typed representation of the `UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourcesItem` API schema.
+ * Typed representation of the
+ * `UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourcesItem` API schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX668e3a8f26::class),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourXc4b5f9e83b::class)
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourX668e3a8f26::class
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourXc4b5f9e83b::class
+    ),
 )
 sealed interface UploadProjectAvatarResponseDeploymentPolicyGitSourcesItemSourcesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseDismissedToastsItemValueVariant2(
     val currentValue: Any,
-    val previousValue: Any
+    val previousValue: Any,
 ) : UploadProjectAvatarResponseDismissedToastsItemValue
 
-/**
- * Typed representation of the `UploadProjectAvatarResponseDismissedToastsItemValue` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UploadProjectAvatarResponseDismissedToastsItemValue.Deserializer::class)
+/** Typed representation of the `UploadProjectAvatarResponseDismissedToastsItemValue` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = UploadProjectAvatarResponseDismissedToastsItemValue.Deserializer::class
+)
 sealed interface UploadProjectAvatarResponseDismissedToastsItemValue {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UploadProjectAvatarResponseDismissedToastsItemValue>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<
+            UploadProjectAvatarResponseDismissedToastsItemValue
+        >() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): UploadProjectAvatarResponseDismissedToastsItemValue {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out UploadProjectAvatarResponseDismissedToastsItemValue>> = listOf(UploadProjectAvatarResponseDismissedToastsItemValueVariant2::class.java)
+            val objectTypes: List<Class<out UploadProjectAvatarResponseDismissedToastsItemValue>> =
+                listOf(UploadProjectAvatarResponseDismissedToastsItemValueVariant2::class.java)
             for (objectType in objectTypes) {
                 try {
                     return mapper.convertValue(node, objectType)
@@ -187,229 +289,430 @@ sealed interface UploadProjectAvatarResponseDismissedToastsItemValue {
                 }
             }
             return when {
-                node.isTextual -> StringUploadProjectAvatarResponseDismissedToastsItemValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
-                node.isNumber -> DoubleUploadProjectAvatarResponseDismissedToastsItemValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Double>() {}))
-                node.isBoolean -> BooleanUploadProjectAvatarResponseDismissedToastsItemValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {}))
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, UploadProjectAvatarResponseDismissedToastsItemValue::class.java, "no UploadProjectAvatarResponseDismissedToastsItemValue branch accepts this payload")
+                node.isTextual ->
+                    StringUploadProjectAvatarResponseDismissedToastsItemValue(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
+                        )
+                    )
+                node.isNumber ->
+                    DoubleUploadProjectAvatarResponseDismissedToastsItemValue(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<Double>() {},
+                        )
+                    )
+                node.isBoolean ->
+                    BooleanUploadProjectAvatarResponseDismissedToastsItemValue(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {},
+                        )
+                    )
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        UploadProjectAvatarResponseDismissedToastsItemValue::class.java,
+                        "no UploadProjectAvatarResponseDismissedToastsItemValue branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class StringUploadProjectAvatarResponseDismissedToastsItemValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : UploadProjectAvatarResponseDismissedToastsItemValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class StringUploadProjectAvatarResponseDismissedToastsItemValue(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
+) : UploadProjectAvatarResponseDismissedToastsItemValue
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class DoubleUploadProjectAvatarResponseDismissedToastsItemValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: Double) : UploadProjectAvatarResponseDismissedToastsItemValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class DoubleUploadProjectAvatarResponseDismissedToastsItemValue(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Double
+) : UploadProjectAvatarResponseDismissedToastsItemValue
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class BooleanUploadProjectAvatarResponseDismissedToastsItemValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) : UploadProjectAvatarResponseDismissedToastsItemValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class BooleanUploadProjectAvatarResponseDismissedToastsItemValue(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean
+) : UploadProjectAvatarResponseDismissedToastsItemValue
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseEnvItemContentHintVariant0(
     val storeId: String,
-    val type: UploadProjectAvatarResponseEnvItemContentHintVariant0TypeEnum
+    val type: UploadProjectAvatarResponseEnvItemContentHintVariant0TypeEnum,
 ) : UploadProjectAvatarResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseEnvItemContentHintVariant1(
     val storeId: String,
-    val type: UploadProjectAvatarResponseEnvItemContentHintVariant1TypeEnum
+    val type: UploadProjectAvatarResponseEnvItemContentHintVariant1TypeEnum,
 ) : UploadProjectAvatarResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseEnvItemContentHintVariant2(
     val storeId: String,
-    val type: UploadProjectAvatarResponseEnvItemContentHintVariant2TypeEnum
+    val type: UploadProjectAvatarResponseEnvItemContentHintVariant2TypeEnum,
 ) : UploadProjectAvatarResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseEnvItemContentHintVariant3(
     val storeId: String,
-    val type: UploadProjectAvatarResponseEnvItemContentHintVariant3TypeEnum
+    val type: UploadProjectAvatarResponseEnvItemContentHintVariant3TypeEnum,
 ) : UploadProjectAvatarResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseEnvItemContentHintVariant4(
     val storeId: String,
-    val type: UploadProjectAvatarResponseEnvItemContentHintVariant4TypeEnum
+    val type: UploadProjectAvatarResponseEnvItemContentHintVariant4TypeEnum,
 ) : UploadProjectAvatarResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseEnvItemContentHintVariant5(
     val storeId: String,
-    val type: UploadProjectAvatarResponseEnvItemContentHintVariant5TypeEnum
+    val type: UploadProjectAvatarResponseEnvItemContentHintVariant5TypeEnum,
 ) : UploadProjectAvatarResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseEnvItemContentHintVariant6(
     val storeId: String,
-    val type: UploadProjectAvatarResponseEnvItemContentHintVariant6TypeEnum
+    val type: UploadProjectAvatarResponseEnvItemContentHintVariant6TypeEnum,
 ) : UploadProjectAvatarResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseEnvItemContentHintVariant7(
     val storeId: String,
-    val type: UploadProjectAvatarResponseEnvItemContentHintVariant7TypeEnum
+    val type: UploadProjectAvatarResponseEnvItemContentHintVariant7TypeEnum,
 ) : UploadProjectAvatarResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseEnvItemContentHintVariant8(
     val storeId: String,
-    val type: UploadProjectAvatarResponseEnvItemContentHintVariant8TypeEnum
+    val type: UploadProjectAvatarResponseEnvItemContentHintVariant8TypeEnum,
 ) : UploadProjectAvatarResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseEnvItemContentHintVariant9(
     val storeId: String,
-    val type: UploadProjectAvatarResponseEnvItemContentHintVariant9TypeEnum
+    val type: UploadProjectAvatarResponseEnvItemContentHintVariant9TypeEnum,
 ) : UploadProjectAvatarResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseEnvItemContentHintVariant10(
     val storeId: String,
-    val type: UploadProjectAvatarResponseEnvItemContentHintVariant10TypeEnum
+    val type: UploadProjectAvatarResponseEnvItemContentHintVariant10TypeEnum,
 ) : UploadProjectAvatarResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseEnvItemContentHintVariant11(
     val storeId: String,
-    val type: UploadProjectAvatarResponseEnvItemContentHintVariant11TypeEnum
+    val type: UploadProjectAvatarResponseEnvItemContentHintVariant11TypeEnum,
 ) : UploadProjectAvatarResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseEnvItemContentHintVariant12(
     val storeId: String,
-    val type: UploadProjectAvatarResponseEnvItemContentHintVariant12TypeEnum
+    val type: UploadProjectAvatarResponseEnvItemContentHintVariant12TypeEnum,
 ) : UploadProjectAvatarResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseEnvItemContentHintVariant13(
     val storeId: String,
-    val type: UploadProjectAvatarResponseEnvItemContentHintVariant13TypeEnum
+    val type: UploadProjectAvatarResponseEnvItemContentHintVariant13TypeEnum,
 ) : UploadProjectAvatarResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseEnvItemContentHintVariant14(
     val storeId: String,
-    val type: UploadProjectAvatarResponseEnvItemContentHintVariant14TypeEnum
+    val type: UploadProjectAvatarResponseEnvItemContentHintVariant14TypeEnum,
 ) : UploadProjectAvatarResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseEnvItemContentHintVariant15(
     val integrationConfigurationId: String,
     val integrationId: String,
     val integrationProductId: String,
     val storeId: String,
-    val type: UploadProjectAvatarResponseEnvItemContentHintVariant15TypeEnum
+    val type: UploadProjectAvatarResponseEnvItemContentHintVariant15TypeEnum,
 ) : UploadProjectAvatarResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseEnvItemContentHintVariant16(
     val projectId: String,
-    val type: UploadProjectAvatarResponseEnvItemContentHintVariant16TypeEnum
+    val type: UploadProjectAvatarResponseEnvItemContentHintVariant16TypeEnum,
 ) : UploadProjectAvatarResponseEnvItemContentHint
 
-/**
- * Typed representation of the `UploadProjectAvatarResponseEnvItemContentHint` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
+/** Typed representation of the `UploadProjectAvatarResponseEnvItemContentHint` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "type",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseEnvItemContentHintVariant0::class, name = "redis-url"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseEnvItemContentHintVariant1::class, name = "redis-rest-api-url"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseEnvItemContentHintVariant2::class, name = "redis-rest-api-token"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseEnvItemContentHintVariant3::class, name = "redis-rest-api-read-only-token"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseEnvItemContentHintVariant4::class, name = "blob-read-write-token"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseEnvItemContentHintVariant5::class, name = "blob-store-id"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseEnvItemContentHintVariant6::class, name = "blob-webhook-public-key"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseEnvItemContentHintVariant7::class, name = "postgres-url"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseEnvItemContentHintVariant8::class, name = "postgres-url-non-pooling"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseEnvItemContentHintVariant9::class, name = "postgres-prisma-url"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseEnvItemContentHintVariant10::class, name = "postgres-user"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseEnvItemContentHintVariant11::class, name = "postgres-host"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseEnvItemContentHintVariant12::class, name = "postgres-password"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseEnvItemContentHintVariant13::class, name = "postgres-database"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseEnvItemContentHintVariant14::class, name = "postgres-url-no-ssl"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseEnvItemContentHintVariant15::class, name = "integration-store-secret"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseEnvItemContentHintVariant16::class, name = "flags-connection-string")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseEnvItemContentHintVariant0::class,
+        name = "redis-url",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseEnvItemContentHintVariant1::class,
+        name = "redis-rest-api-url",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseEnvItemContentHintVariant2::class,
+        name = "redis-rest-api-token",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseEnvItemContentHintVariant3::class,
+        name = "redis-rest-api-read-only-token",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseEnvItemContentHintVariant4::class,
+        name = "blob-read-write-token",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseEnvItemContentHintVariant5::class,
+        name = "blob-store-id",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseEnvItemContentHintVariant6::class,
+        name = "blob-webhook-public-key",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseEnvItemContentHintVariant7::class,
+        name = "postgres-url",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseEnvItemContentHintVariant8::class,
+        name = "postgres-url-non-pooling",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseEnvItemContentHintVariant9::class,
+        name = "postgres-prisma-url",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseEnvItemContentHintVariant10::class,
+        name = "postgres-user",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseEnvItemContentHintVariant11::class,
+        name = "postgres-host",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseEnvItemContentHintVariant12::class,
+        name = "postgres-password",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseEnvItemContentHintVariant13::class,
+        name = "postgres-database",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseEnvItemContentHintVariant14::class,
+        name = "postgres-url-no-ssl",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseEnvItemContentHintVariant15::class,
+        name = "integration-store-secret",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseEnvItemContentHintVariant16::class,
+        name = "flags-connection-string",
+    ),
 )
 sealed interface UploadProjectAvatarResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseExpirationVariant0(
-    /**
-     * Unix ms timestamp when the project is scheduled to expire.
-     */
+    /** Unix ms timestamp when the project is scheduled to expire. */
     val expiresAt: Double
 ) : UploadProjectAvatarResponseExpiration
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseExpirationVariant1(
-    /**
-     * Unix ms timestamp when the project was locked.
-     */
+    /** Unix ms timestamp when the project was locked. */
     val lockedAt: Double,
-    /**
-     * userId of the actor that triggered the lock (system or admin).
-     */
-    val lockedBy: String
+    /** userId of the actor that triggered the lock (system or admin). */
+    val lockedBy: String,
 ) : UploadProjectAvatarResponseExpiration
 
-/**
- * Typed representation of the `UploadProjectAvatarResponseExpiration` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION)
+/** Typed representation of the `UploadProjectAvatarResponseExpiration` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseExpirationVariant0::class),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseExpirationVariant1::class)
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseExpirationVariant0::class
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseExpirationVariant1::class
+    ),
 )
 sealed interface UploadProjectAvatarResponseExpiration
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseInternalRoutesItemVariant0(
     val src: String,
     val status: Double,
-    val expiry: Double? = null
+    val expiry: Double? = null,
 ) : UploadProjectAvatarResponseInternalRoutesItem
 
-data class UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8(
-    val eq: String
-)
+data class UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8(val eq: String)
 
 data class UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant0(
     val key: UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXf6f5c87a26,
     val type: UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVX0e16684728,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8
+    @com.fasterxml.jackson.annotation.JsonProperty("value")
+    val `value`: UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXc494831fc8,
 )
 
-data class UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413a(
-    val eq: String
-)
+data class UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413a(val eq: String)
 
 data class UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVariant1(
     val type: UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVX63fd3015de,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413a
+    @com.fasterxml.jackson.annotation.JsonProperty("value")
+    val `value`: UploadProjectAvatarResponseInternalRoutesItemVariant1HasItemVXe9fc80413a,
 )
 
 data class UploadProjectAvatarResponseInternalRoutesItemVariant1Mitigate(
     val action: UploadProjectAvatarResponseInternalRoutesItemVariant1MitigateActionEnum
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseInternalRoutesItemVariant1(
     val has: List<Any>,
     val mitigate: UploadProjectAvatarResponseInternalRoutesItemVariant1Mitigate,
-    val src: String? = null
+    val src: String? = null,
 ) : UploadProjectAvatarResponseInternalRoutesItem
 
-/**
- * Typed representation of the `UploadProjectAvatarResponseInternalRoutesItem` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION)
+/** Typed representation of the `UploadProjectAvatarResponseInternalRoutesItem` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseInternalRoutesItemVariant0::class),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UploadProjectAvatarResponseInternalRoutesItemVariant1::class)
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseInternalRoutesItemVariant0::class
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UploadProjectAvatarResponseInternalRoutesItemVariant1::class
+    ),
 )
 sealed interface UploadProjectAvatarResponseInternalRoutesItem
 
@@ -418,10 +721,15 @@ data class UploadProjectAvatarResponseLinkVariant0DeployHooksItem(
     val name: String,
     val ref: String,
     val url: String,
-    val createdAt: Double? = null
+    val createdAt: Double? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseLinkVariant0(
     val deployHooks: List<UploadProjectAvatarResponseLinkVariant0DeployHooksItem>,
     val gitCredentialId: String,
@@ -432,11 +740,12 @@ data class UploadProjectAvatarResponseLinkVariant0(
     val repo: String? = null,
     val repoId: Double? = null,
     /**
-     * A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+     * A new field, should be included in all new project links, is being added just in time when a
+     * deployment is created. This is needed for Protected Git scopes.
      */
     val repoOwnerId: Double? = null,
     val sourceless: Boolean? = null,
-    val updatedAt: Double? = null
+    val updatedAt: Double? = null,
 ) : UploadProjectAvatarResponseLink
 
 data class UploadProjectAvatarResponseLinkVariant1DeployHooksItem(
@@ -444,10 +753,15 @@ data class UploadProjectAvatarResponseLinkVariant1DeployHooksItem(
     val name: String,
     val ref: String,
     val url: String,
-    val createdAt: Double? = null
+    val createdAt: Double? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseLinkVariant1(
     val deployHooks: List<UploadProjectAvatarResponseLinkVariant1DeployHooksItem>,
     val gitCredentialId: String,
@@ -458,11 +772,12 @@ data class UploadProjectAvatarResponseLinkVariant1(
     val repo: String? = null,
     val repoId: Double? = null,
     /**
-     * A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+     * A new field, should be included in all new project links, is being added just in time when a
+     * deployment is created. This is needed for Protected Git scopes.
      */
     val repoOwnerId: Double? = null,
     val sourceless: Boolean? = null,
-    val updatedAt: Double? = null
+    val updatedAt: Double? = null,
 ) : UploadProjectAvatarResponseLink
 
 data class UploadProjectAvatarResponseLinkVariant2DeployHooksItem(
@@ -470,10 +785,15 @@ data class UploadProjectAvatarResponseLinkVariant2DeployHooksItem(
     val name: String,
     val ref: String,
     val url: String,
-    val createdAt: Double? = null
+    val createdAt: Double? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseLinkVariant2(
     val deployHooks: List<UploadProjectAvatarResponseLinkVariant2DeployHooksItem>,
     val gitCredentialId: String,
@@ -485,11 +805,12 @@ data class UploadProjectAvatarResponseLinkVariant2(
     val repo: String? = null,
     val repoId: Double? = null,
     /**
-     * A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
+     * A new field, should be included in all new project links, is being added just in time when a
+     * deployment is created. This is needed for Protected Git scopes.
      */
     val repoOwnerId: Double? = null,
     val sourceless: Boolean? = null,
-    val updatedAt: Double? = null
+    val updatedAt: Double? = null,
 ) : UploadProjectAvatarResponseLink
 
 data class UploadProjectAvatarResponseLinkVariant3DeployHooksItem(
@@ -497,10 +818,15 @@ data class UploadProjectAvatarResponseLinkVariant3DeployHooksItem(
     val name: String,
     val ref: String,
     val url: String,
-    val createdAt: Double? = null
+    val createdAt: Double? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseLinkVariant3(
     val deployHooks: List<UploadProjectAvatarResponseLinkVariant3DeployHooksItem>,
     val gitCredentialId: String,
@@ -513,11 +839,13 @@ data class UploadProjectAvatarResponseLinkVariant3(
     val type: UploadProjectAvatarResponseLinkVariant3TypeEnum,
     val createdAt: Double? = null,
     /**
-     * A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes. This is the id of the top level group that a namespace belongs to. Gitlab supports group nesting (up to 20 levels).
+     * A new field, should be included in all new project links, is being added just in time when a
+     * deployment is created. This is needed for Protected Git scopes. This is the id of the top
+     * level group that a namespace belongs to. Gitlab supports group nesting (up to 20 levels).
      */
     val projectOwnerId: Double? = null,
     val sourceless: Boolean? = null,
-    val updatedAt: Double? = null
+    val updatedAt: Double? = null,
 ) : UploadProjectAvatarResponseLink
 
 data class UploadProjectAvatarResponseLinkVariant4DeployHooksItem(
@@ -525,10 +853,15 @@ data class UploadProjectAvatarResponseLinkVariant4DeployHooksItem(
     val name: String,
     val ref: String,
     val url: String,
-    val createdAt: Double? = null
+    val createdAt: Double? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseLinkVariant4(
     val deployHooks: List<UploadProjectAvatarResponseLinkVariant4DeployHooksItem>,
     val gitCredentialId: String,
@@ -541,7 +874,7 @@ data class UploadProjectAvatarResponseLinkVariant4(
     val workspaceUuid: String,
     val createdAt: Double? = null,
     val sourceless: Boolean? = null,
-    val updatedAt: Double? = null
+    val updatedAt: Double? = null,
 ) : UploadProjectAvatarResponseLink
 
 data class UploadProjectAvatarResponseLinkVariant5DeployHooksItem(
@@ -549,10 +882,15 @@ data class UploadProjectAvatarResponseLinkVariant5DeployHooksItem(
     val name: String,
     val ref: String,
     val url: String,
-    val createdAt: Double? = null
+    val createdAt: Double? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UploadProjectAvatarResponseLinkVariant5(
     val deployHooks: List<UploadProjectAvatarResponseLinkVariant5DeployHooksItem>,
     val gitCredentialId: String,
@@ -563,7 +901,7 @@ data class UploadProjectAvatarResponseLinkVariant5(
     val type: UploadProjectAvatarResponseLinkVariant5TypeEnum,
     val createdAt: Double? = null,
     val sourceless: Boolean? = null,
-    val updatedAt: Double? = null
+    val updatedAt: Double? = null,
 ) : UploadProjectAvatarResponseLink
 
 data class UploadProjectAvatarResponseLinkVariant6DeployHooksItem(
@@ -571,5 +909,5 @@ data class UploadProjectAvatarResponseLinkVariant6DeployHooksItem(
     val name: String,
     val ref: String,
     val url: String,
-    val createdAt: Double? = null
+    val createdAt: Double? = null,
 )

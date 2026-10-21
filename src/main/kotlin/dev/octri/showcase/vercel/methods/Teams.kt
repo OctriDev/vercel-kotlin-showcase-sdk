@@ -13,9 +13,9 @@ import dev.octri.showcase.vercel.GetTeamMembersResponseEmailInviteCodesItemTeamR
 import dev.octri.showcase.vercel.GetTeamMembersResponseMembersItemJoinedFromOriginEnum
 import dev.octri.showcase.vercel.GetTeamMembersResponseMembersItemProjectsItemRoleEnum
 import dev.octri.showcase.vercel.GetTeamMembersResponseMembersItemRoleEnum
-import dev.octri.showcase.vercel.InvitedTeamMember
 import dev.octri.showcase.vercel.InviteUserToTeamItemProjectsItemRoleEnum
 import dev.octri.showcase.vercel.InviteUserToTeamItemRoleEnum
+import dev.octri.showcase.vercel.InvitedTeamMember
 import dev.octri.showcase.vercel.ListTeamsResponseTeamsItem
 import dev.octri.showcase.vercel.Pagination
 import dev.octri.showcase.vercel.RequestAccessToTeamJoinedFromOriginEnum
@@ -41,652 +41,440 @@ import dev.octri.showcase.vercel.UpdateTeamResourceConfigBuildMachineDefaultEnum
 
 object Teams {
 
-
-/**
- * Information about the Bitbucket account of this user.
- */
-data class GetTeamMembersResponseMembersItemBitbucket(
-    val login: String? = null
-)
-
-/**
- * Information about the GitHub account for this user.
- */
-data class GetTeamMembersResponseMembersItemGithub(
-    val login: String? = null
-)
-
-/**
- * Information about the GitLab account of this user.
- */
-data class GetTeamMembersResponseMembersItemGitlab(
-    val login: String? = null
-)
-
-/**
- * Map with information about the members origin if they joined by requesting access.
- */
-data class GetTeamMembersResponseMembersItemJoinedFrom(
-    val origin: GetTeamMembersResponseMembersItemJoinedFromOriginEnum,
-    val commitId: String? = null,
-    val dsyncConnectedAt: Double? = null,
-    val dsyncUserId: String? = null,
-    val gitUserId: Any? = null,
-    val gitUserLogin: String? = null,
-    val idpUserId: String? = null,
-    val repoId: String? = null,
-    val repoPath: String? = null,
-    val ssoConnectedAt: Double? = null,
-    val ssoUserId: String? = null
-)
-
-/**
- * Array of project memberships
- */
-data class GetTeamMembersResponseMembersItemProjectsItem(
-    val id: String,
-    val name: String,
-    val role: GetTeamMembersResponseMembersItemProjectsItemRoleEnum? = null
-)
-
-data class GetTeamMembersResponseMembersItem(
-    /**
-     * Boolean that indicates if this member was confirmed by an owner.
-     */
-    val confirmed: Boolean,
-    /**
-     * Timestamp in milliseconds when this member was added.
-     */
-    val createdAt: Double,
-    /**
-     * The email of this member.
-     */
-    val email: String,
-    /**
-     * Role of this user in the team.
-     */
-    val role: GetTeamMembersResponseMembersItemRoleEnum,
-    /**
-     * The ID of this user.
-     */
-    val uid: String,
-    /**
-     * The unique username of this user.
-     */
-    val username: String,
-    /**
-     * Timestamp in milliseconds for when this team member was accepted by an owner.
-     */
-    val accessRequestedAt: Double? = null,
-    /**
-     * ID of the file for the Avatar of this member.
-     */
-    val avatar: String? = null,
-    /**
-     * Information about the Bitbucket account of this user.
-     */
-    val bitbucket: GetTeamMembersResponseMembersItemBitbucket? = null,
-    /**
-     * Information about the GitHub account for this user.
-     */
-    val github: GetTeamMembersResponseMembersItemGithub? = null,
-    /**
-     * Information about the GitLab account of this user.
-     */
-    val gitlab: GetTeamMembersResponseMembersItemGitlab? = null,
-    /**
-     * Indicates whether the user is managed by an enterprise.
-     */
-    val isEnterpriseManaged: Boolean? = null,
-    /**
-     * Map with information about the members origin if they joined by requesting access.
-     */
-    val joinedFrom: GetTeamMembersResponseMembersItemJoinedFrom? = null,
-    /**
-     * The name of this user.
-     */
-    val name: String? = null,
-    /**
-     * Array of project memberships
-     */
-    val projects: List<GetTeamMembersResponseMembersItemProjectsItem>? = null
-)
-
-data class GetTeamMembersResponsePagination(
-    /**
-     * Amount of items in the current page.
-     */
-    val count: Double,
-    val hasNext: Boolean,
-    /**
-     * Timestamp that must be used to request the next page.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: Double?,
-    /**
-     * Timestamp that must be used to request the previous page.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("prev", required = true) val prev: Double?
-)
-
-
-
-
-
-
-
-
-
-data class GetTeamMembersResponseEmailInviteCodesItem(
-    val id: String,
-    val isDSyncUser: Boolean,
-    val accessGroups: List<String>? = null,
-    val createdAt: Double? = null,
-    val email: String? = null,
-    val entitlements: List<String>? = null,
-    val expired: Boolean? = null,
-    val projects: Map<String, GetTeamMembersResponseEmailInviteCodesItemProjectsValueEnum>? = null,
-    val role: GetTeamMembersResponseEmailInviteCodesItemRoleEnum? = null,
-    val teamPermissions: List<GetTeamMembersResponseEmailInviteCodesItemTeamPermissionsItemEnum>? = null,
-    val teamRoles: List<GetTeamMembersResponseEmailInviteCodesItemTeamRolesItemEnum>? = null
-)
-
-data class GetTeamMembersResponse(
-    val members: List<GetTeamMembersResponseMembersItem>,
-    val pagination: GetTeamMembersResponsePagination,
-    val emailInviteCodes: List<GetTeamMembersResponseEmailInviteCodesItem>? = null
-)
-
-
-
-data class InviteUserToTeamItemProjectsItem(
-    /**
-     * The ID of the project.
-     */
-    val projectId: String,
-    /**
-     * Sets the project roles for the invited user
-     */
-    val role: InviteUserToTeamItemProjectsItemRoleEnum
-)
-
-data class InviteUserToTeamItem(
-    /**
-     * The email address of the user to invite
-     */
-    val email: String,
-    /**
-     * The role of the user to invite
-     */
-    val role: InviteUserToTeamItemRoleEnum? = null,
-    val projects: List<InviteUserToTeamItemProjectsItem>? = null
-)
-
-data class RequestAccessToTeamJoinedFrom(
-    /**
-     * The origin of the request.
-     */
-    val origin: RequestAccessToTeamJoinedFromOriginEnum,
-    /**
-     * The commit sha if the origin is a git provider.
-     */
-    val commitId: String? = null,
-    /**
-     * The ID of the repository for the given Git provider.
-     */
-    val repoId: String? = null,
-    /**
-     * The path to the repository for the given Git provider.
-     */
-    val repoPath: String? = null,
-    /**
-     * The ID of the Git account of the user who requests access.
-     */
-    val gitUserId: Any? = null,
-    /**
-     * The login name for the Git account of the user who requests access.
-     */
-    val gitUserLogin: String? = null
-)
-
-data class RequestAccessToTeamResponseBitbucket(
-    val login: String? = null
-)
-
-data class RequestAccessToTeamResponseGithub(
-    val login: String? = null
-)
-
-data class RequestAccessToTeamResponseGitlab(
-    val login: String? = null
-)
-
-data class RequestAccessToTeamResponseJoinedFrom(
-    val origin: RequestAccessToTeamResponseJoinedFromOriginEnum,
-    val commitId: String? = null,
-    val dsyncConnectedAt: Double? = null,
-    val dsyncUserId: String? = null,
-    val gitUserId: Any? = null,
-    val gitUserLogin: String? = null,
-    val idpUserId: String? = null,
-    val repoId: String? = null,
-    val repoPath: String? = null,
-    val ssoConnectedAt: Double? = null,
-    val ssoUserId: String? = null
-)
-
-data class RequestAccessToTeamResponse(
-    @com.fasterxml.jackson.annotation.JsonProperty("bitbucket", required = true) val bitbucket: RequestAccessToTeamResponseBitbucket?,
-    val confirmed: Boolean,
-    @com.fasterxml.jackson.annotation.JsonProperty("github", required = true) val github: RequestAccessToTeamResponseGithub?,
-    @com.fasterxml.jackson.annotation.JsonProperty("gitlab", required = true) val gitlab: RequestAccessToTeamResponseGitlab?,
-    val teamName: String,
-    val teamSlug: String,
-    val accessRequestedAt: Double? = null,
-    val joinedFrom: RequestAccessToTeamResponseJoinedFrom? = null
-)
-
-/**
- * Map of the connected Bitbucket account.
- */
-data class GetTeamAccessRequestResponseBitbucket(
-    val login: String? = null
-)
-
-/**
- * Map of the connected GitHub account.
- */
-data class GetTeamAccessRequestResponseGithub(
-    val login: String? = null
-)
-
-/**
- * Map of the connected GitLab account.
- */
-data class GetTeamAccessRequestResponseGitlab(
-    val login: String? = null
-)
-
-/**
- * A map that describes the origin from where the user joined.
- */
-data class GetTeamAccessRequestResponseJoinedFrom(
-    val origin: GetTeamAccessRequestResponseJoinedFromOriginEnum,
-    val commitId: String? = null,
-    val dsyncConnectedAt: Double? = null,
-    val dsyncUserId: String? = null,
-    val gitUserId: Any? = null,
-    val gitUserLogin: String? = null,
-    val idpUserId: String? = null,
-    val repoId: String? = null,
-    val repoPath: String? = null,
-    val ssoConnectedAt: Double? = null,
-    val ssoUserId: String? = null
-)
-
-data class GetTeamAccessRequestResponse(
-    /**
-     * Timestamp in milliseconds when the user requested access to the team.
-     */
-    val accessRequestedAt: Double,
-    /**
-     * Map of the connected Bitbucket account.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("bitbucket", required = true) val bitbucket: GetTeamAccessRequestResponseBitbucket?,
-    /**
-     * Current status of the membership. Will be `true` if confirmed, if pending it'll be `false`.
-     */
-    val confirmed: Boolean,
-    /**
-     * Map of the connected GitHub account.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("github", required = true) val github: GetTeamAccessRequestResponseGithub?,
-    /**
-     * Map of the connected GitLab account.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("gitlab", required = true) val gitlab: GetTeamAccessRequestResponseGitlab?,
-    /**
-     * A map that describes the origin from where the user joined.
-     */
-    val joinedFrom: GetTeamAccessRequestResponseJoinedFrom,
-    /**
-     * The name of the team.
-     */
-    val teamName: String,
-    /**
-     * The slug of the team.
-     */
-    val teamSlug: String
-)
-
-/**
- * Successfully joined a team.
- */
-data class JoinTeamResponse(
-    /**
-     * The origin of how the user joined.
-     */
-    val from: String,
-    /**
-     * The name of the team the user joined.
-     */
-    val name: String,
-    /**
-     * The slug of the team the user joined.
-     */
-    val slug: String,
-    /**
-     * The ID of the team the user joined.
-     */
-    val teamId: String
-)
-
-data class UpdateTeamMemberProjectsItem(
-    /**
-     * The ID of the project.
-     */
-    val projectId: String,
-    /**
-     * The project role of the member that will be added. \"null\" will remove this project level role.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("role", required = true) val role: UpdateTeamMemberProjectsItemRoleEnum?
-)
-
-data class UpdateTeamMemberJoinedFrom(
-    val ssoUserId: Any? = null
-)
-
-data class UpdateTeamMemberResponse(
-    /**
-     * ID of the team.
-     */
-    val id: String
-)
-
-data class RemoveTeamMemberResponse(
-    /**
-     * ID of the team.
-     */
-    val id: String
-)
-
-
-
-data class UpdateTeamSamlRolesValueVariant1(
-    val accessGroupId: String
-)
-
-data class UpdateTeamSaml(
-    /**
-     * Require that members of the team use SAML Single Sign-On.
-     */
-    val enforced: Boolean? = null,
-    /**
-     * Directory groups to role or access group mappings.
-     */
-    val roles: Map<String, Any>? = null
-)
-
-/**
- * Whether or not remote caching is enabled for the team
- */
-data class UpdateTeamRemoteCaching(
-    /**
-     * Enable or disable remote caching for the team.
-     */
-    val enabled: Boolean? = null
-)
-
-/**
- * Allows to protect project deployments with a password
- */
-data class UpdateTeamDefaultDeploymentProtectionPasswordProtection(
-    /**
-     * Specify if the password will apply to every Deployment Target or just Preview
-     */
-    val deploymentType: UpdateTeamDefaultDeploymentProtectionPasswordProtectionDeployX12f2688c14,
-    /**
-     * The password that will be used to protect Project Deployments
-     */
-    val password: String? = null
-)
-
-/**
- * Ensures visitors to your Preview Deployments are logged into Vercel and have a minimum of Viewer access on your team
- */
-data class UpdateTeamDefaultDeploymentProtectionSsoProtection(
-    /**
-     * Specify if the Vercel Authentication (SSO Protection) will apply to every Deployment Target or just Preview
-     */
-    val deploymentType: UpdateTeamDefaultDeploymentProtectionSsoProtectionDeploymentTypeEnum
-)
-
-/**
- * Default deployment protection settings for new projects.
- */
-data class UpdateTeamDefaultDeploymentProtection(
-    /**
-     * Allows to protect project deployments with a password
-     */
-    val passwordProtection: UpdateTeamDefaultDeploymentProtectionPasswordProtection? = null,
-    /**
-     * Ensures visitors to your Preview Deployments are logged into Vercel and have a minimum of Viewer access on your team
-     */
-    val ssoProtection: UpdateTeamDefaultDeploymentProtectionSsoProtection? = null
-)
-
-/**
- * Default Passport configuration for new projects.
- */
-data class UpdateTeamDefaultPassport(
-    val connectorId: String,
-    val deploymentType: UpdateTeamDefaultPassportDeploymentTypeEnum? = null
-)
-
-
-
-
-
-
-
-
-
-data class UpdateTeamDefaultExpirationSettings(
-    /**
-     * The time period to keep non-production deployments for
-     */
-    val expiration: UpdateTeamDefaultExpirationSettingsExpirationEnum? = null,
-    /**
-     * The time period to keep production deployments for
-     */
-    val expirationProduction: UpdateTeamDefaultExpirationSettingsExpirationProductionEnum? = null,
-    /**
-     * The time period to keep canceled deployments for
-     */
-    val expirationCanceled: UpdateTeamDefaultExpirationSettingsExpirationCanceledEnum? = null,
-    /**
-     * The time period to keep errored deployments for
-     */
-    val expirationErrored: UpdateTeamDefaultExpirationSettingsExpirationErroredEnum? = null,
-    /**
-     * When true, opts a Pro team out of the upcoming deployment-storage retention reduce. Does not change expiration settings. Unmetered teams also require acknowledgeStorageBilling.
-     */
-    val keepCurrentRetention: Boolean? = null,
-    /**
-     * Required with keepCurrentRetention for unmetered Pro teams; acknowledges that keeping current retention will incur storage billing on a later date.
-     */
-    val acknowledgeStorageBilling: Boolean? = null
-)
-
-/**
- * When enabled, deployment protection settings require stricter permissions (owner-only).
- */
-data class UpdateTeamStrictDeploymentProtectionSettings(
-    /**
-     * Enable or disable strict deployment protection settings.
-     */
-    val enabled: Boolean
-)
-
-/**
- * When enabled, creating shareable links requires Owner role.
- */
-data class UpdateTeamStrictShareableLinks(
-    /**
-     * Enable or disable requiring Owner role to create shareable links.
-     */
-    val enabled: Boolean
-)
-
-/**
- * When enabled, adding, changing, or removing project password protection requires Owner role.
- */
-data class UpdateTeamStrictPasswordProtectionSettings(
-    /**
-     * Enable or disable requiring Owner role to change project password protection.
-     */
-    val enabled: Boolean
-)
-
-/**
- * When enabled, creating and managing connectors requires Owner role.
- */
-data class UpdateTeamStrictConnectors(
-    /**
-     * Enable or disable requiring Owner role to manage connectors.
-     */
-    val enabled: Boolean
-)
-
-/**
- * Build machine configuration.
- */
-data class UpdateTeamResourceConfigBuildMachine(
-    /**
-     * Default build machine type for new builds: standard, enhanced, turbo, or elastic.
-     */
-    val default: UpdateTeamResourceConfigBuildMachineDefaultEnum? = null
-)
-
-/**
- * Resource configuration for the team.
- */
-data class UpdateTeamResourceConfig(
-    /**
-     * Build machine configuration.
-     */
-    val buildMachine: UpdateTeamResourceConfigBuildMachine? = null
-)
-
-/**
- * A paginated list of teams.
- */
-data class ListTeamsResponse(
-    /**
-     * This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
-     */
-    val pagination: Pagination,
-    val teams: List<ListTeamsResponseTeamsItem>
-)
-
-data class CreateTeamAttributionUtm(
-    /**
-     * UTM source
-     */
-    val utmSource: String? = null,
-    /**
-     * UTM medium
-     */
-    val utmMedium: String? = null,
-    /**
-     * UTM campaign
-     */
-    val utmCampaign: String? = null,
-    /**
-     * UTM term
-     */
-    val utmTerm: String? = null
-)
-
-/**
- * Attribution information for the session or current page
- */
-data class CreateTeamAttribution(
-    /**
-     * Session referrer
-     */
-    val sessionReferrer: String? = null,
-    /**
-     * Session landing page
-     */
-    val landingPage: String? = null,
-    /**
-     * Referrer to the signup page
-     */
-    val pageBeforeConversionPage: String? = null,
-    val utm: CreateTeamAttributionUtm? = null
-)
-
-/**
- * The team was created successfully
- */
-data class CreateTeamResponse(
-    /**
-     * Id of the created team
-     */
-    val id: String,
-    val slug: String
-)
-
-data class PostTeamDsyncRolesResponse(
-    val ok: Boolean
-)
-
-/**
- * An object describing the reason why the team is being deleted.
- */
-data class DeleteTeamReasonsItem(
-    /**
-     * Idenitifier slug of the reason why the team is being deleted.
-     */
-    val slug: String,
-    /**
-     * Description of the reason why the team is being deleted.
-     */
-    val description: String
-)
-
-/**
- * The Team was successfully deleted
- */
-data class DeleteTeamResponse(
-    /**
-     * The ID of the deleted Team
-     */
-    val id: String,
-    /**
-     * Signifies whether the default team update has failed, when newDefaultTeamId is provided in request query.
-     */
-    val newDefaultTeamIdError: Boolean? = null
-)
-
-data class DeleteTeamInviteCodeResponse(
-    /**
-     * ID of the team.
-     */
-    val id: String
-)
-
-data class UpdateMicrofrontendsGroupResponseUpdatedMicrofrontendsGroup(
-    val id: String,
-    val enablePolyrepoBranchRouting: Boolean? = null,
-    val fallbackEnvironment: String? = null,
-    val name: String? = null,
-    val slug: String? = null
-)
-
-data class UpdateMicrofrontendsGroupResponse(
-    val updatedMicrofrontendsGroup: UpdateMicrofrontendsGroupResponseUpdatedMicrofrontendsGroup
-)
+    /** Information about the Bitbucket account of this user. */
+    data class GetTeamMembersResponseMembersItemBitbucket(val login: String? = null)
+
+    /** Information about the GitHub account for this user. */
+    data class GetTeamMembersResponseMembersItemGithub(val login: String? = null)
+
+    /** Information about the GitLab account of this user. */
+    data class GetTeamMembersResponseMembersItemGitlab(val login: String? = null)
+
+    /** Map with information about the members origin if they joined by requesting access. */
+    data class GetTeamMembersResponseMembersItemJoinedFrom(
+        val origin: GetTeamMembersResponseMembersItemJoinedFromOriginEnum,
+        val commitId: String? = null,
+        val dsyncConnectedAt: Double? = null,
+        val dsyncUserId: String? = null,
+        val gitUserId: Any? = null,
+        val gitUserLogin: String? = null,
+        val idpUserId: String? = null,
+        val repoId: String? = null,
+        val repoPath: String? = null,
+        val ssoConnectedAt: Double? = null,
+        val ssoUserId: String? = null,
+    )
+
+    /** Array of project memberships */
+    data class GetTeamMembersResponseMembersItemProjectsItem(
+        val id: String,
+        val name: String,
+        val role: GetTeamMembersResponseMembersItemProjectsItemRoleEnum? = null,
+    )
+
+    data class GetTeamMembersResponseMembersItem(
+        /** Boolean that indicates if this member was confirmed by an owner. */
+        val confirmed: Boolean,
+        /** Timestamp in milliseconds when this member was added. */
+        val createdAt: Double,
+        /** The email of this member. */
+        val email: String,
+        /** Role of this user in the team. */
+        val role: GetTeamMembersResponseMembersItemRoleEnum,
+        /** The ID of this user. */
+        val uid: String,
+        /** The unique username of this user. */
+        val username: String,
+        /** Timestamp in milliseconds for when this team member was accepted by an owner. */
+        val accessRequestedAt: Double? = null,
+        /** ID of the file for the Avatar of this member. */
+        val avatar: String? = null,
+        /** Information about the Bitbucket account of this user. */
+        val bitbucket: GetTeamMembersResponseMembersItemBitbucket? = null,
+        /** Information about the GitHub account for this user. */
+        val github: GetTeamMembersResponseMembersItemGithub? = null,
+        /** Information about the GitLab account of this user. */
+        val gitlab: GetTeamMembersResponseMembersItemGitlab? = null,
+        /** Indicates whether the user is managed by an enterprise. */
+        val isEnterpriseManaged: Boolean? = null,
+        /** Map with information about the members origin if they joined by requesting access. */
+        val joinedFrom: GetTeamMembersResponseMembersItemJoinedFrom? = null,
+        /** The name of this user. */
+        val name: String? = null,
+        /** Array of project memberships */
+        val projects: List<GetTeamMembersResponseMembersItemProjectsItem>? = null,
+    )
+
+    data class GetTeamMembersResponsePagination(
+        /** Amount of items in the current page. */
+        val count: Double,
+        val hasNext: Boolean,
+        /** Timestamp that must be used to request the next page. */
+        @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: Double?,
+        /** Timestamp that must be used to request the previous page. */
+        @com.fasterxml.jackson.annotation.JsonProperty("prev", required = true) val prev: Double?,
+    )
+
+    data class GetTeamMembersResponseEmailInviteCodesItem(
+        val id: String,
+        val isDSyncUser: Boolean,
+        val accessGroups: List<String>? = null,
+        val createdAt: Double? = null,
+        val email: String? = null,
+        val entitlements: List<String>? = null,
+        val expired: Boolean? = null,
+        val projects: Map<String, GetTeamMembersResponseEmailInviteCodesItemProjectsValueEnum>? =
+            null,
+        val role: GetTeamMembersResponseEmailInviteCodesItemRoleEnum? = null,
+        val teamPermissions:
+            List<GetTeamMembersResponseEmailInviteCodesItemTeamPermissionsItemEnum>? =
+            null,
+        val teamRoles: List<GetTeamMembersResponseEmailInviteCodesItemTeamRolesItemEnum>? = null,
+    )
+
+    data class GetTeamMembersResponse(
+        val members: List<GetTeamMembersResponseMembersItem>,
+        val pagination: GetTeamMembersResponsePagination,
+        val emailInviteCodes: List<GetTeamMembersResponseEmailInviteCodesItem>? = null,
+    )
+
+    data class InviteUserToTeamItemProjectsItem(
+        /** The ID of the project. */
+        val projectId: String,
+        /** Sets the project roles for the invited user */
+        val role: InviteUserToTeamItemProjectsItemRoleEnum,
+    )
+
+    data class InviteUserToTeamItem(
+        /** The email address of the user to invite */
+        val email: String,
+        /** The role of the user to invite */
+        val role: InviteUserToTeamItemRoleEnum? = null,
+        val projects: List<InviteUserToTeamItemProjectsItem>? = null,
+    )
+
+    data class RequestAccessToTeamJoinedFrom(
+        /** The origin of the request. */
+        val origin: RequestAccessToTeamJoinedFromOriginEnum,
+        /** The commit sha if the origin is a git provider. */
+        val commitId: String? = null,
+        /** The ID of the repository for the given Git provider. */
+        val repoId: String? = null,
+        /** The path to the repository for the given Git provider. */
+        val repoPath: String? = null,
+        /** The ID of the Git account of the user who requests access. */
+        val gitUserId: Any? = null,
+        /** The login name for the Git account of the user who requests access. */
+        val gitUserLogin: String? = null,
+    )
+
+    data class RequestAccessToTeamResponseBitbucket(val login: String? = null)
+
+    data class RequestAccessToTeamResponseGithub(val login: String? = null)
+
+    data class RequestAccessToTeamResponseGitlab(val login: String? = null)
+
+    data class RequestAccessToTeamResponseJoinedFrom(
+        val origin: RequestAccessToTeamResponseJoinedFromOriginEnum,
+        val commitId: String? = null,
+        val dsyncConnectedAt: Double? = null,
+        val dsyncUserId: String? = null,
+        val gitUserId: Any? = null,
+        val gitUserLogin: String? = null,
+        val idpUserId: String? = null,
+        val repoId: String? = null,
+        val repoPath: String? = null,
+        val ssoConnectedAt: Double? = null,
+        val ssoUserId: String? = null,
+    )
+
+    data class RequestAccessToTeamResponse(
+        @com.fasterxml.jackson.annotation.JsonProperty("bitbucket", required = true)
+        val bitbucket: RequestAccessToTeamResponseBitbucket?,
+        val confirmed: Boolean,
+        @com.fasterxml.jackson.annotation.JsonProperty("github", required = true)
+        val github: RequestAccessToTeamResponseGithub?,
+        @com.fasterxml.jackson.annotation.JsonProperty("gitlab", required = true)
+        val gitlab: RequestAccessToTeamResponseGitlab?,
+        val teamName: String,
+        val teamSlug: String,
+        val accessRequestedAt: Double? = null,
+        val joinedFrom: RequestAccessToTeamResponseJoinedFrom? = null,
+    )
+
+    /** Map of the connected Bitbucket account. */
+    data class GetTeamAccessRequestResponseBitbucket(val login: String? = null)
+
+    /** Map of the connected GitHub account. */
+    data class GetTeamAccessRequestResponseGithub(val login: String? = null)
+
+    /** Map of the connected GitLab account. */
+    data class GetTeamAccessRequestResponseGitlab(val login: String? = null)
+
+    /** A map that describes the origin from where the user joined. */
+    data class GetTeamAccessRequestResponseJoinedFrom(
+        val origin: GetTeamAccessRequestResponseJoinedFromOriginEnum,
+        val commitId: String? = null,
+        val dsyncConnectedAt: Double? = null,
+        val dsyncUserId: String? = null,
+        val gitUserId: Any? = null,
+        val gitUserLogin: String? = null,
+        val idpUserId: String? = null,
+        val repoId: String? = null,
+        val repoPath: String? = null,
+        val ssoConnectedAt: Double? = null,
+        val ssoUserId: String? = null,
+    )
+
+    data class GetTeamAccessRequestResponse(
+        /** Timestamp in milliseconds when the user requested access to the team. */
+        val accessRequestedAt: Double,
+        /** Map of the connected Bitbucket account. */
+        @com.fasterxml.jackson.annotation.JsonProperty("bitbucket", required = true)
+        val bitbucket: GetTeamAccessRequestResponseBitbucket?,
+        /**
+         * Current status of the membership. Will be `true` if confirmed, if pending it'll be
+         * `false`.
+         */
+        val confirmed: Boolean,
+        /** Map of the connected GitHub account. */
+        @com.fasterxml.jackson.annotation.JsonProperty("github", required = true)
+        val github: GetTeamAccessRequestResponseGithub?,
+        /** Map of the connected GitLab account. */
+        @com.fasterxml.jackson.annotation.JsonProperty("gitlab", required = true)
+        val gitlab: GetTeamAccessRequestResponseGitlab?,
+        /** A map that describes the origin from where the user joined. */
+        val joinedFrom: GetTeamAccessRequestResponseJoinedFrom,
+        /** The name of the team. */
+        val teamName: String,
+        /** The slug of the team. */
+        val teamSlug: String,
+    )
+
+    /** Successfully joined a team. */
+    data class JoinTeamResponse(
+        /** The origin of how the user joined. */
+        val from: String,
+        /** The name of the team the user joined. */
+        val name: String,
+        /** The slug of the team the user joined. */
+        val slug: String,
+        /** The ID of the team the user joined. */
+        val teamId: String,
+    )
+
+    data class UpdateTeamMemberProjectsItem(
+        /** The ID of the project. */
+        val projectId: String,
+        /**
+         * The project role of the member that will be added. \"null\" will remove this project
+         * level role.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("role", required = true)
+        val role: UpdateTeamMemberProjectsItemRoleEnum?,
+    )
+
+    data class UpdateTeamMemberJoinedFrom(val ssoUserId: Any? = null)
+
+    data class UpdateTeamMemberResponse(
+        /** ID of the team. */
+        val id: String
+    )
+
+    data class RemoveTeamMemberResponse(
+        /** ID of the team. */
+        val id: String
+    )
+
+    data class UpdateTeamSamlRolesValueVariant1(val accessGroupId: String)
+
+    data class UpdateTeamSaml(
+        /** Require that members of the team use SAML Single Sign-On. */
+        val enforced: Boolean? = null,
+        /** Directory groups to role or access group mappings. */
+        val roles: Map<String, Any>? = null,
+    )
+
+    /** Whether or not remote caching is enabled for the team */
+    data class UpdateTeamRemoteCaching(
+        /** Enable or disable remote caching for the team. */
+        val enabled: Boolean? = null
+    )
+
+    /** Allows to protect project deployments with a password */
+    data class UpdateTeamDefaultDeploymentProtectionPasswordProtection(
+        /** Specify if the password will apply to every Deployment Target or just Preview */
+        val deploymentType:
+            UpdateTeamDefaultDeploymentProtectionPasswordProtectionDeployX12f2688c14,
+        /** The password that will be used to protect Project Deployments */
+        val password: String? = null,
+    )
+
+    /**
+     * Ensures visitors to your Preview Deployments are logged into Vercel and have a minimum of
+     * Viewer access on your team
+     */
+    data class UpdateTeamDefaultDeploymentProtectionSsoProtection(
+        /**
+         * Specify if the Vercel Authentication (SSO Protection) will apply to every Deployment
+         * Target or just Preview
+         */
+        val deploymentType: UpdateTeamDefaultDeploymentProtectionSsoProtectionDeploymentTypeEnum
+    )
+
+    /** Default deployment protection settings for new projects. */
+    data class UpdateTeamDefaultDeploymentProtection(
+        /** Allows to protect project deployments with a password */
+        val passwordProtection: UpdateTeamDefaultDeploymentProtectionPasswordProtection? = null,
+        /**
+         * Ensures visitors to your Preview Deployments are logged into Vercel and have a minimum of
+         * Viewer access on your team
+         */
+        val ssoProtection: UpdateTeamDefaultDeploymentProtectionSsoProtection? = null,
+    )
+
+    /** Default Passport configuration for new projects. */
+    data class UpdateTeamDefaultPassport(
+        val connectorId: String,
+        val deploymentType: UpdateTeamDefaultPassportDeploymentTypeEnum? = null,
+    )
+
+    data class UpdateTeamDefaultExpirationSettings(
+        /** The time period to keep non-production deployments for */
+        val expiration: UpdateTeamDefaultExpirationSettingsExpirationEnum? = null,
+        /** The time period to keep production deployments for */
+        val expirationProduction: UpdateTeamDefaultExpirationSettingsExpirationProductionEnum? =
+            null,
+        /** The time period to keep canceled deployments for */
+        val expirationCanceled: UpdateTeamDefaultExpirationSettingsExpirationCanceledEnum? = null,
+        /** The time period to keep errored deployments for */
+        val expirationErrored: UpdateTeamDefaultExpirationSettingsExpirationErroredEnum? = null,
+        /**
+         * When true, opts a Pro team out of the upcoming deployment-storage retention reduce. Does
+         * not change expiration settings. Unmetered teams also require acknowledgeStorageBilling.
+         */
+        val keepCurrentRetention: Boolean? = null,
+        /**
+         * Required with keepCurrentRetention for unmetered Pro teams; acknowledges that keeping
+         * current retention will incur storage billing on a later date.
+         */
+        val acknowledgeStorageBilling: Boolean? = null,
+    )
+
+    /** When enabled, deployment protection settings require stricter permissions (owner-only). */
+    data class UpdateTeamStrictDeploymentProtectionSettings(
+        /** Enable or disable strict deployment protection settings. */
+        val enabled: Boolean
+    )
+
+    /** When enabled, creating shareable links requires Owner role. */
+    data class UpdateTeamStrictShareableLinks(
+        /** Enable or disable requiring Owner role to create shareable links. */
+        val enabled: Boolean
+    )
+
+    /**
+     * When enabled, adding, changing, or removing project password protection requires Owner role.
+     */
+    data class UpdateTeamStrictPasswordProtectionSettings(
+        /** Enable or disable requiring Owner role to change project password protection. */
+        val enabled: Boolean
+    )
+
+    /** When enabled, creating and managing connectors requires Owner role. */
+    data class UpdateTeamStrictConnectors(
+        /** Enable or disable requiring Owner role to manage connectors. */
+        val enabled: Boolean
+    )
+
+    /** Build machine configuration. */
+    data class UpdateTeamResourceConfigBuildMachine(
+        /** Default build machine type for new builds: standard, enhanced, turbo, or elastic. */
+        val default: UpdateTeamResourceConfigBuildMachineDefaultEnum? = null
+    )
+
+    /** Resource configuration for the team. */
+    data class UpdateTeamResourceConfig(
+        /** Build machine configuration. */
+        val buildMachine: UpdateTeamResourceConfigBuildMachine? = null
+    )
+
+    /** A paginated list of teams. */
+    data class ListTeamsResponse(
+        /**
+         * This object contains information related to the pagination of the current request,
+         * including the necessary parameters to get the next or previous page of data.
+         */
+        val pagination: Pagination,
+        val teams: List<ListTeamsResponseTeamsItem>,
+    )
+
+    data class CreateTeamAttributionUtm(
+        /** UTM source */
+        val utmSource: String? = null,
+        /** UTM medium */
+        val utmMedium: String? = null,
+        /** UTM campaign */
+        val utmCampaign: String? = null,
+        /** UTM term */
+        val utmTerm: String? = null,
+    )
+
+    /** Attribution information for the session or current page */
+    data class CreateTeamAttribution(
+        /** Session referrer */
+        val sessionReferrer: String? = null,
+        /** Session landing page */
+        val landingPage: String? = null,
+        /** Referrer to the signup page */
+        val pageBeforeConversionPage: String? = null,
+        val utm: CreateTeamAttributionUtm? = null,
+    )
+
+    /** The team was created successfully */
+    data class CreateTeamResponse(
+        /** Id of the created team */
+        val id: String,
+        val slug: String,
+    )
+
+    data class PostTeamDsyncRolesResponse(val ok: Boolean)
+
+    /** An object describing the reason why the team is being deleted. */
+    data class DeleteTeamReasonsItem(
+        /** Idenitifier slug of the reason why the team is being deleted. */
+        val slug: String,
+        /** Description of the reason why the team is being deleted. */
+        val description: String,
+    )
+
+    /** The Team was successfully deleted */
+    data class DeleteTeamResponse(
+        /** The ID of the deleted Team */
+        val id: String,
+        /**
+         * Signifies whether the default team update has failed, when newDefaultTeamId is provided
+         * in request query.
+         */
+        val newDefaultTeamIdError: Boolean? = null,
+    )
+
+    data class DeleteTeamInviteCodeResponse(
+        /** ID of the team. */
+        val id: String
+    )
+
+    data class UpdateMicrofrontendsGroupResponseUpdatedMicrofrontendsGroup(
+        val id: String,
+        val enablePolyrepoBranchRouting: Boolean? = null,
+        val fallbackEnvironment: String? = null,
+        val name: String? = null,
+        val slug: String? = null,
+    )
+
+    data class UpdateMicrofrontendsGroupResponse(
+        val updatedMicrofrontendsGroup: UpdateMicrofrontendsGroupResponseUpdatedMicrofrontendsGroup
+    )
 
     /** Parameters for [getTeamMembers]. */
     data class GetTeamMembersRequest(
@@ -698,7 +486,7 @@ data class UpdateMicrofrontendsGroupResponse(
         val role: GetTeamMembersParameterEnum? = null,
         val excludeProject: String? = null,
         val eligibleMembersForProjectId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [updateTeamMember]. */
@@ -709,7 +497,7 @@ data class UpdateMicrofrontendsGroupResponse(
         val role: String? = null,
         val teamPermissions: List<UpdateTeamMemberTeamPermissionsItemEnum>? = null,
         val projects: List<UpdateTeamMemberProjectsItem>? = null,
-        val joinedFrom: UpdateTeamMemberJoinedFrom? = null
+        val joinedFrom: UpdateTeamMemberJoinedFrom? = null,
     )
 
     /** Parameters for [updateTeam]. */
@@ -738,13 +526,14 @@ data class UpdateMicrofrontendsGroupResponse(
         val defaultPassport: SdkClient.SdkOptional<UpdateTeamDefaultPassport?>? = null,
         val defaultExpirationSettings: UpdateTeamDefaultExpirationSettings? = null,
         val deploymentPolicy: UpdateTeamRequestDeploymentPolicy? = null,
-        val strictDeploymentProtectionSettings: UpdateTeamStrictDeploymentProtectionSettings? = null,
+        val strictDeploymentProtectionSettings: UpdateTeamStrictDeploymentProtectionSettings? =
+            null,
         val strictShareableLinks: UpdateTeamStrictShareableLinks? = null,
         val strictPasswordProtectionSettings: UpdateTeamStrictPasswordProtectionSettings? = null,
         val strictConnectors: UpdateTeamStrictConnectors? = null,
         val nsnbConfig: UpdateTeamRequestNsnbConfig? = null,
         val defaultProjectJobs: UpdateTeamRequestDefaultProjectJobs? = null,
-        val resourceConfig: UpdateTeamResourceConfig? = null
+        val resourceConfig: UpdateTeamResourceConfig? = null,
     )
 
     /** Parameters for [updateMicrofrontendsGroup]. */
@@ -754,13 +543,19 @@ data class UpdateMicrofrontendsGroupResponse(
         val slug: String? = null,
         val name: String? = null,
         val fallbackEnvironment: String? = null,
-        val enablePolyrepoBranchRouting: Boolean? = null
+        val enablePolyrepoBranchRouting: Boolean? = null,
     )
 
     /**
-     * Lists team members and pending email invitations for the specified team. Use the query filters to search members, select a team role, or restrict results by membership timestamps or project eligibility. The response includes pagination metadata for navigating the results.
+     * Lists team members and pending email invitations for the specified team. Use the query
+     * filters to search members, select a team role, or restrict results by membership timestamps
+     * or project eligibility. The response includes pagination metadata for navigating the results.
      */
-    fun getTeamMembers(clientConfig: ClientConfig, request: GetTeamMembersRequest, options: RequestOptions? = null): GetTeamMembersResponse =
+    fun getTeamMembers(
+        clientConfig: ClientConfig,
+        request: GetTeamMembersRequest,
+        options: RequestOptions? = null,
+    ): GetTeamMembersResponse =
         dev.octri.showcase.vercel.methods.TeamsGetTeamMembersOperation.getTeamMembers(
             clientConfig,
             request,
@@ -768,9 +563,17 @@ data class UpdateMicrofrontendsGroupResponse(
         )
 
     /**
-     * Invites one or more users to join the specified team by email. Each invitation requires an `email`; you can also assign a team role and project-specific roles. The authenticated user must be an `OWNER` to invite members.
+     * Invites one or more users to join the specified team by email. Each invitation requires an
+     * `email`; you can also assign a team role and project-specific roles. The authenticated user
+     * must be an `OWNER` to invite members.
      */
-    fun inviteUserToTeam(clientConfig: ClientConfig, teamId: String, slug: String? = null, body: List<InviteUserToTeamItem>? = null, options: RequestOptions? = null): InvitedTeamMember =
+    fun inviteUserToTeam(
+        clientConfig: ClientConfig,
+        teamId: String,
+        slug: String? = null,
+        body: List<InviteUserToTeamItem>? = null,
+        options: RequestOptions? = null,
+    ): InvitedTeamMember =
         dev.octri.showcase.vercel.methods.TeamsInviteUserToTeamOperation.inviteUserToTeam(
             clientConfig,
             teamId,
@@ -780,9 +583,17 @@ data class UpdateMicrofrontendsGroupResponse(
         )
 
     /**
-     * Submits a request for the authenticated user to join the specified team. Include `joinedFrom.origin` to identify where the request originated, and provide the relevant repository or Git account details when applicable. A team owner must approve the request, and no more than 100 users can have pending access requests at the same time.
+     * Submits a request for the authenticated user to join the specified team. Include
+     * `joinedFrom.origin` to identify where the request originated, and provide the relevant
+     * repository or Git account details when applicable. A team owner must approve the request, and
+     * no more than 100 users can have pending access requests at the same time.
      */
-    fun requestAccessToTeam(clientConfig: ClientConfig, teamId: String, joinedFrom: RequestAccessToTeamJoinedFrom, options: RequestOptions? = null): RequestAccessToTeamResponse =
+    fun requestAccessToTeam(
+        clientConfig: ClientConfig,
+        teamId: String,
+        joinedFrom: RequestAccessToTeamJoinedFrom,
+        options: RequestOptions? = null,
+    ): RequestAccessToTeamResponse =
         dev.octri.showcase.vercel.methods.TeamsRequestAccessToTeamOperation.requestAccessToTeam(
             clientConfig,
             teamId,
@@ -791,9 +602,16 @@ data class UpdateMicrofrontendsGroupResponse(
         )
 
     /**
-     * Retrieves the status of a user's request to join a team. Use `userId` to identify whose request to check; the endpoint returns the authenticated user's status when that path segment is not provided. A declined request is reported as not found.
+     * Retrieves the status of a user's request to join a team. Use `userId` to identify whose
+     * request to check; the endpoint returns the authenticated user's status when that path segment
+     * is not provided. A declined request is reported as not found.
      */
-    fun getTeamAccessRequest(clientConfig: ClientConfig, userId: String, teamId: String, options: RequestOptions? = null): GetTeamAccessRequestResponse =
+    fun getTeamAccessRequest(
+        clientConfig: ClientConfig,
+        userId: String,
+        teamId: String,
+        options: RequestOptions? = null,
+    ): GetTeamAccessRequestResponse =
         dev.octri.showcase.vercel.methods.TeamsGetTeamAccessRequestOperation.getTeamAccessRequest(
             clientConfig,
             userId,
@@ -802,9 +620,16 @@ data class UpdateMicrofrontendsGroupResponse(
         )
 
     /**
-     * Joins the authenticated user to a team using the team identifier and, when applicable, an invite code. Include `inviteCode` in the request body when joining with a code. The response identifies the team the user joined and the source of the join.
+     * Joins the authenticated user to a team using the team identifier and, when applicable, an
+     * invite code. Include `inviteCode` in the request body when joining with a code. The response
+     * identifies the team the user joined and the source of the join.
      */
-    fun joinTeam(clientConfig: ClientConfig, teamId: String, inviteCode: String? = null, options: RequestOptions? = null): JoinTeamResponse =
+    fun joinTeam(
+        clientConfig: ClientConfig,
+        teamId: String,
+        inviteCode: String? = null,
+        options: RequestOptions? = null,
+    ): JoinTeamResponse =
         dev.octri.showcase.vercel.methods.TeamsJoinTeamOperation.joinTeam(
             clientConfig,
             teamId,
@@ -813,9 +638,16 @@ data class UpdateMicrofrontendsGroupResponse(
         )
 
     /**
-     * Updates a member's membership on the specified team, including their team role, permissions, or project roles. You can also confirm an unconfirmed member by setting `confirmed` to `true`. The authenticated user must be a team owner, except when disconnecting their own SAML connection.
+     * Updates a member's membership on the specified team, including their team role, permissions,
+     * or project roles. You can also confirm an unconfirmed member by setting `confirmed` to
+     * `true`. The authenticated user must be a team owner, except when disconnecting their own SAML
+     * connection.
      */
-    fun updateTeamMember(clientConfig: ClientConfig, request: UpdateTeamMemberRequest, options: RequestOptions? = null): UpdateTeamMemberResponse =
+    fun updateTeamMember(
+        clientConfig: ClientConfig,
+        request: UpdateTeamMemberRequest,
+        options: RequestOptions? = null,
+    ): UpdateTeamMemberResponse =
         dev.octri.showcase.vercel.methods.TeamsUpdateTeamMemberOperation.updateTeamMember(
             clientConfig,
             request,
@@ -823,9 +655,18 @@ data class UpdateMicrofrontendsGroupResponse(
         )
 
     /**
-     * Removes a member from a team, dismisses a user's access request, or lets a member leave the team. Use `newDefaultTeamId` to set a replacement default team for the user. Directory Sync members can be removed when their directory email is absent or does not match a primary or verified secondary email.
+     * Removes a member from a team, dismisses a user's access request, or lets a member leave the
+     * team. Use `newDefaultTeamId` to set a replacement default team for the user. Directory Sync
+     * members can be removed when their directory email is absent or does not match a primary or
+     * verified secondary email.
      */
-    fun removeTeamMember(clientConfig: ClientConfig, uid: String, teamId: String, newDefaultTeamId: String? = null, options: RequestOptions? = null): RemoveTeamMemberResponse =
+    fun removeTeamMember(
+        clientConfig: ClientConfig,
+        uid: String,
+        teamId: String,
+        newDefaultTeamId: String? = null,
+        options: RequestOptions? = null,
+    ): RemoveTeamMemberResponse =
         dev.octri.showcase.vercel.methods.TeamsRemoveTeamMemberOperation.removeTeamMember(
             clientConfig,
             uid,
@@ -835,9 +676,16 @@ data class UpdateMicrofrontendsGroupResponse(
         )
 
     /**
-     * Retrieves information about the specified team, including its billing plan, creation details, and team configuration. Use the team identifier to select the team; you can also supply its slug as request context.
+     * Retrieves information about the specified team, including its billing plan, creation details,
+     * and team configuration. Use the team identifier to select the team; you can also supply its
+     * slug as request context.
      */
-    fun getTeams(clientConfig: ClientConfig, teamId: String, slug: String? = null, options: RequestOptions? = null): Team =
+    fun getTeams(
+        clientConfig: ClientConfig,
+        teamId: String,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Team =
         dev.octri.showcase.vercel.methods.TeamsGetTeamsOperation.getTeams(
             clientConfig,
             teamId,
@@ -846,9 +694,15 @@ data class UpdateMicrofrontendsGroupResponse(
         )
 
     /**
-     * Updates the specified team's information using the fields supplied in the request body. Include only the team properties you want to change, such as its name, slug, avatar, or feedback settings. The authenticated user must be a team owner to update the team.
+     * Updates the specified team's information using the fields supplied in the request body.
+     * Include only the team properties you want to change, such as its name, slug, avatar, or
+     * feedback settings. The authenticated user must be a team owner to update the team.
      */
-    fun updateTeam(clientConfig: ClientConfig, request: UpdateTeamRequest, options: RequestOptions? = null): Team =
+    fun updateTeam(
+        clientConfig: ClientConfig,
+        request: UpdateTeamRequest,
+        options: RequestOptions? = null,
+    ): Team =
         dev.octri.showcase.vercel.methods.TeamsUpdateTeamOperation.updateTeam(
             clientConfig,
             request,
@@ -856,9 +710,16 @@ data class UpdateMicrofrontendsGroupResponse(
         )
 
     /**
-     * Lists teams that the authenticated user belongs to, with pagination metadata. Use `limit` to cap the number of teams and `since` or `until` to filter by creation time in milliseconds.
+     * Lists teams that the authenticated user belongs to, with pagination metadata. Use `limit` to
+     * cap the number of teams and `since` or `until` to filter by creation time in milliseconds.
      */
-    fun listTeams(clientConfig: ClientConfig, limit: Double? = null, since: Double? = null, until: Double? = null, options: RequestOptions? = null): ListTeamsResponse =
+    fun listTeams(
+        clientConfig: ClientConfig,
+        limit: Double? = null,
+        since: Double? = null,
+        until: Double? = null,
+        options: RequestOptions? = null,
+    ): ListTeamsResponse =
         dev.octri.showcase.vercel.methods.TeamsListTeamsOperation.listTeams(
             clientConfig,
             limit,
@@ -868,9 +729,17 @@ data class UpdateMicrofrontendsGroupResponse(
         )
 
     /**
-     * Creates a new team under the authenticated user's account. Supply `slug` and optionally `name`; the team name is generated from the slug when you omit `name`. A successful response includes the created team's identifier and slug.
+     * Creates a new team under the authenticated user's account. Supply `slug` and optionally
+     * `name`; the team name is generated from the slug when you omit `name`. A successful response
+     * includes the created team's identifier and slug.
      */
-    fun createTeam(clientConfig: ClientConfig, slug: String, name: String? = null, attribution: CreateTeamAttribution? = null, options: RequestOptions? = null): CreateTeamResponse =
+    fun createTeam(
+        clientConfig: ClientConfig,
+        slug: String,
+        name: String? = null,
+        attribution: CreateTeamAttribution? = null,
+        options: RequestOptions? = null,
+    ): CreateTeamResponse =
         dev.octri.showcase.vercel.methods.TeamsCreateTeamOperation.createTeam(
             clientConfig,
             slug,
@@ -880,9 +749,17 @@ data class UpdateMicrofrontendsGroupResponse(
         )
 
     /**
-     * Updates Directory Sync role mappings for a team, associating directory groups with team roles or access groups. Identify the team with `teamId` or `slug` and provide the mappings in `roles`.
+     * Updates Directory Sync role mappings for a team, associating directory groups with team roles
+     * or access groups. Identify the team with `teamId` or `slug` and provide the mappings in
+     * `roles`.
      */
-    fun postTeamDsyncRoles(clientConfig: ClientConfig, teamId: String, roles: Map<String, Any>, slug: String? = null, options: RequestOptions? = null): PostTeamDsyncRolesResponse =
+    fun postTeamDsyncRoles(
+        clientConfig: ClientConfig,
+        teamId: String,
+        roles: Map<String, Any>,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): PostTeamDsyncRolesResponse =
         dev.octri.showcase.vercel.methods.TeamsPostTeamDsyncRolesOperation.postTeamDsyncRoles(
             clientConfig,
             teamId,
@@ -892,9 +769,18 @@ data class UpdateMicrofrontendsGroupResponse(
         )
 
     /**
-     * Deletes a team under the authenticated user's account. Identify the team with `teamId` and optionally provide `newDefaultTeamId` to select a replacement default team. Enterprise teams can be deleted only in test billing mode and when they are not linked to an organization.
+     * Deletes a team under the authenticated user's account. Identify the team with `teamId` and
+     * optionally provide `newDefaultTeamId` to select a replacement default team. Enterprise teams
+     * can be deleted only in test billing mode and when they are not linked to an organization.
      */
-    fun deleteTeam(clientConfig: ClientConfig, teamId: String, newDefaultTeamId: String? = null, slug: String? = null, reasons: List<DeleteTeamReasonsItem>? = null, options: RequestOptions? = null): DeleteTeamResponse =
+    fun deleteTeam(
+        clientConfig: ClientConfig,
+        teamId: String,
+        newDefaultTeamId: String? = null,
+        slug: String? = null,
+        reasons: List<DeleteTeamReasonsItem>? = null,
+        options: RequestOptions? = null,
+    ): DeleteTeamResponse =
         dev.octri.showcase.vercel.methods.TeamsDeleteTeamOperation.deleteTeam(
             clientConfig,
             teamId,
@@ -905,9 +791,15 @@ data class UpdateMicrofrontendsGroupResponse(
         )
 
     /**
-     * Deletes an active team invite code. Use `teamId` and `inviteId` to identify the team and invite code to remove.
+     * Deletes an active team invite code. Use `teamId` and `inviteId` to identify the team and
+     * invite code to remove.
      */
-    fun deleteTeamInviteCode(clientConfig: ClientConfig, inviteId: String, teamId: String, options: RequestOptions? = null): DeleteTeamInviteCodeResponse =
+    fun deleteTeamInviteCode(
+        clientConfig: ClientConfig,
+        inviteId: String,
+        teamId: String,
+        options: RequestOptions? = null,
+    ): DeleteTeamInviteCodeResponse =
         dev.octri.showcase.vercel.methods.TeamsDeleteTeamInviteCodeOperation.deleteTeamInviteCode(
             clientConfig,
             inviteId,
@@ -916,24 +808,39 @@ data class UpdateMicrofrontendsGroupResponse(
         )
 
     /**
-     * Updates the settings of a microfrontends group in a team. Supply any of `name`, `fallbackEnvironment`, or `enablePolyrepoBranchRouting` to change that setting; fields you omit are not specified for update.
+     * Updates the settings of a microfrontends group in a team. Supply any of `name`,
+     * `fallbackEnvironment`, or `enablePolyrepoBranchRouting` to change that setting; fields you
+     * omit are not specified for update.
      */
-    fun updateMicrofrontendsGroup(clientConfig: ClientConfig, request: UpdateMicrofrontendsGroupRequest, options: RequestOptions? = null): UpdateMicrofrontendsGroupResponse =
-        dev.octri.showcase.vercel.methods.TeamsUpdateMicrofrontendsGroupOperation.updateMicrofrontendsGroup(
-            clientConfig,
-            request,
-            options,
-        )
+    fun updateMicrofrontendsGroup(
+        clientConfig: ClientConfig,
+        request: UpdateMicrofrontendsGroupRequest,
+        options: RequestOptions? = null,
+    ): UpdateMicrofrontendsGroupResponse =
+        dev.octri.showcase.vercel.methods.TeamsUpdateMicrofrontendsGroupOperation
+            .updateMicrofrontendsGroup(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Deletes a microfrontends group from the team associated with its group identifier. Use `groupId` and `teamId` to identify the group and team.
+     * Deletes a microfrontends group from the team associated with its group identifier. Use
+     * `groupId` and `teamId` to identify the group and team.
      */
-    fun deleteMicrofrontendsGroup(clientConfig: ClientConfig, groupId: String, teamId: String, slug: String? = null, options: RequestOptions? = null): Map<String, Any> =
-        dev.octri.showcase.vercel.methods.TeamsDeleteMicrofrontendsGroupOperation.deleteMicrofrontendsGroup(
-            clientConfig,
-            groupId,
-            teamId,
-            slug,
-            options,
-        )
+    fun deleteMicrofrontendsGroup(
+        clientConfig: ClientConfig,
+        groupId: String,
+        teamId: String,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Map<String, Any> =
+        dev.octri.showcase.vercel.methods.TeamsDeleteMicrofrontendsGroupOperation
+            .deleteMicrofrontendsGroup(
+                clientConfig,
+                groupId,
+                teamId,
+                slug,
+                options,
+            )
 }

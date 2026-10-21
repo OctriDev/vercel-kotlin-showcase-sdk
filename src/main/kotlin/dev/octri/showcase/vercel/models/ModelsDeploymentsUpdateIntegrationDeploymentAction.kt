@@ -5,49 +5,65 @@ package dev.octri.showcase.vercel.models
 
 data class UpdateIntegrationDeploymentActionRequestOutcomesItemVariant0SecretsItem(
     val name: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UpdateIntegrationDeploymentActionRequestOutcomesItemVariant0(
     val kind: String,
-    val secrets: List<UpdateIntegrationDeploymentActionRequestOutcomesItemVariant0SecretsItem>
+    val secrets: List<UpdateIntegrationDeploymentActionRequestOutcomesItemVariant0SecretsItem>,
 ) : UpdateIntegrationDeploymentActionRequestOutcomesItem
 
 data class UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CX216833dd70(
-    /**
-     * Applies only when the token is minted for one of these roles.
-     */
+    /** Applies only when the token is minted for one of these roles. */
     val role: List<String>? = null,
     /**
-     * Applies only when the token is minted for one of these environments: `production`, `preview`, `development`, or a custom environment slug. A custom environment also matches `preview`.
+     * Applies only when the token is minted for one of these environments: `production`, `preview`,
+     * `development`, or a custom environment slug. A custom environment also matches `preview`.
      */
-    val environment: List<String>? = null
+    val environment: List<String>? = null,
 )
 
 data class UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93(
     /**
-     * Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
+     * Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier
+     * rules and over the default claims. `null` removes a claim. Reserved claims cannot be set;
+     * `aud` and `sub` can be overridden with a string but not removed.
      */
     val claims: Map<String, Any>,
-    @com.fasterxml.jackson.annotation.JsonProperty("when") val `when`: UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CX216833dd70? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("when")
+    val `when`: UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CX216833dd70? = null,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1(
     val kind: String,
-    /**
-     * Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones.
-     */
-    val claimRules: List<UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93>
+    /** Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones. */
+    val claimRules: List<UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1CXf6ff4d9c93>,
 ) : UpdateIntegrationDeploymentActionRequestOutcomesItem
 
 /**
  * Typed representation of the `UpdateIntegrationDeploymentActionRequestOutcomesItem` API schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateIntegrationDeploymentActionRequestOutcomesItemVariant0::class),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1::class)
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateIntegrationDeploymentActionRequestOutcomesItemVariant0::class
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateIntegrationDeploymentActionRequestOutcomesItemVariant1::class
+    ),
 )
 sealed interface UpdateIntegrationDeploymentActionRequestOutcomesItem

@@ -3,117 +3,169 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class SegmentDataRulesItemConditionsItemRhsVariant2(
-    /**
-     * Required array value serialized in the `items` wire field.
-     */
+    /** Required array value serialized in the `items` wire field. */
     val items: List<Any>,
-    /**
-     * Required enumerated value serialized in the `type` wire field.
-     */
-    val type: SegmentDataRulesItemConditionsItemRhsVariant2TypeEnum
+    /** Required enumerated value serialized in the `type` wire field. */
+    val type: SegmentDataRulesItemConditionsItemRhsVariant2TypeEnum,
 ) : SegmentDataRulesItemConditionsItemRhs
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class SegmentDataRulesItemConditionsItemRhsVariant3(
-    /**
-     * Required `string` value serialized in the `flags` wire field.
-     */
+    /** Required `string` value serialized in the `flags` wire field. */
     val flags: String,
-    /**
-     * Required `string` value serialized in the `pattern` wire field.
-     */
+    /** Required `string` value serialized in the `pattern` wire field. */
     val pattern: String,
-    /**
-     * Required enumerated value serialized in the `type` wire field.
-     */
-    val type: SegmentDataRulesItemConditionsItemRhsVariant3TypeEnum
+    /** Required enumerated value serialized in the `type` wire field. */
+    val type: SegmentDataRulesItemConditionsItemRhsVariant3TypeEnum,
 ) : SegmentDataRulesItemConditionsItemRhs
 
-/**
- * Optional API value serialized in the `rhs` wire field.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = SegmentDataRulesItemConditionsItemRhs.Deserializer::class)
+/** Optional API value serialized in the `rhs` wire field. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = SegmentDataRulesItemConditionsItemRhs.Deserializer::class
+)
 sealed interface SegmentDataRulesItemConditionsItemRhs {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<SegmentDataRulesItemConditionsItemRhs>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<SegmentDataRulesItemConditionsItemRhs>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): SegmentDataRulesItemConditionsItemRhs {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out SegmentDataRulesItemConditionsItemRhs>> = listOf(SegmentDataRulesItemConditionsItemRhsVariant2::class.java, SegmentDataRulesItemConditionsItemRhsVariant3::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out SegmentDataRulesItemConditionsItemRhs>> =
+                listOf(
+                    SegmentDataRulesItemConditionsItemRhsVariant2::class.java,
+                    SegmentDataRulesItemConditionsItemRhsVariant3::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                node.isTextual -> StringSegmentDataRulesItemConditionsItemRhs(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
-                node.isNumber -> DoubleSegmentDataRulesItemConditionsItemRhs(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Double>() {}))
-                node.isBoolean -> BooleanSegmentDataRulesItemConditionsItemRhs(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {}))
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, SegmentDataRulesItemConditionsItemRhs::class.java, "no SegmentDataRulesItemConditionsItemRhs branch accepts this payload")
+                node.isTextual ->
+                    StringSegmentDataRulesItemConditionsItemRhs(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
+                        )
+                    )
+                node.isNumber ->
+                    DoubleSegmentDataRulesItemConditionsItemRhs(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<Double>() {},
+                        )
+                    )
+                node.isBoolean ->
+                    BooleanSegmentDataRulesItemConditionsItemRhs(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {},
+                        )
+                    )
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        SegmentDataRulesItemConditionsItemRhs::class.java,
+                        "no SegmentDataRulesItemConditionsItemRhs branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class StringSegmentDataRulesItemConditionsItemRhs(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : SegmentDataRulesItemConditionsItemRhs
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class StringSegmentDataRulesItemConditionsItemRhs(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
+) : SegmentDataRulesItemConditionsItemRhs
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class DoubleSegmentDataRulesItemConditionsItemRhs(@get:com.fasterxml.jackson.annotation.JsonValue val value: Double) : SegmentDataRulesItemConditionsItemRhs
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class DoubleSegmentDataRulesItemConditionsItemRhs(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Double
+) : SegmentDataRulesItemConditionsItemRhs
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class BooleanSegmentDataRulesItemConditionsItemRhs(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) : SegmentDataRulesItemConditionsItemRhs
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class BooleanSegmentDataRulesItemConditionsItemRhs(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean
+) : SegmentDataRulesItemConditionsItemRhs
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class SegmentDataRulesItemOutcomeVariant0(
-    /**
-     * Required enumerated value serialized in the `type` wire field.
-     */
+    /** Required enumerated value serialized in the `type` wire field. */
     val type: SegmentDataRulesItemOutcomeVariant0TypeEnum
 ) : SegmentDataRulesItemOutcome
 
-/**
- * Required object value serialized in the `base` wire field.
- */
+/** Required object value serialized in the `base` wire field. */
 data class SegmentDataRulesItemOutcomeVariant1Base(
-    /**
-     * Required `string` value serialized in the `attribute` wire field.
-     */
+    /** Required `string` value serialized in the `attribute` wire field. */
     val attribute: String,
-    /**
-     * Required `string` value serialized in the `kind` wire field.
-     */
+    /** Required `string` value serialized in the `kind` wire field. */
     val kind: String,
-    /**
-     * Required enumerated value serialized in the `type` wire field.
-     */
-    val type: SegmentDataRulesItemOutcomeVariant1BaseTypeEnum
+    /** Required enumerated value serialized in the `type` wire field. */
+    val type: SegmentDataRulesItemOutcomeVariant1BaseTypeEnum,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class SegmentDataRulesItemOutcomeVariant1(
-    /**
-     * Required object value serialized in the `base` wire field.
-     */
+    /** Required object value serialized in the `base` wire field. */
     val base: SegmentDataRulesItemOutcomeVariant1Base,
-    /**
-     * Required `number` value serialized in the `passPromille` wire field.
-     */
+    /** Required `number` value serialized in the `passPromille` wire field. */
     val passPromille: Double,
-    /**
-     * Required enumerated value serialized in the `type` wire field.
-     */
-    val type: SegmentDataRulesItemOutcomeVariant1TypeEnum
+    /** Required enumerated value serialized in the `type` wire field. */
+    val type: SegmentDataRulesItemOutcomeVariant1TypeEnum,
 ) : SegmentDataRulesItemOutcome
 
-/**
- * Required API value serialized in the `outcome` wire field.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
+/** Required API value serialized in the `outcome` wire field. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "type",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = SegmentDataRulesItemOutcomeVariant0::class, name = "all"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = SegmentDataRulesItemOutcomeVariant1::class, name = "split")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = SegmentDataRulesItemOutcomeVariant0::class,
+        name = "all",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = SegmentDataRulesItemOutcomeVariant1::class,
+        name = "split",
+    ),
 )
 sealed interface SegmentDataRulesItemOutcome

@@ -15,177 +15,448 @@ import java.time.OffsetDateTime
 
 internal object MarketplaceUpdateInstallationOperation {
     /**
-     * Updates an integration installation's status, external identifier, billing plan, or notification. Supply only the fields you want to change; `status` must use one of the listed installation states, and sending `null` for `notification` clears it.
+     * Updates an integration installation's status, external identifier, billing plan, or
+     * notification. Supply only the fields you want to change; `status` must use one of the listed
+     * installation states, and sending `null` for `notification` clears it.
      *
      * This endpoint updates an integration installation.
      *
-     * @param notification A notification to display to your customer. Send `null` to
-     *   clear the current notification.
+     * @param notification A notification to display to your customer. Send `null` to clear the
+     *   current notification.
      */
-    fun updateInstallation(clientConfig: ClientConfig, integrationConfigurationId: String, status: UpdateInstallationStatusEnum? = null, externalId: String? = null, billingPlan: Marketplace.UpdateInstallationBillingPlan? = null, notification: UpdateInstallationRequestNotification? = null, options: RequestOptions? = null): Unit {
-        SdkClient.request<Unit>(SdkClient.RequestSpec("PATCH", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}", config = clientConfig, body = SdkClient.bodyMap("status" to (SdkClient.omitIfNull(status)), "externalId" to (SdkClient.omitIfNull(externalId)), "billingPlan" to (SdkClient.omitIfNull(billingPlan)), "notification" to (SdkClient.omitIfNull(notification))), operationId = "updateInstallation", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+    fun updateInstallation(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        status: UpdateInstallationStatusEnum? = null,
+        externalId: String? = null,
+        billingPlan: Marketplace.UpdateInstallationBillingPlan? = null,
+        notification: UpdateInstallationRequestNotification? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "PATCH",
+                "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}",
+                config = clientConfig,
+                body =
+                    SdkClient.bodyMap(
+                        "status" to (SdkClient.omitIfNull(status)),
+                        "externalId" to (SdkClient.omitIfNull(externalId)),
+                        "billingPlan" to (SdkClient.omitIfNull(billingPlan)),
+                        "notification" to (SdkClient.omitIfNull(notification)),
+                    ),
+                operationId = "updateInstallation",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 }
 
 internal object MarketplaceGetAccountInfoOperation {
     /**
-     * Retrieves account contact information and the team name associated with an integration installation. Use the installation identifier to look up the best available contact, which can change as team members and their roles change.
+     * Retrieves account contact information and the team name associated with an integration
+     * installation. Use the installation identifier to look up the best available contact, which
+     * can change as team members and their roles change.
      *
      * Fetches the best account or user’s contact info
      */
-    fun getAccountInfo(clientConfig: ClientConfig, integrationConfigurationId: String, options: RequestOptions? = null): Marketplace.GetAccountInfoResponse {
-        return SdkClient.request<Marketplace.GetAccountInfoResponse>(SdkClient.RequestSpec("GET", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/account", config = clientConfig, operationId = "getAccountInfo", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getAccountInfo(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        options: RequestOptions? = null,
+    ): Marketplace.GetAccountInfoResponse {
+        return SdkClient.request<Marketplace.GetAccountInfoResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/account",
+                    config = clientConfig,
+                    operationId = "getAccountInfo",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object MarketplaceGetMemberOperation {
     /**
-     * Retrieves the role and other available information for a member of an integration installation. Use the member's user ID from the SSO OIDC token's `user_id` claim to identify the member.
+     * Retrieves the role and other available information for a member of an integration
+     * installation. Use the member's user ID from the SSO OIDC token's `user_id` claim to identify
+     * the member.
      *
-     * Returns the member role and other information for a given member ID ("user_id" claim in the SSO OIDC token).
+     * Returns the member role and other information for a given member ID ("user_id" claim in the
+     * SSO OIDC token).
      */
-    fun getMember(clientConfig: ClientConfig, integrationConfigurationId: String, memberId: String, options: RequestOptions? = null): Marketplace.GetMemberResponse {
-        return SdkClient.request<Marketplace.GetMemberResponse>(SdkClient.RequestSpec("GET", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/member/${SdkClient.encodePathSegment(memberId)}", config = clientConfig, operationId = "getMember", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getMember(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        memberId: String,
+        options: RequestOptions? = null,
+    ): Marketplace.GetMemberResponse {
+        return SdkClient.request<Marketplace.GetMemberResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/member/${SdkClient.encodePathSegment(memberId)}",
+                    config = clientConfig,
+                    operationId = "getMember",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object MarketplaceRotateInstallationCredentialOperation {
     /**
-     * Rotates an installation credential by issuing a replacement access token. Authenticate with the credential being replaced and the integration's client secret; the previous credential remains valid until you explicitly revoke it, so store the replacement before completing that step.
+     * Rotates an installation credential by issuing a replacement access token. Authenticate with
+     * the credential being replaced and the integration's client secret; the previous credential
+     * remains valid until you explicitly revoke it, so store the replacement before completing that
+     * step.
      *
-     * Issues a replacement access token for an installation, so a partner can rotate a credential it believes is compromised without the customer having to reinstall. Authenticated by the credential being replaced plus the integration's client secret: a leaked access token on its own cannot rotate itself, which would otherwise let an attacker take over the installation and lock the partner out. The previous credential intentionally stays valid so in-flight requests keep working.…
+     * Issues a replacement access token for an installation, so a partner can rotate a credential
+     * it believes is compromised without the customer having to reinstall. Authenticated by the
+     * credential being replaced plus the integration's client secret: a leaked access token on its
+     * own cannot rotate itself, which would otherwise let an attacker take over the installation
+     * and lock the partner out. The previous credential intentionally stays valid so in-flight
+     * requests keep working.…
      */
-    fun rotateInstallationCredential(clientConfig: ClientConfig, integrationConfigurationId: String, clientSecret: String, clientId: String? = null, options: RequestOptions? = null): Marketplace.RotateInstallationCredentialResponse {
+    fun rotateInstallationCredential(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        clientSecret: String,
+        clientId: String? = null,
+        options: RequestOptions? = null,
+    ): Marketplace.RotateInstallationCredentialResponse {
         Validation.validateLength("client_secret", clientSecret, Validation.LengthOpts(max = 512))
 
-        return SdkClient.request<Marketplace.RotateInstallationCredentialResponse>(SdkClient.RequestSpec("POST", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/credentials/rotate", config = clientConfig, body = SdkClient.bodyMap("client_secret" to (clientSecret), "client_id" to (SdkClient.omitIfNull(clientId))), operationId = "rotateInstallationCredential", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<Marketplace.RotateInstallationCredentialResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/credentials/rotate",
+                    config = clientConfig,
+                    body =
+                        SdkClient.bodyMap(
+                            "client_secret" to (clientSecret),
+                            "client_id" to (SdkClient.omitIfNull(clientId)),
+                        ),
+                    operationId = "rotateInstallationCredential",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object MarketplaceRevokeInstallationCredentialOperation {
     /**
-     * Revokes a superseded credential for an integration installation after you have rotated it. Authenticate with a live installation credential and the integration's client secret, then name the old credential in the request body; the last live credential cannot be revoked.
+     * Revokes a superseded credential for an integration installation after you have rotated it.
+     * Authenticate with a live installation credential and the integration's client secret, then
+     * name the old credential in the request body; the last live credential cannot be revoked.
      *
-     * Retires a superseded installation credential, so a partner can complete a rotation it started with `POST /credentials/rotate` — the leaked credential stops working without the customer having to reinstall. Authenticated by a live installation credential plus the integration's client secret. The credential to retire is named in the body rather than being the one that authenticates, so the ordinary flow is: rotate, store the replacement, then authenticate with the replacement…
+     * Retires a superseded installation credential, so a partner can complete a rotation it started
+     * with `POST /credentials/rotate` — the leaked credential stops working without the customer
+     * having to reinstall. Authenticated by a live installation credential plus the integration's
+     * client secret. The credential to retire is named in the body rather than being the one that
+     * authenticates, so the ordinary flow is: rotate, store the replacement, then authenticate with
+     * the replacement…
      */
-    fun revokeInstallationCredential(clientConfig: ClientConfig, integrationConfigurationId: String, token: String, clientSecret: String, clientId: String? = null, options: RequestOptions? = null): Marketplace.RevokeInstallationCredentialResponse {
+    fun revokeInstallationCredential(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        token: String,
+        clientSecret: String,
+        clientId: String? = null,
+        options: RequestOptions? = null,
+    ): Marketplace.RevokeInstallationCredentialResponse {
         Validation.validateLength("token", token, Validation.LengthOpts(max = 512))
 
         Validation.validateLength("client_secret", clientSecret, Validation.LengthOpts(max = 512))
 
-        return SdkClient.request<Marketplace.RevokeInstallationCredentialResponse>(SdkClient.RequestSpec("POST", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/credentials/revoke", config = clientConfig, body = SdkClient.bodyMap("token" to (token), "client_secret" to (clientSecret), "client_id" to (SdkClient.omitIfNull(clientId))), operationId = "revokeInstallationCredential", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<Marketplace.RevokeInstallationCredentialResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/credentials/revoke",
+                    config = clientConfig,
+                    body =
+                        SdkClient.bodyMap(
+                            "token" to (token),
+                            "client_secret" to (clientSecret),
+                            "client_id" to (SdkClient.omitIfNull(clientId)),
+                        ),
+                    operationId = "revokeInstallationCredential",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object MarketplaceCreateEventOperation {
     /**
-     * Submits an event to notify Vercel about a change to an installation or one of its resources. Send an installation update when its billing plan changes outside Vercel, or a resource update when a linked resource's state changes; Vercel uses its read APIs to retrieve the updated state.
+     * Submits an event to notify Vercel about a change to an installation or one of its resources.
+     * Send an installation update when its billing plan changes outside Vercel, or a resource
+     * update when a linked resource's state changes; Vercel uses its read APIs to retrieve the
+     * updated state.
      *
-     * Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state. `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner. `installation.updated` event should be dispatched when an installation's billing plan is changed via the provider instead of Vercel. Resource update use cases: - The user renames a database in the…
+     * Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is
+     * expected to use `list-resources` and other read APIs to get the new state. `resource.updated`
+     * event should be dispatched when any state of a resource linked to Vercel is modified by the
+     * partner. `installation.updated` event should be dispatched when an installation's billing
+     * plan is changed via the provider instead of Vercel. Resource update use cases: - The user
+     * renames a database in the…
      *
      * @param event Typed representation of the `CreateEventRequestEvent` API schema.
      */
-    fun createEvent(clientConfig: ClientConfig, integrationConfigurationId: String, event: CreateEventRequestEvent, options: RequestOptions? = null): Unit {
-        SdkClient.request<Unit>(SdkClient.RequestSpec("POST", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/events", config = clientConfig, body = SdkClient.bodyMap("event" to (event)), operationId = "createEvent", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+    fun createEvent(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        event: CreateEventRequestEvent,
+        options: RequestOptions? = null,
+    ): Unit {
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "POST",
+                "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/events",
+                config = clientConfig,
+                body = SdkClient.bodyMap("event" to (event)),
+                operationId = "createEvent",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 }
 
 internal object MarketplaceGetIntegrationResourcesOperation {
     /**
-     * Lists the resources associated with an integration installation. Use the installation identifier to retrieve its resources, including each resource's partner and product identifiers and its name.
+     * Lists the resources associated with an integration installation. Use the installation
+     * identifier to retrieve its resources, including each resource's partner and product
+     * identifiers and its name.
      *
      * Get all resources for a given installation ID.
      */
-    fun getIntegrationResources(clientConfig: ClientConfig, integrationConfigurationId: String, options: RequestOptions? = null): Marketplace.GetIntegrationResourcesResponse {
-        return SdkClient.request<Marketplace.GetIntegrationResourcesResponse>(SdkClient.RequestSpec("GET", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources", config = clientConfig, operationId = "getIntegrationResources", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getIntegrationResources(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        options: RequestOptions? = null,
+    ): Marketplace.GetIntegrationResourcesResponse {
+        return SdkClient.request<Marketplace.GetIntegrationResourcesResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources",
+                    config = clientConfig,
+                    operationId = "getIntegrationResources",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object MarketplaceGetIntegrationResourceOperation {
     /**
-     * Retrieves a resource associated with an integration installation by its partner-provided ID. Use both path identifiers to scope the lookup to the installation that owns the resource.
+     * Retrieves a resource associated with an integration installation by its partner-provided ID.
+     * Use both path identifiers to scope the lookup to the installation that owns the resource.
      *
      * Get a resource by its partner ID.
      *
-     * @param integrationConfigurationId The ID of the integration configuration
-     *   (installation) the resource belongs to
-     * @param resourceId The ID provided by the 3rd party provider for the given
-     *   resource
+     * @param integrationConfigurationId The ID of the integration configuration (installation) the
+     *   resource belongs to
+     * @param resourceId The ID provided by the 3rd party provider for the given resource
      */
-    fun getIntegrationResource(clientConfig: ClientConfig, integrationConfigurationId: String, resourceId: String, options: RequestOptions? = null): Marketplace.GetIntegrationResourceResponse {
-        return SdkClient.request<Marketplace.GetIntegrationResourceResponse>(SdkClient.RequestSpec("GET", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(resourceId)}", config = clientConfig, operationId = "getIntegrationResource", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getIntegrationResource(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        resourceId: String,
+        options: RequestOptions? = null,
+    ): Marketplace.GetIntegrationResourceResponse {
+        return SdkClient.request<Marketplace.GetIntegrationResourceResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(resourceId)}",
+                    config = clientConfig,
+                    operationId = "getIntegrationResource",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object MarketplaceDeleteIntegrationResourceOperation {
     /**
-     * Deletes a resource owned by an installation. Use `integrationConfigurationId` and `resourceId` to identify the installation and resource to remove. A 204 response confirms the deletion without returning a response body.
+     * Deletes a resource owned by an installation. Use `integrationConfigurationId` and
+     * `resourceId` to identify the installation and resource to remove. A 204 response confirms the
+     * deletion without returning a response body.
      *
      * Delete a resource owned by the selected installation ID.
      */
-    fun deleteIntegrationResource(clientConfig: ClientConfig, integrationConfigurationId: String, resourceId: String, options: RequestOptions? = null): Unit {
-        SdkClient.request<Unit>(SdkClient.RequestSpec("DELETE", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(resourceId)}", config = clientConfig, operationId = "deleteIntegrationResource", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+    fun deleteIntegrationResource(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        resourceId: String,
+        options: RequestOptions? = null,
+    ): Unit {
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "DELETE",
+                "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(resourceId)}",
+                config = clientConfig,
+                operationId = "deleteIntegrationResource",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 }
 
 internal object MarketplaceImportResourceOperation {
     /**
-     * Imports or upserts a resource into an integration installation, including resources created independently in the provider's system. Use this operation to synchronize an existing resource to Vercel; for a user-initiated import, call it before redirecting the user back to Vercel.
+     * Imports or upserts a resource into an integration installation, including resources created
+     * independently in the provider's system. Use this operation to synchronize an existing
+     * resource to Vercel; for a user-initiated import, call it before redirecting the user back to
+     * Vercel.
      *
-     * This endpoint imports (upserts) a resource to Vercel's installation. This may be needed if resources can be independently created on the partner's side and need to be synchronized to Vercel. When importing as part of the user-initiated import flow, call this endpoint before redirecting the user back to Vercel. See the Import existing resources flow for the full contract.
+     * This endpoint imports (upserts) a resource to Vercel's installation. This may be needed if
+     * resources can be independently created on the partner's side and need to be synchronized to
+     * Vercel. When importing as part of the user-initiated import flow, call this endpoint before
+     * redirecting the user back to Vercel. See the Import existing resources flow for the full
+     * contract.
      *
-     * @param customClaims Custom claims embedded in the resource tokens Vercel mints
-     *   for this resource.
+     * @param customClaims Custom claims embedded in the resource tokens Vercel mints for this
+     *   resource.
      */
-    fun importResource(clientConfig: ClientConfig, request: Marketplace.ImportResourceRequest, options: RequestOptions? = null): Marketplace.ImportResourceResponse {
-        return SdkClient.request<Marketplace.ImportResourceResponse>(SdkClient.RequestSpec("PUT", "/v1/installations/${SdkClient.encodePathSegment(request.integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(request.resourceId)}", config = clientConfig, body = SdkClient.bodyMap("productId" to (request.productId), "name" to (request.name), "status" to (request.status), "ownership" to (SdkClient.omitIfNull(request.ownership)), "metadata" to (SdkClient.omitIfNull(request.metadata)), "billingPlan" to (SdkClient.omitIfNull(request.billingPlan)), "notification" to
-    (SdkClient.omitIfNull(request.notification)), "extras" to (SdkClient.omitIfNull(request.extras)), "secrets" to (SdkClient.omitIfNull(request.secrets)), "customClaims" to
-    (SdkClient.omitIfNull(request.customClaims))), operationId = "importResource", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun importResource(
+        clientConfig: ClientConfig,
+        request: Marketplace.ImportResourceRequest,
+        options: RequestOptions? = null,
+    ): Marketplace.ImportResourceResponse {
+        return SdkClient.request<Marketplace.ImportResourceResponse>(
+                SdkClient.RequestSpec(
+                    "PUT",
+                    "/v1/installations/${SdkClient.encodePathSegment(request.integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(request.resourceId)}",
+                    config = clientConfig,
+                    body =
+                        SdkClient.bodyMap(
+                            "productId" to (request.productId),
+                            "name" to (request.name),
+                            "status" to (request.status),
+                            "ownership" to (SdkClient.omitIfNull(request.ownership)),
+                            "metadata" to (SdkClient.omitIfNull(request.metadata)),
+                            "billingPlan" to (SdkClient.omitIfNull(request.billingPlan)),
+                            "notification" to (SdkClient.omitIfNull(request.notification)),
+                            "extras" to (SdkClient.omitIfNull(request.extras)),
+                            "secrets" to (SdkClient.omitIfNull(request.secrets)),
+                            "customClaims" to (SdkClient.omitIfNull(request.customClaims)),
+                        ),
+                    operationId = "importResource",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object MarketplaceUpdateResourceOperation {
     /**
-     * Updates selected properties of an existing resource in an integration installation. Send only the fields you want to change; use the path identifiers to target the resource within its installation.
+     * Updates selected properties of an existing resource in an integration installation. Send only
+     * the fields you want to change; use the path identifiers to target the resource within its
+     * installation.
      *
-     * This endpoint updates an existing resource in the installation. All parameters are optional, allowing partial updates.
+     * This endpoint updates an existing resource in the installation. All parameters are optional,
+     * allowing partial updates.
      *
-     * @param notification Typed representation of the
-     *   `UpdateResourceRequestNotification` API schema.
-     * @param customClaims Custom claims embedded in the resource tokens Vercel mints
-     *   for this resource.
+     * @param notification Typed representation of the `UpdateResourceRequestNotification` API
+     *   schema.
+     * @param customClaims Custom claims embedded in the resource tokens Vercel mints for this
+     *   resource.
      */
-    fun updateResource(clientConfig: ClientConfig, request: Marketplace.UpdateResourceRequest, options: RequestOptions? = null): Marketplace.UpdateResourceResponse {
-        return SdkClient.request<Marketplace.UpdateResourceResponse>(SdkClient.RequestSpec("PATCH", "/v1/installations/${SdkClient.encodePathSegment(request.integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(request.resourceId)}", config = clientConfig, body = SdkClient.bodyMap("ownership" to (SdkClient.omitIfNull(request.ownership)), "name" to (SdkClient.omitIfNull(request.name)), "status" to (SdkClient.omitIfNull(request.status)), "metadata" to (SdkClient.omitIfNull(request.metadata)), "billingPlan" to (SdkClient.omitIfNull(request.billingPlan)), "notification" to
-    (SdkClient.omitIfNull(request.notification)), "extras" to (SdkClient.omitIfNull(request.extras)), "secrets" to (SdkClient.omitIfNull(request.secrets)), "customClaims" to
-    (SdkClient.omitIfNull(request.customClaims))), operationId = "updateResource", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun updateResource(
+        clientConfig: ClientConfig,
+        request: Marketplace.UpdateResourceRequest,
+        options: RequestOptions? = null,
+    ): Marketplace.UpdateResourceResponse {
+        return SdkClient.request<Marketplace.UpdateResourceResponse>(
+                SdkClient.RequestSpec(
+                    "PATCH",
+                    "/v1/installations/${SdkClient.encodePathSegment(request.integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(request.resourceId)}",
+                    config = clientConfig,
+                    body =
+                        SdkClient.bodyMap(
+                            "ownership" to (SdkClient.omitIfNull(request.ownership)),
+                            "name" to (SdkClient.omitIfNull(request.name)),
+                            "status" to (SdkClient.omitIfNull(request.status)),
+                            "metadata" to (SdkClient.omitIfNull(request.metadata)),
+                            "billingPlan" to (SdkClient.omitIfNull(request.billingPlan)),
+                            "notification" to (SdkClient.omitIfNull(request.notification)),
+                            "extras" to (SdkClient.omitIfNull(request.extras)),
+                            "secrets" to (SdkClient.omitIfNull(request.secrets)),
+                            "customClaims" to (SdkClient.omitIfNull(request.customClaims)),
+                        ),
+                    operationId = "updateResource",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object MarketplaceSubmitBillingDataOperation {
     /**
-     * Submits billing and usage data for an installation. Send the latest data at least daily, and ideally hourly, using the installation's billing period, billing entries, and usage metrics. Authorize the request with the installation's `credentials.access_token`.
+     * Submits billing and usage data for an installation. Send the latest data at least daily, and
+     * ideally hourly, using the installation's billing period, billing entries, and usage metrics.
+     * Authorize the request with the installation's `credentials.access_token`.
      *
-     * Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. Use the `credentials.access_token` we provided in the Upsert Installation body to authorize this request.
+     * Sends the billing and usage data. The partner should do this at least once a day and ideally
+     * once per hour. Use the `credentials.access_token` we provided in the Upsert Installation body
+     * to authorize this request.
      *
-     * @param timestamp Server time of your integration, used to determine the most
-     *   recent data for race conditions & updates. Only the latest usage data for a
-     *   given day, week, and month will be kept.
-     * @param eod End of Day, the UTC datetime for when the end of the billing/usage
-     *   day is in UTC time. This tells us which day the usage data is for, and also
-     *   allows for your "end of day" to be different from UTC 00:00:00. eod must be
-     *   within the period dates, and cannot be older than 24h earlier from our
-     *   server's current time.
-     * @param period Period for the billing cycle. The period end date cannot be
-     *   older than 24 hours earlier than our current server's time.
+     * @param timestamp Server time of your integration, used to determine the most recent data for
+     *   race conditions & updates. Only the latest usage data for a given day, week, and month will
+     *   be kept.
+     * @param eod End of Day, the UTC datetime for when the end of the billing/usage day is in UTC
+     *   time. This tells us which day the usage data is for, and also allows for your "end of day"
+     *   to be different from UTC 00:00:00. eod must be within the period dates, and cannot be older
+     *   than 24h earlier from our server's current time.
+     * @param period Period for the billing cycle. The period end date cannot be older than 24 hours
+     *   earlier than our current server's time.
      * @param billing Billing data (interim invoicing data).
      */
-    fun submitBillingData(clientConfig: ClientConfig, request: Marketplace.SubmitBillingDataRequest, options: RequestOptions? = null): Unit {
+    fun submitBillingData(
+        clientConfig: ClientConfig,
+        request: Marketplace.SubmitBillingDataRequest,
+        options: RequestOptions? = null,
+    ): Unit {
         validateSubmitBillingDataRequest(request)
 
-        SdkClient.request<Unit>(SdkClient.RequestSpec("POST", "/v1/installations/${SdkClient.encodePathSegment(request.integrationConfigurationId)}/billing", config = clientConfig, body = SdkClient.bodyMap("timestamp" to (request.timestamp), "eod" to (request.eod), "period" to (request.period), "billing" to (request.billing), "usage" to (request.usage)), operationId = "submitBillingData", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "POST",
+                "/v1/installations/${SdkClient.encodePathSegment(request.integrationConfigurationId)}/billing",
+                config = clientConfig,
+                body =
+                    SdkClient.bodyMap(
+                        "timestamp" to (request.timestamp),
+                        "eod" to (request.eod),
+                        "period" to (request.period),
+                        "billing" to (request.billing),
+                        "usage" to (request.usage),
+                    ),
+                operationId = "submitBillingData",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
-
 
     private fun validateSubmitBillingDataRequest(request: Marketplace.SubmitBillingDataRequest) {
         Validation.validateDateTime("timestamp", request.timestamp)
@@ -196,25 +467,57 @@ internal object MarketplaceSubmitBillingDataOperation {
 
 internal object MarketplaceSubmitInvoiceOperation {
     /**
-     * Submits an invoice for an installation to the billing system for delivery to the customer. Include the invoice date, billing period, and invoice items; the resource must be eligible for the selected active subscription plan during that period. Send interim subscription usage data hourly before submitting the invoice.
+     * Submits an invoice for an installation to the billing system for delivery to the customer.
+     * Include the invoice date, billing period, and invoice items; the resource must be eligible
+     * for the selected active subscription plan during that period. Send interim subscription usage
+     * data hourly before submitting the invoice.
      *
-     * This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period. Use the `credentials.access_token` we provided in the Upsert Installation body to authorize this request. There are several limitations to the invoice submission: 1. A resource can…
+     * This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in
+     * Vercel's billing system and sent to the customer. Depending on the type of billing plan, the
+     * invoice can be sent at a time of signup, at the start of the billing period, or at the end of
+     * the billing period. Use the `credentials.access_token` we provided in the Upsert Installation
+     * body to authorize this request. There are several limitations to the invoice submission: 1. A
+     * resource can…
      *
      * @param invoiceDate Invoice date. Must be within the period's start and end.
      * @param period Subscription period for this billing cycle.
-     * @param externalId Partner-provided invoice identifier. If provided, it must be
-     *   unique for this installation.
+     * @param externalId Partner-provided invoice identifier. If provided, it must be unique for
+     *   this installation.
      * @param memo Additional memo for the invoice.
-     * @param final Set this to `true` if this is the final invoice for the
-     *   installation. Can only be set when the installation is pending deletion.
+     * @param final Set this to `true` if this is the final invoice for the installation. Can only
+     *   be set when the installation is pending deletion.
      * @param test Test mode
      */
-    fun submitInvoice(clientConfig: ClientConfig, request: Marketplace.SubmitInvoiceRequest, options: RequestOptions? = null): Marketplace.SubmitInvoiceResponse {
+    fun submitInvoice(
+        clientConfig: ClientConfig,
+        request: Marketplace.SubmitInvoiceRequest,
+        options: RequestOptions? = null,
+    ): Marketplace.SubmitInvoiceResponse {
         validateSubmitInvoiceRequest(request)
 
-        return SdkClient.request<Marketplace.SubmitInvoiceResponse>(SdkClient.RequestSpec("POST", "/v1/installations/${SdkClient.encodePathSegment(request.integrationConfigurationId)}/billing/invoices", config = clientConfig, body = SdkClient.bodyMap("invoiceDate" to (request.invoiceDate), "period" to (request.period), "items" to (request.items), "externalId" to (SdkClient.omitIfNull(request.externalId)), "memo" to (SdkClient.omitIfNull(request.memo)), "discounts" to (SdkClient.omitIfNull(request.discounts)), "final" to (SdkClient.omitIfNull(request.final)), "test" to (SdkClient.omitIfNull(request.test))), operationId = "submitInvoice", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<Marketplace.SubmitInvoiceResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v1/installations/${SdkClient.encodePathSegment(request.integrationConfigurationId)}/billing/invoices",
+                    config = clientConfig,
+                    body =
+                        SdkClient.bodyMap(
+                            "invoiceDate" to (request.invoiceDate),
+                            "period" to (request.period),
+                            "items" to (request.items),
+                            "externalId" to (SdkClient.omitIfNull(request.externalId)),
+                            "memo" to (SdkClient.omitIfNull(request.memo)),
+                            "discounts" to (SdkClient.omitIfNull(request.discounts)),
+                            "final" to (SdkClient.omitIfNull(request.final)),
+                            "test" to (SdkClient.omitIfNull(request.test)),
+                        ),
+                    operationId = "submitInvoice",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
-
 
     private fun validateSubmitInvoiceRequest(request: Marketplace.SubmitInvoiceRequest) {
         Validation.validateDateTime("invoiceDate", request.invoiceDate)
@@ -223,170 +526,453 @@ internal object MarketplaceSubmitInvoiceOperation {
 
 internal object MarketplaceFinalizeInstallationOperation {
     /**
-     * Finalizes an installation after a customer requests uninstall and you have submitted any remaining invoices. Finalization indicates that you will submit no further invoices and allows uninstall to proceed after outstanding invoices are paid. Authorize the request with the installation's `credentials.access_token`.
+     * Finalizes an installation after a customer requests uninstall and you have submitted any
+     * remaining invoices. Finalization indicates that you will submit no further invoices and
+     * allows uninstall to proceed after outstanding invoices are paid. Authorize the request with
+     * the installation's `credentials.access_token`.
      *
-     * This endpoint allows the partner to mark an installation as finalized. This means you will not send any more invoices for the installation. Use this after a customer has requested uninstall and you have sent any remaining invoices. This will allow the uninstall process to proceed immediately after all invoices have been paid. Use the `credentials.access_token` we provided in the Upsert Installation body to authorize this request.
+     * This endpoint allows the partner to mark an installation as finalized. This means you will
+     * not send any more invoices for the installation. Use this after a customer has requested
+     * uninstall and you have sent any remaining invoices. This will allow the uninstall process to
+     * proceed immediately after all invoices have been paid. Use the `credentials.access_token` we
+     * provided in the Upsert Installation body to authorize this request.
      */
-    fun finalizeInstallation(clientConfig: ClientConfig, integrationConfigurationId: String, options: RequestOptions? = null): Unit {
-        SdkClient.request<Unit>(SdkClient.RequestSpec("POST", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/billing/finalize", config = clientConfig, operationId = "finalizeInstallation", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+    fun finalizeInstallation(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        options: RequestOptions? = null,
+    ): Unit {
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "POST",
+                "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/billing/finalize",
+                config = clientConfig,
+                operationId = "finalizeInstallation",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 }
 
 internal object MarketplaceGetInvoiceOperation {
     /**
-     * Retrieves invoice details and status for an installation. Use the installation and invoice identifiers to select the invoice, and use the returned state and timestamps to track its billing lifecycle. Consult billing events through webhooks when you need invoice event notifications.
+     * Retrieves invoice details and status for an installation. Use the installation and invoice
+     * identifiers to select the invoice, and use the returned state and timestamps to track its
+     * billing lifecycle. Consult billing events through webhooks when you need invoice event
+     * notifications.
      *
-     * Get Invoice details and status for a given invoice ID. See Billing Events with Webhooks documentation on how to receive invoice events. This endpoint is used to retrieve the invoice details.
+     * Get Invoice details and status for a given invoice ID. See Billing Events with Webhooks
+     * documentation on how to receive invoice events. This endpoint is used to retrieve the invoice
+     * details.
      */
-    fun getInvoice(clientConfig: ClientConfig, integrationConfigurationId: String, invoiceId: String, options: RequestOptions? = null): Marketplace.GetInvoiceResponse {
-        return SdkClient.request<Marketplace.GetInvoiceResponse>(SdkClient.RequestSpec("GET", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/billing/invoices/${SdkClient.encodePathSegment(invoiceId)}", config = clientConfig, operationId = "getInvoice", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getInvoice(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        invoiceId: String,
+        options: RequestOptions? = null,
+    ): Marketplace.GetInvoiceResponse {
+        return SdkClient.request<Marketplace.GetInvoiceResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/billing/invoices/${SdkClient.encodePathSegment(invoiceId)}",
+                    config = clientConfig,
+                    operationId = "getInvoice",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object MarketplaceUpdateInvoiceOperation {
     /**
-     * Submits a refund request for an invoice previously created through the invoice submission operation. Provide the refund reason and amount along with the `refund` action. The requested amount cannot exceed the invoice total.
+     * Submits a refund request for an invoice previously created through the invoice submission
+     * operation. Provide the refund reason and amount along with the `refund` action. The requested
+     * amount cannot exceed the invoice total.
      *
-     * This endpoint allows the partner to request a refund for an invoice to Vercel. The invoice is created using the Submit Invoice API.
+     * This endpoint allows the partner to request a refund for an invoice to Vercel. The invoice is
+     * created using the Submit Invoice API.
      *
      * @param reason Refund reason.
-     * @param total The total amount to be refunded. Must be less than or equal to
-     *   the total amount of the invoice.
+     * @param total The total amount to be refunded. Must be less than or equal to the total amount
+     *   of the invoice.
      */
-    fun updateInvoice(clientConfig: ClientConfig, integrationConfigurationId: String, invoiceId: String, action: UpdateInvoiceActionEnum, reason: String, total: String, options: RequestOptions? = null): Unit {
+    fun updateInvoice(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        invoiceId: String,
+        action: UpdateInvoiceActionEnum,
+        reason: String,
+        total: String,
+        options: RequestOptions? = null,
+    ): Unit {
         Validation.validatePattern("total", total, "^[0-9]+(\\.[0-9]+)?$")
 
-        SdkClient.request<Unit>(SdkClient.RequestSpec("POST", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/billing/invoices/${SdkClient.encodePathSegment(invoiceId)}/actions", config = clientConfig, body = SdkClient.bodyMap("action" to (action), "reason" to (reason), "total" to (total)), operationId = "updateInvoice", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "POST",
+                "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/billing/invoices/${SdkClient.encodePathSegment(invoiceId)}/actions",
+                config = clientConfig,
+                body =
+                    SdkClient.bodyMap(
+                        "action" to (action),
+                        "reason" to (reason),
+                        "total" to (total),
+                    ),
+                operationId = "updateInvoice",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 }
 
 internal object MarketplaceSubmitPrepaymentBalancesOperation {
     /**
-     * Submits prepayment credit balances for an installation. Send the latest balances at least daily, and ideally hourly, so the billing system can use their USD values to evaluate automatic purchase thresholds. Authorize the request with the installation's `credentials.access_token`.
+     * Submits prepayment credit balances for an installation. Send the latest balances at least
+     * daily, and ideally hourly, so the billing system can use their USD values to evaluate
+     * automatic purchase thresholds. Authorize the request with the installation's
+     * `credentials.access_token`.
      *
-     * Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. Use the `credentials.access_token` we provided in the Upsert Installation body to authorize this request.
+     * Sends the prepayment balances. The partner should do this at least once a day and ideally
+     * once per hour. Use the `credentials.access_token` we provided in the Upsert Installation body
+     * to authorize this request.
      *
-     * @param timestamp Server time of your integration, used to determine the most
-     *   recent data for race conditions & updates. Only the latest usage data for a
-     *   given day, week, and month will be kept.
+     * @param timestamp Server time of your integration, used to determine the most recent data for
+     *   race conditions & updates. Only the latest usage data for a given day, week, and month will
+     *   be kept.
      */
-    fun submitPrepaymentBalances(clientConfig: ClientConfig, integrationConfigurationId: String, timestamp: OffsetDateTime, balances: List<Marketplace.SubmitPrepaymentBalancesBalancesItem>, options: RequestOptions? = null): Unit {
+    fun submitPrepaymentBalances(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        timestamp: OffsetDateTime,
+        balances: List<Marketplace.SubmitPrepaymentBalancesBalancesItem>,
+        options: RequestOptions? = null,
+    ): Unit {
         Validation.validateDateTime("timestamp", timestamp)
 
-        SdkClient.request<Unit>(SdkClient.RequestSpec("POST", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/billing/balance", config = clientConfig, body = SdkClient.bodyMap("timestamp" to (timestamp), "balances" to (balances)), operationId = "submitPrepaymentBalances", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "POST",
+                "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/billing/balance",
+                config = clientConfig,
+                body = SdkClient.bodyMap("timestamp" to (timestamp), "balances" to (balances)),
+                operationId = "submitPrepaymentBalances",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 }
 
 internal object MarketplaceUpdateResourceSecretsOperation {
     /**
-     * Replaces the secrets for a resource connected to an installation. This operation is deprecated and has been replaced by PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets; existing connected projects may continue using old secrets until you redeploy them. Use `partial` to update only the supplied secrets instead of replacing the full set.
+     * Replaces the secrets for a resource connected to an installation. This operation is
+     * deprecated and has been replaced by PUT
+     * /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets; existing
+     * connected projects may continue using old secrets until you redeploy them. Use `partial` to
+     * update only the supplied secrets instead of replacing the full set.
      *
-     * This endpoint is deprecated and replaced with the endpoint Update Resource Secrets. This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets. Use cases for this…
+     * This endpoint is deprecated and replaced with the endpoint Update Resource Secrets. This
+     * endpoint updates the secrets of a resource. If a resource has projects connected, the
+     * connected secrets are updated with the new secrets. The old secrets may still be used by
+     * existing connected projects because they are not automatically redeployed. Redeployment is a
+     * manual action and must be completed by the user. All new project connections will use the new
+     * secrets. Use cases for this…
      *
      * @param partial If true, will only update the provided secrets
-     * @deprecated This operation is deprecated and may be removed in a future
-     *   release.
+     * @deprecated This operation is deprecated and may be removed in a future release.
      */
-    fun updateResourceSecrets(clientConfig: ClientConfig, integrationConfigurationId: String, integrationProductIdOrSlug: String, resourceId: String, secrets: List<Marketplace.UpdateResourceSecretsSecretsItem>, partial: Boolean? = null, options: RequestOptions? = null): Unit {
-        SdkClient.request<Unit>(SdkClient.RequestSpec("PUT", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/products/${SdkClient.encodePathSegment(integrationProductIdOrSlug)}/resources/${SdkClient.encodePathSegment(resourceId)}/secrets", config = clientConfig, body = SdkClient.bodyMap("secrets" to (secrets), "partial" to (SdkClient.omitIfNull(partial))), operationId = "updateResourceSecrets", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+    fun updateResourceSecrets(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        integrationProductIdOrSlug: String,
+        resourceId: String,
+        secrets: List<Marketplace.UpdateResourceSecretsSecretsItem>,
+        partial: Boolean? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "PUT",
+                "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/products/${SdkClient.encodePathSegment(integrationProductIdOrSlug)}/resources/${SdkClient.encodePathSegment(resourceId)}/secrets",
+                config = clientConfig,
+                body =
+                    SdkClient.bodyMap(
+                        "secrets" to (secrets),
+                        "partial" to (SdkClient.omitIfNull(partial)),
+                    ),
+                operationId = "updateResourceSecrets",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 }
 
 internal object MarketplaceUpdateResourceSecretsByIdOperation {
     /**
-     * Replaces the secrets for a resource connected to an installation. Existing connected projects may continue using old secrets because they are not redeployed automatically, while new project connections use the updated secrets. Set `partial` to `true` to overwrite only the supplied secrets rather than replacing all secrets.
+     * Replaces the secrets for a resource connected to an installation. Existing connected projects
+     * may continue using old secrets because they are not redeployed automatically, while new
+     * project connections use the updated secrets. Set `partial` to `true` to overwrite only the
+     * supplied secrets rather than replacing all secrets.
      *
-     * This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets. Use cases for this endpoint: - Resetting the credentials of a database in the partner. If the user…
+     * This endpoint updates the secrets of a resource. If a resource has projects connected, the
+     * connected secrets are updated with the new secrets. The old secrets may still be used by
+     * existing connected projects because they are not automatically redeployed. Redeployment is a
+     * manual action and must be completed by the user. All new project connections will use the new
+     * secrets. Use cases for this endpoint: - Resetting the credentials of a database in the
+     * partner. If the user…
      *
-     * @param partial If true, will only overwrite the provided secrets instead of
-     *   replacing all secrets.
+     * @param partial If true, will only overwrite the provided secrets instead of replacing all
+     *   secrets.
      */
-    fun updateResourceSecretsById(clientConfig: ClientConfig, integrationConfigurationId: String, resourceId: String, secrets: List<Marketplace.UpdateResourceSecretsByIdSecretsItem>, partial: Boolean? = null, options: RequestOptions? = null): Unit {
-        SdkClient.request<Unit>(SdkClient.RequestSpec("PUT", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(resourceId)}/secrets", config = clientConfig, body = SdkClient.bodyMap("secrets" to (secrets), "partial" to (SdkClient.omitIfNull(partial))), operationId = "updateResourceSecretsById", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+    fun updateResourceSecretsById(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        resourceId: String,
+        secrets: List<Marketplace.UpdateResourceSecretsByIdSecretsItem>,
+        partial: Boolean? = null,
+        options: RequestOptions? = null,
+    ): Unit {
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "PUT",
+                "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(resourceId)}/secrets",
+                config = clientConfig,
+                body =
+                    SdkClient.bodyMap(
+                        "secrets" to (secrets),
+                        "partial" to (SdkClient.omitIfNull(partial)),
+                    ),
+                operationId = "updateResourceSecretsById",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 }
 
 internal object MarketplaceCreateInstallationsByIntegrationConfigurationIdResX9f149c6e47 {
     /**
-     * Creates one or more experimentation items for an integration resource. Supply an `items` array whose entries identify each item with `id`, `slug`, and `origin`; each item can also include category and descriptive metadata.
+     * Creates one or more experimentation items for an integration resource. Supply an `items`
+     * array whose entries identify each item with `id`, `slug`, and `origin`; each item can also
+     * include category and descriptive metadata.
      *
      * Create one or multiple experimentation items
      */
-    fun createInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems(clientConfig: ClientConfig, integrationConfigurationId: String, resourceId: String, items: List<Marketplace.CreateInstallationsByIntegrationConfigurationIdResourcesByResX71e74b42bd>, options: RequestOptions? = null): Unit {
+    fun createInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        resourceId: String,
+        items:
+            List<
+                Marketplace.CreateInstallationsByIntegrationConfigurationIdResourcesByResX71e74b42bd
+            >,
+        options: RequestOptions? = null,
+    ): Unit {
         Validation.validateItems("items", items, Validation.LengthOpts(max = 50))
 
-        SdkClient.request<Unit>(SdkClient.RequestSpec("POST", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(resourceId)}/experimentation/items", config = clientConfig, body = SdkClient.bodyMap("items" to (items)), operationId = "createInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "POST",
+                "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(resourceId)}/experimentation/items",
+                config = clientConfig,
+                body = SdkClient.bodyMap("items" to (items)),
+                operationId =
+                    "createInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 }
 
 internal object MarketplaceUpdateInstallationsByIntegrationConfigurationIdResX6bce601965 {
     /**
-     * Updates an existing experimentation item for an integration resource. Identify the item with `itemId` and provide its required `slug` and `origin`, along with any other fields you want to change.
+     * Updates an existing experimentation item for an integration resource. Identify the item with
+     * `itemId` and provide its required `slug` and `origin`, along with any other fields you want
+     * to change.
      *
      * Patch an existing experimentation item
      */
-    fun updateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(clientConfig: ClientConfig, request: Marketplace.UpdateInstallationsByIntegrationConfigurationIdResourcesByResX5235ac8d4aRequest, options: RequestOptions? = null): Unit {
-        validateUpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdRequest(request)
+    fun updateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(
+        clientConfig: ClientConfig,
+        request:
+            Marketplace.UpdateInstallationsByIntegrationConfigurationIdResourcesByResX5235ac8d4aRequest,
+        options: RequestOptions? = null,
+    ): Unit {
+        validateUpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdRequest(
+            request
+        )
 
-        SdkClient.request<Unit>(SdkClient.RequestSpec("PATCH", "/v1/installations/${SdkClient.encodePathSegment(request.integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(request.resourceId)}/experimentation/items/${SdkClient.encodePathSegment(request.itemId)}", config = clientConfig, body = SdkClient.bodyMap("slug" to (request.slug), "origin" to (request.origin), "name" to (SdkClient.omitIfNull(request.name)), "category" to (SdkClient.omitIfNull(request.category)), "description" to (SdkClient.omitIfNull(request.description)), "isArchived" to (SdkClient.omitIfNull(request.isArchived)), "createdAt" to (SdkClient.omitIfNull(request.createdAt)), "updatedAt" to (SdkClient.omitIfNull(request.updatedAt))), operationId = "updateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "PATCH",
+                "/v1/installations/${SdkClient.encodePathSegment(request.integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(request.resourceId)}/experimentation/items/${SdkClient.encodePathSegment(request.itemId)}",
+                config = clientConfig,
+                body =
+                    SdkClient.bodyMap(
+                        "slug" to (request.slug),
+                        "origin" to (request.origin),
+                        "name" to (SdkClient.omitIfNull(request.name)),
+                        "category" to (SdkClient.omitIfNull(request.category)),
+                        "description" to (SdkClient.omitIfNull(request.description)),
+                        "isArchived" to (SdkClient.omitIfNull(request.isArchived)),
+                        "createdAt" to (SdkClient.omitIfNull(request.createdAt)),
+                        "updatedAt" to (SdkClient.omitIfNull(request.updatedAt)),
+                    ),
+                operationId =
+                    "updateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 
-
-    private fun validateUpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdRequest(request: Marketplace.UpdateInstallationsByIntegrationConfigurationIdResourcesByResX5235ac8d4aRequest) {
+    private fun validateUpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemIdRequest(
+        request:
+            Marketplace.UpdateInstallationsByIntegrationConfigurationIdResourcesByResX5235ac8d4aRequest
+    ) {
         Validation.validateLength("slug", request.slug, Validation.LengthOpts(max = 1024))
 
         Validation.validateLength("origin", request.origin, Validation.LengthOpts(max = 2048))
 
         if (request.name != null) {
             Validation.validateLength("name", request.name, Validation.LengthOpts(max = 1024))
-}
+        }
 
         if (request.description != null) {
-            Validation.validateLength("description", request.description, Validation.LengthOpts(max = 1024))
-}
+            Validation.validateLength(
+                "description",
+                request.description,
+                Validation.LengthOpts(max = 1024),
+            )
+        }
     }
 }
 
 internal object MarketplaceDeleteInstallationsByIntegrationConfigurationIdResX6dd1548c78 {
     /**
-     * Deletes an experimentation item from an integration resource. Use `integrationConfigurationId`, `resourceId`, and `itemId` to identify the item to remove.
+     * Deletes an experimentation item from an integration resource. Use
+     * `integrationConfigurationId`, `resourceId`, and `itemId` to identify the item to remove.
      *
      * Delete an existing experimentation item
      */
-    fun deleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(clientConfig: ClientConfig, integrationConfigurationId: String, resourceId: String, itemId: String, options: RequestOptions? = null): Unit {
-        SdkClient.request<Unit>(SdkClient.RequestSpec("DELETE", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(resourceId)}/experimentation/items/${SdkClient.encodePathSegment(itemId)}", config = clientConfig, operationId = "deleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+    fun deleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        resourceId: String,
+        itemId: String,
+        options: RequestOptions? = null,
+    ): Unit {
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "DELETE",
+                "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(resourceId)}/experimentation/items/${SdkClient.encodePathSegment(itemId)}",
+                config = clientConfig,
+                operationId =
+                    "deleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 }
 
 internal object MarketplaceHeadInstallationsByIntegrationConfigurationIdResouXac3e5127a0 {
     /**
-     * Retrieves response metadata for a user-provided Global Config associated with an integration resource. Use this endpoint when the user has enabled Global Config syncing and you need to check the configuration without requesting its contents.
+     * Retrieves response metadata for a user-provided Global Config associated with an integration
+     * resource. Use this endpoint when the user has enabled Global Config syncing and you need to
+     * check the configuration without requesting its contents.
      *
-     * When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.
+     * When the user enabled Global Config syncing, then this endpoint can be used by the partner to
+     * fetch the contents of the Global Config.
      */
-    fun headInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(clientConfig: ClientConfig, integrationConfigurationId: String, resourceId: String, options: RequestOptions? = null): Unit {
-        SdkClient.request<Unit>(SdkClient.RequestSpec("HEAD", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(resourceId)}/experimentation/global-config", config = clientConfig, operationId = "headInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
+    fun headInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        resourceId: String,
+        options: RequestOptions? = null,
+    ): Unit {
+        SdkClient.request<Unit>(
+            SdkClient.RequestSpec(
+                "HEAD",
+                "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(resourceId)}/experimentation/global-config",
+                config = clientConfig,
+                operationId =
+                    "headInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig",
+                decoder = SdkClient.ResponseDecoder.EMPTY,
+                options = options,
+            )
+        )
     }
 }
 
 internal object MarketplaceGetInstallationsByIntegrationConfigurationIdResourXfa99fa09d4 {
     /**
-     * Retrieves the contents of a user-provided Global Config for an integration resource. Use this endpoint when the user has enabled Global Config syncing; the response includes the configuration items, digest, and update time.
+     * Retrieves the contents of a user-provided Global Config for an integration resource. Use this
+     * endpoint when the user has enabled Global Config syncing; the response includes the
+     * configuration items, digest, and update time.
      *
-     * When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.
+     * When the user enabled Global Config syncing, then this endpoint can be used by the partner to
+     * fetch the contents of the Global Config.
      */
-    fun getInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(clientConfig: ClientConfig, integrationConfigurationId: String, resourceId: String, options: RequestOptions? = null): Marketplace.GetInstallationsByIntegrationConfigurationIdResourcesByResourX5dfbcfa520 {
-        return SdkClient.request<Marketplace.GetInstallationsByIntegrationConfigurationIdResourcesByResourX5dfbcfa520>(SdkClient.RequestSpec("GET", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(resourceId)}/experimentation/global-config", config = clientConfig, operationId = "getInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun getInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        resourceId: String,
+        options: RequestOptions? = null,
+    ): Marketplace.GetInstallationsByIntegrationConfigurationIdResourcesByResourX5dfbcfa520 {
+        return SdkClient.request<
+                Marketplace.GetInstallationsByIntegrationConfigurationIdResourcesByResourX5dfbcfa520
+            >(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(resourceId)}/experimentation/global-config",
+                    config = clientConfig,
+                    operationId =
+                        "getInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object MarketplaceReplaceInstallationsByIntegrationConfigurationIdReX1db4727493 {
     /**
-     * Replaces the data in a user-provided Global Config for an integration resource. Use this endpoint to push configuration data when the user has enabled Global Config syncing, and provide the new value in `data`.
+     * Replaces the data in a user-provided Global Config for an integration resource. Use this
+     * endpoint to push configuration data when the user has enabled Global Config syncing, and
+     * provide the new value in `data`.
      *
-     * When the user enabled Global Config syncing, then this endpoint can be used by the partner to push their configuration data into the relevant Global Config.
+     * When the user enabled Global Config syncing, then this endpoint can be used by the partner to
+     * push their configuration data into the relevant Global Config.
      */
-    fun replaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(clientConfig: ClientConfig, integrationConfigurationId: String, resourceId: String, data: Map<String, Any>, options: RequestOptions? = null): Marketplace.ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c03db {
-        return SdkClient.request<Marketplace.ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c03db>(SdkClient.RequestSpec("PUT", "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(resourceId)}/experimentation/global-config", config = clientConfig, body = SdkClient.bodyMap("data" to (data)), operationId = "replaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun replaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig(
+        clientConfig: ClientConfig,
+        integrationConfigurationId: String,
+        resourceId: String,
+        data: Map<String, Any>,
+        options: RequestOptions? = null,
+    ): Marketplace.ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c03db {
+        return SdkClient.request<
+                Marketplace.ReplaceInstallationsByIntegrationConfigurationIdResourcesByReXe5b63c03db
+            >(
+                SdkClient.RequestSpec(
+                    "PUT",
+                    "/v1/installations/${SdkClient.encodePathSegment(integrationConfigurationId)}/resources/${SdkClient.encodePathSegment(resourceId)}/experimentation/global-config",
+                    config = clientConfig,
+                    body = SdkClient.bodyMap("data" to (data)),
+                    operationId =
+                        "replaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }

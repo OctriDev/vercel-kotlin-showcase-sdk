@@ -10,7 +10,9 @@ import dev.octri.showcase.vercel.Validation
 
 internal object ProjectsGetProjectTraceOperation {
     /**
-     * Retrieves the OpenTelemetry trace associated with a Vercel CLI request. Provide the project identifier and request identifier to locate the trace. The response includes the trace spans and identifier, and may include resource data and a root span identifier.
+     * Retrieves the OpenTelemetry trace associated with a Vercel CLI request. Provide the project
+     * identifier and request identifier to locate the trace. The response includes the trace spans
+     * and identifier, and may include resource data and a root span identifier.
      *
      * Returns the OTEL trace for a given Vercel CLI request.
      *
@@ -19,27 +21,77 @@ internal object ProjectsGetProjectTraceOperation {
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getProjectTrace(clientConfig: ClientConfig, projectId: String, requestId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Projects.GetProjectTraceResponse {
+    fun getProjectTrace(
+        clientConfig: ClientConfig,
+        projectId: String,
+        requestId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Projects.GetProjectTraceResponse {
         Validation.validateLength("projectId", projectId, Validation.LengthOpts(max = 150))
 
         Validation.validateLength("requestId", requestId, Validation.LengthOpts(max = 256))
 
-        return SdkClient.request<Projects.GetProjectTraceResponse>(SdkClient.RequestSpec("GET", "/v1/projects/traces", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true), "requestId" to SdkClient.queryValue(requestId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getProjectTrace", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+        return SdkClient.request<Projects.GetProjectTraceResponse>(
+                SdkClient.RequestSpec(
+                    "GET",
+                    "/v1/projects/traces",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "projectId" to SdkClient.queryValue(projectId, "form", true),
+                            "requestId" to SdkClient.queryValue(requestId, "form", true),
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    operationId = "getProjectTrace",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }
 
 internal object ProjectsCreateTraceSessionOperation {
     /**
-     * Creates a short-lived HS256 JWT scoped to a deployment hostname. Supply the project identifier and deployment hostname in the request body to define the token scope. The Vercel CLI presents the token to the proxy with requests it wants traced.
+     * Creates a short-lived HS256 JWT scoped to a deployment hostname. Supply the project
+     * identifier and deployment hostname in the request body to define the token scope. The Vercel
+     * CLI presents the token to the proxy with requests it wants traced.
      *
-     * Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI presents this JWT to the Vercel proxy on requests it wants traced.
+     * Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI presents this
+     * JWT to the Vercel proxy on requests it wants traced.
      *
      * @param projectId The project ID the deployment belongs to.
      * @param hostname The deployment hostname to scope the trace session to.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun createTraceSession(clientConfig: ClientConfig, projectId: String, hostname: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Projects.CreateTraceSessionResponse {
-        return SdkClient.request<Projects.CreateTraceSessionResponse>(SdkClient.RequestSpec("POST", "/v1/projects/traces/session", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("projectId" to (projectId), "hostname" to (hostname)), operationId = "createTraceSession", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
+    fun createTraceSession(
+        clientConfig: ClientConfig,
+        projectId: String,
+        hostname: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Projects.CreateTraceSessionResponse {
+        return SdkClient.request<Projects.CreateTraceSessionResponse>(
+                SdkClient.RequestSpec(
+                    "POST",
+                    "/v1/projects/traces/session",
+                    config = clientConfig,
+                    query =
+                        mapOf(
+                            "teamId" to SdkClient.queryValue(teamId, "form", true),
+                            "slug" to SdkClient.queryValue(slug, "form", true),
+                        ),
+                    body = SdkClient.bodyMap("projectId" to (projectId), "hostname" to (hostname)),
+                    operationId = "createTraceSession",
+                    decoder = SdkClient.ResponseDecoder.JSON,
+                    options = options,
+                )
+            )
+            .data
     }
 }

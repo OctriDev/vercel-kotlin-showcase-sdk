@@ -4,55 +4,38 @@
 package dev.octri.showcase.vercel.models
 
 /**
- * Representation of a Flags SDK key returned by CREATE. Includes cleartext secrets (`keyValue`, `tokenValue`, `connectionString`) which are only ever disclosed once, on creation.
+ * Representation of a Flags SDK key returned by CREATE. Includes cleartext secrets (`keyValue`,
+ * `tokenValue`, `connectionString`) which are only ever disclosed once, on creation.
  */
 data class FlagsSdkKeyWithSecrets(
-    /**
-     * Required `number` value serialized in the `createdAt` wire field.
-     */
+    /** Required `number` value serialized in the `createdAt` wire field. */
     val createdAt: Double,
-    /**
-     * Required `string` value serialized in the `createdBy` wire field.
-     */
+    /** Required `string` value serialized in the `createdBy` wire field. */
     val createdBy: String,
-    /**
-     * Required `string` value serialized in the `environment` wire field.
-     */
+    /** Required `string` value serialized in the `environment` wire field. */
     val environment: String,
-    /**
-     * Required `string` value serialized in the `hashKey` wire field.
-     */
+    /** Required `string` value serialized in the `hashKey` wire field. */
     val hashKey: String,
     /**
-     * Partially-masked representation of the SDK key value, safe to display in UIs. The value is the `vf_<type>_` prefix followed by the first 3 characters of the secret portion and a fixed 8-character `*` mask (e.g. `vf_server_abc********`).
+     * Partially-masked representation of the SDK key value, safe to display in UIs. The value is
+     * the `vf_<type>_` prefix followed by the first 3 characters of the secret portion and a fixed
+     * 8-character `*` mask (e.g. `vf_server_abc********`).
      */
     val partialKeyValue: String,
-    /**
-     * Required `string` value serialized in the `projectId` wire field.
-     */
+    /** Required `string` value serialized in the `projectId` wire field. */
     val projectId: String,
-    /**
-     * Required enumerated value serialized in the `type` wire field.
-     */
+    /** Required enumerated value serialized in the `type` wire field. */
     val type: FlagsSdkKeyWithSecretsTypeEnum,
-    /**
-     * Required `number` value serialized in the `updatedAt` wire field.
-     */
+    /** Required `number` value serialized in the `updatedAt` wire field. */
     val updatedAt: Double,
-    /**
-     * Cleartext value of the SDK key.
-     */
+    /** Cleartext value of the SDK key. */
     val keyValue: String,
-    /**
-     * Optional `number` value serialized in the `deletedAt` wire field.
-     */
+    /** Optional `number` value serialized in the `deletedAt` wire field. */
     val deletedAt: Double? = null,
-    /**
-     * Optional `string` value serialized in the `label` wire field.
-     */
+    /** Optional `string` value serialized in the `label` wire field. */
     val label: String? = null,
     /**
      * Cleartext value of the Global Config token, when the project has a Global Config connection.
      */
-    val tokenValue: String? = null
+    val tokenValue: String? = null,
 )

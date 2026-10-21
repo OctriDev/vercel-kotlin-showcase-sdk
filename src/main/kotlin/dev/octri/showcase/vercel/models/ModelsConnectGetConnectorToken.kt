@@ -3,7 +3,12 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetConnectorTokenRequestSubjectVariant0(
     val type: GetConnectorTokenRequestSubjectVariant0TypeEnum
 ) : GetConnectorTokenRequestSubject {
@@ -12,59 +17,83 @@ data class GetConnectorTokenRequestSubjectVariant0(
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetConnectorTokenRequestSubjectVariant1(
     val type: GetConnectorTokenRequestSubjectVariant1TypeEnum,
     val id: String? = null,
-    val issuer: String? = null
+    val issuer: String? = null,
 ) : GetConnectorTokenRequestSubject {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetConnectorTokenRequestSubjectVariant2(
     val type: GetConnectorTokenRequestSubjectVariant2TypeEnum,
     val sub: String? = null,
     val iss: String? = null,
     val aud: String? = null,
-    val additionalClaims: Map<String, Any>? = null
+    val additionalClaims: Map<String, Any>? = null,
 ) : GetConnectorTokenRequestSubject {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetConnectorTokenRequestSubjectVariant3(
     val type: GetConnectorTokenRequestSubjectVariant3TypeEnum,
-    val token: String
+    val token: String,
 ) : GetConnectorTokenRequestSubject
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class GetConnectorTokenRequestSubjectVariant4(
-    val type: String
-) : GetConnectorTokenRequestSubject {
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class GetConnectorTokenRequestSubjectVariant4(val type: String) :
+    GetConnectorTokenRequestSubject {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-/**
- * Typed representation of the `GetConnectorTokenRequestSubject` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = GetConnectorTokenRequestSubject.Deserializer::class)
+/** Typed representation of the `GetConnectorTokenRequestSubject` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = GetConnectorTokenRequestSubject.Deserializer::class
+)
 sealed interface GetConnectorTokenRequestSubject {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<GetConnectorTokenRequestSubject>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<GetConnectorTokenRequestSubject>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): GetConnectorTokenRequestSubject {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = GetConnectorTokenRequestSubjectOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                GetConnectorTokenRequestSubjectOwnedTypes.firstOrNull { (keys, _) ->
+                        keys.any(node::has)
+                    }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -72,18 +101,34 @@ sealed interface GetConnectorTokenRequestSubject {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out GetConnectorTokenRequestSubject>> = listOf(GetConnectorTokenRequestSubjectVariant0::class.java, GetConnectorTokenRequestSubjectVariant1::class.java, GetConnectorTokenRequestSubjectVariant2::class.java, GetConnectorTokenRequestSubjectVariant3::class.java, GetConnectorTokenRequestSubjectVariant4::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out GetConnectorTokenRequestSubject>> =
+                listOf(
+                    GetConnectorTokenRequestSubjectVariant0::class.java,
+                    GetConnectorTokenRequestSubjectVariant1::class.java,
+                    GetConnectorTokenRequestSubjectVariant2::class.java,
+                    GetConnectorTokenRequestSubjectVariant3::class.java,
+                    GetConnectorTokenRequestSubjectVariant4::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, GetConnectorTokenRequestSubject::class.java, "no GetConnectorTokenRequestSubject branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        GetConnectorTokenRequestSubject::class.java,
+                        "no GetConnectorTokenRequestSubject branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val GetConnectorTokenRequestSubjectOwnedTypes: List<Pair<List<String>, Class<out GetConnectorTokenRequestSubject>>> = listOf(
-    listOf("id", "issuer") to GetConnectorTokenRequestSubjectVariant1::class.java,
-    listOf("sub", "iss", "aud", "additionalClaims") to GetConnectorTokenRequestSubjectVariant2::class.java,
-    listOf("token") to GetConnectorTokenRequestSubjectVariant3::class.java,
-)
+internal val GetConnectorTokenRequestSubjectOwnedTypes:
+    List<Pair<List<String>, Class<out GetConnectorTokenRequestSubject>>> =
+    listOf(
+        listOf("id", "issuer") to GetConnectorTokenRequestSubjectVariant1::class.java,
+        listOf("sub", "iss", "aud", "additionalClaims") to
+            GetConnectorTokenRequestSubjectVariant2::class.java,
+        listOf("token") to GetConnectorTokenRequestSubjectVariant3::class.java,
+    )

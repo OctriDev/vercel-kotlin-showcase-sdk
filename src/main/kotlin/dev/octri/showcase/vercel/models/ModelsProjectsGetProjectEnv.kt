@@ -5,77 +5,77 @@ package dev.octri.showcase.vercel.models
 
 data class GetProjectEnvResponseVariant0ContentHintVariant0(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant0ContentHintVariant0TypeEnum
+    val type: GetProjectEnvResponseVariant0ContentHintVariant0TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant0ContentHintVariant1(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant0ContentHintVariant1TypeEnum
+    val type: GetProjectEnvResponseVariant0ContentHintVariant1TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant0ContentHintVariant2(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant0ContentHintVariant2TypeEnum
+    val type: GetProjectEnvResponseVariant0ContentHintVariant2TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant0ContentHintVariant3(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant0ContentHintVariant3TypeEnum
+    val type: GetProjectEnvResponseVariant0ContentHintVariant3TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant0ContentHintVariant4(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant0ContentHintVariant4TypeEnum
+    val type: GetProjectEnvResponseVariant0ContentHintVariant4TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant0ContentHintVariant5(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant0ContentHintVariant5TypeEnum
+    val type: GetProjectEnvResponseVariant0ContentHintVariant5TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant0ContentHintVariant6(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant0ContentHintVariant6TypeEnum
+    val type: GetProjectEnvResponseVariant0ContentHintVariant6TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant0ContentHintVariant7(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant0ContentHintVariant7TypeEnum
+    val type: GetProjectEnvResponseVariant0ContentHintVariant7TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant0ContentHintVariant8(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant0ContentHintVariant8TypeEnum
+    val type: GetProjectEnvResponseVariant0ContentHintVariant8TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant0ContentHintVariant9(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant0ContentHintVariant9TypeEnum
+    val type: GetProjectEnvResponseVariant0ContentHintVariant9TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant0ContentHintVariant10(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant0ContentHintVariant10TypeEnum
+    val type: GetProjectEnvResponseVariant0ContentHintVariant10TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant0ContentHintVariant11(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant0ContentHintVariant11TypeEnum
+    val type: GetProjectEnvResponseVariant0ContentHintVariant11TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant0ContentHintVariant12(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant0ContentHintVariant12TypeEnum
+    val type: GetProjectEnvResponseVariant0ContentHintVariant12TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant0ContentHintVariant13(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant0ContentHintVariant13TypeEnum
+    val type: GetProjectEnvResponseVariant0ContentHintVariant13TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant0ContentHintVariant14(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant0ContentHintVariant14TypeEnum
+    val type: GetProjectEnvResponseVariant0ContentHintVariant14TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant0ContentHintVariant15(
@@ -83,15 +83,20 @@ data class GetProjectEnvResponseVariant0ContentHintVariant15(
     val integrationId: String,
     val integrationProductId: String,
     val storeId: String,
-    val type: GetProjectEnvResponseVariant0ContentHintVariant15TypeEnum
+    val type: GetProjectEnvResponseVariant0ContentHintVariant15TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant0ContentHintVariant16(
     val projectId: String,
-    val type: GetProjectEnvResponseVariant0ContentHintVariant16TypeEnum
+    val type: GetProjectEnvResponseVariant0ContentHintVariant16TypeEnum,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetProjectEnvResponseVariant0(
     val decrypted: Boolean,
     val key: String,
@@ -106,92 +111,91 @@ data class GetProjectEnvResponseVariant0(
     val edgeConfigTokenId: String? = null,
     val gitBranch: String? = null,
     val id: String? = null,
-    /**
-     * This is used to identify variables that have been migrated from type secret to sensitive.
-     */
+    /** This is used to identify variables that have been migrated from type secret to sensitive. */
     val sunsetSecretId: String? = null,
     val target: Any? = null,
     val updatedAt: Double? = null,
     val updatedBy: String? = null,
     /**
-     * User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
+     * User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit
+     * this field and callers fall back to existing `type` behavior.
      */
-    val visibility: GetProjectEnvResponseVariant0VisibilityEnum? = null
+    val visibility: GetProjectEnvResponseVariant0VisibilityEnum? = null,
 ) : GetProjectEnvResponse
 
 data class GetProjectEnvResponseVariant1ContentHintVariant0(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant1ContentHintVariant0TypeEnum
+    val type: GetProjectEnvResponseVariant1ContentHintVariant0TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant1ContentHintVariant1(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant1ContentHintVariant1TypeEnum
+    val type: GetProjectEnvResponseVariant1ContentHintVariant1TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant1ContentHintVariant2(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant1ContentHintVariant2TypeEnum
+    val type: GetProjectEnvResponseVariant1ContentHintVariant2TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant1ContentHintVariant3(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant1ContentHintVariant3TypeEnum
+    val type: GetProjectEnvResponseVariant1ContentHintVariant3TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant1ContentHintVariant4(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant1ContentHintVariant4TypeEnum
+    val type: GetProjectEnvResponseVariant1ContentHintVariant4TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant1ContentHintVariant5(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant1ContentHintVariant5TypeEnum
+    val type: GetProjectEnvResponseVariant1ContentHintVariant5TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant1ContentHintVariant6(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant1ContentHintVariant6TypeEnum
+    val type: GetProjectEnvResponseVariant1ContentHintVariant6TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant1ContentHintVariant7(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant1ContentHintVariant7TypeEnum
+    val type: GetProjectEnvResponseVariant1ContentHintVariant7TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant1ContentHintVariant8(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant1ContentHintVariant8TypeEnum
+    val type: GetProjectEnvResponseVariant1ContentHintVariant8TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant1ContentHintVariant9(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant1ContentHintVariant9TypeEnum
+    val type: GetProjectEnvResponseVariant1ContentHintVariant9TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant1ContentHintVariant10(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant1ContentHintVariant10TypeEnum
+    val type: GetProjectEnvResponseVariant1ContentHintVariant10TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant1ContentHintVariant11(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant1ContentHintVariant11TypeEnum
+    val type: GetProjectEnvResponseVariant1ContentHintVariant11TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant1ContentHintVariant12(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant1ContentHintVariant12TypeEnum
+    val type: GetProjectEnvResponseVariant1ContentHintVariant12TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant1ContentHintVariant13(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant1ContentHintVariant13TypeEnum
+    val type: GetProjectEnvResponseVariant1ContentHintVariant13TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant1ContentHintVariant14(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant1ContentHintVariant14TypeEnum
+    val type: GetProjectEnvResponseVariant1ContentHintVariant14TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant1ContentHintVariant15(
@@ -199,15 +203,20 @@ data class GetProjectEnvResponseVariant1ContentHintVariant15(
     val integrationId: String,
     val integrationProductId: String,
     val storeId: String,
-    val type: GetProjectEnvResponseVariant1ContentHintVariant15TypeEnum
+    val type: GetProjectEnvResponseVariant1ContentHintVariant15TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant1ContentHintVariant16(
     val projectId: String,
-    val type: GetProjectEnvResponseVariant1ContentHintVariant16TypeEnum
+    val type: GetProjectEnvResponseVariant1ContentHintVariant16TypeEnum,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetProjectEnvResponseVariant1(
     val decrypted: Boolean,
     val key: String,
@@ -223,92 +232,91 @@ data class GetProjectEnvResponseVariant1(
     val edgeConfigTokenId: String? = null,
     val gitBranch: String? = null,
     val id: String? = null,
-    /**
-     * This is used to identify variables that have been migrated from type secret to sensitive.
-     */
+    /** This is used to identify variables that have been migrated from type secret to sensitive. */
     val sunsetSecretId: String? = null,
     val target: Any? = null,
     val updatedAt: Double? = null,
     val updatedBy: String? = null,
     /**
-     * User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
+     * User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit
+     * this field and callers fall back to existing `type` behavior.
      */
-    val visibility: GetProjectEnvResponseVariant1VisibilityEnum? = null
+    val visibility: GetProjectEnvResponseVariant1VisibilityEnum? = null,
 ) : GetProjectEnvResponse
 
 data class GetProjectEnvResponseVariant2ContentHintVariant0(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant2ContentHintVariant0TypeEnum
+    val type: GetProjectEnvResponseVariant2ContentHintVariant0TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant2ContentHintVariant1(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant2ContentHintVariant1TypeEnum
+    val type: GetProjectEnvResponseVariant2ContentHintVariant1TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant2ContentHintVariant2(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant2ContentHintVariant2TypeEnum
+    val type: GetProjectEnvResponseVariant2ContentHintVariant2TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant2ContentHintVariant3(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant2ContentHintVariant3TypeEnum
+    val type: GetProjectEnvResponseVariant2ContentHintVariant3TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant2ContentHintVariant4(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant2ContentHintVariant4TypeEnum
+    val type: GetProjectEnvResponseVariant2ContentHintVariant4TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant2ContentHintVariant5(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant2ContentHintVariant5TypeEnum
+    val type: GetProjectEnvResponseVariant2ContentHintVariant5TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant2ContentHintVariant6(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant2ContentHintVariant6TypeEnum
+    val type: GetProjectEnvResponseVariant2ContentHintVariant6TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant2ContentHintVariant7(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant2ContentHintVariant7TypeEnum
+    val type: GetProjectEnvResponseVariant2ContentHintVariant7TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant2ContentHintVariant8(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant2ContentHintVariant8TypeEnum
+    val type: GetProjectEnvResponseVariant2ContentHintVariant8TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant2ContentHintVariant9(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant2ContentHintVariant9TypeEnum
+    val type: GetProjectEnvResponseVariant2ContentHintVariant9TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant2ContentHintVariant10(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant2ContentHintVariant10TypeEnum
+    val type: GetProjectEnvResponseVariant2ContentHintVariant10TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant2ContentHintVariant11(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant2ContentHintVariant11TypeEnum
+    val type: GetProjectEnvResponseVariant2ContentHintVariant11TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant2ContentHintVariant12(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant2ContentHintVariant12TypeEnum
+    val type: GetProjectEnvResponseVariant2ContentHintVariant12TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant2ContentHintVariant13(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant2ContentHintVariant13TypeEnum
+    val type: GetProjectEnvResponseVariant2ContentHintVariant13TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant2ContentHintVariant14(
     val storeId: String,
-    val type: GetProjectEnvResponseVariant2ContentHintVariant14TypeEnum
+    val type: GetProjectEnvResponseVariant2ContentHintVariant14TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant2ContentHintVariant15(
@@ -316,26 +324,30 @@ data class GetProjectEnvResponseVariant2ContentHintVariant15(
     val integrationId: String,
     val integrationProductId: String,
     val storeId: String,
-    val type: GetProjectEnvResponseVariant2ContentHintVariant15TypeEnum
+    val type: GetProjectEnvResponseVariant2ContentHintVariant15TypeEnum,
 )
 
 data class GetProjectEnvResponseVariant2ContentHintVariant16(
     val projectId: String,
-    val type: GetProjectEnvResponseVariant2ContentHintVariant16TypeEnum
+    val type: GetProjectEnvResponseVariant2ContentHintVariant16TypeEnum,
 )
 
-/**
- * Similar to `contentHints`, but should not be exposed to the user.
- */
+/** Similar to `contentHints`, but should not be exposed to the user. */
 data class GetProjectEnvResponseVariant2InternalContentHint(
     /**
-     * Contains the `value` of the env variable, encrypted with a special key to make decryption possible in the subscriber Lambda.
+     * Contains the `value` of the env variable, encrypted with a special key to make decryption
+     * possible in the subscriber Lambda.
      */
     val encryptedValue: String,
-    val type: GetProjectEnvResponseVariant2InternalContentHintTypeEnum
+    val type: GetProjectEnvResponseVariant2InternalContentHintTypeEnum,
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetProjectEnvResponseVariant2(
     val key: String,
     val type: GetProjectEnvResponseVariant2TypeEnum,
@@ -351,31 +363,26 @@ data class GetProjectEnvResponseVariant2(
     val edgeConfigTokenId: String? = null,
     val gitBranch: String? = null,
     val id: String? = null,
-    /**
-     * Similar to `contentHints`, but should not be exposed to the user.
-     */
+    /** Similar to `contentHints`, but should not be exposed to the user. */
     val internalContentHint: GetProjectEnvResponseVariant2InternalContentHint? = null,
-    /**
-     * Legacy now-encryption ciphertext, present after migration swaps value/vsmValue
-     */
+    /** Legacy now-encryption ciphertext, present after migration swaps value/vsmValue */
     val legacyValue: String? = null,
-    /**
-     * This is used to identify variables that have been migrated from type secret to sensitive.
-     */
+    /** This is used to identify variables that have been migrated from type secret to sensitive. */
     val sunsetSecretId: String? = null,
     val target: Any? = null,
     val updatedAt: Double? = null,
     val updatedBy: String? = null,
     /**
-     * User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior.
+     * User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit
+     * this field and callers fall back to existing `type` behavior.
      */
-    val visibility: GetProjectEnvResponseVariant2VisibilityEnum? = null
+    val visibility: GetProjectEnvResponseVariant2VisibilityEnum? = null,
 ) : GetProjectEnvResponse
 
-/**
- * Typed representation of the `GetProjectEnvResponse` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = GetProjectEnvResponse.Deserializer::class)
+/** Typed representation of the `GetProjectEnvResponse` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = GetProjectEnvResponse.Deserializer::class
+)
 sealed interface GetProjectEnvResponse {
     /** Chooses the branch this payload is shaped like. */
     class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<GetProjectEnvResponse>() {
@@ -385,7 +392,9 @@ sealed interface GetProjectEnvResponse {
         ): GetProjectEnvResponse {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = GetProjectEnvResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                GetProjectEnvResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -393,16 +402,29 @@ sealed interface GetProjectEnvResponse {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out GetProjectEnvResponse>> = listOf(GetProjectEnvResponseVariant0::class.java, GetProjectEnvResponseVariant1::class.java, GetProjectEnvResponseVariant2::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out GetProjectEnvResponse>> =
+                listOf(
+                    GetProjectEnvResponseVariant0::class.java,
+                    GetProjectEnvResponseVariant1::class.java,
+                    GetProjectEnvResponseVariant2::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, GetProjectEnvResponse::class.java, "no GetProjectEnvResponse branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        GetProjectEnvResponse::class.java,
+                        "no GetProjectEnvResponse branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val GetProjectEnvResponseOwnedTypes: List<Pair<List<String>, Class<out GetProjectEnvResponse>>> = listOf(
-    listOf("internalContentHint", "legacyValue") to GetProjectEnvResponseVariant2::class.java,
-)
+internal val GetProjectEnvResponseOwnedTypes:
+    List<Pair<List<String>, Class<out GetProjectEnvResponse>>> =
+    listOf(
+        listOf("internalContentHint", "legacyValue") to GetProjectEnvResponseVariant2::class.java
+    )

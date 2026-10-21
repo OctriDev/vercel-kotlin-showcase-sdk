@@ -3,29 +3,42 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class UpdateDomainsResponseVariant0(
-    val moved: Boolean
-) : UpdateDomainsResponse
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class UpdateDomainsResponseVariant0(val moved: Boolean) : UpdateDomainsResponse
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UpdateDomainsResponseVariant1(
     val moved: Boolean,
-    val token: String
+    val token: String,
 ) : UpdateDomainsResponse
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UpdateDomainsResponseVariant2(
     val echMode: UpdateDomainsResponseVariant2EchModeEnum,
     val customNameservers: List<String>? = null,
     val renew: Boolean? = null,
-    val zone: Boolean? = null
+    val zone: Boolean? = null,
 ) : UpdateDomainsResponse
 
-/**
- * Typed representation of the `UpdateDomainsResponse` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UpdateDomainsResponse.Deserializer::class)
+/** Typed representation of the `UpdateDomainsResponse` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = UpdateDomainsResponse.Deserializer::class
+)
 sealed interface UpdateDomainsResponse {
     /** Chooses the branch this payload is shaped like. */
     class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UpdateDomainsResponse>() {
@@ -35,7 +48,9 @@ sealed interface UpdateDomainsResponse {
         ): UpdateDomainsResponse {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = UpdateDomainsResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                UpdateDomainsResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -43,17 +58,31 @@ sealed interface UpdateDomainsResponse {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out UpdateDomainsResponse>> = listOf(UpdateDomainsResponseVariant0::class.java, UpdateDomainsResponseVariant1::class.java, UpdateDomainsResponseVariant2::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out UpdateDomainsResponse>> =
+                listOf(
+                    UpdateDomainsResponseVariant0::class.java,
+                    UpdateDomainsResponseVariant1::class.java,
+                    UpdateDomainsResponseVariant2::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, UpdateDomainsResponse::class.java, "no UpdateDomainsResponse branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        UpdateDomainsResponse::class.java,
+                        "no UpdateDomainsResponse branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val UpdateDomainsResponseOwnedTypes: List<Pair<List<String>, Class<out UpdateDomainsResponse>>> = listOf(
-    listOf("token") to UpdateDomainsResponseVariant1::class.java,
-    listOf("customNameservers", "echMode", "renew", "zone") to UpdateDomainsResponseVariant2::class.java,
-)
+internal val UpdateDomainsResponseOwnedTypes:
+    List<Pair<List<String>, Class<out UpdateDomainsResponse>>> =
+    listOf(
+        listOf("token") to UpdateDomainsResponseVariant1::class.java,
+        listOf("customNameservers", "echMode", "renew", "zone") to
+            UpdateDomainsResponseVariant2::class.java,
+    )

@@ -3,128 +3,192 @@
 
 package dev.octri.showcase.vercel.models
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXc519de25f0 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXc519de25f0 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXc519de25f0
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXc519de25f0 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXc519de25f0(false)
-        @JvmField val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXc519de25f0(true)
+        @JvmField
+        val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXc519de25f0(false)
+        @JvmField
+        val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXc519de25f0(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXc519de25f0(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXc519de25f0(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX32a4dd4d62 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX32a4dd4d62 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX32a4dd4d62
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX32a4dd4d62 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX32a4dd4d62(false)
-        @JvmField val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX32a4dd4d62(true)
+        @JvmField
+        val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX32a4dd4d62(false)
+        @JvmField
+        val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX32a4dd4d62(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX32a4dd4d62(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX32a4dd4d62(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX9dbcb10336 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX9dbcb10336 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX9dbcb10336
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX9dbcb10336 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX9dbcb10336(false)
-        @JvmField val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX9dbcb10336(true)
+        @JvmField
+        val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX9dbcb10336(false)
+        @JvmField
+        val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX9dbcb10336(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX9dbcb10336(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX9dbcb10336(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXaf869c2ba7 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXaf869c2ba7 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXaf869c2ba7
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXaf869c2ba7 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXaf869c2ba7(false)
-        @JvmField val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXaf869c2ba7(true)
+        @JvmField
+        val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXaf869c2ba7(false)
+        @JvmField
+        val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXaf869c2ba7(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXaf869c2ba7(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXaf869c2ba7(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1CleanUrlsEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1CleanUrlsEnum && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1CleanUrlsEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1CleanUrlsEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1CleanUrlsEnum(false)
+        @JvmField
+        val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1CleanUrlsEnum(false)
         @JvmField val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1CleanUrlsEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateDeploymentResponseVariant1ServicesItemVariant1CleanUrlsEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1CleanUrlsEnum(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXc13de1a4fa private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXc13de1a4fa && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXc13de1a4fa
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXc13de1a4fa &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val STRICT = CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXc13de1a4fa("strict")
+        @JvmField
+        val STRICT =
+            CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXc13de1a4fa("strict")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXc13de1a4fa(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXc13de1a4fa(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX7e06db9d40 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX7e06db9d40 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX7e06db9d40
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX7e06db9d40 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val ARM64 = CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX7e06db9d40("arm64")
-        @JvmField val X86_64 = CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX7e06db9d40("x86_64")
+        @JvmField
+        val ARM64 =
+            CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX7e06db9d40("arm64")
+        @JvmField
+        val X86_64 =
+            CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX7e06db9d40("x86_64")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX7e06db9d40(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX7e06db9d40(value)
     }
 }
 
-/**
- * Event type - must be "queue/v1beta" (REQUIRED)
- */
-enum class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXa1d65421b6(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/** Event type - must be "queue/v1beta" (REQUIRED) */
+enum class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXa1d65421b6(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     QUEUE_V1BETA("queue/v1beta");
 
     override fun toString() = value
@@ -132,15 +196,16 @@ enum class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXa1d6542
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/**
- * Event type - must be "queue/v2beta" (REQUIRED)
- */
-enum class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXed39e9ad92(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/** Event type - must be "queue/v2beta" (REQUIRED) */
+enum class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXed39e9ad92(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     QUEUE_V2BETA("queue/v2beta");
 
     override fun toString() = value
@@ -148,15 +213,16 @@ enum class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXed39e9a
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/**
- * Event type - must be "schedule/v1beta" (REQUIRED)
- */
-enum class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX240c3cc574(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/** Event type - must be "schedule/v1beta" (REQUIRED) */
+enum class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX240c3cc574(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     SCHEDULE_V1BETA("schedule/v1beta");
 
     override fun toString() = value
@@ -164,415 +230,649 @@ enum class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX240c3cc
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXec8c29bb5d private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXec8c29bb5d && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXec8c29bb5d
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXec8c29bb5d &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val MAX = CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXec8c29bb5d("max")
+        @JvmField
+        val MAX = CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXec8c29bb5d("max")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXec8c29bb5d(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXec8c29bb5d(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX62f4eec0c7 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX62f4eec0c7 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX62f4eec0c7
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX62f4eec0c7 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX62f4eec0c7(false)
-        @JvmField val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX62f4eec0c7(true)
+        @JvmField
+        val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX62f4eec0c7(false)
+        @JvmField
+        val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX62f4eec0c7(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX62f4eec0c7(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX62f4eec0c7(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXa1db2691b4 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXa1db2691b4 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXa1db2691b4
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXa1db2691b4 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val HOST = CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXa1db2691b4("host")
+        @JvmField
+        val HOST = CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXa1db2691b4("host")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXa1db2691b4(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXa1db2691b4(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXb69cfab04a private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXb69cfab04a && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXb69cfab04a
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXb69cfab04a &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val COOKIE = CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXb69cfab04a("cookie")
-        @JvmField val HEADER = CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXb69cfab04a("header")
-        @JvmField val QUERY = CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXb69cfab04a("query")
+        @JvmField
+        val COOKIE =
+            CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXb69cfab04a("cookie")
+        @JvmField
+        val HEADER =
+            CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXb69cfab04a("header")
+        @JvmField
+        val QUERY =
+            CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXb69cfab04a("query")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXb69cfab04a(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXb69cfab04a(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXf9c64b53c2 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXf9c64b53c2 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXf9c64b53c2
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXf9c64b53c2 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val HOST = CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXf9c64b53c2("host")
+        @JvmField
+        val HOST = CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXf9c64b53c2("host")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXf9c64b53c2(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXf9c64b53c2(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX685bb1d0a6 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX685bb1d0a6 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX685bb1d0a6
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX685bb1d0a6 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val COOKIE = CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX685bb1d0a6("cookie")
-        @JvmField val HEADER = CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX685bb1d0a6("header")
-        @JvmField val QUERY = CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX685bb1d0a6("query")
+        @JvmField
+        val COOKIE =
+            CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX685bb1d0a6("cookie")
+        @JvmField
+        val HEADER =
+            CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX685bb1d0a6("header")
+        @JvmField
+        val QUERY =
+            CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX685bb1d0a6("query")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX685bb1d0a6(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX685bb1d0a6(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXc10e92c28e private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXc10e92c28e && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXc10e92c28e
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXc10e92c28e &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val HOST = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXc10e92c28e("host")
+        @JvmField
+        val HOST = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXc10e92c28e("host")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXc10e92c28e(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXc10e92c28e(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX02b00a2b21 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX02b00a2b21 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX02b00a2b21
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX02b00a2b21 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val COOKIE = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX02b00a2b21("cookie")
-        @JvmField val HEADER = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX02b00a2b21("header")
-        @JvmField val QUERY = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX02b00a2b21("query")
+        @JvmField
+        val COOKIE =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX02b00a2b21("cookie")
+        @JvmField
+        val HEADER =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX02b00a2b21("header")
+        @JvmField
+        val QUERY =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX02b00a2b21("query")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX02b00a2b21(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX02b00a2b21(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX9e6e46d987 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX9e6e46d987 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX9e6e46d987
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX9e6e46d987 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val HOST = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX9e6e46d987("host")
+        @JvmField
+        val HOST = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX9e6e46d987("host")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX9e6e46d987(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX9e6e46d987(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX2ea7816a35 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX2ea7816a35 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX2ea7816a35
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX2ea7816a35 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val COOKIE = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX2ea7816a35("cookie")
-        @JvmField val HEADER = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX2ea7816a35("header")
-        @JvmField val QUERY = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX2ea7816a35("query")
+        @JvmField
+        val COOKIE =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX2ea7816a35("cookie")
+        @JvmField
+        val HEADER =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX2ea7816a35("header")
+        @JvmField
+        val QUERY =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX2ea7816a35("query")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX2ea7816a35(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX2ea7816a35(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXfe4399ec26 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXfe4399ec26 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXfe4399ec26
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXfe4399ec26 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXfe4399ec26(false)
-        @JvmField val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXfe4399ec26(true)
+        @JvmField
+        val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXfe4399ec26(false)
+        @JvmField
+        val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXfe4399ec26(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXfe4399ec26(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXfe4399ec26(value)
     }
 }
 
 /**
- * Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
+ * Optional explicit format marker. The destination is identified by the presence of `service`, so
+ * `type` is no longer required.
  */
-class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX191bf81f71 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX191bf81f71 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX191bf81f71
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX191bf81f71 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val SERVICE = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX191bf81f71("service")
+        @JvmField
+        val SERVICE =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX191bf81f71("service")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX191bf81f71(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX191bf81f71(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX48fc56fcd3 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX48fc56fcd3 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX48fc56fcd3
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX48fc56fcd3 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val HOST = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX48fc56fcd3("host")
+        @JvmField
+        val HOST = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX48fc56fcd3("host")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX48fc56fcd3(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX48fc56fcd3(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXc00dca8f40 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXc00dca8f40 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXc00dca8f40
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXc00dca8f40 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val COOKIE = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXc00dca8f40("cookie")
-        @JvmField val HEADER = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXc00dca8f40("header")
-        @JvmField val QUERY = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXc00dca8f40("query")
+        @JvmField
+        val COOKIE =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXc00dca8f40("cookie")
+        @JvmField
+        val HEADER =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXc00dca8f40("header")
+        @JvmField
+        val QUERY =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXc00dca8f40("query")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXc00dca8f40(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXc00dca8f40(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX82b15a1005 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX82b15a1005 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX82b15a1005
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX82b15a1005 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val HOST = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX82b15a1005("host")
+        @JvmField
+        val HOST = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX82b15a1005("host")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX82b15a1005(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX82b15a1005(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX2e26fc5b95 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX2e26fc5b95 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX2e26fc5b95
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX2e26fc5b95 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val COOKIE = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX2e26fc5b95("cookie")
-        @JvmField val HEADER = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX2e26fc5b95("header")
-        @JvmField val QUERY = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX2e26fc5b95("query")
+        @JvmField
+        val COOKIE =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX2e26fc5b95("cookie")
+        @JvmField
+        val HEADER =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX2e26fc5b95("header")
+        @JvmField
+        val QUERY =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX2e26fc5b95("query")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX2e26fc5b95(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX2e26fc5b95(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX5d7314e361 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX5d7314e361 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX5d7314e361
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX5d7314e361 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX5d7314e361(false)
-        @JvmField val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX5d7314e361(true)
+        @JvmField
+        val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX5d7314e361(false)
+        @JvmField
+        val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX5d7314e361(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX5d7314e361(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX5d7314e361(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX37cf0a5db9 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX37cf0a5db9 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX37cf0a5db9
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX37cf0a5db9 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val SET = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX37cf0a5db9("set")
+        @JvmField
+        val SET = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX37cf0a5db9("set")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX37cf0a5db9(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX37cf0a5db9(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX56d9a29325 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX56d9a29325 && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX56d9a29325
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX56d9a29325 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val REQUEST_PATH = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX56d9a29325("request.path")
+        @JvmField
+        val REQUEST_PATH =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX56d9a29325("request.path")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX56d9a29325(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX56d9a29325(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX305a6e2ddb private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX305a6e2ddb && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX305a6e2ddb
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX305a6e2ddb &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX305a6e2ddb(false)
-        @JvmField val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX305a6e2ddb(true)
+        @JvmField
+        val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX305a6e2ddb(false)
+        @JvmField
+        val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX305a6e2ddb(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX305a6e2ddb(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX305a6e2ddb(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXf09746a87b private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXf09746a87b && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXf09746a87b
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXf09746a87b &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXf09746a87b(false)
-        @JvmField val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXf09746a87b(true)
+        @JvmField
+        val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXf09746a87b(false)
+        @JvmField
+        val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXf09746a87b(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXf09746a87b(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXf09746a87b(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXb4fd63266b private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXb4fd63266b && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXb4fd63266b
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXb4fd63266b &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXb4fd63266b(false)
-        @JvmField val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXb4fd63266b(true)
+        @JvmField
+        val FALSE = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXb4fd63266b(false)
+        @JvmField
+        val TRUE = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXb4fd63266b(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXb4fd63266b(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXb4fd63266b(value)
     }
 }
 
 /**
- * Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
+ * Optional explicit format marker. The destination is identified by the presence of `service`, so
+ * `type` is no longer required.
  */
-class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXbe2c8fe7fe private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXbe2c8fe7fe && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXbe2c8fe7fe
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXbe2c8fe7fe &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val SERVICE = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXbe2c8fe7fe("service")
+        @JvmField
+        val SERVICE =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXbe2c8fe7fe("service")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXbe2c8fe7fe(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXbe2c8fe7fe(value)
     }
 }
 
-class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX298e00d4fa private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX298e00d4fa && value == other.value
+class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX298e00d4fa
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX298e00d4fa &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val HOST = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX298e00d4fa("host")
+        @JvmField
+        val HOST = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX298e00d4fa("host")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX298e00d4fa(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX298e00d4fa(value)
     }
 }

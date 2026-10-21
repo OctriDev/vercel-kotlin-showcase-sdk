@@ -3,42 +3,86 @@
 
 package dev.octri.showcase.vercel
 
-
 class WebAnalyticsNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Aggregates page views for a project within a requested date range. Use `by` to group results by up to two dimensions and `filter` to restrict the data; `since` and `until` define the inclusive range. The optional `limit` controls the number of distinct results, with remaining results grouped as “Others.”
+     * Aggregates page views for a project within a requested date range. Use `by` to group results
+     * by up to two dimensions and `filter` to restrict the data; `since` and `until` define the
+     * inclusive range. The optional `limit` controls the number of distinct results, with remaining
+     * results grouped as “Others.”
      *
-     * Counts pageviews on a project, within the requested date range. Results are either aggregated or broken down over time. Results can additionally be broken down by one dimension, and filtered by multiple dimensions.
+     * Counts pageviews on a project, within the requested date range. Results are either aggregated
+     * or broken down over time. Results can additionally be broken down by one dimension, and
+     * filtered by multiple dimensions.
      */
-    fun aggregatePageviews(request: dev.octri.showcase.vercel.methods.WebAnalytics.AggregatePageviewsRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.WebAnalytics.AggregatePageviewsResponse {
-        return dev.octri.showcase.vercel.methods.WebAnalytics.aggregatePageviews(clientConfig, request, options)
+    fun aggregatePageviews(
+        request: dev.octri.showcase.vercel.methods.WebAnalytics.AggregatePageviewsRequest,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.WebAnalytics.AggregatePageviewsResponse {
+        return dev.octri.showcase.vercel.methods.WebAnalytics.aggregatePageviews(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Aggregates custom events for a project within a requested date range. Use `by` to group results by up to two dimensions and `filter` to restrict the data; `since` and `until` define the inclusive range. The optional `limit` controls the number of distinct results, with remaining results grouped as “Others.”
+     * Aggregates custom events for a project within a requested date range. Use `by` to group
+     * results by up to two dimensions and `filter` to restrict the data; `since` and `until` define
+     * the inclusive range. The optional `limit` controls the number of distinct results, with
+     * remaining results grouped as “Others.”
      *
-     * Counts custom events on a project, within the requested date range. Results are either aggregated or broken down over time. Results can additionally be broken down by one dimension, and filtered by multiple dimensions.
+     * Counts custom events on a project, within the requested date range. Results are either
+     * aggregated or broken down over time. Results can additionally be broken down by one
+     * dimension, and filtered by multiple dimensions.
      */
-    fun aggregateEvents(request: dev.octri.showcase.vercel.methods.WebAnalytics.AggregateEventsRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.WebAnalytics.AggregateEventsResponse {
-        return dev.octri.showcase.vercel.methods.WebAnalytics.aggregateEvents(clientConfig, request, options)
+    fun aggregateEvents(
+        request: dev.octri.showcase.vercel.methods.WebAnalytics.AggregateEventsRequest,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.WebAnalytics.AggregateEventsResponse {
+        return dev.octri.showcase.vercel.methods.WebAnalytics.aggregateEvents(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Counts page views for a project since Web Analytics was enabled; the count covers production data only. Use `since` and `until` to select a date range, and `filter` to restrict results by supported dimensions. The date bounds accept timestamps in milliseconds or valid date strings.
+     * Counts page views for a project since Web Analytics was enabled; the count covers production
+     * data only. Use `since` and `until` to select a date range, and `filter` to restrict results
+     * by supported dimensions. The date bounds accept timestamps in milliseconds or valid date
+     * strings.
      *
-     * Counts the number of page views on a project (production only), since Web Analytics was enabled. Results can be filtered on supported dimensions.
+     * Counts the number of page views on a project (production only), since Web Analytics was
+     * enabled. Results can be filtered on supported dimensions.
      */
-    fun countPageviews(request: dev.octri.showcase.vercel.methods.WebAnalytics.CountPageviewsRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.WebAnalytics.CountPageviewsResponse {
-        return dev.octri.showcase.vercel.methods.WebAnalytics.countPageviews(clientConfig, request, options)
+    fun countPageviews(
+        request: dev.octri.showcase.vercel.methods.WebAnalytics.CountPageviewsRequest,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.WebAnalytics.CountPageviewsResponse {
+        return dev.octri.showcase.vercel.methods.WebAnalytics.countPageviews(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Counts custom events for a project since Web Analytics was enabled; the count covers production data only. Use `since` and `until` to select a date range, and `filter` to restrict results by supported dimensions, including `eventName` and event data. The date bounds accept timestamps in milliseconds or valid date strings.
+     * Counts custom events for a project since Web Analytics was enabled; the count covers
+     * production data only. Use `since` and `until` to select a date range, and `filter` to
+     * restrict results by supported dimensions, including `eventName` and event data. The date
+     * bounds accept timestamps in milliseconds or valid date strings.
      *
-     * Counts the number of custom events on a project (production only), since Web Analytics was enabled. Results can be filtered on supported dimensions.
+     * Counts the number of custom events on a project (production only), since Web Analytics was
+     * enabled. Results can be filtered on supported dimensions.
      */
-    fun countEvents(request: dev.octri.showcase.vercel.methods.WebAnalytics.CountEventsRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.WebAnalytics.CountEventsResponse {
-        return dev.octri.showcase.vercel.methods.WebAnalytics.countEvents(clientConfig, request, options)
+    fun countEvents(
+        request: dev.octri.showcase.vercel.methods.WebAnalytics.CountEventsRequest,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.WebAnalytics.CountEventsResponse {
+        return dev.octri.showcase.vercel.methods.WebAnalytics.countEvents(
+            clientConfig,
+            request,
+            options,
+        )
     }
-
 }
