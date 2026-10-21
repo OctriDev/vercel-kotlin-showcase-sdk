@@ -4,47 +4,45 @@
 package dev.octri.showcase.vercel.models
 
 /**
- * Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly
- * derived from the function path. Only one trigger per function is allowed.
+ * Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed.
  */
 data class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX8ee285b046(
-    /** Name of the queue topic to consume from (REQUIRED) */
+    /**
+     * Name of the queue topic to consume from (REQUIRED)
+     */
     val topic: String,
-    /** Event type - must be "queue/v2beta" (REQUIRED) */
+    /**
+     * Event type - must be "queue/v2beta" (REQUIRED)
+     */
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX3f8f0956f9,
     /**
-     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use
-     * 0 for no initial delay. Behavior when not specified depends on the server's default
-     * configuration.
+     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
      */
     val initialDelaySeconds: Double? = null,
     /**
-     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if
-     * specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxConcurrency: Double? = null,
     /**
-     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the
-     * total number of times a message can be delivered, not the number of retries. Must be at least
-     * 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxDeliveries: Double? = null,
     /**
-     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified
-     * depends on the server's default configuration.
+     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
      */
-    val retryAfterSeconds: Double? = null,
+    val retryAfterSeconds: Double? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX95c73cc1e0(
-    /** Event type - must be "schedule/v1beta" (REQUIRED) */
+    /**
+     * Event type - must be "schedule/v1beta" (REQUIRED)
+     */
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX7c7841c1ae
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXd79d159a55(
     val affinity: CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX244bc2af34? = null,
-    val architecture: CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXd892dff5a3? =
-        null,
+    val architecture: CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXd892dff5a3? = null,
     val excludeFiles: String? = null,
     val experimentalTriggers: List<Any>? = null,
     val functionFailoverRegions: List<String>? = null,
@@ -54,7 +52,7 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXd79d159
     val memory: Double? = null,
     val regions: List<String>? = null,
     val runtime: String? = null,
-    val supportsCancellation: Boolean? = null,
+    val supportsCancellation: Boolean? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa6786814f9(
@@ -71,84 +69,108 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa678681
     val nodeVersion: String? = null,
     val outputDirectory: String? = null,
     val rootDirectory: String? = null,
-    val sourceFilesOutsideRootDirectory: Boolean? = null,
+    val sourceFilesOutsideRootDirectory: Boolean? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX19e39a667b(
-    /** Runtime-specific entrypoint locator from `vercel.json`. */
+    /**
+     * Runtime-specific entrypoint locator from `vercel.json`.
+     */
     val entrypoint: String,
-    /** Names of the schedules that dispatch to this entrypoint, in config order. */
+    /**
+     * Names of the schedules that dispatch to this entrypoint, in config order.
+     */
     val scheduleNames: List<String>,
-    /** Project-relative source file that contains the entrypoint. */
-    val sourceFile: String,
+    /**
+     * Project-relative source file that contains the entrypoint.
+     */
+    val sourceFile: String
 )
 
-/** Set when this build produces a function for schedule entrypoints. */
+/**
+ * Set when this build produces a function for schedule entrypoints.
+ */
 data class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX7fd7b0d32a(
     val entrypoints: List<CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX19e39a667b>,
-    /** Function output path every schedule in this build targets. */
-    val outputPath: String,
+    /**
+     * Function output path every schedule in this build targets.
+     */
+    val outputPath: String
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderConfig(
     val buildCommand: String? = null,
-    /** Buildpack runtime slug (e.g. "ruby"). */
+    /**
+     * Buildpack runtime slug (e.g. "ruby").
+     */
     val buildpack: String? = null,
     val bundle: Boolean? = null,
     val bunVersion: String? = null,
-    /** Set when this build produces the named daemon. */
+    /**
+     * Set when this build produces the named daemon.
+     */
     val daemon: CreateDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDaemon? = null,
     val debug: Boolean? = null,
     val devCommand: String? = null,
     val excludeFiles: Any? = null,
     val framework: String? = null,
-    val functions:
-        Map<String, CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXd79d159a55>? =
-        null,
+    val functions: Map<String, CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXd79d159a55>? = null,
     val helpers: Boolean? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("import")
-    val `import`: Map<String, String>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("import") val `import`: Map<String, String>? = null,
     val includeFiles: Any? = null,
     val installCommand: String? = null,
     val ldsflags: String? = null,
     val maxLambdaSize: String? = null,
     val middleware: Boolean? = null,
     val middlewareMatcher: Any? = null,
-    /** Enforced runtime for explicitly configured Routing Middleware. */
-    val middlewareRuntime:
-        CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXe2e540972f? =
-        null,
+    /**
+     * Enforced runtime for explicitly configured Routing Middleware.
+     */
+    val middlewareRuntime: CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXe2e540972f? = null,
     val nodeVersion: String? = null,
     val outputDirectory: String? = null,
-    val projectSettings: CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa6786814f9? =
-        null,
+    val projectSettings: CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa6786814f9? = null,
     val rust: String? = null,
-    /** Set when this build produces a function for schedule entrypoints. */
-    val scheduleFunction:
-        CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX7fd7b0d32a? =
-        null,
-    /** Owning service name; scopes per-function config such as the v2beta consumer. */
+    /**
+     * Set when this build produces a function for schedule entrypoints.
+     */
+    val scheduleFunction: CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX7fd7b0d32a? = null,
+    /**
+     * Owning service name; scopes per-function config such as the v2beta consumer.
+     */
     val serviceName: String? = null,
-    val zeroConfig: Boolean? = null,
+    val zeroConfig: Boolean? = null
 )
 
-/** Builder selected by the resolver. */
+/**
+ * Builder selected by the resolver.
+ */
 data class CreateDeploymentResponseVariant1ServicesItemVariant1Builder(
     val use: String,
     val config: CreateDeploymentResponseVariant1ServicesItemVariant1BuilderConfig? = null,
-    val src: String? = null,
+    val src: String? = null
 )
 
-/** Caller-side bindings to other services. */
+/**
+ * Caller-side bindings to other services.
+ */
 data class CreateDeploymentResponseVariant1ServicesItemVariant1BindingsItem(
-    /** Environment variable name that will store the generated value */
+    /**
+     * Environment variable name that will store the generated value
+     */
     val env: String,
-    /** Generated value shape, must be `"url"`. */
+    /**
+     * Generated value shape, must be `"url"`.
+     */
     val format: CreateDeploymentResponseVariant1ServicesItemVariant1BindingsIXd5b57e278e,
-    /** Target service name from `services`. */
+    /**
+     * Target service name from `services`.
+     */
     val service: String,
-    /** If present, must be `"service"` for Service-to-Service HTTP bindings. */
-    val type: CreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemTypeEnum? = null,
+    /**
+     * If present, must be `"service"` for Service-to-Service HTTP bindings.
+     */
+    val type: CreateDeploymentResponseVariant1ServicesItemVariant1BindingsItemTypeEnum? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXed77a2ca0e(
@@ -159,79 +181,79 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXed77a2c
  * Queue trigger input event for v1beta (from vercel.json config). Requires explicit consumer name.
  */
 data class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX8f270aecde(
-    /** Name of the consumer group for this trigger (REQUIRED) */
+    /**
+     * Name of the consumer group for this trigger (REQUIRED)
+     */
     val consumer: String,
-    /** Name of the queue topic to consume from (REQUIRED) */
+    /**
+     * Name of the queue topic to consume from (REQUIRED)
+     */
     val topic: String,
-    /** Event type - must be "queue/v1beta" (REQUIRED) */
+    /**
+     * Event type - must be "queue/v1beta" (REQUIRED)
+     */
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXa1d65421b6,
     /**
-     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use
-     * 0 for no initial delay. Behavior when not specified depends on the server's default
-     * configuration.
+     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
      */
     val initialDelaySeconds: Double? = null,
     /**
-     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if
-     * specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxConcurrency: Double? = null,
     /**
-     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the
-     * total number of times a message can be delivered, not the number of retries. Must be at least
-     * 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxDeliveries: Double? = null,
     /**
-     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified
-     * depends on the server's default configuration.
+     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
      */
-    val retryAfterSeconds: Double? = null,
+    val retryAfterSeconds: Double? = null
 )
 
 /**
- * Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly
- * derived from the function path. Only one trigger per function is allowed.
+ * Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed.
  */
 data class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX5f2e3b8171(
-    /** Name of the queue topic to consume from (REQUIRED) */
+    /**
+     * Name of the queue topic to consume from (REQUIRED)
+     */
     val topic: String,
-    /** Event type - must be "queue/v2beta" (REQUIRED) */
+    /**
+     * Event type - must be "queue/v2beta" (REQUIRED)
+     */
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXed39e9ad92,
     /**
-     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use
-     * 0 for no initial delay. Behavior when not specified depends on the server's default
-     * configuration.
+     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
      */
     val initialDelaySeconds: Double? = null,
     /**
-     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if
-     * specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxConcurrency: Double? = null,
     /**
-     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the
-     * total number of times a message can be delivered, not the number of retries. Must be at least
-     * 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxDeliveries: Double? = null,
     /**
-     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified
-     * depends on the server's default configuration.
+     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
      */
-    val retryAfterSeconds: Double? = null,
+    val retryAfterSeconds: Double? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXff9fd7e8b8(
-    /** Event type - must be "schedule/v1beta" (REQUIRED) */
+    /**
+     * Event type - must be "schedule/v1beta" (REQUIRED)
+     */
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX240c3cc574
 )
 
-/** Function configuration scoped to this service. */
+/**
+ * Function configuration scoped to this service.
+ */
 data class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsValue(
     val affinity: CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsXed77a2ca0e? = null,
-    val architecture: CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX7e06db9d40? =
-        null,
+    val architecture: CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsX7e06db9d40? = null,
     val excludeFiles: String? = null,
     val experimentalTriggers: List<Any>? = null,
     val functionFailoverRegions: List<String>? = null,
@@ -241,12 +263,12 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1FunctionsValue(
     val memory: Double? = null,
     val regions: List<String>? = null,
     val runtime: String? = null,
-    val supportsCancellation: Boolean? = null,
+    val supportsCancellation: Boolean? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX0a5efc15aa(
     val key: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXdc9a68b1d6(
@@ -260,12 +282,12 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXdc9a68b
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX77cb133d88(
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXa1db2691b4,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXb71a58004e(
@@ -279,13 +301,13 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXb71a580
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX90b3a55c1d(
     val key: String,
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXb69cfab04a,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX811a72813e(
@@ -299,12 +321,12 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX811a728
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX8b65a2cc0b(
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXf9c64b53c2,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXe669da4b3f(
@@ -318,20 +340,20 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItXe669da4
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX5bda2c35c9(
     val key: String,
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX685bb1d0a6,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItem(
     val headers: List<CreateDeploymentResponseVariant1ServicesItemVariant1HeadersItX0a5efc15aa>,
     val source: String,
     val has: List<Any>? = null,
-    val missing: List<Any>? = null,
+    val missing: List<Any>? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX0ab3acc065(
@@ -345,12 +367,12 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX0ab3acc
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX274036e95e(
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXc10e92c28e,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX6780f31430(
@@ -364,13 +386,13 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX6780f31
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX61fd54c03d(
     val key: String,
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX02b00a2b21,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX8361509735(
@@ -384,12 +406,12 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX8361509
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXe77a01c0c3(
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX9e6e46d987,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXc8bd96b429(
@@ -403,13 +425,13 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsXc8bd96b
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX072a8c95fb(
     val key: String,
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsX2ea7816a35,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsItem(
@@ -419,18 +441,19 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1RedirectsItem(
     val has: List<Any>? = null,
     val missing: List<Any>? = null,
     val permanent: Boolean? = null,
-    val statusCode: Double? = null,
+    val statusCode: Double? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXdf3fff9a6c(
     val service: String,
-    /** Routing-only path used to select a route inside the target service. */
+    /**
+     * Routing-only path used to select a route inside the target service.
+     */
     val path: String? = null,
     /**
-     * Optional explicit format marker. The destination is identified by the presence of `service`,
-     * so `type` is no longer required.
+     * Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
      */
-    val type: CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX191bf81f71? = null,
+    val type: CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX191bf81f71? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXff58044dec(
@@ -444,12 +467,12 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXff58044
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX89a33c5c8f(
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX48fc56fcd3,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7064aa42f0(
@@ -463,13 +486,13 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7064aa4
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX7bfd6fc1b1(
     val key: String,
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXc00dca8f40,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXbb644bca88(
@@ -483,12 +506,12 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXbb644bc
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX65e506db9c(
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX82b15a1005,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX9e9ccf2631(
@@ -502,20 +525,20 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX9e9ccf2
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX01ae4b4741(
     val key: String,
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX2e26fc5b95,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXd00e5e4cca(
     val args: String,
     val op: CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX37cf0a5db9,
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIX56d9a29325,
-    val env: List<String>? = null,
+    val env: List<String>? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesItem(
@@ -526,20 +549,19 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1RewritesItem(
     val missing: List<Any>? = null,
     val respectOriginCacheControl: Boolean? = null,
     val statusCode: Double? = null,
-    val transforms:
-        List<CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXd00e5e4cca>? =
-        null,
+    val transforms: List<CreateDeploymentResponseVariant1ServicesItemVariant1RewritesIXd00e5e4cca>? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX220629b5b6(
     val service: String,
-    /** Routing-only path used to select a route inside the target service. */
+    /**
+     * Routing-only path used to select a route inside the target service.
+     */
     val path: String? = null,
     /**
-     * Optional explicit format marker. The destination is identified by the presence of `service`,
-     * so `type` is no longer required.
+     * Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
      */
-    val type: CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXbe2c8fe7fe? = null,
+    val type: CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXbe2c8fe7fe? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd33c82fc76(
@@ -553,12 +575,12 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXd33c82f
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX23e5b894c6(
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX298e00d4fa,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXe1c02f2db5(
@@ -572,11 +594,11 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXe1c02f2
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null,
+    val suf: String? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteX7e6d5b2800(
     val key: String,
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1RoutesIteXf5f0429f6d,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
 )

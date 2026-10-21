@@ -25,250 +25,369 @@ import dev.octri.showcase.vercel.TldName
 import dev.octri.showcase.vercel.TransferInDomainResponseLinksValueMethodEnum
 
 object DomainsRegistrar {
-    data class SearchDomainsResponse(val results: List<SearchDomainsResponseResultsItem>)
+data class SearchDomainsResponse(
+    val results: List<SearchDomainsResponseResultsItem>
+)
 
-    data class GetTldResponse(
-        /**
-         * The language codes that are supported for the TLD. The key is the language code, and the
-         * value is the name of the language.
-         */
-        val supportedLanguageCodes: Map<String, String>
-    )
-
-    data class GetTldPriceResponse(
-        /** The number of years the returned price is for. */
-        val years: Double,
-        val purchasePrice: Any,
-        val renewalPrice: Any,
-        val transferPrice: Any,
-    )
-
-    data class GetDomainAvailabilityResponse(val available: Boolean)
-
-    data class GetDomainPriceResponse(
-        val years: Double,
-        val purchasePrice: Any,
-        val renewalPrice: Any,
-        val transferPrice: Any,
-    )
-
-    data class GetBulkPriceResponseResultsItem(
-        /** A valid domain name */
-        val domain: DomainName,
-        val years: Double,
-        val purchasePrice: Any,
-        val renewalPrice: Any,
-        val transferPrice: Any,
-    )
-
-    data class GetBulkPriceResponse(val results: List<GetBulkPriceResponseResultsItem>)
-
-    data class GetBulkAvailabilityResponseResultsItem(
-        /** A valid domain name */
-        val domain: DomainName,
-        val available: Boolean,
-    )
-
-    data class GetBulkAvailabilityResponse(
-        val results: List<GetBulkAvailabilityResponseResultsItem>
-    )
-
-    data class GetDomainAuthCodeResponse(val authCode: String)
-
+data class GetTldResponse(
     /**
-     * The contact information for the domain. Some TLDs require additional contact information. Use
-     * the Get contact info schema endpoint to retrieve the required fields.
+     * The language codes that are supported for the TLD. The key is the language code, and the value is the name of the language.
      */
-    data class BuySingleDomainContactInformation(
-        /** a non empty string */
-        val firstName: NonEmptyTrimmedString,
-        /** a non empty string */
-        val lastName: NonEmptyTrimmedString,
-        /** A valid RFC 5322 email address */
-        val email: EmailAddress,
-        /** A valid E.164 phone number */
-        val phone: E164PhoneNumber,
-        /** a non empty string */
-        val address1: NonEmptyTrimmedString,
-        /** a non empty string */
-        val city: NonEmptyTrimmedString,
-        /** a non empty string */
-        val state: NonEmptyTrimmedString,
-        /** a non empty string */
-        val zip: NonEmptyTrimmedString,
-        /** A valid ISO 3166-1 alpha-2 country code */
-        val country: CountryCode,
-        /** a non empty string */
-        val address2: NonEmptyTrimmedString? = null,
-        /** a non empty string */
-        val companyName: NonEmptyTrimmedString? = null,
-        /** A valid E.164 phone number */
-        val fax: E164PhoneNumber? = null,
-        val additional: Map<String, Any>? = null,
-    )
+    val supportedLanguageCodes: Map<String, String>
+)
 
-    data class BuySingleDomainResponseLinksValue(
-        val href: String,
-        val method: BuySingleDomainResponseLinksValueMethodEnum,
-    )
-
-    data class BuySingleDomainResponse(
-        /** A valid order ID */
-        val orderId: OrderId,
-        @com.fasterxml.jackson.annotation.JsonProperty("_links")
-        val links: Map<String, BuySingleDomainResponseLinksValue>,
-    )
-
-    data class BuyDomainsDomainsItem(
-        /** A valid domain name */
-        val domainName: DomainName,
-        /**
-         * Whether the domain should be auto-renewed before it expires. This can be configured later
-         * through the Vercel Dashboard or the Update auto-renew for a domain endpoint.
-         */
-        val autoRenew: Boolean,
-        /** The number of years to purchase the domain for. */
-        val years: Double,
-        val expectedPrice: Double,
-        /**
-         * The language code for the domain. For punycode domains, this must be provided. The list
-         * of supported language codes for a TLD can be retrieved from the Get TLD endpoint.
-         */
-        val languageCode: String? = null,
-    )
-
+data class GetTldPriceResponse(
     /**
-     * The contact information for the domain. Some TLDs require additional contact information. Use
-     * the Get contact info schema endpoint to retrieve the required fields.
+     * The number of years the returned price is for.
      */
-    data class BuyDomainsContactInformation(
-        /** a non empty string */
-        val firstName: NonEmptyTrimmedString,
-        /** a non empty string */
-        val lastName: NonEmptyTrimmedString,
-        /** A valid RFC 5322 email address */
-        val email: EmailAddress,
-        /** A valid E.164 phone number */
-        val phone: E164PhoneNumber,
-        /** a non empty string */
-        val address1: NonEmptyTrimmedString,
-        /** a non empty string */
-        val city: NonEmptyTrimmedString,
-        /** a non empty string */
-        val state: NonEmptyTrimmedString,
-        /** a non empty string */
-        val zip: NonEmptyTrimmedString,
-        /** A valid ISO 3166-1 alpha-2 country code */
-        val country: CountryCode,
-        /** a non empty string */
-        val address2: NonEmptyTrimmedString? = null,
-        /** a non empty string */
-        val companyName: NonEmptyTrimmedString? = null,
-        /** A valid E.164 phone number */
-        val fax: E164PhoneNumber? = null,
-        val additional: Map<String, Any>? = null,
-    )
+    val years: Double,
+    val purchasePrice: Any,
+    val renewalPrice: Any,
+    val transferPrice: Any
+)
 
-    data class BuyDomainsResponseLinksValue(
-        val href: String,
-        val method: BuyDomainsResponseLinksValueMethodEnum,
-    )
+data class GetDomainAvailabilityResponse(
+    val available: Boolean
+)
 
-    data class BuyDomainsResponse(
-        /** A valid order ID */
-        val orderId: OrderId,
-        @com.fasterxml.jackson.annotation.JsonProperty("_links")
-        val links: Map<String, BuyDomainsResponseLinksValue>,
-    )
+data class GetDomainPriceResponse(
+    val years: Double,
+    val purchasePrice: Any,
+    val renewalPrice: Any,
+    val transferPrice: Any
+)
 
-    data class TransferInDomainContactInformation(
-        /** a non empty string */
-        val firstName: NonEmptyTrimmedString,
-        /** a non empty string */
-        val lastName: NonEmptyTrimmedString,
-        /** A valid RFC 5322 email address */
-        val email: EmailAddress,
-        /** A valid E.164 phone number */
-        val phone: E164PhoneNumber,
-        /** a non empty string */
-        val address1: NonEmptyTrimmedString,
-        /** a non empty string */
-        val city: NonEmptyTrimmedString,
-        /** a non empty string */
-        val state: NonEmptyTrimmedString,
-        /** a non empty string */
-        val zip: NonEmptyTrimmedString,
-        /** A valid ISO 3166-1 alpha-2 country code */
-        val country: CountryCode,
-        /** a non empty string */
-        val address2: NonEmptyTrimmedString? = null,
-        /** a non empty string */
-        val companyName: NonEmptyTrimmedString? = null,
-        /** A valid E.164 phone number */
-        val fax: E164PhoneNumber? = null,
-    )
+data class GetBulkPriceResponseResultsItem(
+    /**
+     * A valid domain name
+     */
+    val domain: DomainName,
+    val years: Double,
+    val purchasePrice: Any,
+    val renewalPrice: Any,
+    val transferPrice: Any
+)
 
-    data class TransferInDomainResponseLinksValue(
-        val href: String,
-        val method: TransferInDomainResponseLinksValueMethodEnum,
-    )
+data class GetBulkPriceResponse(
+    val results: List<GetBulkPriceResponseResultsItem>
+)
 
-    data class TransferInDomainResponse(
-        /** A valid order ID */
-        val orderId: OrderId,
-        @com.fasterxml.jackson.annotation.JsonProperty("_links")
-        val links: Map<String, TransferInDomainResponseLinksValue>,
-    )
+data class GetBulkAvailabilityResponseResultsItem(
+    /**
+     * A valid domain name
+     */
+    val domain: DomainName,
+    val available: Boolean
+)
 
-    data class GetDomainTransferInResponse(val status: GetDomainTransferInResponseStatusEnum)
+data class GetBulkAvailabilityResponse(
+    val results: List<GetBulkAvailabilityResponseResultsItem>
+)
 
-    data class RenewDomainContactInformation(
-        /** a non empty string */
-        val firstName: NonEmptyTrimmedString,
-        /** a non empty string */
-        val lastName: NonEmptyTrimmedString,
-        /** A valid RFC 5322 email address */
-        val email: EmailAddress,
-        /** A valid E.164 phone number */
-        val phone: E164PhoneNumber,
-        /** a non empty string */
-        val address1: NonEmptyTrimmedString,
-        /** a non empty string */
-        val city: NonEmptyTrimmedString,
-        /** a non empty string */
-        val state: NonEmptyTrimmedString,
-        /** a non empty string */
-        val zip: NonEmptyTrimmedString,
-        /** A valid ISO 3166-1 alpha-2 country code */
-        val country: CountryCode,
-        /** a non empty string */
-        val address2: NonEmptyTrimmedString? = null,
-        /** a non empty string */
-        val companyName: NonEmptyTrimmedString? = null,
-        /** A valid E.164 phone number */
-        val fax: E164PhoneNumber? = null,
-    )
+data class GetDomainAuthCodeResponse(
+    val authCode: String
+)
 
-    data class RenewDomainResponseLinksValue(
-        val href: String,
-        val method: RenewDomainResponseLinksValueMethodEnum,
-    )
+/**
+ * The contact information for the domain. Some TLDs require additional contact information. Use the Get contact info schema endpoint to retrieve the required fields.
+ */
+data class BuySingleDomainContactInformation(
+    /**
+     * a non empty string
+     */
+    val firstName: NonEmptyTrimmedString,
+    /**
+     * a non empty string
+     */
+    val lastName: NonEmptyTrimmedString,
+    /**
+     * A valid RFC 5322 email address
+     */
+    val email: EmailAddress,
+    /**
+     * A valid E.164 phone number
+     */
+    val phone: E164PhoneNumber,
+    /**
+     * a non empty string
+     */
+    val address1: NonEmptyTrimmedString,
+    /**
+     * a non empty string
+     */
+    val city: NonEmptyTrimmedString,
+    /**
+     * a non empty string
+     */
+    val state: NonEmptyTrimmedString,
+    /**
+     * a non empty string
+     */
+    val zip: NonEmptyTrimmedString,
+    /**
+     * A valid ISO 3166-1 alpha-2 country code
+     */
+    val country: CountryCode,
+    /**
+     * a non empty string
+     */
+    val address2: NonEmptyTrimmedString? = null,
+    /**
+     * a non empty string
+     */
+    val companyName: NonEmptyTrimmedString? = null,
+    /**
+     * A valid E.164 phone number
+     */
+    val fax: E164PhoneNumber? = null,
+    val additional: Map<String, Any>? = null
+)
 
-    data class RenewDomainResponse(
-        /** A valid order ID */
-        val orderId: OrderId,
-        @com.fasterxml.jackson.annotation.JsonProperty("_links")
-        val links: Map<String, RenewDomainResponseLinksValue>,
-    )
+data class BuySingleDomainResponseLinksValue(
+    val href: String,
+    val method: BuySingleDomainResponseLinksValueMethodEnum
+)
 
-    data class GetOrderResponse(
-        /** A valid order ID */
-        val orderId: OrderId,
-        val domains: List<GetOrderResponseDomainsItem>,
-        val status: GetOrderResponseStatusEnum,
-        /** Typed representation of the `GetOrderResponseError` API schema. */
-        val error: GetOrderResponseError? = null,
-    )
+data class BuySingleDomainResponse(
+    /**
+     * A valid order ID
+     */
+    val orderId: OrderId,
+    @com.fasterxml.jackson.annotation.JsonProperty("_links") val links: Map<String, BuySingleDomainResponseLinksValue>
+)
+
+data class BuyDomainsDomainsItem(
+    /**
+     * A valid domain name
+     */
+    val domainName: DomainName,
+    /**
+     * Whether the domain should be auto-renewed before it expires. This can be configured later through the Vercel Dashboard or the Update auto-renew for a domain endpoint.
+     */
+    val autoRenew: Boolean,
+    /**
+     * The number of years to purchase the domain for.
+     */
+    val years: Double,
+    val expectedPrice: Double,
+    /**
+     * The language code for the domain. For punycode domains, this must be provided. The list of supported language codes for a TLD can be retrieved from the Get TLD endpoint.
+     */
+    val languageCode: String? = null
+)
+
+/**
+ * The contact information for the domain. Some TLDs require additional contact information. Use the Get contact info schema endpoint to retrieve the required fields.
+ */
+data class BuyDomainsContactInformation(
+    /**
+     * a non empty string
+     */
+    val firstName: NonEmptyTrimmedString,
+    /**
+     * a non empty string
+     */
+    val lastName: NonEmptyTrimmedString,
+    /**
+     * A valid RFC 5322 email address
+     */
+    val email: EmailAddress,
+    /**
+     * A valid E.164 phone number
+     */
+    val phone: E164PhoneNumber,
+    /**
+     * a non empty string
+     */
+    val address1: NonEmptyTrimmedString,
+    /**
+     * a non empty string
+     */
+    val city: NonEmptyTrimmedString,
+    /**
+     * a non empty string
+     */
+    val state: NonEmptyTrimmedString,
+    /**
+     * a non empty string
+     */
+    val zip: NonEmptyTrimmedString,
+    /**
+     * A valid ISO 3166-1 alpha-2 country code
+     */
+    val country: CountryCode,
+    /**
+     * a non empty string
+     */
+    val address2: NonEmptyTrimmedString? = null,
+    /**
+     * a non empty string
+     */
+    val companyName: NonEmptyTrimmedString? = null,
+    /**
+     * A valid E.164 phone number
+     */
+    val fax: E164PhoneNumber? = null,
+    val additional: Map<String, Any>? = null
+)
+
+data class BuyDomainsResponseLinksValue(
+    val href: String,
+    val method: BuyDomainsResponseLinksValueMethodEnum
+)
+
+data class BuyDomainsResponse(
+    /**
+     * A valid order ID
+     */
+    val orderId: OrderId,
+    @com.fasterxml.jackson.annotation.JsonProperty("_links") val links: Map<String, BuyDomainsResponseLinksValue>
+)
+
+data class TransferInDomainContactInformation(
+    /**
+     * a non empty string
+     */
+    val firstName: NonEmptyTrimmedString,
+    /**
+     * a non empty string
+     */
+    val lastName: NonEmptyTrimmedString,
+    /**
+     * A valid RFC 5322 email address
+     */
+    val email: EmailAddress,
+    /**
+     * A valid E.164 phone number
+     */
+    val phone: E164PhoneNumber,
+    /**
+     * a non empty string
+     */
+    val address1: NonEmptyTrimmedString,
+    /**
+     * a non empty string
+     */
+    val city: NonEmptyTrimmedString,
+    /**
+     * a non empty string
+     */
+    val state: NonEmptyTrimmedString,
+    /**
+     * a non empty string
+     */
+    val zip: NonEmptyTrimmedString,
+    /**
+     * A valid ISO 3166-1 alpha-2 country code
+     */
+    val country: CountryCode,
+    /**
+     * a non empty string
+     */
+    val address2: NonEmptyTrimmedString? = null,
+    /**
+     * a non empty string
+     */
+    val companyName: NonEmptyTrimmedString? = null,
+    /**
+     * A valid E.164 phone number
+     */
+    val fax: E164PhoneNumber? = null
+)
+
+data class TransferInDomainResponseLinksValue(
+    val href: String,
+    val method: TransferInDomainResponseLinksValueMethodEnum
+)
+
+data class TransferInDomainResponse(
+    /**
+     * A valid order ID
+     */
+    val orderId: OrderId,
+    @com.fasterxml.jackson.annotation.JsonProperty("_links") val links: Map<String, TransferInDomainResponseLinksValue>
+)
+
+data class GetDomainTransferInResponse(
+    val status: GetDomainTransferInResponseStatusEnum
+)
+
+data class RenewDomainContactInformation(
+    /**
+     * a non empty string
+     */
+    val firstName: NonEmptyTrimmedString,
+    /**
+     * a non empty string
+     */
+    val lastName: NonEmptyTrimmedString,
+    /**
+     * A valid RFC 5322 email address
+     */
+    val email: EmailAddress,
+    /**
+     * A valid E.164 phone number
+     */
+    val phone: E164PhoneNumber,
+    /**
+     * a non empty string
+     */
+    val address1: NonEmptyTrimmedString,
+    /**
+     * a non empty string
+     */
+    val city: NonEmptyTrimmedString,
+    /**
+     * a non empty string
+     */
+    val state: NonEmptyTrimmedString,
+    /**
+     * a non empty string
+     */
+    val zip: NonEmptyTrimmedString,
+    /**
+     * A valid ISO 3166-1 alpha-2 country code
+     */
+    val country: CountryCode,
+    /**
+     * a non empty string
+     */
+    val address2: NonEmptyTrimmedString? = null,
+    /**
+     * a non empty string
+     */
+    val companyName: NonEmptyTrimmedString? = null,
+    /**
+     * A valid E.164 phone number
+     */
+    val fax: E164PhoneNumber? = null
+)
+
+data class RenewDomainResponseLinksValue(
+    val href: String,
+    val method: RenewDomainResponseLinksValueMethodEnum
+)
+
+data class RenewDomainResponse(
+    /**
+     * A valid order ID
+     */
+    val orderId: OrderId,
+    @com.fasterxml.jackson.annotation.JsonProperty("_links") val links: Map<String, RenewDomainResponseLinksValue>
+)
+
+data class GetOrderResponse(
+    /**
+     * A valid order ID
+     */
+    val orderId: OrderId,
+    val domains: List<GetOrderResponseDomainsItem>,
+    val status: GetOrderResponseStatusEnum,
+    /**
+     * Typed representation of the `GetOrderResponseError` API schema.
+     */
+    val error: GetOrderResponseError? = null
+)
 
     /** Parameters for [buySingleDomain]. */
     data class BuySingleDomainRequest(
@@ -278,7 +397,7 @@ object DomainsRegistrar {
         val expectedPrice: Double,
         val contactInformation: BuySingleDomainContactInformation,
         val teamId: String? = null,
-        val languageCode: String? = null,
+        val languageCode: String? = null
     )
 
     /** Parameters for [transferInDomain]. */
@@ -289,21 +408,13 @@ object DomainsRegistrar {
         val years: Double,
         val expectedPrice: Double,
         val contactInformation: TransferInDomainContactInformation,
-        val teamId: String? = null,
+        val teamId: String? = null
     )
 
     /**
-     * Searches for domain registration availability and pricing for a batch of exact domain names.
-     * Provide between 1 and 200 valid domain names in `domains`; results are returned in input
-     * order and include registration and renewal prices in USD for available domains. This
-     * operation does not require authentication.
+     * Searches for domain registration availability and pricing for a batch of exact domain names. Provide between 1 and 200 valid domain names in `domains`; results are returned in input order and include registration and renewal prices in USD for available domains. This operation does not require authentication.
      */
-    fun searchDomains(
-        clientConfig: ClientConfig,
-        domains: List<DomainName>,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): SearchDomainsResponse =
+    fun searchDomains(clientConfig: ClientConfig, domains: List<DomainName>, teamId: String? = null, options: RequestOptions? = null): SearchDomainsResponse =
         dev.octri.showcase.vercel.methods.DomainsRegistrarSearchDomainsOperation.searchDomains(
             clientConfig,
             domains,
@@ -312,33 +423,19 @@ object DomainsRegistrar {
         )
 
     /**
-     * Lists the top-level domains supported for domain registration. Use this operation to discover
-     * which TLDs are available before requesting TLD metadata or checking domain availability. The
-     * response is an array of TLD names.
+     * Lists the top-level domains supported for domain registration. Use this operation to discover which TLDs are available before requesting TLD metadata or checking domain availability. The response is an array of TLD names.
      */
-    fun getSupportedTlds(
-        clientConfig: ClientConfig,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): List<TldName> =
-        dev.octri.showcase.vercel.methods.DomainsRegistrarGetSupportedTldsOperation
-            .getSupportedTlds(
-                clientConfig,
-                teamId,
-                options,
-            )
+    fun getSupportedTlds(clientConfig: ClientConfig, teamId: String? = null, options: RequestOptions? = null): List<TldName> =
+        dev.octri.showcase.vercel.methods.DomainsRegistrarGetSupportedTldsOperation.getSupportedTlds(
+            clientConfig,
+            teamId,
+            options,
+        )
 
     /**
-     * Retrieves metadata for a specific top-level domain. Use this operation to find the language
-     * codes supported for the TLD and their corresponding language names. The response contains a
-     * map of supported language codes.
+     * Retrieves metadata for a specific top-level domain. Use this operation to find the language codes supported for the TLD and their corresponding language names. The response contains a map of supported language codes.
      */
-    fun getTld(
-        clientConfig: ClientConfig,
-        tld: TldName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): GetTldResponse =
+    fun getTld(clientConfig: ClientConfig, tld: TldName, teamId: String? = null, options: RequestOptions? = null): GetTldResponse =
         dev.octri.showcase.vercel.methods.DomainsRegistrarGetTldOperation.getTld(
             clientConfig,
             tld,
@@ -347,17 +444,9 @@ object DomainsRegistrar {
         )
 
     /**
-     * Retrieves base price data for a top-level domain (TLD); premium domains may have different
-     * prices. Use `years` to request a registration term, or omit it to use the TLD's minimum term.
-     * For premium-domain pricing, use the endpoint for getting price data for a domain.
+     * Retrieves base price data for a top-level domain (TLD); premium domains may have different prices. Use `years` to request a registration term, or omit it to use the TLD's minimum term. For premium-domain pricing, use the endpoint for getting price data for a domain.
      */
-    fun getTldPrice(
-        clientConfig: ClientConfig,
-        tld: TldName,
-        years: String? = null,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): GetTldPriceResponse =
+    fun getTldPrice(clientConfig: ClientConfig, tld: TldName, years: String? = null, teamId: String? = null, options: RequestOptions? = null): GetTldPriceResponse =
         dev.octri.showcase.vercel.methods.DomainsRegistrarGetTldPriceOperation.getTldPrice(
             clientConfig,
             tld,
@@ -367,36 +456,20 @@ object DomainsRegistrar {
         )
 
     /**
-     * Retrieves the availability status for a specific domain. Use `domain` to check whether the
-     * name is available before attempting to purchase it. If it is available, you can purchase it
-     * through the single-domain or multiple-domain purchase endpoint.
+     * Retrieves the availability status for a specific domain. Use `domain` to check whether the name is available before attempting to purchase it. If it is available, you can purchase it through the single-domain or multiple-domain purchase endpoint.
      */
-    fun getDomainAvailability(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): GetDomainAvailabilityResponse =
-        dev.octri.showcase.vercel.methods.DomainsRegistrarGetDomainAvailabilityOperation
-            .getDomainAvailability(
-                clientConfig,
-                domain,
-                teamId,
-                options,
-            )
+    fun getDomainAvailability(clientConfig: ClientConfig, domain: DomainName, teamId: String? = null, options: RequestOptions? = null): GetDomainAvailabilityResponse =
+        dev.octri.showcase.vercel.methods.DomainsRegistrarGetDomainAvailabilityOperation.getDomainAvailability(
+            clientConfig,
+            domain,
+            teamId,
+            options,
+        )
 
     /**
-     * Retrieves price data for a specific domain, including purchase, renewal, and transfer prices.
-     * Use `years` to request pricing for a particular term, or omit it to use the minimum term for
-     * the domain's TLD.
+     * Retrieves price data for a specific domain, including purchase, renewal, and transfer prices. Use `years` to request pricing for a particular term, or omit it to use the minimum term for the domain's TLD.
      */
-    fun getDomainPrice(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        years: String? = null,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): GetDomainPriceResponse =
+    fun getDomainPrice(clientConfig: ClientConfig, domain: DomainName, years: String? = null, teamId: String? = null, options: RequestOptions? = null): GetDomainPriceResponse =
         dev.octri.showcase.vercel.methods.DomainsRegistrarGetDomainPriceOperation.getDomainPrice(
             clientConfig,
             domain,
@@ -406,17 +479,9 @@ object DomainsRegistrar {
         )
 
     /**
-     * Retrieves price data for multiple domains in one request. Supply `domains` with the names to
-     * price, and optionally set `years` to request a specific term; omitted terms use the minimum
-     * term for each TLD. Use the returned prices to evaluate domains before purchasing them.
+     * Retrieves price data for multiple domains in one request. Supply `domains` with the names to price, and optionally set `years` to request a specific term; omitted terms use the minimum term for each TLD. Use the returned prices to evaluate domains before purchasing them.
      */
-    fun getBulkPrice(
-        clientConfig: ClientConfig,
-        domains: List<DomainName>,
-        teamId: String? = null,
-        years: Double? = null,
-        options: RequestOptions? = null,
-    ): GetBulkPriceResponse =
+    fun getBulkPrice(clientConfig: ClientConfig, domains: List<DomainName>, teamId: String? = null, years: Double? = null, options: RequestOptions? = null): GetBulkPriceResponse =
         dev.octri.showcase.vercel.methods.DomainsRegistrarGetBulkPriceOperation.getBulkPrice(
             clientConfig,
             domains,
@@ -426,73 +491,42 @@ object DomainsRegistrar {
         )
 
     /**
-     * Checks the availability of multiple domains in one request. Supply `domains` with the names
-     * to check, up to 50 per request. If domains are available, you can purchase them through the
-     * single-domain or multiple-domain purchase endpoint.
+     * Checks the availability of multiple domains in one request. Supply `domains` with the names to check, up to 50 per request. If domains are available, you can purchase them through the single-domain or multiple-domain purchase endpoint.
      */
-    fun getBulkAvailability(
-        clientConfig: ClientConfig,
-        domains: List<DomainName>,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): GetBulkAvailabilityResponse =
-        dev.octri.showcase.vercel.methods.DomainsRegistrarGetBulkAvailabilityOperation
-            .getBulkAvailability(
-                clientConfig,
-                domains,
-                teamId,
-                options,
-            )
+    fun getBulkAvailability(clientConfig: ClientConfig, domains: List<DomainName>, teamId: String? = null, options: RequestOptions? = null): GetBulkAvailabilityResponse =
+        dev.octri.showcase.vercel.methods.DomainsRegistrarGetBulkAvailabilityOperation.getBulkAvailability(
+            clientConfig,
+            domains,
+            teamId,
+            options,
+        )
 
     /**
-     * Retrieves the contact information schema for a domain's TLD. Use the schema to identify any
-     * TLD-specific contact fields you need to supply when registering a domain. The required fields
-     * can differ between TLDs.
+     * Retrieves the contact information schema for a domain's TLD. Use the schema to identify any TLD-specific contact fields you need to supply when registering a domain. The required fields can differ between TLDs.
      */
-    fun getContactInfoSchema(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): Map<String, Any> =
-        dev.octri.showcase.vercel.methods.DomainsRegistrarGetContactInfoSchemaOperation
-            .getContactInfoSchema(
-                clientConfig,
-                domain,
-                teamId,
-                options,
-            )
+    fun getContactInfoSchema(clientConfig: ClientConfig, domain: DomainName, teamId: String? = null, options: RequestOptions? = null): Map<String, Any> =
+        dev.octri.showcase.vercel.methods.DomainsRegistrarGetContactInfoSchemaOperation.getContactInfoSchema(
+            clientConfig,
+            domain,
+            teamId,
+            options,
+        )
 
     /**
-     * Retrieves the authorization code for a domain registered with the domain registrar. Use this
-     * code when transferring the domain from the registrar to another registrar. The domain must be
-     * eligible for transfer out before its code can be retrieved.
+     * Retrieves the authorization code for a domain registered with the domain registrar. Use this code when transferring the domain from the registrar to another registrar. The domain must be eligible for transfer out before its code can be retrieved.
      */
-    fun getDomainAuthCode(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): GetDomainAuthCodeResponse =
-        dev.octri.showcase.vercel.methods.DomainsRegistrarGetDomainAuthCodeOperation
-            .getDomainAuthCode(
-                clientConfig,
-                domain,
-                teamId,
-                options,
-            )
+    fun getDomainAuthCode(clientConfig: ClientConfig, domain: DomainName, teamId: String? = null, options: RequestOptions? = null): GetDomainAuthCodeResponse =
+        dev.octri.showcase.vercel.methods.DomainsRegistrarGetDomainAuthCodeOperation.getDomainAuthCode(
+            clientConfig,
+            domain,
+            teamId,
+            options,
+        )
 
     /**
-     * Purchases a domain using the supplied registration term, renewal preference, expected price,
-     * and contact information. Provide `contactInformation` with the required registrant details
-     * and use the TLD contact schema to determine whether additional fields are needed. For a
-     * punycode domain, include `languageCode`.
+     * Purchases a domain using the supplied registration term, renewal preference, expected price, and contact information. Provide `contactInformation` with the required registrant details and use the TLD contact schema to determine whether additional fields are needed. For a punycode domain, include `languageCode`.
      */
-    fun buySingleDomain(
-        clientConfig: ClientConfig,
-        request: BuySingleDomainRequest,
-        options: RequestOptions? = null,
-    ): BuySingleDomainResponse =
+    fun buySingleDomain(clientConfig: ClientConfig, request: BuySingleDomainRequest, options: RequestOptions? = null): BuySingleDomainResponse =
         dev.octri.showcase.vercel.methods.DomainsRegistrarBuySingleDomainOperation.buySingleDomain(
             clientConfig,
             request,
@@ -500,17 +534,9 @@ object DomainsRegistrar {
         )
 
     /**
-     * Purchases multiple domains in one order using shared contact information. Supply `domains`
-     * with each domain's renewal preference, term, and expected price, and provide the registrant
-     * details in `contactInformation`. Include `languageCode` for any punycode domain.
+     * Purchases multiple domains in one order using shared contact information. Supply `domains` with each domain's renewal preference, term, and expected price, and provide the registrant details in `contactInformation`. Include `languageCode` for any punycode domain.
      */
-    fun buyDomains(
-        clientConfig: ClientConfig,
-        domains: List<BuyDomainsDomainsItem>,
-        contactInformation: BuyDomainsContactInformation,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): BuyDomainsResponse =
+    fun buyDomains(clientConfig: ClientConfig, domains: List<BuyDomainsDomainsItem>, contactInformation: BuyDomainsContactInformation, teamId: String? = null, options: RequestOptions? = null): BuyDomainsResponse =
         dev.octri.showcase.vercel.methods.DomainsRegistrarBuyDomainsOperation.buyDomains(
             clientConfig,
             domains,
@@ -520,56 +546,30 @@ object DomainsRegistrar {
         )
 
     /**
-     * Transfers a domain to the account from another registrar. Provide the losing registrar's
-     * `authCode`, the transfer term in `years`, the `expectedPrice`, and registrant
-     * `contactInformation`; set `autoRenew` to control future renewals. A 200 response includes the
-     * transfer order's `orderId` and links for related actions.
+     * Transfers a domain to the account from another registrar. Provide the losing registrar's `authCode`, the transfer term in `years`, the `expectedPrice`, and registrant `contactInformation`; set `autoRenew` to control future renewals. A 200 response includes the transfer order's `orderId` and links for related actions.
      */
-    fun transferInDomain(
-        clientConfig: ClientConfig,
-        request: TransferInDomainRequest,
-        options: RequestOptions? = null,
-    ): TransferInDomainResponse =
-        dev.octri.showcase.vercel.methods.DomainsRegistrarTransferInDomainOperation
-            .transferInDomain(
-                clientConfig,
-                request,
-                options,
-            )
+    fun transferInDomain(clientConfig: ClientConfig, request: TransferInDomainRequest, options: RequestOptions? = null): TransferInDomainResponse =
+        dev.octri.showcase.vercel.methods.DomainsRegistrarTransferInDomainOperation.transferInDomain(
+            clientConfig,
+            request,
+            options,
+        )
 
     /**
-     * Retrieves the transfer status for a domain. Use the status to check the progress or outcome
-     * of an incoming domain transfer. The response reports the transfer's current state.
+     * Retrieves the transfer status for a domain. Use the status to check the progress or outcome of an incoming domain transfer. The response reports the transfer's current state.
      */
-    fun getDomainTransferIn(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): GetDomainTransferInResponse =
-        dev.octri.showcase.vercel.methods.DomainsRegistrarGetDomainTransferInOperation
-            .getDomainTransferIn(
-                clientConfig,
-                domain,
-                teamId,
-                options,
-            )
+    fun getDomainTransferIn(clientConfig: ClientConfig, domain: DomainName, teamId: String? = null, options: RequestOptions? = null): GetDomainTransferInResponse =
+        dev.octri.showcase.vercel.methods.DomainsRegistrarGetDomainTransferInOperation.getDomainTransferIn(
+            clientConfig,
+            domain,
+            teamId,
+            options,
+        )
 
     /**
-     * Renews a domain registered with Vercel for the specified number of years. Provide `years` and
-     * `expectedPrice`, and include `contactInformation` when updating the registrant details as
-     * part of the renewal. A 200 response includes the renewal order's `orderId` and links for
-     * related actions.
+     * Renews a domain registered with Vercel for the specified number of years. Provide `years` and `expectedPrice`, and include `contactInformation` when updating the registrant details as part of the renewal. A 200 response includes the renewal order's `orderId` and links for related actions.
      */
-    fun renewDomain(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        years: Double,
-        expectedPrice: Double,
-        teamId: String? = null,
-        contactInformation: RenewDomainContactInformation? = null,
-        options: RequestOptions? = null,
-    ): RenewDomainResponse =
+    fun renewDomain(clientConfig: ClientConfig, domain: DomainName, years: Double, expectedPrice: Double, teamId: String? = null, contactInformation: RenewDomainContactInformation? = null, options: RequestOptions? = null): RenewDomainResponse =
         dev.octri.showcase.vercel.methods.DomainsRegistrarRenewDomainOperation.renewDomain(
             clientConfig,
             domain,
@@ -581,77 +581,44 @@ object DomainsRegistrar {
         )
 
     /**
-     * Updates whether a domain is set to renew automatically. Set `autoRenew` to `true` or `false`
-     * to enable or disable automatic renewal for the specified domain. A 204 response confirms the
-     * setting was updated and contains no response body.
+     * Updates whether a domain is set to renew automatically. Set `autoRenew` to `true` or `false` to enable or disable automatic renewal for the specified domain. A 204 response confirms the setting was updated and contains no response body.
      */
-    fun updateDomainAutoRenew(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        autoRenew: Boolean,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): Unit =
-        dev.octri.showcase.vercel.methods.DomainsRegistrarUpdateDomainAutoRenewOperation
-            .updateDomainAutoRenew(
-                clientConfig,
-                domain,
-                autoRenew,
-                teamId,
-                options,
-            )
+    fun updateDomainAutoRenew(clientConfig: ClientConfig, domain: DomainName, autoRenew: Boolean, teamId: String? = null, options: RequestOptions? = null): Unit =
+        dev.octri.showcase.vercel.methods.DomainsRegistrarUpdateDomainAutoRenewOperation.updateDomainAutoRenew(
+            clientConfig,
+            domain,
+            autoRenew,
+            teamId,
+            options,
+        )
 
     /**
-     * Updates the nameservers assigned to a domain. Provide `nameservers` as an array of valid
-     * nameserver values, or pass an empty array to use Vercel's default nameservers. A 204 response
-     * confirms the change and contains no response body.
+     * Updates the nameservers assigned to a domain. Provide `nameservers` as an array of valid nameserver values, or pass an empty array to use Vercel's default nameservers. A 204 response confirms the change and contains no response body.
      */
-    fun updateDomainNameservers(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        nameservers: List<Nameserver>,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): Unit =
-        dev.octri.showcase.vercel.methods.DomainsRegistrarUpdateDomainNameserversOperation
-            .updateDomainNameservers(
-                clientConfig,
-                domain,
-                nameservers,
-                teamId,
-                options,
-            )
+    fun updateDomainNameservers(clientConfig: ClientConfig, domain: DomainName, nameservers: List<Nameserver>, teamId: String? = null, options: RequestOptions? = null): Unit =
+        dev.octri.showcase.vercel.methods.DomainsRegistrarUpdateDomainNameserversOperation.updateDomainNameservers(
+            clientConfig,
+            domain,
+            nameservers,
+            teamId,
+            options,
+        )
 
     /**
-     * Retrieves the registrant contact verification status for a domain. Use this after purchasing
-     * a domain to check whether its registrant contact has been verified. A 400 is returned if the
-     * domain was bought less than 30 minutes before the request.
+     * Retrieves the registrant contact verification status for a domain. Use this after purchasing a domain to check whether its registrant contact has been verified. A 400 is returned if the domain was bought less than 30 minutes before the request.
      */
-    fun getDomainContactVerification(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): GetDomainContactVerificationResponse =
-        dev.octri.showcase.vercel.methods.DomainsRegistrarGetDomainContactVerificationOperation
-            .getDomainContactVerification(
-                clientConfig,
-                domain,
-                teamId,
-                options,
-            )
+    fun getDomainContactVerification(clientConfig: ClientConfig, domain: DomainName, teamId: String? = null, options: RequestOptions? = null): GetDomainContactVerificationResponse =
+        dev.octri.showcase.vercel.methods.DomainsRegistrarGetDomainContactVerificationOperation.getDomainContactVerification(
+            clientConfig,
+            domain,
+            teamId,
+            options,
+        )
 
     /**
-     * Retrieves information about a domain order using its order ID. Use the response to inspect
-     * the domains included in the order and its current status. The status is one of `draft`,
-     * `purchasing`, `completed`, or `failed`.
+     * Retrieves information about a domain order using its order ID. Use the response to inspect the domains included in the order and its current status. The status is one of `draft`, `purchasing`, `completed`, or `failed`.
      */
-    fun getOrder(
-        clientConfig: ClientConfig,
-        orderId: OrderId,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): GetOrderResponse =
+    fun getOrder(clientConfig: ClientConfig, orderId: OrderId, teamId: String? = null, options: RequestOptions? = null): GetOrderResponse =
         dev.octri.showcase.vercel.methods.DomainsRegistrarGetOrderOperation.getOrder(
             clientConfig,
             orderId,

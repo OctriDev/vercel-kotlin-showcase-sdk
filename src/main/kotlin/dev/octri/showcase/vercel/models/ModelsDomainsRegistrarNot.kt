@@ -3,22 +3,38 @@
 
 package dev.octri.showcase.vercel.models
 
-/** Typed representation of the `NotAuthorizedForScope` API schema. */
+/**
+ * Typed representation of the `NotAuthorizedForScope` API schema.
+ */
 data class NotAuthorizedForScope(
-    /** Required enumerated value serialized in the `status` wire field. */
+    /**
+     * Required enumerated value serialized in the `status` wire field.
+     */
     val status: Long,
-    /** Required enumerated value serialized in the `code` wire field. */
+    /**
+     * Required enumerated value serialized in the `code` wire field.
+     */
     val code: NotAuthorizedForScopeCodeEnum,
-    /** Required `string` value serialized in the `message` wire field. */
-    val message: String,
+    /**
+     * Required `string` value serialized in the `message` wire field.
+     */
+    val message: String
 ) : dev.octri.showcase.vercel.ErrorBody
 
-/** Typed representation of the `NotFound` API schema. */
+/**
+ * Typed representation of the `NotFound` API schema.
+ */
 data class NotFound(
-    /** Required enumerated value serialized in the `status` wire field. */
+    /**
+     * Required enumerated value serialized in the `status` wire field.
+     */
     val status: Long,
-    /** Required enumerated value serialized in the `code` wire field. */
+    /**
+     * Required enumerated value serialized in the `code` wire field.
+     */
     val code: NotFoundCodeEnum,
-    /** Required `string` value serialized in the `message` wire field. */
-    val message: String,
+    /**
+     * Required `string` value serialized in the `message` wire field.
+     */
+    val message: String
 ) : dev.octri.showcase.vercel.ErrorBody

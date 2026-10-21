@@ -3,162 +3,176 @@
 
 package dev.octri.showcase.vercel.models
 
-/** Authentication token metadata. */
+/**
+ * Authentication token metadata.
+ */
 data class AuthToken(
-    /** Timestamp (in milliseconds) of when the token was most recently used. */
+    /**
+     * Timestamp (in milliseconds) of when the token was most recently used.
+     */
     val activeAt: Double,
-    /** Timestamp (in milliseconds) of when the token was created. */
+    /**
+     * Timestamp (in milliseconds) of when the token was created.
+     */
     val createdAt: Double,
-    /** The unique identifier of the token. */
+    /**
+     * The unique identifier of the token.
+     */
     val id: String,
-    /** The human-readable name of the token. */
+    /**
+     * The human-readable name of the token.
+     */
     val name: String,
-    /** The type of the token. */
+    /**
+     * The type of the token.
+     */
     val type: String,
-    /** Timestamp (in milliseconds) of when the token expires. */
+    /**
+     * Timestamp (in milliseconds) of when the token expires.
+     */
     val expiresAt: Double? = null,
-    /** Timestamp (in milliseconds) of when the token was marked as leaked. */
+    /**
+     * Timestamp (in milliseconds) of when the token was marked as leaked.
+     */
     val leakedAt: Double? = null,
-    /** URL where the token was discovered as leaked. */
+    /**
+     * URL where the token was discovered as leaked.
+     */
     val leakedUrl: String? = null,
-    /** The origin of how the token was created. */
+    /**
+     * The origin of how the token was created.
+     */
     val origin: String? = null,
-    /** The token's prefix, for identification purposes. */
+    /**
+     * The token's prefix, for identification purposes.
+     */
     val prefix: String? = null,
-    /** Timestamp (in milliseconds) of when the token was revoked. */
+    /**
+     * Timestamp (in milliseconds) of when the token was revoked.
+     */
     val revokedAt: Double? = null,
-    /** The access scopes granted to the token. */
+    /**
+     * The access scopes granted to the token.
+     */
     val scopes: List<AuthTokenScopesItem>? = null,
-    /** The last few characters of the token, for identification purposes. */
-    val suffix: String? = null,
+    /**
+     * The last few characters of the token, for identification purposes.
+     */
+    val suffix: String? = null
 )
 
-/** Optional object value serialized in the `sudo` wire field. */
+/**
+ * Optional object value serialized in the `sudo` wire field.
+ */
 data class AuthTokenScopesItemVariant0Sudo(
-    /** Required `number` value serialized in the `expiresAt` wire field. */
+    /**
+     * Required `number` value serialized in the `expiresAt` wire field.
+     */
     val expiresAt: Double,
-    /** Possible step-up auth origins */
+    /**
+     * Possible step-up auth origins
+     */
     val origin: AuthTokenScopesItemVariant0SudoOriginEnum,
-    /** Optional `number` value serialized in the `verifiedAt` wire field. */
-    val verifiedAt: Double? = null,
+    /**
+     * Optional `number` value serialized in the `verifiedAt` wire field.
+     */
+    val verifiedAt: Double? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class AuthTokenScopesItemVariant0(
-    /** Required `number` value serialized in the `createdAt` wire field. */
+    /**
+     * Required `number` value serialized in the `createdAt` wire field.
+     */
     val createdAt: Double,
-    /** Required enumerated value serialized in the `type` wire field. */
+    /**
+     * Required enumerated value serialized in the `type` wire field.
+     */
     val type: AuthTokenScopesItemVariant0TypeEnum,
-    /** Optional `number` value serialized in the `expiresAt` wire field. */
+    /**
+     * Optional `number` value serialized in the `expiresAt` wire field.
+     */
     val expiresAt: Double? = null,
-    /** Optional enumerated value serialized in the `origin` wire field. */
+    /**
+     * Optional enumerated value serialized in the `origin` wire field.
+     */
     val origin: AuthTokenScopesItemVariant0OriginEnum? = null,
-    /** Optional object value serialized in the `sudo` wire field. */
-    val sudo: AuthTokenScopesItemVariant0Sudo? = null,
+    /**
+     * Optional object value serialized in the `sudo` wire field.
+     */
+    val sudo: AuthTokenScopesItemVariant0Sudo? = null
 ) : AuthTokenScopesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class AuthTokenScopesItemVariant1(
-    /** Required `number` value serialized in the `createdAt` wire field. */
+    /**
+     * Required `number` value serialized in the `createdAt` wire field.
+     */
     val createdAt: Double,
-    /** Required `string` value serialized in the `teamId` wire field. */
+    /**
+     * Required `string` value serialized in the `teamId` wire field.
+     */
     val teamId: String,
-    /** Required enumerated value serialized in the `type` wire field. */
+    /**
+     * Required enumerated value serialized in the `type` wire field.
+     */
     val type: AuthTokenScopesItemVariant1TypeEnum,
-    /** Optional `number` value serialized in the `expiresAt` wire field. */
+    /**
+     * Optional `number` value serialized in the `expiresAt` wire field.
+     */
     val expiresAt: Double? = null,
-    /** Optional enumerated value serialized in the `origin` wire field. */
-    val origin: AuthTokenScopesItemVariant1OriginEnum? = null,
+    /**
+     * Optional enumerated value serialized in the `origin` wire field.
+     */
+    val origin: AuthTokenScopesItemVariant1OriginEnum? = null
 ) : AuthTokenScopesItem
 
-/** Required API value serialized in the `scopes[]` wire field. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+/**
+ * Required API value serialized in the `scopes[]` wire field.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AuthTokenScopesItemVariant0::class,
-        name = "user",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AuthTokenScopesItemVariant1::class,
-        name = "team",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = AuthTokenScopesItemVariant0::class, name = "user"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = AuthTokenScopesItemVariant1::class, name = "team")
 )
 sealed interface AuthTokenScopesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ExchangeSsoTokenResponseVariant0(
-    @com.fasterxml.jackson.annotation.JsonProperty("access_token", required = true)
-    val accessToken: String?,
+    @com.fasterxml.jackson.annotation.JsonProperty("access_token", required = true) val accessToken: String?,
     @com.fasterxml.jackson.annotation.JsonProperty("id_token") val idToken: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("token_type", required = true)
-    val tokenType: String?,
+    @com.fasterxml.jackson.annotation.JsonProperty("token_type", required = true) val tokenType: String?,
     @com.fasterxml.jackson.annotation.JsonProperty("expires_in") val expiresIn: Double? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("refresh_token")
-    val refreshToken: String? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("refresh_token") val refreshToken: String? = null
 ) : ExchangeSsoTokenResponse
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ExchangeSsoTokenResponseVariant1(
     @com.fasterxml.jackson.annotation.JsonProperty("access_token") val accessToken: String,
     @com.fasterxml.jackson.annotation.JsonProperty("expires_in") val expiresIn: Double,
     @com.fasterxml.jackson.annotation.JsonProperty("id_token") val idToken: String,
     @com.fasterxml.jackson.annotation.JsonProperty("refresh_token") val refreshToken: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("token_type") val tokenType: String,
+    @com.fasterxml.jackson.annotation.JsonProperty("token_type") val tokenType: String
 ) : ExchangeSsoTokenResponse
 
-/** Typed representation of the `ExchangeSsoTokenResponse` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = ExchangeSsoTokenResponse.Deserializer::class
-)
+/**
+ * Typed representation of the `ExchangeSsoTokenResponse` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = ExchangeSsoTokenResponse.Deserializer::class)
 sealed interface ExchangeSsoTokenResponse {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<ExchangeSsoTokenResponse>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<ExchangeSsoTokenResponse>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): ExchangeSsoTokenResponse {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out ExchangeSsoTokenResponse>> =
-                listOf(
-                    ExchangeSsoTokenResponseVariant0::class.java,
-                    ExchangeSsoTokenResponseVariant1::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out ExchangeSsoTokenResponse>> = listOf(ExchangeSsoTokenResponseVariant0::class.java, ExchangeSsoTokenResponseVariant1::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        ExchangeSsoTokenResponse::class.java,
-                        "no ExchangeSsoTokenResponse branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, ExchangeSsoTokenResponse::class.java, "no ExchangeSsoTokenResponse branch accepts this payload")
             }
         }
     }
@@ -167,39 +181,28 @@ sealed interface ExchangeSsoTokenResponse {
 data class ListAuthTokensResponseVariant0Pagination(
     val count: Double,
     @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?,
-    @com.fasterxml.jackson.annotation.JsonProperty("prev", required = true) val prev: String?,
+    @com.fasterxml.jackson.annotation.JsonProperty("prev", required = true) val prev: String?
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListAuthTokensResponseVariant0(
     val pagination: ListAuthTokensResponseVariant0Pagination,
-    val tokens: List<AuthToken>,
+    val tokens: List<AuthToken>
 ) : ListAuthTokensResponse
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ListAuthTokensResponseVariant1(
     /**
-     * This object contains information related to the pagination of the current request, including
-     * the necessary parameters to get the next or previous page of data.
+     * This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.
      */
     val pagination: Pagination,
-    val tokens: List<AuthToken>,
+    val tokens: List<AuthToken>
 ) : ListAuthTokensResponse
 
-/** Typed representation of the `ListAuthTokensResponse` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = ListAuthTokensResponse.Deserializer::class
-)
+/**
+ * Typed representation of the `ListAuthTokensResponse` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = ListAuthTokensResponse.Deserializer::class)
 sealed interface ListAuthTokensResponse {
     /** Chooses the branch this payload is shaped like. */
     class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<ListAuthTokensResponse>() {
@@ -209,21 +212,11 @@ sealed interface ListAuthTokensResponse {
         ): ListAuthTokensResponse {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out ListAuthTokensResponse>> =
-                listOf(
-                    ListAuthTokensResponseVariant0::class.java,
-                    ListAuthTokensResponseVariant1::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out ListAuthTokensResponse>> = listOf(ListAuthTokensResponseVariant0::class.java, ListAuthTokensResponseVariant1::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        ListAuthTokensResponse::class.java,
-                        "no ListAuthTokensResponse branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, ListAuthTokensResponse::class.java, "no ListAuthTokensResponse branch accepts this payload")
             }
         }
     }

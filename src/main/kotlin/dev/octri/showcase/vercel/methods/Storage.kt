@@ -19,208 +19,181 @@ import dev.octri.showcase.vercel.Validation
 
 object Storage {
 
-    data class GetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymeX98d533f4c4(
-        val environments: List<String>,
-        val slug: String,
-    )
+data class GetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymeX98d533f4c4(
+    val environments: List<String>,
+    val slug: String
+)
 
-    data class GetStorageStoresByIdResponseStoreProjectsMetadataItemDeployments(
-        val actions: List<GetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymeX98d533f4c4>,
-        val required: Boolean,
-    )
+data class GetStorageStoresByIdResponseStoreProjectsMetadataItemDeployments(
+    val actions: List<GetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymeX98d533f4c4>,
+    val required: Boolean
+)
 
-    data class GetStorageStoresByIdResponseStoreProjectsMetadataItem(
-        val environments: List<String>,
-        val environmentVariables: List<String>,
-        @com.fasterxml.jackson.annotation.JsonProperty("envVarPrefix", required = true)
-        val envVarPrefix: String?,
-        val id: String,
-        val name: String,
-        val projectId: String,
-        val deployments: GetStorageStoresByIdResponseStoreProjectsMetadataItemDeployments? = null,
-        val framework: GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum? = null,
-        val latestDeployment: String? = null,
-        val makeEnvVarsSensitive: Boolean? = null,
-    )
 
-    data class GetStorageStoresByIdResponseStoreProjectFilterGit(
-        val providers: Any,
-        val owners: List<String>? = null,
-        val repos: List<String>? = null,
-    )
 
-    data class GetStorageStoresByIdResponseStoreProjectFilter(
-        val git: GetStorageStoresByIdResponseStoreProjectFilterGit? = null
-    )
+data class GetStorageStoresByIdResponseStoreProjectsMetadataItem(
+    val environments: List<String>,
+    val environmentVariables: List<String>,
+    @com.fasterxml.jackson.annotation.JsonProperty("envVarPrefix", required = true) val envVarPrefix: String?,
+    val id: String,
+    val name: String,
+    val projectId: String,
+    val deployments: GetStorageStoresByIdResponseStoreProjectsMetadataItemDeployments? = null,
+    val framework: GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum? = null,
+    val latestDeployment: String? = null,
+    val makeEnvVarsSensitive: Boolean? = null
+)
 
-    data class GetStorageStoresByIdResponseStore(
-        val projectsMetadata: List<GetStorageStoresByIdResponseStoreProjectsMetadataItem>,
-        @com.fasterxml.jackson.annotation.JsonProperty("status", required = true)
-        val status: GetStorageStoresByIdResponseStoreStatusEnum?,
-        val usageQuotaExceeded: Boolean,
-        val projectFilter: GetStorageStoresByIdResponseStoreProjectFilter? = null,
-        val totalConnectedProjects: Double? = null,
-    )
 
-    data class GetStorageStoresByIdResponse(val store: GetStorageStoresByIdResponseStore)
 
-    data class CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploXdbb4725d02(
-        val environments: List<String>,
-        val slug: String,
-    )
 
-    data class CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeployments(
-        val actions: List<CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploXdbb4725d02>,
-        val required: Boolean,
-    )
 
-    data class CreateStorageStoresBlobResponseStoreProjectsMetadataItem(
-        val environments: List<String>,
-        val environmentVariables: List<String>,
-        @com.fasterxml.jackson.annotation.JsonProperty("envVarPrefix", required = true)
-        val envVarPrefix: String?,
-        val id: String,
-        val name: String,
-        val projectId: String,
-        val deployments: CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeployments? =
-            null,
-        val framework: CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum? =
-            null,
-        val latestDeployment: String? = null,
-        val makeEnvVarsSensitive: Boolean? = null,
-    )
 
-    data class CreateStorageStoresBlobResponseStoreProjectFilterGit(
-        val providers: Any,
-        val owners: List<String>? = null,
-        val repos: List<String>? = null,
-    )
 
-    data class CreateStorageStoresBlobResponseStoreProjectFilter(
-        val git: CreateStorageStoresBlobResponseStoreProjectFilterGit? = null
-    )
+data class GetStorageStoresByIdResponseStoreProjectFilterGit(
+    val providers: Any,
+    val owners: List<String>? = null,
+    val repos: List<String>? = null
+)
 
-    data class CreateStorageStoresBlobResponseStore(
-        val projectsMetadata: List<CreateStorageStoresBlobResponseStoreProjectsMetadataItem>,
-        @com.fasterxml.jackson.annotation.JsonProperty("status", required = true)
-        val status: CreateStorageStoresBlobResponseStoreStatusEnum?,
-        val usageQuotaExceeded: Boolean,
-        val count: Double,
-        val isTokenExpired: Boolean,
-        val region: CreateStorageStoresBlobResponseStoreRegionEnum,
-        val size: Double,
-        val projectFilter: CreateStorageStoresBlobResponseStoreProjectFilter? = null,
-        val totalConnectedProjects: Double? = null,
-        val access: CreateStorageStoresBlobResponseStoreAccessEnum? = null,
-        /**
-         * A project-default store is a private blob store that is lazily created per-project, uses
-         * OIDC auth instead of read-write tokens, and cannot be modified through standard store
-         * mutation APIs. Undefined for legacy stores.
-         */
-        val kind: CreateStorageStoresBlobResponseStoreKindEnum? = null,
-        /**
-         * The project this store is scoped to. Set for project-default stores and user-created
-         * stores with enforced project association.
-         */
-        val projectId: String? = null,
-    )
+data class GetStorageStoresByIdResponseStoreProjectFilter(
+    val git: GetStorageStoresByIdResponseStoreProjectFilterGit? = null
+)
 
-    data class CreateStorageStoresBlobResponse(
-        @com.fasterxml.jackson.annotation.JsonProperty("store", required = true)
-        val store: CreateStorageStoresBlobResponseStore?
-    )
+data class GetStorageStoresByIdResponseStore(
+    val projectsMetadata: List<GetStorageStoresByIdResponseStoreProjectsMetadataItem>,
+    @com.fasterxml.jackson.annotation.JsonProperty("status", required = true) val status: GetStorageStoresByIdResponseStoreStatusEnum?,
+    val usageQuotaExceeded: Boolean,
+    val projectFilter: GetStorageStoresByIdResponseStoreProjectFilter? = null,
+    val totalConnectedProjects: Double? = null
+)
 
-    data class DeleteStorageStoresBlobByIdResponse(val id: String)
+data class GetStorageStoresByIdResponse(
+    val store: GetStorageStoresByIdResponseStore
+)
+
+data class CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploXdbb4725d02(
+    val environments: List<String>,
+    val slug: String
+)
+
+data class CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeployments(
+    val actions: List<CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploXdbb4725d02>,
+    val required: Boolean
+)
+
+
+
+data class CreateStorageStoresBlobResponseStoreProjectsMetadataItem(
+    val environments: List<String>,
+    val environmentVariables: List<String>,
+    @com.fasterxml.jackson.annotation.JsonProperty("envVarPrefix", required = true) val envVarPrefix: String?,
+    val id: String,
+    val name: String,
+    val projectId: String,
+    val deployments: CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeployments? = null,
+    val framework: CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum? = null,
+    val latestDeployment: String? = null,
+    val makeEnvVarsSensitive: Boolean? = null
+)
+
+
+
+
+
+
+
+
+
+data class CreateStorageStoresBlobResponseStoreProjectFilterGit(
+    val providers: Any,
+    val owners: List<String>? = null,
+    val repos: List<String>? = null
+)
+
+data class CreateStorageStoresBlobResponseStoreProjectFilter(
+    val git: CreateStorageStoresBlobResponseStoreProjectFilterGit? = null
+)
+
+
+
+
+
+data class CreateStorageStoresBlobResponseStore(
+    val projectsMetadata: List<CreateStorageStoresBlobResponseStoreProjectsMetadataItem>,
+    @com.fasterxml.jackson.annotation.JsonProperty("status", required = true) val status: CreateStorageStoresBlobResponseStoreStatusEnum?,
+    val usageQuotaExceeded: Boolean,
+    val count: Double,
+    val isTokenExpired: Boolean,
+    val region: CreateStorageStoresBlobResponseStoreRegionEnum,
+    val size: Double,
+    val projectFilter: CreateStorageStoresBlobResponseStoreProjectFilter? = null,
+    val totalConnectedProjects: Double? = null,
+    val access: CreateStorageStoresBlobResponseStoreAccessEnum? = null,
+    /**
+     * A project-default store is a private blob store that is lazily created per-project, uses OIDC auth instead of read-write tokens, and cannot be modified through standard store mutation APIs. Undefined for legacy stores.
+     */
+    val kind: CreateStorageStoresBlobResponseStoreKindEnum? = null,
+    /**
+     * The project this store is scoped to. Set for project-default stores and user-created stores with enforced project association.
+     */
+    val projectId: String? = null
+)
+
+data class CreateStorageStoresBlobResponse(
+    @com.fasterxml.jackson.annotation.JsonProperty("store", required = true) val store: CreateStorageStoresBlobResponseStore?
+)
+
+data class DeleteStorageStoresBlobByIdResponse(
+    val id: String
+)
+
 
     /**
-     * Retrieves a storage store by its identifier. Use `skip-metadata` to control whether project
-     * metadata is included and `include-guides` to control whether guides are included in the
-     * response.
+     * Retrieves a storage store by its identifier. Use `skip-metadata` to control whether project metadata is included and `include-guides` to control whether guides are included in the response.
      */
-    fun getStorageStoresById(
-        clientConfig: ClientConfig,
-        id: String,
-        skipMetadata: Boolean? = null,
-        includeGuides: Boolean? = null,
-        options: RequestOptions? = null,
-    ): GetStorageStoresByIdResponse {
-        return SdkClient.request<GetStorageStoresByIdResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/storage/stores/${SdkClient.encodePathSegment(id)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "skip-metadata" to SdkClient.queryValue(skipMetadata, "form", true),
-                            "include-guides" to SdkClient.queryValue(includeGuides, "form", true),
-                        ),
-                    operationId = "getStorageStoresById",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun getStorageStoresById(clientConfig: ClientConfig, id: String, skipMetadata: Boolean? = null, includeGuides: Boolean? = null, options: RequestOptions? = null): GetStorageStoresByIdResponse {
+        return SdkClient.request<GetStorageStoresByIdResponse>(SdkClient.RequestSpec("GET", "/storage/stores/${SdkClient.encodePathSegment(id)}", config = clientConfig, query = mapOf("skip-metadata" to
+    SdkClient.queryValue(skipMetadata, "form", true), "include-guides" to
+    SdkClient.queryValue(includeGuides, "form", true)), operationId = "getStorageStoresById", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
+
+
+
+
+
+
     /**
-     * Creates a Blob store with a name and optional region, access setting, and project
-     * association. Choose a supported region and set `access` to `public` or `private`; access
-     * defaults to public when omitted. The response includes the created store and its
-     * configuration.
+     * Creates a Blob store with a name and optional region, access setting, and project association. Choose a supported region and set `access` to `public` or `private`; access defaults to public when omitted. The response includes the created store and its configuration.
      */
-    fun createStorageStoresBlob(
-        clientConfig: ClientConfig,
-        name: String,
-        region: CreateStorageStoresBlobRegionEnum? = null,
-        access: CreateStorageStoresBlobAccessEnum? = null,
-        projectId: String? = null,
-        options: RequestOptions? = null,
-    ): CreateStorageStoresBlobResponse {
+    fun createStorageStoresBlob(clientConfig: ClientConfig, name: String, region: CreateStorageStoresBlobRegionEnum? = null, access: CreateStorageStoresBlobAccessEnum? = null, projectId: String? = null, options: RequestOptions? = null): CreateStorageStoresBlobResponse {
         Validation.validateLength("name", name, Validation.LengthOpts(max = 70))
 
         if (projectId != null) {
             Validation.validateLength("projectId", projectId, Validation.LengthOpts(max = 50))
-        }
+}
 
-        return SdkClient.request<CreateStorageStoresBlobResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/storage/stores/blob",
-                    config = clientConfig,
-                    body =
-                        SdkClient.bodyMap(
-                            "name" to (name),
-                            "region" to (SdkClient.omitIfNull(region)),
-                            "access" to (SdkClient.omitIfNull(access)),
-                            "projectId" to (SdkClient.omitIfNull(projectId)),
-                        ),
-                    operationId = "createStorageStoresBlob",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<CreateStorageStoresBlobResponse>(SdkClient.RequestSpec("POST", "/storage/stores/blob", config = clientConfig, body = SdkClient.bodyMap("name" to (name), "region" to (SdkClient.omitIfNull(region)), "access" to (SdkClient.omitIfNull(access)), "projectId" to (SdkClient.omitIfNull(projectId))), operationId = "createStorageStoresBlob", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
+
+
+
+
+
 
     /**
-     * Deletes a Blob store by its identifier. Use the returned identifier to confirm which store
-     * was deleted. The store must be accessible to the authenticated user.
+     * Deletes a Blob store by its identifier. Use the returned identifier to confirm which store was deleted. The store must be accessible to the authenticated user.
      */
-    fun deleteStorageStoresBlobById(
-        clientConfig: ClientConfig,
-        id: String,
-        options: RequestOptions? = null,
-    ): DeleteStorageStoresBlobByIdResponse {
-        return SdkClient.request<DeleteStorageStoresBlobByIdResponse>(
-                SdkClient.RequestSpec(
-                    "DELETE",
-                    "/storage/stores/blob/${SdkClient.encodePathSegment(id)}",
-                    config = clientConfig,
-                    operationId = "deleteStorageStoresBlobById",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun deleteStorageStoresBlobById(clientConfig: ClientConfig, id: String, options: RequestOptions? = null): DeleteStorageStoresBlobByIdResponse {
+        return SdkClient.request<DeleteStorageStoresBlobByIdResponse>(SdkClient.RequestSpec("DELETE", "/storage/stores/blob/${SdkClient.encodePathSegment(id)}", config = clientConfig, operationId = "deleteStorageStoresBlobById", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
+
+
+
+
+
+
 }

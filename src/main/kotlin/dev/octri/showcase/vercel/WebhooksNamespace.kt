@@ -3,95 +3,42 @@
 
 package dev.octri.showcase.vercel
 
+
 class WebhooksNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Creates a webhook that sends selected events to a URL. Provide an HTTP or HTTPS `url` and at
-     * least one event in `events`; you can optionally associate the webhook with 1 to 50
-     * `projectIds`. The response includes the webhook ID and secret used to sign payloads.
+     * Creates a webhook that sends selected events to a URL. Provide an HTTP or HTTPS `url` and at least one event in `events`; you can optionally associate the webhook with 1 to 50 `projectIds`. The response includes the webhook ID and secret used to sign payloads.
      *
      * Creates a webhook
      */
-    fun create(
-        url: String,
-        events: List<CreateWebhookEventsItemEnum>,
-        teamId: String? = null,
-        slug: String? = null,
-        projectIds: List<String>? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Webhooks.CreateWebhookResponse {
-        return dev.octri.showcase.vercel.methods.Webhooks.createWebhook(
-            clientConfig,
-            url,
-            events,
-            teamId,
-            slug,
-            projectIds,
-            options,
-        )
+    fun create(url: String, events: List<CreateWebhookEventsItemEnum>, teamId: String? = null, slug: String? = null, projectIds: List<String>? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Webhooks.CreateWebhookResponse {
+        return dev.octri.showcase.vercel.methods.Webhooks.createWebhook(clientConfig, url, events, teamId, slug, projectIds, options)
     }
 
     /**
-     * Lists webhooks, optionally scoped to a project. Use `projectId` to retrieve webhooks
-     * associated with a specific project; omit it to list webhooks without that project filter. The
-     * project identifier must match the documented character pattern.
+     * Lists webhooks, optionally scoped to a project. Use `projectId` to retrieve webhooks associated with a specific project; omit it to list webhooks without that project filter. The project identifier must match the documented character pattern.
      *
      * Get a list of webhooks
      */
-    fun get(
-        projectId: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): List<Map<String, Any>> {
-        return dev.octri.showcase.vercel.methods.Webhooks.getWebhooks(
-            clientConfig,
-            projectId,
-            teamId,
-            slug,
-            options,
-        )
+    fun get(projectId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): List<Map<String, Any>> {
+        return dev.octri.showcase.vercel.methods.Webhooks.getWebhooks(clientConfig, projectId, teamId, slug, options)
     }
 
     /**
-     * Retrieves a webhook by its identifier. Use `teamId` or `slug` to specify the team context for
-     * the request. The response includes the webhook URL, subscribed events, associated project
-     * IDs, and timestamps.
+     * Retrieves a webhook by its identifier. Use `teamId` or `slug` to specify the team context for the request. The response includes the webhook URL, subscribed events, associated project IDs, and timestamps.
      *
      * Get a webhook
      */
-    fun getWebhook(
-        id: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Webhooks.GetWebhookResponse {
-        return dev.octri.showcase.vercel.methods.Webhooks.getWebhook(
-            clientConfig,
-            id,
-            teamId,
-            slug,
-            options,
-        )
+    fun getWebhook(id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Webhooks.GetWebhookResponse {
+        return dev.octri.showcase.vercel.methods.Webhooks.getWebhook(clientConfig, id, teamId, slug, options)
     }
 
     /**
-     * Deletes a webhook by its identifier. Use `teamId` or `slug` to specify the team context for
-     * the request. The operation returns no response body when the deletion succeeds.
+     * Deletes a webhook by its identifier. Use `teamId` or `slug` to specify the team context for the request. The operation returns no response body when the deletion succeeds.
      *
      * Deletes a webhook
      */
-    fun delete(
-        id: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Unit {
-        return dev.octri.showcase.vercel.methods.Webhooks.deleteWebhook(
-            clientConfig,
-            id,
-            teamId,
-            slug,
-            options,
-        )
+    fun delete(id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
+        return dev.octri.showcase.vercel.methods.Webhooks.deleteWebhook(clientConfig, id, teamId, slug, options)
     }
+
 }

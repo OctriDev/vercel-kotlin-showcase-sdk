@@ -3,175 +3,205 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorUpdateDataRequestVariant4(
-    /** Salesforce connected app consumer key. */
+    /**
+     * Salesforce connected app consumer key.
+     */
     val consumerKey: String? = null,
-    /** Salesforce connected app consumer secret. */
+    /**
+     * Salesforce connected app consumer secret.
+     */
     val consumerSecret: String? = null,
-    /** Salesforce login host, such as login.salesforce.com. */
-    val loginHost: String? = null,
+    /**
+     * Salesforce login host, such as login.salesforce.com.
+     */
+    val loginHost: String? = null
 ) : ConnectConnectorUpdateDataRequest
 
-/** Slack workspace metadata. */
+/**
+ * Slack workspace metadata.
+ */
 data class ConnectConnectorUpdateDataRequestVariant5SlackTeam(
-    /** Slack workspace ID. */
+    /**
+     * Slack workspace ID.
+     */
     val id: String,
-    /** Slack workspace name. */
+    /**
+     * Slack workspace name.
+     */
     val name: String? = null,
-    /** Slack workspace domain. */
-    val domain: String? = null,
+    /**
+     * Slack workspace domain.
+     */
+    val domain: String? = null
 )
 
 data class ConnectConnectorUpdateDataRequestVariant5SlashCommandsItem(
-    /** Slash command including its leading slash. */
+    /**
+     * Slash command including its leading slash.
+     */
     val command: String,
-    /** Description shown for the slash command in Slack. */
+    /**
+     * Description shown for the slash command in Slack.
+     */
     val description: String,
-    /** Optional usage hint shown for the slash command. */
+    /**
+     * Optional usage hint shown for the slash command.
+     */
     val usageHint: String? = null,
-    /** Whether Slack should escape command arguments. */
-    val shouldEscape: Boolean? = null,
+    /**
+     * Whether Slack should escape command arguments.
+     */
+    val shouldEscape: Boolean? = null
 )
 
 data class ConnectConnectorUpdateDataRequestVariant5ShortcutsItem(
-    /** Where Slack exposes the shortcut. */
+    /**
+     * Where Slack exposes the shortcut.
+     */
     val type: ConnectConnectorUpdateDataRequestVariant5ShortcutsItemTypeEnum,
-    /** Shortcut display name. */
+    /**
+     * Shortcut display name.
+     */
     val name: String,
-    /** Identifier included in the shortcut callback. */
+    /**
+     * Identifier included in the shortcut callback.
+     */
     val callbackId: String,
-    /** Description shown for the shortcut in Slack. */
-    val description: String,
+    /**
+     * Description shown for the shortcut in Slack.
+     */
+    val description: String
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorUpdateDataRequestVariant5(
-    /** Slack app ID. */
+    /**
+     * Slack app ID.
+     */
     val appId: String? = null,
-    /** Slack app display name. */
+    /**
+     * Slack app display name.
+     */
     val appName: String? = null,
-    /** Slack app OAuth client ID. */
+    /**
+     * Slack app OAuth client ID.
+     */
     val clientId: String? = null,
-    /** Slack app OAuth client secret. */
+    /**
+     * Slack app OAuth client secret.
+     */
     val clientSecret: String? = null,
-    /** Slack workspace metadata. */
+    /**
+     * Slack workspace metadata.
+     */
     val slackTeam: ConnectConnectorUpdateDataRequestVariant5SlackTeam? = null,
-    /** Slack request signing secret. */
+    /**
+     * Slack request signing secret.
+     */
     val signingSecret: String? = null,
-    /** Legacy Slack webhook verification token. */
+    /**
+     * Legacy Slack webhook verification token.
+     */
     val verificationToken: String? = null,
-    /** OAuth scopes requested for Slack bot tokens. */
+    /**
+     * OAuth scopes requested for Slack bot tokens.
+     */
     val botScopes: List<String>? = null,
-    /** OAuth scopes requested for Slack user tokens. */
+    /**
+     * OAuth scopes requested for Slack user tokens.
+     */
     val userScopes: List<String>? = null,
-    /** Slash commands configured for the managed Slack app. */
+    /**
+     * Slash commands configured for the managed Slack app.
+     */
     val slashCommands: List<ConnectConnectorUpdateDataRequestVariant5SlashCommandsItem>? = null,
-    /** Global and message shortcuts configured for the Slack app. */
+    /**
+     * Global and message shortcuts configured for the Slack app.
+     */
     val shortcuts: List<ConnectConnectorUpdateDataRequestVariant5ShortcutsItem>? = null,
-    /** Additional provider metadata stored with the connector. */
-    val extras: Map<String, Any>? = null,
+    /**
+     * Additional provider metadata stored with the connector.
+     */
+    val extras: Map<String, Any>? = null
 ) : ConnectConnectorUpdateDataRequest
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorUpdateDataRequestVariant6(
-    /** Snowflake account identifier. */
+    /**
+     * Snowflake account identifier.
+     */
     val accountIdentifier: String? = null,
-    /** Default Snowflake role for created sessions. */
-    val defaultSessionRole: String? = null,
+    /**
+     * Default Snowflake role for created sessions.
+     */
+    val defaultSessionRole: String? = null
 ) : ConnectConnectorUpdateDataRequest
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorUpdateDataRequestVariant7(
-    /** Snowflake account identifier. */
+    /**
+     * Snowflake account identifier.
+     */
     val accountIdentifier: String? = null
 ) : ConnectConnectorUpdateDataRequest
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorUpdateDataRequestVariant8(
-    /** Linq partner API token for the shared line. */
+    /**
+     * Linq partner API token for the shared line.
+     */
     val apiToken: String? = null,
-    val phoneNumbers: List<String>? = null,
+    val phoneNumbers: List<String>? = null
 ) : ConnectConnectorUpdateDataRequest
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorUpdateDataRequestVariant9(
-    /** Sendblue API key id (`sb-api-key-id`). */
+    /**
+     * Sendblue API key id (`sb-api-key-id`).
+     */
     val apiKeyId: String? = null,
-    /** Sendblue API secret key (`sb-api-secret-key`). */
+    /**
+     * Sendblue API secret key (`sb-api-secret-key`).
+     */
     val apiSecretKey: String? = null,
     /**
-     * E.164 Sendblue lines this connector sends and receives on. Used as the connector's display
-     * name, and the only lines its webhooks are registered for; an empty array clears them, which
-     * also removes the webhook subscription.
+     * E.164 Sendblue lines this connector sends and receives on. Used as the connector's display name, and the only lines its webhooks are registered for; an empty array clears them, which also removes the webhook subscription.
      */
-    val phoneNumbers: List<String>? = null,
+    val phoneNumbers: List<String>? = null
 ) : ConnectConnectorUpdateDataRequest
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorUpdateDataRequestVariant10(
-    /** Photon project secret. */
+    /**
+     * Photon project secret.
+     */
     val projectSecret: String? = null,
-    /** Photon webhook verification secret. */
+    /**
+     * Photon webhook verification secret.
+     */
     val webhookSecret: String? = null,
-    /** Whether Connect should recreate the Photon webhook. */
-    val repairWebhook: Boolean? = null,
+    /**
+     * Whether Connect should recreate the Photon webhook.
+     */
+    val repairWebhook: Boolean? = null
 ) : ConnectConnectorUpdateDataRequest
 
-/** Provider configuration fields to update. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = ConnectConnectorUpdateDataRequest.Deserializer::class
-)
+/**
+ * Provider configuration fields to update.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = ConnectConnectorUpdateDataRequest.Deserializer::class)
 sealed interface ConnectConnectorUpdateDataRequest {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<ConnectConnectorUpdateDataRequest>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<ConnectConnectorUpdateDataRequest>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): ConnectConnectorUpdateDataRequest {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                ConnectConnectorUpdateDataRequestOwnedTypes.firstOrNull { (keys, _) ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = ConnectConnectorUpdateDataRequestOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -179,186 +209,139 @@ sealed interface ConnectConnectorUpdateDataRequest {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out ConnectConnectorUpdateDataRequest>> =
-                listOf(
-                    ConnectConnectorUpdateDataRequestVariant0::class.java,
-                    ConnectConnectorUpdateDataRequestVariant1::class.java,
-                    ConnectConnectorUpdateDataRequestVariant2::class.java,
-                    ConnectConnectorUpdateDataRequestVariant3::class.java,
-                    ConnectConnectorUpdateDataRequestVariant4::class.java,
-                    ConnectConnectorUpdateDataRequestVariant5::class.java,
-                    ConnectConnectorUpdateDataRequestVariant6::class.java,
-                    ConnectConnectorUpdateDataRequestVariant7::class.java,
-                    ConnectConnectorUpdateDataRequestVariant8::class.java,
-                    ConnectConnectorUpdateDataRequestVariant9::class.java,
-                    ConnectConnectorUpdateDataRequestVariant10::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out ConnectConnectorUpdateDataRequest>> = listOf(ConnectConnectorUpdateDataRequestVariant0::class.java, ConnectConnectorUpdateDataRequestVariant1::class.java, ConnectConnectorUpdateDataRequestVariant2::class.java, ConnectConnectorUpdateDataRequestVariant3::class.java, ConnectConnectorUpdateDataRequestVariant4::class.java, ConnectConnectorUpdateDataRequestVariant5::class.java, ConnectConnectorUpdateDataRequestVariant6::class.java, ConnectConnectorUpdateDataRequestVariant7::class.java, ConnectConnectorUpdateDataRequestVariant8::class.java, ConnectConnectorUpdateDataRequestVariant9::class.java, ConnectConnectorUpdateDataRequestVariant10::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                node.isObject ->
-                    ObjectMapConnectConnectorUpdateDataRequest(
-                        mapper.convertValue(
-                            node,
-                            object :
-                                com.fasterxml.jackson.core.type.TypeReference<
-                                    Map<String, Any>
-                                >() {},
-                        )
-                    )
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        ConnectConnectorUpdateDataRequest::class.java,
-                        "no ConnectConnectorUpdateDataRequest branch accepts this payload",
-                    )
+                node.isObject -> ObjectMapConnectConnectorUpdateDataRequest(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Map<String, Any>>() {}))
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, ConnectConnectorUpdateDataRequest::class.java, "no ConnectConnectorUpdateDataRequest branch accepts this payload")
             }
         }
     }
 }
 
-internal val ConnectConnectorUpdateDataRequestOwnedTypes:
-    List<Pair<List<String>, Class<out ConnectConnectorUpdateDataRequest>>> =
-    listOf(
-        listOf(
-            "serverUrl",
-            "serverConfig",
-            "clientName",
-            "tokenEndpointAuthMethod",
-            "responseType",
-            "pkceRequired",
-            "codeChallengeMethod",
-            "userAuthorization",
-            "refreshTokens",
-            "clientCredentials",
-            "forwardedClaims",
-            "defaultAudience",
-            "defaultResource",
-            "defaultTokenExpiresIn",
-            "authorizationUrlParams",
-            "jwtBearer",
-            "clientAssertion",
-        ) to ConnectConnectorUpdateDataRequestVariant0::class.java,
-        listOf("toDelete", "toAdd", "toUpdate", "instructions") to
-            ConnectConnectorUpdateDataRequestVariant1::class.java,
-        listOf("appSlug", "owner", "privateKeyPem") to
-            ConnectConnectorUpdateDataRequestVariant2::class.java,
-        listOf("appScopes", "ownerOrganization", "application") to
-            ConnectConnectorUpdateDataRequestVariant3::class.java,
-        listOf("consumerKey", "consumerSecret", "loginHost") to
-            ConnectConnectorUpdateDataRequestVariant4::class.java,
-        listOf(
-            "slackTeam",
-            "signingSecret",
-            "verificationToken",
-            "botScopes",
-            "slashCommands",
-            "shortcuts",
-        ) to ConnectConnectorUpdateDataRequestVariant5::class.java,
-        listOf("defaultSessionRole") to ConnectConnectorUpdateDataRequestVariant6::class.java,
-        listOf("apiToken") to ConnectConnectorUpdateDataRequestVariant8::class.java,
-        listOf("apiKeyId", "apiSecretKey") to ConnectConnectorUpdateDataRequestVariant9::class.java,
-        listOf("projectSecret", "repairWebhook") to
-            ConnectConnectorUpdateDataRequestVariant10::class.java,
-    )
-
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+internal val ConnectConnectorUpdateDataRequestOwnedTypes: List<Pair<List<String>, Class<out ConnectConnectorUpdateDataRequest>>> = listOf(
+    listOf("serverUrl", "serverConfig", "clientName", "tokenEndpointAuthMethod", "responseType", "pkceRequired", "codeChallengeMethod", "userAuthorization", "refreshTokens", "clientCredentials", "forwardedClaims", "defaultAudience", "defaultResource", "defaultTokenExpiresIn", "authorizationUrlParams", "jwtBearer", "clientAssertion") to ConnectConnectorUpdateDataRequestVariant0::class.java,
+    listOf("toDelete", "toAdd", "toUpdate", "instructions") to ConnectConnectorUpdateDataRequestVariant1::class.java,
+    listOf("appSlug", "owner", "privateKeyPem") to ConnectConnectorUpdateDataRequestVariant2::class.java,
+    listOf("appScopes", "ownerOrganization", "application") to ConnectConnectorUpdateDataRequestVariant3::class.java,
+    listOf("consumerKey", "consumerSecret", "loginHost") to ConnectConnectorUpdateDataRequestVariant4::class.java,
+    listOf("slackTeam", "signingSecret", "verificationToken", "botScopes", "slashCommands", "shortcuts") to ConnectConnectorUpdateDataRequestVariant5::class.java,
+    listOf("defaultSessionRole") to ConnectConnectorUpdateDataRequestVariant6::class.java,
+    listOf("apiToken") to ConnectConnectorUpdateDataRequestVariant8::class.java,
+    listOf("apiKeyId", "apiSecretKey") to ConnectConnectorUpdateDataRequestVariant9::class.java,
+    listOf("projectSecret", "repairWebhook") to ConnectConnectorUpdateDataRequestVariant10::class.java,
 )
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class ObjectMapConnectConnectorUpdateDataRequest(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Map<String, Any>
-) : ConnectConnectorUpdateDataRequest
 
-/** Updated connector and any required provider follow-up actions. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class ObjectMapConnectConnectorUpdateDataRequest(@get:com.fasterxml.jackson.annotation.JsonValue val value: Map<String, Any>) : ConnectConnectorUpdateDataRequest
+
+/**
+ * Updated connector and any required provider follow-up actions.
+ */
 data class ConnectConnectorUpdateResult(
-    /** Updated connector. */
+    /**
+     * Updated connector.
+     */
     val connector: ConnectConnector,
-    /** Present when affected users must authorize the connector's new permissions. */
+    /**
+     * Present when affected users must authorize the connector's new permissions.
+     */
     val reconsentNeeded: ConnectReconsent? = null,
     /**
-     * When true, prompt a team owner or administrator to reinstall the connector before relying on
-     * the change.
+     * When true, prompt a team owner or administrator to reinstall the connector before relying on the change.
      */
     val reinstallNeeded: Boolean? = null,
-    /** Result of synchronizing the change with the external service. */
-    val serviceSync: ConnectServiceSync? = null,
+    /**
+     * Result of synchronizing the change with the external service.
+     */
+    val serviceSync: ConnectServiceSync? = null
 )
 
 /**
- * Existing authorizations no longer cover the connector's configured scopes, so they must be
- * re-authorized.
+ * Existing authorizations no longer cover the connector's configured scopes, so they must be re-authorized.
  */
 data class ConnectReconsent(
-    /** The affected authorization scope. user means each affected user must authorize again. */
+    /**
+     * The affected authorization scope. user means each affected user must authorize again.
+     */
     val scope: ConnectReconsentScopeEnum
 )
 
-/** Provider-side configuration synchronization result. */
+/**
+ * Provider-side configuration synchronization result.
+ */
 data class ConnectServiceSync(
     /**
-     * done means the external service was updated. required means the Vercel update was saved, but
-     * provider-side configuration still needs attention.
+     * done means the external service was updated. required means the Vercel update was saved, but provider-side configuration still needs attention.
      */
     val status: ConnectServiceSyncStatusEnum,
-    /** Provider synchronization errors. Present when serviceSync.status is required. */
-    val errors: List<ConnectServiceSyncError>? = null,
+    /**
+     * Provider synchronization errors. Present when serviceSync.status is required.
+     */
+    val errors: List<ConnectServiceSyncError>? = null
 )
 
-/** Provider synchronization errors, when synchronization is required. */
+/**
+ * Provider synchronization errors, when synchronization is required.
+ */
 data class ConnectServiceSyncError(
-    /** Human-readable provider synchronization error. */
+    /**
+     * Human-readable provider synchronization error.
+     */
     val message: String,
-    /** Connector fields that caused the synchronization error. */
+    /**
+     * Connector fields that caused the synchronization error.
+     */
     val fields: List<String>? = null,
-    /** Provider-specific error details that are safe to expose. */
-    val vendor: Map<String, Any>? = null,
+    /**
+     * Provider-specific error details that are safe to expose.
+     */
+    val vendor: Map<String, Any>? = null
 )
 
-/** Connector fields to update. */
+/**
+ * Connector fields to update.
+ */
 data class ConnectUpdateConnectorRequestRequest(
-    /** Whether the triggers are enabled for this connector. */
+    /**
+     * Whether the triggers are enabled for this connector.
+     */
     val triggers: Boolean? = null,
     /**
-     * Plaintext verification inputs, validated by the trigger driver and encrypted into stored
-     * triggerData. An empty object makes no changes.
+     * Plaintext verification inputs, validated by the trigger driver and encrypted into stored triggerData. An empty object makes no changes.
      */
     val triggerVerificationInput: Map<String, Any>? = null,
     /**
-     * Additional registration inputs, validated by the trigger driver. Requires triggers: true.
-     * Shared verification credentials are read from triggerData.
+     * Additional registration inputs, validated by the trigger driver. Requires triggers: true. Shared verification credentials are read from triggerData.
      */
     val triggerRegistrationInput: Map<String, Any>? = null,
-    /** Default trigger events for this connector. */
-    val events: List<String>? = null,
-    /** Provider configuration fields to update. */
-    @com.fasterxml.jackson.annotation.JsonProperty("data")
-    val `data`: ConnectConnectorUpdateDataRequest? = null,
     /**
-     * SHA-1 digest of a PNG or JPEG icon that is at least 640 by 640 pixels. This field does not
-     * accept a URL or image bytes. First compute the digest and upload the raw image with POST
-     * /v2/files. Send `Content-Length` and the same 40-character digest in `x-vercel-digest`. Then
-     * set `icon` to that digest. ```js import { createHash } from 'node:crypto'; import { readFile
-     * } from 'node:fs/promises'; const VERCEL_TOKEN = process.env.VERCEL_TOKEN; const connectorId =
-     * 'scl_...'; const…
+     * Default trigger events for this connector.
+     */
+    val events: List<String>? = null,
+    /**
+     * Provider configuration fields to update.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("data") val `data`: ConnectConnectorUpdateDataRequest? = null,
+    /**
+     * SHA-1 digest of a PNG or JPEG icon that is at least 640 by 640 pixels. This field does not accept a URL or image bytes. First compute the digest and upload the raw image with POST /v2/files. Send `Content-Length` and the same 40-character digest in `x-vercel-digest`. Then set `icon` to that digest. ```js import { createHash } from 'node:crypto'; import { readFile } from 'node:fs/promises'; const VERCEL_TOKEN = process.env.VERCEL_TOKEN; const connectorId = 'scl_...'; const…
      */
     val icon: String? = null,
-    /** Optional `string` value serialized in the `backgroundColor` wire field. */
+    /**
+     * Optional `string` value serialized in the `backgroundColor` wire field.
+     */
     val backgroundColor: String? = null,
-    /** Optional `string` value serialized in the `accentColor` wire field. */
+    /**
+     * Optional `string` value serialized in the `accentColor` wire field.
+     */
     val accentColor: String? = null,
     /**
-     * Full team-scoped UID, such as `slack/my-bot`. It cannot contain whitespace, `%`, `#`, control
-     * characters, or Vercel-owned namespaces. Changing it breaks callers that use the old UID. The
-     * stable connector ID does not change.
+     * Full team-scoped UID, such as `slack/my-bot`. It cannot contain whitespace, `%`, `#`, control characters, or Vercel-owned namespaces. Changing it breaks callers that use the old UID. The stable connector ID does not change.
      */
     val uid: String? = null,
     /**
-     * Display name for the connector. It is trimmed and cannot be empty or contain control
-     * characters.
+     * Display name for the connector. It is trimmed and cannot be empty or contain control characters.
      */
-    val name: String? = null,
+    val name: String? = null
 )

@@ -23,819 +23,276 @@ import dev.octri.showcase.vercel.Validation
 
 internal object DomainsRegistrarSearchDomainsOperation {
     /**
-     * Searches for domain registration availability and pricing for a batch of exact domain names.
-     * Provide between 1 and 200 valid domain names in `domains`; results are returned in input
-     * order and include registration and renewal prices in USD for available domains. This
-     * operation does not require authentication.
+     * Searches for domain registration availability and pricing for a batch of exact domain names. Provide between 1 and 200 valid domain names in `domains`; results are returned in input order and include registration and renewal prices in USD for available domains. This operation does not require authentication.
      *
-     * Start domain research here. Get registration availability and pricing for 1–200 exact domain
-     * names. Returns results in input order, with registration and renewal prices in USD for
-     * available domains. No authentication required.
+     * Start domain research here. Get registration availability and pricing for 1–200 exact domain names. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.
      *
      * @param domains an array of at most 200 item(s)
      */
-    fun searchDomains(
-        clientConfig: ClientConfig,
-        domains: List<DomainName>,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): DomainsRegistrar.SearchDomainsResponse {
+    fun searchDomains(clientConfig: ClientConfig, domains: List<DomainName>, teamId: String? = null, options: RequestOptions? = null): DomainsRegistrar.SearchDomainsResponse {
         Validation.validateItems("domains", domains, Validation.LengthOpts(min = 1, max = 200))
 
-        return SdkClient.request<DomainsRegistrar.SearchDomainsResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v1/registrar/domains/search",
-                    config = clientConfig,
-                    query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)),
-                    body = SdkClient.bodyMap("domains" to (domains)),
-                    operationId = "searchDomains",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                    errors =
-                        mapOf(
-                            "400" to HttpApiDecodeError::class.java,
-                            "401" to Unauthorized::class.java,
-                            "403" to NotAuthorizedForScope::class.java,
-                            "429" to TooManyRequests::class.java,
-                            "500" to InternalServerError::class.java,
-                        ),
-                )
-            )
-            .data
+        return SdkClient.request<DomainsRegistrar.SearchDomainsResponse>(SdkClient.RequestSpec("POST", "/v1/registrar/domains/search", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)), body = SdkClient.bodyMap("domains" to (domains)), operationId = "searchDomains", decoder = SdkClient.ResponseDecoder.JSON, options = options, errors = mapOf("400" to HttpApiDecodeError::class.java, "401" to Unauthorized::class.java, "403" to NotAuthorizedForScope::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java))).data
     }
 }
 
 internal object DomainsRegistrarGetSupportedTldsOperation {
     /**
-     * Lists the top-level domains supported for domain registration. Use this operation to discover
-     * which TLDs are available before requesting TLD metadata or checking domain availability. The
-     * response is an array of TLD names.
+     * Lists the top-level domains supported for domain registration. Use this operation to discover which TLDs are available before requesting TLD metadata or checking domain availability. The response is an array of TLD names.
      *
      * Get a list of TLDs supported by Vercel
      */
-    fun getSupportedTlds(
-        clientConfig: ClientConfig,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): List<TldName> {
-        return SdkClient.request<List<TldName>>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/registrar/tlds/supported",
-                    config = clientConfig,
-                    query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)),
-                    operationId = "getSupportedTlds",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                    errors =
-                        mapOf(
-                            "400" to HttpApiDecodeError::class.java,
-                            "401" to Unauthorized::class.java,
-                            "403" to NotAuthorizedForScope::class.java,
-                            "429" to TooManyRequests::class.java,
-                            "500" to InternalServerError::class.java,
-                        ),
-                )
-            )
-            .data
+    fun getSupportedTlds(clientConfig: ClientConfig, teamId: String? = null, options: RequestOptions? = null): List<TldName> {
+        return SdkClient.request<List<TldName>>(SdkClient.RequestSpec("GET", "/v1/registrar/tlds/supported", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)), operationId = "getSupportedTlds", decoder = SdkClient.ResponseDecoder.JSON, options = options, errors = mapOf("400" to HttpApiDecodeError::class.java, "401" to Unauthorized::class.java, "403" to NotAuthorizedForScope::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java))).data
     }
 }
 
 internal object DomainsRegistrarGetTldOperation {
     /**
-     * Retrieves metadata for a specific top-level domain. Use this operation to find the language
-     * codes supported for the TLD and their corresponding language names. The response contains a
-     * map of supported language codes.
+     * Retrieves metadata for a specific top-level domain. Use this operation to find the language codes supported for the TLD and their corresponding language names. The response contains a map of supported language codes.
      *
      * Get the metadata for a specific TLD.
      */
-    fun getTld(
-        clientConfig: ClientConfig,
-        tld: TldName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): DomainsRegistrar.GetTldResponse {
-        return SdkClient.request<DomainsRegistrar.GetTldResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/registrar/tlds/${SdkClient.encodePathSegment(tld)}",
-                    config = clientConfig,
-                    query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)),
-                    operationId = "getTld",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                    errors =
-                        mapOf(
-                            "401" to Unauthorized::class.java,
-                            "403" to NotAuthorizedForScope::class.java,
-                            "429" to TooManyRequests::class.java,
-                            "500" to InternalServerError::class.java,
-                        ),
-                )
-            )
-            .data
+    fun getTld(clientConfig: ClientConfig, tld: TldName, teamId: String? = null, options: RequestOptions? = null): DomainsRegistrar.GetTldResponse {
+        return SdkClient.request<DomainsRegistrar.GetTldResponse>(SdkClient.RequestSpec("GET", "/v1/registrar/tlds/${SdkClient.encodePathSegment(tld)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)), operationId = "getTld", decoder = SdkClient.ResponseDecoder.JSON, options = options, errors = mapOf("401" to Unauthorized::class.java, "403" to NotAuthorizedForScope::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java))).data
     }
 }
 
 internal object DomainsRegistrarGetTldPriceOperation {
     /**
-     * Retrieves base price data for a top-level domain (TLD); premium domains may have different
-     * prices. Use `years` to request a registration term, or omit it to use the TLD's minimum term.
-     * For premium-domain pricing, use the endpoint for getting price data for a domain.
+     * Retrieves base price data for a top-level domain (TLD); premium domains may have different prices. Use `years` to request a registration term, or omit it to use the TLD's minimum term. For premium-domain pricing, use the endpoint for getting price data for a domain.
      *
-     * Get price data for a specific TLD. This only reflects base prices for the given TLD. Premium
-     * domains may have different prices. Use the Get price data for a domain endpoint to get the
-     * price data for a specific domain.
+     * Get price data for a specific TLD. This only reflects base prices for the given TLD. Premium domains may have different prices. Use the Get price data for a domain endpoint to get the price data for a specific domain.
      *
-     * @param years The number of years to get the price for. If not provided, the minimum number of
-     *   years for the TLD will be used.
+     * @param years The number of years to get the price for. If not provided, the
+     *   minimum number of years for the TLD will be used.
      */
-    fun getTldPrice(
-        clientConfig: ClientConfig,
-        tld: TldName,
-        years: String? = null,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): DomainsRegistrar.GetTldPriceResponse {
-        return SdkClient.request<DomainsRegistrar.GetTldPriceResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/registrar/tlds/${SdkClient.encodePathSegment(tld)}/price",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "years" to SdkClient.queryValue(years, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                        ),
-                    operationId = "getTldPrice",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                    errors =
-                        mapOf(
-                            "401" to Unauthorized::class.java,
-                            "403" to NotAuthorizedForScope::class.java,
-                            "429" to TooManyRequests::class.java,
-                            "500" to InternalServerError::class.java,
-                        ),
-                )
-            )
-            .data
+    fun getTldPrice(clientConfig: ClientConfig, tld: TldName, years: String? = null, teamId: String? = null, options: RequestOptions? = null): DomainsRegistrar.GetTldPriceResponse {
+        return SdkClient.request<DomainsRegistrar.GetTldPriceResponse>(SdkClient.RequestSpec("GET", "/v1/registrar/tlds/${SdkClient.encodePathSegment(tld)}/price", config = clientConfig, query = mapOf("years" to SdkClient.queryValue(years, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true)), operationId = "getTldPrice", decoder = SdkClient.ResponseDecoder.JSON, options = options, errors = mapOf("401" to Unauthorized::class.java, "403" to NotAuthorizedForScope::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java))).data
     }
 }
 
 internal object DomainsRegistrarGetDomainAvailabilityOperation {
     /**
-     * Retrieves the availability status for a specific domain. Use `domain` to check whether the
-     * name is available before attempting to purchase it. If it is available, you can purchase it
-     * through the single-domain or multiple-domain purchase endpoint.
+     * Retrieves the availability status for a specific domain. Use `domain` to check whether the name is available before attempting to purchase it. If it is available, you can purchase it through the single-domain or multiple-domain purchase endpoint.
      *
-     * Get availability for a specific domain. If the domain is available, it can be purchased using
-     * the Buy a domain endpoint or the Buy multiple domains endpoint.
+     * Get availability for a specific domain. If the domain is available, it can be purchased using the Buy a domain endpoint or the Buy multiple domains endpoint.
      */
-    fun getDomainAvailability(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): DomainsRegistrar.GetDomainAvailabilityResponse {
-        return SdkClient.request<DomainsRegistrar.GetDomainAvailabilityResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/availability",
-                    config = clientConfig,
-                    query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)),
-                    operationId = "getDomainAvailability",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                    errors =
-                        mapOf(
-                            "400" to HttpApiDecodeError::class.java,
-                            "401" to Unauthorized::class.java,
-                            "403" to NotAuthorizedForScope::class.java,
-                            "404" to NotFound::class.java,
-                            "429" to TooManyRequests::class.java,
-                            "500" to InternalServerError::class.java,
-                        ),
-                )
-            )
-            .data
+    fun getDomainAvailability(clientConfig: ClientConfig, domain: DomainName, teamId: String? = null, options: RequestOptions? = null): DomainsRegistrar.GetDomainAvailabilityResponse {
+        return SdkClient.request<DomainsRegistrar.GetDomainAvailabilityResponse>(SdkClient.RequestSpec("GET", "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/availability", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)), operationId = "getDomainAvailability", decoder = SdkClient.ResponseDecoder.JSON, options = options, errors = mapOf("400" to HttpApiDecodeError::class.java, "401" to Unauthorized::class.java, "403" to NotAuthorizedForScope::class.java, "404" to NotFound::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java))).data
     }
 }
 
 internal object DomainsRegistrarGetDomainPriceOperation {
     /**
-     * Retrieves price data for a specific domain, including purchase, renewal, and transfer prices.
-     * Use `years` to request pricing for a particular term, or omit it to use the minimum term for
-     * the domain's TLD.
+     * Retrieves price data for a specific domain, including purchase, renewal, and transfer prices. Use `years` to request pricing for a particular term, or omit it to use the minimum term for the domain's TLD.
      *
      * Get price data for a specific domain
      *
-     * @param years The number of years to get the price for. If not provided, the minimum number of
-     *   years for the TLD will be used.
+     * @param years The number of years to get the price for. If not provided, the
+     *   minimum number of years for the TLD will be used.
      */
-    fun getDomainPrice(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        years: String? = null,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): DomainsRegistrar.GetDomainPriceResponse {
-        return SdkClient.request<DomainsRegistrar.GetDomainPriceResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/price",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "years" to SdkClient.queryValue(years, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                        ),
-                    operationId = "getDomainPrice",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                    errors =
-                        mapOf(
-                            "401" to Unauthorized::class.java,
-                            "403" to NotAuthorizedForScope::class.java,
-                            "429" to TooManyRequests::class.java,
-                            "500" to InternalServerError::class.java,
-                        ),
-                )
-            )
-            .data
+    fun getDomainPrice(clientConfig: ClientConfig, domain: DomainName, years: String? = null, teamId: String? = null, options: RequestOptions? = null): DomainsRegistrar.GetDomainPriceResponse {
+        return SdkClient.request<DomainsRegistrar.GetDomainPriceResponse>(SdkClient.RequestSpec("GET", "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/price", config = clientConfig, query = mapOf("years" to SdkClient.queryValue(years, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true)), operationId = "getDomainPrice", decoder = SdkClient.ResponseDecoder.JSON, options = options, errors = mapOf("401" to Unauthorized::class.java, "403" to NotAuthorizedForScope::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java))).data
     }
 }
 
 internal object DomainsRegistrarGetBulkPriceOperation {
     /**
-     * Retrieves price data for multiple domains in one request. Supply `domains` with the names to
-     * price, and optionally set `years` to request a specific term; omitted terms use the minimum
-     * term for each TLD. Use the returned prices to evaluate domains before purchasing them.
+     * Retrieves price data for multiple domains in one request. Supply `domains` with the names to price, and optionally set `years` to request a specific term; omitted terms use the minimum term for each TLD. Use the returned prices to evaluate domains before purchasing them.
      *
      * Get price data for multiple domains in a single request.
      *
      * @param domains an array of at most 50 item(s)
-     * @param years The number of years to get the price for. If not provided, the minimum number of
-     *   years for the TLD will be used.
+     * @param years The number of years to get the price for. If not provided, the
+     *   minimum number of years for the TLD will be used.
      */
-    fun getBulkPrice(
-        clientConfig: ClientConfig,
-        domains: List<DomainName>,
-        teamId: String? = null,
-        years: Double? = null,
-        options: RequestOptions? = null,
-    ): DomainsRegistrar.GetBulkPriceResponse {
+    fun getBulkPrice(clientConfig: ClientConfig, domains: List<DomainName>, teamId: String? = null, years: Double? = null, options: RequestOptions? = null): DomainsRegistrar.GetBulkPriceResponse {
         Validation.validateItems("domains", domains, Validation.LengthOpts(min = 1, max = 50))
 
-        return SdkClient.request<DomainsRegistrar.GetBulkPriceResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v1/registrar/domains/price",
-                    config = clientConfig,
-                    query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)),
-                    body =
-                        SdkClient.bodyMap(
-                            "domains" to (domains),
-                            "years" to (SdkClient.omitIfNull(years)),
-                        ),
-                    operationId = "getBulkPrice",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                    errors =
-                        mapOf(
-                            "401" to Unauthorized::class.java,
-                            "403" to NotAuthorizedForScope::class.java,
-                            "429" to TooManyRequests::class.java,
-                            "500" to InternalServerError::class.java,
-                        ),
-                )
-            )
-            .data
+        return SdkClient.request<DomainsRegistrar.GetBulkPriceResponse>(SdkClient.RequestSpec("POST", "/v1/registrar/domains/price", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)), body = SdkClient.bodyMap("domains" to (domains), "years" to (SdkClient.omitIfNull(years))), operationId = "getBulkPrice", decoder = SdkClient.ResponseDecoder.JSON, options = options, errors = mapOf("401" to Unauthorized::class.java, "403" to NotAuthorizedForScope::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java))).data
     }
 }
 
 internal object DomainsRegistrarGetBulkAvailabilityOperation {
     /**
-     * Checks the availability of multiple domains in one request. Supply `domains` with the names
-     * to check, up to 50 per request. If domains are available, you can purchase them through the
-     * single-domain or multiple-domain purchase endpoint.
+     * Checks the availability of multiple domains in one request. Supply `domains` with the names to check, up to 50 per request. If domains are available, you can purchase them through the single-domain or multiple-domain purchase endpoint.
      *
-     * Get availability for multiple domains. If the domains are available, they can be purchased
-     * using the Buy a domain endpoint or the Buy multiple domains endpoint.
+     * Get availability for multiple domains. If the domains are available, they can be purchased using the Buy a domain endpoint or the Buy multiple domains endpoint.
      *
      * @param domains an array of at most 50 item(s)
      */
-    fun getBulkAvailability(
-        clientConfig: ClientConfig,
-        domains: List<DomainName>,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): DomainsRegistrar.GetBulkAvailabilityResponse {
+    fun getBulkAvailability(clientConfig: ClientConfig, domains: List<DomainName>, teamId: String? = null, options: RequestOptions? = null): DomainsRegistrar.GetBulkAvailabilityResponse {
         Validation.validateItems("domains", domains, Validation.LengthOpts(min = 1, max = 50))
 
-        return SdkClient.request<DomainsRegistrar.GetBulkAvailabilityResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v1/registrar/domains/availability",
-                    config = clientConfig,
-                    query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)),
-                    body = SdkClient.bodyMap("domains" to (domains)),
-                    operationId = "getBulkAvailability",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                    errors =
-                        mapOf(
-                            "400" to HttpApiDecodeError::class.java,
-                            "401" to Unauthorized::class.java,
-                            "403" to NotAuthorizedForScope::class.java,
-                            "429" to TooManyRequests::class.java,
-                            "500" to InternalServerError::class.java,
-                        ),
-                )
-            )
-            .data
+        return SdkClient.request<DomainsRegistrar.GetBulkAvailabilityResponse>(SdkClient.RequestSpec("POST", "/v1/registrar/domains/availability", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)), body = SdkClient.bodyMap("domains" to (domains)), operationId = "getBulkAvailability", decoder = SdkClient.ResponseDecoder.JSON, options = options, errors = mapOf("400" to HttpApiDecodeError::class.java, "401" to Unauthorized::class.java, "403" to NotAuthorizedForScope::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java))).data
     }
 }
 
 internal object DomainsRegistrarGetContactInfoSchemaOperation {
     /**
-     * Retrieves the contact information schema for a domain's TLD. Use the schema to identify any
-     * TLD-specific contact fields you need to supply when registering a domain. The required fields
-     * can differ between TLDs.
+     * Retrieves the contact information schema for a domain's TLD. Use the schema to identify any TLD-specific contact fields you need to supply when registering a domain. The required fields can differ between TLDs.
      *
-     * Some TLDs require additional contact information. Use this endpoint to get the schema for the
-     * tld-specific contact information for a domain.
+     * Some TLDs require additional contact information. Use this endpoint to get the schema for the tld-specific contact information for a domain.
      */
-    fun getContactInfoSchema(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): Map<String, Any> {
-        return SdkClient.request<Map<String, Any>>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/contact-info/schema",
-                    config = clientConfig,
-                    query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)),
-                    operationId = "getContactInfoSchema",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                    errors =
-                        mapOf(
-                            "401" to Unauthorized::class.java,
-                            "403" to NotAuthorizedForScope::class.java,
-                            "429" to TooManyRequests::class.java,
-                            "500" to InternalServerError::class.java,
-                        ),
-                )
-            )
-            .data
+    fun getContactInfoSchema(clientConfig: ClientConfig, domain: DomainName, teamId: String? = null, options: RequestOptions? = null): Map<String, Any> {
+        return SdkClient.request<Map<String, Any>>(SdkClient.RequestSpec("GET", "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/contact-info/schema", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)), operationId = "getContactInfoSchema", decoder = SdkClient.ResponseDecoder.JSON, options = options, errors = mapOf("401" to Unauthorized::class.java, "403" to NotAuthorizedForScope::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java))).data
     }
 }
 
 internal object DomainsRegistrarGetDomainAuthCodeOperation {
     /**
-     * Retrieves the authorization code for a domain registered with the domain registrar. Use this
-     * code when transferring the domain from the registrar to another registrar. The domain must be
-     * eligible for transfer out before its code can be retrieved.
+     * Retrieves the authorization code for a domain registered with the domain registrar. Use this code when transferring the domain from the registrar to another registrar. The domain must be eligible for transfer out before its code can be retrieved.
      *
-     * Get the auth code for a domain. This is required to transfer a domain from Vercel to another
-     * registrar.
+     * Get the auth code for a domain. This is required to transfer a domain from Vercel to another registrar.
      */
-    fun getDomainAuthCode(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): DomainsRegistrar.GetDomainAuthCodeResponse {
-        return SdkClient.request<DomainsRegistrar.GetDomainAuthCodeResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/auth-code",
-                    config = clientConfig,
-                    query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)),
-                    operationId = "getDomainAuthCode",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                    errors =
-                        mapOf(
-                            "401" to Unauthorized::class.java,
-                            "404" to DomainNotFound::class.java,
-                            "409" to DomainCannotBeTransferedOutUntil::class.java,
-                            "429" to TooManyRequests::class.java,
-                            "500" to InternalServerError::class.java,
-                        ),
-                )
-            )
-            .data
+    fun getDomainAuthCode(clientConfig: ClientConfig, domain: DomainName, teamId: String? = null, options: RequestOptions? = null): DomainsRegistrar.GetDomainAuthCodeResponse {
+        return SdkClient.request<DomainsRegistrar.GetDomainAuthCodeResponse>(SdkClient.RequestSpec("GET", "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/auth-code", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)), operationId = "getDomainAuthCode", decoder = SdkClient.ResponseDecoder.JSON, options = options, errors = mapOf("401" to Unauthorized::class.java, "404" to DomainNotFound::class.java, "409" to DomainCannotBeTransferedOutUntil::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java))).data
     }
 }
 
 internal object DomainsRegistrarBuySingleDomainOperation {
     /**
-     * Purchases a domain using the supplied registration term, renewal preference, expected price,
-     * and contact information. Provide `contactInformation` with the required registrant details
-     * and use the TLD contact schema to determine whether additional fields are needed. For a
-     * punycode domain, include `languageCode`.
+     * Purchases a domain using the supplied registration term, renewal preference, expected price, and contact information. Provide `contactInformation` with the required registrant details and use the TLD contact schema to determine whether additional fields are needed. For a punycode domain, include `languageCode`.
      *
      * Buy a domain
      *
-     * @param autoRenew Whether the domain should be auto-renewed before it expires. This can be
-     *   configured later through the Vercel Dashboard or the Update auto-renew for a domain
-     *   endpoint.
+     * @param autoRenew Whether the domain should be auto-renewed before it expires.
+     *   This can be configured later through the Vercel Dashboard or the Update
+     *   auto-renew for a domain endpoint.
      * @param years The number of years to purchase the domain for.
-     * @param contactInformation The contact information for the domain. Some TLDs require
-     *   additional contact information. Use the Get contact info schema endpoint to retrieve the
-     *   required fields.
-     * @param languageCode The language code for the domain. For punycode domains, this must be
-     *   provided. The list of supported language codes for a TLD can be retrieved from the Get TLD
-     *   endpoint.
+     * @param contactInformation The contact information for the domain. Some TLDs
+     *   require additional contact information. Use the Get contact info schema
+     *   endpoint to retrieve the required fields.
+     * @param languageCode The language code for the domain. For punycode domains,
+     *   this must be provided. The list of supported language codes for a TLD can be
+     *   retrieved from the Get TLD endpoint.
      */
-    fun buySingleDomain(
-        clientConfig: ClientConfig,
-        request: DomainsRegistrar.BuySingleDomainRequest,
-        options: RequestOptions? = null,
-    ): DomainsRegistrar.BuySingleDomainResponse {
+    fun buySingleDomain(clientConfig: ClientConfig, request: DomainsRegistrar.BuySingleDomainRequest, options: RequestOptions? = null): DomainsRegistrar.BuySingleDomainResponse {
         validateBuySingleDomainRequest(request)
 
-        return SdkClient.request<DomainsRegistrar.BuySingleDomainResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v1/registrar/domains/${SdkClient.encodePathSegment(request.domain)}/buy",
-                    config = clientConfig,
-                    query = mapOf("teamId" to SdkClient.queryValue(request.teamId, "form", true)),
-                    body =
-                        SdkClient.bodyMap(
-                            "autoRenew" to (request.autoRenew),
-                            "years" to (request.years),
-                            "expectedPrice" to (request.expectedPrice),
-                            "contactInformation" to (request.contactInformation),
-                            "languageCode" to (SdkClient.omitIfNull(request.languageCode)),
-                        ),
-                    operationId = "buySingleDomain",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                    errors =
-                        mapOf(
-                            "401" to Unauthorized::class.java,
-                            "429" to TooManyRequests::class.java,
-                            "500" to InternalServerError::class.java,
-                        ),
-                )
-            )
-            .data
+        return SdkClient.request<DomainsRegistrar.BuySingleDomainResponse>(SdkClient.RequestSpec("POST", "/v1/registrar/domains/${SdkClient.encodePathSegment(request.domain)}/buy", config = clientConfig, query = mapOf("teamId" to
+    SdkClient.queryValue(request.teamId, "form", true)), body = SdkClient.bodyMap("autoRenew" to (request.autoRenew), "years" to (request.years), "expectedPrice" to (request.expectedPrice), "contactInformation" to (request.contactInformation), "languageCode" to
+    (SdkClient.omitIfNull(request.languageCode))), operationId = "buySingleDomain", decoder = SdkClient.ResponseDecoder.JSON, options = options, errors = mapOf("401" to Unauthorized::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java))).data
     }
 
+
     private fun validateBuySingleDomainRequest(request: DomainsRegistrar.BuySingleDomainRequest) {
-        Validation.validateRange(
-            "expectedPrice",
-            request.expectedPrice,
-            Validation.RangeOpts(min = 0.01),
-        )
+        Validation.validateRange("expectedPrice", request.expectedPrice, Validation.RangeOpts(min = 0.01))
     }
 }
 
 internal object DomainsRegistrarBuyDomainsOperation {
     /**
-     * Purchases multiple domains in one order using shared contact information. Supply `domains`
-     * with each domain's renewal preference, term, and expected price, and provide the registrant
-     * details in `contactInformation`. Include `languageCode` for any punycode domain.
+     * Purchases multiple domains in one order using shared contact information. Supply `domains` with each domain's renewal preference, term, and expected price, and provide the registrant details in `contactInformation`. Include `languageCode` for any punycode domain.
      *
      * Buy multiple domains at once
      *
-     * @param contactInformation The contact information for the domain. Some TLDs require
-     *   additional contact information. Use the Get contact info schema endpoint to retrieve the
-     *   required fields.
+     * @param contactInformation The contact information for the domain. Some TLDs
+     *   require additional contact information. Use the Get contact info schema
+     *   endpoint to retrieve the required fields.
      */
-    fun buyDomains(
-        clientConfig: ClientConfig,
-        domains: List<DomainsRegistrar.BuyDomainsDomainsItem>,
-        contactInformation: DomainsRegistrar.BuyDomainsContactInformation,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): DomainsRegistrar.BuyDomainsResponse {
+    fun buyDomains(clientConfig: ClientConfig, domains: List<DomainsRegistrar.BuyDomainsDomainsItem>, contactInformation: DomainsRegistrar.BuyDomainsContactInformation, teamId: String? = null, options: RequestOptions? = null): DomainsRegistrar.BuyDomainsResponse {
         Validation.validateItems("domains", domains, Validation.LengthOpts(min = 1))
 
-        return SdkClient.request<DomainsRegistrar.BuyDomainsResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v1/registrar/domains/buy",
-                    config = clientConfig,
-                    query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)),
-                    body =
-                        SdkClient.bodyMap(
-                            "domains" to (domains),
-                            "contactInformation" to (contactInformation),
-                        ),
-                    operationId = "buyDomains",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                    errors =
-                        mapOf(
-                            "401" to Unauthorized::class.java,
-                            "429" to TooManyRequests::class.java,
-                            "500" to InternalServerError::class.java,
-                        ),
-                )
-            )
-            .data
+        return SdkClient.request<DomainsRegistrar.BuyDomainsResponse>(SdkClient.RequestSpec("POST", "/v1/registrar/domains/buy", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)), body = SdkClient.bodyMap("domains" to (domains), "contactInformation" to (contactInformation)), operationId = "buyDomains", decoder = SdkClient.ResponseDecoder.JSON, options = options, errors = mapOf("401" to Unauthorized::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java))).data
     }
 }
 
 internal object DomainsRegistrarTransferInDomainOperation {
     /**
-     * Transfers a domain to the account from another registrar. Provide the losing registrar's
-     * `authCode`, the transfer term in `years`, the `expectedPrice`, and registrant
-     * `contactInformation`; set `autoRenew` to control future renewals. A 200 response includes the
-     * transfer order's `orderId` and links for related actions.
+     * Transfers a domain to the account from another registrar. Provide the losing registrar's `authCode`, the transfer term in `years`, the `expectedPrice`, and registrant `contactInformation`; set `autoRenew` to control future renewals. A 200 response includes the transfer order's `orderId` and links for related actions.
      *
      * Transfer a domain in from another registrar
      *
-     * @param authCode The auth code for the domain. You must obtain this code from the losing
-     *   registrar.
-     * @param autoRenew Whether the domain should be auto-renewed before it expires. This can be
-     *   configured later through the Vercel Dashboard or the Update auto-renew for a domain
-     *   endpoint.
-     * @param years The number of years to renew the domain for once it is transferred in. This must
-     *   be a valid number of transfer years for the TLD.
+     * @param authCode The auth code for the domain. You must obtain this code from
+     *   the losing registrar.
+     * @param autoRenew Whether the domain should be auto-renewed before it expires.
+     *   This can be configured later through the Vercel Dashboard or the Update
+     *   auto-renew for a domain endpoint.
+     * @param years The number of years to renew the domain for once it is
+     *   transferred in. This must be a valid number of transfer years for the TLD.
      */
-    fun transferInDomain(
-        clientConfig: ClientConfig,
-        request: DomainsRegistrar.TransferInDomainRequest,
-        options: RequestOptions? = null,
-    ): DomainsRegistrar.TransferInDomainResponse {
+    fun transferInDomain(clientConfig: ClientConfig, request: DomainsRegistrar.TransferInDomainRequest, options: RequestOptions? = null): DomainsRegistrar.TransferInDomainResponse {
         validateTransferInDomainRequest(request)
 
-        return SdkClient.request<DomainsRegistrar.TransferInDomainResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v1/registrar/domains/${SdkClient.encodePathSegment(request.domain)}/transfer",
-                    config = clientConfig,
-                    query = mapOf("teamId" to SdkClient.queryValue(request.teamId, "form", true)),
-                    body =
-                        SdkClient.bodyMap(
-                            "authCode" to (request.authCode),
-                            "autoRenew" to (request.autoRenew),
-                            "years" to (request.years),
-                            "expectedPrice" to (request.expectedPrice),
-                            "contactInformation" to (request.contactInformation),
-                        ),
-                    operationId = "transferInDomain",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                    errors =
-                        mapOf(
-                            "401" to Unauthorized::class.java,
-                            "429" to TooManyRequests::class.java,
-                            "500" to InternalServerError::class.java,
-                        ),
-                )
-            )
-            .data
+        return SdkClient.request<DomainsRegistrar.TransferInDomainResponse>(SdkClient.RequestSpec("POST", "/v1/registrar/domains/${SdkClient.encodePathSegment(request.domain)}/transfer", config = clientConfig, query = mapOf("teamId" to
+    SdkClient.queryValue(request.teamId, "form", true)), body = SdkClient.bodyMap("authCode" to (request.authCode), "autoRenew" to (request.autoRenew), "years" to (request.years), "expectedPrice" to (request.expectedPrice), "contactInformation" to (request.contactInformation)), operationId = "transferInDomain", decoder = SdkClient.ResponseDecoder.JSON, options = options, errors = mapOf("401" to Unauthorized::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java))).data
     }
 
+
     private fun validateTransferInDomainRequest(request: DomainsRegistrar.TransferInDomainRequest) {
-        Validation.validateRange(
-            "expectedPrice",
-            request.expectedPrice,
-            Validation.RangeOpts(min = 0.01),
-        )
+        Validation.validateRange("expectedPrice", request.expectedPrice, Validation.RangeOpts(min = 0.01))
     }
 }
 
 internal object DomainsRegistrarGetDomainTransferInOperation {
     /**
-     * Retrieves the transfer status for a domain. Use the status to check the progress or outcome
-     * of an incoming domain transfer. The response reports the transfer's current state.
+     * Retrieves the transfer status for a domain. Use the status to check the progress or outcome of an incoming domain transfer. The response reports the transfer's current state.
      *
      * Get the transfer status for a domain
      */
-    fun getDomainTransferIn(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): DomainsRegistrar.GetDomainTransferInResponse {
-        return SdkClient.request<DomainsRegistrar.GetDomainTransferInResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/transfer",
-                    config = clientConfig,
-                    query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)),
-                    operationId = "getDomainTransferIn",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                    errors =
-                        mapOf(
-                            "400" to HttpApiDecodeError::class.java,
-                            "401" to Unauthorized::class.java,
-                            "404" to NotFound::class.java,
-                            "429" to TooManyRequests::class.java,
-                            "500" to InternalServerError::class.java,
-                        ),
-                )
-            )
-            .data
+    fun getDomainTransferIn(clientConfig: ClientConfig, domain: DomainName, teamId: String? = null, options: RequestOptions? = null): DomainsRegistrar.GetDomainTransferInResponse {
+        return SdkClient.request<DomainsRegistrar.GetDomainTransferInResponse>(SdkClient.RequestSpec("GET", "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/transfer", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)), operationId = "getDomainTransferIn", decoder = SdkClient.ResponseDecoder.JSON, options = options, errors = mapOf("400" to HttpApiDecodeError::class.java, "401" to Unauthorized::class.java, "404" to NotFound::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java))).data
     }
 }
 
 internal object DomainsRegistrarRenewDomainOperation {
     /**
-     * Renews a domain registered with Vercel for the specified number of years. Provide `years` and
-     * `expectedPrice`, and include `contactInformation` when updating the registrant details as
-     * part of the renewal. A 200 response includes the renewal order's `orderId` and links for
-     * related actions.
+     * Renews a domain registered with Vercel for the specified number of years. Provide `years` and `expectedPrice`, and include `contactInformation` when updating the registrant details as part of the renewal. A 200 response includes the renewal order's `orderId` and links for related actions.
      *
      * Renew a domain
      *
      * @param years The number of years to renew the domain for.
      */
-    fun renewDomain(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        years: Double,
-        expectedPrice: Double,
-        teamId: String? = null,
-        contactInformation: DomainsRegistrar.RenewDomainContactInformation? = null,
-        options: RequestOptions? = null,
-    ): DomainsRegistrar.RenewDomainResponse {
+    fun renewDomain(clientConfig: ClientConfig, domain: DomainName, years: Double, expectedPrice: Double, teamId: String? = null, contactInformation: DomainsRegistrar.RenewDomainContactInformation? = null, options: RequestOptions? = null): DomainsRegistrar.RenewDomainResponse {
         Validation.validateRange("expectedPrice", expectedPrice, Validation.RangeOpts(min = 0.01))
 
-        return SdkClient.request<DomainsRegistrar.RenewDomainResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/renew",
-                    config = clientConfig,
-                    query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)),
-                    body =
-                        SdkClient.bodyMap(
-                            "years" to (years),
-                            "expectedPrice" to (expectedPrice),
-                            "contactInformation" to (SdkClient.omitIfNull(contactInformation)),
-                        ),
-                    operationId = "renewDomain",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                    errors =
-                        mapOf(
-                            "401" to Unauthorized::class.java,
-                            "404" to DomainNotFound::class.java,
-                            "429" to TooManyRequests::class.java,
-                            "500" to InternalServerError::class.java,
-                        ),
-                )
-            )
-            .data
+        return SdkClient.request<DomainsRegistrar.RenewDomainResponse>(SdkClient.RequestSpec("POST", "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/renew", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)), body = SdkClient.bodyMap("years" to (years), "expectedPrice" to (expectedPrice), "contactInformation" to
+    (SdkClient.omitIfNull(contactInformation))), operationId = "renewDomain", decoder = SdkClient.ResponseDecoder.JSON, options = options, errors = mapOf("401" to Unauthorized::class.java, "404" to DomainNotFound::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java))).data
     }
 }
 
 internal object DomainsRegistrarUpdateDomainAutoRenewOperation {
     /**
-     * Updates whether a domain is set to renew automatically. Set `autoRenew` to `true` or `false`
-     * to enable or disable automatic renewal for the specified domain. A 204 response confirms the
-     * setting was updated and contains no response body.
+     * Updates whether a domain is set to renew automatically. Set `autoRenew` to `true` or `false` to enable or disable automatic renewal for the specified domain. A 204 response confirms the setting was updated and contains no response body.
      *
      * Update the auto-renew setting for a domain
      */
-    fun updateDomainAutoRenew(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        autoRenew: Boolean,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): Unit {
-        SdkClient.request<Unit>(
-            SdkClient.RequestSpec(
-                "PATCH",
-                "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/auto-renew",
-                config = clientConfig,
-                query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)),
-                body = SdkClient.bodyMap("autoRenew" to (autoRenew)),
-                operationId = "updateDomainAutoRenew",
-                decoder = SdkClient.ResponseDecoder.EMPTY,
-                options = options,
-                errors =
-                    mapOf(
-                        "401" to Unauthorized::class.java,
-                        "404" to DomainNotFound::class.java,
-                        "429" to TooManyRequests::class.java,
-                        "500" to InternalServerError::class.java,
-                    ),
-            )
-        )
+    fun updateDomainAutoRenew(clientConfig: ClientConfig, domain: DomainName, autoRenew: Boolean, teamId: String? = null, options: RequestOptions? = null): Unit {
+        SdkClient.request<Unit>(SdkClient.RequestSpec("PATCH", "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/auto-renew", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)), body = SdkClient.bodyMap("autoRenew" to (autoRenew)), operationId = "updateDomainAutoRenew", decoder = SdkClient.ResponseDecoder.EMPTY, options = options, errors = mapOf("401" to Unauthorized::class.java, "404" to DomainNotFound::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java)))
     }
 }
 
 internal object DomainsRegistrarUpdateDomainNameserversOperation {
     /**
-     * Updates the nameservers assigned to a domain. Provide `nameservers` as an array of valid
-     * nameserver values, or pass an empty array to use Vercel's default nameservers. A 204 response
-     * confirms the change and contains no response body.
+     * Updates the nameservers assigned to a domain. Provide `nameservers` as an array of valid nameserver values, or pass an empty array to use Vercel's default nameservers. A 204 response confirms the change and contains no response body.
      *
      * Update the nameservers for a domain. Pass an empty array to use Vercel's default nameservers.
      */
-    fun updateDomainNameservers(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        nameservers: List<Nameserver>,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): Unit {
-        SdkClient.request<Unit>(
-            SdkClient.RequestSpec(
-                "PATCH",
-                "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/nameservers",
-                config = clientConfig,
-                query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)),
-                body = SdkClient.bodyMap("nameservers" to (nameservers)),
-                operationId = "updateDomainNameservers",
-                decoder = SdkClient.ResponseDecoder.EMPTY,
-                options = options,
-                errors =
-                    mapOf(
-                        "401" to Unauthorized::class.java,
-                        "404" to DomainNotFound::class.java,
-                        "429" to TooManyRequests::class.java,
-                        "500" to InternalServerError::class.java,
-                    ),
-            )
-        )
+    fun updateDomainNameservers(clientConfig: ClientConfig, domain: DomainName, nameservers: List<Nameserver>, teamId: String? = null, options: RequestOptions? = null): Unit {
+        SdkClient.request<Unit>(SdkClient.RequestSpec("PATCH", "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/nameservers", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)), body = SdkClient.bodyMap("nameservers" to (nameservers)), operationId = "updateDomainNameservers", decoder = SdkClient.ResponseDecoder.EMPTY, options = options, errors = mapOf("401" to Unauthorized::class.java, "404" to DomainNotFound::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java)))
     }
 }
 
 internal object DomainsRegistrarGetDomainContactVerificationOperation {
     /**
-     * Retrieves the registrant contact verification status for a domain. Use this after purchasing
-     * a domain to check whether its registrant contact has been verified. A 400 is returned if the
-     * domain was bought less than 30 minutes before the request.
+     * Retrieves the registrant contact verification status for a domain. Use this after purchasing a domain to check whether its registrant contact has been verified. A 400 is returned if the domain was bought less than 30 minutes before the request.
      *
-     * Get the registrant contact verification status for a domain. Use this after purchasing a
-     * domain to determine whether the contact has been verified. Note that a bought_too_recently
-     * error will be returned if the domain was bought less than 30 minutes before the request.
+     * Get the registrant contact verification status for a domain. Use this after purchasing a domain to determine whether the contact has been verified. Note that a bought_too_recently error will be returned if the domain was bought less than 30 minutes before the request.
      */
-    fun getDomainContactVerification(
-        clientConfig: ClientConfig,
-        domain: DomainName,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): GetDomainContactVerificationResponse {
-        return SdkClient.request<GetDomainContactVerificationResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/contact-verification",
-                    config = clientConfig,
-                    query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)),
-                    operationId = "getDomainContactVerification",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                    errors =
-                        mapOf(
-                            "401" to Unauthorized::class.java,
-                            "404" to DomainNotFound::class.java,
-                            "429" to TooManyRequests::class.java,
-                            "500" to InternalServerError::class.java,
-                        ),
-                )
-            )
-            .data
+    fun getDomainContactVerification(clientConfig: ClientConfig, domain: DomainName, teamId: String? = null, options: RequestOptions? = null): GetDomainContactVerificationResponse {
+        return SdkClient.request<GetDomainContactVerificationResponse>(SdkClient.RequestSpec("GET", "/v1/registrar/domains/${SdkClient.encodePathSegment(domain)}/contact-verification", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)), operationId = "getDomainContactVerification", decoder = SdkClient.ResponseDecoder.JSON, options = options, errors = mapOf("401" to Unauthorized::class.java, "404" to DomainNotFound::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java))).data
     }
 }
 
 internal object DomainsRegistrarGetOrderOperation {
     /**
-     * Retrieves information about a domain order using its order ID. Use the response to inspect
-     * the domains included in the order and its current status. The status is one of `draft`,
-     * `purchasing`, `completed`, or `failed`.
+     * Retrieves information about a domain order using its order ID. Use the response to inspect the domains included in the order and its current status. The status is one of `draft`, `purchasing`, `completed`, or `failed`.
      *
      * Get information about a domain order by its ID
      */
-    fun getOrder(
-        clientConfig: ClientConfig,
-        orderId: OrderId,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): DomainsRegistrar.GetOrderResponse {
-        return SdkClient.request<DomainsRegistrar.GetOrderResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/registrar/orders/${SdkClient.encodePathSegment(orderId)}",
-                    config = clientConfig,
-                    query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)),
-                    operationId = "getOrder",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                    errors =
-                        mapOf(
-                            "400" to HttpApiDecodeError::class.java,
-                            "401" to Unauthorized::class.java,
-                            "404" to NotFound::class.java,
-                            "429" to TooManyRequests::class.java,
-                            "500" to InternalServerError::class.java,
-                        ),
-                )
-            )
-            .data
+    fun getOrder(clientConfig: ClientConfig, orderId: OrderId, teamId: String? = null, options: RequestOptions? = null): DomainsRegistrar.GetOrderResponse {
+        return SdkClient.request<DomainsRegistrar.GetOrderResponse>(SdkClient.RequestSpec("GET", "/v1/registrar/orders/${SdkClient.encodePathSegment(orderId)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true)), operationId = "getOrder", decoder = SdkClient.ResponseDecoder.JSON, options = options, errors = mapOf("400" to HttpApiDecodeError::class.java, "401" to Unauthorized::class.java, "404" to NotFound::class.java, "429" to TooManyRequests::class.java, "500" to InternalServerError::class.java))).data
     }
 }

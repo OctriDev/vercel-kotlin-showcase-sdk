@@ -9,85 +9,30 @@ import dev.octri.showcase.vercel.SdkClient
 
 internal object ProjectsUploadProjectAvatarOperation {
     /**
-     * Uploads an image to use as the avatar for a project identified by its ID or name. Send the
-     * raw image bytes and declare the image type with the `Content-Type` header; accepted formats
-     * are JPG, PNG, and SVG. SVG images are sanitized and optimized before storage, and the
-     * response returns the updated project.
+     * Uploads an image to use as the avatar for a project identified by its ID or name. Send the raw image bytes and declare the image type with the `Content-Type` header; accepted formats are JPG, PNG, and SVG. SVG images are sanitized and optimized before storage, and the response returns the updated project.
      *
-     * Upload an image as the avatar of the project identified by `idOrName`. The request body is
-     * the raw bytes of a JPG, PNG, or SVG image; the `Content-Type` header must declare which. SVG
-     * payloads are sanitized and optimized server-side before storage. The final SHA-1 of the
-     * stored bytes becomes the project's `avatar` value. The actual upload pipeline (validation,
-     * sanitization, S3 write, conditional `updateProject`, and event emission) lives in the shared…
+     * Upload an image as the avatar of the project identified by `idOrName`. The request body is the raw bytes of a JPG, PNG, or SVG image; the `Content-Type` header must declare which. SVG payloads are sanitized and optimized server-side before storage. The final SHA-1 of the stored bytes becomes the project's `avatar` value. The actual upload pipeline (validation, sanitization, S3 write, conditional `updateProject`, and event emission) lives in the shared…
      *
      * @param idOrName The unique project identifier or the project name.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun uploadProjectAvatar(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        teamId: String? = null,
-        slug: String? = null,
-        body: ByteArray? = null,
-        options: RequestOptions? = null,
-    ): Projects.UploadProjectAvatarResponse {
-        return SdkClient.request<Projects.UploadProjectAvatarResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v1/projects/${SdkClient.encodePathSegment(idOrName)}/avatar",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    body = body,
-                    contentType = "application/octet-stream",
-                    operationId = "uploadProjectAvatar",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun uploadProjectAvatar(clientConfig: ClientConfig, idOrName: String, teamId: String? = null, slug: String? = null, body: ByteArray? = null, options: RequestOptions? = null): Projects.UploadProjectAvatarResponse {
+        return SdkClient.request<Projects.UploadProjectAvatarResponse>(SdkClient.RequestSpec("POST", "/v1/projects/${SdkClient.encodePathSegment(idOrName)}/avatar", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = body, contentType = "application/octet-stream", operationId = "uploadProjectAvatar", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 }
 
 internal object ProjectsDeleteProjectAvatarOperation {
     /**
-     * Removes the avatar assignment from a project identified by its ID or name. This clears the
-     * project's avatar field so a later production deployment can run avatar auto-detection again,
-     * but it does not delete the stored image. The response returns the updated project.
+     * Removes the avatar assignment from a project identified by its ID or name. This clears the project's avatar field so a later production deployment can run avatar auto-detection again, but it does not delete the stored image. The response returns the updated project.
      *
-     * Remove the avatar of the project identified by `idOrName`. Deletes the chosen avatar field so
-     * the next production deploy can run auto-detection again. Does not delete the stored image.
+     * Remove the avatar of the project identified by `idOrName`. Deletes the chosen avatar field so the next production deploy can run auto-detection again. Does not delete the stored image.
      *
      * @param idOrName The unique project identifier or the project name.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun deleteProjectAvatar(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Projects.DeleteProjectAvatarResponse {
-        return SdkClient.request<Projects.DeleteProjectAvatarResponse>(
-                SdkClient.RequestSpec(
-                    "DELETE",
-                    "/v1/projects/${SdkClient.encodePathSegment(idOrName)}/avatar",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "deleteProjectAvatar",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun deleteProjectAvatar(clientConfig: ClientConfig, idOrName: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Projects.DeleteProjectAvatarResponse {
+        return SdkClient.request<Projects.DeleteProjectAvatarResponse>(SdkClient.RequestSpec("DELETE", "/v1/projects/${SdkClient.encodePathSegment(idOrName)}/avatar", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "deleteProjectAvatar", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 }

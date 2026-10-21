@@ -3,113 +3,42 @@
 
 package dev.octri.showcase.vercel
 
+
 class EdgeCacheNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Invalidates cache entries associated with the specified tags, marking them stale for
-     * background revalidation on the next request. Supply `projectIdOrName` to scope the operation
-     * and `tags` in the body. You can target `production` or `preview` with the optional `target`
-     * field.
+     * Invalidates cache entries associated with the specified tags, marking them stale for background revalidation on the next request. Supply `projectIdOrName` to scope the operation and `tags` in the body. You can target `production` or `preview` with the optional `target` field.
      *
-     * Marks a cache tag as stale, causing cache entries associated with that tag to be revalidated
-     * in the background on the next request.
+     * Marks a cache tag as stale, causing cache entries associated with that tag to be revalidated in the background on the next request.
      */
-    fun invalidateByTags(
-        projectIdOrName: String,
-        tags: List<String>,
-        teamId: String? = null,
-        slug: String? = null,
-        target: InvalidateByTagsTargetEnum? = null,
-        options: RequestOptions? = null,
-    ): Unit {
-        return dev.octri.showcase.vercel.methods.EdgeCache.invalidateByTags(
-            clientConfig,
-            projectIdOrName,
-            tags,
-            teamId,
-            slug,
-            target,
-            options,
-        )
+    fun invalidateByTags(projectIdOrName: String, tags: List<String>, teamId: String? = null, slug: String? = null, target: InvalidateByTagsTargetEnum? = null, options: RequestOptions? = null): Unit {
+        return dev.octri.showcase.vercel.methods.EdgeCache.invalidateByTags(clientConfig, projectIdOrName, tags, teamId, slug, target, options)
     }
 
     /**
-     * Marks cache entries associated with the specified tags as deleted so they are revalidated in
-     * the foreground on the next request. Supply `projectIdOrName` and `tags`, and optionally set
-     * `revalidationDeadlineSeconds` or `target`. Use this operation cautiously: deleting cached
-     * entries can send many concurrent requests to the origin; prefer tag invalidation for routine
-     * use.
+     * Marks cache entries associated with the specified tags as deleted so they are revalidated in the foreground on the next request. Supply `projectIdOrName` and `tags`, and optionally set `revalidationDeadlineSeconds` or `target`. Use this operation cautiously: deleting cached entries can send many concurrent requests to the origin; prefer tag invalidation for routine use.
      *
-     * Marks a cache tag as deleted, causing cache entries associated with that tag to be
-     * revalidated in the foreground on the next request. Use this method with caution because one
-     * tag can be associated with many paths and deleting the cache can cause many concurrent
-     * requests to the origin leading to cache stampede problem. This method is for advanced use
-     * cases and is not recommended; prefer using `invalidateByTag` instead.
+     * Marks a cache tag as deleted, causing cache entries associated with that tag to be revalidated in the foreground on the next request. Use this method with caution because one tag can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateByTag` instead.
      */
-    fun dangerouslyDeleteByTags(
-        request: dev.octri.showcase.vercel.methods.EdgeCache.DangerouslyDeleteByTagsRequest,
-        options: RequestOptions? = null,
-    ): Unit {
-        return dev.octri.showcase.vercel.methods.EdgeCache.dangerouslyDeleteByTags(
-            clientConfig,
-            request,
-            options,
-        )
+    fun dangerouslyDeleteByTags(request: dev.octri.showcase.vercel.methods.EdgeCache.DangerouslyDeleteByTagsRequest, options: RequestOptions? = null): Unit {
+        return dev.octri.showcase.vercel.methods.EdgeCache.dangerouslyDeleteByTags(clientConfig, request, options)
     }
 
     /**
-     * Invalidates source images, marking them stale so their transformed images are revalidated in
-     * the background on the next request. Use `projectIdOrName` to scope the operation and supply
-     * the image sources in `srcImages`. The request can include between 1 and 8 source images.
+     * Invalidates source images, marking them stale so their transformed images are revalidated in the background on the next request. Use `projectIdOrName` to scope the operation and supply the image sources in `srcImages`. The request can include between 1 and 8 source images.
      *
-     * Marks a source image as stale, causing its corresponding transformed images to be revalidated
-     * in the background on the next request.
+     * Marks a source image as stale, causing its corresponding transformed images to be revalidated in the background on the next request.
      */
-    fun invalidateBySrcImages(
-        projectIdOrName: String,
-        srcImages: List<String>,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Unit {
-        return dev.octri.showcase.vercel.methods.EdgeCache.invalidateBySrcImages(
-            clientConfig,
-            projectIdOrName,
-            srcImages,
-            teamId,
-            slug,
-            options,
-        )
+    fun invalidateBySrcImages(projectIdOrName: String, srcImages: List<String>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
+        return dev.octri.showcase.vercel.methods.EdgeCache.invalidateBySrcImages(clientConfig, projectIdOrName, srcImages, teamId, slug, options)
     }
 
     /**
-     * Marks cache entries associated with source images as deleted so they are revalidated in the
-     * foreground on the next request. Provide `projectIdOrName` and between 1 and 8 entries in
-     * `srcImages`; you can optionally set `revalidationDeadlineSeconds`. Use this operation
-     * cautiously because foreground revalidation can send many concurrent requests to the origin;
-     * prefer source image invalidation for routine use.
+     * Marks cache entries associated with source images as deleted so they are revalidated in the foreground on the next request. Provide `projectIdOrName` and between 1 and 8 entries in `srcImages`; you can optionally set `revalidationDeadlineSeconds`. Use this operation cautiously because foreground revalidation can send many concurrent requests to the origin; prefer source image invalidation for routine use.
      *
-     * Marks a source image as deleted, causing cache entries associated with that source image to
-     * be revalidated in the foreground on the next request. Use this method with caution because
-     * one source image can be associated with many paths and deleting the cache can cause many
-     * concurrent requests to the origin leading to cache stampede problem. This method is for
-     * advanced use cases and is not recommended; prefer using `invalidateBySrcImage` instead.
+     * Marks a source image as deleted, causing cache entries associated with that source image to be revalidated in the foreground on the next request. Use this method with caution because one source image can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateBySrcImage` instead.
      */
-    fun dangerouslyDeleteBySrcImages(
-        projectIdOrName: String,
-        srcImages: List<String>,
-        teamId: String? = null,
-        slug: String? = null,
-        revalidationDeadlineSeconds: Long? = null,
-        options: RequestOptions? = null,
-    ): Unit {
-        return dev.octri.showcase.vercel.methods.EdgeCache.dangerouslyDeleteBySrcImages(
-            clientConfig,
-            projectIdOrName,
-            srcImages,
-            teamId,
-            slug,
-            revalidationDeadlineSeconds,
-            options,
-        )
+    fun dangerouslyDeleteBySrcImages(projectIdOrName: String, srcImages: List<String>, teamId: String? = null, slug: String? = null, revalidationDeadlineSeconds: Long? = null, options: RequestOptions? = null): Unit {
+        return dev.octri.showcase.vercel.methods.EdgeCache.dangerouslyDeleteBySrcImages(clientConfig, projectIdOrName, srcImages, teamId, slug, revalidationDeadlineSeconds, options)
     }
+
 }

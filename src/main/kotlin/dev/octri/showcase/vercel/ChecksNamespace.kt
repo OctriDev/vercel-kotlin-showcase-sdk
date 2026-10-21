@@ -3,116 +3,66 @@
 
 package dev.octri.showcase.vercel
 
+
 class ChecksNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Creates a check for a deployment. Provide `name` and `blocking` in the request body, and use
-     * OAuth2 authentication as required by this operation. This operation is closing down and will
-     * be removed on a date not specified in the API definition.
+     * Creates a check for a deployment. Provide `name` and `blocking` in the request body, and use OAuth2 authentication as required by this operation. This operation is closing down and will be removed on a date not specified in the API definition.
      *
-     * Creates a new check. This endpoint must be called with an OAuth2 or it will produce a 400
-     * error.
+     * Creates a new check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
      *
-     * @deprecated This operation is deprecated and may be removed in a future release.
+     * @deprecated This operation is deprecated and may be removed in a future
+     *   release.
      */
-    fun create(
-        request: dev.octri.showcase.vercel.methods.Checks.CreateCheckRequest,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Checks.CreateCheckResponse {
+    fun create(request: dev.octri.showcase.vercel.methods.Checks.CreateCheckRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Checks.CreateCheckResponse {
         return dev.octri.showcase.vercel.methods.Checks.createCheck(clientConfig, request, options)
     }
 
     /**
-     * Lists the checks created for a deployment. Use `deploymentId` to select the deployment whose
-     * checks you want to inspect. This operation is closing down and will be removed on a date not
-     * specified in the API definition.
+     * Lists the checks created for a deployment. Use `deploymentId` to select the deployment whose checks you want to inspect. This operation is closing down and will be removed on a date not specified in the API definition.
      *
      * List all of the checks created for a deployment.
      *
-     * @deprecated This operation is deprecated and may be removed in a future release.
+     * @deprecated This operation is deprecated and may be removed in a future
+     *   release.
      */
-    fun list(
-        deploymentId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Checks.ListChecksResponse {
-        return dev.octri.showcase.vercel.methods.Checks.listChecks(
-            clientConfig,
-            deploymentId,
-            teamId,
-            slug,
-            options,
-        )
+    fun list(deploymentId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Checks.ListChecksResponse {
+        return dev.octri.showcase.vercel.methods.Checks.listChecks(clientConfig, deploymentId, teamId, slug, options)
     }
 
     /**
-     * Retrieves the details of a single check for a deployment. Use `deploymentId` and `checkId` to
-     * identify the deployment and check. This operation is closing down and will be removed on a
-     * date not specified in the API definition.
+     * Retrieves the details of a single check for a deployment. Use `deploymentId` and `checkId` to identify the deployment and check. This operation is closing down and will be removed on a date not specified in the API definition.
      *
      * Return a detailed response for a single check.
      *
-     * @deprecated This operation is deprecated and may be removed in a future release.
+     * @deprecated This operation is deprecated and may be removed in a future
+     *   release.
      */
-    fun get(
-        deploymentId: String,
-        checkId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Checks.GetCheckResponse {
-        return dev.octri.showcase.vercel.methods.Checks.getCheck(
-            clientConfig,
-            deploymentId,
-            checkId,
-            teamId,
-            slug,
-            options,
-        )
+    fun get(deploymentId: String, checkId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Checks.GetCheckResponse {
+        return dev.octri.showcase.vercel.methods.Checks.getCheck(clientConfig, deploymentId, checkId, teamId, slug, options)
     }
 
     /**
-     * Updates an existing check for a deployment. Supply the check fields you want to change, such
-     * as `status`, `conclusion`, or `output`; call the operation with OAuth2 authentication. A 200
-     * response returns the updated check object.
+     * Updates an existing check for a deployment. Supply the check fields you want to change, such as `status`, `conclusion`, or `output`; call the operation with OAuth2 authentication. A 200 response returns the updated check object.
      *
-     * Update an existing check. This endpoint must be called with an OAuth2 or it will produce a
-     * 400 error.
+     * Update an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error.
      *
-     * @deprecated This operation is deprecated and may be removed in a future release.
+     * @deprecated This operation is deprecated and may be removed in a future
+     *   release.
      */
-    fun update(
-        request: dev.octri.showcase.vercel.methods.Checks.UpdateCheckRequest,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Checks.UpdateCheckResponse {
+    fun update(request: dev.octri.showcase.vercel.methods.Checks.UpdateCheckRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Checks.UpdateCheckResponse {
         return dev.octri.showcase.vercel.methods.Checks.updateCheck(clientConfig, request, options)
     }
 
     /**
-     * Triggers another run of a selected check that has failed. Use `deploymentId` and `checkId` to
-     * identify the deployment and check, and set `autoUpdate` to mark the check as running. This
-     * operation is closing down and will be removed on a date not specified in the API definition.
+     * Triggers another run of a selected check that has failed. Use `deploymentId` and `checkId` to identify the deployment and check, and set `autoUpdate` to mark the check as running. This operation is closing down and will be removed on a date not specified in the API definition.
      *
      * Rerequest a selected check that has failed.
      *
-     * @deprecated This operation is deprecated and may be removed in a future release.
+     * @deprecated This operation is deprecated and may be removed in a future
+     *   release.
      */
-    fun rerequest(
-        deploymentId: String,
-        checkId: String,
-        autoUpdate: Boolean? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Map<String, Any> {
-        return dev.octri.showcase.vercel.methods.Checks.rerequestCheck(
-            clientConfig,
-            deploymentId,
-            checkId,
-            autoUpdate,
-            teamId,
-            slug,
-            options,
-        )
+    fun rerequest(deploymentId: String, checkId: String, autoUpdate: Boolean? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Map<String, Any> {
+        return dev.octri.showcase.vercel.methods.Checks.rerequestCheck(clientConfig, deploymentId, checkId, autoUpdate, teamId, slug, options)
     }
+
 }

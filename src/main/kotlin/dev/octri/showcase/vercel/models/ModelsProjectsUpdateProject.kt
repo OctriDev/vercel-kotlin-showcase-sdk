@@ -5,78 +5,68 @@ package dev.octri.showcase.vercel.models
 
 data class UpdateProjectRequestDeploymentPolicyVariant0GitSourcesVariantXa75bca2476(
     val type: UpdateProjectRequestDeploymentPolicyVariant0GitSourcesVariantXc01766afc9,
-    val target: UpdateProjectRequestDeploymentPolicyVariant0GitSourcesVariantXc4244709e4,
+    val target: UpdateProjectRequestDeploymentPolicyVariant0GitSourcesVariantXc4244709e4
 )
 
 data class UpdateProjectRequestDeploymentPolicyVariant0GitSourcesVariantX0b3fc983e8(
     val type: UpdateProjectRequestDeploymentPolicyVariant0GitSourcesVariantX015435f4b7,
-    val environmentId: String,
+    val environmentId: String
 )
 
 data class UpdateProjectRequestDeploymentPolicyVariant0GitSourcesVariantXcf1b4232f0(
     val provider: UpdateProjectRequestDeploymentPolicyVariant0GitSourcesVariantXca4aa8c855,
     val org: String,
-    val repo: String? = null,
+    val repo: String? = null
 )
 
 data class UpdateProjectRequestDeploymentPolicyVariant0GitSourcesVariantXd671029a69(
     val provider: UpdateProjectRequestDeploymentPolicyVariant0GitSourcesVariantX4d43f4061e,
     val namespace: String,
-    val project: String? = null,
+    val project: String? = null
 )
 
 data class UpdateProjectRequestDeploymentPolicyVariant0GitSourcesVariant0Item(
     val enabled: Boolean,
     val environments: List<Any>,
-    val sources: List<Any>,
+    val sources: List<Any>
 )
 
 data class UpdateProjectRequestDeploymentPolicyVariant0DeploymentSourcesX1809d39144(
     val type: UpdateProjectRequestDeploymentPolicyVariant0DeploymentSourcesX6243e61483,
-    val target: UpdateProjectRequestDeploymentPolicyVariant0DeploymentSourcesXa902b5e570,
+    val target: UpdateProjectRequestDeploymentPolicyVariant0DeploymentSourcesXa902b5e570
 )
 
 data class UpdateProjectRequestDeploymentPolicyVariant0DeploymentSourcesX79148c5c99(
     val type: UpdateProjectRequestDeploymentPolicyVariant0DeploymentSourcesX25f57180ce,
-    val environmentId: String,
+    val environmentId: String
 )
 
 data class UpdateProjectRequestDeploymentPolicyVariant0DeploymentSourcesX21b91c2e0c(
     val enabled: Boolean,
     val environments: List<Any>,
-    val sources: List<UpdateProjectRequestDeploymentPolicyVariant0DeploymentSourcesXc500086563>,
+    val sources: List<UpdateProjectRequestDeploymentPolicyVariant0DeploymentSourcesXc500086563>
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectRequestDeploymentPolicyVariant0(
     val gitSources: Any? = null,
-    val deploymentSources: Any? = null,
+    val deploymentSources: Any? = null
 ) : UpdateProjectRequestDeploymentPolicy
 
-/** Typed representation of the `UpdateProjectRequestDeploymentPolicy` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = UpdateProjectRequestDeploymentPolicy.Deserializer::class
-)
+/**
+ * Typed representation of the `UpdateProjectRequestDeploymentPolicy` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UpdateProjectRequestDeploymentPolicy.Deserializer::class)
 sealed interface UpdateProjectRequestDeploymentPolicy {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<UpdateProjectRequestDeploymentPolicy>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UpdateProjectRequestDeploymentPolicy>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): UpdateProjectRequestDeploymentPolicy {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                UpdateProjectRequestDeploymentPolicyOwnedTypes.firstOrNull { (keys, _) ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = UpdateProjectRequestDeploymentPolicyOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -84,8 +74,7 @@ sealed interface UpdateProjectRequestDeploymentPolicy {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out UpdateProjectRequestDeploymentPolicy>> =
-                listOf(UpdateProjectRequestDeploymentPolicyVariant0::class.java)
+            val objectTypes: List<Class<out UpdateProjectRequestDeploymentPolicy>> = listOf(UpdateProjectRequestDeploymentPolicyVariant0::class.java)
             for (objectType in objectTypes) {
                 try {
                     return mapper.convertValue(node, objectType)
@@ -94,70 +83,41 @@ sealed interface UpdateProjectRequestDeploymentPolicy {
                 }
             }
             return when {
-                node.isTextual ->
-                    StringUpdateProjectRequestDeploymentPolicy(
-                        mapper.convertValue(
-                            node,
-                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
-                        )
-                    )
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        UpdateProjectRequestDeploymentPolicy::class.java,
-                        "no UpdateProjectRequestDeploymentPolicy branch accepts this payload",
-                    )
+                node.isTextual -> StringUpdateProjectRequestDeploymentPolicy(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, UpdateProjectRequestDeploymentPolicy::class.java, "no UpdateProjectRequestDeploymentPolicy branch accepts this payload")
             }
         }
     }
 }
 
-internal val UpdateProjectRequestDeploymentPolicyOwnedTypes:
-    List<Pair<List<String>, Class<out UpdateProjectRequestDeploymentPolicy>>> =
-    listOf(
-        listOf("gitSources", "deploymentSources") to
-            UpdateProjectRequestDeploymentPolicyVariant0::class.java
-    )
+internal val UpdateProjectRequestDeploymentPolicyOwnedTypes: List<Pair<List<String>, Class<out UpdateProjectRequestDeploymentPolicy>>> = listOf(
+    listOf("gitSources", "deploymentSources") to UpdateProjectRequestDeploymentPolicyVariant0::class.java,
+)
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class StringUpdateProjectRequestDeploymentPolicy(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
-) : UpdateProjectRequestDeploymentPolicy
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class StringUpdateProjectRequestDeploymentPolicy(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : UpdateProjectRequestDeploymentPolicy
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectRequestDismissedToastsItemValueVariant4(
     val previousValue: Any,
-    val currentValue: Any,
+    val currentValue: Any
 ) : UpdateProjectRequestDismissedToastsItemValue
 
-/** Typed representation of the `UpdateProjectRequestDismissedToastsItemValue` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = UpdateProjectRequestDismissedToastsItemValue.Deserializer::class
-)
+/**
+ * Typed representation of the `UpdateProjectRequestDismissedToastsItemValue` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UpdateProjectRequestDismissedToastsItemValue.Deserializer::class)
 sealed interface UpdateProjectRequestDismissedToastsItemValue {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<
-            UpdateProjectRequestDismissedToastsItemValue
-        >() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UpdateProjectRequestDismissedToastsItemValue>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): UpdateProjectRequestDismissedToastsItemValue {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out UpdateProjectRequestDismissedToastsItemValue>> =
-                listOf(UpdateProjectRequestDismissedToastsItemValueVariant4::class.java)
+            val objectTypes: List<Class<out UpdateProjectRequestDismissedToastsItemValue>> = listOf(UpdateProjectRequestDismissedToastsItemValueVariant4::class.java)
             for (objectType in objectTypes) {
                 try {
                     return mapper.convertValue(node, objectType)
@@ -166,346 +126,201 @@ sealed interface UpdateProjectRequestDismissedToastsItemValue {
                 }
             }
             return when {
-                node.isTextual ->
-                    StringUpdateProjectRequestDismissedToastsItemValue(
-                        mapper.convertValue(
-                            node,
-                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
-                        )
-                    )
-                node.isBoolean ->
-                    BooleanUpdateProjectRequestDismissedToastsItemValue(
-                        mapper.convertValue(
-                            node,
-                            object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {},
-                        )
-                    )
-                node.isNumber ->
-                    DoubleUpdateProjectRequestDismissedToastsItemValue(
-                        mapper.convertValue(
-                            node,
-                            object : com.fasterxml.jackson.core.type.TypeReference<Double>() {},
-                        )
-                    )
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        UpdateProjectRequestDismissedToastsItemValue::class.java,
-                        "no UpdateProjectRequestDismissedToastsItemValue branch accepts this payload",
-                    )
+                node.isTextual -> StringUpdateProjectRequestDismissedToastsItemValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
+                node.isBoolean -> BooleanUpdateProjectRequestDismissedToastsItemValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {}))
+                node.isNumber -> DoubleUpdateProjectRequestDismissedToastsItemValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Double>() {}))
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, UpdateProjectRequestDismissedToastsItemValue::class.java, "no UpdateProjectRequestDismissedToastsItemValue branch accepts this payload")
             }
         }
     }
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class StringUpdateProjectRequestDismissedToastsItemValue(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
-) : UpdateProjectRequestDismissedToastsItemValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class StringUpdateProjectRequestDismissedToastsItemValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : UpdateProjectRequestDismissedToastsItemValue
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class BooleanUpdateProjectRequestDismissedToastsItemValue(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean
-) : UpdateProjectRequestDismissedToastsItemValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class BooleanUpdateProjectRequestDismissedToastsItemValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) : UpdateProjectRequestDismissedToastsItemValue
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class DoubleUpdateProjectRequestDismissedToastsItemValue(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Double
-) : UpdateProjectRequestDismissedToastsItemValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class DoubleUpdateProjectRequestDismissedToastsItemValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: Double) : UpdateProjectRequestDismissedToastsItemValue
 
 data class UpdateProjectResponseCreatorVariant0ViaVariant0App(
-    /** The internal ID of the Vercel App backing this principal. */
+    /**
+     * The internal ID of the Vercel App backing this principal.
+     */
     val id: String,
     /**
-     * The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata
-     * Documents (CIMD) are used.
+     * The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
      */
-    val clientId: String? = null,
+    val clientId: String? = null
 )
 
 /**
- * Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented
- * OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for
- * impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
+ * Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
  */
 data class UpdateProjectResponseCreatorVariant0ViaVariant0(
     val app: UpdateProjectResponseCreatorVariant0ViaVariant0App,
-    val type: UpdateProjectResponseCreatorVariant0ViaVariant0TypeEnum,
+    val type: UpdateProjectResponseCreatorVariant0ViaVariant0TypeEnum
 )
 
 data class UpdateProjectResponseCreatorVariant0ViaVariant1Integration(
     val configurationId: String,
-    val integrationId: String,
+    val integrationId: String
 )
 
 /**
- * Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented
- * OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for
- * impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
+ * Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal.
  */
 data class UpdateProjectResponseCreatorVariant0ViaVariant1(
     val integration: UpdateProjectResponseCreatorVariant0ViaVariant1Integration,
-    val type: UpdateProjectResponseCreatorVariant0ViaVariant1TypeEnum,
+    val type: UpdateProjectResponseCreatorVariant0ViaVariant1TypeEnum
 )
 
-data class UpdateProjectResponseCreatorVariant0User(val id: String)
+data class UpdateProjectResponseCreatorVariant0User(
+    val id: String
+)
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseCreatorVariant0(
     val type: UpdateProjectResponseCreatorVariant0TypeEnum,
     @com.fasterxml.jackson.annotation.JsonProperty("via", required = true) val via: Any?,
-    val user: UpdateProjectResponseCreatorVariant0User,
+    val user: UpdateProjectResponseCreatorVariant0User
 ) : UpdateProjectResponseCreator
 
 data class UpdateProjectResponseCreatorVariant1App(
-    /** The internal ID of the Vercel App backing this principal. */
+    /**
+     * The internal ID of the Vercel App backing this principal.
+     */
     val id: String,
     /**
-     * The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata
-     * Documents (CIMD) are used.
+     * The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used.
      */
-    val clientId: String? = null,
+    val clientId: String? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseCreatorVariant1(
     val app: UpdateProjectResponseCreatorVariant1App,
-    val type: UpdateProjectResponseCreatorVariant1TypeEnum,
+    val type: UpdateProjectResponseCreatorVariant1TypeEnum
 ) : UpdateProjectResponseCreator
 
 data class UpdateProjectResponseCreatorVariant2Integration(
     val configurationId: String,
-    val integrationId: String,
+    val integrationId: String
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseCreatorVariant2(
     val integration: UpdateProjectResponseCreatorVariant2Integration,
-    val type: UpdateProjectResponseCreatorVariant2TypeEnum,
+    val type: UpdateProjectResponseCreatorVariant2TypeEnum
 ) : UpdateProjectResponseCreator
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseCreatorVariant3(
     val type: UpdateProjectResponseCreatorVariant3TypeEnum
 ) : UpdateProjectResponseCreator
 
-/** Typed representation of the `UpdateProjectResponseCreator` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+/**
+ * Typed representation of the `UpdateProjectResponseCreator` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseCreatorVariant0::class,
-        name = "user",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseCreatorVariant1::class,
-        name = "app",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseCreatorVariant2::class,
-        name = "integration",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseCreatorVariant3::class,
-        name = "system",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseCreatorVariant0::class, name = "user"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseCreatorVariant1::class, name = "app"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseCreatorVariant2::class, name = "integration"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseCreatorVariant3::class, name = "system")
 )
 sealed interface UpdateProjectResponseCreator
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX60d1c02936(
     val target: UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvXad62c6b5c3,
-    val type: UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX5dbaf7f4da,
+    val type: UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX5dbaf7f4da
 ) : UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvXe55fd539e1
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8a0b1ddf56(
     val environmentId: String,
-    val type: UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvXc67670823d,
+    val type: UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvXc67670823d
 ) : UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvXe55fd539e1
 
 /**
- * Typed representation of the
- * `UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvironmentsItem` API schema.
+ * Typed representation of the `UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvironmentsItem` API schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX60d1c02936::class,
-        name = "system",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8a0b1ddf56::class,
-        name = "custom",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX60d1c02936::class, name = "system"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvX8a0b1ddf56::class, name = "custom")
 )
 sealed interface UpdateProjectResponseDeploymentPolicyDeploymentSourcesItemEnvXe55fd539e1
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseDeploymentPolicyGitSourcesItemEnvironmenX8522a61775(
     val target: UpdateProjectResponseDeploymentPolicyGitSourcesItemEnvironmenXd434a42780,
-    val type: UpdateProjectResponseDeploymentPolicyGitSourcesItemEnvironmenX5dd34528e8,
+    val type: UpdateProjectResponseDeploymentPolicyGitSourcesItemEnvironmenX5dd34528e8
 ) : UpdateProjectResponseDeploymentPolicyGitSourcesItemEnvironmentsItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseDeploymentPolicyGitSourcesItemEnvironmenXd8323cecee(
     val environmentId: String,
-    val type: UpdateProjectResponseDeploymentPolicyGitSourcesItemEnvironmenX86f45d26d1,
+    val type: UpdateProjectResponseDeploymentPolicyGitSourcesItemEnvironmenX86f45d26d1
 ) : UpdateProjectResponseDeploymentPolicyGitSourcesItemEnvironmentsItem
 
 /**
- * Typed representation of the `UpdateProjectResponseDeploymentPolicyGitSourcesItemEnvironmentsItem`
- * API schema.
+ * Typed representation of the `UpdateProjectResponseDeploymentPolicyGitSourcesItemEnvironmentsItem` API schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseDeploymentPolicyGitSourcesItemEnvironmenX8522a61775::class,
-        name = "system",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseDeploymentPolicyGitSourcesItemEnvironmenXd8323cecee::class,
-        name = "custom",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseDeploymentPolicyGitSourcesItemEnvironmenX8522a61775::class, name = "system"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseDeploymentPolicyGitSourcesItemEnvironmenXd8323cecee::class, name = "custom")
 )
 sealed interface UpdateProjectResponseDeploymentPolicyGitSourcesItemEnvironmentsItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseDeploymentPolicyGitSourcesItemSourcesItemVariant0(
     val org: String,
     val provider: UpdateProjectResponseDeploymentPolicyGitSourcesItemSourcesIteX0bcbe9c44a,
-    val repo: String? = null,
+    val repo: String? = null
 ) : UpdateProjectResponseDeploymentPolicyGitSourcesItemSourcesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseDeploymentPolicyGitSourcesItemSourcesItemVariant1(
     val namespace: String,
     val provider: UpdateProjectResponseDeploymentPolicyGitSourcesItemSourcesIteXe2f2e6b088,
-    val project: String? = null,
+    val project: String? = null
 ) : UpdateProjectResponseDeploymentPolicyGitSourcesItemSourcesItem
 
 /**
- * Typed representation of the `UpdateProjectResponseDeploymentPolicyGitSourcesItemSourcesItem` API
- * schema.
+ * Typed representation of the `UpdateProjectResponseDeploymentPolicyGitSourcesItemSourcesItem` API schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION
-)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseDeploymentPolicyGitSourcesItemSourcesItemVariant0::class
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseDeploymentPolicyGitSourcesItemSourcesItemVariant1::class
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseDeploymentPolicyGitSourcesItemSourcesItemVariant0::class),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseDeploymentPolicyGitSourcesItemSourcesItemVariant1::class)
 )
 sealed interface UpdateProjectResponseDeploymentPolicyGitSourcesItemSourcesItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseDismissedToastsItemValueVariant2(
     val currentValue: Any,
-    val previousValue: Any,
+    val previousValue: Any
 ) : UpdateProjectResponseDismissedToastsItemValue
 
-/** Typed representation of the `UpdateProjectResponseDismissedToastsItemValue` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = UpdateProjectResponseDismissedToastsItemValue.Deserializer::class
-)
+/**
+ * Typed representation of the `UpdateProjectResponseDismissedToastsItemValue` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = UpdateProjectResponseDismissedToastsItemValue.Deserializer::class)
 sealed interface UpdateProjectResponseDismissedToastsItemValue {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<
-            UpdateProjectResponseDismissedToastsItemValue
-        >() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<UpdateProjectResponseDismissedToastsItemValue>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): UpdateProjectResponseDismissedToastsItemValue {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out UpdateProjectResponseDismissedToastsItemValue>> =
-                listOf(UpdateProjectResponseDismissedToastsItemValueVariant2::class.java)
+            val objectTypes: List<Class<out UpdateProjectResponseDismissedToastsItemValue>> = listOf(UpdateProjectResponseDismissedToastsItemValueVariant2::class.java)
             for (objectType in objectTypes) {
                 try {
                     return mapper.convertValue(node, objectType)
@@ -514,430 +329,229 @@ sealed interface UpdateProjectResponseDismissedToastsItemValue {
                 }
             }
             return when {
-                node.isTextual ->
-                    StringUpdateProjectResponseDismissedToastsItemValue(
-                        mapper.convertValue(
-                            node,
-                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
-                        )
-                    )
-                node.isNumber ->
-                    DoubleUpdateProjectResponseDismissedToastsItemValue(
-                        mapper.convertValue(
-                            node,
-                            object : com.fasterxml.jackson.core.type.TypeReference<Double>() {},
-                        )
-                    )
-                node.isBoolean ->
-                    BooleanUpdateProjectResponseDismissedToastsItemValue(
-                        mapper.convertValue(
-                            node,
-                            object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {},
-                        )
-                    )
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        UpdateProjectResponseDismissedToastsItemValue::class.java,
-                        "no UpdateProjectResponseDismissedToastsItemValue branch accepts this payload",
-                    )
+                node.isTextual -> StringUpdateProjectResponseDismissedToastsItemValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
+                node.isNumber -> DoubleUpdateProjectResponseDismissedToastsItemValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Double>() {}))
+                node.isBoolean -> BooleanUpdateProjectResponseDismissedToastsItemValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {}))
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, UpdateProjectResponseDismissedToastsItemValue::class.java, "no UpdateProjectResponseDismissedToastsItemValue branch accepts this payload")
             }
         }
     }
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class StringUpdateProjectResponseDismissedToastsItemValue(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
-) : UpdateProjectResponseDismissedToastsItemValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class StringUpdateProjectResponseDismissedToastsItemValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : UpdateProjectResponseDismissedToastsItemValue
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class DoubleUpdateProjectResponseDismissedToastsItemValue(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Double
-) : UpdateProjectResponseDismissedToastsItemValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class DoubleUpdateProjectResponseDismissedToastsItemValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: Double) : UpdateProjectResponseDismissedToastsItemValue
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class BooleanUpdateProjectResponseDismissedToastsItemValue(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean
-) : UpdateProjectResponseDismissedToastsItemValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class BooleanUpdateProjectResponseDismissedToastsItemValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) : UpdateProjectResponseDismissedToastsItemValue
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseEnvItemContentHintVariant0(
     val storeId: String,
-    val type: UpdateProjectResponseEnvItemContentHintVariant0TypeEnum,
+    val type: UpdateProjectResponseEnvItemContentHintVariant0TypeEnum
 ) : UpdateProjectResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseEnvItemContentHintVariant1(
     val storeId: String,
-    val type: UpdateProjectResponseEnvItemContentHintVariant1TypeEnum,
+    val type: UpdateProjectResponseEnvItemContentHintVariant1TypeEnum
 ) : UpdateProjectResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseEnvItemContentHintVariant2(
     val storeId: String,
-    val type: UpdateProjectResponseEnvItemContentHintVariant2TypeEnum,
+    val type: UpdateProjectResponseEnvItemContentHintVariant2TypeEnum
 ) : UpdateProjectResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseEnvItemContentHintVariant3(
     val storeId: String,
-    val type: UpdateProjectResponseEnvItemContentHintVariant3TypeEnum,
+    val type: UpdateProjectResponseEnvItemContentHintVariant3TypeEnum
 ) : UpdateProjectResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseEnvItemContentHintVariant4(
     val storeId: String,
-    val type: UpdateProjectResponseEnvItemContentHintVariant4TypeEnum,
+    val type: UpdateProjectResponseEnvItemContentHintVariant4TypeEnum
 ) : UpdateProjectResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseEnvItemContentHintVariant5(
     val storeId: String,
-    val type: UpdateProjectResponseEnvItemContentHintVariant5TypeEnum,
+    val type: UpdateProjectResponseEnvItemContentHintVariant5TypeEnum
 ) : UpdateProjectResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseEnvItemContentHintVariant6(
     val storeId: String,
-    val type: UpdateProjectResponseEnvItemContentHintVariant6TypeEnum,
+    val type: UpdateProjectResponseEnvItemContentHintVariant6TypeEnum
 ) : UpdateProjectResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseEnvItemContentHintVariant7(
     val storeId: String,
-    val type: UpdateProjectResponseEnvItemContentHintVariant7TypeEnum,
+    val type: UpdateProjectResponseEnvItemContentHintVariant7TypeEnum
 ) : UpdateProjectResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseEnvItemContentHintVariant8(
     val storeId: String,
-    val type: UpdateProjectResponseEnvItemContentHintVariant8TypeEnum,
+    val type: UpdateProjectResponseEnvItemContentHintVariant8TypeEnum
 ) : UpdateProjectResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseEnvItemContentHintVariant9(
     val storeId: String,
-    val type: UpdateProjectResponseEnvItemContentHintVariant9TypeEnum,
+    val type: UpdateProjectResponseEnvItemContentHintVariant9TypeEnum
 ) : UpdateProjectResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseEnvItemContentHintVariant10(
     val storeId: String,
-    val type: UpdateProjectResponseEnvItemContentHintVariant10TypeEnum,
+    val type: UpdateProjectResponseEnvItemContentHintVariant10TypeEnum
 ) : UpdateProjectResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseEnvItemContentHintVariant11(
     val storeId: String,
-    val type: UpdateProjectResponseEnvItemContentHintVariant11TypeEnum,
+    val type: UpdateProjectResponseEnvItemContentHintVariant11TypeEnum
 ) : UpdateProjectResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseEnvItemContentHintVariant12(
     val storeId: String,
-    val type: UpdateProjectResponseEnvItemContentHintVariant12TypeEnum,
+    val type: UpdateProjectResponseEnvItemContentHintVariant12TypeEnum
 ) : UpdateProjectResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseEnvItemContentHintVariant13(
     val storeId: String,
-    val type: UpdateProjectResponseEnvItemContentHintVariant13TypeEnum,
+    val type: UpdateProjectResponseEnvItemContentHintVariant13TypeEnum
 ) : UpdateProjectResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseEnvItemContentHintVariant14(
     val storeId: String,
-    val type: UpdateProjectResponseEnvItemContentHintVariant14TypeEnum,
+    val type: UpdateProjectResponseEnvItemContentHintVariant14TypeEnum
 ) : UpdateProjectResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseEnvItemContentHintVariant15(
     val integrationConfigurationId: String,
     val integrationId: String,
     val integrationProductId: String,
     val storeId: String,
-    val type: UpdateProjectResponseEnvItemContentHintVariant15TypeEnum,
+    val type: UpdateProjectResponseEnvItemContentHintVariant15TypeEnum
 ) : UpdateProjectResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseEnvItemContentHintVariant16(
     val projectId: String,
-    val type: UpdateProjectResponseEnvItemContentHintVariant16TypeEnum,
+    val type: UpdateProjectResponseEnvItemContentHintVariant16TypeEnum
 ) : UpdateProjectResponseEnvItemContentHint
 
-/** Typed representation of the `UpdateProjectResponseEnvItemContentHint` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+/**
+ * Typed representation of the `UpdateProjectResponseEnvItemContentHint` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseEnvItemContentHintVariant0::class,
-        name = "redis-url",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseEnvItemContentHintVariant1::class,
-        name = "redis-rest-api-url",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseEnvItemContentHintVariant2::class,
-        name = "redis-rest-api-token",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseEnvItemContentHintVariant3::class,
-        name = "redis-rest-api-read-only-token",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseEnvItemContentHintVariant4::class,
-        name = "blob-read-write-token",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseEnvItemContentHintVariant5::class,
-        name = "blob-store-id",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseEnvItemContentHintVariant6::class,
-        name = "blob-webhook-public-key",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseEnvItemContentHintVariant7::class,
-        name = "postgres-url",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseEnvItemContentHintVariant8::class,
-        name = "postgres-url-non-pooling",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseEnvItemContentHintVariant9::class,
-        name = "postgres-prisma-url",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseEnvItemContentHintVariant10::class,
-        name = "postgres-user",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseEnvItemContentHintVariant11::class,
-        name = "postgres-host",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseEnvItemContentHintVariant12::class,
-        name = "postgres-password",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseEnvItemContentHintVariant13::class,
-        name = "postgres-database",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseEnvItemContentHintVariant14::class,
-        name = "postgres-url-no-ssl",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseEnvItemContentHintVariant15::class,
-        name = "integration-store-secret",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseEnvItemContentHintVariant16::class,
-        name = "flags-connection-string",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseEnvItemContentHintVariant0::class, name = "redis-url"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseEnvItemContentHintVariant1::class, name = "redis-rest-api-url"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseEnvItemContentHintVariant2::class, name = "redis-rest-api-token"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseEnvItemContentHintVariant3::class, name = "redis-rest-api-read-only-token"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseEnvItemContentHintVariant4::class, name = "blob-read-write-token"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseEnvItemContentHintVariant5::class, name = "blob-store-id"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseEnvItemContentHintVariant6::class, name = "blob-webhook-public-key"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseEnvItemContentHintVariant7::class, name = "postgres-url"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseEnvItemContentHintVariant8::class, name = "postgres-url-non-pooling"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseEnvItemContentHintVariant9::class, name = "postgres-prisma-url"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseEnvItemContentHintVariant10::class, name = "postgres-user"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseEnvItemContentHintVariant11::class, name = "postgres-host"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseEnvItemContentHintVariant12::class, name = "postgres-password"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseEnvItemContentHintVariant13::class, name = "postgres-database"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseEnvItemContentHintVariant14::class, name = "postgres-url-no-ssl"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseEnvItemContentHintVariant15::class, name = "integration-store-secret"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseEnvItemContentHintVariant16::class, name = "flags-connection-string")
 )
 sealed interface UpdateProjectResponseEnvItemContentHint
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseExpirationVariant0(
-    /** Unix ms timestamp when the project is scheduled to expire. */
+    /**
+     * Unix ms timestamp when the project is scheduled to expire.
+     */
     val expiresAt: Double
 ) : UpdateProjectResponseExpiration
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseExpirationVariant1(
-    /** Unix ms timestamp when the project was locked. */
+    /**
+     * Unix ms timestamp when the project was locked.
+     */
     val lockedAt: Double,
-    /** userId of the actor that triggered the lock (system or admin). */
-    val lockedBy: String,
+    /**
+     * userId of the actor that triggered the lock (system or admin).
+     */
+    val lockedBy: String
 ) : UpdateProjectResponseExpiration
 
-/** Typed representation of the `UpdateProjectResponseExpiration` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION
-)
+/**
+ * Typed representation of the `UpdateProjectResponseExpiration` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseExpirationVariant0::class
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseExpirationVariant1::class
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseExpirationVariant0::class),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseExpirationVariant1::class)
 )
 sealed interface UpdateProjectResponseExpiration
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseInternalRoutesItemVariant0(
     val src: String,
     val status: Double,
-    val expiry: Double? = null,
+    val expiry: Double? = null
 ) : UpdateProjectResponseInternalRoutesItem
 
-data class UpdateProjectResponseInternalRoutesItemVariant1HasItemVariant0Value(val eq: String)
+data class UpdateProjectResponseInternalRoutesItemVariant1HasItemVariant0Value(
+    val eq: String
+)
 
 data class UpdateProjectResponseInternalRoutesItemVariant1HasItemVariant0(
     val key: UpdateProjectResponseInternalRoutesItemVariant1HasItemVariant0KeyEnum,
     val type: UpdateProjectResponseInternalRoutesItemVariant1HasItemVariant0TypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value")
-    val `value`: UpdateProjectResponseInternalRoutesItemVariant1HasItemVariant0Value,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: UpdateProjectResponseInternalRoutesItemVariant1HasItemVariant0Value
 )
 
-data class UpdateProjectResponseInternalRoutesItemVariant1HasItemVariant1Value(val eq: String)
+data class UpdateProjectResponseInternalRoutesItemVariant1HasItemVariant1Value(
+    val eq: String
+)
 
 data class UpdateProjectResponseInternalRoutesItemVariant1HasItemVariant1(
     val type: UpdateProjectResponseInternalRoutesItemVariant1HasItemVariant1TypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value")
-    val `value`: UpdateProjectResponseInternalRoutesItemVariant1HasItemVariant1Value,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: UpdateProjectResponseInternalRoutesItemVariant1HasItemVariant1Value
 )
 
 data class UpdateProjectResponseInternalRoutesItemVariant1Mitigate(
     val action: UpdateProjectResponseInternalRoutesItemVariant1MitigateActionEnum
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseInternalRoutesItemVariant1(
     val has: List<Any>,
     val mitigate: UpdateProjectResponseInternalRoutesItemVariant1Mitigate,
-    val src: String? = null,
+    val src: String? = null
 ) : UpdateProjectResponseInternalRoutesItem
 
-/** Typed representation of the `UpdateProjectResponseInternalRoutesItem` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION
-)
+/**
+ * Typed representation of the `UpdateProjectResponseInternalRoutesItem` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseInternalRoutesItemVariant0::class
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateProjectResponseInternalRoutesItemVariant1::class
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseInternalRoutesItemVariant0::class),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateProjectResponseInternalRoutesItemVariant1::class)
 )
 sealed interface UpdateProjectResponseInternalRoutesItem
 
@@ -946,15 +560,10 @@ data class UpdateProjectResponseLinkVariant0DeployHooksItem(
     val name: String,
     val ref: String,
     val url: String,
-    val createdAt: Double? = null,
+    val createdAt: Double? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UpdateProjectResponseLinkVariant0(
     val deployHooks: List<UpdateProjectResponseLinkVariant0DeployHooksItem>,
     val gitCredentialId: String,
@@ -965,10 +574,9 @@ data class UpdateProjectResponseLinkVariant0(
     val repo: String? = null,
     val repoId: Double? = null,
     /**
-     * A new field, should be included in all new project links, is being added just in time when a
-     * deployment is created. This is needed for Protected Git scopes.
+     * A new field, should be included in all new project links, is being added just in time when a deployment is created. This is needed for Protected Git scopes.
      */
     val repoOwnerId: Double? = null,
     val sourceless: Boolean? = null,
-    val updatedAt: Double? = null,
+    val updatedAt: Double? = null
 ) : UpdateProjectResponseLink

@@ -3,84 +3,148 @@
 
 package dev.octri.showcase.vercel.models
 
-/** The domain is already owned by another team or user. */
+/**
+ * The domain is already owned by another team or user.
+ */
 data class DomainAlreadyOwned(
-    /** Required enumerated value serialized in the `status` wire field. */
+    /**
+     * Required enumerated value serialized in the `status` wire field.
+     */
     val status: Long,
-    /** Required enumerated value serialized in the `code` wire field. */
+    /**
+     * Required enumerated value serialized in the `code` wire field.
+     */
     val code: DomainAlreadyOwnedCodeEnum,
-    /** Required `string` value serialized in the `message` wire field. */
-    val message: String,
+    /**
+     * Required `string` value serialized in the `message` wire field.
+     */
+    val message: String
 )
 
-/** The domain is already renewing. */
+/**
+ * The domain is already renewing.
+ */
 data class DomainAlreadyRenewing(
-    /** Required enumerated value serialized in the `status` wire field. */
+    /**
+     * Required enumerated value serialized in the `status` wire field.
+     */
     val status: Long,
-    /** Required enumerated value serialized in the `code` wire field. */
+    /**
+     * Required enumerated value serialized in the `code` wire field.
+     */
     val code: DomainAlreadyRenewingCodeEnum,
-    /** Required `string` value serialized in the `message` wire field. */
-    val message: String,
+    /**
+     * Required `string` value serialized in the `message` wire field.
+     */
+    val message: String
 )
 
-/** The domain cannot be transfered out until the specified date. */
+/**
+ * The domain cannot be transfered out until the specified date.
+ */
 data class DomainCannotBeTransferedOutUntil(
-    /** Required enumerated value serialized in the `status` wire field. */
+    /**
+     * Required enumerated value serialized in the `status` wire field.
+     */
     val status: Long,
-    /** Required enumerated value serialized in the `code` wire field. */
+    /**
+     * Required enumerated value serialized in the `code` wire field.
+     */
     val code: DomainCannotBeTransferedOutUntilCodeEnum,
-    /** Required `string` value serialized in the `message` wire field. */
-    val message: String,
+    /**
+     * Required `string` value serialized in the `message` wire field.
+     */
+    val message: String
 ) : dev.octri.showcase.vercel.ErrorBody
 
 typealias DomainName = String
 
-/** The domain is not available. */
+/**
+ * The domain is not available.
+ */
 data class DomainNotAvailable(
-    /** Required enumerated value serialized in the `status` wire field. */
+    /**
+     * Required enumerated value serialized in the `status` wire field.
+     */
     val status: Long,
-    /** Required enumerated value serialized in the `code` wire field. */
+    /**
+     * Required enumerated value serialized in the `code` wire field.
+     */
     val code: DomainNotAvailableCodeEnum,
-    /** Required `string` value serialized in the `message` wire field. */
-    val message: String,
+    /**
+     * Required `string` value serialized in the `message` wire field.
+     */
+    val message: String
 )
 
-/** The domain was not found in our system. */
+/**
+ * The domain was not found in our system.
+ */
 data class DomainNotFound(
-    /** Required enumerated value serialized in the `status` wire field. */
+    /**
+     * Required enumerated value serialized in the `status` wire field.
+     */
     val status: Long,
-    /** Required enumerated value serialized in the `code` wire field. */
+    /**
+     * Required enumerated value serialized in the `code` wire field.
+     */
     val code: DomainNotFoundCodeEnum,
-    /** Required `string` value serialized in the `message` wire field. */
-    val message: String,
+    /**
+     * Required `string` value serialized in the `message` wire field.
+     */
+    val message: String
 ) : dev.octri.showcase.vercel.ErrorBody
 
-/** The domain is not registered with Vercel. */
+/**
+ * The domain is not registered with Vercel.
+ */
 data class DomainNotRegistered(
-    /** Required enumerated value serialized in the `status` wire field. */
+    /**
+     * Required enumerated value serialized in the `status` wire field.
+     */
     val status: Long,
-    /** Required enumerated value serialized in the `code` wire field. */
+    /**
+     * Required enumerated value serialized in the `code` wire field.
+     */
     val code: DomainNotRegisteredCodeEnum,
-    /** Required `string` value serialized in the `message` wire field. */
-    val message: String,
+    /**
+     * Required `string` value serialized in the `message` wire field.
+     */
+    val message: String
 )
 
-/** The domain is not renewable. */
+/**
+ * The domain is not renewable.
+ */
 data class DomainNotRenewable(
-    /** Required enumerated value serialized in the `status` wire field. */
+    /**
+     * Required enumerated value serialized in the `status` wire field.
+     */
     val status: Long,
-    /** Required enumerated value serialized in the `code` wire field. */
+    /**
+     * Required enumerated value serialized in the `code` wire field.
+     */
     val code: DomainNotRenewableCodeEnum,
-    /** Required `string` value serialized in the `message` wire field. */
-    val message: String,
+    /**
+     * Required `string` value serialized in the `message` wire field.
+     */
+    val message: String
 )
 
-/** The domain name (excluding the TLD) is too short. */
+/**
+ * The domain name (excluding the TLD) is too short.
+ */
 data class DomainTooShort(
-    /** Required enumerated value serialized in the `status` wire field. */
+    /**
+     * Required enumerated value serialized in the `status` wire field.
+     */
     val status: Long,
-    /** Required enumerated value serialized in the `code` wire field. */
+    /**
+     * Required enumerated value serialized in the `code` wire field.
+     */
     val code: DomainTooShortCodeEnum,
-    /** Required `string` value serialized in the `message` wire field. */
-    val message: String,
+    /**
+     * Required `string` value serialized in the `message` wire field.
+     */
+    val message: String
 )

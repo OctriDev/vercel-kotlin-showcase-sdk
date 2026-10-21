@@ -3,10 +3,16 @@
 
 package dev.octri.showcase.vercel.models
 
-/** Page of projects connected to a connector. */
+/**
+ * Page of projects connected to a connector.
+ */
 data class ConnectConnectorProjectConnectionList(
-    /** Cursor for the next page. */
+    /**
+     * Cursor for the next page.
+     */
     val pagination: ConnectPagination,
-    /** Project connections in this page. */
-    val projects: List<ConnectProjectConnection>,
+    /**
+     * Project connections in this page.
+     */
+    val projects: List<ConnectProjectConnection>
 )

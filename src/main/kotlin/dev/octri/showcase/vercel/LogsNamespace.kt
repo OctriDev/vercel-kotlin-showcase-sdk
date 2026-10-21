@@ -3,28 +3,15 @@
 
 package dev.octri.showcase.vercel
 
+
 class LogsNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Retrieves a stream of runtime logs for a deployment in a project. Use `projectId` and
-     * `deploymentId` to identify the deployment, and optionally set `teamId` or `slug` to specify
-     * the team context.
+     * Retrieves a stream of runtime logs for a deployment in a project. Use `projectId` and `deploymentId` to identify the deployment, and optionally set `teamId` or `slug` to specify the team context.
      *
      * Returns a stream of logs for a given deployment.
      */
-    fun getRuntime(
-        projectId: String,
-        deploymentId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Logs.GetRuntimeLogsResponse {
-        return dev.octri.showcase.vercel.methods.Logs.getRuntimeLogs(
-            clientConfig,
-            projectId,
-            deploymentId,
-            teamId,
-            slug,
-            options,
-        )
+    fun getRuntime(projectId: String, deploymentId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Logs.GetRuntimeLogsResponse {
+        return dev.octri.showcase.vercel.methods.Logs.getRuntimeLogs(clientConfig, projectId, deploymentId, teamId, slug, options)
     }
+
 }

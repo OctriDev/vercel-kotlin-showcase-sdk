@@ -3,98 +3,51 @@
 
 package dev.octri.showcase.vercel
 
+
 class CertsNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Retrieves a certificate by its identifier. Use `teamId` or `slug` to specify the team context
-     * for the request. The response includes the certificate's common names, renewal setting, and
-     * creation and expiration timestamps.
+     * Retrieves a certificate by its identifier. Use `teamId` or `slug` to specify the team context for the request. The response includes the certificate's common names, renewal setting, and creation and expiration timestamps.
      *
      * Get cert by id
      */
-    fun getById(
-        id: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Certs.GetCertByIdResponse {
-        return dev.octri.showcase.vercel.methods.Certs.getCertById(
-            clientConfig,
-            id,
-            teamId,
-            slug,
-            options,
-        )
+    fun getById(id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Certs.GetCertByIdResponse {
+        return dev.octri.showcase.vercel.methods.Certs.getCertById(clientConfig, id, teamId, slug, options)
     }
 
     /**
-     * Deletes a certificate identified by its certificate ID. Use `teamId` or `slug` to scope the
-     * request to a team. The response object confirms the removal.
+     * Deletes a certificate identified by its certificate ID. Use `teamId` or `slug` to scope the request to a team. The response object confirms the removal.
      *
      * Remove cert
      */
-    fun remove(
-        id: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Map<String, Any> {
-        return dev.octri.showcase.vercel.methods.Certs.removeCert(
-            clientConfig,
-            id,
-            teamId,
-            slug,
-            options,
-        )
+    fun remove(id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Map<String, Any> {
+        return dev.octri.showcase.vercel.methods.Certs.removeCert(clientConfig, id, teamId, slug, options)
     }
 
     /**
-     * Lists certificates available to the authenticated user or team. Use `teamId` or `slug` to
-     * scope the request to a team. The response includes certificate details and pagination
-     * information.
+     * Lists certificates available to the authenticated user or team. Use `teamId` or `slug` to scope the request to a team. The response includes certificate details and pagination information.
      *
      * Get certs
      */
-    fun get(
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Certs.GetCertsResponse {
+    fun get(teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Certs.GetCertsResponse {
         return dev.octri.showcase.vercel.methods.Certs.getCerts(clientConfig, teamId, slug, options)
     }
 
     /**
-     * Issues a new certificate for the common names you provide. Supply `cns` to specify the common
-     * names for which the certificate should be issued. The response includes the certificate
-     * identifier, common names, and certificate dates.
+     * Issues a new certificate for the common names you provide. Supply `cns` to specify the common names for which the certificate should be issued. The response includes the certificate identifier, common names, and certificate dates.
      *
      * Issue a new cert
      */
-    fun issue(
-        teamId: String? = null,
-        slug: String? = null,
-        cns: List<String>? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Certs.IssueCertResponse {
-        return dev.octri.showcase.vercel.methods.Certs.issueCert(
-            clientConfig,
-            teamId,
-            slug,
-            cns,
-            options,
-        )
+    fun issue(teamId: String? = null, slug: String? = null, cns: List<String>? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Certs.IssueCertResponse {
+        return dev.octri.showcase.vercel.methods.Certs.issueCert(clientConfig, teamId, slug, cns, options)
     }
 
     /**
-     * Uploads a certificate using its certificate authority, key, and certificate data. Provide
-     * `ca`, `key`, and `cert` in the request body; you can also set `skipValidation` to control
-     * certificate validation. The response includes the uploaded certificate details.
+     * Uploads a certificate using its certificate authority, key, and certificate data. Provide `ca`, `key`, and `cert` in the request body; you can also set `skipValidation` to control certificate validation. The response includes the uploaded certificate details.
      *
      * Upload a cert
      */
-    fun upload(
-        request: dev.octri.showcase.vercel.methods.Certs.UploadCertRequest,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Certs.UploadCertResponse {
+    fun upload(request: dev.octri.showcase.vercel.methods.Certs.UploadCertRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Certs.UploadCertResponse {
         return dev.octri.showcase.vercel.methods.Certs.uploadCert(clientConfig, request, options)
     }
+
 }

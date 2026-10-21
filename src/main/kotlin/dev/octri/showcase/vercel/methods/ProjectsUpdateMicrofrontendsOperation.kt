@@ -9,57 +9,33 @@ import dev.octri.showcase.vercel.SdkClient
 
 internal object ProjectsUpdateMicrofrontendsOperation {
     /**
-     * Updates the microfrontends settings for a project. Use the optional fields to change the
-     * project's group, enablement, default application, route, or observability routing
-     * configuration. The two routing options can only be set for child applications.
+     * Updates the microfrontends settings for a project. Use the optional fields to change the project's group, enablement, default application, route, or observability routing configuration. The two routing options can only be set for child applications.
      *
      * Update the microfrontends settings for a project.
      *
      * @param projectId The unique project identifier
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param microfrontendsGroupId The unique group identifier to add this microfrontend to
+     * @param microfrontendsGroupId The unique group identifier to add this
+     *   microfrontend to
      * @param enabled Enable or disable microfrontends for the project
-     * @param isDefaultApp Whether the application is the default application for the microfrontends
-     *   group
-     * @param defaultRoute The default route used for screenshots and preview links for the project
-     * @param routeObservabilityToThisProject Whether observability data should be routed to this
-     *   project or a root project. Can only be set for child applications.
-     * @param doNotRouteWithMicrofrontendsRouting Whether domains in this project should route as a
-     *   microfrontend. Can only be set for child applications.
+     * @param isDefaultApp Whether the application is the default application for the
+     *   microfrontends group
+     * @param defaultRoute The default route used for screenshots and preview links
+     *   for the project
+     * @param routeObservabilityToThisProject Whether observability data should be
+     *   routed to this project or a root project. Can only be set for child
+     *   applications.
+     * @param doNotRouteWithMicrofrontendsRouting Whether domains in this project
+     *   should route as a microfrontend. Can only be set for child applications.
      */
-    fun updateMicrofrontends(
-        clientConfig: ClientConfig,
-        request: Projects.UpdateMicrofrontendsRequest,
-        options: RequestOptions? = null,
-    ): Projects.UpdateMicrofrontendsResponse {
-        return SdkClient.request<Projects.UpdateMicrofrontendsResponse>(
-                SdkClient.RequestSpec(
-                    "PATCH",
-                    "/v1/projects/${SdkClient.encodePathSegment(request.projectId)}/microfrontends",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    body =
-                        SdkClient.bodyMap(
-                            "microfrontendsGroupId" to
-                                (SdkClient.omitIfNull(request.microfrontendsGroupId)),
-                            "enabled" to (SdkClient.omitIfNull(request.enabled)),
-                            "isDefaultApp" to (SdkClient.omitIfNull(request.isDefaultApp)),
-                            "defaultRoute" to (SdkClient.omitIfNull(request.defaultRoute)),
-                            "routeObservabilityToThisProject" to
-                                (SdkClient.omitIfNull(request.routeObservabilityToThisProject)),
-                            "doNotRouteWithMicrofrontendsRouting" to
-                                (SdkClient.omitIfNull(request.doNotRouteWithMicrofrontendsRouting)),
-                        ),
-                    operationId = "updateMicrofrontends",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun updateMicrofrontends(clientConfig: ClientConfig, request: Projects.UpdateMicrofrontendsRequest, options: RequestOptions? = null): Projects.UpdateMicrofrontendsResponse {
+        return SdkClient.request<Projects.UpdateMicrofrontendsResponse>(SdkClient.RequestSpec("PATCH", "/v1/projects/${SdkClient.encodePathSegment(request.projectId)}/microfrontends", config = clientConfig, query = mapOf("teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("microfrontendsGroupId" to
+    (SdkClient.omitIfNull(request.microfrontendsGroupId)), "enabled" to (SdkClient.omitIfNull(request.enabled)), "isDefaultApp" to
+    (SdkClient.omitIfNull(request.isDefaultApp)), "defaultRoute" to
+    (SdkClient.omitIfNull(request.defaultRoute)), "routeObservabilityToThisProject" to
+    (SdkClient.omitIfNull(request.routeObservabilityToThisProject)), "doNotRouteWithMicrofrontendsRouting" to
+    (SdkClient.omitIfNull(request.doNotRouteWithMicrofrontendsRouting))), operationId = "updateMicrofrontends", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 }

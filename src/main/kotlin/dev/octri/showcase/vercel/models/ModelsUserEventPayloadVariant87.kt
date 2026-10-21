@@ -3,467 +3,604 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant87(
-    /** Optional `string` value serialized in the `cn` wire field. */
+    /**
+     * Optional `string` value serialized in the `cn` wire field.
+     */
     val cn: String? = null,
-    /** Optional array value serialized in the `cns` wire field. */
+    /**
+     * Optional array value serialized in the `cns` wire field.
+     */
     val cns: List<String>? = null,
-    /** Optional `string` value serialized in the `id` wire field. */
-    val id: String? = null,
+    /**
+     * Optional `string` value serialized in the `id` wire field.
+     */
+    val id: String? = null
 ) : UserEventPayload
 
-/** Optional object value serialized in the `newTeam` wire field. */
+/**
+ * Optional object value serialized in the `newTeam` wire field.
+ */
 data class UserEventPayloadVariant88NewTeam(
-    /** Required `string` value serialized in the `name` wire field. */
+    /**
+     * Required `string` value serialized in the `name` wire field.
+     */
     val name: String
 )
 
-/** Optional object value serialized in the `oldTeam` wire field. */
+/**
+ * Optional object value serialized in the `oldTeam` wire field.
+ */
 data class UserEventPayloadVariant88OldTeam(
-    /** Required `string` value serialized in the `name` wire field. */
+    /**
+     * Required `string` value serialized in the `name` wire field.
+     */
     val name: String
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant88(
-    /** Required `string` value serialized in the `id` wire field. */
+    /**
+     * Required `string` value serialized in the `id` wire field.
+     */
     val id: String,
-    /** Optional object value serialized in the `newTeam` wire field. */
+    /**
+     * Optional object value serialized in the `newTeam` wire field.
+     */
     val newTeam: UserEventPayloadVariant88NewTeam? = null,
-    /** Optional object value serialized in the `oldTeam` wire field. */
-    val oldTeam: UserEventPayloadVariant88OldTeam? = null,
+    /**
+     * Optional object value serialized in the `oldTeam` wire field.
+     */
+    val oldTeam: UserEventPayloadVariant88OldTeam? = null
 ) : UserEventPayload
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant89(
-    /** Required `string` value serialized in the `dst` wire field. */
+    /**
+     * Required `string` value serialized in the `dst` wire field.
+     */
     val dst: String,
-    /** Required `string` value serialized in the `src` wire field. */
-    val src: String,
+    /**
+     * Required `string` value serialized in the `src` wire field.
+     */
+    val src: String
 ) : UserEventPayload
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant90(
-    /** Required `string` value serialized in the `id` wire field. */
+    /**
+     * Required `string` value serialized in the `id` wire field.
+     */
     val id: String,
-    /** Optional `string` value serialized in the `cn` wire field. */
+    /**
+     * Optional `string` value serialized in the `cn` wire field.
+     */
     val cn: String? = null,
-    /** Optional array value serialized in the `cns` wire field. */
-    val cns: List<String>? = null,
+    /**
+     * Optional array value serialized in the `cns` wire field.
+     */
+    val cns: List<String>? = null
 ) : UserEventPayload
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant91(
-    /** Optional `string` value serialized in the `cn` wire field. */
+    /**
+     * Optional `string` value serialized in the `cn` wire field.
+     */
     val cn: String? = null,
-    /** Optional array value serialized in the `cns` wire field. */
-    val cns: List<String>? = null,
+    /**
+     * Optional array value serialized in the `cns` wire field.
+     */
+    val cns: List<String>? = null
 ) : UserEventPayload
 
-/** Required object value serialized in the `next` wire field. */
+/**
+ * Required object value serialized in the `next` wire field.
+ */
 data class UserEventPayloadVariant92Next(
-    /** Required enumerated value serialized in the `autoAddReviewers` wire field. */
+    /**
+     * Required enumerated value serialized in the `autoAddReviewers` wire field.
+     */
     val autoAddReviewers: Boolean,
-    /** Required enumerated value serialized in the `enabled` wire field. */
-    val enabled: Boolean,
+    /**
+     * Required enumerated value serialized in the `enabled` wire field.
+     */
+    val enabled: Boolean
 )
 
-/** Required object value serialized in the `previous` wire field. */
+/**
+ * Required object value serialized in the `previous` wire field.
+ */
 data class UserEventPayloadVariant92Previous(
-    /** Required enumerated value serialized in the `autoAddReviewers` wire field. */
+    /**
+     * Required enumerated value serialized in the `autoAddReviewers` wire field.
+     */
     val autoAddReviewers: Boolean,
-    /** Required enumerated value serialized in the `enabled` wire field. */
-    val enabled: Boolean,
+    /**
+     * Required enumerated value serialized in the `enabled` wire field.
+     */
+    val enabled: Boolean
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant92(
-    /** Required `string` value serialized in the `gitOwnerName` wire field. */
+    /**
+     * Required `string` value serialized in the `gitOwnerName` wire field.
+     */
     val gitOwnerName: String,
-    /** Required `string` value serialized in the `gitRepositoryName` wire field. */
+    /**
+     * Required `string` value serialized in the `gitRepositoryName` wire field.
+     */
     val gitRepositoryName: String,
-    /** Required object value serialized in the `next` wire field. */
+    /**
+     * Required object value serialized in the `next` wire field.
+     */
     val next: UserEventPayloadVariant92Next,
-    /** Required object value serialized in the `previous` wire field. */
-    val previous: UserEventPayloadVariant92Previous,
+    /**
+     * Required object value serialized in the `previous` wire field.
+     */
+    val previous: UserEventPayloadVariant92Previous
 ) : UserEventPayload
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant93(
-    /** Required `string` value serialized in the `documentId` wire field. */
+    /**
+     * Required `string` value serialized in the `documentId` wire field.
+     */
     val documentId: String,
-    /** Required `string` value serialized in the `fingerprint` wire field. */
+    /**
+     * Required `string` value serialized in the `fingerprint` wire field.
+     */
     val fingerprint: String,
-    /** Required `string` value serialized in the `slug` wire field. */
+    /**
+     * Required `string` value serialized in the `slug` wire field.
+     */
     val slug: String,
-    /** Required `string` value serialized in the `title` wire field. */
-    val title: String,
+    /**
+     * Required `string` value serialized in the `title` wire field.
+     */
+    val title: String
 ) : UserEventPayload
 
-/** A single document included in a bulk compliance download. */
+/**
+ * A single document included in a bulk compliance download.
+ */
 data class UserEventPayloadVariant94DocumentsItem(
-    /** Required `string` value serialized in the `documentId` wire field. */
+    /**
+     * Required `string` value serialized in the `documentId` wire field.
+     */
     val documentId: String,
-    /** Required `string` value serialized in the `fingerprint` wire field. */
+    /**
+     * Required `string` value serialized in the `fingerprint` wire field.
+     */
     val fingerprint: String,
-    /** Required `string` value serialized in the `slug` wire field. */
+    /**
+     * Required `string` value serialized in the `slug` wire field.
+     */
     val slug: String,
-    /** Required `string` value serialized in the `title` wire field. */
-    val title: String,
+    /**
+     * Required `string` value serialized in the `title` wire field.
+     */
+    val title: String
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant94(
-    /** Required `number` value serialized in the `count` wire field. */
+    /**
+     * Required `number` value serialized in the `count` wire field.
+     */
     val count: Double,
-    /** Required array value serialized in the `documents` wire field. */
-    val documents: List<UserEventPayloadVariant94DocumentsItem>,
+    /**
+     * Required array value serialized in the `documents` wire field.
+     */
+    val documents: List<UserEventPayloadVariant94DocumentsItem>
 ) : UserEventPayload
 
-/** Required object value serialized in the `configuration` wire field. */
+/**
+ * Required object value serialized in the `configuration` wire field.
+ */
 data class UserEventPayloadVariant95Configuration(
-    /** Required `string` value serialized in the `id` wire field. */
+    /**
+     * Required `string` value serialized in the `id` wire field.
+     */
     val id: String,
-    /** Required `string` value serialized in the `name` wire field. */
-    val name: String,
+    /**
+     * Required `string` value serialized in the `name` wire field.
+     */
+    val name: String
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant95(
-    /** Required object value serialized in the `configuration` wire field. */
+    /**
+     * Required object value serialized in the `configuration` wire field.
+     */
     val configuration: UserEventPayloadVariant95Configuration
 ) : UserEventPayload
 
-/** Required object value serialized in the `configuration` wire field. */
+/**
+ * Required object value serialized in the `configuration` wire field.
+ */
 data class UserEventPayloadVariant96Configuration(
-    /** Required `string` value serialized in the `id` wire field. */
+    /**
+     * Required `string` value serialized in the `id` wire field.
+     */
     val id: String,
-    /** Optional `string` value serialized in the `name` wire field. */
-    val name: String? = null,
+    /**
+     * Optional `string` value serialized in the `name` wire field.
+     */
+    val name: String? = null
 )
 
-/** Required object value serialized in the `project` wire field. */
+/**
+ * Required object value serialized in the `project` wire field.
+ */
 data class UserEventPayloadVariant96Project(
-    /** Required `string` value serialized in the `id` wire field. */
+    /**
+     * Required `string` value serialized in the `id` wire field.
+     */
     val id: String,
-    /** Optional `string` value serialized in the `name` wire field. */
-    val name: String? = null,
+    /**
+     * Optional `string` value serialized in the `name` wire field.
+     */
+    val name: String? = null
 )
 
-/** Required object value serialized in the `team` wire field. */
+/**
+ * Required object value serialized in the `team` wire field.
+ */
 data class UserEventPayloadVariant96Team(
-    /** Required `string` value serialized in the `id` wire field. */
+    /**
+     * Required `string` value serialized in the `id` wire field.
+     */
     val id: String,
-    /** Required `string` value serialized in the `name` wire field. */
-    val name: String,
+    /**
+     * Required `string` value serialized in the `name` wire field.
+     */
+    val name: String
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant96(
-    /** Required object value serialized in the `configuration` wire field. */
+    /**
+     * Required object value serialized in the `configuration` wire field.
+     */
     val configuration: UserEventPayloadVariant96Configuration,
-    /** Required object value serialized in the `project` wire field. */
+    /**
+     * Required object value serialized in the `project` wire field.
+     */
     val project: UserEventPayloadVariant96Project,
-    /** Required object value serialized in the `team` wire field. */
+    /**
+     * Required object value serialized in the `team` wire field.
+     */
     val team: UserEventPayloadVariant96Team,
-    /** Optional enumerated value serialized in the `buildsEnabled` wire field. */
-    val buildsEnabled: Boolean? = null,
+    /**
+     * Optional enumerated value serialized in the `buildsEnabled` wire field.
+     */
+    val buildsEnabled: Boolean? = null
 ) : UserEventPayload
 
-/** Required object value serialized in the `configuration` wire field. */
+/**
+ * Required object value serialized in the `configuration` wire field.
+ */
 data class UserEventPayloadVariant97Configuration(
-    /** Required `string` value serialized in the `id` wire field. */
+    /**
+     * Required `string` value serialized in the `id` wire field.
+     */
     val id: String,
-    /** Optional `string` value serialized in the `name` wire field. */
-    val name: String? = null,
+    /**
+     * Optional `string` value serialized in the `name` wire field.
+     */
+    val name: String? = null
 )
 
-/** Required object value serialized in the `project` wire field. */
+/**
+ * Required object value serialized in the `project` wire field.
+ */
 data class UserEventPayloadVariant97Project(
-    /** Required `string` value serialized in the `id` wire field. */
+    /**
+     * Required `string` value serialized in the `id` wire field.
+     */
     val id: String,
-    /** Optional `string` value serialized in the `name` wire field. */
-    val name: String? = null,
+    /**
+     * Optional `string` value serialized in the `name` wire field.
+     */
+    val name: String? = null
 )
 
-/** Required object value serialized in the `team` wire field. */
+/**
+ * Required object value serialized in the `team` wire field.
+ */
 data class UserEventPayloadVariant97Team(
-    /** Required `string` value serialized in the `id` wire field. */
+    /**
+     * Required `string` value serialized in the `id` wire field.
+     */
     val id: String,
-    /** Required `string` value serialized in the `name` wire field. */
-    val name: String,
+    /**
+     * Required `string` value serialized in the `name` wire field.
+     */
+    val name: String
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant97(
-    /** Required object value serialized in the `configuration` wire field. */
+    /**
+     * Required object value serialized in the `configuration` wire field.
+     */
     val configuration: UserEventPayloadVariant97Configuration,
-    /** Required object value serialized in the `project` wire field. */
+    /**
+     * Required object value serialized in the `project` wire field.
+     */
     val project: UserEventPayloadVariant97Project,
-    /** Required object value serialized in the `team` wire field. */
+    /**
+     * Required object value serialized in the `team` wire field.
+     */
     val team: UserEventPayloadVariant97Team,
-    /** Optional enumerated value serialized in the `buildsEnabled` wire field. */
+    /**
+     * Optional enumerated value serialized in the `buildsEnabled` wire field.
+     */
     val buildsEnabled: Boolean? = null,
-    /** Optional enumerated value serialized in the `passive` wire field. */
-    val passive: Boolean? = null,
+    /**
+     * Optional enumerated value serialized in the `passive` wire field.
+     */
+    val passive: Boolean? = null
 ) : UserEventPayload
 
-/** Required object value serialized in the `configuration` wire field. */
+/**
+ * Required object value serialized in the `configuration` wire field.
+ */
 data class UserEventPayloadVariant98Configuration(
-    /** Required `string` value serialized in the `id` wire field. */
+    /**
+     * Required `string` value serialized in the `id` wire field.
+     */
     val id: String,
-    /** Optional `string` value serialized in the `name` wire field. */
-    val name: String? = null,
+    /**
+     * Optional `string` value serialized in the `name` wire field.
+     */
+    val name: String? = null
 )
 
-/** Required object value serialized in the `project` wire field. */
+/**
+ * Required object value serialized in the `project` wire field.
+ */
 data class UserEventPayloadVariant98Project(
-    /** Required `string` value serialized in the `id` wire field. */
+    /**
+     * Required `string` value serialized in the `id` wire field.
+     */
     val id: String,
-    /** Optional `string` value serialized in the `name` wire field. */
-    val name: String? = null,
+    /**
+     * Optional `string` value serialized in the `name` wire field.
+     */
+    val name: String? = null
 )
 
-/** Required object value serialized in the `team` wire field. */
+/**
+ * Required object value serialized in the `team` wire field.
+ */
 data class UserEventPayloadVariant98Team(
-    /** Required `string` value serialized in the `id` wire field. */
+    /**
+     * Required `string` value serialized in the `id` wire field.
+     */
     val id: String,
-    /** Required `string` value serialized in the `name` wire field. */
-    val name: String,
+    /**
+     * Required `string` value serialized in the `name` wire field.
+     */
+    val name: String
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant98(
-    /** Required object value serialized in the `configuration` wire field. */
+    /**
+     * Required object value serialized in the `configuration` wire field.
+     */
     val configuration: UserEventPayloadVariant98Configuration,
-    /** Required object value serialized in the `project` wire field. */
+    /**
+     * Required object value serialized in the `project` wire field.
+     */
     val project: UserEventPayloadVariant98Project,
-    /** Required object value serialized in the `team` wire field. */
-    val team: UserEventPayloadVariant98Team,
+    /**
+     * Required object value serialized in the `team` wire field.
+     */
+    val team: UserEventPayloadVariant98Team
 ) : UserEventPayload
 
-/** Required object value serialized in the `configuration` wire field. */
+/**
+ * Required object value serialized in the `configuration` wire field.
+ */
 data class UserEventPayloadVariant99Configuration(
-    /** Required `string` value serialized in the `id` wire field. */
+    /**
+     * Required `string` value serialized in the `id` wire field.
+     */
     val id: String,
-    /** Optional `string` value serialized in the `name` wire field. */
-    val name: String? = null,
+    /**
+     * Optional `string` value serialized in the `name` wire field.
+     */
+    val name: String? = null
 )
 
-/** Required object value serialized in the `team` wire field. */
+/**
+ * Required object value serialized in the `team` wire field.
+ */
 data class UserEventPayloadVariant99Team(
-    /** Required `string` value serialized in the `id` wire field. */
+    /**
+     * Required `string` value serialized in the `id` wire field.
+     */
     val id: String,
-    /** Required `string` value serialized in the `name` wire field. */
-    val name: String,
+    /**
+     * Required `string` value serialized in the `name` wire field.
+     */
+    val name: String
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant99(
-    /** Required object value serialized in the `configuration` wire field. */
+    /**
+     * Required object value serialized in the `configuration` wire field.
+     */
     val configuration: UserEventPayloadVariant99Configuration,
-    /** Required `string` value serialized in the `newName` wire field. */
+    /**
+     * Required `string` value serialized in the `newName` wire field.
+     */
     val newName: String,
-    /** Required object value serialized in the `team` wire field. */
-    val team: UserEventPayloadVariant99Team,
+    /**
+     * Required object value serialized in the `team` wire field.
+     */
+    val team: UserEventPayloadVariant99Team
 ) : UserEventPayload
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant100(
-    /** Required `string` value serialized in the `githubLogin` wire field. */
+    /**
+     * Required `string` value serialized in the `githubLogin` wire field.
+     */
     val githubLogin: String,
-    /** Optional `string` value serialized in the `host` wire field. */
-    val host: String? = null,
+    /**
+     * Optional `string` value serialized in the `host` wire field.
+     */
+    val host: String? = null
 ) : UserEventPayload
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant101(
-    /** Required `string` value serialized in the `githubLogin` wire field. */
+    /**
+     * Required `string` value serialized in the `githubLogin` wire field.
+     */
     val githubLogin: String
 ) : UserEventPayload
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant102(
-    /** Required `string` value serialized in the `githubLogin` wire field. */
+    /**
+     * Required `string` value serialized in the `githubLogin` wire field.
+     */
     val githubLogin: String,
-    /** Required `string` value serialized in the `host` wire field. */
-    val host: String,
+    /**
+     * Required `string` value serialized in the `host` wire field.
+     */
+    val host: String
 ) : UserEventPayload
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant103(
-    /** Required `string` value serialized in the `gitlabEmail` wire field. */
+    /**
+     * Required `string` value serialized in the `gitlabEmail` wire field.
+     */
     val gitlabEmail: String,
-    /** Required `string` value serialized in the `gitlabLogin` wire field. */
+    /**
+     * Required `string` value serialized in the `gitlabLogin` wire field.
+     */
     val gitlabLogin: String,
-    /** Optional `string` value serialized in the `gitlabName` wire field. */
+    /**
+     * Optional `string` value serialized in the `gitlabName` wire field.
+     */
     val gitlabName: String? = null,
-    /** Optional `string` value serialized in the `zeitAccount` wire field. */
+    /**
+     * Optional `string` value serialized in the `zeitAccount` wire field.
+     */
     val zeitAccount: String? = null,
-    /** Optional `string` value serialized in the `zeitAccountType` wire field. */
-    val zeitAccountType: String? = null,
+    /**
+     * Optional `string` value serialized in the `zeitAccountType` wire field.
+     */
+    val zeitAccountType: String? = null
 ) : UserEventPayload
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant104(
-    /** Required `string` value serialized in the `gitlabLogin` wire field. */
+    /**
+     * Required `string` value serialized in the `gitlabLogin` wire field.
+     */
     val gitlabLogin: String,
-    /** Required `number` value serialized in the `gitlabUserId` wire field. */
-    val gitlabUserId: Double,
+    /**
+     * Required `number` value serialized in the `gitlabUserId` wire field.
+     */
+    val gitlabUserId: Double
 ) : UserEventPayload
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant105(
-    /** Required `string` value serialized in the `bitbucketEmail` wire field. */
+    /**
+     * Required `string` value serialized in the `bitbucketEmail` wire field.
+     */
     val bitbucketEmail: String,
-    /** Required `string` value serialized in the `bitbucketLogin` wire field. */
+    /**
+     * Required `string` value serialized in the `bitbucketLogin` wire field.
+     */
     val bitbucketLogin: String,
-    /** Optional `string` value serialized in the `bitbucketName` wire field. */
-    val bitbucketName: String? = null,
+    /**
+     * Optional `string` value serialized in the `bitbucketName` wire field.
+     */
+    val bitbucketName: String? = null
 ) : UserEventPayload
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant106(
-    /** Required `string` value serialized in the `bitbucketAccountId` wire field. */
+    /**
+     * Required `string` value serialized in the `bitbucketAccountId` wire field.
+     */
     val bitbucketAccountId: String,
-    /** Required `string` value serialized in the `bitbucketLogin` wire field. */
-    val bitbucketLogin: String,
+    /**
+     * Required `string` value serialized in the `bitbucketLogin` wire field.
+     */
+    val bitbucketLogin: String
 ) : UserEventPayload
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class UserEventPayloadVariant107(
-    /** Optional `number` value serialized in the `acceptedTokenCount` wire field. */
+    /**
+     * Optional `number` value serialized in the `acceptedTokenCount` wire field.
+     */
     val acceptedTokenCount: Double? = null,
-    /** Optional `string` value serialized in the `clientId` wire field. */
+    /**
+     * Optional `string` value serialized in the `clientId` wire field.
+     */
     val clientId: String? = null,
-    /** Optional `string` value serialized in the `clientName` wire field. */
+    /**
+     * Optional `string` value serialized in the `clientName` wire field.
+     */
     val clientName: String? = null,
-    /** Optional `string` value serialized in the `clientUid` wire field. */
+    /**
+     * Optional `string` value serialized in the `clientUid` wire field.
+     */
     val clientUid: String? = null,
-    /** Optional array value serialized in the `environments` wire field. */
+    /**
+     * Optional array value serialized in the `environments` wire field.
+     */
     val environments: List<String>? = null,
-    /** Optional array value serialized in the `fields` wire field. */
+    /**
+     * Optional array value serialized in the `fields` wire field.
+     */
     val fields: List<String>? = null,
-    /** Optional `number` value serialized in the `importedTokenCount` wire field. */
+    /**
+     * Optional `number` value serialized in the `importedTokenCount` wire field.
+     */
     val importedTokenCount: Double? = null,
-    /** Optional `string` value serialized in the `installationId` wire field. */
+    /**
+     * Optional `string` value serialized in the `installationId` wire field.
+     */
     val installationId: String? = null,
-    /** Optional `string` value serialized in the `projectId` wire field. */
+    /**
+     * Optional `string` value serialized in the `projectId` wire field.
+     */
     val projectId: String? = null,
-    /** Optional `string` value serialized in the `projectName` wire field. */
+    /**
+     * Optional `string` value serialized in the `projectName` wire field.
+     */
     val projectName: String? = null,
-    /** Optional enumerated value serialized in the `subjectType` wire field. */
+    /**
+     * Optional enumerated value serialized in the `subjectType` wire field.
+     */
     val subjectType: UserEventPayloadVariant107SubjectTypeEnum? = null,
-    /** Optional `number` value serialized in the `tokenCount` wire field. */
+    /**
+     * Optional `number` value serialized in the `tokenCount` wire field.
+     */
     val tokenCount: Double? = null,
-    /** Optional `number` value serialized in the `tokensDeleted` wire field. */
+    /**
+     * Optional `number` value serialized in the `tokensDeleted` wire field.
+     */
     val tokensDeleted: Double? = null,
-    /** Optional `number` value serialized in the `triggerDestinationCount` wire field. */
-    val triggerDestinationCount: Double? = null,
+    /**
+     * Optional `number` value serialized in the `triggerDestinationCount` wire field.
+     */
+    val triggerDestinationCount: Double? = null
 ) : UserEventPayload

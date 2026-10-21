@@ -3,401 +3,562 @@
 
 package dev.octri.showcase.vercel.models
 
-/** Configuration input options for setting plan item quantity. */
+/**
+ * Configuration input options for setting plan item quantity.
+ */
 data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX809b0aec9f(
-    /** The alias of the product to set quantity for. */
+    /**
+     * The alias of the product to set quantity for.
+     */
     val productAlias: String,
-    /** The quantity to set for the plan item. */
+    /**
+     * The quantity to set for the plan item.
+     */
     val quantity: Double,
-    /** The resource IDs for the plan item. Only set if SKU requires resource entitlements. */
-    val resourceIds: List<String>? = null,
+    /**
+     * The resource IDs for the plan item. Only set if SKU requires resource entitlements.
+     */
+    val resourceIds: List<String>? = null
 )
 
 /**
- * Resources that were changed as part of this intent. Tracks all logical changes including the
- * primary change and any side effects.
+ * Resources that were changed as part of this intent. Tracks all logical changes including the primary change and any side effects.
  */
 data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXc71b1fc21b(
-    /** The alias of the product that was changed. */
+    /**
+     * The alias of the product that was changed.
+     */
     val productAlias: String,
-    /** The ID of the product that was changed. */
+    /**
+     * The ID of the product that was changed.
+     */
     val productId: String,
-    /** The resulting quantity after this change. */
+    /**
+     * The resulting quantity after this change.
+     */
     val quantity: Double,
-    /** Resource IDs that were added. */
+    /**
+     * Resource IDs that were added.
+     */
     val addedResourceIds: List<String>? = null,
-    /** When this resource change should take effect for downstream consumers. */
+    /**
+     * When this resource change should take effect for downstream consumers.
+     */
     val effectiveAt: String? = null,
-    /** Resource IDs that were removed. */
+    /**
+     * Resource IDs that were removed.
+     */
     val removedResourceIds: List<String>? = null,
-    /** The full set of resource IDs after the change. */
-    val resourceIds: List<String>? = null,
+    /**
+     * The full set of resource IDs after the change.
+     */
+    val resourceIds: List<String>? = null
 )
 
 /**
- * The canonical reference-product billing period at intent creation. Omitted for historical
- * intents.
+ * The canonical reference-product billing period at intent creation. Omitted for historical intents.
  */
 data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX26191979cd(
-    /** The exclusive end of the reference billing period. */
+    /**
+     * The exclusive end of the reference billing period.
+     */
     val endDate: String,
-    /** The inclusive start of the reference billing period. */
-    val startDate: String,
-)
-
-/** Output returned after configuring an OrbSubscriptionIntent. */
-data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXac520e5124(
-    /** When the subscription change should take effect. */
-    val effectiveBehavior: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX75ab2e4567,
-    /** The Orb price ID for the subscription item being modified. */
-    val orbPriceId: String,
-    /** The source used as the authoritative price for this intent. */
-    val pricingSource: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXbabb0f6851,
-    /** The product ID associated with this intent. */
-    val productId: String,
     /**
-     * Resources that were changed as part of this intent. Tracks all logical changes including the
-     * primary change and any side effects.
+     * The inclusive start of the reference billing period.
      */
-    val changedResources:
-        List<BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXc71b1fc21b>? =
-        null,
-    /** The Orb customer's timezone when the intent was created. Omitted for legacy intents. */
-    val customerTimezone: String? = null,
-    /** Optional metadata associated with the intent to update the Orb subscription with. */
-    val metadata: Map<String, String>? = null,
-    /** The ID of the pending subscription change if there is one. */
-    val pendingSubscriptionChangeId: String? = null,
-    /**
-     * The canonical reference-product billing period at intent creation. Omitted for historical
-     * intents.
-     */
-    val referenceBillingPeriod:
-        BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX26191979cd? =
-        null,
-)
-
-/** Configuration for the Orb subscription intent. */
-data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant0(
-    /** Configuration input options for setting plan item quantity. */
-    val options: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX809b0aec9f,
-    /** Output returned after configuring an OrbSubscriptionIntent. */
-    val output: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXac520e5124,
-    val type: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXd38ef73ba4,
-)
-
-/** Configuration input options for increasing plan item quantity. */
-data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXca3bf8cc7c(
-    /** The alias of the product to increase quantity for. */
-    val productAlias: String,
-    /**
-     * The resource IDs to incrementally add. The quantity of the plan item will be increased by the
-     * number of resource IDs.
-     */
-    val resourceIds: List<String>,
+    val startDate: String
 )
 
 /**
- * Resources that were changed as part of this intent. Tracks all logical changes including the
- * primary change and any side effects.
+ * Output returned after configuring an OrbSubscriptionIntent.
+ */
+data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXac520e5124(
+    /**
+     * When the subscription change should take effect.
+     */
+    val effectiveBehavior: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX75ab2e4567,
+    /**
+     * The Orb price ID for the subscription item being modified.
+     */
+    val orbPriceId: String,
+    /**
+     * The source used as the authoritative price for this intent.
+     */
+    val pricingSource: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXbabb0f6851,
+    /**
+     * The product ID associated with this intent.
+     */
+    val productId: String,
+    /**
+     * Resources that were changed as part of this intent. Tracks all logical changes including the primary change and any side effects.
+     */
+    val changedResources: List<BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXc71b1fc21b>? = null,
+    /**
+     * The Orb customer's timezone when the intent was created. Omitted for legacy intents.
+     */
+    val customerTimezone: String? = null,
+    /**
+     * Optional metadata associated with the intent to update the Orb subscription with.
+     */
+    val metadata: Map<String, String>? = null,
+    /**
+     * The ID of the pending subscription change if there is one.
+     */
+    val pendingSubscriptionChangeId: String? = null,
+    /**
+     * The canonical reference-product billing period at intent creation. Omitted for historical intents.
+     */
+    val referenceBillingPeriod: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX26191979cd? = null
+)
+
+/**
+ * Configuration for the Orb subscription intent.
+ */
+data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant0(
+    /**
+     * Configuration input options for setting plan item quantity.
+     */
+    val options: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX809b0aec9f,
+    /**
+     * Output returned after configuring an OrbSubscriptionIntent.
+     */
+    val output: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXac520e5124,
+    val type: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXd38ef73ba4
+)
+
+/**
+ * Configuration input options for increasing plan item quantity.
+ */
+data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXca3bf8cc7c(
+    /**
+     * The alias of the product to increase quantity for.
+     */
+    val productAlias: String,
+    /**
+     * The resource IDs to incrementally add. The quantity of the plan item will be increased by the number of resource IDs.
+     */
+    val resourceIds: List<String>
+)
+
+/**
+ * Resources that were changed as part of this intent. Tracks all logical changes including the primary change and any side effects.
  */
 data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX5c22505538(
-    /** The alias of the product that was changed. */
+    /**
+     * The alias of the product that was changed.
+     */
     val productAlias: String,
-    /** The ID of the product that was changed. */
+    /**
+     * The ID of the product that was changed.
+     */
     val productId: String,
-    /** The resulting quantity after this change. */
+    /**
+     * The resulting quantity after this change.
+     */
     val quantity: Double,
-    /** Resource IDs that were added. */
+    /**
+     * Resource IDs that were added.
+     */
     val addedResourceIds: List<String>? = null,
-    /** When this resource change should take effect for downstream consumers. */
+    /**
+     * When this resource change should take effect for downstream consumers.
+     */
     val effectiveAt: String? = null,
-    /** Resource IDs that were removed. */
+    /**
+     * Resource IDs that were removed.
+     */
     val removedResourceIds: List<String>? = null,
-    /** The full set of resource IDs after the change. */
-    val resourceIds: List<String>? = null,
+    /**
+     * The full set of resource IDs after the change.
+     */
+    val resourceIds: List<String>? = null
 )
 
 /**
- * The canonical reference-product billing period at intent creation. Omitted for historical
- * intents.
+ * The canonical reference-product billing period at intent creation. Omitted for historical intents.
  */
 data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX0fa1fd45cb(
-    /** The exclusive end of the reference billing period. */
+    /**
+     * The exclusive end of the reference billing period.
+     */
     val endDate: String,
-    /** The inclusive start of the reference billing period. */
-    val startDate: String,
-)
-
-/** Output returned after configuring an OrbSubscriptionIntent. */
-data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXeeefdd1a24(
-    /** When the subscription change should take effect. */
-    val effectiveBehavior: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXe2df3723f9,
-    /** The Orb price ID for the subscription item being modified. */
-    val orbPriceId: String,
-    /** The source used as the authoritative price for this intent. */
-    val pricingSource: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX10ee802324,
-    /** The product ID associated with this intent. */
-    val productId: String,
     /**
-     * Resources that were changed as part of this intent. Tracks all logical changes including the
-     * primary change and any side effects.
+     * The inclusive start of the reference billing period.
      */
-    val changedResources:
-        List<BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX5c22505538>? =
-        null,
-    /** The Orb customer's timezone when the intent was created. Omitted for legacy intents. */
-    val customerTimezone: String? = null,
-    /** Optional metadata associated with the intent to update the Orb subscription with. */
-    val metadata: Map<String, String>? = null,
-    /** The ID of the pending subscription change if there is one. */
-    val pendingSubscriptionChangeId: String? = null,
-    /**
-     * The canonical reference-product billing period at intent creation. Omitted for historical
-     * intents.
-     */
-    val referenceBillingPeriod:
-        BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX0fa1fd45cb? =
-        null,
-)
-
-/** Configuration for the Orb subscription intent. */
-data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant1(
-    /** Configuration input options for increasing plan item quantity. */
-    val options: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXca3bf8cc7c,
-    /** Output returned after configuring an OrbSubscriptionIntent. */
-    val output: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXeeefdd1a24,
-    val type: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXae29569003,
-)
-
-/** Configuration input options for decreasing plan item quantity. */
-data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXfcfcee52fc(
-    /** The alias of the product to decrease quantity for. */
-    val productAlias: String,
-    /**
-     * The resource IDs to decrementally remove. The quantity of the plan item will be decreased by
-     * the number of resource IDs.
-     */
-    val resourceIds: List<String>,
+    val startDate: String
 )
 
 /**
- * Resources that were changed as part of this intent. Tracks all logical changes including the
- * primary change and any side effects.
+ * Output returned after configuring an OrbSubscriptionIntent.
+ */
+data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXeeefdd1a24(
+    /**
+     * When the subscription change should take effect.
+     */
+    val effectiveBehavior: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXe2df3723f9,
+    /**
+     * The Orb price ID for the subscription item being modified.
+     */
+    val orbPriceId: String,
+    /**
+     * The source used as the authoritative price for this intent.
+     */
+    val pricingSource: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX10ee802324,
+    /**
+     * The product ID associated with this intent.
+     */
+    val productId: String,
+    /**
+     * Resources that were changed as part of this intent. Tracks all logical changes including the primary change and any side effects.
+     */
+    val changedResources: List<BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX5c22505538>? = null,
+    /**
+     * The Orb customer's timezone when the intent was created. Omitted for legacy intents.
+     */
+    val customerTimezone: String? = null,
+    /**
+     * Optional metadata associated with the intent to update the Orb subscription with.
+     */
+    val metadata: Map<String, String>? = null,
+    /**
+     * The ID of the pending subscription change if there is one.
+     */
+    val pendingSubscriptionChangeId: String? = null,
+    /**
+     * The canonical reference-product billing period at intent creation. Omitted for historical intents.
+     */
+    val referenceBillingPeriod: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX0fa1fd45cb? = null
+)
+
+/**
+ * Configuration for the Orb subscription intent.
+ */
+data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant1(
+    /**
+     * Configuration input options for increasing plan item quantity.
+     */
+    val options: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXca3bf8cc7c,
+    /**
+     * Output returned after configuring an OrbSubscriptionIntent.
+     */
+    val output: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXeeefdd1a24,
+    val type: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXae29569003
+)
+
+/**
+ * Configuration input options for decreasing plan item quantity.
+ */
+data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXfcfcee52fc(
+    /**
+     * The alias of the product to decrease quantity for.
+     */
+    val productAlias: String,
+    /**
+     * The resource IDs to decrementally remove. The quantity of the plan item will be decreased by the number of resource IDs.
+     */
+    val resourceIds: List<String>
+)
+
+/**
+ * Resources that were changed as part of this intent. Tracks all logical changes including the primary change and any side effects.
  */
 data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX12441cd024(
-    /** The alias of the product that was changed. */
+    /**
+     * The alias of the product that was changed.
+     */
     val productAlias: String,
-    /** The ID of the product that was changed. */
+    /**
+     * The ID of the product that was changed.
+     */
     val productId: String,
-    /** The resulting quantity after this change. */
+    /**
+     * The resulting quantity after this change.
+     */
     val quantity: Double,
-    /** Resource IDs that were added. */
+    /**
+     * Resource IDs that were added.
+     */
     val addedResourceIds: List<String>? = null,
-    /** When this resource change should take effect for downstream consumers. */
+    /**
+     * When this resource change should take effect for downstream consumers.
+     */
     val effectiveAt: String? = null,
-    /** Resource IDs that were removed. */
+    /**
+     * Resource IDs that were removed.
+     */
     val removedResourceIds: List<String>? = null,
-    /** The full set of resource IDs after the change. */
-    val resourceIds: List<String>? = null,
+    /**
+     * The full set of resource IDs after the change.
+     */
+    val resourceIds: List<String>? = null
 )
 
 /**
- * The canonical reference-product billing period at intent creation. Omitted for historical
- * intents.
+ * The canonical reference-product billing period at intent creation. Omitted for historical intents.
  */
 data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX053466cdc9(
-    /** The exclusive end of the reference billing period. */
+    /**
+     * The exclusive end of the reference billing period.
+     */
     val endDate: String,
-    /** The inclusive start of the reference billing period. */
-    val startDate: String,
+    /**
+     * The inclusive start of the reference billing period.
+     */
+    val startDate: String
 )
 
-/** Output returned after configuring an OrbSubscriptionIntent. */
+/**
+ * Output returned after configuring an OrbSubscriptionIntent.
+ */
 data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX291ebf5f7f(
-    /** When the subscription change should take effect. */
+    /**
+     * When the subscription change should take effect.
+     */
     val effectiveBehavior: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX0f6c4dc41d,
-    /** The Orb price ID for the subscription item being modified. */
+    /**
+     * The Orb price ID for the subscription item being modified.
+     */
     val orbPriceId: String,
-    /** The source used as the authoritative price for this intent. */
+    /**
+     * The source used as the authoritative price for this intent.
+     */
     val pricingSource: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXb2efe6fa10,
-    /** The product ID associated with this intent. */
+    /**
+     * The product ID associated with this intent.
+     */
     val productId: String,
     /**
-     * Resources that were changed as part of this intent. Tracks all logical changes including the
-     * primary change and any side effects.
+     * Resources that were changed as part of this intent. Tracks all logical changes including the primary change and any side effects.
      */
-    val changedResources:
-        List<BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX12441cd024>? =
-        null,
-    /** The Orb customer's timezone when the intent was created. Omitted for legacy intents. */
+    val changedResources: List<BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX12441cd024>? = null,
+    /**
+     * The Orb customer's timezone when the intent was created. Omitted for legacy intents.
+     */
     val customerTimezone: String? = null,
-    /** Optional metadata associated with the intent to update the Orb subscription with. */
+    /**
+     * Optional metadata associated with the intent to update the Orb subscription with.
+     */
     val metadata: Map<String, String>? = null,
-    /** The ID of the pending subscription change if there is one. */
+    /**
+     * The ID of the pending subscription change if there is one.
+     */
     val pendingSubscriptionChangeId: String? = null,
     /**
-     * The canonical reference-product billing period at intent creation. Omitted for historical
-     * intents.
+     * The canonical reference-product billing period at intent creation. Omitted for historical intents.
      */
-    val referenceBillingPeriod:
-        BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX053466cdc9? =
-        null,
+    val referenceBillingPeriod: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX053466cdc9? = null
 )
 
-/** Configuration for the Orb subscription intent. */
+/**
+ * Configuration for the Orb subscription intent.
+ */
 data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant2(
-    /** Configuration input options for decreasing plan item quantity. */
+    /**
+     * Configuration input options for decreasing plan item quantity.
+     */
     val options: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXfcfcee52fc,
-    /** Output returned after configuring an OrbSubscriptionIntent. */
+    /**
+     * Output returned after configuring an OrbSubscriptionIntent.
+     */
     val output: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX291ebf5f7f,
-    val type: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX03c330fdd1,
+    val type: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX03c330fdd1
 )
 
-/** Configuration input options for adjusting plan item quantity. */
+/**
+ * Configuration input options for adjusting plan item quantity.
+ */
 data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX35144d8fdf(
     /**
-     * The resource IDs to incrementally add. The quantity of the plan item will be increased by the
-     * number of resource IDs.
+     * The resource IDs to incrementally add. The quantity of the plan item will be increased by the number of resource IDs.
      */
     val addedResourceIds: List<String>,
-    /** The alias of the product to adjust quantity for. */
+    /**
+     * The alias of the product to adjust quantity for.
+     */
     val productAlias: String,
     /**
-     * The resource IDs to incrementally remove. The quantity of the plan item will be decreased by
-     * the number of resource IDs.
+     * The resource IDs to incrementally remove. The quantity of the plan item will be decreased by the number of resource IDs.
      */
-    val removedResourceIds: List<String>,
+    val removedResourceIds: List<String>
 )
 
 /**
- * Resources that were changed as part of this intent. Tracks all logical changes including the
- * primary change and any side effects.
+ * Resources that were changed as part of this intent. Tracks all logical changes including the primary change and any side effects.
  */
 data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX45a37b25c4(
-    /** The alias of the product that was changed. */
+    /**
+     * The alias of the product that was changed.
+     */
     val productAlias: String,
-    /** The ID of the product that was changed. */
+    /**
+     * The ID of the product that was changed.
+     */
     val productId: String,
-    /** The resulting quantity after this change. */
+    /**
+     * The resulting quantity after this change.
+     */
     val quantity: Double,
-    /** Resource IDs that were added. */
+    /**
+     * Resource IDs that were added.
+     */
     val addedResourceIds: List<String>? = null,
-    /** When this resource change should take effect for downstream consumers. */
+    /**
+     * When this resource change should take effect for downstream consumers.
+     */
     val effectiveAt: String? = null,
-    /** Resource IDs that were removed. */
+    /**
+     * Resource IDs that were removed.
+     */
     val removedResourceIds: List<String>? = null,
-    /** The full set of resource IDs after the change. */
-    val resourceIds: List<String>? = null,
+    /**
+     * The full set of resource IDs after the change.
+     */
+    val resourceIds: List<String>? = null
 )
 
 /**
- * The canonical reference-product billing period at intent creation. Omitted for historical
- * intents.
+ * The canonical reference-product billing period at intent creation. Omitted for historical intents.
  */
 data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX8be7f6b4e7(
-    /** The exclusive end of the reference billing period. */
+    /**
+     * The exclusive end of the reference billing period.
+     */
     val endDate: String,
-    /** The inclusive start of the reference billing period. */
-    val startDate: String,
+    /**
+     * The inclusive start of the reference billing period.
+     */
+    val startDate: String
 )
 
-/** Output returned after configuring an OrbSubscriptionIntent. */
+/**
+ * Output returned after configuring an OrbSubscriptionIntent.
+ */
 data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXd35129c269(
-    /** When the subscription change should take effect. */
+    /**
+     * When the subscription change should take effect.
+     */
     val effectiveBehavior: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX16897b9113,
-    /** The Orb price ID for the subscription item being modified. */
+    /**
+     * The Orb price ID for the subscription item being modified.
+     */
     val orbPriceId: String,
-    /** The source used as the authoritative price for this intent. */
+    /**
+     * The source used as the authoritative price for this intent.
+     */
     val pricingSource: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXb7268ff0f2,
-    /** The product ID associated with this intent. */
+    /**
+     * The product ID associated with this intent.
+     */
     val productId: String,
     /**
-     * Resources that were changed as part of this intent. Tracks all logical changes including the
-     * primary change and any side effects.
+     * Resources that were changed as part of this intent. Tracks all logical changes including the primary change and any side effects.
      */
-    val changedResources:
-        List<BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX45a37b25c4>? =
-        null,
-    /** The Orb customer's timezone when the intent was created. Omitted for legacy intents. */
+    val changedResources: List<BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX45a37b25c4>? = null,
+    /**
+     * The Orb customer's timezone when the intent was created. Omitted for legacy intents.
+     */
     val customerTimezone: String? = null,
-    /** Optional metadata associated with the intent to update the Orb subscription with. */
+    /**
+     * Optional metadata associated with the intent to update the Orb subscription with.
+     */
     val metadata: Map<String, String>? = null,
-    /** The ID of the pending subscription change if there is one. */
+    /**
+     * The ID of the pending subscription change if there is one.
+     */
     val pendingSubscriptionChangeId: String? = null,
     /**
-     * The canonical reference-product billing period at intent creation. Omitted for historical
-     * intents.
+     * The canonical reference-product billing period at intent creation. Omitted for historical intents.
      */
-    val referenceBillingPeriod:
-        BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX8be7f6b4e7? =
-        null,
+    val referenceBillingPeriod: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX8be7f6b4e7? = null
 )
 
-/** Configuration for the Orb subscription intent. */
+/**
+ * Configuration for the Orb subscription intent.
+ */
 data class BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVariant3(
-    /** Configuration input options for adjusting plan item quantity. */
+    /**
+     * Configuration input options for adjusting plan item quantity.
+     */
     val options: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX35144d8fdf,
-    /** Output returned after configuring an OrbSubscriptionIntent. */
+    /**
+     * Output returned after configuring an OrbSubscriptionIntent.
+     */
     val output: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVXd35129c269,
-    val type: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX2b5c73193b,
+    val type: BuyCreditsResponseVariant2OrbSubscriptionIntentConfigurationVX2b5c73193b
 )
 
-/** How the subscription change is applied to Orb. */
+/**
+ * How the subscription change is applied to Orb.
+ */
 data class BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant0(
     val mode: BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant0ModeEnum
 )
 
-/** How the subscription change is applied to Orb. */
+/**
+ * How the subscription change is applied to Orb.
+ */
 data class BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant1(
     val mode: BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant1ModeEnum,
-    val status: BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariaXad51fb9fa7,
+    val status: BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariaXad51fb9fa7
 )
 
-/** How the subscription change is applied to Orb. */
+/**
+ * How the subscription change is applied to Orb.
+ */
 data class BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2(
-    /** The ISO 8601 date-time that the subscription change was applied to Orb. */
+    /**
+     * The ISO 8601 date-time that the subscription change was applied to Orb.
+     */
     val appliedAt: String,
     val mode: BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariant2ModeEnum,
-    val status: BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariaX3896b28c24,
+    val status: BuyCreditsResponseVariant2OrbSubscriptionIntentOrbUpdateVariaX3896b28c24
 )
 
 data class BuyCreditsResponseVariant2OrbSubscriptionIntent(
     val configuration: Any,
-    /** The ISO 8601 date-time that the intent was created. */
+    /**
+     * The ISO 8601 date-time that the intent was created.
+     */
     val createdAt: String,
-    /** The ID of the Orb subscription intent with the format `orbsubint_`. */
+    /**
+     * The ID of the Orb subscription intent with the format `orbsubint_`.
+     */
     val id: String,
-    /** The Orb subscription ID this intent is associated with. */
+    /**
+     * The Orb subscription ID this intent is associated with.
+     */
     val orbSubscriptionId: String,
     val orbUpdate: Any,
-    /** The owner ID for this intent (e.g., team or user ID). */
+    /**
+     * The owner ID for this intent (e.g., team or user ID).
+     */
     val ownerId: String,
-    /** The status of the Orb subscription intent. */
+    /**
+     * The status of the Orb subscription intent.
+     */
     val status: BuyCreditsResponseVariant2OrbSubscriptionIntentStatusEnum,
-    /** The ISO 8601 date-time that the intent was last updated. */
+    /**
+     * The ISO 8601 date-time that the intent was last updated.
+     */
     val updatedAt: String,
-    /** Optional purchase intent ID if this is associated with a purchase. */
-    val purchaseIntentId: String? = null,
+    /**
+     * Optional purchase intent ID if this is associated with a purchase.
+     */
+    val purchaseIntentId: String? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class BuyCreditsResponseVariant2(
     val orbSubscriptionIntent: BuyCreditsResponseVariant2OrbSubscriptionIntent
 ) : BuyCreditsResponse
 
-/** Typed representation of the `BuyCreditsResponse` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION
-)
+/**
+ * Typed representation of the `BuyCreditsResponse` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
     com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = BuyCreditsResponseVariant0::class),
     com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = BuyCreditsResponseVariant1::class),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = BuyCreditsResponseVariant2::class),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = BuyCreditsResponseVariant2::class)
 )
 sealed interface BuyCreditsResponse

@@ -9,32 +9,22 @@ import dev.octri.showcase.vercel.SdkClient
 
 object Web {
 
-    data class CreateWebInsightsToggleResponse(
-        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Boolean
-    )
+data class CreateWebInsightsToggleResponse(
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Boolean
+)
+
 
     /**
-     * Updates the Web Insights setting for a project. Supply `projectId` and the `value` to set the
-     * toggle to true or false. The response returns the resulting toggle value.
+     * Updates the Web Insights setting for a project. Supply `projectId` and the `value` to set the toggle to true or false. The response returns the resulting toggle value.
      */
-    fun createWebInsightsToggle(
-        clientConfig: ClientConfig,
-        projectId: String,
-        value: Boolean,
-        options: RequestOptions? = null,
-    ): CreateWebInsightsToggleResponse {
-        return SdkClient.request<CreateWebInsightsToggleResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/web/insights/toggle",
-                    config = clientConfig,
-                    query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true)),
-                    body = SdkClient.bodyMap("value" to (value)),
-                    operationId = "createWebInsightsToggle",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun createWebInsightsToggle(clientConfig: ClientConfig, projectId: String, value: Boolean, options: RequestOptions? = null): CreateWebInsightsToggleResponse {
+        return SdkClient.request<CreateWebInsightsToggleResponse>(SdkClient.RequestSpec("POST", "/web/insights/toggle", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true)), body = SdkClient.bodyMap("value" to (value)), operationId = "createWebInsightsToggle", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
+
+
+
+
+
+
 }

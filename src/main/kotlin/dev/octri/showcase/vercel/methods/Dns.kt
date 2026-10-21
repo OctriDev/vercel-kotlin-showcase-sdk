@@ -15,35 +15,36 @@ import dev.octri.showcase.vercel.Validation
 
 object Dns {
 
-    data class UpdateRecordSrv(
-        @com.fasterxml.jackson.annotation.JsonProperty("target", required = true)
-        val target: String?,
-        @com.fasterxml.jackson.annotation.JsonProperty("weight", required = true) val weight: Long?,
-        @com.fasterxml.jackson.annotation.JsonProperty("port", required = true) val port: Long?,
-        @com.fasterxml.jackson.annotation.JsonProperty("priority", required = true)
-        val priority: Long?,
-    )
+data class UpdateRecordSrv(
+    @com.fasterxml.jackson.annotation.JsonProperty("target", required = true) val target: String?,
+    @com.fasterxml.jackson.annotation.JsonProperty("weight", required = true) val weight: Long?,
+    @com.fasterxml.jackson.annotation.JsonProperty("port", required = true) val port: Long?,
+    @com.fasterxml.jackson.annotation.JsonProperty("priority", required = true) val priority: Long?
+)
 
-    data class UpdateRecordHttps(
-        @com.fasterxml.jackson.annotation.JsonProperty("priority", required = true)
-        val priority: Long?,
-        @com.fasterxml.jackson.annotation.JsonProperty("target", required = true)
-        val target: String?,
-        val params: String? = null,
-    )
+data class UpdateRecordHttps(
+    @com.fasterxml.jackson.annotation.JsonProperty("priority", required = true) val priority: Long?,
+    @com.fasterxml.jackson.annotation.JsonProperty("target", required = true) val target: String?,
+    val params: String? = null
+)
 
-    data class UpdateRecordResponse(
-        val creator: String,
-        val domain: String,
-        val id: String,
-        val name: String,
-        val recordType: UpdateRecordResponseRecordTypeEnum,
-        val type: UpdateRecordResponseTypeEnum,
-        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-        val comment: String? = null,
-        val createdAt: Double? = null,
-        val ttl: Double? = null,
-    )
+
+
+
+
+data class UpdateRecordResponse(
+    val creator: String,
+    val domain: String,
+    val id: String,
+    val name: String,
+    val recordType: UpdateRecordResponseRecordTypeEnum,
+    val type: UpdateRecordResponseTypeEnum,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+    val comment: String? = null,
+    val createdAt: Double? = null,
+    val ttl: Double? = null
+)
+
 
     /** Parameters for [getRecords]. */
     data class GetRecordsRequest(
@@ -52,15 +53,13 @@ object Dns {
         val since: String? = null,
         val until: String? = null,
         val teamId: String? = null,
-        val slug: String? = null,
+        val slug: String? = null
     )
 
     /**
-     * Lists DNS records created for a domain. Use `limit` to control the number of records returned
-     * and `since` or `until` to filter by JavaScript timestamps. The default limit is 20 records.
+     * Lists DNS records created for a domain. Use `limit` to control the number of records returned and `since` or `until` to filter by JavaScript timestamps. The default limit is 20 records.
      *
-     * Retrieves a list of DNS records created for a domain name. By default it returns 20 records
-     * if no limit is provided. The rest can be retrieved using the pagination options.
+     * Retrieves a list of DNS records created for a domain name. By default it returns 20 records if no limit is provided. The rest can be retrieved using the pagination options.
      *
      * @param limit Maximum number of records to list from a request.
      * @param since Get records created after this JavaScript timestamp.
@@ -68,36 +67,19 @@ object Dns {
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getRecords(
-        clientConfig: ClientConfig,
-        request: GetRecordsRequest,
-        options: RequestOptions? = null,
-    ): Any {
-        return SdkClient.request<Any>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v5/domains/${SdkClient.encodePathSegment(request.domain)}/records",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "limit" to SdkClient.queryValue(request.limit, "form", true),
-                            "since" to SdkClient.queryValue(request.since, "form", true),
-                            "until" to SdkClient.queryValue(request.until, "form", true),
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    operationId = "getRecords",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun getRecords(clientConfig: ClientConfig, request: GetRecordsRequest, options: RequestOptions? = null): Any {
+        return SdkClient.request<Any>(SdkClient.RequestSpec("GET", "/v5/domains/${SdkClient.encodePathSegment(request.domain)}/records", config = clientConfig, query = mapOf("limit" to SdkClient.queryValue(request.limit, "form", true), "since" to SdkClient.queryValue(request.since, "form", true), "until" to SdkClient.queryValue(request.until, "form", true), "teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "getRecords", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
+
+
+
+
+
+
     /**
-     * Creates a DNS record for a domain. Provide the record `type`, `name`, and `value`; the
-     * accepted fields and value format depend on the record type. The response includes the
-     * identifier of the newly created record.
+     * Creates a DNS record for a domain. Provide the record `type`, `name`, and `value`; the accepted fields and value format depend on the record type. The response includes the identifier of the newly created record.
      *
      * Creates a DNS record for a domain.
      *
@@ -106,32 +88,15 @@ object Dns {
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun createRecord(
-        clientConfig: ClientConfig,
-        domain: String,
-        type: CreateRecordTypeEnum,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): CreateRecordResponse {
-        return SdkClient.request<CreateRecordResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v2/domains/${SdkClient.encodePathSegment(domain)}/records",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    body = SdkClient.bodyMap("type" to (type)),
-                    operationId = "createRecord",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun createRecord(clientConfig: ClientConfig, domain: String, type: CreateRecordTypeEnum, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): CreateRecordResponse {
+        return SdkClient.request<CreateRecordResponse>(SdkClient.RequestSpec("POST", "/v2/domains/${SdkClient.encodePathSegment(domain)}/records", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("type" to (type)), operationId = "createRecord", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
+
+
+
+
+
 
     /** Parameters for [updateRecord]. */
     data class UpdateRecordRequest(
@@ -145,13 +110,11 @@ object Dns {
         val mxPriority: SdkClient.SdkOptional<Long?>? = null,
         val srv: SdkClient.SdkOptional<UpdateRecordSrv?>? = null,
         val https: SdkClient.SdkOptional<UpdateRecordHttps?>? = null,
-        val comment: String? = null,
+        val comment: String? = null
     )
 
     /**
-     * Updates an existing DNS record for a domain. Supply only the record properties you want to
-     * change, such as its `name`, `value`, or `ttl`; record-specific data can be provided through
-     * `srv` or `https`. The response contains the updated DNS record.
+     * Updates an existing DNS record for a domain. Supply only the record properties you want to change, such as its `name`, `value`, or `ttl`; record-specific data can be provided through `srv` or `https`. The response contains the updated DNS record.
      *
      * Updates an existing DNS record for a domain name.
      *
@@ -165,94 +128,52 @@ object Dns {
      * @param mxPriority The MX priority value of the DNS record
      * @param comment A comment to add context on what this DNS record is for
      */
-    fun updateRecord(
-        clientConfig: ClientConfig,
-        request: UpdateRecordRequest,
-        options: RequestOptions? = null,
-    ): UpdateRecordResponse {
+    fun updateRecord(clientConfig: ClientConfig, request: UpdateRecordRequest, options: RequestOptions? = null): UpdateRecordResponse {
         validateUpdateRecordRequest(request)
 
-        return SdkClient.request<UpdateRecordResponse>(
-                SdkClient.RequestSpec(
-                    "PATCH",
-                    "/v1/domains/records/${SdkClient.encodePathSegment(request.recordId)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    body =
-                        SdkClient.bodyMap(
-                            "name" to (request.name ?: SdkClient.SdkOptional.Omitted),
-                            "value" to (request.value ?: SdkClient.SdkOptional.Omitted),
-                            "type" to (request.type ?: SdkClient.SdkOptional.Omitted),
-                            "ttl" to (request.ttl ?: SdkClient.SdkOptional.Omitted),
-                            "mxPriority" to (request.mxPriority ?: SdkClient.SdkOptional.Omitted),
-                            "srv" to (request.srv ?: SdkClient.SdkOptional.Omitted),
-                            "https" to (request.https ?: SdkClient.SdkOptional.Omitted),
-                            "comment" to (SdkClient.omitIfNull(request.comment)),
-                        ),
-                    operationId = "updateRecord",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<UpdateRecordResponse>(SdkClient.RequestSpec("PATCH", "/v1/domains/records/${SdkClient.encodePathSegment(request.recordId)}", config = clientConfig, query = mapOf("teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("name" to (request.name ?: SdkClient.SdkOptional.Omitted), "value" to (request.value ?: SdkClient.SdkOptional.Omitted), "type" to (request.type ?: SdkClient.SdkOptional.Omitted), "ttl" to (request.ttl ?: SdkClient.SdkOptional.Omitted), "mxPriority" to
+    (request.mxPriority ?: SdkClient.SdkOptional.Omitted), "srv" to (request.srv ?: SdkClient.SdkOptional.Omitted), "https" to (request.https ?: SdkClient.SdkOptional.Omitted), "comment" to (SdkClient.omitIfNull(request.comment))), operationId = "updateRecord", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
 
     private fun validateUpdateRecordRequest(request: UpdateRecordRequest) {
         val typeValue = request.type?.getOrNull()
-        if (typeValue != null) {
+if (typeValue != null) {
             Validation.validateLength("type", typeValue.value, Validation.LengthOpts(max = 255))
-        }
+}
 
         val ttlValue = request.ttl?.getOrNull()
-        if (ttlValue != null) {
-            Validation.validateRange(
-                "ttl",
-                ttlValue,
-                Validation.RangeOpts(min = 60.0, max = 2147483647.0),
-            )
-        }
+if (ttlValue != null) {
+            Validation.validateRange("ttl", ttlValue, Validation.RangeOpts(min = 60.0, max = 2147483647.0))
+}
 
         if (request.comment != null) {
             Validation.validateLength("comment", request.comment, Validation.LengthOpts(max = 500))
-        }
+}
     }
 
+
+
+
+
+
     /**
-     * Deletes an existing DNS record from a domain. Supply the domain and record identifiers to
-     * select the record to remove. The response confirms removal of the specified record.
+     * Deletes an existing DNS record from a domain. Supply the domain and record identifiers to select the record to remove. The response confirms removal of the specified record.
      *
      * Removes an existing DNS record from a domain name.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun removeRecord(
-        clientConfig: ClientConfig,
-        domain: String,
-        recordId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Map<String, Any> {
-        return SdkClient.request<Map<String, Any>>(
-                SdkClient.RequestSpec(
-                    "DELETE",
-                    "/v2/domains/${SdkClient.encodePathSegment(domain)}/records/${SdkClient.encodePathSegment(recordId)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "removeRecord",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun removeRecord(clientConfig: ClientConfig, domain: String, recordId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Map<String, Any> {
+        return SdkClient.request<Map<String, Any>>(SdkClient.RequestSpec("DELETE", "/v2/domains/${SdkClient.encodePathSegment(domain)}/records/${SdkClient.encodePathSegment(recordId)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "removeRecord", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
+
+
+
+
+
+
 }

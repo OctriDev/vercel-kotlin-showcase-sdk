@@ -3,12 +3,7 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateConnectorAuthorizationRequestRequestSubjectVariant0(
     val type: CreateConnectorAuthorizationRequestRequestSubjectVariant0TypeEnum
 ) : CreateConnectorAuthorizationRequestRequestSubject {
@@ -17,86 +12,59 @@ data class CreateConnectorAuthorizationRequestRequestSubjectVariant0(
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateConnectorAuthorizationRequestRequestSubjectVariant1(
     val type: CreateConnectorAuthorizationRequestRequestSubjectVariant1TypeEnum,
     val id: String? = null,
-    val issuer: String? = null,
+    val issuer: String? = null
 ) : CreateConnectorAuthorizationRequestRequestSubject {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateConnectorAuthorizationRequestRequestSubjectVariant2(
     val type: CreateConnectorAuthorizationRequestRequestSubjectVariant2TypeEnum,
     val sub: String? = null,
     val iss: String? = null,
     val aud: String? = null,
-    val additionalClaims: Map<String, Any>? = null,
+    val additionalClaims: Map<String, Any>? = null
 ) : CreateConnectorAuthorizationRequestRequestSubject {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CreateConnectorAuthorizationRequestRequestSubjectVariant3(
     val type: CreateConnectorAuthorizationRequestRequestSubjectVariant3TypeEnum,
-    val token: String,
+    val token: String
 ) : CreateConnectorAuthorizationRequestRequestSubject
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class CreateConnectorAuthorizationRequestRequestSubjectVariant4(val type: String) :
-    CreateConnectorAuthorizationRequestRequestSubject {
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class CreateConnectorAuthorizationRequestRequestSubjectVariant4(
+    val type: String
+) : CreateConnectorAuthorizationRequestRequestSubject {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-/** Typed representation of the `CreateConnectorAuthorizationRequestRequestSubject` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = CreateConnectorAuthorizationRequestRequestSubject.Deserializer::class
-)
+/**
+ * Typed representation of the `CreateConnectorAuthorizationRequestRequestSubject` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = CreateConnectorAuthorizationRequestRequestSubject.Deserializer::class)
 sealed interface CreateConnectorAuthorizationRequestRequestSubject {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<
-            CreateConnectorAuthorizationRequestRequestSubject
-        >() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<CreateConnectorAuthorizationRequestRequestSubject>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): CreateConnectorAuthorizationRequestRequestSubject {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                CreateConnectorAuthorizationRequestRequestSubjectOwnedTypes.firstOrNull { (keys, _)
-                        ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = CreateConnectorAuthorizationRequestRequestSubjectOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -104,35 +72,18 @@ sealed interface CreateConnectorAuthorizationRequestRequestSubject {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out CreateConnectorAuthorizationRequestRequestSubject>> =
-                listOf(
-                    CreateConnectorAuthorizationRequestRequestSubjectVariant0::class.java,
-                    CreateConnectorAuthorizationRequestRequestSubjectVariant1::class.java,
-                    CreateConnectorAuthorizationRequestRequestSubjectVariant2::class.java,
-                    CreateConnectorAuthorizationRequestRequestSubjectVariant3::class.java,
-                    CreateConnectorAuthorizationRequestRequestSubjectVariant4::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out CreateConnectorAuthorizationRequestRequestSubject>> = listOf(CreateConnectorAuthorizationRequestRequestSubjectVariant0::class.java, CreateConnectorAuthorizationRequestRequestSubjectVariant1::class.java, CreateConnectorAuthorizationRequestRequestSubjectVariant2::class.java, CreateConnectorAuthorizationRequestRequestSubjectVariant3::class.java, CreateConnectorAuthorizationRequestRequestSubjectVariant4::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        CreateConnectorAuthorizationRequestRequestSubject::class.java,
-                        "no CreateConnectorAuthorizationRequestRequestSubject branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, CreateConnectorAuthorizationRequestRequestSubject::class.java, "no CreateConnectorAuthorizationRequestRequestSubject branch accepts this payload")
             }
         }
     }
 }
 
-internal val CreateConnectorAuthorizationRequestRequestSubjectOwnedTypes:
-    List<Pair<List<String>, Class<out CreateConnectorAuthorizationRequestRequestSubject>>> =
-    listOf(
-        listOf("id", "issuer") to
-            CreateConnectorAuthorizationRequestRequestSubjectVariant1::class.java,
-        listOf("sub", "iss", "aud", "additionalClaims") to
-            CreateConnectorAuthorizationRequestRequestSubjectVariant2::class.java,
-        listOf("token") to CreateConnectorAuthorizationRequestRequestSubjectVariant3::class.java,
-    )
+internal val CreateConnectorAuthorizationRequestRequestSubjectOwnedTypes: List<Pair<List<String>, Class<out CreateConnectorAuthorizationRequestRequestSubject>>> = listOf(
+    listOf("id", "issuer") to CreateConnectorAuthorizationRequestRequestSubjectVariant1::class.java,
+    listOf("sub", "iss", "aud", "additionalClaims") to CreateConnectorAuthorizationRequestRequestSubjectVariant2::class.java,
+    listOf("token") to CreateConnectorAuthorizationRequestRequestSubjectVariant3::class.java,
+)

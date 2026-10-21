@@ -3,210 +3,87 @@
 
 package dev.octri.showcase.vercel
 
+
 class IntegrationsNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Lists Git namespaces for a supported provider. Use `provider` to select a provider, or omit
-     * it to let the API infer the provider from the authenticated user; provide `host` when using a
-     * custom Git host. Set `viewerMetadata` to include viewer information for each namespace.
+     * Lists Git namespaces for a supported provider. Use `provider` to select a provider, or omit it to let the API infer the provider from the authenticated user; provide `host` when using a custom Git host. Set `viewerMetadata` to include viewer information for each namespace.
      *
-     * Lists git namespaces for a supported provider. Supported providers are `github`, `gitlab` and
-     * `bitbucket`. If the provider is not provided, it will try to obtain it from the user that
-     * authenticated the request.
+     * Lists git namespaces for a supported provider. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider is not provided, it will try to obtain it from the user that authenticated the request.
      */
-    fun gitNamespaces(
-        host: String? = null,
-        provider: GitNamespacesParameterEnum? = null,
-        viewerMetadata: Boolean? = null,
-        options: RequestOptions? = null,
-    ): List<dev.octri.showcase.vercel.methods.Integrations.GitNamespacesResponseItem> {
-        return dev.octri.showcase.vercel.methods.Integrations.gitNamespaces(
-            clientConfig,
-            host,
-            provider,
-            viewerMetadata,
-            options,
-        )
+    fun gitNamespaces(host: String? = null, provider: GitNamespacesParameterEnum? = null, viewerMetadata: Boolean? = null, options: RequestOptions? = null): List<dev.octri.showcase.vercel.methods.Integrations.GitNamespacesResponseItem> {
+        return dev.octri.showcase.vercel.methods.Integrations.gitNamespaces(clientConfig, host, provider, viewerMetadata, options)
     }
 
     /**
-     * Searches for Git repositories linked to a namespace for a supported provider. Use
-     * `namespaceId` and `provider` to narrow the search, or omit them to let the API infer values
-     * from the authenticated user; `query` can filter the repositories. Supply `host` when using a
-     * custom Git host.
+     * Searches for Git repositories linked to a namespace for a supported provider. Use `namespaceId` and `provider` to narrow the search, or omit them to let the API infer values from the authenticated user; `query` can filter the repositories. Supply `host` when using a custom Git host.
      *
-     * Lists git repositories linked to a namespace `id` for a supported provider. A specific
-     * namespace `id` can be obtained via the `git-namespaces` endpoint. Supported providers are
-     * `github`, `gitlab` and `bitbucket`. If the provider or namespace is not provided, it will try
-     * to obtain it from the user that authenticated the request.
+     * Lists git repositories linked to a namespace `id` for a supported provider. A specific namespace `id` can be obtained via the `git-namespaces` endpoint. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider or namespace is not provided, it will try to obtain it from the user that authenticated the request.
      */
-    fun searchRepo(
-        request: dev.octri.showcase.vercel.methods.Integrations.SearchRepoRequest,
-        options: RequestOptions? = null,
-    ): Map<String, Any> {
-        return dev.octri.showcase.vercel.methods.Integrations.searchRepo(
-            clientConfig,
-            request,
-            options,
-        )
+    fun searchRepo(request: dev.octri.showcase.vercel.methods.Integrations.SearchRepoRequest, options: RequestOptions? = null): Map<String, Any> {
+        return dev.octri.showcase.vercel.methods.Integrations.searchRepo(clientConfig, request, options)
     }
 
     /**
-     * Lists billing plans for an integration and product. Use `integrationIdOrSlug` and
-     * `productIdOrSlug` to identify them, and use `source` to filter by the source of the request.
-     * You can also provide `integrationConfigurationId` or `metadata` to scope the plan lookup.
+     * Lists billing plans for an integration and product. Use `integrationIdOrSlug` and `productIdOrSlug` to identify them, and use `source` to filter by the source of the request. You can also provide `integrationConfigurationId` or `metadata` to scope the plan lookup.
      *
      * Get a list of billing plans for an integration and product.
      */
-    fun getBillingPlans(
-        request: dev.octri.showcase.vercel.methods.Integrations.GetBillingPlansRequest,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Integrations.GetBillingPlansResponse {
-        return dev.octri.showcase.vercel.methods.Integrations.getBillingPlans(
-            clientConfig,
-            request,
-            options,
-        )
+    fun getBillingPlans(request: dev.octri.showcase.vercel.methods.Integrations.GetBillingPlansRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Integrations.GetBillingPlansResponse {
+        return dev.octri.showcase.vercel.methods.Integrations.getBillingPlans(clientConfig, request, options)
     }
 
     /**
-     * Connects a provisioned integration resource to a project. Supply `projectId` in the request
-     * body to establish the connection, and optionally choose which environments receive
-     * environment variables or mark those variables as sensitive. Use this operation for a resource
-     * that has already been provisioned through an integration.
+     * Connects a provisioned integration resource to a project. Supply `projectId` in the request body to establish the connection, and optionally choose which environments receive environment variables or mark those variables as sensitive. Use this operation for a resource that has already been provisioned through an integration.
      *
-     * Connects an integration resource to a Vercel project. This endpoint establishes a connection
-     * between a provisioned integration resource (from storage APIs like `POST
-     * /v1/storage/stores/integration/direct`) and a specific Vercel project.
+     * Connects an integration resource to a Vercel project. This endpoint establishes a connection between a provisioned integration resource (from storage APIs like `POST /v1/storage/stores/integration/direct`) and a specific Vercel project.
      */
-    fun connectResourceToProject(
-        request:
-            dev.octri.showcase.vercel.methods.Integrations.ConnectIntegrationResourceToProjectRequest,
-        options: RequestOptions? = null,
-    ): Unit {
-        return dev.octri.showcase.vercel.methods.Integrations.connectIntegrationResourceToProject(
-            clientConfig,
-            request,
-            options,
-        )
+    fun connectResourceToProject(request: dev.octri.showcase.vercel.methods.Integrations.ConnectIntegrationResourceToProjectRequest, options: RequestOptions? = null): Unit {
+        return dev.octri.showcase.vercel.methods.Integrations.connectIntegrationResourceToProject(clientConfig, request, options)
     }
 
     /**
-     * Lists integration configurations for the authenticated user or team. Set `view` to `account`
-     * or `project` to choose the configuration scope, and use the optional filters to narrow
-     * results by installation type, integration, or team. The `project` view excludes
-     * configurations generated for the authorization flow.
+     * Lists integration configurations for the authenticated user or team. Set `view` to `account` or `project` to choose the configuration scope, and use the optional filters to narrow results by installation type, integration, or team. The `project` view excludes configurations generated for the authorization flow.
      *
-     * Allows to retrieve all configurations for an authenticated integration. When the `project`
-     * view is used, configurations generated for the authorization flow will be filtered out of the
-     * results.
+     * Allows to retrieve all configurations for an authenticated integration. When the `project` view is used, configurations generated for the authorization flow will be filtered out of the results.
      */
-    fun getConfigurations(
-        view: GetConfigurationsParameterEnum,
-        installationType: GetConfigurationsParameterEnuma99a7642? = null,
-        integrationIdOrSlug: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): List<Map<String, Any>> {
-        return dev.octri.showcase.vercel.methods.Integrations.getConfigurations(
-            clientConfig,
-            view,
-            installationType,
-            integrationIdOrSlug,
-            teamId,
-            slug,
-            options,
-        )
+    fun getConfigurations(view: GetConfigurationsParameterEnum, installationType: GetConfigurationsParameterEnuma99a7642? = null, integrationIdOrSlug: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): List<Map<String, Any>> {
+        return dev.octri.showcase.vercel.methods.Integrations.getConfigurations(clientConfig, view, installationType, integrationIdOrSlug, teamId, slug, options)
     }
 
     /**
-     * Retrieves an integration configuration by its identifier. Use `teamId` or `slug` to make the
-     * request on behalf of a team, and access is limited to the configuration's owner. The response
-     * contains the configuration details.
+     * Retrieves an integration configuration by its identifier. Use `teamId` or `slug` to make the request on behalf of a team, and access is limited to the configuration's owner. The response contains the configuration details.
      *
-     * Allows to retrieve a the configuration with the provided id in case it exists. The
-     * authenticated user or team must be the owner of the config in order to access it.
+     * Allows to retrieve a the configuration with the provided id in case it exists. The authenticated user or team must be the owner of the config in order to access it.
      */
-    fun getConfiguration(
-        id: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): GetConfigurationResponse {
-        return dev.octri.showcase.vercel.methods.Integrations.getConfiguration(
-            clientConfig,
-            id,
-            teamId,
-            slug,
-            options,
-        )
+    fun getConfiguration(id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetConfigurationResponse {
+        return dev.octri.showcase.vercel.methods.Integrations.getConfiguration(clientConfig, id, teamId, slug, options)
     }
 
     /**
-     * Deletes an integration configuration and all resources associated with it. Use `id` to
-     * identify the configuration and `teamId` or `slug` to make the request on behalf of a team.
-     * Deletion also removes associated webhooks, log drains, and project environment variables.
+     * Deletes an integration configuration and all resources associated with it. Use `id` to identify the configuration and `teamId` or `slug` to make the request on behalf of a team. Deletion also removes associated webhooks, log drains, and project environment variables.
      *
-     * Allows to remove the configuration with the `id` provided in the parameters. The
-     * configuration and all of its resources will be removed. This includes Webhooks, LogDrains and
-     * Project Env variables.
+     * Allows to remove the configuration with the `id` provided in the parameters. The configuration and all of its resources will be removed. This includes Webhooks, LogDrains and Project Env variables.
      */
-    fun deleteConfiguration(
-        id: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Unit {
-        return dev.octri.showcase.vercel.methods.Integrations.deleteConfiguration(
-            clientConfig,
-            id,
-            teamId,
-            slug,
-            options,
-        )
+    fun deleteConfiguration(id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
+        return dev.octri.showcase.vercel.methods.Integrations.deleteConfiguration(clientConfig, id, teamId, slug, options)
     }
 
     /**
-     * Lists the products available for an integration configuration. Use `id` to select the
-     * configuration, and use `teamId` or `slug` when making the request on behalf of a team. Each
-     * product includes a `metadataSchema` describing its required and optional metadata fields.
+     * Lists the products available for an integration configuration. Use `id` to select the configuration, and use `teamId` or `slug` when making the request on behalf of a team. Each product includes a `metadataSchema` describing its required and optional metadata fields.
      *
-     * Returns products available for an integration configuration. Each product includes a
-     * `metadataSchema` field with the JSON Schema for required and optional metadata fields.
+     * Returns products available for an integration configuration. Each product includes a `metadataSchema` field with the JSON Schema for required and optional metadata fields.
      */
-    fun getConfigurationProducts(
-        id: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Integrations.GetConfigurationProductsResponse {
-        return dev.octri.showcase.vercel.methods.Integrations.getConfigurationProducts(
-            clientConfig,
-            id,
-            teamId,
-            slug,
-            options,
-        )
+    fun getConfigurationProducts(id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Integrations.GetConfigurationProductsResponse {
+        return dev.octri.showcase.vercel.methods.Integrations.getConfigurationProducts(clientConfig, id, teamId, slug, options)
     }
 
     /**
-     * Creates an integration store and handles free or paid billing plans. Supply `name`,
-     * `integrationConfigurationId`, and `integrationProductIdOrSlug`; omit `billingPlanId` to
-     * discover a free plan or provide one for a paid resource. Use `paymentMethodId` when you need
-     * to select a payment method other than the default.
+     * Creates an integration store and handles free or paid billing plans. Supply `name`, `integrationConfigurationId`, and `integrationProductIdOrSlug`; omit `billingPlanId` to discover a free plan or provide one for a paid resource. Use `paymentMethodId` when you need to select a payment method other than the default.
      *
-     * Creates an integration store with automatic billing plan handling. For free resources, omit
-     * `billingPlanId` to auto-discover free plans. For paid resources, provide a `billingPlanId`
-     * from the billing plans endpoint.
+     * Creates an integration store with automatic billing plan handling. For free resources, omit `billingPlanId` to auto-discover free plans. For paid resources, provide a `billingPlanId` from the billing plans endpoint.
      */
-    fun createStoreDirect(
-        request: dev.octri.showcase.vercel.methods.Integrations.CreateIntegrationStoreDirectRequest,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Integrations.CreateIntegrationStoreDirectResponse {
-        return dev.octri.showcase.vercel.methods.Integrations.createIntegrationStoreDirect(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createStoreDirect(request: dev.octri.showcase.vercel.methods.Integrations.CreateIntegrationStoreDirectRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Integrations.CreateIntegrationStoreDirectResponse {
+        return dev.octri.showcase.vercel.methods.Integrations.createIntegrationStoreDirect(clientConfig, request, options)
     }
+
 }

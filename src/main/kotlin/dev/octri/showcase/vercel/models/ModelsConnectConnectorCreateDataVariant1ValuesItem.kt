@@ -3,308 +3,402 @@
 
 package dev.octri.showcase.vercel.models
 
-/** Required object value serialized in the `values[]` wire field. */
+/**
+ * Required object value serialized in the `values[]` wire field.
+ */
 data class ConnectConnectorCreateDataVariant1ValuesItem(
-    /** Optional scope associated with the API key value. */
+    /**
+     * Optional scope associated with the API key value.
+     */
     val scope: String? = null,
-    /** The timestamp when the API key value expires in milliseconds. */
-    val expiresAt: Long? = null,
+    /**
+     * The timestamp when the API key value expires in milliseconds.
+     */
+    val expiresAt: Long? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorCreateDataVariant1(
     /**
-     * Which subject the connector issues tokens for. Defaults to \"app\" (connector-level keys).
-     * \"user\" connectors store no connector-level values; each user supplies their own key during
-     * authorization.
+     * Which subject the connector issues tokens for. Defaults to \"app\" (connector-level keys). \"user\" connectors store no connector-level values; each user supplies their own key during authorization.
      */
     val subjectType: ConnectConnectorCreateDataVariant1SubjectTypeEnum? = null,
-    /** Initial API key values stored by the connector. */
+    /**
+     * Initial API key values stored by the connector.
+     */
     val values: List<ConnectConnectorCreateDataVariant1ValuesItem>? = null,
-    /** The HTTPS resources the API key authenticates against. */
+    /**
+     * The HTTPS resources the API key authenticates against.
+     */
     val serviceUrls: List<String>? = null,
     /**
-     * Markdown instructions shown to each user on the authorization screen, explaining how to
-     * obtain the key they should paste.
+     * Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste.
      */
-    val instructions: String? = null,
+    val instructions: String? = null
 ) : ConnectConnectorCreateData
 
-/** GitHub App owner. */
+/**
+ * GitHub App owner.
+ */
 data class ConnectConnectorCreateDataVariant2Owner(
-    /** GitHub App owner type. */
+    /**
+     * GitHub App owner type.
+     */
     val type: ConnectConnectorCreateDataVariant2OwnerTypeEnum,
-    /** GitHub App owner numeric ID. */
+    /**
+     * GitHub App owner numeric ID.
+     */
     val id: Long,
-    /** GitHub App owner login. */
+    /**
+     * GitHub App owner login.
+     */
     val slug: String,
-    /** GitHub App owner display name. */
-    val name: String? = null,
+    /**
+     * GitHub App owner display name.
+     */
+    val name: String? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorCreateDataVariant2(
-    /** GitHub App numeric ID. */
+    /**
+     * GitHub App numeric ID.
+     */
     val appId: Long,
-    /** GitHub App slug. */
+    /**
+     * GitHub App slug.
+     */
     val appSlug: String,
-    /** GitHub App display name. */
+    /**
+     * GitHub App display name.
+     */
     val appName: String,
-    /** OAuth client ID assigned by GitHub. */
+    /**
+     * OAuth client ID assigned by GitHub.
+     */
     val clientId: String,
-    /** GitHub App owner. */
+    /**
+     * GitHub App owner.
+     */
     val owner: ConnectConnectorCreateDataVariant2Owner? = null,
-    /** Additional provider metadata stored with the connector. */
-    val extras: Map<String, Any>? = null,
+    /**
+     * Additional provider metadata stored with the connector.
+     */
+    val extras: Map<String, Any>? = null
 ) : ConnectConnectorCreateData
 
-/** Linear organization that owns the OAuth application. */
+/**
+ * Linear organization that owns the OAuth application.
+ */
 data class ConnectConnectorCreateDataVariant3OwnerOrganization(
-    /** Linear organization ID. */
+    /**
+     * Linear organization ID.
+     */
     val id: String,
-    /** Linear organization slug. */
+    /**
+     * Linear organization slug.
+     */
     val slug: String,
-    /** Linear organization name. */
+    /**
+     * Linear organization name.
+     */
     val name: String,
-    /** Linear organization logo URL. */
-    val logoUrl: String? = null,
+    /**
+     * Linear organization logo URL.
+     */
+    val logoUrl: String? = null
 )
 
-/** Linear OAuth application metadata. */
+/**
+ * Linear OAuth application metadata.
+ */
 data class ConnectConnectorCreateDataVariant3Application(
-    /** Linear OAuth application ID. */
+    /**
+     * Linear OAuth application ID.
+     */
     val id: String,
-    /** Linear OAuth client ID. */
+    /**
+     * Linear OAuth client ID.
+     */
     val clientId: String,
-    /** Linear OAuth application name. */
+    /**
+     * Linear OAuth application name.
+     */
     val name: String,
-    /** Linear OAuth application description. */
+    /**
+     * Linear OAuth application description.
+     */
     val description: String? = null,
-    /** Linear OAuth application developer name. */
+    /**
+     * Linear OAuth application developer name.
+     */
     val developer: String? = null,
-    /** Linear OAuth application developer URL. */
+    /**
+     * Linear OAuth application developer URL.
+     */
     val developerUrl: String? = null,
-    /** Linear OAuth application image URL. */
+    /**
+     * Linear OAuth application image URL.
+     */
     val imageUrl: String? = null,
-    /** Registered redirect URIs for the Linear OAuth application. */
+    /**
+     * Registered redirect URIs for the Linear OAuth application.
+     */
     val redirectUris: List<String>? = null,
-    /** Linear OAuth application distribution mode. */
+    /**
+     * Linear OAuth application distribution mode.
+     */
     val distribution: String? = null,
-    /** Linear resource types delivered to the webhook. */
+    /**
+     * Linear resource types delivered to the webhook.
+     */
     val webhookResourceTypes: List<String>? = null,
-    /** Linear webhook URL. */
+    /**
+     * Linear webhook URL.
+     */
     val webhookUrl: String? = null,
-    /** Whether the Linear webhook is enabled. */
+    /**
+     * Whether the Linear webhook is enabled.
+     */
     val webhookEnabled: Boolean? = null,
-    /** Linear OAuth application creation timestamp. */
+    /**
+     * Linear OAuth application creation timestamp.
+     */
     val createdAt: String? = null,
-    /** Linear OAuth application update timestamp. */
-    val updatedAt: String? = null,
+    /**
+     * Linear OAuth application update timestamp.
+     */
+    val updatedAt: String? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorCreateDataVariant3(
-    /** OAuth client ID assigned by Linear. */
+    /**
+     * OAuth client ID assigned by Linear.
+     */
     val clientId: String,
-    /** Linear application ID. */
+    /**
+     * Linear application ID.
+     */
     val appId: String? = null,
-    /** Linear application name. */
+    /**
+     * Linear application name.
+     */
     val appName: String? = null,
-    /** OAuth scopes requested for Linear application tokens. */
+    /**
+     * OAuth scopes requested for Linear application tokens.
+     */
     val appScopes: List<String>? = null,
-    /** OAuth scopes requested for Linear user tokens. */
+    /**
+     * OAuth scopes requested for Linear user tokens.
+     */
     val userScopes: List<String>? = null,
-    /** Linear organization that owns the OAuth application. */
+    /**
+     * Linear organization that owns the OAuth application.
+     */
     val ownerOrganization: ConnectConnectorCreateDataVariant3OwnerOrganization? = null,
-    /** Linear OAuth application metadata. */
+    /**
+     * Linear OAuth application metadata.
+     */
     val application: ConnectConnectorCreateDataVariant3Application? = null,
-    /** Additional provider metadata stored with the connector. */
-    val extras: Map<String, Any>? = null,
+    /**
+     * Additional provider metadata stored with the connector.
+     */
+    val extras: Map<String, Any>? = null
 ) : ConnectConnectorCreateData
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorCreateDataVariant4(
-    /** Optional array value serialized in the `phoneNumbers` wire field. */
+    /**
+     * Optional array value serialized in the `phoneNumbers` wire field.
+     */
     val phoneNumbers: List<String>? = null
 ) : ConnectConnectorCreateData
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorCreateDataVariant5(
-    /** Salesforce connected app consumer key. */
+    /**
+     * Salesforce connected app consumer key.
+     */
     val consumerKey: String,
-    /** Salesforce login host, such as login.salesforce.com. */
-    val loginHost: String,
+    /**
+     * Salesforce login host, such as login.salesforce.com.
+     */
+    val loginHost: String
 ) : ConnectConnectorCreateData
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorCreateDataVariant6(
-    /** Sendblue API key id (`sb-api-key-id`). */
+    /**
+     * Sendblue API key id (`sb-api-key-id`).
+     */
     val apiKeyId: String,
     /**
-     * E.164 Sendblue lines this connector sends and receives on. Used as the connector's display
-     * name, and the only lines its webhooks are registered for; an empty array clears them, which
-     * also removes the webhook subscription.
+     * E.164 Sendblue lines this connector sends and receives on. Used as the connector's display name, and the only lines its webhooks are registered for; an empty array clears them, which also removes the webhook subscription.
      */
-    val phoneNumbers: List<String>? = null,
+    val phoneNumbers: List<String>? = null
 ) : ConnectConnectorCreateData
 
-/** Slack workspace metadata. */
+/**
+ * Slack workspace metadata.
+ */
 data class ConnectConnectorCreateDataVariant7SlackTeam(
-    /** Slack workspace ID. */
+    /**
+     * Slack workspace ID.
+     */
     val id: String,
-    /** Slack workspace name. */
+    /**
+     * Slack workspace name.
+     */
     val name: String? = null,
-    /** Slack workspace domain. */
-    val domain: String? = null,
+    /**
+     * Slack workspace domain.
+     */
+    val domain: String? = null
 )
 
-/** Required object value serialized in the `slashCommands[]` wire field. */
+/**
+ * Required object value serialized in the `slashCommands[]` wire field.
+ */
 data class ConnectConnectorCreateDataVariant7SlashCommandsItem(
-    /** Slash command including its leading slash. */
+    /**
+     * Slash command including its leading slash.
+     */
     val command: String,
-    /** Description shown for the slash command in Slack. */
+    /**
+     * Description shown for the slash command in Slack.
+     */
     val description: String,
-    /** Optional usage hint shown for the slash command. */
+    /**
+     * Optional usage hint shown for the slash command.
+     */
     val usageHint: String? = null,
-    /** Whether Slack should escape command arguments. */
-    val shouldEscape: Boolean? = null,
+    /**
+     * Whether Slack should escape command arguments.
+     */
+    val shouldEscape: Boolean? = null
 )
 
-/** Required object value serialized in the `shortcuts[]` wire field. */
+/**
+ * Required object value serialized in the `shortcuts[]` wire field.
+ */
 data class ConnectConnectorCreateDataVariant7ShortcutsItem(
-    /** Where Slack exposes the shortcut. */
+    /**
+     * Where Slack exposes the shortcut.
+     */
     val type: ConnectConnectorCreateDataVariant7ShortcutsItemTypeEnum,
-    /** Shortcut display name. */
+    /**
+     * Shortcut display name.
+     */
     val name: String,
-    /** Identifier included in the shortcut callback. */
+    /**
+     * Identifier included in the shortcut callback.
+     */
     val callbackId: String,
-    /** Description shown for the shortcut in Slack. */
-    val description: String,
+    /**
+     * Description shown for the shortcut in Slack.
+     */
+    val description: String
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorCreateDataVariant7(
-    /** Slack app ID. */
+    /**
+     * Slack app ID.
+     */
     val appId: String,
-    /** Slack app display name. */
+    /**
+     * Slack app display name.
+     */
     val appName: String,
-    /** OAuth client ID assigned by Slack. */
+    /**
+     * OAuth client ID assigned by Slack.
+     */
     val clientId: String,
-    /** Slack workspace metadata. */
+    /**
+     * Slack workspace metadata.
+     */
     val slackTeam: ConnectConnectorCreateDataVariant7SlackTeam? = null,
-    /** OAuth scopes requested for Slack bot tokens. */
+    /**
+     * OAuth scopes requested for Slack bot tokens.
+     */
     val botScopes: List<String>? = null,
-    /** OAuth scopes requested for Slack user tokens. */
+    /**
+     * OAuth scopes requested for Slack user tokens.
+     */
     val userScopes: List<String>? = null,
-    /** Slash commands configured for the managed Slack app. */
+    /**
+     * Slash commands configured for the managed Slack app.
+     */
     val slashCommands: List<ConnectConnectorCreateDataVariant7SlashCommandsItem>? = null,
-    /** Global and message shortcuts configured for the Slack app. */
+    /**
+     * Global and message shortcuts configured for the Slack app.
+     */
     val shortcuts: List<ConnectConnectorCreateDataVariant7ShortcutsItem>? = null,
-    /** Additional provider metadata stored with the connector. */
-    val extras: Map<String, Any>? = null,
+    /**
+     * Additional provider metadata stored with the connector.
+     */
+    val extras: Map<String, Any>? = null
 ) : ConnectConnectorCreateData
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorCreateDataVariant8(
-    /** Snowflake account identifier. */
+    /**
+     * Snowflake account identifier.
+     */
     val accountIdentifier: String,
-    /** Snowflake OAuth client name. */
+    /**
+     * Snowflake OAuth client name.
+     */
     val clientName: String? = null,
-    /** Default Snowflake role for created sessions. */
+    /**
+     * Default Snowflake role for created sessions.
+     */
     val defaultSessionRole: String? = null,
-    /** Additional provider metadata stored with the connector. */
-    val extras: Map<String, Any>? = null,
+    /**
+     * Additional provider metadata stored with the connector.
+     */
+    val extras: Map<String, Any>? = null
 ) : ConnectConnectorCreateData
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorCreateDataVariant9(
-    /** Snowflake client name. */
+    /**
+     * Snowflake client name.
+     */
     val clientName: String? = null,
-    /** Snowflake account identifier. */
+    /**
+     * Snowflake account identifier.
+     */
     val accountIdentifier: String? = null,
-    /** Additional provider metadata stored with the connector. */
-    val extras: Map<String, Any>? = null,
+    /**
+     * Additional provider metadata stored with the connector.
+     */
+    val extras: Map<String, Any>? = null
 ) : ConnectConnectorCreateData
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorCreateDataVariant10(
-    /** Photon project ID. */
+    /**
+     * Photon project ID.
+     */
     val projectId: String
 ) : ConnectConnectorCreateData
 
 /**
- * Provider configuration. With type, provide the complete configuration for that type. With service
- * and connectionMethod, provide only credentials and preferences; Connect supplies the type,
- * endpoints, templates, and defaults. Other connector types accept an arbitrary object.
+ * Provider configuration. With type, provide the complete configuration for that type. With service and connectionMethod, provide only credentials and preferences; Connect supplies the type, endpoints, templates, and defaults. Other connector types accept an arbitrary object.
  */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = ConnectConnectorCreateData.Deserializer::class
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = ConnectConnectorCreateData.Deserializer::class)
 sealed interface ConnectConnectorCreateData {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<ConnectConnectorCreateData>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<ConnectConnectorCreateData>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): ConnectConnectorCreateData {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                ConnectConnectorCreateDataOwnedTypes.firstOrNull { (keys, _) ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = ConnectConnectorCreateDataOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -312,156 +406,107 @@ sealed interface ConnectConnectorCreateData {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out ConnectConnectorCreateData>> =
-                listOf(
-                    ConnectConnectorCreateDataVariant0::class.java,
-                    ConnectConnectorCreateDataVariant1::class.java,
-                    ConnectConnectorCreateDataVariant2::class.java,
-                    ConnectConnectorCreateDataVariant3::class.java,
-                    ConnectConnectorCreateDataVariant4::class.java,
-                    ConnectConnectorCreateDataVariant5::class.java,
-                    ConnectConnectorCreateDataVariant6::class.java,
-                    ConnectConnectorCreateDataVariant7::class.java,
-                    ConnectConnectorCreateDataVariant8::class.java,
-                    ConnectConnectorCreateDataVariant9::class.java,
-                    ConnectConnectorCreateDataVariant10::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out ConnectConnectorCreateData>> = listOf(ConnectConnectorCreateDataVariant0::class.java, ConnectConnectorCreateDataVariant1::class.java, ConnectConnectorCreateDataVariant2::class.java, ConnectConnectorCreateDataVariant3::class.java, ConnectConnectorCreateDataVariant4::class.java, ConnectConnectorCreateDataVariant5::class.java, ConnectConnectorCreateDataVariant6::class.java, ConnectConnectorCreateDataVariant7::class.java, ConnectConnectorCreateDataVariant8::class.java, ConnectConnectorCreateDataVariant9::class.java, ConnectConnectorCreateDataVariant10::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                node.isObject ->
-                    ObjectMapConnectConnectorCreateData(
-                        mapper.convertValue(
-                            node,
-                            object :
-                                com.fasterxml.jackson.core.type.TypeReference<
-                                    Map<String, Any>
-                                >() {},
-                        )
-                    )
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        ConnectConnectorCreateData::class.java,
-                        "no ConnectConnectorCreateData branch accepts this payload",
-                    )
+                node.isObject -> ObjectMapConnectConnectorCreateData(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Map<String, Any>>() {}))
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, ConnectConnectorCreateData::class.java, "no ConnectConnectorCreateData branch accepts this payload")
             }
         }
     }
 }
 
-internal val ConnectConnectorCreateDataOwnedTypes:
-    List<Pair<List<String>, Class<out ConnectConnectorCreateData>>> =
-    listOf(
-        listOf(
-            "serverUrl",
-            "serverConfig",
-            "tokenEndpointAuthMethod",
-            "responseType",
-            "pkceRequired",
-            "codeChallengeMethod",
-            "userAuthorization",
-            "refreshTokens",
-            "clientCredentials",
-            "forwardedClaims",
-            "defaultAudience",
-            "defaultResource",
-            "defaultTokenExpiresIn",
-            "authorizationUrlParams",
-            "jwtBearer",
-            "clientAssertion",
-        ) to ConnectConnectorCreateDataVariant0::class.java,
-        listOf("subjectType", "values", "serviceUrls", "instructions") to
-            ConnectConnectorCreateDataVariant1::class.java,
-        listOf("appSlug", "owner") to ConnectConnectorCreateDataVariant2::class.java,
-        listOf("appScopes", "ownerOrganization", "application") to
-            ConnectConnectorCreateDataVariant3::class.java,
-        listOf("consumerKey", "loginHost") to ConnectConnectorCreateDataVariant5::class.java,
-        listOf("apiKeyId") to ConnectConnectorCreateDataVariant6::class.java,
-        listOf("slackTeam", "botScopes", "slashCommands", "shortcuts") to
-            ConnectConnectorCreateDataVariant7::class.java,
-        listOf("defaultSessionRole") to ConnectConnectorCreateDataVariant8::class.java,
-        listOf("projectId") to ConnectConnectorCreateDataVariant10::class.java,
-    )
+internal val ConnectConnectorCreateDataOwnedTypes: List<Pair<List<String>, Class<out ConnectConnectorCreateData>>> = listOf(
+    listOf("serverUrl", "serverConfig", "tokenEndpointAuthMethod", "responseType", "pkceRequired", "codeChallengeMethod", "userAuthorization", "refreshTokens", "clientCredentials", "forwardedClaims", "defaultAudience", "defaultResource", "defaultTokenExpiresIn", "authorizationUrlParams", "jwtBearer", "clientAssertion") to ConnectConnectorCreateDataVariant0::class.java,
+    listOf("subjectType", "values", "serviceUrls", "instructions") to ConnectConnectorCreateDataVariant1::class.java,
+    listOf("appSlug", "owner") to ConnectConnectorCreateDataVariant2::class.java,
+    listOf("appScopes", "ownerOrganization", "application") to ConnectConnectorCreateDataVariant3::class.java,
+    listOf("consumerKey", "loginHost") to ConnectConnectorCreateDataVariant5::class.java,
+    listOf("apiKeyId") to ConnectConnectorCreateDataVariant6::class.java,
+    listOf("slackTeam", "botScopes", "slashCommands", "shortcuts") to ConnectConnectorCreateDataVariant7::class.java,
+    listOf("defaultSessionRole") to ConnectConnectorCreateDataVariant8::class.java,
+    listOf("projectId") to ConnectConnectorCreateDataVariant10::class.java,
+)
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class ObjectMapConnectConnectorCreateData(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Map<String, Any>
-) : ConnectConnectorCreateData
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class ObjectMapConnectConnectorCreateData(@get:com.fasterxml.jackson.annotation.JsonValue val value: Map<String, Any>) : ConnectConnectorCreateData
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorCreatedByVariant0(
-    /** Vercel user ID. */
+    /**
+     * Vercel user ID.
+     */
     val id: String,
-    /** Principal kind. */
-    val type: ConnectConnectorCreatedByVariant0TypeEnum,
+    /**
+     * Principal kind.
+     */
+    val type: ConnectConnectorCreatedByVariant0TypeEnum
 ) : ConnectConnectorCreatedBy
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class ConnectConnectorCreatedByVariant1(
-    /** Deployment environment of the project principal. */
+    /**
+     * Deployment environment of the project principal.
+     */
     val environment: String,
-    /** Vercel project ID. */
+    /**
+     * Vercel project ID.
+     */
     val id: String,
-    /** Principal kind. */
-    val type: ConnectConnectorCreatedByVariant1TypeEnum,
+    /**
+     * Principal kind.
+     */
+    val type: ConnectConnectorCreatedByVariant1TypeEnum
 ) : ConnectConnectorCreatedBy
 
-/** Principal that created the connector. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "type",
-    visible = true,
-)
+/**
+ * Principal that created the connector.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ConnectConnectorCreatedByVariant0::class,
-        name = "user",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ConnectConnectorCreatedByVariant1::class,
-        name = "project",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ConnectConnectorCreatedByVariant0::class, name = "user"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ConnectConnectorCreatedByVariant1::class, name = "project")
 )
 sealed interface ConnectConnectorCreatedBy
 
-/** Required object value serialized in the `keys[]` wire field. */
+/**
+ * Required object value serialized in the `keys[]` wire field.
+ */
 data class ConnectConnectorUpdateDataVariant0ServerConfigJwksKeysItem(
-    /** JSON Web Key type. */
+    /**
+     * JSON Web Key type.
+     */
     val kty: String,
-    /** JSON Web Key identifier. */
+    /**
+     * JSON Web Key identifier.
+     */
     val kid: String? = null,
-    /** Intended key use: signing or encryption. */
+    /**
+     * Intended key use: signing or encryption.
+     */
     val use: ConnectConnectorUpdateDataVariant0ServerConfigJwksKeysItemUseEnum? = null,
-    /** Operations permitted for this key. */
+    /**
+     * Operations permitted for this key.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("key_ops") val keyOps: List<String>? = null,
-    /** Algorithm intended for this key. */
-    val alg: String? = null,
+    /**
+     * Algorithm intended for this key.
+     */
+    val alg: String? = null
 ) {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-/** Inline authorization server JSON Web Key Set. */
+/**
+ * Inline authorization server JSON Web Key Set.
+ */
 data class ConnectConnectorUpdateDataVariant0ServerConfigJwks(
-    /** JSON Web Keys published by the authorization server. */
+    /**
+     * JSON Web Keys published by the authorization server.
+     */
     val keys: List<ConnectConnectorUpdateDataVariant0ServerConfigJwksKeysItem>
 ) {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter

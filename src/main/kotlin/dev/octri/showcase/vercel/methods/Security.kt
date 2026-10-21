@@ -27,6 +27,7 @@ import dev.octri.showcase.vercel.CreateSecurityFirewallConfigByConfigVersionActi
 import dev.octri.showcase.vercel.CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX834a319c52
 import dev.octri.showcase.vercel.CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX903f93fff2
 import dev.octri.showcase.vercel.CreateSecurityFirewallConfigByConfigVersionActivateResponseMaXec200ccd9a
+import dev.octri.showcase.vercel.CreateSecurityFirewallConfigByConfigVersionActivateResponseRulesItem
 import dev.octri.showcase.vercel.CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX0168e2e8b2
 import dev.octri.showcase.vercel.CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08
 import dev.octri.showcase.vercel.CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a
@@ -35,7 +36,6 @@ import dev.octri.showcase.vercel.CreateSecurityFirewallConfigByConfigVersionActi
 import dev.octri.showcase.vercel.CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b
 import dev.octri.showcase.vercel.CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0c2460bfe
 import dev.octri.showcase.vercel.CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfc318e7e2c
-import dev.octri.showcase.vercel.CreateSecurityFirewallConfigByConfigVersionActivateResponseRulesItem
 import dev.octri.showcase.vercel.GetBypassIpResponseResultItemActionEnum
 import dev.octri.showcase.vercel.GetConditionalBypassResponse
 import dev.octri.showcase.vercel.GetFirewallConfigResponseConditionsItemConditionGroupItemCondX5a4c5a06e8
@@ -57,7 +57,6 @@ import dev.octri.showcase.vercel.GetFirewallConfigResponseManagedRulesBotProtect
 import dev.octri.showcase.vercel.GetFirewallConfigResponseManagedRulesOwaspActionEnum
 import dev.octri.showcase.vercel.GetFirewallConfigResponseManagedRulesTrafficSourcesActionEnum
 import dev.octri.showcase.vercel.GetFirewallConfigResponseManagedRulesVercelRulesetActionEnum
-import dev.octri.showcase.vercel.GetFirewallConfigResponseRulesItem
 import dev.octri.showcase.vercel.GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateActionEnum
 import dev.octri.showcase.vercel.GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateRaXb80a17d46b
 import dev.octri.showcase.vercel.GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateRaXe17b6e5139
@@ -66,6 +65,7 @@ import dev.octri.showcase.vercel.GetFirewallConfigResponseRulesetsVariant0ItemCo
 import dev.octri.showcase.vercel.GetFirewallConfigResponseRulesetsVariant1ValueActionEnum
 import dev.octri.showcase.vercel.GetFirewallConfigResponseRulesetsVariant1ValueRateLimitActionEnum
 import dev.octri.showcase.vercel.GetFirewallConfigResponseRulesetsVariant1ValueRateLimitAlgoEnum
+import dev.octri.showcase.vercel.GetFirewallConfigResponseRulesItem
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseActiveConditionsItemConditioX9a0bf58682
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseActiveConditionsItemConditioXd37aa37d4b
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseActiveCrsGenActionEnum
@@ -85,7 +85,6 @@ import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseActiveManagedR
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseActiveManagedRulesOwaspActionEnum
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseActiveManagedRulesTrafficSouXfd680791b9
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseActiveManagedRulesVercelRuleXa030d00325
-import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseActiveRulesItem
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX7e7ed2c629
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcXcb1f4f277c
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcXd015bbd289
@@ -94,6 +93,7 @@ import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseActiveRulesets
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueActionEnum
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueRXd85fecb427
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueRXe71b835f63
+import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseActiveRulesItem
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseDraftConditionsItemConditionX25cf762f25
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseDraftConditionsItemConditionXcaf75d3d66
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseDraftCrsGenActionEnum
@@ -113,7 +113,6 @@ import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseDraftManagedRu
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseDraftManagedRulesOwaspActionEnum
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseDraftManagedRulesTrafficSourX7d191f826f
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseDraftManagedRulesVercelRulesXb6dd0a1967
-import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseDraftRulesItem
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActX2ff134a148
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActX89ed8f16dd
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActXb7114cd692
@@ -122,6 +121,7 @@ import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseDraftRulesetsV
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseDraftRulesetsVariant1ValueActionEnum
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseDraftRulesetsVariant1ValueRaXea7fcec3c5
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseDraftRulesetsVariant1ValueRaXf0ee8122fa
+import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseDraftRulesItem
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseVersionsItemConditionsItemCoX377d9265ac
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseVersionsItemConditionsItemCoXc0d3d5db6b
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseVersionsItemCrsGenActionEnum
@@ -141,7 +141,6 @@ import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseVersionsItemMa
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseVersionsItemManagedRulesOwaspActionEnum
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseVersionsItemManagedRulesTrafX0cf63ee314
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseVersionsItemManagedRulesVercX587ef0054f
-import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseVersionsItemRulesItem
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X83e084834f
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X87a74868fd
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X8bfb2f452e
@@ -150,6 +149,7 @@ import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseVersionsItemRu
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1Xcec932a814
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1Xd138d000e6
 import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1Xf35454e1d8
+import dev.octri.showcase.vercel.GetSecurityFirewallConfigResponseVersionsItemRulesItem
 import dev.octri.showcase.vercel.GetSecurityFirewallEventsParameterEnum
 import dev.octri.showcase.vercel.GetSecurityFirewallEventsParameterEnumc35a8c6a
 import dev.octri.showcase.vercel.GetSecurityFirewallEventsParameterItemEnum
@@ -188,7 +188,6 @@ import dev.octri.showcase.vercel.PutFirewallConfigResponseActiveManagedRulesBotP
 import dev.octri.showcase.vercel.PutFirewallConfigResponseActiveManagedRulesOwaspActionEnum
 import dev.octri.showcase.vercel.PutFirewallConfigResponseActiveManagedRulesTrafficSourcesActionEnum
 import dev.octri.showcase.vercel.PutFirewallConfigResponseActiveManagedRulesVercelRulesetActionEnum
-import dev.octri.showcase.vercel.PutFirewallConfigResponseActiveRulesItem
 import dev.octri.showcase.vercel.PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiX492dd63aa8
 import dev.octri.showcase.vercel.PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiX6373a9c123
 import dev.octri.showcase.vercel.PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiXb5c9aa2893
@@ -197,6 +196,7 @@ import dev.octri.showcase.vercel.PutFirewallConfigResponseActiveRulesetsVariant0
 import dev.octri.showcase.vercel.PutFirewallConfigResponseActiveRulesetsVariant1ValueActionEnum
 import dev.octri.showcase.vercel.PutFirewallConfigResponseActiveRulesetsVariant1ValueRateLimitActionEnum
 import dev.octri.showcase.vercel.PutFirewallConfigResponseActiveRulesetsVariant1ValueRateLimitAlgoEnum
+import dev.octri.showcase.vercel.PutFirewallConfigResponseActiveRulesItem
 import dev.octri.showcase.vercel.PutFirewallConfigRulesItemActionMitigateActionEnum
 import dev.octri.showcase.vercel.PutFirewallConfigRulesItemActionMitigateRateLimitVariant0ActiXc7ee3c6247
 import dev.octri.showcase.vercel.PutFirewallConfigRulesItemActionMitigateRateLimitVariant0AlgoEnum
@@ -205,1972 +205,2074 @@ import dev.octri.showcase.vercel.PutFirewallConfigRulesItemConditionGroupItemCon
 import dev.octri.showcase.vercel.RequestOptions
 
 object Security {
-    data class UpdateAttackChallengeModeResponse(
-        val attackModeEnabled: Boolean,
-        val attackModeUpdatedAt: Double,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveIpsItem(
-        val action: GetSecurityFirewallConfigResponseActiveIpsItemActionEnum,
-        val hostname: String,
-        val id: String,
-        val ip: String,
-        val notes: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveConditionsItemConditioX6c91cdfe60(
-        val op: GetSecurityFirewallConfigResponseActiveConditionsItemConditioX9a0bf58682,
-        val type: GetSecurityFirewallConfigResponseActiveConditionsItemConditioXd37aa37d4b,
-        val key: String? = null,
-        val neg: Boolean? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveConditionsItemConditionGroupItem(
-        val conditions:
-            List<GetSecurityFirewallConfigResponseActiveConditionsItemConditioX6c91cdfe60>
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveConditionsItem(
-        val active: Boolean,
-        val conditionGroup:
-            List<GetSecurityFirewallConfigResponseActiveConditionsItemConditionGroupItem>,
-        val id: String,
-        val name: String,
-        val description: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveCrsGen(
-        val action: GetSecurityFirewallConfigResponseActiveCrsGenActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveCrsJava(
-        val action: GetSecurityFirewallConfigResponseActiveCrsJavaActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveCrsLfi(
-        val action: GetSecurityFirewallConfigResponseActiveCrsLfiActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveCrsMa(
-        val action: GetSecurityFirewallConfigResponseActiveCrsMaActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveCrsPhp(
-        val action: GetSecurityFirewallConfigResponseActiveCrsPhpActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveCrsRce(
-        val action: GetSecurityFirewallConfigResponseActiveCrsRceActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveCrsRfi(
-        val action: GetSecurityFirewallConfigResponseActiveCrsRfiActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveCrsSd(
-        val action: GetSecurityFirewallConfigResponseActiveCrsSdActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveCrsSf(
-        val action: GetSecurityFirewallConfigResponseActiveCrsSfActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveCrsSqli(
-        val action: GetSecurityFirewallConfigResponseActiveCrsSqliActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveCrsXss(
-        val action: GetSecurityFirewallConfigResponseActiveCrsXssActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveCrs(
-        val gen: GetSecurityFirewallConfigResponseActiveCrsGen,
-        val java: GetSecurityFirewallConfigResponseActiveCrsJava,
-        val lfi: GetSecurityFirewallConfigResponseActiveCrsLfi,
-        val ma: GetSecurityFirewallConfigResponseActiveCrsMa,
-        val php: GetSecurityFirewallConfigResponseActiveCrsPhp,
-        val rce: GetSecurityFirewallConfigResponseActiveCrsRce,
-        val rfi: GetSecurityFirewallConfigResponseActiveCrsRfi,
-        val sd: GetSecurityFirewallConfigResponseActiveCrsSd,
-        val sf: GetSecurityFirewallConfigResponseActiveCrsSf,
-        val sqli: GetSecurityFirewallConfigResponseActiveCrsSqli,
-        val xss: GetSecurityFirewallConfigResponseActiveCrsXss,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveManagedRulesAiBots(
-        val active: Boolean,
-        val action: GetSecurityFirewallConfigResponseActiveManagedRulesAiBotsActionEnum? = null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveManagedRulesBotProtection(
-        val active: Boolean,
-        val action: GetSecurityFirewallConfigResponseActiveManagedRulesBotProtectX3967b6004c? =
-            null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveManagedRulesOwasp(
-        val active: Boolean,
-        val action: GetSecurityFirewallConfigResponseActiveManagedRulesOwaspActionEnum? = null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveManagedRulesTrafficSources(
-        val active: Boolean,
-        val action: GetSecurityFirewallConfigResponseActiveManagedRulesTrafficSouXfd680791b9? =
-            null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveManagedRulesVercelRuleset(
-        val active: Boolean,
-        val action: GetSecurityFirewallConfigResponseActiveManagedRulesVercelRuleXa030d00325? =
-            null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveManagedRules(
-        @com.fasterxml.jackson.annotation.JsonProperty("ai_bots")
-        val aiBots: GetSecurityFirewallConfigResponseActiveManagedRulesAiBots? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("bot_protection")
-        val botProtection: GetSecurityFirewallConfigResponseActiveManagedRulesBotProtection? = null,
-        val owasp: GetSecurityFirewallConfigResponseActiveManagedRulesOwasp? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("traffic_sources")
-        val trafficSources: GetSecurityFirewallConfigResponseActiveManagedRulesTrafficSources? =
-            null,
-        @com.fasterxml.jackson.annotation.JsonProperty("vercel_ruleset")
-        val vercelRuleset: GetSecurityFirewallConfigResponseActiveManagedRulesVercelRuleset? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemCoXd4f7041494(
-        val op: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemCoX652274aaef,
-        val type: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemCoXbe73d04536,
-        val key: String? = null,
-        val neg: Boolean? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemCoX296e359f1f(
-        val conditions:
-            List<GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemCoXd4f7041494>
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX5bd117cadc(
-        val algo: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcXd015bbd289,
-        val keys: List<String>,
-        val limit: Double,
-        val window: Double,
-        val action: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX7e7ed2c629? =
-            null,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX5a9115a7b9(
-        val location: String,
-        val permanent: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX6f6b27fe4e(
-        val action: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcXcb1f4f277c,
-        val actionDuration: String? = null,
-        val bypassSystem: Boolean? = null,
-        val logHeaders: Any? = null,
-        val rateLimit: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX5bd117cadc? =
-            null,
-        val redirect: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX5a9115a7b9? =
-            null,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAction(
-        val mitigate: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX6f6b27fe4e? =
-            null
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveRulesetsVariant0Item(
-        val active: Boolean,
-        val conditionGroup:
-            List<GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemCoX296e359f1f>,
-        val id: String,
-        val name: String,
-        val description: String? = null,
-        val action: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAction? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueRateLimit(
-        val algo: GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueRXe71b835f63,
-        val keys: List<String>,
-        val limit: Double,
-        val window: Double,
-        val action: GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueRXd85fecb427? =
-            null,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueRedirect(
-        val location: String,
-        val permanent: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseActiveRulesetsVariant1Value(
-        val action: GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueActionEnum,
-        val actionDuration: String? = null,
-        val bypassSystem: Boolean? = null,
-        val logHeaders: Any? = null,
-        val rateLimit: GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueRateLimit? =
-            null,
-        val redirect: GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueRedirect? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseActive(
-        val changes: List<Map<String, Any>>,
-        val firewallEnabled: Boolean,
-        val id: String,
-        val ips: List<GetSecurityFirewallConfigResponseActiveIpsItem>,
-        val ownerId: String,
-        val projectKey: String,
-        val rules: List<GetSecurityFirewallConfigResponseActiveRulesItem>,
-        val updatedAt: String,
-        val version: Double,
-        val botIdEnabled: Boolean? = null,
-        val conditions: List<GetSecurityFirewallConfigResponseActiveConditionsItem>? = null,
-        val crs: GetSecurityFirewallConfigResponseActiveCrs? = null,
-        val logHeaders: Any? = null,
-        val managedRules: GetSecurityFirewallConfigResponseActiveManagedRules? = null,
-        val rulesets: Any? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftIpsItem(
-        val action: GetSecurityFirewallConfigResponseDraftIpsItemActionEnum,
-        val hostname: String,
-        val id: String,
-        val ip: String,
-        val notes: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftConditionsItemConditionX877f73f757(
-        val op: GetSecurityFirewallConfigResponseDraftConditionsItemConditionXcaf75d3d66,
-        val type: GetSecurityFirewallConfigResponseDraftConditionsItemConditionX25cf762f25,
-        val key: String? = null,
-        val neg: Boolean? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftConditionsItemConditionGroupItem(
-        val conditions:
-            List<GetSecurityFirewallConfigResponseDraftConditionsItemConditionX877f73f757>
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftConditionsItem(
-        val active: Boolean,
-        val conditionGroup:
-            List<GetSecurityFirewallConfigResponseDraftConditionsItemConditionGroupItem>,
-        val id: String,
-        val name: String,
-        val description: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftCrsGen(
-        val action: GetSecurityFirewallConfigResponseDraftCrsGenActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftCrsJava(
-        val action: GetSecurityFirewallConfigResponseDraftCrsJavaActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftCrsLfi(
-        val action: GetSecurityFirewallConfigResponseDraftCrsLfiActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftCrsMa(
-        val action: GetSecurityFirewallConfigResponseDraftCrsMaActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftCrsPhp(
-        val action: GetSecurityFirewallConfigResponseDraftCrsPhpActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftCrsRce(
-        val action: GetSecurityFirewallConfigResponseDraftCrsRceActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftCrsRfi(
-        val action: GetSecurityFirewallConfigResponseDraftCrsRfiActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftCrsSd(
-        val action: GetSecurityFirewallConfigResponseDraftCrsSdActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftCrsSf(
-        val action: GetSecurityFirewallConfigResponseDraftCrsSfActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftCrsSqli(
-        val action: GetSecurityFirewallConfigResponseDraftCrsSqliActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftCrsXss(
-        val action: GetSecurityFirewallConfigResponseDraftCrsXssActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftCrs(
-        val gen: GetSecurityFirewallConfigResponseDraftCrsGen,
-        val java: GetSecurityFirewallConfigResponseDraftCrsJava,
-        val lfi: GetSecurityFirewallConfigResponseDraftCrsLfi,
-        val ma: GetSecurityFirewallConfigResponseDraftCrsMa,
-        val php: GetSecurityFirewallConfigResponseDraftCrsPhp,
-        val rce: GetSecurityFirewallConfigResponseDraftCrsRce,
-        val rfi: GetSecurityFirewallConfigResponseDraftCrsRfi,
-        val sd: GetSecurityFirewallConfigResponseDraftCrsSd,
-        val sf: GetSecurityFirewallConfigResponseDraftCrsSf,
-        val sqli: GetSecurityFirewallConfigResponseDraftCrsSqli,
-        val xss: GetSecurityFirewallConfigResponseDraftCrsXss,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftManagedRulesAiBots(
-        val active: Boolean,
-        val action: GetSecurityFirewallConfigResponseDraftManagedRulesAiBotsActionEnum? = null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftManagedRulesBotProtection(
-        val active: Boolean,
-        val action: GetSecurityFirewallConfigResponseDraftManagedRulesBotProtectiXcf50d058d8? =
-            null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftManagedRulesOwasp(
-        val active: Boolean,
-        val action: GetSecurityFirewallConfigResponseDraftManagedRulesOwaspActionEnum? = null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftManagedRulesTrafficSources(
-        val active: Boolean,
-        val action: GetSecurityFirewallConfigResponseDraftManagedRulesTrafficSourX7d191f826f? =
-            null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftManagedRulesVercelRuleset(
-        val active: Boolean,
-        val action: GetSecurityFirewallConfigResponseDraftManagedRulesVercelRulesXb6dd0a1967? =
-            null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftManagedRules(
-        @com.fasterxml.jackson.annotation.JsonProperty("ai_bots")
-        val aiBots: GetSecurityFirewallConfigResponseDraftManagedRulesAiBots? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("bot_protection")
-        val botProtection: GetSecurityFirewallConfigResponseDraftManagedRulesBotProtection? = null,
-        val owasp: GetSecurityFirewallConfigResponseDraftManagedRulesOwasp? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("traffic_sources")
-        val trafficSources: GetSecurityFirewallConfigResponseDraftManagedRulesTrafficSources? =
-            null,
-        @com.fasterxml.jackson.annotation.JsonProperty("vercel_ruleset")
-        val vercelRuleset: GetSecurityFirewallConfigResponseDraftManagedRulesVercelRuleset? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemConXbbf9fc87ae(
-        val op: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemConX80f1739788,
-        val type: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemConX77899429d2,
-        val key: String? = null,
-        val neg: Boolean? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemConXad91295c98(
-        val conditions:
-            List<GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemConXbbf9fc87ae>
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActX540180217a(
-        val algo: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActX2ff134a148,
-        val keys: List<String>,
-        val limit: Double,
-        val window: Double,
-        val action: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActX89ed8f16dd? =
-            null,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActX07aa27cdb6(
-        val location: String,
-        val permanent: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActionMitigate(
-        val action: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActXb7114cd692,
-        val actionDuration: String? = null,
-        val bypassSystem: Boolean? = null,
-        val logHeaders: Any? = null,
-        val rateLimit: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActX540180217a? =
-            null,
-        val redirect: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActX07aa27cdb6? =
-            null,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemAction(
-        val mitigate: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActionMitigate? =
-            null
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftRulesetsVariant0Item(
-        val active: Boolean,
-        val conditionGroup:
-            List<GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemConXad91295c98>,
-        val id: String,
-        val name: String,
-        val description: String? = null,
-        val action: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemAction? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftRulesetsVariant1ValueRateLimit(
-        val algo: GetSecurityFirewallConfigResponseDraftRulesetsVariant1ValueRaXf0ee8122fa,
-        val keys: List<String>,
-        val limit: Double,
-        val window: Double,
-        val action: GetSecurityFirewallConfigResponseDraftRulesetsVariant1ValueRaXea7fcec3c5? =
-            null,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftRulesetsVariant1ValueRedirect(
-        val location: String,
-        val permanent: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraftRulesetsVariant1Value(
-        val action: GetSecurityFirewallConfigResponseDraftRulesetsVariant1ValueActionEnum,
-        val actionDuration: String? = null,
-        val bypassSystem: Boolean? = null,
-        val logHeaders: Any? = null,
-        val rateLimit: GetSecurityFirewallConfigResponseDraftRulesetsVariant1ValueRateLimit? = null,
-        val redirect: GetSecurityFirewallConfigResponseDraftRulesetsVariant1ValueRedirect? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseDraft(
-        val changes: List<Map<String, Any>>,
-        val firewallEnabled: Boolean,
-        val id: String,
-        val ips: List<GetSecurityFirewallConfigResponseDraftIpsItem>,
-        val ownerId: String,
-        val projectKey: String,
-        val rules: List<GetSecurityFirewallConfigResponseDraftRulesItem>,
-        val updatedAt: String,
-        val version: Double,
-        val botIdEnabled: Boolean? = null,
-        val conditions: List<GetSecurityFirewallConfigResponseDraftConditionsItem>? = null,
-        val crs: GetSecurityFirewallConfigResponseDraftCrs? = null,
-        val logHeaders: Any? = null,
-        val managedRules: GetSecurityFirewallConfigResponseDraftManagedRules? = null,
-        val rulesets: Any? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemIpsItem(
-        val action: GetSecurityFirewallConfigResponseVersionsItemIpsItemActionEnum,
-        val hostname: String,
-        val id: String,
-        val ip: String,
-        val notes: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemConditionsItemCoXd6e2c8e58f(
-        val op: GetSecurityFirewallConfigResponseVersionsItemConditionsItemCoX377d9265ac,
-        val type: GetSecurityFirewallConfigResponseVersionsItemConditionsItemCoXc0d3d5db6b,
-        val key: String? = null,
-        val neg: Boolean? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemConditionsItemCoXa3b4434cf1(
-        val conditions:
-            List<GetSecurityFirewallConfigResponseVersionsItemConditionsItemCoXd6e2c8e58f>
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemConditionsItem(
-        val active: Boolean,
-        val conditionGroup:
-            List<GetSecurityFirewallConfigResponseVersionsItemConditionsItemCoXa3b4434cf1>,
-        val id: String,
-        val name: String,
-        val description: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemCrsGen(
-        val action: GetSecurityFirewallConfigResponseVersionsItemCrsGenActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemCrsJava(
-        val action: GetSecurityFirewallConfigResponseVersionsItemCrsJavaActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemCrsLfi(
-        val action: GetSecurityFirewallConfigResponseVersionsItemCrsLfiActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemCrsMa(
-        val action: GetSecurityFirewallConfigResponseVersionsItemCrsMaActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemCrsPhp(
-        val action: GetSecurityFirewallConfigResponseVersionsItemCrsPhpActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemCrsRce(
-        val action: GetSecurityFirewallConfigResponseVersionsItemCrsRceActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemCrsRfi(
-        val action: GetSecurityFirewallConfigResponseVersionsItemCrsRfiActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemCrsSd(
-        val action: GetSecurityFirewallConfigResponseVersionsItemCrsSdActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemCrsSf(
-        val action: GetSecurityFirewallConfigResponseVersionsItemCrsSfActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemCrsSqli(
-        val action: GetSecurityFirewallConfigResponseVersionsItemCrsSqliActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemCrsXss(
-        val action: GetSecurityFirewallConfigResponseVersionsItemCrsXssActionEnum,
-        val active: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemCrs(
-        val gen: GetSecurityFirewallConfigResponseVersionsItemCrsGen,
-        val java: GetSecurityFirewallConfigResponseVersionsItemCrsJava,
-        val lfi: GetSecurityFirewallConfigResponseVersionsItemCrsLfi,
-        val ma: GetSecurityFirewallConfigResponseVersionsItemCrsMa,
-        val php: GetSecurityFirewallConfigResponseVersionsItemCrsPhp,
-        val rce: GetSecurityFirewallConfigResponseVersionsItemCrsRce,
-        val rfi: GetSecurityFirewallConfigResponseVersionsItemCrsRfi,
-        val sd: GetSecurityFirewallConfigResponseVersionsItemCrsSd,
-        val sf: GetSecurityFirewallConfigResponseVersionsItemCrsSf,
-        val sqli: GetSecurityFirewallConfigResponseVersionsItemCrsSqli,
-        val xss: GetSecurityFirewallConfigResponseVersionsItemCrsXss,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemManagedRulesAiBots(
-        val active: Boolean,
-        val action: GetSecurityFirewallConfigResponseVersionsItemManagedRulesAiBoXc48a92afe4? =
-            null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemManagedRulesBotProtection(
-        val active: Boolean,
-        val action: GetSecurityFirewallConfigResponseVersionsItemManagedRulesBotPX8ab24eaa40? =
-            null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemManagedRulesOwasp(
-        val active: Boolean,
-        val action: GetSecurityFirewallConfigResponseVersionsItemManagedRulesOwaspActionEnum? =
-            null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemManagedRulesTrafficSources(
-        val active: Boolean,
-        val action: GetSecurityFirewallConfigResponseVersionsItemManagedRulesTrafX0cf63ee314? =
-            null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemManagedRulesVercelRuleset(
-        val active: Boolean,
-        val action: GetSecurityFirewallConfigResponseVersionsItemManagedRulesVercX587ef0054f? =
-            null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemManagedRules(
-        @com.fasterxml.jackson.annotation.JsonProperty("ai_bots")
-        val aiBots: GetSecurityFirewallConfigResponseVersionsItemManagedRulesAiBots? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("bot_protection")
-        val botProtection: GetSecurityFirewallConfigResponseVersionsItemManagedRulesBotProtection? =
-            null,
-        val owasp: GetSecurityFirewallConfigResponseVersionsItemManagedRulesOwasp? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("traffic_sources")
-        val trafficSources:
-            GetSecurityFirewallConfigResponseVersionsItemManagedRulesTrafficSources? =
-            null,
-        @com.fasterxml.jackson.annotation.JsonProperty("vercel_ruleset")
-        val vercelRuleset: GetSecurityFirewallConfigResponseVersionsItemManagedRulesVercelRuleset? =
-            null,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0Xfcd20807b0(
-        val op: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0Xc7381d3381,
-        val type: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X8bfb2f452e,
-        val key: String? = null,
-        val neg: Boolean? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X34a099ffac(
-        val conditions:
-            List<GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0Xfcd20807b0>
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X9ed923181f(
-        val algo: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0Xb5eacb9991,
-        val keys: List<String>,
-        val limit: Double,
-        val window: Double,
-        val action: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X83e084834f? =
-            null,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X026123299f(
-        val location: String,
-        val permanent: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X9451911214(
-        val action: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X87a74868fd,
-        val actionDuration: String? = null,
-        val bypassSystem: Boolean? = null,
-        val logHeaders: Any? = null,
-        val rateLimit: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X9ed923181f? =
-            null,
-        val redirect: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X026123299f? =
-            null,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0ItemAction(
-        val mitigate: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X9451911214? =
-            null
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0Item(
-        val active: Boolean,
-        val conditionGroup:
-            List<GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X34a099ffac>,
-        val id: String,
-        val name: String,
-        val description: String? = null,
-        val action: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0ItemAction? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1X4b9913d467(
-        val algo: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1Xf35454e1d8,
-        val keys: List<String>,
-        val limit: Double,
-        val window: Double,
-        val action: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1Xcec932a814? =
-            null,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1Xcf229951e0(
-        val location: String,
-        val permanent: Boolean,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1Value(
-        val action: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1Xd138d000e6,
-        val actionDuration: String? = null,
-        val bypassSystem: Boolean? = null,
-        val logHeaders: Any? = null,
-        val rateLimit: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1X4b9913d467? =
-            null,
-        val redirect: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1Xcf229951e0? =
-            null,
-    )
-
-    data class GetSecurityFirewallConfigResponseVersionsItem(
-        val changes: List<Map<String, Any>>,
-        val firewallEnabled: Boolean,
-        val id: String,
-        val ips: List<GetSecurityFirewallConfigResponseVersionsItemIpsItem>,
-        val ownerId: String,
-        val projectKey: String,
-        val rules: List<GetSecurityFirewallConfigResponseVersionsItemRulesItem>,
-        val updatedAt: String,
-        val version: Double,
-        val botIdEnabled: Boolean? = null,
-        val conditions: List<GetSecurityFirewallConfigResponseVersionsItemConditionsItem>? = null,
-        val crs: GetSecurityFirewallConfigResponseVersionsItemCrs? = null,
-        val logHeaders: Any? = null,
-        val managedRules: GetSecurityFirewallConfigResponseVersionsItemManagedRules? = null,
-        val rulesets: Any? = null,
-    )
-
-    data class GetSecurityFirewallConfigResponse(
-        @com.fasterxml.jackson.annotation.JsonProperty("active", required = true)
-        val active: GetSecurityFirewallConfigResponseActive?,
-        @com.fasterxml.jackson.annotation.JsonProperty("draft", required = true)
-        val draft: GetSecurityFirewallConfigResponseDraft?,
-        val versions: List<GetSecurityFirewallConfigResponseVersionsItem>,
-    )
+data class UpdateAttackChallengeModeResponse(
+    val attackModeEnabled: Boolean,
+    val attackModeUpdatedAt: Double
+)
+
+data class GetSecurityFirewallConfigResponseActiveIpsItem(
+    val action: GetSecurityFirewallConfigResponseActiveIpsItemActionEnum,
+    val hostname: String,
+    val id: String,
+    val ip: String,
+    val notes: String? = null
+)
+
+
+
+
+
+data class GetSecurityFirewallConfigResponseActiveConditionsItemConditioX6c91cdfe60(
+    val op: GetSecurityFirewallConfigResponseActiveConditionsItemConditioX9a0bf58682,
+    val type: GetSecurityFirewallConfigResponseActiveConditionsItemConditioXd37aa37d4b,
+    val key: String? = null,
+    val neg: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+)
+
+data class GetSecurityFirewallConfigResponseActiveConditionsItemConditionGroupItem(
+    val conditions: List<GetSecurityFirewallConfigResponseActiveConditionsItemConditioX6c91cdfe60>
+)
+
+data class GetSecurityFirewallConfigResponseActiveConditionsItem(
+    val active: Boolean,
+    val conditionGroup: List<GetSecurityFirewallConfigResponseActiveConditionsItemConditionGroupItem>,
+    val id: String,
+    val name: String,
+    val description: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseActiveCrsGen(
+    val action: GetSecurityFirewallConfigResponseActiveCrsGenActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseActiveCrsJava(
+    val action: GetSecurityFirewallConfigResponseActiveCrsJavaActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseActiveCrsLfi(
+    val action: GetSecurityFirewallConfigResponseActiveCrsLfiActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseActiveCrsMa(
+    val action: GetSecurityFirewallConfigResponseActiveCrsMaActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseActiveCrsPhp(
+    val action: GetSecurityFirewallConfigResponseActiveCrsPhpActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseActiveCrsRce(
+    val action: GetSecurityFirewallConfigResponseActiveCrsRceActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseActiveCrsRfi(
+    val action: GetSecurityFirewallConfigResponseActiveCrsRfiActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseActiveCrsSd(
+    val action: GetSecurityFirewallConfigResponseActiveCrsSdActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseActiveCrsSf(
+    val action: GetSecurityFirewallConfigResponseActiveCrsSfActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseActiveCrsSqli(
+    val action: GetSecurityFirewallConfigResponseActiveCrsSqliActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseActiveCrsXss(
+    val action: GetSecurityFirewallConfigResponseActiveCrsXssActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseActiveCrs(
+    val gen: GetSecurityFirewallConfigResponseActiveCrsGen,
+    val java: GetSecurityFirewallConfigResponseActiveCrsJava,
+    val lfi: GetSecurityFirewallConfigResponseActiveCrsLfi,
+    val ma: GetSecurityFirewallConfigResponseActiveCrsMa,
+    val php: GetSecurityFirewallConfigResponseActiveCrsPhp,
+    val rce: GetSecurityFirewallConfigResponseActiveCrsRce,
+    val rfi: GetSecurityFirewallConfigResponseActiveCrsRfi,
+    val sd: GetSecurityFirewallConfigResponseActiveCrsSd,
+    val sf: GetSecurityFirewallConfigResponseActiveCrsSf,
+    val sqli: GetSecurityFirewallConfigResponseActiveCrsSqli,
+    val xss: GetSecurityFirewallConfigResponseActiveCrsXss
+)
+
 
+
+data class GetSecurityFirewallConfigResponseActiveManagedRulesAiBots(
+    val active: Boolean,
+    val action: GetSecurityFirewallConfigResponseActiveManagedRulesAiBotsActionEnum? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseActiveManagedRulesBotProtection(
+    val active: Boolean,
+    val action: GetSecurityFirewallConfigResponseActiveManagedRulesBotProtectX3967b6004c? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseActiveManagedRulesOwasp(
+    val active: Boolean,
+    val action: GetSecurityFirewallConfigResponseActiveManagedRulesOwaspActionEnum? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseActiveManagedRulesTrafficSources(
+    val active: Boolean,
+    val action: GetSecurityFirewallConfigResponseActiveManagedRulesTrafficSouXfd680791b9? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseActiveManagedRulesVercelRuleset(
+    val active: Boolean,
+    val action: GetSecurityFirewallConfigResponseActiveManagedRulesVercelRuleXa030d00325? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseActiveManagedRules(
+    @com.fasterxml.jackson.annotation.JsonProperty("ai_bots") val aiBots: GetSecurityFirewallConfigResponseActiveManagedRulesAiBots? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("bot_protection") val botProtection: GetSecurityFirewallConfigResponseActiveManagedRulesBotProtection? = null,
+    val owasp: GetSecurityFirewallConfigResponseActiveManagedRulesOwasp? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("traffic_sources") val trafficSources: GetSecurityFirewallConfigResponseActiveManagedRulesTrafficSources? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("vercel_ruleset") val vercelRuleset: GetSecurityFirewallConfigResponseActiveManagedRulesVercelRuleset? = null
+)
+
+
+
+
+
+data class GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemCoXd4f7041494(
+    val op: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemCoX652274aaef,
+    val type: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemCoXbe73d04536,
+    val key: String? = null,
+    val neg: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+)
+
+data class GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemCoX296e359f1f(
+    val conditions: List<GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemCoXd4f7041494>
+)
+
+
+
+
+
+
+
+
+
+data class GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX5bd117cadc(
+    val algo: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcXd015bbd289,
+    val keys: List<String>,
+    val limit: Double,
+    val window: Double,
+    val action: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX7e7ed2c629? = null
+)
+
+data class GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX5a9115a7b9(
+    val location: String,
+    val permanent: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX6f6b27fe4e(
+    val action: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcXcb1f4f277c,
+    val actionDuration: String? = null,
+    val bypassSystem: Boolean? = null,
+    val logHeaders: Any? = null,
+    val rateLimit: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX5bd117cadc? = null,
+    val redirect: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX5a9115a7b9? = null
+)
+
+data class GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAction(
+    val mitigate: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAcX6f6b27fe4e? = null
+)
+
+data class GetSecurityFirewallConfigResponseActiveRulesetsVariant0Item(
+    val active: Boolean,
+    val conditionGroup: List<GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemCoX296e359f1f>,
+    val id: String,
+    val name: String,
+    val description: String? = null,
+    val action: GetSecurityFirewallConfigResponseActiveRulesetsVariant0ItemAction? = null
+)
+
+
+
+
+
+
+
+
+
+data class GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueRateLimit(
+    val algo: GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueRXe71b835f63,
+    val keys: List<String>,
+    val limit: Double,
+    val window: Double,
+    val action: GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueRXd85fecb427? = null
+)
+
+data class GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueRedirect(
+    val location: String,
+    val permanent: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseActiveRulesetsVariant1Value(
+    val action: GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueActionEnum,
+    val actionDuration: String? = null,
+    val bypassSystem: Boolean? = null,
+    val logHeaders: Any? = null,
+    val rateLimit: GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueRateLimit? = null,
+    val redirect: GetSecurityFirewallConfigResponseActiveRulesetsVariant1ValueRedirect? = null
+)
+
+data class GetSecurityFirewallConfigResponseActive(
+    val changes: List<Map<String, Any>>,
+    val firewallEnabled: Boolean,
+    val id: String,
+    val ips: List<GetSecurityFirewallConfigResponseActiveIpsItem>,
+    val ownerId: String,
+    val projectKey: String,
+    val rules: List<GetSecurityFirewallConfigResponseActiveRulesItem>,
+    val updatedAt: String,
+    val version: Double,
+    val botIdEnabled: Boolean? = null,
+    val conditions: List<GetSecurityFirewallConfigResponseActiveConditionsItem>? = null,
+    val crs: GetSecurityFirewallConfigResponseActiveCrs? = null,
+    val logHeaders: Any? = null,
+    val managedRules: GetSecurityFirewallConfigResponseActiveManagedRules? = null,
+    val rulesets: Any? = null
+)
+
+data class GetSecurityFirewallConfigResponseDraftIpsItem(
+    val action: GetSecurityFirewallConfigResponseDraftIpsItemActionEnum,
+    val hostname: String,
+    val id: String,
+    val ip: String,
+    val notes: String? = null
+)
+
+
+
+
+
+data class GetSecurityFirewallConfigResponseDraftConditionsItemConditionX877f73f757(
+    val op: GetSecurityFirewallConfigResponseDraftConditionsItemConditionXcaf75d3d66,
+    val type: GetSecurityFirewallConfigResponseDraftConditionsItemConditionX25cf762f25,
+    val key: String? = null,
+    val neg: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+)
+
+data class GetSecurityFirewallConfigResponseDraftConditionsItemConditionGroupItem(
+    val conditions: List<GetSecurityFirewallConfigResponseDraftConditionsItemConditionX877f73f757>
+)
+
+data class GetSecurityFirewallConfigResponseDraftConditionsItem(
+    val active: Boolean,
+    val conditionGroup: List<GetSecurityFirewallConfigResponseDraftConditionsItemConditionGroupItem>,
+    val id: String,
+    val name: String,
+    val description: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseDraftCrsGen(
+    val action: GetSecurityFirewallConfigResponseDraftCrsGenActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseDraftCrsJava(
+    val action: GetSecurityFirewallConfigResponseDraftCrsJavaActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseDraftCrsLfi(
+    val action: GetSecurityFirewallConfigResponseDraftCrsLfiActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseDraftCrsMa(
+    val action: GetSecurityFirewallConfigResponseDraftCrsMaActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseDraftCrsPhp(
+    val action: GetSecurityFirewallConfigResponseDraftCrsPhpActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseDraftCrsRce(
+    val action: GetSecurityFirewallConfigResponseDraftCrsRceActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseDraftCrsRfi(
+    val action: GetSecurityFirewallConfigResponseDraftCrsRfiActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseDraftCrsSd(
+    val action: GetSecurityFirewallConfigResponseDraftCrsSdActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseDraftCrsSf(
+    val action: GetSecurityFirewallConfigResponseDraftCrsSfActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseDraftCrsSqli(
+    val action: GetSecurityFirewallConfigResponseDraftCrsSqliActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseDraftCrsXss(
+    val action: GetSecurityFirewallConfigResponseDraftCrsXssActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseDraftCrs(
+    val gen: GetSecurityFirewallConfigResponseDraftCrsGen,
+    val java: GetSecurityFirewallConfigResponseDraftCrsJava,
+    val lfi: GetSecurityFirewallConfigResponseDraftCrsLfi,
+    val ma: GetSecurityFirewallConfigResponseDraftCrsMa,
+    val php: GetSecurityFirewallConfigResponseDraftCrsPhp,
+    val rce: GetSecurityFirewallConfigResponseDraftCrsRce,
+    val rfi: GetSecurityFirewallConfigResponseDraftCrsRfi,
+    val sd: GetSecurityFirewallConfigResponseDraftCrsSd,
+    val sf: GetSecurityFirewallConfigResponseDraftCrsSf,
+    val sqli: GetSecurityFirewallConfigResponseDraftCrsSqli,
+    val xss: GetSecurityFirewallConfigResponseDraftCrsXss
+)
+
+
+
+data class GetSecurityFirewallConfigResponseDraftManagedRulesAiBots(
+    val active: Boolean,
+    val action: GetSecurityFirewallConfigResponseDraftManagedRulesAiBotsActionEnum? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseDraftManagedRulesBotProtection(
+    val active: Boolean,
+    val action: GetSecurityFirewallConfigResponseDraftManagedRulesBotProtectiXcf50d058d8? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseDraftManagedRulesOwasp(
+    val active: Boolean,
+    val action: GetSecurityFirewallConfigResponseDraftManagedRulesOwaspActionEnum? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseDraftManagedRulesTrafficSources(
+    val active: Boolean,
+    val action: GetSecurityFirewallConfigResponseDraftManagedRulesTrafficSourX7d191f826f? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseDraftManagedRulesVercelRuleset(
+    val active: Boolean,
+    val action: GetSecurityFirewallConfigResponseDraftManagedRulesVercelRulesXb6dd0a1967? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseDraftManagedRules(
+    @com.fasterxml.jackson.annotation.JsonProperty("ai_bots") val aiBots: GetSecurityFirewallConfigResponseDraftManagedRulesAiBots? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("bot_protection") val botProtection: GetSecurityFirewallConfigResponseDraftManagedRulesBotProtection? = null,
+    val owasp: GetSecurityFirewallConfigResponseDraftManagedRulesOwasp? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("traffic_sources") val trafficSources: GetSecurityFirewallConfigResponseDraftManagedRulesTrafficSources? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("vercel_ruleset") val vercelRuleset: GetSecurityFirewallConfigResponseDraftManagedRulesVercelRuleset? = null
+)
+
+
+
+
+
+data class GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemConXbbf9fc87ae(
+    val op: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemConX80f1739788,
+    val type: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemConX77899429d2,
+    val key: String? = null,
+    val neg: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+)
+
+data class GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemConXad91295c98(
+    val conditions: List<GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemConXbbf9fc87ae>
+)
+
+
+
+
+
+
+
+
+
+data class GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActX540180217a(
+    val algo: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActX2ff134a148,
+    val keys: List<String>,
+    val limit: Double,
+    val window: Double,
+    val action: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActX89ed8f16dd? = null
+)
+
+data class GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActX07aa27cdb6(
+    val location: String,
+    val permanent: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActionMitigate(
+    val action: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActXb7114cd692,
+    val actionDuration: String? = null,
+    val bypassSystem: Boolean? = null,
+    val logHeaders: Any? = null,
+    val rateLimit: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActX540180217a? = null,
+    val redirect: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActX07aa27cdb6? = null
+)
+
+data class GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemAction(
+    val mitigate: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemActionMitigate? = null
+)
+
+data class GetSecurityFirewallConfigResponseDraftRulesetsVariant0Item(
+    val active: Boolean,
+    val conditionGroup: List<GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemConXad91295c98>,
+    val id: String,
+    val name: String,
+    val description: String? = null,
+    val action: GetSecurityFirewallConfigResponseDraftRulesetsVariant0ItemAction? = null
+)
+
+
+
+
+
+
+
+
+
+data class GetSecurityFirewallConfigResponseDraftRulesetsVariant1ValueRateLimit(
+    val algo: GetSecurityFirewallConfigResponseDraftRulesetsVariant1ValueRaXf0ee8122fa,
+    val keys: List<String>,
+    val limit: Double,
+    val window: Double,
+    val action: GetSecurityFirewallConfigResponseDraftRulesetsVariant1ValueRaXea7fcec3c5? = null
+)
+
+data class GetSecurityFirewallConfigResponseDraftRulesetsVariant1ValueRedirect(
+    val location: String,
+    val permanent: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseDraftRulesetsVariant1Value(
+    val action: GetSecurityFirewallConfigResponseDraftRulesetsVariant1ValueActionEnum,
+    val actionDuration: String? = null,
+    val bypassSystem: Boolean? = null,
+    val logHeaders: Any? = null,
+    val rateLimit: GetSecurityFirewallConfigResponseDraftRulesetsVariant1ValueRateLimit? = null,
+    val redirect: GetSecurityFirewallConfigResponseDraftRulesetsVariant1ValueRedirect? = null
+)
+
+data class GetSecurityFirewallConfigResponseDraft(
+    val changes: List<Map<String, Any>>,
+    val firewallEnabled: Boolean,
+    val id: String,
+    val ips: List<GetSecurityFirewallConfigResponseDraftIpsItem>,
+    val ownerId: String,
+    val projectKey: String,
+    val rules: List<GetSecurityFirewallConfigResponseDraftRulesItem>,
+    val updatedAt: String,
+    val version: Double,
+    val botIdEnabled: Boolean? = null,
+    val conditions: List<GetSecurityFirewallConfigResponseDraftConditionsItem>? = null,
+    val crs: GetSecurityFirewallConfigResponseDraftCrs? = null,
+    val logHeaders: Any? = null,
+    val managedRules: GetSecurityFirewallConfigResponseDraftManagedRules? = null,
+    val rulesets: Any? = null
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemIpsItem(
+    val action: GetSecurityFirewallConfigResponseVersionsItemIpsItemActionEnum,
+    val hostname: String,
+    val id: String,
+    val ip: String,
+    val notes: String? = null
+)
+
+
+
+
+
+data class GetSecurityFirewallConfigResponseVersionsItemConditionsItemCoXd6e2c8e58f(
+    val op: GetSecurityFirewallConfigResponseVersionsItemConditionsItemCoX377d9265ac,
+    val type: GetSecurityFirewallConfigResponseVersionsItemConditionsItemCoXc0d3d5db6b,
+    val key: String? = null,
+    val neg: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemConditionsItemCoXa3b4434cf1(
+    val conditions: List<GetSecurityFirewallConfigResponseVersionsItemConditionsItemCoXd6e2c8e58f>
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemConditionsItem(
+    val active: Boolean,
+    val conditionGroup: List<GetSecurityFirewallConfigResponseVersionsItemConditionsItemCoXa3b4434cf1>,
+    val id: String,
+    val name: String,
+    val description: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemCrsGen(
+    val action: GetSecurityFirewallConfigResponseVersionsItemCrsGenActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemCrsJava(
+    val action: GetSecurityFirewallConfigResponseVersionsItemCrsJavaActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemCrsLfi(
+    val action: GetSecurityFirewallConfigResponseVersionsItemCrsLfiActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemCrsMa(
+    val action: GetSecurityFirewallConfigResponseVersionsItemCrsMaActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemCrsPhp(
+    val action: GetSecurityFirewallConfigResponseVersionsItemCrsPhpActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemCrsRce(
+    val action: GetSecurityFirewallConfigResponseVersionsItemCrsRceActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemCrsRfi(
+    val action: GetSecurityFirewallConfigResponseVersionsItemCrsRfiActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemCrsSd(
+    val action: GetSecurityFirewallConfigResponseVersionsItemCrsSdActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemCrsSf(
+    val action: GetSecurityFirewallConfigResponseVersionsItemCrsSfActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemCrsSqli(
+    val action: GetSecurityFirewallConfigResponseVersionsItemCrsSqliActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemCrsXss(
+    val action: GetSecurityFirewallConfigResponseVersionsItemCrsXssActionEnum,
+    val active: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemCrs(
+    val gen: GetSecurityFirewallConfigResponseVersionsItemCrsGen,
+    val java: GetSecurityFirewallConfigResponseVersionsItemCrsJava,
+    val lfi: GetSecurityFirewallConfigResponseVersionsItemCrsLfi,
+    val ma: GetSecurityFirewallConfigResponseVersionsItemCrsMa,
+    val php: GetSecurityFirewallConfigResponseVersionsItemCrsPhp,
+    val rce: GetSecurityFirewallConfigResponseVersionsItemCrsRce,
+    val rfi: GetSecurityFirewallConfigResponseVersionsItemCrsRfi,
+    val sd: GetSecurityFirewallConfigResponseVersionsItemCrsSd,
+    val sf: GetSecurityFirewallConfigResponseVersionsItemCrsSf,
+    val sqli: GetSecurityFirewallConfigResponseVersionsItemCrsSqli,
+    val xss: GetSecurityFirewallConfigResponseVersionsItemCrsXss
+)
+
+
+
+data class GetSecurityFirewallConfigResponseVersionsItemManagedRulesAiBots(
+    val active: Boolean,
+    val action: GetSecurityFirewallConfigResponseVersionsItemManagedRulesAiBoXc48a92afe4? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemManagedRulesBotProtection(
+    val active: Boolean,
+    val action: GetSecurityFirewallConfigResponseVersionsItemManagedRulesBotPX8ab24eaa40? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemManagedRulesOwasp(
+    val active: Boolean,
+    val action: GetSecurityFirewallConfigResponseVersionsItemManagedRulesOwaspActionEnum? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemManagedRulesTrafficSources(
+    val active: Boolean,
+    val action: GetSecurityFirewallConfigResponseVersionsItemManagedRulesTrafX0cf63ee314? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemManagedRulesVercelRuleset(
+    val active: Boolean,
+    val action: GetSecurityFirewallConfigResponseVersionsItemManagedRulesVercX587ef0054f? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemManagedRules(
+    @com.fasterxml.jackson.annotation.JsonProperty("ai_bots") val aiBots: GetSecurityFirewallConfigResponseVersionsItemManagedRulesAiBots? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("bot_protection") val botProtection: GetSecurityFirewallConfigResponseVersionsItemManagedRulesBotProtection? = null,
+    val owasp: GetSecurityFirewallConfigResponseVersionsItemManagedRulesOwasp? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("traffic_sources") val trafficSources: GetSecurityFirewallConfigResponseVersionsItemManagedRulesTrafficSources? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("vercel_ruleset") val vercelRuleset: GetSecurityFirewallConfigResponseVersionsItemManagedRulesVercelRuleset? = null
+)
+
+
+
+
+
+data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0Xfcd20807b0(
+    val op: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0Xc7381d3381,
+    val type: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X8bfb2f452e,
+    val key: String? = null,
+    val neg: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X34a099ffac(
+    val conditions: List<GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0Xfcd20807b0>
+)
+
+
+
+
+
+
+
+
+
+data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X9ed923181f(
+    val algo: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0Xb5eacb9991,
+    val keys: List<String>,
+    val limit: Double,
+    val window: Double,
+    val action: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X83e084834f? = null
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X026123299f(
+    val location: String,
+    val permanent: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X9451911214(
+    val action: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X87a74868fd,
+    val actionDuration: String? = null,
+    val bypassSystem: Boolean? = null,
+    val logHeaders: Any? = null,
+    val rateLimit: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X9ed923181f? = null,
+    val redirect: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X026123299f? = null
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0ItemAction(
+    val mitigate: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X9451911214? = null
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0Item(
+    val active: Boolean,
+    val conditionGroup: List<GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0X34a099ffac>,
+    val id: String,
+    val name: String,
+    val description: String? = null,
+    val action: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant0ItemAction? = null
+)
+
+
+
+
+
+
+
+
+
+data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1X4b9913d467(
+    val algo: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1Xf35454e1d8,
+    val keys: List<String>,
+    val limit: Double,
+    val window: Double,
+    val action: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1Xcec932a814? = null
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1Xcf229951e0(
+    val location: String,
+    val permanent: Boolean
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1Value(
+    val action: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1Xd138d000e6,
+    val actionDuration: String? = null,
+    val bypassSystem: Boolean? = null,
+    val logHeaders: Any? = null,
+    val rateLimit: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1X4b9913d467? = null,
+    val redirect: GetSecurityFirewallConfigResponseVersionsItemRulesetsVariant1Xcf229951e0? = null
+)
+
+data class GetSecurityFirewallConfigResponseVersionsItem(
+    val changes: List<Map<String, Any>>,
+    val firewallEnabled: Boolean,
+    val id: String,
+    val ips: List<GetSecurityFirewallConfigResponseVersionsItemIpsItem>,
+    val ownerId: String,
+    val projectKey: String,
+    val rules: List<GetSecurityFirewallConfigResponseVersionsItemRulesItem>,
+    val updatedAt: String,
+    val version: Double,
+    val botIdEnabled: Boolean? = null,
+    val conditions: List<GetSecurityFirewallConfigResponseVersionsItemConditionsItem>? = null,
+    val crs: GetSecurityFirewallConfigResponseVersionsItemCrs? = null,
+    val logHeaders: Any? = null,
+    val managedRules: GetSecurityFirewallConfigResponseVersionsItemManagedRules? = null,
+    val rulesets: Any? = null
+)
+
+data class GetSecurityFirewallConfigResponse(
+    @com.fasterxml.jackson.annotation.JsonProperty("active", required = true) val active: GetSecurityFirewallConfigResponseActive?,
+    @com.fasterxml.jackson.annotation.JsonProperty("draft", required = true) val draft: GetSecurityFirewallConfigResponseDraft?,
+    val versions: List<GetSecurityFirewallConfigResponseVersionsItem>
+)
+
+/**
+ * Scanner Detection - Detect and prevent reconnaissance activities from network scanning tools.
+ */
+data class PutFirewallConfigCrsSd(
+    val active: Boolean,
+    val action: PutFirewallConfigCrsSdActionEnum
+)
+
+/**
+ * Multipart Attack - Block attempts to bypass security controls using multipart/form-data encoding.
+ */
+data class PutFirewallConfigCrsMa(
+    val active: Boolean,
+    val action: PutFirewallConfigCrsMaActionEnum
+)
+
+/**
+ * Local File Inclusion Attack - Prevent unauthorized access to local files through web applications.
+ */
+data class PutFirewallConfigCrsLfi(
+    val active: Boolean,
+    val action: PutFirewallConfigCrsLfiActionEnum
+)
+
+/**
+ * Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files.
+ */
+data class PutFirewallConfigCrsRfi(
+    val active: Boolean,
+    val action: PutFirewallConfigCrsRfiActionEnum
+)
+
+/**
+ * Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands.
+ */
+data class PutFirewallConfigCrsRce(
+    val active: Boolean,
+    val action: PutFirewallConfigCrsRceActionEnum
+)
+
+/**
+ * PHP Attack - Safeguard against vulnerability exploits in PHP-based applications.
+ */
+data class PutFirewallConfigCrsPhp(
+    val active: Boolean,
+    val action: PutFirewallConfigCrsPhpActionEnum
+)
+
+/**
+ * Generic Attack - Provide broad protection from various undefined or novel attack vectors.
+ */
+data class PutFirewallConfigCrsGen(
+    val active: Boolean,
+    val action: PutFirewallConfigCrsGenActionEnum
+)
+
+/**
+ * XSS Attack - Prevent injection of malicious scripts into trusted webpages.
+ */
+data class PutFirewallConfigCrsXss(
+    val active: Boolean,
+    val action: PutFirewallConfigCrsXssActionEnum
+)
+
+/**
+ * SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases.
+ */
+data class PutFirewallConfigCrsSqli(
+    val active: Boolean,
+    val action: PutFirewallConfigCrsSqliActionEnum
+)
+
+/**
+ * Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing unique session IDs.
+ */
+data class PutFirewallConfigCrsSf(
+    val active: Boolean,
+    val action: PutFirewallConfigCrsSfActionEnum
+)
+
+/**
+ * Java Attack - Mitigate risks of exploitation targeting Java-based applications or components.
+ */
+data class PutFirewallConfigCrsJava(
+    val active: Boolean,
+    val action: PutFirewallConfigCrsJavaActionEnum
+)
+
+/**
+ * Custom Ruleset
+ */
+data class PutFirewallConfigCrs(
     /**
      * Scanner Detection - Detect and prevent reconnaissance activities from network scanning tools.
      */
-    data class PutFirewallConfigCrsSd(
-        val active: Boolean,
-        val action: PutFirewallConfigCrsSdActionEnum,
-    )
-
+    val sd: PutFirewallConfigCrsSd? = null,
     /**
-     * Multipart Attack - Block attempts to bypass security controls using multipart/form-data
-     * encoding.
+     * Multipart Attack - Block attempts to bypass security controls using multipart/form-data encoding.
      */
-    data class PutFirewallConfigCrsMa(
-        val active: Boolean,
-        val action: PutFirewallConfigCrsMaActionEnum,
-    )
-
+    val ma: PutFirewallConfigCrsMa? = null,
     /**
-     * Local File Inclusion Attack - Prevent unauthorized access to local files through web
-     * applications.
+     * Local File Inclusion Attack - Prevent unauthorized access to local files through web applications.
      */
-    data class PutFirewallConfigCrsLfi(
-        val active: Boolean,
-        val action: PutFirewallConfigCrsLfiActionEnum,
-    )
-
-    /** Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files. */
-    data class PutFirewallConfigCrsRfi(
-        val active: Boolean,
-        val action: PutFirewallConfigCrsRfiActionEnum,
-    )
-
-    /** Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands. */
-    data class PutFirewallConfigCrsRce(
-        val active: Boolean,
-        val action: PutFirewallConfigCrsRceActionEnum,
-    )
-
-    /** PHP Attack - Safeguard against vulnerability exploits in PHP-based applications. */
-    data class PutFirewallConfigCrsPhp(
-        val active: Boolean,
-        val action: PutFirewallConfigCrsPhpActionEnum,
-    )
-
-    /** Generic Attack - Provide broad protection from various undefined or novel attack vectors. */
-    data class PutFirewallConfigCrsGen(
-        val active: Boolean,
-        val action: PutFirewallConfigCrsGenActionEnum,
-    )
-
-    /** XSS Attack - Prevent injection of malicious scripts into trusted webpages. */
-    data class PutFirewallConfigCrsXss(
-        val active: Boolean,
-        val action: PutFirewallConfigCrsXssActionEnum,
-    )
-
-    /** SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases. */
-    data class PutFirewallConfigCrsSqli(
-        val active: Boolean,
-        val action: PutFirewallConfigCrsSqliActionEnum,
-    )
-
+    val lfi: PutFirewallConfigCrsLfi? = null,
     /**
-     * Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing unique
-     * session IDs.
+     * Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files.
      */
-    data class PutFirewallConfigCrsSf(
-        val active: Boolean,
-        val action: PutFirewallConfigCrsSfActionEnum,
-    )
-
+    val rfi: PutFirewallConfigCrsRfi? = null,
+    /**
+     * Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands.
+     */
+    val rce: PutFirewallConfigCrsRce? = null,
+    /**
+     * PHP Attack - Safeguard against vulnerability exploits in PHP-based applications.
+     */
+    val php: PutFirewallConfigCrsPhp? = null,
+    /**
+     * Generic Attack - Provide broad protection from various undefined or novel attack vectors.
+     */
+    val gen: PutFirewallConfigCrsGen? = null,
+    /**
+     * XSS Attack - Prevent injection of malicious scripts into trusted webpages.
+     */
+    val xss: PutFirewallConfigCrsXss? = null,
+    /**
+     * SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases.
+     */
+    val sqli: PutFirewallConfigCrsSqli? = null,
+    /**
+     * Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing unique session IDs.
+     */
+    val sf: PutFirewallConfigCrsSf? = null,
     /**
      * Java Attack - Mitigate risks of exploitation targeting Java-based applications or components.
      */
-    data class PutFirewallConfigCrsJava(
-        val active: Boolean,
-        val action: PutFirewallConfigCrsJavaActionEnum,
-    )
+    val java: PutFirewallConfigCrsJava? = null
+)
 
-    /** Custom Ruleset */
-    data class PutFirewallConfigCrs(
-        /**
-         * Scanner Detection - Detect and prevent reconnaissance activities from network scanning
-         * tools.
-         */
-        val sd: PutFirewallConfigCrsSd? = null,
-        /**
-         * Multipart Attack - Block attempts to bypass security controls using multipart/form-data
-         * encoding.
-         */
-        val ma: PutFirewallConfigCrsMa? = null,
-        /**
-         * Local File Inclusion Attack - Prevent unauthorized access to local files through web
-         * applications.
-         */
-        val lfi: PutFirewallConfigCrsLfi? = null,
-        /**
-         * Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files.
-         */
-        val rfi: PutFirewallConfigCrsRfi? = null,
-        /**
-         * Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands.
-         */
-        val rce: PutFirewallConfigCrsRce? = null,
-        /** PHP Attack - Safeguard against vulnerability exploits in PHP-based applications. */
-        val php: PutFirewallConfigCrsPhp? = null,
-        /**
-         * Generic Attack - Provide broad protection from various undefined or novel attack vectors.
-         */
-        val gen: PutFirewallConfigCrsGen? = null,
-        /** XSS Attack - Prevent injection of malicious scripts into trusted webpages. */
-        val xss: PutFirewallConfigCrsXss? = null,
-        /**
-         * SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases.
-         */
-        val sqli: PutFirewallConfigCrsSqli? = null,
-        /**
-         * Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing
-         * unique session IDs.
-         */
-        val sf: PutFirewallConfigCrsSf? = null,
-        /**
-         * Java Attack - Mitigate risks of exploitation targeting Java-based applications or
-         * components.
-         */
-        val java: PutFirewallConfigCrsJava? = null,
-    )
 
-    data class PutFirewallConfigRulesItemConditionGroupItemConditionsItem(
-        /** Parameter from the incoming traffic. */
-        val type: PutFirewallConfigRulesItemConditionGroupItemConditionsItemTypeEnum,
-        val op: PutFirewallConfigRulesItemConditionGroupItemConditionsItemOpEnum,
-        val neg: Boolean? = null,
-        val key: String? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
-    )
 
-    data class PutFirewallConfigRulesItemConditionGroupItem(
-        val conditions: List<PutFirewallConfigRulesItemConditionGroupItemConditionsItem>
-    )
 
-    data class PutFirewallConfigRulesItemActionMitigateRateLimitVariant0(
-        val algo: PutFirewallConfigRulesItemActionMitigateRateLimitVariant0AlgoEnum,
-        val window: Double,
-        val limit: Double,
-        val keys: List<String>,
-        val action: PutFirewallConfigRulesItemActionMitigateRateLimitVariant0ActiXc7ee3c6247? =
-            null,
-    )
 
-    data class PutFirewallConfigRulesItemActionMitigateRedirectVariant0(
-        val location: String,
-        val permanent: Boolean,
-    )
+data class PutFirewallConfigRulesItemConditionGroupItemConditionsItem(
+    /**
+     * Parameter from the incoming traffic.
+     */
+    val type: PutFirewallConfigRulesItemConditionGroupItemConditionsItemTypeEnum,
+    val op: PutFirewallConfigRulesItemConditionGroupItemConditionsItemOpEnum,
+    val neg: Boolean? = null,
+    val key: String? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+)
 
-    data class PutFirewallConfigRulesItemActionMitigate(
-        val action: PutFirewallConfigRulesItemActionMitigateActionEnum,
-        val rateLimit: PutFirewallConfigRulesItemActionMitigateRateLimitVariant0? = null,
-        val redirect: PutFirewallConfigRulesItemActionMitigateRedirectVariant0? = null,
-        val actionDuration: String? = null,
-        val bypassSystem: Boolean? = null,
-        val logHeaders: List<String>? = null,
-    )
+data class PutFirewallConfigRulesItemConditionGroupItem(
+    val conditions: List<PutFirewallConfigRulesItemConditionGroupItemConditionsItem>
+)
 
-    data class PutFirewallConfigRulesItemAction(
-        val mitigate: PutFirewallConfigRulesItemActionMitigate? = null
-    )
 
-    data class PutFirewallConfigRulesItem(
-        val name: String,
-        val active: Boolean,
-        val conditionGroup: List<PutFirewallConfigRulesItemConditionGroupItem>,
-        val action: PutFirewallConfigRulesItemAction,
-        val id: String? = null,
-        val description: String? = null,
-        val valid: Boolean? = null,
-        val validationErrors: List<String>? = null,
-    )
 
-    data class PutFirewallConfigIpsItem(
-        val hostname: String,
-        val ip: String,
-        val action: PutFirewallConfigIpsItemActionEnum,
-        val id: String? = null,
-        val notes: String? = null,
-    )
 
-    data class PutFirewallConfigResponseActiveIpsItem(
-        val action: PutFirewallConfigResponseActiveIpsItemActionEnum,
-        val hostname: String,
-        val id: String,
-        val ip: String,
-        val notes: String? = null,
-    )
 
-    data class PutFirewallConfigResponseActiveConditionsItemConditionGroupItX6b7870a3a1(
-        val op: PutFirewallConfigResponseActiveConditionsItemConditionGroupItXf234002d6c,
-        val type: PutFirewallConfigResponseActiveConditionsItemConditionGroupItXeebb8df439,
-        val key: String? = null,
-        val neg: Boolean? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
-    )
 
-    data class PutFirewallConfigResponseActiveConditionsItemConditionGroupItem(
-        val conditions:
-            List<PutFirewallConfigResponseActiveConditionsItemConditionGroupItX6b7870a3a1>
-    )
 
-    data class PutFirewallConfigResponseActiveConditionsItem(
-        val active: Boolean,
-        val conditionGroup: List<PutFirewallConfigResponseActiveConditionsItemConditionGroupItem>,
-        val id: String,
-        val name: String,
-        val description: String? = null,
-    )
+data class PutFirewallConfigRulesItemActionMitigateRateLimitVariant0(
+    val algo: PutFirewallConfigRulesItemActionMitigateRateLimitVariant0AlgoEnum,
+    val window: Double,
+    val limit: Double,
+    val keys: List<String>,
+    val action: PutFirewallConfigRulesItemActionMitigateRateLimitVariant0ActiXc7ee3c6247? = null
+)
 
-    /** Generic Attack - Provide broad protection from various undefined or novel attack vectors. */
-    data class PutFirewallConfigResponseActiveCrsGen(
-        val action: PutFirewallConfigResponseActiveCrsGenActionEnum,
-        val active: Boolean,
-    )
+data class PutFirewallConfigRulesItemActionMitigateRedirectVariant0(
+    val location: String,
+    val permanent: Boolean
+)
 
+data class PutFirewallConfigRulesItemActionMitigate(
+    val action: PutFirewallConfigRulesItemActionMitigateActionEnum,
+    val rateLimit: PutFirewallConfigRulesItemActionMitigateRateLimitVariant0? = null,
+    val redirect: PutFirewallConfigRulesItemActionMitigateRedirectVariant0? = null,
+    val actionDuration: String? = null,
+    val bypassSystem: Boolean? = null,
+    val logHeaders: List<String>? = null
+)
+
+data class PutFirewallConfigRulesItemAction(
+    val mitigate: PutFirewallConfigRulesItemActionMitigate? = null
+)
+
+data class PutFirewallConfigRulesItem(
+    val name: String,
+    val active: Boolean,
+    val conditionGroup: List<PutFirewallConfigRulesItemConditionGroupItem>,
+    val action: PutFirewallConfigRulesItemAction,
+    val id: String? = null,
+    val description: String? = null,
+    val valid: Boolean? = null,
+    val validationErrors: List<String>? = null
+)
+
+data class PutFirewallConfigIpsItem(
+    val hostname: String,
+    val ip: String,
+    val action: PutFirewallConfigIpsItemActionEnum,
+    val id: String? = null,
+    val notes: String? = null
+)
+
+data class PutFirewallConfigResponseActiveIpsItem(
+    val action: PutFirewallConfigResponseActiveIpsItemActionEnum,
+    val hostname: String,
+    val id: String,
+    val ip: String,
+    val notes: String? = null
+)
+
+
+
+
+
+data class PutFirewallConfigResponseActiveConditionsItemConditionGroupItX6b7870a3a1(
+    val op: PutFirewallConfigResponseActiveConditionsItemConditionGroupItXf234002d6c,
+    val type: PutFirewallConfigResponseActiveConditionsItemConditionGroupItXeebb8df439,
+    val key: String? = null,
+    val neg: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+)
+
+data class PutFirewallConfigResponseActiveConditionsItemConditionGroupItem(
+    val conditions: List<PutFirewallConfigResponseActiveConditionsItemConditionGroupItX6b7870a3a1>
+)
+
+data class PutFirewallConfigResponseActiveConditionsItem(
+    val active: Boolean,
+    val conditionGroup: List<PutFirewallConfigResponseActiveConditionsItemConditionGroupItem>,
+    val id: String,
+    val name: String,
+    val description: String? = null
+)
+
+/**
+ * Generic Attack - Provide broad protection from various undefined or novel attack vectors.
+ */
+data class PutFirewallConfigResponseActiveCrsGen(
+    val action: PutFirewallConfigResponseActiveCrsGenActionEnum,
+    val active: Boolean
+)
+
+/**
+ * Java Attack - Mitigate risks of exploitation targeting Java-based applications or components.
+ */
+data class PutFirewallConfigResponseActiveCrsJava(
+    val action: PutFirewallConfigResponseActiveCrsJavaActionEnum,
+    val active: Boolean
+)
+
+/**
+ * Local File Inclusion Attack - Prevent unauthorized access to local files through web applications.
+ */
+data class PutFirewallConfigResponseActiveCrsLfi(
+    val action: PutFirewallConfigResponseActiveCrsLfiActionEnum,
+    val active: Boolean
+)
+
+/**
+ * Multipart Attack - Block attempts to bypass security controls using multipart/form-data encoding.
+ */
+data class PutFirewallConfigResponseActiveCrsMa(
+    val action: PutFirewallConfigResponseActiveCrsMaActionEnum,
+    val active: Boolean
+)
+
+/**
+ * PHP Attack - Safeguard against vulnerability exploits in PHP-based applications.
+ */
+data class PutFirewallConfigResponseActiveCrsPhp(
+    val action: PutFirewallConfigResponseActiveCrsPhpActionEnum,
+    val active: Boolean
+)
+
+/**
+ * Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands.
+ */
+data class PutFirewallConfigResponseActiveCrsRce(
+    val action: PutFirewallConfigResponseActiveCrsRceActionEnum,
+    val active: Boolean
+)
+
+/**
+ * Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files.
+ */
+data class PutFirewallConfigResponseActiveCrsRfi(
+    val action: PutFirewallConfigResponseActiveCrsRfiActionEnum,
+    val active: Boolean
+)
+
+/**
+ * Scanner Detection - Detect and prevent reconnaissance activities from network scanning tools.
+ */
+data class PutFirewallConfigResponseActiveCrsSd(
+    val action: PutFirewallConfigResponseActiveCrsSdActionEnum,
+    val active: Boolean
+)
+
+/**
+ * Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing unique session IDs.
+ */
+data class PutFirewallConfigResponseActiveCrsSf(
+    val action: PutFirewallConfigResponseActiveCrsSfActionEnum,
+    val active: Boolean
+)
+
+/**
+ * SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases.
+ */
+data class PutFirewallConfigResponseActiveCrsSqli(
+    val action: PutFirewallConfigResponseActiveCrsSqliActionEnum,
+    val active: Boolean
+)
+
+/**
+ * XSS Attack - Prevent injection of malicious scripts into trusted webpages.
+ */
+data class PutFirewallConfigResponseActiveCrsXss(
+    val action: PutFirewallConfigResponseActiveCrsXssActionEnum,
+    val active: Boolean
+)
+
+/**
+ * Custom Ruleset
+ */
+data class PutFirewallConfigResponseActiveCrs(
+    /**
+     * Generic Attack - Provide broad protection from various undefined or novel attack vectors.
+     */
+    val gen: PutFirewallConfigResponseActiveCrsGen,
     /**
      * Java Attack - Mitigate risks of exploitation targeting Java-based applications or components.
      */
-    data class PutFirewallConfigResponseActiveCrsJava(
-        val action: PutFirewallConfigResponseActiveCrsJavaActionEnum,
-        val active: Boolean,
-    )
-
+    val java: PutFirewallConfigResponseActiveCrsJava,
     /**
-     * Local File Inclusion Attack - Prevent unauthorized access to local files through web
-     * applications.
+     * Local File Inclusion Attack - Prevent unauthorized access to local files through web applications.
      */
-    data class PutFirewallConfigResponseActiveCrsLfi(
-        val action: PutFirewallConfigResponseActiveCrsLfiActionEnum,
-        val active: Boolean,
-    )
-
+    val lfi: PutFirewallConfigResponseActiveCrsLfi,
     /**
-     * Multipart Attack - Block attempts to bypass security controls using multipart/form-data
-     * encoding.
+     * Multipart Attack - Block attempts to bypass security controls using multipart/form-data encoding.
      */
-    data class PutFirewallConfigResponseActiveCrsMa(
-        val action: PutFirewallConfigResponseActiveCrsMaActionEnum,
-        val active: Boolean,
-    )
-
-    /** PHP Attack - Safeguard against vulnerability exploits in PHP-based applications. */
-    data class PutFirewallConfigResponseActiveCrsPhp(
-        val action: PutFirewallConfigResponseActiveCrsPhpActionEnum,
-        val active: Boolean,
-    )
-
-    /** Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands. */
-    data class PutFirewallConfigResponseActiveCrsRce(
-        val action: PutFirewallConfigResponseActiveCrsRceActionEnum,
-        val active: Boolean,
-    )
-
-    /** Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files. */
-    data class PutFirewallConfigResponseActiveCrsRfi(
-        val action: PutFirewallConfigResponseActiveCrsRfiActionEnum,
-        val active: Boolean,
-    )
-
+    val ma: PutFirewallConfigResponseActiveCrsMa,
+    /**
+     * PHP Attack - Safeguard against vulnerability exploits in PHP-based applications.
+     */
+    val php: PutFirewallConfigResponseActiveCrsPhp,
+    /**
+     * Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands.
+     */
+    val rce: PutFirewallConfigResponseActiveCrsRce,
+    /**
+     * Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files.
+     */
+    val rfi: PutFirewallConfigResponseActiveCrsRfi,
     /**
      * Scanner Detection - Detect and prevent reconnaissance activities from network scanning tools.
      */
-    data class PutFirewallConfigResponseActiveCrsSd(
-        val action: PutFirewallConfigResponseActiveCrsSdActionEnum,
-        val active: Boolean,
-    )
-
+    val sd: PutFirewallConfigResponseActiveCrsSd,
     /**
-     * Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing unique
-     * session IDs.
+     * Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing unique session IDs.
      */
-    data class PutFirewallConfigResponseActiveCrsSf(
-        val action: PutFirewallConfigResponseActiveCrsSfActionEnum,
-        val active: Boolean,
-    )
+    val sf: PutFirewallConfigResponseActiveCrsSf,
+    /**
+     * SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases.
+     */
+    val sqli: PutFirewallConfigResponseActiveCrsSqli,
+    /**
+     * XSS Attack - Prevent injection of malicious scripts into trusted webpages.
+     */
+    val xss: PutFirewallConfigResponseActiveCrsXss
+)
 
-    /** SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases. */
-    data class PutFirewallConfigResponseActiveCrsSqli(
-        val action: PutFirewallConfigResponseActiveCrsSqliActionEnum,
-        val active: Boolean,
-    )
 
-    /** XSS Attack - Prevent injection of malicious scripts into trusted webpages. */
-    data class PutFirewallConfigResponseActiveCrsXss(
-        val action: PutFirewallConfigResponseActiveCrsXssActionEnum,
-        val active: Boolean,
-    )
 
-    /** Custom Ruleset */
-    data class PutFirewallConfigResponseActiveCrs(
-        /**
-         * Generic Attack - Provide broad protection from various undefined or novel attack vectors.
-         */
-        val gen: PutFirewallConfigResponseActiveCrsGen,
-        /**
-         * Java Attack - Mitigate risks of exploitation targeting Java-based applications or
-         * components.
-         */
-        val java: PutFirewallConfigResponseActiveCrsJava,
-        /**
-         * Local File Inclusion Attack - Prevent unauthorized access to local files through web
-         * applications.
-         */
-        val lfi: PutFirewallConfigResponseActiveCrsLfi,
-        /**
-         * Multipart Attack - Block attempts to bypass security controls using multipart/form-data
-         * encoding.
-         */
-        val ma: PutFirewallConfigResponseActiveCrsMa,
-        /** PHP Attack - Safeguard against vulnerability exploits in PHP-based applications. */
-        val php: PutFirewallConfigResponseActiveCrsPhp,
-        /**
-         * Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands.
-         */
-        val rce: PutFirewallConfigResponseActiveCrsRce,
-        /**
-         * Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files.
-         */
-        val rfi: PutFirewallConfigResponseActiveCrsRfi,
-        /**
-         * Scanner Detection - Detect and prevent reconnaissance activities from network scanning
-         * tools.
-         */
-        val sd: PutFirewallConfigResponseActiveCrsSd,
-        /**
-         * Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing
-         * unique session IDs.
-         */
-        val sf: PutFirewallConfigResponseActiveCrsSf,
-        /**
-         * SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases.
-         */
-        val sqli: PutFirewallConfigResponseActiveCrsSqli,
-        /** XSS Attack - Prevent injection of malicious scripts into trusted webpages. */
-        val xss: PutFirewallConfigResponseActiveCrsXss,
-    )
+data class PutFirewallConfigResponseActiveManagedRulesAiBots(
+    val active: Boolean,
+    val action: PutFirewallConfigResponseActiveManagedRulesAiBotsActionEnum? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
 
-    data class PutFirewallConfigResponseActiveManagedRulesAiBots(
-        val active: Boolean,
-        val action: PutFirewallConfigResponseActiveManagedRulesAiBotsActionEnum? = null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
+data class PutFirewallConfigResponseActiveManagedRulesBotProtection(
+    val active: Boolean,
+    val action: PutFirewallConfigResponseActiveManagedRulesBotProtectionActionEnum? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
 
-    data class PutFirewallConfigResponseActiveManagedRulesBotProtection(
-        val active: Boolean,
-        val action: PutFirewallConfigResponseActiveManagedRulesBotProtectionActionEnum? = null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
+data class PutFirewallConfigResponseActiveManagedRulesOwasp(
+    val active: Boolean,
+    val action: PutFirewallConfigResponseActiveManagedRulesOwaspActionEnum? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
 
-    data class PutFirewallConfigResponseActiveManagedRulesOwasp(
-        val active: Boolean,
-        val action: PutFirewallConfigResponseActiveManagedRulesOwaspActionEnum? = null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
+data class PutFirewallConfigResponseActiveManagedRulesTrafficSources(
+    val active: Boolean,
+    val action: PutFirewallConfigResponseActiveManagedRulesTrafficSourcesActionEnum? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
 
-    data class PutFirewallConfigResponseActiveManagedRulesTrafficSources(
-        val active: Boolean,
-        val action: PutFirewallConfigResponseActiveManagedRulesTrafficSourcesActionEnum? = null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
+data class PutFirewallConfigResponseActiveManagedRulesVercelRuleset(
+    val active: Boolean,
+    val action: PutFirewallConfigResponseActiveManagedRulesVercelRulesetActionEnum? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
 
-    data class PutFirewallConfigResponseActiveManagedRulesVercelRuleset(
-        val active: Boolean,
-        val action: PutFirewallConfigResponseActiveManagedRulesVercelRulesetActionEnum? = null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
+data class PutFirewallConfigResponseActiveManagedRules(
+    @com.fasterxml.jackson.annotation.JsonProperty("ai_bots") val aiBots: PutFirewallConfigResponseActiveManagedRulesAiBots? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("bot_protection") val botProtection: PutFirewallConfigResponseActiveManagedRulesBotProtection? = null,
+    val owasp: PutFirewallConfigResponseActiveManagedRulesOwasp? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("traffic_sources") val trafficSources: PutFirewallConfigResponseActiveManagedRulesTrafficSources? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("vercel_ruleset") val vercelRuleset: PutFirewallConfigResponseActiveManagedRulesVercelRuleset? = null
+)
 
-    data class PutFirewallConfigResponseActiveManagedRules(
-        @com.fasterxml.jackson.annotation.JsonProperty("ai_bots")
-        val aiBots: PutFirewallConfigResponseActiveManagedRulesAiBots? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("bot_protection")
-        val botProtection: PutFirewallConfigResponseActiveManagedRulesBotProtection? = null,
-        val owasp: PutFirewallConfigResponseActiveManagedRulesOwasp? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("traffic_sources")
-        val trafficSources: PutFirewallConfigResponseActiveManagedRulesTrafficSources? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("vercel_ruleset")
-        val vercelRuleset: PutFirewallConfigResponseActiveManagedRulesVercelRuleset? = null,
-    )
 
-    data class PutFirewallConfigResponseActiveRulesetsVariant0ItemConditionGX8a3dbcdd01(
-        val op: PutFirewallConfigResponseActiveRulesetsVariant0ItemConditionGXeb0c9b4df7,
-        val type: PutFirewallConfigResponseActiveRulesetsVariant0ItemConditionGX33dd97e67e,
-        val key: String? = null,
-        val neg: Boolean? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
-    )
 
-    data class PutFirewallConfigResponseActiveRulesetsVariant0ItemConditionGroupItem(
-        val conditions:
-            List<PutFirewallConfigResponseActiveRulesetsVariant0ItemConditionGX8a3dbcdd01>
-    )
 
-    data class PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiXb84b8a2182(
-        val algo: PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiX6373a9c123,
-        val keys: List<String>,
-        val limit: Double,
-        val window: Double,
-        val action: PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiX492dd63aa8? =
-            null,
-    )
 
-    data class PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiXdc04eb054c(
-        val location: String,
-        val permanent: Boolean,
-    )
+data class PutFirewallConfigResponseActiveRulesetsVariant0ItemConditionGX8a3dbcdd01(
+    val op: PutFirewallConfigResponseActiveRulesetsVariant0ItemConditionGXeb0c9b4df7,
+    val type: PutFirewallConfigResponseActiveRulesetsVariant0ItemConditionGX33dd97e67e,
+    val key: String? = null,
+    val neg: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+)
 
-    data class PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitigate(
-        val action: PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiXb5c9aa2893,
-        val actionDuration: String? = null,
-        val bypassSystem: Boolean? = null,
-        val logHeaders: Any? = null,
-        val rateLimit: PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiXb84b8a2182? =
-            null,
-        val redirect: PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiXdc04eb054c? =
-            null,
-    )
+data class PutFirewallConfigResponseActiveRulesetsVariant0ItemConditionGroupItem(
+    val conditions: List<PutFirewallConfigResponseActiveRulesetsVariant0ItemConditionGX8a3dbcdd01>
+)
 
-    data class PutFirewallConfigResponseActiveRulesetsVariant0ItemAction(
-        val mitigate: PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitigate? = null
-    )
 
-    data class PutFirewallConfigResponseActiveRulesetsVariant0Item(
-        val active: Boolean,
-        val conditionGroup:
-            List<PutFirewallConfigResponseActiveRulesetsVariant0ItemConditionGroupItem>,
-        val id: String,
-        val name: String,
-        val description: String? = null,
-        val action: PutFirewallConfigResponseActiveRulesetsVariant0ItemAction? = null,
-    )
 
-    data class PutFirewallConfigResponseActiveRulesetsVariant1ValueRateLimit(
-        val algo: PutFirewallConfigResponseActiveRulesetsVariant1ValueRateLimitAlgoEnum,
-        val keys: List<String>,
-        val limit: Double,
-        val window: Double,
-        val action: PutFirewallConfigResponseActiveRulesetsVariant1ValueRateLimitActionEnum? = null,
-    )
 
-    data class PutFirewallConfigResponseActiveRulesetsVariant1ValueRedirect(
-        val location: String,
-        val permanent: Boolean,
-    )
 
-    data class PutFirewallConfigResponseActiveRulesetsVariant1Value(
-        val action: PutFirewallConfigResponseActiveRulesetsVariant1ValueActionEnum,
-        val actionDuration: String? = null,
-        val bypassSystem: Boolean? = null,
-        val logHeaders: Any? = null,
-        val rateLimit: PutFirewallConfigResponseActiveRulesetsVariant1ValueRateLimit? = null,
-        val redirect: PutFirewallConfigResponseActiveRulesetsVariant1ValueRedirect? = null,
-    )
 
-    data class PutFirewallConfigResponseActive(
-        val changes: List<Map<String, Any>>,
-        val firewallEnabled: Boolean,
-        val id: String,
-        val ips: List<PutFirewallConfigResponseActiveIpsItem>,
-        val ownerId: String,
-        val projectKey: String,
-        val rules: List<PutFirewallConfigResponseActiveRulesItem>,
-        val updatedAt: String,
-        val version: Double,
-        val botIdEnabled: Boolean? = null,
-        val conditions: List<PutFirewallConfigResponseActiveConditionsItem>? = null,
-        /** Custom Ruleset */
-        val crs: PutFirewallConfigResponseActiveCrs? = null,
-        val logHeaders: Any? = null,
-        val managedRules: PutFirewallConfigResponseActiveManagedRules? = null,
-        val rulesets: Any? = null,
-    )
 
-    data class PutFirewallConfigResponse(val active: PutFirewallConfigResponseActive)
 
-    data class GetFirewallConfigResponseIpsItem(
-        val action: GetFirewallConfigResponseIpsItemActionEnum,
-        val hostname: String,
-        val id: String,
-        val ip: String,
-        val notes: String? = null,
-    )
 
-    data class GetFirewallConfigResponseConditionsItemConditionGroupItemConditionsItem(
-        val op: GetFirewallConfigResponseConditionsItemConditionGroupItemCondXa31511c02c,
-        val type: GetFirewallConfigResponseConditionsItemConditionGroupItemCondX5a4c5a06e8,
-        val key: String? = null,
-        val neg: Boolean? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
-    )
+data class PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiXb84b8a2182(
+    val algo: PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiX6373a9c123,
+    val keys: List<String>,
+    val limit: Double,
+    val window: Double,
+    val action: PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiX492dd63aa8? = null
+)
 
-    data class GetFirewallConfigResponseConditionsItemConditionGroupItem(
-        val conditions:
-            List<GetFirewallConfigResponseConditionsItemConditionGroupItemConditionsItem>
-    )
+data class PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiXdc04eb054c(
+    val location: String,
+    val permanent: Boolean
+)
 
-    data class GetFirewallConfigResponseConditionsItem(
-        val active: Boolean,
-        val conditionGroup: List<GetFirewallConfigResponseConditionsItemConditionGroupItem>,
-        val id: String,
-        val name: String,
-        val description: String? = null,
-    )
+data class PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitigate(
+    val action: PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiXb5c9aa2893,
+    val actionDuration: String? = null,
+    val bypassSystem: Boolean? = null,
+    val logHeaders: Any? = null,
+    val rateLimit: PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiXb84b8a2182? = null,
+    val redirect: PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitiXdc04eb054c? = null
+)
 
-    /** Generic Attack - Provide broad protection from various undefined or novel attack vectors. */
-    data class GetFirewallConfigResponseCrsGen(
-        val action: GetFirewallConfigResponseCrsGenActionEnum,
-        val active: Boolean,
-    )
+data class PutFirewallConfigResponseActiveRulesetsVariant0ItemAction(
+    val mitigate: PutFirewallConfigResponseActiveRulesetsVariant0ItemActionMitigate? = null
+)
 
+data class PutFirewallConfigResponseActiveRulesetsVariant0Item(
+    val active: Boolean,
+    val conditionGroup: List<PutFirewallConfigResponseActiveRulesetsVariant0ItemConditionGroupItem>,
+    val id: String,
+    val name: String,
+    val description: String? = null,
+    val action: PutFirewallConfigResponseActiveRulesetsVariant0ItemAction? = null
+)
+
+
+
+
+
+
+
+
+
+data class PutFirewallConfigResponseActiveRulesetsVariant1ValueRateLimit(
+    val algo: PutFirewallConfigResponseActiveRulesetsVariant1ValueRateLimitAlgoEnum,
+    val keys: List<String>,
+    val limit: Double,
+    val window: Double,
+    val action: PutFirewallConfigResponseActiveRulesetsVariant1ValueRateLimitActionEnum? = null
+)
+
+data class PutFirewallConfigResponseActiveRulesetsVariant1ValueRedirect(
+    val location: String,
+    val permanent: Boolean
+)
+
+data class PutFirewallConfigResponseActiveRulesetsVariant1Value(
+    val action: PutFirewallConfigResponseActiveRulesetsVariant1ValueActionEnum,
+    val actionDuration: String? = null,
+    val bypassSystem: Boolean? = null,
+    val logHeaders: Any? = null,
+    val rateLimit: PutFirewallConfigResponseActiveRulesetsVariant1ValueRateLimit? = null,
+    val redirect: PutFirewallConfigResponseActiveRulesetsVariant1ValueRedirect? = null
+)
+
+data class PutFirewallConfigResponseActive(
+    val changes: List<Map<String, Any>>,
+    val firewallEnabled: Boolean,
+    val id: String,
+    val ips: List<PutFirewallConfigResponseActiveIpsItem>,
+    val ownerId: String,
+    val projectKey: String,
+    val rules: List<PutFirewallConfigResponseActiveRulesItem>,
+    val updatedAt: String,
+    val version: Double,
+    val botIdEnabled: Boolean? = null,
+    val conditions: List<PutFirewallConfigResponseActiveConditionsItem>? = null,
+    /**
+     * Custom Ruleset
+     */
+    val crs: PutFirewallConfigResponseActiveCrs? = null,
+    val logHeaders: Any? = null,
+    val managedRules: PutFirewallConfigResponseActiveManagedRules? = null,
+    val rulesets: Any? = null
+)
+
+data class PutFirewallConfigResponse(
+    val active: PutFirewallConfigResponseActive
+)
+
+data class GetFirewallConfigResponseIpsItem(
+    val action: GetFirewallConfigResponseIpsItemActionEnum,
+    val hostname: String,
+    val id: String,
+    val ip: String,
+    val notes: String? = null
+)
+
+
+
+
+
+data class GetFirewallConfigResponseConditionsItemConditionGroupItemConditionsItem(
+    val op: GetFirewallConfigResponseConditionsItemConditionGroupItemCondXa31511c02c,
+    val type: GetFirewallConfigResponseConditionsItemConditionGroupItemCondX5a4c5a06e8,
+    val key: String? = null,
+    val neg: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+)
+
+data class GetFirewallConfigResponseConditionsItemConditionGroupItem(
+    val conditions: List<GetFirewallConfigResponseConditionsItemConditionGroupItemConditionsItem>
+)
+
+data class GetFirewallConfigResponseConditionsItem(
+    val active: Boolean,
+    val conditionGroup: List<GetFirewallConfigResponseConditionsItemConditionGroupItem>,
+    val id: String,
+    val name: String,
+    val description: String? = null
+)
+
+/**
+ * Generic Attack - Provide broad protection from various undefined or novel attack vectors.
+ */
+data class GetFirewallConfigResponseCrsGen(
+    val action: GetFirewallConfigResponseCrsGenActionEnum,
+    val active: Boolean
+)
+
+/**
+ * Java Attack - Mitigate risks of exploitation targeting Java-based applications or components.
+ */
+data class GetFirewallConfigResponseCrsJava(
+    val action: GetFirewallConfigResponseCrsJavaActionEnum,
+    val active: Boolean
+)
+
+/**
+ * Local File Inclusion Attack - Prevent unauthorized access to local files through web applications.
+ */
+data class GetFirewallConfigResponseCrsLfi(
+    val action: GetFirewallConfigResponseCrsLfiActionEnum,
+    val active: Boolean
+)
+
+/**
+ * Multipart Attack - Block attempts to bypass security controls using multipart/form-data encoding.
+ */
+data class GetFirewallConfigResponseCrsMa(
+    val action: GetFirewallConfigResponseCrsMaActionEnum,
+    val active: Boolean
+)
+
+/**
+ * PHP Attack - Safeguard against vulnerability exploits in PHP-based applications.
+ */
+data class GetFirewallConfigResponseCrsPhp(
+    val action: GetFirewallConfigResponseCrsPhpActionEnum,
+    val active: Boolean
+)
+
+/**
+ * Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands.
+ */
+data class GetFirewallConfigResponseCrsRce(
+    val action: GetFirewallConfigResponseCrsRceActionEnum,
+    val active: Boolean
+)
+
+/**
+ * Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files.
+ */
+data class GetFirewallConfigResponseCrsRfi(
+    val action: GetFirewallConfigResponseCrsRfiActionEnum,
+    val active: Boolean
+)
+
+/**
+ * Scanner Detection - Detect and prevent reconnaissance activities from network scanning tools.
+ */
+data class GetFirewallConfigResponseCrsSd(
+    val action: GetFirewallConfigResponseCrsSdActionEnum,
+    val active: Boolean
+)
+
+/**
+ * Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing unique session IDs.
+ */
+data class GetFirewallConfigResponseCrsSf(
+    val action: GetFirewallConfigResponseCrsSfActionEnum,
+    val active: Boolean
+)
+
+/**
+ * SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases.
+ */
+data class GetFirewallConfigResponseCrsSqli(
+    val action: GetFirewallConfigResponseCrsSqliActionEnum,
+    val active: Boolean
+)
+
+/**
+ * XSS Attack - Prevent injection of malicious scripts into trusted webpages.
+ */
+data class GetFirewallConfigResponseCrsXss(
+    val action: GetFirewallConfigResponseCrsXssActionEnum,
+    val active: Boolean
+)
+
+/**
+ * Custom Ruleset
+ */
+data class GetFirewallConfigResponseCrs(
+    /**
+     * Generic Attack - Provide broad protection from various undefined or novel attack vectors.
+     */
+    val gen: GetFirewallConfigResponseCrsGen,
     /**
      * Java Attack - Mitigate risks of exploitation targeting Java-based applications or components.
      */
-    data class GetFirewallConfigResponseCrsJava(
-        val action: GetFirewallConfigResponseCrsJavaActionEnum,
-        val active: Boolean,
-    )
-
+    val java: GetFirewallConfigResponseCrsJava,
     /**
-     * Local File Inclusion Attack - Prevent unauthorized access to local files through web
-     * applications.
+     * Local File Inclusion Attack - Prevent unauthorized access to local files through web applications.
      */
-    data class GetFirewallConfigResponseCrsLfi(
-        val action: GetFirewallConfigResponseCrsLfiActionEnum,
-        val active: Boolean,
-    )
-
+    val lfi: GetFirewallConfigResponseCrsLfi,
     /**
-     * Multipart Attack - Block attempts to bypass security controls using multipart/form-data
-     * encoding.
+     * Multipart Attack - Block attempts to bypass security controls using multipart/form-data encoding.
      */
-    data class GetFirewallConfigResponseCrsMa(
-        val action: GetFirewallConfigResponseCrsMaActionEnum,
-        val active: Boolean,
-    )
-
-    /** PHP Attack - Safeguard against vulnerability exploits in PHP-based applications. */
-    data class GetFirewallConfigResponseCrsPhp(
-        val action: GetFirewallConfigResponseCrsPhpActionEnum,
-        val active: Boolean,
-    )
-
-    /** Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands. */
-    data class GetFirewallConfigResponseCrsRce(
-        val action: GetFirewallConfigResponseCrsRceActionEnum,
-        val active: Boolean,
-    )
-
-    /** Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files. */
-    data class GetFirewallConfigResponseCrsRfi(
-        val action: GetFirewallConfigResponseCrsRfiActionEnum,
-        val active: Boolean,
-    )
-
+    val ma: GetFirewallConfigResponseCrsMa,
+    /**
+     * PHP Attack - Safeguard against vulnerability exploits in PHP-based applications.
+     */
+    val php: GetFirewallConfigResponseCrsPhp,
+    /**
+     * Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands.
+     */
+    val rce: GetFirewallConfigResponseCrsRce,
+    /**
+     * Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files.
+     */
+    val rfi: GetFirewallConfigResponseCrsRfi,
     /**
      * Scanner Detection - Detect and prevent reconnaissance activities from network scanning tools.
      */
-    data class GetFirewallConfigResponseCrsSd(
-        val action: GetFirewallConfigResponseCrsSdActionEnum,
-        val active: Boolean,
-    )
-
+    val sd: GetFirewallConfigResponseCrsSd,
     /**
-     * Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing unique
-     * session IDs.
+     * Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing unique session IDs.
      */
-    data class GetFirewallConfigResponseCrsSf(
-        val action: GetFirewallConfigResponseCrsSfActionEnum,
-        val active: Boolean,
-    )
-
-    /** SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases. */
-    data class GetFirewallConfigResponseCrsSqli(
-        val action: GetFirewallConfigResponseCrsSqliActionEnum,
-        val active: Boolean,
-    )
-
-    /** XSS Attack - Prevent injection of malicious scripts into trusted webpages. */
-    data class GetFirewallConfigResponseCrsXss(
-        val action: GetFirewallConfigResponseCrsXssActionEnum,
-        val active: Boolean,
-    )
-
-    /** Custom Ruleset */
-    data class GetFirewallConfigResponseCrs(
-        /**
-         * Generic Attack - Provide broad protection from various undefined or novel attack vectors.
-         */
-        val gen: GetFirewallConfigResponseCrsGen,
-        /**
-         * Java Attack - Mitigate risks of exploitation targeting Java-based applications or
-         * components.
-         */
-        val java: GetFirewallConfigResponseCrsJava,
-        /**
-         * Local File Inclusion Attack - Prevent unauthorized access to local files through web
-         * applications.
-         */
-        val lfi: GetFirewallConfigResponseCrsLfi,
-        /**
-         * Multipart Attack - Block attempts to bypass security controls using multipart/form-data
-         * encoding.
-         */
-        val ma: GetFirewallConfigResponseCrsMa,
-        /** PHP Attack - Safeguard against vulnerability exploits in PHP-based applications. */
-        val php: GetFirewallConfigResponseCrsPhp,
-        /**
-         * Remote Execution Attack - Prevent unauthorized execution of remote scripts or commands.
-         */
-        val rce: GetFirewallConfigResponseCrsRce,
-        /**
-         * Remote File Inclusion Attack - Prohibit unauthorized upload or execution of remote files.
-         */
-        val rfi: GetFirewallConfigResponseCrsRfi,
-        /**
-         * Scanner Detection - Detect and prevent reconnaissance activities from network scanning
-         * tools.
-         */
-        val sd: GetFirewallConfigResponseCrsSd,
-        /**
-         * Session Fixation Attack - Prevent unauthorized takeover of user sessions by enforcing
-         * unique session IDs.
-         */
-        val sf: GetFirewallConfigResponseCrsSf,
-        /**
-         * SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases.
-         */
-        val sqli: GetFirewallConfigResponseCrsSqli,
-        /** XSS Attack - Prevent injection of malicious scripts into trusted webpages. */
-        val xss: GetFirewallConfigResponseCrsXss,
-    )
-
-    data class GetFirewallConfigResponseManagedRulesAiBots(
-        val active: Boolean,
-        val action: GetFirewallConfigResponseManagedRulesAiBotsActionEnum? = null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetFirewallConfigResponseManagedRulesBotProtection(
-        val active: Boolean,
-        val action: GetFirewallConfigResponseManagedRulesBotProtectionActionEnum? = null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetFirewallConfigResponseManagedRulesOwasp(
-        val active: Boolean,
-        val action: GetFirewallConfigResponseManagedRulesOwaspActionEnum? = null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetFirewallConfigResponseManagedRulesTrafficSources(
-        val active: Boolean,
-        val action: GetFirewallConfigResponseManagedRulesTrafficSourcesActionEnum? = null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetFirewallConfigResponseManagedRulesVercelRuleset(
-        val active: Boolean,
-        val action: GetFirewallConfigResponseManagedRulesVercelRulesetActionEnum? = null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class GetFirewallConfigResponseManagedRules(
-        @com.fasterxml.jackson.annotation.JsonProperty("ai_bots")
-        val aiBots: GetFirewallConfigResponseManagedRulesAiBots? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("bot_protection")
-        val botProtection: GetFirewallConfigResponseManagedRulesBotProtection? = null,
-        val owasp: GetFirewallConfigResponseManagedRulesOwasp? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("traffic_sources")
-        val trafficSources: GetFirewallConfigResponseManagedRulesTrafficSources? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("vercel_ruleset")
-        val vercelRuleset: GetFirewallConfigResponseManagedRulesVercelRuleset? = null,
-    )
-
-    data class GetFirewallConfigResponseRulesetsVariant0ItemConditionGroupItXc61589a8a8(
-        val op: GetFirewallConfigResponseRulesetsVariant0ItemConditionGroupItXe5170e12e8,
-        val type: GetFirewallConfigResponseRulesetsVariant0ItemConditionGroupItXe328b47d85,
-        val key: String? = null,
-        val neg: Boolean? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
-    )
-
-    data class GetFirewallConfigResponseRulesetsVariant0ItemConditionGroupItem(
-        val conditions:
-            List<GetFirewallConfigResponseRulesetsVariant0ItemConditionGroupItXc61589a8a8>
-    )
-
-    data class GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateRateLimit(
-        val algo: GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateRaXe17b6e5139,
-        val keys: List<String>,
-        val limit: Double,
-        val window: Double,
-        val action: GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateRaXb80a17d46b? =
-            null,
-    )
-
-    data class GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateRedirect(
-        val location: String,
-        val permanent: Boolean,
-    )
-
-    data class GetFirewallConfigResponseRulesetsVariant0ItemActionMitigate(
-        val action: GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateActionEnum,
-        val actionDuration: String? = null,
-        val bypassSystem: Boolean? = null,
-        val logHeaders: Any? = null,
-        val rateLimit: GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateRateLimit? = null,
-        val redirect: GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateRedirect? = null,
-    )
-
-    data class GetFirewallConfigResponseRulesetsVariant0ItemAction(
-        val mitigate: GetFirewallConfigResponseRulesetsVariant0ItemActionMitigate? = null
-    )
-
-    data class GetFirewallConfigResponseRulesetsVariant0Item(
-        val active: Boolean,
-        val conditionGroup: List<GetFirewallConfigResponseRulesetsVariant0ItemConditionGroupItem>,
-        val id: String,
-        val name: String,
-        val description: String? = null,
-        val action: GetFirewallConfigResponseRulesetsVariant0ItemAction? = null,
-    )
-
-    data class GetFirewallConfigResponseRulesetsVariant1ValueRateLimit(
-        val algo: GetFirewallConfigResponseRulesetsVariant1ValueRateLimitAlgoEnum,
-        val keys: List<String>,
-        val limit: Double,
-        val window: Double,
-        val action: GetFirewallConfigResponseRulesetsVariant1ValueRateLimitActionEnum? = null,
-    )
-
-    data class GetFirewallConfigResponseRulesetsVariant1ValueRedirect(
-        val location: String,
-        val permanent: Boolean,
-    )
-
-    data class GetFirewallConfigResponseRulesetsVariant1Value(
-        val action: GetFirewallConfigResponseRulesetsVariant1ValueActionEnum,
-        val actionDuration: String? = null,
-        val bypassSystem: Boolean? = null,
-        val logHeaders: Any? = null,
-        val rateLimit: GetFirewallConfigResponseRulesetsVariant1ValueRateLimit? = null,
-        val redirect: GetFirewallConfigResponseRulesetsVariant1ValueRedirect? = null,
-    )
-
-    data class GetFirewallConfigResponse(
-        val changes: List<Map<String, Any>>,
-        val firewallEnabled: Boolean,
-        val id: String,
-        val ips: List<GetFirewallConfigResponseIpsItem>,
-        val ownerId: String,
-        val projectKey: String,
-        val rules: List<GetFirewallConfigResponseRulesItem>,
-        val updatedAt: String,
-        val version: Double,
-        val botIdEnabled: Boolean? = null,
-        val conditions: List<GetFirewallConfigResponseConditionsItem>? = null,
-        /** Custom Ruleset */
-        val crs: GetFirewallConfigResponseCrs? = null,
-        val logHeaders: Any? = null,
-        val managedRules: GetFirewallConfigResponseManagedRules? = null,
-        val rulesets: Any? = null,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseIpsItem(
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseIpXada89f5b66,
-        val hostname: String,
-        val id: String,
-        val ip: String,
-        val notes: String? = null,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCoXb3cdec842b(
-        val op: CreateSecurityFirewallConfigByConfigVersionActivateResponseCoX05bb478e38,
-        val type: CreateSecurityFirewallConfigByConfigVersionActivateResponseCoX68ee2d43db,
-        val key: String? = null,
-        val neg: Boolean? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCoX4f2009f79f(
-        val conditions:
-            List<CreateSecurityFirewallConfigByConfigVersionActivateResponseCoXb3cdec842b>
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCoXf08aa2318c(
-        val active: Boolean,
-        val conditionGroup:
-            List<CreateSecurityFirewallConfigByConfigVersionActivateResponseCoX4f2009f79f>,
-        val id: String,
-        val name: String,
-        val description: String? = null,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsGen(
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX53a6ac515e,
-        val active: Boolean,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsJava(
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX2b72b8e14b,
-        val active: Boolean,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsLfi(
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX800de2f26b,
-        val active: Boolean,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsMa(
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrXd290e87431,
-        val active: Boolean,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsPhp(
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX5798b0dedf,
-        val active: Boolean,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsRce(
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrXacd48a5715,
-        val active: Boolean,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsRfi(
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX4900df4784,
-        val active: Boolean,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsSd(
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX85735866ec,
-        val active: Boolean,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsSf(
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX8ad34cac18,
-        val active: Boolean,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsSqli(
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX026273093e,
-        val active: Boolean,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsXss(
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX15a1759256,
-        val active: Boolean,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrs(
-        val gen: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsGen,
-        val java: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsJava,
-        val lfi: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsLfi,
-        val ma: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsMa,
-        val php: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsPhp,
-        val rce: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsRce,
-        val rfi: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsRfi,
-        val sd: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsSd,
-        val sf: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsSf,
-        val sqli: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsSqli,
-        val xss: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsXss,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseMaXc67d451247(
-        val active: Boolean,
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX610b913b04? =
-            null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX181de53991(
-        val active: Boolean,
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX834a319c52? =
-            null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseMaXd8f9e910a9(
-        val active: Boolean,
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX903f93fff2? =
-            null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX0867625da1(
-        val active: Boolean,
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseMaXec200ccd9a? =
-            null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX4d62834f14(
-        val active: Boolean,
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX42fece18f7? =
-            null,
-        val updatedAt: String? = null,
-        val userId: String? = null,
-        val username: String? = null,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseManagedRules(
-        @com.fasterxml.jackson.annotation.JsonProperty("ai_bots")
-        val aiBots: CreateSecurityFirewallConfigByConfigVersionActivateResponseMaXc67d451247? =
-            null,
-        @com.fasterxml.jackson.annotation.JsonProperty("bot_protection")
-        val botProtection:
-            CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX181de53991? =
-            null,
-        val owasp: CreateSecurityFirewallConfigByConfigVersionActivateResponseMaXd8f9e910a9? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("traffic_sources")
-        val trafficSources:
-            CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX0867625da1? =
-            null,
-        @com.fasterxml.jackson.annotation.JsonProperty("vercel_ruleset")
-        val vercelRuleset:
-            CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX4d62834f14? =
-            null,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc63809bb08(
-        val op: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a,
-        val type: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30,
-        val key: String? = null,
-        val neg: Boolean? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXe8c63ad7b2(
-        val conditions:
-            List<CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc63809bb08>
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX65cc68302f(
-        val algo: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7d56867dd6,
-        val keys: List<String>,
-        val limit: Double,
-        val window: Double,
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0c2460bfe? =
-            null,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXae23c4b3a6(
-        val location: String,
-        val permanent: Boolean,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX4284d009d4(
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b,
-        val actionDuration: String? = null,
-        val bypassSystem: Boolean? = null,
-        val logHeaders: Any? = null,
-        val rateLimit: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX65cc68302f? =
-            null,
-        val redirect: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXae23c4b3a6? =
-            null,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd96590877f(
-        val mitigate: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX4284d009d4? =
-            null
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9b64aeace1(
-        val active: Boolean,
-        val conditionGroup:
-            List<CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXe8c63ad7b2>,
-        val id: String,
-        val name: String,
-        val description: String? = null,
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd96590877f? =
-            null,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX93592aa0ef(
-        val algo: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX0168e2e8b2,
-        val keys: List<String>,
-        val limit: Double,
-        val window: Double,
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfc318e7e2c? =
-            null,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX706c4032d6(
-        val location: String,
-        val permanent: Boolean,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXcaf713aa2b(
-        val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08,
-        val actionDuration: String? = null,
-        val bypassSystem: Boolean? = null,
-        val logHeaders: Any? = null,
-        val rateLimit: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX93592aa0ef? =
-            null,
-        val redirect: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX706c4032d6? =
-            null,
-    )
-
-    data class CreateSecurityFirewallConfigByConfigVersionActivateResponse(
-        val changes: List<Map<String, Any>>,
-        val firewallEnabled: Boolean,
-        val id: String,
-        val ips: List<CreateSecurityFirewallConfigByConfigVersionActivateResponseIpsItem>,
-        val ownerId: String,
-        val projectKey: String,
-        val rules: List<CreateSecurityFirewallConfigByConfigVersionActivateResponseRulesItem>,
-        val updatedAt: String,
-        val version: Double,
-        val botIdEnabled: Boolean? = null,
-        val conditions:
-            List<CreateSecurityFirewallConfigByConfigVersionActivateResponseCoXf08aa2318c>? =
-            null,
-        val crs: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrs? = null,
-        val logHeaders: Any? = null,
-        val managedRules: CreateSecurityFirewallConfigByConfigVersionActivateResponseManagedRules? =
-            null,
-        val rulesets: Any? = null,
-    )
-
-    data class GetBypassIpResponseResultItem(
-        @com.fasterxml.jackson.annotation.JsonProperty("CreatedAt") val createdAt: String,
-        @com.fasterxml.jackson.annotation.JsonProperty("Domain") val domain: String,
-        @com.fasterxml.jackson.annotation.JsonProperty("Id") val id: String,
-        @com.fasterxml.jackson.annotation.JsonProperty("Ip") val ip: String,
-        @com.fasterxml.jackson.annotation.JsonProperty("OwnerId") val ownerId: String,
-        @com.fasterxml.jackson.annotation.JsonProperty("UpdatedAt") val updatedAt: String,
-        @com.fasterxml.jackson.annotation.JsonProperty("UpdatedAtHour") val updatedAtHour: String,
-        @com.fasterxml.jackson.annotation.JsonProperty("Action")
-        val action: GetBypassIpResponseResultItemActionEnum? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("ActorId") val actorId: String? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("DeletedAt") val deletedAt: String? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("ExpiresAt") val expiresAt: Double? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("IsProjectRule")
-        val isProjectRule: Boolean? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("Note") val note: String? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("ProjectId") val projectId: String? = null,
-    )
-
-    data class GetBypassIpResponsePagination(
-        @com.fasterxml.jackson.annotation.JsonProperty("Id") val id: String,
-        @com.fasterxml.jackson.annotation.JsonProperty("OwnerId") val ownerId: String,
-    )
-
-    data class GetBypassIpResponse(
-        val result: List<GetBypassIpResponseResultItem>,
-        val pagination: GetBypassIpResponsePagination? = null,
-    )
-
-    data class RemoveBypassIpResponse(val ok: Boolean)
-
-    data class CreateConditionalBypassConditionGroupItem(
-        val conditions: List<CreateConditionalBypassRequestConditionGroupItemConditionsItem>
-    )
-
-    data class CreateConditionalBypassResponseResultConditionGroupItemConditionsItem(
-        val op: CreateConditionalBypassResponseResultConditionGroupItemConditXf704e1f951,
-        val type: CreateConditionalBypassResponseResultConditionGroupItemConditX1e0b70490d,
-        val key: String? = null,
-        val neg: Boolean? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
-    )
-
-    data class CreateConditionalBypassResponseResultConditionGroupItem(
-        val conditions: List<CreateConditionalBypassResponseResultConditionGroupItemConditionsItem>
-    )
-
-    data class CreateConditionalBypassResponseResult(
-        val condition: String,
-        val conditionGroup: List<CreateConditionalBypassResponseResultConditionGroupItem>,
-        val createdAt: String,
-        val domain: String,
-        val id: String,
-        val projectId: String,
-        val updatedAt: String,
-        val note: String? = null,
-    )
-
-    data class CreateConditionalBypassResponse(val result: CreateConditionalBypassResponseResult)
-
-    data class DeleteConditionalBypassResponse(val ok: Boolean)
-
-    data class GetSecurityFirewallEventsResponseActionsItem(
-        val action: String,
-        @com.fasterxml.jackson.annotation.JsonProperty("action_type") val actionType: String,
-        val count: Double,
-        val endTime: String,
-        val host: String,
-        val isActive: Boolean,
-        @com.fasterxml.jackson.annotation.JsonProperty("public_ip") val publicIp: String,
-        @com.fasterxml.jackson.annotation.JsonProperty("ruleId", required = true)
-        val ruleId: String?,
-        @com.fasterxml.jackson.annotation.JsonProperty("ruleName", required = true)
-        val ruleName: String?,
-        val startTime: String,
-    )
-
-    data class GetSecurityFirewallEventsResponsePagination(
-        val hasMore: Boolean,
-        /** Pass as `cursor` to fetch the next page; null when there are no more. */
-        @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?,
-    )
-
-    data class GetSecurityFirewallEventsResponse(
-        val actions: List<GetSecurityFirewallEventsResponseActionsItem>,
-        val pagination: GetSecurityFirewallEventsResponsePagination,
-    )
-
-    data class GetSecurityFirewallEventsSummaryResponse(
-        val blockingIps: Double,
-        val byAction: Map<String, Double>,
-        val byActionType: Map<String, Double>,
-        val challengingIps: Double,
-        val other: Double,
-        val total: Double,
-    )
-
-    data class GenerateFirewallRuleResponseRuleActionMitigateRateLimit(
-        val algo: String,
-        val keys: List<String>,
-        val limit: Double,
-        val window: Double,
-        val action: String? = null,
-    )
-
-    data class GenerateFirewallRuleResponseRuleActionMitigateRedirect(
-        val location: String,
-        val permanent: Boolean,
-    )
-
-    data class GenerateFirewallRuleResponseRuleActionMitigate(
-        val action: String,
-        val actionDuration: String? = null,
-        val rateLimit: GenerateFirewallRuleResponseRuleActionMitigateRateLimit? = null,
-        val redirect: GenerateFirewallRuleResponseRuleActionMitigateRedirect? = null,
-    )
-
-    data class GenerateFirewallRuleResponseRuleAction(
-        val mitigate: GenerateFirewallRuleResponseRuleActionMitigate? = null
-    )
-
-    data class GenerateFirewallRuleResponseRuleConditionGroupItemConditionsItem(
-        val op: String,
-        val type: String,
-        val key: String? = null,
-        val neg: Boolean? = null,
-        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
-    )
-
-    data class GenerateFirewallRuleResponseRuleConditionGroupItem(
-        val conditions: List<GenerateFirewallRuleResponseRuleConditionGroupItemConditionsItem>
-    )
-
-    data class GenerateFirewallRuleResponseRule(
-        val action: GenerateFirewallRuleResponseRuleAction,
-        val active: Boolean,
-        val conditionGroup: List<GenerateFirewallRuleResponseRuleConditionGroupItem>,
-        val name: String,
-        val description: String? = null,
-    )
-
-    data class GenerateFirewallRuleResponse(
-        val error: String? = null,
-        val rule: GenerateFirewallRuleResponseRule? = null,
-    )
+    val sf: GetFirewallConfigResponseCrsSf,
+    /**
+     * SQL Injection Attack - Prohibit unauthorized use of SQL commands to manipulate databases.
+     */
+    val sqli: GetFirewallConfigResponseCrsSqli,
+    /**
+     * XSS Attack - Prevent injection of malicious scripts into trusted webpages.
+     */
+    val xss: GetFirewallConfigResponseCrsXss
+)
+
+
+
+data class GetFirewallConfigResponseManagedRulesAiBots(
+    val active: Boolean,
+    val action: GetFirewallConfigResponseManagedRulesAiBotsActionEnum? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetFirewallConfigResponseManagedRulesBotProtection(
+    val active: Boolean,
+    val action: GetFirewallConfigResponseManagedRulesBotProtectionActionEnum? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetFirewallConfigResponseManagedRulesOwasp(
+    val active: Boolean,
+    val action: GetFirewallConfigResponseManagedRulesOwaspActionEnum? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetFirewallConfigResponseManagedRulesTrafficSources(
+    val active: Boolean,
+    val action: GetFirewallConfigResponseManagedRulesTrafficSourcesActionEnum? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetFirewallConfigResponseManagedRulesVercelRuleset(
+    val active: Boolean,
+    val action: GetFirewallConfigResponseManagedRulesVercelRulesetActionEnum? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class GetFirewallConfigResponseManagedRules(
+    @com.fasterxml.jackson.annotation.JsonProperty("ai_bots") val aiBots: GetFirewallConfigResponseManagedRulesAiBots? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("bot_protection") val botProtection: GetFirewallConfigResponseManagedRulesBotProtection? = null,
+    val owasp: GetFirewallConfigResponseManagedRulesOwasp? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("traffic_sources") val trafficSources: GetFirewallConfigResponseManagedRulesTrafficSources? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("vercel_ruleset") val vercelRuleset: GetFirewallConfigResponseManagedRulesVercelRuleset? = null
+)
+
+
+
+
+
+data class GetFirewallConfigResponseRulesetsVariant0ItemConditionGroupItXc61589a8a8(
+    val op: GetFirewallConfigResponseRulesetsVariant0ItemConditionGroupItXe5170e12e8,
+    val type: GetFirewallConfigResponseRulesetsVariant0ItemConditionGroupItXe328b47d85,
+    val key: String? = null,
+    val neg: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+)
+
+data class GetFirewallConfigResponseRulesetsVariant0ItemConditionGroupItem(
+    val conditions: List<GetFirewallConfigResponseRulesetsVariant0ItemConditionGroupItXc61589a8a8>
+)
+
+
+
+
+
+
+
+
+
+data class GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateRateLimit(
+    val algo: GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateRaXe17b6e5139,
+    val keys: List<String>,
+    val limit: Double,
+    val window: Double,
+    val action: GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateRaXb80a17d46b? = null
+)
+
+data class GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateRedirect(
+    val location: String,
+    val permanent: Boolean
+)
+
+data class GetFirewallConfigResponseRulesetsVariant0ItemActionMitigate(
+    val action: GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateActionEnum,
+    val actionDuration: String? = null,
+    val bypassSystem: Boolean? = null,
+    val logHeaders: Any? = null,
+    val rateLimit: GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateRateLimit? = null,
+    val redirect: GetFirewallConfigResponseRulesetsVariant0ItemActionMitigateRedirect? = null
+)
+
+data class GetFirewallConfigResponseRulesetsVariant0ItemAction(
+    val mitigate: GetFirewallConfigResponseRulesetsVariant0ItemActionMitigate? = null
+)
+
+data class GetFirewallConfigResponseRulesetsVariant0Item(
+    val active: Boolean,
+    val conditionGroup: List<GetFirewallConfigResponseRulesetsVariant0ItemConditionGroupItem>,
+    val id: String,
+    val name: String,
+    val description: String? = null,
+    val action: GetFirewallConfigResponseRulesetsVariant0ItemAction? = null
+)
+
+
+
+
+
+
+
+
+
+data class GetFirewallConfigResponseRulesetsVariant1ValueRateLimit(
+    val algo: GetFirewallConfigResponseRulesetsVariant1ValueRateLimitAlgoEnum,
+    val keys: List<String>,
+    val limit: Double,
+    val window: Double,
+    val action: GetFirewallConfigResponseRulesetsVariant1ValueRateLimitActionEnum? = null
+)
+
+data class GetFirewallConfigResponseRulesetsVariant1ValueRedirect(
+    val location: String,
+    val permanent: Boolean
+)
+
+data class GetFirewallConfigResponseRulesetsVariant1Value(
+    val action: GetFirewallConfigResponseRulesetsVariant1ValueActionEnum,
+    val actionDuration: String? = null,
+    val bypassSystem: Boolean? = null,
+    val logHeaders: Any? = null,
+    val rateLimit: GetFirewallConfigResponseRulesetsVariant1ValueRateLimit? = null,
+    val redirect: GetFirewallConfigResponseRulesetsVariant1ValueRedirect? = null
+)
+
+data class GetFirewallConfigResponse(
+    val changes: List<Map<String, Any>>,
+    val firewallEnabled: Boolean,
+    val id: String,
+    val ips: List<GetFirewallConfigResponseIpsItem>,
+    val ownerId: String,
+    val projectKey: String,
+    val rules: List<GetFirewallConfigResponseRulesItem>,
+    val updatedAt: String,
+    val version: Double,
+    val botIdEnabled: Boolean? = null,
+    val conditions: List<GetFirewallConfigResponseConditionsItem>? = null,
+    /**
+     * Custom Ruleset
+     */
+    val crs: GetFirewallConfigResponseCrs? = null,
+    val logHeaders: Any? = null,
+    val managedRules: GetFirewallConfigResponseManagedRules? = null,
+    val rulesets: Any? = null
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseIpsItem(
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseIpXada89f5b66,
+    val hostname: String,
+    val id: String,
+    val ip: String,
+    val notes: String? = null
+)
+
+
+
+
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCoXb3cdec842b(
+    val op: CreateSecurityFirewallConfigByConfigVersionActivateResponseCoX05bb478e38,
+    val type: CreateSecurityFirewallConfigByConfigVersionActivateResponseCoX68ee2d43db,
+    val key: String? = null,
+    val neg: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCoX4f2009f79f(
+    val conditions: List<CreateSecurityFirewallConfigByConfigVersionActivateResponseCoXb3cdec842b>
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCoXf08aa2318c(
+    val active: Boolean,
+    val conditionGroup: List<CreateSecurityFirewallConfigByConfigVersionActivateResponseCoX4f2009f79f>,
+    val id: String,
+    val name: String,
+    val description: String? = null
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsGen(
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX53a6ac515e,
+    val active: Boolean
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsJava(
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX2b72b8e14b,
+    val active: Boolean
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsLfi(
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX800de2f26b,
+    val active: Boolean
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsMa(
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrXd290e87431,
+    val active: Boolean
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsPhp(
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX5798b0dedf,
+    val active: Boolean
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsRce(
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrXacd48a5715,
+    val active: Boolean
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsRfi(
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX4900df4784,
+    val active: Boolean
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsSd(
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX85735866ec,
+    val active: Boolean
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsSf(
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX8ad34cac18,
+    val active: Boolean
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsSqli(
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX026273093e,
+    val active: Boolean
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsXss(
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrX15a1759256,
+    val active: Boolean
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseCrs(
+    val gen: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsGen,
+    val java: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsJava,
+    val lfi: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsLfi,
+    val ma: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsMa,
+    val php: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsPhp,
+    val rce: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsRce,
+    val rfi: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsRfi,
+    val sd: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsSd,
+    val sf: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsSf,
+    val sqli: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsSqli,
+    val xss: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrsXss
+)
+
+
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseMaXc67d451247(
+    val active: Boolean,
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX610b913b04? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX181de53991(
+    val active: Boolean,
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX834a319c52? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseMaXd8f9e910a9(
+    val active: Boolean,
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX903f93fff2? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX0867625da1(
+    val active: Boolean,
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseMaXec200ccd9a? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX4d62834f14(
+    val active: Boolean,
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX42fece18f7? = null,
+    val updatedAt: String? = null,
+    val userId: String? = null,
+    val username: String? = null
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseManagedRules(
+    @com.fasterxml.jackson.annotation.JsonProperty("ai_bots") val aiBots: CreateSecurityFirewallConfigByConfigVersionActivateResponseMaXc67d451247? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("bot_protection") val botProtection: CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX181de53991? = null,
+    val owasp: CreateSecurityFirewallConfigByConfigVersionActivateResponseMaXd8f9e910a9? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("traffic_sources") val trafficSources: CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX0867625da1? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("vercel_ruleset") val vercelRuleset: CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX4d62834f14? = null
+)
+
+
+
+
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc63809bb08(
+    val op: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a,
+    val type: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30,
+    val key: String? = null,
+    val neg: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXe8c63ad7b2(
+    val conditions: List<CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc63809bb08>
+)
+
+
+
+
+
+
+
+
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX65cc68302f(
+    val algo: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7d56867dd6,
+    val keys: List<String>,
+    val limit: Double,
+    val window: Double,
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0c2460bfe? = null
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXae23c4b3a6(
+    val location: String,
+    val permanent: Boolean
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX4284d009d4(
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b,
+    val actionDuration: String? = null,
+    val bypassSystem: Boolean? = null,
+    val logHeaders: Any? = null,
+    val rateLimit: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX65cc68302f? = null,
+    val redirect: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXae23c4b3a6? = null
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd96590877f(
+    val mitigate: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX4284d009d4? = null
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9b64aeace1(
+    val active: Boolean,
+    val conditionGroup: List<CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXe8c63ad7b2>,
+    val id: String,
+    val name: String,
+    val description: String? = null,
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd96590877f? = null
+)
+
+
+
+
+
+
+
+
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX93592aa0ef(
+    val algo: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX0168e2e8b2,
+    val keys: List<String>,
+    val limit: Double,
+    val window: Double,
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfc318e7e2c? = null
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX706c4032d6(
+    val location: String,
+    val permanent: Boolean
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXcaf713aa2b(
+    val action: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08,
+    val actionDuration: String? = null,
+    val bypassSystem: Boolean? = null,
+    val logHeaders: Any? = null,
+    val rateLimit: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX93592aa0ef? = null,
+    val redirect: CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX706c4032d6? = null
+)
+
+data class CreateSecurityFirewallConfigByConfigVersionActivateResponse(
+    val changes: List<Map<String, Any>>,
+    val firewallEnabled: Boolean,
+    val id: String,
+    val ips: List<CreateSecurityFirewallConfigByConfigVersionActivateResponseIpsItem>,
+    val ownerId: String,
+    val projectKey: String,
+    val rules: List<CreateSecurityFirewallConfigByConfigVersionActivateResponseRulesItem>,
+    val updatedAt: String,
+    val version: Double,
+    val botIdEnabled: Boolean? = null,
+    val conditions: List<CreateSecurityFirewallConfigByConfigVersionActivateResponseCoXf08aa2318c>? = null,
+    val crs: CreateSecurityFirewallConfigByConfigVersionActivateResponseCrs? = null,
+    val logHeaders: Any? = null,
+    val managedRules: CreateSecurityFirewallConfigByConfigVersionActivateResponseManagedRules? = null,
+    val rulesets: Any? = null
+)
+
+data class GetBypassIpResponseResultItem(
+    @com.fasterxml.jackson.annotation.JsonProperty("CreatedAt") val createdAt: String,
+    @com.fasterxml.jackson.annotation.JsonProperty("Domain") val domain: String,
+    @com.fasterxml.jackson.annotation.JsonProperty("Id") val id: String,
+    @com.fasterxml.jackson.annotation.JsonProperty("Ip") val ip: String,
+    @com.fasterxml.jackson.annotation.JsonProperty("OwnerId") val ownerId: String,
+    @com.fasterxml.jackson.annotation.JsonProperty("UpdatedAt") val updatedAt: String,
+    @com.fasterxml.jackson.annotation.JsonProperty("UpdatedAtHour") val updatedAtHour: String,
+    @com.fasterxml.jackson.annotation.JsonProperty("Action") val action: GetBypassIpResponseResultItemActionEnum? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("ActorId") val actorId: String? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("DeletedAt") val deletedAt: String? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("ExpiresAt") val expiresAt: Double? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("IsProjectRule") val isProjectRule: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("Note") val note: String? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("ProjectId") val projectId: String? = null
+)
+
+data class GetBypassIpResponsePagination(
+    @com.fasterxml.jackson.annotation.JsonProperty("Id") val id: String,
+    @com.fasterxml.jackson.annotation.JsonProperty("OwnerId") val ownerId: String
+)
+
+data class GetBypassIpResponse(
+    val result: List<GetBypassIpResponseResultItem>,
+    val pagination: GetBypassIpResponsePagination? = null
+)
+
+data class RemoveBypassIpResponse(
+    val ok: Boolean
+)
+
+data class CreateConditionalBypassConditionGroupItem(
+    val conditions: List<CreateConditionalBypassRequestConditionGroupItemConditionsItem>
+)
+
+
+
+
+
+data class CreateConditionalBypassResponseResultConditionGroupItemConditionsItem(
+    val op: CreateConditionalBypassResponseResultConditionGroupItemConditXf704e1f951,
+    val type: CreateConditionalBypassResponseResultConditionGroupItemConditX1e0b70490d,
+    val key: String? = null,
+    val neg: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+)
+
+data class CreateConditionalBypassResponseResultConditionGroupItem(
+    val conditions: List<CreateConditionalBypassResponseResultConditionGroupItemConditionsItem>
+)
+
+data class CreateConditionalBypassResponseResult(
+    val condition: String,
+    val conditionGroup: List<CreateConditionalBypassResponseResultConditionGroupItem>,
+    val createdAt: String,
+    val domain: String,
+    val id: String,
+    val projectId: String,
+    val updatedAt: String,
+    val note: String? = null
+)
+
+data class CreateConditionalBypassResponse(
+    val result: CreateConditionalBypassResponseResult
+)
+
+data class DeleteConditionalBypassResponse(
+    val ok: Boolean
+)
+
+data class GetSecurityFirewallEventsResponseActionsItem(
+    val action: String,
+    @com.fasterxml.jackson.annotation.JsonProperty("action_type") val actionType: String,
+    val count: Double,
+    val endTime: String,
+    val host: String,
+    val isActive: Boolean,
+    @com.fasterxml.jackson.annotation.JsonProperty("public_ip") val publicIp: String,
+    @com.fasterxml.jackson.annotation.JsonProperty("ruleId", required = true) val ruleId: String?,
+    @com.fasterxml.jackson.annotation.JsonProperty("ruleName", required = true) val ruleName: String?,
+    val startTime: String
+)
+
+data class GetSecurityFirewallEventsResponsePagination(
+    val hasMore: Boolean,
+    /**
+     * Pass as `cursor` to fetch the next page; null when there are no more.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?
+)
+
+data class GetSecurityFirewallEventsResponse(
+    val actions: List<GetSecurityFirewallEventsResponseActionsItem>,
+    val pagination: GetSecurityFirewallEventsResponsePagination
+)
+
+data class GetSecurityFirewallEventsSummaryResponse(
+    val blockingIps: Double,
+    val byAction: Map<String, Double>,
+    val byActionType: Map<String, Double>,
+    val challengingIps: Double,
+    val other: Double,
+    val total: Double
+)
+
+data class GenerateFirewallRuleResponseRuleActionMitigateRateLimit(
+    val algo: String,
+    val keys: List<String>,
+    val limit: Double,
+    val window: Double,
+    val action: String? = null
+)
+
+data class GenerateFirewallRuleResponseRuleActionMitigateRedirect(
+    val location: String,
+    val permanent: Boolean
+)
+
+data class GenerateFirewallRuleResponseRuleActionMitigate(
+    val action: String,
+    val actionDuration: String? = null,
+    val rateLimit: GenerateFirewallRuleResponseRuleActionMitigateRateLimit? = null,
+    val redirect: GenerateFirewallRuleResponseRuleActionMitigateRedirect? = null
+)
+
+data class GenerateFirewallRuleResponseRuleAction(
+    val mitigate: GenerateFirewallRuleResponseRuleActionMitigate? = null
+)
+
+data class GenerateFirewallRuleResponseRuleConditionGroupItemConditionsItem(
+    val op: String,
+    val type: String,
+    val key: String? = null,
+    val neg: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+)
+
+data class GenerateFirewallRuleResponseRuleConditionGroupItem(
+    val conditions: List<GenerateFirewallRuleResponseRuleConditionGroupItemConditionsItem>
+)
+
+data class GenerateFirewallRuleResponseRule(
+    val action: GenerateFirewallRuleResponseRuleAction,
+    val active: Boolean,
+    val conditionGroup: List<GenerateFirewallRuleResponseRuleConditionGroupItem>,
+    val name: String,
+    val description: String? = null
+)
+
+data class GenerateFirewallRuleResponse(
+    val error: String? = null,
+    val rule: GenerateFirewallRuleResponseRule? = null
+)
 
     /** Parameters for [putFirewallConfig]. */
     data class PutFirewallConfigRequest(
@@ -2184,7 +2286,7 @@ object Security {
         val rulesets: Any? = null,
         val ips: List<PutFirewallConfigIpsItem>? = null,
         val botIdEnabled: Boolean? = null,
-        val logHeaders: List<String>? = null,
+        val logHeaders: List<String>? = null
     )
 
     /** Parameters for [getBypassIp]. */
@@ -2196,7 +2298,7 @@ object Security {
         val projectScope: Boolean? = null,
         val offset: String? = null,
         val teamId: String? = null,
-        val slug: String? = null,
+        val slug: String? = null
     )
 
     /** Parameters for [addBypassIp]. */
@@ -2209,7 +2311,7 @@ object Security {
         val sourceIp: String? = null,
         val allSources: Boolean? = null,
         val ttl: Double? = null,
-        val note: String? = null,
+        val note: String? = null
     )
 
     /** Parameters for [removeBypassIp]. */
@@ -2221,7 +2323,7 @@ object Security {
         val projectScope: Boolean? = null,
         val sourceIp: String? = null,
         val allSources: Boolean? = null,
-        val note: String? = null,
+        val note: String? = null
     )
 
     /** Parameters for [getConditionalBypass]. */
@@ -2231,7 +2333,7 @@ object Security {
         val domain: String? = null,
         val limit: Double? = null,
         val offset: String? = null,
-        val teamId: String? = null,
+        val teamId: String? = null
     )
 
     /** Parameters for [createConditionalBypass]. */
@@ -2241,7 +2343,7 @@ object Security {
         val conditionGroup: List<CreateConditionalBypassConditionGroupItem>,
         val slug: String? = null,
         val teamId: String? = null,
-        val note: String? = null,
+        val note: String? = null
     )
 
     /** Parameters for [getSecurityFirewallEvents]. */
@@ -2260,7 +2362,7 @@ object Security {
         val ruleKind: GetSecurityFirewallEventsParameterEnumc35a8c6a? = null,
         val ruleId: List<String>? = null,
         val teamId: String? = null,
-        val slug: String? = null,
+        val slug: String? = null
     )
 
     /** Parameters for [getSecurityFirewallEventsSummary]. */
@@ -2276,55 +2378,34 @@ object Security {
         val ruleKind: GetSecurityFirewallEventsSummaryParameterEnum? = null,
         val ruleId: List<String>? = null,
         val teamId: String? = null,
-        val slug: String? = null,
+        val slug: String? = null
     )
 
     /**
-     * Updates whether Attack Challenge mode is enabled for a project. Supply `projectId` and
-     * `attackModeEnabled`; include `attackModeActiveUntil` when using the request variant that sets
-     * an active-until time. The response includes the updated setting and its update timestamp.
+     * Updates whether Attack Challenge mode is enabled for a project. Supply `projectId` and `attackModeEnabled`; include `attackModeActiveUntil` when using the request variant that sets an active-until time. The response includes the updated setting and its update timestamp.
      */
-    fun updateAttackChallengeMode(
-        clientConfig: ClientConfig,
-        body: Map<String, Any>,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): UpdateAttackChallengeModeResponse =
-        dev.octri.showcase.vercel.methods.SecurityUpdateAttackChallengeModeOperation
-            .updateAttackChallengeMode(
-                clientConfig,
-                body,
-                teamId,
-                slug,
-                options,
-            )
+    fun updateAttackChallengeMode(clientConfig: ClientConfig, body: Map<String, Any>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): UpdateAttackChallengeModeResponse =
+        dev.octri.showcase.vercel.methods.SecurityUpdateAttackChallengeModeOperation.updateAttackChallengeMode(
+            clientConfig,
+            body,
+            teamId,
+            slug,
+            options,
+        )
 
     /**
-     * Retrieves the active and draft firewall configurations for a project, along with its
-     * configuration versions. Use this operation to inspect the current WAF settings and review
-     * available versions before changing or activating a configuration.
+     * Retrieves the active and draft firewall configurations for a project, along with its configuration versions. Use this operation to inspect the current WAF settings and review available versions before changing or activating a configuration.
      */
-    fun getSecurityFirewallConfig(
-        clientConfig: ClientConfig,
-        options: RequestOptions? = null,
-    ): GetSecurityFirewallConfigResponse =
-        dev.octri.showcase.vercel.methods.SecurityGetSecurityFirewallConfigOperation
-            .getSecurityFirewallConfig(
-                clientConfig,
-                options,
-            )
+    fun getSecurityFirewallConfig(clientConfig: ClientConfig, options: RequestOptions? = null): GetSecurityFirewallConfigResponse =
+        dev.octri.showcase.vercel.methods.SecurityGetSecurityFirewallConfigOperation.getSecurityFirewallConfig(
+            clientConfig,
+            options,
+        )
 
     /**
-     * Replaces the firewall configuration for a project, creating a configuration if one does not
-     * already exist. Supply `firewallEnabled` and any firewall settings you want applied, including
-     * rules, rulesets, IP rules, or managed rules.
+     * Replaces the firewall configuration for a project, creating a configuration if one does not already exist. Supply `firewallEnabled` and any firewall settings you want applied, including rules, rulesets, IP rules, or managed rules.
      */
-    fun putFirewallConfig(
-        clientConfig: ClientConfig,
-        request: PutFirewallConfigRequest,
-        options: RequestOptions? = null,
-    ): PutFirewallConfigResponse =
+    fun putFirewallConfig(clientConfig: ClientConfig, request: PutFirewallConfigRequest, options: RequestOptions? = null): PutFirewallConfigResponse =
         dev.octri.showcase.vercel.methods.SecurityPutFirewallConfigOperation.putFirewallConfig(
             clientConfig,
             request,
@@ -2332,40 +2413,22 @@ object Security {
         )
 
     /**
-     * Updates an existing firewall configuration by applying configuration changes. Supply the
-     * appropriate action and values for each change; the accepted body uses action-specific shapes
-     * for firewall settings and rulesets.
+     * Updates an existing firewall configuration by applying configuration changes. Supply the appropriate action and values for each change; the accepted body uses action-specific shapes for firewall settings and rulesets.
      */
-    fun updateFirewallConfig(
-        clientConfig: ClientConfig,
-        projectId: String,
-        body: Map<String, Any>,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Map<String, Any> =
-        dev.octri.showcase.vercel.methods.SecurityUpdateFirewallConfigOperation
-            .updateFirewallConfig(
-                clientConfig,
-                projectId,
-                body,
-                teamId,
-                slug,
-                options,
-            )
+    fun updateFirewallConfig(clientConfig: ClientConfig, projectId: String, body: Map<String, Any>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Map<String, Any> =
+        dev.octri.showcase.vercel.methods.SecurityUpdateFirewallConfigOperation.updateFirewallConfig(
+            clientConfig,
+            projectId,
+            body,
+            teamId,
+            slug,
+            options,
+        )
 
     /**
-     * Retrieves a specific firewall configuration version for a project. Use `configVersion` to
-     * select the version to inspect; the deployed version is identified as `active`.
+     * Retrieves a specific firewall configuration version for a project. Use `configVersion` to select the version to inspect; the deployed version is identified as `active`.
      */
-    fun getFirewallConfig(
-        clientConfig: ClientConfig,
-        configVersion: String,
-        projectId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): GetFirewallConfigResponse =
+    fun getFirewallConfig(clientConfig: ClientConfig, configVersion: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetFirewallConfigResponse =
         dev.octri.showcase.vercel.methods.SecurityGetFirewallConfigOperation.getFirewallConfig(
             clientConfig,
             configVersion,
@@ -2376,70 +2439,42 @@ object Security {
         )
 
     /**
-     * Deletes a firewall configuration version. Supply `configVersion` to identify the version to
-     * remove; use this operation when that version should no longer be available.
+     * Deletes a firewall configuration version. Supply `configVersion` to identify the version to remove; use this operation when that version should no longer be available.
      */
-    fun deleteSecurityFirewallConfigByConfigVersion(
-        clientConfig: ClientConfig,
-        configVersion: String,
-        options: RequestOptions? = null,
-    ): Unit =
-        dev.octri.showcase.vercel.methods
-            .SecurityDeleteSecurityFirewallConfigByConfigVersionOperation
-            .deleteSecurityFirewallConfigByConfigVersion(
-                clientConfig,
-                configVersion,
-                options,
-            )
+    fun deleteSecurityFirewallConfigByConfigVersion(clientConfig: ClientConfig, configVersion: String, options: RequestOptions? = null): Unit =
+        dev.octri.showcase.vercel.methods.SecurityDeleteSecurityFirewallConfigByConfigVersionOperation.deleteSecurityFirewallConfigByConfigVersion(
+            clientConfig,
+            configVersion,
+            options,
+        )
 
     /**
-     * Triggers activation of a draft firewall configuration version. Supply `configVersion` to
-     * select the draft to promote; the response contains the activated configuration.
+     * Triggers activation of a draft firewall configuration version. Supply `configVersion` to select the draft to promote; the response contains the activated configuration.
      */
-    fun createSecurityFirewallConfigByConfigVersionActivate(
-        clientConfig: ClientConfig,
-        configVersion: String,
-        options: RequestOptions? = null,
-    ): CreateSecurityFirewallConfigByConfigVersionActivateResponse =
-        dev.octri.showcase.vercel.methods
-            .SecurityCreateSecurityFirewallConfigByConfigVersionActivateOperation
-            .createSecurityFirewallConfigByConfigVersionActivate(
-                clientConfig,
-                configVersion,
-                options,
-            )
+    fun createSecurityFirewallConfigByConfigVersionActivate(clientConfig: ClientConfig, configVersion: String, options: RequestOptions? = null): CreateSecurityFirewallConfigByConfigVersionActivateResponse =
+        dev.octri.showcase.vercel.methods.SecurityCreateSecurityFirewallConfigByConfigVersionActivateOperation.createSecurityFirewallConfigByConfigVersionActivate(
+            clientConfig,
+            configVersion,
+            options,
+        )
 
     /**
-     * Retrieves recent active attack data for a project. Use `since` to set the lookback period in
-     * days; it defaults to one day when omitted.
+     * Retrieves recent active attack data for a project. Use `since` to set the lookback period in days; it defaults to one day when omitted.
      */
-    fun getActiveAttackStatus(
-        clientConfig: ClientConfig,
-        projectId: String,
-        since: Double? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Map<String, Any> =
-        dev.octri.showcase.vercel.methods.SecurityGetActiveAttackStatusOperation
-            .getActiveAttackStatus(
-                clientConfig,
-                projectId,
-                since,
-                teamId,
-                slug,
-                options,
-            )
+    fun getActiveAttackStatus(clientConfig: ClientConfig, projectId: String, since: Double? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Map<String, Any> =
+        dev.octri.showcase.vercel.methods.SecurityGetActiveAttackStatusOperation.getActiveAttackStatus(
+            clientConfig,
+            projectId,
+            since,
+            teamId,
+            slug,
+            options,
+        )
 
     /**
-     * Lists system bypass rules configured for a project. Filter the results with `sourceIp`,
-     * `domain`, or `projectScope`, and use `offset` and `limit` to page through matching rules.
+     * Lists system bypass rules configured for a project. Filter the results with `sourceIp`, `domain`, or `projectScope`, and use `offset` and `limit` to page through matching rules.
      */
-    fun getBypassIp(
-        clientConfig: ClientConfig,
-        request: GetBypassIpRequest,
-        options: RequestOptions? = null,
-    ): GetBypassIpResponse =
+    fun getBypassIp(clientConfig: ClientConfig, request: GetBypassIpRequest, options: RequestOptions? = null): GetBypassIpResponse =
         dev.octri.showcase.vercel.methods.SecurityGetBypassIpOperation.getBypassIp(
             clientConfig,
             request,
@@ -2447,15 +2482,9 @@ object Security {
         )
 
     /**
-     * Creates a system bypass rule for a project. Supply either `domain` to scope the rule to a
-     * domain or `projectScope` to apply it across project domains; you can also set a source IP,
-     * expiry, and note.
+     * Creates a system bypass rule for a project. Supply either `domain` to scope the rule to a domain or `projectScope` to apply it across project domains; you can also set a source IP, expiry, and note.
      */
-    fun addBypassIp(
-        clientConfig: ClientConfig,
-        request: AddBypassIpRequest,
-        options: RequestOptions? = null,
-    ): AddBypassIpResponse =
+    fun addBypassIp(clientConfig: ClientConfig, request: AddBypassIpRequest, options: RequestOptions? = null): AddBypassIpResponse =
         dev.octri.showcase.vercel.methods.SecurityAddBypassIpOperation.addBypassIp(
             clientConfig,
             request,
@@ -2463,15 +2492,9 @@ object Security {
         )
 
     /**
-     * Deletes system bypass rules for a project. Specify either `domain` or `projectScope` to
-     * identify the scope of the rules to remove, and optionally narrow the selection with source
-     * details.
+     * Deletes system bypass rules for a project. Specify either `domain` or `projectScope` to identify the scope of the rules to remove, and optionally narrow the selection with source details.
      */
-    fun removeBypassIp(
-        clientConfig: ClientConfig,
-        request: RemoveBypassIpRequest,
-        options: RequestOptions? = null,
-    ): RemoveBypassIpResponse =
+    fun removeBypassIp(clientConfig: ClientConfig, request: RemoveBypassIpRequest, options: RequestOptions? = null): RemoveBypassIpResponse =
         dev.octri.showcase.vercel.methods.SecurityRemoveBypassIpOperation.removeBypassIp(
             clientConfig,
             request,
@@ -2479,117 +2502,67 @@ object Security {
         )
 
     /**
-     * Lists conditional firewall bypass rules for a project. Use `projectId` to select the project
-     * and optionally filter by `slug` or `domain`; `limit` and `offset` control the returned
-     * results. The response includes the rules and may include pagination metadata.
+     * Lists conditional firewall bypass rules for a project. Use `projectId` to select the project and optionally filter by `slug` or `domain`; `limit` and `offset` control the returned results. The response includes the rules and may include pagination metadata.
      */
-    fun getConditionalBypass(
-        clientConfig: ClientConfig,
-        request: GetConditionalBypassRequest,
-        options: RequestOptions? = null,
-    ): GetConditionalBypassResponse =
-        dev.octri.showcase.vercel.methods.SecurityGetConditionalBypassOperation
-            .getConditionalBypass(
-                clientConfig,
-                request,
-                options,
-            )
+    fun getConditionalBypass(clientConfig: ClientConfig, request: GetConditionalBypassRequest, options: RequestOptions? = null): GetConditionalBypassResponse =
+        dev.octri.showcase.vercel.methods.SecurityGetConditionalBypassOperation.getConditionalBypass(
+            clientConfig,
+            request,
+            options,
+        )
 
     /**
-     * Creates a conditional firewall bypass rule for a project domain. Provide the domain and a
-     * `conditionGroup` containing the conditions that determine when the bypass applies. You can
-     * add an optional note to describe the rule.
+     * Creates a conditional firewall bypass rule for a project domain. Provide the domain and a `conditionGroup` containing the conditions that determine when the bypass applies. You can add an optional note to describe the rule.
      */
-    fun createConditionalBypass(
-        clientConfig: ClientConfig,
-        request: CreateConditionalBypassRequest,
-        options: RequestOptions? = null,
-    ): CreateConditionalBypassResponse =
-        dev.octri.showcase.vercel.methods.SecurityCreateConditionalBypassOperation
-            .createConditionalBypass(
-                clientConfig,
-                request,
-                options,
-            )
+    fun createConditionalBypass(clientConfig: ClientConfig, request: CreateConditionalBypassRequest, options: RequestOptions? = null): CreateConditionalBypassResponse =
+        dev.octri.showcase.vercel.methods.SecurityCreateConditionalBypassOperation.createConditionalBypass(
+            clientConfig,
+            request,
+            options,
+        )
 
     /**
-     * Deletes a conditional firewall bypass rule for a project domain. Specify the project with
-     * `projectId` and the rule's domain with `domain`. You can use `slug` or `teamId` to perform
-     * the request in a team context.
+     * Deletes a conditional firewall bypass rule for a project domain. Specify the project with `projectId` and the rule's domain with `domain`. You can use `slug` or `teamId` to perform the request in a team context.
      */
-    fun deleteConditionalBypass(
-        clientConfig: ClientConfig,
-        projectId: String,
-        domain: String,
-        slug: String? = null,
-        teamId: String? = null,
-        options: RequestOptions? = null,
-    ): DeleteConditionalBypassResponse =
-        dev.octri.showcase.vercel.methods.SecurityDeleteConditionalBypassOperation
-            .deleteConditionalBypass(
-                clientConfig,
-                projectId,
-                domain,
-                slug,
-                teamId,
-                options,
-            )
+    fun deleteConditionalBypass(clientConfig: ClientConfig, projectId: String, domain: String, slug: String? = null, teamId: String? = null, options: RequestOptions? = null): DeleteConditionalBypassResponse =
+        dev.octri.showcase.vercel.methods.SecurityDeleteConditionalBypassOperation.deleteConditionalBypass(
+            clientConfig,
+            projectId,
+            domain,
+            slug,
+            teamId,
+            options,
+        )
 
     /**
-     * Lists firewall actions for a project, with optional filters for time, host, IP address,
-     * activity, action, and rule. Filters are combined across parameters and matched as
-     * alternatives within repeated parameters; use the returned pagination cursor to fetch
-     * subsequent results. Rule names reflect the project's current active firewall configuration
-     * and active team rulesets.
+     * Lists firewall actions for a project, with optional filters for time, host, IP address, activity, action, and rule. Filters are combined across parameters and matched as alternatives within repeated parameters; use the returned pagination cursor to fetch subsequent results. Rule names reflect the project's current active firewall configuration and active team rulesets.
      */
-    fun getSecurityFirewallEvents(
-        clientConfig: ClientConfig,
-        request: GetSecurityFirewallEventsRequest,
-        options: RequestOptions? = null,
-    ): GetSecurityFirewallEventsResponse =
-        dev.octri.showcase.vercel.methods.SecurityGetSecurityFirewallEventsOperation
-            .getSecurityFirewallEvents(
-                clientConfig,
-                request,
-                options,
-            )
+    fun getSecurityFirewallEvents(clientConfig: ClientConfig, request: GetSecurityFirewallEventsRequest, options: RequestOptions? = null): GetSecurityFirewallEventsResponse =
+        dev.octri.showcase.vercel.methods.SecurityGetSecurityFirewallEventsOperation.getSecurityFirewallEvents(
+            clientConfig,
+            request,
+            options,
+        )
 
     /**
-     * Returns aggregate counts for firewall actions matching the specified project and filters,
-     * without returning individual action rows. The counts represent policies, including policies
-     * that matched no requests. Use the same filter parameters as the firewall actions listing to
-     * scope the summary.
+     * Returns aggregate counts for firewall actions matching the specified project and filters, without returning individual action rows. The counts represent policies, including policies that matched no requests. Use the same filter parameters as the firewall actions listing to scope the summary.
      */
-    fun getSecurityFirewallEventsSummary(
-        clientConfig: ClientConfig,
-        request: GetSecurityFirewallEventsSummaryRequest,
-        options: RequestOptions? = null,
-    ): GetSecurityFirewallEventsSummaryResponse =
-        dev.octri.showcase.vercel.methods.SecurityGetSecurityFirewallEventsSummaryOperation
-            .getSecurityFirewallEventsSummary(
-                clientConfig,
-                request,
-                options,
-            )
+    fun getSecurityFirewallEventsSummary(clientConfig: ClientConfig, request: GetSecurityFirewallEventsSummaryRequest, options: RequestOptions? = null): GetSecurityFirewallEventsSummaryResponse =
+        dev.octri.showcase.vercel.methods.SecurityGetSecurityFirewallEventsSummaryOperation.getSecurityFirewallEventsSummary(
+            clientConfig,
+            request,
+            options,
+        )
 
     /**
-     * Generates a firewall rule from a natural-language description for the selected project or
-     * team context. Use `projectId`, `teamId`, or `slug` to scope the request, then inspect the
-     * returned `rule` or `error`.
+     * Generates a firewall rule from a natural-language description for the selected project or team context. Use `projectId`, `teamId`, or `slug` to scope the request, then inspect the returned `rule` or `error`.
      */
-    fun generateFirewallRule(
-        clientConfig: ClientConfig,
-        projectId: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): GenerateFirewallRuleResponse =
-        dev.octri.showcase.vercel.methods.SecurityGenerateFirewallRuleOperation
-            .generateFirewallRule(
-                clientConfig,
-                projectId,
-                teamId,
-                slug,
-                options,
-            )
+    fun generateFirewallRule(clientConfig: ClientConfig, projectId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GenerateFirewallRuleResponse =
+        dev.octri.showcase.vercel.methods.SecurityGenerateFirewallRuleOperation.generateFirewallRule(
+            clientConfig,
+            projectId,
+            teamId,
+            slug,
+            options,
+        )
 }

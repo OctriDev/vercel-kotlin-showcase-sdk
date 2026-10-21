@@ -3,236 +3,94 @@
 
 package dev.octri.showcase.vercel
 
+
 class DeploymentsNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Retrieves build logs and events for a deployment, either as JSON or as a live stream. Use
-     * `idOrUrl` to identify the deployment and `name` to select a build; use `since`, `until`, and
-     * `statusCode` to filter events. Set `follow` to `1` to receive live events as they happen.
+     * Retrieves build logs and events for a deployment, either as JSON or as a live stream. Use `idOrUrl` to identify the deployment and `name` to select a build; use `since`, `until`, and `statusCode` to filter events. Set `follow` to `1` to receive live events as they happen.
      *
-     * Get the build logs of a deployment by deployment ID and build ID. It can work as an infinite
-     * stream of logs or as a JSON endpoint depending on the input parameters.
+     * Get the build logs of a deployment by deployment ID and build ID. It can work as an infinite stream of logs or as a JSON endpoint depending on the input parameters.
      */
-    fun getEvents(
-        request: dev.octri.showcase.vercel.methods.Deployments.GetDeploymentEventsRequest,
-        options: RequestOptions? = null,
-    ): List<GetDeploymentEventsResponseItem?> {
-        return dev.octri.showcase.vercel.methods.Deployments.getDeploymentEvents(
-            clientConfig,
-            request,
-            options,
-        )
+    fun getEvents(request: dev.octri.showcase.vercel.methods.Deployments.GetDeploymentEventsRequest, options: RequestOptions? = null): List<GetDeploymentEventsResponseItem?> {
+        return dev.octri.showcase.vercel.methods.Deployments.getDeploymentEvents(clientConfig, request, options)
     }
 
     /**
-     * Updates an integration action associated with a deployment resource. Use the path parameters
-     * to identify the deployment, integration installation, resource, and action, then provide any
-     * action status or outcome details in the body. The update is accepted asynchronously with a
-     * 202 response.
+     * Updates an integration action associated with a deployment resource. Use the path parameters to identify the deployment, integration installation, resource, and action, then provide any action status or outcome details in the body. The update is accepted asynchronously with a 202 response.
      *
      * Updates the deployment integration action for the specified integration installation
      */
-    fun updateAction(
-        request:
-            dev.octri.showcase.vercel.methods.Deployments.UpdateIntegrationDeploymentActionRequest,
-        options: RequestOptions? = null,
-    ): Unit {
-        return dev.octri.showcase.vercel.methods.Deployments.updateIntegrationDeploymentAction(
-            clientConfig,
-            request,
-            options,
-        )
+    fun updateAction(request: dev.octri.showcase.vercel.methods.Deployments.UpdateIntegrationDeploymentActionRequest, options: RequestOptions? = null): Unit {
+        return dev.octri.showcase.vercel.methods.Deployments.updateIntegrationDeploymentAction(clientConfig, request, options)
     }
 
     /**
-     * Retrieves a deployment by its unique identifier or hostname. Use `withGitRepoInfo` to include
-     * the `gitSource` object with commit, branch, and repository metadata. The response includes
-     * additional private deployment details when the authenticated user or team owns the
-     * deployment.
+     * Retrieves a deployment by its unique identifier or hostname. Use `withGitRepoInfo` to include the `gitSource` object with commit, branch, and repository metadata. The response includes additional private deployment details when the authenticated user or team owns the deployment.
      *
-     * Retrieves information for a deployment either by supplying its ID (`id` property) or Hostname
-     * (`url` property). Additional details will be included when the authenticated user or team is
-     * an owner of the deployment.
+     * Retrieves information for a deployment either by supplying its ID (`id` property) or Hostname (`url` property). Additional details will be included when the authenticated user or team is an owner of the deployment.
      */
-    fun get(
-        idOrUrl: String,
-        withGitRepoInfo: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): GetDeploymentResponse {
-        return dev.octri.showcase.vercel.methods.Deployments.getDeployment(
-            clientConfig,
-            idOrUrl,
-            withGitRepoInfo,
-            teamId,
-            slug,
-            options,
-        )
+    fun get(idOrUrl: String, withGitRepoInfo: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetDeploymentResponse {
+        return dev.octri.showcase.vercel.methods.Deployments.getDeployment(clientConfig, idOrUrl, withGitRepoInfo, teamId, slug, options)
     }
 
     /**
-     * Creates a deployment for the authenticated team or user and starts its build. Supply `name`
-     * and either a Git source or deployment files for a non-Git deployment; you can also provide a
-     * `deploymentId` to redeploy an existing deployment. Poll the returned `readyState` to track
-     * progress through the build states.
+     * Creates a deployment for the authenticated team or user and starts its build. Supply `name` and either a Git source or deployment files for a non-Git deployment; you can also provide a `deploymentId` to redeploy an existing deployment. Poll the returned `readyState` to track progress through the build states.
      *
-     * Creates a new deployment for the authenticated team or user. For non-git deployments, upload
-     * files first via the file upload API, then reference them here by SHA — or inline small files
-     * directly in the request body. To redeploy an existing deployment, provide its `deploymentId`;
-     * all settings are inherited unless explicitly overridden. The deployment begins building
-     * immediately and transitions through `QUEUED` → `INITIALIZING` → `BUILDING` before reaching
-     * `READY` or `ERROR`.
+     * Creates a new deployment for the authenticated team or user. For non-git deployments, upload files first via the file upload API, then reference them here by SHA — or inline small files directly in the request body. To redeploy an existing deployment, provide its `deploymentId`; all settings are inherited unless explicitly overridden. The deployment begins building immediately and transitions through `QUEUED` → `INITIALIZING` → `BUILDING` before reaching `READY` or `ERROR`.
      */
-    fun create(
-        request: dev.octri.showcase.vercel.methods.Deployments.CreateDeploymentRequest,
-        options: RequestOptions? = null,
-    ): CreateDeploymentResponse {
-        return dev.octri.showcase.vercel.methods.Deployments.createDeployment(
-            clientConfig,
-            request,
-            options,
-        )
+    fun create(request: dev.octri.showcase.vercel.methods.Deployments.CreateDeploymentRequest, options: RequestOptions? = null): CreateDeploymentResponse {
+        return dev.octri.showcase.vercel.methods.Deployments.createDeployment(clientConfig, request, options)
     }
 
     /**
-     * Cancels a deployment that is currently in progress and stops its build before completion. Use
-     * this operation to stop an accidental deployment or a build with known errors; deployments in
-     * `READY`, `ERROR`, or `CANCELED` states are not cancelable. The 200 response returns the
-     * updated deployment with `readyState` set to `CANCELED`, and cancellation is irreversible.
+     * Cancels a deployment that is currently in progress and stops its build before completion. Use this operation to stop an accidental deployment or a build with known errors; deployments in `READY`, `ERROR`, or `CANCELED` states are not cancelable. The 200 response returns the updated deployment with `readyState` set to `CANCELED`, and cancellation is irreversible.
      *
-     * Cancels a deployment that is currently in progress, stopping the build before it completes.
-     * Use this to recover quickly from accidental deploys, wrong-branch pushes, or builds with
-     * known errors — without waiting for them to finish. Returns 400 if the deployment is no longer
-     * cancelable (already `READY`, `ERROR`, or `CANCELED`). Returns the updated deployment object
-     * with `readyState: 'CANCELED'` on success.
+     * Cancels a deployment that is currently in progress, stopping the build before it completes. Use this to recover quickly from accidental deploys, wrong-branch pushes, or builds with known errors — without waiting for them to finish. Returns 400 if the deployment is no longer cancelable (already `READY`, `ERROR`, or `CANCELED`). Returns the updated deployment object with `readyState: 'CANCELED'` on success.
      */
-    fun cancel(
-        id: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Deployments.CancelDeploymentResponse {
-        return dev.octri.showcase.vercel.methods.Deployments.cancelDeployment(
-            clientConfig,
-            id,
-            teamId,
-            slug,
-            options,
-        )
+    fun cancel(id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Deployments.CancelDeploymentResponse {
+        return dev.octri.showcase.vercel.methods.Deployments.cancelDeployment(clientConfig, id, teamId, slug, options)
     }
 
     /**
-     * Uploads a file for use in a deployment. Send the file content as the request body before
-     * creating the deployment that uses it. A successful response confirms the file is already
-     * uploaded or has been uploaded.
+     * Uploads a file for use in a deployment. Send the file content as the request body before creating the deployment that uses it. A successful response confirms the file is already uploaded or has been uploaded.
      *
-     * Before you create a deployment you need to upload the required files for that deployment. To
-     * do it, you need to first upload each file to this endpoint. Once that's completed, you can
-     * create a new deployment with the uploaded files. The file content must be placed inside the
-     * body of the request. In the case of a successful response you'll receive a status code 200
-     * with an empty body.
+     * Before you create a deployment you need to upload the required files for that deployment. To do it, you need to first upload each file to this endpoint. Once that's completed, you can create a new deployment with the uploaded files. The file content must be placed inside the body of the request. In the case of a successful response you'll receive a status code 200 with an empty body.
      */
-    fun uploadFile(
-        request: dev.octri.showcase.vercel.methods.Deployments.UploadFileModelRequest,
-        options: RequestOptions? = null,
-    ): Map<String, Any> {
-        return dev.octri.showcase.vercel.methods.Deployments.uploadFile(
-            clientConfig,
-            request,
-            options,
-        )
+    fun uploadFile(request: dev.octri.showcase.vercel.methods.Deployments.UploadFileModelRequest, options: RequestOptions? = null): Map<String, Any> {
+        return dev.octri.showcase.vercel.methods.Deployments.uploadFile(clientConfig, request, options)
     }
 
     /**
-     * Retrieves the source file tree for a deployment. Use `id` to identify the deployment; a
-     * retrievable file tree is available when the deployment was created with the Vercel CLI or
-     * through the API using the `files` key.
+     * Retrieves the source file tree for a deployment. Use `id` to identify the deployment; a retrievable file tree is available when the deployment was created with the Vercel CLI or through the API using the `files` key.
      *
-     * Allows to retrieve the file structure of the source code of a deployment by supplying the
-     * deployment unique identifier. If the deployment was created with the Vercel CLI or the API
-     * directly with the `files` key, it will have a file tree that can be retrievable.
+     * Allows to retrieve the file structure of the source code of a deployment by supplying the deployment unique identifier. If the deployment was created with the Vercel CLI or the API directly with the `files` key, it will have a file tree that can be retrievable.
      */
-    fun listFiles(
-        id: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): List<FileTree> {
-        return dev.octri.showcase.vercel.methods.Deployments.listDeploymentFiles(
-            clientConfig,
-            id,
-            teamId,
-            slug,
-            options,
-        )
+    fun listFiles(id: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): List<FileTree> {
+        return dev.octri.showcase.vercel.methods.Deployments.listDeploymentFiles(clientConfig, id, teamId, slug, options)
     }
 
     /**
-     * Allows to retrieve the content of a file by supplying the file identifier and the deployment
-     * unique identifier. The response body will contain a JSON response containing the contents of
-     * the file encoded as base64.
+     * Allows to retrieve the content of a file by supplying the file identifier and the deployment unique identifier. The response body will contain a JSON response containing the contents of the file encoded as base64.
      */
-    fun getFileContents(
-        id: String,
-        fileId: String,
-        path: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Any {
-        return dev.octri.showcase.vercel.methods.Deployments.getDeploymentFileContents(
-            clientConfig,
-            id,
-            fileId,
-            path,
-            teamId,
-            slug,
-            options,
-        )
+    fun getFileContents(id: String, fileId: String, path: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Any {
+        return dev.octri.showcase.vercel.methods.Deployments.getDeploymentFileContents(clientConfig, id, fileId, path, teamId, slug, options)
     }
 
     /**
-     * Lists deployments for the authenticated user or team. Use filters such as `projectId`,
-     * `state`, `branch`, or `target` to narrow the results, and use `limit` to set the maximum
-     * number returned. Incomplete deployments have a `url` value of `null`.
+     * Lists deployments for the authenticated user or team. Use filters such as `projectId`, `state`, `branch`, or `target` to narrow the results, and use `limit` to set the maximum number returned. Incomplete deployments have a `url` value of `null`.
      *
-     * List deployments under the authenticated user or team. If a deployment hasn't finished
-     * uploading (is incomplete), the `url` property will have a value of `null`.
+     * List deployments under the authenticated user or team. If a deployment hasn't finished uploading (is incomplete), the `url` property will have a value of `null`.
      */
-    fun getDeployments(
-        request: dev.octri.showcase.vercel.methods.Deployments.GetDeploymentsRequest,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Deployments.GetDeploymentsResponse {
-        return dev.octri.showcase.vercel.methods.Deployments.getDeployments(
-            clientConfig,
-            request,
-            options,
-        )
+    fun getDeployments(request: dev.octri.showcase.vercel.methods.Deployments.GetDeploymentsRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Deployments.GetDeploymentsResponse {
+        return dev.octri.showcase.vercel.methods.Deployments.getDeployments(clientConfig, request, options)
     }
 
     /**
-     * Deletes a deployment identified by its ID or URL. Pass `url` to identify a deployment or
-     * alias URL; when provided, `url` takes precedence over `id`. You can obtain a deployment ID by
-     * listing deployments.
+     * Deletes a deployment identified by its ID or URL. Pass `url` to identify a deployment or alias URL; when provided, `url` takes precedence over `id`. You can obtain a deployment ID by listing deployments.
      *
-     * This API allows you to delete a deployment, either by supplying its `id` in the URL or the
-     * `url` of the deployment as a query parameter. You can obtain the ID, for example, by listing
-     * all deployments.
+     * This API allows you to delete a deployment, either by supplying its `id` in the URL or the `url` of the deployment as a query parameter. You can obtain the ID, for example, by listing all deployments.
      */
-    fun delete(
-        id: String,
-        url: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): dev.octri.showcase.vercel.methods.Deployments.DeleteDeploymentResponse {
-        return dev.octri.showcase.vercel.methods.Deployments.deleteDeployment(
-            clientConfig,
-            id,
-            url,
-            teamId,
-            slug,
-            options,
-        )
+    fun delete(id: String, url: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Deployments.DeleteDeploymentResponse {
+        return dev.octri.showcase.vercel.methods.Deployments.deleteDeployment(clientConfig, id, url, teamId, slug, options)
     }
+
 }

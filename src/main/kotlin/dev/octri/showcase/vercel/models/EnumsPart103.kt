@@ -3,316 +3,168 @@
 
 package dev.octri.showcase.vercel.models
 
-class GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVarX3f8a1af834
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVarX3f8a1af834 &&
-            value == other.value
-
+class GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVarX3f8a1af834 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVarX3f8a1af834 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val BITBUCKET =
-            GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVarX3f8a1af834("bitbucket")
-        @JvmField
-        val GITHUB =
-            GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVarX3f8a1af834("github")
-        @JvmField
-        val GITLAB =
-            GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVarX3f8a1af834("gitlab")
+        @JvmField val BITBUCKET = GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVarX3f8a1af834("bitbucket")
+        @JvmField val GITHUB = GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVarX3f8a1af834("github")
+        @JvmField val GITLAB = GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVarX3f8a1af834("gitlab")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVarX3f8a1af834(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVarX3f8a1af834(value)
     }
 }
 
-class GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVariant1Enum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVariant1Enum &&
-            value == other.value
-
+class GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVariant1Enum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVariant1Enum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val UNKNOWN = GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVariant1Enum("*")
+        @JvmField val UNKNOWN = GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVariant1Enum("*")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVariant1Enum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetStorageStoresByIdResponseStoreProjectFilterGitProvidersVariant1Enum(value)
     }
 }
 
-class GetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymeXadeb9db7fa
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymeXadeb9db7fa &&
-            value == other.value
-
+class GetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymeXadeb9db7fa private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymeXadeb9db7fa && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = GetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymeXadeb9db7fa(false)
-        @JvmField
-        val TRUE = GetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymeXadeb9db7fa(true)
+        @JvmField val FALSE = GetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymeXadeb9db7fa(false)
+        @JvmField val TRUE = GetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymeXadeb9db7fa(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymeXadeb9db7fa(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetStorageStoresByIdResponseStoreProjectsMetadataItemDeploymeXadeb9db7fa(value)
     }
 }
 
-class GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum &&
-            value == other.value
-
+class GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val ACTIX_WEB =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("actix-web")
-        @JvmField
-        val ANGULAR = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("angular")
-        @JvmField
-        val ASH = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("ash")
-        @JvmField
-        val ASTRO = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("astro")
-        @JvmField
-        val AXUM = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("axum")
-        @JvmField
-        val BLITZJS = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("blitzjs")
-        @JvmField
-        val BRUNCH = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("brunch")
-        @JvmField
-        val BUN = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("bun")
-        @JvmField
-        val CONTAINER =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("container")
-        @JvmField
-        val CREATE_REACT_APP =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("create-react-app")
-        @JvmField
-        val DJANGO = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("django")
-        @JvmField
-        val DOCUSAURUS =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("docusaurus")
-        @JvmField
-        val DOCUSAURUS_2 =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("docusaurus-2")
-        @JvmField
-        val DOJO = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("dojo")
-        @JvmField
-        val ELEVENTY =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("eleventy")
-        @JvmField
-        val ELYSIA = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("elysia")
-        @JvmField
-        val EMBER = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("ember")
-        @JvmField
-        val EVE = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("eve")
-        @JvmField
-        val EXPRESS = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("express")
-        @JvmField
-        val FACTORY_EVE =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("factory-eve")
-        @JvmField
-        val FASTAPI = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("fastapi")
-        @JvmField
-        val FASTHTML =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("fasthtml")
-        @JvmField
-        val FASTIFY = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("fastify")
-        @JvmField
-        val FLASK = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("flask")
-        @JvmField
-        val GATSBY = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("gatsby")
+        @JvmField val ACTIX_WEB = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("actix-web")
+        @JvmField val ANGULAR = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("angular")
+        @JvmField val ASH = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("ash")
+        @JvmField val ASTRO = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("astro")
+        @JvmField val AXUM = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("axum")
+        @JvmField val BLITZJS = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("blitzjs")
+        @JvmField val BRUNCH = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("brunch")
+        @JvmField val BUN = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("bun")
+        @JvmField val CONTAINER = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("container")
+        @JvmField val CREATE_REACT_APP = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("create-react-app")
+        @JvmField val DJANGO = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("django")
+        @JvmField val DOCUSAURUS = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("docusaurus")
+        @JvmField val DOCUSAURUS_2 = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("docusaurus-2")
+        @JvmField val DOJO = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("dojo")
+        @JvmField val ELEVENTY = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("eleventy")
+        @JvmField val ELYSIA = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("elysia")
+        @JvmField val EMBER = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("ember")
+        @JvmField val EVE = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("eve")
+        @JvmField val EXPRESS = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("express")
+        @JvmField val FACTORY_EVE = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("factory-eve")
+        @JvmField val FASTAPI = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("fastapi")
+        @JvmField val FASTHTML = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("fasthtml")
+        @JvmField val FASTIFY = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("fastify")
+        @JvmField val FLASK = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("flask")
+        @JvmField val GATSBY = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("gatsby")
         @JvmField val GO = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("go")
-        @JvmField
-        val GRIDSOME =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("gridsome")
+        @JvmField val GRIDSOME = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("gridsome")
         @JvmField val H3 = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("h3")
-        @JvmField
-        val HEXO = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("hexo")
-        @JvmField
-        val HONO = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("hono")
-        @JvmField
-        val HUGO = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("hugo")
-        @JvmField
-        val HYDROGEN =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("hydrogen")
-        @JvmField
-        val IONIC_ANGULAR =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("ionic-angular")
-        @JvmField
-        val IONIC_REACT =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("ionic-react")
-        @JvmField
-        val JEKYLL = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("jekyll")
-        @JvmField
-        val KOA = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("koa")
-        @JvmField
-        val MASTRA = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("mastra")
-        @JvmField
-        val MIDDLEMAN =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("middleman")
-        @JvmField
-        val NESTJS = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("nestjs")
-        @JvmField
-        val NEXTJS = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("nextjs")
-        @JvmField
-        val NITRO = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("nitro")
-        @JvmField
-        val NODE = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("node")
-        @JvmField
-        val NUXTJS = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("nuxtjs")
-        @JvmField
-        val PARCEL = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("parcel")
-        @JvmField
-        val POLYMER = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("polymer")
-        @JvmField
-        val PREACT = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("preact")
-        @JvmField
-        val PYTHON = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("python")
-        @JvmField
-        val REACT_ROUTER =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("react-router")
-        @JvmField
-        val REDWOODJS =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("redwoodjs")
-        @JvmField
-        val REMIX = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("remix")
-        @JvmField
-        val RUBY = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("ruby")
-        @JvmField
-        val RUST = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("rust")
-        @JvmField
-        val SABER = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("saber")
-        @JvmField
-        val SANITY = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("sanity")
-        @JvmField
-        val SANITY_V2 =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("sanity-v2")
-        @JvmField
-        val SAPPER = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("sapper")
-        @JvmField
-        val SCULLY = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("scully")
-        @JvmField
-        val SERVICES =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("services")
-        @JvmField
-        val SOLIDSTART =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("solidstart")
-        @JvmField
-        val SOLIDSTART_1 =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("solidstart-1")
-        @JvmField
-        val STENCIL = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("stencil")
-        @JvmField
-        val STORYBOOK =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("storybook")
-        @JvmField
-        val SVELTE = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("svelte")
-        @JvmField
-        val SVELTEKIT =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("sveltekit")
-        @JvmField
-        val SVELTEKIT_1 =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("sveltekit-1")
-        @JvmField
-        val TANSTACK_START =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("tanstack-start")
-        @JvmField
-        val TANSTACK_START_LOVABLE =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum(
-                "tanstack-start-lovable"
-            )
-        @JvmField
-        val UMIJS = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("umijs")
-        @JvmField
-        val VITE = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("vite")
-        @JvmField
-        val VITEPRESS =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("vitepress")
-        @JvmField
-        val VUE = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("vue")
-        @JvmField
-        val VUEPRESS =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("vuepress")
-        @JvmField
-        val XMCP = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("xmcp")
-        @JvmField
-        val ZOLA = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("zola")
+        @JvmField val HEXO = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("hexo")
+        @JvmField val HONO = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("hono")
+        @JvmField val HUGO = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("hugo")
+        @JvmField val HYDROGEN = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("hydrogen")
+        @JvmField val IONIC_ANGULAR = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("ionic-angular")
+        @JvmField val IONIC_REACT = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("ionic-react")
+        @JvmField val JEKYLL = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("jekyll")
+        @JvmField val KOA = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("koa")
+        @JvmField val MASTRA = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("mastra")
+        @JvmField val MIDDLEMAN = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("middleman")
+        @JvmField val NESTJS = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("nestjs")
+        @JvmField val NEXTJS = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("nextjs")
+        @JvmField val NITRO = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("nitro")
+        @JvmField val NODE = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("node")
+        @JvmField val NUXTJS = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("nuxtjs")
+        @JvmField val PARCEL = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("parcel")
+        @JvmField val POLYMER = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("polymer")
+        @JvmField val PREACT = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("preact")
+        @JvmField val PYTHON = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("python")
+        @JvmField val REACT_ROUTER = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("react-router")
+        @JvmField val REDWOODJS = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("redwoodjs")
+        @JvmField val REMIX = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("remix")
+        @JvmField val RUBY = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("ruby")
+        @JvmField val RUST = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("rust")
+        @JvmField val SABER = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("saber")
+        @JvmField val SANITY = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("sanity")
+        @JvmField val SANITY_V2 = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("sanity-v2")
+        @JvmField val SAPPER = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("sapper")
+        @JvmField val SCULLY = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("scully")
+        @JvmField val SERVICES = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("services")
+        @JvmField val SOLIDSTART = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("solidstart")
+        @JvmField val SOLIDSTART_1 = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("solidstart-1")
+        @JvmField val STENCIL = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("stencil")
+        @JvmField val STORYBOOK = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("storybook")
+        @JvmField val SVELTE = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("svelte")
+        @JvmField val SVELTEKIT = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("sveltekit")
+        @JvmField val SVELTEKIT_1 = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("sveltekit-1")
+        @JvmField val TANSTACK_START = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("tanstack-start")
+        @JvmField val TANSTACK_START_LOVABLE = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("tanstack-start-lovable")
+        @JvmField val UMIJS = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("umijs")
+        @JvmField val VITE = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("vite")
+        @JvmField val VITEPRESS = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("vitepress")
+        @JvmField val VUE = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("vue")
+        @JvmField val VUEPRESS = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("vuepress")
+        @JvmField val XMCP = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("xmcp")
+        @JvmField val ZOLA = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum("zola")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetStorageStoresByIdResponseStoreProjectsMetadataItemFrameworkEnum(value)
     }
 }
 
-class GetStorageStoresByIdResponseStoreProjectsMetadataItemMakeEnvVXa3f30fee35
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetStorageStoresByIdResponseStoreProjectsMetadataItemMakeEnvVXa3f30fee35 &&
-            value == other.value
-
+class GetStorageStoresByIdResponseStoreProjectsMetadataItemMakeEnvVXa3f30fee35 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetStorageStoresByIdResponseStoreProjectsMetadataItemMakeEnvVXa3f30fee35 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = GetStorageStoresByIdResponseStoreProjectsMetadataItemMakeEnvVXa3f30fee35(false)
-        @JvmField
-        val TRUE = GetStorageStoresByIdResponseStoreProjectsMetadataItemMakeEnvVXa3f30fee35(true)
+        @JvmField val FALSE = GetStorageStoresByIdResponseStoreProjectsMetadataItemMakeEnvVXa3f30fee35(false)
+        @JvmField val TRUE = GetStorageStoresByIdResponseStoreProjectsMetadataItemMakeEnvVXa3f30fee35(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetStorageStoresByIdResponseStoreProjectsMetadataItemMakeEnvVXa3f30fee35(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetStorageStoresByIdResponseStoreProjectsMetadataItemMakeEnvVXa3f30fee35(value)
     }
 }
 
-class GetStorageStoresByIdResponseStoreStatusEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetStorageStoresByIdResponseStoreStatusEnum && value == other.value
-
+class GetStorageStoresByIdResponseStoreStatusEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetStorageStoresByIdResponseStoreStatusEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -320,31 +172,22 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val AVAILABLE = GetStorageStoresByIdResponseStoreStatusEnum("available")
         @JvmField val ERROR = GetStorageStoresByIdResponseStoreStatusEnum("error")
         @JvmField val INITIALIZING = GetStorageStoresByIdResponseStoreStatusEnum("initializing")
-        @JvmField
-        val LIMITS_EXCEEDED_SUSPENDED =
-            GetStorageStoresByIdResponseStoreStatusEnum("limits-exceeded-suspended")
-        @JvmField
-        val LIMITS_EXCEEDED_SUSPENDED_STORE_COUNT =
-            GetStorageStoresByIdResponseStoreStatusEnum("limits-exceeded-suspended-store-count")
+        @JvmField val LIMITS_EXCEEDED_SUSPENDED = GetStorageStoresByIdResponseStoreStatusEnum("limits-exceeded-suspended")
+        @JvmField val LIMITS_EXCEEDED_SUSPENDED_STORE_COUNT = GetStorageStoresByIdResponseStoreStatusEnum("limits-exceeded-suspended-store-count")
         @JvmField val ONBOARDING = GetStorageStoresByIdResponseStoreStatusEnum("onboarding")
         @JvmField val SUSPENDED = GetStorageStoresByIdResponseStoreStatusEnum("suspended")
         @JvmField val UNINSTALLED = GetStorageStoresByIdResponseStoreStatusEnum("uninstalled")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = GetStorageStoresByIdResponseStoreStatusEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetStorageStoresByIdResponseStoreStatusEnum(value)
     }
 }
 
-class GetStorageStoresByIdResponseStoreUsageQuotaExceededEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetStorageStoresByIdResponseStoreUsageQuotaExceededEnum && value == other.value
-
+class GetStorageStoresByIdResponseStoreUsageQuotaExceededEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetStorageStoresByIdResponseStoreUsageQuotaExceededEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
@@ -352,22 +195,16 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: B
         @JvmField val FALSE = GetStorageStoresByIdResponseStoreUsageQuotaExceededEnum(false)
         @JvmField val TRUE = GetStorageStoresByIdResponseStoreUsageQuotaExceededEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetStorageStoresByIdResponseStoreUsageQuotaExceededEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetStorageStoresByIdResponseStoreUsageQuotaExceededEnum(value)
     }
 }
 
-class CreateStorageStoresBlobAccessEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is CreateStorageStoresBlobAccessEnum && value == other.value
-
+class CreateStorageStoresBlobAccessEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateStorageStoresBlobAccessEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -375,21 +212,16 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val PUBLIC = CreateStorageStoresBlobAccessEnum("public")
         @JvmField val PRIVATE = CreateStorageStoresBlobAccessEnum("private")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = CreateStorageStoresBlobAccessEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = CreateStorageStoresBlobAccessEnum(value)
     }
 }
 
-class CreateStorageStoresBlobRegionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is CreateStorageStoresBlobRegionEnum && value == other.value
-
+class CreateStorageStoresBlobRegionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateStorageStoresBlobRegionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -415,21 +247,16 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val SYD1 = CreateStorageStoresBlobRegionEnum("syd1")
         @JvmField val YUL1 = CreateStorageStoresBlobRegionEnum("yul1")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = CreateStorageStoresBlobRegionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = CreateStorageStoresBlobRegionEnum(value)
     }
 }
 
-class CreateStorageStoresBlobResponseStoreAccessEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is CreateStorageStoresBlobResponseStoreAccessEnum && value == other.value
-
+class CreateStorageStoresBlobResponseStoreAccessEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateStorageStoresBlobResponseStoreAccessEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -437,21 +264,16 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val PRIVATE = CreateStorageStoresBlobResponseStoreAccessEnum("private")
         @JvmField val PUBLIC = CreateStorageStoresBlobResponseStoreAccessEnum("public")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = CreateStorageStoresBlobResponseStoreAccessEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = CreateStorageStoresBlobResponseStoreAccessEnum(value)
     }
 }
 
-class CreateStorageStoresBlobResponseStoreIsTokenExpiredEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is CreateStorageStoresBlobResponseStoreIsTokenExpiredEnum && value == other.value
-
+class CreateStorageStoresBlobResponseStoreIsTokenExpiredEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateStorageStoresBlobResponseStoreIsTokenExpiredEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
@@ -459,364 +281,193 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: B
         @JvmField val FALSE = CreateStorageStoresBlobResponseStoreIsTokenExpiredEnum(false)
         @JvmField val TRUE = CreateStorageStoresBlobResponseStoreIsTokenExpiredEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            CreateStorageStoresBlobResponseStoreIsTokenExpiredEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = CreateStorageStoresBlobResponseStoreIsTokenExpiredEnum(value)
     }
 }
 
 /**
- * A project-default store is a private blob store that is lazily created per-project, uses OIDC
- * auth instead of read-write tokens, and cannot be modified through standard store mutation APIs.
- * Undefined for legacy stores.
+ * A project-default store is a private blob store that is lazily created per-project, uses OIDC auth instead of read-write tokens, and cannot be modified through standard store mutation APIs. Undefined for legacy stores.
  */
-class CreateStorageStoresBlobResponseStoreKindEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is CreateStorageStoresBlobResponseStoreKindEnum && value == other.value
-
+class CreateStorageStoresBlobResponseStoreKindEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateStorageStoresBlobResponseStoreKindEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val PROJECT_DEFAULT = CreateStorageStoresBlobResponseStoreKindEnum("project-default")
+        @JvmField val PROJECT_DEFAULT = CreateStorageStoresBlobResponseStoreKindEnum("project-default")
         @JvmField val USER_CREATED = CreateStorageStoresBlobResponseStoreKindEnum("user-created")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = CreateStorageStoresBlobResponseStoreKindEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = CreateStorageStoresBlobResponseStoreKindEnum(value)
     }
 }
 
-class CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX7588a69537
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX7588a69537 &&
-            value == other.value
-
+class CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX7588a69537 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX7588a69537 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val BITBUCKET =
-            CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX7588a69537("bitbucket")
-        @JvmField
-        val GITHUB =
-            CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX7588a69537("github")
-        @JvmField
-        val GITLAB =
-            CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX7588a69537("gitlab")
+        @JvmField val BITBUCKET = CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX7588a69537("bitbucket")
+        @JvmField val GITHUB = CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX7588a69537("github")
+        @JvmField val GITLAB = CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX7588a69537("gitlab")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX7588a69537(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX7588a69537(value)
     }
 }
 
-class CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX5ed19ac652
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX5ed19ac652 &&
-            value == other.value
-
+class CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX5ed19ac652 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX5ed19ac652 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val UNKNOWN = CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX5ed19ac652("*")
+        @JvmField val UNKNOWN = CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX5ed19ac652("*")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX5ed19ac652(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = CreateStorageStoresBlobResponseStoreProjectFilterGitProvidersX5ed19ac652(value)
     }
 }
 
-class CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploXe13108aabd
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploXe13108aabd &&
-            value == other.value
-
+class CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploXe13108aabd private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploXe13108aabd && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploXe13108aabd(false)
-        @JvmField
-        val TRUE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploXe13108aabd(true)
+        @JvmField val FALSE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploXe13108aabd(false)
+        @JvmField val TRUE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploXe13108aabd(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploXe13108aabd(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = CreateStorageStoresBlobResponseStoreProjectsMetadataItemDeploXe13108aabd(value)
     }
 }
 
-class CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum &&
-            value == other.value
-
+class CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val ACTIX_WEB =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("actix-web")
-        @JvmField
-        val ANGULAR =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("angular")
-        @JvmField
-        val ASH = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("ash")
-        @JvmField
-        val ASTRO = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("astro")
-        @JvmField
-        val AXUM = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("axum")
-        @JvmField
-        val BLITZJS =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("blitzjs")
-        @JvmField
-        val BRUNCH = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("brunch")
-        @JvmField
-        val BUN = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("bun")
-        @JvmField
-        val CONTAINER =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("container")
-        @JvmField
-        val CREATE_REACT_APP =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum(
-                "create-react-app"
-            )
-        @JvmField
-        val DJANGO = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("django")
-        @JvmField
-        val DOCUSAURUS =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("docusaurus")
-        @JvmField
-        val DOCUSAURUS_2 =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("docusaurus-2")
-        @JvmField
-        val DOJO = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("dojo")
-        @JvmField
-        val ELEVENTY =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("eleventy")
-        @JvmField
-        val ELYSIA = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("elysia")
-        @JvmField
-        val EMBER = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("ember")
-        @JvmField
-        val EVE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("eve")
-        @JvmField
-        val EXPRESS =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("express")
-        @JvmField
-        val FACTORY_EVE =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("factory-eve")
-        @JvmField
-        val FASTAPI =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("fastapi")
-        @JvmField
-        val FASTHTML =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("fasthtml")
-        @JvmField
-        val FASTIFY =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("fastify")
-        @JvmField
-        val FLASK = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("flask")
-        @JvmField
-        val GATSBY = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("gatsby")
-        @JvmField
-        val GO = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("go")
-        @JvmField
-        val GRIDSOME =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("gridsome")
-        @JvmField
-        val H3 = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("h3")
-        @JvmField
-        val HEXO = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("hexo")
-        @JvmField
-        val HONO = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("hono")
-        @JvmField
-        val HUGO = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("hugo")
-        @JvmField
-        val HYDROGEN =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("hydrogen")
-        @JvmField
-        val IONIC_ANGULAR =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("ionic-angular")
-        @JvmField
-        val IONIC_REACT =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("ionic-react")
-        @JvmField
-        val JEKYLL = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("jekyll")
-        @JvmField
-        val KOA = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("koa")
-        @JvmField
-        val MASTRA = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("mastra")
-        @JvmField
-        val MIDDLEMAN =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("middleman")
-        @JvmField
-        val NESTJS = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("nestjs")
-        @JvmField
-        val NEXTJS = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("nextjs")
-        @JvmField
-        val NITRO = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("nitro")
-        @JvmField
-        val NODE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("node")
-        @JvmField
-        val NUXTJS = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("nuxtjs")
-        @JvmField
-        val PARCEL = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("parcel")
-        @JvmField
-        val POLYMER =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("polymer")
-        @JvmField
-        val PREACT = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("preact")
-        @JvmField
-        val PYTHON = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("python")
-        @JvmField
-        val REACT_ROUTER =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("react-router")
-        @JvmField
-        val REDWOODJS =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("redwoodjs")
-        @JvmField
-        val REMIX = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("remix")
-        @JvmField
-        val RUBY = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("ruby")
-        @JvmField
-        val RUST = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("rust")
-        @JvmField
-        val SABER = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("saber")
-        @JvmField
-        val SANITY = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("sanity")
-        @JvmField
-        val SANITY_V2 =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("sanity-v2")
-        @JvmField
-        val SAPPER = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("sapper")
-        @JvmField
-        val SCULLY = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("scully")
-        @JvmField
-        val SERVICES =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("services")
-        @JvmField
-        val SOLIDSTART =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("solidstart")
-        @JvmField
-        val SOLIDSTART_1 =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("solidstart-1")
-        @JvmField
-        val STENCIL =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("stencil")
-        @JvmField
-        val STORYBOOK =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("storybook")
-        @JvmField
-        val SVELTE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("svelte")
-        @JvmField
-        val SVELTEKIT =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("sveltekit")
-        @JvmField
-        val SVELTEKIT_1 =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("sveltekit-1")
-        @JvmField
-        val TANSTACK_START =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("tanstack-start")
-        @JvmField
-        val TANSTACK_START_LOVABLE =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum(
-                "tanstack-start-lovable"
-            )
-        @JvmField
-        val UMIJS = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("umijs")
-        @JvmField
-        val VITE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("vite")
-        @JvmField
-        val VITEPRESS =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("vitepress")
-        @JvmField
-        val VUE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("vue")
-        @JvmField
-        val VUEPRESS =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("vuepress")
-        @JvmField
-        val XMCP = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("xmcp")
-        @JvmField
-        val ZOLA = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("zola")
+        @JvmField val ACTIX_WEB = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("actix-web")
+        @JvmField val ANGULAR = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("angular")
+        @JvmField val ASH = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("ash")
+        @JvmField val ASTRO = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("astro")
+        @JvmField val AXUM = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("axum")
+        @JvmField val BLITZJS = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("blitzjs")
+        @JvmField val BRUNCH = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("brunch")
+        @JvmField val BUN = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("bun")
+        @JvmField val CONTAINER = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("container")
+        @JvmField val CREATE_REACT_APP = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("create-react-app")
+        @JvmField val DJANGO = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("django")
+        @JvmField val DOCUSAURUS = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("docusaurus")
+        @JvmField val DOCUSAURUS_2 = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("docusaurus-2")
+        @JvmField val DOJO = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("dojo")
+        @JvmField val ELEVENTY = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("eleventy")
+        @JvmField val ELYSIA = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("elysia")
+        @JvmField val EMBER = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("ember")
+        @JvmField val EVE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("eve")
+        @JvmField val EXPRESS = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("express")
+        @JvmField val FACTORY_EVE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("factory-eve")
+        @JvmField val FASTAPI = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("fastapi")
+        @JvmField val FASTHTML = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("fasthtml")
+        @JvmField val FASTIFY = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("fastify")
+        @JvmField val FLASK = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("flask")
+        @JvmField val GATSBY = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("gatsby")
+        @JvmField val GO = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("go")
+        @JvmField val GRIDSOME = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("gridsome")
+        @JvmField val H3 = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("h3")
+        @JvmField val HEXO = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("hexo")
+        @JvmField val HONO = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("hono")
+        @JvmField val HUGO = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("hugo")
+        @JvmField val HYDROGEN = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("hydrogen")
+        @JvmField val IONIC_ANGULAR = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("ionic-angular")
+        @JvmField val IONIC_REACT = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("ionic-react")
+        @JvmField val JEKYLL = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("jekyll")
+        @JvmField val KOA = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("koa")
+        @JvmField val MASTRA = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("mastra")
+        @JvmField val MIDDLEMAN = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("middleman")
+        @JvmField val NESTJS = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("nestjs")
+        @JvmField val NEXTJS = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("nextjs")
+        @JvmField val NITRO = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("nitro")
+        @JvmField val NODE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("node")
+        @JvmField val NUXTJS = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("nuxtjs")
+        @JvmField val PARCEL = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("parcel")
+        @JvmField val POLYMER = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("polymer")
+        @JvmField val PREACT = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("preact")
+        @JvmField val PYTHON = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("python")
+        @JvmField val REACT_ROUTER = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("react-router")
+        @JvmField val REDWOODJS = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("redwoodjs")
+        @JvmField val REMIX = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("remix")
+        @JvmField val RUBY = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("ruby")
+        @JvmField val RUST = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("rust")
+        @JvmField val SABER = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("saber")
+        @JvmField val SANITY = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("sanity")
+        @JvmField val SANITY_V2 = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("sanity-v2")
+        @JvmField val SAPPER = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("sapper")
+        @JvmField val SCULLY = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("scully")
+        @JvmField val SERVICES = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("services")
+        @JvmField val SOLIDSTART = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("solidstart")
+        @JvmField val SOLIDSTART_1 = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("solidstart-1")
+        @JvmField val STENCIL = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("stencil")
+        @JvmField val STORYBOOK = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("storybook")
+        @JvmField val SVELTE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("svelte")
+        @JvmField val SVELTEKIT = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("sveltekit")
+        @JvmField val SVELTEKIT_1 = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("sveltekit-1")
+        @JvmField val TANSTACK_START = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("tanstack-start")
+        @JvmField val TANSTACK_START_LOVABLE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("tanstack-start-lovable")
+        @JvmField val UMIJS = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("umijs")
+        @JvmField val VITE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("vite")
+        @JvmField val VITEPRESS = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("vitepress")
+        @JvmField val VUE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("vue")
+        @JvmField val VUEPRESS = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("vuepress")
+        @JvmField val XMCP = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("xmcp")
+        @JvmField val ZOLA = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum("zola")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = CreateStorageStoresBlobResponseStoreProjectsMetadataItemFrameworkEnum(value)
     }
 }
 
-class CreateStorageStoresBlobResponseStoreProjectsMetadataItemMakeEX53b57e5009
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is CreateStorageStoresBlobResponseStoreProjectsMetadataItemMakeEX53b57e5009 &&
-            value == other.value
-
+class CreateStorageStoresBlobResponseStoreProjectsMetadataItemMakeEX53b57e5009 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateStorageStoresBlobResponseStoreProjectsMetadataItemMakeEX53b57e5009 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemMakeEX53b57e5009(false)
-        @JvmField
-        val TRUE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemMakeEX53b57e5009(true)
+        @JvmField val FALSE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemMakeEX53b57e5009(false)
+        @JvmField val TRUE = CreateStorageStoresBlobResponseStoreProjectsMetadataItemMakeEX53b57e5009(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            CreateStorageStoresBlobResponseStoreProjectsMetadataItemMakeEX53b57e5009(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = CreateStorageStoresBlobResponseStoreProjectsMetadataItemMakeEX53b57e5009(value)
     }
 }
 
-class CreateStorageStoresBlobResponseStoreRegionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is CreateStorageStoresBlobResponseStoreRegionEnum && value == other.value
-
+class CreateStorageStoresBlobResponseStoreRegionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateStorageStoresBlobResponseStoreRegionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -842,21 +493,16 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val SYD1 = CreateStorageStoresBlobResponseStoreRegionEnum("syd1")
         @JvmField val YUL1 = CreateStorageStoresBlobResponseStoreRegionEnum("yul1")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = CreateStorageStoresBlobResponseStoreRegionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = CreateStorageStoresBlobResponseStoreRegionEnum(value)
     }
 }
 
-class CreateStorageStoresBlobResponseStoreStatusEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is CreateStorageStoresBlobResponseStoreStatusEnum && value == other.value
-
+class CreateStorageStoresBlobResponseStoreStatusEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateStorageStoresBlobResponseStoreStatusEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -864,31 +510,22 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val AVAILABLE = CreateStorageStoresBlobResponseStoreStatusEnum("available")
         @JvmField val ERROR = CreateStorageStoresBlobResponseStoreStatusEnum("error")
         @JvmField val INITIALIZING = CreateStorageStoresBlobResponseStoreStatusEnum("initializing")
-        @JvmField
-        val LIMITS_EXCEEDED_SUSPENDED =
-            CreateStorageStoresBlobResponseStoreStatusEnum("limits-exceeded-suspended")
-        @JvmField
-        val LIMITS_EXCEEDED_SUSPENDED_STORE_COUNT =
-            CreateStorageStoresBlobResponseStoreStatusEnum("limits-exceeded-suspended-store-count")
+        @JvmField val LIMITS_EXCEEDED_SUSPENDED = CreateStorageStoresBlobResponseStoreStatusEnum("limits-exceeded-suspended")
+        @JvmField val LIMITS_EXCEEDED_SUSPENDED_STORE_COUNT = CreateStorageStoresBlobResponseStoreStatusEnum("limits-exceeded-suspended-store-count")
         @JvmField val ONBOARDING = CreateStorageStoresBlobResponseStoreStatusEnum("onboarding")
         @JvmField val SUSPENDED = CreateStorageStoresBlobResponseStoreStatusEnum("suspended")
         @JvmField val UNINSTALLED = CreateStorageStoresBlobResponseStoreStatusEnum("uninstalled")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = CreateStorageStoresBlobResponseStoreStatusEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = CreateStorageStoresBlobResponseStoreStatusEnum(value)
     }
 }
 
-class CreateStorageStoresBlobResponseStoreUsageQuotaExceededEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is CreateStorageStoresBlobResponseStoreUsageQuotaExceededEnum && value == other.value
-
+class CreateStorageStoresBlobResponseStoreUsageQuotaExceededEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateStorageStoresBlobResponseStoreUsageQuotaExceededEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
@@ -896,52 +533,36 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: B
         @JvmField val FALSE = CreateStorageStoresBlobResponseStoreUsageQuotaExceededEnum(false)
         @JvmField val TRUE = CreateStorageStoresBlobResponseStoreUsageQuotaExceededEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            CreateStorageStoresBlobResponseStoreUsageQuotaExceededEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = CreateStorageStoresBlobResponseStoreUsageQuotaExceededEnum(value)
     }
 }
 
-class ListAccessGroupsResponseVariant1AccessGroupsItemIsDsyncManagedEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is ListAccessGroupsResponseVariant1AccessGroupsItemIsDsyncManagedEnum &&
-            value == other.value
-
+class ListAccessGroupsResponseVariant1AccessGroupsItemIsDsyncManagedEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is ListAccessGroupsResponseVariant1AccessGroupsItemIsDsyncManagedEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = ListAccessGroupsResponseVariant1AccessGroupsItemIsDsyncManagedEnum(false)
-        @JvmField
-        val TRUE = ListAccessGroupsResponseVariant1AccessGroupsItemIsDsyncManagedEnum(true)
+        @JvmField val FALSE = ListAccessGroupsResponseVariant1AccessGroupsItemIsDsyncManagedEnum(false)
+        @JvmField val TRUE = ListAccessGroupsResponseVariant1AccessGroupsItemIsDsyncManagedEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            ListAccessGroupsResponseVariant1AccessGroupsItemIsDsyncManagedEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = ListAccessGroupsResponseVariant1AccessGroupsItemIsDsyncManagedEnum(value)
     }
 }
 
 /**
- * The project role that will be added to this Access Group. "null" will remove this project level
- * role.
+ * The project role that will be added to this Access Group. "null" will remove this project level role.
  */
-class CreateAccessGroupProjectsItemRoleEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is CreateAccessGroupProjectsItemRoleEnum && value == other.value
-
+class CreateAccessGroupProjectsItemRoleEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateAccessGroupProjectsItemRoleEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -950,31 +571,23 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val PROJECT_VIEWER = CreateAccessGroupProjectsItemRoleEnum("PROJECT_VIEWER")
         @JvmField val PROJECT_DEVELOPER = CreateAccessGroupProjectsItemRoleEnum("PROJECT_DEVELOPER")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = CreateAccessGroupProjectsItemRoleEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = CreateAccessGroupProjectsItemRoleEnum(value)
     }
 }
 
-class CreateAccessGroupResponseEntitlementsItemEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is CreateAccessGroupResponseEntitlementsItemEnum && value == other.value
-
+class CreateAccessGroupResponseEntitlementsItemEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is CreateAccessGroupResponseEntitlementsItemEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val V0 = CreateAccessGroupResponseEntitlementsItemEnum("v0")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = CreateAccessGroupResponseEntitlementsItemEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = CreateAccessGroupResponseEntitlementsItemEnum(value)
     }
 }

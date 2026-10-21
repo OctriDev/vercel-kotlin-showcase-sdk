@@ -3,32 +3,56 @@
 
 package dev.octri.showcase.vercel.models
 
-/** A user-facing event type. */
+/**
+ * A user-facing event type.
+ */
 data class ListEventType(
-    /** Categories that group this event type with related event types. */
+    /**
+     * Categories that group this event type with related event types.
+     */
     val categories: List<ListEventTypeCategoriesItemEnum>,
-    /** Description of the event, visible to users in the Activity dashboard and docs. */
+    /**
+     * Description of the event, visible to users in the Activity dashboard and docs.
+     */
     val description: String,
-    /** The name of the event type. */
+    /**
+     * The name of the event type.
+     */
     val name: ListEventTypeNameEnum,
-    /** Present only when this event type is deprecated. */
+    /**
+     * Present only when this event type is deprecated.
+     */
     val deprecated: Boolean? = null,
-    /** Event type names that supersede this deprecated event type. */
-    val replacedBy: List<ListEventTypeReplacedByItemEnum>? = null,
+    /**
+     * Event type names that supersede this deprecated event type.
+     */
+    val replacedBy: List<ListEventTypeReplacedByItemEnum>? = null
 )
 
-/** Required object value serialized in the `categories[]` wire field. */
+/**
+ * Required object value serialized in the `categories[]` wire field.
+ */
 data class ListEventTypesResponseCategoriesItem(
-    /** Required `string` value serialized in the `label` wire field. */
+    /**
+     * Required `string` value serialized in the `label` wire field.
+     */
     val label: String,
-    /** Required enumerated value serialized in the `name` wire field. */
-    val name: ListEventTypesResponseCategoriesItemNameEnum,
+    /**
+     * Required enumerated value serialized in the `name` wire field.
+     */
+    val name: ListEventTypesResponseCategoriesItemNameEnum
 )
 
-/** Response returned by the List Event Types endpoint. */
+/**
+ * Response returned by the List Event Types endpoint.
+ */
 data class ListEventTypesResponse(
-    /** Required array value serialized in the `categories` wire field. */
+    /**
+     * Required array value serialized in the `categories` wire field.
+     */
     val categories: List<ListEventTypesResponseCategoriesItem>,
-    /** Required array value serialized in the `types` wire field. */
-    val types: List<ListEventType>,
+    /**
+     * Required array value serialized in the `types` wire field.
+     */
+    val types: List<ListEventType>
 )

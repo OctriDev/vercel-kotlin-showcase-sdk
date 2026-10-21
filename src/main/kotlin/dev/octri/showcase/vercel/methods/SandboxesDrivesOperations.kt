@@ -10,161 +10,87 @@ import dev.octri.showcase.vercel.Validation
 
 internal object SandboxesListDrivesOperation {
     /**
-     * Lists drives associated with a project in a paginated response. Use `projectId` to select the
-     * project unless the request uses a Vercel OIDC token scoped to one, and use `namePrefix` to
-     * filter by name when sorting by name. Continue through the results with the pagination cursor
-     * returned in the response.
+     * Lists drives associated with a project in a paginated response. Use `projectId` to select the project unless the request uses a Vercel OIDC token scoped to one, and use `namePrefix` to filter by name when sorting by name. Continue through the results with the pagination cursor returned in the response.
      *
      * Retrieves a paginated list of drives belonging to a specific project.
      *
-     * @param projectId The project ID or name associated with the drives. Required unless using a
-     *   Vercel OIDC token scoped to a project.
-     * @param limit Maximum number of drives to return in the response. Used for pagination.
+     * @param projectId The project ID or name associated with the drives. Required
+     *   unless using a Vercel OIDC token scoped to a project.
+     * @param limit Maximum number of drives to return in the response. Used for
+     *   pagination.
      * @param cursor Opaque pagination cursor from a previous response.
      * @param sortBy Field to sort drives by.
-     * @param namePrefix Filter drives whose name starts with this prefix. Only valid when
-     *   sortBy=name.
+     * @param namePrefix Filter drives whose name starts with this prefix. Only valid
+     *   when sortBy=name.
      * @param sortOrder Sort direction for results.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listDrives(
-        clientConfig: ClientConfig,
-        request: Sandboxes.ListDrivesRequest,
-        options: RequestOptions? = null,
-    ): Sandboxes.ListDrivesResponse {
+    fun listDrives(clientConfig: ClientConfig, request: Sandboxes.ListDrivesRequest, options: RequestOptions? = null): Sandboxes.ListDrivesResponse {
         validateListDrivesRequest(request)
 
-        return SdkClient.request<Sandboxes.ListDrivesResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v2/sandboxes/drives",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(request.projectId, "form", true),
-                            "limit" to SdkClient.queryValue(request.limit, "form", true),
-                            "cursor" to SdkClient.queryValue(request.cursor, "form", true),
-                            "sortBy" to SdkClient.queryValue(request.sortBy, "form", true),
-                            "namePrefix" to SdkClient.queryValue(request.namePrefix, "form", true),
-                            "sortOrder" to SdkClient.queryValue(request.sortOrder, "form", true),
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    operationId = "listDrives",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Sandboxes.ListDrivesResponse>(SdkClient.RequestSpec("GET", "/v2/sandboxes/drives", config = clientConfig, query = mapOf("projectId" to
+    SdkClient.queryValue(request.projectId, "form", true), "limit" to SdkClient.queryValue(request.limit, "form", true), "cursor" to
+    SdkClient.queryValue(request.cursor, "form", true), "sortBy" to
+    SdkClient.queryValue(request.sortBy, "form", true), "namePrefix" to
+    SdkClient.queryValue(request.namePrefix, "form", true), "sortOrder" to
+    SdkClient.queryValue(request.sortOrder, "form", true), "teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "listDrives", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
 
     private fun validateListDrivesRequest(request: Sandboxes.ListDrivesRequest) {
         if (request.limit != null) {
-            Validation.validateRange(
-                "limit",
-                request.limit,
-                Validation.RangeOpts(min = 1.0, max = 50.0),
-            )
-        }
+            Validation.validateRange("limit", request.limit, Validation.RangeOpts(min = 1.0, max = 50.0))
+}
     }
 }
 
 internal object SandboxesGetDriveOperation {
     /**
-     * Retrieves a drive by its name or ID within a project. Supply `projectId` unless the request
-     * uses a Vercel OIDC token scoped to a project. The drive name or ID must use only letters,
-     * digits, hyphens, or underscores and be no longer than 64 characters.
+     * Retrieves a drive by its name or ID within a project. Supply `projectId` unless the request uses a Vercel OIDC token scoped to a project. The drive name or ID must use only letters, digits, hyphens, or underscores and be no longer than 64 characters.
      *
      * Gets an existing drive by project and name or drive ID. Returns 404 if doesn't exist.
      *
      * @param nameOrId The drive name or ID.
-     * @param projectId The project ID or name associated with the drive. Required unless using a
-     *   Vercel OIDC token scoped to a project.
+     * @param projectId The project ID or name associated with the drive. Required
+     *   unless using a Vercel OIDC token scoped to a project.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getDrive(
-        clientConfig: ClientConfig,
-        nameOrId: String,
-        projectId: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Sandboxes.GetDriveResponse {
+    fun getDrive(clientConfig: ClientConfig, nameOrId: String, projectId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Sandboxes.GetDriveResponse {
         Validation.validateLength("nameOrId", nameOrId, Validation.LengthOpts(max = 64))
         Validation.validatePattern("nameOrId", nameOrId, "^[a-zA-Z0-9_-]+$")
 
-        return SdkClient.request<Sandboxes.GetDriveResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v2/sandboxes/drives/${SdkClient.encodePathSegment(nameOrId)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(projectId, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "getDrive",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Sandboxes.GetDriveResponse>(SdkClient.RequestSpec("GET", "/v2/sandboxes/drives/${SdkClient.encodePathSegment(nameOrId)}", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getDrive", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 }
 
 internal object SandboxesGetOrCreateDriveOperation {
     /**
-     * Creates a drive with the specified name or retrieves the existing drive with that name in the
-     * project. Use `projectId` to associate the drive with a project unless your Vercel OIDC token
-     * is scoped to one; configure its size with `maxSizeBytes` and storage location with `region`.
-     * The response includes the drive object and its identifier.
+     * Creates a drive with the specified name or retrieves the existing drive with that name in the project. Use `projectId` to associate the drive with a project unless your Vercel OIDC token is scoped to one; configure its size with `maxSizeBytes` and storage location with `region`. The response includes the drive object and its identifier.
      *
      * Gets an existing drive by project and name, or creates it when it does not exist.
      *
-     * @param name Name for the drive. Must be unique per project and URL-safe (alphanumeric,
-     *   hyphens, underscores).
+     * @param name Name for the drive. Must be unique per project and URL-safe
+     *   (alphanumeric, hyphens, underscores).
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param projectId The project ID or name to associate the drive with. Required unless using a
-     *   Vercel OIDC token scoped to a project.
-     * @param maxSizeBytes Maximum drive size in bytes. Must be a multiple of 4096 bytes. Defaults
-     *   to 1 TiB when omitted (1 GiB for Hobby). The maximum quota is 16 TiB. Request a quota above
-     *   16 TiB at vercel.com
+     * @param projectId The project ID or name to associate the drive with. Required
+     *   unless using a Vercel OIDC token scoped to a project.
+     * @param maxSizeBytes Maximum drive size in bytes. Must be a multiple of 4096
+     *   bytes. Defaults to 1 TiB when omitted (1 GiB for Hobby). The maximum quota is
+     *   16 TiB. Request a quota above 16 TiB at vercel.com
      * @param region Region where the drive is stored. Defaults to iad1.
      */
-    fun getOrCreateDrive(
-        clientConfig: ClientConfig,
-        request: Sandboxes.GetOrCreateDriveRequest,
-        options: RequestOptions? = null,
-    ): Sandboxes.GetOrCreateDriveResponse {
+    fun getOrCreateDrive(clientConfig: ClientConfig, request: Sandboxes.GetOrCreateDriveRequest, options: RequestOptions? = null): Sandboxes.GetOrCreateDriveResponse {
         validateGetOrCreateDriveRequest(request)
 
-        return SdkClient.request<Sandboxes.GetOrCreateDriveResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v2/sandboxes/drives/${SdkClient.encodePathSegment(request.name)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    body =
-                        SdkClient.bodyMap(
-                            "projectId" to (SdkClient.omitIfNull(request.projectId)),
-                            "maxSizeBytes" to (SdkClient.omitIfNull(request.maxSizeBytes)),
-                            "region" to (SdkClient.omitIfNull(request.region)),
-                        ),
-                    operationId = "getOrCreateDrive",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Sandboxes.GetOrCreateDriveResponse>(SdkClient.RequestSpec("POST", "/v2/sandboxes/drives/${SdkClient.encodePathSegment(request.name)}", config = clientConfig, query = mapOf("teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("projectId" to (SdkClient.omitIfNull(request.projectId)), "maxSizeBytes" to
+    (SdkClient.omitIfNull(request.maxSizeBytes)), "region" to (SdkClient.omitIfNull(request.region))), operationId = "getOrCreateDrive", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
 
     private fun validateGetOrCreateDriveRequest(request: Sandboxes.GetOrCreateDriveRequest) {
         Validation.validateLength("name", request.name, Validation.LengthOpts(max = 64))
@@ -174,100 +100,46 @@ internal object SandboxesGetOrCreateDriveOperation {
 
 internal object SandboxesDeleteDriveOperation {
     /**
-     * Deletes a drive identified by its name and project. Use this operation to remove a drive that
-     * is no longer needed; a drive attached to a session cannot be deleted, so stop or replace the
-     * session using it before retrying. A successful response includes the deleted drive object.
+     * Deletes a drive identified by its name and project. Use this operation to remove a drive that is no longer needed; a drive attached to a session cannot be deleted, so stop or replace the session using it before retrying. A successful response includes the deleted drive object.
      *
-     * Deletes a drive by project and name. Attached drives cannot be deleted. Stop or replace the
-     * session currently using the drive before retrying deletion.
+     * Deletes a drive by project and name. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.
      *
-     * @param name Name for the drive. Must be unique per project and URL-safe (alphanumeric,
-     *   hyphens, underscores).
-     * @param projectId The project ID or name associated with the drive. Required unless using a
-     *   Vercel OIDC token scoped to a project.
+     * @param name Name for the drive. Must be unique per project and URL-safe
+     *   (alphanumeric, hyphens, underscores).
+     * @param projectId The project ID or name associated with the drive. Required
+     *   unless using a Vercel OIDC token scoped to a project.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun deleteDrive(
-        clientConfig: ClientConfig,
-        name: String,
-        projectId: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Sandboxes.DeleteDriveResponse {
+    fun deleteDrive(clientConfig: ClientConfig, name: String, projectId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Sandboxes.DeleteDriveResponse {
         Validation.validateLength("name", name, Validation.LengthOpts(max = 64))
         Validation.validatePattern("name", name, "^[a-zA-Z0-9_-]+$")
 
-        return SdkClient.request<Sandboxes.DeleteDriveResponse>(
-                SdkClient.RequestSpec(
-                    "DELETE",
-                    "/v2/sandboxes/drives/${SdkClient.encodePathSegment(name)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(projectId, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "deleteDrive",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Sandboxes.DeleteDriveResponse>(SdkClient.RequestSpec("DELETE", "/v2/sandboxes/drives/${SdkClient.encodePathSegment(name)}", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "deleteDrive", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 }
 
 internal object SandboxesForkDriveOperation {
     /**
-     * Forks a source drive into a new drive that inherits the source drive's region and maximum
-     * size. Provide the new drive's name in the request body and identify the project unless your
-     * Vercel OIDC token is scoped to one. The response contains the created drive object.
+     * Forks a source drive into a new drive that inherits the source drive's region and maximum size. Provide the new drive's name in the request body and identify the project unless your Vercel OIDC token is scoped to one. The response contains the created drive object.
      *
-     * Fork the provided drive into a new one with the provided name, inheriting the region and max
-     * size.
+     * Fork the provided drive into a new one with the provided name, inheriting the region and max size.
      *
      * @param name Name of the source drive to fork.
-     * @param name2 Name for the forked drive. Must be unique per project and URL-safe
-     *   (alphanumeric, hyphens, underscores).
-     * @param projectId The project ID or name associated with the drive. Required unless using a
-     *   Vercel OIDC token scoped to a project.
+     * @param name2 Name for the forked drive. Must be unique per project and
+     *   URL-safe (alphanumeric, hyphens, underscores).
+     * @param projectId The project ID or name associated with the drive. Required
+     *   unless using a Vercel OIDC token scoped to a project.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun forkDrive(
-        clientConfig: ClientConfig,
-        name: String,
-        name2: String,
-        projectId: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Sandboxes.ForkDriveResponse {
+    fun forkDrive(clientConfig: ClientConfig, name: String, name2: String, projectId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Sandboxes.ForkDriveResponse {
         Validation.validateLength("name", name, Validation.LengthOpts(max = 64))
         Validation.validatePattern("name", name, "^[a-zA-Z0-9_-]+$")
 
         Validation.validateLength("name", name2, Validation.LengthOpts(max = 64))
         Validation.validatePattern("name", name2, "^[a-zA-Z0-9_-]+$")
 
-        return SdkClient.request<Sandboxes.ForkDriveResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v2/sandboxes/drives/${SdkClient.encodePathSegment(name)}/fork",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(projectId, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    body = SdkClient.bodyMap("name" to (name2)),
-                    operationId = "forkDrive",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Sandboxes.ForkDriveResponse>(SdkClient.RequestSpec("POST", "/v2/sandboxes/drives/${SdkClient.encodePathSegment(name)}/fork", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("name" to (name2)), operationId = "forkDrive", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 }

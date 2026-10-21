@@ -16,128 +16,68 @@ import dev.octri.showcase.vercel.VcrRepositoryPermissionList
 
 internal object VcrCreateRepositoryOperation {
     /**
-     * Creates a container registry repository for a project. Supply `projectId` and `name` in the
-     * request body; the name must follow the allowed lowercase repository-name format. The `teamId`
-     * or `slug` query parameter selects the team to act on behalf of.
+     * Creates a container registry repository for a project. Supply `projectId` and `name` in the request body; the name must follow the allowed lowercase repository-name format. The `teamId` or `slug` query parameter selects the team to act on behalf of.
      *
      * Create a container registry repository for a project.
      *
-     * @param projectId Project ID or name (slug) within the authenticated team. IDs take precedence
-     *   over names. Missing or empty values return HTTP 400.
+     * @param projectId Project ID or name (slug) within the authenticated team. IDs
+     *   take precedence over names. Missing or empty values return HTTP 400.
      * @param name Single Docker repository name component.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun createRepository(
-        clientConfig: ClientConfig,
-        projectId: String,
-        name: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Vcr.CreateRepositoryResponse {
+    fun createRepository(clientConfig: ClientConfig, projectId: String, name: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Vcr.CreateRepositoryResponse {
         Validation.validateLength("name", name, Validation.LengthOpts(max = 255))
         Validation.validatePattern("name", name, "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$")
 
-        return SdkClient.request<Vcr.CreateRepositoryResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v1/vcr/repository",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    body = SdkClient.bodyMap("projectId" to (projectId), "name" to (name)),
-                    operationId = "createRepository",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Vcr.CreateRepositoryResponse>(SdkClient.RequestSpec("POST", "/v1/vcr/repository", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("projectId" to (projectId), "name" to (name)), operationId = "createRepository", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 }
 
 internal object VcrListRepositoriesOperation {
     /**
-     * Lists container registry repositories for a project in the authenticated team. Supply
-     * `projectId` to select the project; use `cursor` to continue through paginated results and
-     * `limit` to control the page size.
+     * Lists container registry repositories for a project in the authenticated team. Supply `projectId` to select the project; use `cursor` to continue through paginated results and `limit` to control the page size.
      *
      * List container registry repositories for a project.
      *
-     * @param projectId Project ID or name (slug) within the authenticated team. IDs take precedence
-     *   over names. Missing or empty values return HTTP 400.
+     * @param projectId Project ID or name (slug) within the authenticated team. IDs
+     *   take precedence over names. Missing or empty values return HTTP 400.
      * @param cursor Opaque pagination cursor returned by a previous list response.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listRepositories(
-        clientConfig: ClientConfig,
-        projectId: String,
-        limit: Long? = null,
-        cursor: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): VcrRepositoryList {
+    fun listRepositories(clientConfig: ClientConfig, projectId: String, limit: Long? = null, cursor: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): VcrRepositoryList {
         if (limit != null) {
             Validation.validateRange("limit", limit, Validation.RangeOpts(min = 1.0, max = 1000.0))
-        }
+}
 
         if (cursor != null) {
             Validation.validateLength("cursor", cursor, Validation.LengthOpts(max = 1024))
-        }
+}
 
-        return SdkClient.request<VcrRepositoryList>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/vcr/repository",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(projectId, "form", true),
-                            "limit" to SdkClient.queryValue(limit, "form", true),
-                            "cursor" to SdkClient.queryValue(cursor, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "listRepositories",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<VcrRepositoryList>(SdkClient.RequestSpec("GET", "/v1/vcr/repository", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true), "limit" to SdkClient.queryValue(limit, "form", true), "cursor" to SdkClient.queryValue(cursor, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "listRepositories", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
+
+
+
+
+
     /**
-     * Lists container registry repositories for a project in the authenticated team. Supply
-     * `projectId` to select the project; use `cursor` to continue through paginated results and
-     * `limit` to control the page size.
+     * Lists container registry repositories for a project in the authenticated team. Supply `projectId` to select the project; use `cursor` to continue through paginated results and `limit` to control the page size.
      *
      * List container registry repositories for a project.
      *
-     * @param projectId Project ID or name (slug) within the authenticated team. IDs take precedence
-     *   over names. Missing or empty values return HTTP 400.
+     * @param projectId Project ID or name (slug) within the authenticated team. IDs
+     *   take precedence over names. Missing or empty values return HTTP 400.
      * @param cursor Opaque pagination cursor returned by a previous list response.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listRepositoriesPaginated(
-        clientConfig: ClientConfig,
-        projectId: String,
-        limit: Long? = null,
-        cursor: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-        yieldFn: (VcrRepository) -> Boolean,
-    ) {
+    fun listRepositoriesPaginated(clientConfig: ClientConfig, projectId: String, limit: Long? = null, cursor: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null, yieldFn: (VcrRepository) -> Boolean) {
         var cursor = cursor
         while (true) {
-            val page =
-                listRepositories(clientConfig, projectId, limit, cursor, teamId, slug, options)
+            val page = listRepositories(clientConfig, projectId, limit, cursor, teamId, slug, options)
             val items = page.repositories.orEmpty()
             if (items.isEmpty()) return
             for (item in items) {
@@ -148,20 +88,12 @@ internal object VcrListRepositoriesOperation {
         }
     }
 
-    fun listRepositoriesPages(
-        clientConfig: ClientConfig,
-        projectId: String,
-        limit: Long? = null,
-        cursor: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-        yieldPage: (Vcr.ListRepositoriesPage) -> Boolean,
-    ) {
+
+
+    fun listRepositoriesPages(clientConfig: ClientConfig, projectId: String, limit: Long? = null, cursor: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null, yieldPage: (Vcr.ListRepositoriesPage) -> Boolean) {
         var cursor = cursor
         while (true) {
-            val page =
-                listRepositories(clientConfig, projectId, limit, cursor, teamId, slug, options)
+            val page = listRepositories(clientConfig, projectId, limit, cursor, teamId, slug, options)
             val items = page.repositories.orEmpty()
             if (items.isEmpty()) return
             val nextCursor = page.nextCursor
@@ -175,170 +107,91 @@ internal object VcrListRepositoriesOperation {
 
 internal object VcrGetRepositoryOperation {
     /**
-     * Retrieves a container registry repository for a project by its identifier or name. Supply
-     * `projectId` to select the project; IDs take precedence over names when identifying the
-     * project.
+     * Retrieves a container registry repository for a project by its identifier or name. Supply `projectId` to select the project; IDs take precedence over names when identifying the project.
      *
      * Fetch a container registry repository for a project by ID or name.
      *
-     * @param projectId Project ID or name (slug) within the authenticated team. IDs take precedence
-     *   over names. Missing or empty values return HTTP 400.
+     * @param projectId Project ID or name (slug) within the authenticated team. IDs
+     *   take precedence over names. Missing or empty values return HTTP 400.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getRepository(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        projectId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Vcr.GetRepositoryResponse {
+    fun getRepository(clientConfig: ClientConfig, idOrName: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Vcr.GetRepositoryResponse {
         Validation.validateLength("idOrName", idOrName, Validation.LengthOpts(max = 255))
 
-        return SdkClient.request<Vcr.GetRepositoryResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/vcr/repository/${SdkClient.encodePathSegment(idOrName)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(projectId, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "getRepository",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Vcr.GetRepositoryResponse>(SdkClient.RequestSpec("GET", "/v1/vcr/repository/${SdkClient.encodePathSegment(idOrName)}", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getRepository", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 }
 
 internal object VcrDeleteRepositoryOperation {
     /**
-     * Deletes a container registry repository by scheduling it for removal. The repository
-     * disappears from list and get results immediately, while its images and associated data are
-     * reclaimed asynchronously.
+     * Deletes a container registry repository by scheduling it for removal. The repository disappears from list and get results immediately, while its images and associated data are reclaimed asynchronously.
      *
-     * Schedule a repository for deletion. The repository is marked so it disappears from list/get
-     * immediately; subscriber-vcr reclaims every image (manifests, blobs, tags and rows) and
-     * finally deletes the repository row asynchronously via the VcrRepositoryRemoved event.
+     * Schedule a repository for deletion. The repository is marked so it disappears from list/get immediately; subscriber-vcr reclaims every image (manifests, blobs, tags and rows) and finally deletes the repository row asynchronously via the VcrRepositoryRemoved event.
      *
-     * @param projectId Project ID or name (slug) within the authenticated team. IDs take precedence
-     *   over names. Missing or empty values return HTTP 400.
+     * @param projectId Project ID or name (slug) within the authenticated team. IDs
+     *   take precedence over names. Missing or empty values return HTTP 400.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun deleteRepository(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        projectId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Any {
+    fun deleteRepository(clientConfig: ClientConfig, idOrName: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Any {
         Validation.validateLength("idOrName", idOrName, Validation.LengthOpts(max = 255))
 
-        return SdkClient.request<Any>(
-                SdkClient.RequestSpec(
-                    "DELETE",
-                    "/v1/vcr/repository/${SdkClient.encodePathSegment(idOrName)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(projectId, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "deleteRepository",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Any>(SdkClient.RequestSpec("DELETE", "/v1/vcr/repository/${SdkClient.encodePathSegment(idOrName)}", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "deleteRepository", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 }
 
 internal object VcrListRepositoryImagesOperation {
     /**
-     * Lists images and their tags for a container registry repository. Supply `projectId` and
-     * `idOrName` to identify the repository, and use `untagged` to filter for images without tags.
-     * Use `cursor` to continue through paginated results.
+     * Lists images and their tags for a container registry repository. Supply `projectId` and `idOrName` to identify the repository, and use `untagged` to filter for images without tags. Use `cursor` to continue through paginated results.
      *
      * List images for a container registry repository, including their tags.
      *
-     * @param projectId Project ID or name (slug) within the authenticated team. IDs take precedence
-     *   over names. Missing or empty values return HTTP 400.
+     * @param projectId Project ID or name (slug) within the authenticated team. IDs
+     *   take precedence over names. Missing or empty values return HTTP 400.
      * @param cursor Opaque pagination cursor returned by a previous list response.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listRepositoryImages(
-        clientConfig: ClientConfig,
-        request: Vcr.ListRepositoryImagesRequest,
-        options: RequestOptions? = null,
-    ): VcrImageList {
+    fun listRepositoryImages(clientConfig: ClientConfig, request: Vcr.ListRepositoryImagesRequest, options: RequestOptions? = null): VcrImageList {
         validateListRepositoryImagesRequest(request)
 
-        return SdkClient.request<VcrImageList>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/vcr/repository/${SdkClient.encodePathSegment(request.idOrName)}/images",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(request.projectId, "form", true),
-                            "limit" to SdkClient.queryValue(request.limit, "form", true),
-                            "cursor" to SdkClient.queryValue(request.cursor, "form", true),
-                            "untagged" to SdkClient.queryValue(request.untagged, "form", true),
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    operationId = "listRepositoryImages",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<VcrImageList>(SdkClient.RequestSpec("GET", "/v1/vcr/repository/${SdkClient.encodePathSegment(request.idOrName)}/images", config = clientConfig, query = mapOf("projectId" to
+    SdkClient.queryValue(request.projectId, "form", true), "limit" to SdkClient.queryValue(request.limit, "form", true), "cursor" to
+    SdkClient.queryValue(request.cursor, "form", true), "untagged" to
+    SdkClient.queryValue(request.untagged, "form", true), "teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "listRepositoryImages", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
 
     private fun validateListRepositoryImagesRequest(request: Vcr.ListRepositoryImagesRequest) {
         Validation.validateLength("idOrName", request.idOrName, Validation.LengthOpts(max = 255))
 
         if (request.limit != null) {
-            Validation.validateRange(
-                "limit",
-                request.limit,
-                Validation.RangeOpts(min = 1.0, max = 100.0),
-            )
-        }
+            Validation.validateRange("limit", request.limit, Validation.RangeOpts(min = 1.0, max = 100.0))
+}
 
         if (request.cursor != null) {
             Validation.validateLength("cursor", request.cursor, Validation.LengthOpts(max = 1024))
-        }
+}
     }
 
+
+
+
+
     /**
-     * Lists images and their tags for a container registry repository. Supply `projectId` and
-     * `idOrName` to identify the repository, and use `untagged` to filter for images without tags.
-     * Use `cursor` to continue through paginated results.
+     * Lists images and their tags for a container registry repository. Supply `projectId` and `idOrName` to identify the repository, and use `untagged` to filter for images without tags. Use `cursor` to continue through paginated results.
      *
      * List images for a container registry repository, including their tags.
      *
-     * @param projectId Project ID or name (slug) within the authenticated team. IDs take precedence
-     *   over names. Missing or empty values return HTTP 400.
+     * @param projectId Project ID or name (slug) within the authenticated team. IDs
+     *   take precedence over names. Missing or empty values return HTTP 400.
      * @param cursor Opaque pagination cursor returned by a previous list response.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listRepositoryImagesPaginated(
-        clientConfig: ClientConfig,
-        request: Vcr.ListRepositoryImagesRequest,
-        options: RequestOptions? = null,
-        yieldFn: (VcrImageListItem) -> Boolean,
-    ) {
+    fun listRepositoryImagesPaginated(clientConfig: ClientConfig, request: Vcr.ListRepositoryImagesRequest, options: RequestOptions? = null, yieldFn: (VcrImageListItem) -> Boolean) {
         var cursor = request.cursor
         while (true) {
             val page = listRepositoryImages(clientConfig, request.copy(cursor = cursor), options)
@@ -352,12 +205,9 @@ internal object VcrListRepositoryImagesOperation {
         }
     }
 
-    fun listRepositoryImagesPages(
-        clientConfig: ClientConfig,
-        request: Vcr.ListRepositoryImagesRequest,
-        options: RequestOptions? = null,
-        yieldPage: (Vcr.ListRepositoryImagesPage) -> Boolean,
-    ) {
+
+
+    fun listRepositoryImagesPages(clientConfig: ClientConfig, request: Vcr.ListRepositoryImagesRequest, options: RequestOptions? = null, yieldPage: (Vcr.ListRepositoryImagesPage) -> Boolean) {
         var cursor = request.cursor
         while (true) {
             val page = listRepositoryImages(clientConfig, request.copy(cursor = cursor), options)
@@ -374,220 +224,131 @@ internal object VcrListRepositoryImagesOperation {
 
 internal object VcrAddRepositoryPermissionOperation {
     /**
-     * Grants a team access to a VCR repository, with sharing applied to the entire repository.
-     * Supply the repository and project identifiers, then identify the team using the request body.
-     * The response includes the permission grant and its creation time.
+     * Grants a team access to a VCR repository, with sharing applied to the entire repository. Supply the repository and project identifiers, then identify the team using the request body. The response includes the permission grant and its creation time.
      *
      * Grant a team access to a VCR repository. Sharing applies to the whole repository.
      *
-     * @param projectId Project ID or name (slug) within the authenticated team. IDs take precedence
-     *   over names. Missing or empty values return HTTP 400.
+     * @param projectId Project ID or name (slug) within the authenticated team. IDs
+     *   take precedence over names. Missing or empty values return HTTP 400.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      * @param teamId2 ID of a team that is granted access to a repository.
      * @param teamSlug Slug of a team that is granted access to a repository.
      */
-    fun addRepositoryPermission(
-        clientConfig: ClientConfig,
-        request: Vcr.AddRepositoryPermissionRequest,
-        options: RequestOptions? = null,
-    ): Vcr.AddRepositoryPermissionResponse {
+    fun addRepositoryPermission(clientConfig: ClientConfig, request: Vcr.AddRepositoryPermissionRequest, options: RequestOptions? = null): Vcr.AddRepositoryPermissionResponse {
         validateAddRepositoryPermissionRequest(request)
 
-        return SdkClient.request<Vcr.AddRepositoryPermissionResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v1/vcr/repository/${SdkClient.encodePathSegment(request.idOrName)}/permissions",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(request.projectId, "form", true),
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    body =
-                        SdkClient.bodyMap(
-                            "teamId" to (SdkClient.omitIfNull(request.teamId2)),
-                            "teamSlug" to (SdkClient.omitIfNull(request.teamSlug)),
-                        ),
-                    operationId = "addRepositoryPermission",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Vcr.AddRepositoryPermissionResponse>(SdkClient.RequestSpec("POST", "/v1/vcr/repository/${SdkClient.encodePathSegment(request.idOrName)}/permissions", config = clientConfig, query = mapOf("projectId" to
+    SdkClient.queryValue(request.projectId, "form", true), "teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("teamId" to (SdkClient.omitIfNull(request.teamId2)), "teamSlug" to (SdkClient.omitIfNull(request.teamSlug))), operationId = "addRepositoryPermission", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
-    private fun validateAddRepositoryPermissionRequest(
-        request: Vcr.AddRepositoryPermissionRequest
-    ) {
+
+    private fun validateAddRepositoryPermissionRequest(request: Vcr.AddRepositoryPermissionRequest) {
         Validation.validateLength("idOrName", request.idOrName, Validation.LengthOpts(max = 255))
 
         if (request.teamId2 != null) {
             Validation.validateLength("teamId", request.teamId2, Validation.LengthOpts(max = 64))
             Validation.validatePattern("teamId", request.teamId2, "^team_[a-zA-Z0-9]+$")
-        }
+}
 
         if (request.teamSlug != null) {
             Validation.validateLength("teamSlug", request.teamSlug, Validation.LengthOpts(max = 64))
-            Validation.validatePattern(
-                "teamSlug",
-                request.teamSlug,
-                "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
-            )
-        }
+            Validation.validatePattern("teamSlug", request.teamSlug, "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$")
+}
     }
 }
 
 internal object VcrRemoveRepositoryPermissionOperation {
     /**
-     * Revokes a team's access to a VCR repository. Supply the repository and project identifiers,
-     * then identify the team whose permission you want to remove. The operation removes the team's
-     * repository-wide access grant.
+     * Revokes a team's access to a VCR repository. Supply the repository and project identifiers, then identify the team whose permission you want to remove. The operation removes the team's repository-wide access grant.
      *
      * Revoke a team's access to a VCR repository.
      *
-     * @param projectId Project ID or name (slug) within the authenticated team. IDs take precedence
-     *   over names. Missing or empty values return HTTP 400.
+     * @param projectId Project ID or name (slug) within the authenticated team. IDs
+     *   take precedence over names. Missing or empty values return HTTP 400.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      * @param teamId2 ID of a team that is granted access to a repository.
      * @param teamSlug Slug of a team that is granted access to a repository.
      */
-    fun removeRepositoryPermission(
-        clientConfig: ClientConfig,
-        request: Vcr.RemoveRepositoryPermissionRequest,
-        options: RequestOptions? = null,
-    ): Unit {
+    fun removeRepositoryPermission(clientConfig: ClientConfig, request: Vcr.RemoveRepositoryPermissionRequest, options: RequestOptions? = null): Unit {
         validateRemoveRepositoryPermissionRequest(request)
 
-        SdkClient.request<Unit>(
-            SdkClient.RequestSpec(
-                "DELETE",
-                "/v1/vcr/repository/${SdkClient.encodePathSegment(request.idOrName)}/permissions",
-                config = clientConfig,
-                query =
-                    mapOf(
-                        "projectId" to SdkClient.queryValue(request.projectId, "form", true),
-                        "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                        "slug" to SdkClient.queryValue(request.slug, "form", true),
-                    ),
-                body =
-                    SdkClient.bodyMap(
-                        "teamId" to (SdkClient.omitIfNull(request.teamId2)),
-                        "teamSlug" to (SdkClient.omitIfNull(request.teamSlug)),
-                    ),
-                operationId = "removeRepositoryPermission",
-                decoder = SdkClient.ResponseDecoder.EMPTY,
-                options = options,
-            )
-        )
+        SdkClient.request<Unit>(SdkClient.RequestSpec("DELETE", "/v1/vcr/repository/${SdkClient.encodePathSegment(request.idOrName)}/permissions", config = clientConfig, query = mapOf("projectId" to
+    SdkClient.queryValue(request.projectId, "form", true), "teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("teamId" to (SdkClient.omitIfNull(request.teamId2)), "teamSlug" to (SdkClient.omitIfNull(request.teamSlug))), operationId = "removeRepositoryPermission", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
     }
 
-    private fun validateRemoveRepositoryPermissionRequest(
-        request: Vcr.RemoveRepositoryPermissionRequest
-    ) {
+
+    private fun validateRemoveRepositoryPermissionRequest(request: Vcr.RemoveRepositoryPermissionRequest) {
         Validation.validateLength("idOrName", request.idOrName, Validation.LengthOpts(max = 255))
 
         if (request.teamId2 != null) {
             Validation.validateLength("teamId", request.teamId2, Validation.LengthOpts(max = 64))
             Validation.validatePattern("teamId", request.teamId2, "^team_[a-zA-Z0-9]+$")
-        }
+}
 
         if (request.teamSlug != null) {
             Validation.validateLength("teamSlug", request.teamSlug, Validation.LengthOpts(max = 64))
-            Validation.validatePattern(
-                "teamSlug",
-                request.teamSlug,
-                "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
-            )
-        }
+            Validation.validatePattern("teamSlug", request.teamSlug, "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$")
+}
     }
 }
 
 internal object VcrListRepositoryPermissionsOperation {
     /**
-     * Lists the teams that a container registry repository is shared with. Supply `projectId` and
-     * `idOrName` to identify the repository, and use `cursor` to continue through paginated
-     * results.
+     * Lists the teams that a container registry repository is shared with. Supply `projectId` and `idOrName` to identify the repository, and use `cursor` to continue through paginated results.
      *
      * List the teams a VCR repository is shared with.
      *
-     * @param projectId Project ID or name (slug) within the authenticated team. IDs take precedence
-     *   over names. Missing or empty values return HTTP 400.
+     * @param projectId Project ID or name (slug) within the authenticated team. IDs
+     *   take precedence over names. Missing or empty values return HTTP 400.
      * @param cursor Opaque pagination cursor returned by a previous list response.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listRepositoryPermissions(
-        clientConfig: ClientConfig,
-        request: Vcr.ListRepositoryPermissionsRequest,
-        options: RequestOptions? = null,
-    ): VcrRepositoryPermissionList {
+    fun listRepositoryPermissions(clientConfig: ClientConfig, request: Vcr.ListRepositoryPermissionsRequest, options: RequestOptions? = null): VcrRepositoryPermissionList {
         validateListRepositoryPermissionsRequest(request)
 
-        return SdkClient.request<VcrRepositoryPermissionList>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/vcr/repository/${SdkClient.encodePathSegment(request.idOrName)}/permissions",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(request.projectId, "form", true),
-                            "limit" to SdkClient.queryValue(request.limit, "form", true),
-                            "cursor" to SdkClient.queryValue(request.cursor, "form", true),
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    operationId = "listRepositoryPermissions",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<VcrRepositoryPermissionList>(SdkClient.RequestSpec("GET", "/v1/vcr/repository/${SdkClient.encodePathSegment(request.idOrName)}/permissions", config = clientConfig, query = mapOf("projectId" to
+    SdkClient.queryValue(request.projectId, "form", true), "limit" to SdkClient.queryValue(request.limit, "form", true), "cursor" to
+    SdkClient.queryValue(request.cursor, "form", true), "teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "listRepositoryPermissions", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
-    private fun validateListRepositoryPermissionsRequest(
-        request: Vcr.ListRepositoryPermissionsRequest
-    ) {
+
+    private fun validateListRepositoryPermissionsRequest(request: Vcr.ListRepositoryPermissionsRequest) {
         Validation.validateLength("idOrName", request.idOrName, Validation.LengthOpts(max = 255))
 
         if (request.limit != null) {
-            Validation.validateRange(
-                "limit",
-                request.limit,
-                Validation.RangeOpts(min = 1.0, max = 100.0),
-            )
-        }
+            Validation.validateRange("limit", request.limit, Validation.RangeOpts(min = 1.0, max = 100.0))
+}
 
         if (request.cursor != null) {
             Validation.validateLength("cursor", request.cursor, Validation.LengthOpts(max = 1024))
-        }
+}
     }
 
+
+
+
+
     /**
-     * Lists the teams that a container registry repository is shared with. Supply `projectId` and
-     * `idOrName` to identify the repository, and use `cursor` to continue through paginated
-     * results.
+     * Lists the teams that a container registry repository is shared with. Supply `projectId` and `idOrName` to identify the repository, and use `cursor` to continue through paginated results.
      *
      * List the teams a VCR repository is shared with.
      *
-     * @param projectId Project ID or name (slug) within the authenticated team. IDs take precedence
-     *   over names. Missing or empty values return HTTP 400.
+     * @param projectId Project ID or name (slug) within the authenticated team. IDs
+     *   take precedence over names. Missing or empty values return HTTP 400.
      * @param cursor Opaque pagination cursor returned by a previous list response.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listRepositoryPermissionsPaginated(
-        clientConfig: ClientConfig,
-        request: Vcr.ListRepositoryPermissionsRequest,
-        options: RequestOptions? = null,
-        yieldFn: (VcrRepositoryPermission) -> Boolean,
-    ) {
+    fun listRepositoryPermissionsPaginated(clientConfig: ClientConfig, request: Vcr.ListRepositoryPermissionsRequest, options: RequestOptions? = null, yieldFn: (VcrRepositoryPermission) -> Boolean) {
         var cursor = request.cursor
         while (true) {
-            val page =
-                listRepositoryPermissions(clientConfig, request.copy(cursor = cursor), options)
+            val page = listRepositoryPermissions(clientConfig, request.copy(cursor = cursor), options)
             val items = page.permissions.orEmpty()
             if (items.isEmpty()) return
             for (item in items) {
@@ -598,16 +359,12 @@ internal object VcrListRepositoryPermissionsOperation {
         }
     }
 
-    fun listRepositoryPermissionsPages(
-        clientConfig: ClientConfig,
-        request: Vcr.ListRepositoryPermissionsRequest,
-        options: RequestOptions? = null,
-        yieldPage: (Vcr.ListRepositoryPermissionsPage) -> Boolean,
-    ) {
+
+
+    fun listRepositoryPermissionsPages(clientConfig: ClientConfig, request: Vcr.ListRepositoryPermissionsRequest, options: RequestOptions? = null, yieldPage: (Vcr.ListRepositoryPermissionsPage) -> Boolean) {
         var cursor = request.cursor
         while (true) {
-            val page =
-                listRepositoryPermissions(clientConfig, request.copy(cursor = cursor), options)
+            val page = listRepositoryPermissions(clientConfig, request.copy(cursor = cursor), options)
             val items = page.permissions.orEmpty()
             if (items.isEmpty()) return
             val nextCursor = page.nextCursor
@@ -621,123 +378,72 @@ internal object VcrListRepositoryPermissionsOperation {
 
 internal object VcrClearRepositoryPermissionsOperation {
     /**
-     * Revokes every team's access to a VCR repository. Use this operation to clear all repository
-     * permissions at once; clearing a repository with no shared access has no effect. The operation
-     * requires the repository and project identifiers.
+     * Revokes every team's access to a VCR repository. Use this operation to clear all repository permissions at once; clearing a repository with no shared access has no effect. The operation requires the repository and project identifiers.
      *
      * Revoke every team's access to a VCR repository. Clearing an unshared repository is a no-op.
      *
-     * @param projectId Project ID or name (slug) within the authenticated team. IDs take precedence
-     *   over names. Missing or empty values return HTTP 400.
+     * @param projectId Project ID or name (slug) within the authenticated team. IDs
+     *   take precedence over names. Missing or empty values return HTTP 400.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun clearRepositoryPermissions(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        projectId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Unit {
+    fun clearRepositoryPermissions(clientConfig: ClientConfig, idOrName: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
         Validation.validateLength("idOrName", idOrName, Validation.LengthOpts(max = 255))
 
-        SdkClient.request<Unit>(
-            SdkClient.RequestSpec(
-                "DELETE",
-                "/v1/vcr/repository/${SdkClient.encodePathSegment(idOrName)}/permissions/all",
-                config = clientConfig,
-                query =
-                    mapOf(
-                        "projectId" to SdkClient.queryValue(projectId, "form", true),
-                        "teamId" to SdkClient.queryValue(teamId, "form", true),
-                        "slug" to SdkClient.queryValue(slug, "form", true),
-                    ),
-                operationId = "clearRepositoryPermissions",
-                decoder = SdkClient.ResponseDecoder.EMPTY,
-                options = options,
-            )
-        )
+        SdkClient.request<Unit>(SdkClient.RequestSpec("DELETE", "/v1/vcr/repository/${SdkClient.encodePathSegment(idOrName)}/permissions/all", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "clearRepositoryPermissions", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
     }
 }
 
 internal object VcrListRepositoryTagsOperation {
     /**
-     * Lists tags in a VCR repository, with optional pagination and sorting for non-pinned tags. Use
-     * `cursor` to continue from a previous page and the sort parameters to control tag ordering.
-     * The response includes a `nextCursor` when another page is available.
+     * Lists tags in a VCR repository, with optional pagination and sorting for non-pinned tags. Use `cursor` to continue from a previous page and the sort parameters to control tag ordering. The response includes a `nextCursor` when another page is available.
      *
      * List a repository's tags.
      *
-     * @param projectId Project ID or name (slug) within the authenticated team. IDs take precedence
-     *   over names. Missing or empty values return HTTP 400.
+     * @param projectId Project ID or name (slug) within the authenticated team. IDs
+     *   take precedence over names. Missing or empty values return HTTP 400.
      * @param sortBy Field to sort the non-pinned tags by.
      * @param sortOrder Sort direction. Defaults to desc.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listRepositoryTags(
-        clientConfig: ClientConfig,
-        request: Vcr.ListRepositoryTagsRequest,
-        options: RequestOptions? = null,
-    ): Vcr.ListRepositoryTagsResponse {
+    fun listRepositoryTags(clientConfig: ClientConfig, request: Vcr.ListRepositoryTagsRequest, options: RequestOptions? = null): Vcr.ListRepositoryTagsResponse {
         validateListRepositoryTagsRequest(request)
 
-        return SdkClient.request<Vcr.ListRepositoryTagsResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/vcr/repository/${SdkClient.encodePathSegment(request.idOrName)}/tags",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(request.projectId, "form", true),
-                            "limit" to SdkClient.queryValue(request.limit, "form", true),
-                            "cursor" to SdkClient.queryValue(request.cursor, "form", true),
-                            "sortBy" to SdkClient.queryValue(request.sortBy, "form", true),
-                            "sortOrder" to SdkClient.queryValue(request.sortOrder, "form", true),
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    operationId = "listRepositoryTags",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Vcr.ListRepositoryTagsResponse>(SdkClient.RequestSpec("GET", "/v1/vcr/repository/${SdkClient.encodePathSegment(request.idOrName)}/tags", config = clientConfig, query = mapOf("projectId" to
+    SdkClient.queryValue(request.projectId, "form", true), "limit" to SdkClient.queryValue(request.limit, "form", true), "cursor" to
+    SdkClient.queryValue(request.cursor, "form", true), "sortBy" to
+    SdkClient.queryValue(request.sortBy, "form", true), "sortOrder" to
+    SdkClient.queryValue(request.sortOrder, "form", true), "teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "listRepositoryTags", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
 
     private fun validateListRepositoryTagsRequest(request: Vcr.ListRepositoryTagsRequest) {
         Validation.validateLength("idOrName", request.idOrName, Validation.LengthOpts(max = 255))
 
         if (request.limit != null) {
-            Validation.validateRange(
-                "limit",
-                request.limit,
-                Validation.RangeOpts(min = 1.0, max = 100.0),
-            )
-        }
+            Validation.validateRange("limit", request.limit, Validation.RangeOpts(min = 1.0, max = 100.0))
+}
     }
 
+
+
+
+
     /**
-     * Lists tags in a VCR repository, with optional pagination and sorting for non-pinned tags. Use
-     * `cursor` to continue from a previous page and the sort parameters to control tag ordering.
-     * The response includes a `nextCursor` when another page is available.
+     * Lists tags in a VCR repository, with optional pagination and sorting for non-pinned tags. Use `cursor` to continue from a previous page and the sort parameters to control tag ordering. The response includes a `nextCursor` when another page is available.
      *
      * List a repository's tags.
      *
-     * @param projectId Project ID or name (slug) within the authenticated team. IDs take precedence
-     *   over names. Missing or empty values return HTTP 400.
+     * @param projectId Project ID or name (slug) within the authenticated team. IDs
+     *   take precedence over names. Missing or empty values return HTTP 400.
      * @param sortBy Field to sort the non-pinned tags by.
      * @param sortOrder Sort direction. Defaults to desc.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listRepositoryTagsPaginated(
-        clientConfig: ClientConfig,
-        request: Vcr.ListRepositoryTagsRequest,
-        options: RequestOptions? = null,
-        yieldFn: (Vcr.ListRepositoryTagsResponseTagsItem) -> Boolean,
-    ) {
+    fun listRepositoryTagsPaginated(clientConfig: ClientConfig, request: Vcr.ListRepositoryTagsRequest, options: RequestOptions? = null, yieldFn: (Vcr.ListRepositoryTagsResponseTagsItem) -> Boolean) {
         var cursor = request.cursor
         while (true) {
             val page = listRepositoryTags(clientConfig, request.copy(cursor = cursor), options)
@@ -751,12 +457,9 @@ internal object VcrListRepositoryTagsOperation {
         }
     }
 
-    fun listRepositoryTagsPages(
-        clientConfig: ClientConfig,
-        request: Vcr.ListRepositoryTagsRequest,
-        options: RequestOptions? = null,
-        yieldPage: (Vcr.ListRepositoryTagsPage) -> Boolean,
-    ) {
+
+
+    fun listRepositoryTagsPages(clientConfig: ClientConfig, request: Vcr.ListRepositoryTagsRequest, options: RequestOptions? = null, yieldPage: (Vcr.ListRepositoryTagsPage) -> Boolean) {
         var cursor = request.cursor
         while (true) {
             val page = listRepositoryTags(clientConfig, request.copy(cursor = cursor), options)
@@ -773,150 +476,62 @@ internal object VcrListRepositoryTagsOperation {
 
 internal object VcrGetRepositoryTagOperation {
     /**
-     * Retrieves a single tag from a VCR repository, including metadata for its backing image and
-     * its VHS-readiness status. Use the repository and tag identifiers to select the tag you want
-     * to inspect. The response contains the tag and its associated image details.
+     * Retrieves a single tag from a VCR repository, including metadata for its backing image and its VHS-readiness status. Use the repository and tag identifiers to select the tag you want to inspect. The response contains the tag and its associated image details.
      *
-     * Fetch a single tag from a repository, including the backing image's metadata and
-     * VHS-readiness status.
+     * Fetch a single tag from a repository, including the backing image's metadata and VHS-readiness status.
      *
-     * @param projectId Project ID or name (slug) within the authenticated team. IDs take precedence
-     *   over names. Missing or empty values return HTTP 400.
+     * @param projectId Project ID or name (slug) within the authenticated team. IDs
+     *   take precedence over names. Missing or empty values return HTTP 400.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getRepositoryTag(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        tag: String,
-        projectId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Vcr.GetRepositoryTagResponse {
+    fun getRepositoryTag(clientConfig: ClientConfig, idOrName: String, tag: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Vcr.GetRepositoryTagResponse {
         Validation.validateLength("idOrName", idOrName, Validation.LengthOpts(max = 255))
 
         Validation.validateLength("tag", tag, Validation.LengthOpts(max = 255))
 
-        return SdkClient.request<Vcr.GetRepositoryTagResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/vcr/repository/${SdkClient.encodePathSegment(idOrName)}/tags/${SdkClient.encodePathSegment(tag)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(projectId, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "getRepositoryTag",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Vcr.GetRepositoryTagResponse>(SdkClient.RequestSpec("GET", "/v1/vcr/repository/${SdkClient.encodePathSegment(idOrName)}/tags/${SdkClient.encodePathSegment(tag)}", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getRepositoryTag", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 }
 
 internal object VcrGetRepositoryImageOperation {
     /**
-     * Retrieves an image from a VCR repository, including its tags and resolved Dockerfile layer
-     * history. Identify the image by its internal ID or manifest digest to inspect its metadata and
-     * layer details. The image identifier may use the `image_` ID form or the `sha256:` digest
-     * form.
+     * Retrieves an image from a VCR repository, including its tags and resolved Dockerfile layer history. Identify the image by its internal ID or manifest digest to inspect its metadata and layer details. The image identifier may use the `image_` ID form or the `sha256:` digest form.
      *
-     * Fetch an individual image from a repository, including its tags and Dockerfile history
-     * entries with discriminated layer details for UI rendering. The image may be addressed by its
-     * internal id (`image_...`) or by its manifest digest (`sha256:...`).
+     * Fetch an individual image from a repository, including its tags and Dockerfile history entries with discriminated layer details for UI rendering. The image may be addressed by its internal id (`image_...`) or by its manifest digest (`sha256:...`).
      *
-     * @param imageIdOrDigest The internal image id (`image_...`) or the image manifest digest
-     *   (`sha256:...`).
-     * @param projectId Project ID or name (slug) within the authenticated team. IDs take precedence
-     *   over names. Missing or empty values return HTTP 400.
+     * @param imageIdOrDigest The internal image id (`image_...`) or the image
+     *   manifest digest (`sha256:...`).
+     * @param projectId Project ID or name (slug) within the authenticated team. IDs
+     *   take precedence over names. Missing or empty values return HTTP 400.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getRepositoryImage(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        imageIdOrDigest: String,
-        projectId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Vcr.GetRepositoryImageResponse {
+    fun getRepositoryImage(clientConfig: ClientConfig, idOrName: String, imageIdOrDigest: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Vcr.GetRepositoryImageResponse {
         Validation.validateLength("idOrName", idOrName, Validation.LengthOpts(max = 255))
 
-        Validation.validateLength(
-            "imageIdOrDigest",
-            imageIdOrDigest,
-            Validation.LengthOpts(max = 255),
-        )
+        Validation.validateLength("imageIdOrDigest", imageIdOrDigest, Validation.LengthOpts(max = 255))
 
-        return SdkClient.request<Vcr.GetRepositoryImageResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/vcr/repository/${SdkClient.encodePathSegment(idOrName)}/images/${SdkClient.encodePathSegment(imageIdOrDigest)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(projectId, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "getRepositoryImage",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Vcr.GetRepositoryImageResponse>(SdkClient.RequestSpec("GET", "/v1/vcr/repository/${SdkClient.encodePathSegment(idOrName)}/images/${SdkClient.encodePathSegment(imageIdOrDigest)}", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getRepositoryImage", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 }
 
 internal object VcrDeleteRepositoryImageOperation {
     /**
-     * Schedules a VCR repository image for deletion. The image disappears from list and retrieve
-     * results immediately, while its manifest, blobs, tags, and database record are reclaimed
-     * asynchronously. The cleanup is performed through the `VcrManifestRemoved` event.
+     * Schedules a VCR repository image for deletion. The image disappears from list and retrieve results immediately, while its manifest, blobs, tags, and database record are reclaimed asynchronously. The cleanup is performed through the `VcrManifestRemoved` event.
      *
-     * Schedule an image for deletion. The image is marked so it disappears from list/get
-     * immediately; subscriber-vcr reclaims the manifest, blobs, tags and row asynchronously via the
-     * VcrManifestRemoved event.
+     * Schedule an image for deletion. The image is marked so it disappears from list/get immediately; subscriber-vcr reclaims the manifest, blobs, tags and row asynchronously via the VcrManifestRemoved event.
      *
-     * @param projectId Project ID or name (slug) within the authenticated team. IDs take precedence
-     *   over names. Missing or empty values return HTTP 400.
+     * @param projectId Project ID or name (slug) within the authenticated team. IDs
+     *   take precedence over names. Missing or empty values return HTTP 400.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun deleteRepositoryImage(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        imageId: String,
-        projectId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Any {
+    fun deleteRepositoryImage(clientConfig: ClientConfig, idOrName: String, imageId: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Any {
         Validation.validateLength("idOrName", idOrName, Validation.LengthOpts(max = 255))
 
         Validation.validateLength("imageId", imageId, Validation.LengthOpts(max = 255))
 
-        return SdkClient.request<Any>(
-                SdkClient.RequestSpec(
-                    "DELETE",
-                    "/v1/vcr/repository/${SdkClient.encodePathSegment(idOrName)}/images/${SdkClient.encodePathSegment(imageId)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "projectId" to SdkClient.queryValue(projectId, "form", true),
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "deleteRepositoryImage",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Any>(SdkClient.RequestSpec("DELETE", "/v1/vcr/repository/${SdkClient.encodePathSegment(idOrName)}/images/${SdkClient.encodePathSegment(imageId)}", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "deleteRepositoryImage", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 }

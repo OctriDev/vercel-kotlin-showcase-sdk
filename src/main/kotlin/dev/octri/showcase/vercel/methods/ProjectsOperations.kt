@@ -10,63 +10,49 @@ import dev.octri.showcase.vercel.Validation
 
 internal object ProjectsListProjectsOperation {
     /**
-     * Lists projects belonging to the authenticated user or a team, with pagination and filters for
-     * project updates, repositories, configuration, and build settings. Use `from`, `since`, and
-     * `until` to filter by update time, or `search` to match project names. The `teamId` or `slug`
-     * query parameter scopes the request to a team.
+     * Lists projects belonging to the authenticated user or a team, with pagination and filters for project updates, repositories, configuration, and build settings. Use `from`, `since`, and `until` to filter by update time, or `search` to match project names. The `teamId` or `slug` query parameter scopes the request to a team.
      *
-     * Allows to retrieve the list of projects of the authenticated user or team. The list will be
-     * paginated and the provided query parameters allow filtering the returned projects.
+     * Allows to retrieve the list of projects of the authenticated user or team. The list will be paginated and the provided query parameters allow filtering the returned projects.
      *
-     * @param from Query only projects updated after the given timestamp or continuation token.
+     * @param from Query only projects updated after the given timestamp or
+     *   continuation token.
      * @param since Query only projects updated after this JavaScript timestamp.
      * @param until Query only projects updated before this JavaScript timestamp.
-     * @param gitForkProtection Specifies whether PRs from Git forks should require a team member's
-     *   authorization before it can be deployed
+     * @param gitForkProtection Specifies whether PRs from Git forks should require a
+     *   team member's authorization before it can be deployed
      * @param limit Limit the number of projects returned
      * @param search Search projects by the name field
      * @param repo Filter results by repo. Also used for project count
      * @param repoId Filter results by Repository ID.
      * @param repoUrl Filter results by Repository URL.
-     * @param excludeRepos Filter results by excluding those projects that belong to a repo
+     * @param excludeRepos Filter results by excluding those projects that belong to
+     *   a repo
      * @param edgeConfigId Filter results by connected Global Config ID
      * @param edgeConfigTokenId Filter results by connected Global Config Token ID
-     * @param elasticConcurrencyEnabled Filter results by projects with elastic concurrency enabled
+     * @param elasticConcurrencyEnabled Filter results by projects with elastic
+     *   concurrency enabled
      * @param staticIpsEnabled Filter results by projects with Static IPs enabled
-     * @param buildMachineTypes Filter results by effective build machine types. Accepts
-     *   comma-separated values. Use \"elastic\" for projects with elastic selection and \"default\"
-     *   for projects without a build machine type set.
+     * @param buildMachineTypes Filter results by effective build machine types.
+     *   Accepts comma-separated values. Use \"elastic\" for projects with elastic
+     *   selection and \"default\" for projects without a build machine type set.
      * @param buildQueueConfiguration Filter results by build queue configuration.
      *   SKIP_NAMESPACE_QUEUE includes projects without a configuration set.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listProjects(
-        clientConfig: ClientConfig,
-        request: Projects.ListProjectsRequest,
-        options: RequestOptions? = null,
-    ): Any {
+    fun listProjects(clientConfig: ClientConfig, request: Projects.ListProjectsRequest, options: RequestOptions? = null): Any {
         validateListProjectsRequest(request)
 
-        return SdkClient.request<Any>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v10/projects",
-                    config = clientConfig,
-                    query = buildListProjectsQuery(request),
-                    operationId = "listProjects",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Any>(SdkClient.RequestSpec("GET", "/v10/projects", config = clientConfig, query = buildListProjectsQuery(request), operationId = "listProjects", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
 
     private fun validateListProjectsRequest(request: Projects.ListProjectsRequest) {
         if (request.search != null) {
             Validation.validateLength("search", request.search, Validation.LengthOpts(max = 100))
-        }
+}
     }
+
 
     private fun buildListProjectsQuery(request: Projects.ListProjectsRequest): Map<String, Any?> =
         buildMap {
@@ -74,115 +60,104 @@ internal object ProjectsListProjectsOperation {
             putAll(buildListProjectsQueryPart2(request))
         }
 
-    private fun buildListProjectsQueryPart1(
-        request: Projects.ListProjectsRequest
-    ): Map<String, Any?> =
+    private fun buildListProjectsQueryPart1(request: Projects.ListProjectsRequest): Map<String, Any?> =
         mapOf(
             "from" to SdkClient.queryValue(request.from, "form", true),
             "since" to SdkClient.queryValue(request.since, "form", true),
             "until" to SdkClient.queryValue(request.until, "form", true),
-            "gitForkProtection" to SdkClient.queryValue(request.gitForkProtection, "form", true),
+            "gitForkProtection" to
+    SdkClient.queryValue(request.gitForkProtection, "form", true),
             "limit" to SdkClient.queryValue(request.limit, "form", true),
-            "search" to SdkClient.queryValue(request.search, "form", true),
+            "search" to
+    SdkClient.queryValue(request.search, "form", true),
             "repo" to SdkClient.queryValue(request.repo, "form", true),
-            "repoId" to SdkClient.queryValue(request.repoId, "form", true),
-            "repoUrl" to SdkClient.queryValue(request.repoUrl, "form", true),
-            "excludeRepos" to SdkClient.queryValue(request.excludeRepos, "form", true),
-            "edgeConfigId" to SdkClient.queryValue(request.edgeConfigId, "form", true),
-            "edgeConfigTokenId" to SdkClient.queryValue(request.edgeConfigTokenId, "form", true),
+            "repoId" to
+    SdkClient.queryValue(request.repoId, "form", true),
+            "repoUrl" to
+    SdkClient.queryValue(request.repoUrl, "form", true),
+            "excludeRepos" to
+    SdkClient.queryValue(request.excludeRepos, "form", true),
+            "edgeConfigId" to
+    SdkClient.queryValue(request.edgeConfigId, "form", true),
+            "edgeConfigTokenId" to
+    SdkClient.queryValue(request.edgeConfigTokenId, "form", true),
         )
 
-    private fun buildListProjectsQueryPart2(
-        request: Projects.ListProjectsRequest
-    ): Map<String, Any?> =
+    private fun buildListProjectsQueryPart2(request: Projects.ListProjectsRequest): Map<String, Any?> =
         mapOf(
-            "deprecated" to SdkClient.queryValue(request.deprecated, "form", true),
+            "deprecated" to
+    SdkClient.queryValue(request.deprecated, "form", true),
             "elasticConcurrencyEnabled" to
-                SdkClient.queryValue(request.elasticConcurrencyEnabled, "form", true),
-            "staticIpsEnabled" to SdkClient.queryValue(request.staticIpsEnabled, "form", true),
-            "buildMachineTypes" to SdkClient.queryValue(request.buildMachineTypes, "form", true),
+    SdkClient.queryValue(request.elasticConcurrencyEnabled, "form", true),
+            "staticIpsEnabled" to
+    SdkClient.queryValue(request.staticIpsEnabled, "form", true),
+            "buildMachineTypes" to
+    SdkClient.queryValue(request.buildMachineTypes, "form", true),
             "buildQueueConfiguration" to
-                SdkClient.queryValue(request.buildQueueConfiguration, "form", true),
-            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+    SdkClient.queryValue(request.buildQueueConfiguration, "form", true),
+            "teamId" to
+    SdkClient.queryValue(request.teamId, "form", true),
             "slug" to SdkClient.queryValue(request.slug, "form", true),
         )
 }
 
 internal object ProjectsCreateProjectOperation {
     /**
-     * Creates a project with a required `name` and optional settings for its framework, build
-     * commands, environment variables, Git connection, and sandbox regions. Supply only the
-     * settings you want to configure; supported build and install commands can be detected
-     * automatically when set to `null`. A 200 response returns the created project object.
+     * Creates a project with a required `name` and optional settings for its framework, build commands, environment variables, Git connection, and sandbox regions. Supply only the settings you want to configure; supported build and install commands can be detected automatically when set to `null`. A 200 response returns the created project object.
      *
-     * Allows to create a new project with the provided configuration. It only requires the project
-     * `name` but more configuration can be provided to override the defaults.
+     * Allows to create a new project with the provided configuration. It only requires the project `name` but more configuration can be provided to override the defaults.
      *
      * @param name The desired name for the project
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      * @param enablePreviewFeedback Opt-in to preview toolbar on the project level
-     * @param enableProductionFeedback Opt-in to production toolbar on the project level
-     * @param previewDeploymentsDisabled Specifies whether preview deployments are disabled for this
-     *   project.
-     * @param previewDeploymentSuffix Custom domain suffix for preview deployments. Takes precedence
-     *   over team-level suffix. Must be a domain owned by the team.
-     * @param buildCommand The build command for this project. When `null` is used this value will
-     *   be automatically detected
-     * @param devCommand The dev command for this project. When `null` is used this value will be
-     *   automatically detected
+     * @param enableProductionFeedback Opt-in to production toolbar on the project
+     *   level
+     * @param previewDeploymentsDisabled Specifies whether preview deployments are
+     *   disabled for this project.
+     * @param previewDeploymentSuffix Custom domain suffix for preview deployments.
+     *   Takes precedence over team-level suffix. Must be a domain owned by the team.
+     * @param buildCommand The build command for this project. When `null` is used
+     *   this value will be automatically detected
+     * @param devCommand The dev command for this project. When `null` is used this
+     *   value will be automatically detected
      * @param environmentVariables Collection of ENV Variables the Project will use
-     * @param framework The framework that is being used for this project. When `null` is used no
-     *   framework is selected
-     * @param gitRepository The Git Repository that will be connected to the project. When this is
-     *   defined, any pushes to the specified connected Git Repository will be automatically
-     *   deployed
-     * @param installCommand The install command for this project. When `null` is used this value
-     *   will be automatically detected
-     * @param skipGitConnectDuringLink Opts-out of the message prompting a CLI user to connect a Git
-     *   repository in `vercel link`.
-     * @param ssoProtection The Vercel Auth setting for the project (historically named \"SSO
-     *   Protection\")
-     * @param sandbox Specifies the default region and failover regions for sandboxes created in the
-     *   project
-     * @param outputDirectory The output directory of the project. When `null` is used this value
-     *   will be automatically detected
-     * @param publicSource Deprecated. Accepted for backwards compatibility but ignored.
-     * @param rootDirectory The name of a directory or relative path to the source code of your
-     *   project. When `null` is used it will default to the project root
-     * @param serverlessFunctionRegion The region to deploy Serverless Functions in this project
-     * @param serverlessFunctionZeroConfigFailover Specifies whether Zero Config Failover is enabled
-     *   for this project.
+     * @param framework The framework that is being used for this project. When
+     *   `null` is used no framework is selected
+     * @param gitRepository The Git Repository that will be connected to the project.
+     *   When this is defined, any pushes to the specified connected Git Repository
+     *   will be automatically deployed
+     * @param installCommand The install command for this project. When `null` is
+     *   used this value will be automatically detected
+     * @param skipGitConnectDuringLink Opts-out of the message prompting a CLI user
+     *   to connect a Git repository in `vercel link`.
+     * @param ssoProtection The Vercel Auth setting for the project (historically
+     *   named \"SSO Protection\")
+     * @param sandbox Specifies the default region and failover regions for sandboxes
+     *   created in the project
+     * @param outputDirectory The output directory of the project. When `null` is
+     *   used this value will be automatically detected
+     * @param publicSource Deprecated. Accepted for backwards compatibility but
+     *   ignored.
+     * @param rootDirectory The name of a directory or relative path to the source
+     *   code of your project. When `null` is used it will default to the project root
+     * @param serverlessFunctionRegion The region to deploy Serverless Functions in
+     *   this project
+     * @param serverlessFunctionZeroConfigFailover Specifies whether Zero Config
+     *   Failover is enabled for this project.
      * @param oidcTokenConfig OpenID Connect JSON Web Token generation configuration.
-     * @param enableAffectedProjectsDeployments Opt-in to skip deployments when there are no changes
-     *   to the root directory and its dependencies
-     * @param resourceConfig Specifies resource override configuration for the project
+     * @param enableAffectedProjectsDeployments Opt-in to skip deployments when there
+     *   are no changes to the root directory and its dependencies
+     * @param resourceConfig Specifies resource override configuration for the
+     *   project
      */
-    fun createProject(
-        clientConfig: ClientConfig,
-        request: Projects.CreateProjectRequest,
-        options: RequestOptions? = null,
-    ): Projects.CreateProjectResponse {
+    fun createProject(clientConfig: ClientConfig, request: Projects.CreateProjectRequest, options: RequestOptions? = null): Projects.CreateProjectResponse {
         validateCreateProjectRequest(request)
 
-        return SdkClient.request<Projects.CreateProjectResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v11/projects",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    body = buildCreateProjectBody(request),
-                    operationId = "createProject",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Projects.CreateProjectResponse>(SdkClient.RequestSpec("POST", "/v11/projects", config = clientConfig, query = mapOf("teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = buildCreateProjectBody(request), operationId = "createProject", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
 
     private fun validateCreateProjectRequest(request: Projects.CreateProjectRequest) {
         validateCreateProjectRequestPart1(request)
@@ -193,79 +168,49 @@ internal object ProjectsCreateProjectOperation {
         Validation.validateLength("name", request.name, Validation.LengthOpts(max = 100))
 
         val previewDeploymentSuffixValue = request.previewDeploymentSuffix?.getOrNull()
-        if (previewDeploymentSuffixValue != null) {
-            Validation.validateLength(
-                "previewDeploymentSuffix",
-                previewDeploymentSuffixValue,
-                Validation.LengthOpts(max = 253),
-            )
-        }
+if (previewDeploymentSuffixValue != null) {
+            Validation.validateLength("previewDeploymentSuffix", previewDeploymentSuffixValue, Validation.LengthOpts(max = 253))
+}
 
         val buildCommandValue = request.buildCommand?.getOrNull()
-        if (buildCommandValue != null) {
-            Validation.validateLength(
-                "buildCommand",
-                buildCommandValue,
-                Validation.LengthOpts(max = 256),
-            )
-        }
+if (buildCommandValue != null) {
+            Validation.validateLength("buildCommand", buildCommandValue, Validation.LengthOpts(max = 256))
+}
 
         val commandForIgnoringBuildStepValue = request.commandForIgnoringBuildStep?.getOrNull()
-        if (commandForIgnoringBuildStepValue != null) {
-            Validation.validateLength(
-                "commandForIgnoringBuildStep",
-                commandForIgnoringBuildStepValue,
-                Validation.LengthOpts(max = 256),
-            )
-        }
+if (commandForIgnoringBuildStepValue != null) {
+            Validation.validateLength("commandForIgnoringBuildStep", commandForIgnoringBuildStepValue, Validation.LengthOpts(max = 256))
+}
 
         val devCommandValue = request.devCommand?.getOrNull()
-        if (devCommandValue != null) {
-            Validation.validateLength(
-                "devCommand",
-                devCommandValue,
-                Validation.LengthOpts(max = 256),
-            )
-        }
+if (devCommandValue != null) {
+            Validation.validateLength("devCommand", devCommandValue, Validation.LengthOpts(max = 256))
+}
     }
 
     private fun validateCreateProjectRequestPart2(request: Projects.CreateProjectRequest) {
         val installCommandValue = request.installCommand?.getOrNull()
-        if (installCommandValue != null) {
-            Validation.validateLength(
-                "installCommand",
-                installCommandValue,
-                Validation.LengthOpts(max = 256),
-            )
-        }
+if (installCommandValue != null) {
+            Validation.validateLength("installCommand", installCommandValue, Validation.LengthOpts(max = 256))
+}
 
         val outputDirectoryValue = request.outputDirectory?.getOrNull()
-        if (outputDirectoryValue != null) {
-            Validation.validateLength(
-                "outputDirectory",
-                outputDirectoryValue,
-                Validation.LengthOpts(max = 256),
-            )
-        }
+if (outputDirectoryValue != null) {
+            Validation.validateLength("outputDirectory", outputDirectoryValue, Validation.LengthOpts(max = 256))
+}
 
         val rootDirectoryValue = request.rootDirectory?.getOrNull()
-        if (rootDirectoryValue != null) {
-            Validation.validateLength(
-                "rootDirectory",
-                rootDirectoryValue,
-                Validation.LengthOpts(max = 256),
-            )
-        }
+if (rootDirectoryValue != null) {
+            Validation.validateLength("rootDirectory", rootDirectoryValue, Validation.LengthOpts(max = 256))
+}
 
         val serverlessFunctionRegionValue = request.serverlessFunctionRegion?.getOrNull()
-        if (serverlessFunctionRegionValue != null) {
-            Validation.validateLength(
-                "serverlessFunctionRegion",
-                serverlessFunctionRegionValue,
-                Validation.LengthOpts(max = 4),
-            )
-        }
+if (serverlessFunctionRegionValue != null) {
+            Validation.validateLength("serverlessFunctionRegion", serverlessFunctionRegionValue, Validation.LengthOpts(max = 4))
+}
     }
+
+
 
     private fun buildCreateProjectBody(request: Projects.CreateProjectRequest): Map<String, Any?> =
         buildMap {
@@ -273,191 +218,165 @@ internal object ProjectsCreateProjectOperation {
             putAll(buildCreateProjectBodyPart2(request))
         }
 
-    private fun buildCreateProjectBodyPart1(
-        request: Projects.CreateProjectRequest
-    ): Map<String, Any?> =
+    private fun buildCreateProjectBodyPart1(request: Projects.CreateProjectRequest): Map<String, Any?> =
         SdkClient.bodyMap(
             "name" to (request.name),
             "enablePreviewFeedback" to
-                (request.enablePreviewFeedback ?: SdkClient.SdkOptional.Omitted),
+    (request.enablePreviewFeedback ?: SdkClient.SdkOptional.Omitted),
             "enableProductionFeedback" to
-                (request.enableProductionFeedback ?: SdkClient.SdkOptional.Omitted),
+    (request.enableProductionFeedback ?: SdkClient.SdkOptional.Omitted),
             "previewDeploymentsDisabled" to
-                (request.previewDeploymentsDisabled ?: SdkClient.SdkOptional.Omitted),
+    (request.previewDeploymentsDisabled ?: SdkClient.SdkOptional.Omitted),
             "previewDeploymentSuffix" to
-                (request.previewDeploymentSuffix ?: SdkClient.SdkOptional.Omitted),
-            "buildCommand" to (request.buildCommand ?: SdkClient.SdkOptional.Omitted),
+    (request.previewDeploymentSuffix ?: SdkClient.SdkOptional.Omitted),
+            "buildCommand" to
+    (request.buildCommand ?: SdkClient.SdkOptional.Omitted),
             "commandForIgnoringBuildStep" to
-                (request.commandForIgnoringBuildStep ?: SdkClient.SdkOptional.Omitted),
-            "devCommand" to (request.devCommand ?: SdkClient.SdkOptional.Omitted),
-            "environmentVariables" to (SdkClient.omitIfNull(request.environmentVariables)),
+    (request.commandForIgnoringBuildStep ?: SdkClient.SdkOptional.Omitted),
+            "devCommand" to
+    (request.devCommand ?: SdkClient.SdkOptional.Omitted),
+            "environmentVariables" to
+    (SdkClient.omitIfNull(request.environmentVariables)),
             "framework" to (SdkClient.omitIfNull(request.framework)),
-            "gitRepository" to (SdkClient.omitIfNull(request.gitRepository)),
-            "installCommand" to (request.installCommand ?: SdkClient.SdkOptional.Omitted),
+            "gitRepository" to
+    (SdkClient.omitIfNull(request.gitRepository)),
+            "installCommand" to
+    (request.installCommand ?: SdkClient.SdkOptional.Omitted),
         )
 
-    private fun buildCreateProjectBodyPart2(
-        request: Projects.CreateProjectRequest
-    ): Map<String, Any?> =
+    private fun buildCreateProjectBodyPart2(request: Projects.CreateProjectRequest): Map<String, Any?> =
         SdkClient.bodyMap(
-            "skipGitConnectDuringLink" to (SdkClient.omitIfNull(request.skipGitConnectDuringLink)),
-            "ssoProtection" to (request.ssoProtection ?: SdkClient.SdkOptional.Omitted),
+            "skipGitConnectDuringLink" to
+    (SdkClient.omitIfNull(request.skipGitConnectDuringLink)),
+            "ssoProtection" to
+    (request.ssoProtection ?: SdkClient.SdkOptional.Omitted),
             "sandbox" to (SdkClient.omitIfNull(request.sandbox)),
-            "outputDirectory" to (request.outputDirectory ?: SdkClient.SdkOptional.Omitted),
-            "publicSource" to (request.publicSource ?: SdkClient.SdkOptional.Omitted),
-            "rootDirectory" to (request.rootDirectory ?: SdkClient.SdkOptional.Omitted),
+            "outputDirectory" to
+    (request.outputDirectory ?: SdkClient.SdkOptional.Omitted),
+            "publicSource" to
+    (request.publicSource ?: SdkClient.SdkOptional.Omitted),
+            "rootDirectory" to
+    (request.rootDirectory ?: SdkClient.SdkOptional.Omitted),
             "serverlessFunctionRegion" to
-                (request.serverlessFunctionRegion ?: SdkClient.SdkOptional.Omitted),
+    (request.serverlessFunctionRegion ?: SdkClient.SdkOptional.Omitted),
             "serverlessFunctionZeroConfigFailover" to
-                (SdkClient.omitIfNull(request.serverlessFunctionZeroConfigFailover)),
-            "oidcTokenConfig" to (SdkClient.omitIfNull(request.oidcTokenConfig)),
+    (SdkClient.omitIfNull(request.serverlessFunctionZeroConfigFailover)),
+            "oidcTokenConfig" to
+    (SdkClient.omitIfNull(request.oidcTokenConfig)),
             "enableAffectedProjectsDeployments" to
-                (SdkClient.omitIfNull(request.enableAffectedProjectsDeployments)),
-            "resourceConfig" to (SdkClient.omitIfNull(request.resourceConfig)),
+    (SdkClient.omitIfNull(request.enableAffectedProjectsDeployments)),
+            "resourceConfig" to
+    (SdkClient.omitIfNull(request.resourceConfig)),
         )
 }
 
 internal object ProjectsGetProjectsOperation {
     /**
-     * Retrieves project information using the project's ID or name. Use the `teamId` or `slug`
-     * query parameter to make the request on behalf of a team.
+     * Retrieves project information using the project's ID or name. Use the `teamId` or `slug` query parameter to make the request on behalf of a team.
      *
-     * Get the information for a specific project by passing either the project `id` or `name` in
-     * the URL.
+     * Get the information for a specific project by passing either the project `id` or `name` in the URL.
      *
      * @param idOrName The unique project identifier or the project name
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getProjects(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Projects.GetProjectsResponse {
-        return SdkClient.request<Projects.GetProjectsResponse>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v9/projects/${SdkClient.encodePathSegment(idOrName)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    operationId = "getProjects",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun getProjects(clientConfig: ClientConfig, idOrName: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Projects.GetProjectsResponse {
+        return SdkClient.request<Projects.GetProjectsResponse>(SdkClient.RequestSpec("GET", "/v9/projects/${SdkClient.encodePathSegment(idOrName)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getProjects", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 }
 
 internal object ProjectsUpdateProjectOperation {
     /**
-     * Updates configuration fields for a project identified by its ID or name. Submit the settings
-     * you want to change; supported build and install commands can be set to `null` for automatic
-     * detection. The response contains the updated project object.
+     * Updates configuration fields for a project identified by its ID or name. Submit the settings you want to change; supported build and install commands can be set to `null` for automatic detection. The response contains the updated project object.
      *
      * Update the fields of a project using either its `name` or `id`.
      *
      * @param idOrName The unique project identifier or the project name
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param buildCommand The build command for this project. When `null` is used this value will
-     *   be automatically detected
-     * @param customerSupportCodeVisibility Specifies whether customer support can see git source
-     *   for a deployment
-     * @param devCommand The dev command for this project. When `null` is used this value will be
-     *   automatically detected
-     * @param framework The framework that is being used for this project. When `null` is used no
-     *   framework is selected
-     * @param gitForkProtection Specifies whether PRs from Git forks should require a team member's
-     *   authorization before it can be deployed
+     * @param buildCommand The build command for this project. When `null` is used
+     *   this value will be automatically detected
+     * @param customerSupportCodeVisibility Specifies whether customer support can
+     *   see git source for a deployment
+     * @param devCommand The dev command for this project. When `null` is used this
+     *   value will be automatically detected
+     * @param framework The framework that is being used for this project. When
+     *   `null` is used no framework is selected
+     * @param gitForkProtection Specifies whether PRs from Git forks should require a
+     *   team member's authorization before it can be deployed
      * @param gitLfs Specifies whether Git LFS is enabled for this project.
-     * @param protectedSourcemaps Specifies whether sourcemaps are protected and require
-     *   authentication to access.
-     * @param installCommand The install command for this project. When `null` is used this value
-     *   will be automatically detected
+     * @param protectedSourcemaps Specifies whether sourcemaps are protected and
+     *   require authentication to access.
+     * @param installCommand The install command for this project. When `null` is
+     *   used this value will be automatically detected
      * @param name The desired name for the project
-     * @param outputDirectory The output directory of the project. When `null` is used this value
-     *   will be automatically detected
-     * @param previewDeploymentsDisabled Specifies whether preview deployments are disabled for this
-     *   project.
-     * @param previewDeploymentSuffix Custom domain suffix for preview deployments. Takes precedence
-     *   over team-level suffix. Must be a domain owned by the team.
-     * @param resourceConfig Specifies resource override configuration for the project
-     * @param publicSource Deprecated. Accepted for backwards compatibility but ignored.
-     * @param rootDirectory The name of a directory or relative path to the source code of your
-     *   project. When `null` is used it will default to the project root
-     * @param serverlessFunctionRegion The region to deploy Serverless Functions in this project
-     * @param serverlessFunctionZeroConfigFailover Specifies whether Zero Config Failover is enabled
-     *   for this project.
-     * @param skewProtectionBoundaryAt Deployments created before this absolute datetime have Skew
-     *   Protection disabled. Value is in milliseconds since epoch to match \"createdAt\" fields.
-     * @param skewProtectionMaxAge Deployments created before this rolling window have Skew
-     *   Protection disabled. Value is in seconds to match \"revalidate\" fields.
-     * @param skewProtectionAllowedDomains Cross-site domains allowed to fetch skew-protected assets
-     *   (hostnames, optionally with leading wildcard like *.example.com).
-     * @param skipGitConnectDuringLink Opts-out of the message prompting a CLI user to connect a Git
-     *   repository in `vercel link`.
-     * @param sourceFilesOutsideRootDirectory Indicates if there are source files outside of the
-     *   root directory
+     * @param outputDirectory The output directory of the project. When `null` is
+     *   used this value will be automatically detected
+     * @param previewDeploymentsDisabled Specifies whether preview deployments are
+     *   disabled for this project.
+     * @param previewDeploymentSuffix Custom domain suffix for preview deployments.
+     *   Takes precedence over team-level suffix. Must be a domain owned by the team.
+     * @param resourceConfig Specifies resource override configuration for the
+     *   project
+     * @param publicSource Deprecated. Accepted for backwards compatibility but
+     *   ignored.
+     * @param rootDirectory The name of a directory or relative path to the source
+     *   code of your project. When `null` is used it will default to the project root
+     * @param serverlessFunctionRegion The region to deploy Serverless Functions in
+     *   this project
+     * @param serverlessFunctionZeroConfigFailover Specifies whether Zero Config
+     *   Failover is enabled for this project.
+     * @param skewProtectionBoundaryAt Deployments created before this absolute
+     *   datetime have Skew Protection disabled. Value is in milliseconds since epoch
+     *   to match \"createdAt\" fields.
+     * @param skewProtectionMaxAge Deployments created before this rolling window
+     *   have Skew Protection disabled. Value is in seconds to match \"revalidate\"
+     *   fields.
+     * @param skewProtectionAllowedDomains Cross-site domains allowed to fetch
+     *   skew-protected assets (hostnames, optionally with leading wildcard like
+     *   *.example.com).
+     * @param skipGitConnectDuringLink Opts-out of the message prompting a CLI user
+     *   to connect a Git repository in `vercel link`.
+     * @param sourceFilesOutsideRootDirectory Indicates if there are source files
+     *   outside of the root directory
      * @param enablePreviewFeedback Opt-in to preview toolbar on the project level
-     * @param enableProductionFeedback Opt-in to production toolbar on the project level
-     * @param enableAffectedProjectsDeployments Opt-in to skip deployments when there are no changes
-     *   to the root directory and its dependencies
-     * @param enableExternalRewriteCaching Specifies whether external rewrite caching is enabled for
-     *   this project.
+     * @param enableProductionFeedback Opt-in to production toolbar on the project
+     *   level
+     * @param enableAffectedProjectsDeployments Opt-in to skip deployments when there
+     *   are no changes to the root directory and its dependencies
+     * @param enableExternalRewriteCaching Specifies whether external rewrite caching
+     *   is enabled for this project.
      * @param staticIps Manage Static IPs for this project
      * @param tracing Tracing configuration for this project
      * @param oidcTokenConfig OpenID Connect JSON Web Token generation configuration.
-     * @param passwordProtection Allows to protect project deployments with a password
+     * @param passwordProtection Allows to protect project deployments with a
+     *   password
      * @param passport Passport configuration for the project.
-     * @param sandbox Specifies the default region and failover regions for sandboxes created in the
-     *   project
-     * @param ssoProtection Ensures visitors to your Preview Deployments are logged into Vercel and
-     *   have a minimum of Viewer access on your team
-     * @param trustedIps Restricts access to deployments based on the incoming request IP address
+     * @param sandbox Specifies the default region and failover regions for sandboxes
+     *   created in the project
+     * @param ssoProtection Ensures visitors to your Preview Deployments are logged
+     *   into Vercel and have a minimum of Viewer access on your team
+     * @param trustedIps Restricts access to deployments based on the incoming
+     *   request IP address
      * @param trustedSources Deployment Protection Trusted Sources
-     * @param deploymentPolicy Typed representation of the `UpdateProjectRequestDeploymentPolicy`
-     *   API schema.
-     * @param optionsAllowlist Specify a list of paths that should not be protected by Deployment
-     *   Protection to enable Cors preflight requests
-     * @param connectConfigurations The list of connections from project environments to dedicated
-     *   Secure Compute networks. Shared networks must be managed through the shared-connect-links
-     *   endpoint.
-     * @param dismissedToasts An array of objects representing a Dismissed Toast in regards to a
-     *   Project. Objects are either merged with existing toasts (on key match), or added to the
-     *   `dimissedToasts` array.`
+     * @param deploymentPolicy Typed representation of the
+     *   `UpdateProjectRequestDeploymentPolicy` API schema.
+     * @param optionsAllowlist Specify a list of paths that should not be protected
+     *   by Deployment Protection to enable Cors preflight requests
+     * @param connectConfigurations The list of connections from project environments
+     *   to dedicated Secure Compute networks. Shared networks must be managed through
+     *   the shared-connect-links endpoint.
+     * @param dismissedToasts An array of objects representing a Dismissed Toast in
+     *   regards to a Project. Objects are either merged with existing toasts (on key
+     *   match), or added to the `dimissedToasts` array.`
      */
-    fun updateProject(
-        clientConfig: ClientConfig,
-        request: Projects.UpdateProjectRequest,
-        options: RequestOptions? = null,
-    ): Projects.UpdateProjectResponse {
+    fun updateProject(clientConfig: ClientConfig, request: Projects.UpdateProjectRequest, options: RequestOptions? = null): Projects.UpdateProjectResponse {
         validateUpdateProjectRequest(request)
 
-        return SdkClient.request<Projects.UpdateProjectResponse>(
-                SdkClient.RequestSpec(
-                    "PATCH",
-                    "/v9/projects/${SdkClient.encodePathSegment(request.idOrName)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    body = buildUpdateProjectBody(request),
-                    operationId = "updateProject",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Projects.UpdateProjectResponse>(SdkClient.RequestSpec("PATCH", "/v9/projects/${SdkClient.encodePathSegment(request.idOrName)}", config = clientConfig, query = mapOf("teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = buildUpdateProjectBody(request), operationId = "updateProject", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
 
     private fun validateUpdateProjectRequest(request: Projects.UpdateProjectRequest) {
         validateUpdateProjectRequestPart1(request)
@@ -467,126 +386,76 @@ internal object ProjectsUpdateProjectOperation {
 
     private fun validateUpdateProjectRequestPart1(request: Projects.UpdateProjectRequest) {
         val buildCommandValue = request.buildCommand?.getOrNull()
-        if (buildCommandValue != null) {
-            Validation.validateLength(
-                "buildCommand",
-                buildCommandValue,
-                Validation.LengthOpts(max = 256),
-            )
-        }
+if (buildCommandValue != null) {
+            Validation.validateLength("buildCommand", buildCommandValue, Validation.LengthOpts(max = 256))
+}
 
         val commandForIgnoringBuildStepValue = request.commandForIgnoringBuildStep?.getOrNull()
-        if (commandForIgnoringBuildStepValue != null) {
-            Validation.validateLength(
-                "commandForIgnoringBuildStep",
-                commandForIgnoringBuildStepValue,
-                Validation.LengthOpts(max = 256),
-            )
-        }
+if (commandForIgnoringBuildStepValue != null) {
+            Validation.validateLength("commandForIgnoringBuildStep", commandForIgnoringBuildStepValue, Validation.LengthOpts(max = 256))
+}
 
         val devCommandValue = request.devCommand?.getOrNull()
-        if (devCommandValue != null) {
-            Validation.validateLength(
-                "devCommand",
-                devCommandValue,
-                Validation.LengthOpts(max = 256),
-            )
-        }
+if (devCommandValue != null) {
+            Validation.validateLength("devCommand", devCommandValue, Validation.LengthOpts(max = 256))
+}
 
         val installCommandValue = request.installCommand?.getOrNull()
-        if (installCommandValue != null) {
-            Validation.validateLength(
-                "installCommand",
-                installCommandValue,
-                Validation.LengthOpts(max = 256),
-            )
-        }
+if (installCommandValue != null) {
+            Validation.validateLength("installCommand", installCommandValue, Validation.LengthOpts(max = 256))
+}
 
         if (request.name != null) {
             Validation.validateLength("name", request.name, Validation.LengthOpts(max = 100))
-        }
+}
     }
 
     private fun validateUpdateProjectRequestPart2(request: Projects.UpdateProjectRequest) {
         val outputDirectoryValue = request.outputDirectory?.getOrNull()
-        if (outputDirectoryValue != null) {
-            Validation.validateLength(
-                "outputDirectory",
-                outputDirectoryValue,
-                Validation.LengthOpts(max = 256),
-            )
-        }
+if (outputDirectoryValue != null) {
+            Validation.validateLength("outputDirectory", outputDirectoryValue, Validation.LengthOpts(max = 256))
+}
 
         val previewDeploymentSuffixValue = request.previewDeploymentSuffix?.getOrNull()
-        if (previewDeploymentSuffixValue != null) {
-            Validation.validateLength(
-                "previewDeploymentSuffix",
-                previewDeploymentSuffixValue,
-                Validation.LengthOpts(max = 253),
-            )
-        }
+if (previewDeploymentSuffixValue != null) {
+            Validation.validateLength("previewDeploymentSuffix", previewDeploymentSuffixValue, Validation.LengthOpts(max = 253))
+}
 
         val rootDirectoryValue = request.rootDirectory?.getOrNull()
-        if (rootDirectoryValue != null) {
-            Validation.validateLength(
-                "rootDirectory",
-                rootDirectoryValue,
-                Validation.LengthOpts(max = 256),
-            )
-        }
+if (rootDirectoryValue != null) {
+            Validation.validateLength("rootDirectory", rootDirectoryValue, Validation.LengthOpts(max = 256))
+}
 
         val serverlessFunctionRegionValue = request.serverlessFunctionRegion?.getOrNull()
-        if (serverlessFunctionRegionValue != null) {
-            Validation.validateLength(
-                "serverlessFunctionRegion",
-                serverlessFunctionRegionValue,
-                Validation.LengthOpts(max = 4),
-            )
-        }
+if (serverlessFunctionRegionValue != null) {
+            Validation.validateLength("serverlessFunctionRegion", serverlessFunctionRegionValue, Validation.LengthOpts(max = 4))
+}
 
         if (request.skewProtectionBoundaryAt != null) {
-            Validation.validateRange(
-                "skewProtectionBoundaryAt",
-                request.skewProtectionBoundaryAt,
-                Validation.RangeOpts(min = 0.0),
-            )
-        }
+            Validation.validateRange("skewProtectionBoundaryAt", request.skewProtectionBoundaryAt, Validation.RangeOpts(min = 0.0))
+}
     }
 
     private fun validateUpdateProjectRequestPart3(request: Projects.UpdateProjectRequest) {
         if (request.skewProtectionMaxAge != null) {
-            Validation.validateRange(
-                "skewProtectionMaxAge",
-                request.skewProtectionMaxAge,
-                Validation.RangeOpts(min = 0.0),
-            )
-        }
+            Validation.validateRange("skewProtectionMaxAge", request.skewProtectionMaxAge, Validation.RangeOpts(min = 0.0))
+}
 
         if (request.skewProtectionAllowedDomains != null) {
-            Validation.validateItems(
-                "skewProtectionAllowedDomains",
-                request.skewProtectionAllowedDomains,
-                Validation.LengthOpts(max = 12),
-            )
-        }
+            Validation.validateItems("skewProtectionAllowedDomains", request.skewProtectionAllowedDomains, Validation.LengthOpts(max = 12))
+}
 
         val connectConfigurationsValue = request.connectConfigurations?.getOrNull()
-        if (connectConfigurationsValue != null) {
-            Validation.validateItems(
-                "connectConfigurations",
-                connectConfigurationsValue,
-                Validation.LengthOpts(min = 1),
-            )
-        }
+if (connectConfigurationsValue != null) {
+            Validation.validateItems("connectConfigurations", connectConfigurationsValue, Validation.LengthOpts(min = 1))
+}
 
         if (request.dismissedToasts != null) {
-            Validation.validateItems(
-                "dismissedToasts",
-                request.dismissedToasts,
-                Validation.LengthOpts(min = 0, max = 50),
-            )
-        }
+            Validation.validateItems("dismissedToasts", request.dismissedToasts, Validation.LengthOpts(min = 0, max = 50))
+}
     }
+
+
 
     private fun buildUpdateProjectBody(request: Projects.UpdateProjectRequest): Map<String, Any?> =
         buildMap {
@@ -596,94 +465,111 @@ internal object ProjectsUpdateProjectOperation {
             putAll(buildUpdateProjectBodyPart4(request))
         }
 
-    private fun buildUpdateProjectBodyPart1(
-        request: Projects.UpdateProjectRequest
-    ): Map<String, Any?> =
+    private fun buildUpdateProjectBodyPart1(request: Projects.UpdateProjectRequest): Map<String, Any?> =
         SdkClient.bodyMap(
-            "autoExposeSystemEnvs" to (SdkClient.omitIfNull(request.autoExposeSystemEnvs)),
-            "autoAssignCustomDomains" to (SdkClient.omitIfNull(request.autoAssignCustomDomains)),
+            "autoExposeSystemEnvs" to
+    (SdkClient.omitIfNull(request.autoExposeSystemEnvs)),
+            "autoAssignCustomDomains" to
+    (SdkClient.omitIfNull(request.autoAssignCustomDomains)),
             "autoAssignCustomDomainsUpdatedBy" to
-                (SdkClient.omitIfNull(request.autoAssignCustomDomainsUpdatedBy)),
-            "buildCommand" to (request.buildCommand ?: SdkClient.SdkOptional.Omitted),
+    (SdkClient.omitIfNull(request.autoAssignCustomDomainsUpdatedBy)),
+            "buildCommand" to
+    (request.buildCommand ?: SdkClient.SdkOptional.Omitted),
             "commandForIgnoringBuildStep" to
-                (request.commandForIgnoringBuildStep ?: SdkClient.SdkOptional.Omitted),
+    (request.commandForIgnoringBuildStep ?: SdkClient.SdkOptional.Omitted),
             "customerSupportCodeVisibility" to
-                (SdkClient.omitIfNull(request.customerSupportCodeVisibility)),
-            "devCommand" to (request.devCommand ?: SdkClient.SdkOptional.Omitted),
-            "directoryListing" to (SdkClient.omitIfNull(request.directoryListing)),
-            "framework" to (request.framework ?: SdkClient.SdkOptional.Omitted),
-            "gitForkProtection" to (SdkClient.omitIfNull(request.gitForkProtection)),
+    (SdkClient.omitIfNull(request.customerSupportCodeVisibility)),
+            "devCommand" to
+    (request.devCommand ?: SdkClient.SdkOptional.Omitted),
+            "directoryListing" to
+    (SdkClient.omitIfNull(request.directoryListing)),
+            "framework" to
+    (request.framework ?: SdkClient.SdkOptional.Omitted),
+            "gitForkProtection" to
+    (SdkClient.omitIfNull(request.gitForkProtection)),
             "gitLFS" to (SdkClient.omitIfNull(request.gitLfs)),
-            "protectedSourcemaps" to (SdkClient.omitIfNull(request.protectedSourcemaps)),
+            "protectedSourcemaps" to
+    (SdkClient.omitIfNull(request.protectedSourcemaps)),
         )
 
-    private fun buildUpdateProjectBodyPart2(
-        request: Projects.UpdateProjectRequest
-    ): Map<String, Any?> =
+    private fun buildUpdateProjectBodyPart2(request: Projects.UpdateProjectRequest): Map<String, Any?> =
         SdkClient.bodyMap(
-            "installCommand" to (request.installCommand ?: SdkClient.SdkOptional.Omitted),
+            "installCommand" to
+    (request.installCommand ?: SdkClient.SdkOptional.Omitted),
             "name" to (SdkClient.omitIfNull(request.name)),
             "nodeVersion" to (SdkClient.omitIfNull(request.nodeVersion)),
-            "outputDirectory" to (request.outputDirectory ?: SdkClient.SdkOptional.Omitted),
+            "outputDirectory" to
+    (request.outputDirectory ?: SdkClient.SdkOptional.Omitted),
             "previewDeploymentsDisabled" to
-                (request.previewDeploymentsDisabled ?: SdkClient.SdkOptional.Omitted),
+    (request.previewDeploymentsDisabled ?: SdkClient.SdkOptional.Omitted),
             "previewDeploymentSuffix" to
-                (request.previewDeploymentSuffix ?: SdkClient.SdkOptional.Omitted),
-            "resourceConfig" to (SdkClient.omitIfNull(request.resourceConfig)),
-            "publicSource" to (request.publicSource ?: SdkClient.SdkOptional.Omitted),
-            "rootDirectory" to (request.rootDirectory ?: SdkClient.SdkOptional.Omitted),
+    (request.previewDeploymentSuffix ?: SdkClient.SdkOptional.Omitted),
+            "resourceConfig" to
+    (SdkClient.omitIfNull(request.resourceConfig)),
+            "publicSource" to
+    (request.publicSource ?: SdkClient.SdkOptional.Omitted),
+            "rootDirectory" to
+    (request.rootDirectory ?: SdkClient.SdkOptional.Omitted),
             "serverlessFunctionRegion" to
-                (request.serverlessFunctionRegion ?: SdkClient.SdkOptional.Omitted),
+    (request.serverlessFunctionRegion ?: SdkClient.SdkOptional.Omitted),
             "serverlessFunctionZeroConfigFailover" to
-                (SdkClient.omitIfNull(request.serverlessFunctionZeroConfigFailover)),
-            "skewProtectionBoundaryAt" to (SdkClient.omitIfNull(request.skewProtectionBoundaryAt)),
+    (SdkClient.omitIfNull(request.serverlessFunctionZeroConfigFailover)),
+            "skewProtectionBoundaryAt" to
+    (SdkClient.omitIfNull(request.skewProtectionBoundaryAt)),
         )
 
-    private fun buildUpdateProjectBodyPart3(
-        request: Projects.UpdateProjectRequest
-    ): Map<String, Any?> =
+    private fun buildUpdateProjectBodyPart3(request: Projects.UpdateProjectRequest): Map<String, Any?> =
         SdkClient.bodyMap(
-            "skewProtectionMaxAge" to (SdkClient.omitIfNull(request.skewProtectionMaxAge)),
+            "skewProtectionMaxAge" to
+    (SdkClient.omitIfNull(request.skewProtectionMaxAge)),
             "skewProtectionAllowedDomains" to
-                (SdkClient.omitIfNull(request.skewProtectionAllowedDomains)),
-            "skipGitConnectDuringLink" to (SdkClient.omitIfNull(request.skipGitConnectDuringLink)),
+    (SdkClient.omitIfNull(request.skewProtectionAllowedDomains)),
+            "skipGitConnectDuringLink" to
+    (SdkClient.omitIfNull(request.skipGitConnectDuringLink)),
             "sourceFilesOutsideRootDirectory" to
-                (SdkClient.omitIfNull(request.sourceFilesOutsideRootDirectory)),
+    (SdkClient.omitIfNull(request.sourceFilesOutsideRootDirectory)),
             "enablePreviewFeedback" to
-                (request.enablePreviewFeedback ?: SdkClient.SdkOptional.Omitted),
+    (request.enablePreviewFeedback ?: SdkClient.SdkOptional.Omitted),
             "enableProductionFeedback" to
-                (request.enableProductionFeedback ?: SdkClient.SdkOptional.Omitted),
+    (request.enableProductionFeedback ?: SdkClient.SdkOptional.Omitted),
             "enableAffectedProjectsDeployments" to
-                (SdkClient.omitIfNull(request.enableAffectedProjectsDeployments)),
+    (SdkClient.omitIfNull(request.enableAffectedProjectsDeployments)),
             "enableExternalRewriteCaching" to
-                (SdkClient.omitIfNull(request.enableExternalRewriteCaching)),
+    (SdkClient.omitIfNull(request.enableExternalRewriteCaching)),
             "staticIps" to (SdkClient.omitIfNull(request.staticIps)),
-            "tracing" to (request.tracing ?: SdkClient.SdkOptional.Omitted),
-            "oidcTokenConfig" to (SdkClient.omitIfNull(request.oidcTokenConfig)),
-            "passwordProtection" to (request.passwordProtection ?: SdkClient.SdkOptional.Omitted),
+            "tracing" to
+    (request.tracing ?: SdkClient.SdkOptional.Omitted),
+            "oidcTokenConfig" to
+    (SdkClient.omitIfNull(request.oidcTokenConfig)),
+            "passwordProtection" to
+    (request.passwordProtection ?: SdkClient.SdkOptional.Omitted),
         )
 
-    private fun buildUpdateProjectBodyPart4(
-        request: Projects.UpdateProjectRequest
-    ): Map<String, Any?> =
+    private fun buildUpdateProjectBodyPart4(request: Projects.UpdateProjectRequest): Map<String, Any?> =
         SdkClient.bodyMap(
-            "passport" to (request.passport ?: SdkClient.SdkOptional.Omitted),
+            "passport" to
+    (request.passport ?: SdkClient.SdkOptional.Omitted),
             "sandbox" to (SdkClient.omitIfNull(request.sandbox)),
-            "ssoProtection" to (request.ssoProtection ?: SdkClient.SdkOptional.Omitted),
-            "trustedIps" to (request.trustedIps ?: SdkClient.SdkOptional.Omitted),
-            "trustedSources" to (request.trustedSources ?: SdkClient.SdkOptional.Omitted),
-            "deploymentPolicy" to (SdkClient.omitIfNull(request.deploymentPolicy)),
-            "optionsAllowlist" to (request.optionsAllowlist ?: SdkClient.SdkOptional.Omitted),
+            "ssoProtection" to
+    (request.ssoProtection ?: SdkClient.SdkOptional.Omitted),
+            "trustedIps" to
+    (request.trustedIps ?: SdkClient.SdkOptional.Omitted),
+            "trustedSources" to
+    (request.trustedSources ?: SdkClient.SdkOptional.Omitted),
+            "deploymentPolicy" to
+    (SdkClient.omitIfNull(request.deploymentPolicy)),
+            "optionsAllowlist" to
+    (request.optionsAllowlist ?: SdkClient.SdkOptional.Omitted),
             "connectConfigurations" to
-                (request.connectConfigurations ?: SdkClient.SdkOptional.Omitted),
-            "dismissedToasts" to (SdkClient.omitIfNull(request.dismissedToasts)),
+    (request.connectConfigurations ?: SdkClient.SdkOptional.Omitted),
+            "dismissedToasts" to
+    (SdkClient.omitIfNull(request.dismissedToasts)),
         )
 }
 
 internal object ProjectsDeleteProjectOperation {
     /**
-     * Deletes a project identified by its ID or name. Use the `teamId` or `slug` query parameter to
-     * make the request on behalf of a team. A 204 response confirms the project was removed.
+     * Deletes a project identified by its ID or name. Use the `teamId` or `slug` query parameter to make the request on behalf of a team. A 204 response confirms the project was removed.
      *
      * Delete a specific project by passing either the project `id` or `name` in the URL.
      *
@@ -691,27 +577,7 @@ internal object ProjectsDeleteProjectOperation {
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun deleteProject(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Unit {
-        SdkClient.request<Unit>(
-            SdkClient.RequestSpec(
-                "DELETE",
-                "/v9/projects/${SdkClient.encodePathSegment(idOrName)}",
-                config = clientConfig,
-                query =
-                    mapOf(
-                        "teamId" to SdkClient.queryValue(teamId, "form", true),
-                        "slug" to SdkClient.queryValue(slug, "form", true),
-                    ),
-                operationId = "deleteProject",
-                decoder = SdkClient.ResponseDecoder.EMPTY,
-                options = options,
-            )
-        )
+    fun deleteProject(clientConfig: ClientConfig, idOrName: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
+        SdkClient.request<Unit>(SdkClient.RequestSpec("DELETE", "/v9/projects/${SdkClient.encodePathSegment(idOrName)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "deleteProject", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
     }
 }

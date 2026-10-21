@@ -9,52 +9,54 @@ data class CreateDeploymentResponseVariant1GitSourceVariant18(
     val repo: String,
     val repoId: String,
     val sha: String,
-    val type: CreateDeploymentResponseVariant1GitSourceVariant18TypeEnum,
+    val type: CreateDeploymentResponseVariant1GitSourceVariant18TypeEnum
 )
 
 data class CreateDeploymentResponseVariant1ImagesLocalPatternsItem(
     /**
-     * Can be literal or wildcard. Single `*` matches a single path segment. Double `**` matches any
-     * number of path segments.
+     * Can be literal or wildcard. Single `*` matches a single path segment. Double `**` matches any number of path segments.
      */
     val pathname: String? = null,
-    /** Can be literal query string such as `?v=1` or empty string meaning no query string. */
-    val search: String? = null,
+    /**
+     * Can be literal query string such as `?v=1` or empty string meaning no query string.
+     */
+    val search: String? = null
 )
 
 data class CreateDeploymentResponseVariant1ImagesRemotePatternsItem(
     /**
-     * Can be literal or wildcard. Single `*` matches a single subdomain. Double `**` matches any
-     * number of subdomains.
+     * Can be literal or wildcard. Single `*` matches a single subdomain. Double `**` matches any number of subdomains.
      */
     val hostname: String,
     /**
-     * Can be literal or wildcard. Single `*` matches a single path segment. Double `**` matches any
-     * number of path segments.
+     * Can be literal or wildcard. Single `*` matches a single path segment. Double `**` matches any number of path segments.
      */
     val pathname: String? = null,
-    /** Can be literal port such as `8080` or empty string meaning no port. */
+    /**
+     * Can be literal port such as `8080` or empty string meaning no port.
+     */
     val port: String? = null,
-    /** Must be `http` or `https`. */
+    /**
+     * Must be `http` or `https`.
+     */
     val protocol: CreateDeploymentResponseVariant1ImagesRemotePatternsItemProtocolEnum? = null,
-    /** Can be literal query string such as `?v=1` or empty string meaning no query string. */
-    val search: String? = null,
+    /**
+     * Can be literal query string such as `?v=1` or empty string meaning no query string.
+     */
+    val search: String? = null
 )
 
 data class CreateDeploymentResponseVariant1Images(
-    val contentDispositionType: CreateDeploymentResponseVariant1ImagesContentDispositionTypeEnum? =
-        null,
+    val contentDispositionType: CreateDeploymentResponseVariant1ImagesContentDispositionTypeEnum? = null,
     val contentSecurityPolicy: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("dangerouslyAllowSVG")
-    val dangerouslyAllowSvg: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("dangerouslyAllowSVG") val dangerouslyAllowSvg: Boolean? = null,
     val domains: List<String>? = null,
     val formats: List<CreateDeploymentResponseVariant1ImagesFormatsItemEnum>? = null,
     val localPatterns: List<CreateDeploymentResponseVariant1ImagesLocalPatternsItem>? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("minimumCacheTTL")
-    val minimumCacheTtl: Double? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("minimumCacheTTL") val minimumCacheTtl: Double? = null,
     val qualities: List<Double>? = null,
     val remotePatterns: List<CreateDeploymentResponseVariant1ImagesRemotePatternsItem>? = null,
-    val sizes: List<Double>? = null,
+    val sizes: List<Double>? = null
 )
 
 data class CreateDeploymentResponseVariant1Integrations(
@@ -63,76 +65,74 @@ data class CreateDeploymentResponseVariant1Integrations(
     val claimedAt: Double? = null,
     val completedAt: Double? = null,
     val skippedAt: Double? = null,
-    val skippedBy: String? = null,
+    val skippedBy: String? = null
 )
 
 data class CreateDeploymentResponseVariant1LambdasItemOutputItem(
     val functionName: String,
-    val path: String,
+    val path: String
 )
 
-/** A partial representation of a Build used by the deployment endpoint. */
+/**
+ * A partial representation of a Build used by the deployment endpoint.
+ */
 data class CreateDeploymentResponseVariant1LambdasItem(
     val id: String,
     val output: List<CreateDeploymentResponseVariant1LambdasItemOutputItem>,
     val createdAt: Double? = null,
     val entrypoint: String? = null,
     val readyState: CreateDeploymentResponseVariant1LambdasItemReadyStateEnum? = null,
-    val readyStateAt: Double? = null,
+    val readyStateAt: Double? = null
 )
 
 /**
- * Present when deployment was created with manual provisioning enabled, either explicitly or via
- * the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.
+ * Present when deployment was created with manual provisioning enabled, either explicitly or via the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.
  */
 data class CreateDeploymentResponseVariant1ManualProvisioning(
-    /** Current provisioning state */
+    /**
+     * Current provisioning state
+     */
     val state: CreateDeploymentResponseVariant1ManualProvisioningStateEnum,
-    /** Timestamp when manual provisioning completed */
-    val completedAt: Double? = null,
+    /**
+     * Timestamp when manual provisioning completed
+     */
+    val completedAt: Double? = null
 )
 
 data class CreateDeploymentResponseVariant1MicrofrontendsVariant0(
-    /** The project name of the default app of this deployment's microfrontends group. */
+    /**
+     * The project name of the default app of this deployment's microfrontends group.
+     */
     val defaultAppProjectName: String,
     /**
-     * The group of microfrontends that this project belongs to. Each microfrontend project must
-     * belong to a microfrontends group that is the set of microfrontends that are used together.
+     * The group of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
      */
     val groupIds: List<String>,
     /**
-     * A path that is used to take screenshots and as the default path in preview links when a
-     * domain for this microfrontend is shown in the UI.
+     * A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI.
      */
     val defaultRoute: String? = null,
-    val isDefaultApp: Boolean? = null,
+    val isDefaultApp: Boolean? = null
 )
 
 data class CreateDeploymentResponseVariant1MicrofrontendsVariant1(
-    /** The project name of the default app of this deployment's microfrontends group. */
+    /**
+     * The project name of the default app of this deployment's microfrontends group.
+     */
     val defaultAppProjectName: String,
     /**
-     * The group of microfrontends that this project belongs to. Each microfrontend project must
-     * belong to a microfrontends group that is the set of microfrontends that are used together.
+     * The group of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
      */
     val groupIds: List<String>,
     val isDefaultApp: Boolean,
     /**
-     * A path that is used to take screenshots and as the default path in preview links when a
-     * domain for this microfrontend is shown in the UI.
+     * A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI.
      */
     val defaultRoute: String? = null,
     /**
-     * The result of the microfrontends config upload during deployment creation / build. Only set
-     * for default app deployments. The config upload is attempted during deployment create, and
-     * then again during the build. If the config is not in the root directory, or the deployment is
-     * prebuilt, the config cannot be uploaded during deployment create. The upload during
-     * deployment build finds the config even if it's not in the root directory, as it has access to
-     * all files. Uploading the…
+     * The result of the microfrontends config upload during deployment creation / build. Only set for default app deployments. The config upload is attempted during deployment create, and then again during the build. If the config is not in the root directory, or the deployment is prebuilt, the config cannot be uploaded during deployment create. The upload during deployment build finds the config even if it's not in the root directory, as it has access to all files. Uploading the…
      */
-    val mfeConfigUploadState:
-        CreateDeploymentResponseVariant1MicrofrontendsVariant1MfeConfXac1634dab1? =
-        null,
+    val mfeConfigUploadState: CreateDeploymentResponseVariant1MicrofrontendsVariant1MfeConfXac1634dab1? = null
 )
 
 data class CreateDeploymentResponseVariant1OidcTokenClaims(
@@ -145,127 +145,139 @@ data class CreateDeploymentResponseVariant1OidcTokenClaims(
     @com.fasterxml.jackson.annotation.JsonProperty("project_id") val projectId: String,
     val scope: String,
     val sub: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("custom_environment_id")
-    val customEnvironmentId: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("deployment_id")
-    val deploymentId: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("mfe_group_ids")
-    val mfeGroupIds: List<String>? = null,
-    val plan: String? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("custom_environment_id") val customEnvironmentId: String? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("deployment_id") val deploymentId: String? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("mfe_group_ids") val mfeGroupIds: List<String>? = null,
+    val plan: String? = null
 )
 
-/** The user on the external platform who triggered the deployment. */
+/**
+ * The user on the external platform who triggered the deployment.
+ */
 data class CreateDeploymentResponseVariant1PlatformCreator(
-    /** Display name of the platform user. */
+    /**
+     * Display name of the platform user.
+     */
     val name: String,
-    /** URL of the platform user's avatar image. */
-    val avatar: String? = null,
+    /**
+     * URL of the platform user's avatar image.
+     */
+    val avatar: String? = null
 )
 
-/** Reference back to the entity on the platform that initiated the deployment. */
+/**
+ * Reference back to the entity on the platform that initiated the deployment.
+ */
 data class CreateDeploymentResponseVariant1PlatformOrigin(
-    /** Whether the value is an opaque identifier or a URL. */
+    /**
+     * Whether the value is an opaque identifier or a URL.
+     */
     val type: CreateDeploymentResponseVariant1PlatformOriginTypeEnum,
-    /** The identifier or URL pointing to the originating entity. */
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+    /**
+     * The identifier or URL pointing to the originating entity.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String
 )
 
-/** The external platform that created the deployment (e.g. its display name). */
+/**
+ * The external platform that created the deployment (e.g. its display name).
+ */
 data class CreateDeploymentResponseVariant1PlatformSource(
-    /** Display name of the platform. */
+    /**
+     * Display name of the platform.
+     */
     val name: String
 )
 
 /**
- * Metadata about the source platform that triggered the deployment. Allows us to map a deployment
- * back to a platform (e.g. the chat that created it)
+ * Metadata about the source platform that triggered the deployment. Allows us to map a deployment back to a platform (e.g. the chat that created it)
  */
 data class CreateDeploymentResponseVariant1Platform(
-    /** The user on the external platform who triggered the deployment. */
+    /**
+     * The user on the external platform who triggered the deployment.
+     */
     val creator: CreateDeploymentResponseVariant1PlatformCreator,
-    /** Reference back to the entity on the platform that initiated the deployment. */
+    /**
+     * Reference back to the entity on the platform that initiated the deployment.
+     */
     val origin: CreateDeploymentResponseVariant1PlatformOrigin,
-    /** The external platform that created the deployment (e.g. its display name). */
+    /**
+     * The external platform that created the deployment (e.g. its display name).
+     */
     val source: CreateDeploymentResponseVariant1PlatformSource,
-    /** Arbitrary key-value metadata provided by the platform. */
-    val meta: Map<String, String>? = null,
-)
-
-/** The public project information associated with the deployment. */
-data class CreateDeploymentResponseVariant1Project(
-    val id: String,
-    val name: String,
-    val framework: String? = null,
+    /**
+     * Arbitrary key-value metadata provided by the platform.
+     */
+    val meta: Map<String, String>? = null
 )
 
 /**
- * Build machine configuration recorded for this deployment's build. See {@link
- * DeploymentBuildMachine}. Distinct from the team/user `resourceConfig.buildMachine`, which only
- * carries `default`.
+ * The public project information associated with the deployment.
+ */
+data class CreateDeploymentResponseVariant1Project(
+    val id: String,
+    val name: String,
+    val framework: String? = null
+)
+
+/**
+ * Build machine configuration recorded for this deployment's build. See {@link DeploymentBuildMachine}. Distinct from the team/user `resourceConfig.buildMachine`, which only carries `default`.
  */
 data class CreateDeploymentResponseVariant1ResourceConfigBuildMachine(
     /**
-     * Number of cores the build machine ran with. Set at dispatch time once the build lands on a
-     * hive.
+     * Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive.
      */
     val cores: Double? = null,
     /**
-     * The build machine tier included with the customer's plan. For most customers this is
-     * standard; enhanced entitlements include enhanced, while `none` means every build is billed at
-     * its purchase type.
+     * The build machine tier included with the customer's plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.
      */
-    val defaultPurchaseType:
-        CreateDeploymentResponseVariant1ResourceConfigBuildMachineDefX250fe04a52? =
-        null,
-    /** Whether the build ran on a fixed or elastic machine. Used to drive billing for the build. */
-    val machineSelectionType:
-        CreateDeploymentResponseVariant1ResourceConfigBuildMachineMacX4afc5be462? =
-        null,
+    val defaultPurchaseType: CreateDeploymentResponseVariant1ResourceConfigBuildMachineDefX250fe04a52? = null,
     /**
-     * Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a
-     * hive.
+     * Whether the build ran on a fixed or elastic machine. Used to drive billing for the build.
+     */
+    val machineSelectionType: CreateDeploymentResponseVariant1ResourceConfigBuildMachineMacX4afc5be462? = null,
+    /**
+     * Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a hive.
      */
     val memory: Double? = null,
     /**
-     * Machine type which was purchased/selected for this build. `basic` is the 2vCPU tier, recorded
-     * on the deployment so the build pipeline can detect a basic build without consulting the
-     * project.
+     * Machine type which was purchased/selected for this build. `basic` is the 2vCPU tier, recorded on the deployment so the build pipeline can detect a basic build without consulting the project.
      */
-    val purchaseType: CreateDeploymentResponseVariant1ResourceConfigBuildMachinePurXaaffac2fd6? =
-        null,
+    val purchaseType: CreateDeploymentResponseVariant1ResourceConfigBuildMachinePurXaaffac2fd6? = null,
     /**
-     * The setting which selected the build machine when the deployment was created. Frozen here so
-     * later project or team changes do not rewrite its history.
+     * The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.
      */
-    val selectionSource: CreateDeploymentResponseVariant1ResourceConfigBuildMachineSelX95968b9d0a? =
-        null,
+    val selectionSource: CreateDeploymentResponseVariant1ResourceConfigBuildMachineSelX95968b9d0a? = null
 )
 
 data class CreateDeploymentResponseVariant1ResourceConfig(
     /**
-     * Build machine configuration recorded for this deployment's build. See {@link
-     * DeploymentBuildMachine}. Distinct from the team/user `resourceConfig.buildMachine`, which
-     * only carries `default`.
+     * Build machine configuration recorded for this deployment's build. See {@link DeploymentBuildMachine}. Distinct from the team/user `resourceConfig.buildMachine`, which only carries `default`.
      */
     val buildMachine: CreateDeploymentResponseVariant1ResourceConfigBuildMachine? = null
 )
 
-/** NSNB Blocked metadata */
+/**
+ * NSNB Blocked metadata
+ */
 data class CreateDeploymentResponseVariant1SeatBlock(
     /**
      * The NSNB decision code for the seat block. Future change: We should consolidate block types.
      */
     val blockCode: CreateDeploymentResponseVariant1SeatBlockBlockCodeEnum,
-    /** The git provider type associated with gitUserId. */
+    /**
+     * The git provider type associated with gitUserId.
+     */
     val gitProvider: CreateDeploymentResponseVariant1SeatBlockGitProviderEnum? = null,
     val gitUserId: Any? = null,
     /**
-     * Determines if the user was verified during the block. In the git integration case, the commit
-     * sender was the author.
+     * Determines if the user was verified during the block. In the git integration case, the commit sender was the author.
      */
     val isVerified: Boolean? = null,
-    /** The blocked vercel user ID. */
-    val userId: String? = null,
+    /**
+     * The blocked vercel user ID.
+     */
+    val userId: String? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX4f427e0fa5(
@@ -276,18 +288,24 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX3083677
     val requests: CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX4f427e0fa5
 )
 
-/** Set when this build produces the named daemon. */
+/**
+ * Set when this build produces the named daemon.
+ */
 data class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigDaemon(
     val entrypoint: String,
     val root: String,
     val name: String,
     val command: List<String>? = null,
-    /** Instance counts by region. */
+    /**
+     * Instance counts by region.
+     */
     val instances: Map<String, Double>? = null,
-    /** Instance counts by region. */
+    /**
+     * Instance counts by region.
+     */
     val replicas: Map<String, Double>? = null,
     val resources: CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX30836770a1? = null,
-    val terminationGracePeriodSeconds: Double? = null,
+    val terminationGracePeriodSeconds: Double? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX2fd8f281e5(
@@ -298,78 +316,76 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX2fd8f28
  * Queue trigger input event for v1beta (from vercel.json config). Requires explicit consumer name.
  */
 data class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX4151a546af(
-    /** Name of the consumer group for this trigger (REQUIRED) */
+    /**
+     * Name of the consumer group for this trigger (REQUIRED)
+     */
     val consumer: String,
-    /** Name of the queue topic to consume from (REQUIRED) */
+    /**
+     * Name of the queue topic to consume from (REQUIRED)
+     */
     val topic: String,
-    /** Event type - must be "queue/v1beta" (REQUIRED) */
+    /**
+     * Event type - must be "queue/v1beta" (REQUIRED)
+     */
     val type: CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXf00b670717,
     /**
-     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use
-     * 0 for no initial delay. Behavior when not specified depends on the server's default
-     * configuration.
+     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
      */
     val initialDelaySeconds: Double? = null,
     /**
-     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if
-     * specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxConcurrency: Double? = null,
     /**
-     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the
-     * total number of times a message can be delivered, not the number of retries. Must be at least
-     * 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxDeliveries: Double? = null,
     /**
-     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified
-     * depends on the server's default configuration.
+     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
      */
-    val retryAfterSeconds: Double? = null,
+    val retryAfterSeconds: Double? = null
 )
 
 /**
- * Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly
- * derived from the function path. Only one trigger per function is allowed.
+ * Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed.
  */
 data class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX5373b0a1e5(
-    /** Name of the queue topic to consume from (REQUIRED) */
+    /**
+     * Name of the queue topic to consume from (REQUIRED)
+     */
     val topic: String,
-    /** Event type - must be "queue/v2beta" (REQUIRED) */
+    /**
+     * Event type - must be "queue/v2beta" (REQUIRED)
+     */
     val type: CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX3797199c13,
     /**
-     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use
-     * 0 for no initial delay. Behavior when not specified depends on the server's default
-     * configuration.
+     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
      */
     val initialDelaySeconds: Double? = null,
     /**
-     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if
-     * specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxConcurrency: Double? = null,
     /**
-     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the
-     * total number of times a message can be delivered, not the number of retries. Must be at least
-     * 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxDeliveries: Double? = null,
     /**
-     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified
-     * depends on the server's default configuration.
+     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
      */
-    val retryAfterSeconds: Double? = null,
+    val retryAfterSeconds: Double? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX2918c27225(
-    /** Event type - must be "schedule/v1beta" (REQUIRED) */
+    /**
+     * Event type - must be "schedule/v1beta" (REQUIRED)
+     */
     val type: CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXd1bce0d3e0
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX4e906539a0(
     val affinity: CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX2fd8f281e5? = null,
-    val architecture: CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXd28475dd41? =
-        null,
+    val architecture: CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXd28475dd41? = null,
     val excludeFiles: String? = null,
     val experimentalTriggers: List<Any>? = null,
     val functionFailoverRegions: List<String>? = null,
@@ -379,7 +395,7 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX4e90653
     val memory: Double? = null,
     val regions: List<String>? = null,
     val runtime: String? = null,
-    val supportsCancellation: Boolean? = null,
+    val supportsCancellation: Boolean? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXa2a05329d7(
@@ -396,87 +412,98 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXa2a0532
     val nodeVersion: String? = null,
     val outputDirectory: String? = null,
     val rootDirectory: String? = null,
-    val sourceFilesOutsideRootDirectory: Boolean? = null,
+    val sourceFilesOutsideRootDirectory: Boolean? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX61d32a3f5c(
-    /** Runtime-specific entrypoint locator from `vercel.json`. */
+    /**
+     * Runtime-specific entrypoint locator from `vercel.json`.
+     */
     val entrypoint: String,
-    /** Names of the schedules that dispatch to this entrypoint, in config order. */
+    /**
+     * Names of the schedules that dispatch to this entrypoint, in config order.
+     */
     val scheduleNames: List<String>,
-    /** Project-relative source file that contains the entrypoint. */
-    val sourceFile: String,
+    /**
+     * Project-relative source file that contains the entrypoint.
+     */
+    val sourceFile: String
 )
 
-/** Set when this build produces a function for schedule entrypoints. */
+/**
+ * Set when this build produces a function for schedule entrypoints.
+ */
 data class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX63c4690fb7(
     val entrypoints: List<CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX61d32a3f5c>,
-    /** Function output path every schedule in this build targets. */
-    val outputPath: String,
+    /**
+     * Function output path every schedule in this build targets.
+     */
+    val outputPath: String
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfig(
     val buildCommand: String? = null,
-    /** Buildpack runtime slug (e.g. "ruby"). */
+    /**
+     * Buildpack runtime slug (e.g. "ruby").
+     */
     val buildpack: String? = null,
     val bundle: Boolean? = null,
     val bunVersion: String? = null,
-    /** Set when this build produces the named daemon. */
+    /**
+     * Set when this build produces the named daemon.
+     */
     val daemon: CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfigDaemon? = null,
     val debug: Boolean? = null,
     val devCommand: String? = null,
     val excludeFiles: Any? = null,
     val framework: String? = null,
-    val functions:
-        Map<String, CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX4e906539a0>? =
-        null,
+    val functions: Map<String, CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX4e906539a0>? = null,
     val helpers: Boolean? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("import")
-    val `import`: Map<String, String>? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("import") val `import`: Map<String, String>? = null,
     val includeFiles: Any? = null,
     val installCommand: String? = null,
     val ldsflags: String? = null,
     val maxLambdaSize: String? = null,
     val middleware: Boolean? = null,
     val middlewareMatcher: Any? = null,
-    /** Enforced runtime for explicitly configured Routing Middleware. */
-    val middlewareRuntime:
-        CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXf289fba5c8? =
-        null,
+    /**
+     * Enforced runtime for explicitly configured Routing Middleware.
+     */
+    val middlewareRuntime: CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXf289fba5c8? = null,
     val nodeVersion: String? = null,
     val outputDirectory: String? = null,
-    val projectSettings: CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXa2a05329d7? =
-        null,
+    val projectSettings: CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoXa2a05329d7? = null,
     val rust: String? = null,
-    /** Set when this build produces a function for schedule entrypoints. */
-    val scheduleFunction:
-        CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX63c4690fb7? =
-        null,
-    /** Owning service name; scopes per-function config such as the v2beta consumer. */
+    /**
+     * Set when this build produces a function for schedule entrypoints.
+     */
+    val scheduleFunction: CreateDeploymentResponseVariant1ServicesItemVariant0BuilderCoX63c4690fb7? = null,
+    /**
+     * Owning service name; scopes per-function config such as the v2beta consumer.
+     */
     val serviceName: String? = null,
-    val zeroConfig: Boolean? = null,
+    val zeroConfig: Boolean? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant0Builder(
     val use: String,
     val config: CreateDeploymentResponseVariant1ServicesItemVariant0BuilderConfig? = null,
-    val src: String? = null,
+    val src: String? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant0EnvValue(
     val service: String,
-    val type: CreateDeploymentResponseVariant1ServicesItemVariant0EnvValueTypeEnum,
+    val type: CreateDeploymentResponseVariant1ServicesItemVariant0EnvValueTypeEnum
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant0TopicsVariant1Item(
     val topic: String,
     val initialDelaySeconds: Double? = null,
-    val retryAfterSeconds: Double? = null,
+    val retryAfterSeconds: Double? = null
 )
 
 /**
- * Services detected during build from vercel.json experimentalServices or auto-detected from
- * project structure. Used to inject service URLs as environment variables at runtime.
+ * Services detected during build from vercel.json experimentalServices or auto-detected from project structure. Used to inject service URLs as environment variables at runtime.
  */
 data class CreateDeploymentResponseVariant1ServicesItemVariant0(
     val builder: CreateDeploymentResponseVariant1ServicesItemVariant0Builder,
@@ -493,14 +520,12 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant0(
     val installCommand: String? = null,
     val preDeployCommand: String? = null,
     val routePrefix: String? = null,
-    val routePrefixSource:
-        CreateDeploymentResponseVariant1ServicesItemVariant0RoutePrefX2b6783ca13? =
-        null,
+    val routePrefixSource: CreateDeploymentResponseVariant1ServicesItemVariant0RoutePrefX2b6783ca13? = null,
     val runtime: String? = null,
     val schedule: Any? = null,
     val subdomain: String? = null,
     val topics: Any? = null,
-    val trigger: CreateDeploymentResponseVariant1ServicesItemVariant0TriggerEnum? = null,
+    val trigger: CreateDeploymentResponseVariant1ServicesItemVariant0TriggerEnum? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX774bee5fc3(
@@ -511,18 +536,24 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa590a6e
     val requests: CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX774bee5fc3
 )
 
-/** Set when this build produces the named daemon. */
+/**
+ * Set when this build produces the named daemon.
+ */
 data class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderConfigDaemon(
     val entrypoint: String,
     val root: String,
     val name: String,
     val command: List<String>? = null,
-    /** Instance counts by region. */
+    /**
+     * Instance counts by region.
+     */
     val instances: Map<String, Double>? = null,
-    /** Instance counts by region. */
+    /**
+     * Instance counts by region.
+     */
     val replicas: Map<String, Double>? = null,
     val resources: CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXa590a6ef0e? = null,
-    val terminationGracePeriodSeconds: Double? = null,
+    val terminationGracePeriodSeconds: Double? = null
 )
 
 data class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX244bc2af34(
@@ -533,32 +564,32 @@ data class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX244bc2a
  * Queue trigger input event for v1beta (from vercel.json config). Requires explicit consumer name.
  */
 data class CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoXe19cc5035f(
-    /** Name of the consumer group for this trigger (REQUIRED) */
+    /**
+     * Name of the consumer group for this trigger (REQUIRED)
+     */
     val consumer: String,
-    /** Name of the queue topic to consume from (REQUIRED) */
+    /**
+     * Name of the queue topic to consume from (REQUIRED)
+     */
     val topic: String,
-    /** Event type - must be "queue/v1beta" (REQUIRED) */
+    /**
+     * Event type - must be "queue/v1beta" (REQUIRED)
+     */
     val type: CreateDeploymentResponseVariant1ServicesItemVariant1BuilderCoX0ff94269c1,
     /**
-     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use
-     * 0 for no initial delay. Behavior when not specified depends on the server's default
-     * configuration.
+     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
      */
     val initialDelaySeconds: Double? = null,
     /**
-     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if
-     * specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxConcurrency: Double? = null,
     /**
-     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the
-     * total number of times a message can be delivered, not the number of retries. Must be at least
-     * 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxDeliveries: Double? = null,
     /**
-     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified
-     * depends on the server's default configuration.
+     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
      */
-    val retryAfterSeconds: Double? = null,
+    val retryAfterSeconds: Double? = null
 )

@@ -8,19 +8,14 @@ data class GetConditionalBypassResponseVariant0ResultItemConditionsItem(
     val type: GetConditionalBypassResponseVariant0ResultItemConditionsItemTypeEnum,
     val key: String? = null,
     val neg: Boolean? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
 )
 
 data class GetConditionalBypassResponseVariant0ResultItem(
     val conditions: List<GetConditionalBypassResponseVariant0ResultItemConditionsItem>
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetConditionalBypassResponseVariant0(
     val result: List<GetConditionalBypassResponseVariant0ResultItem>
 ) : GetConditionalBypassResponse
@@ -34,7 +29,7 @@ data class GetConditionalBypassResponseVariant1ResultItemConditionGroupIXd8e23c8
     val type: GetConditionalBypassResponseVariant1ResultItemConditionGroupIXf654c5004f,
     val key: String? = null,
     val neg: Boolean? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
 )
 
 data class GetConditionalBypassResponseVariant1ResultItemConditionGroupItem(
@@ -43,39 +38,29 @@ data class GetConditionalBypassResponseVariant1ResultItemConditionGroupItem(
 
 data class GetConditionalBypassResponseVariant1ResultItem(
     val conditionGroup: List<GetConditionalBypassResponseVariant1ResultItemConditionGroupItem>,
-    val domain: String,
+    val domain: String
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class GetConditionalBypassResponseVariant1(
     val pagination: GetConditionalBypassResponseVariant1Pagination,
-    val result: List<GetConditionalBypassResponseVariant1ResultItem>,
+    val result: List<GetConditionalBypassResponseVariant1ResultItem>
 ) : GetConditionalBypassResponse
 
-/** Typed representation of the `GetConditionalBypassResponse` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = GetConditionalBypassResponse.Deserializer::class
-)
+/**
+ * Typed representation of the `GetConditionalBypassResponse` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = GetConditionalBypassResponse.Deserializer::class)
 sealed interface GetConditionalBypassResponse {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer :
-        com.fasterxml.jackson.databind.JsonDeserializer<GetConditionalBypassResponse>() {
+    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<GetConditionalBypassResponse>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): GetConditionalBypassResponse {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                GetConditionalBypassResponseOwnedTypes.firstOrNull { (keys, _) ->
-                        keys.any(node::has)
-                    }
-                    ?.second
+            val ownedType = GetConditionalBypassResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -83,26 +68,16 @@ sealed interface GetConditionalBypassResponse {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out GetConditionalBypassResponse>> =
-                listOf(
-                    GetConditionalBypassResponseVariant0::class.java,
-                    GetConditionalBypassResponseVariant1::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out GetConditionalBypassResponse>> = listOf(GetConditionalBypassResponseVariant0::class.java, GetConditionalBypassResponseVariant1::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        GetConditionalBypassResponse::class.java,
-                        "no GetConditionalBypassResponse branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, GetConditionalBypassResponse::class.java, "no GetConditionalBypassResponse branch accepts this payload")
             }
         }
     }
 }
 
-internal val GetConditionalBypassResponseOwnedTypes:
-    List<Pair<List<String>, Class<out GetConditionalBypassResponse>>> =
-    listOf(listOf("pagination") to GetConditionalBypassResponseVariant1::class.java)
+internal val GetConditionalBypassResponseOwnedTypes: List<Pair<List<String>, Class<out GetConditionalBypassResponse>>> = listOf(
+    listOf("pagination") to GetConditionalBypassResponseVariant1::class.java,
+)

@@ -10,112 +10,47 @@ import dev.octri.showcase.vercel.Validation
 
 internal object ProjectsCreateProjectTransferRequestOperation {
     /**
-     * Creates a request to transfer a project from one team to another. Use `idOrName` to identify
-     * the project, and optionally provide callback details to receive a signed webhook when the
-     * transfer is accepted. The response includes a transfer code that remains valid for 24 hours
-     * and can be used by another team to accept the request.
+     * Creates a request to transfer a project from one team to another. Use `idOrName` to identify the project, and optionally provide callback details to receive a signed webhook when the transfer is accepted. The response includes a transfer code that remains valid for 24 hours and can be used by another team to accept the request.
      *
-     * Initiates a project transfer request from one team to another. Returns a `code` that remains
-     * valid for 24 hours and can be used to accept the transfer request by another team using the
-     * `PUT /projects/transfer-request/:code` endpoint. Users can also accept the project transfer
-     * request using the claim URL: `vercel.com &returnUrl=<returnUrl>`. The `code` parameter
-     * specifies the project transfer request code generated using this endpoint. The `returnUrl`
-     * parameter redirects…
+     * Initiates a project transfer request from one team to another. Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. Users can also accept the project transfer request using the claim URL: `vercel.com &returnUrl=<returnUrl>`. The `code` parameter specifies the project transfer request code generated using this endpoint. The `returnUrl` parameter redirects…
      *
      * @param idOrName The ID or name of the project to transfer.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      * @param callbackUrl The URL to send a webhook to when the transfer is accepted.
-     * @param callbackSecret The secret to use to sign the webhook payload with HMAC-SHA256.
+     * @param callbackSecret The secret to use to sign the webhook payload with
+     *   HMAC-SHA256.
      */
-    fun createProjectTransferRequest(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        teamId: String? = null,
-        slug: String? = null,
-        callbackUrl: String? = null,
-        callbackSecret: String? = null,
-        options: RequestOptions? = null,
-    ): Projects.CreateProjectTransferRequestResponse {
-        return SdkClient.request<Projects.CreateProjectTransferRequestResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/projects/${SdkClient.encodePathSegment(idOrName)}/transfer-request",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    body =
-                        SdkClient.bodyMap(
-                            "callbackUrl" to (SdkClient.omitIfNull(callbackUrl)),
-                            "callbackSecret" to (SdkClient.omitIfNull(callbackSecret)),
-                        ),
-                    operationId = "createProjectTransferRequest",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+    fun createProjectTransferRequest(clientConfig: ClientConfig, idOrName: String, teamId: String? = null, slug: String? = null, callbackUrl: String? = null, callbackSecret: String? = null, options: RequestOptions? = null): Projects.CreateProjectTransferRequestResponse {
+        return SdkClient.request<Projects.CreateProjectTransferRequestResponse>(SdkClient.RequestSpec("POST", "/projects/${SdkClient.encodePathSegment(idOrName)}/transfer-request", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("callbackUrl" to (SdkClient.omitIfNull(callbackUrl)), "callbackSecret" to (SdkClient.omitIfNull(callbackSecret))), operationId = "createProjectTransferRequest", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 }
 
 internal object ProjectsAcceptProjectTransferRequestOperation {
     /**
-     * Accepts a project transfer request initiated by another team. Use the `code` from the
-     * transfer request and optionally set the new project name, paid features, or accepted
-     * policies. The transfer response includes the project name and details about partner calls,
-     * resource transfer errors, and transferred stores.
+     * Accepts a project transfer request initiated by another team. Use the `code` from the transfer request and optionally set the new project name, paid features, or accepted policies. The transfer response includes the project name and details about partner calls, resource transfer errors, and transferred stores.
      *
-     * Accept a project transfer request initated by another team. The `code` is generated using the
-     * `POST /projects/:idOrName/transfer-request` endpoint.
+     * Accept a project transfer request initated by another team. The `code` is generated using the `POST /projects/:idOrName/transfer-request` endpoint.
      *
      * @param code The code of the project transfer request.
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      * @param newProjectName The desired name for the project
      */
-    fun acceptProjectTransferRequest(
-        clientConfig: ClientConfig,
-        request: Projects.AcceptProjectTransferRequestRequest,
-        options: RequestOptions? = null,
-    ): Projects.AcceptProjectTransferRequestResponse {
+    fun acceptProjectTransferRequest(clientConfig: ClientConfig, request: Projects.AcceptProjectTransferRequestRequest, options: RequestOptions? = null): Projects.AcceptProjectTransferRequestResponse {
         validateAcceptProjectTransferRequestRequest(request)
 
-        return SdkClient.request<Projects.AcceptProjectTransferRequestResponse>(
-                SdkClient.RequestSpec(
-                    "PUT",
-                    "/projects/transfer-request/${SdkClient.encodePathSegment(request.code)}",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    body =
-                        SdkClient.bodyMap(
-                            "newProjectName" to (SdkClient.omitIfNull(request.newProjectName)),
-                            "paidFeatures" to (SdkClient.omitIfNull(request.paidFeatures)),
-                            "acceptedPolicies" to (SdkClient.omitIfNull(request.acceptedPolicies)),
-                        ),
-                    operationId = "acceptProjectTransferRequest",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Projects.AcceptProjectTransferRequestResponse>(SdkClient.RequestSpec("PUT", "/projects/transfer-request/${SdkClient.encodePathSegment(request.code)}", config = clientConfig, query = mapOf("teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("newProjectName" to
+    (SdkClient.omitIfNull(request.newProjectName)), "paidFeatures" to
+    (SdkClient.omitIfNull(request.paidFeatures)), "acceptedPolicies" to
+    (SdkClient.omitIfNull(request.acceptedPolicies))), operationId = "acceptProjectTransferRequest", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 
-    private fun validateAcceptProjectTransferRequestRequest(
-        request: Projects.AcceptProjectTransferRequestRequest
-    ) {
+
+    private fun validateAcceptProjectTransferRequestRequest(request: Projects.AcceptProjectTransferRequestRequest) {
         if (request.newProjectName != null) {
-            Validation.validateLength(
-                "newProjectName",
-                request.newProjectName,
-                Validation.LengthOpts(max = 100),
-            )
-        }
+            Validation.validateLength("newProjectName", request.newProjectName, Validation.LengthOpts(max = 100))
+}
     }
 }

@@ -10,92 +10,44 @@ import dev.octri.showcase.vercel.Validation
 
 internal object ProjectsRequestPromoteOperation {
     /**
-     * Triggers a production promotion for a deployment in a project. Identify the project and
-     * deployment in the path, and use `teamId` or `slug` to select the team context when needed.
-     * Promotion does not rebuild the deployment; use the deployment creation operation when a
-     * rebuild is required.
+     * Triggers a production promotion for a deployment in a project. Identify the project and deployment in the path, and use `teamId` or `slug` to select the team context when needed. Promotion does not rebuild the deployment; use the deployment creation operation when a rebuild is required.
      *
-     * Allows users to promote a deployment to production. Note: This does NOT rebuild the
-     * deployment. If you need that, then call create-deployments endpoint.
+     * Allows users to promote a deployment to production. Note: This does NOT rebuild the deployment. If you need that, then call create-deployments endpoint.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun requestPromote(
-        clientConfig: ClientConfig,
-        projectId: String,
-        deploymentId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Unit {
-        SdkClient.request<Unit>(
-            SdkClient.RequestSpec(
-                "POST",
-                "/v10/projects/${SdkClient.encodePathSegment(projectId)}/promote/${SdkClient.encodePathSegment(deploymentId)}",
-                config = clientConfig,
-                query =
-                    mapOf(
-                        "teamId" to SdkClient.queryValue(teamId, "form", true),
-                        "slug" to SdkClient.queryValue(slug, "form", true),
-                    ),
-                operationId = "requestPromote",
-                decoder = SdkClient.ResponseDecoder.EMPTY,
-                options = options,
-            )
-        )
+    fun requestPromote(clientConfig: ClientConfig, projectId: String, deploymentId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
+        SdkClient.request<Unit>(SdkClient.RequestSpec("POST", "/v10/projects/${SdkClient.encodePathSegment(projectId)}/promote/${SdkClient.encodePathSegment(deploymentId)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "requestPromote", decoder = SdkClient.ResponseDecoder.EMPTY, options = options))
     }
 }
 
 internal object ProjectsListPromoteAliasesOperation {
     /**
-     * Lists aliases associated with the latest promotion request for a project and their mapping
-     * status. Use `since` and `until` to filter by creation time, and `failedOnly` to limit results
-     * to aliases that failed to map to the requested deployment. Use `limit` to cap the number of
-     * aliases returned.
+     * Lists aliases associated with the latest promotion request for a project and their mapping status. Use `since` and `until` to filter by creation time, and `failedOnly` to limit results to aliases that failed to map to the requested deployment. Use `limit` to cap the number of aliases returned.
      *
      * Get a list of aliases related to the last promote request with their mapping status
      *
      * @param limit Maximum number of aliases to list from a request (max 100).
      * @param since Get aliases created after this epoch timestamp.
      * @param until Get aliases created before this epoch timestamp.
-     * @param failedOnly Filter results down to aliases that failed to map to the requested
-     *   deployment
+     * @param failedOnly Filter results down to aliases that failed to map to the
+     *   requested deployment
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listPromoteAliases(
-        clientConfig: ClientConfig,
-        request: Projects.ListPromoteAliasesRequest,
-        options: RequestOptions? = null,
-    ): Map<String, Any> {
+    fun listPromoteAliases(clientConfig: ClientConfig, request: Projects.ListPromoteAliasesRequest, options: RequestOptions? = null): Map<String, Any> {
         validateListPromoteAliasesRequest(request)
 
-        return SdkClient.request<Map<String, Any>>(
-                SdkClient.RequestSpec(
-                    "GET",
-                    "/v1/projects/${SdkClient.encodePathSegment(request.projectId)}/promote/aliases",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "limit" to SdkClient.queryValue(request.limit, "form", true),
-                            "since" to SdkClient.queryValue(request.since, "form", true),
-                            "until" to SdkClient.queryValue(request.until, "form", true),
-                            "failedOnly" to SdkClient.queryValue(request.failedOnly, "form", true),
-                            "teamId" to SdkClient.queryValue(request.teamId, "form", true),
-                            "slug" to SdkClient.queryValue(request.slug, "form", true),
-                        ),
-                    operationId = "listPromoteAliases",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Map<String, Any>>(SdkClient.RequestSpec("GET", "/v1/projects/${SdkClient.encodePathSegment(request.projectId)}/promote/aliases", config = clientConfig, query = mapOf("limit" to SdkClient.queryValue(request.limit, "form", true), "since" to SdkClient.queryValue(request.since, "form", true), "until" to SdkClient.queryValue(request.until, "form", true), "failedOnly" to
+    SdkClient.queryValue(request.failedOnly, "form", true), "teamId" to
+    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), operationId = "listPromoteAliases", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
+
 
     private fun validateListPromoteAliasesRequest(request: Projects.ListPromoteAliasesRequest) {
         if (request.limit != null) {
             Validation.validateRange("limit", request.limit, Validation.RangeOpts(max = 100.0))
-        }
+}
     }
 }

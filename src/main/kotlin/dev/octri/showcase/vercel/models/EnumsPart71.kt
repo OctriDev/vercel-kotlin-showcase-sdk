@@ -3,13 +3,11 @@
 
 package dev.octri.showcase.vercel.models
 
-class UpdateInstallationRequestNotificationVariant0LevelEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateInstallationRequestNotificationVariant0LevelEnum && value == other.value
-
+class UpdateInstallationRequestNotificationVariant0LevelEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateInstallationRequestNotificationVariant0LevelEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -18,17 +16,12 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val WARN = UpdateInstallationRequestNotificationVariant0LevelEnum("warn")
         @JvmField val ERROR = UpdateInstallationRequestNotificationVariant0LevelEnum("error")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = UpdateInstallationRequestNotificationVariant0LevelEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateInstallationRequestNotificationVariant0LevelEnum(value)
     }
 }
 
-enum class UpdateKmsIssuerPolicyResponseVariant0KindEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateKmsIssuerPolicyResponseVariant0KindEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     PROJECT_GRANT("project-grant");
 
     override fun toString() = value
@@ -36,15 +29,12 @@ enum class UpdateKmsIssuerPolicyResponseVariant0KindEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateKmsIssuerPolicyResponseVariant1KindEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateKmsIssuerPolicyResponseVariant1KindEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     CONNEX_GRANT("connex-grant");
 
     override fun toString() = value
@@ -52,15 +42,12 @@ enum class UpdateKmsIssuerPolicyResponseVariant1KindEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateKmsIssuerResponsePoliciesItemVariant0KindEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateKmsIssuerResponsePoliciesItemVariant0KindEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     PROJECT_GRANT("project-grant");
 
     override fun toString() = value
@@ -68,15 +55,12 @@ enum class UpdateKmsIssuerResponsePoliciesItemVariant0KindEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateKmsIssuerResponsePoliciesItemVariant1KindEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateKmsIssuerResponsePoliciesItemVariant1KindEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     CONNEX_GRANT("connex-grant");
 
     override fun toString() = value
@@ -84,15 +68,12 @@ enum class UpdateKmsIssuerResponsePoliciesItemVariant1KindEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseCreatorVariant0TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseCreatorVariant0TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     USER("user");
 
     override fun toString() = value
@@ -100,15 +81,12 @@ enum class UpdateMicrofrontendsResponseCreatorVariant0TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseCreatorVariant0ViaVariant0TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseCreatorVariant0ViaVariant0TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     APP("app");
 
     override fun toString() = value
@@ -116,15 +94,12 @@ enum class UpdateMicrofrontendsResponseCreatorVariant0ViaVariant0TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseCreatorVariant0ViaVariant1TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseCreatorVariant0ViaVariant1TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     INTEGRATION("integration");
 
     override fun toString() = value
@@ -132,15 +107,12 @@ enum class UpdateMicrofrontendsResponseCreatorVariant0ViaVariant1TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseCreatorVariant1TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseCreatorVariant1TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     APP("app");
 
     override fun toString() = value
@@ -148,15 +120,12 @@ enum class UpdateMicrofrontendsResponseCreatorVariant1TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseCreatorVariant2TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseCreatorVariant2TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     INTEGRATION("integration");
 
     override fun toString() = value
@@ -164,15 +133,12 @@ enum class UpdateMicrofrontendsResponseCreatorVariant2TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseCreatorVariant3TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseCreatorVariant3TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SYSTEM("system");
 
     override fun toString() = value
@@ -180,43 +146,29 @@ enum class UpdateMicrofrontendsResponseCreatorVariant3TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesX1ae85151fb
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesX1ae85151fb &&
-            value == other.value
-
+class UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesX1ae85151fb private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesX1ae85151fb && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val PREVIEW =
-            UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesX1ae85151fb("preview")
-        @JvmField
-        val PRODUCTION =
-            UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesX1ae85151fb("production")
+        @JvmField val PREVIEW = UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesX1ae85151fb("preview")
+        @JvmField val PRODUCTION = UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesX1ae85151fb("production")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesX1ae85151fb(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesX1ae85151fb(value)
     }
 }
 
-enum class UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesXc35258737b(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesXc35258737b(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SYSTEM("system");
 
     override fun toString() = value
@@ -224,15 +176,12 @@ enum class UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesXc352587
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesX05669784b1(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesX05669784b1(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     CUSTOM("custom");
 
     override fun toString() = value
@@ -240,43 +189,29 @@ enum class UpdateMicrofrontendsResponseDeploymentPolicyDeploymentSourcesX0566978
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemEnvX307571e84c
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemEnvX307571e84c &&
-            value == other.value
-
+class UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemEnvX307571e84c private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemEnvX307571e84c && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val PREVIEW =
-            UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemEnvX307571e84c("preview")
-        @JvmField
-        val PRODUCTION =
-            UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemEnvX307571e84c("production")
+        @JvmField val PREVIEW = UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemEnvX307571e84c("preview")
+        @JvmField val PRODUCTION = UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemEnvX307571e84c("production")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemEnvX307571e84c(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemEnvX307571e84c(value)
     }
 }
 
-enum class UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemEnvX80111c45e4(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemEnvX80111c45e4(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SYSTEM("system");
 
     override fun toString() = value
@@ -284,15 +219,12 @@ enum class UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemEnvX80111c4
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemEnvX1a8ef56258(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemEnvX1a8ef56258(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     CUSTOM("custom");
 
     override fun toString() = value
@@ -300,145 +232,96 @@ enum class UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemEnvX1a8ef56
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouXc73e26ecc7
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouXc73e26ecc7 &&
-            value == other.value
-
+class UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouXc73e26ecc7 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouXc73e26ecc7 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val BITBUCKET =
-            UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouXc73e26ecc7("bitbucket")
-        @JvmField
-        val GITHUB =
-            UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouXc73e26ecc7("github")
+        @JvmField val BITBUCKET = UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouXc73e26ecc7("bitbucket")
+        @JvmField val GITHUB = UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouXc73e26ecc7("github")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouXc73e26ecc7(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouXc73e26ecc7(value)
     }
 }
 
-class UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouX3b3f0c3030
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouX3b3f0c3030 &&
-            value == other.value
-
+class UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouX3b3f0c3030 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouX3b3f0c3030 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val GITLAB =
-            UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouX3b3f0c3030("gitlab")
+        @JvmField val GITLAB = UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouX3b3f0c3030("gitlab")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouX3b3f0c3030(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateMicrofrontendsResponseDeploymentPolicyGitSourcesItemSouX3b3f0c3030(value)
     }
 }
 
-class UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2CX9a3fdaf5ef
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2CX9a3fdaf5ef &&
-            value == other.value
-
+class UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2CX9a3fdaf5ef private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2CX9a3fdaf5ef && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2CX9a3fdaf5ef(false)
-        @JvmField
-        val TRUE = UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2CX9a3fdaf5ef(true)
+        @JvmField val FALSE = UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2CX9a3fdaf5ef(false)
+        @JvmField val TRUE = UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2CX9a3fdaf5ef(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2CX9a3fdaf5ef(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2CX9a3fdaf5ef(value)
     }
 }
 
-class UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2PX33f4fc0313
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2PX33f4fc0313 &&
-            value == other.value
-
+class UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2PX33f4fc0313 private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2PX33f4fc0313 && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2PX33f4fc0313(false)
-        @JvmField
-        val TRUE = UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2PX33f4fc0313(true)
+        @JvmField val FALSE = UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2PX33f4fc0313(false)
+        @JvmField val TRUE = UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2PX33f4fc0313(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2PX33f4fc0313(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = UpdateMicrofrontendsResponseDismissedToastsItemValueVariant2PX33f4fc0313(value)
     }
 }
 
-class UpdateMicrofrontendsResponseDismissedToastsItemValueVariant3Enum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateMicrofrontendsResponseDismissedToastsItemValueVariant3Enum &&
-            value == other.value
-
+class UpdateMicrofrontendsResponseDismissedToastsItemValueVariant3Enum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateMicrofrontendsResponseDismissedToastsItemValueVariant3Enum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = UpdateMicrofrontendsResponseDismissedToastsItemValueVariant3Enum(false)
+        @JvmField val FALSE = UpdateMicrofrontendsResponseDismissedToastsItemValueVariant3Enum(false)
         @JvmField val TRUE = UpdateMicrofrontendsResponseDismissedToastsItemValueVariant3Enum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            UpdateMicrofrontendsResponseDismissedToastsItemValueVariant3Enum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = UpdateMicrofrontendsResponseDismissedToastsItemValueVariant3Enum(value)
     }
 }
 
-enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant0TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant0TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     REDIS_URL("redis-url");
 
     override fun toString() = value
@@ -446,15 +329,12 @@ enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant0TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant1TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant1TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     REDIS_REST_API_URL("redis-rest-api-url");
 
     override fun toString() = value
@@ -462,15 +342,12 @@ enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant1TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant10TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant10TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     POSTGRES_USER("postgres-user");
 
     override fun toString() = value
@@ -478,15 +355,12 @@ enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant10TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant11TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant11TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     POSTGRES_HOST("postgres-host");
 
     override fun toString() = value
@@ -494,15 +368,12 @@ enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant11TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant12TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant12TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     POSTGRES_PASSWORD("postgres-password");
 
     override fun toString() = value
@@ -510,15 +381,12 @@ enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant12TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant13TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant13TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     POSTGRES_DATABASE("postgres-database");
 
     override fun toString() = value
@@ -526,15 +394,12 @@ enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant13TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant14TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant14TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     POSTGRES_URL_NO_SSL("postgres-url-no-ssl");
 
     override fun toString() = value
@@ -542,15 +407,12 @@ enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant14TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant15TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant15TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     INTEGRATION_STORE_SECRET("integration-store-secret");
 
     override fun toString() = value
@@ -558,15 +420,12 @@ enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant15TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant16TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant16TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     FLAGS_CONNECTION_STRING("flags-connection-string");
 
     override fun toString() = value
@@ -574,15 +433,12 @@ enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant16TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant2TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant2TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     REDIS_REST_API_TOKEN("redis-rest-api-token");
 
     override fun toString() = value
@@ -590,15 +446,12 @@ enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant2TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant3TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant3TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     REDIS_REST_API_READ_ONLY_TOKEN("redis-rest-api-read-only-token");
 
     override fun toString() = value
@@ -606,15 +459,12 @@ enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant3TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant4TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant4TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     BLOB_READ_WRITE_TOKEN("blob-read-write-token");
 
     override fun toString() = value
@@ -622,15 +472,12 @@ enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant4TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant5TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant5TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     BLOB_STORE_ID("blob-store-id");
 
     override fun toString() = value
@@ -638,15 +485,12 @@ enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant5TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant6TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant6TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     BLOB_WEBHOOK_PUBLIC_KEY("blob-webhook-public-key");
 
     override fun toString() = value
@@ -654,15 +498,12 @@ enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant6TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant7TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant7TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     POSTGRES_URL("postgres-url");
 
     override fun toString() = value
@@ -670,15 +511,12 @@ enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant7TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant8TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant8TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     POSTGRES_URL_NON_POOLING("postgres-url-non-pooling");
 
     override fun toString() = value
@@ -686,15 +524,12 @@ enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant8TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant9TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant9TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     POSTGRES_PRISMA_URL("postgres-prisma-url");
 
     override fun toString() = value
@@ -702,42 +537,28 @@ enum class UpdateMicrofrontendsResponseEnvItemContentHintVariant9TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class UpdateMicrofrontendsResponseInternalRoutesItemVariant1HasItemXe7d369877a
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateMicrofrontendsResponseInternalRoutesItemVariant1HasItemXe7d369877a &&
-            value == other.value
-
+class UpdateMicrofrontendsResponseInternalRoutesItemVariant1HasItemXe7d369877a private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateMicrofrontendsResponseInternalRoutesItemVariant1HasItemXe7d369877a && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val X_VERCEL_IP_COUNTRY =
-            UpdateMicrofrontendsResponseInternalRoutesItemVariant1HasItemXe7d369877a(
-                "x-vercel-ip-country"
-            )
+        @JvmField val X_VERCEL_IP_COUNTRY = UpdateMicrofrontendsResponseInternalRoutesItemVariant1HasItemXe7d369877a("x-vercel-ip-country")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateMicrofrontendsResponseInternalRoutesItemVariant1HasItemXe7d369877a(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateMicrofrontendsResponseInternalRoutesItemVariant1HasItemXe7d369877a(value)
     }
 }
 
-enum class UpdateMicrofrontendsResponseInternalRoutesItemVariant1HasItemXd751581e3e(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseInternalRoutesItemVariant1HasItemXd751581e3e(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     HEADER("header");
 
     override fun toString() = value
@@ -745,15 +566,12 @@ enum class UpdateMicrofrontendsResponseInternalRoutesItemVariant1HasItemXd751581
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class UpdateMicrofrontendsResponseInternalRoutesItemVariant1HasItemX9123f8bcf6(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateMicrofrontendsResponseInternalRoutesItemVariant1HasItemX9123f8bcf6(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     HOST("host");
 
     override fun toString() = value
@@ -761,35 +579,23 @@ enum class UpdateMicrofrontendsResponseInternalRoutesItemVariant1HasItemX9123f8b
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class UpdateMicrofrontendsResponseInternalRoutesItemVariant1MitigateActionEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateMicrofrontendsResponseInternalRoutesItemVariant1MitigateActionEnum &&
-            value == other.value
-
+class UpdateMicrofrontendsResponseInternalRoutesItemVariant1MitigateActionEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateMicrofrontendsResponseInternalRoutesItemVariant1MitigateActionEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val BLOCK_LEGAL_CWC =
-            UpdateMicrofrontendsResponseInternalRoutesItemVariant1MitigateActionEnum(
-                "block_legal_cwc"
-            )
+        @JvmField val BLOCK_LEGAL_CWC = UpdateMicrofrontendsResponseInternalRoutesItemVariant1MitigateActionEnum("block_legal_cwc")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            UpdateMicrofrontendsResponseInternalRoutesItemVariant1MitigateActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = UpdateMicrofrontendsResponseInternalRoutesItemVariant1MitigateActionEnum(value)
     }
 }

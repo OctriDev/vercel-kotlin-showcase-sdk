@@ -3,14 +3,14 @@
 
 package dev.octri.showcase.vercel.models
 
-/** The project role of the member that will be added. */
-class AddProjectMemberRoleEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is AddProjectMemberRoleEnum && value == other.value
-
+/**
+ * The project role of the member that will be added.
+ */
+class AddProjectMemberRoleEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is AddProjectMemberRoleEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -19,17 +19,12 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val PROJECT_VIEWER = AddProjectMemberRoleEnum("PROJECT_VIEWER")
         @JvmField val PROJECT_DEVELOPER = AddProjectMemberRoleEnum("PROJECT_DEVELOPER")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = AddProjectMemberRoleEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = AddProjectMemberRoleEnum(value)
     }
 }
 
-enum class UpdateProjectProtectionBypassResponseProtectionBypassValueVarX736e6d3553(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateProjectProtectionBypassResponseProtectionBypassValueVarX736e6d3553(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     INTEGRATION_AUTOMATION_BYPASS("integration-automation-bypass");
 
     override fun toString() = value
@@ -37,47 +32,32 @@ enum class UpdateProjectProtectionBypassResponseProtectionBypassValueVarX736e6d3
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
 /**
- * When there was only one bypass, it was automatically set as an env var on deployments. With
- * multiple bypasses, there is always one bypass that is selected as the default, and gets set as an
- * env var on deployments. As this is a new field, undefined means that the bypass is the env var.
- * If there are any automation bypasses, exactly one must be the env var.
+ * When there was only one bypass, it was automatically set as an env var on deployments. With multiple bypasses, there is always one bypass that is selected as the default, and gets set as an env var on deployments. As this is a new field, undefined means that the bypass is the env var. If there are any automation bypasses, exactly one must be the env var.
  */
-class UpdateProjectProtectionBypassResponseProtectionBypassValueVarX57aa16a9ab
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is UpdateProjectProtectionBypassResponseProtectionBypassValueVarX57aa16a9ab &&
-            value == other.value
-
+class UpdateProjectProtectionBypassResponseProtectionBypassValueVarX57aa16a9ab private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is UpdateProjectProtectionBypassResponseProtectionBypassValueVarX57aa16a9ab && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = UpdateProjectProtectionBypassResponseProtectionBypassValueVarX57aa16a9ab(false)
-        @JvmField
-        val TRUE = UpdateProjectProtectionBypassResponseProtectionBypassValueVarX57aa16a9ab(true)
+        @JvmField val FALSE = UpdateProjectProtectionBypassResponseProtectionBypassValueVarX57aa16a9ab(false)
+        @JvmField val TRUE = UpdateProjectProtectionBypassResponseProtectionBypassValueVarX57aa16a9ab(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            UpdateProjectProtectionBypassResponseProtectionBypassValueVarX57aa16a9ab(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = UpdateProjectProtectionBypassResponseProtectionBypassValueVarX57aa16a9ab(value)
     }
 }
 
-enum class UpdateProjectProtectionBypassResponseProtectionBypassValueVarX9896d723b4(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class UpdateProjectProtectionBypassResponseProtectionBypassValueVarX9896d723b4(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     AUTOMATION_BYPASS("automation-bypass");
 
     override fun toString() = value
@@ -85,20 +65,19 @@ enum class UpdateProjectProtectionBypassResponseProtectionBypassValueVarX9896d72
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/** Filter by rolling release state */
-class GetRollingReleaseParameterEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseParameterEnum && value == other.value
-
+/**
+ * Filter by rolling release state
+ */
+class GetRollingReleaseParameterEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseParameterEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -107,412 +86,265 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val COMPLETE = GetRollingReleaseParameterEnum("COMPLETE")
         @JvmField val ABORTED = GetRollingReleaseParameterEnum("ABORTED")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = GetRollingReleaseParameterEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetRollingReleaseParameterEnum(value)
     }
 }
 
-/** Whether or not this stage is the final stage (targetPercentage === 100) */
-class GetRollingReleaseResponseRollingReleaseActiveStageIsFinalStageEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseActiveStageIsFinalStageEnum &&
-            value == other.value
-
+/**
+ * Whether or not this stage is the final stage (targetPercentage === 100)
+ */
+class GetRollingReleaseResponseRollingReleaseActiveStageIsFinalStageEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseActiveStageIsFinalStageEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = GetRollingReleaseResponseRollingReleaseActiveStageIsFinalStageEnum(false)
-        @JvmField
-        val TRUE = GetRollingReleaseResponseRollingReleaseActiveStageIsFinalStageEnum(true)
+        @JvmField val FALSE = GetRollingReleaseResponseRollingReleaseActiveStageIsFinalStageEnum(false)
+        @JvmField val TRUE = GetRollingReleaseResponseRollingReleaseActiveStageIsFinalStageEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetRollingReleaseResponseRollingReleaseActiveStageIsFinalStageEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetRollingReleaseResponseRollingReleaseActiveStageIsFinalStageEnum(value)
     }
 }
 
-/** Whether to linearly shift traffic over the duration of this stage */
-class GetRollingReleaseResponseRollingReleaseActiveStageLinearShiftEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseActiveStageLinearShiftEnum &&
-            value == other.value
-
+/**
+ * Whether to linearly shift traffic over the duration of this stage
+ */
+class GetRollingReleaseResponseRollingReleaseActiveStageLinearShiftEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseActiveStageLinearShiftEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = GetRollingReleaseResponseRollingReleaseActiveStageLinearShiftEnum(false)
+        @JvmField val FALSE = GetRollingReleaseResponseRollingReleaseActiveStageLinearShiftEnum(false)
         @JvmField val TRUE = GetRollingReleaseResponseRollingReleaseActiveStageLinearShiftEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetRollingReleaseResponseRollingReleaseActiveStageLinearShiftEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetRollingReleaseResponseRollingReleaseActiveStageLinearShiftEnum(value)
     }
 }
 
-/** Whether or not this stage requires manual approval to proceed */
-class GetRollingReleaseResponseRollingReleaseActiveStageRequireApprovalEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseActiveStageRequireApprovalEnum &&
-            value == other.value
-
+/**
+ * Whether or not this stage requires manual approval to proceed
+ */
+class GetRollingReleaseResponseRollingReleaseActiveStageRequireApprovalEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseActiveStageRequireApprovalEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = GetRollingReleaseResponseRollingReleaseActiveStageRequireApprovalEnum(false)
-        @JvmField
-        val TRUE = GetRollingReleaseResponseRollingReleaseActiveStageRequireApprovalEnum(true)
+        @JvmField val FALSE = GetRollingReleaseResponseRollingReleaseActiveStageRequireApprovalEnum(false)
+        @JvmField val TRUE = GetRollingReleaseResponseRollingReleaseActiveStageRequireApprovalEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetRollingReleaseResponseRollingReleaseActiveStageRequireApprovalEnum(value)
-    }
-}
-
-/** The advancement type of the rolling release */
-class GetRollingReleaseResponseRollingReleaseAdvancementTypeEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseAdvancementTypeEnum && value == other.value
-
-    override fun hashCode(): Int = value.hashCode()
-
-    override fun toString(): String = value
-
-    companion object {
-
-        @JvmField
-        val AUTOMATIC = GetRollingReleaseResponseRollingReleaseAdvancementTypeEnum("automatic")
-        @JvmField
-        val MANUAL_APPROVAL =
-            GetRollingReleaseResponseRollingReleaseAdvancementTypeEnum("manual-approval")
-
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            GetRollingReleaseResponseRollingReleaseAdvancementTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetRollingReleaseResponseRollingReleaseActiveStageRequireApprovalEnum(value)
     }
 }
 
 /**
- * The state of the deployment depending on the process of deploying, or if it is ready or in an
- * error state
+ * The advancement type of the rolling release
  */
-class GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum &&
-            value == other.value
-
+class GetRollingReleaseResponseRollingReleaseAdvancementTypeEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseAdvancementTypeEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val BLOCKED =
-            GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum("BLOCKED")
-        @JvmField
-        val BUILDING =
-            GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum("BUILDING")
-        @JvmField
-        val CANCELED =
-            GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum("CANCELED")
-        @JvmField
-        val ERROR = GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum("ERROR")
-        @JvmField
-        val INITIALIZING =
-            GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum("INITIALIZING")
-        @JvmField
-        val QUEUED = GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum("QUEUED")
-        @JvmField
-        val READY = GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum("READY")
+        @JvmField val AUTOMATIC = GetRollingReleaseResponseRollingReleaseAdvancementTypeEnum("automatic")
+        @JvmField val MANUAL_APPROVAL = GetRollingReleaseResponseRollingReleaseAdvancementTypeEnum("manual-approval")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetRollingReleaseResponseRollingReleaseAdvancementTypeEnum(value)
     }
 }
 
 /**
- * Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do
- * not gate behavior on it.
+ * The state of the deployment depending on the process of deploying, or if it is ready or in an error state
  */
-class GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum &&
-            value == other.value
-
+class GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val API_TRIGGER_GIT_DEPLOY =
-            GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum(
-                "api-trigger-git-deploy"
-            )
+        @JvmField val BLOCKED = GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum("BLOCKED")
+        @JvmField val BUILDING = GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum("BUILDING")
+        @JvmField val CANCELED = GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum("CANCELED")
+        @JvmField val ERROR = GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum("ERROR")
+        @JvmField val INITIALIZING = GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum("INITIALIZING")
+        @JvmField val QUEUED = GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum("QUEUED")
+        @JvmField val READY = GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum("READY")
+
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetRollingReleaseResponseRollingReleaseCanaryDeploymentReadyStateEnum(value)
+    }
+}
+
+/**
+ * Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
+ */
+class GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum && value == other.value
+    override fun hashCode(): Int = value.hashCode()
+    override fun toString(): String = value
+
+    companion object {
+
+        @JvmField val API_TRIGGER_GIT_DEPLOY = GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum("api-trigger-git-deploy")
         @JvmField val CLI = GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum("cli")
-        @JvmField
-        val CLONE_REPO =
-            GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum("clone/repo")
-        @JvmField
-        val DROP = GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum("drop")
+        @JvmField val CLONE_REPO = GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum("clone/repo")
+        @JvmField val DROP = GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum("drop")
         @JvmField val GIT = GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum("git")
-        @JvmField
-        val GIT_DEPLOY_HOOK =
-            GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum("git-deploy-hook")
-        @JvmField
-        val IMPORT = GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum("import")
-        @JvmField
-        val IMPORT_REPO =
-            GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum("import/repo")
-        @JvmField
-        val REDEPLOY = GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum("redeploy")
-        @JvmField
-        val V0_WEB = GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum("v0-web")
+        @JvmField val GIT_DEPLOY_HOOK = GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum("git-deploy-hook")
+        @JvmField val IMPORT = GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum("import")
+        @JvmField val IMPORT_REPO = GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum("import/repo")
+        @JvmField val REDEPLOY = GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum("redeploy")
+        @JvmField val V0_WEB = GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum("v0-web")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetRollingReleaseResponseRollingReleaseCanaryDeploymentSourceEnum(value)
     }
 }
 
 /**
- * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was
- * assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value
- * indicates the "preview" deployment.
+ * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
  */
-class GetRollingReleaseResponseRollingReleaseCanaryDeploymentTargetEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseCanaryDeploymentTargetEnum &&
-            value == other.value
-
+class GetRollingReleaseResponseRollingReleaseCanaryDeploymentTargetEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseCanaryDeploymentTargetEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val PRODUCTION =
-            GetRollingReleaseResponseRollingReleaseCanaryDeploymentTargetEnum("production")
-        @JvmField
-        val STAGING = GetRollingReleaseResponseRollingReleaseCanaryDeploymentTargetEnum("staging")
+        @JvmField val PRODUCTION = GetRollingReleaseResponseRollingReleaseCanaryDeploymentTargetEnum("production")
+        @JvmField val STAGING = GetRollingReleaseResponseRollingReleaseCanaryDeploymentTargetEnum("staging")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            GetRollingReleaseResponseRollingReleaseCanaryDeploymentTargetEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetRollingReleaseResponseRollingReleaseCanaryDeploymentTargetEnum(value)
     }
 }
 
 /**
- * The state of the deployment depending on the process of deploying, or if it is ready or in an
- * error state
+ * The state of the deployment depending on the process of deploying, or if it is ready or in an error state
  */
-class GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum &&
-            value == other.value
-
+class GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val BLOCKED =
-            GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum("BLOCKED")
-        @JvmField
-        val BUILDING =
-            GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum("BUILDING")
-        @JvmField
-        val CANCELED =
-            GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum("CANCELED")
-        @JvmField
-        val ERROR = GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum("ERROR")
-        @JvmField
-        val INITIALIZING =
-            GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum("INITIALIZING")
-        @JvmField
-        val QUEUED =
-            GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum("QUEUED")
-        @JvmField
-        val READY = GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum("READY")
+        @JvmField val BLOCKED = GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum("BLOCKED")
+        @JvmField val BUILDING = GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum("BUILDING")
+        @JvmField val CANCELED = GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum("CANCELED")
+        @JvmField val ERROR = GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum("ERROR")
+        @JvmField val INITIALIZING = GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum("INITIALIZING")
+        @JvmField val QUEUED = GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum("QUEUED")
+        @JvmField val READY = GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum("READY")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetRollingReleaseResponseRollingReleaseCurrentDeploymentReadyStateEnum(value)
     }
 }
 
 /**
- * Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do
- * not gate behavior on it.
+ * Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.
  */
-class GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum &&
-            value == other.value
-
+class GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val API_TRIGGER_GIT_DEPLOY =
-            GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum(
-                "api-trigger-git-deploy"
-            )
-        @JvmField
-        val CLI = GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("cli")
-        @JvmField
-        val CLONE_REPO =
-            GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("clone/repo")
-        @JvmField
-        val DROP = GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("drop")
-        @JvmField
-        val GIT = GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("git")
-        @JvmField
-        val GIT_DEPLOY_HOOK =
-            GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("git-deploy-hook")
-        @JvmField
-        val IMPORT = GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("import")
-        @JvmField
-        val IMPORT_REPO =
-            GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("import/repo")
-        @JvmField
-        val REDEPLOY =
-            GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("redeploy")
-        @JvmField
-        val V0_WEB = GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("v0-web")
+        @JvmField val API_TRIGGER_GIT_DEPLOY = GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("api-trigger-git-deploy")
+        @JvmField val CLI = GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("cli")
+        @JvmField val CLONE_REPO = GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("clone/repo")
+        @JvmField val DROP = GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("drop")
+        @JvmField val GIT = GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("git")
+        @JvmField val GIT_DEPLOY_HOOK = GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("git-deploy-hook")
+        @JvmField val IMPORT = GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("import")
+        @JvmField val IMPORT_REPO = GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("import/repo")
+        @JvmField val REDEPLOY = GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("redeploy")
+        @JvmField val V0_WEB = GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum("v0-web")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetRollingReleaseResponseRollingReleaseCurrentDeploymentSourceEnum(value)
     }
 }
 
 /**
- * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was
- * assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value
- * indicates the "preview" deployment.
+ * If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the "preview" deployment.
  */
-class GetRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum &&
-            value == other.value
-
+class GetRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val PRODUCTION =
-            GetRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum("production")
-        @JvmField
-        val STAGING = GetRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum("staging")
+        @JvmField val PRODUCTION = GetRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum("production")
+        @JvmField val STAGING = GetRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum("staging")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            GetRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetRollingReleaseResponseRollingReleaseCurrentDeploymentTargetEnum(value)
     }
 }
 
-/** Whether or not this stage is the final stage (targetPercentage === 100) */
-class GetRollingReleaseResponseRollingReleaseNextStageIsFinalStageEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseNextStageIsFinalStageEnum &&
-            value == other.value
-
+/**
+ * Whether or not this stage is the final stage (targetPercentage === 100)
+ */
+class GetRollingReleaseResponseRollingReleaseNextStageIsFinalStageEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseNextStageIsFinalStageEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = GetRollingReleaseResponseRollingReleaseNextStageIsFinalStageEnum(false)
+        @JvmField val FALSE = GetRollingReleaseResponseRollingReleaseNextStageIsFinalStageEnum(false)
         @JvmField val TRUE = GetRollingReleaseResponseRollingReleaseNextStageIsFinalStageEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetRollingReleaseResponseRollingReleaseNextStageIsFinalStageEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetRollingReleaseResponseRollingReleaseNextStageIsFinalStageEnum(value)
     }
 }
 
-/** Whether to linearly shift traffic over the duration of this stage */
-class GetRollingReleaseResponseRollingReleaseNextStageLinearShiftEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseNextStageLinearShiftEnum &&
-            value == other.value
-
+/**
+ * Whether to linearly shift traffic over the duration of this stage
+ */
+class GetRollingReleaseResponseRollingReleaseNextStageLinearShiftEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseNextStageLinearShiftEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
@@ -520,129 +352,99 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: B
         @JvmField val FALSE = GetRollingReleaseResponseRollingReleaseNextStageLinearShiftEnum(false)
         @JvmField val TRUE = GetRollingReleaseResponseRollingReleaseNextStageLinearShiftEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetRollingReleaseResponseRollingReleaseNextStageLinearShiftEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetRollingReleaseResponseRollingReleaseNextStageLinearShiftEnum(value)
     }
 }
 
-/** Whether or not this stage requires manual approval to proceed */
-class GetRollingReleaseResponseRollingReleaseNextStageRequireApprovalEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseNextStageRequireApprovalEnum &&
-            value == other.value
-
+/**
+ * Whether or not this stage requires manual approval to proceed
+ */
+class GetRollingReleaseResponseRollingReleaseNextStageRequireApprovalEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseNextStageRequireApprovalEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = GetRollingReleaseResponseRollingReleaseNextStageRequireApprovalEnum(false)
-        @JvmField
-        val TRUE = GetRollingReleaseResponseRollingReleaseNextStageRequireApprovalEnum(true)
+        @JvmField val FALSE = GetRollingReleaseResponseRollingReleaseNextStageRequireApprovalEnum(false)
+        @JvmField val TRUE = GetRollingReleaseResponseRollingReleaseNextStageRequireApprovalEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetRollingReleaseResponseRollingReleaseNextStageRequireApprovalEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetRollingReleaseResponseRollingReleaseNextStageRequireApprovalEnum(value)
     }
 }
 
-/** Whether or not this stage is the final stage (targetPercentage === 100) */
-class GetRollingReleaseResponseRollingReleaseStagesItemIsFinalStageEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseStagesItemIsFinalStageEnum &&
-            value == other.value
-
+/**
+ * Whether or not this stage is the final stage (targetPercentage === 100)
+ */
+class GetRollingReleaseResponseRollingReleaseStagesItemIsFinalStageEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseStagesItemIsFinalStageEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = GetRollingReleaseResponseRollingReleaseStagesItemIsFinalStageEnum(false)
+        @JvmField val FALSE = GetRollingReleaseResponseRollingReleaseStagesItemIsFinalStageEnum(false)
         @JvmField val TRUE = GetRollingReleaseResponseRollingReleaseStagesItemIsFinalStageEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetRollingReleaseResponseRollingReleaseStagesItemIsFinalStageEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetRollingReleaseResponseRollingReleaseStagesItemIsFinalStageEnum(value)
     }
 }
 
-/** Whether to linearly shift traffic over the duration of this stage */
-class GetRollingReleaseResponseRollingReleaseStagesItemLinearShiftEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseStagesItemLinearShiftEnum &&
-            value == other.value
-
+/**
+ * Whether to linearly shift traffic over the duration of this stage
+ */
+class GetRollingReleaseResponseRollingReleaseStagesItemLinearShiftEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseStagesItemLinearShiftEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = GetRollingReleaseResponseRollingReleaseStagesItemLinearShiftEnum(false)
+        @JvmField val FALSE = GetRollingReleaseResponseRollingReleaseStagesItemLinearShiftEnum(false)
         @JvmField val TRUE = GetRollingReleaseResponseRollingReleaseStagesItemLinearShiftEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetRollingReleaseResponseRollingReleaseStagesItemLinearShiftEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetRollingReleaseResponseRollingReleaseStagesItemLinearShiftEnum(value)
     }
 }
 
-/** Whether or not this stage requires manual approval to proceed */
-class GetRollingReleaseResponseRollingReleaseStagesItemRequireApprovalEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseStagesItemRequireApprovalEnum &&
-            value == other.value
-
+/**
+ * Whether or not this stage requires manual approval to proceed
+ */
+class GetRollingReleaseResponseRollingReleaseStagesItemRequireApprovalEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseStagesItemRequireApprovalEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField
-        val FALSE = GetRollingReleaseResponseRollingReleaseStagesItemRequireApprovalEnum(false)
-        @JvmField
-        val TRUE = GetRollingReleaseResponseRollingReleaseStagesItemRequireApprovalEnum(true)
+        @JvmField val FALSE = GetRollingReleaseResponseRollingReleaseStagesItemRequireApprovalEnum(false)
+        @JvmField val TRUE = GetRollingReleaseResponseRollingReleaseStagesItemRequireApprovalEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            GetRollingReleaseResponseRollingReleaseStagesItemRequireApprovalEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = GetRollingReleaseResponseRollingReleaseStagesItemRequireApprovalEnum(value)
     }
 }
 
-/** The current state of the rolling release */
-class GetRollingReleaseResponseRollingReleaseStateEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseStateEnum && value == other.value
-
+/**
+ * The current state of the rolling release
+ */
+class GetRollingReleaseResponseRollingReleaseStateEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseStateEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -651,189 +453,131 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val ACTIVE = GetRollingReleaseResponseRollingReleaseStateEnum("ACTIVE")
         @JvmField val COMPLETE = GetRollingReleaseResponseRollingReleaseStateEnum("COMPLETE")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = GetRollingReleaseResponseRollingReleaseStateEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetRollingReleaseResponseRollingReleaseStateEnum(value)
     }
 }
 
-/** When set to `PAUSED`, the rollout is frozen at the current percentage until continued. */
-class GetRollingReleaseResponseRollingReleaseSubstateEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is GetRollingReleaseResponseRollingReleaseSubstateEnum && value == other.value
-
+/**
+ * When set to `PAUSED`, the rollout is frozen at the current percentage until continued.
+ */
+class GetRollingReleaseResponseRollingReleaseSubstateEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is GetRollingReleaseResponseRollingReleaseSubstateEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val PAUSED = GetRollingReleaseResponseRollingReleaseSubstateEnum("PAUSED")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = GetRollingReleaseResponseRollingReleaseSubstateEnum(value)
-    }
-}
-
-/** Whether or not this stage is the final stage (targetPercentage === 100) */
-class ApproveRollingReleaseStageResponseRollingReleaseActiveStageIsX3d0762927f
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is ApproveRollingReleaseStageResponseRollingReleaseActiveStageIsX3d0762927f &&
-            value == other.value
-
-    override fun hashCode(): Int = value.hashCode()
-
-    override fun toString(): String = value.toString()
-
-    companion object {
-
-        @JvmField
-        val FALSE = ApproveRollingReleaseStageResponseRollingReleaseActiveStageIsX3d0762927f(false)
-        @JvmField
-        val TRUE = ApproveRollingReleaseStageResponseRollingReleaseActiveStageIsX3d0762927f(true)
-
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            ApproveRollingReleaseStageResponseRollingReleaseActiveStageIsX3d0762927f(value)
-    }
-}
-
-/** Whether to linearly shift traffic over the duration of this stage */
-class ApproveRollingReleaseStageResponseRollingReleaseActiveStageLiX03c5deb0db
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is ApproveRollingReleaseStageResponseRollingReleaseActiveStageLiX03c5deb0db &&
-            value == other.value
-
-    override fun hashCode(): Int = value.hashCode()
-
-    override fun toString(): String = value.toString()
-
-    companion object {
-
-        @JvmField
-        val FALSE = ApproveRollingReleaseStageResponseRollingReleaseActiveStageLiX03c5deb0db(false)
-        @JvmField
-        val TRUE = ApproveRollingReleaseStageResponseRollingReleaseActiveStageLiX03c5deb0db(true)
-
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            ApproveRollingReleaseStageResponseRollingReleaseActiveStageLiX03c5deb0db(value)
-    }
-}
-
-/** Whether or not this stage requires manual approval to proceed */
-class ApproveRollingReleaseStageResponseRollingReleaseActiveStageReX4a4c1f59da
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is ApproveRollingReleaseStageResponseRollingReleaseActiveStageReX4a4c1f59da &&
-            value == other.value
-
-    override fun hashCode(): Int = value.hashCode()
-
-    override fun toString(): String = value.toString()
-
-    companion object {
-
-        @JvmField
-        val FALSE = ApproveRollingReleaseStageResponseRollingReleaseActiveStageReX4a4c1f59da(false)
-        @JvmField
-        val TRUE = ApproveRollingReleaseStageResponseRollingReleaseActiveStageReX4a4c1f59da(true)
-
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            ApproveRollingReleaseStageResponseRollingReleaseActiveStageReX4a4c1f59da(value)
-    }
-}
-
-/** The advancement type of the rolling release */
-class ApproveRollingReleaseStageResponseRollingReleaseAdvancementTypeEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is ApproveRollingReleaseStageResponseRollingReleaseAdvancementTypeEnum &&
-            value == other.value
-
-    override fun hashCode(): Int = value.hashCode()
-
-    override fun toString(): String = value
-
-    companion object {
-
-        @JvmField
-        val AUTOMATIC =
-            ApproveRollingReleaseStageResponseRollingReleaseAdvancementTypeEnum("automatic")
-        @JvmField
-        val MANUAL_APPROVAL =
-            ApproveRollingReleaseStageResponseRollingReleaseAdvancementTypeEnum("manual-approval")
-
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            ApproveRollingReleaseStageResponseRollingReleaseAdvancementTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = GetRollingReleaseResponseRollingReleaseSubstateEnum(value)
     }
 }
 
 /**
- * The state of the deployment depending on the process of deploying, or if it is ready or in an
- * error state
+ * Whether or not this stage is the final stage (targetPercentage === 100)
  */
-class ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca &&
-            value == other.value
-
+class ApproveRollingReleaseStageResponseRollingReleaseActiveStageIsX3d0762927f private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is ApproveRollingReleaseStageResponseRollingReleaseActiveStageIsX3d0762927f && value == other.value
     override fun hashCode(): Int = value.hashCode()
+    override fun toString(): String = value.toString()
 
+    companion object {
+
+        @JvmField val FALSE = ApproveRollingReleaseStageResponseRollingReleaseActiveStageIsX3d0762927f(false)
+        @JvmField val TRUE = ApproveRollingReleaseStageResponseRollingReleaseActiveStageIsX3d0762927f(true)
+
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = ApproveRollingReleaseStageResponseRollingReleaseActiveStageIsX3d0762927f(value)
+    }
+}
+
+/**
+ * Whether to linearly shift traffic over the duration of this stage
+ */
+class ApproveRollingReleaseStageResponseRollingReleaseActiveStageLiX03c5deb0db private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is ApproveRollingReleaseStageResponseRollingReleaseActiveStageLiX03c5deb0db && value == other.value
+    override fun hashCode(): Int = value.hashCode()
+    override fun toString(): String = value.toString()
+
+    companion object {
+
+        @JvmField val FALSE = ApproveRollingReleaseStageResponseRollingReleaseActiveStageLiX03c5deb0db(false)
+        @JvmField val TRUE = ApproveRollingReleaseStageResponseRollingReleaseActiveStageLiX03c5deb0db(true)
+
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = ApproveRollingReleaseStageResponseRollingReleaseActiveStageLiX03c5deb0db(value)
+    }
+}
+
+/**
+ * Whether or not this stage requires manual approval to proceed
+ */
+class ApproveRollingReleaseStageResponseRollingReleaseActiveStageReX4a4c1f59da private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is ApproveRollingReleaseStageResponseRollingReleaseActiveStageReX4a4c1f59da && value == other.value
+    override fun hashCode(): Int = value.hashCode()
+    override fun toString(): String = value.toString()
+
+    companion object {
+
+        @JvmField val FALSE = ApproveRollingReleaseStageResponseRollingReleaseActiveStageReX4a4c1f59da(false)
+        @JvmField val TRUE = ApproveRollingReleaseStageResponseRollingReleaseActiveStageReX4a4c1f59da(true)
+
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = ApproveRollingReleaseStageResponseRollingReleaseActiveStageReX4a4c1f59da(value)
+    }
+}
+
+/**
+ * The advancement type of the rolling release
+ */
+class ApproveRollingReleaseStageResponseRollingReleaseAdvancementTypeEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is ApproveRollingReleaseStageResponseRollingReleaseAdvancementTypeEnum && value == other.value
+    override fun hashCode(): Int = value.hashCode()
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val BLOCKED =
-            ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca("BLOCKED")
-        @JvmField
-        val BUILDING =
-            ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca("BUILDING")
-        @JvmField
-        val CANCELED =
-            ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca("CANCELED")
-        @JvmField
-        val ERROR =
-            ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca("ERROR")
-        @JvmField
-        val INITIALIZING =
-            ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca("INITIALIZING")
-        @JvmField
-        val QUEUED =
-            ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca("QUEUED")
-        @JvmField
-        val READY =
-            ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca("READY")
+        @JvmField val AUTOMATIC = ApproveRollingReleaseStageResponseRollingReleaseAdvancementTypeEnum("automatic")
+        @JvmField val MANUAL_APPROVAL = ApproveRollingReleaseStageResponseRollingReleaseAdvancementTypeEnum("manual-approval")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) =
-            ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = ApproveRollingReleaseStageResponseRollingReleaseAdvancementTypeEnum(value)
+    }
+}
+
+/**
+ * The state of the deployment depending on the process of deploying, or if it is ready or in an error state
+ */
+class ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca && value == other.value
+    override fun hashCode(): Int = value.hashCode()
+    override fun toString(): String = value
+
+    companion object {
+
+        @JvmField val BLOCKED = ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca("BLOCKED")
+        @JvmField val BUILDING = ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca("BUILDING")
+        @JvmField val CANCELED = ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca("CANCELED")
+        @JvmField val ERROR = ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca("ERROR")
+        @JvmField val INITIALIZING = ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca("INITIALIZING")
+        @JvmField val QUEUED = ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca("QUEUED")
+        @JvmField val READY = ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca("READY")
+
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = ApproveRollingReleaseStageResponseRollingReleaseCanaryDeploymXcccf75d3ca(value)
     }
 }

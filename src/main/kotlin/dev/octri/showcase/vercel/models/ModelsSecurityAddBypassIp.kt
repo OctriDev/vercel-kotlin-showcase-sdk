@@ -10,20 +10,14 @@ data class AddBypassIpResponseVariant0ResultItem(
     @com.fasterxml.jackson.annotation.JsonProperty("Note") val note: String,
     @com.fasterxml.jackson.annotation.JsonProperty("OwnerId") val ownerId: String,
     @com.fasterxml.jackson.annotation.JsonProperty("ProjectId") val projectId: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("Ip") val ip: String? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("Ip") val ip: String? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class AddBypassIpResponseVariant0(
     val ok: Boolean,
-    @com.fasterxml.jackson.annotation.JsonProperty("pagination", required = true)
-    val pagination: Any?,
-    val result: List<AddBypassIpResponseVariant0ResultItem>,
+    @com.fasterxml.jackson.annotation.JsonProperty("pagination", required = true) val pagination: Any?,
+    val result: List<AddBypassIpResponseVariant0ResultItem>
 ) : AddBypassIpResponse
 
 data class AddBypassIpResponseVariant1ResultItem(
@@ -34,32 +28,25 @@ data class AddBypassIpResponseVariant1ResultItem(
     @com.fasterxml.jackson.annotation.JsonProperty("OwnerId") val ownerId: String,
     @com.fasterxml.jackson.annotation.JsonProperty("UpdatedAt") val updatedAt: String,
     @com.fasterxml.jackson.annotation.JsonProperty("UpdatedAtHour") val updatedAtHour: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("Action")
-    val action: AddBypassIpResponseVariant1ResultItemActionEnum? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("Action") val action: AddBypassIpResponseVariant1ResultItemActionEnum? = null,
     @com.fasterxml.jackson.annotation.JsonProperty("ActorId") val actorId: String? = null,
     @com.fasterxml.jackson.annotation.JsonProperty("DeletedAt") val deletedAt: String? = null,
     @com.fasterxml.jackson.annotation.JsonProperty("ExpiresAt") val expiresAt: Double? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("IsProjectRule")
-    val isProjectRule: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("IsProjectRule") val isProjectRule: Boolean? = null,
     @com.fasterxml.jackson.annotation.JsonProperty("Note") val note: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("ProjectId") val projectId: String? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("ProjectId") val projectId: String? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class AddBypassIpResponseVariant1(
     val ok: Boolean,
-    val result: List<AddBypassIpResponseVariant1ResultItem>? = null,
+    val result: List<AddBypassIpResponseVariant1ResultItem>? = null
 ) : AddBypassIpResponse
 
-/** Typed representation of the `AddBypassIpResponse` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = AddBypassIpResponse.Deserializer::class
-)
+/**
+ * Typed representation of the `AddBypassIpResponse` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = AddBypassIpResponse.Deserializer::class)
 sealed interface AddBypassIpResponse {
     /** Chooses the branch this payload is shaped like. */
     class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<AddBypassIpResponse>() {
@@ -69,9 +56,7 @@ sealed interface AddBypassIpResponse {
         ): AddBypassIpResponse {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                AddBypassIpResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }
-                    ?.second
+            val ownedType = AddBypassIpResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -79,26 +64,16 @@ sealed interface AddBypassIpResponse {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out AddBypassIpResponse>> =
-                listOf(
-                    AddBypassIpResponseVariant0::class.java,
-                    AddBypassIpResponseVariant1::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out AddBypassIpResponse>> = listOf(AddBypassIpResponseVariant0::class.java, AddBypassIpResponseVariant1::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        AddBypassIpResponse::class.java,
-                        "no AddBypassIpResponse branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, AddBypassIpResponse::class.java, "no AddBypassIpResponse branch accepts this payload")
             }
         }
     }
 }
 
-internal val AddBypassIpResponseOwnedTypes:
-    List<Pair<List<String>, Class<out AddBypassIpResponse>>> =
-    listOf(listOf("pagination") to AddBypassIpResponseVariant0::class.java)
+internal val AddBypassIpResponseOwnedTypes: List<Pair<List<String>, Class<out AddBypassIpResponse>>> = listOf(
+    listOf("pagination") to AddBypassIpResponseVariant0::class.java,
+)

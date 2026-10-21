@@ -3,487 +3,204 @@
 
 package dev.octri.showcase.vercel
 
+
 class AiGatewayNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Creates a virtual model configuration (VMC) for a team. Specify `teamId` or `slug` to perform
-     * the request in that team's context. A 201 response returns the created configuration.
+     * Creates a virtual model configuration (VMC) for a team. Specify `teamId` or `slug` to perform the request in that team's context. A 201 response returns the created configuration.
      *
      * Create a virtual model config (VMC)
      */
-    fun createVirtualModelConfig(
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayVirtualModelConfig {
-        return dev.octri.showcase.vercel.methods.AiGateway.createAiGatewayVirtualModelConfig(
-            clientConfig,
-            teamId,
-            slug,
-            options,
-        )
+    fun createVirtualModelConfig(teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayVirtualModelConfig {
+        return dev.octri.showcase.vercel.methods.AiGateway.createAiGatewayVirtualModelConfig(clientConfig, teamId, slug, options)
     }
 
     /**
-     * Retrieves virtual model configuration data for the authenticated team, including active and
-     * archived configurations. Use `virtualModelSlug` to select a configuration or `limit` and
-     * `cursor` to request a page of results.
+     * Retrieves virtual model configuration data for the authenticated team, including active and archived configurations. Use `virtualModelSlug` to select a configuration or `limit` and `cursor` to request a page of results.
      *
      * Get a virtual model config
      */
-    fun getVirtualModelConfig(
-        request: dev.octri.showcase.vercel.methods.AiGateway.GetAiGatewayVirtualModelConfigRequest,
-        options: RequestOptions? = null,
-    ): GetAiGatewayVirtualModelConfigResponse {
-        return dev.octri.showcase.vercel.methods.AiGateway.getAiGatewayVirtualModelConfig(
-            clientConfig,
-            request,
-            options,
-        )
+    fun getVirtualModelConfig(request: dev.octri.showcase.vercel.methods.AiGateway.GetAiGatewayVirtualModelConfigRequest, options: RequestOptions? = null): GetAiGatewayVirtualModelConfigResponse {
+        return dev.octri.showcase.vercel.methods.AiGateway.getAiGatewayVirtualModelConfig(clientConfig, request, options)
     }
 
     /**
-     * Updates a virtual model configuration for a team. Specify `teamId` or `slug` to perform the
-     * request in that team's context. A 200 response returns the updated configuration.
+     * Updates a virtual model configuration for a team. Specify `teamId` or `slug` to perform the request in that team's context. A 200 response returns the updated configuration.
      *
      * Update a virtual model config
      */
-    fun updateVirtualModelConfig(
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayVirtualModelConfig {
-        return dev.octri.showcase.vercel.methods.AiGateway.updateAiGatewayVirtualModelConfig(
-            clientConfig,
-            teamId,
-            slug,
-            options,
-        )
+    fun updateVirtualModelConfig(teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayVirtualModelConfig {
+        return dev.octri.showcase.vercel.methods.AiGateway.updateAiGatewayVirtualModelConfig(clientConfig, teamId, slug, options)
     }
 
     /**
-     * Deletes a virtual model configuration by its slug using a soft delete. Specify
-     * `virtualModelSlug` to identify the configuration and optionally use `ownerId`, `teamId`, or
-     * `slug` to select the owner context.
+     * Deletes a virtual model configuration by its slug using a soft delete. Specify `virtualModelSlug` to identify the configuration and optionally use `ownerId`, `teamId`, or `slug` to select the owner context.
      *
      * Delete a virtual model config (soft delete)
      */
-    fun deleteVirtualModelConfig(
-        request:
-            dev.octri.showcase.vercel.methods.AiGateway.DeleteAiGatewayVirtualModelConfigRequest,
-        options: RequestOptions? = null,
-    ): Unit {
-        return dev.octri.showcase.vercel.methods.AiGateway.deleteAiGatewayVirtualModelConfig(
-            clientConfig,
-            request,
-            options,
-        )
+    fun deleteVirtualModelConfig(request: dev.octri.showcase.vercel.methods.AiGateway.DeleteAiGatewayVirtualModelConfigRequest, options: RequestOptions? = null): Unit {
+        return dev.octri.showcase.vercel.methods.AiGateway.deleteAiGatewayVirtualModelConfig(clientConfig, request, options)
     }
 
     /**
-     * Lists virtual model configurations for a team or across teams. Use `limit` and `cursor` to
-     * retrieve a page; team results are ordered by `virtualModelSlug`, while cross-team results are
-     * ordered newest first.
+     * Lists virtual model configurations for a team or across teams. Use `limit` and `cursor` to retrieve a page; team results are ordered by `virtualModelSlug`, while cross-team results are ordered newest first.
      *
-     * List virtual model configs. For a team, returns all of its VMCs, or with `limit` or `cursor`
-     * one page ordered by `virtualModelSlug`. Across teams, pages newest-first.
-     * `includeArchived=false` omits archived VMCs.
+     * List virtual model configs. For a team, returns all of its VMCs, or with `limit` or `cursor` one page ordered by `virtualModelSlug`. Across teams, pages newest-first. `includeArchived=false` omits archived VMCs.
      */
-    fun listVirtualModelConfigs(
-        request:
-            dev.octri.showcase.vercel.methods.AiGateway.ListAiGatewayVirtualModelConfigsRequest,
-        options: RequestOptions? = null,
-    ): AiGatewayVirtualModelConfigList {
-        return dev.octri.showcase.vercel.methods.AiGateway.listAiGatewayVirtualModelConfigs(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listVirtualModelConfigs(request: dev.octri.showcase.vercel.methods.AiGateway.ListAiGatewayVirtualModelConfigsRequest, options: RequestOptions? = null): AiGatewayVirtualModelConfigList {
+        return dev.octri.showcase.vercel.methods.AiGateway.listAiGatewayVirtualModelConfigs(clientConfig, request, options)
     }
 
     /**
-     * Lists virtual model configurations for a team or across teams. Use `limit` and `cursor` to
-     * retrieve a page; team results are ordered by `virtualModelSlug`, while cross-team results are
-     * ordered newest first.
+     * Lists virtual model configurations for a team or across teams. Use `limit` and `cursor` to retrieve a page; team results are ordered by `virtualModelSlug`, while cross-team results are ordered newest first.
      *
-     * List virtual model configs. For a team, returns all of its VMCs, or with `limit` or `cursor`
-     * one page ordered by `virtualModelSlug`. Across teams, pages newest-first.
-     * `includeArchived=false` omits archived VMCs.
+     * List virtual model configs. For a team, returns all of its VMCs, or with `limit` or `cursor` one page ordered by `virtualModelSlug`. Across teams, pages newest-first. `includeArchived=false` omits archived VMCs.
      */
-    fun listVirtualModelConfigsPaginated(
-        request:
-            dev.octri.showcase.vercel.methods.AiGateway.ListAiGatewayVirtualModelConfigsRequest,
-        options: RequestOptions? = null,
-        yieldFn: (AiGatewayVirtualModelConfig) -> Boolean,
-    ) {
-        dev.octri.showcase.vercel.methods.AiGateway.listAiGatewayVirtualModelConfigsPaginated(
-            clientConfig,
-            request,
-            options,
-            yieldFn,
-        )
+    fun listVirtualModelConfigsPaginated(request: dev.octri.showcase.vercel.methods.AiGateway.ListAiGatewayVirtualModelConfigsRequest, options: RequestOptions? = null, yieldFn: (AiGatewayVirtualModelConfig) -> Boolean) {
+        dev.octri.showcase.vercel.methods.AiGateway.listAiGatewayVirtualModelConfigsPaginated(clientConfig, request, options, yieldFn)
     }
 
     /**
-     * Retrieves a virtual model configuration by its path slug. Use `ownerId` or the team selectors
-     * `teamId` and `slug` to scope the lookup to the appropriate owner.
+     * Retrieves a virtual model configuration by its path slug. Use `ownerId` or the team selectors `teamId` and `slug` to scope the lookup to the appropriate owner.
      *
      * Get a virtual model config by path slug
      */
-    fun getVirtualModelConfigBySlug(
-        vmcSlug: String,
-        ownerId: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayVirtualModelConfig {
-        return dev.octri.showcase.vercel.methods.AiGateway.getAiGatewayVirtualModelConfigBySlug(
-            clientConfig,
-            vmcSlug,
-            ownerId,
-            teamId,
-            slug,
-            options,
-        )
+    fun getVirtualModelConfigBySlug(vmcSlug: String, ownerId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayVirtualModelConfig {
+        return dev.octri.showcase.vercel.methods.AiGateway.getAiGatewayVirtualModelConfigBySlug(clientConfig, vmcSlug, ownerId, teamId, slug, options)
     }
 
     /**
-     * Updates a virtual model configuration identified by its path slug. Specify `teamId` or `slug`
-     * to perform the request in that team's context. A 200 response returns the updated
-     * configuration.
+     * Updates a virtual model configuration identified by its path slug. Specify `teamId` or `slug` to perform the request in that team's context. A 200 response returns the updated configuration.
      *
      * Update a virtual model config by path slug
      */
-    fun updateVirtualModelConfigBySlug(
-        vmcSlug: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayVirtualModelConfig {
-        return dev.octri.showcase.vercel.methods.AiGateway.updateAiGatewayVirtualModelConfigBySlug(
-            clientConfig,
-            vmcSlug,
-            teamId,
-            slug,
-            options,
-        )
+    fun updateVirtualModelConfigBySlug(vmcSlug: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayVirtualModelConfig {
+        return dev.octri.showcase.vercel.methods.AiGateway.updateAiGatewayVirtualModelConfigBySlug(clientConfig, vmcSlug, teamId, slug, options)
     }
 
     /**
-     * Deletes a virtual model configuration identified by its path slug using a soft delete.
-     * Specify `vmcSlug` to select the configuration, and optionally use `ownerId`, `teamId`, or
-     * `slug` to scope the operation.
+     * Deletes a virtual model configuration identified by its path slug using a soft delete. Specify `vmcSlug` to select the configuration, and optionally use `ownerId`, `teamId`, or `slug` to scope the operation.
      *
      * Delete a virtual model config by path slug (soft delete)
      */
-    fun deleteVirtualModelConfigBySlug(
-        request:
-            dev.octri.showcase.vercel.methods.AiGateway.DeleteAiGatewayVirtualModelConfigBySlugRequest,
-        options: RequestOptions? = null,
-    ): Unit {
-        return dev.octri.showcase.vercel.methods.AiGateway.deleteAiGatewayVirtualModelConfigBySlug(
-            clientConfig,
-            request,
-            options,
-        )
+    fun deleteVirtualModelConfigBySlug(request: dev.octri.showcase.vercel.methods.AiGateway.DeleteAiGatewayVirtualModelConfigBySlugRequest, options: RequestOptions? = null): Unit {
+        return dev.octri.showcase.vercel.methods.AiGateway.deleteAiGatewayVirtualModelConfigBySlug(clientConfig, request, options)
     }
 
     /**
-     * Lists the authenticated team's active and archived AI Gateway routers. Public callers select
-     * the team with `teamId` or `slug`; trusted-origin callers can use `ownerId` to scope the list.
+     * Lists the authenticated team's active and archived AI Gateway routers. Public callers select the team with `teamId` or `slug`; trusted-origin callers can use `ownerId` to scope the list.
      *
      * List the authenticated team's active and archived custom routers.
      */
-    fun listRouters(
-        ownerId: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayRouterList {
-        return dev.octri.showcase.vercel.methods.AiGateway.listAiGatewayRouters(
-            clientConfig,
-            ownerId,
-            teamId,
-            slug,
-            options,
-        )
+    fun listRouters(ownerId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayRouterList {
+        return dev.octri.showcase.vercel.methods.AiGateway.listAiGatewayRouters(clientConfig, ownerId, teamId, slug, options)
     }
 
     /**
-     * Creates a routing rule for the authenticated team. Use `teamId` or `slug` to select the team
-     * context when needed. A 201 response returns the created rule, including its identifier and
-     * configuration.
+     * Creates a routing rule for the authenticated team. Use `teamId` or `slug` to select the team context when needed. A 201 response returns the created rule, including its identifier and configuration.
      *
      * Create a routing rule
      */
-    fun createRule(
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayRule {
-        return dev.octri.showcase.vercel.methods.AiGateway.createAiGatewayRule(
-            clientConfig,
-            teamId,
-            slug,
-            options,
-        )
+    fun createRule(teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayRule {
+        return dev.octri.showcase.vercel.methods.AiGateway.createAiGatewayRule(clientConfig, teamId, slug, options)
     }
 
     /**
-     * Lists the authenticated team's AI Gateway routing rules, ordered from oldest to newest. Use
-     * `includeDisabled` to control whether disabled rules are included, and use `limit` and
-     * `cursor` to retrieve a page of results. Paged responses include `nextCursor` for the next
-     * request; it is null on the last page.
+     * Lists the authenticated team's AI Gateway routing rules, ordered from oldest to newest. Use `includeDisabled` to control whether disabled rules are included, and use `limit` and `cursor` to retrieve a page of results. Paged responses include `nextCursor` for the next request; it is null on the last page.
      *
-     * List the authenticated team's routing rules, oldest first. Without `limit` or `cursor`,
-     * returns every rule. With either, returns one page and a `nextCursor` for the next page (null
-     * on the last page). Paging reads and sorts the team's rules server-side, which is fine at
-     * current rule counts.
+     * List the authenticated team's routing rules, oldest first. Without `limit` or `cursor`, returns every rule. With either, returns one page and a `nextCursor` for the next page (null on the last page). Paging reads and sorts the team's rules server-side, which is fine at current rule counts.
      */
-    fun listRules(
-        includeDisabled: ListAiGatewayRulesParameterEnum? = null,
-        limit: Long? = null,
-        cursor: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayRuleList {
-        return dev.octri.showcase.vercel.methods.AiGateway.listAiGatewayRules(
-            clientConfig,
-            includeDisabled,
-            limit,
-            cursor,
-            teamId,
-            slug,
-            options,
-        )
+    fun listRules(includeDisabled: ListAiGatewayRulesParameterEnum? = null, limit: Long? = null, cursor: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayRuleList {
+        return dev.octri.showcase.vercel.methods.AiGateway.listAiGatewayRules(clientConfig, includeDisabled, limit, cursor, teamId, slug, options)
     }
 
     /**
-     * Lists the authenticated team's AI Gateway routing rules, ordered from oldest to newest. Use
-     * `includeDisabled` to control whether disabled rules are included, and use `limit` and
-     * `cursor` to retrieve a page of results. Paged responses include `nextCursor` for the next
-     * request; it is null on the last page.
+     * Lists the authenticated team's AI Gateway routing rules, ordered from oldest to newest. Use `includeDisabled` to control whether disabled rules are included, and use `limit` and `cursor` to retrieve a page of results. Paged responses include `nextCursor` for the next request; it is null on the last page.
      *
-     * List the authenticated team's routing rules, oldest first. Without `limit` or `cursor`,
-     * returns every rule. With either, returns one page and a `nextCursor` for the next page (null
-     * on the last page). Paging reads and sorts the team's rules server-side, which is fine at
-     * current rule counts.
+     * List the authenticated team's routing rules, oldest first. Without `limit` or `cursor`, returns every rule. With either, returns one page and a `nextCursor` for the next page (null on the last page). Paging reads and sorts the team's rules server-side, which is fine at current rule counts.
      */
-    fun listRulesPaginated(
-        includeDisabled: ListAiGatewayRulesParameterEnum? = null,
-        limit: Long? = null,
-        cursor: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-        yieldFn: (AiGatewayRule) -> Boolean,
-    ) {
-        dev.octri.showcase.vercel.methods.AiGateway.listAiGatewayRulesPaginated(
-            clientConfig,
-            includeDisabled,
-            limit,
-            cursor,
-            teamId,
-            slug,
-            options,
-            yieldFn,
-        )
+    fun listRulesPaginated(includeDisabled: ListAiGatewayRulesParameterEnum? = null, limit: Long? = null, cursor: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null, yieldFn: (AiGatewayRule) -> Boolean) {
+        dev.octri.showcase.vercel.methods.AiGateway.listAiGatewayRulesPaginated(clientConfig, includeDisabled, limit, cursor, teamId, slug, options, yieldFn)
     }
 
     /**
-     * Updates a routing rule's enabled state, action, or description for the authenticated team.
-     * Use `teamId` or `slug` to select the team context when needed. A 200 response returns the
-     * updated rule and its current configuration.
+     * Updates a routing rule's enabled state, action, or description for the authenticated team. Use `teamId` or `slug` to select the team context when needed. A 200 response returns the updated rule and its current configuration.
      *
      * Update a routing rule (enabled, action, or description)
      */
-    fun updateRule(
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayRule {
-        return dev.octri.showcase.vercel.methods.AiGateway.updateAiGatewayRule(
-            clientConfig,
-            teamId,
-            slug,
-            options,
-        )
+    fun updateRule(teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayRule {
+        return dev.octri.showcase.vercel.methods.AiGateway.updateAiGatewayRule(clientConfig, teamId, slug, options)
     }
 
     /**
-     * Deletes a routing rule from the authenticated team's active rules; deletion is soft, so the
-     * rule is not necessarily permanently removed. Supply the rule's `ruleId` and use `teamId` or
-     * `slug` to select the team context when needed.
+     * Deletes a routing rule from the authenticated team's active rules; deletion is soft, so the rule is not necessarily permanently removed. Supply the rule's `ruleId` and use `teamId` or `slug` to select the team context when needed.
      *
      * Delete a routing rule (soft delete)
      */
-    fun deleteRule(
-        ruleId: String,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Unit {
-        return dev.octri.showcase.vercel.methods.AiGateway.deleteAiGatewayRule(
-            clientConfig,
-            ruleId,
-            teamId,
-            slug,
-            options,
-        )
+    fun deleteRule(ruleId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
+        return dev.octri.showcase.vercel.methods.AiGateway.deleteAiGatewayRule(clientConfig, ruleId, teamId, slug, options)
     }
 
     /**
-     * Lists the authenticated team's AI Gateway budgets as a flat list, with optional filtering by
-     * scope. Use `scopeType` to filter by team, project, user, or API key, and use `limit` and
-     * `cursor` to paginate results. Paged responses include `nextCursor` and
-     * `defaultCoveredCounts`.
+     * Lists the authenticated team's AI Gateway budgets as a flat list, with optional filtering by scope. Use `scopeType` to filter by team, project, user, or API key, and use `limit` and `cursor` to paginate results. Paged responses include `nextCursor` and `defaultCoveredCounts`.
      *
-     * List the team's AI Gateway budgets (team/project/user scopes, plus default-covered api-key
-     * spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns
-     * every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor`
-     * (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge
-     * server-side: the gateway meter list it joins has no cursor.
+     * List the team's AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor` (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.
      */
-    fun listBudgets(
-        request: dev.octri.showcase.vercel.methods.AiGateway.ListAiGatewayBudgetsRequest,
-        options: RequestOptions? = null,
-    ): AiGatewayBudgetList {
-        return dev.octri.showcase.vercel.methods.AiGateway.listAiGatewayBudgets(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listBudgets(request: dev.octri.showcase.vercel.methods.AiGateway.ListAiGatewayBudgetsRequest, options: RequestOptions? = null): AiGatewayBudgetList {
+        return dev.octri.showcase.vercel.methods.AiGateway.listAiGatewayBudgets(clientConfig, request, options)
     }
 
     /**
-     * Lists the authenticated team's AI Gateway budgets as a flat list, with optional filtering by
-     * scope. Use `scopeType` to filter by team, project, user, or API key, and use `limit` and
-     * `cursor` to paginate results. Paged responses include `nextCursor` and
-     * `defaultCoveredCounts`.
+     * Lists the authenticated team's AI Gateway budgets as a flat list, with optional filtering by scope. Use `scopeType` to filter by team, project, user, or API key, and use `limit` and `cursor` to paginate results. Paged responses include `nextCursor` and `defaultCoveredCounts`.
      *
-     * List the team's AI Gateway budgets (team/project/user scopes, plus default-covered api-key
-     * spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns
-     * every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor`
-     * (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge
-     * server-side: the gateway meter list it joins has no cursor.
+     * List the team's AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor` (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.
      */
-    fun listBudgetsPaginated(
-        request: dev.octri.showcase.vercel.methods.AiGateway.ListAiGatewayBudgetsRequest,
-        options: RequestOptions? = null,
-        yieldFn: (AiGatewayBudget) -> Boolean,
-    ) {
-        dev.octri.showcase.vercel.methods.AiGateway.listAiGatewayBudgetsPaginated(
-            clientConfig,
-            request,
-            options,
-            yieldFn,
-        )
+    fun listBudgetsPaginated(request: dev.octri.showcase.vercel.methods.AiGateway.ListAiGatewayBudgetsRequest, options: RequestOptions? = null, yieldFn: (AiGatewayBudget) -> Boolean) {
+        dev.octri.showcase.vercel.methods.AiGateway.listAiGatewayBudgetsPaginated(clientConfig, request, options, yieldFn)
     }
 
     /**
-     * Creates or updates an AI Gateway budget for a team, project, or user scope. Supply
-     * `scopeType` and `limitAmount`, and include `projectId` or `userId` when the selected scope
-     * requires it. The response contains the saved budget and its current spend and configuration.
+     * Creates or updates an AI Gateway budget for a team, project, or user scope. Supply `scopeType` and `limitAmount`, and include `projectId` or `userId` when the selected scope requires it. The response contains the saved budget and its current spend and configuration.
      *
      * Create or update a team-, project-, or user-scope AI Gateway budget.
      */
-    fun upsertBudget(
-        request: dev.octri.showcase.vercel.methods.AiGateway.UpsertAiGatewayBudgetRequest,
-        options: RequestOptions? = null,
-    ): AiGatewayBudget {
-        return dev.octri.showcase.vercel.methods.AiGateway.upsertAiGatewayBudget(
-            clientConfig,
-            request,
-            options,
-        )
+    fun upsertBudget(request: dev.octri.showcase.vercel.methods.AiGateway.UpsertAiGatewayBudgetRequest, options: RequestOptions? = null): AiGatewayBudget {
+        return dev.octri.showcase.vercel.methods.AiGateway.upsertAiGatewayBudget(clientConfig, request, options)
     }
 
     /**
-     * Archives an AI Gateway budget for a team, project, or user scope. Set `scopeType` and include
-     * `projectId` or `userId` when the selected scope requires it. The response returns the
-     * archived budget and its current configuration.
+     * Archives an AI Gateway budget for a team, project, or user scope. Set `scopeType` and include `projectId` or `userId` when the selected scope requires it. The response returns the archived budget and its current configuration.
      *
      * Archive a team-, project-, or user-scope AI Gateway budget.
      */
-    fun archiveBudget(
-        scopeType: ArchiveAiGatewayBudgetParameterEnum,
-        projectId: String? = null,
-        userId: String? = null,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayBudget {
-        return dev.octri.showcase.vercel.methods.AiGateway.archiveAiGatewayBudget(
-            clientConfig,
-            scopeType,
-            projectId,
-            userId,
-            teamId,
-            slug,
-            options,
-        )
+    fun archiveBudget(scopeType: ArchiveAiGatewayBudgetParameterEnum, projectId: String? = null, userId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayBudget {
+        return dev.octri.showcase.vercel.methods.AiGateway.archiveAiGatewayBudget(clientConfig, scopeType, projectId, userId, teamId, slug, options)
     }
 
     /**
-     * Lists the authenticated team's AI Gateway budget defaults as a flat list, with one entry for
-     * each scope that has a default. An empty `defaults` array is a normal result when no defaults
-     * are configured. Use `teamId` or `slug` to select the team context when needed.
+     * Lists the authenticated team's AI Gateway budget defaults as a flat list, with one entry for each scope that has a default. An empty `defaults` array is a normal result when no defaults are configured. Use `teamId` or `slug` to select the team context when needed.
      *
-     * List the team's AI Gateway budget defaults as a flat per-scope list (one row per
-     * team/project/api-key/user scope with a default set). An empty list is a normal state for the
-     * dashboard.
+     * List the team's AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user scope with a default set). An empty list is a normal state for the dashboard.
      */
-    fun listBudgetDefaults(
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): AiGatewayBudgetDefaultList {
-        return dev.octri.showcase.vercel.methods.AiGateway.listAiGatewayBudgetDefaults(
-            clientConfig,
-            teamId,
-            slug,
-            options,
-        )
+    fun listBudgetDefaults(teamId: String? = null, slug: String? = null, options: RequestOptions? = null): AiGatewayBudgetDefaultList {
+        return dev.octri.showcase.vercel.methods.AiGateway.listAiGatewayBudgetDefaults(clientConfig, teamId, slug, options)
     }
 
     /**
-     * Creates or updates an AI Gateway budget default for one scope. Supply `scopeType` and
-     * `limitAmount`; only team owners and admins have authority to manage these defaults. The
-     * response returns the saved default configuration.
+     * Creates or updates an AI Gateway budget default for one scope. Supply `scopeType` and `limitAmount`; only team owners and admins have authority to manage these defaults. The response returns the saved default configuration.
      *
-     * Create or update an AI Gateway budget default for one scope. Team-level authority only
-     * (owners/admins).
+     * Create or update an AI Gateway budget default for one scope. Team-level authority only (owners/admins).
      */
-    fun upsertBudgetDefault(
-        request: dev.octri.showcase.vercel.methods.AiGateway.UpsertAiGatewayBudgetDefaultRequest,
-        options: RequestOptions? = null,
-    ): AiGatewayBudgetDefault {
-        return dev.octri.showcase.vercel.methods.AiGateway.upsertAiGatewayBudgetDefault(
-            clientConfig,
-            request,
-            options,
-        )
+    fun upsertBudgetDefault(request: dev.octri.showcase.vercel.methods.AiGateway.UpsertAiGatewayBudgetDefaultRequest, options: RequestOptions? = null): AiGatewayBudgetDefault {
+        return dev.octri.showcase.vercel.methods.AiGateway.upsertAiGatewayBudgetDefault(clientConfig, request, options)
     }
 
     /**
-     * Deletes an AI Gateway budget default for one scope by archiving it. Set `scopeType` to
-     * identify the scope; only team owners and admins have authority to manage budget defaults. A
-     * 204 response confirms the default was archived.
+     * Deletes an AI Gateway budget default for one scope by archiving it. Set `scopeType` to identify the scope; only team owners and admins have authority to manage budget defaults. A 204 response confirms the default was archived.
      *
      * Delete an AI Gateway budget default for one scope. Team-level authority only (owners/admins).
      */
-    fun archiveBudgetDefault(
-        scopeType: ArchiveAiGatewayBudgetDefaultParameterEnum,
-        teamId: String? = null,
-        slug: String? = null,
-        options: RequestOptions? = null,
-    ): Unit {
-        return dev.octri.showcase.vercel.methods.AiGateway.archiveAiGatewayBudgetDefault(
-            clientConfig,
-            scopeType,
-            teamId,
-            slug,
-            options,
-        )
+    fun archiveBudgetDefault(scopeType: ArchiveAiGatewayBudgetDefaultParameterEnum, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit {
+        return dev.octri.showcase.vercel.methods.AiGateway.archiveAiGatewayBudgetDefault(clientConfig, scopeType, teamId, slug, options)
     }
+
 }

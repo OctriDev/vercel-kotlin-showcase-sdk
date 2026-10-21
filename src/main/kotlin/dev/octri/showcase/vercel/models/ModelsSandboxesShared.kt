@@ -3,320 +3,513 @@
 
 package dev.octri.showcase.vercel.models
 
-/** This object contains information related to a Vercel Sandbox Drive. */
+/**
+ * This object contains information related to a Vercel Sandbox Drive.
+ */
 data class Drive(
-    /** The time when the drive was created, in milliseconds since the epoch. */
+    /**
+     * The time when the drive was created, in milliseconds since the epoch.
+     */
     val createdAt: Double,
-    /** The unique drive ID. */
+    /**
+     * The unique drive ID.
+     */
     val id: String,
-    /** The maximum drive size in bytes. */
+    /**
+     * The maximum drive size in bytes.
+     */
     val maxSizeBytes: Double,
-    /** The unique drive name within the project. */
+    /**
+     * The unique drive name within the project.
+     */
     val name: String,
-    /** The project that owns the drive. */
+    /**
+     * The project that owns the drive.
+     */
     val projectId: String,
-    /** The region where the drive is stored. */
+    /**
+     * The region where the drive is stored.
+     */
     val region: String,
-    /** The last time the drive was updated, in milliseconds since the epoch. */
+    /**
+     * The last time the drive was updated, in milliseconds since the epoch.
+     */
     val updatedAt: Double,
-    /** Current sandbox name the drive is attached to, if any. */
+    /**
+     * Current sandbox name the drive is attached to, if any.
+     */
     val currentSandboxName: String? = null,
-    /** Current session ID the drive is attached to, if any. */
+    /**
+     * Current session ID the drive is attached to, if any.
+     */
     val currentSessionId: String? = null,
-    /** The ID of the source drive when this drive is a fork. */
+    /**
+     * The ID of the source drive when this drive is a fork.
+     */
     val parentDriveId: String? = null,
-    /** The ID of the original drive at the root of this fork. */
+    /**
+     * The ID of the original drive at the root of this fork.
+     */
     val rootDriveId: String? = null,
-    /** Whether this drive is managed by v0 on the customer's behalf. */
-    val v0: Boolean? = null,
+    /**
+     * Whether this drive is managed by v0 on the customer's behalf.
+     */
+    val v0: Boolean? = null
 )
 
-/** Keep-last snapshot configuration. */
+/**
+ * Keep-last snapshot configuration.
+ */
 data class NamedSandboxKeepLastSnapshots(
-    /** Number of most recent snapshots to keep. */
+    /**
+     * Number of most recent snapshots to keep.
+     */
     val count: Double,
-    /** Whether to immediately delete evicted snapshots. */
+    /**
+     * Whether to immediately delete evicted snapshots.
+     */
     val deleteEvicted: Boolean,
-    /** Expiration time in milliseconds for kept snapshots. */
-    val expiration: Double? = null,
+    /**
+     * Expiration time in milliseconds for kept snapshots.
+     */
+    val expiration: Double? = null
 )
 
-/** Key-value pairs of mount path and drive. */
+/**
+ * Key-value pairs of mount path and drive.
+ */
 data class NamedSandboxMountsValue(
     val drive: String,
     val mode: NamedSandboxMountsValueModeEnum? = null,
-    val snapshot: String? = null,
+    val snapshot: String? = null
 )
 
-/** Network policy configuration. */
+/**
+ * Network policy configuration.
+ */
 data class NamedSandboxNetworkPolicy(
-    /** Required enumerated value serialized in the `mode` wire field. */
+    /**
+     * Required enumerated value serialized in the `mode` wire field.
+     */
     val mode: NamedSandboxNetworkPolicyModeEnum,
-    /** Optional array value serialized in the `allowedCIDRs` wire field. */
-    @com.fasterxml.jackson.annotation.JsonProperty("allowedCIDRs")
-    val allowedCidrs: List<String>? = null,
-    /** Optional array value serialized in the `allowedDomains` wire field. */
+    /**
+     * Optional array value serialized in the `allowedCIDRs` wire field.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("allowedCIDRs") val allowedCidrs: List<String>? = null,
+    /**
+     * Optional array value serialized in the `allowedDomains` wire field.
+     */
     val allowedDomains: List<String>? = null,
-    /** Optional array value serialized in the `deniedCIDRs` wire field. */
-    @com.fasterxml.jackson.annotation.JsonProperty("deniedCIDRs")
-    val deniedCidrs: List<String>? = null,
-    /** Optional `string` value serialized in the `s3Key` wire field. */
-    val s3Key: String? = null,
+    /**
+     * Optional array value serialized in the `deniedCIDRs` wire field.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("deniedCIDRs") val deniedCidrs: List<String>? = null,
+    /**
+     * Optional `string` value serialized in the `s3Key` wire field.
+     */
+    val s3Key: String? = null
 )
 
-/** This object contains information related to a Vercel NamedSandbox. */
+/**
+ * This object contains information related to a Vercel NamedSandbox.
+ */
 data class NamedSandbox(
-    /** The time when the named sandbox was created, in milliseconds since the epoch. */
+    /**
+     * The time when the named sandbox was created, in milliseconds since the epoch.
+     */
     val createdAt: Double,
-    /** Current session ID the sandbox is pointing to. */
+    /**
+     * Current session ID the sandbox is pointing to.
+     */
     val currentSessionId: String,
-    /** The unique identifier of the sandbox. */
+    /**
+     * The unique identifier of the sandbox.
+     */
     val name: String,
-    /** Whether the sandbox persists its state across restarts via automatic snapshots. */
+    /**
+     * Whether the sandbox persists its state across restarts via automatic snapshots.
+     */
     val persistent: Boolean,
-    /** The status of the current sandbox. */
+    /**
+     * The status of the current sandbox.
+     */
     val status: NamedSandboxStatusEnum,
-    /** The time when the sandbox status was last updated, in milliseconds since the epoch. */
+    /**
+     * The time when the sandbox status was last updated, in milliseconds since the epoch.
+     */
     val statusUpdatedAt: Double,
-    /** The time when the named sandbox was last updated, in milliseconds since the epoch. */
+    /**
+     * The time when the named sandbox was last updated, in milliseconds since the epoch.
+     */
     val updatedAt: Double,
-    /** CPU architecture of the sandbox. This value does not change. */
+    /**
+     * CPU architecture of the sandbox. This value does not change.
+     */
     val architecture: NamedSandboxArchitectureEnum? = null,
-    /** Current snapshot ID that the named sandbox is pointing to. */
+    /**
+     * Current snapshot ID that the named sandbox is pointing to.
+     */
     val currentSnapshotId: String? = null,
-    /** The working directory of the sandbox. */
+    /**
+     * The working directory of the sandbox.
+     */
     val cwd: String? = null,
     /**
-     * The time at which the currently running sandbox will time out, in milliseconds since the
-     * epoch. Only present while a session is running.
+     * The time at which the currently running sandbox will time out, in milliseconds since the epoch. Only present while a session is running.
      */
     val expiresAt: Double? = null,
-    /** The regions the sandbox fails over to. Empty when it does not fail over. */
+    /**
+     * The regions the sandbox fails over to. Empty when it does not fail over.
+     */
     val failoverRegions: List<NamedSandboxFailoverRegionsItemEnum>? = null,
     /**
-     * Owner-qualified, digest-pinned reference of the container image the sandbox was created from
-     * ("{team}/{project}/{repository}@{manifestDigest}").
+     * Owner-qualified, digest-pinned reference of the container image the sandbox was created from ("{team}/{project}/{repository}@{manifestDigest}").
      */
     val image: String? = null,
-    /** Keep-last snapshot configuration. */
+    /**
+     * Keep-last snapshot configuration.
+     */
     val keepLastSnapshots: NamedSandboxKeepLastSnapshots? = null,
-    /** Memory allocated in MB. */
+    /**
+     * Memory allocated in MB.
+     */
     val memory: Double? = null,
-    /** Key-value pairs of mount path and drive. */
+    /**
+     * Key-value pairs of mount path and drive.
+     */
     val mounts: Map<String, NamedSandboxMountsValue>? = null,
-    /** The Connect network id for the target Secure Compute private network. */
+    /**
+     * The Connect network id for the target Secure Compute private network.
+     */
     val networkId: String? = null,
-    /** Network policy configuration. */
+    /**
+     * Network policy configuration.
+     */
     val networkPolicy: NamedSandboxNetworkPolicy? = null,
     /**
-     * The region the sandbox is pinned to: the region stored on the sandbox, otherwise the platform
-     * default. Where a running session actually landed is reported by `session.region`.
+     * The region the sandbox is pinned to: the region stored on the sandbox, otherwise the platform default. Where a running session actually landed is reported by `session.region`.
      */
     val region: String? = null,
-    /** Runtime identifier. */
+    /**
+     * Runtime identifier.
+     */
     val runtime: String? = null,
-    /** Default snapshot expiration time in milliseconds. 0 means no expiration. */
+    /**
+     * Default snapshot expiration time in milliseconds. 0 means no expiration.
+     */
     val snapshotExpiration: Double? = null,
-    /** Key-value tags attached to the named sandbox. */
+    /**
+     * Key-value tags attached to the named sandbox.
+     */
     val tags: Map<String, String>? = null,
-    /** Timeout in milliseconds. */
+    /**
+     * Timeout in milliseconds.
+     */
     val timeout: Double? = null,
-    /** Cumulative active CPU duration in milliseconds across all sandbox runs. */
+    /**
+     * Cumulative active CPU duration in milliseconds across all sandbox runs.
+     */
     val totalActiveCpuDurationMs: Double? = null,
-    /** Cumulative wall-clock duration in milliseconds across all sandbox runs. */
+    /**
+     * Cumulative wall-clock duration in milliseconds across all sandbox runs.
+     */
     val totalDurationMs: Double? = null,
-    /** Cumulative egress bytes across all sandbox runs. */
+    /**
+     * Cumulative egress bytes across all sandbox runs.
+     */
     val totalEgressBytes: Double? = null,
-    /** Cumulative ingress bytes across all sandbox runs. */
+    /**
+     * Cumulative ingress bytes across all sandbox runs.
+     */
     val totalIngressBytes: Double? = null,
-    /** Whether this sandbox is managed by v0 on the customer's behalf. */
+    /**
+     * Whether this sandbox is managed by v0 on the customer's behalf.
+     */
     val v0: Boolean? = null,
-    /** Number of virtual CPUs allocated. */
-    val vcpus: Double? = null,
+    /**
+     * Number of virtual CPUs allocated.
+     */
+    val vcpus: Double? = null
 )
 
-/** HTTP header injection rules for outgoing requests matching specific domains. */
+/**
+ * HTTP header injection rules for outgoing requests matching specific domains.
+ */
 data class SandboxInjectionRule(
     /**
-     * The domain (or pattern) that this injection rule applies to. Supports wildcards like
-     * *.vercel.com.
+     * The domain (or pattern) that this injection rule applies to. Supports wildcards like *.vercel.com.
      */
     val domain: String,
     /**
      * The names of HTTP headers that have value that will be injected for requests to this domain.
      */
-    val headerNames: List<String>? = null,
+    val headerNames: List<String>? = null
 )
 
-/** The network policy applied to this sandbox, if any. */
+/**
+ * The network policy applied to this sandbox, if any.
+ */
 data class SandboxNetworkPolicy(
     /**
-     * The network policy mode. - 'allow-all': All traffic is allowed. - 'deny-all': All traffic is
-     * blocked. - 'custom': Traffic is controlled by explicit allow/deny rules.
+     * The network policy mode. - 'allow-all': All traffic is allowed. - 'deny-all': All traffic is blocked. - 'custom': Traffic is controlled by explicit allow/deny rules.
      */
     val mode: SandboxNetworkPolicyModeEnum,
-    /** List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. */
-    @com.fasterxml.jackson.annotation.JsonProperty("allowedCIDRs")
-    val allowedCidrs: List<String>? = null,
     /**
-     * List of domain names the sandbox is allowed to connect to. Supports wildcard patterns (e.g.,
-     * "*.vercel.com" matches all subdomains).
+     * List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("allowedCIDRs") val allowedCidrs: List<String>? = null,
+    /**
+     * List of domain names the sandbox is allowed to connect to. Supports wildcard patterns (e.g., "*.vercel.com" matches all subdomains).
      */
     val allowedDomains: List<String>? = null,
     /**
-     * List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These
-     * rules take precedence over all allowed rules.
+     * List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("deniedCIDRs")
-    val deniedCidrs: List<String>? = null,
-    /** HTTP header injection rules for outgoing requests matching specific domains. */
-    val injectionRules: List<SandboxInjectionRule>? = null,
-)
-
-/** This object represents a public route in a Vercel Sandbox. */
-data class SandboxPublicRoute(
-    /** The user port number that the route is mapped to. */
-    val port: Double,
-    /** The subdomain assigned to this route. */
-    val subdomain: String,
-    /** A public URL to access the corresponding port in the Sandbox. */
-    val url: String,
-    /** Whether the route is reserved by the system (e.g. for internal use). */
-    val system: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("deniedCIDRs") val deniedCidrs: List<String>? = null,
+    /**
+     * HTTP header injection rules for outgoing requests matching specific domains.
+     */
+    val injectionRules: List<SandboxInjectionRule>? = null
 )
 
 /**
- * The quantity of data transfered to and from the sandbox, in bytes. This value is only available
- * once the sandbox is stopped, and only if it stopped successfully.
+ * This object represents a public route in a Vercel Sandbox.
+ */
+data class SandboxPublicRoute(
+    /**
+     * The user port number that the route is mapped to.
+     */
+    val port: Double,
+    /**
+     * The subdomain assigned to this route.
+     */
+    val subdomain: String,
+    /**
+     * A public URL to access the corresponding port in the Sandbox.
+     */
+    val url: String,
+    /**
+     * Whether the route is reserved by the system (e.g. for internal use).
+     */
+    val system: Boolean? = null
+)
+
+/**
+ * The quantity of data transfered to and from the sandbox, in bytes. This value is only available once the sandbox is stopped, and only if it stopped successfully.
  */
 data class SessionNetworkTransfer(
-    /** Required `number` value serialized in the `egress` wire field. */
+    /**
+     * Required `number` value serialized in the `egress` wire field.
+     */
     val egress: Double,
-    /** Required `number` value serialized in the `ingress` wire field. */
-    val ingress: Double,
+    /**
+     * Required `number` value serialized in the `ingress` wire field.
+     */
+    val ingress: Double
 )
 
 /**
- * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
- * "session" instead of "sandbox" as the response wrapper key.
+ * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
  */
 data class Session(
-    /** The time when the sandbox was created, in milliseconds since the epoch. */
+    /**
+     * The time when the sandbox was created, in milliseconds since the epoch.
+     */
     val createdAt: Double,
-    /** The working directory of the sandbox. */
+    /**
+     * The working directory of the sandbox.
+     */
     val cwd: String,
-    /** The unique identifier of the sandbox. */
+    /**
+     * The unique identifier of the sandbox.
+     */
     val id: String,
-    /** Memory allocated to this sandbox in MB. */
+    /**
+     * Memory allocated to this sandbox in MB.
+     */
     val memory: Double,
-    /** The unique identifier of the project associated with this session. */
+    /**
+     * The unique identifier of the project associated with this session.
+     */
     val projectId: String,
-    /** The region where the sandbox is hosted. */
+    /**
+     * The region where the sandbox is hosted.
+     */
     val region: String,
-    /** The time when the sandbox was requested, in milliseconds since the epoch. */
+    /**
+     * The time when the sandbox was requested, in milliseconds since the epoch.
+     */
     val requestedAt: Double,
-    /** The runtime of the sandbox. */
+    /**
+     * The runtime of the sandbox.
+     */
     val runtime: String,
-    /** The name of the source sandbox. */
+    /**
+     * The name of the source sandbox.
+     */
     val sourceSandboxName: String,
-    /** The status of the sandbox. */
+    /**
+     * The status of the sandbox.
+     */
     val status: SessionStatusEnum,
-    /** The maximum amount of time the sandbox will run for in milliseconds. */
+    /**
+     * The maximum amount of time the sandbox will run for in milliseconds.
+     */
     val timeout: Double,
-    /** The last time the sandbox was updated, in milliseconds since the epoch. */
+    /**
+     * The last time the sandbox was updated, in milliseconds since the epoch.
+     */
     val updatedAt: Double,
-    /** Number of vCPUs allocated to this sandbox. */
+    /**
+     * Number of vCPUs allocated to this sandbox.
+     */
     val vcpus: Double,
-    /** The time when the sandbox was aborted, in milliseconds since the epoch. */
+    /**
+     * The time when the sandbox was aborted, in milliseconds since the epoch.
+     */
     val abortedAt: Double? = null,
     /**
-     * The amount of CPU time the sandbox consumed, if available, in milliseconds. This value is
-     * only available once the sandbox is stopped, and only if it stopped successfully.
+     * The amount of CPU time the sandbox consumed, if available, in milliseconds. This value is only available once the sandbox is stopped, and only if it stopped successfully.
      */
     val activeCpuDurationMs: Double? = null,
-    /** CPU architecture of the sandbox. */
+    /**
+     * CPU architecture of the sandbox.
+     */
     val architecture: SessionArchitectureEnum? = null,
-    /** The duration of the sandbox in milliseconds. */
+    /**
+     * The duration of the sandbox in milliseconds.
+     */
     val duration: Double? = null,
-    /** The network policy applied to this sandbox, if any. */
+    /**
+     * The network policy applied to this sandbox, if any.
+     */
     val networkPolicy: SandboxNetworkPolicy? = null,
     /**
-     * The quantity of data transfered to and from the sandbox, in bytes. This value is only
-     * available once the sandbox is stopped, and only if it stopped successfully.
+     * The quantity of data transfered to and from the sandbox, in bytes. This value is only available once the sandbox is stopped, and only if it stopped successfully.
      */
     val networkTransfer: SessionNetworkTransfer? = null,
-    /** The time when the sandbox was requested to stop, in milliseconds since the epoch. */
+    /**
+     * The time when the sandbox was requested to stop, in milliseconds since the epoch.
+     */
     val requestedStopAt: Double? = null,
-    /** The time when a snapshot was requested, in milliseconds since the epoch. */
+    /**
+     * The time when a snapshot was requested, in milliseconds since the epoch.
+     */
     val snapshottedAt: Double? = null,
-    /** The unique identifier of the snapshot associated with this sandbox, if any. */
+    /**
+     * The unique identifier of the snapshot associated with this sandbox, if any.
+     */
     val sourceSnapshotId: String? = null,
-    /** The time when the sandbox was started, in milliseconds since the epoch. */
+    /**
+     * The time when the sandbox was started, in milliseconds since the epoch.
+     */
     val startedAt: Double? = null,
-    /** The time when the sandbox was stopped, in milliseconds since the epoch. */
+    /**
+     * The time when the sandbox was stopped, in milliseconds since the epoch.
+     */
     val stoppedAt: Double? = null,
-    /** Whether this sandbox is managed by v0 on the customer's behalf. */
-    val v0: Boolean? = null,
+    /**
+     * Whether this sandbox is managed by v0 on the customer's behalf.
+     */
+    val v0: Boolean? = null
 )
 
-/** This object represents a command run in a Vercel Sandbox session (v2 API). */
+/**
+ * This object represents a command run in a Vercel Sandbox session (v2 API).
+ */
 data class SessionCommand(
-    /** The arguments of the command. */
+    /**
+     * The arguments of the command.
+     */
     val args: List<String>,
-    /** The current working directory of the command. */
+    /**
+     * The current working directory of the command.
+     */
     val cwd: String,
-    /** If the command did finish, the exit code. */
-    @com.fasterxml.jackson.annotation.JsonProperty("exitCode", required = true)
-    val exitCode: Double?,
-    /** The ID of the command. */
-    val id: String,
-    /** The name of the command. */
-    val name: String,
-    /** The ID of the session associated with the command. */
-    val sessionId: String,
-    /** When the command was started, in milliseconds since the epoch. */
-    val startedAt: Double,
-    /** Duration of the command execution in milliseconds. */
-    val durationMs: Double? = null,
-)
-
-/** This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API). */
-data class Snapshot(
-    /** The time when the snapshot was created, in milliseconds since the epoch. */
-    val createdAt: Double,
-    /** The unique identifier of the snapshot. */
+    /**
+     * If the command did finish, the exit code.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("exitCode", required = true) val exitCode: Double?,
+    /**
+     * The ID of the command.
+     */
     val id: String,
     /**
-     * The last time the snapshot was used (e.g. to resume or create a sandbox), in milliseconds
-     * since the epoch. Falls back to `createdAt` for older snapshots that predate this field.
+     * The name of the command.
+     */
+    val name: String,
+    /**
+     * The ID of the session associated with the command.
+     */
+    val sessionId: String,
+    /**
+     * When the command was started, in milliseconds since the epoch.
+     */
+    val startedAt: Double,
+    /**
+     * Duration of the command execution in milliseconds.
+     */
+    val durationMs: Double? = null
+)
+
+/**
+ * This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
+ */
+data class Snapshot(
+    /**
+     * The time when the snapshot was created, in milliseconds since the epoch.
+     */
+    val createdAt: Double,
+    /**
+     * The unique identifier of the snapshot.
+     */
+    val id: String,
+    /**
+     * The last time the snapshot was used (e.g. to resume or create a sandbox), in milliseconds since the epoch. Falls back to `createdAt` for older snapshots that predate this field.
      */
     val lastUsedAt: Double,
-    /** The size of the snapshot in bytes. */
+    /**
+     * The size of the snapshot in bytes.
+     */
     val sizeBytes: Double,
-    /** The unique identifier of the session from which the snapshot was created. */
+    /**
+     * The unique identifier of the session from which the snapshot was created.
+     */
     val sourceSessionId: String,
-    /** The status of the snapshot. */
+    /**
+     * The status of the snapshot.
+     */
     val status: SnapshotStatusEnum,
-    /** The last time the snapshot was updated, in milliseconds since the epoch. */
+    /**
+     * The last time the snapshot was updated, in milliseconds since the epoch.
+     */
     val updatedAt: Double,
-    /** CPU architecture required to restore the snapshot. */
+    /**
+     * CPU architecture required to restore the snapshot.
+     */
     val architecture: SnapshotArchitectureEnum? = null,
-    /** The method used to create the snapshot. */
+    /**
+     * The method used to create the snapshot.
+     */
     val creationMethod: SnapshotCreationMethodEnum? = null,
     /**
-     * The time when the snapshot will expire, in milliseconds since the epoch. If not set, the
-     * snapshot does not have any expiration.
+     * The time when the snapshot will expire, in milliseconds since the epoch. If not set, the snapshot does not have any expiration.
      */
     val expiresAt: Double? = null,
     /**
-     * The unique identifier of the parent snapshot, if this snapshot was created from another
-     * snapshot.
+     * The unique identifier of the parent snapshot, if this snapshot was created from another snapshot.
      */
     val parentId: String? = null,
-    /** The region where the snapshot is stored. */
+    /**
+     * The region where the snapshot is stored.
+     */
     val region: String? = null,
-    /** The regions where the snapshot is available. */
+    /**
+     * The regions where the snapshot is available.
+     */
     val regions: List<String>? = null,
-    /** Whether this snapshot is managed by v0 on the customer's behalf. */
-    val v0: Boolean? = null,
+    /**
+     * Whether this snapshot is managed by v0 on the customer's behalf.
+     */
+    val v0: Boolean? = null
 )

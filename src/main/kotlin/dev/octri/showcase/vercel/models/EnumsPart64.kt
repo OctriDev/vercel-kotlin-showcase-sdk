@@ -3,9 +3,7 @@
 
 package dev.octri.showcase.vercel.models
 
-enum class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX12b4596044(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX12b4596044(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SUCCEEDED("succeeded");
 
     override fun toString() = value
@@ -13,15 +11,12 @@ enum class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVX12b4596
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXc2f970e456(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXc2f970e456(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     CACHED("cached");
 
     override fun toString() = value
@@ -29,15 +24,12 @@ enum class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXc2f970e
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXf967363179(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXf967363179(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     FAILED("failed");
 
     override fun toString() = value
@@ -45,15 +37,12 @@ enum class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXf967363
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXce11734e7f(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+enum class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXce11734e7f(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SKIPPED("skipped");
 
     override fun toString() = value
@@ -61,20 +50,19 @@ enum class SearchVercelCiLogsResponseInvocationsItemTasksItemConclusionVXce11734
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/** Required enumerated value serialized in the `cmp` wire field. */
-class SegmentDataRulesItemConditionsItemCmpEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is SegmentDataRulesItemConditionsItemCmpEnum && value == other.value
-
+/**
+ * Required enumerated value serialized in the `cmp` wire field.
+ */
+class SegmentDataRulesItemConditionsItemCmpEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is SegmentDataRulesItemConditionsItemCmpEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -103,22 +91,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val REGEX_2 = SegmentDataRulesItemConditionsItemCmpEnum("regex")
         @JvmField val STARTSWITH_2 = SegmentDataRulesItemConditionsItemCmpEnum("startsWith")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = SegmentDataRulesItemConditionsItemCmpEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = SegmentDataRulesItemConditionsItemCmpEnum(value)
     }
 }
 
-/** Optional enumerated value serialized in the `ignoreCase` wire field. */
-class SegmentDataRulesItemConditionsItemCmpOptionsIgnoreCaseEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is SegmentDataRulesItemConditionsItemCmpOptionsIgnoreCaseEnum && value == other.value
-
+/**
+ * Optional enumerated value serialized in the `ignoreCase` wire field.
+ */
+class SegmentDataRulesItemConditionsItemCmpOptionsIgnoreCaseEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is SegmentDataRulesItemConditionsItemCmpOptionsIgnoreCaseEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
@@ -126,40 +111,34 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: B
         @JvmField val FALSE = SegmentDataRulesItemConditionsItemCmpOptionsIgnoreCaseEnum(false)
         @JvmField val TRUE = SegmentDataRulesItemConditionsItemCmpOptionsIgnoreCaseEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) =
-            SegmentDataRulesItemConditionsItemCmpOptionsIgnoreCaseEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = SegmentDataRulesItemConditionsItemCmpOptionsIgnoreCaseEnum(value)
     }
 }
 
-/** Required enumerated value serialized in the `typeName` wire field. */
-class SegmentTypeNameEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/**
+ * Required enumerated value serialized in the `typeName` wire field.
+ */
+class SegmentTypeNameEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
     override fun equals(other: Any?): Boolean = other is SegmentTypeNameEnum && value == other.value
-
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val SEGMENT = SegmentTypeNameEnum("segment")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = SegmentTypeNameEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = SegmentTypeNameEnum(value)
     }
 }
 
-/** Required enumerated value serialized in the `type` wire field. */
-enum class SegmentDataRulesItemConditionsItemLhsVariant0TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+/**
+ * Required enumerated value serialized in the `type` wire field.
+ */
+enum class SegmentDataRulesItemConditionsItemLhsVariant0TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SEGMENT("segment");
 
     override fun toString() = value
@@ -167,16 +146,15 @@ enum class SegmentDataRulesItemConditionsItemLhsVariant0TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/** Required enumerated value serialized in the `type` wire field. */
-enum class SegmentDataRulesItemConditionsItemLhsVariant1TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+/**
+ * Required enumerated value serialized in the `type` wire field.
+ */
+enum class SegmentDataRulesItemConditionsItemLhsVariant1TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     ENTITY("entity");
 
     override fun toString() = value
@@ -184,66 +162,58 @@ enum class SegmentDataRulesItemConditionsItemLhsVariant1TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/** Required enumerated value serialized in the `type` wire field. */
-class SegmentDataRulesItemConditionsItemRhsVariant2TypeEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is SegmentDataRulesItemConditionsItemRhsVariant2TypeEnum && value == other.value
-
+/**
+ * Required enumerated value serialized in the `type` wire field.
+ */
+class SegmentDataRulesItemConditionsItemRhsVariant2TypeEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is SegmentDataRulesItemConditionsItemRhsVariant2TypeEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val LIST = SegmentDataRulesItemConditionsItemRhsVariant2TypeEnum("list")
-        @JvmField
-        val LIST_INLINE = SegmentDataRulesItemConditionsItemRhsVariant2TypeEnum("list/inline")
+        @JvmField val LIST_INLINE = SegmentDataRulesItemConditionsItemRhsVariant2TypeEnum("list/inline")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = SegmentDataRulesItemConditionsItemRhsVariant2TypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = SegmentDataRulesItemConditionsItemRhsVariant2TypeEnum(value)
     }
 }
 
-/** Required enumerated value serialized in the `type` wire field. */
-class SegmentDataRulesItemConditionsItemRhsVariant3TypeEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is SegmentDataRulesItemConditionsItemRhsVariant3TypeEnum && value == other.value
-
+/**
+ * Required enumerated value serialized in the `type` wire field.
+ */
+class SegmentDataRulesItemConditionsItemRhsVariant3TypeEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is SegmentDataRulesItemConditionsItemRhsVariant3TypeEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val REGEX = SegmentDataRulesItemConditionsItemRhsVariant3TypeEnum("regex")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = SegmentDataRulesItemConditionsItemRhsVariant3TypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = SegmentDataRulesItemConditionsItemRhsVariant3TypeEnum(value)
     }
 }
 
-/** Optional enumerated value serialized in the `rhs` wire field. */
-class SegmentDataRulesItemConditionsItemRhsVariant4Enum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is SegmentDataRulesItemConditionsItemRhsVariant4Enum && value == other.value
-
+/**
+ * Optional enumerated value serialized in the `rhs` wire field.
+ */
+class SegmentDataRulesItemConditionsItemRhsVariant4Enum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is SegmentDataRulesItemConditionsItemRhsVariant4Enum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
@@ -251,18 +221,15 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: B
         @JvmField val FALSE = SegmentDataRulesItemConditionsItemRhsVariant4Enum(false)
         @JvmField val TRUE = SegmentDataRulesItemConditionsItemRhsVariant4Enum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) = SegmentDataRulesItemConditionsItemRhsVariant4Enum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = SegmentDataRulesItemConditionsItemRhsVariant4Enum(value)
     }
 }
 
-/** Required enumerated value serialized in the `type` wire field. */
-enum class SegmentDataRulesItemOutcomeVariant0TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+/**
+ * Required enumerated value serialized in the `type` wire field.
+ */
+enum class SegmentDataRulesItemOutcomeVariant0TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     ALL("all");
 
     override fun toString() = value
@@ -270,38 +237,34 @@ enum class SegmentDataRulesItemOutcomeVariant0TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/** Required enumerated value serialized in the `type` wire field. */
-class SegmentDataRulesItemOutcomeVariant1BaseTypeEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is SegmentDataRulesItemOutcomeVariant1BaseTypeEnum && value == other.value
-
+/**
+ * Required enumerated value serialized in the `type` wire field.
+ */
+class SegmentDataRulesItemOutcomeVariant1BaseTypeEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is SegmentDataRulesItemOutcomeVariant1BaseTypeEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val ENTITY = SegmentDataRulesItemOutcomeVariant1BaseTypeEnum("entity")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = SegmentDataRulesItemOutcomeVariant1BaseTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = SegmentDataRulesItemOutcomeVariant1BaseTypeEnum(value)
     }
 }
 
-/** Required enumerated value serialized in the `type` wire field. */
-enum class SegmentDataRulesItemOutcomeVariant1TypeEnum(
-    @com.fasterxml.jackson.annotation.JsonValue val value: String
-) {
+/**
+ * Required enumerated value serialized in the `type` wire field.
+ */
+enum class SegmentDataRulesItemOutcomeVariant1TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SPLIT("split");
 
     override fun toString() = value
@@ -309,20 +272,19 @@ enum class SegmentDataRulesItemOutcomeVariant1TypeEnum(
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) =
-            values().find { it.value == v }
-                ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) = values().find { it.value == v }
+            ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/** CPU architecture of the sandbox. */
-class SessionArchitectureEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is SessionArchitectureEnum && value == other.value
-
+/**
+ * CPU architecture of the sandbox.
+ */
+class SessionArchitectureEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is SessionArchitectureEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -330,21 +292,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val AMD64 = SessionArchitectureEnum("amd64")
         @JvmField val ARM64 = SessionArchitectureEnum("arm64")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = SessionArchitectureEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = SessionArchitectureEnum(value)
     }
 }
 
-/** The status of the sandbox. */
-class SessionStatusEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/**
+ * The status of the sandbox.
+ */
+class SessionStatusEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
     override fun equals(other: Any?): Boolean = other is SessionStatusEnum && value == other.value
-
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -357,21 +317,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val STOPPED = SessionStatusEnum("stopped")
         @JvmField val STOPPING = SessionStatusEnum("stopping")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = SessionStatusEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = SessionStatusEnum(value)
     }
 }
 
-/** Whether this sandbox is managed by v0 on the customer's behalf. */
-class SessionV0Enum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+/**
+ * Whether this sandbox is managed by v0 on the customer's behalf.
+ */
+class SessionV0Enum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
     override fun equals(other: Any?): Boolean = other is SessionV0Enum && value == other.value
-
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
@@ -379,22 +337,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: B
         @JvmField val FALSE = SessionV0Enum(false)
         @JvmField val TRUE = SessionV0Enum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) = SessionV0Enum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = SessionV0Enum(value)
     }
 }
 
-/** CPU architecture required to restore the snapshot. */
-class SnapshotArchitectureEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is SnapshotArchitectureEnum && value == other.value
-
+/**
+ * CPU architecture required to restore the snapshot.
+ */
+class SnapshotArchitectureEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is SnapshotArchitectureEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -402,22 +357,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val AMD64 = SnapshotArchitectureEnum("amd64")
         @JvmField val ARM64 = SnapshotArchitectureEnum("arm64")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = SnapshotArchitectureEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = SnapshotArchitectureEnum(value)
     }
 }
 
-/** The method used to create the snapshot. */
-class SnapshotCreationMethodEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is SnapshotCreationMethodEnum && value == other.value
-
+/**
+ * The method used to create the snapshot.
+ */
+class SnapshotCreationMethodEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is SnapshotCreationMethodEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -425,21 +377,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val AUTOMATIC = SnapshotCreationMethodEnum("automatic")
         @JvmField val MANUAL = SnapshotCreationMethodEnum("manual")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = SnapshotCreationMethodEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = SnapshotCreationMethodEnum(value)
     }
 }
 
-/** The status of the snapshot. */
-class SnapshotStatusEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/**
+ * The status of the snapshot.
+ */
+class SnapshotStatusEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
     override fun equals(other: Any?): Boolean = other is SnapshotStatusEnum && value == other.value
-
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -448,21 +398,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val DELETED = SnapshotStatusEnum("deleted")
         @JvmField val FAILED = SnapshotStatusEnum("failed")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = SnapshotStatusEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = SnapshotStatusEnum(value)
     }
 }
 
-/** Whether this snapshot is managed by v0 on the customer's behalf. */
-class SnapshotV0Enum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+/**
+ * Whether this snapshot is managed by v0 on the customer's behalf.
+ */
+class SnapshotV0Enum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
     override fun equals(other: Any?): Boolean = other is SnapshotV0Enum && value == other.value
-
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
@@ -470,21 +418,16 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: B
         @JvmField val FALSE = SnapshotV0Enum(false)
         @JvmField val TRUE = SnapshotV0Enum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) = SnapshotV0Enum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = SnapshotV0Enum(value)
     }
 }
 
-class StatusResponseVariant1StatusEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is StatusResponseVariant1StatusEnum && value == other.value
-
+class StatusResponseVariant1StatusEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is StatusResponseVariant1StatusEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -494,22 +437,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val OVER_LIMIT = StatusResponseVariant1StatusEnum("over_limit")
         @JvmField val PAUSED = StatusResponseVariant1StatusEnum("paused")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = StatusResponseVariant1StatusEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = StatusResponseVariant1StatusEnum(value)
     }
 }
 
-/** Present and `true` when the token can read artifacts but cannot upload them. */
-class StatusResponseVariant2ReadOnlyEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is StatusResponseVariant2ReadOnlyEnum && value == other.value
-
+/**
+ * Present and `true` when the token can read artifacts but cannot upload them.
+ */
+class StatusResponseVariant2ReadOnlyEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is StatusResponseVariant2ReadOnlyEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
@@ -517,21 +457,16 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: B
         @JvmField val FALSE = StatusResponseVariant2ReadOnlyEnum(false)
         @JvmField val TRUE = StatusResponseVariant2ReadOnlyEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) = StatusResponseVariant2ReadOnlyEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = StatusResponseVariant2ReadOnlyEnum(value)
     }
 }
 
-class StatusResponseVariant2StatusEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is StatusResponseVariant2StatusEnum && value == other.value
-
+class StatusResponseVariant2StatusEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is StatusResponseVariant2StatusEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -541,21 +476,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val OVER_LIMIT = StatusResponseVariant2StatusEnum("over_limit")
         @JvmField val PAUSED = StatusResponseVariant2StatusEnum("paused")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = StatusResponseVariant2StatusEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = StatusResponseVariant2StatusEnum(value)
     }
 }
 
-/** Required enumerated value serialized in the `plan` wire field. */
-class TeamBillingPlanEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/**
+ * Required enumerated value serialized in the `plan` wire field.
+ */
+class TeamBillingPlanEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
     override fun equals(other: Any?): Boolean = other is TeamBillingPlanEnum && value == other.value
-
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -564,22 +497,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val HOBBY = TeamBillingPlanEnum("hobby")
         @JvmField val PRO = TeamBillingPlanEnum("pro")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = TeamBillingPlanEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = TeamBillingPlanEnum(value)
     }
 }
 
-/** Optional enumerated value serialized in the `enabled` wire field. */
-class TeamConnectEnabledEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
-    override fun equals(other: Any?): Boolean =
-        other is TeamConnectEnabledEnum && value == other.value
-
+/**
+ * Optional enumerated value serialized in the `enabled` wire field.
+ */
+class TeamConnectEnabledEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
+) {
+    override fun equals(other: Any?): Boolean = other is TeamConnectEnabledEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value.toString()
 
     companion object {
@@ -587,25 +517,19 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: B
         @JvmField val FALSE = TeamConnectEnabledEnum(false)
         @JvmField val TRUE = TeamConnectEnabledEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: Boolean) = TeamConnectEnabledEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: Boolean) = TeamConnectEnabledEnum(value)
     }
 }
 
 /**
- * Default continuous-usage billing kind for projects under this team. Absent means projects stay
- * unmetered.
+ * Default continuous-usage billing kind for projects under this team. Absent means projects stay unmetered.
  */
-class TeamDefaultContinuousUsageKindEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is TeamDefaultContinuousUsageKindEnum && value == other.value
-
+class TeamDefaultContinuousUsageKindEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is TeamDefaultContinuousUsageKindEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
@@ -613,92 +537,66 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
         @JvmField val METERED = TeamDefaultContinuousUsageKindEnum("metered")
         @JvmField val UNMETERED = TeamDefaultContinuousUsageKindEnum("unmetered")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = TeamDefaultContinuousUsageKindEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = TeamDefaultContinuousUsageKindEnum(value)
     }
 }
 
-/** Default Passport configuration for new projects in this team. */
-class TeamDefaultPassportDeploymentTypeEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is TeamDefaultPassportDeploymentTypeEnum && value == other.value
-
+/**
+ * Default Passport configuration for new projects in this team.
+ */
+class TeamDefaultPassportDeploymentTypeEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is TeamDefaultPassportDeploymentTypeEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val ALL = TeamDefaultPassportDeploymentTypeEnum("all")
-        @JvmField
-        val ALL_EXCEPT_CUSTOM_DOMAINS =
-            TeamDefaultPassportDeploymentTypeEnum("all_except_custom_domains")
+        @JvmField val ALL_EXCEPT_CUSTOM_DOMAINS = TeamDefaultPassportDeploymentTypeEnum("all_except_custom_domains")
         @JvmField val PREVIEW = TeamDefaultPassportDeploymentTypeEnum("preview")
-        @JvmField
-        val PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS =
-            TeamDefaultPassportDeploymentTypeEnum("prod_deployment_urls_and_all_previews")
+        @JvmField val PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = TeamDefaultPassportDeploymentTypeEnum("prod_deployment_urls_and_all_previews")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = TeamDefaultPassportDeploymentTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = TeamDefaultPassportDeploymentTypeEnum(value)
     }
 }
 
-/** Required enumerated value serialized in the `teamPermissions[]` wire field. */
-class TeamDefaultRolesTeamPermissionsItemEnum
-private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
-    override fun equals(other: Any?): Boolean =
-        other is TeamDefaultRolesTeamPermissionsItemEnum && value == other.value
-
+/**
+ * Required enumerated value serialized in the `teamPermissions[]` wire field.
+ */
+class TeamDefaultRolesTeamPermissionsItemEnum private constructor(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
+) {
+    override fun equals(other: Any?): Boolean = other is TeamDefaultRolesTeamPermissionsItemEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
-
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField
-        val AIGATEWAYBUDGETMANAGER =
-            TeamDefaultRolesTeamPermissionsItemEnum("AiGatewayBudgetManager")
+        @JvmField val AIGATEWAYBUDGETMANAGER = TeamDefaultRolesTeamPermissionsItemEnum("AiGatewayBudgetManager")
         @JvmField val AIGATEWAYCREDITS = TeamDefaultRolesTeamPermissionsItemEnum("AiGatewayCredits")
-        @JvmField
-        val AIGATEWAYSETTINGS = TeamDefaultRolesTeamPermissionsItemEnum("AiGatewaySettings")
-        @JvmField
-        val AIGATEWAYTRANSCRIPTSMANAGER =
-            TeamDefaultRolesTeamPermissionsItemEnum("AiGatewayTranscriptsManager")
-        @JvmField
-        val AIGATEWAYTRANSCRIPTSVIEWER =
-            TeamDefaultRolesTeamPermissionsItemEnum("AiGatewayTranscriptsViewer")
+        @JvmField val AIGATEWAYSETTINGS = TeamDefaultRolesTeamPermissionsItemEnum("AiGatewaySettings")
+        @JvmField val AIGATEWAYTRANSCRIPTSMANAGER = TeamDefaultRolesTeamPermissionsItemEnum("AiGatewayTranscriptsManager")
+        @JvmField val AIGATEWAYTRANSCRIPTSVIEWER = TeamDefaultRolesTeamPermissionsItemEnum("AiGatewayTranscriptsViewer")
         @JvmField val AIGATEWAYUSER = TeamDefaultRolesTeamPermissionsItemEnum("AiGatewayUser")
         @JvmField val CONNECTORMANAGER = TeamDefaultRolesTeamPermissionsItemEnum("ConnectorManager")
         @JvmField val CREATEPROJECT = TeamDefaultRolesTeamPermissionsItemEnum("CreateProject")
-        @JvmField
-        val ENVVARIABLEMANAGER = TeamDefaultRolesTeamPermissionsItemEnum("EnvVariableManager")
-        @JvmField
-        val ENVIRONMENTMANAGER = TeamDefaultRolesTeamPermissionsItemEnum("EnvironmentManager")
-        @JvmField
-        val FULLPRODUCTIONDEPLOYMENT =
-            TeamDefaultRolesTeamPermissionsItemEnum("FullProductionDeployment")
-        @JvmField
-        val INTEGRATIONMANAGER = TeamDefaultRolesTeamPermissionsItemEnum("IntegrationManager")
+        @JvmField val ENVVARIABLEMANAGER = TeamDefaultRolesTeamPermissionsItemEnum("EnvVariableManager")
+        @JvmField val ENVIRONMENTMANAGER = TeamDefaultRolesTeamPermissionsItemEnum("EnvironmentManager")
+        @JvmField val FULLPRODUCTIONDEPLOYMENT = TeamDefaultRolesTeamPermissionsItemEnum("FullProductionDeployment")
+        @JvmField val INTEGRATIONMANAGER = TeamDefaultRolesTeamPermissionsItemEnum("IntegrationManager")
         @JvmField val ORGADMIN = TeamDefaultRolesTeamPermissionsItemEnum("OrgAdmin")
         @JvmField val ORGVIEWER = TeamDefaultRolesTeamPermissionsItemEnum("OrgViewer")
         @JvmField val USAGEVIEWER = TeamDefaultRolesTeamPermissionsItemEnum("UsageViewer")
         @JvmField val V0BUILDER = TeamDefaultRolesTeamPermissionsItemEnum("V0Builder")
         @JvmField val V0CHATTER = TeamDefaultRolesTeamPermissionsItemEnum("V0Chatter")
         @JvmField val V0VIEWER = TeamDefaultRolesTeamPermissionsItemEnum("V0Viewer")
-        @JvmField
-        val WORKFLOWDECRYPTOR = TeamDefaultRolesTeamPermissionsItemEnum("WorkflowDecryptor")
+        @JvmField val WORKFLOWDECRYPTOR = TeamDefaultRolesTeamPermissionsItemEnum("WorkflowDecryptor")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(
-            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
-        )
-        @JvmStatic
-        fun fromValue(value: String) = TeamDefaultRolesTeamPermissionsItemEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
+        @JvmStatic fun fromValue(value: String) = TeamDefaultRolesTeamPermissionsItemEnum(value)
     }
 }

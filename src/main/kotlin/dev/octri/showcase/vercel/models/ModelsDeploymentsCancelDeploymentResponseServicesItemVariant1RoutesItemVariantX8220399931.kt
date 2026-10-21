@@ -8,14 +8,14 @@ data class CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX8220399
     val target: CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX4537ef6c51,
     val type: CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX54246d1b24,
     val args: Any? = null,
-    val env: List<String>? = null,
+    val env: List<String>? = null
 )
 
 data class CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX042b73abef(
     val args: String,
     val op: CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX855d6ea116,
     val type: CancelDeploymentResponseServicesItemVariant1RoutesItemVariantX7f3c8bc93d,
-    val env: List<String>? = null,
+    val env: List<String>? = null
 )
 
 data class CancelDeploymentResponseServicesItemVariant1RoutesItemVariant0(
@@ -31,64 +31,69 @@ data class CancelDeploymentResponseServicesItemVariant1RoutesItemVariant0(
     val important: Boolean? = null,
     val locale: CancelDeploymentResponseServicesItemVariant1RoutesItemVariant0Locale? = null,
     val methods: List<String>? = null,
-    /** A middleware index in the `middleware` key under the build result */
+    /**
+     * A middleware index in the `middleware` key under the build result
+     */
     val middleware: Double? = null,
     /**
-     * A middleware key within the `output` key under the build result. Overrides a `middleware`
-     * definition.
+     * A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
      */
     val middlewarePath: String? = null,
-    /** The original middleware matchers. */
+    /**
+     * The original middleware matchers.
+     */
     val middlewareRawSrc: List<String>? = null,
     val missing: List<Any>? = null,
     val mitigate: CancelDeploymentResponseServicesItemVariant1RoutesItemVariant0Mitigate? = null,
     @com.fasterxml.jackson.annotation.JsonProperty("override") val `override`: Boolean? = null,
     val respectOriginCacheControl: Boolean? = null,
     /**
-     * Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`,
-     * `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During
-     * normalization, the string forms are converted to their canonical forms (`src`, `dest`,
-     * `status`) and stripped from the route object. `destination` may also be a service-targeted
-     * object, in which case routing is delegated into the named service's internal route table and
-     * the object is preserved…
+     * Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`, `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During normalization, the string forms are converted to their canonical forms (`src`, `dest`, `status`) and stripped from the route object. `destination` may also be a service-targeted object, in which case routing is delegated into the named service's internal route table and the object is preserved…
      */
     val source: String? = null,
     val status: Double? = null,
     val statusCode: Double? = null,
-    val transforms: List<Any>? = null,
+    val transforms: List<Any>? = null
 )
 
 data class CancelDeploymentResponseServicesItemVariant1RoutesItemVariant1(
     val handle: CancelDeploymentResponseServicesItemVariant1RoutesItemVariant1HandleEnum,
     val dest: String? = null,
     val src: String? = null,
-    val status: Double? = null,
+    val status: Double? = null
 )
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
 data class CancelDeploymentResponseServicesItemVariant1(
-    /** Builder selected by the resolver. */
+    /**
+     * Builder selected by the resolver.
+     */
     val builder: CancelDeploymentResponseServicesItemVariant1Builder,
     val name: String,
-    /** Path to the service root, relative to the project root. */
+    /**
+     * Path to the service root, relative to the project root.
+     */
     val root: String,
     val schema: CancelDeploymentResponseServicesItemVariant1SchemaEnum,
-    /** Caller-side bindings to other services. */
+    /**
+     * Caller-side bindings to other services.
+     */
     val bindings: List<CancelDeploymentResponseServicesItemVariant1BindingsItem>? = null,
     val buildCommand: String? = null,
     val cleanUrls: Boolean? = null,
-    /** Command override for `runtime: "container"` services. */
+    /**
+     * Command override for `runtime: "container"` services.
+     */
     val command: List<String>? = null,
     val devCommand: String? = null,
-    /** Resolved entrypoint, relative to the service root. */
+    /**
+     * Resolved entrypoint, relative to the service root.
+     */
     val entrypoint: String? = null,
     val framework: String? = null,
-    /** Function configuration scoped to this service. */
+    /**
+     * Function configuration scoped to this service.
+     */
     val functions: Map<String, CancelDeploymentResponseServicesItemVariant1FunctionsValue>? = null,
     val headers: List<CancelDeploymentResponseServicesItemVariant1HeadersItem>? = null,
     val ignoreCommand: String? = null,
@@ -98,23 +103,15 @@ data class CancelDeploymentResponseServicesItemVariant1(
     val rewrites: List<CancelDeploymentResponseServicesItemVariant1RewritesItem>? = null,
     val routes: List<Any>? = null,
     val runtime: String? = null,
-    val trailingSlash: Boolean? = null,
+    val trailingSlash: Boolean? = null
 ) : CancelDeploymentResponseServicesItem
 
-/** Typed representation of the `CancelDeploymentResponseServicesItem` API schema. */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    property = "schema",
-    visible = true,
-)
+/**
+ * Typed representation of the `CancelDeploymentResponseServicesItem` API schema.
+ */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "schema", visible = true)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CancelDeploymentResponseServicesItemVariant0::class,
-        name = "experimentalServices",
-    ),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CancelDeploymentResponseServicesItemVariant1::class,
-        name = "experimentalServicesV2",
-    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CancelDeploymentResponseServicesItemVariant0::class, name = "experimentalServices"),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CancelDeploymentResponseServicesItemVariant1::class, name = "experimentalServicesV2")
 )
 sealed interface CancelDeploymentResponseServicesItem

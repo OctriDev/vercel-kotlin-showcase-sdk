@@ -3,38 +3,29 @@
 
 package dev.octri.showcase.vercel.models
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class StatusResponseVariant0(val status: String) : StatusResponse
-
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class StatusResponseVariant1(val status: StatusResponseVariant1StatusEnum) : StatusResponse
-
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
-)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
-)
-data class StatusResponseVariant2(
-    val status: StatusResponseVariant2StatusEnum,
-    /** Present and `true` when the token can read artifacts but cannot upload them. */
-    val readOnly: Boolean? = null,
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class StatusResponseVariant0(
+    val status: String
 ) : StatusResponse
 
-/** Typed representation of the `StatusResponse` API schema. */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    using = StatusResponse.Deserializer::class
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class StatusResponseVariant1(
+    val status: StatusResponseVariant1StatusEnum
+) : StatusResponse
+
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+data class StatusResponseVariant2(
+    val status: StatusResponseVariant2StatusEnum,
+    /**
+     * Present and `true` when the token can read artifacts but cannot upload them.
+     */
+    val readOnly: Boolean? = null
+) : StatusResponse
+
+/**
+ * Typed representation of the `StatusResponse` API schema.
+ */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = StatusResponse.Deserializer::class)
 sealed interface StatusResponse {
     /** Chooses the branch this payload is shaped like. */
     class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<StatusResponse>() {
@@ -44,8 +35,7 @@ sealed interface StatusResponse {
         ): StatusResponse {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType =
-                StatusResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType = StatusResponseOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -53,26 +43,16 @@ sealed interface StatusResponse {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out StatusResponse>> =
-                listOf(
-                    StatusResponseVariant0::class.java,
-                    StatusResponseVariant1::class.java,
-                    StatusResponseVariant2::class.java,
-                )
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
-                return it
-            }
+            val objectTypes: List<Class<out StatusResponse>> = listOf(StatusResponseVariant0::class.java, StatusResponseVariant1::class.java, StatusResponseVariant2::class.java)
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
             return when {
-                else ->
-                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                        parser,
-                        StatusResponse::class.java,
-                        "no StatusResponse branch accepts this payload",
-                    )
+                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                    parser, StatusResponse::class.java, "no StatusResponse branch accepts this payload")
             }
         }
     }
 }
 
-internal val StatusResponseOwnedTypes: List<Pair<List<String>, Class<out StatusResponse>>> =
-    listOf(listOf("readOnly") to StatusResponseVariant2::class.java)
+internal val StatusResponseOwnedTypes: List<Pair<List<String>, Class<out StatusResponse>>> = listOf(
+    listOf("readOnly") to StatusResponseVariant2::class.java,
+)

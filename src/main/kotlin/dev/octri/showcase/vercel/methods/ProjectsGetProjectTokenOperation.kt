@@ -10,9 +10,7 @@ import dev.octri.showcase.vercel.Validation
 
 internal object ProjectsGetProjectTokenOperation {
     /**
-     * Creates an OIDC token for a project identified by its ID or name. Provide the project
-     * identifier and optionally specify a `source` to identify what is calling the endpoint. The
-     * response contains the generated token.
+     * Creates an OIDC token for a project identified by its ID or name. Provide the project identifier and optionally specify a `source` to identify what is calling the endpoint. The response contains the generated token.
      *
      * Generates an OIDC token for the project and returns it.
      *
@@ -21,36 +19,13 @@ internal object ProjectsGetProjectTokenOperation {
      * @param slug The Team slug to perform the request on behalf of.
      * @param source The source that is calling the endpoint.
      */
-    fun getProjectToken(
-        clientConfig: ClientConfig,
-        idOrName: String,
-        teamId: String? = null,
-        slug: String? = null,
-        source: String? = null,
-        options: RequestOptions? = null,
-    ): Projects.GetProjectTokenResponse {
+    fun getProjectToken(clientConfig: ClientConfig, idOrName: String, teamId: String? = null, slug: String? = null, source: String? = null, options: RequestOptions? = null): Projects.GetProjectTokenResponse {
         Validation.validateLength("idOrName", idOrName, Validation.LengthOpts(max = 150))
 
         if (source != null) {
             Validation.validateLength("source", source, Validation.LengthOpts(max = 150))
-        }
+}
 
-        return SdkClient.request<Projects.GetProjectTokenResponse>(
-                SdkClient.RequestSpec(
-                    "POST",
-                    "/v1/projects/${SdkClient.encodePathSegment(idOrName)}/token",
-                    config = clientConfig,
-                    query =
-                        mapOf(
-                            "teamId" to SdkClient.queryValue(teamId, "form", true),
-                            "slug" to SdkClient.queryValue(slug, "form", true),
-                        ),
-                    body = SdkClient.bodyMap("source" to (SdkClient.omitIfNull(source))),
-                    operationId = "getProjectToken",
-                    decoder = SdkClient.ResponseDecoder.JSON,
-                    options = options,
-                )
-            )
-            .data
+        return SdkClient.request<Projects.GetProjectTokenResponse>(SdkClient.RequestSpec("POST", "/v1/projects/${SdkClient.encodePathSegment(idOrName)}/token", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("source" to (SdkClient.omitIfNull(source))), operationId = "getProjectToken", decoder = SdkClient.ResponseDecoder.JSON, options = options)).data
     }
 }
