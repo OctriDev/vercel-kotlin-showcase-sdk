@@ -29301,7 +29301,7 @@
     },
     {
       "id": "behavior-229",
-      "operationId": "updateTeams",
+      "operationId": "updateTeam",
       "kinds": [
         "auth-application",
         "error-response",

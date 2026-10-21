@@ -29,4 +29,4 @@ style:
     maxJumpCount: 4
 naming:
   MatchingDeclarationName:
-    excludes: ['**/methods/*OperationsPart*.kt', '**/models/**']
+    excludes: ['**/models/**']

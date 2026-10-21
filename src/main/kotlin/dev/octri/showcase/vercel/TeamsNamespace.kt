@@ -176,10 +176,10 @@ class TeamsNamespace(private val clientConfig: ClientConfig) {
      * contain the information that will be updated on the Team.
      */
     fun update(
-        request: dev.octri.showcase.vercel.methods.Teams.UpdateTeamsRequest,
+        request: dev.octri.showcase.vercel.methods.Teams.UpdateTeamRequest,
         options: RequestOptions? = null,
     ): Team {
-        return dev.octri.showcase.vercel.methods.Teams.updateTeams(clientConfig, request, options)
+        return dev.octri.showcase.vercel.methods.Teams.updateTeam(clientConfig, request, options)
     }
 
     /**

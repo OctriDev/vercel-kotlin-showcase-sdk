@@ -4,10 +4,10 @@
 package dev.octri.showcase.vercel.models
 
 /** The time period to keep errored deployments for */
-class UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum
+class UpdateTeamDefaultExpirationSettingsExpirationErroredEnum
 private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
     override fun equals(other: Any?): Boolean =
-        other is UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum && value == other.value
+        other is UpdateTeamDefaultExpirationSettingsExpirationErroredEnum && value == other.value
 
     override fun hashCode(): Int = value.hashCode()
 
@@ -15,32 +15,31 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
 
     companion object {
 
-        @JvmField val V1Y = UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum("1y")
-        @JvmField val V6M = UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum("6m")
-        @JvmField val V3M = UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum("3m")
-        @JvmField val V2M = UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum("2m")
-        @JvmField val V1M = UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum("1m")
-        @JvmField val V2W = UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum("2w")
-        @JvmField val V1W = UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum("1w")
-        @JvmField val V1D = UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum("1d")
+        @JvmField val V1Y = UpdateTeamDefaultExpirationSettingsExpirationErroredEnum("1y")
+        @JvmField val V6M = UpdateTeamDefaultExpirationSettingsExpirationErroredEnum("6m")
+        @JvmField val V3M = UpdateTeamDefaultExpirationSettingsExpirationErroredEnum("3m")
+        @JvmField val V2M = UpdateTeamDefaultExpirationSettingsExpirationErroredEnum("2m")
+        @JvmField val V1M = UpdateTeamDefaultExpirationSettingsExpirationErroredEnum("1m")
+        @JvmField val V2W = UpdateTeamDefaultExpirationSettingsExpirationErroredEnum("2w")
+        @JvmField val V1W = UpdateTeamDefaultExpirationSettingsExpirationErroredEnum("1w")
+        @JvmField val V1D = UpdateTeamDefaultExpirationSettingsExpirationErroredEnum("1d")
         @JvmField
-        val UNLIMITED = UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum("unlimited")
+        val UNLIMITED = UpdateTeamDefaultExpirationSettingsExpirationErroredEnum("unlimited")
 
         @com.fasterxml.jackson.annotation.JsonCreator(
             mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
         )
         @JvmStatic
         fun fromValue(value: String) =
-            UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum(value)
+            UpdateTeamDefaultExpirationSettingsExpirationErroredEnum(value)
     }
 }
 
 /** The time period to keep production deployments for */
-class UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum
+class UpdateTeamDefaultExpirationSettingsExpirationProductionEnum
 private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
     override fun equals(other: Any?): Boolean =
-        other is UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum &&
-            value == other.value
+        other is UpdateTeamDefaultExpirationSettingsExpirationProductionEnum && value == other.value
 
     override fun hashCode(): Int = value.hashCode()
 
@@ -48,32 +47,32 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
 
     companion object {
 
-        @JvmField val V3Y = UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum("3y")
-        @JvmField val V2Y = UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum("2y")
-        @JvmField val V1Y = UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum("1y")
-        @JvmField val V6M = UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum("6m")
-        @JvmField val V3M = UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum("3m")
-        @JvmField val V2M = UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum("2m")
-        @JvmField val V1M = UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum("1m")
-        @JvmField val V2W = UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum("2w")
-        @JvmField val V1W = UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum("1w")
-        @JvmField val V1D = UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum("1d")
+        @JvmField val V3Y = UpdateTeamDefaultExpirationSettingsExpirationProductionEnum("3y")
+        @JvmField val V2Y = UpdateTeamDefaultExpirationSettingsExpirationProductionEnum("2y")
+        @JvmField val V1Y = UpdateTeamDefaultExpirationSettingsExpirationProductionEnum("1y")
+        @JvmField val V6M = UpdateTeamDefaultExpirationSettingsExpirationProductionEnum("6m")
+        @JvmField val V3M = UpdateTeamDefaultExpirationSettingsExpirationProductionEnum("3m")
+        @JvmField val V2M = UpdateTeamDefaultExpirationSettingsExpirationProductionEnum("2m")
+        @JvmField val V1M = UpdateTeamDefaultExpirationSettingsExpirationProductionEnum("1m")
+        @JvmField val V2W = UpdateTeamDefaultExpirationSettingsExpirationProductionEnum("2w")
+        @JvmField val V1W = UpdateTeamDefaultExpirationSettingsExpirationProductionEnum("1w")
+        @JvmField val V1D = UpdateTeamDefaultExpirationSettingsExpirationProductionEnum("1d")
         @JvmField
-        val UNLIMITED = UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum("unlimited")
+        val UNLIMITED = UpdateTeamDefaultExpirationSettingsExpirationProductionEnum("unlimited")
 
         @com.fasterxml.jackson.annotation.JsonCreator(
             mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
         )
         @JvmStatic
         fun fromValue(value: String) =
-            UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum(value)
+            UpdateTeamDefaultExpirationSettingsExpirationProductionEnum(value)
     }
 }
 
-class UpdateTeamsDefaultPassportDeploymentTypeEnum
+class UpdateTeamDefaultPassportDeploymentTypeEnum
 private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
     override fun equals(other: Any?): Boolean =
-        other is UpdateTeamsDefaultPassportDeploymentTypeEnum && value == other.value
+        other is UpdateTeamDefaultPassportDeploymentTypeEnum && value == other.value
 
     override fun hashCode(): Int = value.hashCode()
 
@@ -81,28 +80,28 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
 
     companion object {
 
-        @JvmField val ALL = UpdateTeamsDefaultPassportDeploymentTypeEnum("all")
-        @JvmField val PREVIEW = UpdateTeamsDefaultPassportDeploymentTypeEnum("preview")
+        @JvmField val ALL = UpdateTeamDefaultPassportDeploymentTypeEnum("all")
+        @JvmField val PREVIEW = UpdateTeamDefaultPassportDeploymentTypeEnum("preview")
         @JvmField
         val PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS =
-            UpdateTeamsDefaultPassportDeploymentTypeEnum("prod_deployment_urls_and_all_previews")
+            UpdateTeamDefaultPassportDeploymentTypeEnum("prod_deployment_urls_and_all_previews")
         @JvmField
         val ALL_EXCEPT_CUSTOM_DOMAINS =
-            UpdateTeamsDefaultPassportDeploymentTypeEnum("all_except_custom_domains")
+            UpdateTeamDefaultPassportDeploymentTypeEnum("all_except_custom_domains")
 
         @com.fasterxml.jackson.annotation.JsonCreator(
             mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
         )
         @JvmStatic
-        fun fromValue(value: String) = UpdateTeamsDefaultPassportDeploymentTypeEnum(value)
+        fun fromValue(value: String) = UpdateTeamDefaultPassportDeploymentTypeEnum(value)
     }
 }
 
 /** Controls who can request access to protected deployments. */
-class UpdateTeamsDpAccessRequestsModeEnum
+class UpdateTeamDpAccessRequestsModeEnum
 private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
     override fun equals(other: Any?): Boolean =
-        other is UpdateTeamsDpAccessRequestsModeEnum && value == other.value
+        other is UpdateTeamDpAccessRequestsModeEnum && value == other.value
 
     override fun hashCode(): Int = value.hashCode()
 
@@ -110,23 +109,23 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
 
     companion object {
 
-        @JvmField val ALL = UpdateTeamsDpAccessRequestsModeEnum("all")
-        @JvmField val NONE = UpdateTeamsDpAccessRequestsModeEnum("none")
-        @JvmField val EMAIL_DOMAIN = UpdateTeamsDpAccessRequestsModeEnum("email-domain")
+        @JvmField val ALL = UpdateTeamDpAccessRequestsModeEnum("all")
+        @JvmField val NONE = UpdateTeamDpAccessRequestsModeEnum("none")
+        @JvmField val EMAIL_DOMAIN = UpdateTeamDpAccessRequestsModeEnum("email-domain")
 
         @com.fasterxml.jackson.annotation.JsonCreator(
             mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
         )
         @JvmStatic
-        fun fromValue(value: String) = UpdateTeamsDpAccessRequestsModeEnum(value)
+        fun fromValue(value: String) = UpdateTeamDpAccessRequestsModeEnum(value)
     }
 }
 
 /** Default build machine type for new builds: standard, enhanced, turbo, or elastic. */
-class UpdateTeamsResourceConfigBuildMachineDefaultEnum
+class UpdateTeamResourceConfigBuildMachineDefaultEnum
 private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
     override fun equals(other: Any?): Boolean =
-        other is UpdateTeamsResourceConfigBuildMachineDefaultEnum && value == other.value
+        other is UpdateTeamResourceConfigBuildMachineDefaultEnum && value == other.value
 
     override fun hashCode(): Int = value.hashCode()
 
@@ -134,24 +133,24 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
 
     companion object {
 
-        @JvmField val BASIC = UpdateTeamsResourceConfigBuildMachineDefaultEnum("basic")
-        @JvmField val ENHANCED = UpdateTeamsResourceConfigBuildMachineDefaultEnum("enhanced")
-        @JvmField val TURBO = UpdateTeamsResourceConfigBuildMachineDefaultEnum("turbo")
-        @JvmField val STANDARD = UpdateTeamsResourceConfigBuildMachineDefaultEnum("standard")
-        @JvmField val ELASTIC = UpdateTeamsResourceConfigBuildMachineDefaultEnum("elastic")
+        @JvmField val BASIC = UpdateTeamResourceConfigBuildMachineDefaultEnum("basic")
+        @JvmField val ENHANCED = UpdateTeamResourceConfigBuildMachineDefaultEnum("enhanced")
+        @JvmField val TURBO = UpdateTeamResourceConfigBuildMachineDefaultEnum("turbo")
+        @JvmField val STANDARD = UpdateTeamResourceConfigBuildMachineDefaultEnum("standard")
+        @JvmField val ELASTIC = UpdateTeamResourceConfigBuildMachineDefaultEnum("elastic")
 
         @com.fasterxml.jackson.annotation.JsonCreator(
             mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
         )
         @JvmStatic
-        fun fromValue(value: String) = UpdateTeamsResourceConfigBuildMachineDefaultEnum(value)
+        fun fromValue(value: String) = UpdateTeamResourceConfigBuildMachineDefaultEnum(value)
     }
 }
 
-class UpdateTeamsSamlRolesValueVariant0Enum
+class UpdateTeamSamlRolesValueVariant0Enum
 private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
     override fun equals(other: Any?): Boolean =
-        other is UpdateTeamsSamlRolesValueVariant0Enum && value == other.value
+        other is UpdateTeamSamlRolesValueVariant0Enum && value == other.value
 
     override fun hashCode(): Int = value.hashCode()
 
@@ -159,20 +158,20 @@ private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: S
 
     companion object {
 
-        @JvmField val OWNER = UpdateTeamsSamlRolesValueVariant0Enum("OWNER")
-        @JvmField val MEMBER = UpdateTeamsSamlRolesValueVariant0Enum("MEMBER")
-        @JvmField val DEVELOPER = UpdateTeamsSamlRolesValueVariant0Enum("DEVELOPER")
-        @JvmField val SECURITY = UpdateTeamsSamlRolesValueVariant0Enum("SECURITY")
-        @JvmField val BILLING = UpdateTeamsSamlRolesValueVariant0Enum("BILLING")
-        @JvmField val VIEWER = UpdateTeamsSamlRolesValueVariant0Enum("VIEWER")
-        @JvmField val VIEWER_FOR_PLUS = UpdateTeamsSamlRolesValueVariant0Enum("VIEWER_FOR_PLUS")
-        @JvmField val CONTRIBUTOR = UpdateTeamsSamlRolesValueVariant0Enum("CONTRIBUTOR")
+        @JvmField val OWNER = UpdateTeamSamlRolesValueVariant0Enum("OWNER")
+        @JvmField val MEMBER = UpdateTeamSamlRolesValueVariant0Enum("MEMBER")
+        @JvmField val DEVELOPER = UpdateTeamSamlRolesValueVariant0Enum("DEVELOPER")
+        @JvmField val SECURITY = UpdateTeamSamlRolesValueVariant0Enum("SECURITY")
+        @JvmField val BILLING = UpdateTeamSamlRolesValueVariant0Enum("BILLING")
+        @JvmField val VIEWER = UpdateTeamSamlRolesValueVariant0Enum("VIEWER")
+        @JvmField val VIEWER_FOR_PLUS = UpdateTeamSamlRolesValueVariant0Enum("VIEWER_FOR_PLUS")
+        @JvmField val CONTRIBUTOR = UpdateTeamSamlRolesValueVariant0Enum("CONTRIBUTOR")
 
         @com.fasterxml.jackson.annotation.JsonCreator(
             mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
         )
         @JvmStatic
-        fun fromValue(value: String) = UpdateTeamsSamlRolesValueVariant0Enum(value)
+        fun fromValue(value: String) = UpdateTeamSamlRolesValueVariant0Enum(value)
     }
 }
 

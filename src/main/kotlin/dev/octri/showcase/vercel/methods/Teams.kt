@@ -23,21 +23,21 @@ import dev.octri.showcase.vercel.RequestAccessToTeamResponseJoinedFromOriginEnum
 import dev.octri.showcase.vercel.RequestOptions
 import dev.octri.showcase.vercel.SdkClient
 import dev.octri.showcase.vercel.Team
+import dev.octri.showcase.vercel.UpdateTeamDefaultDeploymentProtectionPasswordProtectionDeployX12f2688c14
+import dev.octri.showcase.vercel.UpdateTeamDefaultDeploymentProtectionSsoProtectionDeploymentTypeEnum
+import dev.octri.showcase.vercel.UpdateTeamDefaultExpirationSettingsExpirationCanceledEnum
+import dev.octri.showcase.vercel.UpdateTeamDefaultExpirationSettingsExpirationEnum
+import dev.octri.showcase.vercel.UpdateTeamDefaultExpirationSettingsExpirationErroredEnum
+import dev.octri.showcase.vercel.UpdateTeamDefaultExpirationSettingsExpirationProductionEnum
+import dev.octri.showcase.vercel.UpdateTeamDefaultPassportDeploymentTypeEnum
+import dev.octri.showcase.vercel.UpdateTeamDpAccessRequestsModeEnum
 import dev.octri.showcase.vercel.UpdateTeamMemberConfirmedEnum
 import dev.octri.showcase.vercel.UpdateTeamMemberProjectsItemRoleEnum
 import dev.octri.showcase.vercel.UpdateTeamMemberTeamPermissionsItemEnum
-import dev.octri.showcase.vercel.UpdateTeamsDefaultDeploymentProtectionPasswordProtectionDeploX2077a79074
-import dev.octri.showcase.vercel.UpdateTeamsDefaultDeploymentProtectionSsoProtectionDeploymentTypeEnum
-import dev.octri.showcase.vercel.UpdateTeamsDefaultExpirationSettingsExpirationCanceledEnum
-import dev.octri.showcase.vercel.UpdateTeamsDefaultExpirationSettingsExpirationEnum
-import dev.octri.showcase.vercel.UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum
-import dev.octri.showcase.vercel.UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum
-import dev.octri.showcase.vercel.UpdateTeamsDefaultPassportDeploymentTypeEnum
-import dev.octri.showcase.vercel.UpdateTeamsDpAccessRequestsModeEnum
-import dev.octri.showcase.vercel.UpdateTeamsRequestDefaultProjectJobs
-import dev.octri.showcase.vercel.UpdateTeamsRequestDeploymentPolicy
-import dev.octri.showcase.vercel.UpdateTeamsRequestNsnbConfig
-import dev.octri.showcase.vercel.UpdateTeamsResourceConfigBuildMachineDefaultEnum
+import dev.octri.showcase.vercel.UpdateTeamRequestDefaultProjectJobs
+import dev.octri.showcase.vercel.UpdateTeamRequestDeploymentPolicy
+import dev.octri.showcase.vercel.UpdateTeamRequestNsnbConfig
+import dev.octri.showcase.vercel.UpdateTeamResourceConfigBuildMachineDefaultEnum
 
 object Teams {
 
@@ -286,9 +286,9 @@ object Teams {
         val id: String
     )
 
-    data class UpdateTeamsSamlRolesValueVariant1(val accessGroupId: String)
+    data class UpdateTeamSamlRolesValueVariant1(val accessGroupId: String)
 
-    data class UpdateTeamsSaml(
+    data class UpdateTeamSaml(
         /** Require that members of the team use SAML Single Sign-On. */
         val enforced: Boolean? = null,
         /** Directory groups to role or access group mappings. */
@@ -296,16 +296,16 @@ object Teams {
     )
 
     /** Whether or not remote caching is enabled for the team */
-    data class UpdateTeamsRemoteCaching(
+    data class UpdateTeamRemoteCaching(
         /** Enable or disable remote caching for the team. */
         val enabled: Boolean? = null
     )
 
     /** Allows to protect project deployments with a password */
-    data class UpdateTeamsDefaultDeploymentProtectionPasswordProtection(
+    data class UpdateTeamDefaultDeploymentProtectionPasswordProtection(
         /** Specify if the password will apply to every Deployment Target or just Preview */
         val deploymentType:
-            UpdateTeamsDefaultDeploymentProtectionPasswordProtectionDeploX2077a79074,
+            UpdateTeamDefaultDeploymentProtectionPasswordProtectionDeployX12f2688c14,
         /** The password that will be used to protect Project Deployments */
         val password: String? = null,
     )
@@ -314,41 +314,41 @@ object Teams {
      * Ensures visitors to your Preview Deployments are logged into Vercel and have a minimum of
      * Viewer access on your team
      */
-    data class UpdateTeamsDefaultDeploymentProtectionSsoProtection(
+    data class UpdateTeamDefaultDeploymentProtectionSsoProtection(
         /**
          * Specify if the Vercel Authentication (SSO Protection) will apply to every Deployment
          * Target or just Preview
          */
-        val deploymentType: UpdateTeamsDefaultDeploymentProtectionSsoProtectionDeploymentTypeEnum
+        val deploymentType: UpdateTeamDefaultDeploymentProtectionSsoProtectionDeploymentTypeEnum
     )
 
     /** Default deployment protection settings for new projects. */
-    data class UpdateTeamsDefaultDeploymentProtection(
+    data class UpdateTeamDefaultDeploymentProtection(
         /** Allows to protect project deployments with a password */
-        val passwordProtection: UpdateTeamsDefaultDeploymentProtectionPasswordProtection? = null,
+        val passwordProtection: UpdateTeamDefaultDeploymentProtectionPasswordProtection? = null,
         /**
          * Ensures visitors to your Preview Deployments are logged into Vercel and have a minimum of
          * Viewer access on your team
          */
-        val ssoProtection: UpdateTeamsDefaultDeploymentProtectionSsoProtection? = null,
+        val ssoProtection: UpdateTeamDefaultDeploymentProtectionSsoProtection? = null,
     )
 
     /** Default Passport configuration for new projects. */
-    data class UpdateTeamsDefaultPassport(
+    data class UpdateTeamDefaultPassport(
         val connectorId: String,
-        val deploymentType: UpdateTeamsDefaultPassportDeploymentTypeEnum? = null,
+        val deploymentType: UpdateTeamDefaultPassportDeploymentTypeEnum? = null,
     )
 
-    data class UpdateTeamsDefaultExpirationSettings(
+    data class UpdateTeamDefaultExpirationSettings(
         /** The time period to keep non-production deployments for */
-        val expiration: UpdateTeamsDefaultExpirationSettingsExpirationEnum? = null,
+        val expiration: UpdateTeamDefaultExpirationSettingsExpirationEnum? = null,
         /** The time period to keep production deployments for */
-        val expirationProduction: UpdateTeamsDefaultExpirationSettingsExpirationProductionEnum? =
+        val expirationProduction: UpdateTeamDefaultExpirationSettingsExpirationProductionEnum? =
             null,
         /** The time period to keep canceled deployments for */
-        val expirationCanceled: UpdateTeamsDefaultExpirationSettingsExpirationCanceledEnum? = null,
+        val expirationCanceled: UpdateTeamDefaultExpirationSettingsExpirationCanceledEnum? = null,
         /** The time period to keep errored deployments for */
-        val expirationErrored: UpdateTeamsDefaultExpirationSettingsExpirationErroredEnum? = null,
+        val expirationErrored: UpdateTeamDefaultExpirationSettingsExpirationErroredEnum? = null,
         /**
          * When true, opts a Pro team out of the upcoming deployment-storage retention reduce. Does
          * not change expiration settings. Unmetered teams also require acknowledgeStorageBilling.
@@ -362,13 +362,13 @@ object Teams {
     )
 
     /** When enabled, deployment protection settings require stricter permissions (owner-only). */
-    data class UpdateTeamsStrictDeploymentProtectionSettings(
+    data class UpdateTeamStrictDeploymentProtectionSettings(
         /** Enable or disable strict deployment protection settings. */
         val enabled: Boolean
     )
 
     /** When enabled, creating shareable links requires Owner role. */
-    data class UpdateTeamsStrictShareableLinks(
+    data class UpdateTeamStrictShareableLinks(
         /** Enable or disable requiring Owner role to create shareable links. */
         val enabled: Boolean
     )
@@ -376,27 +376,27 @@ object Teams {
     /**
      * When enabled, adding, changing, or removing project password protection requires Owner role.
      */
-    data class UpdateTeamsStrictPasswordProtectionSettings(
+    data class UpdateTeamStrictPasswordProtectionSettings(
         /** Enable or disable requiring Owner role to change project password protection. */
         val enabled: Boolean
     )
 
     /** When enabled, creating and managing connectors requires Owner role. */
-    data class UpdateTeamsStrictConnectors(
+    data class UpdateTeamStrictConnectors(
         /** Enable or disable requiring Owner role to manage connectors. */
         val enabled: Boolean
     )
 
     /** Build machine configuration. */
-    data class UpdateTeamsResourceConfigBuildMachine(
+    data class UpdateTeamResourceConfigBuildMachine(
         /** Default build machine type for new builds: standard, enhanced, turbo, or elastic. */
-        val default: UpdateTeamsResourceConfigBuildMachineDefaultEnum? = null
+        val default: UpdateTeamResourceConfigBuildMachineDefaultEnum? = null
     )
 
     /** Resource configuration for the team. */
-    data class UpdateTeamsResourceConfig(
+    data class UpdateTeamResourceConfig(
         /** Build machine configuration. */
-        val buildMachine: UpdateTeamsResourceConfigBuildMachine? = null
+        val buildMachine: UpdateTeamResourceConfigBuildMachine? = null
     )
 
     /** A paginated list of teams. */
@@ -500,8 +500,8 @@ object Teams {
         val joinedFrom: UpdateTeamMemberJoinedFrom? = null,
     )
 
-    /** Parameters for [updateTeams]. */
-    data class UpdateTeamsRequest(
+    /** Parameters for [updateTeam]. */
+    data class UpdateTeamRequest(
         val teamId: String,
         val slug: String? = null,
         val avatar: SdkClient.SdkOptional<String?>? = null,
@@ -510,30 +510,30 @@ object Teams {
         val name: String? = null,
         val previewDeploymentSuffix: SdkClient.SdkOptional<String?>? = null,
         val regenerateInviteCode: Boolean? = null,
-        val saml: UpdateTeamsSaml? = null,
+        val saml: UpdateTeamSaml? = null,
         val slug2: String? = null,
         val enablePreviewFeedback: String? = null,
         val enableProductionFeedback: String? = null,
         val sensitiveEnvironmentVariablePolicy: String? = null,
         val disjunctiveProductionSecretPolicy: String? = null,
-        val remoteCaching: UpdateTeamsRemoteCaching? = null,
+        val remoteCaching: UpdateTeamRemoteCaching? = null,
         val hideIpAddresses: Boolean? = null,
         val hideIpAddressesInLogDrains: Boolean? = null,
-        val dpAccessRequestsMode: UpdateTeamsDpAccessRequestsModeEnum? = null,
+        val dpAccessRequestsMode: UpdateTeamDpAccessRequestsModeEnum? = null,
         val requireVerifiedCommits: Boolean? = null,
         val disableRepositoryDispatchEvents: Boolean? = null,
-        val defaultDeploymentProtection: UpdateTeamsDefaultDeploymentProtection? = null,
-        val defaultPassport: SdkClient.SdkOptional<UpdateTeamsDefaultPassport?>? = null,
-        val defaultExpirationSettings: UpdateTeamsDefaultExpirationSettings? = null,
-        val deploymentPolicy: UpdateTeamsRequestDeploymentPolicy? = null,
-        val strictDeploymentProtectionSettings: UpdateTeamsStrictDeploymentProtectionSettings? =
+        val defaultDeploymentProtection: UpdateTeamDefaultDeploymentProtection? = null,
+        val defaultPassport: SdkClient.SdkOptional<UpdateTeamDefaultPassport?>? = null,
+        val defaultExpirationSettings: UpdateTeamDefaultExpirationSettings? = null,
+        val deploymentPolicy: UpdateTeamRequestDeploymentPolicy? = null,
+        val strictDeploymentProtectionSettings: UpdateTeamStrictDeploymentProtectionSettings? =
             null,
-        val strictShareableLinks: UpdateTeamsStrictShareableLinks? = null,
-        val strictPasswordProtectionSettings: UpdateTeamsStrictPasswordProtectionSettings? = null,
-        val strictConnectors: UpdateTeamsStrictConnectors? = null,
-        val nsnbConfig: UpdateTeamsRequestNsnbConfig? = null,
-        val defaultProjectJobs: UpdateTeamsRequestDefaultProjectJobs? = null,
-        val resourceConfig: UpdateTeamsResourceConfig? = null,
+        val strictShareableLinks: UpdateTeamStrictShareableLinks? = null,
+        val strictPasswordProtectionSettings: UpdateTeamStrictPasswordProtectionSettings? = null,
+        val strictConnectors: UpdateTeamStrictConnectors? = null,
+        val nsnbConfig: UpdateTeamRequestNsnbConfig? = null,
+        val defaultProjectJobs: UpdateTeamRequestDefaultProjectJobs? = null,
+        val resourceConfig: UpdateTeamResourceConfig? = null,
     )
 
     /** Parameters for [updateMicrofrontendsGroup]. */
@@ -698,12 +698,12 @@ object Teams {
      * Include only the team properties you want to change, such as its name, slug, avatar, or
      * feedback settings. The authenticated user must be a team owner to update the team.
      */
-    fun updateTeams(
+    fun updateTeam(
         clientConfig: ClientConfig,
-        request: UpdateTeamsRequest,
+        request: UpdateTeamRequest,
         options: RequestOptions? = null,
     ): Team =
-        dev.octri.showcase.vercel.methods.TeamsUpdateTeamsOperation.updateTeams(
+        dev.octri.showcase.vercel.methods.TeamsUpdateTeamOperation.updateTeam(
             clientConfig,
             request,
             options,
