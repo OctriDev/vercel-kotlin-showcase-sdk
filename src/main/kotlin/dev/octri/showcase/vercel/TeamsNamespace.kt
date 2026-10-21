@@ -82,8 +82,8 @@ class TeamsNamespace(private val clientConfig: ClientConfig) {
      *
      * Update the information of a Team specified by the `teamId` parameter. The request body should contain the information that will be updated on the Team.
      */
-    fun update(request: dev.octri.showcase.vercel.methods.Teams.UpdateTeamsRequest, options: RequestOptions? = null): Team {
-        return dev.octri.showcase.vercel.methods.Teams.updateTeams(clientConfig, request, options)
+    fun update(request: dev.octri.showcase.vercel.methods.Teams.UpdateTeamRequest, options: RequestOptions? = null): Team {
+        return dev.octri.showcase.vercel.methods.Teams.updateTeam(clientConfig, request, options)
     }
 
     /**

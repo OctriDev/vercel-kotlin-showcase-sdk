@@ -283,11 +283,11 @@ typealias StringUpdateResourceRequestNotification = dev.octri.showcase.vercel.mo
 
 typealias StringUpdateSandboxRequestKeepLastSnapshots = dev.octri.showcase.vercel.models.StringUpdateSandboxRequestKeepLastSnapshots
 
-typealias StringUpdateTeamsRequestDefaultProjectJobs = dev.octri.showcase.vercel.models.StringUpdateTeamsRequestDefaultProjectJobs
+typealias StringUpdateTeamRequestDefaultProjectJobs = dev.octri.showcase.vercel.models.StringUpdateTeamRequestDefaultProjectJobs
 
-typealias StringUpdateTeamsRequestDeploymentPolicy = dev.octri.showcase.vercel.models.StringUpdateTeamsRequestDeploymentPolicy
+typealias StringUpdateTeamRequestDeploymentPolicy = dev.octri.showcase.vercel.models.StringUpdateTeamRequestDeploymentPolicy
 
-typealias StringUpdateTeamsRequestNsnbConfig = dev.octri.showcase.vercel.models.StringUpdateTeamsRequestNsnbConfig
+typealias StringUpdateTeamRequestNsnbConfig = dev.octri.showcase.vercel.models.StringUpdateTeamRequestNsnbConfig
 
 typealias StringUploadProjectAvatarResponseDismissedToastsItemValue = dev.octri.showcase.vercel.models.StringUploadProjectAvatarResponseDismissedToastsItemValue
 

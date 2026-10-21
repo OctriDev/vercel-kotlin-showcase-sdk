@@ -46,24 +46,24 @@ enum class UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipX9e98a61
     }
 }
 
-class UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaXfab4ba847a private constructor(
+class UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1185fdfc75 private constructor(
     @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
 ) {
-    override fun equals(other: Any?): Boolean = other is UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaXfab4ba847a && value == other.value
+    override fun equals(other: Any?): Boolean = other is UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1185fdfc75 && value == other.value
     override fun hashCode(): Int = value.hashCode()
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val PRODUCTION = UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaXfab4ba847a("production")
-        @JvmField val PREVIEW = UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaXfab4ba847a("preview")
+        @JvmField val PRODUCTION = UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1185fdfc75("production")
+        @JvmField val PREVIEW = UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1185fdfc75("preview")
 
         @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaXfab4ba847a(value)
+        @JvmStatic fun fromValue(value: String) = UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX1185fdfc75(value)
     }
 }
 
-enum class UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaX25d2bdee7b(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX5f2f28aacd(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SYSTEM("system");
 
     override fun toString() = value
@@ -76,7 +76,7 @@ enum class UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaX25d2bde
     }
 }
 
-enum class UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaXfac73a93ea(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarXad2652a4f2(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     CUSTOM("custom");
 
     override fun toString() = value
@@ -89,45 +89,45 @@ enum class UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaXfac73a9
     }
 }
 
-class UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaX0332c3bc78 private constructor(
+class UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX3c2a75f114 private constructor(
     @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
 ) {
-    override fun equals(other: Any?): Boolean = other is UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaX0332c3bc78 && value == other.value
+    override fun equals(other: Any?): Boolean = other is UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX3c2a75f114 && value == other.value
     override fun hashCode(): Int = value.hashCode()
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val GIT = UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaX0332c3bc78("git")
-        @JvmField val CLI = UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaX0332c3bc78("cli")
-        @JvmField val REST_API = UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaX0332c3bc78("rest-api")
-        @JvmField val DEPLOY_HOOK = UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaX0332c3bc78("deploy-hook")
-        @JvmField val INTEGRATION = UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaX0332c3bc78("integration")
-        @JvmField val V0 = UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaX0332c3bc78("v0")
+        @JvmField val GIT = UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX3c2a75f114("git")
+        @JvmField val CLI = UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX3c2a75f114("cli")
+        @JvmField val REST_API = UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX3c2a75f114("rest-api")
+        @JvmField val DEPLOY_HOOK = UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX3c2a75f114("deploy-hook")
+        @JvmField val INTEGRATION = UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX3c2a75f114("integration")
+        @JvmField val V0 = UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX3c2a75f114("v0")
 
         @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UpdateTeamsRequestDeploymentPolicyVariant0DeploymentSourcesVaX0332c3bc78(value)
+        @JvmStatic fun fromValue(value: String) = UpdateTeamRequestDeploymentPolicyVariant0DeploymentSourcesVarX3c2a75f114(value)
     }
 }
 
-class UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IX68a79b7878 private constructor(
+class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX4465cd9f67 private constructor(
     @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
 ) {
-    override fun equals(other: Any?): Boolean = other is UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IX68a79b7878 && value == other.value
+    override fun equals(other: Any?): Boolean = other is UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX4465cd9f67 && value == other.value
     override fun hashCode(): Int = value.hashCode()
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val PRODUCTION = UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IX68a79b7878("production")
-        @JvmField val PREVIEW = UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IX68a79b7878("preview")
+        @JvmField val PRODUCTION = UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX4465cd9f67("production")
+        @JvmField val PREVIEW = UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX4465cd9f67("preview")
 
         @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IX68a79b7878(value)
+        @JvmStatic fun fromValue(value: String) = UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX4465cd9f67(value)
     }
 }
 
-enum class UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IX66ec699d0e(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX29ee34b686(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     SYSTEM("system");
 
     override fun toString() = value
@@ -140,7 +140,7 @@ enum class UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IX66ec699
     }
 }
 
-enum class UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IXdc0ef81dbf(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX379c02c6b1(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
     CUSTOM("custom");
 
     override fun toString() = value
@@ -153,57 +153,57 @@ enum class UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IXdc0ef81
     }
 }
 
-class UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IXc03a915994 private constructor(
+class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX177a1b945c private constructor(
     @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
 ) {
-    override fun equals(other: Any?): Boolean = other is UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IXc03a915994 && value == other.value
+    override fun equals(other: Any?): Boolean = other is UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX177a1b945c && value == other.value
     override fun hashCode(): Int = value.hashCode()
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val GITHUB = UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IXc03a915994("github")
-        @JvmField val BITBUCKET = UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IXc03a915994("bitbucket")
+        @JvmField val GITHUB = UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX177a1b945c("github")
+        @JvmField val BITBUCKET = UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX177a1b945c("bitbucket")
 
         @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IXc03a915994(value)
+        @JvmStatic fun fromValue(value: String) = UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItX177a1b945c(value)
     }
 }
 
-class UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IXbfc437ebad private constructor(
+class UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXa6321df9da private constructor(
     @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
 ) {
-    override fun equals(other: Any?): Boolean = other is UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IXbfc437ebad && value == other.value
+    override fun equals(other: Any?): Boolean = other is UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXa6321df9da && value == other.value
     override fun hashCode(): Int = value.hashCode()
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val GITLAB = UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IXbfc437ebad("gitlab")
+        @JvmField val GITLAB = UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXa6321df9da("gitlab")
 
         @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UpdateTeamsRequestDeploymentPolicyVariant0GitSourcesVariant0IXbfc437ebad(value)
+        @JvmStatic fun fromValue(value: String) = UpdateTeamRequestDeploymentPolicyVariant0GitSourcesVariant0ItXa6321df9da(value)
     }
 }
 
 /**
  * The NSNB preference for the team.
  */
-class UpdateTeamsRequestNsnbConfigVariant0PreferenceEnum private constructor(
+class UpdateTeamRequestNsnbConfigVariant0PreferenceEnum private constructor(
     @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
 ) {
-    override fun equals(other: Any?): Boolean = other is UpdateTeamsRequestNsnbConfigVariant0PreferenceEnum && value == other.value
+    override fun equals(other: Any?): Boolean = other is UpdateTeamRequestNsnbConfigVariant0PreferenceEnum && value == other.value
     override fun hashCode(): Int = value.hashCode()
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val AUTO_APPROVAL = UpdateTeamsRequestNsnbConfigVariant0PreferenceEnum("auto-approval")
-        @JvmField val MANUAL_APPROVAL = UpdateTeamsRequestNsnbConfigVariant0PreferenceEnum("manual-approval")
-        @JvmField val BLOCK = UpdateTeamsRequestNsnbConfigVariant0PreferenceEnum("block")
+        @JvmField val AUTO_APPROVAL = UpdateTeamRequestNsnbConfigVariant0PreferenceEnum("auto-approval")
+        @JvmField val MANUAL_APPROVAL = UpdateTeamRequestNsnbConfigVariant0PreferenceEnum("manual-approval")
+        @JvmField val BLOCK = UpdateTeamRequestNsnbConfigVariant0PreferenceEnum("block")
 
         @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UpdateTeamsRequestNsnbConfigVariant0PreferenceEnum(value)
+        @JvmStatic fun fromValue(value: String) = UpdateTeamRequestNsnbConfigVariant0PreferenceEnum(value)
     }
 }
 
