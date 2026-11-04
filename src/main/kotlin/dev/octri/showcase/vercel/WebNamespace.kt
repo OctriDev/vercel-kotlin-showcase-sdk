@@ -3,26 +3,49 @@
 
 package dev.octri.showcase.vercel
 
-
 class WebNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Updates the Web Insights setting for a project. Supply `projectId` and the `value` to set the toggle to true or false. The response returns the resulting toggle value.
+     * Updates the Web Insights setting for a project. Supply `projectId` and the `value` to set the
+     * toggle to true or false. The response returns the resulting toggle value.
      */
-    fun createInsightsToggle(projectId: String, value: Boolean, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.Web.CreateWebInsightsToggleResponse {
-        return dev.octri.showcase.vercel.methods.Web.createWebInsightsToggle(clientConfig, projectId, value, options)
+    fun createInsightsToggle(
+        projectId: String,
+        value: Boolean,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.Web.CreateWebInsightsToggleResponse {
+        return dev.octri.showcase.vercel.methods.Web.createWebInsightsToggle(
+            clientConfig,
+            projectId,
+            value,
+            options,
+        )
     }
 
-    /** These operations, each returning its [SdkResponse] envelope: status code, headers, request ID and latency. */
+    /**
+     * These operations, each returning its [SdkResponse] envelope: status code, headers, request ID
+     * and latency.
+     */
     fun withRawResponse(): WithRawResponse = WithRawResponse(clientConfig)
 
-    /** The operations of [WebNamespace], returning the [SdkResponse] envelope around each result. */
+    /**
+     * The operations of [WebNamespace], returning the [SdkResponse] envelope around each result.
+     */
     class WithRawResponse internal constructor(private val clientConfig: ClientConfig) {
         /**
-         * Updates the Web Insights setting for a project. Supply `projectId` and the `value` to set the toggle to true or false. The response returns the resulting toggle value.
+         * Updates the Web Insights setting for a project. Supply `projectId` and the `value` to set
+         * the toggle to true or false. The response returns the resulting toggle value.
          */
-        fun createInsightsToggle(projectId: String, value: Boolean, options: RequestOptions? = null): SdkResponse<dev.octri.showcase.vercel.methods.Web.CreateWebInsightsToggleResponse> {
-            return dev.octri.showcase.vercel.methods.Web.createWebInsightsToggleWithRawResponse(clientConfig, projectId, value, options)
+        fun createInsightsToggle(
+            projectId: String,
+            value: Boolean,
+            options: RequestOptions? = null,
+        ): SdkResponse<dev.octri.showcase.vercel.methods.Web.CreateWebInsightsToggleResponse> {
+            return dev.octri.showcase.vercel.methods.Web.createWebInsightsToggleWithRawResponse(
+                clientConfig,
+                projectId,
+                value,
+                options,
+            )
         }
-
     }
 }

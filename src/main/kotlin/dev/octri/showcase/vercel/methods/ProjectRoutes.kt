@@ -46,711 +46,528 @@ import dev.octri.showcase.vercel.StageRoutesRoutesItemRouteTransformsItemTypeEnu
 import dev.octri.showcase.vercel.UpdateRouteVersionsActionEnum
 
 object ProjectRoutes {
-data class StageRoutesRoutesItemRouteHasItem(
-    val type: StageRoutesRoutesItemRouteHasItemTypeEnum? = null,
-    val key: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-) : SdkResource()
-
-data class StageRoutesRoutesItemRouteMissingItem(
-    val type: StageRoutesRoutesItemRouteMissingItemTypeEnum? = null,
-    val key: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-) : SdkResource()
-
-
-
-
-
-data class StageRoutesRoutesItemRouteTransformsItem(
-    val type: StageRoutesRoutesItemRouteTransformsItemTypeEnum? = null,
-    val op: StageRoutesRoutesItemRouteTransformsItemOpEnum? = null,
-    val target: Map<String, Any>? = null,
-    val args: Any? = null,
-    val env: List<String>? = null
-) : SdkResource()
-
-data class StageRoutesRoutesItemRoute(
-    val src: String,
-    val dest: String? = null,
-    val headers: Map<String, Any>? = null,
-    val caseSensitive: Boolean? = null,
-    val status: Long? = null,
-    val has: List<StageRoutesRoutesItemRouteHasItem>? = null,
-    val missing: List<StageRoutesRoutesItemRouteMissingItem>? = null,
-    val transforms: List<StageRoutesRoutesItemRouteTransformsItem>? = null,
-    val respectOriginCacheControl: Boolean? = null
-) : SdkResource()
-
-data class StageRoutesRoutesItem(
-    val id: String,
-    val name: String,
-    val route: StageRoutesRoutesItemRoute,
-    val description: String? = null,
-    val enabled: Boolean? = null
-) : SdkResource()
-
-/**
- * A version of routing rules stored in S3.
- */
-data class StageRoutesResponseVersion(
-    /**
-     * The user who created this version.
-     */
-    val createdBy: String,
-    /**
-     * Unique identifier for the version.
-     */
-    val id: String,
-    /**
-     * Timestamp of when this version was last modified.
-     */
-    val lastModified: Double,
-    /**
-     * The S3 key where the routing rules are stored.
-     */
-    val s3Key: String,
-    /**
-     * The staging alias for previewing this version.
-     */
-    val alias: String? = null,
-    /**
-     * Whether this version is currently live in production.
-     */
-    val isLive: Boolean? = null,
-    /**
-     * Whether this version is staged and not yet promoted to production.
-     */
-    val isStaging: Boolean? = null,
-    /**
-     * The number of routing rules in this version.
-     */
-    val ruleCount: Double? = null
-) : SdkResource()
-
-data class StageRoutesResponse(
-    /**
-     * A version of routing rules stored in S3.
-     */
-    val version: StageRoutesResponseVersion
-) : SdkResource()
-
-data class AddRouteRouteRouteHasItem(
-    val type: AddRouteRouteRouteHasItemTypeEnum? = null,
-    val key: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-) : SdkResource()
-
-data class AddRouteRouteRouteMissingItem(
-    val type: AddRouteRouteRouteMissingItemTypeEnum? = null,
-    val key: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-) : SdkResource()
-
-
-
-
-
-data class AddRouteRouteRouteTransformsItem(
-    val type: AddRouteRouteRouteTransformsItemTypeEnum? = null,
-    val op: AddRouteRouteRouteTransformsItemOpEnum? = null,
-    val target: Map<String, Any>? = null,
-    val args: Any? = null,
-    val env: List<String>? = null
-) : SdkResource()
-
-data class AddRouteRouteRoute(
-    val src: String,
-    val dest: String? = null,
-    val headers: Map<String, Any>? = null,
-    val caseSensitive: Boolean? = null,
-    val status: Long? = null,
-    val has: List<AddRouteRouteRouteHasItem>? = null,
-    val missing: List<AddRouteRouteRouteMissingItem>? = null,
-    val transforms: List<AddRouteRouteRouteTransformsItem>? = null,
-    val respectOriginCacheControl: Boolean? = null
-) : SdkResource()
-
-
-
-data class AddRouteRoute(
-    val name: String,
-    val route: AddRouteRouteRoute,
-    val description: String? = null,
-    val enabled: Boolean? = null,
-    /**
-     * Pattern syntax type. If not provided, inferred from pattern.
-     */
-    val srcSyntax: AddRouteRouteSrcSyntaxEnum? = null
-) : SdkResource()
-
-/**
- * Controls where the route is inserted. Defaults to "end" if omitted.
- */
-data class AddRoutePosition(
-    /**
-     * "after"/"before" require referenceId.
-     */
-    val placement: AddRoutePositionPlacementEnum? = null,
-    /**
-     * Route ID to insert after/before. Required for "after"/"before".
-     */
-    val referenceId: String? = null
-) : SdkResource()
-
-data class AddRouteResponseRouteRouteLocale(
-    val cookie: String? = null,
-    val redirect: Map<String, String>? = null
-) : SdkResource()
-
-data class AddRouteResponseRouteRouteMitigate(
-    val action: AddRouteResponseRouteRouteMitigateActionEnum
-) : SdkResource()
-
-/**
- * The route definition from @vercel/routing-utils.
- */
-data class AddRouteResponseRouteRoute(
-    val src: String,
-    val caseSensitive: Boolean? = null,
-    val check: Boolean? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("continue") val `continue`: Boolean? = null,
-    val dest: String? = null,
-    /**
-     * Typed representation of the `AddRouteResponseRouteRouteDestination` API schema.
-     */
-    val destination: AddRouteResponseRouteRouteDestination? = null,
-    val env: List<String>? = null,
-    val has: List<AddRouteResponseRouteRouteHasItem>? = null,
-    val headers: Map<String, String>? = null,
-    val important: Boolean? = null,
-    val locale: AddRouteResponseRouteRouteLocale? = null,
-    val methods: List<String>? = null,
-    /**
-     * A middleware index in the `middleware` key under the build result
-     */
-    val middleware: Double? = null,
-    /**
-     * A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
-     */
-    val middlewarePath: String? = null,
-    /**
-     * The original middleware matchers.
-     */
-    val middlewareRawSrc: List<String>? = null,
-    val missing: List<AddRouteResponseRouteRouteMissingItem>? = null,
-    val mitigate: AddRouteResponseRouteRouteMitigate? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("override") val `override`: Boolean? = null,
-    val respectOriginCacheControl: Boolean? = null,
-    /**
-     * Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`, `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During normalization, the string forms are converted to their canonical forms (`src`, `dest`, `status`) and stripped from the route object. `destination` may also be a service-targeted object, in which case routing is delegated into the named service's internal route table and the object is preserved…
-     */
-    val source: String? = null,
-    val status: Double? = null,
-    val statusCode: Double? = null,
-    val transforms: List<AddRouteResponseRouteRouteTransformsItem>? = null
-) : SdkResource()
-
-
-
-
-
-data class AddRouteResponseRoute(
-    /**
-     * Unique identifier for the routing rule.
-     */
-    val id: String,
-    /**
-     * Human-readable name for the routing rule.
-     */
-    val name: String,
-    /**
-     * The route definition from @vercel/routing-utils.
-     */
-    val route: AddRouteResponseRouteRoute,
-    /**
-     * Optional description of what the routing rule does.
-     */
-    val description: String? = null,
-    /**
-     * Whether the routing rule is enabled. Defaults to true.
-     */
-    val enabled: Boolean? = null,
-    /**
-     * Original destination provided by user.
-     */
-    val rawDest: String? = null,
-    /**
-     * Original source pattern provided by user (path-to-regexp or regex). Used to display the user's input in API responses.
-     */
-    val rawSrc: String? = null,
-    val routeType: AddRouteResponseRouteRouteTypeEnum? = null,
-    /**
-     * The syntax type of the source pattern. Determines how the pattern is compiled to regex.
-     */
-    val srcSyntax: AddRouteResponseRouteSrcSyntaxEnum? = null,
-    /**
-     * Whether this route is new and not yet published to production. Set to true only when a route is first created via add-route. Cleared (set to false) when a version is promoted to production.
-     */
-    val staged: Boolean? = null
-) : SdkResource()
-
-/**
- * A version of routing rules stored in S3.
- */
-data class AddRouteResponseVersion(
-    /**
-     * The user who created this version.
-     */
-    val createdBy: String,
-    /**
-     * Unique identifier for the version.
-     */
-    val id: String,
-    /**
-     * Timestamp of when this version was last modified.
-     */
-    val lastModified: Double,
-    /**
-     * The S3 key where the routing rules are stored.
-     */
-    val s3Key: String,
-    /**
-     * The staging alias for previewing this version.
-     */
-    val alias: String? = null,
-    /**
-     * Whether this version is currently live in production.
-     */
-    val isLive: Boolean? = null,
-    /**
-     * Whether this version is staged and not yet promoted to production.
-     */
-    val isStaging: Boolean? = null,
-    /**
-     * The number of routing rules in this version.
-     */
-    val ruleCount: Double? = null
-) : SdkResource()
-
-data class AddRouteResponse(
-    val route: AddRouteResponseRoute,
-    /**
-     * A version of routing rules stored in S3.
-     */
-    val version: AddRouteResponseVersion
-) : SdkResource()
-
-/**
- * A version of routing rules stored in S3.
- */
-data class DeleteRoutesResponseVersion(
-    /**
-     * The user who created this version.
-     */
-    val createdBy: String,
-    /**
-     * Unique identifier for the version.
-     */
-    val id: String,
-    /**
-     * Timestamp of when this version was last modified.
-     */
-    val lastModified: Double,
-    /**
-     * The S3 key where the routing rules are stored.
-     */
-    val s3Key: String,
-    /**
-     * The staging alias for previewing this version.
-     */
-    val alias: String? = null,
-    /**
-     * Whether this version is currently live in production.
-     */
-    val isLive: Boolean? = null,
-    /**
-     * Whether this version is staged and not yet promoted to production.
-     */
-    val isStaging: Boolean? = null,
-    /**
-     * The number of routing rules in this version.
-     */
-    val ruleCount: Double? = null
-) : SdkResource()
-
-data class DeleteRoutesResponse(
-    val deletedCount: Double,
-    /**
-     * A version of routing rules stored in S3.
-     */
-    val version: DeleteRoutesResponseVersion
-) : SdkResource()
-
-data class EditRouteRouteRouteHasItem(
-    val type: EditRouteRouteRouteHasItemTypeEnum? = null,
-    val key: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-) : SdkResource()
-
-data class EditRouteRouteRouteMissingItem(
-    val type: EditRouteRouteRouteMissingItemTypeEnum? = null,
-    val key: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-) : SdkResource()
-
-
-
-
-
-data class EditRouteRouteRouteTransformsItem(
-    val type: EditRouteRouteRouteTransformsItemTypeEnum? = null,
-    val op: EditRouteRouteRouteTransformsItemOpEnum? = null,
-    val target: Map<String, Any>? = null,
-    val args: Any? = null,
-    val env: List<String>? = null
-) : SdkResource()
-
-data class EditRouteRouteRoute(
-    val src: String,
-    val dest: String? = null,
-    val headers: Map<String, Any>? = null,
-    val caseSensitive: Boolean? = null,
-    val status: Long? = null,
-    val has: List<EditRouteRouteRouteHasItem>? = null,
-    val missing: List<EditRouteRouteRouteMissingItem>? = null,
-    val transforms: List<EditRouteRouteRouteTransformsItem>? = null,
-    val respectOriginCacheControl: Boolean? = null
-) : SdkResource()
-
-
-
-/**
- * The full route object to replace the existing route with
- */
-data class EditRouteRoute(
-    val name: String,
-    val route: EditRouteRouteRoute,
-    val description: String? = null,
-    val enabled: Boolean? = null,
-    /**
-     * Pattern syntax type. If not provided, inferred from pattern.
-     */
-    val srcSyntax: EditRouteRouteSrcSyntaxEnum? = null
-) : SdkResource()
-
-/**
- * A version of routing rules stored in S3.
- */
-data class EditRouteResponseVersion(
-    /**
-     * The user who created this version.
-     */
-    val createdBy: String,
-    /**
-     * Unique identifier for the version.
-     */
-    val id: String,
-    /**
-     * Timestamp of when this version was last modified.
-     */
-    val lastModified: Double,
-    /**
-     * The S3 key where the routing rules are stored.
-     */
-    val s3Key: String,
-    /**
-     * The staging alias for previewing this version.
-     */
-    val alias: String? = null,
-    /**
-     * Whether this version is currently live in production.
-     */
-    val isLive: Boolean? = null,
-    /**
-     * Whether this version is staged and not yet promoted to production.
-     */
-    val isStaging: Boolean? = null,
-    /**
-     * The number of routing rules in this version.
-     */
-    val ruleCount: Double? = null
-) : SdkResource()
-
-data class EditRouteResponseRouteRouteLocale(
-    val cookie: String? = null,
-    val redirect: Map<String, String>? = null
-) : SdkResource()
-
-data class EditRouteResponseRouteRouteMitigate(
-    val action: EditRouteResponseRouteRouteMitigateActionEnum
-) : SdkResource()
-
-/**
- * The route definition from @vercel/routing-utils.
- */
-data class EditRouteResponseRouteRoute(
-    val src: String,
-    val caseSensitive: Boolean? = null,
-    val check: Boolean? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("continue") val `continue`: Boolean? = null,
-    val dest: String? = null,
-    /**
-     * Typed representation of the `EditRouteResponseRouteRouteDestination` API schema.
-     */
-    val destination: EditRouteResponseRouteRouteDestination? = null,
-    val env: List<String>? = null,
-    val has: List<EditRouteResponseRouteRouteHasItem>? = null,
-    val headers: Map<String, String>? = null,
-    val important: Boolean? = null,
-    val locale: EditRouteResponseRouteRouteLocale? = null,
-    val methods: List<String>? = null,
-    /**
-     * A middleware index in the `middleware` key under the build result
-     */
-    val middleware: Double? = null,
-    /**
-     * A middleware key within the `output` key under the build result. Overrides a `middleware` definition.
-     */
-    val middlewarePath: String? = null,
-    /**
-     * The original middleware matchers.
-     */
-    val middlewareRawSrc: List<String>? = null,
-    val missing: List<EditRouteResponseRouteRouteMissingItem>? = null,
-    val mitigate: EditRouteResponseRouteRouteMitigate? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("override") val `override`: Boolean? = null,
-    val respectOriginCacheControl: Boolean? = null,
-    /**
-     * Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`, `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`. During normalization, the string forms are converted to their canonical forms (`src`, `dest`, `status`) and stripped from the route object. `destination` may also be a service-targeted object, in which case routing is delegated into the named service's internal route table and the object is preserved…
-     */
-    val source: String? = null,
-    val status: Double? = null,
-    val statusCode: Double? = null,
-    val transforms: List<EditRouteResponseRouteRouteTransformsItem>? = null
-) : SdkResource()
-
-
-
-
-
-data class EditRouteResponseRoute(
-    /**
-     * Unique identifier for the routing rule.
-     */
-    val id: String,
-    /**
-     * Human-readable name for the routing rule.
-     */
-    val name: String,
-    /**
-     * The route definition from @vercel/routing-utils.
-     */
-    val route: EditRouteResponseRouteRoute,
-    /**
-     * Optional description of what the routing rule does.
-     */
-    val description: String? = null,
-    /**
-     * Whether the routing rule is enabled. Defaults to true.
-     */
-    val enabled: Boolean? = null,
-    /**
-     * Original destination provided by user.
-     */
-    val rawDest: String? = null,
-    /**
-     * Original source pattern provided by user (path-to-regexp or regex). Used to display the user's input in API responses.
-     */
-    val rawSrc: String? = null,
-    val routeType: EditRouteResponseRouteRouteTypeEnum? = null,
-    /**
-     * The syntax type of the source pattern. Determines how the pattern is compiled to regex.
-     */
-    val srcSyntax: EditRouteResponseRouteSrcSyntaxEnum? = null,
-    /**
-     * Whether this route is new and not yet published to production. Set to true only when a route is first created via add-route. Cleared (set to false) when a version is promoted to production.
-     */
-    val staged: Boolean? = null
-) : SdkResource()
-
-data class EditRouteResponse(
-    /**
-     * A version of routing rules stored in S3.
-     */
-    val version: EditRouteResponseVersion,
-    val route: EditRouteResponseRoute? = null
-) : SdkResource()
-
-data class GenerateRouteCurrentRoutePathCondition(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
-    val syntax: String? = null
-) : SdkResource()
-
-data class GenerateRouteCurrentRouteActionsItemHeadersItem(
-    val key: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
-    val op: String? = null
-) : SdkResource()
-
-data class GenerateRouteCurrentRouteActionsItem(
-    val type: String? = null,
-    val subType: String? = null,
-    val dest: String? = null,
-    val status: Long? = null,
-    val headers: List<GenerateRouteCurrentRouteActionsItemHeadersItem>? = null
-) : SdkResource()
-
-data class GenerateRouteCurrentRouteConditionsItem(
-    @com.fasterxml.jackson.annotation.JsonProperty("field") val `field`: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("operator") val `operator`: String? = null,
-    val key: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
-    val missing: Boolean? = null
-) : SdkResource()
-
-data class GenerateRouteCurrentRoute(
-    val pathCondition: GenerateRouteCurrentRoutePathCondition,
-    val actions: List<GenerateRouteCurrentRouteActionsItem>,
-    val name: String? = null,
-    val description: String? = null,
-    val conditions: List<GenerateRouteCurrentRouteConditionsItem>? = null
-) : SdkResource()
-
-
-
-data class GenerateRouteResponseRouteActionsItemHeadersItem(
-    val key: String,
-    val op: GenerateRouteResponseRouteActionsItemHeadersItemOpEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-) : SdkResource()
-
-
-
-data class GenerateRouteResponseRouteActionsItem(
-    val type: GenerateRouteResponseRouteActionsItemTypeEnum,
-    val dest: String? = null,
-    val headers: List<GenerateRouteResponseRouteActionsItemHeadersItem>? = null,
-    val status: Double? = null,
-    val subType: GenerateRouteResponseRouteActionsItemSubTypeEnum? = null
-) : SdkResource()
-
-data class GenerateRouteResponseRoutePathCondition(
-    val syntax: GenerateRouteResponseRoutePathConditionSyntaxEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String
-) : SdkResource()
-
-
-
-
-
-data class GenerateRouteResponseRouteConditionsItem(
-    @com.fasterxml.jackson.annotation.JsonProperty("field") val `field`: GenerateRouteResponseRouteConditionsItemFieldEnum,
-    val missing: Boolean,
-    @com.fasterxml.jackson.annotation.JsonProperty("operator") val `operator`: GenerateRouteResponseRouteConditionsItemOperatorEnum,
-    val key: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
-) : SdkResource()
-
-data class GenerateRouteResponseRoute(
-    val actions: List<GenerateRouteResponseRouteActionsItem>,
-    val description: String,
-    val name: String,
-    val pathCondition: GenerateRouteResponseRoutePathCondition,
-    val conditions: List<GenerateRouteResponseRouteConditionsItem>? = null
-) : SdkResource()
-
-data class GenerateRouteResponse(
-    val error: String? = null,
-    val route: GenerateRouteResponseRoute? = null
-) : SdkResource()
-
-/**
- * A version of routing rules stored in S3.
- */
-data class GetRouteVersionsResponseVersionsItem(
-    /**
-     * The user who created this version.
-     */
-    val createdBy: String,
-    /**
-     * Unique identifier for the version.
-     */
-    val id: String,
-    /**
-     * Timestamp of when this version was last modified.
-     */
-    val lastModified: Double,
-    /**
-     * The S3 key where the routing rules are stored.
-     */
-    val s3Key: String,
-    /**
-     * The staging alias for previewing this version.
-     */
-    val alias: String? = null,
-    /**
-     * Whether this version is currently live in production.
-     */
-    val isLive: Boolean? = null,
-    /**
-     * Whether this version is staged and not yet promoted to production.
-     */
-    val isStaging: Boolean? = null,
-    /**
-     * The number of routing rules in this version.
-     */
-    val ruleCount: Double? = null
-) : SdkResource()
-
-data class GetRouteVersionsResponse(
-    val versions: List<GetRouteVersionsResponseVersionsItem>
-) : SdkResource()
-
-/**
- * A version of routing rules stored in S3.
- */
-data class UpdateRouteVersionsResponseVersion(
-    /**
-     * The user who created this version.
-     */
-    val createdBy: String,
-    /**
-     * Unique identifier for the version.
-     */
-    val id: String,
-    /**
-     * Timestamp of when this version was last modified.
-     */
-    val lastModified: Double,
-    /**
-     * The S3 key where the routing rules are stored.
-     */
-    val s3Key: String,
-    /**
-     * The staging alias for previewing this version.
-     */
-    val alias: String? = null,
-    /**
-     * Whether this version is currently live in production.
-     */
-    val isLive: Boolean? = null,
-    /**
-     * Whether this version is staged and not yet promoted to production.
-     */
-    val isStaging: Boolean? = null,
-    /**
-     * The number of routing rules in this version.
-     */
-    val ruleCount: Double? = null
-) : SdkResource()
-
-data class UpdateRouteVersionsResponse(
-    /**
-     * A version of routing rules stored in S3.
-     */
-    val version: UpdateRouteVersionsResponseVersion
-) : SdkResource()
+    data class StageRoutesRoutesItemRouteHasItem(
+        val type: StageRoutesRoutesItemRouteHasItemTypeEnum? = null,
+        val key: String? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    ) : SdkResource()
+
+    data class StageRoutesRoutesItemRouteMissingItem(
+        val type: StageRoutesRoutesItemRouteMissingItemTypeEnum? = null,
+        val key: String? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    ) : SdkResource()
+
+    data class StageRoutesRoutesItemRouteTransformsItem(
+        val type: StageRoutesRoutesItemRouteTransformsItemTypeEnum? = null,
+        val op: StageRoutesRoutesItemRouteTransformsItemOpEnum? = null,
+        val target: Map<String, Any>? = null,
+        val args: Any? = null,
+        val env: List<String>? = null,
+    ) : SdkResource()
+
+    data class StageRoutesRoutesItemRoute(
+        val src: String,
+        val dest: String? = null,
+        val headers: Map<String, Any>? = null,
+        val caseSensitive: Boolean? = null,
+        val status: Long? = null,
+        val has: List<StageRoutesRoutesItemRouteHasItem>? = null,
+        val missing: List<StageRoutesRoutesItemRouteMissingItem>? = null,
+        val transforms: List<StageRoutesRoutesItemRouteTransformsItem>? = null,
+        val respectOriginCacheControl: Boolean? = null,
+    ) : SdkResource()
+
+    data class StageRoutesRoutesItem(
+        val id: String,
+        val name: String,
+        val route: StageRoutesRoutesItemRoute,
+        val description: String? = null,
+        val enabled: Boolean? = null,
+    ) : SdkResource()
+
+    /** A version of routing rules stored in S3. */
+    data class StageRoutesResponseVersion(
+        /** The user who created this version. */
+        val createdBy: String,
+        /** Unique identifier for the version. */
+        val id: String,
+        /** Timestamp of when this version was last modified. */
+        val lastModified: Double,
+        /** The S3 key where the routing rules are stored. */
+        val s3Key: String,
+        /** The staging alias for previewing this version. */
+        val alias: String? = null,
+        /** Whether this version is currently live in production. */
+        val isLive: Boolean? = null,
+        /** Whether this version is staged and not yet promoted to production. */
+        val isStaging: Boolean? = null,
+        /** The number of routing rules in this version. */
+        val ruleCount: Double? = null,
+    ) : SdkResource()
+
+    data class StageRoutesResponse(
+        /** A version of routing rules stored in S3. */
+        val version: StageRoutesResponseVersion
+    ) : SdkResource()
+
+    data class AddRouteRouteRouteHasItem(
+        val type: AddRouteRouteRouteHasItemTypeEnum? = null,
+        val key: String? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    ) : SdkResource()
+
+    data class AddRouteRouteRouteMissingItem(
+        val type: AddRouteRouteRouteMissingItemTypeEnum? = null,
+        val key: String? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    ) : SdkResource()
+
+    data class AddRouteRouteRouteTransformsItem(
+        val type: AddRouteRouteRouteTransformsItemTypeEnum? = null,
+        val op: AddRouteRouteRouteTransformsItemOpEnum? = null,
+        val target: Map<String, Any>? = null,
+        val args: Any? = null,
+        val env: List<String>? = null,
+    ) : SdkResource()
+
+    data class AddRouteRouteRoute(
+        val src: String,
+        val dest: String? = null,
+        val headers: Map<String, Any>? = null,
+        val caseSensitive: Boolean? = null,
+        val status: Long? = null,
+        val has: List<AddRouteRouteRouteHasItem>? = null,
+        val missing: List<AddRouteRouteRouteMissingItem>? = null,
+        val transforms: List<AddRouteRouteRouteTransformsItem>? = null,
+        val respectOriginCacheControl: Boolean? = null,
+    ) : SdkResource()
+
+    data class AddRouteRoute(
+        val name: String,
+        val route: AddRouteRouteRoute,
+        val description: String? = null,
+        val enabled: Boolean? = null,
+        /** Pattern syntax type. If not provided, inferred from pattern. */
+        val srcSyntax: AddRouteRouteSrcSyntaxEnum? = null,
+    ) : SdkResource()
+
+    /** Controls where the route is inserted. Defaults to "end" if omitted. */
+    data class AddRoutePosition(
+        /** "after"/"before" require referenceId. */
+        val placement: AddRoutePositionPlacementEnum? = null,
+        /** Route ID to insert after/before. Required for "after"/"before". */
+        val referenceId: String? = null,
+    ) : SdkResource()
+
+    data class AddRouteResponseRouteRouteLocale(
+        val cookie: String? = null,
+        val redirect: Map<String, String>? = null,
+    ) : SdkResource()
+
+    data class AddRouteResponseRouteRouteMitigate(
+        val action: AddRouteResponseRouteRouteMitigateActionEnum
+    ) : SdkResource()
+
+    /** The route definition from @vercel/routing-utils. */
+    data class AddRouteResponseRouteRoute(
+        val src: String,
+        val caseSensitive: Boolean? = null,
+        val check: Boolean? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("continue") val `continue`: Boolean? = null,
+        val dest: String? = null,
+        /** Typed representation of the `AddRouteResponseRouteRouteDestination` API schema. */
+        val destination: AddRouteResponseRouteRouteDestination? = null,
+        val env: List<String>? = null,
+        val has: List<AddRouteResponseRouteRouteHasItem>? = null,
+        val headers: Map<String, String>? = null,
+        val important: Boolean? = null,
+        val locale: AddRouteResponseRouteRouteLocale? = null,
+        val methods: List<String>? = null,
+        /** A middleware index in the `middleware` key under the build result */
+        val middleware: Double? = null,
+        /**
+         * A middleware key within the `output` key under the build result. Overrides a `middleware`
+         * definition.
+         */
+        val middlewarePath: String? = null,
+        /** The original middleware matchers. */
+        val middlewareRawSrc: List<String>? = null,
+        val missing: List<AddRouteResponseRouteRouteMissingItem>? = null,
+        val mitigate: AddRouteResponseRouteRouteMitigate? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("override") val `override`: Boolean? = null,
+        val respectOriginCacheControl: Boolean? = null,
+        /**
+         * Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`,
+         * `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`.
+         * During normalization, the string forms are converted to their canonical forms (`src`,
+         * `dest`, `status`) and stripped from the route object. `destination` may also be a
+         * service-targeted object, in which case routing is delegated into the named service's
+         * internal route table and the object is preserved…
+         */
+        val source: String? = null,
+        val status: Double? = null,
+        val statusCode: Double? = null,
+        val transforms: List<AddRouteResponseRouteRouteTransformsItem>? = null,
+    ) : SdkResource()
+
+    data class AddRouteResponseRoute(
+        /** Unique identifier for the routing rule. */
+        val id: String,
+        /** Human-readable name for the routing rule. */
+        val name: String,
+        /** The route definition from @vercel/routing-utils. */
+        val route: AddRouteResponseRouteRoute,
+        /** Optional description of what the routing rule does. */
+        val description: String? = null,
+        /** Whether the routing rule is enabled. Defaults to true. */
+        val enabled: Boolean? = null,
+        /** Original destination provided by user. */
+        val rawDest: String? = null,
+        /**
+         * Original source pattern provided by user (path-to-regexp or regex). Used to display the
+         * user's input in API responses.
+         */
+        val rawSrc: String? = null,
+        val routeType: AddRouteResponseRouteRouteTypeEnum? = null,
+        /**
+         * The syntax type of the source pattern. Determines how the pattern is compiled to regex.
+         */
+        val srcSyntax: AddRouteResponseRouteSrcSyntaxEnum? = null,
+        /**
+         * Whether this route is new and not yet published to production. Set to true only when a
+         * route is first created via add-route. Cleared (set to false) when a version is promoted
+         * to production.
+         */
+        val staged: Boolean? = null,
+    ) : SdkResource()
+
+    /** A version of routing rules stored in S3. */
+    data class AddRouteResponseVersion(
+        /** The user who created this version. */
+        val createdBy: String,
+        /** Unique identifier for the version. */
+        val id: String,
+        /** Timestamp of when this version was last modified. */
+        val lastModified: Double,
+        /** The S3 key where the routing rules are stored. */
+        val s3Key: String,
+        /** The staging alias for previewing this version. */
+        val alias: String? = null,
+        /** Whether this version is currently live in production. */
+        val isLive: Boolean? = null,
+        /** Whether this version is staged and not yet promoted to production. */
+        val isStaging: Boolean? = null,
+        /** The number of routing rules in this version. */
+        val ruleCount: Double? = null,
+    ) : SdkResource()
+
+    data class AddRouteResponse(
+        val route: AddRouteResponseRoute,
+        /** A version of routing rules stored in S3. */
+        val version: AddRouteResponseVersion,
+    ) : SdkResource()
+
+    /** A version of routing rules stored in S3. */
+    data class DeleteRoutesResponseVersion(
+        /** The user who created this version. */
+        val createdBy: String,
+        /** Unique identifier for the version. */
+        val id: String,
+        /** Timestamp of when this version was last modified. */
+        val lastModified: Double,
+        /** The S3 key where the routing rules are stored. */
+        val s3Key: String,
+        /** The staging alias for previewing this version. */
+        val alias: String? = null,
+        /** Whether this version is currently live in production. */
+        val isLive: Boolean? = null,
+        /** Whether this version is staged and not yet promoted to production. */
+        val isStaging: Boolean? = null,
+        /** The number of routing rules in this version. */
+        val ruleCount: Double? = null,
+    ) : SdkResource()
+
+    data class DeleteRoutesResponse(
+        val deletedCount: Double,
+        /** A version of routing rules stored in S3. */
+        val version: DeleteRoutesResponseVersion,
+    ) : SdkResource()
+
+    data class EditRouteRouteRouteHasItem(
+        val type: EditRouteRouteRouteHasItemTypeEnum? = null,
+        val key: String? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    ) : SdkResource()
+
+    data class EditRouteRouteRouteMissingItem(
+        val type: EditRouteRouteRouteMissingItemTypeEnum? = null,
+        val key: String? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    ) : SdkResource()
+
+    data class EditRouteRouteRouteTransformsItem(
+        val type: EditRouteRouteRouteTransformsItemTypeEnum? = null,
+        val op: EditRouteRouteRouteTransformsItemOpEnum? = null,
+        val target: Map<String, Any>? = null,
+        val args: Any? = null,
+        val env: List<String>? = null,
+    ) : SdkResource()
+
+    data class EditRouteRouteRoute(
+        val src: String,
+        val dest: String? = null,
+        val headers: Map<String, Any>? = null,
+        val caseSensitive: Boolean? = null,
+        val status: Long? = null,
+        val has: List<EditRouteRouteRouteHasItem>? = null,
+        val missing: List<EditRouteRouteRouteMissingItem>? = null,
+        val transforms: List<EditRouteRouteRouteTransformsItem>? = null,
+        val respectOriginCacheControl: Boolean? = null,
+    ) : SdkResource()
+
+    /** The full route object to replace the existing route with */
+    data class EditRouteRoute(
+        val name: String,
+        val route: EditRouteRouteRoute,
+        val description: String? = null,
+        val enabled: Boolean? = null,
+        /** Pattern syntax type. If not provided, inferred from pattern. */
+        val srcSyntax: EditRouteRouteSrcSyntaxEnum? = null,
+    ) : SdkResource()
+
+    /** A version of routing rules stored in S3. */
+    data class EditRouteResponseVersion(
+        /** The user who created this version. */
+        val createdBy: String,
+        /** Unique identifier for the version. */
+        val id: String,
+        /** Timestamp of when this version was last modified. */
+        val lastModified: Double,
+        /** The S3 key where the routing rules are stored. */
+        val s3Key: String,
+        /** The staging alias for previewing this version. */
+        val alias: String? = null,
+        /** Whether this version is currently live in production. */
+        val isLive: Boolean? = null,
+        /** Whether this version is staged and not yet promoted to production. */
+        val isStaging: Boolean? = null,
+        /** The number of routing rules in this version. */
+        val ruleCount: Double? = null,
+    ) : SdkResource()
+
+    data class EditRouteResponseRouteRouteLocale(
+        val cookie: String? = null,
+        val redirect: Map<String, String>? = null,
+    ) : SdkResource()
+
+    data class EditRouteResponseRouteRouteMitigate(
+        val action: EditRouteResponseRouteRouteMitigateActionEnum
+    ) : SdkResource()
+
+    /** The route definition from @vercel/routing-utils. */
+    data class EditRouteResponseRouteRoute(
+        val src: String,
+        val caseSensitive: Boolean? = null,
+        val check: Boolean? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("continue") val `continue`: Boolean? = null,
+        val dest: String? = null,
+        /** Typed representation of the `EditRouteResponseRouteRouteDestination` API schema. */
+        val destination: EditRouteResponseRouteRouteDestination? = null,
+        val env: List<String>? = null,
+        val has: List<EditRouteResponseRouteRouteHasItem>? = null,
+        val headers: Map<String, String>? = null,
+        val important: Boolean? = null,
+        val locale: EditRouteResponseRouteRouteLocale? = null,
+        val methods: List<String>? = null,
+        /** A middleware index in the `middleware` key under the build result */
+        val middleware: Double? = null,
+        /**
+         * A middleware key within the `output` key under the build result. Overrides a `middleware`
+         * definition.
+         */
+        val middlewarePath: String? = null,
+        /** The original middleware matchers. */
+        val middlewareRawSrc: List<String>? = null,
+        val missing: List<EditRouteResponseRouteRouteMissingItem>? = null,
+        val mitigate: EditRouteResponseRouteRouteMitigate? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("override") val `override`: Boolean? = null,
+        val respectOriginCacheControl: Boolean? = null,
+        /**
+         * Aliases for `src`, `dest`, and `status`. These provide consistency with the `rewrites`,
+         * `redirects`, and `headers` fields which use `source`, `destination`, and `statusCode`.
+         * During normalization, the string forms are converted to their canonical forms (`src`,
+         * `dest`, `status`) and stripped from the route object. `destination` may also be a
+         * service-targeted object, in which case routing is delegated into the named service's
+         * internal route table and the object is preserved…
+         */
+        val source: String? = null,
+        val status: Double? = null,
+        val statusCode: Double? = null,
+        val transforms: List<EditRouteResponseRouteRouteTransformsItem>? = null,
+    ) : SdkResource()
+
+    data class EditRouteResponseRoute(
+        /** Unique identifier for the routing rule. */
+        val id: String,
+        /** Human-readable name for the routing rule. */
+        val name: String,
+        /** The route definition from @vercel/routing-utils. */
+        val route: EditRouteResponseRouteRoute,
+        /** Optional description of what the routing rule does. */
+        val description: String? = null,
+        /** Whether the routing rule is enabled. Defaults to true. */
+        val enabled: Boolean? = null,
+        /** Original destination provided by user. */
+        val rawDest: String? = null,
+        /**
+         * Original source pattern provided by user (path-to-regexp or regex). Used to display the
+         * user's input in API responses.
+         */
+        val rawSrc: String? = null,
+        val routeType: EditRouteResponseRouteRouteTypeEnum? = null,
+        /**
+         * The syntax type of the source pattern. Determines how the pattern is compiled to regex.
+         */
+        val srcSyntax: EditRouteResponseRouteSrcSyntaxEnum? = null,
+        /**
+         * Whether this route is new and not yet published to production. Set to true only when a
+         * route is first created via add-route. Cleared (set to false) when a version is promoted
+         * to production.
+         */
+        val staged: Boolean? = null,
+    ) : SdkResource()
+
+    data class EditRouteResponse(
+        /** A version of routing rules stored in S3. */
+        val version: EditRouteResponseVersion,
+        val route: EditRouteResponseRoute? = null,
+    ) : SdkResource()
+
+    data class GenerateRouteCurrentRoutePathCondition(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+        val syntax: String? = null,
+    ) : SdkResource()
+
+    data class GenerateRouteCurrentRouteActionsItemHeadersItem(
+        val key: String? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+        val op: String? = null,
+    ) : SdkResource()
+
+    data class GenerateRouteCurrentRouteActionsItem(
+        val type: String? = null,
+        val subType: String? = null,
+        val dest: String? = null,
+        val status: Long? = null,
+        val headers: List<GenerateRouteCurrentRouteActionsItemHeadersItem>? = null,
+    ) : SdkResource()
+
+    data class GenerateRouteCurrentRouteConditionsItem(
+        @com.fasterxml.jackson.annotation.JsonProperty("field") val `field`: String? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("operator") val `operator`: String? = null,
+        val key: String? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+        val missing: Boolean? = null,
+    ) : SdkResource()
+
+    data class GenerateRouteCurrentRoute(
+        val pathCondition: GenerateRouteCurrentRoutePathCondition,
+        val actions: List<GenerateRouteCurrentRouteActionsItem>,
+        val name: String? = null,
+        val description: String? = null,
+        val conditions: List<GenerateRouteCurrentRouteConditionsItem>? = null,
+    ) : SdkResource()
+
+    data class GenerateRouteResponseRouteActionsItemHeadersItem(
+        val key: String,
+        val op: GenerateRouteResponseRouteActionsItemHeadersItemOpEnum,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    ) : SdkResource()
+
+    data class GenerateRouteResponseRouteActionsItem(
+        val type: GenerateRouteResponseRouteActionsItemTypeEnum,
+        val dest: String? = null,
+        val headers: List<GenerateRouteResponseRouteActionsItemHeadersItem>? = null,
+        val status: Double? = null,
+        val subType: GenerateRouteResponseRouteActionsItemSubTypeEnum? = null,
+    ) : SdkResource()
+
+    data class GenerateRouteResponseRoutePathCondition(
+        val syntax: GenerateRouteResponseRoutePathConditionSyntaxEnum,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+    ) : SdkResource()
+
+    data class GenerateRouteResponseRouteConditionsItem(
+        @com.fasterxml.jackson.annotation.JsonProperty("field")
+        val `field`: GenerateRouteResponseRouteConditionsItemFieldEnum,
+        val missing: Boolean,
+        @com.fasterxml.jackson.annotation.JsonProperty("operator")
+        val `operator`: GenerateRouteResponseRouteConditionsItemOperatorEnum,
+        val key: String? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
+    ) : SdkResource()
+
+    data class GenerateRouteResponseRoute(
+        val actions: List<GenerateRouteResponseRouteActionsItem>,
+        val description: String,
+        val name: String,
+        val pathCondition: GenerateRouteResponseRoutePathCondition,
+        val conditions: List<GenerateRouteResponseRouteConditionsItem>? = null,
+    ) : SdkResource()
+
+    data class GenerateRouteResponse(
+        val error: String? = null,
+        val route: GenerateRouteResponseRoute? = null,
+    ) : SdkResource()
+
+    /** A version of routing rules stored in S3. */
+    data class GetRouteVersionsResponseVersionsItem(
+        /** The user who created this version. */
+        val createdBy: String,
+        /** Unique identifier for the version. */
+        val id: String,
+        /** Timestamp of when this version was last modified. */
+        val lastModified: Double,
+        /** The S3 key where the routing rules are stored. */
+        val s3Key: String,
+        /** The staging alias for previewing this version. */
+        val alias: String? = null,
+        /** Whether this version is currently live in production. */
+        val isLive: Boolean? = null,
+        /** Whether this version is staged and not yet promoted to production. */
+        val isStaging: Boolean? = null,
+        /** The number of routing rules in this version. */
+        val ruleCount: Double? = null,
+    ) : SdkResource()
+
+    data class GetRouteVersionsResponse(val versions: List<GetRouteVersionsResponseVersionsItem>) :
+        SdkResource()
+
+    /** A version of routing rules stored in S3. */
+    data class UpdateRouteVersionsResponseVersion(
+        /** The user who created this version. */
+        val createdBy: String,
+        /** Unique identifier for the version. */
+        val id: String,
+        /** Timestamp of when this version was last modified. */
+        val lastModified: Double,
+        /** The S3 key where the routing rules are stored. */
+        val s3Key: String,
+        /** The staging alias for previewing this version. */
+        val alias: String? = null,
+        /** Whether this version is currently live in production. */
+        val isLive: Boolean? = null,
+        /** Whether this version is staged and not yet promoted to production. */
+        val isStaging: Boolean? = null,
+        /** The number of routing rules in this version. */
+        val ruleCount: Double? = null,
+    ) : SdkResource()
+
+    data class UpdateRouteVersionsResponse(
+        /** A version of routing rules stored in S3. */
+        val version: UpdateRouteVersionsResponseVersion
+    ) : SdkResource()
 
     /** Parameters for [getRoutes]. */
     data class GetRoutesRequest(
@@ -760,7 +577,7 @@ data class UpdateRouteVersionsResponse(
         val filter: GetRoutesParameterEnum? = null,
         val diff: Any? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [editRoute]. */
@@ -770,13 +587,20 @@ data class UpdateRouteVersionsResponse(
         val teamId: String? = null,
         val slug: String? = null,
         val route: EditRouteRoute? = null,
-        val restore: Boolean? = null
+        val restore: Boolean? = null,
     )
 
     /**
-     * Lists routing rules for a project, with options to search, filter by route type, or compare staged changes with production. Use `q` to search by name, ID, or pattern, and `filter` to select a route type. Set `diff` to compare changes; the response can include a diff count and version information.
+     * Lists routing rules for a project, with options to search, filter by route type, or compare
+     * staged changes with production. Use `q` to search by name, ID, or pattern, and `filter` to
+     * select a route type. Set `diff` to compare changes; the response can include a diff count and
+     * version information.
      */
-    fun getRoutes(clientConfig: ClientConfig, request: GetRoutesRequest, options: RequestOptions? = null): Map<String, Any> =
+    fun getRoutes(
+        clientConfig: ClientConfig,
+        request: GetRoutesRequest,
+        options: RequestOptions? = null,
+    ): Map<String, Any> =
         dev.octri.showcase.vercel.methods.ProjectRoutesGetRoutesOperation.getRoutes(
             clientConfig,
             request,
@@ -784,9 +608,16 @@ data class UpdateRouteVersionsResponse(
         )
 
     /**
-     * Lists routing rules for a project, with options to search, filter by route type, or compare staged changes with production. Use `q` to search by name, ID, or pattern, and `filter` to select a route type. Set `diff` to compare changes; the response can include a diff count and version information.
+     * Lists routing rules for a project, with options to search, filter by route type, or compare
+     * staged changes with production. Use `q` to search by name, ID, or pattern, and `filter` to
+     * select a route type. Set `diff` to compare changes; the response can include a diff count and
+     * version information.
      */
-    fun getRoutesWithRawResponse(clientConfig: ClientConfig, request: GetRoutesRequest, options: RequestOptions? = null): SdkResponse<Map<String, Any>> =
+    fun getRoutesWithRawResponse(
+        clientConfig: ClientConfig,
+        request: GetRoutesRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<Map<String, Any>> =
         dev.octri.showcase.vercel.methods.ProjectRoutesGetRoutesOperation.getRoutesWithRawResponse(
             clientConfig,
             request,
@@ -794,9 +625,19 @@ data class UpdateRouteVersionsResponse(
         )
 
     /**
-     * Stages routing rules for a project and returns the new staged version. Set `overwrite` to replace all existing rules; otherwise, submitted rules are merged with existing rules by ID. Each item in `routes` must include an `id`, `name`, and route configuration with `src`.
+     * Stages routing rules for a project and returns the new staged version. Set `overwrite` to
+     * replace all existing rules; otherwise, submitted rules are merged with existing rules by ID.
+     * Each item in `routes` must include an `id`, `name`, and route configuration with `src`.
      */
-    fun stageRoutes(clientConfig: ClientConfig, projectId: String, teamId: String? = null, slug: String? = null, overwrite: Boolean? = null, routes: List<StageRoutesRoutesItem>? = null, options: RequestOptions? = null): StageRoutesResponse =
+    fun stageRoutes(
+        clientConfig: ClientConfig,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        overwrite: Boolean? = null,
+        routes: List<StageRoutesRoutesItem>? = null,
+        options: RequestOptions? = null,
+    ): StageRoutesResponse =
         dev.octri.showcase.vercel.methods.ProjectRoutesStageRoutesOperation.stageRoutes(
             clientConfig,
             projectId,
@@ -808,23 +649,44 @@ data class UpdateRouteVersionsResponse(
         )
 
     /**
-     * Stages routing rules for a project and returns the new staged version. Set `overwrite` to replace all existing rules; otherwise, submitted rules are merged with existing rules by ID. Each item in `routes` must include an `id`, `name`, and route configuration with `src`.
+     * Stages routing rules for a project and returns the new staged version. Set `overwrite` to
+     * replace all existing rules; otherwise, submitted rules are merged with existing rules by ID.
+     * Each item in `routes` must include an `id`, `name`, and route configuration with `src`.
      */
-    fun stageRoutesWithRawResponse(clientConfig: ClientConfig, projectId: String, teamId: String? = null, slug: String? = null, overwrite: Boolean? = null, routes: List<StageRoutesRoutesItem>? = null, options: RequestOptions? = null): SdkResponse<StageRoutesResponse> =
-        dev.octri.showcase.vercel.methods.ProjectRoutesStageRoutesOperation.stageRoutesWithRawResponse(
-            clientConfig,
-            projectId,
-            teamId,
-            slug,
-            overwrite,
-            routes,
-            options,
-        )
+    fun stageRoutesWithRawResponse(
+        clientConfig: ClientConfig,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        overwrite: Boolean? = null,
+        routes: List<StageRoutesRoutesItem>? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<StageRoutesResponse> =
+        dev.octri.showcase.vercel.methods.ProjectRoutesStageRoutesOperation
+            .stageRoutesWithRawResponse(
+                clientConfig,
+                projectId,
+                teamId,
+                slug,
+                overwrite,
+                routes,
+                options,
+            )
 
     /**
-     * Adds a routing rule to a project and stages a new routing-rule version. Supply a `route` with its `name` and route configuration; the route configuration must include `src`. Use `position` to choose where to insert the rule, or omit it to add the rule at the end.
+     * Adds a routing rule to a project and stages a new routing-rule version. Supply a `route` with
+     * its `name` and route configuration; the route configuration must include `src`. Use
+     * `position` to choose where to insert the rule, or omit it to add the rule at the end.
      */
-    fun addRoute(clientConfig: ClientConfig, projectId: String, route: AddRouteRoute, teamId: String? = null, slug: String? = null, position: AddRoutePosition? = null, options: RequestOptions? = null): AddRouteResponse =
+    fun addRoute(
+        clientConfig: ClientConfig,
+        projectId: String,
+        route: AddRouteRoute,
+        teamId: String? = null,
+        slug: String? = null,
+        position: AddRoutePosition? = null,
+        options: RequestOptions? = null,
+    ): AddRouteResponse =
         dev.octri.showcase.vercel.methods.ProjectRoutesAddRouteOperation.addRoute(
             clientConfig,
             projectId,
@@ -836,9 +698,19 @@ data class UpdateRouteVersionsResponse(
         )
 
     /**
-     * Adds a routing rule to a project and stages a new routing-rule version. Supply a `route` with its `name` and route configuration; the route configuration must include `src`. Use `position` to choose where to insert the rule, or omit it to add the rule at the end.
+     * Adds a routing rule to a project and stages a new routing-rule version. Supply a `route` with
+     * its `name` and route configuration; the route configuration must include `src`. Use
+     * `position` to choose where to insert the rule, or omit it to add the rule at the end.
      */
-    fun addRouteWithRawResponse(clientConfig: ClientConfig, projectId: String, route: AddRouteRoute, teamId: String? = null, slug: String? = null, position: AddRoutePosition? = null, options: RequestOptions? = null): SdkResponse<AddRouteResponse> =
+    fun addRouteWithRawResponse(
+        clientConfig: ClientConfig,
+        projectId: String,
+        route: AddRouteRoute,
+        teamId: String? = null,
+        slug: String? = null,
+        position: AddRoutePosition? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<AddRouteResponse> =
         dev.octri.showcase.vercel.methods.ProjectRoutesAddRouteOperation.addRouteWithRawResponse(
             clientConfig,
             projectId,
@@ -850,9 +722,18 @@ data class UpdateRouteVersionsResponse(
         )
 
     /**
-     * Deletes one or more routing rules from a project by ID and stages a new version with those rules removed. Supply the IDs in `routeIds`; the array must contain at least one route ID. The response includes the number of deleted rules and the staged version.
+     * Deletes one or more routing rules from a project by ID and stages a new version with those
+     * rules removed. Supply the IDs in `routeIds`; the array must contain at least one route ID.
+     * The response includes the number of deleted rules and the staged version.
      */
-    fun deleteRoutes(clientConfig: ClientConfig, projectId: String, routeIds: List<String>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): DeleteRoutesResponse =
+    fun deleteRoutes(
+        clientConfig: ClientConfig,
+        projectId: String,
+        routeIds: List<String>,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): DeleteRoutesResponse =
         dev.octri.showcase.vercel.methods.ProjectRoutesDeleteRoutesOperation.deleteRoutes(
             clientConfig,
             projectId,
@@ -863,22 +744,38 @@ data class UpdateRouteVersionsResponse(
         )
 
     /**
-     * Deletes one or more routing rules from a project by ID and stages a new version with those rules removed. Supply the IDs in `routeIds`; the array must contain at least one route ID. The response includes the number of deleted rules and the staged version.
+     * Deletes one or more routing rules from a project by ID and stages a new version with those
+     * rules removed. Supply the IDs in `routeIds`; the array must contain at least one route ID.
+     * The response includes the number of deleted rules and the staged version.
      */
-    fun deleteRoutesWithRawResponse(clientConfig: ClientConfig, projectId: String, routeIds: List<String>, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<DeleteRoutesResponse> =
-        dev.octri.showcase.vercel.methods.ProjectRoutesDeleteRoutesOperation.deleteRoutesWithRawResponse(
-            clientConfig,
-            projectId,
-            routeIds,
-            teamId,
-            slug,
-            options,
-        )
+    fun deleteRoutesWithRawResponse(
+        clientConfig: ClientConfig,
+        projectId: String,
+        routeIds: List<String>,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<DeleteRoutesResponse> =
+        dev.octri.showcase.vercel.methods.ProjectRoutesDeleteRoutesOperation
+            .deleteRoutesWithRawResponse(
+                clientConfig,
+                projectId,
+                routeIds,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Updates a routing rule in a project by replacing it or restoring its value from the current production version. Supply `route` with the complete replacement rule, or set `restore` to restore the production value. The update stages a new routing-rule version.
+     * Updates a routing rule in a project by replacing it or restoring its value from the current
+     * production version. Supply `route` with the complete replacement rule, or set `restore` to
+     * restore the production value. The update stages a new routing-rule version.
      */
-    fun editRoute(clientConfig: ClientConfig, request: EditRouteRequest, options: RequestOptions? = null): EditRouteResponse =
+    fun editRoute(
+        clientConfig: ClientConfig,
+        request: EditRouteRequest,
+        options: RequestOptions? = null,
+    ): EditRouteResponse =
         dev.octri.showcase.vercel.methods.ProjectRoutesEditRouteOperation.editRoute(
             clientConfig,
             request,
@@ -886,9 +783,15 @@ data class UpdateRouteVersionsResponse(
         )
 
     /**
-     * Updates a routing rule in a project by replacing it or restoring its value from the current production version. Supply `route` with the complete replacement rule, or set `restore` to restore the production value. The update stages a new routing-rule version.
+     * Updates a routing rule in a project by replacing it or restoring its value from the current
+     * production version. Supply `route` with the complete replacement rule, or set `restore` to
+     * restore the production value. The update stages a new routing-rule version.
      */
-    fun editRouteWithRawResponse(clientConfig: ClientConfig, request: EditRouteRequest, options: RequestOptions? = null): SdkResponse<EditRouteResponse> =
+    fun editRouteWithRawResponse(
+        clientConfig: ClientConfig,
+        request: EditRouteRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<EditRouteResponse> =
         dev.octri.showcase.vercel.methods.ProjectRoutesEditRouteOperation.editRouteWithRawResponse(
             clientConfig,
             request,
@@ -896,9 +799,20 @@ data class UpdateRouteVersionsResponse(
         )
 
     /**
-     * Generates a suggested routing-rule configuration from a natural-language description. Provide the request in `prompt`, which can be up to 2000 characters, and optionally include `currentRoute` as context. Review the suggested route before saving it with a routing-rule operation.
+     * Generates a suggested routing-rule configuration from a natural-language description. Provide
+     * the request in `prompt`, which can be up to 2000 characters, and optionally include
+     * `currentRoute` as context. Review the suggested route before saving it with a routing-rule
+     * operation.
      */
-    fun generateRoute(clientConfig: ClientConfig, projectId: String, prompt: String, teamId: String? = null, slug: String? = null, currentRoute: GenerateRouteCurrentRoute? = null, options: RequestOptions? = null): GenerateRouteResponse =
+    fun generateRoute(
+        clientConfig: ClientConfig,
+        projectId: String,
+        prompt: String,
+        teamId: String? = null,
+        slug: String? = null,
+        currentRoute: GenerateRouteCurrentRoute? = null,
+        options: RequestOptions? = null,
+    ): GenerateRouteResponse =
         dev.octri.showcase.vercel.methods.ProjectRoutesGenerateRouteOperation.generateRoute(
             clientConfig,
             projectId,
@@ -910,23 +824,44 @@ data class UpdateRouteVersionsResponse(
         )
 
     /**
-     * Generates a suggested routing-rule configuration from a natural-language description. Provide the request in `prompt`, which can be up to 2000 characters, and optionally include `currentRoute` as context. Review the suggested route before saving it with a routing-rule operation.
+     * Generates a suggested routing-rule configuration from a natural-language description. Provide
+     * the request in `prompt`, which can be up to 2000 characters, and optionally include
+     * `currentRoute` as context. Review the suggested route before saving it with a routing-rule
+     * operation.
      */
-    fun generateRouteWithRawResponse(clientConfig: ClientConfig, projectId: String, prompt: String, teamId: String? = null, slug: String? = null, currentRoute: GenerateRouteCurrentRoute? = null, options: RequestOptions? = null): SdkResponse<GenerateRouteResponse> =
-        dev.octri.showcase.vercel.methods.ProjectRoutesGenerateRouteOperation.generateRouteWithRawResponse(
-            clientConfig,
-            projectId,
-            prompt,
-            teamId,
-            slug,
-            currentRoute,
-            options,
-        )
+    fun generateRouteWithRawResponse(
+        clientConfig: ClientConfig,
+        projectId: String,
+        prompt: String,
+        teamId: String? = null,
+        slug: String? = null,
+        currentRoute: GenerateRouteCurrentRoute? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GenerateRouteResponse> =
+        dev.octri.showcase.vercel.methods.ProjectRoutesGenerateRouteOperation
+            .generateRouteWithRawResponse(
+                clientConfig,
+                projectId,
+                prompt,
+                teamId,
+                slug,
+                currentRoute,
+                options,
+            )
 
     /**
-     * Lists the version history for a project's routing rules. The results include the staging version, when one exists, followed by production versions in descending recency. Use `isStaging` to identify the staged version and `isLive` to identify the current production version.
+     * Lists the version history for a project's routing rules. The results include the staging
+     * version, when one exists, followed by production versions in descending recency. Use
+     * `isStaging` to identify the staged version and `isLive` to identify the current production
+     * version.
      */
-    fun getRouteVersions(clientConfig: ClientConfig, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetRouteVersionsResponse =
+    fun getRouteVersions(
+        clientConfig: ClientConfig,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetRouteVersionsResponse =
         dev.octri.showcase.vercel.methods.ProjectRoutesGetRouteVersionsOperation.getRouteVersions(
             clientConfig,
             projectId,
@@ -936,42 +871,74 @@ data class UpdateRouteVersionsResponse(
         )
 
     /**
-     * Lists the version history for a project's routing rules. The results include the staging version, when one exists, followed by production versions in descending recency. Use `isStaging` to identify the staged version and `isLive` to identify the current production version.
+     * Lists the version history for a project's routing rules. The results include the staging
+     * version, when one exists, followed by production versions in descending recency. Use
+     * `isStaging` to identify the staged version and `isLive` to identify the current production
+     * version.
      */
-    fun getRouteVersionsWithRawResponse(clientConfig: ClientConfig, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<GetRouteVersionsResponse> =
-        dev.octri.showcase.vercel.methods.ProjectRoutesGetRouteVersionsOperation.getRouteVersionsWithRawResponse(
-            clientConfig,
-            projectId,
-            teamId,
-            slug,
-            options,
-        )
+    fun getRouteVersionsWithRawResponse(
+        clientConfig: ClientConfig,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetRouteVersionsResponse> =
+        dev.octri.showcase.vercel.methods.ProjectRoutesGetRouteVersionsOperation
+            .getRouteVersionsWithRawResponse(
+                clientConfig,
+                projectId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Promotes staged routing rules to production, restores an earlier production version, or discards staged changes. Supply the version `id` and choose an `action` of `promote`, `restore`, or `discard`. The response returns the resulting routing-rule version.
+     * Promotes staged routing rules to production, restores an earlier production version, or
+     * discards staged changes. Supply the version `id` and choose an `action` of `promote`,
+     * `restore`, or `discard`. The response returns the resulting routing-rule version.
      */
-    fun updateRouteVersions(clientConfig: ClientConfig, projectId: String, id: String, action: UpdateRouteVersionsActionEnum, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): UpdateRouteVersionsResponse =
-        dev.octri.showcase.vercel.methods.ProjectRoutesUpdateRouteVersionsOperation.updateRouteVersions(
-            clientConfig,
-            projectId,
-            id,
-            action,
-            teamId,
-            slug,
-            options,
-        )
+    fun updateRouteVersions(
+        clientConfig: ClientConfig,
+        projectId: String,
+        id: String,
+        action: UpdateRouteVersionsActionEnum,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): UpdateRouteVersionsResponse =
+        dev.octri.showcase.vercel.methods.ProjectRoutesUpdateRouteVersionsOperation
+            .updateRouteVersions(
+                clientConfig,
+                projectId,
+                id,
+                action,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Promotes staged routing rules to production, restores an earlier production version, or discards staged changes. Supply the version `id` and choose an `action` of `promote`, `restore`, or `discard`. The response returns the resulting routing-rule version.
+     * Promotes staged routing rules to production, restores an earlier production version, or
+     * discards staged changes. Supply the version `id` and choose an `action` of `promote`,
+     * `restore`, or `discard`. The response returns the resulting routing-rule version.
      */
-    fun updateRouteVersionsWithRawResponse(clientConfig: ClientConfig, projectId: String, id: String, action: UpdateRouteVersionsActionEnum, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<UpdateRouteVersionsResponse> =
-        dev.octri.showcase.vercel.methods.ProjectRoutesUpdateRouteVersionsOperation.updateRouteVersionsWithRawResponse(
-            clientConfig,
-            projectId,
-            id,
-            action,
-            teamId,
-            slug,
-            options,
-        )
+    fun updateRouteVersionsWithRawResponse(
+        clientConfig: ClientConfig,
+        projectId: String,
+        id: String,
+        action: UpdateRouteVersionsActionEnum,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<UpdateRouteVersionsResponse> =
+        dev.octri.showcase.vercel.methods.ProjectRoutesUpdateRouteVersionsOperation
+            .updateRouteVersionsWithRawResponse(
+                clientConfig,
+                projectId,
+                id,
+                action,
+                teamId,
+                slug,
+                options,
+            )
 }

@@ -41,168 +41,173 @@ import dev.octri.showcase.vercel.Validation
 
 object ChecksV2 {
 
+    data class ListProjectChecksResponseChecksItem(
+        val blocks: ListProjectChecksResponseChecksItemBlocksEnum,
+        val createdAt: Double,
+        val id: String,
+        val isRerequestable: Boolean,
+        val name: String,
+        val ownerId: String,
+        val projectId: String,
+        val requires: ListProjectChecksResponseChecksItemRequiresEnum,
+        /** Typed representation of the `ListProjectChecksResponseChecksItemSource` API schema. */
+        val source: ListProjectChecksResponseChecksItemSource,
+        val sourceKind: ListProjectChecksResponseChecksItemSourceKindEnum,
+        val targets: List<String>,
+        val timeout: Double,
+        val updatedAt: Double,
+        val deletedAt: Double? = null,
+        val sourceIntegrationConfigurationId: String? = null,
+    ) : SdkResource()
 
+    data class ListProjectChecksResponse(
+        val availableNativeChecks: List<String>,
+        val checks: List<ListProjectChecksResponseChecksItem>,
+    ) : SdkResource()
 
+    data class CreateProjectCheckResponse(
+        val blocks: CreateProjectCheckResponseBlocksEnum,
+        val createdAt: Double,
+        val id: String,
+        val isRerequestable: Boolean,
+        val name: String,
+        val ownerId: String,
+        val projectId: String,
+        val requires: CreateProjectCheckResponseRequiresEnum,
+        /** Typed representation of the `CreateProjectCheckResponseSource` API schema. */
+        val source: CreateProjectCheckResponseSource,
+        val sourceKind: CreateProjectCheckResponseSourceKindEnum,
+        val targets: List<String>,
+        val timeout: Double,
+        val updatedAt: Double,
+        val deletedAt: Double? = null,
+        val sourceIntegrationConfigurationId: String? = null,
+    ) : SdkResource()
 
+    data class GetProjectCheckResponse(
+        val blocks: GetProjectCheckResponseBlocksEnum,
+        val createdAt: Double,
+        val id: String,
+        val isRerequestable: Boolean,
+        val name: String,
+        val ownerId: String,
+        val projectId: String,
+        val requires: GetProjectCheckResponseRequiresEnum,
+        /** Typed representation of the `GetProjectCheckResponseSource` API schema. */
+        val source: GetProjectCheckResponseSource,
+        val sourceKind: GetProjectCheckResponseSourceKindEnum,
+        val targets: List<String>,
+        val timeout: Double,
+        val updatedAt: Double,
+        val deletedAt: Double? = null,
+        val sourceIntegrationConfigurationId: String? = null,
+    ) : SdkResource()
 
+    data class UpdateProjectCheckResponse(
+        val blocks: UpdateProjectCheckResponseBlocksEnum,
+        val createdAt: Double,
+        val id: String,
+        val isRerequestable: Boolean,
+        val name: String,
+        val ownerId: String,
+        val projectId: String,
+        val requires: UpdateProjectCheckResponseRequiresEnum,
+        /** Typed representation of the `UpdateProjectCheckResponseSource` API schema. */
+        val source: UpdateProjectCheckResponseSource,
+        val sourceKind: UpdateProjectCheckResponseSourceKindEnum,
+        val targets: List<String>,
+        val timeout: Double,
+        val updatedAt: Double,
+        val deletedAt: Double? = null,
+        val sourceIntegrationConfigurationId: String? = null,
+    ) : SdkResource()
 
+    data class DeleteProjectCheckResponse(val success: Boolean) : SdkResource()
 
-data class ListProjectChecksResponseChecksItem(
-    val blocks: ListProjectChecksResponseChecksItemBlocksEnum,
-    val createdAt: Double,
-    val id: String,
-    val isRerequestable: Boolean,
-    val name: String,
-    val ownerId: String,
-    val projectId: String,
-    val requires: ListProjectChecksResponseChecksItemRequiresEnum,
-    /**
-     * Typed representation of the `ListProjectChecksResponseChecksItemSource` API schema.
-     */
-    val source: ListProjectChecksResponseChecksItemSource,
-    val sourceKind: ListProjectChecksResponseChecksItemSourceKindEnum,
-    val targets: List<String>,
-    val timeout: Double,
-    val updatedAt: Double,
-    val deletedAt: Double? = null,
-    val sourceIntegrationConfigurationId: String? = null
-) : SdkResource()
+    data class ListCheckRunsResponse(val runs: List<ListCheckRunsResponseRunsItem>) : SdkResource()
 
-data class ListProjectChecksResponse(
-    val availableNativeChecks: List<String>,
-    val checks: List<ListProjectChecksResponseChecksItem>
-) : SdkResource()
-
-
-
-
-
-
-
-data class CreateProjectCheckResponse(
-    val blocks: CreateProjectCheckResponseBlocksEnum,
-    val createdAt: Double,
-    val id: String,
-    val isRerequestable: Boolean,
-    val name: String,
-    val ownerId: String,
-    val projectId: String,
-    val requires: CreateProjectCheckResponseRequiresEnum,
-    /**
-     * Typed representation of the `CreateProjectCheckResponseSource` API schema.
-     */
-    val source: CreateProjectCheckResponseSource,
-    val sourceKind: CreateProjectCheckResponseSourceKindEnum,
-    val targets: List<String>,
-    val timeout: Double,
-    val updatedAt: Double,
-    val deletedAt: Double? = null,
-    val sourceIntegrationConfigurationId: String? = null
-) : SdkResource()
-
-
-
-
-
-
-
-data class GetProjectCheckResponse(
-    val blocks: GetProjectCheckResponseBlocksEnum,
-    val createdAt: Double,
-    val id: String,
-    val isRerequestable: Boolean,
-    val name: String,
-    val ownerId: String,
-    val projectId: String,
-    val requires: GetProjectCheckResponseRequiresEnum,
-    /**
-     * Typed representation of the `GetProjectCheckResponseSource` API schema.
-     */
-    val source: GetProjectCheckResponseSource,
-    val sourceKind: GetProjectCheckResponseSourceKindEnum,
-    val targets: List<String>,
-    val timeout: Double,
-    val updatedAt: Double,
-    val deletedAt: Double? = null,
-    val sourceIntegrationConfigurationId: String? = null
-) : SdkResource()
-
-
-
-
-
-
-
-data class UpdateProjectCheckResponse(
-    val blocks: UpdateProjectCheckResponseBlocksEnum,
-    val createdAt: Double,
-    val id: String,
-    val isRerequestable: Boolean,
-    val name: String,
-    val ownerId: String,
-    val projectId: String,
-    val requires: UpdateProjectCheckResponseRequiresEnum,
-    /**
-     * Typed representation of the `UpdateProjectCheckResponseSource` API schema.
-     */
-    val source: UpdateProjectCheckResponseSource,
-    val sourceKind: UpdateProjectCheckResponseSourceKindEnum,
-    val targets: List<String>,
-    val timeout: Double,
-    val updatedAt: Double,
-    val deletedAt: Double? = null,
-    val sourceIntegrationConfigurationId: String? = null
-) : SdkResource()
-
-data class DeleteProjectCheckResponse(
-    val success: Boolean
-) : SdkResource()
-
-data class ListCheckRunsResponse(
-    val runs: List<ListCheckRunsResponseRunsItem>
-) : SdkResource()
-
-data class ListDeploymentCheckRunsResponse(
-    val runs: List<ListDeploymentCheckRunsResponseRunsItem>
-) : SdkResource()
+    data class ListDeploymentCheckRunsResponse(
+        val runs: List<ListDeploymentCheckRunsResponseRunsItem>
+    ) : SdkResource()
 
     /**
-     * Lists the checks configured for a project, with an optional filter for the deployment target that a check blocks. Use `blocks` to select a target, or omit it to retrieve checks without that filter.
+     * Lists the checks configured for a project, with an optional filter for the deployment target
+     * that a check blocks. Use `blocks` to select a target, or omit it to retrieve checks without
+     * that filter.
      *
      * List all checks for a project, optionally filtered by target.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listProjectChecks(clientConfig: ClientConfig, projectIdOrName: String, blocks: ListProjectChecksParameterEnum? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ListProjectChecksResponse {
-        return listProjectChecksWithRawResponse(clientConfig, projectIdOrName, blocks, teamId, slug, options).data
+    fun listProjectChecks(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        blocks: ListProjectChecksParameterEnum? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ListProjectChecksResponse {
+        return listProjectChecksWithRawResponse(
+                clientConfig,
+                projectIdOrName,
+                blocks,
+                teamId,
+                slug,
+                options,
+            )
+            .data
     }
-
-
-    /** [listProjectChecks], returning the [SdkResponse] envelope: status code, headers, request ID and latency. */
-    fun listProjectChecksWithRawResponse(clientConfig: ClientConfig, projectIdOrName: String, blocks: ListProjectChecksParameterEnum? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<ListProjectChecksResponse> {
-        return SdkClient.request<ListProjectChecksResponse>(SdkClient.RequestSpec("GET", "/v2/projects/${SdkClient.encodePathSegment(projectIdOrName)}/checks", config = clientConfig, query = mapOf("blocks" to SdkClient.queryValue(blocks, "form", true), "teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "listProjectChecks", decoder = SdkClient.ResponseDecoder.JSON, options = options))
-    }
-
-
-
-
-
 
     /**
-     * Creates a check for a project. Provide `name` and `requires`, and configure its targets, source, blocking behavior, and timeout as needed. The check uses `deployment-url` for `requires`, `deployment-alias` for `blocks`, and 300 seconds for `timeout` when those fields are omitted.
+     * [listProjectChecks], returning the [SdkResponse] envelope: status code, headers, request ID
+     * and latency.
+     */
+    fun listProjectChecksWithRawResponse(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        blocks: ListProjectChecksParameterEnum? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<ListProjectChecksResponse> {
+        return SdkClient.request<ListProjectChecksResponse>(
+            SdkClient.RequestSpec(
+                "GET",
+                "/v2/projects/${SdkClient.encodePathSegment(projectIdOrName)}/checks",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "blocks" to SdkClient.queryValue(blocks, "form", true),
+                        "teamId" to SdkClient.queryValue(teamId, "form", true),
+                        "slug" to SdkClient.queryValue(slug, "form", true),
+                    ),
+                operationId = "listProjectChecks",
+                decoder = SdkClient.ResponseDecoder.JSON,
+                options = options,
+            )
+        )
+    }
+
+    /**
+     * Creates a check for a project. Provide `name` and `requires`, and configure its targets,
+     * source, blocking behavior, and timeout as needed. The check uses `deployment-url` for
+     * `requires`, `deployment-alias` for `blocks`, and 300 seconds for `timeout` when those fields
+     * are omitted.
      *
      * Creates a new check for a project.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
-     * @param source Typed representation of the `CreateProjectCheckRequestSource`
-     *   API schema.
+     * @param source Typed representation of the `CreateProjectCheckRequestSource` API schema.
      */
-    fun createProjectCheck(clientConfig: ClientConfig, request: CreateProjectCheckRequest, options: RequestOptions? = null): CreateProjectCheckResponse {
+    fun createProjectCheck(
+        clientConfig: ClientConfig,
+        request: CreateProjectCheckRequest,
+        options: RequestOptions? = null,
+    ): CreateProjectCheckResponse {
         return createProjectCheckWithRawResponse(clientConfig, request, options).data
     }
-
 
     /** Parameters for [createProjectCheck]. */
     data class CreateProjectCheckRequest(
@@ -215,23 +220,48 @@ data class ListDeploymentCheckRunsResponse(
         val targets: List<String>? = null,
         val blocks: CreateProjectCheckBlocksEnum? = null,
         val source: CreateProjectCheckRequestSource? = null,
-        val timeout: Double? = null
+        val timeout: Double? = null,
     )
 
-    /** [createProjectCheck], returning the [SdkResponse] envelope: status code, headers, request ID and latency. */
-    fun createProjectCheckWithRawResponse(clientConfig: ClientConfig, request: CreateProjectCheckRequest, options: RequestOptions? = null): SdkResponse<CreateProjectCheckResponse> {
-        return SdkClient.request<CreateProjectCheckResponse>(SdkClient.RequestSpec("POST", "/v2/projects/${SdkClient.encodePathSegment(request.projectIdOrName)}/checks", config = clientConfig, query = mapOf("teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("name" to (request.name), "requires" to (request.requires), "isRerequestable" to
-    (SdkClient.omitIfNull(request.isRerequestable)), "targets" to (SdkClient.omitIfNull(request.targets)), "blocks" to (SdkClient.omitIfNull(request.blocks)), "source" to (SdkClient.omitIfNull(request.source)), "timeout" to (SdkClient.omitIfNull(request.timeout))), operationId = "createProjectCheck", decoder = SdkClient.ResponseDecoder.JSON, options = options))
+    /**
+     * [createProjectCheck], returning the [SdkResponse] envelope: status code, headers, request ID
+     * and latency.
+     */
+    fun createProjectCheckWithRawResponse(
+        clientConfig: ClientConfig,
+        request: CreateProjectCheckRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<CreateProjectCheckResponse> {
+        return SdkClient.request<CreateProjectCheckResponse>(
+            SdkClient.RequestSpec(
+                "POST",
+                "/v2/projects/${SdkClient.encodePathSegment(request.projectIdOrName)}/checks",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                        "slug" to SdkClient.queryValue(request.slug, "form", true),
+                    ),
+                body =
+                    SdkClient.bodyMap(
+                        "name" to (request.name),
+                        "requires" to (request.requires),
+                        "isRerequestable" to (SdkClient.omitIfNull(request.isRerequestable)),
+                        "targets" to (SdkClient.omitIfNull(request.targets)),
+                        "blocks" to (SdkClient.omitIfNull(request.blocks)),
+                        "source" to (SdkClient.omitIfNull(request.source)),
+                        "timeout" to (SdkClient.omitIfNull(request.timeout)),
+                    ),
+                operationId = "createProjectCheck",
+                decoder = SdkClient.ResponseDecoder.JSON,
+                options = options,
+            )
+        )
     }
 
-
-
-
-
-
     /**
-     * Retrieves the details of a single check configured for a project. Provide the project identifier or name and the check identifier to select the check you want to inspect.
+     * Retrieves the details of a single check configured for a project. Provide the project
+     * identifier or name and the check identifier to select the check you want to inspect.
      *
      * Return a detailed response for a single check.
      *
@@ -239,33 +269,72 @@ data class ListDeploymentCheckRunsResponse(
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getProjectCheck(clientConfig: ClientConfig, projectIdOrName: String, checkId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetProjectCheckResponse {
-        return getProjectCheckWithRawResponse(clientConfig, projectIdOrName, checkId, teamId, slug, options).data
+    fun getProjectCheck(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        checkId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetProjectCheckResponse {
+        return getProjectCheckWithRawResponse(
+                clientConfig,
+                projectIdOrName,
+                checkId,
+                teamId,
+                slug,
+                options,
+            )
+            .data
     }
-
-
-    /** [getProjectCheck], returning the [SdkResponse] envelope: status code, headers, request ID and latency. */
-    fun getProjectCheckWithRawResponse(clientConfig: ClientConfig, projectIdOrName: String, checkId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<GetProjectCheckResponse> {
-        return SdkClient.request<GetProjectCheckResponse>(SdkClient.RequestSpec("GET", "/v2/projects/${SdkClient.encodePathSegment(projectIdOrName)}/checks/${SdkClient.encodePathSegment(checkId)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getProjectCheck", decoder = SdkClient.ResponseDecoder.JSON, options = options))
-    }
-
-
-
-
-
 
     /**
-     * Updates a project check's configuration, including its name, targets, and deployment behavior. Supply only the properties you want to change; `requires`, `blocks`, and `timeout` have defaults when omitted. Use the project and check identifiers to select the check to update.
+     * [getProjectCheck], returning the [SdkResponse] envelope: status code, headers, request ID and
+     * latency.
+     */
+    fun getProjectCheckWithRawResponse(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        checkId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetProjectCheckResponse> {
+        return SdkClient.request<GetProjectCheckResponse>(
+            SdkClient.RequestSpec(
+                "GET",
+                "/v2/projects/${SdkClient.encodePathSegment(projectIdOrName)}/checks/${SdkClient.encodePathSegment(checkId)}",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "teamId" to SdkClient.queryValue(teamId, "form", true),
+                        "slug" to SdkClient.queryValue(slug, "form", true),
+                    ),
+                operationId = "getProjectCheck",
+                decoder = SdkClient.ResponseDecoder.JSON,
+                options = options,
+            )
+        )
+    }
+
+    /**
+     * Updates a project check's configuration, including its name, targets, and deployment
+     * behavior. Supply only the properties you want to change; `requires`, `blocks`, and `timeout`
+     * have defaults when omitted. Use the project and check identifiers to select the check to
+     * update.
      *
      * Update an existing check.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun updateProjectCheck(clientConfig: ClientConfig, request: UpdateProjectCheckRequest, options: RequestOptions? = null): UpdateProjectCheckResponse {
+    fun updateProjectCheck(
+        clientConfig: ClientConfig,
+        request: UpdateProjectCheckRequest,
+        options: RequestOptions? = null,
+    ): UpdateProjectCheckResponse {
         return updateProjectCheckWithRawResponse(clientConfig, request, options).data
     }
-
 
     /** Parameters for [updateProjectCheck]. */
     data class UpdateProjectCheckRequest(
@@ -278,46 +347,105 @@ data class ListDeploymentCheckRunsResponse(
         val requires: UpdateProjectCheckRequiresEnum? = null,
         val targets: List<String>? = null,
         val blocks: UpdateProjectCheckBlocksEnum? = null,
-        val timeout: Double? = null
+        val timeout: Double? = null,
     )
 
-    /** [updateProjectCheck], returning the [SdkResponse] envelope: status code, headers, request ID and latency. */
-    fun updateProjectCheckWithRawResponse(clientConfig: ClientConfig, request: UpdateProjectCheckRequest, options: RequestOptions? = null): SdkResponse<UpdateProjectCheckResponse> {
-        return SdkClient.request<UpdateProjectCheckResponse>(SdkClient.RequestSpec("PATCH", "/v2/projects/${SdkClient.encodePathSegment(request.projectIdOrName)}/checks/${SdkClient.encodePathSegment(request.checkId)}", config = clientConfig, query = mapOf("teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("name" to (SdkClient.omitIfNull(request.name)), "isRerequestable" to
-    (SdkClient.omitIfNull(request.isRerequestable)), "requires" to (SdkClient.omitIfNull(request.requires)), "targets" to (SdkClient.omitIfNull(request.targets)), "blocks" to (SdkClient.omitIfNull(request.blocks)), "timeout" to (SdkClient.omitIfNull(request.timeout))), operationId = "updateProjectCheck", decoder = SdkClient.ResponseDecoder.JSON, options = options))
+    /**
+     * [updateProjectCheck], returning the [SdkResponse] envelope: status code, headers, request ID
+     * and latency.
+     */
+    fun updateProjectCheckWithRawResponse(
+        clientConfig: ClientConfig,
+        request: UpdateProjectCheckRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<UpdateProjectCheckResponse> {
+        return SdkClient.request<UpdateProjectCheckResponse>(
+            SdkClient.RequestSpec(
+                "PATCH",
+                "/v2/projects/${SdkClient.encodePathSegment(request.projectIdOrName)}/checks/${SdkClient.encodePathSegment(request.checkId)}",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                        "slug" to SdkClient.queryValue(request.slug, "form", true),
+                    ),
+                body =
+                    SdkClient.bodyMap(
+                        "name" to (SdkClient.omitIfNull(request.name)),
+                        "isRerequestable" to (SdkClient.omitIfNull(request.isRerequestable)),
+                        "requires" to (SdkClient.omitIfNull(request.requires)),
+                        "targets" to (SdkClient.omitIfNull(request.targets)),
+                        "blocks" to (SdkClient.omitIfNull(request.blocks)),
+                        "timeout" to (SdkClient.omitIfNull(request.timeout)),
+                    ),
+                operationId = "updateProjectCheck",
+                decoder = SdkClient.ResponseDecoder.JSON,
+                options = options,
+            )
+        )
     }
 
-
-
-
-
-
     /**
-     * Deletes a project check and all of its runs. Use the project and check identifiers to select the check to remove. The response confirms whether the deletion succeeded.
+     * Deletes a project check and all of its runs. Use the project and check identifiers to select
+     * the check to remove. The response confirms whether the deletion succeeded.
      *
      * Delete an existing check and all of its runs.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun deleteProjectCheck(clientConfig: ClientConfig, projectIdOrName: String, checkId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): DeleteProjectCheckResponse {
-        return deleteProjectCheckWithRawResponse(clientConfig, projectIdOrName, checkId, teamId, slug, options).data
+    fun deleteProjectCheck(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        checkId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): DeleteProjectCheckResponse {
+        return deleteProjectCheckWithRawResponse(
+                clientConfig,
+                projectIdOrName,
+                checkId,
+                teamId,
+                slug,
+                options,
+            )
+            .data
     }
-
-
-    /** [deleteProjectCheck], returning the [SdkResponse] envelope: status code, headers, request ID and latency. */
-    fun deleteProjectCheckWithRawResponse(clientConfig: ClientConfig, projectIdOrName: String, checkId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<DeleteProjectCheckResponse> {
-        return SdkClient.request<DeleteProjectCheckResponse>(SdkClient.RequestSpec("DELETE", "/v2/projects/${SdkClient.encodePathSegment(projectIdOrName)}/checks/${SdkClient.encodePathSegment(checkId)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "deleteProjectCheck", decoder = SdkClient.ResponseDecoder.JSON, options = options))
-    }
-
-
-
-
-
 
     /**
-     * Lists all runs associated with a project check. Use the project and check identifiers to select the check whose run history you need. The response groups the results in a `runs` array.
+     * [deleteProjectCheck], returning the [SdkResponse] envelope: status code, headers, request ID
+     * and latency.
+     */
+    fun deleteProjectCheckWithRawResponse(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        checkId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<DeleteProjectCheckResponse> {
+        return SdkClient.request<DeleteProjectCheckResponse>(
+            SdkClient.RequestSpec(
+                "DELETE",
+                "/v2/projects/${SdkClient.encodePathSegment(projectIdOrName)}/checks/${SdkClient.encodePathSegment(checkId)}",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "teamId" to SdkClient.queryValue(teamId, "form", true),
+                        "slug" to SdkClient.queryValue(slug, "form", true),
+                    ),
+                operationId = "deleteProjectCheck",
+                decoder = SdkClient.ResponseDecoder.JSON,
+                options = options,
+            )
+        )
+    }
+
+    /**
+     * Lists all runs associated with a project check. Use the project and check identifiers to
+     * select the check whose run history you need. The response groups the results in a `runs`
+     * array.
      *
      * List all runs associated with a given check.
      *
@@ -325,69 +453,173 @@ data class ListDeploymentCheckRunsResponse(
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listCheckRuns(clientConfig: ClientConfig, projectIdOrName: String, checkId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ListCheckRunsResponse {
-        return listCheckRunsWithRawResponse(clientConfig, projectIdOrName, checkId, teamId, slug, options).data
+    fun listCheckRuns(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        checkId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ListCheckRunsResponse {
+        return listCheckRunsWithRawResponse(
+                clientConfig,
+                projectIdOrName,
+                checkId,
+                teamId,
+                slug,
+                options,
+            )
+            .data
     }
-
-
-    /** [listCheckRuns], returning the [SdkResponse] envelope: status code, headers, request ID and latency. */
-    fun listCheckRunsWithRawResponse(clientConfig: ClientConfig, projectIdOrName: String, checkId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<ListCheckRunsResponse> {
-        return SdkClient.request<ListCheckRunsResponse>(SdkClient.RequestSpec("GET", "/v2/projects/${SdkClient.encodePathSegment(projectIdOrName)}/checks/${SdkClient.encodePathSegment(checkId)}/runs", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "listCheckRuns", decoder = SdkClient.ResponseDecoder.JSON, options = options))
-    }
-
-
-
-
-
 
     /**
-     * Lists all check runs associated with a deployment. Use `deploymentId` to select the deployment whose check runs you want to inspect. The response groups the results in a `runs` array.
+     * [listCheckRuns], returning the [SdkResponse] envelope: status code, headers, request ID and
+     * latency.
+     */
+    fun listCheckRunsWithRawResponse(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        checkId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<ListCheckRunsResponse> {
+        return SdkClient.request<ListCheckRunsResponse>(
+            SdkClient.RequestSpec(
+                "GET",
+                "/v2/projects/${SdkClient.encodePathSegment(projectIdOrName)}/checks/${SdkClient.encodePathSegment(checkId)}/runs",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "teamId" to SdkClient.queryValue(teamId, "form", true),
+                        "slug" to SdkClient.queryValue(slug, "form", true),
+                    ),
+                operationId = "listCheckRuns",
+                decoder = SdkClient.ResponseDecoder.JSON,
+                options = options,
+            )
+        )
+    }
+
+    /**
+     * Lists all check runs associated with a deployment. Use `deploymentId` to select the
+     * deployment whose check runs you want to inspect. The response groups the results in a `runs`
+     * array.
      *
      * List all check runs for a deployment.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun listDeploymentCheckRuns(clientConfig: ClientConfig, deploymentId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ListDeploymentCheckRunsResponse {
-        return listDeploymentCheckRunsWithRawResponse(clientConfig, deploymentId, teamId, slug, options).data
+    fun listDeploymentCheckRuns(
+        clientConfig: ClientConfig,
+        deploymentId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ListDeploymentCheckRunsResponse {
+        return listDeploymentCheckRunsWithRawResponse(
+                clientConfig,
+                deploymentId,
+                teamId,
+                slug,
+                options,
+            )
+            .data
     }
-
-
-    /** [listDeploymentCheckRuns], returning the [SdkResponse] envelope: status code, headers, request ID and latency. */
-    fun listDeploymentCheckRunsWithRawResponse(clientConfig: ClientConfig, deploymentId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<ListDeploymentCheckRunsResponse> {
-        return SdkClient.request<ListDeploymentCheckRunsResponse>(SdkClient.RequestSpec("GET", "/v2/deployments/${SdkClient.encodePathSegment(deploymentId)}/check-runs", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "listDeploymentCheckRuns", decoder = SdkClient.ResponseDecoder.JSON, options = options))
-    }
-
-
-
-
-
 
     /**
-     * Creates a check run for a deployment. Supply `checkId` to associate the run with a project-level check; the request body is optional in the operation definition, but `checkId` is required when you provide a body. Use the deployment identifier to select the deployment for the new run.
+     * [listDeploymentCheckRuns], returning the [SdkResponse] envelope: status code, headers,
+     * request ID and latency.
+     */
+    fun listDeploymentCheckRunsWithRawResponse(
+        clientConfig: ClientConfig,
+        deploymentId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<ListDeploymentCheckRunsResponse> {
+        return SdkClient.request<ListDeploymentCheckRunsResponse>(
+            SdkClient.RequestSpec(
+                "GET",
+                "/v2/deployments/${SdkClient.encodePathSegment(deploymentId)}/check-runs",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "teamId" to SdkClient.queryValue(teamId, "form", true),
+                        "slug" to SdkClient.queryValue(slug, "form", true),
+                    ),
+                operationId = "listDeploymentCheckRuns",
+                decoder = SdkClient.ResponseDecoder.JSON,
+                options = options,
+            )
+        )
+    }
+
+    /**
+     * Creates a check run for a deployment. Supply `checkId` to associate the run with a
+     * project-level check; the request body is optional in the operation definition, but `checkId`
+     * is required when you provide a body. Use the deployment identifier to select the deployment
+     * for the new run.
      *
      * Creates a new check run for a deployment.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun createDeploymentCheckRun(clientConfig: ClientConfig, deploymentId: String, checkId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): CreateDeploymentCheckRunResponse {
-        return createDeploymentCheckRunWithRawResponse(clientConfig, deploymentId, checkId, teamId, slug, options).data
+    fun createDeploymentCheckRun(
+        clientConfig: ClientConfig,
+        deploymentId: String,
+        checkId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): CreateDeploymentCheckRunResponse {
+        return createDeploymentCheckRunWithRawResponse(
+                clientConfig,
+                deploymentId,
+                checkId,
+                teamId,
+                slug,
+                options,
+            )
+            .data
     }
-
-
-    /** [createDeploymentCheckRun], returning the [SdkResponse] envelope: status code, headers, request ID and latency. */
-    fun createDeploymentCheckRunWithRawResponse(clientConfig: ClientConfig, deploymentId: String, checkId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<CreateDeploymentCheckRunResponse> {
-        return SdkClient.request<CreateDeploymentCheckRunResponse>(SdkClient.RequestSpec("POST", "/v2/deployments/${SdkClient.encodePathSegment(deploymentId)}/check-runs", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), body = SdkClient.bodyMap("checkId" to (checkId)), operationId = "createDeploymentCheckRun", decoder = SdkClient.ResponseDecoder.JSON, options = options))
-    }
-
-
-
-
-
 
     /**
-     * Retrieves a single check run for a deployment. Use the deployment and check run identifiers to select the record. The response includes the run details and supports both runs backed by a project-level check and Vercel CI runs without a parent check.
+     * [createDeploymentCheckRun], returning the [SdkResponse] envelope: status code, headers,
+     * request ID and latency.
+     */
+    fun createDeploymentCheckRunWithRawResponse(
+        clientConfig: ClientConfig,
+        deploymentId: String,
+        checkId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<CreateDeploymentCheckRunResponse> {
+        return SdkClient.request<CreateDeploymentCheckRunResponse>(
+            SdkClient.RequestSpec(
+                "POST",
+                "/v2/deployments/${SdkClient.encodePathSegment(deploymentId)}/check-runs",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "teamId" to SdkClient.queryValue(teamId, "form", true),
+                        "slug" to SdkClient.queryValue(slug, "form", true),
+                    ),
+                body = SdkClient.bodyMap("checkId" to (checkId)),
+                operationId = "createDeploymentCheckRun",
+                decoder = SdkClient.ResponseDecoder.JSON,
+                options = options,
+            )
+        )
+    }
+
+    /**
+     * Retrieves a single check run for a deployment. Use the deployment and check run identifiers
+     * to select the record. The response includes the run details and supports both runs backed by
+     * a project-level check and Vercel CI runs without a parent check.
      *
      * Return a detailed response for a single check run.
      *
@@ -395,33 +627,71 @@ data class ListDeploymentCheckRunsResponse(
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getDeploymentCheckRun(clientConfig: ClientConfig, deploymentId: String, checkRunId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetDeploymentCheckRunResponse {
-        return getDeploymentCheckRunWithRawResponse(clientConfig, deploymentId, checkRunId, teamId, slug, options).data
+    fun getDeploymentCheckRun(
+        clientConfig: ClientConfig,
+        deploymentId: String,
+        checkRunId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetDeploymentCheckRunResponse {
+        return getDeploymentCheckRunWithRawResponse(
+                clientConfig,
+                deploymentId,
+                checkRunId,
+                teamId,
+                slug,
+                options,
+            )
+            .data
     }
-
-
-    /** [getDeploymentCheckRun], returning the [SdkResponse] envelope: status code, headers, request ID and latency. */
-    fun getDeploymentCheckRunWithRawResponse(clientConfig: ClientConfig, deploymentId: String, checkRunId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<GetDeploymentCheckRunResponse> {
-        return SdkClient.request<GetDeploymentCheckRunResponse>(SdkClient.RequestSpec("GET", "/v2/deployments/${SdkClient.encodePathSegment(deploymentId)}/check-runs/${SdkClient.encodePathSegment(checkRunId)}", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getDeploymentCheckRun", decoder = SdkClient.ResponseDecoder.JSON, options = options))
-    }
-
-
-
-
-
 
     /**
-     * Updates a check run's status and related metadata for a deployment. Supply only the fields you want to change; `status` and `conclusion` are limited to their documented values, and `externalUrl` accepts the specified URL formats. The response returns the updated check run.
+     * [getDeploymentCheckRun], returning the [SdkResponse] envelope: status code, headers, request
+     * ID and latency.
+     */
+    fun getDeploymentCheckRunWithRawResponse(
+        clientConfig: ClientConfig,
+        deploymentId: String,
+        checkRunId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetDeploymentCheckRunResponse> {
+        return SdkClient.request<GetDeploymentCheckRunResponse>(
+            SdkClient.RequestSpec(
+                "GET",
+                "/v2/deployments/${SdkClient.encodePathSegment(deploymentId)}/check-runs/${SdkClient.encodePathSegment(checkRunId)}",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "teamId" to SdkClient.queryValue(teamId, "form", true),
+                        "slug" to SdkClient.queryValue(slug, "form", true),
+                    ),
+                operationId = "getDeploymentCheckRun",
+                decoder = SdkClient.ResponseDecoder.JSON,
+                options = options,
+            )
+        )
+    }
+
+    /**
+     * Updates a check run's status and related metadata for a deployment. Supply only the fields
+     * you want to change; `status` and `conclusion` are limited to their documented values, and
+     * `externalUrl` accepts the specified URL formats. The response returns the updated check run.
      *
      * Update an existing check run for a deployment.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun updateDeploymentCheckRun(clientConfig: ClientConfig, request: UpdateDeploymentCheckRunRequest, options: RequestOptions? = null): UpdateDeploymentCheckRunResponse {
+    fun updateDeploymentCheckRun(
+        clientConfig: ClientConfig,
+        request: UpdateDeploymentCheckRunRequest,
+        options: RequestOptions? = null,
+    ): UpdateDeploymentCheckRunResponse {
         return updateDeploymentCheckRunWithRawResponse(clientConfig, request, options).data
     }
-
 
     /** Parameters for [updateDeploymentCheckRun]. */
     data class UpdateDeploymentCheckRunRequest(
@@ -435,29 +705,51 @@ data class ListDeploymentCheckRunsResponse(
         val output: Map<String, Any>? = null,
         val completedAt: Double? = null,
         val conclusion: UpdateDeploymentCheckRunConclusionEnum? = null,
-        val conclusionText: String? = null
+        val conclusionText: String? = null,
     )
 
-    /** [updateDeploymentCheckRun], returning the [SdkResponse] envelope: status code, headers, request ID and latency. */
-    fun updateDeploymentCheckRunWithRawResponse(clientConfig: ClientConfig, request: UpdateDeploymentCheckRunRequest, options: RequestOptions? = null): SdkResponse<UpdateDeploymentCheckRunResponse> {
+    /**
+     * [updateDeploymentCheckRun], returning the [SdkResponse] envelope: status code, headers,
+     * request ID and latency.
+     */
+    fun updateDeploymentCheckRunWithRawResponse(
+        clientConfig: ClientConfig,
+        request: UpdateDeploymentCheckRunRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<UpdateDeploymentCheckRunResponse> {
         validateUpdateDeploymentCheckRunRequest(request)
 
-        return SdkClient.request<UpdateDeploymentCheckRunResponse>(SdkClient.RequestSpec("PATCH", "/v2/deployments/${SdkClient.encodePathSegment(request.deploymentId)}/check-runs/${SdkClient.encodePathSegment(request.checkRunId)}", config = clientConfig, query = mapOf("teamId" to
-    SdkClient.queryValue(request.teamId, "form", true), "slug" to SdkClient.queryValue(request.slug, "form", true)), body = SdkClient.bodyMap("externalId" to (SdkClient.omitIfNull(request.externalId)), "externalUrl" to (SdkClient.omitIfNull(request.externalUrl)), "status" to (SdkClient.omitIfNull(request.status)), "output" to (SdkClient.omitIfNull(request.output)), "completedAt" to (SdkClient.omitIfNull(request.completedAt)), "conclusion" to (SdkClient.omitIfNull(request.conclusion)), "conclusionText" to
-    (SdkClient.omitIfNull(request.conclusionText))), operationId = "updateDeploymentCheckRun", decoder = SdkClient.ResponseDecoder.JSON, options = options))
+        return SdkClient.request<UpdateDeploymentCheckRunResponse>(
+            SdkClient.RequestSpec(
+                "PATCH",
+                "/v2/deployments/${SdkClient.encodePathSegment(request.deploymentId)}/check-runs/${SdkClient.encodePathSegment(request.checkRunId)}",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "teamId" to SdkClient.queryValue(request.teamId, "form", true),
+                        "slug" to SdkClient.queryValue(request.slug, "form", true),
+                    ),
+                body =
+                    SdkClient.bodyMap(
+                        "externalId" to (SdkClient.omitIfNull(request.externalId)),
+                        "externalUrl" to (SdkClient.omitIfNull(request.externalUrl)),
+                        "status" to (SdkClient.omitIfNull(request.status)),
+                        "output" to (SdkClient.omitIfNull(request.output)),
+                        "completedAt" to (SdkClient.omitIfNull(request.completedAt)),
+                        "conclusion" to (SdkClient.omitIfNull(request.conclusion)),
+                        "conclusionText" to (SdkClient.omitIfNull(request.conclusionText)),
+                    ),
+                operationId = "updateDeploymentCheckRun",
+                decoder = SdkClient.ResponseDecoder.JSON,
+                options = options,
+            )
+        )
     }
-
 
     private fun validateUpdateDeploymentCheckRunRequest(request: UpdateDeploymentCheckRunRequest) {
         if (request.externalUrl != null) {
             Validation.validatePattern("externalUrl", request.externalUrl, "^https?://|^sso:")
             Validation.validateUri("externalUrl", request.externalUrl)
-}
+        }
     }
-
-
-
-
-
-
 }

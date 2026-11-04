@@ -11,27 +11,44 @@ import dev.octri.showcase.vercel.SdkResponse
 
 object Web {
 
-data class CreateWebInsightsToggleResponse(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Boolean
-) : SdkResource()
+    data class CreateWebInsightsToggleResponse(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Boolean
+    ) : SdkResource()
 
     /**
-     * Updates the Web Insights setting for a project. Supply `projectId` and the `value` to set the toggle to true or false. The response returns the resulting toggle value.
+     * Updates the Web Insights setting for a project. Supply `projectId` and the `value` to set the
+     * toggle to true or false. The response returns the resulting toggle value.
      */
-    fun createWebInsightsToggle(clientConfig: ClientConfig, projectId: String, value: Boolean, options: RequestOptions? = null): CreateWebInsightsToggleResponse {
+    fun createWebInsightsToggle(
+        clientConfig: ClientConfig,
+        projectId: String,
+        value: Boolean,
+        options: RequestOptions? = null,
+    ): CreateWebInsightsToggleResponse {
         return createWebInsightsToggleWithRawResponse(clientConfig, projectId, value, options).data
     }
 
-
-    /** [createWebInsightsToggle], returning the [SdkResponse] envelope: status code, headers, request ID and latency. */
-    fun createWebInsightsToggleWithRawResponse(clientConfig: ClientConfig, projectId: String, value: Boolean, options: RequestOptions? = null): SdkResponse<CreateWebInsightsToggleResponse> {
-        return SdkClient.request<CreateWebInsightsToggleResponse>(SdkClient.RequestSpec("POST", "/web/insights/toggle", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true)), body = SdkClient.bodyMap("value" to (value)), operationId = "createWebInsightsToggle", decoder = SdkClient.ResponseDecoder.JSON, options = options))
+    /**
+     * [createWebInsightsToggle], returning the [SdkResponse] envelope: status code, headers,
+     * request ID and latency.
+     */
+    fun createWebInsightsToggleWithRawResponse(
+        clientConfig: ClientConfig,
+        projectId: String,
+        value: Boolean,
+        options: RequestOptions? = null,
+    ): SdkResponse<CreateWebInsightsToggleResponse> {
+        return SdkClient.request<CreateWebInsightsToggleResponse>(
+            SdkClient.RequestSpec(
+                "POST",
+                "/web/insights/toggle",
+                config = clientConfig,
+                query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true)),
+                body = SdkClient.bodyMap("value" to (value)),
+                operationId = "createWebInsightsToggle",
+                decoder = SdkClient.ResponseDecoder.JSON,
+                options = options,
+            )
+        )
     }
-
-
-
-
-
-
-
 }

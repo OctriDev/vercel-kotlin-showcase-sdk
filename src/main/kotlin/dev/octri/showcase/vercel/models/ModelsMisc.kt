@@ -5,26 +5,16 @@ package dev.octri.showcase.vercel.models
 
 import dev.octri.showcase.vercel.SdkResource
 
-/**
- * Typed representation of the `RateLimitNotice` API schema.
- */
+/** Typed representation of the `RateLimitNotice` API schema. */
 data class RateLimitNotice(
-    /**
-     * Required `integer` value serialized in the `remaining` wire field.
-     */
+    /** Required `integer` value serialized in the `remaining` wire field. */
     val remaining: Long,
-    /**
-     * Required `integer` value serialized in the `reset` wire field.
-     */
+    /** Required `integer` value serialized in the `reset` wire field. */
     val reset: Long,
-    /**
-     * Required `integer` value serialized in the `resetMs` wire field.
-     */
+    /** Required `integer` value serialized in the `resetMs` wire field. */
     val resetMs: Long,
-    /**
-     * Required `integer` value serialized in the `total` wire field.
-     */
-    val total: Long
+    /** Required `integer` value serialized in the `total` wire field. */
+    val total: Long,
 ) : SdkResource()
 
 data class RegistrantFieldVariant0RequiredWhenVariant1(
@@ -34,10 +24,15 @@ data class RegistrantFieldVariant0RequiredWhenVariant1(
 data class RegistrantFieldVariant0OptionsItem(
     @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
     val label: String,
-    val fields: Map<String, Any>? = null
+    val fields: Map<String, Any>? = null,
 ) : SdkResource()
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class RegistrantFieldVariant0(
     val description: String,
     val required: Boolean,
@@ -46,20 +41,25 @@ data class RegistrantFieldVariant0(
     val validation: String? = null,
     @com.fasterxml.jackson.annotation.JsonProperty("required_when") val requiredWhen: Any? = null,
     val options: List<RegistrantFieldVariant0OptionsItem>? = null,
-    val fields: Map<String, Any>? = null
+    val fields: Map<String, Any>? = null,
 ) : SdkResource(), RegistrantField
 
 data class RegistrantFieldVariant1OptionsItem(
     @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
     val label: String,
-    val fields: Map<String, Any>? = null
+    val fields: Map<String, Any>? = null,
 ) : SdkResource()
 
 data class RegistrantFieldVariant1RequiredWhenVariant1(
     @com.fasterxml.jackson.annotation.JsonProperty("value_in") val valueIn: List<String>
 ) : SdkResource()
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class RegistrantFieldVariant1(
     val description: String,
     val required: Boolean,
@@ -68,14 +68,19 @@ data class RegistrantFieldVariant1(
     val label: String? = null,
     val validation: String? = null,
     @com.fasterxml.jackson.annotation.JsonProperty("required_when") val requiredWhen: Any? = null,
-    val fields: Map<String, Any>? = null
+    val fields: Map<String, Any>? = null,
 ) : SdkResource(), RegistrantField
 
 data class RegistrantFieldVariant2RequiredWhenVariant1(
     @com.fasterxml.jackson.annotation.JsonProperty("value_in") val valueIn: List<String>
 ) : SdkResource()
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class RegistrantFieldVariant2(
     val description: String,
     val required: Boolean,
@@ -83,31 +88,50 @@ data class RegistrantFieldVariant2(
     val label: String? = null,
     val validation: String? = null,
     @com.fasterxml.jackson.annotation.JsonProperty("required_when") val requiredWhen: Any? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String? = null,
 ) : SdkResource(), RegistrantField
 
 data class RegistrantFieldVariant3RequiredWhenVariant1(
     @com.fasterxml.jackson.annotation.JsonProperty("value_in") val valueIn: List<String>
 ) : SdkResource()
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class RegistrantFieldVariant3(
     val description: String,
     val required: Boolean,
     val type: RegistrantFieldVariant3TypeEnum,
     val label: String? = null,
     val validation: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("required_when") val requiredWhen: Any? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("required_when") val requiredWhen: Any? = null,
 ) : SdkResource(), RegistrantField
 
-/**
- * Schema definition for registrant fields.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
+/** Schema definition for registrant fields. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "type",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = RegistrantFieldVariant0::class, name = "string"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = RegistrantFieldVariant1::class, name = "enum"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = RegistrantFieldVariant2::class, name = "acknowledgement"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = RegistrantFieldVariant3::class, name = "notice")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = RegistrantFieldVariant0::class,
+        name = "string",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = RegistrantFieldVariant1::class,
+        name = "enum",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = RegistrantFieldVariant2::class,
+        name = "acknowledgement",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = RegistrantFieldVariant3::class,
+        name = "notice",
+    ),
 )
 sealed interface RegistrantField

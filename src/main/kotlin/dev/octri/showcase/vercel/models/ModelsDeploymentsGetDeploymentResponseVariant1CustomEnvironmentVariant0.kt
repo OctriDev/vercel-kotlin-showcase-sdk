@@ -6,67 +6,52 @@ package dev.octri.showcase.vercel.models
 import dev.octri.showcase.vercel.SdkResource
 
 /**
- * If the deployment was created using a Custom Environment, then this property contains information regarding the environment used.
+ * If the deployment was created using a Custom Environment, then this property contains information
+ * regarding the environment used.
  */
 data class GetDeploymentResponseVariant1CustomEnvironmentVariant0(
-    /**
-     * Timestamp when the environment was created
-     */
+    /** Timestamp when the environment was created */
     val createdAt: Double,
-    /**
-     * Unique identifier for the custom environment (format: env_*)
-     */
+    /** Unique identifier for the custom environment (format: env_*) */
     val id: String,
-    /**
-     * URL-friendly name of the environment
-     */
+    /** URL-friendly name of the environment */
     val slug: String,
-    /**
-     * The type of environment (production, preview, or development)
-     */
+    /** The type of environment (production, preview, or development) */
     val type: GetDeploymentResponseVariant1CustomEnvironmentVariant0TypeEnum,
-    /**
-     * Timestamp when the environment was last updated
-     */
+    /** Timestamp when the environment was last updated */
     val updatedAt: Double,
-    /**
-     * Configuration for matching git branches to this environment
-     */
+    /** Configuration for matching git branches to this environment */
     val branchMatcher: GetDeploymentResponseVariant1CustomEnvironmentVariant0BranchMatcher? = null,
-    /**
-     * List of aliases for the current deployment
-     */
+    /** List of aliases for the current deployment */
     val currentDeploymentAliases: List<String>? = null,
-    /**
-     * Optional description of the environment's purpose
-     */
+    /** Optional description of the environment's purpose */
     val description: String? = null,
-    /**
-     * List of domains associated with this environment
-     */
-    val domains: List<GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItem>? = null
+    /** List of domains associated with this environment */
+    val domains: List<GetDeploymentResponseVariant1CustomEnvironmentVariant0DomainsItem>? = null,
 ) : SdkResource()
 
 /**
- * If the deployment was created using a Custom Environment, then this property contains information regarding the environment used.
+ * If the deployment was created using a Custom Environment, then this property contains information
+ * regarding the environment used.
  */
-data class GetDeploymentResponseVariant1CustomEnvironmentVariant1(
-    val id: String
-) : SdkResource()
+data class GetDeploymentResponseVariant1CustomEnvironmentVariant1(val id: String) : SdkResource()
 
 data class GetDeploymentResponseVariant1FlagsVariant0DefinitionsValueOptionsItem(
-    @com.fasterxml.jackson.annotation.JsonProperty("value", required = true) val `value`: FlagJSONValue?,
-    val label: String? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("value", required = true)
+    val `value`: FlagJSONValue?,
+    val label: String? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1FlagsVariant0DefinitionsValue(
     val description: String? = null,
-    val options: List<GetDeploymentResponseVariant1FlagsVariant0DefinitionsValueOptionsItem>? = null,
-    val url: String? = null
+    val options: List<GetDeploymentResponseVariant1FlagsVariant0DefinitionsValueOptionsItem>? =
+        null,
+    val url: String? = null,
 ) : SdkResource()
 
 /**
- * Flags defined in the Build Output API, used by this deployment. Primarily used by the Toolbar to know about the used flags.
+ * Flags defined in the Build Output API, used by this deployment. Primarily used by the Toolbar to
+ * know about the used flags.
  */
 data class GetDeploymentResponseVariant1FlagsVariant0(
     val definitions: Map<String, GetDeploymentResponseVariant1FlagsVariant0DefinitionsValue>
@@ -80,70 +65,71 @@ data class GetDeploymentResponseVariant1FunctionsValueAffinity(
  * Queue trigger input event for v1beta (from vercel.json config). Requires explicit consumer name.
  */
 data class GetDeploymentResponseVariant1FunctionsValueExperimentalTriggeX054bdc2c57(
-    /**
-     * Name of the consumer group for this trigger (REQUIRED)
-     */
+    /** Name of the consumer group for this trigger (REQUIRED) */
     val consumer: String,
-    /**
-     * Name of the queue topic to consume from (REQUIRED)
-     */
+    /** Name of the queue topic to consume from (REQUIRED) */
     val topic: String,
-    /**
-     * Event type - must be "queue/v1beta" (REQUIRED)
-     */
+    /** Event type - must be "queue/v1beta" (REQUIRED) */
     val type: GetDeploymentResponseVariant1FunctionsValueExperimentalTriggeX7f174e5586,
     /**
-     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
+     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use
+     * 0 for no initial delay. Behavior when not specified depends on the server's default
+     * configuration.
      */
     val initialDelaySeconds: Double? = null,
     /**
-     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if
+     * specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxConcurrency: Double? = null,
     /**
-     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the
+     * total number of times a message can be delivered, not the number of retries. Must be at least
+     * 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxDeliveries: Double? = null,
     /**
-     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
+     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified
+     * depends on the server's default configuration.
      */
-    val retryAfterSeconds: Double? = null
+    val retryAfterSeconds: Double? = null,
 ) : SdkResource()
 
 /**
- * Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed.
+ * Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly
+ * derived from the function path. Only one trigger per function is allowed.
  */
 data class GetDeploymentResponseVariant1FunctionsValueExperimentalTriggeX5df84acef8(
-    /**
-     * Name of the queue topic to consume from (REQUIRED)
-     */
+    /** Name of the queue topic to consume from (REQUIRED) */
     val topic: String,
-    /**
-     * Event type - must be "queue/v2beta" (REQUIRED)
-     */
+    /** Event type - must be "queue/v2beta" (REQUIRED) */
     val type: GetDeploymentResponseVariant1FunctionsValueExperimentalTriggeX647b2df223,
     /**
-     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use 0 for no initial delay. Behavior when not specified depends on the server's default configuration.
+     * Initial delay in seconds before first execution attempt (OPTIONAL) Must be 0 or greater. Use
+     * 0 for no initial delay. Behavior when not specified depends on the server's default
+     * configuration.
      */
     val initialDelaySeconds: Double? = null,
     /**
-     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of concurrent executions for this consumer (OPTIONAL) Must be at least 1 if
+     * specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxConcurrency: Double? = null,
     /**
-     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the total number of times a message can be delivered, not the number of retries. Must be at least 1 if specified. Behavior when not specified depends on the server's default configuration.
+     * Maximum number of delivery attempts for message processing (OPTIONAL) This represents the
+     * total number of times a message can be delivered, not the number of retries. Must be at least
+     * 1 if specified. Behavior when not specified depends on the server's default configuration.
      */
     val maxDeliveries: Double? = null,
     /**
-     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified depends on the server's default configuration.
+     * Delay in seconds before retrying failed executions (OPTIONAL) Behavior when not specified
+     * depends on the server's default configuration.
      */
-    val retryAfterSeconds: Double? = null
+    val retryAfterSeconds: Double? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1FunctionsValueExperimentalTriggeX99c7d6c81a(
-    /**
-     * Event type - must be "schedule/v1beta" (REQUIRED)
-     */
+    /** Event type - must be "schedule/v1beta" (REQUIRED) */
     val type: GetDeploymentResponseVariant1FunctionsValueExperimentalTriggeX322bfc49e2
 ) : SdkResource()
 
@@ -159,7 +145,7 @@ data class GetDeploymentResponseVariant1FunctionsValue(
     val memory: Double? = null,
     val regions: List<String>? = null,
     val runtime: String? = null,
-    val supportsCancellation: Boolean? = null
+    val supportsCancellation: Boolean? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitRepoVariant0(
@@ -171,7 +157,7 @@ data class GetDeploymentResponseVariant1GitRepoVariant0(
     @com.fasterxml.jackson.annotation.JsonProperty("private") val `private`: Boolean,
     val projectId: Double,
     val type: GetDeploymentResponseVariant1GitRepoVariant0TypeEnum,
-    val url: String
+    val url: String,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitRepoVariant1(
@@ -184,7 +170,7 @@ data class GetDeploymentResponseVariant1GitRepoVariant1(
     val repo: String,
     val repoId: Double,
     val repoOwnerId: Double,
-    val type: GetDeploymentResponseVariant1GitRepoVariant1TypeEnum
+    val type: GetDeploymentResponseVariant1GitRepoVariant1TypeEnum,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitRepoVariant2(
@@ -197,7 +183,7 @@ data class GetDeploymentResponseVariant1GitRepoVariant2(
     val repoUuid: String,
     val slug: String,
     val type: GetDeploymentResponseVariant1GitRepoVariant2TypeEnum,
-    val workspaceUuid: String
+    val workspaceUuid: String,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitRepoVariant3(
@@ -208,25 +194,21 @@ data class GetDeploymentResponseVariant1GitRepoVariant3(
     val path: String,
     @com.fasterxml.jackson.annotation.JsonProperty("private") val `private`: Boolean,
     val repo: String,
-    val type: GetDeploymentResponseVariant1GitRepoVariant3TypeEnum
+    val type: GetDeploymentResponseVariant1GitRepoVariant3TypeEnum,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitRepoVariant4(
     val defaultBranch: String,
     val name: String,
-    /**
-     * Owner (namespace) slug.
-     */
+    /** Owner (namespace) slug. */
     val owner: String,
     val ownerType: GetDeploymentResponseVariant1GitRepoVariant4OwnerTypeEnum,
     val path: String,
     @com.fasterxml.jackson.annotation.JsonProperty("private") val `private`: Boolean,
     val repo: String,
-    /**
-     * Origin repository id.
-     */
+    /** Origin repository id. */
     val repoId: String,
-    val type: GetDeploymentResponseVariant1GitRepoVariant4TypeEnum
+    val type: GetDeploymentResponseVariant1GitRepoVariant4TypeEnum,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant0(
@@ -234,7 +216,7 @@ data class GetDeploymentResponseVariant1GitSourceVariant0(
     val type: GetDeploymentResponseVariant1GitSourceVariant0TypeEnum,
     val prId: Double? = null,
     val ref: String? = null,
-    val sha: String? = null
+    val sha: String? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant1(
@@ -243,7 +225,7 @@ data class GetDeploymentResponseVariant1GitSourceVariant1(
     val type: GetDeploymentResponseVariant1GitSourceVariant1TypeEnum,
     val prId: Double? = null,
     val ref: String? = null,
-    val sha: String? = null
+    val sha: String? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant2(
@@ -252,7 +234,7 @@ data class GetDeploymentResponseVariant1GitSourceVariant2(
     val type: GetDeploymentResponseVariant1GitSourceVariant2TypeEnum,
     val prId: Double? = null,
     val ref: String? = null,
-    val sha: String? = null
+    val sha: String? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant3(
@@ -262,7 +244,7 @@ data class GetDeploymentResponseVariant1GitSourceVariant3(
     val type: GetDeploymentResponseVariant1GitSourceVariant3TypeEnum,
     val prId: Double? = null,
     val ref: String? = null,
-    val sha: String? = null
+    val sha: String? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant4(
@@ -270,7 +252,7 @@ data class GetDeploymentResponseVariant1GitSourceVariant4(
     val type: GetDeploymentResponseVariant1GitSourceVariant4TypeEnum,
     val prId: Double? = null,
     val ref: String? = null,
-    val sha: String? = null
+    val sha: String? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant5(
@@ -279,7 +261,7 @@ data class GetDeploymentResponseVariant1GitSourceVariant5(
     val type: GetDeploymentResponseVariant1GitSourceVariant5TypeEnum,
     val prId: Double? = null,
     val ref: String? = null,
-    val sha: String? = null
+    val sha: String? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant6(
@@ -287,7 +269,7 @@ data class GetDeploymentResponseVariant1GitSourceVariant6(
     val type: GetDeploymentResponseVariant1GitSourceVariant6TypeEnum,
     val prId: Double? = null,
     val ref: String? = null,
-    val sha: String? = null
+    val sha: String? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant7(
@@ -296,7 +278,7 @@ data class GetDeploymentResponseVariant1GitSourceVariant7(
     val prId: Double? = null,
     val ref: String? = null,
     val sha: String? = null,
-    val workspaceUuid: String? = null
+    val workspaceUuid: String? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant8(
@@ -305,25 +287,25 @@ data class GetDeploymentResponseVariant1GitSourceVariant8(
     val type: GetDeploymentResponseVariant1GitSourceVariant8TypeEnum,
     val prId: Double? = null,
     val ref: String? = null,
-    val sha: String? = null
+    val sha: String? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant9CommitMetadataAuthor(
     val date: String,
     val email: String,
-    val name: String
+    val name: String,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant9CommitMetadataCommitter(
     val date: String,
     val email: String,
-    val name: String
+    val name: String,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant9CommitMetadata(
     val author: GetDeploymentResponseVariant1GitSourceVariant9CommitMetadataAuthor,
     val committer: GetDeploymentResponseVariant1GitSourceVariant9CommitMetadataCommitter,
-    val message: String
+    val message: String,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant9(
@@ -335,33 +317,27 @@ data class GetDeploymentResponseVariant1GitSourceVariant9(
     val prId: Double? = null,
     val ref: String? = null,
     val repo: String? = null,
-    val repoPushedAt: Double? = null
+    val repoPushedAt: Double? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant10(
-    /**
-     * Origin repository id.
-     */
+    /** Origin repository id. */
     val repoId: String,
     val type: GetDeploymentResponseVariant1GitSourceVariant10TypeEnum,
-    /**
-     * Owner (namespace) slug.
-     */
+    /** Owner (namespace) slug. */
     val owner: String? = null,
     val prId: Double? = null,
     val ref: String? = null,
     val repo: String? = null,
-    val sha: String? = null
+    val sha: String? = null,
 ) : SdkResource()
 
-/**
- * Allows custom git sources (local folder mounted to the container) in test mode
- */
+/** Allows custom git sources (local folder mounted to the container) in test mode */
 data class GetDeploymentResponseVariant1GitSourceVariant11(
     val gitUrl: String,
     val ref: String,
     val sha: String,
-    val type: GetDeploymentResponseVariant1GitSourceVariant11TypeEnum
+    val type: GetDeploymentResponseVariant1GitSourceVariant11TypeEnum,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant12(
@@ -370,7 +346,7 @@ data class GetDeploymentResponseVariant1GitSourceVariant12(
     val sha: String,
     val type: GetDeploymentResponseVariant1GitSourceVariant12TypeEnum,
     val org: String? = null,
-    val repo: String? = null
+    val repo: String? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant13(
@@ -380,7 +356,7 @@ data class GetDeploymentResponseVariant1GitSourceVariant13(
     val sha: String,
     val type: GetDeploymentResponseVariant1GitSourceVariant13TypeEnum,
     val org: String? = null,
-    val repo: String? = null
+    val repo: String? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant14(
@@ -389,14 +365,14 @@ data class GetDeploymentResponseVariant1GitSourceVariant14(
     val sha: String,
     val type: GetDeploymentResponseVariant1GitSourceVariant14TypeEnum,
     val org: String? = null,
-    val repo: String? = null
+    val repo: String? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant15(
     val projectId: Double,
     val ref: String,
     val sha: String,
-    val type: GetDeploymentResponseVariant1GitSourceVariant15TypeEnum
+    val type: GetDeploymentResponseVariant1GitSourceVariant15TypeEnum,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant16(
@@ -406,25 +382,25 @@ data class GetDeploymentResponseVariant1GitSourceVariant16(
     val type: GetDeploymentResponseVariant1GitSourceVariant16TypeEnum,
     val workspaceUuid: String,
     val owner: String? = null,
-    val slug: String? = null
+    val slug: String? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant17CommitMetadataAuthor(
     val date: String,
     val email: String,
-    val name: String
+    val name: String,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant17CommitMetadataCommitter(
     val date: String,
     val email: String,
-    val name: String
+    val name: String,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant17CommitMetadata(
     val author: GetDeploymentResponseVariant1GitSourceVariant17CommitMetadataAuthor,
     val committer: GetDeploymentResponseVariant1GitSourceVariant17CommitMetadataCommitter,
-    val message: String
+    val message: String,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant17(
@@ -435,7 +411,7 @@ data class GetDeploymentResponseVariant1GitSourceVariant17(
     val type: GetDeploymentResponseVariant1GitSourceVariant17TypeEnum,
     val commitMetadata: GetDeploymentResponseVariant1GitSourceVariant17CommitMetadata? = null,
     val repoId: String? = null,
-    val repoPushedAt: Double? = null
+    val repoPushedAt: Double? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1GitSourceVariant18(
@@ -444,54 +420,52 @@ data class GetDeploymentResponseVariant1GitSourceVariant18(
     val repo: String,
     val repoId: String,
     val sha: String,
-    val type: GetDeploymentResponseVariant1GitSourceVariant18TypeEnum
+    val type: GetDeploymentResponseVariant1GitSourceVariant18TypeEnum,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1ImagesLocalPatternsItem(
     /**
-     * Can be literal or wildcard. Single `*` matches a single path segment. Double `**` matches any number of path segments.
+     * Can be literal or wildcard. Single `*` matches a single path segment. Double `**` matches any
+     * number of path segments.
      */
     val pathname: String? = null,
-    /**
-     * Can be literal query string such as `?v=1` or empty string meaning no query string.
-     */
-    val search: String? = null
+    /** Can be literal query string such as `?v=1` or empty string meaning no query string. */
+    val search: String? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1ImagesRemotePatternsItem(
     /**
-     * Can be literal or wildcard. Single `*` matches a single subdomain. Double `**` matches any number of subdomains.
+     * Can be literal or wildcard. Single `*` matches a single subdomain. Double `**` matches any
+     * number of subdomains.
      */
     val hostname: String,
     /**
-     * Can be literal or wildcard. Single `*` matches a single path segment. Double `**` matches any number of path segments.
+     * Can be literal or wildcard. Single `*` matches a single path segment. Double `**` matches any
+     * number of path segments.
      */
     val pathname: String? = null,
-    /**
-     * Can be literal port such as `8080` or empty string meaning no port.
-     */
+    /** Can be literal port such as `8080` or empty string meaning no port. */
     val port: String? = null,
-    /**
-     * Must be `http` or `https`.
-     */
+    /** Must be `http` or `https`. */
     val protocol: GetDeploymentResponseVariant1ImagesRemotePatternsItemProtocolEnum? = null,
-    /**
-     * Can be literal query string such as `?v=1` or empty string meaning no query string.
-     */
-    val search: String? = null
+    /** Can be literal query string such as `?v=1` or empty string meaning no query string. */
+    val search: String? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1Images(
-    val contentDispositionType: GetDeploymentResponseVariant1ImagesContentDispositionTypeEnum? = null,
+    val contentDispositionType: GetDeploymentResponseVariant1ImagesContentDispositionTypeEnum? =
+        null,
     val contentSecurityPolicy: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("dangerouslyAllowSVG") val dangerouslyAllowSvg: Boolean? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("dangerouslyAllowSVG")
+    val dangerouslyAllowSvg: Boolean? = null,
     val domains: List<String>? = null,
     val formats: List<GetDeploymentResponseVariant1ImagesFormatsItemEnum>? = null,
     val localPatterns: List<GetDeploymentResponseVariant1ImagesLocalPatternsItem>? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("minimumCacheTTL") val minimumCacheTtl: Double? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("minimumCacheTTL")
+    val minimumCacheTtl: Double? = null,
     val qualities: List<Double>? = null,
     val remotePatterns: List<GetDeploymentResponseVariant1ImagesRemotePatternsItem>? = null,
-    val sizes: List<Double>? = null
+    val sizes: List<Double>? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1Integrations(
@@ -500,74 +474,76 @@ data class GetDeploymentResponseVariant1Integrations(
     val claimedAt: Double? = null,
     val completedAt: Double? = null,
     val skippedAt: Double? = null,
-    val skippedBy: String? = null
+    val skippedBy: String? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1LambdasItemOutputItem(
     val functionName: String,
-    val path: String
+    val path: String,
 ) : SdkResource()
 
-/**
- * A partial representation of a Build used by the deployment endpoint.
- */
+/** A partial representation of a Build used by the deployment endpoint. */
 data class GetDeploymentResponseVariant1LambdasItem(
     val id: String,
     val output: List<GetDeploymentResponseVariant1LambdasItemOutputItem>,
     val createdAt: Double? = null,
     val entrypoint: String? = null,
     val readyState: GetDeploymentResponseVariant1LambdasItemReadyStateEnum? = null,
-    val readyStateAt: Double? = null
+    val readyStateAt: Double? = null,
 ) : SdkResource()
 
 /**
- * Present when deployment was created with manual provisioning enabled, either explicitly or via the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.
+ * Present when deployment was created with manual provisioning enabled, either explicitly or via
+ * the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.
  */
 data class GetDeploymentResponseVariant1ManualProvisioning(
-    /**
-     * Current provisioning state
-     */
+    /** Current provisioning state */
     val state: GetDeploymentResponseVariant1ManualProvisioningStateEnum,
-    /**
-     * Timestamp when manual provisioning completed
-     */
-    val completedAt: Double? = null
+    /** Timestamp when manual provisioning completed */
+    val completedAt: Double? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1MicrofrontendsVariant0(
-    /**
-     * The project name of the default app of this deployment's microfrontends group.
-     */
+    /** The project name of the default app of this deployment's microfrontends group. */
     val defaultAppProjectName: String,
     /**
-     * The group of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
+     * The group of microfrontends that this project belongs to. Each microfrontend project must
+     * belong to a microfrontends group that is the set of microfrontends that are used together.
      */
     val groupIds: List<String>,
     /**
-     * A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI.
+     * A path that is used to take screenshots and as the default path in preview links when a
+     * domain for this microfrontend is shown in the UI.
      */
     val defaultRoute: String? = null,
-    val isDefaultApp: Boolean? = null
+    val isDefaultApp: Boolean? = null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1MicrofrontendsVariant1(
-    /**
-     * The project name of the default app of this deployment's microfrontends group.
-     */
+    /** The project name of the default app of this deployment's microfrontends group. */
     val defaultAppProjectName: String,
     /**
-     * The group of microfrontends that this project belongs to. Each microfrontend project must belong to a microfrontends group that is the set of microfrontends that are used together.
+     * The group of microfrontends that this project belongs to. Each microfrontend project must
+     * belong to a microfrontends group that is the set of microfrontends that are used together.
      */
     val groupIds: List<String>,
     val isDefaultApp: Boolean,
     /**
-     * A path that is used to take screenshots and as the default path in preview links when a domain for this microfrontend is shown in the UI.
+     * A path that is used to take screenshots and as the default path in preview links when a
+     * domain for this microfrontend is shown in the UI.
      */
     val defaultRoute: String? = null,
     /**
-     * The result of the microfrontends config upload during deployment creation / build. Only set for default app deployments. The config upload is attempted during deployment create, and then again during the build. If the config is not in the root directory, or the deployment is prebuilt, the config cannot be uploaded during deployment create. The upload during deployment build finds the config even if it's not in the root directory, as it has access to all files. Uploading the…
+     * The result of the microfrontends config upload during deployment creation / build. Only set
+     * for default app deployments. The config upload is attempted during deployment create, and
+     * then again during the build. If the config is not in the root directory, or the deployment is
+     * prebuilt, the config cannot be uploaded during deployment create. The upload during
+     * deployment build finds the config even if it's not in the root directory, as it has access to
+     * all files. Uploading the…
      */
-    val mfeConfigUploadState: GetDeploymentResponseVariant1MicrofrontendsVariant1MfeConfigUXd1f1771235? = null
+    val mfeConfigUploadState:
+        GetDeploymentResponseVariant1MicrofrontendsVariant1MfeConfigUXd1f1771235? =
+        null,
 ) : SdkResource()
 
 data class GetDeploymentResponseVariant1OidcTokenClaims(
@@ -580,22 +556,19 @@ data class GetDeploymentResponseVariant1OidcTokenClaims(
     @com.fasterxml.jackson.annotation.JsonProperty("project_id") val projectId: String,
     val scope: String,
     val sub: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("custom_environment_id") val customEnvironmentId: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("deployment_id") val deploymentId: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("mfe_group_ids") val mfeGroupIds: List<String>? = null,
-    val plan: String? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("custom_environment_id")
+    val customEnvironmentId: String? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("deployment_id")
+    val deploymentId: String? = null,
+    @com.fasterxml.jackson.annotation.JsonProperty("mfe_group_ids")
+    val mfeGroupIds: List<String>? = null,
+    val plan: String? = null,
 ) : SdkResource()
 
-/**
- * The user on the external platform who triggered the deployment.
- */
+/** The user on the external platform who triggered the deployment. */
 data class GetDeploymentResponseVariant1PlatformCreator(
-    /**
-     * Display name of the platform user.
-     */
+    /** Display name of the platform user. */
     val name: String,
-    /**
-     * URL of the platform user's avatar image.
-     */
-    val avatar: String? = null
+    /** URL of the platform user's avatar image. */
+    val avatar: String? = null,
 ) : SdkResource()

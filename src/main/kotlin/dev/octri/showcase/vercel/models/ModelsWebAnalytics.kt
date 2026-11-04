@@ -5,7 +5,12 @@ package dev.octri.showcase.vercel.models
 
 import dev.octri.showcase.vercel.SdkResource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CountEventsResponseDataVariant0(
     val browserName: String,
     val country: String,
@@ -26,30 +31,44 @@ data class CountEventsResponseDataVariant0(
     val utmMedium: String,
     val utmSource: String,
     val utmTerm: String,
-    val visitorId: String
+    val visitorId: String,
 ) : SdkResource(), CountEventsResponseData {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CountEventsResponseDataVariant1(
     val count: Double,
-    val visitors: Double
+    val visitors: Double,
 ) : SdkResource(), CountEventsResponseData
 
-/**
- * Typed representation of the `CountEventsResponseData` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION)
+/** Typed representation of the `CountEventsResponseData` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CountEventsResponseDataVariant0::class),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CountEventsResponseDataVariant1::class)
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CountEventsResponseDataVariant0::class
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CountEventsResponseDataVariant1::class
+    ),
 )
 sealed interface CountEventsResponseData
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CountPageviewsResponseDataVariant0(
     val browserName: String,
     val country: String,
@@ -68,25 +87,34 @@ data class CountPageviewsResponseDataVariant0(
     val utmMedium: String,
     val utmSource: String,
     val utmTerm: String,
-    val visitorId: String
+    val visitorId: String,
 ) : SdkResource(), CountPageviewsResponseData {
     @field:com.fasterxml.jackson.annotation.JsonAnySetter
     @get:com.fasterxml.jackson.annotation.JsonAnyGetter
     val additionalProperties: MutableMap<String, Any?> = linkedMapOf()
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CountPageviewsResponseDataVariant1(
     val pageviews: Double,
-    val visitors: Double
+    val visitors: Double,
 ) : SdkResource(), CountPageviewsResponseData
 
-/**
- * Typed representation of the `CountPageviewsResponseData` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION)
+/** Typed representation of the `CountPageviewsResponseData` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.DEDUCTION
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CountPageviewsResponseDataVariant0::class),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CountPageviewsResponseDataVariant1::class)
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CountPageviewsResponseDataVariant0::class
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CountPageviewsResponseDataVariant1::class
+    ),
 )
 sealed interface CountPageviewsResponseData

@@ -3,49 +3,58 @@
 
 package dev.octri.showcase.vercel.models
 
-/**
- * Required enumerated value serialized in the `onPullRequest` wire field.
- */
-class UserEventPayloadVariant120JobVariant6GitCommentsOnPullRequestEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant6GitCommentsOnPullRequestEnum && value == other.value
+/** Required enumerated value serialized in the `onPullRequest` wire field. */
+class UserEventPayloadVariant120JobVariant6GitCommentsOnPullRequestEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant6GitCommentsOnPullRequestEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = UserEventPayloadVariant120JobVariant6GitCommentsOnPullRequestEnum(false)
+        @JvmField
+        val FALSE = UserEventPayloadVariant120JobVariant6GitCommentsOnPullRequestEnum(false)
         @JvmField val TRUE = UserEventPayloadVariant120JobVariant6GitCommentsOnPullRequestEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant6GitCommentsOnPullRequestEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UserEventPayloadVariant120JobVariant6GitCommentsOnPullRequestEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `provider` wire field.
- */
-class UserEventPayloadVariant120JobVariant6ProviderEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant6ProviderEnum && value == other.value
+/** Required enumerated value serialized in the `provider` wire field. */
+class UserEventPayloadVariant120JobVariant6ProviderEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant6ProviderEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val GITLAB = UserEventPayloadVariant120JobVariant6ProviderEnum("gitlab")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UserEventPayloadVariant120JobVariant6ProviderEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = UserEventPayloadVariant120JobVariant6ProviderEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `type` wire field.
- */
-enum class UserEventPayloadVariant120JobVariant6TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/** Required enumerated value serialized in the `type` wire field. */
+enum class UserEventPayloadVariant120JobVariant6TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     GITLAB_NOW_COMMENT("gitlab-now-comment");
 
     override fun toString() = value
@@ -53,19 +62,20 @@ enum class UserEventPayloadVariant120JobVariant6TypeEnum(@com.fasterxml.jackson.
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/**
- * Optional enumerated value serialized in the `authorized` wire field.
- */
-class UserEventPayloadVariant120JobVariant7AuthorizedEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant7AuthorizedEnum && value == other.value
+/** Optional enumerated value serialized in the `authorized` wire field. */
+class UserEventPayloadVariant120JobVariant7AuthorizedEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant7AuthorizedEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -73,40 +83,55 @@ class UserEventPayloadVariant120JobVariant7AuthorizedEnum private constructor(
         @JvmField val FALSE = UserEventPayloadVariant120JobVariant7AuthorizedEnum(false)
         @JvmField val TRUE = UserEventPayloadVariant120JobVariant7AuthorizedEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant7AuthorizedEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant7AuthorizedEnum(value)
     }
 }
 
 /**
- * Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
+ * Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified -
+ * 'unverified' if the commit is not verified - 'unknown' if the commit verification status is
+ * unknown or not supported
  */
-class UserEventPayloadVariant120JobVariant7CommitVerificationEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant7CommitVerificationEnum && value == other.value
+class UserEventPayloadVariant120JobVariant7CommitVerificationEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant7CommitVerificationEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val UNKNOWN = UserEventPayloadVariant120JobVariant7CommitVerificationEnum("unknown")
-        @JvmField val UNVERIFIED = UserEventPayloadVariant120JobVariant7CommitVerificationEnum("unverified")
-        @JvmField val VERIFIED = UserEventPayloadVariant120JobVariant7CommitVerificationEnum("verified")
+        @JvmField
+        val UNKNOWN = UserEventPayloadVariant120JobVariant7CommitVerificationEnum("unknown")
+        @JvmField
+        val UNVERIFIED = UserEventPayloadVariant120JobVariant7CommitVerificationEnum("unverified")
+        @JvmField
+        val VERIFIED = UserEventPayloadVariant120JobVariant7CommitVerificationEnum("verified")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UserEventPayloadVariant120JobVariant7CommitVerificationEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            UserEventPayloadVariant120JobVariant7CommitVerificationEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `onCommit` wire field.
- */
-class UserEventPayloadVariant120JobVariant7GitCommentsOnCommitEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant7GitCommentsOnCommitEnum && value == other.value
+/** Required enumerated value serialized in the `onCommit` wire field. */
+class UserEventPayloadVariant120JobVariant7GitCommentsOnCommitEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant7GitCommentsOnCommitEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -114,76 +139,149 @@ class UserEventPayloadVariant120JobVariant7GitCommentsOnCommitEnum private const
         @JvmField val FALSE = UserEventPayloadVariant120JobVariant7GitCommentsOnCommitEnum(false)
         @JvmField val TRUE = UserEventPayloadVariant120JobVariant7GitCommentsOnCommitEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant7GitCommentsOnCommitEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UserEventPayloadVariant120JobVariant7GitCommentsOnCommitEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `onPullRequest` wire field.
- */
-class UserEventPayloadVariant120JobVariant7GitCommentsOnPullRequestEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant7GitCommentsOnPullRequestEnum && value == other.value
+/** Required enumerated value serialized in the `onPullRequest` wire field. */
+class UserEventPayloadVariant120JobVariant7GitCommentsOnPullRequestEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant7GitCommentsOnPullRequestEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = UserEventPayloadVariant120JobVariant7GitCommentsOnPullRequestEnum(false)
+        @JvmField
+        val FALSE = UserEventPayloadVariant120JobVariant7GitCommentsOnPullRequestEnum(false)
         @JvmField val TRUE = UserEventPayloadVariant120JobVariant7GitCommentsOnPullRequestEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant7GitCommentsOnPullRequestEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UserEventPayloadVariant120JobVariant7GitCommentsOnPullRequestEnum(value)
     }
 }
 
 /**
- * Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
+ * Since February 2022 All the hashtag-vercel tags found in the commit message triggering the
+ * deploy. For example, #VERCEL_DO_SOMETHING
  */
-class UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum && value == other.value
+class UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val VERCEL_BUILD_MACHINE_TURBO = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_MACHINE=TURBO")
-        @JvmField val VERCEL_BUILD_PRIO_1 = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_1")
-        @JvmField val VERCEL_BUILD_PRIO_10 = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_10")
-        @JvmField val VERCEL_BUILD_PRIO_2 = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_2")
-        @JvmField val VERCEL_BUILD_PRIO_3 = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_3")
-        @JvmField val VERCEL_BUILD_PRIO_4 = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_4")
-        @JvmField val VERCEL_BUILD_PRIO_5 = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_5")
-        @JvmField val VERCEL_BUILD_PRIO_6 = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_6")
-        @JvmField val VERCEL_BUILD_PRIO_7 = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_7")
-        @JvmField val VERCEL_BUILD_PRIO_8 = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_8")
-        @JvmField val VERCEL_BUILD_PRIO_9 = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_9")
-        @JvmField val VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL")
-        @JvmField val VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR")
-        @JvmField val VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL")
-        @JvmField val VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR")
-        @JvmField val VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR")
-        @JvmField val VERCEL_SDDJ_FORCE_GIT_FORK_ERROR = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR")
-        @JvmField val VERCEL_SKIP = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_SKIP")
-        @JvmField val VERCEL_V0_MESSAGE = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_V0_MESSAGE")
+        @JvmField
+        val VERCEL_BUILD_MACHINE_TURBO =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum(
+                "#VERCEL_BUILD_MACHINE=TURBO"
+            )
+        @JvmField
+        val VERCEL_BUILD_PRIO_1 =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_1")
+        @JvmField
+        val VERCEL_BUILD_PRIO_10 =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_10")
+        @JvmField
+        val VERCEL_BUILD_PRIO_2 =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_2")
+        @JvmField
+        val VERCEL_BUILD_PRIO_3 =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_3")
+        @JvmField
+        val VERCEL_BUILD_PRIO_4 =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_4")
+        @JvmField
+        val VERCEL_BUILD_PRIO_5 =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_5")
+        @JvmField
+        val VERCEL_BUILD_PRIO_6 =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_6")
+        @JvmField
+        val VERCEL_BUILD_PRIO_7 =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_7")
+        @JvmField
+        val VERCEL_BUILD_PRIO_8 =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_8")
+        @JvmField
+        val VERCEL_BUILD_PRIO_9 =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_9")
+        @JvmField
+        val VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum(
+                "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
+            )
+        @JvmField
+        val VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum(
+                "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
+            )
+        @JvmField
+        val VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum(
+                "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
+            )
+        @JvmField
+        val VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum(
+                "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
+            )
+        @JvmField
+        val VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum(
+                "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
+            )
+        @JvmField
+        val VERCEL_SDDJ_FORCE_GIT_FORK_ERROR =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum(
+                "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
+            )
+        @JvmField
+        val VERCEL_SKIP =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_SKIP")
+        @JvmField
+        val VERCEL_V0_MESSAGE =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum("#VERCEL_V0_MESSAGE")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            UserEventPayloadVariant120JobVariant7GitHashtagVercelItemEnum(value)
     }
 }
 
 /**
- * Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
+ * Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git
+ * deployment
  */
-class UserEventPayloadVariant120JobVariant7IsManualGitDeployEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant7IsManualGitDeployEnum && value == other.value
+class UserEventPayloadVariant120JobVariant7IsManualGitDeployEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant7IsManualGitDeployEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -191,54 +289,72 @@ class UserEventPayloadVariant120JobVariant7IsManualGitDeployEnum private constru
         @JvmField val FALSE = UserEventPayloadVariant120JobVariant7IsManualGitDeployEnum(false)
         @JvmField val TRUE = UserEventPayloadVariant120JobVariant7IsManualGitDeployEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant7IsManualGitDeployEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UserEventPayloadVariant120JobVariant7IsManualGitDeployEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `action` wire field.
- */
-class UserEventPayloadVariant120JobVariant7NsnbSideEffectActionEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant7NsnbSideEffectActionEnum && value == other.value
+/** Required enumerated value serialized in the `action` wire field. */
+class UserEventPayloadVariant120JobVariant7NsnbSideEffectActionEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant7NsnbSideEffectActionEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val AUTO_APPROVED_MEMBER = UserEventPayloadVariant120JobVariant7NsnbSideEffectActionEnum("auto-approved-member")
-        @JvmField val AUTO_APPROVED_PENDING_INVITE = UserEventPayloadVariant120JobVariant7NsnbSideEffectActionEnum("auto-approved-pending-invite")
+        @JvmField
+        val AUTO_APPROVED_MEMBER =
+            UserEventPayloadVariant120JobVariant7NsnbSideEffectActionEnum("auto-approved-member")
+        @JvmField
+        val AUTO_APPROVED_PENDING_INVITE =
+            UserEventPayloadVariant120JobVariant7NsnbSideEffectActionEnum(
+                "auto-approved-pending-invite"
+            )
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UserEventPayloadVariant120JobVariant7NsnbSideEffectActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            UserEventPayloadVariant120JobVariant7NsnbSideEffectActionEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `provider` wire field.
- */
-class UserEventPayloadVariant120JobVariant7ProviderEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant7ProviderEnum && value == other.value
+/** Required enumerated value serialized in the `provider` wire field. */
+class UserEventPayloadVariant120JobVariant7ProviderEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant7ProviderEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val VERCEL = UserEventPayloadVariant120JobVariant7ProviderEnum("vercel")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UserEventPayloadVariant120JobVariant7ProviderEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = UserEventPayloadVariant120JobVariant7ProviderEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `type` wire field.
- */
-enum class UserEventPayloadVariant120JobVariant7TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/** Required enumerated value serialized in the `type` wire field. */
+enum class UserEventPayloadVariant120JobVariant7TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     VERCEL_PUSH("vercel-push");
 
     override fun toString() = value
@@ -246,19 +362,20 @@ enum class UserEventPayloadVariant120JobVariant7TypeEnum(@com.fasterxml.jackson.
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/**
- * Optional enumerated value serialized in the `authorized` wire field.
- */
-class UserEventPayloadVariant120JobVariant8AuthorizedEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant8AuthorizedEnum && value == other.value
+/** Optional enumerated value serialized in the `authorized` wire field. */
+class UserEventPayloadVariant120JobVariant8AuthorizedEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant8AuthorizedEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -266,40 +383,54 @@ class UserEventPayloadVariant120JobVariant8AuthorizedEnum private constructor(
         @JvmField val FALSE = UserEventPayloadVariant120JobVariant8AuthorizedEnum(false)
         @JvmField val TRUE = UserEventPayloadVariant120JobVariant8AuthorizedEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant8AuthorizedEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant8AuthorizedEnum(value)
     }
 }
 
 /**
- * Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported
+ * Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified -
+ * 'unverified' if the commit is not verified - 'unknown' if the commit verification status is
+ * unknown or not supported
  */
-class UserEventPayloadVariant120JobVariant8CommitVerificationEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant8CommitVerificationEnum && value == other.value
+class UserEventPayloadVariant120JobVariant8CommitVerificationEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant8CommitVerificationEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val UNKNOWN = UserEventPayloadVariant120JobVariant8CommitVerificationEnum("unknown")
-        @JvmField val UNVERIFIED = UserEventPayloadVariant120JobVariant8CommitVerificationEnum("unverified")
-        @JvmField val VERIFIED = UserEventPayloadVariant120JobVariant8CommitVerificationEnum("verified")
+        @JvmField
+        val UNKNOWN = UserEventPayloadVariant120JobVariant8CommitVerificationEnum("unknown")
+        @JvmField
+        val UNVERIFIED = UserEventPayloadVariant120JobVariant8CommitVerificationEnum("unverified")
+        @JvmField
+        val VERIFIED = UserEventPayloadVariant120JobVariant8CommitVerificationEnum("verified")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UserEventPayloadVariant120JobVariant8CommitVerificationEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            UserEventPayloadVariant120JobVariant8CommitVerificationEnum(value)
     }
 }
 
-/**
- * Optional enumerated value serialized in the `eventful` wire field.
- */
-class UserEventPayloadVariant120JobVariant8EventfulEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant8EventfulEnum && value == other.value
+/** Optional enumerated value serialized in the `eventful` wire field. */
+class UserEventPayloadVariant120JobVariant8EventfulEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant8EventfulEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -307,19 +438,22 @@ class UserEventPayloadVariant120JobVariant8EventfulEnum private constructor(
         @JvmField val FALSE = UserEventPayloadVariant120JobVariant8EventfulEnum(false)
         @JvmField val TRUE = UserEventPayloadVariant120JobVariant8EventfulEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant8EventfulEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant8EventfulEnum(value)
     }
 }
 
-/**
- * Optional enumerated value serialized in the `forced` wire field.
- */
-class UserEventPayloadVariant120JobVariant8ForcedEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant8ForcedEnum && value == other.value
+/** Optional enumerated value serialized in the `forced` wire field. */
+class UserEventPayloadVariant120JobVariant8ForcedEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant8ForcedEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -327,19 +461,22 @@ class UserEventPayloadVariant120JobVariant8ForcedEnum private constructor(
         @JvmField val FALSE = UserEventPayloadVariant120JobVariant8ForcedEnum(false)
         @JvmField val TRUE = UserEventPayloadVariant120JobVariant8ForcedEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant8ForcedEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant8ForcedEnum(value)
     }
 }
 
-/**
- * Optional enumerated value serialized in the `forceNew` wire field.
- */
-class UserEventPayloadVariant120JobVariant8ForceNewEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant8ForceNewEnum && value == other.value
+/** Optional enumerated value serialized in the `forceNew` wire field. */
+class UserEventPayloadVariant120JobVariant8ForceNewEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant8ForceNewEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -347,19 +484,23 @@ class UserEventPayloadVariant120JobVariant8ForceNewEnum private constructor(
         @JvmField val FALSE = UserEventPayloadVariant120JobVariant8ForceNewEnum(false)
         @JvmField val TRUE = UserEventPayloadVariant120JobVariant8ForceNewEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant8ForceNewEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant8ForceNewEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `onCommit` wire field.
- */
-class UserEventPayloadVariant120JobVariant8GitCommentsOnCommitEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant8GitCommentsOnCommitEnum && value == other.value
+/** Required enumerated value serialized in the `onCommit` wire field. */
+class UserEventPayloadVariant120JobVariant8GitCommentsOnCommitEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant8GitCommentsOnCommitEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -367,76 +508,149 @@ class UserEventPayloadVariant120JobVariant8GitCommentsOnCommitEnum private const
         @JvmField val FALSE = UserEventPayloadVariant120JobVariant8GitCommentsOnCommitEnum(false)
         @JvmField val TRUE = UserEventPayloadVariant120JobVariant8GitCommentsOnCommitEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant8GitCommentsOnCommitEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UserEventPayloadVariant120JobVariant8GitCommentsOnCommitEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `onPullRequest` wire field.
- */
-class UserEventPayloadVariant120JobVariant8GitCommentsOnPullRequestEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant8GitCommentsOnPullRequestEnum && value == other.value
+/** Required enumerated value serialized in the `onPullRequest` wire field. */
+class UserEventPayloadVariant120JobVariant8GitCommentsOnPullRequestEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant8GitCommentsOnPullRequestEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = UserEventPayloadVariant120JobVariant8GitCommentsOnPullRequestEnum(false)
+        @JvmField
+        val FALSE = UserEventPayloadVariant120JobVariant8GitCommentsOnPullRequestEnum(false)
         @JvmField val TRUE = UserEventPayloadVariant120JobVariant8GitCommentsOnPullRequestEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant8GitCommentsOnPullRequestEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UserEventPayloadVariant120JobVariant8GitCommentsOnPullRequestEnum(value)
     }
 }
 
 /**
- * Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING
+ * Since February 2022 All the hashtag-vercel tags found in the commit message triggering the
+ * deploy. For example, #VERCEL_DO_SOMETHING
  */
-class UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum && value == other.value
+class UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val VERCEL_BUILD_MACHINE_TURBO = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_MACHINE=TURBO")
-        @JvmField val VERCEL_BUILD_PRIO_1 = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_1")
-        @JvmField val VERCEL_BUILD_PRIO_10 = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_10")
-        @JvmField val VERCEL_BUILD_PRIO_2 = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_2")
-        @JvmField val VERCEL_BUILD_PRIO_3 = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_3")
-        @JvmField val VERCEL_BUILD_PRIO_4 = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_4")
-        @JvmField val VERCEL_BUILD_PRIO_5 = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_5")
-        @JvmField val VERCEL_BUILD_PRIO_6 = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_6")
-        @JvmField val VERCEL_BUILD_PRIO_7 = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_7")
-        @JvmField val VERCEL_BUILD_PRIO_8 = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_8")
-        @JvmField val VERCEL_BUILD_PRIO_9 = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_9")
-        @JvmField val VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL")
-        @JvmField val VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR")
-        @JvmField val VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL")
-        @JvmField val VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR")
-        @JvmField val VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR")
-        @JvmField val VERCEL_SDDJ_FORCE_GIT_FORK_ERROR = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR")
-        @JvmField val VERCEL_SKIP = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_SKIP")
-        @JvmField val VERCEL_V0_MESSAGE = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_V0_MESSAGE")
+        @JvmField
+        val VERCEL_BUILD_MACHINE_TURBO =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum(
+                "#VERCEL_BUILD_MACHINE=TURBO"
+            )
+        @JvmField
+        val VERCEL_BUILD_PRIO_1 =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_1")
+        @JvmField
+        val VERCEL_BUILD_PRIO_10 =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_10")
+        @JvmField
+        val VERCEL_BUILD_PRIO_2 =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_2")
+        @JvmField
+        val VERCEL_BUILD_PRIO_3 =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_3")
+        @JvmField
+        val VERCEL_BUILD_PRIO_4 =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_4")
+        @JvmField
+        val VERCEL_BUILD_PRIO_5 =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_5")
+        @JvmField
+        val VERCEL_BUILD_PRIO_6 =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_6")
+        @JvmField
+        val VERCEL_BUILD_PRIO_7 =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_7")
+        @JvmField
+        val VERCEL_BUILD_PRIO_8 =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_8")
+        @JvmField
+        val VERCEL_BUILD_PRIO_9 =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_BUILD_PRIO_9")
+        @JvmField
+        val VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum(
+                "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL"
+            )
+        @JvmField
+        val VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum(
+                "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR"
+            )
+        @JvmField
+        val VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum(
+                "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL"
+            )
+        @JvmField
+        val VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum(
+                "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR"
+            )
+        @JvmField
+        val VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum(
+                "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR"
+            )
+        @JvmField
+        val VERCEL_SDDJ_FORCE_GIT_FORK_ERROR =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum(
+                "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR"
+            )
+        @JvmField
+        val VERCEL_SKIP =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_SKIP")
+        @JvmField
+        val VERCEL_V0_MESSAGE =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum("#VERCEL_V0_MESSAGE")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            UserEventPayloadVariant120JobVariant8GitHashtagVercelItemEnum(value)
     }
 }
 
 /**
- * Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment
+ * Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git
+ * deployment
  */
-class UserEventPayloadVariant120JobVariant8IsManualGitDeployEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant8IsManualGitDeployEnum && value == other.value
+class UserEventPayloadVariant120JobVariant8IsManualGitDeployEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant8IsManualGitDeployEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -444,54 +658,73 @@ class UserEventPayloadVariant120JobVariant8IsManualGitDeployEnum private constru
         @JvmField val FALSE = UserEventPayloadVariant120JobVariant8IsManualGitDeployEnum(false)
         @JvmField val TRUE = UserEventPayloadVariant120JobVariant8IsManualGitDeployEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant8IsManualGitDeployEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UserEventPayloadVariant120JobVariant8IsManualGitDeployEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `action` wire field.
- */
-class UserEventPayloadVariant120JobVariant8NsnbSideEffectActionEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant8NsnbSideEffectActionEnum && value == other.value
+/** Required enumerated value serialized in the `action` wire field. */
+class UserEventPayloadVariant120JobVariant8NsnbSideEffectActionEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant8NsnbSideEffectActionEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val AUTO_APPROVED_MEMBER = UserEventPayloadVariant120JobVariant8NsnbSideEffectActionEnum("auto-approved-member")
-        @JvmField val AUTO_APPROVED_PENDING_INVITE = UserEventPayloadVariant120JobVariant8NsnbSideEffectActionEnum("auto-approved-pending-invite")
+        @JvmField
+        val AUTO_APPROVED_MEMBER =
+            UserEventPayloadVariant120JobVariant8NsnbSideEffectActionEnum("auto-approved-member")
+        @JvmField
+        val AUTO_APPROVED_PENDING_INVITE =
+            UserEventPayloadVariant120JobVariant8NsnbSideEffectActionEnum(
+                "auto-approved-pending-invite"
+            )
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UserEventPayloadVariant120JobVariant8NsnbSideEffectActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            UserEventPayloadVariant120JobVariant8NsnbSideEffectActionEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `provider` wire field.
- */
-class UserEventPayloadVariant120JobVariant8ProviderEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant8ProviderEnum && value == other.value
+/** Required enumerated value serialized in the `provider` wire field. */
+class UserEventPayloadVariant120JobVariant8ProviderEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant8ProviderEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CURSOR_ORIGIN = UserEventPayloadVariant120JobVariant8ProviderEnum("cursor-origin")
+        @JvmField
+        val CURSOR_ORIGIN = UserEventPayloadVariant120JobVariant8ProviderEnum("cursor-origin")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UserEventPayloadVariant120JobVariant8ProviderEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = UserEventPayloadVariant120JobVariant8ProviderEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `type` wire field.
- */
-enum class UserEventPayloadVariant120JobVariant8TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/** Required enumerated value serialized in the `type` wire field. */
+enum class UserEventPayloadVariant120JobVariant8TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     CURSOR_ORIGIN_PUSH("cursor-origin-push");
 
     override fun toString() = value
@@ -499,19 +732,20 @@ enum class UserEventPayloadVariant120JobVariant8TypeEnum(@com.fasterxml.jackson.
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/**
- * Optional enumerated value serialized in the `eventful` wire field.
- */
-class UserEventPayloadVariant120JobVariant9EventfulEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant9EventfulEnum && value == other.value
+/** Optional enumerated value serialized in the `eventful` wire field. */
+class UserEventPayloadVariant120JobVariant9EventfulEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant9EventfulEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -519,19 +753,23 @@ class UserEventPayloadVariant120JobVariant9EventfulEnum private constructor(
         @JvmField val FALSE = UserEventPayloadVariant120JobVariant9EventfulEnum(false)
         @JvmField val TRUE = UserEventPayloadVariant120JobVariant9EventfulEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant9EventfulEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant9EventfulEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `onCommit` wire field.
- */
-class UserEventPayloadVariant120JobVariant9GitCommentsOnCommitEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant9GitCommentsOnCommitEnum && value == other.value
+/** Required enumerated value serialized in the `onCommit` wire field. */
+class UserEventPayloadVariant120JobVariant9GitCommentsOnCommitEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant9GitCommentsOnCommitEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -539,54 +777,68 @@ class UserEventPayloadVariant120JobVariant9GitCommentsOnCommitEnum private const
         @JvmField val FALSE = UserEventPayloadVariant120JobVariant9GitCommentsOnCommitEnum(false)
         @JvmField val TRUE = UserEventPayloadVariant120JobVariant9GitCommentsOnCommitEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant9GitCommentsOnCommitEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UserEventPayloadVariant120JobVariant9GitCommentsOnCommitEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `onPullRequest` wire field.
- */
-class UserEventPayloadVariant120JobVariant9GitCommentsOnPullRequestEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant9GitCommentsOnPullRequestEnum && value == other.value
+/** Required enumerated value serialized in the `onPullRequest` wire field. */
+class UserEventPayloadVariant120JobVariant9GitCommentsOnPullRequestEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant9GitCommentsOnPullRequestEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = UserEventPayloadVariant120JobVariant9GitCommentsOnPullRequestEnum(false)
+        @JvmField
+        val FALSE = UserEventPayloadVariant120JobVariant9GitCommentsOnPullRequestEnum(false)
         @JvmField val TRUE = UserEventPayloadVariant120JobVariant9GitCommentsOnPullRequestEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UserEventPayloadVariant120JobVariant9GitCommentsOnPullRequestEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            UserEventPayloadVariant120JobVariant9GitCommentsOnPullRequestEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `provider` wire field.
- */
-class UserEventPayloadVariant120JobVariant9ProviderEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventPayloadVariant120JobVariant9ProviderEnum && value == other.value
+/** Required enumerated value serialized in the `provider` wire field. */
+class UserEventPayloadVariant120JobVariant9ProviderEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventPayloadVariant120JobVariant9ProviderEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CURSOR_ORIGIN = UserEventPayloadVariant120JobVariant9ProviderEnum("cursor-origin")
+        @JvmField
+        val CURSOR_ORIGIN = UserEventPayloadVariant120JobVariant9ProviderEnum("cursor-origin")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UserEventPayloadVariant120JobVariant9ProviderEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = UserEventPayloadVariant120JobVariant9ProviderEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `type` wire field.
- */
-enum class UserEventPayloadVariant120JobVariant9TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+/** Required enumerated value serialized in the `type` wire field. */
+enum class UserEventPayloadVariant120JobVariant9TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     CURSOR_ORIGIN_NOW_COMMENT("cursor-origin-now-comment");
 
     override fun toString() = value
@@ -594,7 +846,8 @@ enum class UserEventPayloadVariant120JobVariant9TypeEnum(@com.fasterxml.jackson.
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }

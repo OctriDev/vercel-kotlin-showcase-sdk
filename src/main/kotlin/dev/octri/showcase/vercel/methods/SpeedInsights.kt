@@ -11,27 +11,46 @@ import dev.octri.showcase.vercel.SdkResponse
 
 object SpeedInsights {
 
-data class CreateSpeedInsightsToggleResponse(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Boolean
-) : SdkResource()
+    data class CreateSpeedInsightsToggleResponse(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Boolean
+    ) : SdkResource()
 
     /**
-     * Updates the Speed Insights toggle for a project. Provide the `value` field to set the toggle state, and use `projectId` to select the project. The response confirms the resulting toggle value.
+     * Updates the Speed Insights toggle for a project. Provide the `value` field to set the toggle
+     * state, and use `projectId` to select the project. The response confirms the resulting toggle
+     * value.
      */
-    fun createSpeedInsightsToggle(clientConfig: ClientConfig, projectId: String, value: Boolean, options: RequestOptions? = null): CreateSpeedInsightsToggleResponse {
-        return createSpeedInsightsToggleWithRawResponse(clientConfig, projectId, value, options).data
+    fun createSpeedInsightsToggle(
+        clientConfig: ClientConfig,
+        projectId: String,
+        value: Boolean,
+        options: RequestOptions? = null,
+    ): CreateSpeedInsightsToggleResponse {
+        return createSpeedInsightsToggleWithRawResponse(clientConfig, projectId, value, options)
+            .data
     }
 
-
-    /** [createSpeedInsightsToggle], returning the [SdkResponse] envelope: status code, headers, request ID and latency. */
-    fun createSpeedInsightsToggleWithRawResponse(clientConfig: ClientConfig, projectId: String, value: Boolean, options: RequestOptions? = null): SdkResponse<CreateSpeedInsightsToggleResponse> {
-        return SdkClient.request<CreateSpeedInsightsToggleResponse>(SdkClient.RequestSpec("POST", "/speed-insights/toggle", config = clientConfig, query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true)), body = SdkClient.bodyMap("value" to (value)), operationId = "createSpeedInsightsToggle", decoder = SdkClient.ResponseDecoder.JSON, options = options))
+    /**
+     * [createSpeedInsightsToggle], returning the [SdkResponse] envelope: status code, headers,
+     * request ID and latency.
+     */
+    fun createSpeedInsightsToggleWithRawResponse(
+        clientConfig: ClientConfig,
+        projectId: String,
+        value: Boolean,
+        options: RequestOptions? = null,
+    ): SdkResponse<CreateSpeedInsightsToggleResponse> {
+        return SdkClient.request<CreateSpeedInsightsToggleResponse>(
+            SdkClient.RequestSpec(
+                "POST",
+                "/speed-insights/toggle",
+                config = clientConfig,
+                query = mapOf("projectId" to SdkClient.queryValue(projectId, "form", true)),
+                body = SdkClient.bodyMap("value" to (value)),
+                operationId = "createSpeedInsightsToggle",
+                decoder = SdkClient.ResponseDecoder.JSON,
+                options = options,
+            )
+        )
     }
-
-
-
-
-
-
-
 }

@@ -41,9 +41,6 @@ import dev.octri.showcase.vercel.Flag
 import dev.octri.showcase.vercel.FlagsSdkKeyWithSecrets
 import dev.octri.showcase.vercel.GetFlagSettingsResponseTypeNameEnum
 import dev.octri.showcase.vercel.GetSdkKeysResponseDataItemTypeEnum
-import dev.octri.showcase.vercel.ListFlagsParameterEnum
-import dev.octri.showcase.vercel.ListFlagsV2ParameterEnum
-import dev.octri.showcase.vercel.ListFlagsV2ResponseDataItem
 import dev.octri.showcase.vercel.ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX2360529e31
 import dev.octri.showcase.vercel.ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX26195b4372
 import dev.octri.showcase.vercel.ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX58bb90986c
@@ -63,6 +60,9 @@ import dev.octri.showcase.vercel.ListFlagVersionsResponseVersionsItemDataEnviron
 import dev.octri.showcase.vercel.ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXf7ae4cd8e8
 import dev.octri.showcase.vercel.ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXf9fb01d2bf
 import dev.octri.showcase.vercel.ListFlagVersionsResponseVersionsItemDataStateEnum
+import dev.octri.showcase.vercel.ListFlagsParameterEnum
+import dev.octri.showcase.vercel.ListFlagsV2ParameterEnum
+import dev.octri.showcase.vercel.ListFlagsV2ResponseDataItem
 import dev.octri.showcase.vercel.ListTeamFlagsParameterEnum
 import dev.octri.showcase.vercel.ListTeamFlagsParameterEnum69b069ba
 import dev.octri.showcase.vercel.ListTeamFlagsV2ParameterEnum
@@ -104,1032 +104,1010 @@ import dev.octri.showcase.vercel.UpdateFlagSettingsResponseTypeNameEnum
 import dev.octri.showcase.vercel.UpdateFlagStateEnum
 
 object FeatureFlags {
-data class ListFlagsV2ResponsePagination(
-    @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?
-) : SdkResource()
+    data class ListFlagsV2ResponsePagination(
+        @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?
+    ) : SdkResource()
 
-data class ListFlagsV2Response(
-    val pagination: ListFlagsV2ResponsePagination,
-    @com.fasterxml.jackson.annotation.JsonProperty("data") val `data`: List<ListFlagsV2ResponseDataItem>
-) : SdkResource()
+    data class ListFlagsV2Response(
+        val pagination: ListFlagsV2ResponsePagination,
+        @com.fasterxml.jackson.annotation.JsonProperty("data")
+        val `data`: List<ListFlagsV2ResponseDataItem>,
+    ) : SdkResource()
 
-data class ListFlagsResponsePagination(
-    @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?
-) : SdkResource()
+    data class ListFlagsResponsePagination(
+        @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?
+    ) : SdkResource()
 
-data class ListFlagsResponse(
-    @com.fasterxml.jackson.annotation.JsonProperty("data") val `data`: List<Flag>,
-    val pagination: ListFlagsResponsePagination
-) : SdkResource()
+    data class ListFlagsResponse(
+        @com.fasterxml.jackson.annotation.JsonProperty("data") val `data`: List<Flag>,
+        val pagination: ListFlagsResponsePagination,
+    ) : SdkResource()
 
-data class CreateFlagVariantsItem(
+    data class CreateFlagVariantsItem(
+        /** The id of the variant */
+        val id: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
+        /** A label for the variant */
+        val label: String? = null,
+        /** A description of the variant */
+        val description: String? = null,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueFallthroughVariant0(
+        val type: CreateFlagResponseEnvironmentsValueFallthroughVariant0TypeEnum,
+        val variantId: String,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueFallthroughVariant1Base(
+        val attribute: String,
+        val kind: String,
+        val type: CreateFlagResponseEnvironmentsValueFallthroughVariant1BaseTypeEnum,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueFallthroughVariant1(
+        val base: CreateFlagResponseEnvironmentsValueFallthroughVariant1Base,
+        val defaultVariantId: String,
+        val type: CreateFlagResponseEnvironmentsValueFallthroughVariant1TypeEnum,
+        val weights: Map<String, Double>,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueFallthroughVariant2Base(
+        val attribute: String,
+        val kind: String,
+        val type: CreateFlagResponseEnvironmentsValueFallthroughVariant2BaseTypeEnum,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueFallthroughVariant2SlotsItem(
+        val durationMs: Double,
+        val promille: Double,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueFallthroughVariant2(
+        val base: CreateFlagResponseEnvironmentsValueFallthroughVariant2Base,
+        val defaultVariantId: String,
+        val rollFromVariantId: String,
+        val rollToVariantId: String,
+        val slots: List<CreateFlagResponseEnvironmentsValueFallthroughVariant2SlotsItem>,
+        val startTimestamp: Double,
+        val type: CreateFlagResponseEnvironmentsValueFallthroughVariant2TypeEnum,
+        val finalPromille: Double? = null,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueFallthroughVariant3(
+        val type: CreateFlagResponseEnvironmentsValueFallthroughVariant3TypeEnum
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValuePausedOutcome(
+        val type: CreateFlagResponseEnvironmentsValuePausedOutcomeTypeEnum,
+        val variantId: String,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsVariant0(
+        val type: CreateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsXbfdbdb49f4
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsVariant1(
+        val attribute: String,
+        val kind: String,
+        val type: CreateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsX871fc457ca,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpOptions(
+        val ignoreCase: Boolean? = null
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsXdfbf4ceec5(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Double,
+        val label: String? = null,
+        val note: String? = null,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsXfbc0c66f65(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+        val label: String? = null,
+        val note: String? = null,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsVariant2(
+        val items: List<Any>,
+        val type: CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX20a4fb8a73,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsVariant3(
+        val flags: String,
+        val pattern: String,
+        val type: CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX942b61cb51,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueRulesItemConditionsItem(
+        val cmp: CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum,
+        val lhs: Any,
+        val cmpOptions: CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpOptions? =
+            null,
+        val rhs: Any? = null,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant0(
+        val type: CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant0TypeEnum,
+        val variantId: String,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1Base(
+        val attribute: String,
+        val kind: String,
+        val type: CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1BaseTypeEnum,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1(
+        val base: CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1Base,
+        val defaultVariantId: String,
+        val type: CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1TypeEnum,
+        val weights: Map<String, Double>,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2Base(
+        val attribute: String,
+        val kind: String,
+        val type: CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2BaseTypeEnum,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2SlotsItem(
+        val durationMs: Double,
+        val promille: Double,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2(
+        val base: CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2Base,
+        val defaultVariantId: String,
+        val rollFromVariantId: String,
+        val rollToVariantId: String,
+        val slots: List<CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2SlotsItem>,
+        val startTimestamp: Double,
+        val type: CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2TypeEnum,
+        val finalPromille: Double? = null,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant3(
+        val type: CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant3TypeEnum
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueRulesItem(
+        val conditions: List<CreateFlagResponseEnvironmentsValueRulesItemConditionsItem>,
+        val id: String,
+        val outcome: Any,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueReuse(
+        val active: Boolean,
+        val environment: String,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValueTargetsValueValueValueItem(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+        val note: String? = null,
+    ) : SdkResource()
+
+    data class CreateFlagResponseEnvironmentsValue(
+        val active: Boolean,
+        val fallthrough: Any,
+        val pausedOutcome: CreateFlagResponseEnvironmentsValuePausedOutcome,
+        val rules: List<CreateFlagResponseEnvironmentsValueRulesItem>,
+        val reuse: CreateFlagResponseEnvironmentsValueReuse? = null,
+        val revision: Double? = null,
+        val targets:
+            Map<
+                String,
+                Map<
+                    String,
+                    Map<
+                        String,
+                        List<CreateFlagResponseEnvironmentsValueTargetsValueValueValueItem>,
+                    >,
+                >,
+            >? =
+            null,
+    ) : SdkResource()
+
+    data class CreateFlagResponseVariantsItem(
+        val id: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value", required = true) val `value`: Any?,
+        val description: String? = null,
+        val label: String? = null,
+    ) : SdkResource()
+
+    data class CreateFlagResponse(
+        val createdAt: Double,
+        val createdBy: String,
+        val environments: Map<String, CreateFlagResponseEnvironmentsValue>,
+        val id: String,
+        val kind: CreateFlagResponseKindEnum,
+        val ownerId: String,
+        val projectId: String,
+        val revision: Double,
+        val seed: Double,
+        val slug: String,
+        val state: CreateFlagResponseStateEnum,
+        val typeName: CreateFlagResponseTypeNameEnum,
+        val updatedAt: Double,
+        val variants: List<CreateFlagResponseVariantsItem>,
+        val description: String? = null,
+        val maintainerIds: List<String>? = null,
+        val permanent: Boolean? = null,
+        val seenInProduction: Boolean? = null,
+        val tags: List<String>? = null,
+        val updatedBy: String? = null,
+    ) : SdkResource()
+
+    data class UpdateFlagVariantsItem(
+        /** The id of the variant */
+        val id: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
+        /** A label for the variant */
+        val label: String? = null,
+        /** A description of the variant */
+        val description: String? = null,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueFallthroughVariant0(
+        val type: UpdateFlagResponseEnvironmentsValueFallthroughVariant0TypeEnum,
+        val variantId: String,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueFallthroughVariant1Base(
+        val attribute: String,
+        val kind: String,
+        val type: UpdateFlagResponseEnvironmentsValueFallthroughVariant1BaseTypeEnum,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueFallthroughVariant1(
+        val base: UpdateFlagResponseEnvironmentsValueFallthroughVariant1Base,
+        val defaultVariantId: String,
+        val type: UpdateFlagResponseEnvironmentsValueFallthroughVariant1TypeEnum,
+        val weights: Map<String, Double>,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueFallthroughVariant2Base(
+        val attribute: String,
+        val kind: String,
+        val type: UpdateFlagResponseEnvironmentsValueFallthroughVariant2BaseTypeEnum,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueFallthroughVariant2SlotsItem(
+        val durationMs: Double,
+        val promille: Double,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueFallthroughVariant2(
+        val base: UpdateFlagResponseEnvironmentsValueFallthroughVariant2Base,
+        val defaultVariantId: String,
+        val rollFromVariantId: String,
+        val rollToVariantId: String,
+        val slots: List<UpdateFlagResponseEnvironmentsValueFallthroughVariant2SlotsItem>,
+        val startTimestamp: Double,
+        val type: UpdateFlagResponseEnvironmentsValueFallthroughVariant2TypeEnum,
+        val finalPromille: Double? = null,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueFallthroughVariant3(
+        val type: UpdateFlagResponseEnvironmentsValueFallthroughVariant3TypeEnum
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValuePausedOutcome(
+        val type: UpdateFlagResponseEnvironmentsValuePausedOutcomeTypeEnum,
+        val variantId: String,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsVariant0(
+        val type: UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsX2b64796ad5
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsVariant1(
+        val attribute: String,
+        val kind: String,
+        val type: UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsX2a87aa5536,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpOptions(
+        val ignoreCase: Boolean? = null
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX4612a87c94(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Double,
+        val label: String? = null,
+        val note: String? = null,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX407eea14e3(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+        val label: String? = null,
+        val note: String? = null,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsVariant2(
+        val items: List<Any>,
+        val type: UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsXa97e81a0b1,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsVariant3(
+        val flags: String,
+        val pattern: String,
+        val type: UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsXa2da8cd703,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueRulesItemConditionsItem(
+        val cmp: UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum,
+        val lhs: Any,
+        val cmpOptions: UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpOptions? =
+            null,
+        val rhs: Any? = null,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant0(
+        val type: UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant0TypeEnum,
+        val variantId: String,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1Base(
+        val attribute: String,
+        val kind: String,
+        val type: UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1BaseTypeEnum,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1(
+        val base: UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1Base,
+        val defaultVariantId: String,
+        val type: UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1TypeEnum,
+        val weights: Map<String, Double>,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2Base(
+        val attribute: String,
+        val kind: String,
+        val type: UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2BaseTypeEnum,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2SlotsItem(
+        val durationMs: Double,
+        val promille: Double,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2(
+        val base: UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2Base,
+        val defaultVariantId: String,
+        val rollFromVariantId: String,
+        val rollToVariantId: String,
+        val slots: List<UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2SlotsItem>,
+        val startTimestamp: Double,
+        val type: UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2TypeEnum,
+        val finalPromille: Double? = null,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant3(
+        val type: UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant3TypeEnum
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueRulesItem(
+        val conditions: List<UpdateFlagResponseEnvironmentsValueRulesItemConditionsItem>,
+        val id: String,
+        val outcome: Any,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueReuse(
+        val active: Boolean,
+        val environment: String,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValueTargetsValueValueValueItem(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+        val note: String? = null,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseEnvironmentsValue(
+        val active: Boolean,
+        val fallthrough: Any,
+        val pausedOutcome: UpdateFlagResponseEnvironmentsValuePausedOutcome,
+        val rules: List<UpdateFlagResponseEnvironmentsValueRulesItem>,
+        val reuse: UpdateFlagResponseEnvironmentsValueReuse? = null,
+        val revision: Double? = null,
+        val targets:
+            Map<
+                String,
+                Map<
+                    String,
+                    Map<
+                        String,
+                        List<UpdateFlagResponseEnvironmentsValueTargetsValueValueValueItem>,
+                    >,
+                >,
+            >? =
+            null,
+    ) : SdkResource()
+
+    data class UpdateFlagResponseVariantsItem(
+        val id: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value", required = true) val `value`: Any?,
+        val description: String? = null,
+        val label: String? = null,
+    ) : SdkResource()
+
+    data class UpdateFlagResponse(
+        val createdAt: Double,
+        val createdBy: String,
+        val environments: Map<String, UpdateFlagResponseEnvironmentsValue>,
+        val id: String,
+        val kind: UpdateFlagResponseKindEnum,
+        val ownerId: String,
+        val projectId: String,
+        val revision: Double,
+        val seed: Double,
+        val slug: String,
+        val state: UpdateFlagResponseStateEnum,
+        val typeName: UpdateFlagResponseTypeNameEnum,
+        val updatedAt: Double,
+        val variants: List<UpdateFlagResponseVariantsItem>,
+        val description: String? = null,
+        val maintainerIds: List<String>? = null,
+        val permanent: Boolean? = null,
+        val seenInProduction: Boolean? = null,
+        val tags: List<String>? = null,
+        val updatedBy: String? = null,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX8b323c2e44(
+        val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX58bb90986c,
+        val variantId: String,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallXc67142e1dc(
+        val attribute: String,
+        val kind: String,
+        val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX26195b4372,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX79fe13cfbb(
+        val base: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallXc67142e1dc,
+        val defaultVariantId: String,
+        val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallXaa0e21f9de,
+        val weights: Map<String, Double>,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX051f91b1f2(
+        val attribute: String,
+        val kind: String,
+        val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX2360529e31,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallXee911af024(
+        val durationMs: Double,
+        val promille: Double,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallXf4f34483fb(
+        val base: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX051f91b1f2,
+        val defaultVariantId: String,
+        val rollFromVariantId: String,
+        val rollToVariantId: String,
+        val slots: List<ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallXee911af024>,
+        val startTimestamp: Double,
+        val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallXf49fcc8597,
+        val finalPromille: Double? = null,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX667dfcc810(
+        val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallXd7b1a2af6a
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValuePausedOutcome(
+        val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValuePausXd49e4d3e09,
+        val variantId: String,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXb2ae8abe01(
+        val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXe435e4a495
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX248b341ece(
+        val attribute: String,
+        val kind: String,
+        val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX6ce1a5ca59,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX052185f1b7(
+        val ignoreCase: Boolean? = null
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX57fa9fda8e(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Double,
+        val label: String? = null,
+        val note: String? = null,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX4c9c5bc5a2(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+        val label: String? = null,
+        val note: String? = null,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX535b7bf94c(
+        val items: List<Any>,
+        val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXf7ae4cd8e8,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXa25beb3385(
+        val flags: String,
+        val pattern: String,
+        val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXa052613406,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX64430318e6(
+        val cmp: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXf9fb01d2bf,
+        val lhs: Any,
+        val cmpOptions: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX052185f1b7? =
+            null,
+        val rhs: Any? = null,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXa71b12e500(
+        val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXa1b8ef0de2,
+        val variantId: String,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXb1e1e1510a(
+        val attribute: String,
+        val kind: String,
+        val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX5475582648,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX229da540e3(
+        val base: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXb1e1e1510a,
+        val defaultVariantId: String,
+        val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXa3f12bd3bc,
+        val weights: Map<String, Double>,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX91548f75ce(
+        val attribute: String,
+        val kind: String,
+        val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXc49092a600,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX3ea2725d0a(
+        val durationMs: Double,
+        val promille: Double,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXdbb62c6201(
+        val base: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX91548f75ce,
+        val defaultVariantId: String,
+        val rollFromVariantId: String,
+        val rollToVariantId: String,
+        val slots: List<ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX3ea2725d0a>,
+        val startTimestamp: Double,
+        val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXbcdcfccef9,
+        val finalPromille: Double? = null,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXbdd04199e6(
+        val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXd430f20539
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRulesItem(
+        val conditions:
+            List<ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX64430318e6>,
+        val id: String,
+        val outcome: Any,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueReuse(
+        val active: Boolean,
+        val environment: String,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueTargXf67c364d20(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+        val note: String? = null,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValue(
+        val active: Boolean,
+        val fallthrough: Any,
+        val pausedOutcome: ListFlagVersionsResponseVersionsItemDataEnvironmentsValuePausedOutcome,
+        val rules: List<ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRulesItem>,
+        val reuse: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueReuse? = null,
+        val revision: Double? = null,
+        val targets:
+            Map<
+                String,
+                Map<
+                    String,
+                    Map<
+                        String,
+                        List<
+                            ListFlagVersionsResponseVersionsItemDataEnvironmentsValueTargXf67c364d20
+                        >,
+                    >,
+                >,
+            >? =
+            null,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemDataVariantsItem(
+        val id: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value", required = true) val `value`: Any?,
+        val description: String? = null,
+        val label: String? = null,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemData(
+        val environments: Map<String, ListFlagVersionsResponseVersionsItemDataEnvironmentsValue>,
+        val seed: Double,
+        val state: ListFlagVersionsResponseVersionsItemDataStateEnum,
+        val variants: List<ListFlagVersionsResponseVersionsItemDataVariantsItem>,
+        val description: String? = null,
+        val maintainerIds: List<String>? = null,
+        val permanent: Boolean? = null,
+        val tags: List<String>? = null,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemMetadataCreator(
+        val id: String,
+        val name: String,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItemMetadata(
+        val creator: ListFlagVersionsResponseVersionsItemMetadataCreator? = null
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponseVersionsItem(
+        val changedEnvironments: List<String>,
+        val createdAt: Double,
+        val flagId: String,
+        val id: String,
+        val revision: Double,
+        @com.fasterxml.jackson.annotation.JsonProperty("data")
+        val `data`: ListFlagVersionsResponseVersionsItemData,
+        val createdBy: String? = null,
+        val message: String? = null,
+        val metadata: ListFlagVersionsResponseVersionsItemMetadata? = null,
+    ) : SdkResource()
+
+    data class ListFlagVersionsResponse(
+        val pagination: Map<String, Any>,
+        val versions: List<ListFlagVersionsResponseVersionsItem>,
+    ) : SdkResource()
+
+    data class GetFlagSettingsResponseEntitiesItemAttributesItemLabelsItem(
+        val label: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+    ) : SdkResource()
+
+    data class GetFlagSettingsResponseEntitiesItemAttributesItem(
+        val key: String,
+        val type: String,
+        val labels: List<GetFlagSettingsResponseEntitiesItemAttributesItemLabelsItem>? = null,
+    ) : SdkResource()
+
+    data class GetFlagSettingsResponseEntitiesItem(
+        val attributes: List<GetFlagSettingsResponseEntitiesItemAttributesItem>,
+        val kind: String,
+        val label: String,
+    ) : SdkResource()
+
+    data class GetFlagSettingsResponseMetadata(
+        val activeFlagCount: Double,
+        val archivedFlagCount: Double,
+        val packSizeInBytes: Double,
+        val segmentCount: Double,
+        val configUpdatedAt: Double? = null,
+        val packRevision: Double? = null,
+    ) : SdkResource()
+
+    data class GetFlagSettingsResponse(
+        val enabled: Boolean,
+        val entities: List<GetFlagSettingsResponseEntitiesItem>,
+        val environments: List<String>,
+        val metadata: GetFlagSettingsResponseMetadata,
+        val projectId: String,
+        val typeName: GetFlagSettingsResponseTypeNameEnum,
+        val createdAt: Double? = null,
+        val ownerId: String? = null,
+        val updatedAt: Double? = null,
+    ) : SdkResource()
+
+    data class UpdateFlagSettingsEntitiesItemAttributesItemLabelsItem(
+        val label: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+    ) : SdkResource()
+
+    data class UpdateFlagSettingsEntitiesItemAttributesItem(
+        val key: String,
+        val type: String,
+        val labels: List<UpdateFlagSettingsEntitiesItemAttributesItemLabelsItem>? = null,
+    ) : SdkResource()
+
+    data class UpdateFlagSettingsEntitiesItem(
+        val kind: String,
+        val label: String,
+        val attributes: List<UpdateFlagSettingsEntitiesItemAttributesItem>,
+    ) : SdkResource()
+
+    data class UpdateFlagSettingsResponseEntitiesItemAttributesItemLabelsItem(
+        val label: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+    ) : SdkResource()
+
+    data class UpdateFlagSettingsResponseEntitiesItemAttributesItem(
+        val key: String,
+        val type: String,
+        val labels: List<UpdateFlagSettingsResponseEntitiesItemAttributesItemLabelsItem>? = null,
+    ) : SdkResource()
+
+    data class UpdateFlagSettingsResponseEntitiesItem(
+        val attributes: List<UpdateFlagSettingsResponseEntitiesItemAttributesItem>,
+        val kind: String,
+        val label: String,
+    ) : SdkResource()
+
+    data class UpdateFlagSettingsResponseMetadata(
+        val activeFlagCount: Double,
+        val archivedFlagCount: Double,
+        val packSizeInBytes: Double,
+        val segmentCount: Double,
+        val configUpdatedAt: Double? = null,
+        val packRevision: Double? = null,
+    ) : SdkResource()
+
+    data class UpdateFlagSettingsResponse(
+        val enabled: Boolean,
+        val entities: List<UpdateFlagSettingsResponseEntitiesItem>,
+        val environments: List<String>,
+        val metadata: UpdateFlagSettingsResponseMetadata,
+        val projectId: String,
+        val typeName: UpdateFlagSettingsResponseTypeNameEnum,
+        val createdAt: Double? = null,
+        val ownerId: String? = null,
+        val updatedAt: Double? = null,
+    ) : SdkResource()
+
+    data class ListTeamFlagsV2ResponsePagination(
+        @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?
+    ) : SdkResource()
+
+    data class ListTeamFlagsV2Response(
+        val pagination: ListTeamFlagsV2ResponsePagination,
+        @com.fasterxml.jackson.annotation.JsonProperty("data")
+        val `data`: List<ListTeamFlagsV2ResponseDataItem>,
+    ) : SdkResource()
+
+    data class ListTeamFlagsResponsePagination(
+        @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?
+    ) : SdkResource()
+
+    data class ListTeamFlagsResponse(
+        @com.fasterxml.jackson.annotation.JsonProperty("data") val `data`: List<Flag>,
+        val pagination: ListTeamFlagsResponsePagination,
+    ) : SdkResource()
+
+    data class CreateFlagSegmentDataRulesItemConditionsItemCmpOptions(
+        val ignoreCase: Boolean? = null
+    ) : SdkResource()
+
+    data class CreateFlagSegmentDataRulesItemConditionsItem(
+        /**
+         * Typed representation of the `CreateFlagSegmentRequestDataRulesItemConditionsItemLhs` API
+         * schema.
+         */
+        val lhs: CreateFlagSegmentRequestDataRulesItemConditionsItemLhs,
+        val cmp: CreateFlagSegmentDataRulesItemConditionsItemCmpEnum,
+        /**
+         * Typed representation of the `CreateFlagSegmentRequestDataRulesItemConditionsItemRhs` API
+         * schema.
+         */
+        val rhs: CreateFlagSegmentRequestDataRulesItemConditionsItemRhs? = null,
+        val cmpOptions: CreateFlagSegmentDataRulesItemConditionsItemCmpOptions? = null,
+    ) : SdkResource()
+
+    data class CreateFlagSegmentDataRulesItem(
+        val id: String,
+        val conditions: List<CreateFlagSegmentDataRulesItemConditionsItem>,
+        /**
+         * Typed representation of the `CreateFlagSegmentRequestDataRulesItemOutcome` API schema.
+         */
+        val outcome: CreateFlagSegmentRequestDataRulesItemOutcome,
+    ) : SdkResource()
+
+    data class CreateFlagSegmentDataIncludeValueValueItem(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+        val note: String? = null,
+    ) : SdkResource()
+
+    data class CreateFlagSegmentDataExcludeValueValueItem(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+        val note: String? = null,
+    ) : SdkResource()
+
+    /** The data of the segment */
+    data class CreateFlagSegmentData(
+        val rules: List<CreateFlagSegmentDataRulesItem>? = null,
+        val include: Map<String, Map<String, List<CreateFlagSegmentDataIncludeValueValueItem>>>? =
+            null,
+        val exclude: Map<String, Map<String, List<CreateFlagSegmentDataExcludeValueValueItem>>>? =
+            null,
+    ) : SdkResource()
+
+    data class CreateFlagSegmentResponseDataExcludeValueValueItem(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+        val note: String? = null,
+    ) : SdkResource()
+
+    data class CreateFlagSegmentResponseDataIncludeValueValueItem(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+        val note: String? = null,
+    ) : SdkResource()
+
+    data class CreateFlagSegmentResponseDataRulesItemConditionsItemCmpOptions(
+        val ignoreCase: Boolean? = null
+    ) : SdkResource()
+
+    data class CreateFlagSegmentResponseDataRulesItemConditionsItem(
+        val cmp: CreateFlagSegmentResponseDataRulesItemConditionsItemCmpEnum,
+        /**
+         * Typed representation of the `CreateFlagSegmentResponseDataRulesItemConditionsItemLhs` API
+         * schema.
+         */
+        val lhs: CreateFlagSegmentResponseDataRulesItemConditionsItemLhs,
+        val cmpOptions: CreateFlagSegmentResponseDataRulesItemConditionsItemCmpOptions? = null,
+        /**
+         * Typed representation of the `CreateFlagSegmentResponseDataRulesItemConditionsItemRhs` API
+         * schema.
+         */
+        val rhs: CreateFlagSegmentResponseDataRulesItemConditionsItemRhs? = null,
+    ) : SdkResource()
+
+    data class CreateFlagSegmentResponseDataRulesItem(
+        val conditions: List<CreateFlagSegmentResponseDataRulesItemConditionsItem>,
+        val id: String,
+        /**
+         * Typed representation of the `CreateFlagSegmentResponseDataRulesItemOutcome` API schema.
+         */
+        val outcome: CreateFlagSegmentResponseDataRulesItemOutcome,
+    ) : SdkResource()
+
+    data class CreateFlagSegmentResponseData(
+        val exclude:
+            Map<String, Map<String, List<CreateFlagSegmentResponseDataExcludeValueValueItem>>>? =
+            null,
+        val include:
+            Map<String, Map<String, List<CreateFlagSegmentResponseDataIncludeValueValueItem>>>? =
+            null,
+        val rules: List<CreateFlagSegmentResponseDataRulesItem>? = null,
+    ) : SdkResource()
+
+    data class CreateFlagSegmentResponse(
+        val createdAt: Double,
+        @com.fasterxml.jackson.annotation.JsonProperty("data")
+        val `data`: CreateFlagSegmentResponseData,
+        val hint: String,
+        val id: String,
+        val label: String,
+        val projectId: String,
+        val slug: String,
+        val typeName: CreateFlagSegmentResponseTypeNameEnum,
+        val updatedAt: Double,
+        val createdBy: String? = null,
+        val description: String? = null,
+        val usedByFlags: List<String>? = null,
+        val usedBySegments: List<String>? = null,
+    ) : SdkResource()
+
+    data class ListFlagSegmentsResponse(
+        @com.fasterxml.jackson.annotation.JsonProperty("data") val `data`: List<Segment>
+    ) : SdkResource()
+
+    data class UpdateFlagSegmentOperationsItemValue(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+        val note: String? = null,
+    ) : SdkResource()
+
+    data class UpdateFlagSegmentOperationsItem(
+        val action: UpdateFlagSegmentOperationsItemActionEnum,
+        @com.fasterxml.jackson.annotation.JsonProperty("field")
+        val `field`: UpdateFlagSegmentOperationsItemFieldEnum,
+        val entity: String,
+        val attribute: String,
+        @com.fasterxml.jackson.annotation.JsonProperty("value")
+        val `value`: UpdateFlagSegmentOperationsItemValue,
+    ) : SdkResource()
+
+    data class UpdateFlagSegmentDataRulesItemConditionsItemCmpOptions(
+        val ignoreCase: Boolean? = null
+    ) : SdkResource()
+
+    data class UpdateFlagSegmentDataRulesItemConditionsItem(
+        /**
+         * Typed representation of the `UpdateFlagSegmentRequestDataRulesItemConditionsItemLhs` API
+         * schema.
+         */
+        val lhs: UpdateFlagSegmentRequestDataRulesItemConditionsItemLhs,
+        val cmp: UpdateFlagSegmentDataRulesItemConditionsItemCmpEnum,
+        /**
+         * Typed representation of the `UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs` API
+         * schema.
+         */
+        val rhs: UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs? = null,
+        val cmpOptions: UpdateFlagSegmentDataRulesItemConditionsItemCmpOptions? = null,
+    ) : SdkResource()
+
+    data class UpdateFlagSegmentDataRulesItem(
+        val id: String,
+        val conditions: List<UpdateFlagSegmentDataRulesItemConditionsItem>,
+        /**
+         * Typed representation of the `UpdateFlagSegmentRequestDataRulesItemOutcome` API schema.
+         */
+        val outcome: UpdateFlagSegmentRequestDataRulesItemOutcome,
+    ) : SdkResource()
+
+    data class UpdateFlagSegmentDataIncludeValueValueItem(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+        val note: String? = null,
+    ) : SdkResource()
+
+    data class UpdateFlagSegmentDataExcludeValueValueItem(
+        @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
+        val note: String? = null,
+    ) : SdkResource()
+
+    /** The data of the segment */
+    data class UpdateFlagSegmentData(
+        val rules: List<UpdateFlagSegmentDataRulesItem>? = null,
+        val include: Map<String, Map<String, List<UpdateFlagSegmentDataIncludeValueValueItem>>>? =
+            null,
+        val exclude: Map<String, Map<String, List<UpdateFlagSegmentDataExcludeValueValueItem>>>? =
+            null,
+    ) : SdkResource()
+
+    data class GetDeploymentFeatureFlagsResponseStatus(
+        val createdAt: Double,
+        val deploymentId: String,
+        /** The number of flag definitions returned by the flags discovery endpoint. */
+        val flagCount: Double,
+        val projectId: String,
+        /** The HTTP status code from the flags discovery endpoint. */
+        val responseStatus: Double,
+    ) : SdkResource()
+
+    data class GetDeploymentFeatureFlagsResponse(
+        val flags: List<Map<String, Any>>,
+        @com.fasterxml.jackson.annotation.JsonProperty("status", required = true)
+        val status: GetDeploymentFeatureFlagsResponseStatus?,
+    ) : SdkResource()
+
     /**
-     * The id of the variant
+     * Shared metadata for a Flags SDK key, safe to return on both LIST and CREATE. Never contains
+     * cleartext secrets.
      */
-    val id: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
-    /**
-     * A label for the variant
-     */
-    val label: String? = null,
-    /**
-     * A description of the variant
-     */
-    val description: String? = null
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueFallthroughVariant0(
-    val type: CreateFlagResponseEnvironmentsValueFallthroughVariant0TypeEnum,
-    val variantId: String
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueFallthroughVariant1Base(
-    val attribute: String,
-    val kind: String,
-    val type: CreateFlagResponseEnvironmentsValueFallthroughVariant1BaseTypeEnum
-) : SdkResource()
-
-
-
-data class CreateFlagResponseEnvironmentsValueFallthroughVariant1(
-    val base: CreateFlagResponseEnvironmentsValueFallthroughVariant1Base,
-    val defaultVariantId: String,
-    val type: CreateFlagResponseEnvironmentsValueFallthroughVariant1TypeEnum,
-    val weights: Map<String, Double>
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueFallthroughVariant2Base(
-    val attribute: String,
-    val kind: String,
-    val type: CreateFlagResponseEnvironmentsValueFallthroughVariant2BaseTypeEnum
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueFallthroughVariant2SlotsItem(
-    val durationMs: Double,
-    val promille: Double
-) : SdkResource()
-
-
-
-data class CreateFlagResponseEnvironmentsValueFallthroughVariant2(
-    val base: CreateFlagResponseEnvironmentsValueFallthroughVariant2Base,
-    val defaultVariantId: String,
-    val rollFromVariantId: String,
-    val rollToVariantId: String,
-    val slots: List<CreateFlagResponseEnvironmentsValueFallthroughVariant2SlotsItem>,
-    val startTimestamp: Double,
-    val type: CreateFlagResponseEnvironmentsValueFallthroughVariant2TypeEnum,
-    val finalPromille: Double? = null
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueFallthroughVariant3(
-    val type: CreateFlagResponseEnvironmentsValueFallthroughVariant3TypeEnum
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValuePausedOutcome(
-    val type: CreateFlagResponseEnvironmentsValuePausedOutcomeTypeEnum,
-    val variantId: String
-) : SdkResource()
-
-
-
-data class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsVariant0(
-    val type: CreateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsXbfdbdb49f4
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsVariant1(
-    val attribute: String,
-    val kind: String,
-    val type: CreateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsX871fc457ca
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpOptions(
-    val ignoreCase: Boolean? = null
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsXdfbf4ceec5(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Double,
-    val label: String? = null,
-    val note: String? = null
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsXfbc0c66f65(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val label: String? = null,
-    val note: String? = null
-) : SdkResource()
-
-
-
-data class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsVariant2(
-    val items: List<Any>,
-    val type: CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX20a4fb8a73
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsVariant3(
-    val flags: String,
-    val pattern: String,
-    val type: CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX942b61cb51
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueRulesItemConditionsItem(
-    val cmp: CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum,
-    val lhs: Any,
-    val cmpOptions: CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpOptions? = null,
-    val rhs: Any? = null
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant0(
-    val type: CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant0TypeEnum,
-    val variantId: String
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1Base(
-    val attribute: String,
-    val kind: String,
-    val type: CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1BaseTypeEnum
-) : SdkResource()
-
-
-
-data class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1(
-    val base: CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1Base,
-    val defaultVariantId: String,
-    val type: CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1TypeEnum,
-    val weights: Map<String, Double>
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2Base(
-    val attribute: String,
-    val kind: String,
-    val type: CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2BaseTypeEnum
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2SlotsItem(
-    val durationMs: Double,
-    val promille: Double
-) : SdkResource()
-
-
-
-data class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2(
-    val base: CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2Base,
-    val defaultVariantId: String,
-    val rollFromVariantId: String,
-    val rollToVariantId: String,
-    val slots: List<CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2SlotsItem>,
-    val startTimestamp: Double,
-    val type: CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2TypeEnum,
-    val finalPromille: Double? = null
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant3(
-    val type: CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant3TypeEnum
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueRulesItem(
-    val conditions: List<CreateFlagResponseEnvironmentsValueRulesItemConditionsItem>,
-    val id: String,
-    val outcome: Any
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueReuse(
-    val active: Boolean,
-    val environment: String
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValueTargetsValueValueValueItem(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val note: String? = null
-) : SdkResource()
-
-data class CreateFlagResponseEnvironmentsValue(
-    val active: Boolean,
-    val fallthrough: Any,
-    val pausedOutcome: CreateFlagResponseEnvironmentsValuePausedOutcome,
-    val rules: List<CreateFlagResponseEnvironmentsValueRulesItem>,
-    val reuse: CreateFlagResponseEnvironmentsValueReuse? = null,
-    val revision: Double? = null,
-    val targets: Map<String, Map<String, Map<String, List<CreateFlagResponseEnvironmentsValueTargetsValueValueValueItem>>>>? = null
-) : SdkResource()
-
-
-
-
-
-
-
-data class CreateFlagResponseVariantsItem(
-    val id: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value", required = true) val `value`: Any?,
-    val description: String? = null,
-    val label: String? = null
-) : SdkResource()
-
-data class CreateFlagResponse(
-    val createdAt: Double,
-    val createdBy: String,
-    val environments: Map<String, CreateFlagResponseEnvironmentsValue>,
-    val id: String,
-    val kind: CreateFlagResponseKindEnum,
-    val ownerId: String,
-    val projectId: String,
-    val revision: Double,
-    val seed: Double,
-    val slug: String,
-    val state: CreateFlagResponseStateEnum,
-    val typeName: CreateFlagResponseTypeNameEnum,
-    val updatedAt: Double,
-    val variants: List<CreateFlagResponseVariantsItem>,
-    val description: String? = null,
-    val maintainerIds: List<String>? = null,
-    val permanent: Boolean? = null,
-    val seenInProduction: Boolean? = null,
-    val tags: List<String>? = null,
-    val updatedBy: String? = null
-) : SdkResource()
-
-data class UpdateFlagVariantsItem(
-    /**
-     * The id of the variant
-     */
-    val id: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
-    /**
-     * A label for the variant
-     */
-    val label: String? = null,
-    /**
-     * A description of the variant
-     */
-    val description: String? = null
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueFallthroughVariant0(
-    val type: UpdateFlagResponseEnvironmentsValueFallthroughVariant0TypeEnum,
-    val variantId: String
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueFallthroughVariant1Base(
-    val attribute: String,
-    val kind: String,
-    val type: UpdateFlagResponseEnvironmentsValueFallthroughVariant1BaseTypeEnum
-) : SdkResource()
-
-
-
-data class UpdateFlagResponseEnvironmentsValueFallthroughVariant1(
-    val base: UpdateFlagResponseEnvironmentsValueFallthroughVariant1Base,
-    val defaultVariantId: String,
-    val type: UpdateFlagResponseEnvironmentsValueFallthroughVariant1TypeEnum,
-    val weights: Map<String, Double>
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueFallthroughVariant2Base(
-    val attribute: String,
-    val kind: String,
-    val type: UpdateFlagResponseEnvironmentsValueFallthroughVariant2BaseTypeEnum
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueFallthroughVariant2SlotsItem(
-    val durationMs: Double,
-    val promille: Double
-) : SdkResource()
-
-
-
-data class UpdateFlagResponseEnvironmentsValueFallthroughVariant2(
-    val base: UpdateFlagResponseEnvironmentsValueFallthroughVariant2Base,
-    val defaultVariantId: String,
-    val rollFromVariantId: String,
-    val rollToVariantId: String,
-    val slots: List<UpdateFlagResponseEnvironmentsValueFallthroughVariant2SlotsItem>,
-    val startTimestamp: Double,
-    val type: UpdateFlagResponseEnvironmentsValueFallthroughVariant2TypeEnum,
-    val finalPromille: Double? = null
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueFallthroughVariant3(
-    val type: UpdateFlagResponseEnvironmentsValueFallthroughVariant3TypeEnum
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValuePausedOutcome(
-    val type: UpdateFlagResponseEnvironmentsValuePausedOutcomeTypeEnum,
-    val variantId: String
-) : SdkResource()
-
-
-
-data class UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsVariant0(
-    val type: UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsX2b64796ad5
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsVariant1(
-    val attribute: String,
-    val kind: String,
-    val type: UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsX2a87aa5536
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpOptions(
-    val ignoreCase: Boolean? = null
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX4612a87c94(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Double,
-    val label: String? = null,
-    val note: String? = null
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX407eea14e3(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val label: String? = null,
-    val note: String? = null
-) : SdkResource()
-
-
-
-data class UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsVariant2(
-    val items: List<Any>,
-    val type: UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsXa97e81a0b1
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsVariant3(
-    val flags: String,
-    val pattern: String,
-    val type: UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsXa2da8cd703
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueRulesItemConditionsItem(
-    val cmp: UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum,
-    val lhs: Any,
-    val cmpOptions: UpdateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpOptions? = null,
-    val rhs: Any? = null
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant0(
-    val type: UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant0TypeEnum,
-    val variantId: String
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1Base(
-    val attribute: String,
-    val kind: String,
-    val type: UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1BaseTypeEnum
-) : SdkResource()
-
-
-
-data class UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1(
-    val base: UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1Base,
-    val defaultVariantId: String,
-    val type: UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant1TypeEnum,
-    val weights: Map<String, Double>
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2Base(
-    val attribute: String,
-    val kind: String,
-    val type: UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2BaseTypeEnum
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2SlotsItem(
-    val durationMs: Double,
-    val promille: Double
-) : SdkResource()
-
-
-
-data class UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2(
-    val base: UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2Base,
-    val defaultVariantId: String,
-    val rollFromVariantId: String,
-    val rollToVariantId: String,
-    val slots: List<UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2SlotsItem>,
-    val startTimestamp: Double,
-    val type: UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant2TypeEnum,
-    val finalPromille: Double? = null
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant3(
-    val type: UpdateFlagResponseEnvironmentsValueRulesItemOutcomeVariant3TypeEnum
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueRulesItem(
-    val conditions: List<UpdateFlagResponseEnvironmentsValueRulesItemConditionsItem>,
-    val id: String,
-    val outcome: Any
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueReuse(
-    val active: Boolean,
-    val environment: String
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValueTargetsValueValueValueItem(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val note: String? = null
-) : SdkResource()
-
-data class UpdateFlagResponseEnvironmentsValue(
-    val active: Boolean,
-    val fallthrough: Any,
-    val pausedOutcome: UpdateFlagResponseEnvironmentsValuePausedOutcome,
-    val rules: List<UpdateFlagResponseEnvironmentsValueRulesItem>,
-    val reuse: UpdateFlagResponseEnvironmentsValueReuse? = null,
-    val revision: Double? = null,
-    val targets: Map<String, Map<String, Map<String, List<UpdateFlagResponseEnvironmentsValueTargetsValueValueValueItem>>>>? = null
-) : SdkResource()
-
-
-
-
-
-
-
-data class UpdateFlagResponseVariantsItem(
-    val id: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value", required = true) val `value`: Any?,
-    val description: String? = null,
-    val label: String? = null
-) : SdkResource()
-
-data class UpdateFlagResponse(
-    val createdAt: Double,
-    val createdBy: String,
-    val environments: Map<String, UpdateFlagResponseEnvironmentsValue>,
-    val id: String,
-    val kind: UpdateFlagResponseKindEnum,
-    val ownerId: String,
-    val projectId: String,
-    val revision: Double,
-    val seed: Double,
-    val slug: String,
-    val state: UpdateFlagResponseStateEnum,
-    val typeName: UpdateFlagResponseTypeNameEnum,
-    val updatedAt: Double,
-    val variants: List<UpdateFlagResponseVariantsItem>,
-    val description: String? = null,
-    val maintainerIds: List<String>? = null,
-    val permanent: Boolean? = null,
-    val seenInProduction: Boolean? = null,
-    val tags: List<String>? = null,
-    val updatedBy: String? = null
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX8b323c2e44(
-    val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX58bb90986c,
-    val variantId: String
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallXc67142e1dc(
-    val attribute: String,
-    val kind: String,
-    val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX26195b4372
-) : SdkResource()
-
-
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX79fe13cfbb(
-    val base: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallXc67142e1dc,
-    val defaultVariantId: String,
-    val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallXaa0e21f9de,
-    val weights: Map<String, Double>
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX051f91b1f2(
-    val attribute: String,
-    val kind: String,
-    val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX2360529e31
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallXee911af024(
-    val durationMs: Double,
-    val promille: Double
-) : SdkResource()
-
-
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallXf4f34483fb(
-    val base: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX051f91b1f2,
-    val defaultVariantId: String,
-    val rollFromVariantId: String,
-    val rollToVariantId: String,
-    val slots: List<ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallXee911af024>,
-    val startTimestamp: Double,
-    val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallXf49fcc8597,
-    val finalPromille: Double? = null
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallX667dfcc810(
-    val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueFallXd7b1a2af6a
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValuePausedOutcome(
-    val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValuePausXd49e4d3e09,
-    val variantId: String
-) : SdkResource()
-
-
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXb2ae8abe01(
-    val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXe435e4a495
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX248b341ece(
-    val attribute: String,
-    val kind: String,
-    val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX6ce1a5ca59
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX052185f1b7(
-    val ignoreCase: Boolean? = null
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX57fa9fda8e(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Double,
-    val label: String? = null,
-    val note: String? = null
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX4c9c5bc5a2(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val label: String? = null,
-    val note: String? = null
-) : SdkResource()
-
-
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX535b7bf94c(
-    val items: List<Any>,
-    val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXf7ae4cd8e8
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXa25beb3385(
-    val flags: String,
-    val pattern: String,
-    val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXa052613406
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX64430318e6(
-    val cmp: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXf9fb01d2bf,
-    val lhs: Any,
-    val cmpOptions: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX052185f1b7? = null,
-    val rhs: Any? = null
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXa71b12e500(
-    val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXa1b8ef0de2,
-    val variantId: String
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXb1e1e1510a(
-    val attribute: String,
-    val kind: String,
-    val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX5475582648
-) : SdkResource()
-
-
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX229da540e3(
-    val base: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXb1e1e1510a,
-    val defaultVariantId: String,
-    val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXa3f12bd3bc,
-    val weights: Map<String, Double>
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX91548f75ce(
-    val attribute: String,
-    val kind: String,
-    val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXc49092a600
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX3ea2725d0a(
-    val durationMs: Double,
-    val promille: Double
-) : SdkResource()
-
-
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXdbb62c6201(
-    val base: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX91548f75ce,
-    val defaultVariantId: String,
-    val rollFromVariantId: String,
-    val rollToVariantId: String,
-    val slots: List<ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX3ea2725d0a>,
-    val startTimestamp: Double,
-    val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXbcdcfccef9,
-    val finalPromille: Double? = null
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXbdd04199e6(
-    val type: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleXd430f20539
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRulesItem(
-    val conditions: List<ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRuleX64430318e6>,
-    val id: String,
-    val outcome: Any
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueReuse(
-    val active: Boolean,
-    val environment: String
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValueTargXf67c364d20(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val note: String? = null
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemDataEnvironmentsValue(
-    val active: Boolean,
-    val fallthrough: Any,
-    val pausedOutcome: ListFlagVersionsResponseVersionsItemDataEnvironmentsValuePausedOutcome,
-    val rules: List<ListFlagVersionsResponseVersionsItemDataEnvironmentsValueRulesItem>,
-    val reuse: ListFlagVersionsResponseVersionsItemDataEnvironmentsValueReuse? = null,
-    val revision: Double? = null,
-    val targets: Map<String, Map<String, Map<String, List<ListFlagVersionsResponseVersionsItemDataEnvironmentsValueTargXf67c364d20>>>>? = null
-) : SdkResource()
-
-
-
-data class ListFlagVersionsResponseVersionsItemDataVariantsItem(
-    val id: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value", required = true) val `value`: Any?,
-    val description: String? = null,
-    val label: String? = null
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemData(
-    val environments: Map<String, ListFlagVersionsResponseVersionsItemDataEnvironmentsValue>,
-    val seed: Double,
-    val state: ListFlagVersionsResponseVersionsItemDataStateEnum,
-    val variants: List<ListFlagVersionsResponseVersionsItemDataVariantsItem>,
-    val description: String? = null,
-    val maintainerIds: List<String>? = null,
-    val permanent: Boolean? = null,
-    val tags: List<String>? = null
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemMetadataCreator(
-    val id: String,
-    val name: String
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItemMetadata(
-    val creator: ListFlagVersionsResponseVersionsItemMetadataCreator? = null
-) : SdkResource()
-
-data class ListFlagVersionsResponseVersionsItem(
-    val changedEnvironments: List<String>,
-    val createdAt: Double,
-    val flagId: String,
-    val id: String,
-    val revision: Double,
-    @com.fasterxml.jackson.annotation.JsonProperty("data") val `data`: ListFlagVersionsResponseVersionsItemData,
-    val createdBy: String? = null,
-    val message: String? = null,
-    val metadata: ListFlagVersionsResponseVersionsItemMetadata? = null
-) : SdkResource()
-
-data class ListFlagVersionsResponse(
-    val pagination: Map<String, Any>,
-    val versions: List<ListFlagVersionsResponseVersionsItem>
-) : SdkResource()
-
-data class GetFlagSettingsResponseEntitiesItemAttributesItemLabelsItem(
-    val label: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String
-) : SdkResource()
-
-data class GetFlagSettingsResponseEntitiesItemAttributesItem(
-    val key: String,
-    val type: String,
-    val labels: List<GetFlagSettingsResponseEntitiesItemAttributesItemLabelsItem>? = null
-) : SdkResource()
-
-data class GetFlagSettingsResponseEntitiesItem(
-    val attributes: List<GetFlagSettingsResponseEntitiesItemAttributesItem>,
-    val kind: String,
-    val label: String
-) : SdkResource()
-
-data class GetFlagSettingsResponseMetadata(
-    val activeFlagCount: Double,
-    val archivedFlagCount: Double,
-    val packSizeInBytes: Double,
-    val segmentCount: Double,
-    val configUpdatedAt: Double? = null,
-    val packRevision: Double? = null
-) : SdkResource()
-
-
-
-data class GetFlagSettingsResponse(
-    val enabled: Boolean,
-    val entities: List<GetFlagSettingsResponseEntitiesItem>,
-    val environments: List<String>,
-    val metadata: GetFlagSettingsResponseMetadata,
-    val projectId: String,
-    val typeName: GetFlagSettingsResponseTypeNameEnum,
-    val createdAt: Double? = null,
-    val ownerId: String? = null,
-    val updatedAt: Double? = null
-) : SdkResource()
-
-data class UpdateFlagSettingsEntitiesItemAttributesItemLabelsItem(
-    val label: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String
-) : SdkResource()
-
-data class UpdateFlagSettingsEntitiesItemAttributesItem(
-    val key: String,
-    val type: String,
-    val labels: List<UpdateFlagSettingsEntitiesItemAttributesItemLabelsItem>? = null
-) : SdkResource()
-
-data class UpdateFlagSettingsEntitiesItem(
-    val kind: String,
-    val label: String,
-    val attributes: List<UpdateFlagSettingsEntitiesItemAttributesItem>
-) : SdkResource()
-
-data class UpdateFlagSettingsResponseEntitiesItemAttributesItemLabelsItem(
-    val label: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String
-) : SdkResource()
-
-data class UpdateFlagSettingsResponseEntitiesItemAttributesItem(
-    val key: String,
-    val type: String,
-    val labels: List<UpdateFlagSettingsResponseEntitiesItemAttributesItemLabelsItem>? = null
-) : SdkResource()
-
-data class UpdateFlagSettingsResponseEntitiesItem(
-    val attributes: List<UpdateFlagSettingsResponseEntitiesItemAttributesItem>,
-    val kind: String,
-    val label: String
-) : SdkResource()
-
-data class UpdateFlagSettingsResponseMetadata(
-    val activeFlagCount: Double,
-    val archivedFlagCount: Double,
-    val packSizeInBytes: Double,
-    val segmentCount: Double,
-    val configUpdatedAt: Double? = null,
-    val packRevision: Double? = null
-) : SdkResource()
-
-
-
-data class UpdateFlagSettingsResponse(
-    val enabled: Boolean,
-    val entities: List<UpdateFlagSettingsResponseEntitiesItem>,
-    val environments: List<String>,
-    val metadata: UpdateFlagSettingsResponseMetadata,
-    val projectId: String,
-    val typeName: UpdateFlagSettingsResponseTypeNameEnum,
-    val createdAt: Double? = null,
-    val ownerId: String? = null,
-    val updatedAt: Double? = null
-) : SdkResource()
-
-data class ListTeamFlagsV2ResponsePagination(
-    @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?
-) : SdkResource()
-
-data class ListTeamFlagsV2Response(
-    val pagination: ListTeamFlagsV2ResponsePagination,
-    @com.fasterxml.jackson.annotation.JsonProperty("data") val `data`: List<ListTeamFlagsV2ResponseDataItem>
-) : SdkResource()
-
-data class ListTeamFlagsResponsePagination(
-    @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?
-) : SdkResource()
-
-data class ListTeamFlagsResponse(
-    @com.fasterxml.jackson.annotation.JsonProperty("data") val `data`: List<Flag>,
-    val pagination: ListTeamFlagsResponsePagination
-) : SdkResource()
-
-
-
-data class CreateFlagSegmentDataRulesItemConditionsItemCmpOptions(
-    val ignoreCase: Boolean? = null
-) : SdkResource()
-
-data class CreateFlagSegmentDataRulesItemConditionsItem(
-    /**
-     * Typed representation of the `CreateFlagSegmentRequestDataRulesItemConditionsItemLhs` API schema.
-     */
-    val lhs: CreateFlagSegmentRequestDataRulesItemConditionsItemLhs,
-    val cmp: CreateFlagSegmentDataRulesItemConditionsItemCmpEnum,
-    /**
-     * Typed representation of the `CreateFlagSegmentRequestDataRulesItemConditionsItemRhs` API schema.
-     */
-    val rhs: CreateFlagSegmentRequestDataRulesItemConditionsItemRhs? = null,
-    val cmpOptions: CreateFlagSegmentDataRulesItemConditionsItemCmpOptions? = null
-) : SdkResource()
-
-data class CreateFlagSegmentDataRulesItem(
-    val id: String,
-    val conditions: List<CreateFlagSegmentDataRulesItemConditionsItem>,
-    /**
-     * Typed representation of the `CreateFlagSegmentRequestDataRulesItemOutcome` API schema.
-     */
-    val outcome: CreateFlagSegmentRequestDataRulesItemOutcome
-) : SdkResource()
-
-data class CreateFlagSegmentDataIncludeValueValueItem(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val note: String? = null
-) : SdkResource()
-
-data class CreateFlagSegmentDataExcludeValueValueItem(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val note: String? = null
-) : SdkResource()
-
-/**
- * The data of the segment
- */
-data class CreateFlagSegmentData(
-    val rules: List<CreateFlagSegmentDataRulesItem>? = null,
-    val include: Map<String, Map<String, List<CreateFlagSegmentDataIncludeValueValueItem>>>? = null,
-    val exclude: Map<String, Map<String, List<CreateFlagSegmentDataExcludeValueValueItem>>>? = null
-) : SdkResource()
-
-data class CreateFlagSegmentResponseDataExcludeValueValueItem(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val note: String? = null
-) : SdkResource()
-
-data class CreateFlagSegmentResponseDataIncludeValueValueItem(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val note: String? = null
-) : SdkResource()
-
-
-
-data class CreateFlagSegmentResponseDataRulesItemConditionsItemCmpOptions(
-    val ignoreCase: Boolean? = null
-) : SdkResource()
-
-data class CreateFlagSegmentResponseDataRulesItemConditionsItem(
-    val cmp: CreateFlagSegmentResponseDataRulesItemConditionsItemCmpEnum,
-    /**
-     * Typed representation of the `CreateFlagSegmentResponseDataRulesItemConditionsItemLhs` API schema.
-     */
-    val lhs: CreateFlagSegmentResponseDataRulesItemConditionsItemLhs,
-    val cmpOptions: CreateFlagSegmentResponseDataRulesItemConditionsItemCmpOptions? = null,
-    /**
-     * Typed representation of the `CreateFlagSegmentResponseDataRulesItemConditionsItemRhs` API schema.
-     */
-    val rhs: CreateFlagSegmentResponseDataRulesItemConditionsItemRhs? = null
-) : SdkResource()
-
-data class CreateFlagSegmentResponseDataRulesItem(
-    val conditions: List<CreateFlagSegmentResponseDataRulesItemConditionsItem>,
-    val id: String,
-    /**
-     * Typed representation of the `CreateFlagSegmentResponseDataRulesItemOutcome` API schema.
-     */
-    val outcome: CreateFlagSegmentResponseDataRulesItemOutcome
-) : SdkResource()
-
-data class CreateFlagSegmentResponseData(
-    val exclude: Map<String, Map<String, List<CreateFlagSegmentResponseDataExcludeValueValueItem>>>? = null,
-    val include: Map<String, Map<String, List<CreateFlagSegmentResponseDataIncludeValueValueItem>>>? = null,
-    val rules: List<CreateFlagSegmentResponseDataRulesItem>? = null
-) : SdkResource()
-
-
-
-data class CreateFlagSegmentResponse(
-    val createdAt: Double,
-    @com.fasterxml.jackson.annotation.JsonProperty("data") val `data`: CreateFlagSegmentResponseData,
-    val hint: String,
-    val id: String,
-    val label: String,
-    val projectId: String,
-    val slug: String,
-    val typeName: CreateFlagSegmentResponseTypeNameEnum,
-    val updatedAt: Double,
-    val createdBy: String? = null,
-    val description: String? = null,
-    val usedByFlags: List<String>? = null,
-    val usedBySegments: List<String>? = null
-) : SdkResource()
-
-data class ListFlagSegmentsResponse(
-    @com.fasterxml.jackson.annotation.JsonProperty("data") val `data`: List<Segment>
-) : SdkResource()
-
-
-
-
-
-data class UpdateFlagSegmentOperationsItemValue(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val note: String? = null
-) : SdkResource()
-
-data class UpdateFlagSegmentOperationsItem(
-    val action: UpdateFlagSegmentOperationsItemActionEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("field") val `field`: UpdateFlagSegmentOperationsItemFieldEnum,
-    val entity: String,
-    val attribute: String,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: UpdateFlagSegmentOperationsItemValue
-) : SdkResource()
-
-
-
-data class UpdateFlagSegmentDataRulesItemConditionsItemCmpOptions(
-    val ignoreCase: Boolean? = null
-) : SdkResource()
-
-data class UpdateFlagSegmentDataRulesItemConditionsItem(
-    /**
-     * Typed representation of the `UpdateFlagSegmentRequestDataRulesItemConditionsItemLhs` API schema.
-     */
-    val lhs: UpdateFlagSegmentRequestDataRulesItemConditionsItemLhs,
-    val cmp: UpdateFlagSegmentDataRulesItemConditionsItemCmpEnum,
-    /**
-     * Typed representation of the `UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs` API schema.
-     */
-    val rhs: UpdateFlagSegmentRequestDataRulesItemConditionsItemRhs? = null,
-    val cmpOptions: UpdateFlagSegmentDataRulesItemConditionsItemCmpOptions? = null
-) : SdkResource()
-
-data class UpdateFlagSegmentDataRulesItem(
-    val id: String,
-    val conditions: List<UpdateFlagSegmentDataRulesItemConditionsItem>,
-    /**
-     * Typed representation of the `UpdateFlagSegmentRequestDataRulesItemOutcome` API schema.
-     */
-    val outcome: UpdateFlagSegmentRequestDataRulesItemOutcome
-) : SdkResource()
-
-data class UpdateFlagSegmentDataIncludeValueValueItem(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val note: String? = null
-) : SdkResource()
-
-data class UpdateFlagSegmentDataExcludeValueValueItem(
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: String,
-    val note: String? = null
-) : SdkResource()
-
-/**
- * The data of the segment
- */
-data class UpdateFlagSegmentData(
-    val rules: List<UpdateFlagSegmentDataRulesItem>? = null,
-    val include: Map<String, Map<String, List<UpdateFlagSegmentDataIncludeValueValueItem>>>? = null,
-    val exclude: Map<String, Map<String, List<UpdateFlagSegmentDataExcludeValueValueItem>>>? = null
-) : SdkResource()
-
-data class GetDeploymentFeatureFlagsResponseStatus(
-    val createdAt: Double,
-    val deploymentId: String,
-    /**
-     * The number of flag definitions returned by the flags discovery endpoint.
-     */
-    val flagCount: Double,
-    val projectId: String,
-    /**
-     * The HTTP status code from the flags discovery endpoint.
-     */
-    val responseStatus: Double
-) : SdkResource()
-
-data class GetDeploymentFeatureFlagsResponse(
-    val flags: List<Map<String, Any>>,
-    @com.fasterxml.jackson.annotation.JsonProperty("status", required = true) val status: GetDeploymentFeatureFlagsResponseStatus?
-) : SdkResource()
-
-/**
- * Shared metadata for a Flags SDK key, safe to return on both LIST and CREATE. Never contains cleartext secrets.
- */
-data class GetSdkKeysResponseDataItem(
-    val createdAt: Double,
-    val createdBy: String,
-    val environment: String,
-    val hashKey: String,
-    /**
-     * Partially-masked representation of the SDK key value, safe to display in UIs. The value is the `vf_<type>_` prefix followed by the first 3 characters of the secret portion and a fixed 8-character `*` mask (e.g. `vf_server_abc********`).
-     */
-    val partialKeyValue: String,
-    val projectId: String,
-    val type: GetSdkKeysResponseDataItemTypeEnum,
-    val updatedAt: Double,
-    val deletedAt: Double? = null,
-    val label: String? = null
-) : SdkResource()
-
-data class GetSdkKeysResponse(
-    @com.fasterxml.jackson.annotation.JsonProperty("data") val `data`: List<GetSdkKeysResponseDataItem>
-) : SdkResource()
+    data class GetSdkKeysResponseDataItem(
+        val createdAt: Double,
+        val createdBy: String,
+        val environment: String,
+        val hashKey: String,
+        /**
+         * Partially-masked representation of the SDK key value, safe to display in UIs. The value
+         * is the `vf_<type>_` prefix followed by the first 3 characters of the secret portion and a
+         * fixed 8-character `*` mask (e.g. `vf_server_abc********`).
+         */
+        val partialKeyValue: String,
+        val projectId: String,
+        val type: GetSdkKeysResponseDataItemTypeEnum,
+        val updatedAt: Double,
+        val deletedAt: Double? = null,
+        val label: String? = null,
+    ) : SdkResource()
+
+    data class GetSdkKeysResponse(
+        @com.fasterxml.jackson.annotation.JsonProperty("data")
+        val `data`: List<GetSdkKeysResponseDataItem>
+    ) : SdkResource()
 
     /** Parameters for [listFlagsV2]. */
     data class ListFlagsV2Request(
@@ -1143,7 +1121,7 @@ data class GetSdkKeysResponse(
         val maintainerIds: List<String>? = null,
         val includeMarketplaceFlags: Boolean? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [listFlags]. */
@@ -1156,7 +1134,7 @@ data class GetSdkKeysResponse(
         val search: String? = null,
         val tags: List<String>? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [createFlag]. */
@@ -1173,7 +1151,7 @@ data class GetSdkKeysResponse(
         val state: CreateFlagStateEnum? = null,
         val maintainerIds: List<String>? = null,
         val permanent: Boolean? = null,
-        val tags: List<String>? = null
+        val tags: List<String>? = null,
     )
 
     /** Parameters for [getFlag]. */
@@ -1183,7 +1161,7 @@ data class GetSdkKeysResponse(
         val ifMatch: String? = null,
         val withMetadata: Boolean? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [updateFlag]. */
@@ -1203,7 +1181,7 @@ data class GetSdkKeysResponse(
         val state: UpdateFlagStateEnum? = null,
         val maintainerIds: List<String>? = null,
         val permanent: Boolean? = null,
-        val tags: List<String>? = null
+        val tags: List<String>? = null,
     )
 
     /** Parameters for [deleteFlag]. */
@@ -1213,7 +1191,7 @@ data class GetSdkKeysResponse(
         val ifMatch: String? = null,
         val withMetadata: Boolean? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [listFlagVersions]. */
@@ -1225,7 +1203,7 @@ data class GetSdkKeysResponse(
         val environment: String? = null,
         val withMetadata: Boolean? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [updateFlagSettings]. */
@@ -1235,7 +1213,7 @@ data class GetSdkKeysResponse(
         val slug: String? = null,
         val enabled: Boolean? = null,
         val entities: List<UpdateFlagSettingsEntitiesItem>? = null,
-        val environments: List<String>? = null
+        val environments: List<String>? = null,
     )
 
     /** Parameters for [listTeamFlagsV2]. */
@@ -1250,7 +1228,7 @@ data class GetSdkKeysResponse(
         val createdBy: String? = null,
         val maintainerIds: List<String>? = null,
         val includeMarketplaceFlags: Boolean? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [listTeamFlags]. */
@@ -1263,7 +1241,7 @@ data class GetSdkKeysResponse(
         val search: String? = null,
         val kind: ListTeamFlagsParameterEnum69b069ba? = null,
         val tags: List<String>? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [createFlagSegment]. */
@@ -1276,7 +1254,7 @@ data class GetSdkKeysResponse(
         val teamId: String? = null,
         val slug2: String? = null,
         val createdBy: String? = null,
-        val description: String? = null
+        val description: String? = null,
     )
 
     /** Parameters for [updateFlagSegment]. */
@@ -1290,7 +1268,7 @@ data class GetSdkKeysResponse(
         val label: String? = null,
         val description: String? = null,
         val data: UpdateFlagSegmentData? = null,
-        val hint: String? = null
+        val hint: String? = null,
     )
 
     /** Parameters for [createSdkKey]. */
@@ -1300,13 +1278,19 @@ data class GetSdkKeysResponse(
         val environment: String,
         val teamId: String? = null,
         val slug: String? = null,
-        val label: String? = null
+        val label: String? = null,
     )
 
     /**
-     * Lists a project's feature flags with cursor-based pagination. Use `state`, `search`, `tags`, or maintainer and creator filters to narrow the results, and pass the returned pagination cursor to continue through the list. The `state` filter defaults to `active`.
+     * Lists a project's feature flags with cursor-based pagination. Use `state`, `search`, `tags`,
+     * or maintainer and creator filters to narrow the results, and pass the returned pagination
+     * cursor to continue through the list. The `state` filter defaults to `active`.
      */
-    fun listFlagsV2(clientConfig: ClientConfig, request: ListFlagsV2Request, options: RequestOptions? = null): ListFlagsV2Response =
+    fun listFlagsV2(
+        clientConfig: ClientConfig,
+        request: ListFlagsV2Request,
+        options: RequestOptions? = null,
+    ): ListFlagsV2Response =
         dev.octri.showcase.vercel.methods.FeatureFlagsListFlagsV2Operation.listFlagsV2(
             clientConfig,
             request,
@@ -1314,19 +1298,33 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Lists a project's feature flags with cursor-based pagination. Use `state`, `search`, `tags`, or maintainer and creator filters to narrow the results, and pass the returned pagination cursor to continue through the list. The `state` filter defaults to `active`.
+     * Lists a project's feature flags with cursor-based pagination. Use `state`, `search`, `tags`,
+     * or maintainer and creator filters to narrow the results, and pass the returned pagination
+     * cursor to continue through the list. The `state` filter defaults to `active`.
      */
-    fun listFlagsV2WithRawResponse(clientConfig: ClientConfig, request: ListFlagsV2Request, options: RequestOptions? = null): SdkResponse<ListFlagsV2Response> =
-        dev.octri.showcase.vercel.methods.FeatureFlagsListFlagsV2Operation.listFlagsV2WithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listFlagsV2WithRawResponse(
+        clientConfig: ClientConfig,
+        request: ListFlagsV2Request,
+        options: RequestOptions? = null,
+    ): SdkResponse<ListFlagsV2Response> =
+        dev.octri.showcase.vercel.methods.FeatureFlagsListFlagsV2Operation
+            .listFlagsV2WithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Lists feature flags for a project, with optional filtering by state, slug or description, and tags. Use the `cursor` to continue through paginated results, or omit `limit` to retrieve all flags. The `withMetadata` parameter is deprecated; resolve creator identity separately or use the single-flag endpoint when you need that metadata.
+     * Lists feature flags for a project, with optional filtering by state, slug or description, and
+     * tags. Use the `cursor` to continue through paginated results, or omit `limit` to retrieve all
+     * flags. The `withMetadata` parameter is deprecated; resolve creator identity separately or use
+     * the single-flag endpoint when you need that metadata.
      */
-    fun listFlags(clientConfig: ClientConfig, request: ListFlagsRequest, options: RequestOptions? = null): ListFlagsResponse =
+    fun listFlags(
+        clientConfig: ClientConfig,
+        request: ListFlagsRequest,
+        options: RequestOptions? = null,
+    ): ListFlagsResponse =
         dev.octri.showcase.vercel.methods.FeatureFlagsListFlagsOperation.listFlags(
             clientConfig,
             request,
@@ -1334,9 +1332,16 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Lists feature flags for a project, with optional filtering by state, slug or description, and tags. Use the `cursor` to continue through paginated results, or omit `limit` to retrieve all flags. The `withMetadata` parameter is deprecated; resolve creator identity separately or use the single-flag endpoint when you need that metadata.
+     * Lists feature flags for a project, with optional filtering by state, slug or description, and
+     * tags. Use the `cursor` to continue through paginated results, or omit `limit` to retrieve all
+     * flags. The `withMetadata` parameter is deprecated; resolve creator identity separately or use
+     * the single-flag endpoint when you need that metadata.
      */
-    fun listFlagsWithRawResponse(clientConfig: ClientConfig, request: ListFlagsRequest, options: RequestOptions? = null): SdkResponse<ListFlagsResponse> =
+    fun listFlagsWithRawResponse(
+        clientConfig: ClientConfig,
+        request: ListFlagsRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<ListFlagsResponse> =
         dev.octri.showcase.vercel.methods.FeatureFlagsListFlagsOperation.listFlagsWithRawResponse(
             clientConfig,
             request,
@@ -1344,9 +1349,16 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Creates a feature flag for a project with a unique project-level slug, a flag kind, and environment configuration. Supply `slug`, `kind`, and `environments`; the flag kind must be boolean, string, number, or JSON. Configure optional variants, state, maintainers, and tags as needed.
+     * Creates a feature flag for a project with a unique project-level slug, a flag kind, and
+     * environment configuration. Supply `slug`, `kind`, and `environments`; the flag kind must be
+     * boolean, string, number, or JSON. Configure optional variants, state, maintainers, and tags
+     * as needed.
      */
-    fun createFlag(clientConfig: ClientConfig, request: CreateFlagRequest, options: RequestOptions? = null): CreateFlagResponse =
+    fun createFlag(
+        clientConfig: ClientConfig,
+        request: CreateFlagRequest,
+        options: RequestOptions? = null,
+    ): CreateFlagResponse =
         dev.octri.showcase.vercel.methods.FeatureFlagsCreateFlagOperation.createFlag(
             clientConfig,
             request,
@@ -1354,9 +1366,16 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Creates a feature flag for a project with a unique project-level slug, a flag kind, and environment configuration. Supply `slug`, `kind`, and `environments`; the flag kind must be boolean, string, number, or JSON. Configure optional variants, state, maintainers, and tags as needed.
+     * Creates a feature flag for a project with a unique project-level slug, a flag kind, and
+     * environment configuration. Supply `slug`, `kind`, and `environments`; the flag kind must be
+     * boolean, string, number, or JSON. Configure optional variants, state, maintainers, and tags
+     * as needed.
      */
-    fun createFlagWithRawResponse(clientConfig: ClientConfig, request: CreateFlagRequest, options: RequestOptions? = null): SdkResponse<CreateFlagResponse> =
+    fun createFlagWithRawResponse(
+        clientConfig: ClientConfig,
+        request: CreateFlagRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<CreateFlagResponse> =
         dev.octri.showcase.vercel.methods.FeatureFlagsCreateFlagOperation.createFlagWithRawResponse(
             clientConfig,
             request,
@@ -1364,9 +1383,15 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Retrieves a feature flag by its ID or slug within a project. Use `ifMatch` to send an ETag condition and `withMetadata` to include metadata in the response. The result contains the flag configuration, including its environments, variants, and current state.
+     * Retrieves a feature flag by its ID or slug within a project. Use `ifMatch` to send an ETag
+     * condition and `withMetadata` to include metadata in the response. The result contains the
+     * flag configuration, including its environments, variants, and current state.
      */
-    fun getFlag(clientConfig: ClientConfig, request: GetFlagRequest, options: RequestOptions? = null): Flag =
+    fun getFlag(
+        clientConfig: ClientConfig,
+        request: GetFlagRequest,
+        options: RequestOptions? = null,
+    ): Flag =
         dev.octri.showcase.vercel.methods.FeatureFlagsGetFlagOperation.getFlag(
             clientConfig,
             request,
@@ -1374,9 +1399,15 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Retrieves a feature flag by its ID or slug within a project. Use `ifMatch` to send an ETag condition and `withMetadata` to include metadata in the response. The result contains the flag configuration, including its environments, variants, and current state.
+     * Retrieves a feature flag by its ID or slug within a project. Use `ifMatch` to send an ETag
+     * condition and `withMetadata` to include metadata in the response. The result contains the
+     * flag configuration, including its environments, variants, and current state.
      */
-    fun getFlagWithRawResponse(clientConfig: ClientConfig, request: GetFlagRequest, options: RequestOptions? = null): SdkResponse<Flag> =
+    fun getFlagWithRawResponse(
+        clientConfig: ClientConfig,
+        request: GetFlagRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<Flag> =
         dev.octri.showcase.vercel.methods.FeatureFlagsGetFlagOperation.getFlagWithRawResponse(
             clientConfig,
             request,
@@ -1384,9 +1415,16 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Updates selected properties of an existing feature flag without requiring the full configuration. Supply only the fields to change, such as `variants`, `environments`, or `state`; any environment configuration you provide must include its required settings. Use `ifMatch` when you need to condition the update on an ETag.
+     * Updates selected properties of an existing feature flag without requiring the full
+     * configuration. Supply only the fields to change, such as `variants`, `environments`, or
+     * `state`; any environment configuration you provide must include its required settings. Use
+     * `ifMatch` when you need to condition the update on an ETag.
      */
-    fun updateFlag(clientConfig: ClientConfig, request: UpdateFlagRequest, options: RequestOptions? = null): UpdateFlagResponse =
+    fun updateFlag(
+        clientConfig: ClientConfig,
+        request: UpdateFlagRequest,
+        options: RequestOptions? = null,
+    ): UpdateFlagResponse =
         dev.octri.showcase.vercel.methods.FeatureFlagsUpdateFlagOperation.updateFlag(
             clientConfig,
             request,
@@ -1394,9 +1432,16 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Updates selected properties of an existing feature flag without requiring the full configuration. Supply only the fields to change, such as `variants`, `environments`, or `state`; any environment configuration you provide must include its required settings. Use `ifMatch` when you need to condition the update on an ETag.
+     * Updates selected properties of an existing feature flag without requiring the full
+     * configuration. Supply only the fields to change, such as `variants`, `environments`, or
+     * `state`; any environment configuration you provide must include its required settings. Use
+     * `ifMatch` when you need to condition the update on an ETag.
      */
-    fun updateFlagWithRawResponse(clientConfig: ClientConfig, request: UpdateFlagRequest, options: RequestOptions? = null): SdkResponse<UpdateFlagResponse> =
+    fun updateFlagWithRawResponse(
+        clientConfig: ClientConfig,
+        request: UpdateFlagRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<UpdateFlagResponse> =
         dev.octri.showcase.vercel.methods.FeatureFlagsUpdateFlagOperation.updateFlagWithRawResponse(
             clientConfig,
             request,
@@ -1404,9 +1449,15 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Deletes a feature flag from a project permanently. Use this operation only when you no longer need the flag, because deletion cannot be undone; archive the flag instead if you may need it later. A 204 response has no response body.
+     * Deletes a feature flag from a project permanently. Use this operation only when you no longer
+     * need the flag, because deletion cannot be undone; archive the flag instead if you may need it
+     * later. A 204 response has no response body.
      */
-    fun deleteFlag(clientConfig: ClientConfig, request: DeleteFlagRequest, options: RequestOptions? = null): Unit =
+    fun deleteFlag(
+        clientConfig: ClientConfig,
+        request: DeleteFlagRequest,
+        options: RequestOptions? = null,
+    ): Unit =
         dev.octri.showcase.vercel.methods.FeatureFlagsDeleteFlagOperation.deleteFlag(
             clientConfig,
             request,
@@ -1414,9 +1465,15 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Deletes a feature flag from a project permanently. Use this operation only when you no longer need the flag, because deletion cannot be undone; archive the flag instead if you may need it later. A 204 response has no response body.
+     * Deletes a feature flag from a project permanently. Use this operation only when you no longer
+     * need the flag, because deletion cannot be undone; archive the flag instead if you may need it
+     * later. A 204 response has no response body.
      */
-    fun deleteFlagWithRawResponse(clientConfig: ClientConfig, request: DeleteFlagRequest, options: RequestOptions? = null): SdkResponse<Unit> =
+    fun deleteFlagWithRawResponse(
+        clientConfig: ClientConfig,
+        request: DeleteFlagRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<Unit> =
         dev.octri.showcase.vercel.methods.FeatureFlagsDeleteFlagOperation.deleteFlagWithRawResponse(
             clientConfig,
             request,
@@ -1424,9 +1481,15 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Lists the versions recorded for a feature flag in a project. Use `cursor` to continue through the results and `environment` to filter versions by environment. The response includes pagination information alongside the version records.
+     * Lists the versions recorded for a feature flag in a project. Use `cursor` to continue through
+     * the results and `environment` to filter versions by environment. The response includes
+     * pagination information alongside the version records.
      */
-    fun listFlagVersions(clientConfig: ClientConfig, request: ListFlagVersionsRequest, options: RequestOptions? = null): ListFlagVersionsResponse =
+    fun listFlagVersions(
+        clientConfig: ClientConfig,
+        request: ListFlagVersionsRequest,
+        options: RequestOptions? = null,
+    ): ListFlagVersionsResponse =
         dev.octri.showcase.vercel.methods.FeatureFlagsListFlagVersionsOperation.listFlagVersions(
             clientConfig,
             request,
@@ -1434,19 +1497,33 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Lists the versions recorded for a feature flag in a project. Use `cursor` to continue through the results and `environment` to filter versions by environment. The response includes pagination information alongside the version records.
+     * Lists the versions recorded for a feature flag in a project. Use `cursor` to continue through
+     * the results and `environment` to filter versions by environment. The response includes
+     * pagination information alongside the version records.
      */
-    fun listFlagVersionsWithRawResponse(clientConfig: ClientConfig, request: ListFlagVersionsRequest, options: RequestOptions? = null): SdkResponse<ListFlagVersionsResponse> =
-        dev.octri.showcase.vercel.methods.FeatureFlagsListFlagVersionsOperation.listFlagVersionsWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listFlagVersionsWithRawResponse(
+        clientConfig: ClientConfig,
+        request: ListFlagVersionsRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<ListFlagVersionsResponse> =
+        dev.octri.showcase.vercel.methods.FeatureFlagsListFlagVersionsOperation
+            .listFlagVersionsWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Retrieves feature flag settings for a project. Use these settings to inspect whether flags are enabled, which environments are configured, and the project's flag-related metadata.
+     * Retrieves feature flag settings for a project. Use these settings to inspect whether flags
+     * are enabled, which environments are configured, and the project's flag-related metadata.
      */
-    fun getFlagSettings(clientConfig: ClientConfig, projectIdOrName: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetFlagSettingsResponse =
+    fun getFlagSettings(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetFlagSettingsResponse =
         dev.octri.showcase.vercel.methods.FeatureFlagsGetFlagSettingsOperation.getFlagSettings(
             clientConfig,
             projectIdOrName,
@@ -1456,67 +1533,115 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Retrieves feature flag settings for a project. Use these settings to inspect whether flags are enabled, which environments are configured, and the project's flag-related metadata.
+     * Retrieves feature flag settings for a project. Use these settings to inspect whether flags
+     * are enabled, which environments are configured, and the project's flag-related metadata.
      */
-    fun getFlagSettingsWithRawResponse(clientConfig: ClientConfig, projectIdOrName: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<GetFlagSettingsResponse> =
-        dev.octri.showcase.vercel.methods.FeatureFlagsGetFlagSettingsOperation.getFlagSettingsWithRawResponse(
-            clientConfig,
-            projectIdOrName,
-            teamId,
-            slug,
-            options,
-        )
+    fun getFlagSettingsWithRawResponse(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetFlagSettingsResponse> =
+        dev.octri.showcase.vercel.methods.FeatureFlagsGetFlagSettingsOperation
+            .getFlagSettingsWithRawResponse(
+                clientConfig,
+                projectIdOrName,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Updates feature flag settings for a project, including whether flags are enabled and which environments are synchronized. Send only the settings fields you want to change; entity and attribute entries have required fields and size limits. The response contains the resulting settings.
+     * Updates feature flag settings for a project, including whether flags are enabled and which
+     * environments are synchronized. Send only the settings fields you want to change; entity and
+     * attribute entries have required fields and size limits. The response contains the resulting
+     * settings.
      */
-    fun updateFlagSettings(clientConfig: ClientConfig, request: UpdateFlagSettingsRequest, options: RequestOptions? = null): UpdateFlagSettingsResponse =
-        dev.octri.showcase.vercel.methods.FeatureFlagsUpdateFlagSettingsOperation.updateFlagSettings(
-            clientConfig,
-            request,
-            options,
-        )
+    fun updateFlagSettings(
+        clientConfig: ClientConfig,
+        request: UpdateFlagSettingsRequest,
+        options: RequestOptions? = null,
+    ): UpdateFlagSettingsResponse =
+        dev.octri.showcase.vercel.methods.FeatureFlagsUpdateFlagSettingsOperation
+            .updateFlagSettings(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Updates feature flag settings for a project, including whether flags are enabled and which environments are synchronized. Send only the settings fields you want to change; entity and attribute entries have required fields and size limits. The response contains the resulting settings.
+     * Updates feature flag settings for a project, including whether flags are enabled and which
+     * environments are synchronized. Send only the settings fields you want to change; entity and
+     * attribute entries have required fields and size limits. The response contains the resulting
+     * settings.
      */
-    fun updateFlagSettingsWithRawResponse(clientConfig: ClientConfig, request: UpdateFlagSettingsRequest, options: RequestOptions? = null): SdkResponse<UpdateFlagSettingsResponse> =
-        dev.octri.showcase.vercel.methods.FeatureFlagsUpdateFlagSettingsOperation.updateFlagSettingsWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun updateFlagSettingsWithRawResponse(
+        clientConfig: ClientConfig,
+        request: UpdateFlagSettingsRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<UpdateFlagSettingsResponse> =
+        dev.octri.showcase.vercel.methods.FeatureFlagsUpdateFlagSettingsOperation
+            .updateFlagSettingsWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Lists feature flag settings for projects in a team. Use `limit` to control the maximum number of settings returned and `cursor` to continue through the results.
+     * Lists feature flag settings for projects in a team. Use `limit` to control the maximum number
+     * of settings returned and `cursor` to continue through the results.
      */
-    fun listTeamFlagSettings(clientConfig: ClientConfig, teamId: String, limit: Long? = null, cursor: String? = null, slug: String? = null, options: RequestOptions? = null): Map<String, Any> =
-        dev.octri.showcase.vercel.methods.FeatureFlagsListTeamFlagSettingsOperation.listTeamFlagSettings(
-            clientConfig,
-            teamId,
-            limit,
-            cursor,
-            slug,
-            options,
-        )
+    fun listTeamFlagSettings(
+        clientConfig: ClientConfig,
+        teamId: String,
+        limit: Long? = null,
+        cursor: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Map<String, Any> =
+        dev.octri.showcase.vercel.methods.FeatureFlagsListTeamFlagSettingsOperation
+            .listTeamFlagSettings(
+                clientConfig,
+                teamId,
+                limit,
+                cursor,
+                slug,
+                options,
+            )
 
     /**
-     * Lists feature flag settings for projects in a team. Use `limit` to control the maximum number of settings returned and `cursor` to continue through the results.
+     * Lists feature flag settings for projects in a team. Use `limit` to control the maximum number
+     * of settings returned and `cursor` to continue through the results.
      */
-    fun listTeamFlagSettingsWithRawResponse(clientConfig: ClientConfig, teamId: String, limit: Long? = null, cursor: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<Map<String, Any>> =
-        dev.octri.showcase.vercel.methods.FeatureFlagsListTeamFlagSettingsOperation.listTeamFlagSettingsWithRawResponse(
-            clientConfig,
-            teamId,
-            limit,
-            cursor,
-            slug,
-            options,
-        )
+    fun listTeamFlagSettingsWithRawResponse(
+        clientConfig: ClientConfig,
+        teamId: String,
+        limit: Long? = null,
+        cursor: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<Map<String, Any>> =
+        dev.octri.showcase.vercel.methods.FeatureFlagsListTeamFlagSettingsOperation
+            .listTeamFlagSettingsWithRawResponse(
+                clientConfig,
+                teamId,
+                limit,
+                cursor,
+                slug,
+                options,
+            )
 
     /**
-     * Lists feature flags across all projects in a team. Filter the results by state, kind, tags, creator, maintainers, or search text, and use `cursor` to continue through the results. The response includes an opaque next cursor for pagination.
+     * Lists feature flags across all projects in a team. Filter the results by state, kind, tags,
+     * creator, maintainers, or search text, and use `cursor` to continue through the results. The
+     * response includes an opaque next cursor for pagination.
      */
-    fun listTeamFlagsV2(clientConfig: ClientConfig, request: ListTeamFlagsV2Request, options: RequestOptions? = null): ListTeamFlagsV2Response =
+    fun listTeamFlagsV2(
+        clientConfig: ClientConfig,
+        request: ListTeamFlagsV2Request,
+        options: RequestOptions? = null,
+    ): ListTeamFlagsV2Response =
         dev.octri.showcase.vercel.methods.FeatureFlagsListTeamFlagsV2Operation.listTeamFlagsV2(
             clientConfig,
             request,
@@ -1524,19 +1649,32 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Lists feature flags across all projects in a team. Filter the results by state, kind, tags, creator, maintainers, or search text, and use `cursor` to continue through the results. The response includes an opaque next cursor for pagination.
+     * Lists feature flags across all projects in a team. Filter the results by state, kind, tags,
+     * creator, maintainers, or search text, and use `cursor` to continue through the results. The
+     * response includes an opaque next cursor for pagination.
      */
-    fun listTeamFlagsV2WithRawResponse(clientConfig: ClientConfig, request: ListTeamFlagsV2Request, options: RequestOptions? = null): SdkResponse<ListTeamFlagsV2Response> =
-        dev.octri.showcase.vercel.methods.FeatureFlagsListTeamFlagsV2Operation.listTeamFlagsV2WithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listTeamFlagsV2WithRawResponse(
+        clientConfig: ClientConfig,
+        request: ListTeamFlagsV2Request,
+        options: RequestOptions? = null,
+    ): SdkResponse<ListTeamFlagsV2Response> =
+        dev.octri.showcase.vercel.methods.FeatureFlagsListTeamFlagsV2Operation
+            .listTeamFlagsV2WithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Lists feature flags across all projects in a team. Filter the results by state, kind, tags, or search text, and use `cursor` to continue through the results. The `withMetadata` parameter is deprecated; resolve creator identity separately instead.
+     * Lists feature flags across all projects in a team. Filter the results by state, kind, tags,
+     * or search text, and use `cursor` to continue through the results. The `withMetadata`
+     * parameter is deprecated; resolve creator identity separately instead.
      */
-    fun listTeamFlags(clientConfig: ClientConfig, request: ListTeamFlagsRequest, options: RequestOptions? = null): ListTeamFlagsResponse =
+    fun listTeamFlags(
+        clientConfig: ClientConfig,
+        request: ListTeamFlagsRequest,
+        options: RequestOptions? = null,
+    ): ListTeamFlagsResponse =
         dev.octri.showcase.vercel.methods.FeatureFlagsListTeamFlagsOperation.listTeamFlags(
             clientConfig,
             request,
@@ -1544,19 +1682,32 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Lists feature flags across all projects in a team. Filter the results by state, kind, tags, or search text, and use `cursor` to continue through the results. The `withMetadata` parameter is deprecated; resolve creator identity separately instead.
+     * Lists feature flags across all projects in a team. Filter the results by state, kind, tags,
+     * or search text, and use `cursor` to continue through the results. The `withMetadata`
+     * parameter is deprecated; resolve creator identity separately instead.
      */
-    fun listTeamFlagsWithRawResponse(clientConfig: ClientConfig, request: ListTeamFlagsRequest, options: RequestOptions? = null): SdkResponse<ListTeamFlagsResponse> =
-        dev.octri.showcase.vercel.methods.FeatureFlagsListTeamFlagsOperation.listTeamFlagsWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listTeamFlagsWithRawResponse(
+        clientConfig: ClientConfig,
+        request: ListTeamFlagsRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<ListTeamFlagsResponse> =
+        dev.octri.showcase.vercel.methods.FeatureFlagsListTeamFlagsOperation
+            .listTeamFlagsWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Creates a feature flag segment for a project. Supply `slug`, `label`, `data`, and `hint`; `data` can define segment rules and include or exclude data. A 201 response returns the created segment with its generated identifier.
+     * Creates a feature flag segment for a project. Supply `slug`, `label`, `data`, and `hint`;
+     * `data` can define segment rules and include or exclude data. A 201 response returns the
+     * created segment with its generated identifier.
      */
-    fun createFlagSegment(clientConfig: ClientConfig, request: CreateFlagSegmentRequest, options: RequestOptions? = null): CreateFlagSegmentResponse =
+    fun createFlagSegment(
+        clientConfig: ClientConfig,
+        request: CreateFlagSegmentRequest,
+        options: RequestOptions? = null,
+    ): CreateFlagSegmentResponse =
         dev.octri.showcase.vercel.methods.FeatureFlagsCreateFlagSegmentOperation.createFlagSegment(
             clientConfig,
             request,
@@ -1564,19 +1715,34 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Creates a feature flag segment for a project. Supply `slug`, `label`, `data`, and `hint`; `data` can define segment rules and include or exclude data. A 201 response returns the created segment with its generated identifier.
+     * Creates a feature flag segment for a project. Supply `slug`, `label`, `data`, and `hint`;
+     * `data` can define segment rules and include or exclude data. A 201 response returns the
+     * created segment with its generated identifier.
      */
-    fun createFlagSegmentWithRawResponse(clientConfig: ClientConfig, request: CreateFlagSegmentRequest, options: RequestOptions? = null): SdkResponse<CreateFlagSegmentResponse> =
-        dev.octri.showcase.vercel.methods.FeatureFlagsCreateFlagSegmentOperation.createFlagSegmentWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createFlagSegmentWithRawResponse(
+        clientConfig: ClientConfig,
+        request: CreateFlagSegmentRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<CreateFlagSegmentResponse> =
+        dev.octri.showcase.vercel.methods.FeatureFlagsCreateFlagSegmentOperation
+            .createFlagSegmentWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Lists feature flag segments defined for a project. Use `withMetadata` to control whether metadata is included in the segment records.
+     * Lists feature flag segments defined for a project. Use `withMetadata` to control whether
+     * metadata is included in the segment records.
      */
-    fun listFlagSegments(clientConfig: ClientConfig, projectIdOrName: String, withMetadata: Boolean? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ListFlagSegmentsResponse =
+    fun listFlagSegments(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        withMetadata: Boolean? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ListFlagSegmentsResponse =
         dev.octri.showcase.vercel.methods.FeatureFlagsListFlagSegmentsOperation.listFlagSegments(
             clientConfig,
             projectIdOrName,
@@ -1587,22 +1753,40 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Lists feature flag segments defined for a project. Use `withMetadata` to control whether metadata is included in the segment records.
+     * Lists feature flag segments defined for a project. Use `withMetadata` to control whether
+     * metadata is included in the segment records.
      */
-    fun listFlagSegmentsWithRawResponse(clientConfig: ClientConfig, projectIdOrName: String, withMetadata: Boolean? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<ListFlagSegmentsResponse> =
-        dev.octri.showcase.vercel.methods.FeatureFlagsListFlagSegmentsOperation.listFlagSegmentsWithRawResponse(
-            clientConfig,
-            projectIdOrName,
-            withMetadata,
-            teamId,
-            slug,
-            options,
-        )
+    fun listFlagSegmentsWithRawResponse(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        withMetadata: Boolean? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<ListFlagSegmentsResponse> =
+        dev.octri.showcase.vercel.methods.FeatureFlagsListFlagSegmentsOperation
+            .listFlagSegmentsWithRawResponse(
+                clientConfig,
+                projectIdOrName,
+                withMetadata,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Retrieves a feature flag segment from a project by its identifier or slug. Use `withMetadata` to control whether the response includes segment metadata.
+     * Retrieves a feature flag segment from a project by its identifier or slug. Use `withMetadata`
+     * to control whether the response includes segment metadata.
      */
-    fun getFlagSegment(clientConfig: ClientConfig, projectIdOrName: String, segmentIdOrSlug: String, withMetadata: Boolean? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Segment =
+    fun getFlagSegment(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        segmentIdOrSlug: String,
+        withMetadata: Boolean? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Segment =
         dev.octri.showcase.vercel.methods.FeatureFlagsGetFlagSegmentOperation.getFlagSegment(
             clientConfig,
             projectIdOrName,
@@ -1614,23 +1798,43 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Retrieves a feature flag segment from a project by its identifier or slug. Use `withMetadata` to control whether the response includes segment metadata.
+     * Retrieves a feature flag segment from a project by its identifier or slug. Use `withMetadata`
+     * to control whether the response includes segment metadata.
      */
-    fun getFlagSegmentWithRawResponse(clientConfig: ClientConfig, projectIdOrName: String, segmentIdOrSlug: String, withMetadata: Boolean? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<Segment> =
-        dev.octri.showcase.vercel.methods.FeatureFlagsGetFlagSegmentOperation.getFlagSegmentWithRawResponse(
-            clientConfig,
-            projectIdOrName,
-            segmentIdOrSlug,
-            withMetadata,
-            teamId,
-            slug,
-            options,
-        )
+    fun getFlagSegmentWithRawResponse(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        segmentIdOrSlug: String,
+        withMetadata: Boolean? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<Segment> =
+        dev.octri.showcase.vercel.methods.FeatureFlagsGetFlagSegmentOperation
+            .getFlagSegmentWithRawResponse(
+                clientConfig,
+                projectIdOrName,
+                segmentIdOrSlug,
+                withMetadata,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Deletes a feature flag segment from a project. Use `projectIdOrName` and `segmentIdOrSlug` to identify the project and segment to remove. Set `withMetadata` to include metadata in the response when the operation returns a representation.
+     * Deletes a feature flag segment from a project. Use `projectIdOrName` and `segmentIdOrSlug` to
+     * identify the project and segment to remove. Set `withMetadata` to include metadata in the
+     * response when the operation returns a representation.
      */
-    fun deleteFlagSegment(clientConfig: ClientConfig, projectIdOrName: String, segmentIdOrSlug: String, withMetadata: Boolean? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit =
+    fun deleteFlagSegment(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        segmentIdOrSlug: String,
+        withMetadata: Boolean? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit =
         dev.octri.showcase.vercel.methods.FeatureFlagsDeleteFlagSegmentOperation.deleteFlagSegment(
             clientConfig,
             projectIdOrName,
@@ -1642,23 +1846,41 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Deletes a feature flag segment from a project. Use `projectIdOrName` and `segmentIdOrSlug` to identify the project and segment to remove. Set `withMetadata` to include metadata in the response when the operation returns a representation.
+     * Deletes a feature flag segment from a project. Use `projectIdOrName` and `segmentIdOrSlug` to
+     * identify the project and segment to remove. Set `withMetadata` to include metadata in the
+     * response when the operation returns a representation.
      */
-    fun deleteFlagSegmentWithRawResponse(clientConfig: ClientConfig, projectIdOrName: String, segmentIdOrSlug: String, withMetadata: Boolean? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<Unit> =
-        dev.octri.showcase.vercel.methods.FeatureFlagsDeleteFlagSegmentOperation.deleteFlagSegmentWithRawResponse(
-            clientConfig,
-            projectIdOrName,
-            segmentIdOrSlug,
-            withMetadata,
-            teamId,
-            slug,
-            options,
-        )
+    fun deleteFlagSegmentWithRawResponse(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        segmentIdOrSlug: String,
+        withMetadata: Boolean? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<Unit> =
+        dev.octri.showcase.vercel.methods.FeatureFlagsDeleteFlagSegmentOperation
+            .deleteFlagSegmentWithRawResponse(
+                clientConfig,
+                projectIdOrName,
+                segmentIdOrSlug,
+                withMetadata,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Updates an existing feature flag segment in a project. Use `projectIdOrName` and `segmentIdOrSlug` to identify the project and segment, and send only the segment properties you want to change. The `operations` entries can add or remove values from the segment's include or exclude fields.
+     * Updates an existing feature flag segment in a project. Use `projectIdOrName` and
+     * `segmentIdOrSlug` to identify the project and segment, and send only the segment properties
+     * you want to change. The `operations` entries can add or remove values from the segment's
+     * include or exclude fields.
      */
-    fun updateFlagSegment(clientConfig: ClientConfig, request: UpdateFlagSegmentRequest, options: RequestOptions? = null): UpdateFlagSegmentResponse =
+    fun updateFlagSegment(
+        clientConfig: ClientConfig,
+        request: UpdateFlagSegmentRequest,
+        options: RequestOptions? = null,
+    ): UpdateFlagSegmentResponse =
         dev.octri.showcase.vercel.methods.FeatureFlagsUpdateFlagSegmentOperation.updateFlagSegment(
             clientConfig,
             request,
@@ -1666,43 +1888,77 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Updates an existing feature flag segment in a project. Use `projectIdOrName` and `segmentIdOrSlug` to identify the project and segment, and send only the segment properties you want to change. The `operations` entries can add or remove values from the segment's include or exclude fields.
+     * Updates an existing feature flag segment in a project. Use `projectIdOrName` and
+     * `segmentIdOrSlug` to identify the project and segment, and send only the segment properties
+     * you want to change. The `operations` entries can add or remove values from the segment's
+     * include or exclude fields.
      */
-    fun updateFlagSegmentWithRawResponse(clientConfig: ClientConfig, request: UpdateFlagSegmentRequest, options: RequestOptions? = null): SdkResponse<UpdateFlagSegmentResponse> =
-        dev.octri.showcase.vercel.methods.FeatureFlagsUpdateFlagSegmentOperation.updateFlagSegmentWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun updateFlagSegmentWithRawResponse(
+        clientConfig: ClientConfig,
+        request: UpdateFlagSegmentRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<UpdateFlagSegmentResponse> =
+        dev.octri.showcase.vercel.methods.FeatureFlagsUpdateFlagSegmentOperation
+            .updateFlagSegmentWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Retrieves the feature flags associated with a deployment. Use `deploymentId` to identify the deployment whose flags you need. The response includes the flags and status information for the deployment.
+     * Retrieves the feature flags associated with a deployment. Use `deploymentId` to identify the
+     * deployment whose flags you need. The response includes the flags and status information for
+     * the deployment.
      */
-    fun getDeploymentFeatureFlags(clientConfig: ClientConfig, deploymentId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetDeploymentFeatureFlagsResponse =
-        dev.octri.showcase.vercel.methods.FeatureFlagsGetDeploymentFeatureFlagsOperation.getDeploymentFeatureFlags(
-            clientConfig,
-            deploymentId,
-            teamId,
-            slug,
-            options,
-        )
+    fun getDeploymentFeatureFlags(
+        clientConfig: ClientConfig,
+        deploymentId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetDeploymentFeatureFlagsResponse =
+        dev.octri.showcase.vercel.methods.FeatureFlagsGetDeploymentFeatureFlagsOperation
+            .getDeploymentFeatureFlags(
+                clientConfig,
+                deploymentId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Retrieves the feature flags associated with a deployment. Use `deploymentId` to identify the deployment whose flags you need. The response includes the flags and status information for the deployment.
+     * Retrieves the feature flags associated with a deployment. Use `deploymentId` to identify the
+     * deployment whose flags you need. The response includes the flags and status information for
+     * the deployment.
      */
-    fun getDeploymentFeatureFlagsWithRawResponse(clientConfig: ClientConfig, deploymentId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<GetDeploymentFeatureFlagsResponse> =
-        dev.octri.showcase.vercel.methods.FeatureFlagsGetDeploymentFeatureFlagsOperation.getDeploymentFeatureFlagsWithRawResponse(
-            clientConfig,
-            deploymentId,
-            teamId,
-            slug,
-            options,
-        )
+    fun getDeploymentFeatureFlagsWithRawResponse(
+        clientConfig: ClientConfig,
+        deploymentId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetDeploymentFeatureFlagsResponse> =
+        dev.octri.showcase.vercel.methods.FeatureFlagsGetDeploymentFeatureFlagsOperation
+            .getDeploymentFeatureFlagsWithRawResponse(
+                clientConfig,
+                deploymentId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Lists the SDK keys for a project. Use `projectIdOrName` to select the project whose keys you want to inspect. The response contains safe key metadata and does not include cleartext secrets.
+     * Lists the SDK keys for a project. Use `projectIdOrName` to select the project whose keys you
+     * want to inspect. The response contains safe key metadata and does not include cleartext
+     * secrets.
      */
-    fun getSdkKeys(clientConfig: ClientConfig, projectIdOrName: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetSdkKeysResponse =
+    fun getSdkKeys(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetSdkKeysResponse =
         dev.octri.showcase.vercel.methods.FeatureFlagsGetSdkKeysOperation.getSdkKeys(
             clientConfig,
             projectIdOrName,
@@ -1712,9 +1968,17 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Lists the SDK keys for a project. Use `projectIdOrName` to select the project whose keys you want to inspect. The response contains safe key metadata and does not include cleartext secrets.
+     * Lists the SDK keys for a project. Use `projectIdOrName` to select the project whose keys you
+     * want to inspect. The response contains safe key metadata and does not include cleartext
+     * secrets.
      */
-    fun getSdkKeysWithRawResponse(clientConfig: ClientConfig, projectIdOrName: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<GetSdkKeysResponse> =
+    fun getSdkKeysWithRawResponse(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetSdkKeysResponse> =
         dev.octri.showcase.vercel.methods.FeatureFlagsGetSdkKeysOperation.getSdkKeysWithRawResponse(
             clientConfig,
             projectIdOrName,
@@ -1724,9 +1988,15 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Creates an SDK key for a project. Supply `sdkKeyType` and `environment` in the request body, and optionally provide a `label` to identify the key. The response includes the cleartext key value, which is disclosed only when the key is created.
+     * Creates an SDK key for a project. Supply `sdkKeyType` and `environment` in the request body,
+     * and optionally provide a `label` to identify the key. The response includes the cleartext key
+     * value, which is disclosed only when the key is created.
      */
-    fun createSdkKey(clientConfig: ClientConfig, request: CreateSdkKeyRequest, options: RequestOptions? = null): FlagsSdkKeyWithSecrets =
+    fun createSdkKey(
+        clientConfig: ClientConfig,
+        request: CreateSdkKeyRequest,
+        options: RequestOptions? = null,
+    ): FlagsSdkKeyWithSecrets =
         dev.octri.showcase.vercel.methods.FeatureFlagsCreateSdkKeyOperation.createSdkKey(
             clientConfig,
             request,
@@ -1734,19 +2004,35 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Creates an SDK key for a project. Supply `sdkKeyType` and `environment` in the request body, and optionally provide a `label` to identify the key. The response includes the cleartext key value, which is disclosed only when the key is created.
+     * Creates an SDK key for a project. Supply `sdkKeyType` and `environment` in the request body,
+     * and optionally provide a `label` to identify the key. The response includes the cleartext key
+     * value, which is disclosed only when the key is created.
      */
-    fun createSdkKeyWithRawResponse(clientConfig: ClientConfig, request: CreateSdkKeyRequest, options: RequestOptions? = null): SdkResponse<FlagsSdkKeyWithSecrets> =
-        dev.octri.showcase.vercel.methods.FeatureFlagsCreateSdkKeyOperation.createSdkKeyWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createSdkKeyWithRawResponse(
+        clientConfig: ClientConfig,
+        request: CreateSdkKeyRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<FlagsSdkKeyWithSecrets> =
+        dev.octri.showcase.vercel.methods.FeatureFlagsCreateSdkKeyOperation
+            .createSdkKeyWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Deletes an SDK key from a project. Use `projectIdOrName` and `hashKey` to identify the project and key to remove. The operation removes the key rather than merely hiding it from the project’s key list.
+     * Deletes an SDK key from a project. Use `projectIdOrName` and `hashKey` to identify the
+     * project and key to remove. The operation removes the key rather than merely hiding it from
+     * the project’s key list.
      */
-    fun deleteSdkKey(clientConfig: ClientConfig, projectIdOrName: String, hashKey: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit =
+    fun deleteSdkKey(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        hashKey: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit =
         dev.octri.showcase.vercel.methods.FeatureFlagsDeleteSdkKeyOperation.deleteSdkKey(
             clientConfig,
             projectIdOrName,
@@ -1757,15 +2043,25 @@ data class GetSdkKeysResponse(
         )
 
     /**
-     * Deletes an SDK key from a project. Use `projectIdOrName` and `hashKey` to identify the project and key to remove. The operation removes the key rather than merely hiding it from the project’s key list.
+     * Deletes an SDK key from a project. Use `projectIdOrName` and `hashKey` to identify the
+     * project and key to remove. The operation removes the key rather than merely hiding it from
+     * the project’s key list.
      */
-    fun deleteSdkKeyWithRawResponse(clientConfig: ClientConfig, projectIdOrName: String, hashKey: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<Unit> =
-        dev.octri.showcase.vercel.methods.FeatureFlagsDeleteSdkKeyOperation.deleteSdkKeyWithRawResponse(
-            clientConfig,
-            projectIdOrName,
-            hashKey,
-            teamId,
-            slug,
-            options,
-        )
+    fun deleteSdkKeyWithRawResponse(
+        clientConfig: ClientConfig,
+        projectIdOrName: String,
+        hashKey: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<Unit> =
+        dev.octri.showcase.vercel.methods.FeatureFlagsDeleteSdkKeyOperation
+            .deleteSdkKeyWithRawResponse(
+                clientConfig,
+                projectIdOrName,
+                hashKey,
+                teamId,
+                slug,
+                options,
+            )
 }

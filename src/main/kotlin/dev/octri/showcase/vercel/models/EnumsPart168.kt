@@ -3,374 +3,667 @@
 
 package dev.octri.showcase.vercel.models
 
-class CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX87f6e203ac private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX87f6e203ac && value == other.value
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX87f6e203ac
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX87f6e203ac &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX87f6e203ac(false)
-        @JvmField val TRUE = CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX87f6e203ac(true)
+        @JvmField
+        val FALSE = CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX87f6e203ac(false)
+        @JvmField
+        val TRUE = CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX87f6e203ac(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX87f6e203ac(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseMaX87f6e203ac(value)
     }
 }
 
-class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b && value == other.value
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val ALLOW = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b("allow")
-        @JvmField val BYPASS = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b("bypass")
-        @JvmField val CHALLENGE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b("challenge")
-        @JvmField val DENY = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b("deny")
-        @JvmField val LOG = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b("log")
-        @JvmField val RATE_LIMIT = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b("rate_limit")
-        @JvmField val REDIRECT = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b("redirect")
+        @JvmField
+        val ALLOW =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b("allow")
+        @JvmField
+        val BYPASS =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b("bypass")
+        @JvmField
+        val CHALLENGE =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b("challenge")
+        @JvmField
+        val DENY = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b("deny")
+        @JvmField
+        val LOG = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b("log")
+        @JvmField
+        val RATE_LIMIT =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b("rate_limit")
+        @JvmField
+        val REDIRECT =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b("redirect")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXc138c27d3b(value)
     }
 }
 
-class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXbe09cb742a private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXbe09cb742a && value == other.value
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXbe09cb742a
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXbe09cb742a &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXbe09cb742a(false)
-        @JvmField val TRUE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXbe09cb742a(true)
+        @JvmField
+        val FALSE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXbe09cb742a(false)
+        @JvmField
+        val TRUE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXbe09cb742a(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXbe09cb742a(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXbe09cb742a(value)
     }
 }
 
-class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdbc1e3c88d private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdbc1e3c88d && value == other.value
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdbc1e3c88d
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdbc1e3c88d &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val UNKNOWN = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdbc1e3c88d("*")
+        @JvmField
+        val UNKNOWN = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdbc1e3c88d("*")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdbc1e3c88d(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdbc1e3c88d(value)
     }
 }
 
-class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0c2460bfe private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0c2460bfe && value == other.value
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0c2460bfe
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0c2460bfe &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CHALLENGE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0c2460bfe("challenge")
-        @JvmField val DENY = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0c2460bfe("deny")
-        @JvmField val LOG = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0c2460bfe("log")
-        @JvmField val RATE_LIMIT = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0c2460bfe("rate_limit")
+        @JvmField
+        val CHALLENGE =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0c2460bfe("challenge")
+        @JvmField
+        val DENY = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0c2460bfe("deny")
+        @JvmField
+        val LOG = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0c2460bfe("log")
+        @JvmField
+        val RATE_LIMIT =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0c2460bfe("rate_limit")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0c2460bfe(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0c2460bfe(value)
     }
 }
 
-class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7d56867dd6 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7d56867dd6 && value == other.value
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7d56867dd6
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7d56867dd6 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val FIXED_WINDOW = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7d56867dd6("fixed_window")
-        @JvmField val TOKEN_BUCKET = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7d56867dd6("token_bucket")
+        @JvmField
+        val FIXED_WINDOW =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7d56867dd6("fixed_window")
+        @JvmField
+        val TOKEN_BUCKET =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7d56867dd6("token_bucket")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7d56867dd6(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX7d56867dd6(value)
     }
 }
 
-class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0e4fd8750 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0e4fd8750 && value == other.value
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0e4fd8750
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0e4fd8750 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0e4fd8750(false)
-        @JvmField val TRUE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0e4fd8750(true)
+        @JvmField
+        val FALSE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0e4fd8750(false)
+        @JvmField
+        val TRUE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0e4fd8750(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0e4fd8750(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXd0e4fd8750(value)
     }
 }
 
-class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXad41bd79e1 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXad41bd79e1 && value == other.value
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXad41bd79e1
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXad41bd79e1 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXad41bd79e1(false)
-        @JvmField val TRUE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXad41bd79e1(true)
+        @JvmField
+        val FALSE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXad41bd79e1(false)
+        @JvmField
+        val TRUE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXad41bd79e1(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXad41bd79e1(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXad41bd79e1(value)
     }
 }
 
-class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9df365e4f1 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9df365e4f1 && value == other.value
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9df365e4f1
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9df365e4f1 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9df365e4f1(false)
-        @JvmField val TRUE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9df365e4f1(true)
+        @JvmField
+        val FALSE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9df365e4f1(false)
+        @JvmField
+        val TRUE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9df365e4f1(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9df365e4f1(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX9df365e4f1(value)
     }
 }
 
-class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a && value == other.value
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val EQ = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("eq")
-        @JvmField val EX = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("ex")
-        @JvmField val GT = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("gt")
-        @JvmField val GTE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("gte")
-        @JvmField val INC = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("inc")
-        @JvmField val LIST = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("list")
-        @JvmField val LT = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("lt")
-        @JvmField val LTE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("lte")
-        @JvmField val NEQ = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("neq")
-        @JvmField val NEX = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("nex")
-        @JvmField val NINC = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("ninc")
-        @JvmField val PRE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("pre")
-        @JvmField val RE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("re")
-        @JvmField val SUB = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("sub")
-        @JvmField val SUF = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("suf")
+        @JvmField
+        val EQ = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("eq")
+        @JvmField
+        val EX = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("ex")
+        @JvmField
+        val GT = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("gt")
+        @JvmField
+        val GTE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("gte")
+        @JvmField
+        val INC = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("inc")
+        @JvmField
+        val LIST = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("list")
+        @JvmField
+        val LT = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("lt")
+        @JvmField
+        val LTE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("lte")
+        @JvmField
+        val NEQ = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("neq")
+        @JvmField
+        val NEX = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("nex")
+        @JvmField
+        val NINC = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("ninc")
+        @JvmField
+        val PRE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("pre")
+        @JvmField
+        val RE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("re")
+        @JvmField
+        val SUB = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("sub")
+        @JvmField
+        val SUF = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a("suf")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX375f5a5f9a(value)
     }
 }
 
-class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30 && value == other.value
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val BOT_CATEGORY = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("bot_category")
-        @JvmField val BOT_NAME = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("bot_name")
-        @JvmField val BOT_PROTECTION = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("bot_protection")
-        @JvmField val BOT_STATUS = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("bot_status")
-        @JvmField val COOKIE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("cookie")
-        @JvmField val DOMAIN_ENVIRONMENT = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("domain_environment")
-        @JvmField val ENVIRONMENT = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("environment")
-        @JvmField val GEO_AS_NUMBER = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("geo_as_number")
-        @JvmField val GEO_CITY = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("geo_city")
-        @JvmField val GEO_CONTINENT = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("geo_continent")
-        @JvmField val GEO_COUNTRY = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("geo_country")
-        @JvmField val GEO_COUNTRY_REGION = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("geo_country_region")
-        @JvmField val HEADER = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("header")
-        @JvmField val HOST = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("host")
-        @JvmField val IP_ADDRESS = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("ip_address")
-        @JvmField val JA3_DIGEST = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("ja3_digest")
-        @JvmField val JA4_DIGEST = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("ja4_digest")
-        @JvmField val METHOD = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("method")
-        @JvmField val PATH = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("path")
-        @JvmField val PROTOCOL = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("protocol")
-        @JvmField val QUERY = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("query")
-        @JvmField val RATE_LIMIT_API_ID = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("rate_limit_api_id")
-        @JvmField val RAW_PATH = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("raw_path")
-        @JvmField val REGION = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("region")
-        @JvmField val RESPONSE_CODE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("response_code")
-        @JvmField val ROUTE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("route")
-        @JvmField val RULESET = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("ruleset")
-        @JvmField val SCHEME = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("scheme")
-        @JvmField val SERVER_ACTION = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("server_action")
-        @JvmField val SHARED_CONDITION = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("shared_condition")
-        @JvmField val TARGET_PATH = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("target_path")
-        @JvmField val TRAFFIC_SOURCE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("traffic_source")
-        @JvmField val TRUSTED_SOURCE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("trusted_source")
-        @JvmField val USER_AGENT = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("user_agent")
+        @JvmField
+        val BOT_CATEGORY =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("bot_category")
+        @JvmField
+        val BOT_NAME =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("bot_name")
+        @JvmField
+        val BOT_PROTECTION =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30(
+                "bot_protection"
+            )
+        @JvmField
+        val BOT_STATUS =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("bot_status")
+        @JvmField
+        val COOKIE =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("cookie")
+        @JvmField
+        val DOMAIN_ENVIRONMENT =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30(
+                "domain_environment"
+            )
+        @JvmField
+        val ENVIRONMENT =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("environment")
+        @JvmField
+        val GEO_AS_NUMBER =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30(
+                "geo_as_number"
+            )
+        @JvmField
+        val GEO_CITY =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("geo_city")
+        @JvmField
+        val GEO_CONTINENT =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30(
+                "geo_continent"
+            )
+        @JvmField
+        val GEO_COUNTRY =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("geo_country")
+        @JvmField
+        val GEO_COUNTRY_REGION =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30(
+                "geo_country_region"
+            )
+        @JvmField
+        val HEADER =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("header")
+        @JvmField
+        val HOST = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("host")
+        @JvmField
+        val IP_ADDRESS =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("ip_address")
+        @JvmField
+        val JA3_DIGEST =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("ja3_digest")
+        @JvmField
+        val JA4_DIGEST =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("ja4_digest")
+        @JvmField
+        val METHOD =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("method")
+        @JvmField
+        val PATH = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("path")
+        @JvmField
+        val PROTOCOL =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("protocol")
+        @JvmField
+        val QUERY =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("query")
+        @JvmField
+        val RATE_LIMIT_API_ID =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30(
+                "rate_limit_api_id"
+            )
+        @JvmField
+        val RAW_PATH =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("raw_path")
+        @JvmField
+        val REGION =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("region")
+        @JvmField
+        val RESPONSE_CODE =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30(
+                "response_code"
+            )
+        @JvmField
+        val ROUTE =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("route")
+        @JvmField
+        val RULESET =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("ruleset")
+        @JvmField
+        val SCHEME =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("scheme")
+        @JvmField
+        val SERVER_ACTION =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30(
+                "server_action"
+            )
+        @JvmField
+        val SHARED_CONDITION =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30(
+                "shared_condition"
+            )
+        @JvmField
+        val TARGET_PATH =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("target_path")
+        @JvmField
+        val TRAFFIC_SOURCE =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30(
+                "traffic_source"
+            )
+        @JvmField
+        val TRUSTED_SOURCE =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30(
+                "trusted_source"
+            )
+        @JvmField
+        val USER_AGENT =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30("user_agent")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX5aed3c2a30(value)
     }
 }
 
-class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08 && value == other.value
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val ALLOW = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08("allow")
-        @JvmField val BYPASS = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08("bypass")
-        @JvmField val CHALLENGE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08("challenge")
-        @JvmField val DENY = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08("deny")
-        @JvmField val LOG = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08("log")
-        @JvmField val RATE_LIMIT = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08("rate_limit")
-        @JvmField val REDIRECT = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08("redirect")
+        @JvmField
+        val ALLOW =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08("allow")
+        @JvmField
+        val BYPASS =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08("bypass")
+        @JvmField
+        val CHALLENGE =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08("challenge")
+        @JvmField
+        val DENY = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08("deny")
+        @JvmField
+        val LOG = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08("log")
+        @JvmField
+        val RATE_LIMIT =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08("rate_limit")
+        @JvmField
+        val REDIRECT =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08("redirect")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX34b162aa08(value)
     }
 }
 
-class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX26276ce5c4 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX26276ce5c4 && value == other.value
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX26276ce5c4
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX26276ce5c4 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX26276ce5c4(false)
-        @JvmField val TRUE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX26276ce5c4(true)
+        @JvmField
+        val FALSE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX26276ce5c4(false)
+        @JvmField
+        val TRUE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX26276ce5c4(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX26276ce5c4(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX26276ce5c4(value)
     }
 }
 
-class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdbefd0f638 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdbefd0f638 && value == other.value
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdbefd0f638
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdbefd0f638 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val UNKNOWN = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdbefd0f638("*")
+        @JvmField
+        val UNKNOWN = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdbefd0f638("*")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdbefd0f638(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXdbefd0f638(value)
     }
 }
 
-class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfc318e7e2c private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfc318e7e2c && value == other.value
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfc318e7e2c
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfc318e7e2c &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CHALLENGE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfc318e7e2c("challenge")
-        @JvmField val DENY = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfc318e7e2c("deny")
-        @JvmField val LOG = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfc318e7e2c("log")
-        @JvmField val RATE_LIMIT = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfc318e7e2c("rate_limit")
+        @JvmField
+        val CHALLENGE =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfc318e7e2c("challenge")
+        @JvmField
+        val DENY = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfc318e7e2c("deny")
+        @JvmField
+        val LOG = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfc318e7e2c("log")
+        @JvmField
+        val RATE_LIMIT =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfc318e7e2c("rate_limit")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfc318e7e2c(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXfc318e7e2c(value)
     }
 }
 
-class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX0168e2e8b2 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX0168e2e8b2 && value == other.value
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX0168e2e8b2
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX0168e2e8b2 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val FIXED_WINDOW = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX0168e2e8b2("fixed_window")
-        @JvmField val TOKEN_BUCKET = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX0168e2e8b2("token_bucket")
+        @JvmField
+        val FIXED_WINDOW =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX0168e2e8b2("fixed_window")
+        @JvmField
+        val TOKEN_BUCKET =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX0168e2e8b2("token_bucket")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX0168e2e8b2(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuX0168e2e8b2(value)
     }
 }
 
-class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXe691169d31 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXe691169d31 && value == other.value
+class CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXe691169d31
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXe691169d31 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXe691169d31(false)
-        @JvmField val TRUE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXe691169d31(true)
+        @JvmField
+        val FALSE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXe691169d31(false)
+        @JvmField
+        val TRUE = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXe691169d31(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXe691169d31(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateSecurityFirewallConfigByConfigVersionActivateResponseRuXe691169d31(value)
     }
 }
 
-class GenerateFirewallRuleResponseRuleActionMitigateRedirectPermanentEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GenerateFirewallRuleResponseRuleActionMitigateRedirectPermanentEnum && value == other.value
+class GenerateFirewallRuleResponseRuleActionMitigateRedirectPermanentEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GenerateFirewallRuleResponseRuleActionMitigateRedirectPermanentEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GenerateFirewallRuleResponseRuleActionMitigateRedirectPermanentEnum(false)
-        @JvmField val TRUE = GenerateFirewallRuleResponseRuleActionMitigateRedirectPermanentEnum(true)
+        @JvmField
+        val FALSE = GenerateFirewallRuleResponseRuleActionMitigateRedirectPermanentEnum(false)
+        @JvmField
+        val TRUE = GenerateFirewallRuleResponseRuleActionMitigateRedirectPermanentEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GenerateFirewallRuleResponseRuleActionMitigateRedirectPermanentEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GenerateFirewallRuleResponseRuleActionMitigateRedirectPermanentEnum(value)
     }
 }
 
-class GenerateFirewallRuleResponseRuleActiveEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GenerateFirewallRuleResponseRuleActiveEnum && value == other.value
+class GenerateFirewallRuleResponseRuleActiveEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GenerateFirewallRuleResponseRuleActiveEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -378,33 +671,47 @@ class GenerateFirewallRuleResponseRuleActiveEnum private constructor(
         @JvmField val FALSE = GenerateFirewallRuleResponseRuleActiveEnum(false)
         @JvmField val TRUE = GenerateFirewallRuleResponseRuleActiveEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GenerateFirewallRuleResponseRuleActiveEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = GenerateFirewallRuleResponseRuleActiveEnum(value)
     }
 }
 
-class GenerateFirewallRuleResponseRuleConditionGroupItemConditionsItemNegEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GenerateFirewallRuleResponseRuleConditionGroupItemConditionsItemNegEnum && value == other.value
+class GenerateFirewallRuleResponseRuleConditionGroupItemConditionsItemNegEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GenerateFirewallRuleResponseRuleConditionGroupItemConditionsItemNegEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = GenerateFirewallRuleResponseRuleConditionGroupItemConditionsItemNegEnum(false)
-        @JvmField val TRUE = GenerateFirewallRuleResponseRuleConditionGroupItemConditionsItemNegEnum(true)
+        @JvmField
+        val FALSE = GenerateFirewallRuleResponseRuleConditionGroupItemConditionsItemNegEnum(false)
+        @JvmField
+        val TRUE = GenerateFirewallRuleResponseRuleConditionGroupItemConditionsItemNegEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GenerateFirewallRuleResponseRuleConditionGroupItemConditionsItemNegEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GenerateFirewallRuleResponseRuleConditionGroupItemConditionsItemNegEnum(value)
     }
 }
 
-class GetSecurityFirewallEventsParameterEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetSecurityFirewallEventsParameterEnum && value == other.value
+class GetSecurityFirewallEventsParameterEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetSecurityFirewallEventsParameterEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -412,33 +719,44 @@ class GetSecurityFirewallEventsParameterEnum private constructor(
         @JvmField val STARTTIME_DESC = GetSecurityFirewallEventsParameterEnum("startTime:desc")
         @JvmField val STARTTIME_ASC = GetSecurityFirewallEventsParameterEnum("startTime:asc")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetSecurityFirewallEventsParameterEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = GetSecurityFirewallEventsParameterEnum(value)
     }
 }
 
-class GetSecurityFirewallEventsParameterItemEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetSecurityFirewallEventsParameterItemEnum && value == other.value
+class GetSecurityFirewallEventsParameterItemEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetSecurityFirewallEventsParameterItemEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val SYSTEM_ACTION = GetSecurityFirewallEventsParameterItemEnum("system-action")
-        @JvmField val CUSTOMER_ACTION = GetSecurityFirewallEventsParameterItemEnum("customer-action")
+        @JvmField
+        val CUSTOMER_ACTION = GetSecurityFirewallEventsParameterItemEnum("customer-action")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetSecurityFirewallEventsParameterItemEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = GetSecurityFirewallEventsParameterItemEnum(value)
     }
 }
 
-class GetSecurityFirewallEventsParameterEnumc35a8c6a private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetSecurityFirewallEventsParameterEnumc35a8c6a && value == other.value
+class GetSecurityFirewallEventsParameterEnumc35a8c6a
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetSecurityFirewallEventsParameterEnumc35a8c6a && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -446,16 +764,21 @@ class GetSecurityFirewallEventsParameterEnumc35a8c6a private constructor(
         @JvmField val SYSTEM = GetSecurityFirewallEventsParameterEnumc35a8c6a("system")
         @JvmField val CUSTOM = GetSecurityFirewallEventsParameterEnumc35a8c6a("custom")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetSecurityFirewallEventsParameterEnumc35a8c6a(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = GetSecurityFirewallEventsParameterEnumc35a8c6a(value)
     }
 }
 
-class GetSecurityFirewallEventsParameterItemEnumdb8c46dd private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetSecurityFirewallEventsParameterItemEnumdb8c46dd && value == other.value
+class GetSecurityFirewallEventsParameterItemEnumdb8c46dd
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetSecurityFirewallEventsParameterItemEnumdb8c46dd && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -466,16 +789,21 @@ class GetSecurityFirewallEventsParameterItemEnumdb8c46dd private constructor(
         @JvmField val RATE_LIMIT = GetSecurityFirewallEventsParameterItemEnumdb8c46dd("rate_limit")
         @JvmField val BYPASS = GetSecurityFirewallEventsParameterItemEnumdb8c46dd("bypass")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetSecurityFirewallEventsParameterItemEnumdb8c46dd(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = GetSecurityFirewallEventsParameterItemEnumdb8c46dd(value)
     }
 }
 
-class GetSecurityFirewallEventsResponseActionsItemIsActiveEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetSecurityFirewallEventsResponseActionsItemIsActiveEnum && value == other.value
+class GetSecurityFirewallEventsResponseActionsItemIsActiveEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetSecurityFirewallEventsResponseActionsItemIsActiveEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -483,16 +811,22 @@ class GetSecurityFirewallEventsResponseActionsItemIsActiveEnum private construct
         @JvmField val FALSE = GetSecurityFirewallEventsResponseActionsItemIsActiveEnum(false)
         @JvmField val TRUE = GetSecurityFirewallEventsResponseActionsItemIsActiveEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetSecurityFirewallEventsResponseActionsItemIsActiveEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetSecurityFirewallEventsResponseActionsItemIsActiveEnum(value)
     }
 }
 
-class GetSecurityFirewallEventsResponsePaginationHasMoreEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetSecurityFirewallEventsResponsePaginationHasMoreEnum && value == other.value
+class GetSecurityFirewallEventsResponsePaginationHasMoreEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetSecurityFirewallEventsResponsePaginationHasMoreEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -500,16 +834,22 @@ class GetSecurityFirewallEventsResponsePaginationHasMoreEnum private constructor
         @JvmField val FALSE = GetSecurityFirewallEventsResponsePaginationHasMoreEnum(false)
         @JvmField val TRUE = GetSecurityFirewallEventsResponsePaginationHasMoreEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetSecurityFirewallEventsResponsePaginationHasMoreEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            GetSecurityFirewallEventsResponsePaginationHasMoreEnum(value)
     }
 }
 
-class GetSecurityFirewallEventsSummaryParameterItemEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetSecurityFirewallEventsSummaryParameterItemEnum && value == other.value
+class GetSecurityFirewallEventsSummaryParameterItemEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetSecurityFirewallEventsSummaryParameterItemEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -520,33 +860,48 @@ class GetSecurityFirewallEventsSummaryParameterItemEnum private constructor(
         @JvmField val RATE_LIMIT = GetSecurityFirewallEventsSummaryParameterItemEnum("rate_limit")
         @JvmField val BYPASS = GetSecurityFirewallEventsSummaryParameterItemEnum("bypass")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetSecurityFirewallEventsSummaryParameterItemEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = GetSecurityFirewallEventsSummaryParameterItemEnum(value)
     }
 }
 
-class GetSecurityFirewallEventsSummaryParameterItemEnum709a936c private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetSecurityFirewallEventsSummaryParameterItemEnum709a936c && value == other.value
+class GetSecurityFirewallEventsSummaryParameterItemEnum709a936c
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetSecurityFirewallEventsSummaryParameterItemEnum709a936c && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val SYSTEM_ACTION = GetSecurityFirewallEventsSummaryParameterItemEnum709a936c("system-action")
-        @JvmField val CUSTOMER_ACTION = GetSecurityFirewallEventsSummaryParameterItemEnum709a936c("customer-action")
+        @JvmField
+        val SYSTEM_ACTION =
+            GetSecurityFirewallEventsSummaryParameterItemEnum709a936c("system-action")
+        @JvmField
+        val CUSTOMER_ACTION =
+            GetSecurityFirewallEventsSummaryParameterItemEnum709a936c("customer-action")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetSecurityFirewallEventsSummaryParameterItemEnum709a936c(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            GetSecurityFirewallEventsSummaryParameterItemEnum709a936c(value)
     }
 }
 
-class GetSecurityFirewallEventsSummaryParameterEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GetSecurityFirewallEventsSummaryParameterEnum && value == other.value
+class GetSecurityFirewallEventsSummaryParameterEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GetSecurityFirewallEventsSummaryParameterEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -554,19 +909,22 @@ class GetSecurityFirewallEventsSummaryParameterEnum private constructor(
         @JvmField val SYSTEM = GetSecurityFirewallEventsSummaryParameterEnum("system")
         @JvmField val CUSTOM = GetSecurityFirewallEventsSummaryParameterEnum("custom")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GetSecurityFirewallEventsSummaryParameterEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = GetSecurityFirewallEventsSummaryParameterEnum(value)
     }
 }
 
-/**
- * Source of the store creation request
- */
-class CreateIntegrationStoreDirectSourceEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectSourceEnum && value == other.value
+/** Source of the store creation request */
+class CreateIntegrationStoreDirectSourceEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectSourceEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -579,10 +937,15 @@ class CreateIntegrationStoreDirectSourceEnum private constructor(
         @JvmField val CLI = CreateIntegrationStoreDirectSourceEnum("cli")
         @JvmField val OAUTH = CreateIntegrationStoreDirectSourceEnum("oauth")
         @JvmField val BACKOFFICE = CreateIntegrationStoreDirectSourceEnum("backoffice")
-        @JvmField val IMPORT_RECOMMENDED_INTEGRATIONS = CreateIntegrationStoreDirectSourceEnum("import-recommended-integrations")
+        @JvmField
+        val IMPORT_RECOMMENDED_INTEGRATIONS =
+            CreateIntegrationStoreDirectSourceEnum("import-recommended-integrations")
         @JvmField val ORGANIZATION = CreateIntegrationStoreDirectSourceEnum("organization")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectSourceEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = CreateIntegrationStoreDirectSourceEnum(value)
     }
 }

@@ -3,416 +3,652 @@
 
 package dev.octri.showcase.vercel.models
 
-class ListProjectsResponseVariant0ItemTrustedSourcesProjectsValueCuX474172f2c2 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant0ItemTrustedSourcesProjectsValueCuX474172f2c2 && value == other.value
+class ListProjectsResponseVariant0ItemTrustedSourcesProjectsValueCuX474172f2c2
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant0ItemTrustedSourcesProjectsValueCuX474172f2c2 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val ALL_CUSTOM = ListProjectsResponseVariant0ItemTrustedSourcesProjectsValueCuX474172f2c2("all-custom")
+        @JvmField
+        val ALL_CUSTOM =
+            ListProjectsResponseVariant0ItemTrustedSourcesProjectsValueCuX474172f2c2("all-custom")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = ListProjectsResponseVariant0ItemTrustedSourcesProjectsValueCuX474172f2c2(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            ListProjectsResponseVariant0ItemTrustedSourcesProjectsValueCuX474172f2c2(value)
     }
 }
 
-class ListProjectsResponseVariant0ItemTrustedSourcesProjectsValueCuX14469703b0 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant0ItemTrustedSourcesProjectsValueCuX14469703b0 && value == other.value
+class ListProjectsResponseVariant0ItemTrustedSourcesProjectsValueCuX14469703b0
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant0ItemTrustedSourcesProjectsValueCuX14469703b0 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val ALL_CUSTOM = ListProjectsResponseVariant0ItemTrustedSourcesProjectsValueCuX14469703b0("all-custom")
+        @JvmField
+        val ALL_CUSTOM =
+            ListProjectsResponseVariant0ItemTrustedSourcesProjectsValueCuX14469703b0("all-custom")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = ListProjectsResponseVariant0ItemTrustedSourcesProjectsValueCuX14469703b0(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            ListProjectsResponseVariant0ItemTrustedSourcesProjectsValueCuX14469703b0(value)
     }
 }
 
-class ListProjectsResponseVariant0ItemWebAnalyticsHasDataEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant0ItemWebAnalyticsHasDataEnum && value == other.value
+class ListProjectsResponseVariant0ItemWebAnalyticsHasDataEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant0ItemWebAnalyticsHasDataEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
         @JvmField val TRUE = ListProjectsResponseVariant0ItemWebAnalyticsHasDataEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = ListProjectsResponseVariant0ItemWebAnalyticsHasDataEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            ListProjectsResponseVariant0ItemWebAnalyticsHasDataEnum(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAliasItemConfiguredByEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAliasItemConfiguredByEnum && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAliasItemConfiguredByEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAliasItemConfiguredByEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val A = ListProjectsResponseVariant1ProjectsItemAliasItemConfiguredByEnum("A")
-        @JvmField val CNAME = ListProjectsResponseVariant1ProjectsItemAliasItemConfiguredByEnum("CNAME")
-        @JvmField val DNS_01 = ListProjectsResponseVariant1ProjectsItemAliasItemConfiguredByEnum("dns-01")
-        @JvmField val HTTP = ListProjectsResponseVariant1ProjectsItemAliasItemConfiguredByEnum("http")
+        @JvmField
+        val CNAME = ListProjectsResponseVariant1ProjectsItemAliasItemConfiguredByEnum("CNAME")
+        @JvmField
+        val DNS_01 = ListProjectsResponseVariant1ProjectsItemAliasItemConfiguredByEnum("dns-01")
+        @JvmField
+        val HTTP = ListProjectsResponseVariant1ProjectsItemAliasItemConfiguredByEnum("http")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = ListProjectsResponseVariant1ProjectsItemAliasItemConfiguredByEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            ListProjectsResponseVariant1ProjectsItemAliasItemConfiguredByEnum(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentAlX5ad4b95c81 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentAlX5ad4b95c81 && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentAlX5ad4b95c81
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentAlX5ad4b95c81 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentAlX5ad4b95c81(false)
-        @JvmField val TRUE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentAlX5ad4b95c81(true)
+        @JvmField
+        val FALSE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentAlX5ad4b95c81(false)
+        @JvmField
+        val TRUE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentAlX5ad4b95c81(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentAlX5ad4b95c81(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentAlX5ad4b95c81(value)
     }
 }
 
-/**
- * The type of matching to perform
- */
-class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentBrXe2e25c425e private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentBrXe2e25c425e && value == other.value
+/** The type of matching to perform */
+class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentBrXe2e25c425e
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentBrXe2e25c425e &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val ENDSWITH = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentBrXe2e25c425e("endsWith")
-        @JvmField val EQUALS = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentBrXe2e25c425e("equals")
-        @JvmField val STARTSWITH = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentBrXe2e25c425e("startsWith")
+        @JvmField
+        val ENDSWITH =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentBrXe2e25c425e("endsWith")
+        @JvmField
+        val EQUALS =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentBrXe2e25c425e("equals")
+        @JvmField
+        val STARTSWITH =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentBrXe2e25c425e("startsWith")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentBrXe2e25c425e(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentBrXe2e25c425e(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX18bd89876b private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX18bd89876b && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX18bd89876b
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX18bd89876b &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CANCELED = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX18bd89876b("canceled")
-        @JvmField val FAILED = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX18bd89876b("failed")
-        @JvmField val SKIPPED = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX18bd89876b("skipped")
-        @JvmField val SUCCEEDED = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX18bd89876b("succeeded")
+        @JvmField
+        val CANCELED =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX18bd89876b("canceled")
+        @JvmField
+        val FAILED =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX18bd89876b("failed")
+        @JvmField
+        val SKIPPED =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX18bd89876b("skipped")
+        @JvmField
+        val SUCCEEDED =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX18bd89876b("succeeded")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX18bd89876b(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX18bd89876b(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX69648e72dd private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX69648e72dd && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX69648e72dd
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX69648e72dd &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val COMPLETED = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX69648e72dd("completed")
-        @JvmField val REGISTERED = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX69648e72dd("registered")
-        @JvmField val RUNNING = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX69648e72dd("running")
+        @JvmField
+        val COMPLETED =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX69648e72dd("completed")
+        @JvmField
+        val REGISTERED =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX69648e72dd("registered")
+        @JvmField
+        val RUNNING =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX69648e72dd("running")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX69648e72dd(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentChX69648e72dd(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentCoXf7a8d285c3 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentCoXf7a8d285c3 && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentCoXf7a8d285c3
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentCoXf7a8d285c3 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentCoXf7a8d285c3(false)
-        @JvmField val TRUE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentCoXf7a8d285c3(true)
+        @JvmField
+        val FALSE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentCoXf7a8d285c3(false)
+        @JvmField
+        val TRUE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentCoXf7a8d285c3(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentCoXf7a8d285c3(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentCoXf7a8d285c3(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentForcedEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentForcedEnum && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentForcedEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentForcedEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentForcedEnum(false)
-        @JvmField val TRUE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentForcedEnum(true)
+        @JvmField
+        val FALSE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentForcedEnum(false)
+        @JvmField
+        val TRUE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentForcedEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentForcedEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentForcedEnum(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPlanEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPlanEnum && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPlanEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPlanEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val ENTERPRISE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPlanEnum("enterprise")
-        @JvmField val HOBBY = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPlanEnum("hobby")
-        @JvmField val PRO = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPlanEnum("pro")
+        @JvmField
+        val ENTERPRISE =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPlanEnum("enterprise")
+        @JvmField
+        val HOBBY = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPlanEnum("hobby")
+        @JvmField
+        val PRO = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPlanEnum("pro")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPlanEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPlanEnum(value)
     }
 }
 
-/**
- * Whether or not preview comments are enabled for the deployment
- */
-class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrX2792f6c480 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrX2792f6c480 && value == other.value
+/** Whether or not preview comments are enabled for the deployment */
+class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrX2792f6c480
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrX2792f6c480 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrX2792f6c480(false)
-        @JvmField val TRUE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrX2792f6c480(true)
+        @JvmField
+        val FALSE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrX2792f6c480(false)
+        @JvmField
+        val TRUE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrX2792f6c480(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrX2792f6c480(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrX2792f6c480(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrivateEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrivateEnum && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrivateEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrivateEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrivateEnum(false)
-        @JvmField val TRUE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrivateEnum(true)
+        @JvmField
+        val FALSE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrivateEnum(false)
+        @JvmField
+        val TRUE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrivateEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrivateEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentPrivateEnum(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9 && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val BLOCKED = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9("BLOCKED")
-        @JvmField val BUILDING = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9("BUILDING")
-        @JvmField val CANCELED = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9("CANCELED")
-        @JvmField val ERROR = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9("ERROR")
-        @JvmField val INITIALIZING = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9("INITIALIZING")
-        @JvmField val QUEUED = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9("QUEUED")
-        @JvmField val READY = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9("READY")
+        @JvmField
+        val BLOCKED =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9("BLOCKED")
+        @JvmField
+        val BUILDING =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9("BUILDING")
+        @JvmField
+        val CANCELED =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9("CANCELED")
+        @JvmField
+        val ERROR =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9("ERROR")
+        @JvmField
+        val INITIALIZING =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9("INITIALIZING")
+        @JvmField
+        val QUEUED =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9("QUEUED")
+        @JvmField
+        val READY =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9("READY")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReX8e514defc9(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReXa3891b78e8 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReXa3891b78e8 && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReXa3891b78e8
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReXa3891b78e8 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val PROMOTED = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReXa3891b78e8("PROMOTED")
-        @JvmField val ROLLING = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReXa3891b78e8("ROLLING")
-        @JvmField val STAGED = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReXa3891b78e8("STAGED")
+        @JvmField
+        val PROMOTED =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReXa3891b78e8("PROMOTED")
+        @JvmField
+        val ROLLING =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReXa3891b78e8("ROLLING")
+        @JvmField
+        val STAGED =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReXa3891b78e8("STAGED")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReXa3891b78e8(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentReXa3891b78e8(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentTypeEnum && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentTypeEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val LAMBDAS = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentTypeEnum("LAMBDAS")
+        @JvmField
+        val LAMBDAS = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentTypeEnum("LAMBDAS")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentTypeEnum(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentWithCacheEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentWithCacheEnum && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentWithCacheEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentWithCacheEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentWithCacheEnum(false)
-        @JvmField val TRUE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentWithCacheEnum(true)
+        @JvmField
+        val FALSE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentWithCacheEnum(false)
+        @JvmField
+        val TRUE = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentWithCacheEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentWithCacheEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            ListProjectsResponseVariant1ProjectsItemAliasItemDeploymentWithCacheEnum(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAliasItemEnvironmentEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAliasItemEnvironmentEnum && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAliasItemEnvironmentEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAliasItemEnvironmentEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val PREVIEW = ListProjectsResponseVariant1ProjectsItemAliasItemEnvironmentEnum("preview")
-        @JvmField val PRODUCTION = ListProjectsResponseVariant1ProjectsItemAliasItemEnvironmentEnum("production")
+        @JvmField
+        val PREVIEW = ListProjectsResponseVariant1ProjectsItemAliasItemEnvironmentEnum("preview")
+        @JvmField
+        val PRODUCTION =
+            ListProjectsResponseVariant1ProjectsItemAliasItemEnvironmentEnum("production")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = ListProjectsResponseVariant1ProjectsItemAliasItemEnvironmentEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            ListProjectsResponseVariant1ProjectsItemAliasItemEnvironmentEnum(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAliasItemRedirectStatusCodeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Double,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAliasItemRedirectStatusCodeEnum && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAliasItemRedirectStatusCodeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Double) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAliasItemRedirectStatusCodeEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val V301 = ListProjectsResponseVariant1ProjectsItemAliasItemRedirectStatusCodeEnum(301.0)
-        @JvmField val V302 = ListProjectsResponseVariant1ProjectsItemAliasItemRedirectStatusCodeEnum(302.0)
-        @JvmField val V307 = ListProjectsResponseVariant1ProjectsItemAliasItemRedirectStatusCodeEnum(307.0)
-        @JvmField val V308 = ListProjectsResponseVariant1ProjectsItemAliasItemRedirectStatusCodeEnum(308.0)
+        @JvmField
+        val V301 = ListProjectsResponseVariant1ProjectsItemAliasItemRedirectStatusCodeEnum(301.0)
+        @JvmField
+        val V302 = ListProjectsResponseVariant1ProjectsItemAliasItemRedirectStatusCodeEnum(302.0)
+        @JvmField
+        val V307 = ListProjectsResponseVariant1ProjectsItemAliasItemRedirectStatusCodeEnum(307.0)
+        @JvmField
+        val V308 = ListProjectsResponseVariant1ProjectsItemAliasItemRedirectStatusCodeEnum(308.0)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Double) = ListProjectsResponseVariant1ProjectsItemAliasItemRedirectStatusCodeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Double) =
+            ListProjectsResponseVariant1ProjectsItemAliasItemRedirectStatusCodeEnum(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAliasItemTargetEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAliasItemTargetEnum && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAliasItemTargetEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAliasItemTargetEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val PREVIEW = ListProjectsResponseVariant1ProjectsItemAliasItemTargetEnum("PREVIEW")
-        @JvmField val PRODUCTION = ListProjectsResponseVariant1ProjectsItemAliasItemTargetEnum("PRODUCTION")
-        @JvmField val STAGING = ListProjectsResponseVariant1ProjectsItemAliasItemTargetEnum("STAGING")
+        @JvmField
+        val PREVIEW = ListProjectsResponseVariant1ProjectsItemAliasItemTargetEnum("PREVIEW")
+        @JvmField
+        val PRODUCTION = ListProjectsResponseVariant1ProjectsItemAliasItemTargetEnum("PRODUCTION")
+        @JvmField
+        val STAGING = ListProjectsResponseVariant1ProjectsItemAliasItemTargetEnum("STAGING")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = ListProjectsResponseVariant1ProjectsItemAliasItemTargetEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            ListProjectsResponseVariant1ProjectsItemAliasItemTargetEnum(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAppliedCve55182MigrationEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAppliedCve55182MigrationEnum && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAppliedCve55182MigrationEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAppliedCve55182MigrationEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = ListProjectsResponseVariant1ProjectsItemAppliedCve55182MigrationEnum(false)
-        @JvmField val TRUE = ListProjectsResponseVariant1ProjectsItemAppliedCve55182MigrationEnum(true)
+        @JvmField
+        val FALSE = ListProjectsResponseVariant1ProjectsItemAppliedCve55182MigrationEnum(false)
+        @JvmField
+        val TRUE = ListProjectsResponseVariant1ProjectsItemAppliedCve55182MigrationEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = ListProjectsResponseVariant1ProjectsItemAppliedCve55182MigrationEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            ListProjectsResponseVariant1ProjectsItemAppliedCve55182MigrationEnum(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAutoAssignCustomDomainsEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAutoAssignCustomDomainsEnum && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAutoAssignCustomDomainsEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAutoAssignCustomDomainsEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = ListProjectsResponseVariant1ProjectsItemAutoAssignCustomDomainsEnum(false)
-        @JvmField val TRUE = ListProjectsResponseVariant1ProjectsItemAutoAssignCustomDomainsEnum(true)
+        @JvmField
+        val FALSE = ListProjectsResponseVariant1ProjectsItemAutoAssignCustomDomainsEnum(false)
+        @JvmField
+        val TRUE = ListProjectsResponseVariant1ProjectsItemAutoAssignCustomDomainsEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = ListProjectsResponseVariant1ProjectsItemAutoAssignCustomDomainsEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            ListProjectsResponseVariant1ProjectsItemAutoAssignCustomDomainsEnum(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemAutoExposeSystemEnvsEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemAutoExposeSystemEnvsEnum && value == other.value
+class ListProjectsResponseVariant1ProjectsItemAutoExposeSystemEnvsEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemAutoExposeSystemEnvsEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = ListProjectsResponseVariant1ProjectsItemAutoExposeSystemEnvsEnum(false)
+        @JvmField
+        val FALSE = ListProjectsResponseVariant1ProjectsItemAutoExposeSystemEnvsEnum(false)
         @JvmField val TRUE = ListProjectsResponseVariant1ProjectsItemAutoExposeSystemEnvsEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = ListProjectsResponseVariant1ProjectsItemAutoExposeSystemEnvsEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            ListProjectsResponseVariant1ProjectsItemAutoExposeSystemEnvsEnum(value)
     }
 }
 
-enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant0TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant0TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     USER("user");
 
     override fun toString() = value
@@ -420,12 +656,15 @@ enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant0TypeEnum(@com.
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant0ViaVarXb0b4fe8914(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant0ViaVarXb0b4fe8914(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     APP("app");
 
     override fun toString() = value
@@ -433,12 +672,15 @@ enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant0ViaVarXb0b4fe8
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant0ViaVarXf26091ae24(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant0ViaVarXf26091ae24(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     INTEGRATION("integration");
 
     override fun toString() = value
@@ -446,12 +688,15 @@ enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant0ViaVarXf26091a
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant1TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant1TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     APP("app");
 
     override fun toString() = value
@@ -459,12 +704,15 @@ enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant1TypeEnum(@com.
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant2TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant2TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     INTEGRATION("integration");
 
     override fun toString() = value
@@ -472,12 +720,15 @@ enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant2TypeEnum(@com.
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant3TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant3TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     SYSTEM("system");
 
     override fun toString() = value
@@ -485,33 +736,46 @@ enum class ListProjectsResponseVariant1ProjectsItemCreatorVariant3TypeEnum(@com.
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemCustomerSupportCodeViXb6cc807e92 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemCustomerSupportCodeViXb6cc807e92 && value == other.value
+class ListProjectsResponseVariant1ProjectsItemCustomerSupportCodeViXb6cc807e92
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemCustomerSupportCodeViXb6cc807e92 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = ListProjectsResponseVariant1ProjectsItemCustomerSupportCodeViXb6cc807e92(false)
-        @JvmField val TRUE = ListProjectsResponseVariant1ProjectsItemCustomerSupportCodeViXb6cc807e92(true)
+        @JvmField
+        val FALSE = ListProjectsResponseVariant1ProjectsItemCustomerSupportCodeViXb6cc807e92(false)
+        @JvmField
+        val TRUE = ListProjectsResponseVariant1ProjectsItemCustomerSupportCodeViXb6cc807e92(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = ListProjectsResponseVariant1ProjectsItemCustomerSupportCodeViXb6cc807e92(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            ListProjectsResponseVariant1ProjectsItemCustomerSupportCodeViXb6cc807e92(value)
     }
 }
 
-class ListProjectsResponseVariant1ProjectsItemDirectoryListingEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is ListProjectsResponseVariant1ProjectsItemDirectoryListingEnum && value == other.value
+class ListProjectsResponseVariant1ProjectsItemDirectoryListingEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is ListProjectsResponseVariant1ProjectsItemDirectoryListingEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -519,12 +783,18 @@ class ListProjectsResponseVariant1ProjectsItemDirectoryListingEnum private const
         @JvmField val FALSE = ListProjectsResponseVariant1ProjectsItemDirectoryListingEnum(false)
         @JvmField val TRUE = ListProjectsResponseVariant1ProjectsItemDirectoryListingEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = ListProjectsResponseVariant1ProjectsItemDirectoryListingEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            ListProjectsResponseVariant1ProjectsItemDirectoryListingEnum(value)
     }
 }
 
-enum class ListProjectsResponseVariant1ProjectsItemEnvItemContentHintVarXe992ba238e(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class ListProjectsResponseVariant1ProjectsItemEnvItemContentHintVarXe992ba238e(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     REDIS_URL("redis-url");
 
     override fun toString() = value
@@ -532,12 +802,15 @@ enum class ListProjectsResponseVariant1ProjectsItemEnvItemContentHintVarXe992ba2
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListProjectsResponseVariant1ProjectsItemEnvItemContentHintVarX4029ee8d29(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class ListProjectsResponseVariant1ProjectsItemEnvItemContentHintVarX4029ee8d29(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     REDIS_REST_API_URL("redis-rest-api-url");
 
     override fun toString() = value
@@ -545,12 +818,15 @@ enum class ListProjectsResponseVariant1ProjectsItemEnvItemContentHintVarX4029ee8
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListProjectsResponseVariant1ProjectsItemEnvItemContentHintVarX06cf5606f1(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class ListProjectsResponseVariant1ProjectsItemEnvItemContentHintVarX06cf5606f1(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_USER("postgres-user");
 
     override fun toString() = value
@@ -558,12 +834,15 @@ enum class ListProjectsResponseVariant1ProjectsItemEnvItemContentHintVarX06cf560
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListProjectsResponseVariant1ProjectsItemEnvItemContentHintVarXaa3d0f0209(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class ListProjectsResponseVariant1ProjectsItemEnvItemContentHintVarXaa3d0f0209(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_HOST("postgres-host");
 
     override fun toString() = value
@@ -571,12 +850,15 @@ enum class ListProjectsResponseVariant1ProjectsItemEnvItemContentHintVarXaa3d0f0
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class ListProjectsResponseVariant1ProjectsItemEnvItemContentHintVarX03460c23d0(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class ListProjectsResponseVariant1ProjectsItemEnvItemContentHintVarX03460c23d0(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_PASSWORD("postgres-password");
 
     override fun toString() = value
@@ -584,7 +866,8 @@ enum class ListProjectsResponseVariant1ProjectsItemEnvItemContentHintVarX03460c2
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }

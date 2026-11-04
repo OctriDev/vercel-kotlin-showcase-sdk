@@ -16,16 +16,16 @@ import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
 /**
- * Data-driven behavior suite: replays every shared behavior case through the
- * request layer with a fake middleware transport. Schema-independent — the
- * fixture in test/sdk-behavior-cases.json carries the per-operation detail.
+ * Data-driven behavior suite: replays every shared behavior case through the request layer with a
+ * fake middleware transport. Schema-independent — the fixture in test/sdk-behavior-cases.json
+ * carries the per-operation detail.
  */
 class SdkBehaviorTest {
     private val mapper = ObjectMapper()
 
     /**
-     * Space is "+" in form encoding and "%20" under RFC 3986; pair order is not
-     * part of the contract either.
+     * Space is "+" in form encoding and "%20" under RFC 3986; pair order is not part of the
+     * contract either.
      */
     private fun normalizeQuery(query: String?): String {
         if (query.isNullOrEmpty()) return ""
@@ -84,21 +84,24 @@ class SdkBehaviorTest {
     }
 
     /**
-     * An event stream is decoded by SseParser, the parser every streaming method
-     * reads through, not by the buffered request layer. Framing must not depend on
-     * where the transport splits the body, so it is fed whole, one byte per chunk,
-     * and with CRLF line endings.
+     * An event stream is decoded by SseParser, the parser every streaming method reads through, not
+     * by the buffered request layer. Framing must not depend on where the transport splits the
+     * body, so it is fed whole, one byte per chunk, and with CRLF line endings.
      */
     private fun assertStreamEvents(case: JsonNode) {
         val response = case.get("response")
         val body = response.get("body").asText()
         val expected = jsonValue(response.get("events"))
-        val bodies = mutableListOf(listOf(body.toByteArray()), body.toByteArray().map { byteArrayOf(it) })
-        if ('\r' !in body) bodies.add(body.replace("\n", "\r\n").toByteArray().map { byteArrayOf(it) })
+        val bodies =
+            mutableListOf(listOf(body.toByteArray()), body.toByteArray().map { byteArrayOf(it) })
+        if ('\r' !in body)
+            bodies.add(body.replace("\n", "\r\n").toByteArray().map { byteArrayOf(it) })
         for (chunks in bodies) {
             val parser = SseParser()
             val events = chunks.flatMap { parser.push(it) } + parser.finish()
-            val actual = events.map { mapOf("event" to it.event, "data" to it.data, "id" to it.id, "retry" to it.retry) }
+            val actual = events.map {
+                mapOf("event" to it.event, "data" to it.data, "id" to it.id, "retry" to it.retry)
+            }
             assertEquals(expected, actual, case.get("id").asText())
         }
     }
@@ -145,7 +148,9 @@ class SdkBehaviorTest {
                             SdkRawResponse(
                                 statusCode = status,
                                 statusText = "",
-                                headers = if (mediaType == null) emptyMap() else mapOf("content-type" to mediaType),
+                                headers =
+                                    if (mediaType == null) emptyMap()
+                                    else mapOf("content-type" to mediaType),
                                 body =
                                     if (status == 204) {
                                         ByteArray(0)
@@ -232,7 +237,12 @@ class SdkBehaviorTest {
                 if (responseSpec.has("value")) {
                     assertEquals(
                         jsonValue(responseSpec.get("value")),
-                        jsonValue(mapper.readTree((thrown as? SdkHttpError)?.body ?: (thrown as SdkResponseDecodeError).body)),
+                        jsonValue(
+                            mapper.readTree(
+                                (thrown as? SdkHttpError)?.body
+                                    ?: (thrown as SdkResponseDecodeError).body
+                            )
+                        ),
                         "$id typed error body",
                     )
                 }
@@ -266,12 +276,16 @@ class SdkBehaviorTest {
                 normalizeQuery(gotParts.getOrNull(1)),
                 "$id url query",
             )
-            val sentHeaders = sentRequest.headers.entries.associate { it.key.lowercase() to it.value }
+            val sentHeaders =
+                sentRequest.headers.entries.associate { it.key.lowercase() to it.value }
             val multipart = !expectation.get("multipartFields").isNull
             expectation.get("headers").fields().forEach { (name, value) ->
                 val actual = sentHeaders[name.lowercase()] ?: ""
                 if (name == "content-type" && multipart) {
-                    assertTrue(actual.startsWith("multipart/form-data"), "$id multipart content type")
+                    assertTrue(
+                        actual.startsWith("multipart/form-data"),
+                        "$id multipart content type",
+                    )
                 } else {
                     assertEquals(value.asText(), actual, "$id header $name")
                 }

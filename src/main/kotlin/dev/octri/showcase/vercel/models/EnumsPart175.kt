@@ -3,115 +3,223 @@
 
 package dev.octri.showcase.vercel.models
 
-class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX796dba6fe2 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX796dba6fe2 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX796dba6fe2
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX796dba6fe2 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX796dba6fe2(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX796dba6fe2(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX796dba6fe2(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX796dba6fe2(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX796dba6fe2(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemX796dba6fe2(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbd94d1d032 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbd94d1d032 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbd94d1d032
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbd94d1d032 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CREATE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbd94d1d032("create")
-        @JvmField val UPDATE = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbd94d1d032("update")
+        @JvmField
+        val CREATE =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbd94d1d032("create")
+        @JvmField
+        val UPDATE =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbd94d1d032("update")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbd94d1d032(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemXbd94d1d032(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemaTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemaTypeEnum && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductMetadataSchemaTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductMetadataSchemaTypeEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val OBJECT = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemaTypeEnum("object")
+        @JvmField
+        val OBJECT =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemaTypeEnum("object")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProductMetadataSchemaTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProductMetadataSchemaTypeEnum(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val AI = CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("ai")
-        @JvmField val AUTHENTICATION = CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("authentication")
-        @JvmField val CHECKS = CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("checks")
-        @JvmField val EXPERIMENTATION = CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("experimentation")
-        @JvmField val LOGDRAIN = CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("logDrain")
-        @JvmField val MESSAGING = CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("messaging")
-        @JvmField val OBSERVABILITY = CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("observability")
-        @JvmField val OTHER = CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("other")
-        @JvmField val STORAGE = CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("storage")
-        @JvmField val TRACEDRAIN = CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("traceDrain")
-        @JvmField val VIDEO = CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("video")
-        @JvmField val WORKFLOW = CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("workflow")
+        @JvmField
+        val AUTHENTICATION =
+            CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("authentication")
+        @JvmField
+        val CHECKS = CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("checks")
+        @JvmField
+        val EXPERIMENTATION =
+            CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("experimentation")
+        @JvmField
+        val LOGDRAIN =
+            CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("logDrain")
+        @JvmField
+        val MESSAGING =
+            CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("messaging")
+        @JvmField
+        val OBSERVABILITY =
+            CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("observability")
+        @JvmField
+        val OTHER = CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("other")
+        @JvmField
+        val STORAGE = CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("storage")
+        @JvmField
+        val TRACEDRAIN =
+            CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("traceDrain")
+        @JvmField
+        val VIDEO = CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("video")
+        @JvmField
+        val WORKFLOW =
+            CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum("workflow")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProductPrimaryProtocolEnum(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val READ_WRITE_DEPLOYMENT = CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b("read-write:deployment")
-        @JvmField val READ_WRITE_DEPLOYMENT_CHECK = CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b("read-write:deployment-check")
-        @JvmField val READ_WRITE_DOMAIN = CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b("read-write:domain")
-        @JvmField val READ_WRITE_DRAINS = CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b("read-write:drains")
-        @JvmField val READ_WRITE_GLOBAL_PROJECT_ENV_VARS = CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b("read-write:global-project-env-vars")
-        @JvmField val READ_WRITE_INTEGRATION_DEPLOYMENT_ACTION = CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b("read-write:integration-deployment-action")
-        @JvmField val READ_WRITE_LOG_DRAIN = CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b("read-write:log-drain")
-        @JvmField val READ_WRITE_PROJECT_ENV_VARS = CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b("read-write:project-env-vars")
-        @JvmField val READ_WRITE_PROJECT_PROTECTION_BYPASS = CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b("read-write:project-protection-bypass")
-        @JvmField val READ_DEPLOYMENT = CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b("read:deployment")
-        @JvmField val READ_DOMAIN = CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b("read:domain")
-        @JvmField val READ_PROJECT = CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b("read:project")
+        @JvmField
+        val READ_WRITE_DEPLOYMENT =
+            CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b(
+                "read-write:deployment"
+            )
+        @JvmField
+        val READ_WRITE_DEPLOYMENT_CHECK =
+            CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b(
+                "read-write:deployment-check"
+            )
+        @JvmField
+        val READ_WRITE_DOMAIN =
+            CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b(
+                "read-write:domain"
+            )
+        @JvmField
+        val READ_WRITE_DRAINS =
+            CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b(
+                "read-write:drains"
+            )
+        @JvmField
+        val READ_WRITE_GLOBAL_PROJECT_ENV_VARS =
+            CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b(
+                "read-write:global-project-env-vars"
+            )
+        @JvmField
+        val READ_WRITE_INTEGRATION_DEPLOYMENT_ACTION =
+            CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b(
+                "read-write:integration-deployment-action"
+            )
+        @JvmField
+        val READ_WRITE_LOG_DRAIN =
+            CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b(
+                "read-write:log-drain"
+            )
+        @JvmField
+        val READ_WRITE_PROJECT_ENV_VARS =
+            CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b(
+                "read-write:project-env-vars"
+            )
+        @JvmField
+        val READ_WRITE_PROJECT_PROTECTION_BYPASS =
+            CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b(
+                "read-write:project-protection-bypass"
+            )
+        @JvmField
+        val READ_DEPLOYMENT =
+            CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b(
+                "read:deployment"
+            )
+        @JvmField
+        val READ_DOMAIN =
+            CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b("read:domain")
+        @JvmField
+        val READ_PROJECT =
+            CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b("read:project")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProductProjectConnecX1908fa847b(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductReplEnabledEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductReplEnabledEnum && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductReplEnabledEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductReplEnabledEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -119,436 +227,834 @@ class CreateIntegrationStoreDirectResponseStoreProductReplEnabledEnum private co
         @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductReplEnabledEnum(false)
         @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductReplEnabledEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductReplEnabledEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductReplEnabledEnum(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductReplSupportsRX39516c8637 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductReplSupportsRX39516c8637 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductReplSupportsRX39516c8637
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductReplSupportsRX39516c8637 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductReplSupportsRX39516c8637(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductReplSupportsRX39516c8637(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductReplSupportsRX39516c8637(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductReplSupportsRX39516c8637(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductReplSupportsRX39516c8637(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductReplSupportsRX39516c8637(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductShowSSOLinkOnX93bab2aa95 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductShowSSOLinkOnX93bab2aa95 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductShowSSOLinkOnX93bab2aa95
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductShowSSOLinkOnX93bab2aa95 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProductShowSSOLinkOnX93bab2aa95(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProductShowSSOLinkOnX93bab2aa95(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProductShowSSOLinkOnX93bab2aa95(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProductShowSSOLinkOnX93bab2aa95(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProductShowSSOLinkOnX93bab2aa95(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProductShowSSOLinkOnX93bab2aa95(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val AI = CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("ai")
-        @JvmField val AUTHENTICATION = CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("authentication")
-        @JvmField val CHECKS = CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("checks")
-        @JvmField val EXPERIMENTATION = CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("experimentation")
-        @JvmField val LOGDRAIN = CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("logDrain")
-        @JvmField val MESSAGING = CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("messaging")
-        @JvmField val OBSERVABILITY = CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("observability")
-        @JvmField val OTHER = CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("other")
-        @JvmField val STORAGE = CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("storage")
-        @JvmField val TRACEDRAIN = CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("traceDrain")
-        @JvmField val VIDEO = CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("video")
-        @JvmField val WORKFLOW = CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("workflow")
+        @JvmField
+        val AI = CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("ai")
+        @JvmField
+        val AUTHENTICATION =
+            CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c(
+                "authentication"
+            )
+        @JvmField
+        val CHECKS =
+            CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("checks")
+        @JvmField
+        val EXPERIMENTATION =
+            CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c(
+                "experimentation"
+            )
+        @JvmField
+        val LOGDRAIN =
+            CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("logDrain")
+        @JvmField
+        val MESSAGING =
+            CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("messaging")
+        @JvmField
+        val OBSERVABILITY =
+            CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c(
+                "observability"
+            )
+        @JvmField
+        val OTHER =
+            CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("other")
+        @JvmField
+        val STORAGE =
+            CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("storage")
+        @JvmField
+        val TRACEDRAIN =
+            CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("traceDrain")
+        @JvmField
+        val VIDEO =
+            CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("video")
+        @JvmField
+        val WORKFLOW =
+            CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c("workflow")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProductSupportedProtX58facd022c(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val AI = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("ai")
-        @JvmField val AUTHENTICATION = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("authentication")
+        @JvmField
+        val AUTHENTICATION =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("authentication")
         @JvmField val BLOB = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("blob")
-        @JvmField val CHECKS = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("checks")
-        @JvmField val DRAINS = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("drains")
-        @JvmField val EDGE_CONFIG = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("edge-config")
-        @JvmField val EXPERIMENTATION = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("experimentation")
+        @JvmField
+        val CHECKS = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("checks")
+        @JvmField
+        val DRAINS = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("drains")
+        @JvmField
+        val EDGE_CONFIG =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("edge-config")
+        @JvmField
+        val EXPERIMENTATION =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("experimentation")
         @JvmField val KV = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("kv")
-        @JvmField val LIBSQL = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("libsql")
-        @JvmField val LOGDRAIN = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("logDrain")
+        @JvmField
+        val LIBSQL = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("libsql")
+        @JvmField
+        val LOGDRAIN = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("logDrain")
         @JvmField val MCP = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("mcp")
-        @JvmField val MESSAGING = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("messaging")
+        @JvmField
+        val MESSAGING = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("messaging")
         @JvmField val MYSQL = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("mysql")
-        @JvmField val OBSERVABILITY = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("observability")
+        @JvmField
+        val OBSERVABILITY =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("observability")
         @JvmField val OTHER = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("other")
-        @JvmField val POSTGRES = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("postgres")
+        @JvmField
+        val POSTGRES = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("postgres")
         @JvmField val RDS = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("rds")
         @JvmField val REDIS = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("redis")
-        @JvmField val SQLITE = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("sqlite")
-        @JvmField val STORAGE = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("storage")
-        @JvmField val TAG_AGENTS = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_agents")
-        @JvmField val TAG_AI = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_ai")
-        @JvmField val TAG_ANALYTICS = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_analytics")
-        @JvmField val TAG_AUTHENTICATION = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_authentication")
-        @JvmField val TAG_CHECKS = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_checks")
-        @JvmField val TAG_CMS = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_cms")
-        @JvmField val TAG_CODE_REPOSITORY = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_code_repository")
-        @JvmField val TAG_CODE_REVIEW = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_code_review")
-        @JvmField val TAG_CODE_SECURITY = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_code_security")
-        @JvmField val TAG_CODE_TESTING = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_code_testing")
-        @JvmField val TAG_COMMERCE = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_commerce")
-        @JvmField val TAG_DATABASES = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_databases")
-        @JvmField val TAG_DEV_TOOLS = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_dev_tools")
-        @JvmField val TAG_EXPERIMENTATION = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_experimentation")
-        @JvmField val TAG_FLAGS = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_flags")
-        @JvmField val TAG_LOGDRAIN = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_logDrain")
-        @JvmField val TAG_LOGGING = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_logging")
-        @JvmField val TAG_MESSAGING = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_messaging")
-        @JvmField val TAG_MONITORING = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_monitoring")
-        @JvmField val TAG_OBSERVABILITY = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_observability")
-        @JvmField val TAG_OTHER = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_other")
-        @JvmField val TAG_PAYMENTS = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_payments")
-        @JvmField val TAG_PERFORMANCE = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_performance")
-        @JvmField val TAG_PRODUCTIVITY = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_productivity")
-        @JvmField val TAG_SEARCHING = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_searching")
-        @JvmField val TAG_SECURITY = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_security")
-        @JvmField val TAG_STORAGE = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_storage")
-        @JvmField val TAG_SUPPORT_AGENT = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_support_agent")
-        @JvmField val TAG_TESTING = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_testing")
-        @JvmField val TAG_TRACEDRAIN = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_traceDrain")
-        @JvmField val TAG_VIDEO = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_video")
-        @JvmField val TAG_WEB_AUTOMATION = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_web_automation")
-        @JvmField val TAG_WORKFLOW = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_workflow")
-        @JvmField val TRACEDRAIN = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("traceDrain")
-        @JvmField val VECTOR = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("vector")
+        @JvmField
+        val SQLITE = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("sqlite")
+        @JvmField
+        val STORAGE = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("storage")
+        @JvmField
+        val TAG_AGENTS = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_agents")
+        @JvmField
+        val TAG_AI = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_ai")
+        @JvmField
+        val TAG_ANALYTICS =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_analytics")
+        @JvmField
+        val TAG_AUTHENTICATION =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_authentication")
+        @JvmField
+        val TAG_CHECKS = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_checks")
+        @JvmField
+        val TAG_CMS = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_cms")
+        @JvmField
+        val TAG_CODE_REPOSITORY =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_code_repository")
+        @JvmField
+        val TAG_CODE_REVIEW =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_code_review")
+        @JvmField
+        val TAG_CODE_SECURITY =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_code_security")
+        @JvmField
+        val TAG_CODE_TESTING =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_code_testing")
+        @JvmField
+        val TAG_COMMERCE =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_commerce")
+        @JvmField
+        val TAG_DATABASES =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_databases")
+        @JvmField
+        val TAG_DEV_TOOLS =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_dev_tools")
+        @JvmField
+        val TAG_EXPERIMENTATION =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_experimentation")
+        @JvmField
+        val TAG_FLAGS = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_flags")
+        @JvmField
+        val TAG_LOGDRAIN =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_logDrain")
+        @JvmField
+        val TAG_LOGGING =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_logging")
+        @JvmField
+        val TAG_MESSAGING =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_messaging")
+        @JvmField
+        val TAG_MONITORING =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_monitoring")
+        @JvmField
+        val TAG_OBSERVABILITY =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_observability")
+        @JvmField
+        val TAG_OTHER = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_other")
+        @JvmField
+        val TAG_PAYMENTS =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_payments")
+        @JvmField
+        val TAG_PERFORMANCE =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_performance")
+        @JvmField
+        val TAG_PRODUCTIVITY =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_productivity")
+        @JvmField
+        val TAG_SEARCHING =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_searching")
+        @JvmField
+        val TAG_SECURITY =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_security")
+        @JvmField
+        val TAG_STORAGE =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_storage")
+        @JvmField
+        val TAG_SUPPORT_AGENT =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_support_agent")
+        @JvmField
+        val TAG_TESTING =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_testing")
+        @JvmField
+        val TAG_TRACEDRAIN =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_traceDrain")
+        @JvmField
+        val TAG_VIDEO = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_video")
+        @JvmField
+        val TAG_WEB_AUTOMATION =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_web_automation")
+        @JvmField
+        val TAG_WORKFLOW =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("tag_workflow")
+        @JvmField
+        val TRACEDRAIN = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("traceDrain")
+        @JvmField
+        val VECTOR = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("vector")
         @JvmField val VIDEO = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("video")
-        @JvmField val WORKFLOW = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("workflow")
+        @JvmField
+        val WORKFLOW = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum("workflow")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProductTagsItemEnum(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXaa6774c949 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXaa6774c949 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXaa6774c949
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXaa6774c949 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val BITBUCKET = CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXaa6774c949("bitbucket")
-        @JvmField val GITHUB = CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXaa6774c949("github")
-        @JvmField val GITLAB = CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXaa6774c949("gitlab")
+        @JvmField
+        val BITBUCKET =
+            CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXaa6774c949("bitbucket")
+        @JvmField
+        val GITHUB =
+            CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXaa6774c949("github")
+        @JvmField
+        val GITLAB =
+            CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXaa6774c949("gitlab")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXaa6774c949(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXaa6774c949(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXfc54f232b8 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXfc54f232b8 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXfc54f232b8
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXfc54f232b8 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val UNKNOWN = CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXfc54f232b8("*")
+        @JvmField
+        val UNKNOWN = CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXfc54f232b8("*")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXfc54f232b8(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProjectFilterGitProvXfc54f232b8(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX4a3cf9fa53 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX4a3cf9fa53 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX4a3cf9fa53
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX4a3cf9fa53 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX4a3cf9fa53(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX4a3cf9fa53(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX4a3cf9fa53(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX4a3cf9fa53(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX4a3cf9fa53(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX4a3cf9fa53(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val ACTIX_WEB = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("actix-web")
-        @JvmField val ANGULAR = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("angular")
-        @JvmField val ASH = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("ash")
-        @JvmField val ASTRO = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("astro")
-        @JvmField val AXUM = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("axum")
-        @JvmField val BLITZJS = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("blitzjs")
-        @JvmField val BRUNCH = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("brunch")
-        @JvmField val BUN = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("bun")
-        @JvmField val CONTAINER = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("container")
-        @JvmField val CREATE_REACT_APP = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("create-react-app")
-        @JvmField val DJANGO = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("django")
-        @JvmField val DOCUSAURUS = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("docusaurus")
-        @JvmField val DOCUSAURUS_2 = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("docusaurus-2")
-        @JvmField val DOJO = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("dojo")
-        @JvmField val ELEVENTY = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("eleventy")
-        @JvmField val ELYSIA = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("elysia")
-        @JvmField val EMBER = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("ember")
-        @JvmField val EVE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("eve")
-        @JvmField val EXPRESS = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("express")
-        @JvmField val FACTORY_EVE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("factory-eve")
-        @JvmField val FASTAPI = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("fastapi")
-        @JvmField val FASTHTML = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("fasthtml")
-        @JvmField val FASTIFY = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("fastify")
-        @JvmField val FLASK = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("flask")
-        @JvmField val GATSBY = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("gatsby")
-        @JvmField val GO = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("go")
-        @JvmField val GRIDSOME = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("gridsome")
-        @JvmField val H3 = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("h3")
-        @JvmField val HEXO = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("hexo")
-        @JvmField val HONO = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("hono")
-        @JvmField val HUGO = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("hugo")
-        @JvmField val HYDROGEN = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("hydrogen")
-        @JvmField val IONIC_ANGULAR = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("ionic-angular")
-        @JvmField val IONIC_REACT = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("ionic-react")
-        @JvmField val JEKYLL = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("jekyll")
-        @JvmField val KOA = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("koa")
-        @JvmField val MASTRA = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("mastra")
-        @JvmField val MIDDLEMAN = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("middleman")
-        @JvmField val NESTJS = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("nestjs")
-        @JvmField val NEXTJS = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("nextjs")
-        @JvmField val NITRO = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("nitro")
-        @JvmField val NODE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("node")
-        @JvmField val NUXTJS = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("nuxtjs")
-        @JvmField val PARCEL = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("parcel")
-        @JvmField val POLYMER = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("polymer")
-        @JvmField val PREACT = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("preact")
-        @JvmField val PYTHON = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("python")
-        @JvmField val REACT_ROUTER = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("react-router")
-        @JvmField val REDWOODJS = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("redwoodjs")
-        @JvmField val REMIX = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("remix")
-        @JvmField val RUBY = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("ruby")
-        @JvmField val RUST = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("rust")
-        @JvmField val SABER = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("saber")
-        @JvmField val SANITY = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("sanity")
-        @JvmField val SANITY_V2 = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("sanity-v2")
-        @JvmField val SAPPER = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("sapper")
-        @JvmField val SCULLY = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("scully")
-        @JvmField val SERVICES = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("services")
-        @JvmField val SOLIDSTART = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("solidstart")
-        @JvmField val SOLIDSTART_1 = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("solidstart-1")
-        @JvmField val STENCIL = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("stencil")
-        @JvmField val STORYBOOK = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("storybook")
-        @JvmField val SVELTE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("svelte")
-        @JvmField val SVELTEKIT = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("sveltekit")
-        @JvmField val SVELTEKIT_1 = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("sveltekit-1")
-        @JvmField val TANSTACK_START = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("tanstack-start")
-        @JvmField val TANSTACK_START_LOVABLE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("tanstack-start-lovable")
-        @JvmField val UMIJS = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("umijs")
-        @JvmField val VITE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("vite")
-        @JvmField val VITEPRESS = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("vitepress")
-        @JvmField val VUE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("vue")
-        @JvmField val VUEPRESS = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("vuepress")
-        @JvmField val XMCP = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("xmcp")
-        @JvmField val ZOLA = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("zola")
+        @JvmField
+        val ACTIX_WEB =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("actix-web")
+        @JvmField
+        val ANGULAR =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("angular")
+        @JvmField
+        val ASH = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("ash")
+        @JvmField
+        val ASTRO =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("astro")
+        @JvmField
+        val AXUM = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("axum")
+        @JvmField
+        val BLITZJS =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("blitzjs")
+        @JvmField
+        val BRUNCH =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("brunch")
+        @JvmField
+        val BUN = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("bun")
+        @JvmField
+        val CONTAINER =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("container")
+        @JvmField
+        val CREATE_REACT_APP =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0(
+                "create-react-app"
+            )
+        @JvmField
+        val DJANGO =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("django")
+        @JvmField
+        val DOCUSAURUS =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("docusaurus")
+        @JvmField
+        val DOCUSAURUS_2 =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("docusaurus-2")
+        @JvmField
+        val DOJO = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("dojo")
+        @JvmField
+        val ELEVENTY =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("eleventy")
+        @JvmField
+        val ELYSIA =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("elysia")
+        @JvmField
+        val EMBER =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("ember")
+        @JvmField
+        val EVE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("eve")
+        @JvmField
+        val EXPRESS =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("express")
+        @JvmField
+        val FACTORY_EVE =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("factory-eve")
+        @JvmField
+        val FASTAPI =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("fastapi")
+        @JvmField
+        val FASTHTML =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("fasthtml")
+        @JvmField
+        val FASTIFY =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("fastify")
+        @JvmField
+        val FLASK =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("flask")
+        @JvmField
+        val GATSBY =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("gatsby")
+        @JvmField
+        val GO = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("go")
+        @JvmField
+        val GRIDSOME =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("gridsome")
+        @JvmField
+        val H3 = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("h3")
+        @JvmField
+        val HEXO = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("hexo")
+        @JvmField
+        val HONO = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("hono")
+        @JvmField
+        val HUGO = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("hugo")
+        @JvmField
+        val HYDROGEN =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("hydrogen")
+        @JvmField
+        val IONIC_ANGULAR =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0(
+                "ionic-angular"
+            )
+        @JvmField
+        val IONIC_REACT =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("ionic-react")
+        @JvmField
+        val JEKYLL =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("jekyll")
+        @JvmField
+        val KOA = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("koa")
+        @JvmField
+        val MASTRA =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("mastra")
+        @JvmField
+        val MIDDLEMAN =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("middleman")
+        @JvmField
+        val NESTJS =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("nestjs")
+        @JvmField
+        val NEXTJS =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("nextjs")
+        @JvmField
+        val NITRO =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("nitro")
+        @JvmField
+        val NODE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("node")
+        @JvmField
+        val NUXTJS =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("nuxtjs")
+        @JvmField
+        val PARCEL =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("parcel")
+        @JvmField
+        val POLYMER =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("polymer")
+        @JvmField
+        val PREACT =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("preact")
+        @JvmField
+        val PYTHON =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("python")
+        @JvmField
+        val REACT_ROUTER =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("react-router")
+        @JvmField
+        val REDWOODJS =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("redwoodjs")
+        @JvmField
+        val REMIX =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("remix")
+        @JvmField
+        val RUBY = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("ruby")
+        @JvmField
+        val RUST = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("rust")
+        @JvmField
+        val SABER =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("saber")
+        @JvmField
+        val SANITY =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("sanity")
+        @JvmField
+        val SANITY_V2 =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("sanity-v2")
+        @JvmField
+        val SAPPER =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("sapper")
+        @JvmField
+        val SCULLY =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("scully")
+        @JvmField
+        val SERVICES =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("services")
+        @JvmField
+        val SOLIDSTART =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("solidstart")
+        @JvmField
+        val SOLIDSTART_1 =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("solidstart-1")
+        @JvmField
+        val STENCIL =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("stencil")
+        @JvmField
+        val STORYBOOK =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("storybook")
+        @JvmField
+        val SVELTE =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("svelte")
+        @JvmField
+        val SVELTEKIT =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("sveltekit")
+        @JvmField
+        val SVELTEKIT_1 =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("sveltekit-1")
+        @JvmField
+        val TANSTACK_START =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0(
+                "tanstack-start"
+            )
+        @JvmField
+        val TANSTACK_START_LOVABLE =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0(
+                "tanstack-start-lovable"
+            )
+        @JvmField
+        val UMIJS =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("umijs")
+        @JvmField
+        val VITE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("vite")
+        @JvmField
+        val VITEPRESS =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("vitepress")
+        @JvmField
+        val VUE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("vue")
+        @JvmField
+        val VUEPRESS =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("vuepress")
+        @JvmField
+        val XMCP = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("xmcp")
+        @JvmField
+        val ZOLA = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0("zola")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemXd808cd4ee0(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX53ec34edf4 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX53ec34edf4 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX53ec34edf4
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX53ec34edf4 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX53ec34edf4(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX53ec34edf4(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX53ec34edf4(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX53ec34edf4(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX53ec34edf4(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProjectsMetadataItemX53ec34edf4(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX2d9db9798c private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX2d9db9798c && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX2d9db9798c
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX2d9db9798c &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val DEVELOPMENT = CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX2d9db9798c("development")
-        @JvmField val PREVIEW = CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX2d9db9798c("preview")
-        @JvmField val PRODUCTION = CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX2d9db9798c("production")
+        @JvmField
+        val DEVELOPMENT =
+            CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX2d9db9798c("development")
+        @JvmField
+        val PREVIEW =
+            CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX2d9db9798c("preview")
+        @JvmField
+        val PRODUCTION =
+            CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX2d9db9798c("production")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX2d9db9798c(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreProtocolSettingsAuthX2d9db9798c(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXa0e337635a private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXa0e337635a && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXa0e337635a
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXa0e337635a &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXa0e337635a(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXa0e337635a(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXa0e337635a(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXa0e337635a(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXa0e337635a(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXa0e337635a(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXbae338163f private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXbae338163f && value == other.value
+class CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXbae338163f
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXbae338163f &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXbae338163f(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXbae338163f(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXbae338163f(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXbae338163f(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXbae338163f(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreProtocolSettingsExpeXbae338163f(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreSecretsItemFrameworkX5869817391 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreSecretsItemFrameworkX5869817391 && value == other.value
+class CreateIntegrationStoreDirectResponseStoreSecretsItemFrameworkX5869817391
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreSecretsItemFrameworkX5869817391 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreSecretsItemFrameworkX5869817391(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreSecretsItemFrameworkX5869817391(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreSecretsItemFrameworkX5869817391(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreSecretsItemFrameworkX5869817391(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreSecretsItemFrameworkX5869817391(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreSecretsItemFrameworkX5869817391(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreSecretsItemNonSensitiveEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreSecretsItemNonSensitiveEnum && value == other.value
+class CreateIntegrationStoreDirectResponseStoreSecretsItemNonSensitiveEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreSecretsItemNonSensitiveEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreSecretsItemNonSensitiveEnum(false)
-        @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreSecretsItemNonSensitiveEnum(true)
+        @JvmField
+        val FALSE = CreateIntegrationStoreDirectResponseStoreSecretsItemNonSensitiveEnum(false)
+        @JvmField
+        val TRUE = CreateIntegrationStoreDirectResponseStoreSecretsItemNonSensitiveEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreSecretsItemNonSensitiveEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreSecretsItemNonSensitiveEnum(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreStatusEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreStatusEnum && value == other.value
+class CreateIntegrationStoreDirectResponseStoreStatusEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreStatusEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val AVAILABLE = CreateIntegrationStoreDirectResponseStoreStatusEnum("available")
         @JvmField val ERROR = CreateIntegrationStoreDirectResponseStoreStatusEnum("error")
-        @JvmField val INITIALIZING = CreateIntegrationStoreDirectResponseStoreStatusEnum("initializing")
-        @JvmField val LIMITS_EXCEEDED_SUSPENDED = CreateIntegrationStoreDirectResponseStoreStatusEnum("limits-exceeded-suspended")
-        @JvmField val LIMITS_EXCEEDED_SUSPENDED_STORE_COUNT = CreateIntegrationStoreDirectResponseStoreStatusEnum("limits-exceeded-suspended-store-count")
+        @JvmField
+        val INITIALIZING = CreateIntegrationStoreDirectResponseStoreStatusEnum("initializing")
+        @JvmField
+        val LIMITS_EXCEEDED_SUSPENDED =
+            CreateIntegrationStoreDirectResponseStoreStatusEnum("limits-exceeded-suspended")
+        @JvmField
+        val LIMITS_EXCEEDED_SUSPENDED_STORE_COUNT =
+            CreateIntegrationStoreDirectResponseStoreStatusEnum(
+                "limits-exceeded-suspended-store-count"
+            )
         @JvmField val ONBOARDING = CreateIntegrationStoreDirectResponseStoreStatusEnum("onboarding")
         @JvmField val SUSPENDED = CreateIntegrationStoreDirectResponseStoreStatusEnum("suspended")
-        @JvmField val UNINSTALLED = CreateIntegrationStoreDirectResponseStoreStatusEnum("uninstalled")
+        @JvmField
+        val UNINSTALLED = CreateIntegrationStoreDirectResponseStoreStatusEnum("uninstalled")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreStatusEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreStatusEnum(value)
     }
 }
 
-/**
- * The deployment targets that this resource is available for.
- */
-class CreateIntegrationStoreDirectResponseStoreTargetsItemEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreTargetsItemEnum && value == other.value
+/** The deployment targets that this resource is available for. */
+class CreateIntegrationStoreDirectResponseStoreTargetsItemEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreTargetsItemEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val DEVELOPMENT = CreateIntegrationStoreDirectResponseStoreTargetsItemEnum("development")
+        @JvmField
+        val DEVELOPMENT = CreateIntegrationStoreDirectResponseStoreTargetsItemEnum("development")
         @JvmField val PREVIEW = CreateIntegrationStoreDirectResponseStoreTargetsItemEnum("preview")
-        @JvmField val PRODUCTION = CreateIntegrationStoreDirectResponseStoreTargetsItemEnum("production")
+        @JvmField
+        val PRODUCTION = CreateIntegrationStoreDirectResponseStoreTargetsItemEnum("production")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateIntegrationStoreDirectResponseStoreTargetsItemEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateIntegrationStoreDirectResponseStoreTargetsItemEnum(value)
     }
 }
 
-class CreateIntegrationStoreDirectResponseStoreUsageQuotaExceededEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateIntegrationStoreDirectResponseStoreUsageQuotaExceededEnum && value == other.value
+class CreateIntegrationStoreDirectResponseStoreUsageQuotaExceededEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateIntegrationStoreDirectResponseStoreUsageQuotaExceededEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -556,19 +1062,26 @@ class CreateIntegrationStoreDirectResponseStoreUsageQuotaExceededEnum private co
         @JvmField val FALSE = CreateIntegrationStoreDirectResponseStoreUsageQuotaExceededEnum(false)
         @JvmField val TRUE = CreateIntegrationStoreDirectResponseStoreUsageQuotaExceededEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateIntegrationStoreDirectResponseStoreUsageQuotaExceededEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateIntegrationStoreDirectResponseStoreUsageQuotaExceededEnum(value)
     }
 }
 
 /**
- * Signifies whether the default team update has failed, when newDefaultTeamId is provided in request query.
+ * Signifies whether the default team update has failed, when newDefaultTeamId is provided in
+ * request query.
  */
-class DeleteTeamResponseNewDefaultTeamIdErrorEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteTeamResponseNewDefaultTeamIdErrorEnum && value == other.value
+class DeleteTeamResponseNewDefaultTeamIdErrorEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteTeamResponseNewDefaultTeamIdErrorEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -576,16 +1089,21 @@ class DeleteTeamResponseNewDefaultTeamIdErrorEnum private constructor(
         @JvmField val FALSE = DeleteTeamResponseNewDefaultTeamIdErrorEnum(false)
         @JvmField val TRUE = DeleteTeamResponseNewDefaultTeamIdErrorEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = DeleteTeamResponseNewDefaultTeamIdErrorEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = DeleteTeamResponseNewDefaultTeamIdErrorEnum(value)
     }
 }
 
-class PostTeamDsyncRolesRolesValueVariant0Enum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is PostTeamDsyncRolesRolesValueVariant0Enum && value == other.value
+class PostTeamDsyncRolesRolesValueVariant0Enum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is PostTeamDsyncRolesRolesValueVariant0Enum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -599,7 +1117,10 @@ class PostTeamDsyncRolesRolesValueVariant0Enum private constructor(
         @JvmField val VIEWER_FOR_PLUS = PostTeamDsyncRolesRolesValueVariant0Enum("VIEWER_FOR_PLUS")
         @JvmField val CONTRIBUTOR = PostTeamDsyncRolesRolesValueVariant0Enum("CONTRIBUTOR")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = PostTeamDsyncRolesRolesValueVariant0Enum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = PostTeamDsyncRolesRolesValueVariant0Enum(value)
     }
 }

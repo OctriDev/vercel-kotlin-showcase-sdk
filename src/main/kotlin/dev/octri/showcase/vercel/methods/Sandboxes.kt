@@ -57,362 +57,297 @@ import dev.octri.showcase.vercel.UpdateSandboxResponse
 import dev.octri.showcase.vercel.UpdateSandboxRuntimeEnum
 
 object Sandboxes {
-data class ListNamedSandboxesResponsePagination(
-    val count: Double,
-    @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?
-) : SdkResource()
+    data class ListNamedSandboxesResponsePagination(
+        val count: Double,
+        @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?,
+    ) : SdkResource()
 
-data class ListNamedSandboxesResponse(
-    val pagination: ListNamedSandboxesResponsePagination,
-    val sandboxes: List<NamedSandbox>
-) : SdkResource()
+    data class ListNamedSandboxesResponse(
+        val pagination: ListNamedSandboxesResponsePagination,
+        val sandboxes: List<NamedSandbox>,
+    ) : SdkResource()
 
-/**
- * Resources to define the VM
- */
-data class CreateSandboxesV2Resources(
-    /**
-     * The number of virtual CPUs to allocate to the sandbox. Must be 1, or an even number.
-     */
-    val vcpus: Long? = null,
-    /**
-     * The amount of memory in megabytes to allocate to the sandbox. Must equal vcpus * 2048.
-     */
-    val memory: Long? = null
-) : SdkResource()
+    /** Resources to define the VM */
+    data class CreateSandboxesV2Resources(
+        /** The number of virtual CPUs to allocate to the sandbox. Must be 1, or an even number. */
+        val vcpus: Long? = null,
+        /**
+         * The amount of memory in megabytes to allocate to the sandbox. Must equal vcpus * 2048.
+         */
+        val memory: Long? = null,
+    ) : SdkResource()
 
-/**
- * Protect the N most recent snapshots with different expiration/deletion behavior.
- */
-data class CreateSandboxesV2KeepLastSnapshots(
-    /**
-     * Number of most recent snapshots to keep.
-     */
-    val count: Long,
-    /**
-     * Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration.
-     */
-    val expiration: Long? = null,
-    /**
-     * Whether to immediately delete evicted snapshots. Defaults to true.
-     */
-    val deleteEvicted: Boolean? = null
-) : SdkResource()
+    /** Protect the N most recent snapshots with different expiration/deletion behavior. */
+    data class CreateSandboxesV2KeepLastSnapshots(
+        /** Number of most recent snapshots to keep. */
+        val count: Long,
+        /** Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration. */
+        val expiration: Long? = null,
+        /** Whether to immediately delete evicted snapshots. Defaults to true. */
+        val deleteEvicted: Boolean? = null,
+    ) : SdkResource()
 
-data class CreateSandboxesV2Response(
-    val routes: List<SandboxPublicRoute>,
-    /**
-     * This object contains information related to a Vercel NamedSandbox.
-     */
-    val sandbox: NamedSandbox,
-    /**
-     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-     */
-    val session: Session
-) : SdkResource()
+    data class CreateSandboxesV2Response(
+        val routes: List<SandboxPublicRoute>,
+        /** This object contains information related to a Vercel NamedSandbox. */
+        val sandbox: NamedSandbox,
+        /**
+         * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
+         * "session" instead of "sandbox" as the response wrapper key.
+         */
+        val session: Session,
+    ) : SdkResource()
 
-data class ListDrivesResponsePagination(
-    val count: Double,
-    @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?
-) : SdkResource()
+    data class ListDrivesResponsePagination(
+        val count: Double,
+        @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?,
+    ) : SdkResource()
 
-data class ListDrivesResponse(
-    val drives: List<Drive>,
-    val pagination: ListDrivesResponsePagination
-) : SdkResource()
+    data class ListDrivesResponse(
+        val drives: List<Drive>,
+        val pagination: ListDrivesResponsePagination,
+    ) : SdkResource()
 
-data class GetDriveResponse(
-    /**
-     * This object contains information related to a Vercel Sandbox Drive.
-     */
-    val drive: Drive
-) : SdkResource()
+    data class GetDriveResponse(
+        /** This object contains information related to a Vercel Sandbox Drive. */
+        val drive: Drive
+    ) : SdkResource()
 
-data class GetOrCreateDriveResponse(
-    /**
-     * This object contains information related to a Vercel Sandbox Drive.
-     */
-    val drive: Drive
-) : SdkResource()
+    data class GetOrCreateDriveResponse(
+        /** This object contains information related to a Vercel Sandbox Drive. */
+        val drive: Drive
+    ) : SdkResource()
 
-data class DeleteDriveResponse(
-    /**
-     * This object contains information related to a Vercel Sandbox Drive.
-     */
-    val drive: Drive
-) : SdkResource()
+    data class DeleteDriveResponse(
+        /** This object contains information related to a Vercel Sandbox Drive. */
+        val drive: Drive
+    ) : SdkResource()
 
-data class ForkDriveResponse(
-    /**
-     * This object contains information related to a Vercel Sandbox Drive.
-     */
-    val drive: Drive
-) : SdkResource()
+    data class ForkDriveResponse(
+        /** This object contains information related to a Vercel Sandbox Drive. */
+        val drive: Drive
+    ) : SdkResource()
 
-data class GetSessionSnapshotResponse(
-    /**
-     * This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
-     */
-    val snapshot: Snapshot
-) : SdkResource()
+    data class GetSessionSnapshotResponse(
+        /**
+         * This object contains information related to a Snapshot of a Vercel Sandbox session (v2
+         * API).
+         */
+        val snapshot: Snapshot
+    ) : SdkResource()
 
-data class DeleteSessionSnapshotResponse(
-    /**
-     * This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
-     */
-    val snapshot: Snapshot
-) : SdkResource()
+    data class DeleteSessionSnapshotResponse(
+        /**
+         * This object contains information related to a Snapshot of a Vercel Sandbox session (v2
+         * API).
+         */
+        val snapshot: Snapshot
+    ) : SdkResource()
 
-data class GetSessionResponse(
-    val routes: List<SandboxPublicRoute>,
-    /**
-     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-     */
-    val session: Session
-) : SdkResource()
+    data class GetSessionResponse(
+        val routes: List<SandboxPublicRoute>,
+        /**
+         * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
+         * "session" instead of "sandbox" as the response wrapper key.
+         */
+        val session: Session,
+    ) : SdkResource()
 
-data class GetNamedSandboxResponse(
-    val resumed: Boolean,
-    val routes: List<SandboxPublicRoute>,
-    /**
-     * This object contains information related to a Vercel NamedSandbox.
-     */
-    val sandbox: NamedSandbox,
-    /**
-     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-     */
-    val session: Session
-) : SdkResource()
+    data class GetNamedSandboxResponse(
+        val resumed: Boolean,
+        val routes: List<SandboxPublicRoute>,
+        /** This object contains information related to a Vercel NamedSandbox. */
+        val sandbox: NamedSandbox,
+        /**
+         * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
+         * "session" instead of "sandbox" as the response wrapper key.
+         */
+        val session: Session,
+    ) : SdkResource()
 
-/**
- * Resources to define the VM
- */
-data class UpdateSandboxResources(
-    /**
-     * The number of virtual CPUs to allocate to the sandbox. Must be 1, or an even number.
-     */
-    val vcpus: Long? = null,
-    /**
-     * The amount of memory in megabytes to allocate to the sandbox. Must equal vcpus * 2048.
-     */
-    val memory: Long? = null
-) : SdkResource()
+    /** Resources to define the VM */
+    data class UpdateSandboxResources(
+        /** The number of virtual CPUs to allocate to the sandbox. Must be 1, or an even number. */
+        val vcpus: Long? = null,
+        /**
+         * The amount of memory in megabytes to allocate to the sandbox. Must equal vcpus * 2048.
+         */
+        val memory: Long? = null,
+    ) : SdkResource()
 
-data class DeleteSandboxResponse(
-    /**
-     * This object contains information related to a Vercel NamedSandbox.
-     */
-    val sandbox: NamedSandbox
-) : SdkResource()
+    data class DeleteSandboxResponse(
+        /** This object contains information related to a Vercel NamedSandbox. */
+        val sandbox: NamedSandbox
+    ) : SdkResource()
 
-data class ListSessionCommandsResponse(
-    val commands: List<SessionCommand>
-) : SdkResource()
+    data class ListSessionCommandsResponse(val commands: List<SessionCommand>) : SdkResource()
 
-data class RunSessionCommandResponse(
-    /**
-     * This object represents a command run in a Vercel Sandbox session (v2 API).
-     */
-    val command: SessionCommand
-) : SdkResource()
+    data class RunSessionCommandResponse(
+        /** This object represents a command run in a Vercel Sandbox session (v2 API). */
+        val command: SessionCommand
+    ) : SdkResource()
 
-data class GetSessionCommandResponse(
-    /**
-     * This object represents a command run in a Vercel Sandbox session (v2 API).
-     */
-    val command: SessionCommand
-) : SdkResource()
+    data class GetSessionCommandResponse(
+        /** This object represents a command run in a Vercel Sandbox session (v2 API). */
+        val command: SessionCommand
+    ) : SdkResource()
 
-data class KillSessionCommandResponse(
-    /**
-     * This object represents a command run in a Vercel Sandbox session (v2 API).
-     */
-    val command: SessionCommand
-) : SdkResource()
+    data class KillSessionCommandResponse(
+        /** This object represents a command run in a Vercel Sandbox session (v2 API). */
+        val command: SessionCommand
+    ) : SdkResource()
 
-data class WriteSessionCommandStdinResponse(
-    /**
-     * This object represents a command run in a Vercel Sandbox session (v2 API).
-     */
-    val command: SessionCommand,
-    val bytesWritten: Double? = null
-) : SdkResource()
+    data class WriteSessionCommandStdinResponse(
+        /** This object represents a command run in a Vercel Sandbox session (v2 API). */
+        val command: SessionCommand,
+        val bytesWritten: Double? = null,
+    ) : SdkResource()
 
-data class ExtendSessionTimeoutResponse(
-    /**
-     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-     */
-    val session: Session
-) : SdkResource()
+    data class ExtendSessionTimeoutResponse(
+        /**
+         * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
+         * "session" instead of "sandbox" as the response wrapper key.
+         */
+        val session: Session
+    ) : SdkResource()
 
-data class UpdateSessionNetworkPolicyResponse(
-    /**
-     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-     */
-    val session: Session
-) : SdkResource()
+    data class UpdateSessionNetworkPolicyResponse(
+        /**
+         * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
+         * "session" instead of "sandbox" as the response wrapper key.
+         */
+        val session: Session
+    ) : SdkResource()
 
-data class CreateSandboxesSessionsBySessionIdSnapshotV2Response(
-    /**
-     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-     */
-    val session: Session,
-    /**
-     * This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
-     */
-    val snapshot: Snapshot
-) : SdkResource()
+    data class CreateSandboxesSessionsBySessionIdSnapshotV2Response(
+        /**
+         * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
+         * "session" instead of "sandbox" as the response wrapper key.
+         */
+        val session: Session,
+        /**
+         * This object contains information related to a Snapshot of a Vercel Sandbox session (v2
+         * API).
+         */
+        val snapshot: Snapshot,
+    ) : SdkResource()
 
-/**
- * Resources to define the VM
- */
-data class CreateSandboxesByNameForkV2Resources(
-    /**
-     * The number of virtual CPUs to allocate to the sandbox. Must be 1, or an even number.
-     */
-    val vcpus: Long? = null,
-    /**
-     * The amount of memory in megabytes to allocate to the sandbox. Must equal vcpus * 2048.
-     */
-    val memory: Long? = null
-) : SdkResource()
+    /** Resources to define the VM */
+    data class CreateSandboxesByNameForkV2Resources(
+        /** The number of virtual CPUs to allocate to the sandbox. Must be 1, or an even number. */
+        val vcpus: Long? = null,
+        /**
+         * The amount of memory in megabytes to allocate to the sandbox. Must equal vcpus * 2048.
+         */
+        val memory: Long? = null,
+    ) : SdkResource()
 
-/**
- * Protect the N most recent snapshots with different expiration/deletion behavior.
- */
-data class CreateSandboxesByNameForkV2KeepLastSnapshots(
-    /**
-     * Number of most recent snapshots to keep.
-     */
-    val count: Long,
-    /**
-     * Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration.
-     */
-    val expiration: Long? = null,
-    /**
-     * Whether to immediately delete evicted snapshots. Defaults to true.
-     */
-    val deleteEvicted: Boolean? = null
-) : SdkResource()
+    /** Protect the N most recent snapshots with different expiration/deletion behavior. */
+    data class CreateSandboxesByNameForkV2KeepLastSnapshots(
+        /** Number of most recent snapshots to keep. */
+        val count: Long,
+        /** Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration. */
+        val expiration: Long? = null,
+        /** Whether to immediately delete evicted snapshots. Defaults to true. */
+        val deleteEvicted: Boolean? = null,
+    ) : SdkResource()
 
-data class CreateSandboxesByNameForkV2Response(
-    val routes: List<SandboxPublicRoute>,
-    /**
-     * This object contains information related to a Vercel NamedSandbox.
-     */
-    val sandbox: NamedSandbox,
-    /**
-     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-     */
-    val session: Session
-) : SdkResource()
+    data class CreateSandboxesByNameForkV2Response(
+        val routes: List<SandboxPublicRoute>,
+        /** This object contains information related to a Vercel NamedSandbox. */
+        val sandbox: NamedSandbox,
+        /**
+         * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
+         * "session" instead of "sandbox" as the response wrapper key.
+         */
+        val session: Session,
+    ) : SdkResource()
 
-/**
- * Resources to define the VM
- */
-data class CreateSandboxesV3Resources(
-    /**
-     * The number of virtual CPUs to allocate to the sandbox. Must be 1, or an even number.
-     */
-    val vcpus: Long? = null,
-    /**
-     * The amount of memory in megabytes to allocate to the sandbox. Must equal vcpus * 2048.
-     */
-    val memory: Long? = null
-) : SdkResource()
+    /** Resources to define the VM */
+    data class CreateSandboxesV3Resources(
+        /** The number of virtual CPUs to allocate to the sandbox. Must be 1, or an even number. */
+        val vcpus: Long? = null,
+        /**
+         * The amount of memory in megabytes to allocate to the sandbox. Must equal vcpus * 2048.
+         */
+        val memory: Long? = null,
+    ) : SdkResource()
 
-/**
- * Protect the N most recent snapshots with different expiration/deletion behavior.
- */
-data class CreateSandboxesV3KeepLastSnapshots(
-    /**
-     * Number of most recent snapshots to keep.
-     */
-    val count: Long,
-    /**
-     * Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration.
-     */
-    val expiration: Long? = null,
-    /**
-     * Whether to immediately delete evicted snapshots. Defaults to true.
-     */
-    val deleteEvicted: Boolean? = null
-) : SdkResource()
+    /** Protect the N most recent snapshots with different expiration/deletion behavior. */
+    data class CreateSandboxesV3KeepLastSnapshots(
+        /** Number of most recent snapshots to keep. */
+        val count: Long,
+        /** Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration. */
+        val expiration: Long? = null,
+        /** Whether to immediately delete evicted snapshots. Defaults to true. */
+        val deleteEvicted: Boolean? = null,
+    ) : SdkResource()
 
-data class CreateSandboxesV3Response(
-    val routes: List<SandboxPublicRoute>,
-    /**
-     * This object contains information related to a Vercel NamedSandbox.
-     */
-    val sandbox: NamedSandbox,
-    /**
-     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-     */
-    val session: Session
-) : SdkResource()
+    data class CreateSandboxesV3Response(
+        val routes: List<SandboxPublicRoute>,
+        /** This object contains information related to a Vercel NamedSandbox. */
+        val sandbox: NamedSandbox,
+        /**
+         * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
+         * "session" instead of "sandbox" as the response wrapper key.
+         */
+        val session: Session,
+    ) : SdkResource()
 
-data class CreateSandboxesSessionsBySessionIdSnapshotV3Response(
-    /**
-     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-     */
-    val session: Session,
-    /**
-     * This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
-     */
-    val snapshot: Snapshot
-) : SdkResource()
+    data class CreateSandboxesSessionsBySessionIdSnapshotV3Response(
+        /**
+         * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
+         * "session" instead of "sandbox" as the response wrapper key.
+         */
+        val session: Session,
+        /**
+         * This object contains information related to a Snapshot of a Vercel Sandbox session (v2
+         * API).
+         */
+        val snapshot: Snapshot,
+    ) : SdkResource()
 
-/**
- * Resources to define the VM
- */
-data class CreateSandboxesByNameForkV3Resources(
-    /**
-     * The number of virtual CPUs to allocate to the sandbox. Must be 1, or an even number.
-     */
-    val vcpus: Long? = null,
-    /**
-     * The amount of memory in megabytes to allocate to the sandbox. Must equal vcpus * 2048.
-     */
-    val memory: Long? = null
-) : SdkResource()
+    /** Resources to define the VM */
+    data class CreateSandboxesByNameForkV3Resources(
+        /** The number of virtual CPUs to allocate to the sandbox. Must be 1, or an even number. */
+        val vcpus: Long? = null,
+        /**
+         * The amount of memory in megabytes to allocate to the sandbox. Must equal vcpus * 2048.
+         */
+        val memory: Long? = null,
+    ) : SdkResource()
 
-data class CreateSandboxesByNameForkV3Response(
-    val routes: List<SandboxPublicRoute>,
-    /**
-     * This object contains information related to a Vercel NamedSandbox.
-     */
-    val sandbox: NamedSandbox,
-    /**
-     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-     */
-    val session: Session
-) : SdkResource()
+    data class CreateSandboxesByNameForkV3Response(
+        val routes: List<SandboxPublicRoute>,
+        /** This object contains information related to a Vercel NamedSandbox. */
+        val sandbox: NamedSandbox,
+        /**
+         * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
+         * "session" instead of "sandbox" as the response wrapper key.
+         */
+        val session: Session,
+    ) : SdkResource()
 
-/**
- * Resources to define the VM
- */
-data class CreateSandboxesV4Resources(
-    /**
-     * The number of virtual CPUs to allocate to the sandbox. Must be 1, or an even number.
-     */
-    val vcpus: Long? = null,
-    /**
-     * The amount of memory in megabytes to allocate to the sandbox. Must equal vcpus * 2048.
-     */
-    val memory: Long? = null
-) : SdkResource()
+    /** Resources to define the VM */
+    data class CreateSandboxesV4Resources(
+        /** The number of virtual CPUs to allocate to the sandbox. Must be 1, or an even number. */
+        val vcpus: Long? = null,
+        /**
+         * The amount of memory in megabytes to allocate to the sandbox. Must equal vcpus * 2048.
+         */
+        val memory: Long? = null,
+    ) : SdkResource()
 
-data class CreateSandboxesV4Response(
-    val routes: List<SandboxPublicRoute>,
-    /**
-     * This object contains information related to a Vercel NamedSandbox.
-     */
-    val sandbox: NamedSandbox,
-    /**
-     * This object contains information related to a Vercel Sandbox Session. v2 endpoints return "session" instead of "sandbox" as the response wrapper key.
-     */
-    val session: Session
-) : SdkResource()
+    data class CreateSandboxesV4Response(
+        val routes: List<SandboxPublicRoute>,
+        /** This object contains information related to a Vercel NamedSandbox. */
+        val sandbox: NamedSandbox,
+        /**
+         * This object contains information related to a Vercel Sandbox Session. v2 endpoints return
+         * "session" instead of "sandbox" as the response wrapper key.
+         */
+        val session: Session,
+    ) : SdkResource()
 
     /** Parameters for [listNamedSandboxes]. */
     data class ListNamedSandboxesRequest(
@@ -425,7 +360,7 @@ data class CreateSandboxesV4Response(
         val status: ListNamedSandboxesParameterEnum73016b23? = null,
         val tags: Any? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [createSandboxesV2]. */
@@ -450,7 +385,7 @@ data class CreateSandboxesV4Response(
         val persistent: Boolean? = null,
         val snapshotExpiration: SdkClient.SdkOptional<Long?>? = null,
         val keepLastSnapshots: CreateSandboxesV2KeepLastSnapshots? = null,
-        val tags: Map<String, String>? = null
+        val tags: Map<String, String>? = null,
     )
 
     /** Parameters for [listDrives]. */
@@ -462,7 +397,7 @@ data class CreateSandboxesV4Response(
         val namePrefix: String? = null,
         val sortOrder: ListDrivesParameterEnum534ce49c? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [getOrCreateDrive]. */
@@ -472,7 +407,7 @@ data class CreateSandboxesV4Response(
         val slug: String? = null,
         val projectId: String? = null,
         val maxSizeBytes: Long? = null,
-        val region: GetOrCreateDriveRegionEnum? = null
+        val region: GetOrCreateDriveRegionEnum? = null,
     )
 
     /** Parameters for [listSessionSnapshots]. */
@@ -483,7 +418,7 @@ data class CreateSandboxesV4Response(
         val cursor: String? = null,
         val sortOrder: ListSessionSnapshotsParameterEnum? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [listSessions]. */
@@ -494,7 +429,7 @@ data class CreateSandboxesV4Response(
         val cursor: String? = null,
         val sortOrder: ListSessionsParameterEnum? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     /** Parameters for [updateSandbox]. */
@@ -518,7 +453,7 @@ data class CreateSandboxesV4Response(
         val env: Map<String, String>? = null,
         val ports: List<Long>? = null,
         val currentSnapshotId: String? = null,
-        val tags: Map<String, String>? = null
+        val tags: Map<String, String>? = null,
     )
 
     /** Parameters for [runSessionCommand]. */
@@ -535,7 +470,7 @@ data class CreateSandboxesV4Response(
         val wait: Boolean? = null,
         val logs: Boolean? = null,
         val timeout: Long? = null,
-        val attachStdin: Boolean? = null
+        val attachStdin: Boolean? = null,
     )
 
     data class RunSessionCommandStreamRequest(
@@ -551,7 +486,7 @@ data class CreateSandboxesV4Response(
         val wait: Boolean? = null,
         val logs: Boolean? = null,
         val timeout: Long? = null,
-        val attachStdin: Boolean? = null
+        val attachStdin: Boolean? = null,
     )
 
     /** Parameters for [writeSessionCommandStdin]. */
@@ -562,7 +497,7 @@ data class CreateSandboxesV4Response(
         val slug: String? = null,
         val data: String? = null,
         val offset: Long? = null,
-        val close: Boolean? = null
+        val close: Boolean? = null,
     )
 
     /** Parameters for [createSessionDirectory]. */
@@ -572,7 +507,7 @@ data class CreateSandboxesV4Response(
         val teamId: String? = null,
         val slug: String? = null,
         val cwd: String? = null,
-        val recursive: Boolean? = null
+        val recursive: Boolean? = null,
     )
 
     /** Parameters for [createSandboxesByNameForkV2]. */
@@ -595,7 +530,7 @@ data class CreateSandboxesV4Response(
         val persistent: Boolean? = null,
         val snapshotExpiration: SdkClient.SdkOptional<Long?>? = null,
         val keepLastSnapshots: CreateSandboxesByNameForkV2KeepLastSnapshots? = null,
-        val tags: Map<String, String>? = null
+        val tags: Map<String, String>? = null,
     )
 
     /** Parameters for [createSandboxesV3]. */
@@ -619,7 +554,7 @@ data class CreateSandboxesV4Response(
         val persistent: Boolean? = null,
         val snapshotExpiration: SdkClient.SdkOptional<Long?>? = null,
         val keepLastSnapshots: CreateSandboxesV3KeepLastSnapshots? = null,
-        val tags: Map<String, String>? = null
+        val tags: Map<String, String>? = null,
     )
 
     /** Parameters for [createSandboxesByNameForkV3]. */
@@ -642,7 +577,7 @@ data class CreateSandboxesV4Response(
         val persistent: Boolean? = null,
         val snapshotExpiration: SdkClient.SdkOptional<Long?>? = null,
         val keepLastSnapshots: CreateSandboxesByNameForkV3RequestKeepLastSnapshots? = null,
-        val tags: Map<String, String>? = null
+        val tags: Map<String, String>? = null,
     )
 
     /** Parameters for [createSandboxesV4]. */
@@ -666,13 +601,20 @@ data class CreateSandboxesV4Response(
         val persistent: Boolean? = null,
         val snapshotExpiration: SdkClient.SdkOptional<Long?>? = null,
         val keepLastSnapshots: CreateSandboxesV4RequestKeepLastSnapshots? = null,
-        val tags: Map<String, String>? = null
+        val tags: Map<String, String>? = null,
     )
 
     /**
-     * Lists named sandboxes for a project in a paginated response. Filter by name prefix, status, or tag, and choose a sort field and direction; `namePrefix` is only valid with `sortBy=name`, while `status` is only valid with `sortBy=createdAt`. Continue through results using the pagination cursor returned in the response.
+     * Lists named sandboxes for a project in a paginated response. Filter by name prefix, status,
+     * or tag, and choose a sort field and direction; `namePrefix` is only valid with `sortBy=name`,
+     * while `status` is only valid with `sortBy=createdAt`. Continue through results using the
+     * pagination cursor returned in the response.
      */
-    fun listNamedSandboxes(clientConfig: ClientConfig, request: ListNamedSandboxesRequest, options: RequestOptions? = null): ListNamedSandboxesResponse =
+    fun listNamedSandboxes(
+        clientConfig: ClientConfig,
+        request: ListNamedSandboxesRequest,
+        options: RequestOptions? = null,
+    ): ListNamedSandboxesResponse =
         dev.octri.showcase.vercel.methods.SandboxesListNamedSandboxesOperation.listNamedSandboxes(
             clientConfig,
             request,
@@ -680,19 +622,34 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Lists named sandboxes for a project in a paginated response. Filter by name prefix, status, or tag, and choose a sort field and direction; `namePrefix` is only valid with `sortBy=name`, while `status` is only valid with `sortBy=createdAt`. Continue through results using the pagination cursor returned in the response.
+     * Lists named sandboxes for a project in a paginated response. Filter by name prefix, status,
+     * or tag, and choose a sort field and direction; `namePrefix` is only valid with `sortBy=name`,
+     * while `status` is only valid with `sortBy=createdAt`. Continue through results using the
+     * pagination cursor returned in the response.
      */
-    fun listNamedSandboxesWithRawResponse(clientConfig: ClientConfig, request: ListNamedSandboxesRequest, options: RequestOptions? = null): SdkResponse<ListNamedSandboxesResponse> =
-        dev.octri.showcase.vercel.methods.SandboxesListNamedSandboxesOperation.listNamedSandboxesWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listNamedSandboxesWithRawResponse(
+        clientConfig: ClientConfig,
+        request: ListNamedSandboxesRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<ListNamedSandboxesResponse> =
+        dev.octri.showcase.vercel.methods.SandboxesListNamedSandboxesOperation
+            .listNamedSandboxesWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Creates a named sandbox with an initialized filesystem and runtime configuration. Supply `name` and `projectId` to assign it to a project, and optionally configure its source, resources, network policy, ports, or mounted drives. A 200 response includes the sandbox, session, and exposed routes.
+     * Creates a named sandbox with an initialized filesystem and runtime configuration. Supply
+     * `name` and `projectId` to assign it to a project, and optionally configure its source,
+     * resources, network policy, ports, or mounted drives. A 200 response includes the sandbox,
+     * session, and exposed routes.
      */
-    fun createSandboxesV2(clientConfig: ClientConfig, request: CreateSandboxesV2Request, options: RequestOptions? = null): CreateSandboxesV2Response =
+    fun createSandboxesV2(
+        clientConfig: ClientConfig,
+        request: CreateSandboxesV2Request,
+        options: RequestOptions? = null,
+    ): CreateSandboxesV2Response =
         dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesV2Operation.createSandboxesV2(
             clientConfig,
             request,
@@ -700,19 +657,34 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Creates a named sandbox with an initialized filesystem and runtime configuration. Supply `name` and `projectId` to assign it to a project, and optionally configure its source, resources, network policy, ports, or mounted drives. A 200 response includes the sandbox, session, and exposed routes.
+     * Creates a named sandbox with an initialized filesystem and runtime configuration. Supply
+     * `name` and `projectId` to assign it to a project, and optionally configure its source,
+     * resources, network policy, ports, or mounted drives. A 200 response includes the sandbox,
+     * session, and exposed routes.
      */
-    fun createSandboxesV2WithRawResponse(clientConfig: ClientConfig, request: CreateSandboxesV2Request, options: RequestOptions? = null): SdkResponse<CreateSandboxesV2Response> =
-        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesV2Operation.createSandboxesV2WithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createSandboxesV2WithRawResponse(
+        clientConfig: ClientConfig,
+        request: CreateSandboxesV2Request,
+        options: RequestOptions? = null,
+    ): SdkResponse<CreateSandboxesV2Response> =
+        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesV2Operation
+            .createSandboxesV2WithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Lists drives associated with a project in a paginated response. Use `projectId` to select the project unless the request uses a Vercel OIDC token scoped to one, and use `namePrefix` to filter by name when sorting by name. Continue through the results with the pagination cursor returned in the response.
+     * Lists drives associated with a project in a paginated response. Use `projectId` to select the
+     * project unless the request uses a Vercel OIDC token scoped to one, and use `namePrefix` to
+     * filter by name when sorting by name. Continue through the results with the pagination cursor
+     * returned in the response.
      */
-    fun listDrives(clientConfig: ClientConfig, request: ListDrivesRequest, options: RequestOptions? = null): ListDrivesResponse =
+    fun listDrives(
+        clientConfig: ClientConfig,
+        request: ListDrivesRequest,
+        options: RequestOptions? = null,
+    ): ListDrivesResponse =
         dev.octri.showcase.vercel.methods.SandboxesListDrivesOperation.listDrives(
             clientConfig,
             request,
@@ -720,9 +692,16 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Lists drives associated with a project in a paginated response. Use `projectId` to select the project unless the request uses a Vercel OIDC token scoped to one, and use `namePrefix` to filter by name when sorting by name. Continue through the results with the pagination cursor returned in the response.
+     * Lists drives associated with a project in a paginated response. Use `projectId` to select the
+     * project unless the request uses a Vercel OIDC token scoped to one, and use `namePrefix` to
+     * filter by name when sorting by name. Continue through the results with the pagination cursor
+     * returned in the response.
      */
-    fun listDrivesWithRawResponse(clientConfig: ClientConfig, request: ListDrivesRequest, options: RequestOptions? = null): SdkResponse<ListDrivesResponse> =
+    fun listDrivesWithRawResponse(
+        clientConfig: ClientConfig,
+        request: ListDrivesRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<ListDrivesResponse> =
         dev.octri.showcase.vercel.methods.SandboxesListDrivesOperation.listDrivesWithRawResponse(
             clientConfig,
             request,
@@ -730,9 +709,18 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Retrieves a drive by its name or ID within a project. Supply `projectId` unless the request uses a Vercel OIDC token scoped to a project. The drive name or ID must use only letters, digits, hyphens, or underscores and be no longer than 64 characters.
+     * Retrieves a drive by its name or ID within a project. Supply `projectId` unless the request
+     * uses a Vercel OIDC token scoped to a project. The drive name or ID must use only letters,
+     * digits, hyphens, or underscores and be no longer than 64 characters.
      */
-    fun getDrive(clientConfig: ClientConfig, nameOrId: String, projectId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetDriveResponse =
+    fun getDrive(
+        clientConfig: ClientConfig,
+        nameOrId: String,
+        projectId: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetDriveResponse =
         dev.octri.showcase.vercel.methods.SandboxesGetDriveOperation.getDrive(
             clientConfig,
             nameOrId,
@@ -743,9 +731,18 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Retrieves a drive by its name or ID within a project. Supply `projectId` unless the request uses a Vercel OIDC token scoped to a project. The drive name or ID must use only letters, digits, hyphens, or underscores and be no longer than 64 characters.
+     * Retrieves a drive by its name or ID within a project. Supply `projectId` unless the request
+     * uses a Vercel OIDC token scoped to a project. The drive name or ID must use only letters,
+     * digits, hyphens, or underscores and be no longer than 64 characters.
      */
-    fun getDriveWithRawResponse(clientConfig: ClientConfig, nameOrId: String, projectId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<GetDriveResponse> =
+    fun getDriveWithRawResponse(
+        clientConfig: ClientConfig,
+        nameOrId: String,
+        projectId: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetDriveResponse> =
         dev.octri.showcase.vercel.methods.SandboxesGetDriveOperation.getDriveWithRawResponse(
             clientConfig,
             nameOrId,
@@ -756,9 +753,16 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Creates a drive with the specified name or retrieves the existing drive with that name in the project. Use `projectId` to associate the drive with a project unless your Vercel OIDC token is scoped to one; configure its size with `maxSizeBytes` and storage location with `region`. The response includes the drive object and its identifier.
+     * Creates a drive with the specified name or retrieves the existing drive with that name in the
+     * project. Use `projectId` to associate the drive with a project unless your Vercel OIDC token
+     * is scoped to one; configure its size with `maxSizeBytes` and storage location with `region`.
+     * The response includes the drive object and its identifier.
      */
-    fun getOrCreateDrive(clientConfig: ClientConfig, request: GetOrCreateDriveRequest, options: RequestOptions? = null): GetOrCreateDriveResponse =
+    fun getOrCreateDrive(
+        clientConfig: ClientConfig,
+        request: GetOrCreateDriveRequest,
+        options: RequestOptions? = null,
+    ): GetOrCreateDriveResponse =
         dev.octri.showcase.vercel.methods.SandboxesGetOrCreateDriveOperation.getOrCreateDrive(
             clientConfig,
             request,
@@ -766,19 +770,36 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Creates a drive with the specified name or retrieves the existing drive with that name in the project. Use `projectId` to associate the drive with a project unless your Vercel OIDC token is scoped to one; configure its size with `maxSizeBytes` and storage location with `region`. The response includes the drive object and its identifier.
+     * Creates a drive with the specified name or retrieves the existing drive with that name in the
+     * project. Use `projectId` to associate the drive with a project unless your Vercel OIDC token
+     * is scoped to one; configure its size with `maxSizeBytes` and storage location with `region`.
+     * The response includes the drive object and its identifier.
      */
-    fun getOrCreateDriveWithRawResponse(clientConfig: ClientConfig, request: GetOrCreateDriveRequest, options: RequestOptions? = null): SdkResponse<GetOrCreateDriveResponse> =
-        dev.octri.showcase.vercel.methods.SandboxesGetOrCreateDriveOperation.getOrCreateDriveWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun getOrCreateDriveWithRawResponse(
+        clientConfig: ClientConfig,
+        request: GetOrCreateDriveRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetOrCreateDriveResponse> =
+        dev.octri.showcase.vercel.methods.SandboxesGetOrCreateDriveOperation
+            .getOrCreateDriveWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Deletes a drive identified by its name and project. Use this operation to remove a drive that is no longer needed; a drive attached to a session cannot be deleted, so stop or replace the session using it before retrying. A successful response includes the deleted drive object.
+     * Deletes a drive identified by its name and project. Use this operation to remove a drive that
+     * is no longer needed; a drive attached to a session cannot be deleted, so stop or replace the
+     * session using it before retrying. A successful response includes the deleted drive object.
      */
-    fun deleteDrive(clientConfig: ClientConfig, name: String, projectId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): DeleteDriveResponse =
+    fun deleteDrive(
+        clientConfig: ClientConfig,
+        name: String,
+        projectId: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): DeleteDriveResponse =
         dev.octri.showcase.vercel.methods.SandboxesDeleteDriveOperation.deleteDrive(
             clientConfig,
             name,
@@ -789,9 +810,18 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Deletes a drive identified by its name and project. Use this operation to remove a drive that is no longer needed; a drive attached to a session cannot be deleted, so stop or replace the session using it before retrying. A successful response includes the deleted drive object.
+     * Deletes a drive identified by its name and project. Use this operation to remove a drive that
+     * is no longer needed; a drive attached to a session cannot be deleted, so stop or replace the
+     * session using it before retrying. A successful response includes the deleted drive object.
      */
-    fun deleteDriveWithRawResponse(clientConfig: ClientConfig, name: String, projectId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<DeleteDriveResponse> =
+    fun deleteDriveWithRawResponse(
+        clientConfig: ClientConfig,
+        name: String,
+        projectId: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<DeleteDriveResponse> =
         dev.octri.showcase.vercel.methods.SandboxesDeleteDriveOperation.deleteDriveWithRawResponse(
             clientConfig,
             name,
@@ -802,9 +832,19 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Forks a source drive into a new drive that inherits the source drive's region and maximum size. Provide the new drive's name in the request body and identify the project unless your Vercel OIDC token is scoped to one. The response contains the created drive object.
+     * Forks a source drive into a new drive that inherits the source drive's region and maximum
+     * size. Provide the new drive's name in the request body and identify the project unless your
+     * Vercel OIDC token is scoped to one. The response contains the created drive object.
      */
-    fun forkDrive(clientConfig: ClientConfig, name: String, name2: String, projectId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ForkDriveResponse =
+    fun forkDrive(
+        clientConfig: ClientConfig,
+        name: String,
+        name2: String,
+        projectId: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ForkDriveResponse =
         dev.octri.showcase.vercel.methods.SandboxesForkDriveOperation.forkDrive(
             clientConfig,
             name,
@@ -816,9 +856,19 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Forks a source drive into a new drive that inherits the source drive's region and maximum size. Provide the new drive's name in the request body and identify the project unless your Vercel OIDC token is scoped to one. The response contains the created drive object.
+     * Forks a source drive into a new drive that inherits the source drive's region and maximum
+     * size. Provide the new drive's name in the request body and identify the project unless your
+     * Vercel OIDC token is scoped to one. The response contains the created drive object.
      */
-    fun forkDriveWithRawResponse(clientConfig: ClientConfig, name: String, name2: String, projectId: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<ForkDriveResponse> =
+    fun forkDriveWithRawResponse(
+        clientConfig: ClientConfig,
+        name: String,
+        name2: String,
+        projectId: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<ForkDriveResponse> =
         dev.octri.showcase.vercel.methods.SandboxesForkDriveOperation.forkDriveWithRawResponse(
             clientConfig,
             name,
@@ -830,29 +880,51 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Lists snapshots for a project, with results paginated by an opaque cursor. Filter by project and sandbox name, and use `limit` and `cursor` to control pagination. Results are sorted by creation time in the selected direction.
+     * Lists snapshots for a project, with results paginated by an opaque cursor. Filter by project
+     * and sandbox name, and use `limit` and `cursor` to control pagination. Results are sorted by
+     * creation time in the selected direction.
      */
-    fun listSessionSnapshots(clientConfig: ClientConfig, request: ListSessionSnapshotsRequest, options: RequestOptions? = null): Map<String, Any> =
-        dev.octri.showcase.vercel.methods.SandboxesListSessionSnapshotsOperation.listSessionSnapshots(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listSessionSnapshots(
+        clientConfig: ClientConfig,
+        request: ListSessionSnapshotsRequest,
+        options: RequestOptions? = null,
+    ): Map<String, Any> =
+        dev.octri.showcase.vercel.methods.SandboxesListSessionSnapshotsOperation
+            .listSessionSnapshots(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Lists snapshots for a project, with results paginated by an opaque cursor. Filter by project and sandbox name, and use `limit` and `cursor` to control pagination. Results are sorted by creation time in the selected direction.
+     * Lists snapshots for a project, with results paginated by an opaque cursor. Filter by project
+     * and sandbox name, and use `limit` and `cursor` to control pagination. Results are sorted by
+     * creation time in the selected direction.
      */
-    fun listSessionSnapshotsWithRawResponse(clientConfig: ClientConfig, request: ListSessionSnapshotsRequest, options: RequestOptions? = null): SdkResponse<Map<String, Any>> =
-        dev.octri.showcase.vercel.methods.SandboxesListSessionSnapshotsOperation.listSessionSnapshotsWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listSessionSnapshotsWithRawResponse(
+        clientConfig: ClientConfig,
+        request: ListSessionSnapshotsRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<Map<String, Any>> =
+        dev.octri.showcase.vercel.methods.SandboxesListSessionSnapshotsOperation
+            .listSessionSnapshotsWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Retrieves details for a specific sandbox snapshot, including its creation time, size, expiration, and source session. Use `snapshotId` to identify the snapshot whose details you need. The response contains the snapshot object.
+     * Retrieves details for a specific sandbox snapshot, including its creation time, size,
+     * expiration, and source session. Use `snapshotId` to identify the snapshot whose details you
+     * need. The response contains the snapshot object.
      */
-    fun getSessionSnapshot(clientConfig: ClientConfig, snapshotId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetSessionSnapshotResponse =
+    fun getSessionSnapshot(
+        clientConfig: ClientConfig,
+        snapshotId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetSessionSnapshotResponse =
         dev.octri.showcase.vercel.methods.SandboxesGetSessionSnapshotOperation.getSessionSnapshot(
             clientConfig,
             snapshotId,
@@ -862,45 +934,78 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Retrieves details for a specific sandbox snapshot, including its creation time, size, expiration, and source session. Use `snapshotId` to identify the snapshot whose details you need. The response contains the snapshot object.
+     * Retrieves details for a specific sandbox snapshot, including its creation time, size,
+     * expiration, and source session. Use `snapshotId` to identify the snapshot whose details you
+     * need. The response contains the snapshot object.
      */
-    fun getSessionSnapshotWithRawResponse(clientConfig: ClientConfig, snapshotId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<GetSessionSnapshotResponse> =
-        dev.octri.showcase.vercel.methods.SandboxesGetSessionSnapshotOperation.getSessionSnapshotWithRawResponse(
-            clientConfig,
-            snapshotId,
-            teamId,
-            slug,
-            options,
-        )
+    fun getSessionSnapshotWithRawResponse(
+        clientConfig: ClientConfig,
+        snapshotId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetSessionSnapshotResponse> =
+        dev.octri.showcase.vercel.methods.SandboxesGetSessionSnapshotOperation
+            .getSessionSnapshotWithRawResponse(
+                clientConfig,
+                snapshotId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Deletes a sandbox snapshot and frees its associated storage. Use `snapshotId` to select the snapshot to remove; a deleted snapshot cannot be used to create new sessions. <Callout type="warning">Deletion is permanent and cannot be undone.</Callout>
+     * Deletes a sandbox snapshot and frees its associated storage. Use `snapshotId` to select the
+     * snapshot to remove; a deleted snapshot cannot be used to create new sessions. <Callout
+     * type="warning">Deletion is permanent and cannot be undone.</Callout>
      */
-    fun deleteSessionSnapshot(clientConfig: ClientConfig, snapshotId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): DeleteSessionSnapshotResponse =
-        dev.octri.showcase.vercel.methods.SandboxesDeleteSessionSnapshotOperation.deleteSessionSnapshot(
-            clientConfig,
-            snapshotId,
-            teamId,
-            slug,
-            options,
-        )
+    fun deleteSessionSnapshot(
+        clientConfig: ClientConfig,
+        snapshotId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): DeleteSessionSnapshotResponse =
+        dev.octri.showcase.vercel.methods.SandboxesDeleteSessionSnapshotOperation
+            .deleteSessionSnapshot(
+                clientConfig,
+                snapshotId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Deletes a sandbox snapshot and frees its associated storage. Use `snapshotId` to select the snapshot to remove; a deleted snapshot cannot be used to create new sessions. <Callout type="warning">Deletion is permanent and cannot be undone.</Callout>
+     * Deletes a sandbox snapshot and frees its associated storage. Use `snapshotId` to select the
+     * snapshot to remove; a deleted snapshot cannot be used to create new sessions. <Callout
+     * type="warning">Deletion is permanent and cannot be undone.</Callout>
      */
-    fun deleteSessionSnapshotWithRawResponse(clientConfig: ClientConfig, snapshotId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<DeleteSessionSnapshotResponse> =
-        dev.octri.showcase.vercel.methods.SandboxesDeleteSessionSnapshotOperation.deleteSessionSnapshotWithRawResponse(
-            clientConfig,
-            snapshotId,
-            teamId,
-            slug,
-            options,
-        )
+    fun deleteSessionSnapshotWithRawResponse(
+        clientConfig: ClientConfig,
+        snapshotId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<DeleteSessionSnapshotResponse> =
+        dev.octri.showcase.vercel.methods.SandboxesDeleteSessionSnapshotOperation
+            .deleteSessionSnapshotWithRawResponse(
+                clientConfig,
+                snapshotId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Lists sessions for a sandbox, with results paginated by an opaque cursor and sorted by creation time. Filter by project and sandbox name, and use `limit`, `cursor`, and `sortOrder` to shape the results. The response includes session records and pagination metadata.
+     * Lists sessions for a sandbox, with results paginated by an opaque cursor and sorted by
+     * creation time. Filter by project and sandbox name, and use `limit`, `cursor`, and `sortOrder`
+     * to shape the results. The response includes session records and pagination metadata.
      */
-    fun listSessions(clientConfig: ClientConfig, request: ListSessionsRequest, options: RequestOptions? = null): Map<String, Any> =
+    fun listSessions(
+        clientConfig: ClientConfig,
+        request: ListSessionsRequest,
+        options: RequestOptions? = null,
+    ): Map<String, Any> =
         dev.octri.showcase.vercel.methods.SandboxesListSessionsOperation.listSessions(
             clientConfig,
             request,
@@ -908,19 +1013,34 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Lists sessions for a sandbox, with results paginated by an opaque cursor and sorted by creation time. Filter by project and sandbox name, and use `limit`, `cursor`, and `sortOrder` to shape the results. The response includes session records and pagination metadata.
+     * Lists sessions for a sandbox, with results paginated by an opaque cursor and sorted by
+     * creation time. Filter by project and sandbox name, and use `limit`, `cursor`, and `sortOrder`
+     * to shape the results. The response includes session records and pagination metadata.
      */
-    fun listSessionsWithRawResponse(clientConfig: ClientConfig, request: ListSessionsRequest, options: RequestOptions? = null): SdkResponse<Map<String, Any>> =
-        dev.octri.showcase.vercel.methods.SandboxesListSessionsOperation.listSessionsWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listSessionsWithRawResponse(
+        clientConfig: ClientConfig,
+        request: ListSessionsRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<Map<String, Any>> =
+        dev.octri.showcase.vercel.methods.SandboxesListSessionsOperation
+            .listSessionsWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Retrieves details for a specific sandbox session, including its status, resource configuration, and exposed routes. Use `sessionId` to identify the session to inspect. The response includes the session object and its routes.
+     * Retrieves details for a specific sandbox session, including its status, resource
+     * configuration, and exposed routes. Use `sessionId` to identify the session to inspect. The
+     * response includes the session object and its routes.
      */
-    fun getSession(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetSessionResponse =
+    fun getSession(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetSessionResponse =
         dev.octri.showcase.vercel.methods.SandboxesGetSessionOperation.getSession(
             clientConfig,
             sessionId,
@@ -930,9 +1050,17 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Retrieves details for a specific sandbox session, including its status, resource configuration, and exposed routes. Use `sessionId` to identify the session to inspect. The response includes the session object and its routes.
+     * Retrieves details for a specific sandbox session, including its status, resource
+     * configuration, and exposed routes. Use `sessionId` to identify the session to inspect. The
+     * response includes the session object and its routes.
      */
-    fun getSessionWithRawResponse(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<GetSessionResponse> =
+    fun getSessionWithRawResponse(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetSessionResponse> =
         dev.octri.showcase.vercel.methods.SandboxesGetSessionOperation.getSessionWithRawResponse(
             clientConfig,
             sessionId,
@@ -942,9 +1070,20 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Retrieves a named sandbox, its current session, and its exposed routes. Set `resume` to true to create a new sandbox instance from the most recent snapshot when the named sandbox is stopped; it defaults to false. The response indicates whether the sandbox resumed and includes sandbox and session details.
+     * Retrieves a named sandbox, its current session, and its exposed routes. Set `resume` to true
+     * to create a new sandbox instance from the most recent snapshot when the named sandbox is
+     * stopped; it defaults to false. The response indicates whether the sandbox resumed and
+     * includes sandbox and session details.
      */
-    fun getNamedSandbox(clientConfig: ClientConfig, name: String, projectId: String? = null, resume: Boolean? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetNamedSandboxResponse =
+    fun getNamedSandbox(
+        clientConfig: ClientConfig,
+        name: String,
+        projectId: String? = null,
+        resume: Boolean? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetNamedSandboxResponse =
         dev.octri.showcase.vercel.methods.SandboxesGetNamedSandboxOperation.getNamedSandbox(
             clientConfig,
             name,
@@ -956,23 +1095,42 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Retrieves a named sandbox, its current session, and its exposed routes. Set `resume` to true to create a new sandbox instance from the most recent snapshot when the named sandbox is stopped; it defaults to false. The response indicates whether the sandbox resumed and includes sandbox and session details.
+     * Retrieves a named sandbox, its current session, and its exposed routes. Set `resume` to true
+     * to create a new sandbox instance from the most recent snapshot when the named sandbox is
+     * stopped; it defaults to false. The response indicates whether the sandbox resumed and
+     * includes sandbox and session details.
      */
-    fun getNamedSandboxWithRawResponse(clientConfig: ClientConfig, name: String, projectId: String? = null, resume: Boolean? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<GetNamedSandboxResponse> =
-        dev.octri.showcase.vercel.methods.SandboxesGetNamedSandboxOperation.getNamedSandboxWithRawResponse(
-            clientConfig,
-            name,
-            projectId,
-            resume,
-            teamId,
-            slug,
-            options,
-        )
+    fun getNamedSandboxWithRawResponse(
+        clientConfig: ClientConfig,
+        name: String,
+        projectId: String? = null,
+        resume: Boolean? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetNamedSandboxResponse> =
+        dev.octri.showcase.vercel.methods.SandboxesGetNamedSandboxOperation
+            .getNamedSandboxWithRawResponse(
+                clientConfig,
+                name,
+                projectId,
+                resume,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Updates the configuration of a named sandbox, changing only the fields you provide. Use the request body to adjust its resources, runtime, networking, storage mounts, environment, or other settings; omitted fields remain unchanged. Set `resume` to true to resume a stopped sandbox from its snapshot.
+     * Updates the configuration of a named sandbox, changing only the fields you provide. Use the
+     * request body to adjust its resources, runtime, networking, storage mounts, environment, or
+     * other settings; omitted fields remain unchanged. Set `resume` to true to resume a stopped
+     * sandbox from its snapshot.
      */
-    fun updateSandbox(clientConfig: ClientConfig, request: UpdateSandboxRequest, options: RequestOptions? = null): UpdateSandboxResponse =
+    fun updateSandbox(
+        clientConfig: ClientConfig,
+        request: UpdateSandboxRequest,
+        options: RequestOptions? = null,
+    ): UpdateSandboxResponse =
         dev.octri.showcase.vercel.methods.SandboxesUpdateSandboxOperation.updateSandbox(
             clientConfig,
             request,
@@ -980,19 +1138,37 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Updates the configuration of a named sandbox, changing only the fields you provide. Use the request body to adjust its resources, runtime, networking, storage mounts, environment, or other settings; omitted fields remain unchanged. Set `resume` to true to resume a stopped sandbox from its snapshot.
+     * Updates the configuration of a named sandbox, changing only the fields you provide. Use the
+     * request body to adjust its resources, runtime, networking, storage mounts, environment, or
+     * other settings; omitted fields remain unchanged. Set `resume` to true to resume a stopped
+     * sandbox from its snapshot.
      */
-    fun updateSandboxWithRawResponse(clientConfig: ClientConfig, request: UpdateSandboxRequest, options: RequestOptions? = null): SdkResponse<UpdateSandboxResponse> =
-        dev.octri.showcase.vercel.methods.SandboxesUpdateSandboxOperation.updateSandboxWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun updateSandboxWithRawResponse(
+        clientConfig: ClientConfig,
+        request: UpdateSandboxRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<UpdateSandboxResponse> =
+        dev.octri.showcase.vercel.methods.SandboxesUpdateSandboxOperation
+            .updateSandboxWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Deletes a named sandbox and its metadata, stopping any running sandbox processes first. Use `deleteOrphanSnapshots` to request asynchronous deletion of snapshots that are not referenced by another sandbox; when the config item is missing, returned sandbox fields may be stale.
+     * Deletes a named sandbox and its metadata, stopping any running sandbox processes first. Use
+     * `deleteOrphanSnapshots` to request asynchronous deletion of snapshots that are not referenced
+     * by another sandbox; when the config item is missing, returned sandbox fields may be stale.
      */
-    fun deleteSandbox(clientConfig: ClientConfig, name: String, projectId: String? = null, deleteOrphanSnapshots: Boolean? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): DeleteSandboxResponse =
+    fun deleteSandbox(
+        clientConfig: ClientConfig,
+        name: String,
+        projectId: String? = null,
+        deleteOrphanSnapshots: Boolean? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): DeleteSandboxResponse =
         dev.octri.showcase.vercel.methods.SandboxesDeleteSandboxOperation.deleteSandbox(
             clientConfig,
             name,
@@ -1004,23 +1180,42 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Deletes a named sandbox and its metadata, stopping any running sandbox processes first. Use `deleteOrphanSnapshots` to request asynchronous deletion of snapshots that are not referenced by another sandbox; when the config item is missing, returned sandbox fields may be stale.
+     * Deletes a named sandbox and its metadata, stopping any running sandbox processes first. Use
+     * `deleteOrphanSnapshots` to request asynchronous deletion of snapshots that are not referenced
+     * by another sandbox; when the config item is missing, returned sandbox fields may be stale.
      */
-    fun deleteSandboxWithRawResponse(clientConfig: ClientConfig, name: String, projectId: String? = null, deleteOrphanSnapshots: Boolean? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<DeleteSandboxResponse> =
-        dev.octri.showcase.vercel.methods.SandboxesDeleteSandboxOperation.deleteSandboxWithRawResponse(
-            clientConfig,
-            name,
-            projectId,
-            deleteOrphanSnapshots,
-            teamId,
-            slug,
-            options,
-        )
+    fun deleteSandboxWithRawResponse(
+        clientConfig: ClientConfig,
+        name: String,
+        projectId: String? = null,
+        deleteOrphanSnapshots: Boolean? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<DeleteSandboxResponse> =
+        dev.octri.showcase.vercel.methods.SandboxesDeleteSandboxOperation
+            .deleteSandboxWithRawResponse(
+                clientConfig,
+                name,
+                projectId,
+                deleteOrphanSnapshots,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Lists commands executed in a session, including their current status, exit codes, and execution times. Use `sessionId` to select the session; results are ordered from most recent to oldest.
+     * Lists commands executed in a session, including their current status, exit codes, and
+     * execution times. Use `sessionId` to select the session; results are ordered from most recent
+     * to oldest.
      */
-    fun listSessionCommands(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ListSessionCommandsResponse =
+    fun listSessionCommands(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ListSessionCommandsResponse =
         dev.octri.showcase.vercel.methods.SandboxesListSessionCommandsOperation.listSessionCommands(
             clientConfig,
             sessionId,
@@ -1030,21 +1225,36 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Lists commands executed in a session, including their current status, exit codes, and execution times. Use `sessionId` to select the session; results are ordered from most recent to oldest.
+     * Lists commands executed in a session, including their current status, exit codes, and
+     * execution times. Use `sessionId` to select the session; results are ordered from most recent
+     * to oldest.
      */
-    fun listSessionCommandsWithRawResponse(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<ListSessionCommandsResponse> =
-        dev.octri.showcase.vercel.methods.SandboxesListSessionCommandsOperation.listSessionCommandsWithRawResponse(
-            clientConfig,
-            sessionId,
-            teamId,
-            slug,
-            options,
-        )
+    fun listSessionCommandsWithRawResponse(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<ListSessionCommandsResponse> =
+        dev.octri.showcase.vercel.methods.SandboxesListSessionCommandsOperation
+            .listSessionCommandsWithRawResponse(
+                clientConfig,
+                sessionId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Submits a shell command for execution in a session and returns a command ID for tracking its progress. Use `wait` to stream status updates until the command finishes; set `logs` as well to stream execution output in real time.
+     * Submits a shell command for execution in a session and returns a command ID for tracking its
+     * progress. Use `wait` to stream status updates until the command finishes; set `logs` as well
+     * to stream execution output in real time.
      */
-    fun runSessionCommand(clientConfig: ClientConfig, request: RunSessionCommandRequest, options: RequestOptions? = null): RunSessionCommandResponse =
+    fun runSessionCommand(
+        clientConfig: ClientConfig,
+        request: RunSessionCommandRequest,
+        options: RequestOptions? = null,
+    ): RunSessionCommandResponse =
         dev.octri.showcase.vercel.methods.SandboxesRunSessionCommandOperation.runSessionCommand(
             clientConfig,
             request,
@@ -1052,29 +1262,52 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Submits a shell command for execution in a session and returns a command ID for tracking its progress. Use `wait` to stream status updates until the command finishes; set `logs` as well to stream execution output in real time.
+     * Submits a shell command for execution in a session and returns a command ID for tracking its
+     * progress. Use `wait` to stream status updates until the command finishes; set `logs` as well
+     * to stream execution output in real time.
      */
-    fun runSessionCommandWithRawResponse(clientConfig: ClientConfig, request: RunSessionCommandRequest, options: RequestOptions? = null): SdkResponse<RunSessionCommandResponse> =
-        dev.octri.showcase.vercel.methods.SandboxesRunSessionCommandOperation.runSessionCommandWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun runSessionCommandWithRawResponse(
+        clientConfig: ClientConfig,
+        request: RunSessionCommandRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<RunSessionCommandResponse> =
+        dev.octri.showcase.vercel.methods.SandboxesRunSessionCommandOperation
+            .runSessionCommandWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Submits a shell command for execution in a session and returns a command ID for tracking its progress. Use `wait` to stream status updates until the command finishes; set `logs` as well to stream execution output in real time.
+     * Submits a shell command for execution in a session and returns a command ID for tracking its
+     * progress. Use `wait` to stream status updates until the command finishes; set `logs` as well
+     * to stream execution output in real time.
      */
-    fun runSessionCommandStream(clientConfig: ClientConfig, request: RunSessionCommandStreamRequest, options: RequestOptions? = null): Sequence<Map<String, Any>> =
-        dev.octri.showcase.vercel.methods.SandboxesRunSessionCommandStreamOperation.runSessionCommandStream(
-            clientConfig,
-            request,
-            options,
-        )
+    fun runSessionCommandStream(
+        clientConfig: ClientConfig,
+        request: RunSessionCommandStreamRequest,
+        options: RequestOptions? = null,
+    ): Sequence<Map<String, Any>> =
+        dev.octri.showcase.vercel.methods.SandboxesRunSessionCommandStreamOperation
+            .runSessionCommandStream(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Retrieves the status and details of a command executed in a session, including its exit code if it has finished. Set `wait` to true to block the request until the command finishes.
+     * Retrieves the status and details of a command executed in a session, including its exit code
+     * if it has finished. Set `wait` to true to block the request until the command finishes.
      */
-    fun getSessionCommand(clientConfig: ClientConfig, sessionId: String, cmdId: String, wait: GetSessionCommandParameterEnum? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetSessionCommandResponse =
+    fun getSessionCommand(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        cmdId: String,
+        wait: GetSessionCommandParameterEnum? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetSessionCommandResponse =
         dev.octri.showcase.vercel.methods.SandboxesGetSessionCommandOperation.getSessionCommand(
             clientConfig,
             sessionId,
@@ -1086,23 +1319,43 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Retrieves the status and details of a command executed in a session, including its exit code if it has finished. Set `wait` to true to block the request until the command finishes.
+     * Retrieves the status and details of a command executed in a session, including its exit code
+     * if it has finished. Set `wait` to true to block the request until the command finishes.
      */
-    fun getSessionCommandWithRawResponse(clientConfig: ClientConfig, sessionId: String, cmdId: String, wait: GetSessionCommandParameterEnum? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<GetSessionCommandResponse> =
-        dev.octri.showcase.vercel.methods.SandboxesGetSessionCommandOperation.getSessionCommandWithRawResponse(
-            clientConfig,
-            sessionId,
-            cmdId,
-            wait,
-            teamId,
-            slug,
-            options,
-        )
+    fun getSessionCommandWithRawResponse(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        cmdId: String,
+        wait: GetSessionCommandParameterEnum? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetSessionCommandResponse> =
+        dev.octri.showcase.vercel.methods.SandboxesGetSessionCommandOperation
+            .getSessionCommandWithRawResponse(
+                clientConfig,
+                sessionId,
+                cmdId,
+                wait,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Triggers termination of a running command in a session by sending it a signal. Use signal 15 (SIGTERM) for graceful termination or signal 9 (SIGKILL) to forcefully stop the process; the command must still be running.
+     * Triggers termination of a running command in a session by sending it a signal. Use signal 15
+     * (SIGTERM) for graceful termination or signal 9 (SIGKILL) to forcefully stop the process; the
+     * command must still be running.
      */
-    fun killSessionCommand(clientConfig: ClientConfig, cmdId: String, sessionId: String, signal: Double, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): KillSessionCommandResponse =
+    fun killSessionCommand(
+        clientConfig: ClientConfig,
+        cmdId: String,
+        sessionId: String,
+        signal: Double,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): KillSessionCommandResponse =
         dev.octri.showcase.vercel.methods.SandboxesKillSessionCommandOperation.killSessionCommand(
             clientConfig,
             cmdId,
@@ -1114,56 +1367,97 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Triggers termination of a running command in a session by sending it a signal. Use signal 15 (SIGTERM) for graceful termination or signal 9 (SIGKILL) to forcefully stop the process; the command must still be running.
+     * Triggers termination of a running command in a session by sending it a signal. Use signal 15
+     * (SIGTERM) for graceful termination or signal 9 (SIGKILL) to forcefully stop the process; the
+     * command must still be running.
      */
-    fun killSessionCommandWithRawResponse(clientConfig: ClientConfig, cmdId: String, sessionId: String, signal: Double, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<KillSessionCommandResponse> =
-        dev.octri.showcase.vercel.methods.SandboxesKillSessionCommandOperation.killSessionCommandWithRawResponse(
-            clientConfig,
-            cmdId,
-            sessionId,
-            signal,
-            teamId,
-            slug,
-            options,
-        )
+    fun killSessionCommandWithRawResponse(
+        clientConfig: ClientConfig,
+        cmdId: String,
+        sessionId: String,
+        signal: Double,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<KillSessionCommandResponse> =
+        dev.octri.showcase.vercel.methods.SandboxesKillSessionCommandOperation
+            .killSessionCommandWithRawResponse(
+                clientConfig,
+                cmdId,
+                sessionId,
+                signal,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Writes data to a running command's stdin and can close stdin after the write. The command must have started with `attachStdin` enabled; send writes one at a time to preserve order, and use `offset` to make retries safe when the response includes `bytesWritten`.
+     * Writes data to a running command's stdin and can close stdin after the write. The command
+     * must have started with `attachStdin` enabled; send writes one at a time to preserve order,
+     * and use `offset` to make retries safe when the response includes `bytesWritten`.
      */
-    fun writeSessionCommandStdin(clientConfig: ClientConfig, request: WriteSessionCommandStdinRequest, options: RequestOptions? = null): WriteSessionCommandStdinResponse =
-        dev.octri.showcase.vercel.methods.SandboxesWriteSessionCommandStdinOperation.writeSessionCommandStdin(
-            clientConfig,
-            request,
-            options,
-        )
+    fun writeSessionCommandStdin(
+        clientConfig: ClientConfig,
+        request: WriteSessionCommandStdinRequest,
+        options: RequestOptions? = null,
+    ): WriteSessionCommandStdinResponse =
+        dev.octri.showcase.vercel.methods.SandboxesWriteSessionCommandStdinOperation
+            .writeSessionCommandStdin(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Writes data to a running command's stdin and can close stdin after the write. The command must have started with `attachStdin` enabled; send writes one at a time to preserve order, and use `offset` to make retries safe when the response includes `bytesWritten`.
+     * Writes data to a running command's stdin and can close stdin after the write. The command
+     * must have started with `attachStdin` enabled; send writes one at a time to preserve order,
+     * and use `offset` to make retries safe when the response includes `bytesWritten`.
      */
-    fun writeSessionCommandStdinWithRawResponse(clientConfig: ClientConfig, request: WriteSessionCommandStdinRequest, options: RequestOptions? = null): SdkResponse<WriteSessionCommandStdinResponse> =
-        dev.octri.showcase.vercel.methods.SandboxesWriteSessionCommandStdinOperation.writeSessionCommandStdinWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun writeSessionCommandStdinWithRawResponse(
+        clientConfig: ClientConfig,
+        request: WriteSessionCommandStdinRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<WriteSessionCommandStdinResponse> =
+        dev.octri.showcase.vercel.methods.SandboxesWriteSessionCommandStdinOperation
+            .writeSessionCommandStdinWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Streams command output in real time as newline-delimited JSON (ND-JSON). Each stream entry includes output data and a stream type such as `stdout`, `stderr`, or `error`.
+     * Streams command output in real time as newline-delimited JSON (ND-JSON). Each stream entry
+     * includes output data and a stream type such as `stdout`, `stderr`, or `error`.
      */
-    fun getSessionCommandLogs(clientConfig: ClientConfig, sessionId: String, cmdId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Sequence<GetSessionCommandLogsResponse> =
-        dev.octri.showcase.vercel.methods.SandboxesGetSessionCommandLogsOperation.getSessionCommandLogs(
-            clientConfig,
-            sessionId,
-            cmdId,
-            teamId,
-            slug,
-            options,
-        )
+    fun getSessionCommandLogs(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        cmdId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Sequence<GetSessionCommandLogsResponse> =
+        dev.octri.showcase.vercel.methods.SandboxesGetSessionCommandLogsOperation
+            .getSessionCommandLogs(
+                clientConfig,
+                sessionId,
+                cmdId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Stops a running session and releases its allocated resources, terminating all processes within it. This action cannot be undone, and the stopped session cannot be restarted.
+     * Stops a running session and releases its allocated resources, terminating all processes
+     * within it. This action cannot be undone, and the stopped session cannot be restarted.
      */
-    fun stopSession(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): StopSessionResponse =
+    fun stopSession(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): StopSessionResponse =
         dev.octri.showcase.vercel.methods.SandboxesStopSessionOperation.stopSession(
             clientConfig,
             sessionId,
@@ -1173,9 +1467,16 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Stops a running session and releases its allocated resources, terminating all processes within it. This action cannot be undone, and the stopped session cannot be restarted.
+     * Stops a running session and releases its allocated resources, terminating all processes
+     * within it. This action cannot be undone, and the stopped session cannot be restarted.
      */
-    fun stopSessionWithRawResponse(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<StopSessionResponse> =
+    fun stopSessionWithRawResponse(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<StopSessionResponse> =
         dev.octri.showcase.vercel.methods.SandboxesStopSessionOperation.stopSessionWithRawResponse(
             clientConfig,
             sessionId,
@@ -1185,61 +1486,113 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Extends the maximum execution time of a running session. Supply the additional duration in milliseconds; the session must be active, and the resulting timeout cannot exceed your account's maximum allowed limit.
+     * Extends the maximum execution time of a running session. Supply the additional duration in
+     * milliseconds; the session must be active, and the resulting timeout cannot exceed your
+     * account's maximum allowed limit.
      */
-    fun extendSessionTimeout(clientConfig: ClientConfig, sessionId: String, duration: Double, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ExtendSessionTimeoutResponse =
-        dev.octri.showcase.vercel.methods.SandboxesExtendSessionTimeoutOperation.extendSessionTimeout(
-            clientConfig,
-            sessionId,
-            duration,
-            teamId,
-            slug,
-            options,
-        )
+    fun extendSessionTimeout(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        duration: Double,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ExtendSessionTimeoutResponse =
+        dev.octri.showcase.vercel.methods.SandboxesExtendSessionTimeoutOperation
+            .extendSessionTimeout(
+                clientConfig,
+                sessionId,
+                duration,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Extends the maximum execution time of a running session. Supply the additional duration in milliseconds; the session must be active, and the resulting timeout cannot exceed your account's maximum allowed limit.
+     * Extends the maximum execution time of a running session. Supply the additional duration in
+     * milliseconds; the session must be active, and the resulting timeout cannot exceed your
+     * account's maximum allowed limit.
      */
-    fun extendSessionTimeoutWithRawResponse(clientConfig: ClientConfig, sessionId: String, duration: Double, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<ExtendSessionTimeoutResponse> =
-        dev.octri.showcase.vercel.methods.SandboxesExtendSessionTimeoutOperation.extendSessionTimeoutWithRawResponse(
-            clientConfig,
-            sessionId,
-            duration,
-            teamId,
-            slug,
-            options,
-        )
+    fun extendSessionTimeoutWithRawResponse(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        duration: Double,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<ExtendSessionTimeoutResponse> =
+        dev.octri.showcase.vercel.methods.SandboxesExtendSessionTimeoutOperation
+            .extendSessionTimeoutWithRawResponse(
+                clientConfig,
+                sessionId,
+                duration,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Replaces the network access policy for a running session, controlling which external hosts it can reach. This is a full replacement, so any previously configured network rules are overwritten; choose the policy mode and rules for the complete configuration you want applied.
+     * Replaces the network access policy for a running session, controlling which external hosts it
+     * can reach. This is a full replacement, so any previously configured network rules are
+     * overwritten; choose the policy mode and rules for the complete configuration you want
+     * applied.
      */
-    fun updateSessionNetworkPolicy(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, body: Map<String, Any>? = null, options: RequestOptions? = null): UpdateSessionNetworkPolicyResponse =
-        dev.octri.showcase.vercel.methods.SandboxesUpdateSessionNetworkPolicyOperation.updateSessionNetworkPolicy(
-            clientConfig,
-            sessionId,
-            teamId,
-            slug,
-            body,
-            options,
-        )
+    fun updateSessionNetworkPolicy(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        body: Map<String, Any>? = null,
+        options: RequestOptions? = null,
+    ): UpdateSessionNetworkPolicyResponse =
+        dev.octri.showcase.vercel.methods.SandboxesUpdateSessionNetworkPolicyOperation
+            .updateSessionNetworkPolicy(
+                clientConfig,
+                sessionId,
+                teamId,
+                slug,
+                body,
+                options,
+            )
 
     /**
-     * Replaces the network access policy for a running session, controlling which external hosts it can reach. This is a full replacement, so any previously configured network rules are overwritten; choose the policy mode and rules for the complete configuration you want applied.
+     * Replaces the network access policy for a running session, controlling which external hosts it
+     * can reach. This is a full replacement, so any previously configured network rules are
+     * overwritten; choose the policy mode and rules for the complete configuration you want
+     * applied.
      */
-    fun updateSessionNetworkPolicyWithRawResponse(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, body: Map<String, Any>? = null, options: RequestOptions? = null): SdkResponse<UpdateSessionNetworkPolicyResponse> =
-        dev.octri.showcase.vercel.methods.SandboxesUpdateSessionNetworkPolicyOperation.updateSessionNetworkPolicyWithRawResponse(
-            clientConfig,
-            sessionId,
-            teamId,
-            slug,
-            body,
-            options,
-        )
+    fun updateSessionNetworkPolicyWithRawResponse(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        body: Map<String, Any>? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<UpdateSessionNetworkPolicyResponse> =
+        dev.octri.showcase.vercel.methods.SandboxesUpdateSessionNetworkPolicyOperation
+            .updateSessionNetworkPolicyWithRawResponse(
+                clientConfig,
+                sessionId,
+                teamId,
+                slug,
+                body,
+                options,
+            )
 
     /**
-     * Retrieves a file from a session's filesystem. Supply `path` to identify the file and optionally use `cwd` to resolve a relative path from a different base directory. The file is returned as a binary stream for download.
+     * Retrieves a file from a session's filesystem. Supply `path` to identify the file and
+     * optionally use `cwd` to resolve a relative path from a different base directory. The file is
+     * returned as a binary stream for download.
      */
-    fun readSessionFile(clientConfig: ClientConfig, sessionId: String, path: String, teamId: String? = null, slug: String? = null, cwd: String? = null, options: RequestOptions? = null): ByteArray =
+    fun readSessionFile(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        path: String,
+        teamId: String? = null,
+        slug: String? = null,
+        cwd: String? = null,
+        options: RequestOptions? = null,
+    ): ByteArray =
         dev.octri.showcase.vercel.methods.SandboxesReadSessionFileOperation.readSessionFile(
             clientConfig,
             sessionId,
@@ -1251,43 +1604,77 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Retrieves a file from a session's filesystem. Supply `path` to identify the file and optionally use `cwd` to resolve a relative path from a different base directory. The file is returned as a binary stream for download.
+     * Retrieves a file from a session's filesystem. Supply `path` to identify the file and
+     * optionally use `cwd` to resolve a relative path from a different base directory. The file is
+     * returned as a binary stream for download.
      */
-    fun readSessionFileWithRawResponse(clientConfig: ClientConfig, sessionId: String, path: String, teamId: String? = null, slug: String? = null, cwd: String? = null, options: RequestOptions? = null): SdkResponse<ByteArray> =
-        dev.octri.showcase.vercel.methods.SandboxesReadSessionFileOperation.readSessionFileWithRawResponse(
-            clientConfig,
-            sessionId,
-            path,
-            teamId,
-            slug,
-            cwd,
-            options,
-        )
+    fun readSessionFileWithRawResponse(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        path: String,
+        teamId: String? = null,
+        slug: String? = null,
+        cwd: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<ByteArray> =
+        dev.octri.showcase.vercel.methods.SandboxesReadSessionFileOperation
+            .readSessionFileWithRawResponse(
+                clientConfig,
+                sessionId,
+                path,
+                teamId,
+                slug,
+                cwd,
+                options,
+            )
 
     /**
-     * Creates a directory in a session's filesystem. Supply `path` for the directory location and use `cwd` to resolve a relative path from a different base directory. Parent directories are created recursively by default; set `recursive` to false to require them to exist.
+     * Creates a directory in a session's filesystem. Supply `path` for the directory location and
+     * use `cwd` to resolve a relative path from a different base directory. Parent directories are
+     * created recursively by default; set `recursive` to false to require them to exist.
      */
-    fun createSessionDirectory(clientConfig: ClientConfig, request: CreateSessionDirectoryRequest, options: RequestOptions? = null): Map<String, Any> =
-        dev.octri.showcase.vercel.methods.SandboxesCreateSessionDirectoryOperation.createSessionDirectory(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createSessionDirectory(
+        clientConfig: ClientConfig,
+        request: CreateSessionDirectoryRequest,
+        options: RequestOptions? = null,
+    ): Map<String, Any> =
+        dev.octri.showcase.vercel.methods.SandboxesCreateSessionDirectoryOperation
+            .createSessionDirectory(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Creates a directory in a session's filesystem. Supply `path` for the directory location and use `cwd` to resolve a relative path from a different base directory. Parent directories are created recursively by default; set `recursive` to false to require them to exist.
+     * Creates a directory in a session's filesystem. Supply `path` for the directory location and
+     * use `cwd` to resolve a relative path from a different base directory. Parent directories are
+     * created recursively by default; set `recursive` to false to require them to exist.
      */
-    fun createSessionDirectoryWithRawResponse(clientConfig: ClientConfig, request: CreateSessionDirectoryRequest, options: RequestOptions? = null): SdkResponse<Map<String, Any>> =
-        dev.octri.showcase.vercel.methods.SandboxesCreateSessionDirectoryOperation.createSessionDirectoryWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createSessionDirectoryWithRawResponse(
+        clientConfig: ClientConfig,
+        request: CreateSessionDirectoryRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<Map<String, Any>> =
+        dev.octri.showcase.vercel.methods.SandboxesCreateSessionDirectoryOperation
+            .createSessionDirectoryWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Writes files to a session's filesystem by uploading and extracting a gzipped tarball. Send the archive with `Content-Type: application/gzip`; use `x-cwd` to choose an extraction directory. When `x-cwd` is omitted, files are extracted to the sandbox home directory.
+     * Writes files to a session's filesystem by uploading and extracting a gzipped tarball. Send
+     * the archive with `Content-Type: application/gzip`; use `x-cwd` to choose an extraction
+     * directory. When `x-cwd` is omitted, files are extracted to the sandbox home directory.
      */
-    fun writeSessionFiles(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, xCwd: String? = null, options: RequestOptions? = null): Map<String, Any> =
+    fun writeSessionFiles(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        xCwd: String? = null,
+        options: RequestOptions? = null,
+    ): Map<String, Any> =
         dev.octri.showcase.vercel.methods.SandboxesWriteSessionFilesOperation.writeSessionFiles(
             clientConfig,
             sessionId,
@@ -1298,68 +1685,125 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Writes files to a session's filesystem by uploading and extracting a gzipped tarball. Send the archive with `Content-Type: application/gzip`; use `x-cwd` to choose an extraction directory. When `x-cwd` is omitted, files are extracted to the sandbox home directory.
+     * Writes files to a session's filesystem by uploading and extracting a gzipped tarball. Send
+     * the archive with `Content-Type: application/gzip`; use `x-cwd` to choose an extraction
+     * directory. When `x-cwd` is omitted, files are extracted to the sandbox home directory.
      */
-    fun writeSessionFilesWithRawResponse(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, xCwd: String? = null, options: RequestOptions? = null): SdkResponse<Map<String, Any>> =
-        dev.octri.showcase.vercel.methods.SandboxesWriteSessionFilesOperation.writeSessionFilesWithRawResponse(
-            clientConfig,
-            sessionId,
-            teamId,
-            slug,
-            xCwd,
-            options,
-        )
+    fun writeSessionFilesWithRawResponse(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        xCwd: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<Map<String, Any>> =
+        dev.octri.showcase.vercel.methods.SandboxesWriteSessionFilesOperation
+            .writeSessionFilesWithRawResponse(
+                clientConfig,
+                sessionId,
+                teamId,
+                slug,
+                xCwd,
+                options,
+            )
 
     /**
-     * Creates a point-in-time snapshot of a running session's filesystem. Use a snapshot to restore the filesystem later or initialize another session with the same environment; the session must be running and able to accept commands. The source session is terminated after the snapshot is created.
+     * Creates a point-in-time snapshot of a running session's filesystem. Use a snapshot to restore
+     * the filesystem later or initialize another session with the same environment; the session
+     * must be running and able to accept commands. The source session is terminated after the
+     * snapshot is created.
      */
-    fun createSandboxesSessionsBySessionIdSnapshotV2(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, expiration: SdkClient.SdkOptional<Long?>? = null, options: RequestOptions? = null): CreateSandboxesSessionsBySessionIdSnapshotV2Response =
-        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesSessionsBySessionIdSnapshotV2Operation.createSandboxesSessionsBySessionIdSnapshotV2(
-            clientConfig,
-            sessionId,
-            teamId,
-            slug,
-            expiration,
-            options,
-        )
+    fun createSandboxesSessionsBySessionIdSnapshotV2(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        expiration: SdkClient.SdkOptional<Long?>? = null,
+        options: RequestOptions? = null,
+    ): CreateSandboxesSessionsBySessionIdSnapshotV2Response =
+        dev.octri.showcase.vercel.methods
+            .SandboxesCreateSandboxesSessionsBySessionIdSnapshotV2Operation
+            .createSandboxesSessionsBySessionIdSnapshotV2(
+                clientConfig,
+                sessionId,
+                teamId,
+                slug,
+                expiration,
+                options,
+            )
 
     /**
-     * Creates a point-in-time snapshot of a running session's filesystem. Use a snapshot to restore the filesystem later or initialize another session with the same environment; the session must be running and able to accept commands. The source session is terminated after the snapshot is created.
+     * Creates a point-in-time snapshot of a running session's filesystem. Use a snapshot to restore
+     * the filesystem later or initialize another session with the same environment; the session
+     * must be running and able to accept commands. The source session is terminated after the
+     * snapshot is created.
      */
-    fun createSandboxesSessionsBySessionIdSnapshotV2WithRawResponse(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, expiration: SdkClient.SdkOptional<Long?>? = null, options: RequestOptions? = null): SdkResponse<CreateSandboxesSessionsBySessionIdSnapshotV2Response> =
-        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesSessionsBySessionIdSnapshotV2Operation.createSandboxesSessionsBySessionIdSnapshotV2WithRawResponse(
-            clientConfig,
-            sessionId,
-            teamId,
-            slug,
-            expiration,
-            options,
-        )
+    fun createSandboxesSessionsBySessionIdSnapshotV2WithRawResponse(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        expiration: SdkClient.SdkOptional<Long?>? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<CreateSandboxesSessionsBySessionIdSnapshotV2Response> =
+        dev.octri.showcase.vercel.methods
+            .SandboxesCreateSandboxesSessionsBySessionIdSnapshotV2Operation
+            .createSandboxesSessionsBySessionIdSnapshotV2WithRawResponse(
+                clientConfig,
+                sessionId,
+                teamId,
+                slug,
+                expiration,
+                options,
+            )
 
     /**
-     * Forks a named sandbox into a new named sandbox, copying its configuration and environment variables. Supply `name` to identify the source and `projectId` unless you authenticate with an OIDC token; request fields override values copied from the source. If the source has a snapshot, the fork starts from it; otherwise, it starts from the source runtime or image.
+     * Forks a named sandbox into a new named sandbox, copying its configuration and environment
+     * variables. Supply `name` to identify the source and `projectId` unless you authenticate with
+     * an OIDC token; request fields override values copied from the source. If the source has a
+     * snapshot, the fork starts from it; otherwise, it starts from the source runtime or image.
      */
-    fun createSandboxesByNameForkV2(clientConfig: ClientConfig, request: CreateSandboxesByNameForkV2Request, options: RequestOptions? = null): CreateSandboxesByNameForkV2Response =
-        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesByNameForkV2Operation.createSandboxesByNameForkV2(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createSandboxesByNameForkV2(
+        clientConfig: ClientConfig,
+        request: CreateSandboxesByNameForkV2Request,
+        options: RequestOptions? = null,
+    ): CreateSandboxesByNameForkV2Response =
+        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesByNameForkV2Operation
+            .createSandboxesByNameForkV2(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Forks a named sandbox into a new named sandbox, copying its configuration and environment variables. Supply `name` to identify the source and `projectId` unless you authenticate with an OIDC token; request fields override values copied from the source. If the source has a snapshot, the fork starts from it; otherwise, it starts from the source runtime or image.
+     * Forks a named sandbox into a new named sandbox, copying its configuration and environment
+     * variables. Supply `name` to identify the source and `projectId` unless you authenticate with
+     * an OIDC token; request fields override values copied from the source. If the source has a
+     * snapshot, the fork starts from it; otherwise, it starts from the source runtime or image.
      */
-    fun createSandboxesByNameForkV2WithRawResponse(clientConfig: ClientConfig, request: CreateSandboxesByNameForkV2Request, options: RequestOptions? = null): SdkResponse<CreateSandboxesByNameForkV2Response> =
-        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesByNameForkV2Operation.createSandboxesByNameForkV2WithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createSandboxesByNameForkV2WithRawResponse(
+        clientConfig: ClientConfig,
+        request: CreateSandboxesByNameForkV2Request,
+        options: RequestOptions? = null,
+    ): SdkResponse<CreateSandboxesByNameForkV2Response> =
+        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesByNameForkV2Operation
+            .createSandboxesByNameForkV2WithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Creates a named sandbox environment with automatic snapshotting on shutdown. Configure its resources, source, networking, and other settings in the request body; when `image` and a snapshot source are both absent, the sandbox uses the default universal image. This API version does not accept a `runtime` parameter.
+     * Creates a named sandbox environment with automatic snapshotting on shutdown. Configure its
+     * resources, source, networking, and other settings in the request body; when `image` and a
+     * snapshot source are both absent, the sandbox uses the default universal image. This API
+     * version does not accept a `runtime` parameter.
      */
-    fun createSandboxesV3(clientConfig: ClientConfig, request: CreateSandboxesV3Request, options: RequestOptions? = null): CreateSandboxesV3Response =
+    fun createSandboxesV3(
+        clientConfig: ClientConfig,
+        request: CreateSandboxesV3Request,
+        options: RequestOptions? = null,
+    ): CreateSandboxesV3Response =
         dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesV3Operation.createSandboxesV3(
             clientConfig,
             request,
@@ -1367,65 +1811,125 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Creates a named sandbox environment with automatic snapshotting on shutdown. Configure its resources, source, networking, and other settings in the request body; when `image` and a snapshot source are both absent, the sandbox uses the default universal image. This API version does not accept a `runtime` parameter.
+     * Creates a named sandbox environment with automatic snapshotting on shutdown. Configure its
+     * resources, source, networking, and other settings in the request body; when `image` and a
+     * snapshot source are both absent, the sandbox uses the default universal image. This API
+     * version does not accept a `runtime` parameter.
      */
-    fun createSandboxesV3WithRawResponse(clientConfig: ClientConfig, request: CreateSandboxesV3Request, options: RequestOptions? = null): SdkResponse<CreateSandboxesV3Response> =
-        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesV3Operation.createSandboxesV3WithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createSandboxesV3WithRawResponse(
+        clientConfig: ClientConfig,
+        request: CreateSandboxesV3Request,
+        options: RequestOptions? = null,
+    ): SdkResponse<CreateSandboxesV3Response> =
+        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesV3Operation
+            .createSandboxesV3WithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Creates a point-in-time snapshot of a running session's filesystem. Use a snapshot to restore the filesystem later or initialize another session with the same environment; the session must be running and able to accept commands. The source session is terminated after the snapshot is created, and snapshots default to a seven-day expiration when neither the request nor sandbox configuration sets one.
+     * Creates a point-in-time snapshot of a running session's filesystem. Use a snapshot to restore
+     * the filesystem later or initialize another session with the same environment; the session
+     * must be running and able to accept commands. The source session is terminated after the
+     * snapshot is created, and snapshots default to a seven-day expiration when neither the request
+     * nor sandbox configuration sets one.
      */
-    fun createSandboxesSessionsBySessionIdSnapshotV3(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, expiration: SdkClient.SdkOptional<Long?>? = null, options: RequestOptions? = null): CreateSandboxesSessionsBySessionIdSnapshotV3Response =
-        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesSessionsBySessionIdSnapshotV3Operation.createSandboxesSessionsBySessionIdSnapshotV3(
-            clientConfig,
-            sessionId,
-            teamId,
-            slug,
-            expiration,
-            options,
-        )
+    fun createSandboxesSessionsBySessionIdSnapshotV3(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        expiration: SdkClient.SdkOptional<Long?>? = null,
+        options: RequestOptions? = null,
+    ): CreateSandboxesSessionsBySessionIdSnapshotV3Response =
+        dev.octri.showcase.vercel.methods
+            .SandboxesCreateSandboxesSessionsBySessionIdSnapshotV3Operation
+            .createSandboxesSessionsBySessionIdSnapshotV3(
+                clientConfig,
+                sessionId,
+                teamId,
+                slug,
+                expiration,
+                options,
+            )
 
     /**
-     * Creates a point-in-time snapshot of a running session's filesystem. Use a snapshot to restore the filesystem later or initialize another session with the same environment; the session must be running and able to accept commands. The source session is terminated after the snapshot is created, and snapshots default to a seven-day expiration when neither the request nor sandbox configuration sets one.
+     * Creates a point-in-time snapshot of a running session's filesystem. Use a snapshot to restore
+     * the filesystem later or initialize another session with the same environment; the session
+     * must be running and able to accept commands. The source session is terminated after the
+     * snapshot is created, and snapshots default to a seven-day expiration when neither the request
+     * nor sandbox configuration sets one.
      */
-    fun createSandboxesSessionsBySessionIdSnapshotV3WithRawResponse(clientConfig: ClientConfig, sessionId: String, teamId: String? = null, slug: String? = null, expiration: SdkClient.SdkOptional<Long?>? = null, options: RequestOptions? = null): SdkResponse<CreateSandboxesSessionsBySessionIdSnapshotV3Response> =
-        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesSessionsBySessionIdSnapshotV3Operation.createSandboxesSessionsBySessionIdSnapshotV3WithRawResponse(
-            clientConfig,
-            sessionId,
-            teamId,
-            slug,
-            expiration,
-            options,
-        )
+    fun createSandboxesSessionsBySessionIdSnapshotV3WithRawResponse(
+        clientConfig: ClientConfig,
+        sessionId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        expiration: SdkClient.SdkOptional<Long?>? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<CreateSandboxesSessionsBySessionIdSnapshotV3Response> =
+        dev.octri.showcase.vercel.methods
+            .SandboxesCreateSandboxesSessionsBySessionIdSnapshotV3Operation
+            .createSandboxesSessionsBySessionIdSnapshotV3WithRawResponse(
+                clientConfig,
+                sessionId,
+                teamId,
+                slug,
+                expiration,
+                options,
+            )
 
     /**
-     * Forks a named sandbox into a new named sandbox, copying its configuration and environment variables. Supply `name` to identify the source and `projectId` unless you authenticate with an OIDC token; request fields override values copied from the source. If the source has a snapshot, the fork starts from it; otherwise, it starts from the source runtime or image, with seven-day snapshot expiration and a one-snapshot retention limit by default.
+     * Forks a named sandbox into a new named sandbox, copying its configuration and environment
+     * variables. Supply `name` to identify the source and `projectId` unless you authenticate with
+     * an OIDC token; request fields override values copied from the source. If the source has a
+     * snapshot, the fork starts from it; otherwise, it starts from the source runtime or image,
+     * with seven-day snapshot expiration and a one-snapshot retention limit by default.
      */
-    fun createSandboxesByNameForkV3(clientConfig: ClientConfig, request: CreateSandboxesByNameForkV3Request, options: RequestOptions? = null): CreateSandboxesByNameForkV3Response =
-        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesByNameForkV3Operation.createSandboxesByNameForkV3(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createSandboxesByNameForkV3(
+        clientConfig: ClientConfig,
+        request: CreateSandboxesByNameForkV3Request,
+        options: RequestOptions? = null,
+    ): CreateSandboxesByNameForkV3Response =
+        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesByNameForkV3Operation
+            .createSandboxesByNameForkV3(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Forks a named sandbox into a new named sandbox, copying its configuration and environment variables. Supply `name` to identify the source and `projectId` unless you authenticate with an OIDC token; request fields override values copied from the source. If the source has a snapshot, the fork starts from it; otherwise, it starts from the source runtime or image, with seven-day snapshot expiration and a one-snapshot retention limit by default.
+     * Forks a named sandbox into a new named sandbox, copying its configuration and environment
+     * variables. Supply `name` to identify the source and `projectId` unless you authenticate with
+     * an OIDC token; request fields override values copied from the source. If the source has a
+     * snapshot, the fork starts from it; otherwise, it starts from the source runtime or image,
+     * with seven-day snapshot expiration and a one-snapshot retention limit by default.
      */
-    fun createSandboxesByNameForkV3WithRawResponse(clientConfig: ClientConfig, request: CreateSandboxesByNameForkV3Request, options: RequestOptions? = null): SdkResponse<CreateSandboxesByNameForkV3Response> =
-        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesByNameForkV3Operation.createSandboxesByNameForkV3WithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createSandboxesByNameForkV3WithRawResponse(
+        clientConfig: ClientConfig,
+        request: CreateSandboxesByNameForkV3Request,
+        options: RequestOptions? = null,
+    ): SdkResponse<CreateSandboxesByNameForkV3Response> =
+        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesByNameForkV3Operation
+            .createSandboxesByNameForkV3WithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Creates a named sandbox environment with automatic snapshotting on shutdown. Configure its resources, source, networking, and other settings in the request body; when `image` and a snapshot source are both absent, the sandbox uses the default universal image. Persistent sandboxes keep only their most recent snapshot by default, and snapshots expire after seven days unless configured otherwise.
+     * Creates a named sandbox environment with automatic snapshotting on shutdown. Configure its
+     * resources, source, networking, and other settings in the request body; when `image` and a
+     * snapshot source are both absent, the sandbox uses the default universal image. Persistent
+     * sandboxes keep only their most recent snapshot by default, and snapshots expire after seven
+     * days unless configured otherwise.
      */
-    fun createSandboxesV4(clientConfig: ClientConfig, request: CreateSandboxesV4Request, options: RequestOptions? = null): CreateSandboxesV4Response =
+    fun createSandboxesV4(
+        clientConfig: ClientConfig,
+        request: CreateSandboxesV4Request,
+        options: RequestOptions? = null,
+    ): CreateSandboxesV4Response =
         dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesV4Operation.createSandboxesV4(
             clientConfig,
             request,
@@ -1433,12 +1937,21 @@ data class CreateSandboxesV4Response(
         )
 
     /**
-     * Creates a named sandbox environment with automatic snapshotting on shutdown. Configure its resources, source, networking, and other settings in the request body; when `image` and a snapshot source are both absent, the sandbox uses the default universal image. Persistent sandboxes keep only their most recent snapshot by default, and snapshots expire after seven days unless configured otherwise.
+     * Creates a named sandbox environment with automatic snapshotting on shutdown. Configure its
+     * resources, source, networking, and other settings in the request body; when `image` and a
+     * snapshot source are both absent, the sandbox uses the default universal image. Persistent
+     * sandboxes keep only their most recent snapshot by default, and snapshots expire after seven
+     * days unless configured otherwise.
      */
-    fun createSandboxesV4WithRawResponse(clientConfig: ClientConfig, request: CreateSandboxesV4Request, options: RequestOptions? = null): SdkResponse<CreateSandboxesV4Response> =
-        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesV4Operation.createSandboxesV4WithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createSandboxesV4WithRawResponse(
+        clientConfig: ClientConfig,
+        request: CreateSandboxesV4Request,
+        options: RequestOptions? = null,
+    ): SdkResponse<CreateSandboxesV4Response> =
+        dev.octri.showcase.vercel.methods.SandboxesCreateSandboxesV4Operation
+            .createSandboxesV4WithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 }

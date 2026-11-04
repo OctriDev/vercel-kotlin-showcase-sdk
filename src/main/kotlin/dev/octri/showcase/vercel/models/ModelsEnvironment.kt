@@ -5,110 +5,191 @@ package dev.octri.showcase.vercel.models
 
 import dev.octri.showcase.vercel.SdkResource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateSharedEnvVariableResponseCreatedItemLastEditedByPrincipalVariant0(
     val id: String,
     val type: CreateSharedEnvVariableResponseCreatedItemLastEditedByPrincipX787bb3e9a2,
     val username: String,
     val avatar: String? = null,
-    val name: String? = null
+    val name: String? = null,
 ) : SdkResource(), CreateSharedEnvVariableResponseCreatedItemLastEditedByPrincipal
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class CreateSharedEnvVariableResponseCreatedItemLastEditedByPrincipalVariant1(
     val id: String,
     val name: String,
     val type: CreateSharedEnvVariableResponseCreatedItemLastEditedByPrincipX474a5b17cb,
-    val avatar: String? = null
+    val avatar: String? = null,
 ) : SdkResource(), CreateSharedEnvVariableResponseCreatedItemLastEditedByPrincipal
 
 /**
- * Typed representation of the `CreateSharedEnvVariableResponseCreatedItemLastEditedByPrincipal` API schema.
+ * Typed representation of the `CreateSharedEnvVariableResponseCreatedItemLastEditedByPrincipal` API
+ * schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "type",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateSharedEnvVariableResponseCreatedItemLastEditedByPrincipalVariant0::class, name = "user"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CreateSharedEnvVariableResponseCreatedItemLastEditedByPrincipalVariant1::class, name = "app")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateSharedEnvVariableResponseCreatedItemLastEditedByPrincipalVariant0::class,
+        name = "user",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateSharedEnvVariableResponseCreatedItemLastEditedByPrincipalVariant1::class,
+        name = "app",
+    ),
 )
 sealed interface CreateSharedEnvVariableResponseCreatedItemLastEditedByPrincipal
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetSharedEnvVarResponseLastEditedByPrincipalVariant0(
     val id: String,
     val type: GetSharedEnvVarResponseLastEditedByPrincipalVariant0TypeEnum,
     val username: String,
     val avatar: String? = null,
-    val name: String? = null
+    val name: String? = null,
 ) : SdkResource(), GetSharedEnvVarResponseLastEditedByPrincipal
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class GetSharedEnvVarResponseLastEditedByPrincipalVariant1(
     val id: String,
     val name: String,
     val type: GetSharedEnvVarResponseLastEditedByPrincipalVariant1TypeEnum,
-    val avatar: String? = null
+    val avatar: String? = null,
 ) : SdkResource(), GetSharedEnvVarResponseLastEditedByPrincipal
 
-/**
- * Typed representation of the `GetSharedEnvVarResponseLastEditedByPrincipal` API schema.
- */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
+/** Typed representation of the `GetSharedEnvVarResponseLastEditedByPrincipal` API schema. */
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "type",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetSharedEnvVarResponseLastEditedByPrincipalVariant0::class, name = "user"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GetSharedEnvVarResponseLastEditedByPrincipalVariant1::class, name = "app")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GetSharedEnvVarResponseLastEditedByPrincipalVariant0::class,
+        name = "user",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GetSharedEnvVarResponseLastEditedByPrincipalVariant1::class,
+        name = "app",
+    ),
 )
 sealed interface GetSharedEnvVarResponseLastEditedByPrincipal
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ListSharedEnvVariableResponseDataItemLastEditedByPrincipalVariant0(
     val id: String,
     val type: ListSharedEnvVariableResponseDataItemLastEditedByPrincipalVarX63ccf5f979,
     val username: String,
     val avatar: String? = null,
-    val name: String? = null
+    val name: String? = null,
 ) : SdkResource(), ListSharedEnvVariableResponseDataItemLastEditedByPrincipal
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class ListSharedEnvVariableResponseDataItemLastEditedByPrincipalVariant1(
     val id: String,
     val name: String,
     val type: ListSharedEnvVariableResponseDataItemLastEditedByPrincipalVarX75ad5f2dba,
-    val avatar: String? = null
+    val avatar: String? = null,
 ) : SdkResource(), ListSharedEnvVariableResponseDataItemLastEditedByPrincipal
 
 /**
- * Typed representation of the `ListSharedEnvVariableResponseDataItemLastEditedByPrincipal` API schema.
+ * Typed representation of the `ListSharedEnvVariableResponseDataItemLastEditedByPrincipal` API
+ * schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "type",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListSharedEnvVariableResponseDataItemLastEditedByPrincipalVariant0::class, name = "user"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ListSharedEnvVariableResponseDataItemLastEditedByPrincipalVariant1::class, name = "app")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ListSharedEnvVariableResponseDataItemLastEditedByPrincipalVariant0::class,
+        name = "user",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ListSharedEnvVariableResponseDataItemLastEditedByPrincipalVariant1::class,
+        name = "app",
+    ),
 )
 sealed interface ListSharedEnvVariableResponseDataItemLastEditedByPrincipal
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipalVariant0(
     val id: String,
     val type: UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipX26a35a887f,
     val username: String,
     val avatar: String? = null,
-    val name: String? = null
+    val name: String? = null,
 ) : SdkResource(), UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipal
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipalVariant1(
     val id: String,
     val name: String,
     val type: UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipX9e98a618e3,
-    val avatar: String? = null
+    val avatar: String? = null,
 ) : SdkResource(), UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipal
 
 /**
- * Typed representation of the `UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipal` API schema.
+ * Typed representation of the `UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipal` API
+ * schema.
  */
-@com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME, property = "type", visible = true)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    property = "type",
+    visible = true,
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes(
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipalVariant0::class, name = "user"),
-    com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipalVariant1::class, name = "app")
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipalVariant0::class,
+        name = "user",
+    ),
+    com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipalVariant1::class,
+        name = "app",
+    ),
 )
 sealed interface UpdateSharedEnvVariableResponseUpdatedItemLastEditedByPrincipal

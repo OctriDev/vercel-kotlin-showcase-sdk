@@ -21,68 +21,58 @@ import dev.octri.showcase.vercel.VcrRepositoryPermissionList
 import dev.octri.showcase.vercel.VcrTag
 
 object Vcr {
-data class CreateRepositoryResponse(
-    /**
-     * A Vercel Container Registry repository.
-     */
-    val repository: VcrRepository
-) : SdkResource()
+    data class CreateRepositoryResponse(
+        /** A Vercel Container Registry repository. */
+        val repository: VcrRepository
+    ) : SdkResource()
 
-data class GetRepositoryResponse(
-    /**
-     * A Vercel Container Registry repository.
-     */
-    val repository: VcrRepository
-) : SdkResource()
+    data class GetRepositoryResponse(
+        /** A Vercel Container Registry repository. */
+        val repository: VcrRepository
+    ) : SdkResource()
 
-data class AddRepositoryPermissionResponse(
-    /**
-     * A team's access grant to a Vercel Container Registry repository.
-     */
-    val permission: VcrRepositoryPermission
-) : SdkResource()
+    data class AddRepositoryPermissionResponse(
+        /** A team's access grant to a Vercel Container Registry repository. */
+        val permission: VcrRepositoryPermission
+    ) : SdkResource()
 
+    data class ListRepositoryTagsResponseTagsItem(
+        val createdAt: String,
+        val imageId: String,
+        val kind: ListRepositoryTagsResponseTagsItemKindEnum,
+        val manifestDigest: String,
+        val sizeInBytes: Double,
+        @com.fasterxml.jackson.annotation.JsonProperty("status", required = true)
+        val status: ListRepositoryTagsResponseTagsItemStatusEnum?,
+        val tag: String,
+        val updatedAt: String,
+        val arch: String? = null,
+        val platform: String? = null,
+        val pushedBy: String? = null,
+    ) : SdkResource()
 
+    data class ListRepositoryTagsResponse(
+        val tags: List<ListRepositoryTagsResponseTagsItem>,
+        val nextCursor: String? = null,
+    ) : SdkResource()
 
+    data class GetRepositoryTagResponse(
+        /**
+         * A tag pointing at an image in a Vercel Container Registry repository, enriched with the
+         * backing image's metadata and VHS-readiness status.
+         */
+        val tag: VcrTag
+    ) : SdkResource()
 
+    data class GetRepositoryImageResponse(
+        /** A single image with its tags, status and resolved Dockerfile layer history. */
+        val image: VcrImageDetail
+    ) : SdkResource()
 
-data class ListRepositoryTagsResponseTagsItem(
-    val createdAt: String,
-    val imageId: String,
-    val kind: ListRepositoryTagsResponseTagsItemKindEnum,
-    val manifestDigest: String,
-    val sizeInBytes: Double,
-    @com.fasterxml.jackson.annotation.JsonProperty("status", required = true) val status: ListRepositoryTagsResponseTagsItemStatusEnum?,
-    val tag: String,
-    val updatedAt: String,
-    val arch: String? = null,
-    val platform: String? = null,
-    val pushedBy: String? = null
-) : SdkResource()
-
-data class ListRepositoryTagsResponse(
-    val tags: List<ListRepositoryTagsResponseTagsItem>,
-    val nextCursor: String? = null
-) : SdkResource()
-
-data class GetRepositoryTagResponse(
-    /**
-     * A tag pointing at an image in a Vercel Container Registry repository, enriched with the backing image's metadata and VHS-readiness status.
-     */
-    val tag: VcrTag
-) : SdkResource()
-
-data class GetRepositoryImageResponse(
-    /**
-     * A single image with its tags, status and resolved Dockerfile layer history.
-     */
-    val image: VcrImageDetail
-) : SdkResource()
-
-data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
-    val name: String,
-    val tags: List<String>
-) : SdkResource()
+    data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
+        val name: String,
+        val tags: List<String>,
+    ) : SdkResource()
 
     data class ListRepositoriesPage(
         val data: VcrRepositoryList,
@@ -98,7 +88,7 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         val cursor: String? = null,
         val untagged: Boolean? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     data class ListRepositoryImagesPage(
@@ -114,7 +104,7 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         val teamId: String? = null,
         val slug: String? = null,
         val teamId2: String? = null,
-        val teamSlug: String? = null
+        val teamSlug: String? = null,
     )
 
     /** Parameters for [removeRepositoryPermission]. */
@@ -124,7 +114,7 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         val teamId: String? = null,
         val slug: String? = null,
         val teamId2: String? = null,
-        val teamSlug: String? = null
+        val teamSlug: String? = null,
     )
 
     /** Parameters for [listRepositoryPermissions]. */
@@ -134,7 +124,7 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         val limit: Long? = null,
         val cursor: String? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     data class ListRepositoryPermissionsPage(
@@ -152,7 +142,7 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         val sortBy: ListRepositoryTagsParameterEnum? = null,
         val sortOrder: ListRepositoryTagsParameterEnum85712c8c? = null,
         val teamId: String? = null,
-        val slug: String? = null
+        val slug: String? = null,
     )
 
     data class ListRepositoryTagsPage(
@@ -162,9 +152,18 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
     )
 
     /**
-     * Creates a container registry repository for a project. Supply `projectId` and `name` in the request body; the name must follow the allowed lowercase repository-name format. The `teamId` or `slug` query parameter selects the team to act on behalf of.
+     * Creates a container registry repository for a project. Supply `projectId` and `name` in the
+     * request body; the name must follow the allowed lowercase repository-name format. The `teamId`
+     * or `slug` query parameter selects the team to act on behalf of.
      */
-    fun createRepository(clientConfig: ClientConfig, projectId: String, name: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): CreateRepositoryResponse =
+    fun createRepository(
+        clientConfig: ClientConfig,
+        projectId: String,
+        name: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): CreateRepositoryResponse =
         dev.octri.showcase.vercel.methods.VcrCreateRepositoryOperation.createRepository(
             clientConfig,
             projectId,
@@ -175,22 +174,42 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         )
 
     /**
-     * Creates a container registry repository for a project. Supply `projectId` and `name` in the request body; the name must follow the allowed lowercase repository-name format. The `teamId` or `slug` query parameter selects the team to act on behalf of.
+     * Creates a container registry repository for a project. Supply `projectId` and `name` in the
+     * request body; the name must follow the allowed lowercase repository-name format. The `teamId`
+     * or `slug` query parameter selects the team to act on behalf of.
      */
-    fun createRepositoryWithRawResponse(clientConfig: ClientConfig, projectId: String, name: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<CreateRepositoryResponse> =
-        dev.octri.showcase.vercel.methods.VcrCreateRepositoryOperation.createRepositoryWithRawResponse(
-            clientConfig,
-            projectId,
-            name,
-            teamId,
-            slug,
-            options,
-        )
+    fun createRepositoryWithRawResponse(
+        clientConfig: ClientConfig,
+        projectId: String,
+        name: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<CreateRepositoryResponse> =
+        dev.octri.showcase.vercel.methods.VcrCreateRepositoryOperation
+            .createRepositoryWithRawResponse(
+                clientConfig,
+                projectId,
+                name,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Lists container registry repositories for a project in the authenticated team. Supply `projectId` to select the project; use `cursor` to continue through paginated results and `limit` to control the page size.
+     * Lists container registry repositories for a project in the authenticated team. Supply
+     * `projectId` to select the project; use `cursor` to continue through paginated results and
+     * `limit` to control the page size.
      */
-    fun listRepositories(clientConfig: ClientConfig, projectId: String, limit: Long? = null, cursor: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): VcrRepositoryList =
+    fun listRepositories(
+        clientConfig: ClientConfig,
+        projectId: String,
+        limit: Long? = null,
+        cursor: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): VcrRepositoryList =
         dev.octri.showcase.vercel.methods.VcrListRepositoriesOperation.listRepositories(
             clientConfig,
             projectId,
@@ -202,23 +221,45 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         )
 
     /**
-     * Lists container registry repositories for a project in the authenticated team. Supply `projectId` to select the project; use `cursor` to continue through paginated results and `limit` to control the page size.
+     * Lists container registry repositories for a project in the authenticated team. Supply
+     * `projectId` to select the project; use `cursor` to continue through paginated results and
+     * `limit` to control the page size.
      */
-    fun listRepositoriesWithRawResponse(clientConfig: ClientConfig, projectId: String, limit: Long? = null, cursor: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<VcrRepositoryList> =
-        dev.octri.showcase.vercel.methods.VcrListRepositoriesOperation.listRepositoriesWithRawResponse(
-            clientConfig,
-            projectId,
-            limit,
-            cursor,
-            teamId,
-            slug,
-            options,
-        )
+    fun listRepositoriesWithRawResponse(
+        clientConfig: ClientConfig,
+        projectId: String,
+        limit: Long? = null,
+        cursor: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<VcrRepositoryList> =
+        dev.octri.showcase.vercel.methods.VcrListRepositoriesOperation
+            .listRepositoriesWithRawResponse(
+                clientConfig,
+                projectId,
+                limit,
+                cursor,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Iterates through all pages: Lists container registry repositories for a project in the authenticated team. Supply `projectId` to select the project; use `cursor` to continue through paginated results and `limit` to control the page size.
+     * Iterates through all pages: Lists container registry repositories for a project in the
+     * authenticated team. Supply `projectId` to select the project; use `cursor` to continue
+     * through paginated results and `limit` to control the page size.
      */
-    fun listRepositoriesPaginated(clientConfig: ClientConfig, projectId: String, limit: Long? = null, cursor: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null, yieldFn: (VcrRepository) -> Boolean) =
+    fun listRepositoriesPaginated(
+        clientConfig: ClientConfig,
+        projectId: String,
+        limit: Long? = null,
+        cursor: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+        yieldFn: (VcrRepository) -> Boolean,
+    ) =
         dev.octri.showcase.vercel.methods.VcrListRepositoriesOperation.listRepositoriesPaginated(
             clientConfig,
             projectId,
@@ -231,9 +272,20 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         )
 
     /**
-     * Lists container registry repositories for a project in the authenticated team. Supply `projectId` to select the project; use `cursor` to continue through paginated results and `limit` to control the page size.
+     * Lists container registry repositories for a project in the authenticated team. Supply
+     * `projectId` to select the project; use `cursor` to continue through paginated results and
+     * `limit` to control the page size.
      */
-    fun listRepositoriesPages(clientConfig: ClientConfig, projectId: String, limit: Long? = null, cursor: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null, yieldPage: (ListRepositoriesPage) -> Boolean) =
+    fun listRepositoriesPages(
+        clientConfig: ClientConfig,
+        projectId: String,
+        limit: Long? = null,
+        cursor: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+        yieldPage: (ListRepositoriesPage) -> Boolean,
+    ) =
         dev.octri.showcase.vercel.methods.VcrListRepositoriesOperation.listRepositoriesPages(
             clientConfig,
             projectId,
@@ -246,9 +298,18 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         )
 
     /**
-     * Retrieves a container registry repository for a project by its identifier or name. Supply `projectId` to select the project; IDs take precedence over names when identifying the project.
+     * Retrieves a container registry repository for a project by its identifier or name. Supply
+     * `projectId` to select the project; IDs take precedence over names when identifying the
+     * project.
      */
-    fun getRepository(clientConfig: ClientConfig, idOrName: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetRepositoryResponse =
+    fun getRepository(
+        clientConfig: ClientConfig,
+        idOrName: String,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetRepositoryResponse =
         dev.octri.showcase.vercel.methods.VcrGetRepositoryOperation.getRepository(
             clientConfig,
             idOrName,
@@ -259,9 +320,18 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         )
 
     /**
-     * Retrieves a container registry repository for a project by its identifier or name. Supply `projectId` to select the project; IDs take precedence over names when identifying the project.
+     * Retrieves a container registry repository for a project by its identifier or name. Supply
+     * `projectId` to select the project; IDs take precedence over names when identifying the
+     * project.
      */
-    fun getRepositoryWithRawResponse(clientConfig: ClientConfig, idOrName: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<GetRepositoryResponse> =
+    fun getRepositoryWithRawResponse(
+        clientConfig: ClientConfig,
+        idOrName: String,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetRepositoryResponse> =
         dev.octri.showcase.vercel.methods.VcrGetRepositoryOperation.getRepositoryWithRawResponse(
             clientConfig,
             idOrName,
@@ -272,9 +342,18 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         )
 
     /**
-     * Deletes a container registry repository by scheduling it for removal. The repository disappears from list and get results immediately, while its images and associated data are reclaimed asynchronously.
+     * Deletes a container registry repository by scheduling it for removal. The repository
+     * disappears from list and get results immediately, while its images and associated data are
+     * reclaimed asynchronously.
      */
-    fun deleteRepository(clientConfig: ClientConfig, idOrName: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Any =
+    fun deleteRepository(
+        clientConfig: ClientConfig,
+        idOrName: String,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Any =
         dev.octri.showcase.vercel.methods.VcrDeleteRepositoryOperation.deleteRepository(
             clientConfig,
             idOrName,
@@ -285,22 +364,38 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         )
 
     /**
-     * Deletes a container registry repository by scheduling it for removal. The repository disappears from list and get results immediately, while its images and associated data are reclaimed asynchronously.
+     * Deletes a container registry repository by scheduling it for removal. The repository
+     * disappears from list and get results immediately, while its images and associated data are
+     * reclaimed asynchronously.
      */
-    fun deleteRepositoryWithRawResponse(clientConfig: ClientConfig, idOrName: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<Any> =
-        dev.octri.showcase.vercel.methods.VcrDeleteRepositoryOperation.deleteRepositoryWithRawResponse(
-            clientConfig,
-            idOrName,
-            projectId,
-            teamId,
-            slug,
-            options,
-        )
+    fun deleteRepositoryWithRawResponse(
+        clientConfig: ClientConfig,
+        idOrName: String,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<Any> =
+        dev.octri.showcase.vercel.methods.VcrDeleteRepositoryOperation
+            .deleteRepositoryWithRawResponse(
+                clientConfig,
+                idOrName,
+                projectId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Lists images and their tags for a container registry repository. Supply `projectId` and `idOrName` to identify the repository, and use `untagged` to filter for images without tags. Use `cursor` to continue through paginated results.
+     * Lists images and their tags for a container registry repository. Supply `projectId` and
+     * `idOrName` to identify the repository, and use `untagged` to filter for images without tags.
+     * Use `cursor` to continue through paginated results.
      */
-    fun listRepositoryImages(clientConfig: ClientConfig, request: ListRepositoryImagesRequest, options: RequestOptions? = null): VcrImageList =
+    fun listRepositoryImages(
+        clientConfig: ClientConfig,
+        request: ListRepositoryImagesRequest,
+        options: RequestOptions? = null,
+    ): VcrImageList =
         dev.octri.showcase.vercel.methods.VcrListRepositoryImagesOperation.listRepositoryImages(
             clientConfig,
             request,
@@ -308,149 +403,256 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         )
 
     /**
-     * Lists images and their tags for a container registry repository. Supply `projectId` and `idOrName` to identify the repository, and use `untagged` to filter for images without tags. Use `cursor` to continue through paginated results.
+     * Lists images and their tags for a container registry repository. Supply `projectId` and
+     * `idOrName` to identify the repository, and use `untagged` to filter for images without tags.
+     * Use `cursor` to continue through paginated results.
      */
-    fun listRepositoryImagesWithRawResponse(clientConfig: ClientConfig, request: ListRepositoryImagesRequest, options: RequestOptions? = null): SdkResponse<VcrImageList> =
-        dev.octri.showcase.vercel.methods.VcrListRepositoryImagesOperation.listRepositoryImagesWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listRepositoryImagesWithRawResponse(
+        clientConfig: ClientConfig,
+        request: ListRepositoryImagesRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<VcrImageList> =
+        dev.octri.showcase.vercel.methods.VcrListRepositoryImagesOperation
+            .listRepositoryImagesWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Iterates through all pages: Lists images and their tags for a container registry repository. Supply `projectId` and `idOrName` to identify the repository, and use `untagged` to filter for images without tags. Use `cursor` to continue through paginated results.
+     * Iterates through all pages: Lists images and their tags for a container registry repository.
+     * Supply `projectId` and `idOrName` to identify the repository, and use `untagged` to filter
+     * for images without tags. Use `cursor` to continue through paginated results.
      */
-    fun listRepositoryImagesPaginated(clientConfig: ClientConfig, request: ListRepositoryImagesRequest, options: RequestOptions? = null, yieldFn: (VcrImageListItem) -> Boolean) =
-        dev.octri.showcase.vercel.methods.VcrListRepositoryImagesOperation.listRepositoryImagesPaginated(
-            clientConfig,
-            request,
-            options,
-            yieldFn,
-        )
+    fun listRepositoryImagesPaginated(
+        clientConfig: ClientConfig,
+        request: ListRepositoryImagesRequest,
+        options: RequestOptions? = null,
+        yieldFn: (VcrImageListItem) -> Boolean,
+    ) =
+        dev.octri.showcase.vercel.methods.VcrListRepositoryImagesOperation
+            .listRepositoryImagesPaginated(
+                clientConfig,
+                request,
+                options,
+                yieldFn,
+            )
 
     /**
-     * Lists images and their tags for a container registry repository. Supply `projectId` and `idOrName` to identify the repository, and use `untagged` to filter for images without tags. Use `cursor` to continue through paginated results.
+     * Lists images and their tags for a container registry repository. Supply `projectId` and
+     * `idOrName` to identify the repository, and use `untagged` to filter for images without tags.
+     * Use `cursor` to continue through paginated results.
      */
-    fun listRepositoryImagesPages(clientConfig: ClientConfig, request: ListRepositoryImagesRequest, options: RequestOptions? = null, yieldPage: (ListRepositoryImagesPage) -> Boolean) =
-        dev.octri.showcase.vercel.methods.VcrListRepositoryImagesOperation.listRepositoryImagesPages(
-            clientConfig,
-            request,
-            options,
-            yieldPage,
-        )
+    fun listRepositoryImagesPages(
+        clientConfig: ClientConfig,
+        request: ListRepositoryImagesRequest,
+        options: RequestOptions? = null,
+        yieldPage: (ListRepositoryImagesPage) -> Boolean,
+    ) =
+        dev.octri.showcase.vercel.methods.VcrListRepositoryImagesOperation
+            .listRepositoryImagesPages(
+                clientConfig,
+                request,
+                options,
+                yieldPage,
+            )
 
     /**
-     * Grants a team access to a VCR repository, with sharing applied to the entire repository. Supply the repository and project identifiers, then identify the team using the request body. The response includes the permission grant and its creation time.
+     * Grants a team access to a VCR repository, with sharing applied to the entire repository.
+     * Supply the repository and project identifiers, then identify the team using the request body.
+     * The response includes the permission grant and its creation time.
      */
-    fun addRepositoryPermission(clientConfig: ClientConfig, request: AddRepositoryPermissionRequest, options: RequestOptions? = null): AddRepositoryPermissionResponse =
-        dev.octri.showcase.vercel.methods.VcrAddRepositoryPermissionOperation.addRepositoryPermission(
-            clientConfig,
-            request,
-            options,
-        )
+    fun addRepositoryPermission(
+        clientConfig: ClientConfig,
+        request: AddRepositoryPermissionRequest,
+        options: RequestOptions? = null,
+    ): AddRepositoryPermissionResponse =
+        dev.octri.showcase.vercel.methods.VcrAddRepositoryPermissionOperation
+            .addRepositoryPermission(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Grants a team access to a VCR repository, with sharing applied to the entire repository. Supply the repository and project identifiers, then identify the team using the request body. The response includes the permission grant and its creation time.
+     * Grants a team access to a VCR repository, with sharing applied to the entire repository.
+     * Supply the repository and project identifiers, then identify the team using the request body.
+     * The response includes the permission grant and its creation time.
      */
-    fun addRepositoryPermissionWithRawResponse(clientConfig: ClientConfig, request: AddRepositoryPermissionRequest, options: RequestOptions? = null): SdkResponse<AddRepositoryPermissionResponse> =
-        dev.octri.showcase.vercel.methods.VcrAddRepositoryPermissionOperation.addRepositoryPermissionWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun addRepositoryPermissionWithRawResponse(
+        clientConfig: ClientConfig,
+        request: AddRepositoryPermissionRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<AddRepositoryPermissionResponse> =
+        dev.octri.showcase.vercel.methods.VcrAddRepositoryPermissionOperation
+            .addRepositoryPermissionWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Revokes a team's access to a VCR repository. Supply the repository and project identifiers, then identify the team whose permission you want to remove. The operation removes the team's repository-wide access grant.
+     * Revokes a team's access to a VCR repository. Supply the repository and project identifiers,
+     * then identify the team whose permission you want to remove. The operation removes the team's
+     * repository-wide access grant.
      */
-    fun removeRepositoryPermission(clientConfig: ClientConfig, request: RemoveRepositoryPermissionRequest, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.VcrRemoveRepositoryPermissionOperation.removeRepositoryPermission(
-            clientConfig,
-            request,
-            options,
-        )
+    fun removeRepositoryPermission(
+        clientConfig: ClientConfig,
+        request: RemoveRepositoryPermissionRequest,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods.VcrRemoveRepositoryPermissionOperation
+            .removeRepositoryPermission(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Revokes a team's access to a VCR repository. Supply the repository and project identifiers, then identify the team whose permission you want to remove. The operation removes the team's repository-wide access grant.
+     * Revokes a team's access to a VCR repository. Supply the repository and project identifiers,
+     * then identify the team whose permission you want to remove. The operation removes the team's
+     * repository-wide access grant.
      */
-    fun removeRepositoryPermissionWithRawResponse(clientConfig: ClientConfig, request: RemoveRepositoryPermissionRequest, options: RequestOptions? = null): SdkResponse<Unit> =
-        dev.octri.showcase.vercel.methods.VcrRemoveRepositoryPermissionOperation.removeRepositoryPermissionWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun removeRepositoryPermissionWithRawResponse(
+        clientConfig: ClientConfig,
+        request: RemoveRepositoryPermissionRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<Unit> =
+        dev.octri.showcase.vercel.methods.VcrRemoveRepositoryPermissionOperation
+            .removeRepositoryPermissionWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Lists the teams that a container registry repository is shared with. Supply `projectId` and `idOrName` to identify the repository, and use `cursor` to continue through paginated results.
+     * Lists the teams that a container registry repository is shared with. Supply `projectId` and
+     * `idOrName` to identify the repository, and use `cursor` to continue through paginated
+     * results.
      */
-    fun listRepositoryPermissions(clientConfig: ClientConfig, request: ListRepositoryPermissionsRequest, options: RequestOptions? = null): VcrRepositoryPermissionList =
-        dev.octri.showcase.vercel.methods.VcrListRepositoryPermissionsOperation.listRepositoryPermissions(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listRepositoryPermissions(
+        clientConfig: ClientConfig,
+        request: ListRepositoryPermissionsRequest,
+        options: RequestOptions? = null,
+    ): VcrRepositoryPermissionList =
+        dev.octri.showcase.vercel.methods.VcrListRepositoryPermissionsOperation
+            .listRepositoryPermissions(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Lists the teams that a container registry repository is shared with. Supply `projectId` and `idOrName` to identify the repository, and use `cursor` to continue through paginated results.
+     * Lists the teams that a container registry repository is shared with. Supply `projectId` and
+     * `idOrName` to identify the repository, and use `cursor` to continue through paginated
+     * results.
      */
-    fun listRepositoryPermissionsWithRawResponse(clientConfig: ClientConfig, request: ListRepositoryPermissionsRequest, options: RequestOptions? = null): SdkResponse<VcrRepositoryPermissionList> =
-        dev.octri.showcase.vercel.methods.VcrListRepositoryPermissionsOperation.listRepositoryPermissionsWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listRepositoryPermissionsWithRawResponse(
+        clientConfig: ClientConfig,
+        request: ListRepositoryPermissionsRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<VcrRepositoryPermissionList> =
+        dev.octri.showcase.vercel.methods.VcrListRepositoryPermissionsOperation
+            .listRepositoryPermissionsWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Iterates through all pages: Lists the teams that a container registry repository is shared with. Supply `projectId` and `idOrName` to identify the repository, and use `cursor` to continue through paginated results.
+     * Iterates through all pages: Lists the teams that a container registry repository is shared
+     * with. Supply `projectId` and `idOrName` to identify the repository, and use `cursor` to
+     * continue through paginated results.
      */
-    fun listRepositoryPermissionsPaginated(clientConfig: ClientConfig, request: ListRepositoryPermissionsRequest, options: RequestOptions? = null, yieldFn: (VcrRepositoryPermission) -> Boolean) =
-        dev.octri.showcase.vercel.methods.VcrListRepositoryPermissionsOperation.listRepositoryPermissionsPaginated(
-            clientConfig,
-            request,
-            options,
-            yieldFn,
-        )
+    fun listRepositoryPermissionsPaginated(
+        clientConfig: ClientConfig,
+        request: ListRepositoryPermissionsRequest,
+        options: RequestOptions? = null,
+        yieldFn: (VcrRepositoryPermission) -> Boolean,
+    ) =
+        dev.octri.showcase.vercel.methods.VcrListRepositoryPermissionsOperation
+            .listRepositoryPermissionsPaginated(
+                clientConfig,
+                request,
+                options,
+                yieldFn,
+            )
 
     /**
-     * Lists the teams that a container registry repository is shared with. Supply `projectId` and `idOrName` to identify the repository, and use `cursor` to continue through paginated results.
+     * Lists the teams that a container registry repository is shared with. Supply `projectId` and
+     * `idOrName` to identify the repository, and use `cursor` to continue through paginated
+     * results.
      */
-    fun listRepositoryPermissionsPages(clientConfig: ClientConfig, request: ListRepositoryPermissionsRequest, options: RequestOptions? = null, yieldPage: (ListRepositoryPermissionsPage) -> Boolean) =
-        dev.octri.showcase.vercel.methods.VcrListRepositoryPermissionsOperation.listRepositoryPermissionsPages(
-            clientConfig,
-            request,
-            options,
-            yieldPage,
-        )
+    fun listRepositoryPermissionsPages(
+        clientConfig: ClientConfig,
+        request: ListRepositoryPermissionsRequest,
+        options: RequestOptions? = null,
+        yieldPage: (ListRepositoryPermissionsPage) -> Boolean,
+    ) =
+        dev.octri.showcase.vercel.methods.VcrListRepositoryPermissionsOperation
+            .listRepositoryPermissionsPages(
+                clientConfig,
+                request,
+                options,
+                yieldPage,
+            )
 
     /**
-     * Revokes every team's access to a VCR repository. Use this operation to clear all repository permissions at once; clearing a repository with no shared access has no effect. The operation requires the repository and project identifiers.
+     * Revokes every team's access to a VCR repository. Use this operation to clear all repository
+     * permissions at once; clearing a repository with no shared access has no effect. The operation
+     * requires the repository and project identifiers.
      */
-    fun clearRepositoryPermissions(clientConfig: ClientConfig, idOrName: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.VcrClearRepositoryPermissionsOperation.clearRepositoryPermissions(
-            clientConfig,
-            idOrName,
-            projectId,
-            teamId,
-            slug,
-            options,
-        )
+    fun clearRepositoryPermissions(
+        clientConfig: ClientConfig,
+        idOrName: String,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods.VcrClearRepositoryPermissionsOperation
+            .clearRepositoryPermissions(
+                clientConfig,
+                idOrName,
+                projectId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Revokes every team's access to a VCR repository. Use this operation to clear all repository permissions at once; clearing a repository with no shared access has no effect. The operation requires the repository and project identifiers.
+     * Revokes every team's access to a VCR repository. Use this operation to clear all repository
+     * permissions at once; clearing a repository with no shared access has no effect. The operation
+     * requires the repository and project identifiers.
      */
-    fun clearRepositoryPermissionsWithRawResponse(clientConfig: ClientConfig, idOrName: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<Unit> =
-        dev.octri.showcase.vercel.methods.VcrClearRepositoryPermissionsOperation.clearRepositoryPermissionsWithRawResponse(
-            clientConfig,
-            idOrName,
-            projectId,
-            teamId,
-            slug,
-            options,
-        )
+    fun clearRepositoryPermissionsWithRawResponse(
+        clientConfig: ClientConfig,
+        idOrName: String,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<Unit> =
+        dev.octri.showcase.vercel.methods.VcrClearRepositoryPermissionsOperation
+            .clearRepositoryPermissionsWithRawResponse(
+                clientConfig,
+                idOrName,
+                projectId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Lists tags in a VCR repository, with optional pagination and sorting for non-pinned tags. Use `cursor` to continue from a previous page and the sort parameters to control tag ordering. The response includes a `nextCursor` when another page is available.
+     * Lists tags in a VCR repository, with optional pagination and sorting for non-pinned tags. Use
+     * `cursor` to continue from a previous page and the sort parameters to control tag ordering.
+     * The response includes a `nextCursor` when another page is available.
      */
-    fun listRepositoryTags(clientConfig: ClientConfig, request: ListRepositoryTagsRequest, options: RequestOptions? = null): ListRepositoryTagsResponse =
+    fun listRepositoryTags(
+        clientConfig: ClientConfig,
+        request: ListRepositoryTagsRequest,
+        options: RequestOptions? = null,
+    ): ListRepositoryTagsResponse =
         dev.octri.showcase.vercel.methods.VcrListRepositoryTagsOperation.listRepositoryTags(
             clientConfig,
             request,
@@ -458,30 +660,53 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         )
 
     /**
-     * Lists tags in a VCR repository, with optional pagination and sorting for non-pinned tags. Use `cursor` to continue from a previous page and the sort parameters to control tag ordering. The response includes a `nextCursor` when another page is available.
+     * Lists tags in a VCR repository, with optional pagination and sorting for non-pinned tags. Use
+     * `cursor` to continue from a previous page and the sort parameters to control tag ordering.
+     * The response includes a `nextCursor` when another page is available.
      */
-    fun listRepositoryTagsWithRawResponse(clientConfig: ClientConfig, request: ListRepositoryTagsRequest, options: RequestOptions? = null): SdkResponse<ListRepositoryTagsResponse> =
-        dev.octri.showcase.vercel.methods.VcrListRepositoryTagsOperation.listRepositoryTagsWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun listRepositoryTagsWithRawResponse(
+        clientConfig: ClientConfig,
+        request: ListRepositoryTagsRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<ListRepositoryTagsResponse> =
+        dev.octri.showcase.vercel.methods.VcrListRepositoryTagsOperation
+            .listRepositoryTagsWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Iterates through all pages: Lists tags in a VCR repository, with optional pagination and sorting for non-pinned tags. Use `cursor` to continue from a previous page and the sort parameters to control tag ordering. The response includes a `nextCursor` when another page is available.
+     * Iterates through all pages: Lists tags in a VCR repository, with optional pagination and
+     * sorting for non-pinned tags. Use `cursor` to continue from a previous page and the sort
+     * parameters to control tag ordering. The response includes a `nextCursor` when another page is
+     * available.
      */
-    fun listRepositoryTagsPaginated(clientConfig: ClientConfig, request: ListRepositoryTagsRequest, options: RequestOptions? = null, yieldFn: (ListRepositoryTagsResponseTagsItem) -> Boolean) =
-        dev.octri.showcase.vercel.methods.VcrListRepositoryTagsOperation.listRepositoryTagsPaginated(
-            clientConfig,
-            request,
-            options,
-            yieldFn,
-        )
+    fun listRepositoryTagsPaginated(
+        clientConfig: ClientConfig,
+        request: ListRepositoryTagsRequest,
+        options: RequestOptions? = null,
+        yieldFn: (ListRepositoryTagsResponseTagsItem) -> Boolean,
+    ) =
+        dev.octri.showcase.vercel.methods.VcrListRepositoryTagsOperation
+            .listRepositoryTagsPaginated(
+                clientConfig,
+                request,
+                options,
+                yieldFn,
+            )
 
     /**
-     * Lists tags in a VCR repository, with optional pagination and sorting for non-pinned tags. Use `cursor` to continue from a previous page and the sort parameters to control tag ordering. The response includes a `nextCursor` when another page is available.
+     * Lists tags in a VCR repository, with optional pagination and sorting for non-pinned tags. Use
+     * `cursor` to continue from a previous page and the sort parameters to control tag ordering.
+     * The response includes a `nextCursor` when another page is available.
      */
-    fun listRepositoryTagsPages(clientConfig: ClientConfig, request: ListRepositoryTagsRequest, options: RequestOptions? = null, yieldPage: (ListRepositoryTagsPage) -> Boolean) =
+    fun listRepositoryTagsPages(
+        clientConfig: ClientConfig,
+        request: ListRepositoryTagsRequest,
+        options: RequestOptions? = null,
+        yieldPage: (ListRepositoryTagsPage) -> Boolean,
+    ) =
         dev.octri.showcase.vercel.methods.VcrListRepositoryTagsOperation.listRepositoryTagsPages(
             clientConfig,
             request,
@@ -490,9 +715,19 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         )
 
     /**
-     * Retrieves a single tag from a VCR repository, including metadata for its backing image and its VHS-readiness status. Use the repository and tag identifiers to select the tag you want to inspect. The response contains the tag and its associated image details.
+     * Retrieves a single tag from a VCR repository, including metadata for its backing image and
+     * its VHS-readiness status. Use the repository and tag identifiers to select the tag you want
+     * to inspect. The response contains the tag and its associated image details.
      */
-    fun getRepositoryTag(clientConfig: ClientConfig, idOrName: String, tag: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetRepositoryTagResponse =
+    fun getRepositoryTag(
+        clientConfig: ClientConfig,
+        idOrName: String,
+        tag: String,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetRepositoryTagResponse =
         dev.octri.showcase.vercel.methods.VcrGetRepositoryTagOperation.getRepositoryTag(
             clientConfig,
             idOrName,
@@ -504,23 +739,45 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         )
 
     /**
-     * Retrieves a single tag from a VCR repository, including metadata for its backing image and its VHS-readiness status. Use the repository and tag identifiers to select the tag you want to inspect. The response contains the tag and its associated image details.
+     * Retrieves a single tag from a VCR repository, including metadata for its backing image and
+     * its VHS-readiness status. Use the repository and tag identifiers to select the tag you want
+     * to inspect. The response contains the tag and its associated image details.
      */
-    fun getRepositoryTagWithRawResponse(clientConfig: ClientConfig, idOrName: String, tag: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<GetRepositoryTagResponse> =
-        dev.octri.showcase.vercel.methods.VcrGetRepositoryTagOperation.getRepositoryTagWithRawResponse(
-            clientConfig,
-            idOrName,
-            tag,
-            projectId,
-            teamId,
-            slug,
-            options,
-        )
+    fun getRepositoryTagWithRawResponse(
+        clientConfig: ClientConfig,
+        idOrName: String,
+        tag: String,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetRepositoryTagResponse> =
+        dev.octri.showcase.vercel.methods.VcrGetRepositoryTagOperation
+            .getRepositoryTagWithRawResponse(
+                clientConfig,
+                idOrName,
+                tag,
+                projectId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Retrieves an image from a VCR repository, including its tags and resolved Dockerfile layer history. Identify the image by its internal ID or manifest digest to inspect its metadata and layer details. The image identifier may use the `image_` ID form or the `sha256:` digest form.
+     * Retrieves an image from a VCR repository, including its tags and resolved Dockerfile layer
+     * history. Identify the image by its internal ID or manifest digest to inspect its metadata and
+     * layer details. The image identifier may use the `image_` ID form or the `sha256:` digest
+     * form.
      */
-    fun getRepositoryImage(clientConfig: ClientConfig, idOrName: String, imageIdOrDigest: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetRepositoryImageResponse =
+    fun getRepositoryImage(
+        clientConfig: ClientConfig,
+        idOrName: String,
+        imageIdOrDigest: String,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetRepositoryImageResponse =
         dev.octri.showcase.vercel.methods.VcrGetRepositoryImageOperation.getRepositoryImage(
             clientConfig,
             idOrName,
@@ -532,23 +789,45 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         )
 
     /**
-     * Retrieves an image from a VCR repository, including its tags and resolved Dockerfile layer history. Identify the image by its internal ID or manifest digest to inspect its metadata and layer details. The image identifier may use the `image_` ID form or the `sha256:` digest form.
+     * Retrieves an image from a VCR repository, including its tags and resolved Dockerfile layer
+     * history. Identify the image by its internal ID or manifest digest to inspect its metadata and
+     * layer details. The image identifier may use the `image_` ID form or the `sha256:` digest
+     * form.
      */
-    fun getRepositoryImageWithRawResponse(clientConfig: ClientConfig, idOrName: String, imageIdOrDigest: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<GetRepositoryImageResponse> =
-        dev.octri.showcase.vercel.methods.VcrGetRepositoryImageOperation.getRepositoryImageWithRawResponse(
-            clientConfig,
-            idOrName,
-            imageIdOrDigest,
-            projectId,
-            teamId,
-            slug,
-            options,
-        )
+    fun getRepositoryImageWithRawResponse(
+        clientConfig: ClientConfig,
+        idOrName: String,
+        imageIdOrDigest: String,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetRepositoryImageResponse> =
+        dev.octri.showcase.vercel.methods.VcrGetRepositoryImageOperation
+            .getRepositoryImageWithRawResponse(
+                clientConfig,
+                idOrName,
+                imageIdOrDigest,
+                projectId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Schedules a VCR repository image for deletion. The image disappears from list and retrieve results immediately, while its manifest, blobs, tags, and database record are reclaimed asynchronously. The cleanup is performed through the `VcrManifestRemoved` event.
+     * Schedules a VCR repository image for deletion. The image disappears from list and retrieve
+     * results immediately, while its manifest, blobs, tags, and database record are reclaimed
+     * asynchronously. The cleanup is performed through the `VcrManifestRemoved` event.
      */
-    fun deleteRepositoryImage(clientConfig: ClientConfig, idOrName: String, imageId: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Any =
+    fun deleteRepositoryImage(
+        clientConfig: ClientConfig,
+        idOrName: String,
+        imageId: String,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Any =
         dev.octri.showcase.vercel.methods.VcrDeleteRepositoryImageOperation.deleteRepositoryImage(
             clientConfig,
             idOrName,
@@ -560,21 +839,34 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         )
 
     /**
-     * Schedules a VCR repository image for deletion. The image disappears from list and retrieve results immediately, while its manifest, blobs, tags, and database record are reclaimed asynchronously. The cleanup is performed through the `VcrManifestRemoved` event.
+     * Schedules a VCR repository image for deletion. The image disappears from list and retrieve
+     * results immediately, while its manifest, blobs, tags, and database record are reclaimed
+     * asynchronously. The cleanup is performed through the `VcrManifestRemoved` event.
      */
-    fun deleteRepositoryImageWithRawResponse(clientConfig: ClientConfig, idOrName: String, imageId: String, projectId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<Any> =
-        dev.octri.showcase.vercel.methods.VcrDeleteRepositoryImageOperation.deleteRepositoryImageWithRawResponse(
-            clientConfig,
-            idOrName,
-            imageId,
-            projectId,
-            teamId,
-            slug,
-            options,
-        )
+    fun deleteRepositoryImageWithRawResponse(
+        clientConfig: ClientConfig,
+        idOrName: String,
+        imageId: String,
+        projectId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<Any> =
+        dev.octri.showcase.vercel.methods.VcrDeleteRepositoryImageOperation
+            .deleteRepositoryImageWithRawResponse(
+                clientConfig,
+                idOrName,
+                imageId,
+                projectId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Checks whether the Docker Registry API v2 is supported. Send valid credentials in the `Authorization` header to receive a successful response and proceed with registry requests. Without credentials, the registry returns an authentication challenge for the Docker client.
+     * Checks whether the Docker Registry API v2 is supported. Send valid credentials in the
+     * `Authorization` header to receive a successful response and proceed with registry requests.
+     * Without credentials, the registry returns an authentication challenge for the Docker client.
      */
     fun getRoot(clientConfig: ClientConfig, options: RequestOptions? = null): Map<String, Any> =
         dev.octri.showcase.vercel.methods.VcrGetRootOperation.getRoot(
@@ -583,355 +875,656 @@ data class GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse(
         )
 
     /**
-     * Checks whether the Docker Registry API v2 is supported. Send valid credentials in the `Authorization` header to receive a successful response and proceed with registry requests. Without credentials, the registry returns an authentication challenge for the Docker client.
+     * Checks whether the Docker Registry API v2 is supported. Send valid credentials in the
+     * `Authorization` header to receive a successful response and proceed with registry requests.
+     * Without credentials, the registry returns an authentication challenge for the Docker client.
      */
-    fun getRootWithRawResponse(clientConfig: ClientConfig, options: RequestOptions? = null): SdkResponse<Map<String, Any>> =
+    fun getRootWithRawResponse(
+        clientConfig: ClientConfig,
+        options: RequestOptions? = null,
+    ): SdkResponse<Map<String, Any>> =
         dev.octri.showcase.vercel.methods.VcrGetRootOperation.getRootWithRawResponse(
             clientConfig,
             options,
         )
 
     /**
-     * Checks whether a blob exists in a Docker repository. Docker clients use this check before pushing a layer to avoid uploading content that is already present. Supply the repository components and the blob's content-addressable `digest`.
+     * Checks whether a blob exists in a Docker repository. Docker clients use this check before
+     * pushing a layer to avoid uploading content that is already present. Supply the repository
+     * components and the blob's content-addressable `digest`.
      */
-    fun headByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, digest: String, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.VcrHeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestOperation.headByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            digest,
-            options,
-        )
+    fun headByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        digest: String,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods
+            .VcrHeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestOperation
+            .headByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                digest,
+                options,
+            )
 
     /**
-     * Checks whether a blob exists in a Docker repository. Docker clients use this check before pushing a layer to avoid uploading content that is already present. Supply the repository components and the blob's content-addressable `digest`.
+     * Checks whether a blob exists in a Docker repository. Docker clients use this check before
+     * pushing a layer to avoid uploading content that is already present. Supply the repository
+     * components and the blob's content-addressable `digest`.
      */
-    fun headByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithRawResponse(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, digest: String, options: RequestOptions? = null): SdkResponse<Unit> =
-        dev.octri.showcase.vercel.methods.VcrHeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestOperation.headByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithRawResponse(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            digest,
-            options,
-        )
+    fun headByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithRawResponse(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        digest: String,
+        options: RequestOptions? = null,
+    ): SdkResponse<Unit> =
+        dev.octri.showcase.vercel.methods
+            .VcrHeadByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestOperation
+            .headByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithRawResponse(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                digest,
+                options,
+            )
 
     /**
-     * Downloads a blob from a Docker Registry repository by its content-addressable digest. Supply the team, project, repository, and digest as path components to identify the blob. The digest must use an algorithm followed by a colon and hexadecimal value.
+     * Downloads a blob from a Docker Registry repository by its content-addressable digest. Supply
+     * the team, project, repository, and digest as path components to identify the blob. The digest
+     * must use an algorithm followed by a colon and hexadecimal value.
      */
-    fun getByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, digest: String, options: RequestOptions? = null): Any =
-        dev.octri.showcase.vercel.methods.VcrGetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestOperation.getByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            digest,
-            options,
-        )
+    fun getByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        digest: String,
+        options: RequestOptions? = null,
+    ): Any =
+        dev.octri.showcase.vercel.methods
+            .VcrGetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestOperation
+            .getByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                digest,
+                options,
+            )
 
     /**
-     * Downloads a blob from a Docker Registry repository by its content-addressable digest. Supply the team, project, repository, and digest as path components to identify the blob. The digest must use an algorithm followed by a colon and hexadecimal value.
+     * Downloads a blob from a Docker Registry repository by its content-addressable digest. Supply
+     * the team, project, repository, and digest as path components to identify the blob. The digest
+     * must use an algorithm followed by a colon and hexadecimal value.
      */
-    fun getByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithRawResponse(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, digest: String, options: RequestOptions? = null): SdkResponse<Any> =
-        dev.octri.showcase.vercel.methods.VcrGetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestOperation.getByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithRawResponse(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            digest,
-            options,
-        )
+    fun getByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithRawResponse(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        digest: String,
+        options: RequestOptions? = null,
+    ): SdkResponse<Any> =
+        dev.octri.showcase.vercel.methods
+            .VcrGetByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestOperation
+            .getByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithRawResponse(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                digest,
+                options,
+            )
 
     /**
-     * Rejects attempts to delete a blob from a Docker Registry repository because blob deletion is intentionally unsupported. Use the team, project, repository, and digest path components to identify the blob involved in the request. The operation follows the behavior of most public registries.
+     * Rejects attempts to delete a blob from a Docker Registry repository because blob deletion is
+     * intentionally unsupported. Use the team, project, repository, and digest path components to
+     * identify the blob involved in the request. The operation follows the behavior of most public
+     * registries.
      */
-    fun deleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, digest: String, options: RequestOptions? = null): Any =
-        dev.octri.showcase.vercel.methods.VcrDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestOperation.deleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            digest,
-            options,
-        )
+    fun deleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        digest: String,
+        options: RequestOptions? = null,
+    ): Any =
+        dev.octri.showcase.vercel.methods
+            .VcrDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestOperation
+            .deleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                digest,
+                options,
+            )
 
     /**
-     * Rejects attempts to delete a blob from a Docker Registry repository because blob deletion is intentionally unsupported. Use the team, project, repository, and digest path components to identify the blob involved in the request. The operation follows the behavior of most public registries.
+     * Rejects attempts to delete a blob from a Docker Registry repository because blob deletion is
+     * intentionally unsupported. Use the team, project, repository, and digest path components to
+     * identify the blob involved in the request. The operation follows the behavior of most public
+     * registries.
      */
-    fun deleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithRawResponse(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, digest: String, options: RequestOptions? = null): SdkResponse<Any> =
-        dev.octri.showcase.vercel.methods.VcrDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestOperation.deleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithRawResponse(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            digest,
-            options,
-        )
+    fun deleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithRawResponse(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        digest: String,
+        options: RequestOptions? = null,
+    ): SdkResponse<Any> =
+        dev.octri.showcase.vercel.methods
+            .VcrDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestOperation
+            .deleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigestWithRawResponse(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                digest,
+                options,
+            )
 
     /**
-     * Retrieves the status of an in-progress blob upload in a Docker repository. Use this operation to check an upload session before resuming a partial upload after an interruption. Supply the repository components and the session's `uuid`.
+     * Retrieves the status of an in-progress blob upload in a Docker repository. Use this operation
+     * to check an upload session before resuming a partial upload after an interruption. Supply the
+     * repository components and the session's `uuid`.
      */
-    fun getByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, uuid: String, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.VcrGetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidOperation.getByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            uuid,
-            options,
-        )
+    fun getByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        uuid: String,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods
+            .VcrGetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidOperation
+            .getByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                uuid,
+                options,
+            )
 
     /**
-     * Retrieves the status of an in-progress blob upload in a Docker repository. Use this operation to check an upload session before resuming a partial upload after an interruption. Supply the repository components and the session's `uuid`.
+     * Retrieves the status of an in-progress blob upload in a Docker repository. Use this operation
+     * to check an upload session before resuming a partial upload after an interruption. Supply the
+     * repository components and the session's `uuid`.
      */
-    fun getByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithRawResponse(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, uuid: String, options: RequestOptions? = null): SdkResponse<Unit> =
-        dev.octri.showcase.vercel.methods.VcrGetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidOperation.getByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithRawResponse(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            uuid,
-            options,
-        )
+    fun getByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithRawResponse(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        uuid: String,
+        options: RequestOptions? = null,
+    ): SdkResponse<Unit> =
+        dev.octri.showcase.vercel.methods
+            .VcrGetByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidOperation
+            .getByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithRawResponse(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                uuid,
+                options,
+            )
 
     /**
-     * Deletes an in-progress blob upload from a Docker repository and discards its session. Use this operation to cancel an upload; it also aborts the underlying multipart upload if one was started. Supply the repository components and upload session `uuid`.
+     * Deletes an in-progress blob upload from a Docker repository and discards its session. Use
+     * this operation to cancel an upload; it also aborts the underlying multipart upload if one was
+     * started. Supply the repository components and upload session `uuid`.
      */
-    fun deleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, uuid: String, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.VcrDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsBXdc77e9d42d.deleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            uuid,
-            options,
-        )
+    fun deleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        uuid: String,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods
+            .VcrDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsBXdc77e9d42d
+            .deleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                uuid,
+                options,
+            )
 
     /**
-     * Deletes an in-progress blob upload from a Docker repository and discards its session. Use this operation to cancel an upload; it also aborts the underlying multipart upload if one was started. Supply the repository components and upload session `uuid`.
+     * Deletes an in-progress blob upload from a Docker repository and discards its session. Use
+     * this operation to cancel an upload; it also aborts the underlying multipart upload if one was
+     * started. Supply the repository components and upload session `uuid`.
      */
-    fun deleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithRawResponse(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, uuid: String, options: RequestOptions? = null): SdkResponse<Unit> =
-        dev.octri.showcase.vercel.methods.VcrDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsBXdc77e9d42d.deleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithRawResponse(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            uuid,
-            options,
-        )
+    fun deleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithRawResponse(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        uuid: String,
+        options: RequestOptions? = null,
+    ): SdkResponse<Unit> =
+        dev.octri.showcase.vercel.methods
+            .VcrDeleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsBXdc77e9d42d
+            .deleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithRawResponse(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                uuid,
+                options,
+            )
 
     /**
-     * Uploads a chunk of blob data to an in-progress Docker repository upload. The chunk is streamed to storage and hashed incrementally, so you can call this operation multiple times for a chunked upload. Supply the repository components and upload session `uuid`.
+     * Uploads a chunk of blob data to an in-progress Docker repository upload. The chunk is
+     * streamed to storage and hashed incrementally, so you can call this operation multiple times
+     * for a chunked upload. Supply the repository components and upload session `uuid`.
      */
-    fun updateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, uuid: String, options: RequestOptions? = null): Any =
-        dev.octri.showcase.vercel.methods.VcrUpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsBX0060b9eb7a.updateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            uuid,
-            options,
-        )
+    fun updateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        uuid: String,
+        options: RequestOptions? = null,
+    ): Any =
+        dev.octri.showcase.vercel.methods
+            .VcrUpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsBX0060b9eb7a
+            .updateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                uuid,
+                options,
+            )
 
     /**
-     * Uploads a chunk of blob data to an in-progress Docker repository upload. The chunk is streamed to storage and hashed incrementally, so you can call this operation multiple times for a chunked upload. Supply the repository components and upload session `uuid`.
+     * Uploads a chunk of blob data to an in-progress Docker repository upload. The chunk is
+     * streamed to storage and hashed incrementally, so you can call this operation multiple times
+     * for a chunked upload. Supply the repository components and upload session `uuid`.
      */
-    fun updateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithRawResponse(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, uuid: String, options: RequestOptions? = null): SdkResponse<Any> =
-        dev.octri.showcase.vercel.methods.VcrUpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsBX0060b9eb7a.updateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithRawResponse(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            uuid,
-            options,
-        )
+    fun updateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithRawResponse(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        uuid: String,
+        options: RequestOptions? = null,
+    ): SdkResponse<Any> =
+        dev.octri.showcase.vercel.methods
+            .VcrUpdateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsBX0060b9eb7a
+            .updateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithRawResponse(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                uuid,
+                options,
+            )
 
     /**
-     * Completes a blob upload to a Docker repository. Include the final data chunk in the request body for a monolithic upload, or omit it to finalize a previously uploaded chunked blob. Supply the upload session `uuid` and the blob's `digest`.
+     * Completes a blob upload to a Docker repository. Include the final data chunk in the request
+     * body for a monolithic upload, or omit it to finalize a previously uploaded chunked blob.
+     * Supply the upload session `uuid` and the blob's `digest`.
      */
-    fun replaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, uuid: String, digest: String, options: RequestOptions? = null): Any =
-        dev.octri.showcase.vercel.methods.VcrReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsX262027e6ae.replaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            uuid,
-            digest,
-            options,
-        )
+    fun replaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        uuid: String,
+        digest: String,
+        options: RequestOptions? = null,
+    ): Any =
+        dev.octri.showcase.vercel.methods
+            .VcrReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsX262027e6ae
+            .replaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                uuid,
+                digest,
+                options,
+            )
 
     /**
-     * Completes a blob upload to a Docker repository. Include the final data chunk in the request body for a monolithic upload, or omit it to finalize a previously uploaded chunked blob. Supply the upload session `uuid` and the blob's `digest`.
+     * Completes a blob upload to a Docker repository. Include the final data chunk in the request
+     * body for a monolithic upload, or omit it to finalize a previously uploaded chunked blob.
+     * Supply the upload session `uuid` and the blob's `digest`.
      */
-    fun replaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithRawResponse(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, uuid: String, digest: String, options: RequestOptions? = null): SdkResponse<Any> =
-        dev.octri.showcase.vercel.methods.VcrReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsX262027e6ae.replaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithRawResponse(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            uuid,
-            digest,
-            options,
-        )
+    fun replaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithRawResponse(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        uuid: String,
+        digest: String,
+        options: RequestOptions? = null,
+    ): SdkResponse<Any> =
+        dev.octri.showcase.vercel.methods
+            .VcrReplaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsX262027e6ae
+            .replaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuidWithRawResponse(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                uuid,
+                digest,
+                options,
+            )
 
     /**
-     * Starts a blob upload to a Docker repository. Use the optional `mount` and `from` query parameters to request mounting a blob from another repository; otherwise, the operation initiates an upload session. Use the UUID in the response's `Location` header for subsequent chunk upload and completion requests.
+     * Starts a blob upload to a Docker repository. Use the optional `mount` and `from` query
+     * parameters to request mounting a blob from another repository; otherwise, the operation
+     * initiates an upload session. Use the UUID in the response's `Location` header for subsequent
+     * chunk upload and completion requests.
      */
-    fun createByTeamSlugByProjectSlugByRepositoryNameBlobsUploads(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, mount: String? = null, from: String? = null, options: RequestOptions? = null): Any =
-        dev.octri.showcase.vercel.methods.VcrCreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsOperation.createByTeamSlugByProjectSlugByRepositoryNameBlobsUploads(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            mount,
-            from,
-            options,
-        )
+    fun createByTeamSlugByProjectSlugByRepositoryNameBlobsUploads(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        mount: String? = null,
+        from: String? = null,
+        options: RequestOptions? = null,
+    ): Any =
+        dev.octri.showcase.vercel.methods
+            .VcrCreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsOperation
+            .createByTeamSlugByProjectSlugByRepositoryNameBlobsUploads(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                mount,
+                from,
+                options,
+            )
 
     /**
-     * Starts a blob upload to a Docker repository. Use the optional `mount` and `from` query parameters to request mounting a blob from another repository; otherwise, the operation initiates an upload session. Use the UUID in the response's `Location` header for subsequent chunk upload and completion requests.
+     * Starts a blob upload to a Docker repository. Use the optional `mount` and `from` query
+     * parameters to request mounting a blob from another repository; otherwise, the operation
+     * initiates an upload session. Use the UUID in the response's `Location` header for subsequent
+     * chunk upload and completion requests.
      */
-    fun createByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsWithRawResponse(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, mount: String? = null, from: String? = null, options: RequestOptions? = null): SdkResponse<Any> =
-        dev.octri.showcase.vercel.methods.VcrCreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsOperation.createByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsWithRawResponse(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            mount,
-            from,
-            options,
-        )
+    fun createByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsWithRawResponse(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        mount: String? = null,
+        from: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<Any> =
+        dev.octri.showcase.vercel.methods
+            .VcrCreateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsOperation
+            .createByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsWithRawResponse(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                mount,
+                from,
+                options,
+            )
 
     /**
-     * Uploads an image manifest to a Docker repository and associates it with the specified tag or digest reference. Use this operation to push a manifest after uploading its referenced blobs. The server computes the manifest digest and returns it in the `Docker-Content-Digest` header.
+     * Uploads an image manifest to a Docker repository and associates it with the specified tag or
+     * digest reference. Use this operation to push a manifest after uploading its referenced blobs.
+     * The server computes the manifest digest and returns it in the `Docker-Content-Digest` header.
      */
-    fun replaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, reference: String, options: RequestOptions? = null): Any =
-        dev.octri.showcase.vercel.methods.VcrReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByRX89448400af.replaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            reference,
-            options,
-        )
+    fun replaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        reference: String,
+        options: RequestOptions? = null,
+    ): Any =
+        dev.octri.showcase.vercel.methods
+            .VcrReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByRX89448400af
+            .replaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                reference,
+                options,
+            )
 
     /**
-     * Uploads an image manifest to a Docker repository and associates it with the specified tag or digest reference. Use this operation to push a manifest after uploading its referenced blobs. The server computes the manifest digest and returns it in the `Docker-Content-Digest` header.
+     * Uploads an image manifest to a Docker repository and associates it with the specified tag or
+     * digest reference. Use this operation to push a manifest after uploading its referenced blobs.
+     * The server computes the manifest digest and returns it in the `Docker-Content-Digest` header.
      */
-    fun replaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithRawResponse(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, reference: String, options: RequestOptions? = null): SdkResponse<Any> =
-        dev.octri.showcase.vercel.methods.VcrReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByRX89448400af.replaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithRawResponse(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            reference,
-            options,
-        )
+    fun replaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithRawResponse(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        reference: String,
+        options: RequestOptions? = null,
+    ): SdkResponse<Any> =
+        dev.octri.showcase.vercel.methods
+            .VcrReplaceByTeamSlugByProjectSlugByRepositoryNameManifestsByRX89448400af
+            .replaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithRawResponse(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                reference,
+                options,
+            )
 
     /**
-     * Checks whether a manifest exists in a Docker repository by its tag or digest reference. Docker clients use this check during a push to determine whether the manifest or a referenced config blob is already present. Supply the repository components and a valid `reference`.
+     * Checks whether a manifest exists in a Docker repository by its tag or digest reference.
+     * Docker clients use this check during a push to determine whether the manifest or a referenced
+     * config blob is already present. Supply the repository components and a valid `reference`.
      */
-    fun headByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, reference: String, options: RequestOptions? = null): Unit =
-        dev.octri.showcase.vercel.methods.VcrHeadByTeamSlugByProjectSlugByRepositoryNameManifestsByRefeX05ff18007c.headByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            reference,
-            options,
-        )
+    fun headByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        reference: String,
+        options: RequestOptions? = null,
+    ): Unit =
+        dev.octri.showcase.vercel.methods
+            .VcrHeadByTeamSlugByProjectSlugByRepositoryNameManifestsByRefeX05ff18007c
+            .headByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                reference,
+                options,
+            )
 
     /**
-     * Checks whether a manifest exists in a Docker repository by its tag or digest reference. Docker clients use this check during a push to determine whether the manifest or a referenced config blob is already present. Supply the repository components and a valid `reference`.
+     * Checks whether a manifest exists in a Docker repository by its tag or digest reference.
+     * Docker clients use this check during a push to determine whether the manifest or a referenced
+     * config blob is already present. Supply the repository components and a valid `reference`.
      */
-    fun headByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithRawResponse(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, reference: String, options: RequestOptions? = null): SdkResponse<Unit> =
-        dev.octri.showcase.vercel.methods.VcrHeadByTeamSlugByProjectSlugByRepositoryNameManifestsByRefeX05ff18007c.headByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithRawResponse(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            reference,
-            options,
-        )
+    fun headByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithRawResponse(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        reference: String,
+        options: RequestOptions? = null,
+    ): SdkResponse<Unit> =
+        dev.octri.showcase.vercel.methods
+            .VcrHeadByTeamSlugByProjectSlugByRepositoryNameManifestsByRefeX05ff18007c
+            .headByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithRawResponse(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                reference,
+                options,
+            )
 
     /**
-     * Retrieves an image manifest from a Docker repository using its tag or digest as the reference. Use this operation when you need to fetch the manifest associated with a repository reference. Supply a valid `reference` along with the repository components.
+     * Retrieves an image manifest from a Docker repository using its tag or digest as the
+     * reference. Use this operation when you need to fetch the manifest associated with a
+     * repository reference. Supply a valid `reference` along with the repository components.
      */
-    fun getByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, reference: String, options: RequestOptions? = null): Any =
-        dev.octri.showcase.vercel.methods.VcrGetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferX40ebc5cb22.getByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            reference,
-            options,
-        )
+    fun getByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        reference: String,
+        options: RequestOptions? = null,
+    ): Any =
+        dev.octri.showcase.vercel.methods
+            .VcrGetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferX40ebc5cb22
+            .getByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                reference,
+                options,
+            )
 
     /**
-     * Retrieves an image manifest from a Docker repository using its tag or digest as the reference. Use this operation when you need to fetch the manifest associated with a repository reference. Supply a valid `reference` along with the repository components.
+     * Retrieves an image manifest from a Docker repository using its tag or digest as the
+     * reference. Use this operation when you need to fetch the manifest associated with a
+     * repository reference. Supply a valid `reference` along with the repository components.
      */
-    fun getByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithRawResponse(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, reference: String, options: RequestOptions? = null): SdkResponse<Any> =
-        dev.octri.showcase.vercel.methods.VcrGetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferX40ebc5cb22.getByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithRawResponse(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            reference,
-            options,
-        )
+    fun getByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithRawResponse(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        reference: String,
+        options: RequestOptions? = null,
+    ): SdkResponse<Any> =
+        dev.octri.showcase.vercel.methods
+            .VcrGetByTeamSlugByProjectSlugByRepositoryNameManifestsByReferX40ebc5cb22
+            .getByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithRawResponse(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                reference,
+                options,
+            )
 
     /**
-     * Deletes an image manifest from a Docker repository by its content-addressable digest. Use this operation to remove a manifest by digest rather than by tag. Supply the repository components and a digest-form `reference`.
+     * Deletes an image manifest from a Docker repository by its content-addressable digest. Use
+     * this operation to remove a manifest by digest rather than by tag. Supply the repository
+     * components and a digest-form `reference`.
      */
-    fun deleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, reference: String, options: RequestOptions? = null): Any =
-        dev.octri.showcase.vercel.methods.VcrDeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReXee84afc947.deleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            reference,
-            options,
-        )
+    fun deleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        reference: String,
+        options: RequestOptions? = null,
+    ): Any =
+        dev.octri.showcase.vercel.methods
+            .VcrDeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReXee84afc947
+            .deleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                reference,
+                options,
+            )
 
     /**
-     * Deletes an image manifest from a Docker repository by its content-addressable digest. Use this operation to remove a manifest by digest rather than by tag. Supply the repository components and a digest-form `reference`.
+     * Deletes an image manifest from a Docker repository by its content-addressable digest. Use
+     * this operation to remove a manifest by digest rather than by tag. Supply the repository
+     * components and a digest-form `reference`.
      */
-    fun deleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithRawResponse(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, reference: String, options: RequestOptions? = null): SdkResponse<Any> =
-        dev.octri.showcase.vercel.methods.VcrDeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReXee84afc947.deleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithRawResponse(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            reference,
-            options,
-        )
+    fun deleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithRawResponse(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        reference: String,
+        options: RequestOptions? = null,
+    ): SdkResponse<Any> =
+        dev.octri.showcase.vercel.methods
+            .VcrDeleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReXee84afc947
+            .deleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReferenceWithRawResponse(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                reference,
+                options,
+            )
 
     /**
-     * Lists image tags in a Docker repository. Use `teamSlug`, `projectSlug`, and `repositoryName` to identify the repository, and `n` to control the page size. Pass the opaque cursor from a previous response's `Link` header in `last` to continue listing.
+     * Lists image tags in a Docker repository. Use `teamSlug`, `projectSlug`, and `repositoryName`
+     * to identify the repository, and `n` to control the page size. Pass the opaque cursor from a
+     * previous response's `Link` header in `last` to continue listing.
      */
-    fun getByTeamSlugByProjectSlugByRepositoryNameTagsList(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, n: Long? = null, last: String? = null, options: RequestOptions? = null): GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse =
-        dev.octri.showcase.vercel.methods.VcrGetByTeamSlugByProjectSlugByRepositoryNameTagsListOperation.getByTeamSlugByProjectSlugByRepositoryNameTagsList(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            n,
-            last,
-            options,
-        )
+    fun getByTeamSlugByProjectSlugByRepositoryNameTagsList(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        n: Long? = null,
+        last: String? = null,
+        options: RequestOptions? = null,
+    ): GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse =
+        dev.octri.showcase.vercel.methods
+            .VcrGetByTeamSlugByProjectSlugByRepositoryNameTagsListOperation
+            .getByTeamSlugByProjectSlugByRepositoryNameTagsList(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                n,
+                last,
+                options,
+            )
 
     /**
-     * Lists image tags in a Docker repository. Use `teamSlug`, `projectSlug`, and `repositoryName` to identify the repository, and `n` to control the page size. Pass the opaque cursor from a previous response's `Link` header in `last` to continue listing.
+     * Lists image tags in a Docker repository. Use `teamSlug`, `projectSlug`, and `repositoryName`
+     * to identify the repository, and `n` to control the page size. Pass the opaque cursor from a
+     * previous response's `Link` header in `last` to continue listing.
      */
-    fun getByTeamSlugByProjectSlugByRepositoryNameTagsListWithRawResponse(clientConfig: ClientConfig, teamSlug: String, projectSlug: String, repositoryName: String, n: Long? = null, last: String? = null, options: RequestOptions? = null): SdkResponse<GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse> =
-        dev.octri.showcase.vercel.methods.VcrGetByTeamSlugByProjectSlugByRepositoryNameTagsListOperation.getByTeamSlugByProjectSlugByRepositoryNameTagsListWithRawResponse(
-            clientConfig,
-            teamSlug,
-            projectSlug,
-            repositoryName,
-            n,
-            last,
-            options,
-        )
+    fun getByTeamSlugByProjectSlugByRepositoryNameTagsListWithRawResponse(
+        clientConfig: ClientConfig,
+        teamSlug: String,
+        projectSlug: String,
+        repositoryName: String,
+        n: Long? = null,
+        last: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetByTeamSlugByProjectSlugByRepositoryNameTagsListResponse> =
+        dev.octri.showcase.vercel.methods
+            .VcrGetByTeamSlugByProjectSlugByRepositoryNameTagsListOperation
+            .getByTeamSlugByProjectSlugByRepositoryNameTagsListWithRawResponse(
+                clientConfig,
+                teamSlug,
+                projectSlug,
+                repositoryName,
+                n,
+                last,
+                options,
+            )
 }

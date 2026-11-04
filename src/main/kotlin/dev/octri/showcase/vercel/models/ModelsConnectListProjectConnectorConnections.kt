@@ -5,16 +5,10 @@ package dev.octri.showcase.vercel.models
 
 import dev.octri.showcase.vercel.SdkResource
 
-/**
- * Page of connectors connected to a project.
- */
+/** Page of connectors connected to a project. */
 data class ConnectProjectConnectorConnectionList(
-    /**
-     * Connector connections in this page.
-     */
+    /** Connector connections in this page. */
     val connectors: List<ConnectProjectConnection>,
-    /**
-     * Cursor for the next page.
-     */
-    val pagination: ConnectPagination
+    /** Cursor for the next page. */
+    val pagination: ConnectPagination,
 ) : SdkResource()

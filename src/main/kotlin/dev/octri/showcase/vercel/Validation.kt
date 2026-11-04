@@ -3,13 +3,11 @@
 
 package dev.octri.showcase.vercel
 
+import java.net.URI
 import java.time.OffsetDateTime
 import java.time.format.DateTimeParseException
-import java.net.URI
 
-/**
- * Canonical validation helpers. Each throws [SdkValidationError] on failure.
- */
+/** Canonical validation helpers. Each throws [SdkValidationError] on failure. */
 object Validation {
 
     private const val MAX_WIRE_YEAR = 9999
@@ -21,8 +19,11 @@ object Validation {
         // its JSON-tagged value).
         val s = value.toString()
         if (allowed.any { it?.toString() == s }) return
-        throw SdkValidationError(field, "enum",
-            "Validation failed for '$field': must be one of ${allowed.joinToString(", ")}")
+        throw SdkValidationError(
+            field,
+            "enum",
+            "Validation failed for '$field': must be one of ${allowed.joinToString(", ")}",
+        )
     }
 
     fun validateEnumItems(field: String, value: List<Any?>, allowed: List<Any?>) {
@@ -61,39 +62,83 @@ object Validation {
 
     fun validateLength(field: String, value: String, opts: LengthOpts) {
         val n = value.length
-        opts.min?.let { if (n < it) throw SdkValidationError(field, "length",
-            "Validation failed for '$field': length must be >= $it") }
-        opts.max?.let { if (n > it) throw SdkValidationError(field, "length",
-            "Validation failed for '$field': length must be <= $it") }
+        opts.min?.let {
+            if (n < it)
+                throw SdkValidationError(
+                    field,
+                    "length",
+                    "Validation failed for '$field': length must be >= $it",
+                )
+        }
+        opts.max?.let {
+            if (n > it)
+                throw SdkValidationError(
+                    field,
+                    "length",
+                    "Validation failed for '$field': length must be <= $it",
+                )
+        }
     }
 
     fun validateLength(field: String, value: ByteArray, opts: LengthOpts) {
         val n = value.size
-        opts.min?.let { if (n < it) throw SdkValidationError(field, "length",
-            "Validation failed for '$field': length must be >= $it") }
-        opts.max?.let { if (n > it) throw SdkValidationError(field, "length",
-            "Validation failed for '$field': length must be <= $it") }
+        opts.min?.let {
+            if (n < it)
+                throw SdkValidationError(
+                    field,
+                    "length",
+                    "Validation failed for '$field': length must be >= $it",
+                )
+        }
+        opts.max?.let {
+            if (n > it)
+                throw SdkValidationError(
+                    field,
+                    "length",
+                    "Validation failed for '$field': length must be <= $it",
+                )
+        }
     }
 
     fun validateItems(field: String, value: Collection<*>, opts: LengthOpts) {
         val n = value.size
-        opts.min?.let { if (n < it) throw SdkValidationError(field, "items",
-            "Validation failed for '$field': must have at least $it items") }
-        opts.max?.let { if (n > it) throw SdkValidationError(field, "items",
-            "Validation failed for '$field': must have at most $it items") }
+        opts.min?.let {
+            if (n < it)
+                throw SdkValidationError(
+                    field,
+                    "items",
+                    "Validation failed for '$field': must have at least $it items",
+                )
+        }
+        opts.max?.let {
+            if (n > it)
+                throw SdkValidationError(
+                    field,
+                    "items",
+                    "Validation failed for '$field': must have at most $it items",
+                )
+        }
     }
 
     fun validatePattern(field: String, value: String, pattern: String) {
         if (!Regex(pattern).containsMatchIn(value)) {
-            throw SdkValidationError(field, "pattern",
-                "Validation failed for '$field': must match pattern $pattern")
+            throw SdkValidationError(
+                field,
+                "pattern",
+                "Validation failed for '$field': must match pattern $pattern",
+            )
         }
     }
 
     private val EMAIL_RE = Regex("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$")
+
     fun validateEmail(field: String, value: String) {
-        if (!EMAIL_RE.matches(value)) throw SdkValidationError(field, "format:email",
-            "Validation failed for '$field': must be a valid email address")
+        if (!EMAIL_RE.matches(value))
+            throw SdkValidationError(
+                field,
+                "format:email",
+                "Validation failed for '$field': must be a valid email address",
+            )
     }
 
     fun validateUri(field: String, value: String) {
@@ -104,22 +149,33 @@ object Validation {
                 throw IllegalArgumentException("URI must include a scheme")
             }
         } catch (_: Exception) {
-            throw SdkValidationError(field, "format:uri",
-                "Validation failed for '$field': must be a valid URI")
+            throw SdkValidationError(
+                field,
+                "format:uri",
+                "Validation failed for '$field': must be a valid URI",
+            )
         }
     }
 
     fun validateDateTime(field: String, value: String) {
-        try { OffsetDateTime.parse(value) } catch (_: DateTimeParseException) {
-            throw SdkValidationError(field, "format:date-time",
-                "Validation failed for '$field': must be a valid ISO 8601 date-time")
-        }
-    }
-    fun validateDateTime(field: String, value: OffsetDateTime) {
-        if (value.year !in 0..MAX_WIRE_YEAR) {
-            throw SdkValidationError(field, "format:date-time",
-                "Validation failed for '$field': must be a valid ISO 8601 date-time")
+        try {
+            OffsetDateTime.parse(value)
+        } catch (_: DateTimeParseException) {
+            throw SdkValidationError(
+                field,
+                "format:date-time",
+                "Validation failed for '$field': must be a valid ISO 8601 date-time",
+            )
         }
     }
 
+    fun validateDateTime(field: String, value: OffsetDateTime) {
+        if (value.year !in 0..MAX_WIRE_YEAR) {
+            throw SdkValidationError(
+                field,
+                "format:date-time",
+                "Validation failed for '$field': must be a valid ISO 8601 date-time",
+            )
+        }
+    }
 }

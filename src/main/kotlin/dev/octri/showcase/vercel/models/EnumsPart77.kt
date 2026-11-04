@@ -3,51 +3,83 @@
 
 package dev.octri.showcase.vercel.models
 
-class UploadProjectAvatarResponseTrustedIpsVariant0ProtectionModeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseTrustedIpsVariant0ProtectionModeEnum && value == other.value
+class UploadProjectAvatarResponseTrustedIpsVariant0ProtectionModeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseTrustedIpsVariant0ProtectionModeEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val ADDITIONAL = UploadProjectAvatarResponseTrustedIpsVariant0ProtectionModeEnum("additional")
-        @JvmField val EXCLUSIVE = UploadProjectAvatarResponseTrustedIpsVariant0ProtectionModeEnum("exclusive")
+        @JvmField
+        val ADDITIONAL =
+            UploadProjectAvatarResponseTrustedIpsVariant0ProtectionModeEnum("additional")
+        @JvmField
+        val EXCLUSIVE = UploadProjectAvatarResponseTrustedIpsVariant0ProtectionModeEnum("exclusive")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UploadProjectAvatarResponseTrustedIpsVariant0ProtectionModeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            UploadProjectAvatarResponseTrustedIpsVariant0ProtectionModeEnum(value)
     }
 }
 
-class UploadProjectAvatarResponseTrustedIpsVariant1DeploymentTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UploadProjectAvatarResponseTrustedIpsVariant1DeploymentTypeEnum && value == other.value
+class UploadProjectAvatarResponseTrustedIpsVariant1DeploymentTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UploadProjectAvatarResponseTrustedIpsVariant1DeploymentTypeEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val ALL = UploadProjectAvatarResponseTrustedIpsVariant1DeploymentTypeEnum("all")
-        @JvmField val ALL_EXCEPT_CUSTOM_DOMAINS = UploadProjectAvatarResponseTrustedIpsVariant1DeploymentTypeEnum("all_except_custom_domains")
-        @JvmField val PREVIEW = UploadProjectAvatarResponseTrustedIpsVariant1DeploymentTypeEnum("preview")
-        @JvmField val PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS = UploadProjectAvatarResponseTrustedIpsVariant1DeploymentTypeEnum("prod_deployment_urls_and_all_previews")
-        @JvmField val PRODUCTION = UploadProjectAvatarResponseTrustedIpsVariant1DeploymentTypeEnum("production")
+        @JvmField
+        val ALL_EXCEPT_CUSTOM_DOMAINS =
+            UploadProjectAvatarResponseTrustedIpsVariant1DeploymentTypeEnum(
+                "all_except_custom_domains"
+            )
+        @JvmField
+        val PREVIEW = UploadProjectAvatarResponseTrustedIpsVariant1DeploymentTypeEnum("preview")
+        @JvmField
+        val PROD_DEPLOYMENT_URLS_AND_ALL_PREVIEWS =
+            UploadProjectAvatarResponseTrustedIpsVariant1DeploymentTypeEnum(
+                "prod_deployment_urls_and_all_previews"
+            )
+        @JvmField
+        val PRODUCTION =
+            UploadProjectAvatarResponseTrustedIpsVariant1DeploymentTypeEnum("production")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UploadProjectAvatarResponseTrustedIpsVariant1DeploymentTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            UploadProjectAvatarResponseTrustedIpsVariant1DeploymentTypeEnum(value)
     }
 }
 
 /**
- * The categories that group this event with related event types. An event can belong to multiple categories (e.g. a firewall event is both Firewall and Security). The first entry is the "primary" category. Use the `/events/types` endpoint to discover the full list of categories.
+ * The categories that group this event with related event types. An event can belong to multiple
+ * categories (e.g. a firewall event is both Firewall and Security). The first entry is the
+ * "primary" category. Use the `/events/types` endpoint to discover the full list of categories.
  */
-class UserEventCategoriesItemEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventCategoriesItemEnum && value == other.value
+class UserEventCategoriesItemEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventCategoriesItemEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -76,19 +108,22 @@ class UserEventCategoriesItemEnum private constructor(
         @JvmField val VERCEL_APP = UserEventCategoriesItemEnum("vercel-app")
         @JvmField val WORKFLOW = UserEventCategoriesItemEnum("workflow")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UserEventCategoriesItemEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = UserEventCategoriesItemEnum(value)
     }
 }
 
-/**
- * The type of entity.
- */
-class UserEventEntitiesItemTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UserEventEntitiesItemTypeEnum && value == other.value
+/** The type of entity. */
+class UserEventEntitiesItemTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UserEventEntitiesItemTypeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -117,7 +152,10 @@ class UserEventEntitiesItemTypeEnum private constructor(
         @JvmField val SYSTEM = UserEventEntitiesItemTypeEnum("system")
         @JvmField val TARGET = UserEventEntitiesItemTypeEnum("target")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UserEventEntitiesItemTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = UserEventEntitiesItemTypeEnum(value)
     }
 }

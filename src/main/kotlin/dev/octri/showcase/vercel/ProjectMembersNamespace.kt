@@ -3,66 +3,132 @@
 
 package dev.octri.showcase.vercel
 
-
 class ProjectMembersNamespace(private val clientConfig: ClientConfig) {
     /**
-     * Lists members of a project, with pagination and optional filtering by addition time or member details. Use `limit` to control the number of members returned and `search` to match names, usernames, or email addresses.
+     * Lists members of a project, with pagination and optional filtering by addition time or member
+     * details. Use `limit` to control the number of members returned and `search` to match names,
+     * usernames, or email addresses.
      *
      * Lists all members of a project.
      */
-    fun get(request: dev.octri.showcase.vercel.methods.ProjectMembers.GetProjectMembersRequest, options: RequestOptions? = null): Map<String, Any> {
-        return dev.octri.showcase.vercel.methods.ProjectMembers.getProjectMembers(clientConfig, request, options)
+    fun get(
+        request: dev.octri.showcase.vercel.methods.ProjectMembers.GetProjectMembersRequest,
+        options: RequestOptions? = null,
+    ): Map<String, Any> {
+        return dev.octri.showcase.vercel.methods.ProjectMembers.getProjectMembers(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Adds a member to a project with a specified project role. Identify the member by `uid`, `username`, or `email`, and choose one of the supported roles.
+     * Adds a member to a project with a specified project role. Identify the member by `uid`,
+     * `username`, or `email`, and choose one of the supported roles.
      *
      * Adds a new member to the project.
      */
-    fun add(request: dev.octri.showcase.vercel.methods.ProjectMembers.AddProjectMemberRequest, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.ProjectMembers.AddProjectMemberResponse {
-        return dev.octri.showcase.vercel.methods.ProjectMembers.addProjectMember(clientConfig, request, options)
+    fun add(
+        request: dev.octri.showcase.vercel.methods.ProjectMembers.AddProjectMemberRequest,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.ProjectMembers.AddProjectMemberResponse {
+        return dev.octri.showcase.vercel.methods.ProjectMembers.addProjectMember(
+            clientConfig,
+            request,
+            options,
+        )
     }
 
     /**
-     * Removes a member from a specific project. Use `idOrName` to identify the project and `uid` to identify the member to remove. The response includes the project identifier.
+     * Removes a member from a specific project. Use `idOrName` to identify the project and `uid` to
+     * identify the member to remove. The response includes the project identifier.
      *
      * Remove a member from a specific project
      */
-    fun remove(idOrName: String, uid: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): dev.octri.showcase.vercel.methods.ProjectMembers.RemoveProjectMemberResponse {
-        return dev.octri.showcase.vercel.methods.ProjectMembers.removeProjectMember(clientConfig, idOrName, uid, teamId, slug, options)
+    fun remove(
+        idOrName: String,
+        uid: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): dev.octri.showcase.vercel.methods.ProjectMembers.RemoveProjectMemberResponse {
+        return dev.octri.showcase.vercel.methods.ProjectMembers.removeProjectMember(
+            clientConfig,
+            idOrName,
+            uid,
+            teamId,
+            slug,
+            options,
+        )
     }
 
-    /** These operations, each returning its [SdkResponse] envelope: status code, headers, request ID and latency. */
+    /**
+     * These operations, each returning its [SdkResponse] envelope: status code, headers, request ID
+     * and latency.
+     */
     fun withRawResponse(): WithRawResponse = WithRawResponse(clientConfig)
 
-    /** The operations of [ProjectMembersNamespace], returning the [SdkResponse] envelope around each result. */
+    /**
+     * The operations of [ProjectMembersNamespace], returning the [SdkResponse] envelope around each
+     * result.
+     */
     class WithRawResponse internal constructor(private val clientConfig: ClientConfig) {
         /**
-         * Lists members of a project, with pagination and optional filtering by addition time or member details. Use `limit` to control the number of members returned and `search` to match names, usernames, or email addresses.
+         * Lists members of a project, with pagination and optional filtering by addition time or
+         * member details. Use `limit` to control the number of members returned and `search` to
+         * match names, usernames, or email addresses.
          *
          * Lists all members of a project.
          */
-        fun get(request: dev.octri.showcase.vercel.methods.ProjectMembers.GetProjectMembersRequest, options: RequestOptions? = null): SdkResponse<Map<String, Any>> {
-            return dev.octri.showcase.vercel.methods.ProjectMembers.getProjectMembersWithRawResponse(clientConfig, request, options)
+        fun get(
+            request: dev.octri.showcase.vercel.methods.ProjectMembers.GetProjectMembersRequest,
+            options: RequestOptions? = null,
+        ): SdkResponse<Map<String, Any>> {
+            return dev.octri.showcase.vercel.methods.ProjectMembers
+                .getProjectMembersWithRawResponse(clientConfig, request, options)
         }
 
         /**
-         * Adds a member to a project with a specified project role. Identify the member by `uid`, `username`, or `email`, and choose one of the supported roles.
+         * Adds a member to a project with a specified project role. Identify the member by `uid`,
+         * `username`, or `email`, and choose one of the supported roles.
          *
          * Adds a new member to the project.
          */
-        fun add(request: dev.octri.showcase.vercel.methods.ProjectMembers.AddProjectMemberRequest, options: RequestOptions? = null): SdkResponse<dev.octri.showcase.vercel.methods.ProjectMembers.AddProjectMemberResponse> {
-            return dev.octri.showcase.vercel.methods.ProjectMembers.addProjectMemberWithRawResponse(clientConfig, request, options)
+        fun add(
+            request: dev.octri.showcase.vercel.methods.ProjectMembers.AddProjectMemberRequest,
+            options: RequestOptions? = null,
+        ): SdkResponse<dev.octri.showcase.vercel.methods.ProjectMembers.AddProjectMemberResponse> {
+            return dev.octri.showcase.vercel.methods.ProjectMembers.addProjectMemberWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
         }
 
         /**
-         * Removes a member from a specific project. Use `idOrName` to identify the project and `uid` to identify the member to remove. The response includes the project identifier.
+         * Removes a member from a specific project. Use `idOrName` to identify the project and
+         * `uid` to identify the member to remove. The response includes the project identifier.
          *
          * Remove a member from a specific project
          */
-        fun remove(idOrName: String, uid: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<dev.octri.showcase.vercel.methods.ProjectMembers.RemoveProjectMemberResponse> {
-            return dev.octri.showcase.vercel.methods.ProjectMembers.removeProjectMemberWithRawResponse(clientConfig, idOrName, uid, teamId, slug, options)
+        fun remove(
+            idOrName: String,
+            uid: String,
+            teamId: String? = null,
+            slug: String? = null,
+            options: RequestOptions? = null,
+        ): SdkResponse<
+            dev.octri.showcase.vercel.methods.ProjectMembers.RemoveProjectMemberResponse
+        > {
+            return dev.octri.showcase.vercel.methods.ProjectMembers
+                .removeProjectMemberWithRawResponse(
+                    clientConfig,
+                    idOrName,
+                    uid,
+                    teamId,
+                    slug,
+                    options,
+                )
         }
-
     }
 }

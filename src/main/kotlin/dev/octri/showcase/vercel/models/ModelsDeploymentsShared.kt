@@ -3,10 +3,10 @@
 
 package dev.octri.showcase.vercel.models
 
-/**
- * Typed representation of the `FlagJSONValue` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = FlagJSONValue.Deserializer::class)
+/** Typed representation of the `FlagJSONValue` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = FlagJSONValue.Deserializer::class
+)
 sealed interface FlagJSONValue {
     /** Chooses the branch this payload is shaped like. */
     class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<FlagJSONValue>() {
@@ -17,25 +17,82 @@ sealed interface FlagJSONValue {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
             return when {
-                node.isTextual -> StringFlagJSONValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
-                node.isNumber -> DoubleFlagJSONValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Double>() {}))
-                node.isArray -> ListFlagJSONValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<List<FlagJSONValue?>>() {}))
-                node.isBoolean -> BooleanFlagJSONValue(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {}))
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, FlagJSONValue::class.java, "no FlagJSONValue branch accepts this payload")
+                node.isTextual ->
+                    StringFlagJSONValue(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
+                        )
+                    )
+                node.isNumber ->
+                    DoubleFlagJSONValue(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<Double>() {},
+                        )
+                    )
+                node.isArray ->
+                    ListFlagJSONValue(
+                        mapper.convertValue(
+                            node,
+                            object :
+                                com.fasterxml.jackson.core.type.TypeReference<
+                                    List<FlagJSONValue?>
+                                >() {},
+                        )
+                    )
+                node.isBoolean ->
+                    BooleanFlagJSONValue(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<Boolean>() {},
+                        )
+                    )
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        FlagJSONValue::class.java,
+                        "no FlagJSONValue branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class StringFlagJSONValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : FlagJSONValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class StringFlagJSONValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) :
+    FlagJSONValue
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class DoubleFlagJSONValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: Double) : FlagJSONValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class DoubleFlagJSONValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: Double) :
+    FlagJSONValue
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class ListFlagJSONValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: List<FlagJSONValue?>) : FlagJSONValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class ListFlagJSONValue(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: List<FlagJSONValue?>
+) : FlagJSONValue
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class BooleanFlagJSONValue(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) : FlagJSONValue
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class BooleanFlagJSONValue(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean
+) : FlagJSONValue

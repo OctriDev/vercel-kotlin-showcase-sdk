@@ -5,33 +5,39 @@ package dev.octri.showcase.vercel.models
 
 import dev.octri.showcase.vercel.SdkResource
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class AddRouteResponseRouteRouteDestinationVariant1(
     val service: String,
-    /**
-     * Routing-only path used to select a route inside the target service.
-     */
+    /** Routing-only path used to select a route inside the target service. */
     val path: String? = null,
     /**
-     * Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
+     * Optional explicit format marker. The destination is identified by the presence of `service`,
+     * so `type` is no longer required.
      */
-    val type: AddRouteResponseRouteRouteDestinationVariant1TypeEnum? = null
+    val type: AddRouteResponseRouteRouteDestinationVariant1TypeEnum? = null,
 ) : SdkResource(), AddRouteResponseRouteRouteDestination
 
-/**
- * Typed representation of the `AddRouteResponseRouteRouteDestination` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = AddRouteResponseRouteRouteDestination.Deserializer::class)
+/** Typed representation of the `AddRouteResponseRouteRouteDestination` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = AddRouteResponseRouteRouteDestination.Deserializer::class
+)
 sealed interface AddRouteResponseRouteRouteDestination {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<AddRouteResponseRouteRouteDestination>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<AddRouteResponseRouteRouteDestination>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): AddRouteResponseRouteRouteDestination {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out AddRouteResponseRouteRouteDestination>> = listOf(AddRouteResponseRouteRouteDestinationVariant1::class.java)
+            val objectTypes: List<Class<out AddRouteResponseRouteRouteDestination>> =
+                listOf(AddRouteResponseRouteRouteDestinationVariant1::class.java)
             for (objectType in objectTypes) {
                 try {
                     return mapper.convertValue(node, objectType)
@@ -40,16 +46,33 @@ sealed interface AddRouteResponseRouteRouteDestination {
                 }
             }
             return when {
-                node.isTextual -> StringAddRouteResponseRouteRouteDestination(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, AddRouteResponseRouteRouteDestination::class.java, "no AddRouteResponseRouteRouteDestination branch accepts this payload")
+                node.isTextual ->
+                    StringAddRouteResponseRouteRouteDestination(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
+                        )
+                    )
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        AddRouteResponseRouteRouteDestination::class.java,
+                        "no AddRouteResponseRouteRouteDestination branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class StringAddRouteResponseRouteRouteDestination(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : AddRouteResponseRouteRouteDestination
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class StringAddRouteResponseRouteRouteDestination(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
+) : AddRouteResponseRouteRouteDestination
 
 data class AddRouteResponseRouteRouteHasItemVariant0ValueVariant1(
     val eq: Any? = null,
@@ -62,13 +85,18 @@ data class AddRouteResponseRouteRouteHasItemVariant0ValueVariant1(
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null
+    val suf: String? = null,
 ) : SdkResource()
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class AddRouteResponseRouteRouteHasItemVariant0(
     val type: AddRouteResponseRouteRouteHasItemVariant0TypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
 ) : SdkResource(), AddRouteResponseRouteRouteHasItem
 
 data class AddRouteResponseRouteRouteHasItemVariant1ValueVariant1(
@@ -82,30 +110,40 @@ data class AddRouteResponseRouteRouteHasItemVariant1ValueVariant1(
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null
+    val suf: String? = null,
 ) : SdkResource()
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class AddRouteResponseRouteRouteHasItemVariant1(
     val key: String,
     val type: AddRouteResponseRouteRouteHasItemVariant1TypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
 ) : SdkResource(), AddRouteResponseRouteRouteHasItem
 
-/**
- * Typed representation of the `AddRouteResponseRouteRouteHasItem` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = AddRouteResponseRouteRouteHasItem.Deserializer::class)
+/** Typed representation of the `AddRouteResponseRouteRouteHasItem` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = AddRouteResponseRouteRouteHasItem.Deserializer::class
+)
 sealed interface AddRouteResponseRouteRouteHasItem {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<AddRouteResponseRouteRouteHasItem>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<AddRouteResponseRouteRouteHasItem>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): AddRouteResponseRouteRouteHasItem {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = AddRouteResponseRouteRouteHasItemOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                AddRouteResponseRouteRouteHasItemOwnedTypes.firstOrNull { (keys, _) ->
+                        keys.any(node::has)
+                    }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -113,19 +151,29 @@ sealed interface AddRouteResponseRouteRouteHasItem {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out AddRouteResponseRouteRouteHasItem>> = listOf(AddRouteResponseRouteRouteHasItemVariant0::class.java, AddRouteResponseRouteRouteHasItemVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out AddRouteResponseRouteRouteHasItem>> =
+                listOf(
+                    AddRouteResponseRouteRouteHasItemVariant0::class.java,
+                    AddRouteResponseRouteRouteHasItemVariant1::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, AddRouteResponseRouteRouteHasItem::class.java, "no AddRouteResponseRouteRouteHasItem branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        AddRouteResponseRouteRouteHasItem::class.java,
+                        "no AddRouteResponseRouteRouteHasItem branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val AddRouteResponseRouteRouteHasItemOwnedTypes: List<Pair<List<String>, Class<out AddRouteResponseRouteRouteHasItem>>> = listOf(
-    listOf("key") to AddRouteResponseRouteRouteHasItemVariant1::class.java,
-)
+internal val AddRouteResponseRouteRouteHasItemOwnedTypes:
+    List<Pair<List<String>, Class<out AddRouteResponseRouteRouteHasItem>>> =
+    listOf(listOf("key") to AddRouteResponseRouteRouteHasItemVariant1::class.java)
 
 data class AddRouteResponseRouteRouteMissingItemVariant0ValueVariant1(
     val eq: Any? = null,
@@ -138,13 +186,18 @@ data class AddRouteResponseRouteRouteMissingItemVariant0ValueVariant1(
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null
+    val suf: String? = null,
 ) : SdkResource()
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class AddRouteResponseRouteRouteMissingItemVariant0(
     val type: AddRouteResponseRouteRouteMissingItemVariant0TypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
 ) : SdkResource(), AddRouteResponseRouteRouteMissingItem
 
 data class AddRouteResponseRouteRouteMissingItemVariant1ValueVariant1(
@@ -158,30 +211,40 @@ data class AddRouteResponseRouteRouteMissingItemVariant1ValueVariant1(
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null
+    val suf: String? = null,
 ) : SdkResource()
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class AddRouteResponseRouteRouteMissingItemVariant1(
     val key: String,
     val type: AddRouteResponseRouteRouteMissingItemVariant1TypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
 ) : SdkResource(), AddRouteResponseRouteRouteMissingItem
 
-/**
- * Typed representation of the `AddRouteResponseRouteRouteMissingItem` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = AddRouteResponseRouteRouteMissingItem.Deserializer::class)
+/** Typed representation of the `AddRouteResponseRouteRouteMissingItem` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = AddRouteResponseRouteRouteMissingItem.Deserializer::class
+)
 sealed interface AddRouteResponseRouteRouteMissingItem {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<AddRouteResponseRouteRouteMissingItem>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<AddRouteResponseRouteRouteMissingItem>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): AddRouteResponseRouteRouteMissingItem {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = AddRouteResponseRouteRouteMissingItemOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                AddRouteResponseRouteRouteMissingItemOwnedTypes.firstOrNull { (keys, _) ->
+                        keys.any(node::has)
+                    }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -189,19 +252,29 @@ sealed interface AddRouteResponseRouteRouteMissingItem {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out AddRouteResponseRouteRouteMissingItem>> = listOf(AddRouteResponseRouteRouteMissingItemVariant0::class.java, AddRouteResponseRouteRouteMissingItemVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out AddRouteResponseRouteRouteMissingItem>> =
+                listOf(
+                    AddRouteResponseRouteRouteMissingItemVariant0::class.java,
+                    AddRouteResponseRouteRouteMissingItemVariant1::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, AddRouteResponseRouteRouteMissingItem::class.java, "no AddRouteResponseRouteRouteMissingItem branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        AddRouteResponseRouteRouteMissingItem::class.java,
+                        "no AddRouteResponseRouteRouteMissingItem branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val AddRouteResponseRouteRouteMissingItemOwnedTypes: List<Pair<List<String>, Class<out AddRouteResponseRouteRouteMissingItem>>> = listOf(
-    listOf("key") to AddRouteResponseRouteRouteMissingItemVariant1::class.java,
-)
+internal val AddRouteResponseRouteRouteMissingItemOwnedTypes:
+    List<Pair<List<String>, Class<out AddRouteResponseRouteRouteMissingItem>>> =
+    listOf(listOf("key") to AddRouteResponseRouteRouteMissingItemVariant1::class.java)
 
 data class AddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1(
     val eq: Any? = null,
@@ -213,44 +286,59 @@ data class AddRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1(
     val neq: String? = null,
     val ninc: List<String>? = null,
     val pre: String? = null,
-    val suf: String? = null
+    val suf: String? = null,
 ) : SdkResource()
 
-data class AddRouteResponseRouteRouteTransformsItemVariant0Target(
-    val key: Any
-) : SdkResource()
+data class AddRouteResponseRouteRouteTransformsItemVariant0Target(val key: Any) : SdkResource()
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class AddRouteResponseRouteRouteTransformsItemVariant0(
     val op: AddRouteResponseRouteRouteTransformsItemVariant0OpEnum,
     val target: AddRouteResponseRouteRouteTransformsItemVariant0Target,
     val type: AddRouteResponseRouteRouteTransformsItemVariant0TypeEnum,
     val args: Any? = null,
-    val env: List<String>? = null
+    val env: List<String>? = null,
 ) : SdkResource(), AddRouteResponseRouteRouteTransformsItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class AddRouteResponseRouteRouteTransformsItemVariant1(
     val args: String,
     val op: AddRouteResponseRouteRouteTransformsItemVariant1OpEnum,
     val type: AddRouteResponseRouteRouteTransformsItemVariant1TypeEnum,
-    val env: List<String>? = null
+    val env: List<String>? = null,
 ) : SdkResource(), AddRouteResponseRouteRouteTransformsItem
 
-/**
- * Typed representation of the `AddRouteResponseRouteRouteTransformsItem` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = AddRouteResponseRouteRouteTransformsItem.Deserializer::class)
+/** Typed representation of the `AddRouteResponseRouteRouteTransformsItem` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = AddRouteResponseRouteRouteTransformsItem.Deserializer::class
+)
 sealed interface AddRouteResponseRouteRouteTransformsItem {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<AddRouteResponseRouteRouteTransformsItem>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<
+            AddRouteResponseRouteRouteTransformsItem
+        >() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): AddRouteResponseRouteRouteTransformsItem {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = AddRouteResponseRouteRouteTransformsItemOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                AddRouteResponseRouteRouteTransformsItemOwnedTypes.firstOrNull { (keys, _) ->
+                        keys.any(node::has)
+                    }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -258,47 +346,63 @@ sealed interface AddRouteResponseRouteRouteTransformsItem {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out AddRouteResponseRouteRouteTransformsItem>> = listOf(AddRouteResponseRouteRouteTransformsItemVariant0::class.java, AddRouteResponseRouteRouteTransformsItemVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out AddRouteResponseRouteRouteTransformsItem>> =
+                listOf(
+                    AddRouteResponseRouteRouteTransformsItemVariant0::class.java,
+                    AddRouteResponseRouteRouteTransformsItemVariant1::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, AddRouteResponseRouteRouteTransformsItem::class.java, "no AddRouteResponseRouteRouteTransformsItem branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        AddRouteResponseRouteRouteTransformsItem::class.java,
+                        "no AddRouteResponseRouteRouteTransformsItem branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val AddRouteResponseRouteRouteTransformsItemOwnedTypes: List<Pair<List<String>, Class<out AddRouteResponseRouteRouteTransformsItem>>> = listOf(
-    listOf("target") to AddRouteResponseRouteRouteTransformsItemVariant0::class.java,
-)
+internal val AddRouteResponseRouteRouteTransformsItemOwnedTypes:
+    List<Pair<List<String>, Class<out AddRouteResponseRouteRouteTransformsItem>>> =
+    listOf(listOf("target") to AddRouteResponseRouteRouteTransformsItemVariant0::class.java)
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditRouteResponseRouteRouteDestinationVariant1(
     val service: String,
-    /**
-     * Routing-only path used to select a route inside the target service.
-     */
+    /** Routing-only path used to select a route inside the target service. */
     val path: String? = null,
     /**
-     * Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.
+     * Optional explicit format marker. The destination is identified by the presence of `service`,
+     * so `type` is no longer required.
      */
-    val type: EditRouteResponseRouteRouteDestinationVariant1TypeEnum? = null
+    val type: EditRouteResponseRouteRouteDestinationVariant1TypeEnum? = null,
 ) : SdkResource(), EditRouteResponseRouteRouteDestination
 
-/**
- * Typed representation of the `EditRouteResponseRouteRouteDestination` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = EditRouteResponseRouteRouteDestination.Deserializer::class)
+/** Typed representation of the `EditRouteResponseRouteRouteDestination` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = EditRouteResponseRouteRouteDestination.Deserializer::class
+)
 sealed interface EditRouteResponseRouteRouteDestination {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<EditRouteResponseRouteRouteDestination>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<EditRouteResponseRouteRouteDestination>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): EditRouteResponseRouteRouteDestination {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val objectTypes: List<Class<out EditRouteResponseRouteRouteDestination>> = listOf(EditRouteResponseRouteRouteDestinationVariant1::class.java)
+            val objectTypes: List<Class<out EditRouteResponseRouteRouteDestination>> =
+                listOf(EditRouteResponseRouteRouteDestinationVariant1::class.java)
             for (objectType in objectTypes) {
                 try {
                     return mapper.convertValue(node, objectType)
@@ -307,16 +411,33 @@ sealed interface EditRouteResponseRouteRouteDestination {
                 }
             }
             return when {
-                node.isTextual -> StringEditRouteResponseRouteRouteDestination(mapper.convertValue(node, object : com.fasterxml.jackson.core.type.TypeReference<String>() {}))
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, EditRouteResponseRouteRouteDestination::class.java, "no EditRouteResponseRouteRouteDestination branch accepts this payload")
+                node.isTextual ->
+                    StringEditRouteResponseRouteRouteDestination(
+                        mapper.convertValue(
+                            node,
+                            object : com.fasterxml.jackson.core.type.TypeReference<String>() {},
+                        )
+                    )
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        EditRouteResponseRouteRouteDestination::class.java,
+                        "no EditRouteResponseRouteRouteDestination branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
-data class StringEditRouteResponseRouteRouteDestination(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) : EditRouteResponseRouteRouteDestination
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
+data class StringEditRouteResponseRouteRouteDestination(
+    @get:com.fasterxml.jackson.annotation.JsonValue val value: String
+) : EditRouteResponseRouteRouteDestination
 
 data class EditRouteResponseRouteRouteHasItemVariant0ValueVariant1(
     val eq: Any? = null,
@@ -329,13 +450,18 @@ data class EditRouteResponseRouteRouteHasItemVariant0ValueVariant1(
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null
+    val suf: String? = null,
 ) : SdkResource()
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditRouteResponseRouteRouteHasItemVariant0(
     val type: EditRouteResponseRouteRouteHasItemVariant0TypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
 ) : SdkResource(), EditRouteResponseRouteRouteHasItem
 
 data class EditRouteResponseRouteRouteHasItemVariant1ValueVariant1(
@@ -349,30 +475,40 @@ data class EditRouteResponseRouteRouteHasItemVariant1ValueVariant1(
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null
+    val suf: String? = null,
 ) : SdkResource()
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditRouteResponseRouteRouteHasItemVariant1(
     val key: String,
     val type: EditRouteResponseRouteRouteHasItemVariant1TypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
 ) : SdkResource(), EditRouteResponseRouteRouteHasItem
 
-/**
- * Typed representation of the `EditRouteResponseRouteRouteHasItem` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = EditRouteResponseRouteRouteHasItem.Deserializer::class)
+/** Typed representation of the `EditRouteResponseRouteRouteHasItem` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = EditRouteResponseRouteRouteHasItem.Deserializer::class
+)
 sealed interface EditRouteResponseRouteRouteHasItem {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<EditRouteResponseRouteRouteHasItem>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<EditRouteResponseRouteRouteHasItem>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): EditRouteResponseRouteRouteHasItem {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = EditRouteResponseRouteRouteHasItemOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                EditRouteResponseRouteRouteHasItemOwnedTypes.firstOrNull { (keys, _) ->
+                        keys.any(node::has)
+                    }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -380,19 +516,29 @@ sealed interface EditRouteResponseRouteRouteHasItem {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out EditRouteResponseRouteRouteHasItem>> = listOf(EditRouteResponseRouteRouteHasItemVariant0::class.java, EditRouteResponseRouteRouteHasItemVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out EditRouteResponseRouteRouteHasItem>> =
+                listOf(
+                    EditRouteResponseRouteRouteHasItemVariant0::class.java,
+                    EditRouteResponseRouteRouteHasItemVariant1::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, EditRouteResponseRouteRouteHasItem::class.java, "no EditRouteResponseRouteRouteHasItem branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        EditRouteResponseRouteRouteHasItem::class.java,
+                        "no EditRouteResponseRouteRouteHasItem branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val EditRouteResponseRouteRouteHasItemOwnedTypes: List<Pair<List<String>, Class<out EditRouteResponseRouteRouteHasItem>>> = listOf(
-    listOf("key") to EditRouteResponseRouteRouteHasItemVariant1::class.java,
-)
+internal val EditRouteResponseRouteRouteHasItemOwnedTypes:
+    List<Pair<List<String>, Class<out EditRouteResponseRouteRouteHasItem>>> =
+    listOf(listOf("key") to EditRouteResponseRouteRouteHasItemVariant1::class.java)
 
 data class EditRouteResponseRouteRouteMissingItemVariant0ValueVariant1(
     val eq: Any? = null,
@@ -405,13 +551,18 @@ data class EditRouteResponseRouteRouteMissingItemVariant0ValueVariant1(
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null
+    val suf: String? = null,
 ) : SdkResource()
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditRouteResponseRouteRouteMissingItemVariant0(
     val type: EditRouteResponseRouteRouteMissingItemVariant0TypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any,
 ) : SdkResource(), EditRouteResponseRouteRouteMissingItem
 
 data class EditRouteResponseRouteRouteMissingItemVariant1ValueVariant1(
@@ -425,30 +576,40 @@ data class EditRouteResponseRouteRouteMissingItemVariant1ValueVariant1(
     val ninc: List<String>? = null,
     val pre: String? = null,
     val re: String? = null,
-    val suf: String? = null
+    val suf: String? = null,
 ) : SdkResource()
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditRouteResponseRouteRouteMissingItemVariant1(
     val key: String,
     val type: EditRouteResponseRouteRouteMissingItemVariant1TypeEnum,
-    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null
+    @com.fasterxml.jackson.annotation.JsonProperty("value") val `value`: Any? = null,
 ) : SdkResource(), EditRouteResponseRouteRouteMissingItem
 
-/**
- * Typed representation of the `EditRouteResponseRouteRouteMissingItem` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = EditRouteResponseRouteRouteMissingItem.Deserializer::class)
+/** Typed representation of the `EditRouteResponseRouteRouteMissingItem` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = EditRouteResponseRouteRouteMissingItem.Deserializer::class
+)
 sealed interface EditRouteResponseRouteRouteMissingItem {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<EditRouteResponseRouteRouteMissingItem>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<EditRouteResponseRouteRouteMissingItem>() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): EditRouteResponseRouteRouteMissingItem {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = EditRouteResponseRouteRouteMissingItemOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                EditRouteResponseRouteRouteMissingItemOwnedTypes.firstOrNull { (keys, _) ->
+                        keys.any(node::has)
+                    }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -456,19 +617,29 @@ sealed interface EditRouteResponseRouteRouteMissingItem {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out EditRouteResponseRouteRouteMissingItem>> = listOf(EditRouteResponseRouteRouteMissingItemVariant0::class.java, EditRouteResponseRouteRouteMissingItemVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out EditRouteResponseRouteRouteMissingItem>> =
+                listOf(
+                    EditRouteResponseRouteRouteMissingItemVariant0::class.java,
+                    EditRouteResponseRouteRouteMissingItemVariant1::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, EditRouteResponseRouteRouteMissingItem::class.java, "no EditRouteResponseRouteRouteMissingItem branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        EditRouteResponseRouteRouteMissingItem::class.java,
+                        "no EditRouteResponseRouteRouteMissingItem branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val EditRouteResponseRouteRouteMissingItemOwnedTypes: List<Pair<List<String>, Class<out EditRouteResponseRouteRouteMissingItem>>> = listOf(
-    listOf("key") to EditRouteResponseRouteRouteMissingItemVariant1::class.java,
-)
+internal val EditRouteResponseRouteRouteMissingItemOwnedTypes:
+    List<Pair<List<String>, Class<out EditRouteResponseRouteRouteMissingItem>>> =
+    listOf(listOf("key") to EditRouteResponseRouteRouteMissingItemVariant1::class.java)
 
 data class EditRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1(
     val eq: Any? = null,
@@ -480,44 +651,59 @@ data class EditRouteResponseRouteRouteTransformsItemVariant0TargetKeyVariant1(
     val neq: String? = null,
     val ninc: List<String>? = null,
     val pre: String? = null,
-    val suf: String? = null
+    val suf: String? = null,
 ) : SdkResource()
 
-data class EditRouteResponseRouteRouteTransformsItemVariant0Target(
-    val key: Any
-) : SdkResource()
+data class EditRouteResponseRouteRouteTransformsItemVariant0Target(val key: Any) : SdkResource()
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditRouteResponseRouteRouteTransformsItemVariant0(
     val op: EditRouteResponseRouteRouteTransformsItemVariant0OpEnum,
     val target: EditRouteResponseRouteRouteTransformsItemVariant0Target,
     val type: EditRouteResponseRouteRouteTransformsItemVariant0TypeEnum,
     val args: Any? = null,
-    val env: List<String>? = null
+    val env: List<String>? = null,
 ) : SdkResource(), EditRouteResponseRouteRouteTransformsItem
 
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = com.fasterxml.jackson.databind.JsonDeserializer.None::class) @com.fasterxml.jackson.annotation.JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = com.fasterxml.jackson.databind.JsonDeserializer.None::class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NONE
+)
 data class EditRouteResponseRouteRouteTransformsItemVariant1(
     val args: String,
     val op: EditRouteResponseRouteRouteTransformsItemVariant1OpEnum,
     val type: EditRouteResponseRouteRouteTransformsItemVariant1TypeEnum,
-    val env: List<String>? = null
+    val env: List<String>? = null,
 ) : SdkResource(), EditRouteResponseRouteRouteTransformsItem
 
-/**
- * Typed representation of the `EditRouteResponseRouteRouteTransformsItem` API schema.
- */
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(using = EditRouteResponseRouteRouteTransformsItem.Deserializer::class)
+/** Typed representation of the `EditRouteResponseRouteRouteTransformsItem` API schema. */
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    using = EditRouteResponseRouteRouteTransformsItem.Deserializer::class
+)
 sealed interface EditRouteResponseRouteRouteTransformsItem {
     /** Chooses the branch this payload is shaped like. */
-    class Deserializer : com.fasterxml.jackson.databind.JsonDeserializer<EditRouteResponseRouteRouteTransformsItem>() {
+    class Deserializer :
+        com.fasterxml.jackson.databind.JsonDeserializer<
+            EditRouteResponseRouteRouteTransformsItem
+        >() {
         override fun deserialize(
             parser: com.fasterxml.jackson.core.JsonParser,
             context: com.fasterxml.jackson.databind.DeserializationContext,
         ): EditRouteResponseRouteRouteTransformsItem {
             val mapper = parser.codec as com.fasterxml.jackson.databind.ObjectMapper
             val node: com.fasterxml.jackson.databind.JsonNode = parser.readValueAsTree()
-            val ownedType = EditRouteResponseRouteRouteTransformsItemOwnedTypes.firstOrNull { (keys, _) -> keys.any(node::has) }?.second
+            val ownedType =
+                EditRouteResponseRouteRouteTransformsItemOwnedTypes.firstOrNull { (keys, _) ->
+                        keys.any(node::has)
+                    }
+                    ?.second
             if (ownedType != null) {
                 try {
                     return mapper.convertValue(node, ownedType)
@@ -525,16 +711,26 @@ sealed interface EditRouteResponseRouteRouteTransformsItem {
                     // Tried with the other branches below.
                 }
             }
-            val objectTypes: List<Class<out EditRouteResponseRouteRouteTransformsItem>> = listOf(EditRouteResponseRouteRouteTransformsItemVariant0::class.java, EditRouteResponseRouteRouteTransformsItemVariant1::class.java)
-            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let { return it }
+            val objectTypes: List<Class<out EditRouteResponseRouteRouteTransformsItem>> =
+                listOf(
+                    EditRouteResponseRouteRouteTransformsItemVariant0::class.java,
+                    EditRouteResponseRouteRouteTransformsItemVariant1::class.java,
+                )
+            dev.octri.showcase.vercel.sdkObjectBranch(mapper, node, objectTypes)?.let {
+                return it
+            }
             return when {
-                else -> throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
-                    parser, EditRouteResponseRouteRouteTransformsItem::class.java, "no EditRouteResponseRouteRouteTransformsItem branch accepts this payload")
+                else ->
+                    throw com.fasterxml.jackson.databind.exc.MismatchedInputException.from(
+                        parser,
+                        EditRouteResponseRouteRouteTransformsItem::class.java,
+                        "no EditRouteResponseRouteRouteTransformsItem branch accepts this payload",
+                    )
             }
         }
     }
 }
 
-internal val EditRouteResponseRouteRouteTransformsItemOwnedTypes: List<Pair<List<String>, Class<out EditRouteResponseRouteRouteTransformsItem>>> = listOf(
-    listOf("target") to EditRouteResponseRouteRouteTransformsItemVariant0::class.java,
-)
+internal val EditRouteResponseRouteRouteTransformsItemOwnedTypes:
+    List<Pair<List<String>, Class<out EditRouteResponseRouteRouteTransformsItem>>> =
+    listOf(listOf("target") to EditRouteResponseRouteRouteTransformsItemVariant0::class.java)

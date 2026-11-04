@@ -40,493 +40,498 @@ import dev.octri.showcase.vercel.UpdateKmsIssuerResponsePoliciesItem
 import dev.octri.showcase.vercel.UpdateKmsIssuerResponseSigningKeysItemStatusEnum
 
 object Kms {
-data class SignKmsMessageResponse(
-    /**
-     * Algorithm of the signing key.
-     */
-    val algorithm: String,
-    /**
-     * SHA-256 fingerprint of the signing key's public key (`SHA256:<base64>`).
-     */
-    val fingerprint: String,
-    /**
-     * Key id of the signing key. Matches the JWKS `kid` so verifiers can select the key after rotation without trial-verifying every published key.
-     */
-    val keyId: String,
-    /**
-     * Standard-base64 encoding of the raw signature over the decoded message bytes.
-     */
-    val signature: String
-) : SdkResource()
+    data class SignKmsMessageResponse(
+        /** Algorithm of the signing key. */
+        val algorithm: String,
+        /** SHA-256 fingerprint of the signing key's public key (`SHA256:<base64>`). */
+        val fingerprint: String,
+        /**
+         * Key id of the signing key. Matches the JWKS `kid` so verifiers can select the key after
+         * rotation without trial-verifying every published key.
+         */
+        val keyId: String,
+        /** Standard-base64 encoding of the raw signature over the decoded message bytes. */
+        val signature: String,
+    ) : SdkResource()
 
-data class SignKmsTokenResponse(
-    /**
-     * Algorithm of the signing key.
-     */
-    val algorithm: String,
-    /**
-     * SHA-256 fingerprint of the signing key's public key (`SHA256:<base64>`).
-     */
-    val fingerprint: String,
-    /**
-     * Key id of the signing key. Matches the JWKS `kid` so verifiers can select the key after rotation without trial-verifying every published key.
-     */
-    val keyId: String,
-    /**
-     * Compact JWT signed by the issuer's active signing key.
-     */
-    val token: String
-) : SdkResource()
+    data class SignKmsTokenResponse(
+        /** Algorithm of the signing key. */
+        val algorithm: String,
+        /** SHA-256 fingerprint of the signing key's public key (`SHA256:<base64>`). */
+        val fingerprint: String,
+        /**
+         * Key id of the signing key. Matches the JWKS `kid` so verifiers can select the key after
+         * rotation without trial-verifying every published key.
+         */
+        val keyId: String,
+        /** Compact JWT signed by the issuer's active signing key. */
+        val token: String,
+    ) : SdkResource()
 
+    data class ListKmsIssuersResponseIssuersItemSigningKeysItemPublicKey(
+        val alg: String? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("key_ops") val keyOps: List<String>? = null,
+        val kid: String? = null,
+        val kty: String? = null,
+        val use: String? = null,
+        /**
+         * The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url)
+         * of a certificate. For keys minted with a stored certificate this holds the single
+         * self-signed cert as `[x5c]`.
+         */
+        val x5c: List<String>? = null,
+        /** The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9). */
+        @com.fasterxml.jackson.annotation.JsonProperty("x5t#S256") val x5tS256: String? = null,
+    ) : SdkResource()
 
+    data class ListKmsIssuersResponseIssuersItemSigningKeysItem(
+        val algorithm: String,
+        val createdAt: String,
+        val issuerId: String,
+        /**
+         * The server-minted, unique record identifier. Use this to address the key on the activate
+         * / certificate endpoints.
+         */
+        val keyId: String,
+        val publicKeyFingerprint: String,
+        val status: ListKmsIssuersResponseIssuersItemSigningKeysItemStatusEnum,
+        val updatedAt: String,
+        val activateAt: String? = null,
+        /**
+         * When the key became the active signer. Present for active and revoking keys (and absent
+         * for pending keys and rows predating this field).
+         */
+        val activatedAt: String? = null,
+        /**
+         * The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render.
+         * Present only for keys created with a stored certificate; omitted for keys created before
+         * certificates were stored.
+         */
+        val certificatePem: String? = null,
+        /**
+         * The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique
+         * across an issuer's keys; omitted for generated keys.
+         */
+        val importKeyId: String? = null,
+        val publicKey: ListKmsIssuersResponseIssuersItemSigningKeysItemPublicKey? = null,
+        /**
+         * The public key in SPKI PEM form, ready to render. Present whenever the key has public key
+         * material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`)
+         * do not affect it.
+         */
+        val publicKeyPem: String? = null,
+        val revokeAt: String? = null,
+    ) : SdkResource()
 
+    data class ListKmsIssuersResponseIssuersItem(
+        val algorithm: ListKmsIssuersResponseIssuersItemAlgorithmEnum,
+        val createdAt: String,
+        val id: String,
+        val name: String,
+        val origin: ListKmsIssuersResponseIssuersItemOriginEnum,
+        val ownerId: String,
+        val policies: List<ListKmsIssuersResponseIssuersItemPoliciesItem>,
+        val signingKeys: List<ListKmsIssuersResponseIssuersItemSigningKeysItem>,
+        val updatedAt: String,
+        val claimsSchema: Map<String, Any>? = null,
+        val managedBy: String? = null,
+    ) : SdkResource()
 
+    data class ListKmsIssuersResponsePagination(
+        val count: Double,
+        @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?,
+    ) : SdkResource()
 
+    data class ListKmsIssuersResponse(
+        val issuers: List<ListKmsIssuersResponseIssuersItem>,
+        val pagination: ListKmsIssuersResponsePagination,
+    ) : SdkResource()
 
+    data class CreateKmsIssuerResponseSigningKeysItemPublicKey(
+        val alg: String? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("key_ops") val keyOps: List<String>? = null,
+        val kid: String? = null,
+        val kty: String? = null,
+        val use: String? = null,
+        /**
+         * The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url)
+         * of a certificate. For keys minted with a stored certificate this holds the single
+         * self-signed cert as `[x5c]`.
+         */
+        val x5c: List<String>? = null,
+        /** The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9). */
+        @com.fasterxml.jackson.annotation.JsonProperty("x5t#S256") val x5tS256: String? = null,
+    ) : SdkResource()
 
-data class ListKmsIssuersResponseIssuersItemSigningKeysItemPublicKey(
-    val alg: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("key_ops") val keyOps: List<String>? = null,
-    val kid: String? = null,
-    val kty: String? = null,
-    val use: String? = null,
-    /**
-     * The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-     */
-    val x5c: List<String>? = null,
-    /**
-     * The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("x5t#S256") val x5tS256: String? = null
-) : SdkResource()
+    data class CreateKmsIssuerResponseSigningKeysItem(
+        val algorithm: String,
+        val createdAt: String,
+        val issuerId: String,
+        /**
+         * The server-minted, unique record identifier. Use this to address the key on the activate
+         * / certificate endpoints.
+         */
+        val keyId: String,
+        val publicKeyFingerprint: String,
+        val status: CreateKmsIssuerResponseSigningKeysItemStatusEnum,
+        val updatedAt: String,
+        val activateAt: String? = null,
+        /**
+         * When the key became the active signer. Present for active and revoking keys (and absent
+         * for pending keys and rows predating this field).
+         */
+        val activatedAt: String? = null,
+        /**
+         * The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render.
+         * Present only for keys created with a stored certificate; omitted for keys created before
+         * certificates were stored.
+         */
+        val certificatePem: String? = null,
+        /**
+         * The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique
+         * across an issuer's keys; omitted for generated keys.
+         */
+        val importKeyId: String? = null,
+        val publicKey: CreateKmsIssuerResponseSigningKeysItemPublicKey? = null,
+        /**
+         * The public key in SPKI PEM form, ready to render. Present whenever the key has public key
+         * material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`)
+         * do not affect it.
+         */
+        val publicKeyPem: String? = null,
+        val revokeAt: String? = null,
+    ) : SdkResource()
 
-data class ListKmsIssuersResponseIssuersItemSigningKeysItem(
-    val algorithm: String,
-    val createdAt: String,
-    val issuerId: String,
-    /**
-     * The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-     */
-    val keyId: String,
-    val publicKeyFingerprint: String,
-    val status: ListKmsIssuersResponseIssuersItemSigningKeysItemStatusEnum,
-    val updatedAt: String,
-    val activateAt: String? = null,
-    /**
-     * When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-     */
-    val activatedAt: String? = null,
-    /**
-     * The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-     */
-    val certificatePem: String? = null,
-    /**
-     * The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-     */
-    val importKeyId: String? = null,
-    val publicKey: ListKmsIssuersResponseIssuersItemSigningKeysItemPublicKey? = null,
-    /**
-     * The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-     */
-    val publicKeyPem: String? = null,
-    val revokeAt: String? = null
-) : SdkResource()
+    data class CreateKmsIssuerResponse(
+        val algorithm: CreateKmsIssuerResponseAlgorithmEnum,
+        val createdAt: String,
+        val id: String,
+        val name: String,
+        val origin: CreateKmsIssuerResponseOriginEnum,
+        val ownerId: String,
+        val policies: List<CreateKmsIssuerResponsePoliciesItem>,
+        val signingKeys: List<CreateKmsIssuerResponseSigningKeysItem>,
+        val updatedAt: String,
+        val claimsSchema: Map<String, Any>? = null,
+        val managedBy: String? = null,
+    ) : SdkResource()
 
-data class ListKmsIssuersResponseIssuersItem(
-    val algorithm: ListKmsIssuersResponseIssuersItemAlgorithmEnum,
-    val createdAt: String,
-    val id: String,
-    val name: String,
-    val origin: ListKmsIssuersResponseIssuersItemOriginEnum,
-    val ownerId: String,
-    val policies: List<ListKmsIssuersResponseIssuersItemPoliciesItem>,
-    val signingKeys: List<ListKmsIssuersResponseIssuersItemSigningKeysItem>,
-    val updatedAt: String,
-    val claimsSchema: Map<String, Any>? = null,
-    val managedBy: String? = null
-) : SdkResource()
+    data class CreateKmsSigningKeyResponsePublicKey(
+        val alg: String? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("key_ops") val keyOps: List<String>? = null,
+        val kid: String? = null,
+        val kty: String? = null,
+        val use: String? = null,
+        /**
+         * The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url)
+         * of a certificate. For keys minted with a stored certificate this holds the single
+         * self-signed cert as `[x5c]`.
+         */
+        val x5c: List<String>? = null,
+        /** The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9). */
+        @com.fasterxml.jackson.annotation.JsonProperty("x5t#S256") val x5tS256: String? = null,
+    ) : SdkResource()
 
-data class ListKmsIssuersResponsePagination(
-    val count: Double,
-    @com.fasterxml.jackson.annotation.JsonProperty("next", required = true) val next: String?
-) : SdkResource()
+    data class CreateKmsSigningKeyResponse(
+        val algorithm: String,
+        val createdAt: String,
+        val issuerId: String,
+        /**
+         * The server-minted, unique record identifier. Use this to address the key on the activate
+         * / certificate endpoints.
+         */
+        val keyId: String,
+        val publicKeyFingerprint: String,
+        val status: CreateKmsSigningKeyResponseStatusEnum,
+        val updatedAt: String,
+        val activateAt: String? = null,
+        /**
+         * When the key became the active signer. Present for active and revoking keys (and absent
+         * for pending keys and rows predating this field).
+         */
+        val activatedAt: String? = null,
+        /**
+         * The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render.
+         * Present only for keys created with a stored certificate; omitted for keys created before
+         * certificates were stored.
+         */
+        val certificatePem: String? = null,
+        /**
+         * The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique
+         * across an issuer's keys; omitted for generated keys.
+         */
+        val importKeyId: String? = null,
+        val publicKey: CreateKmsSigningKeyResponsePublicKey? = null,
+        /**
+         * The public key in SPKI PEM form, ready to render. Present whenever the key has public key
+         * material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`)
+         * do not affect it.
+         */
+        val publicKeyPem: String? = null,
+        val revokeAt: String? = null,
+    ) : SdkResource()
 
-data class ListKmsIssuersResponse(
-    val issuers: List<ListKmsIssuersResponseIssuersItem>,
-    val pagination: ListKmsIssuersResponsePagination
-) : SdkResource()
+    data class ActivateKmsSigningKeyResponsePublicKey(
+        val alg: String? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("key_ops") val keyOps: List<String>? = null,
+        val kid: String? = null,
+        val kty: String? = null,
+        val use: String? = null,
+        /**
+         * The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url)
+         * of a certificate. For keys minted with a stored certificate this holds the single
+         * self-signed cert as `[x5c]`.
+         */
+        val x5c: List<String>? = null,
+        /** The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9). */
+        @com.fasterxml.jackson.annotation.JsonProperty("x5t#S256") val x5tS256: String? = null,
+    ) : SdkResource()
 
+    data class ActivateKmsSigningKeyResponse(
+        val algorithm: String,
+        val createdAt: String,
+        val issuerId: String,
+        /**
+         * The server-minted, unique record identifier. Use this to address the key on the activate
+         * / certificate endpoints.
+         */
+        val keyId: String,
+        val publicKeyFingerprint: String,
+        val status: ActivateKmsSigningKeyResponseStatusEnum,
+        val updatedAt: String,
+        val activateAt: String? = null,
+        /**
+         * When the key became the active signer. Present for active and revoking keys (and absent
+         * for pending keys and rows predating this field).
+         */
+        val activatedAt: String? = null,
+        /**
+         * The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render.
+         * Present only for keys created with a stored certificate; omitted for keys created before
+         * certificates were stored.
+         */
+        val certificatePem: String? = null,
+        /**
+         * The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique
+         * across an issuer's keys; omitted for generated keys.
+         */
+        val importKeyId: String? = null,
+        val publicKey: ActivateKmsSigningKeyResponsePublicKey? = null,
+        /**
+         * The public key in SPKI PEM form, ready to render. Present whenever the key has public key
+         * material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`)
+         * do not affect it.
+         */
+        val publicKeyPem: String? = null,
+        val revokeAt: String? = null,
+    ) : SdkResource()
 
+    data class RevokeKmsSigningKeyResponseSigningKeysItemPublicKey(
+        val alg: String? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("key_ops") val keyOps: List<String>? = null,
+        val kid: String? = null,
+        val kty: String? = null,
+        val use: String? = null,
+        /**
+         * The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url)
+         * of a certificate. For keys minted with a stored certificate this holds the single
+         * self-signed cert as `[x5c]`.
+         */
+        val x5c: List<String>? = null,
+        /** The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9). */
+        @com.fasterxml.jackson.annotation.JsonProperty("x5t#S256") val x5tS256: String? = null,
+    ) : SdkResource()
 
+    data class RevokeKmsSigningKeyResponseSigningKeysItem(
+        val algorithm: String,
+        val createdAt: String,
+        val issuerId: String,
+        /**
+         * The server-minted, unique record identifier. Use this to address the key on the activate
+         * / certificate endpoints.
+         */
+        val keyId: String,
+        val publicKeyFingerprint: String,
+        val status: RevokeKmsSigningKeyResponseSigningKeysItemStatusEnum,
+        val updatedAt: String,
+        val activateAt: String? = null,
+        /**
+         * When the key became the active signer. Present for active and revoking keys (and absent
+         * for pending keys and rows predating this field).
+         */
+        val activatedAt: String? = null,
+        /**
+         * The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render.
+         * Present only for keys created with a stored certificate; omitted for keys created before
+         * certificates were stored.
+         */
+        val certificatePem: String? = null,
+        /**
+         * The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique
+         * across an issuer's keys; omitted for generated keys.
+         */
+        val importKeyId: String? = null,
+        val publicKey: RevokeKmsSigningKeyResponseSigningKeysItemPublicKey? = null,
+        /**
+         * The public key in SPKI PEM form, ready to render. Present whenever the key has public key
+         * material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`)
+         * do not affect it.
+         */
+        val publicKeyPem: String? = null,
+        val revokeAt: String? = null,
+    ) : SdkResource()
 
+    data class RevokeKmsSigningKeyResponse(
+        val algorithm: RevokeKmsSigningKeyResponseAlgorithmEnum,
+        val createdAt: String,
+        val id: String,
+        val name: String,
+        val origin: RevokeKmsSigningKeyResponseOriginEnum,
+        val ownerId: String,
+        val policies: List<RevokeKmsSigningKeyResponsePoliciesItem>,
+        val signingKeys: List<RevokeKmsSigningKeyResponseSigningKeysItem>,
+        val updatedAt: String,
+        val claimsSchema: Map<String, Any>? = null,
+        val managedBy: String? = null,
+    ) : SdkResource()
 
+    data class GetKmsIssuerResponseSigningKeysItemPublicKey(
+        val alg: String? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("key_ops") val keyOps: List<String>? = null,
+        val kid: String? = null,
+        val kty: String? = null,
+        val use: String? = null,
+        /**
+         * The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url)
+         * of a certificate. For keys minted with a stored certificate this holds the single
+         * self-signed cert as `[x5c]`.
+         */
+        val x5c: List<String>? = null,
+        /** The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9). */
+        @com.fasterxml.jackson.annotation.JsonProperty("x5t#S256") val x5tS256: String? = null,
+    ) : SdkResource()
 
+    data class GetKmsIssuerResponseSigningKeysItem(
+        val algorithm: String,
+        val createdAt: String,
+        val issuerId: String,
+        /**
+         * The server-minted, unique record identifier. Use this to address the key on the activate
+         * / certificate endpoints.
+         */
+        val keyId: String,
+        val publicKeyFingerprint: String,
+        val status: GetKmsIssuerResponseSigningKeysItemStatusEnum,
+        val updatedAt: String,
+        val activateAt: String? = null,
+        /**
+         * When the key became the active signer. Present for active and revoking keys (and absent
+         * for pending keys and rows predating this field).
+         */
+        val activatedAt: String? = null,
+        /**
+         * The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render.
+         * Present only for keys created with a stored certificate; omitted for keys created before
+         * certificates were stored.
+         */
+        val certificatePem: String? = null,
+        /**
+         * The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique
+         * across an issuer's keys; omitted for generated keys.
+         */
+        val importKeyId: String? = null,
+        val publicKey: GetKmsIssuerResponseSigningKeysItemPublicKey? = null,
+        /**
+         * The public key in SPKI PEM form, ready to render. Present whenever the key has public key
+         * material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`)
+         * do not affect it.
+         */
+        val publicKeyPem: String? = null,
+        val revokeAt: String? = null,
+    ) : SdkResource()
 
-data class CreateKmsIssuerResponseSigningKeysItemPublicKey(
-    val alg: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("key_ops") val keyOps: List<String>? = null,
-    val kid: String? = null,
-    val kty: String? = null,
-    val use: String? = null,
-    /**
-     * The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-     */
-    val x5c: List<String>? = null,
-    /**
-     * The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("x5t#S256") val x5tS256: String? = null
-) : SdkResource()
+    data class GetKmsIssuerResponse(
+        val algorithm: GetKmsIssuerResponseAlgorithmEnum,
+        val createdAt: String,
+        val id: String,
+        val name: String,
+        val origin: GetKmsIssuerResponseOriginEnum,
+        val ownerId: String,
+        val policies: List<GetKmsIssuerResponsePoliciesItem>,
+        val signingKeys: List<GetKmsIssuerResponseSigningKeysItem>,
+        val updatedAt: String,
+        val claimsSchema: Map<String, Any>? = null,
+        val managedBy: String? = null,
+    ) : SdkResource()
 
-data class CreateKmsIssuerResponseSigningKeysItem(
-    val algorithm: String,
-    val createdAt: String,
-    val issuerId: String,
-    /**
-     * The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-     */
-    val keyId: String,
-    val publicKeyFingerprint: String,
-    val status: CreateKmsIssuerResponseSigningKeysItemStatusEnum,
-    val updatedAt: String,
-    val activateAt: String? = null,
-    /**
-     * When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-     */
-    val activatedAt: String? = null,
-    /**
-     * The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-     */
-    val certificatePem: String? = null,
-    /**
-     * The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-     */
-    val importKeyId: String? = null,
-    val publicKey: CreateKmsIssuerResponseSigningKeysItemPublicKey? = null,
-    /**
-     * The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-     */
-    val publicKeyPem: String? = null,
-    val revokeAt: String? = null
-) : SdkResource()
+    data class UpdateKmsIssuerResponseSigningKeysItemPublicKey(
+        val alg: String? = null,
+        @com.fasterxml.jackson.annotation.JsonProperty("key_ops") val keyOps: List<String>? = null,
+        val kid: String? = null,
+        val kty: String? = null,
+        val use: String? = null,
+        /**
+         * The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url)
+         * of a certificate. For keys minted with a stored certificate this holds the single
+         * self-signed cert as `[x5c]`.
+         */
+        val x5c: List<String>? = null,
+        /** The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9). */
+        @com.fasterxml.jackson.annotation.JsonProperty("x5t#S256") val x5tS256: String? = null,
+    ) : SdkResource()
 
-data class CreateKmsIssuerResponse(
-    val algorithm: CreateKmsIssuerResponseAlgorithmEnum,
-    val createdAt: String,
-    val id: String,
-    val name: String,
-    val origin: CreateKmsIssuerResponseOriginEnum,
-    val ownerId: String,
-    val policies: List<CreateKmsIssuerResponsePoliciesItem>,
-    val signingKeys: List<CreateKmsIssuerResponseSigningKeysItem>,
-    val updatedAt: String,
-    val claimsSchema: Map<String, Any>? = null,
-    val managedBy: String? = null
-) : SdkResource()
+    data class UpdateKmsIssuerResponseSigningKeysItem(
+        val algorithm: String,
+        val createdAt: String,
+        val issuerId: String,
+        /**
+         * The server-minted, unique record identifier. Use this to address the key on the activate
+         * / certificate endpoints.
+         */
+        val keyId: String,
+        val publicKeyFingerprint: String,
+        val status: UpdateKmsIssuerResponseSigningKeysItemStatusEnum,
+        val updatedAt: String,
+        val activateAt: String? = null,
+        /**
+         * When the key became the active signer. Present for active and revoking keys (and absent
+         * for pending keys and rows predating this field).
+         */
+        val activatedAt: String? = null,
+        /**
+         * The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render.
+         * Present only for keys created with a stored certificate; omitted for keys created before
+         * certificates were stored.
+         */
+        val certificatePem: String? = null,
+        /**
+         * The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique
+         * across an issuer's keys; omitted for generated keys.
+         */
+        val importKeyId: String? = null,
+        val publicKey: UpdateKmsIssuerResponseSigningKeysItemPublicKey? = null,
+        /**
+         * The public key in SPKI PEM form, ready to render. Present whenever the key has public key
+         * material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`)
+         * do not affect it.
+         */
+        val publicKeyPem: String? = null,
+        val revokeAt: String? = null,
+    ) : SdkResource()
 
-
-
-data class CreateKmsSigningKeyResponsePublicKey(
-    val alg: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("key_ops") val keyOps: List<String>? = null,
-    val kid: String? = null,
-    val kty: String? = null,
-    val use: String? = null,
-    /**
-     * The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-     */
-    val x5c: List<String>? = null,
-    /**
-     * The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("x5t#S256") val x5tS256: String? = null
-) : SdkResource()
-
-data class CreateKmsSigningKeyResponse(
-    val algorithm: String,
-    val createdAt: String,
-    val issuerId: String,
-    /**
-     * The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-     */
-    val keyId: String,
-    val publicKeyFingerprint: String,
-    val status: CreateKmsSigningKeyResponseStatusEnum,
-    val updatedAt: String,
-    val activateAt: String? = null,
-    /**
-     * When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-     */
-    val activatedAt: String? = null,
-    /**
-     * The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-     */
-    val certificatePem: String? = null,
-    /**
-     * The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-     */
-    val importKeyId: String? = null,
-    val publicKey: CreateKmsSigningKeyResponsePublicKey? = null,
-    /**
-     * The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-     */
-    val publicKeyPem: String? = null,
-    val revokeAt: String? = null
-) : SdkResource()
-
-
-
-data class ActivateKmsSigningKeyResponsePublicKey(
-    val alg: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("key_ops") val keyOps: List<String>? = null,
-    val kid: String? = null,
-    val kty: String? = null,
-    val use: String? = null,
-    /**
-     * The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-     */
-    val x5c: List<String>? = null,
-    /**
-     * The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("x5t#S256") val x5tS256: String? = null
-) : SdkResource()
-
-data class ActivateKmsSigningKeyResponse(
-    val algorithm: String,
-    val createdAt: String,
-    val issuerId: String,
-    /**
-     * The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-     */
-    val keyId: String,
-    val publicKeyFingerprint: String,
-    val status: ActivateKmsSigningKeyResponseStatusEnum,
-    val updatedAt: String,
-    val activateAt: String? = null,
-    /**
-     * When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-     */
-    val activatedAt: String? = null,
-    /**
-     * The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-     */
-    val certificatePem: String? = null,
-    /**
-     * The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-     */
-    val importKeyId: String? = null,
-    val publicKey: ActivateKmsSigningKeyResponsePublicKey? = null,
-    /**
-     * The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-     */
-    val publicKeyPem: String? = null,
-    val revokeAt: String? = null
-) : SdkResource()
-
-
-
-
-
-
-
-data class RevokeKmsSigningKeyResponseSigningKeysItemPublicKey(
-    val alg: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("key_ops") val keyOps: List<String>? = null,
-    val kid: String? = null,
-    val kty: String? = null,
-    val use: String? = null,
-    /**
-     * The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-     */
-    val x5c: List<String>? = null,
-    /**
-     * The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("x5t#S256") val x5tS256: String? = null
-) : SdkResource()
-
-data class RevokeKmsSigningKeyResponseSigningKeysItem(
-    val algorithm: String,
-    val createdAt: String,
-    val issuerId: String,
-    /**
-     * The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-     */
-    val keyId: String,
-    val publicKeyFingerprint: String,
-    val status: RevokeKmsSigningKeyResponseSigningKeysItemStatusEnum,
-    val updatedAt: String,
-    val activateAt: String? = null,
-    /**
-     * When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-     */
-    val activatedAt: String? = null,
-    /**
-     * The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-     */
-    val certificatePem: String? = null,
-    /**
-     * The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-     */
-    val importKeyId: String? = null,
-    val publicKey: RevokeKmsSigningKeyResponseSigningKeysItemPublicKey? = null,
-    /**
-     * The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-     */
-    val publicKeyPem: String? = null,
-    val revokeAt: String? = null
-) : SdkResource()
-
-data class RevokeKmsSigningKeyResponse(
-    val algorithm: RevokeKmsSigningKeyResponseAlgorithmEnum,
-    val createdAt: String,
-    val id: String,
-    val name: String,
-    val origin: RevokeKmsSigningKeyResponseOriginEnum,
-    val ownerId: String,
-    val policies: List<RevokeKmsSigningKeyResponsePoliciesItem>,
-    val signingKeys: List<RevokeKmsSigningKeyResponseSigningKeysItem>,
-    val updatedAt: String,
-    val claimsSchema: Map<String, Any>? = null,
-    val managedBy: String? = null
-) : SdkResource()
-
-
-
-
-
-
-
-data class GetKmsIssuerResponseSigningKeysItemPublicKey(
-    val alg: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("key_ops") val keyOps: List<String>? = null,
-    val kid: String? = null,
-    val kty: String? = null,
-    val use: String? = null,
-    /**
-     * The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-     */
-    val x5c: List<String>? = null,
-    /**
-     * The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("x5t#S256") val x5tS256: String? = null
-) : SdkResource()
-
-data class GetKmsIssuerResponseSigningKeysItem(
-    val algorithm: String,
-    val createdAt: String,
-    val issuerId: String,
-    /**
-     * The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-     */
-    val keyId: String,
-    val publicKeyFingerprint: String,
-    val status: GetKmsIssuerResponseSigningKeysItemStatusEnum,
-    val updatedAt: String,
-    val activateAt: String? = null,
-    /**
-     * When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-     */
-    val activatedAt: String? = null,
-    /**
-     * The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-     */
-    val certificatePem: String? = null,
-    /**
-     * The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-     */
-    val importKeyId: String? = null,
-    val publicKey: GetKmsIssuerResponseSigningKeysItemPublicKey? = null,
-    /**
-     * The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-     */
-    val publicKeyPem: String? = null,
-    val revokeAt: String? = null
-) : SdkResource()
-
-data class GetKmsIssuerResponse(
-    val algorithm: GetKmsIssuerResponseAlgorithmEnum,
-    val createdAt: String,
-    val id: String,
-    val name: String,
-    val origin: GetKmsIssuerResponseOriginEnum,
-    val ownerId: String,
-    val policies: List<GetKmsIssuerResponsePoliciesItem>,
-    val signingKeys: List<GetKmsIssuerResponseSigningKeysItem>,
-    val updatedAt: String,
-    val claimsSchema: Map<String, Any>? = null,
-    val managedBy: String? = null
-) : SdkResource()
-
-
-
-
-
-
-
-data class UpdateKmsIssuerResponseSigningKeysItemPublicKey(
-    val alg: String? = null,
-    @com.fasterxml.jackson.annotation.JsonProperty("key_ops") val keyOps: List<String>? = null,
-    val kid: String? = null,
-    val kty: String? = null,
-    val use: String? = null,
-    /**
-     * The X.509 certificate chain (RFC 7517 §4.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as `[x5c]`.
-     */
-    val x5c: List<String>? = null,
-    /**
-     * The base64url SHA-256 thumbprint of the DER certificate in `x5c[0]` (RFC 7517 §4.9).
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("x5t#S256") val x5tS256: String? = null
-) : SdkResource()
-
-data class UpdateKmsIssuerResponseSigningKeysItem(
-    val algorithm: String,
-    val createdAt: String,
-    val issuerId: String,
-    /**
-     * The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints.
-     */
-    val keyId: String,
-    val publicKeyFingerprint: String,
-    val status: UpdateKmsIssuerResponseSigningKeysItemStatusEnum,
-    val updatedAt: String,
-    val activateAt: String? = null,
-    /**
-     * When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field).
-     */
-    val activatedAt: String? = null,
-    /**
-     * The stored X.509 certificate (from `publicKey.x5c[0]`) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored.
-     */
-    val certificatePem: String? = null,
-    /**
-     * The caller-supplied key id (imported keys only), used as the JWT/JWKS `kid`. Not unique across an issuer's keys; omitted for generated keys.
-     */
-    val importKeyId: String? = null,
-    val publicKey: UpdateKmsIssuerResponseSigningKeysItemPublicKey? = null,
-    /**
-     * The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from `publicKey`; the embedded certificate members (`x5c`/`x5t#S256`) do not affect it.
-     */
-    val publicKeyPem: String? = null,
-    val revokeAt: String? = null
-) : SdkResource()
-
-data class UpdateKmsIssuerResponse(
-    val algorithm: UpdateKmsIssuerResponseAlgorithmEnum,
-    val createdAt: String,
-    val id: String,
-    val name: String,
-    val origin: UpdateKmsIssuerResponseOriginEnum,
-    val ownerId: String,
-    val policies: List<UpdateKmsIssuerResponsePoliciesItem>,
-    val signingKeys: List<UpdateKmsIssuerResponseSigningKeysItem>,
-    val updatedAt: String,
-    val claimsSchema: Map<String, Any>? = null,
-    val managedBy: String? = null
-) : SdkResource()
+    data class UpdateKmsIssuerResponse(
+        val algorithm: UpdateKmsIssuerResponseAlgorithmEnum,
+        val createdAt: String,
+        val id: String,
+        val name: String,
+        val origin: UpdateKmsIssuerResponseOriginEnum,
+        val ownerId: String,
+        val policies: List<UpdateKmsIssuerResponsePoliciesItem>,
+        val signingKeys: List<UpdateKmsIssuerResponseSigningKeysItem>,
+        val updatedAt: String,
+        val claimsSchema: Map<String, Any>? = null,
+        val managedBy: String? = null,
+    ) : SdkResource()
 
     /** Parameters for [createKmsIssuer]. */
     data class CreateKmsIssuerRequest(
@@ -537,7 +542,7 @@ data class UpdateKmsIssuerResponse(
         val claimsSchema: Map<String, Any>? = null,
         val policy: CreateKmsIssuerRequestPolicy? = null,
         val importKey: String? = null,
-        val importKeyId: String? = null
+        val importKeyId: String? = null,
     )
 
     /** Parameters for [createKmsSigningKey]. */
@@ -549,7 +554,7 @@ data class UpdateKmsIssuerResponse(
         val revokePreviousAfterHours: Double? = null,
         val revokePreviousAt: Any? = null,
         val importKey: String? = null,
-        val importKeyId: String? = null
+        val importKeyId: String? = null,
     )
 
     /** Parameters for [createKmsIssuerPolicy]. */
@@ -560,7 +565,7 @@ data class UpdateKmsIssuerResponse(
         val environments: List<String>,
         val teamId: String? = null,
         val slug: String? = null,
-        val tokenClaims: Map<String, Any>? = null
+        val tokenClaims: Map<String, Any>? = null,
     )
 
     /** Parameters for [updateKmsIssuerPolicy]. */
@@ -571,13 +576,21 @@ data class UpdateKmsIssuerResponse(
         val teamId: String? = null,
         val slug: String? = null,
         val environments: List<String>? = null,
-        val tokenClaims: SdkClient.SdkOptional<Map<String, Any>?>? = null
+        val tokenClaims: SdkClient.SdkOptional<Map<String, Any>?>? = null,
     )
 
     /**
-     * Signs a base64-encoded message with an issuer's active KMS signing key. Authenticate with a Vercel OIDC token in the `Authorization` header, and ensure the issuer's policies allow the workload to sign. The response identifies the signing key and provides the standard-base64 signature over the decoded message bytes.
+     * Signs a base64-encoded message with an issuer's active KMS signing key. Authenticate with a
+     * Vercel OIDC token in the `Authorization` header, and ensure the issuer's policies allow the
+     * workload to sign. The response identifies the signing key and provides the standard-base64
+     * signature over the decoded message bytes.
      */
-    fun signKmsMessage(clientConfig: ClientConfig, issuerId: String, message: String, options: RequestOptions? = null): SignKmsMessageResponse =
+    fun signKmsMessage(
+        clientConfig: ClientConfig,
+        issuerId: String,
+        message: String,
+        options: RequestOptions? = null,
+    ): SignKmsMessageResponse =
         dev.octri.showcase.vercel.methods.KmsSignKmsMessageOperation.signKmsMessage(
             clientConfig,
             issuerId,
@@ -586,9 +599,17 @@ data class UpdateKmsIssuerResponse(
         )
 
     /**
-     * Signs a base64-encoded message with an issuer's active KMS signing key. Authenticate with a Vercel OIDC token in the `Authorization` header, and ensure the issuer's policies allow the workload to sign. The response identifies the signing key and provides the standard-base64 signature over the decoded message bytes.
+     * Signs a base64-encoded message with an issuer's active KMS signing key. Authenticate with a
+     * Vercel OIDC token in the `Authorization` header, and ensure the issuer's policies allow the
+     * workload to sign. The response identifies the signing key and provides the standard-base64
+     * signature over the decoded message bytes.
      */
-    fun signKmsMessageWithRawResponse(clientConfig: ClientConfig, issuerId: String, message: String, options: RequestOptions? = null): SdkResponse<SignKmsMessageResponse> =
+    fun signKmsMessageWithRawResponse(
+        clientConfig: ClientConfig,
+        issuerId: String,
+        message: String,
+        options: RequestOptions? = null,
+    ): SdkResponse<SignKmsMessageResponse> =
         dev.octri.showcase.vercel.methods.KmsSignKmsMessageOperation.signKmsMessageWithRawResponse(
             clientConfig,
             issuerId,
@@ -597,9 +618,19 @@ data class UpdateKmsIssuerResponse(
         )
 
     /**
-     * Signs a JWT with an issuer's active KMS signing key. Authenticate with a Vercel OIDC token in the `Authorization` header, and ensure the issuer's policies allow the workload to sign. You can provide claims and additional token headers, or omit them to sign a token with default settings.
+     * Signs a JWT with an issuer's active KMS signing key. Authenticate with a Vercel OIDC token in
+     * the `Authorization` header, and ensure the issuer's policies allow the workload to sign. You
+     * can provide claims and additional token headers, or omit them to sign a token with default
+     * settings.
      */
-    fun signKmsToken(clientConfig: ClientConfig, issuerId: String, claims: Map<String, Any>? = null, headers: Map<String, Any>? = null, ttl: SdkClient.SdkOptional<Double?>? = null, options: RequestOptions? = null): SignKmsTokenResponse =
+    fun signKmsToken(
+        clientConfig: ClientConfig,
+        issuerId: String,
+        claims: Map<String, Any>? = null,
+        headers: Map<String, Any>? = null,
+        ttl: SdkClient.SdkOptional<Double?>? = null,
+        options: RequestOptions? = null,
+    ): SignKmsTokenResponse =
         dev.octri.showcase.vercel.methods.KmsSignKmsTokenOperation.signKmsToken(
             clientConfig,
             issuerId,
@@ -610,9 +641,19 @@ data class UpdateKmsIssuerResponse(
         )
 
     /**
-     * Signs a JWT with an issuer's active KMS signing key. Authenticate with a Vercel OIDC token in the `Authorization` header, and ensure the issuer's policies allow the workload to sign. You can provide claims and additional token headers, or omit them to sign a token with default settings.
+     * Signs a JWT with an issuer's active KMS signing key. Authenticate with a Vercel OIDC token in
+     * the `Authorization` header, and ensure the issuer's policies allow the workload to sign. You
+     * can provide claims and additional token headers, or omit them to sign a token with default
+     * settings.
      */
-    fun signKmsTokenWithRawResponse(clientConfig: ClientConfig, issuerId: String, claims: Map<String, Any>? = null, headers: Map<String, Any>? = null, ttl: SdkClient.SdkOptional<Double?>? = null, options: RequestOptions? = null): SdkResponse<SignKmsTokenResponse> =
+    fun signKmsTokenWithRawResponse(
+        clientConfig: ClientConfig,
+        issuerId: String,
+        claims: Map<String, Any>? = null,
+        headers: Map<String, Any>? = null,
+        ttl: SdkClient.SdkOptional<Double?>? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<SignKmsTokenResponse> =
         dev.octri.showcase.vercel.methods.KmsSignKmsTokenOperation.signKmsTokenWithRawResponse(
             clientConfig,
             issuerId,
@@ -623,9 +664,18 @@ data class UpdateKmsIssuerResponse(
         )
 
     /**
-     * Lists KMS issuers belonging to the authenticated user's team. Use `limit` to control the page size and `next` to continue from a previous page; `teamId` or `slug` can scope the request to a team.
+     * Lists KMS issuers belonging to the authenticated user's team. Use `limit` to control the page
+     * size and `next` to continue from a previous page; `teamId` or `slug` can scope the request to
+     * a team.
      */
-    fun listKmsIssuers(clientConfig: ClientConfig, limit: Long? = null, next: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): ListKmsIssuersResponse =
+    fun listKmsIssuers(
+        clientConfig: ClientConfig,
+        limit: Long? = null,
+        next: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): ListKmsIssuersResponse =
         dev.octri.showcase.vercel.methods.KmsListKmsIssuersOperation.listKmsIssuers(
             clientConfig,
             limit,
@@ -636,9 +686,18 @@ data class UpdateKmsIssuerResponse(
         )
 
     /**
-     * Lists KMS issuers belonging to the authenticated user's team. Use `limit` to control the page size and `next` to continue from a previous page; `teamId` or `slug` can scope the request to a team.
+     * Lists KMS issuers belonging to the authenticated user's team. Use `limit` to control the page
+     * size and `next` to continue from a previous page; `teamId` or `slug` can scope the request to
+     * a team.
      */
-    fun listKmsIssuersWithRawResponse(clientConfig: ClientConfig, limit: Long? = null, next: String? = null, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<ListKmsIssuersResponse> =
+    fun listKmsIssuersWithRawResponse(
+        clientConfig: ClientConfig,
+        limit: Long? = null,
+        next: String? = null,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<ListKmsIssuersResponse> =
         dev.octri.showcase.vercel.methods.KmsListKmsIssuersOperation.listKmsIssuersWithRawResponse(
             clientConfig,
             limit,
@@ -649,9 +708,15 @@ data class UpdateKmsIssuerResponse(
         )
 
     /**
-     * Creates a KMS issuer for the authenticated user's team to own asymmetric signing keys. Supply `name` and optionally configure the signing `algorithm`, claims validation schema, policy, or imported private key. The response includes the issuer and its signing keys.
+     * Creates a KMS issuer for the authenticated user's team to own asymmetric signing keys. Supply
+     * `name` and optionally configure the signing `algorithm`, claims validation schema, policy, or
+     * imported private key. The response includes the issuer and its signing keys.
      */
-    fun createKmsIssuer(clientConfig: ClientConfig, request: CreateKmsIssuerRequest, options: RequestOptions? = null): CreateKmsIssuerResponse =
+    fun createKmsIssuer(
+        clientConfig: ClientConfig,
+        request: CreateKmsIssuerRequest,
+        options: RequestOptions? = null,
+    ): CreateKmsIssuerResponse =
         dev.octri.showcase.vercel.methods.KmsCreateKmsIssuerOperation.createKmsIssuer(
             clientConfig,
             request,
@@ -659,19 +724,32 @@ data class UpdateKmsIssuerResponse(
         )
 
     /**
-     * Creates a KMS issuer for the authenticated user's team to own asymmetric signing keys. Supply `name` and optionally configure the signing `algorithm`, claims validation schema, policy, or imported private key. The response includes the issuer and its signing keys.
+     * Creates a KMS issuer for the authenticated user's team to own asymmetric signing keys. Supply
+     * `name` and optionally configure the signing `algorithm`, claims validation schema, policy, or
+     * imported private key. The response includes the issuer and its signing keys.
      */
-    fun createKmsIssuerWithRawResponse(clientConfig: ClientConfig, request: CreateKmsIssuerRequest, options: RequestOptions? = null): SdkResponse<CreateKmsIssuerResponse> =
-        dev.octri.showcase.vercel.methods.KmsCreateKmsIssuerOperation.createKmsIssuerWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createKmsIssuerWithRawResponse(
+        clientConfig: ClientConfig,
+        request: CreateKmsIssuerRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<CreateKmsIssuerResponse> =
+        dev.octri.showcase.vercel.methods.KmsCreateKmsIssuerOperation
+            .createKmsIssuerWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Creates a signing key for a KMS issuer. Use `activation` to choose automatic or manual activation, and optionally configure the grace period before the previous key is revoked. For manual activation, use the activate endpoint after the new key is ready.
+     * Creates a signing key for a KMS issuer. Use `activation` to choose automatic or manual
+     * activation, and optionally configure the grace period before the previous key is revoked. For
+     * manual activation, use the activate endpoint after the new key is ready.
      */
-    fun createKmsSigningKey(clientConfig: ClientConfig, request: CreateKmsSigningKeyRequest, options: RequestOptions? = null): CreateKmsSigningKeyResponse =
+    fun createKmsSigningKey(
+        clientConfig: ClientConfig,
+        request: CreateKmsSigningKeyRequest,
+        options: RequestOptions? = null,
+    ): CreateKmsSigningKeyResponse =
         dev.octri.showcase.vercel.methods.KmsCreateKmsSigningKeyOperation.createKmsSigningKey(
             clientConfig,
             request,
@@ -679,19 +757,36 @@ data class UpdateKmsIssuerResponse(
         )
 
     /**
-     * Creates a signing key for a KMS issuer. Use `activation` to choose automatic or manual activation, and optionally configure the grace period before the previous key is revoked. For manual activation, use the activate endpoint after the new key is ready.
+     * Creates a signing key for a KMS issuer. Use `activation` to choose automatic or manual
+     * activation, and optionally configure the grace period before the previous key is revoked. For
+     * manual activation, use the activate endpoint after the new key is ready.
      */
-    fun createKmsSigningKeyWithRawResponse(clientConfig: ClientConfig, request: CreateKmsSigningKeyRequest, options: RequestOptions? = null): SdkResponse<CreateKmsSigningKeyResponse> =
-        dev.octri.showcase.vercel.methods.KmsCreateKmsSigningKeyOperation.createKmsSigningKeyWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createKmsSigningKeyWithRawResponse(
+        clientConfig: ClientConfig,
+        request: CreateKmsSigningKeyRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<CreateKmsSigningKeyResponse> =
+        dev.octri.showcase.vercel.methods.KmsCreateKmsSigningKeyOperation
+            .createKmsSigningKeyWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Activates a pending signing key so the issuer begins signing with it. Optionally set `revokePreviousAfterHours` to control how long the previously active key remains in use after activation. Use the key identifier returned when the signing key was created.
+     * Activates a pending signing key so the issuer begins signing with it. Optionally set
+     * `revokePreviousAfterHours` to control how long the previously active key remains in use after
+     * activation. Use the key identifier returned when the signing key was created.
      */
-    fun activateKmsSigningKey(clientConfig: ClientConfig, issuerId: String, keyId: String, teamId: String? = null, slug: String? = null, revokePreviousAfterHours: Double? = null, options: RequestOptions? = null): ActivateKmsSigningKeyResponse =
+    fun activateKmsSigningKey(
+        clientConfig: ClientConfig,
+        issuerId: String,
+        keyId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        revokePreviousAfterHours: Double? = null,
+        options: RequestOptions? = null,
+    ): ActivateKmsSigningKeyResponse =
         dev.octri.showcase.vercel.methods.KmsActivateKmsSigningKeyOperation.activateKmsSigningKey(
             clientConfig,
             issuerId,
@@ -703,23 +798,43 @@ data class UpdateKmsIssuerResponse(
         )
 
     /**
-     * Activates a pending signing key so the issuer begins signing with it. Optionally set `revokePreviousAfterHours` to control how long the previously active key remains in use after activation. Use the key identifier returned when the signing key was created.
+     * Activates a pending signing key so the issuer begins signing with it. Optionally set
+     * `revokePreviousAfterHours` to control how long the previously active key remains in use after
+     * activation. Use the key identifier returned when the signing key was created.
      */
-    fun activateKmsSigningKeyWithRawResponse(clientConfig: ClientConfig, issuerId: String, keyId: String, teamId: String? = null, slug: String? = null, revokePreviousAfterHours: Double? = null, options: RequestOptions? = null): SdkResponse<ActivateKmsSigningKeyResponse> =
-        dev.octri.showcase.vercel.methods.KmsActivateKmsSigningKeyOperation.activateKmsSigningKeyWithRawResponse(
-            clientConfig,
-            issuerId,
-            keyId,
-            teamId,
-            slug,
-            revokePreviousAfterHours,
-            options,
-        )
+    fun activateKmsSigningKeyWithRawResponse(
+        clientConfig: ClientConfig,
+        issuerId: String,
+        keyId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        revokePreviousAfterHours: Double? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<ActivateKmsSigningKeyResponse> =
+        dev.octri.showcase.vercel.methods.KmsActivateKmsSigningKeyOperation
+            .activateKmsSigningKeyWithRawResponse(
+                clientConfig,
+                issuerId,
+                keyId,
+                teamId,
+                slug,
+                revokePreviousAfterHours,
+                options,
+            )
 
     /**
-     * Revokes a signing key immediately when it is already scheduled for revocation. Identify the issuer and key with `issuerId` and `keyId`. The response contains the updated issuer and its signing keys.
+     * Revokes a signing key immediately when it is already scheduled for revocation. Identify the
+     * issuer and key with `issuerId` and `keyId`. The response contains the updated issuer and its
+     * signing keys.
      */
-    fun revokeKmsSigningKey(clientConfig: ClientConfig, issuerId: String, keyId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): RevokeKmsSigningKeyResponse =
+    fun revokeKmsSigningKey(
+        clientConfig: ClientConfig,
+        issuerId: String,
+        keyId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): RevokeKmsSigningKeyResponse =
         dev.octri.showcase.vercel.methods.KmsRevokeKmsSigningKeyOperation.revokeKmsSigningKey(
             clientConfig,
             issuerId,
@@ -730,22 +845,40 @@ data class UpdateKmsIssuerResponse(
         )
 
     /**
-     * Revokes a signing key immediately when it is already scheduled for revocation. Identify the issuer and key with `issuerId` and `keyId`. The response contains the updated issuer and its signing keys.
+     * Revokes a signing key immediately when it is already scheduled for revocation. Identify the
+     * issuer and key with `issuerId` and `keyId`. The response contains the updated issuer and its
+     * signing keys.
      */
-    fun revokeKmsSigningKeyWithRawResponse(clientConfig: ClientConfig, issuerId: String, keyId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<RevokeKmsSigningKeyResponse> =
-        dev.octri.showcase.vercel.methods.KmsRevokeKmsSigningKeyOperation.revokeKmsSigningKeyWithRawResponse(
-            clientConfig,
-            issuerId,
-            keyId,
-            teamId,
-            slug,
-            options,
-        )
+    fun revokeKmsSigningKeyWithRawResponse(
+        clientConfig: ClientConfig,
+        issuerId: String,
+        keyId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<RevokeKmsSigningKeyResponse> =
+        dev.octri.showcase.vercel.methods.KmsRevokeKmsSigningKeyOperation
+            .revokeKmsSigningKeyWithRawResponse(
+                clientConfig,
+                issuerId,
+                keyId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Retrieves a KMS issuer by its identifier. Use a team bearer token for issuer management access or an OIDC token authorized by one of the issuer's policies for signing access. An OIDC-authorized response omits policies because that token does not grant management access.
+     * Retrieves a KMS issuer by its identifier. Use a team bearer token for issuer management
+     * access or an OIDC token authorized by one of the issuer's policies for signing access. An
+     * OIDC-authorized response omits policies because that token does not grant management access.
      */
-    fun getKmsIssuer(clientConfig: ClientConfig, issuerId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetKmsIssuerResponse =
+    fun getKmsIssuer(
+        clientConfig: ClientConfig,
+        issuerId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetKmsIssuerResponse =
         dev.octri.showcase.vercel.methods.KmsGetKmsIssuerOperation.getKmsIssuer(
             clientConfig,
             issuerId,
@@ -755,9 +888,17 @@ data class UpdateKmsIssuerResponse(
         )
 
     /**
-     * Retrieves a KMS issuer by its identifier. Use a team bearer token for issuer management access or an OIDC token authorized by one of the issuer's policies for signing access. An OIDC-authorized response omits policies because that token does not grant management access.
+     * Retrieves a KMS issuer by its identifier. Use a team bearer token for issuer management
+     * access or an OIDC token authorized by one of the issuer's policies for signing access. An
+     * OIDC-authorized response omits policies because that token does not grant management access.
      */
-    fun getKmsIssuerWithRawResponse(clientConfig: ClientConfig, issuerId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<GetKmsIssuerResponse> =
+    fun getKmsIssuerWithRawResponse(
+        clientConfig: ClientConfig,
+        issuerId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetKmsIssuerResponse> =
         dev.octri.showcase.vercel.methods.KmsGetKmsIssuerOperation.getKmsIssuerWithRawResponse(
             clientConfig,
             issuerId,
@@ -767,9 +908,18 @@ data class UpdateKmsIssuerResponse(
         )
 
     /**
-     * Updates a KMS issuer's name or claims schema. Include one or both fields to change; pass `null` for `claimsSchema` to remove the schema. The response contains the updated issuer.
+     * Updates a KMS issuer's name or claims schema. Include one or both fields to change; pass
+     * `null` for `claimsSchema` to remove the schema. The response contains the updated issuer.
      */
-    fun updateKmsIssuer(clientConfig: ClientConfig, issuerId: String, teamId: String? = null, slug: String? = null, name: String? = null, claimsSchema: SdkClient.SdkOptional<Map<String, Any>?>? = null, options: RequestOptions? = null): UpdateKmsIssuerResponse =
+    fun updateKmsIssuer(
+        clientConfig: ClientConfig,
+        issuerId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        name: String? = null,
+        claimsSchema: SdkClient.SdkOptional<Map<String, Any>?>? = null,
+        options: RequestOptions? = null,
+    ): UpdateKmsIssuerResponse =
         dev.octri.showcase.vercel.methods.KmsUpdateKmsIssuerOperation.updateKmsIssuer(
             clientConfig,
             issuerId,
@@ -781,23 +931,41 @@ data class UpdateKmsIssuerResponse(
         )
 
     /**
-     * Updates a KMS issuer's name or claims schema. Include one or both fields to change; pass `null` for `claimsSchema` to remove the schema. The response contains the updated issuer.
+     * Updates a KMS issuer's name or claims schema. Include one or both fields to change; pass
+     * `null` for `claimsSchema` to remove the schema. The response contains the updated issuer.
      */
-    fun updateKmsIssuerWithRawResponse(clientConfig: ClientConfig, issuerId: String, teamId: String? = null, slug: String? = null, name: String? = null, claimsSchema: SdkClient.SdkOptional<Map<String, Any>?>? = null, options: RequestOptions? = null): SdkResponse<UpdateKmsIssuerResponse> =
-        dev.octri.showcase.vercel.methods.KmsUpdateKmsIssuerOperation.updateKmsIssuerWithRawResponse(
-            clientConfig,
-            issuerId,
-            teamId,
-            slug,
-            name,
-            claimsSchema,
-            options,
-        )
+    fun updateKmsIssuerWithRawResponse(
+        clientConfig: ClientConfig,
+        issuerId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        name: String? = null,
+        claimsSchema: SdkClient.SdkOptional<Map<String, Any>?>? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<UpdateKmsIssuerResponse> =
+        dev.octri.showcase.vercel.methods.KmsUpdateKmsIssuerOperation
+            .updateKmsIssuerWithRawResponse(
+                clientConfig,
+                issuerId,
+                teamId,
+                slug,
+                name,
+                claimsSchema,
+                options,
+            )
 
     /**
-     * Deletes a KMS issuer and its signing keys. Use `issuerId` to identify the issuer and optionally provide `teamId` or `slug` to select the team scope. The operation removes the issuer and its associated keys.
+     * Deletes a KMS issuer and its signing keys. Use `issuerId` to identify the issuer and
+     * optionally provide `teamId` or `slug` to select the team scope. The operation removes the
+     * issuer and its associated keys.
      */
-    fun deleteKmsIssuer(clientConfig: ClientConfig, issuerId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit =
+    fun deleteKmsIssuer(
+        clientConfig: ClientConfig,
+        issuerId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit =
         dev.octri.showcase.vercel.methods.KmsDeleteKmsIssuerOperation.deleteKmsIssuer(
             clientConfig,
             issuerId,
@@ -807,21 +975,37 @@ data class UpdateKmsIssuerResponse(
         )
 
     /**
-     * Deletes a KMS issuer and its signing keys. Use `issuerId` to identify the issuer and optionally provide `teamId` or `slug` to select the team scope. The operation removes the issuer and its associated keys.
+     * Deletes a KMS issuer and its signing keys. Use `issuerId` to identify the issuer and
+     * optionally provide `teamId` or `slug` to select the team scope. The operation removes the
+     * issuer and its associated keys.
      */
-    fun deleteKmsIssuerWithRawResponse(clientConfig: ClientConfig, issuerId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<Unit> =
-        dev.octri.showcase.vercel.methods.KmsDeleteKmsIssuerOperation.deleteKmsIssuerWithRawResponse(
-            clientConfig,
-            issuerId,
-            teamId,
-            slug,
-            options,
-        )
+    fun deleteKmsIssuerWithRawResponse(
+        clientConfig: ClientConfig,
+        issuerId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<Unit> =
+        dev.octri.showcase.vercel.methods.KmsDeleteKmsIssuerOperation
+            .deleteKmsIssuerWithRawResponse(
+                clientConfig,
+                issuerId,
+                teamId,
+                slug,
+                options,
+            )
 
     /**
-     * Creates a policy on a KMS issuer that grants a project's deployments permission to sign with the issuer. Supply `kind`, `projectId`, and at least one `environments` entry; optionally include `tokenClaims` for claims to add to signed tokens. The response returns the created policy.
+     * Creates a policy on a KMS issuer that grants a project's deployments permission to sign with
+     * the issuer. Supply `kind`, `projectId`, and at least one `environments` entry; optionally
+     * include `tokenClaims` for claims to add to signed tokens. The response returns the created
+     * policy.
      */
-    fun createKmsIssuerPolicy(clientConfig: ClientConfig, request: CreateKmsIssuerPolicyRequest, options: RequestOptions? = null): CreateKmsIssuerPolicyResponse =
+    fun createKmsIssuerPolicy(
+        clientConfig: ClientConfig,
+        request: CreateKmsIssuerPolicyRequest,
+        options: RequestOptions? = null,
+    ): CreateKmsIssuerPolicyResponse =
         dev.octri.showcase.vercel.methods.KmsCreateKmsIssuerPolicyOperation.createKmsIssuerPolicy(
             clientConfig,
             request,
@@ -829,19 +1013,33 @@ data class UpdateKmsIssuerResponse(
         )
 
     /**
-     * Creates a policy on a KMS issuer that grants a project's deployments permission to sign with the issuer. Supply `kind`, `projectId`, and at least one `environments` entry; optionally include `tokenClaims` for claims to add to signed tokens. The response returns the created policy.
+     * Creates a policy on a KMS issuer that grants a project's deployments permission to sign with
+     * the issuer. Supply `kind`, `projectId`, and at least one `environments` entry; optionally
+     * include `tokenClaims` for claims to add to signed tokens. The response returns the created
+     * policy.
      */
-    fun createKmsIssuerPolicyWithRawResponse(clientConfig: ClientConfig, request: CreateKmsIssuerPolicyRequest, options: RequestOptions? = null): SdkResponse<CreateKmsIssuerPolicyResponse> =
-        dev.octri.showcase.vercel.methods.KmsCreateKmsIssuerPolicyOperation.createKmsIssuerPolicyWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun createKmsIssuerPolicyWithRawResponse(
+        clientConfig: ClientConfig,
+        request: CreateKmsIssuerPolicyRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<CreateKmsIssuerPolicyResponse> =
+        dev.octri.showcase.vercel.methods.KmsCreateKmsIssuerPolicyOperation
+            .createKmsIssuerPolicyWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Updates an existing KMS issuer policy's environments or token claims. Use `environments` to change where a project-grant policy applies, and `tokenClaims` to change the claims included in signed JWTs. Pass `null` for `tokenClaims` to remove the claims.
+     * Updates an existing KMS issuer policy's environments or token claims. Use `environments` to
+     * change where a project-grant policy applies, and `tokenClaims` to change the claims included
+     * in signed JWTs. Pass `null` for `tokenClaims` to remove the claims.
      */
-    fun updateKmsIssuerPolicy(clientConfig: ClientConfig, request: UpdateKmsIssuerPolicyRequest, options: RequestOptions? = null): UpdateKmsIssuerPolicyResponse =
+    fun updateKmsIssuerPolicy(
+        clientConfig: ClientConfig,
+        request: UpdateKmsIssuerPolicyRequest,
+        options: RequestOptions? = null,
+    ): UpdateKmsIssuerPolicyResponse =
         dev.octri.showcase.vercel.methods.KmsUpdateKmsIssuerPolicyOperation.updateKmsIssuerPolicy(
             clientConfig,
             request,
@@ -849,19 +1047,35 @@ data class UpdateKmsIssuerResponse(
         )
 
     /**
-     * Updates an existing KMS issuer policy's environments or token claims. Use `environments` to change where a project-grant policy applies, and `tokenClaims` to change the claims included in signed JWTs. Pass `null` for `tokenClaims` to remove the claims.
+     * Updates an existing KMS issuer policy's environments or token claims. Use `environments` to
+     * change where a project-grant policy applies, and `tokenClaims` to change the claims included
+     * in signed JWTs. Pass `null` for `tokenClaims` to remove the claims.
      */
-    fun updateKmsIssuerPolicyWithRawResponse(clientConfig: ClientConfig, request: UpdateKmsIssuerPolicyRequest, options: RequestOptions? = null): SdkResponse<UpdateKmsIssuerPolicyResponse> =
-        dev.octri.showcase.vercel.methods.KmsUpdateKmsIssuerPolicyOperation.updateKmsIssuerPolicyWithRawResponse(
-            clientConfig,
-            request,
-            options,
-        )
+    fun updateKmsIssuerPolicyWithRawResponse(
+        clientConfig: ClientConfig,
+        request: UpdateKmsIssuerPolicyRequest,
+        options: RequestOptions? = null,
+    ): SdkResponse<UpdateKmsIssuerPolicyResponse> =
+        dev.octri.showcase.vercel.methods.KmsUpdateKmsIssuerPolicyOperation
+            .updateKmsIssuerPolicyWithRawResponse(
+                clientConfig,
+                request,
+                options,
+            )
 
     /**
-     * Deletes a policy from a KMS issuer. Use `issuerId`, `kind`, and `policyKey` to identify the issuer policy, and use `teamId` or `slug` to specify the team context when needed.
+     * Deletes a policy from a KMS issuer. Use `issuerId`, `kind`, and `policyKey` to identify the
+     * issuer policy, and use `teamId` or `slug` to specify the team context when needed.
      */
-    fun deleteKmsIssuerPolicy(clientConfig: ClientConfig, issuerId: String, kind: DeleteKmsIssuerPolicyParameterEnum, policyKey: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): Unit =
+    fun deleteKmsIssuerPolicy(
+        clientConfig: ClientConfig,
+        issuerId: String,
+        kind: DeleteKmsIssuerPolicyParameterEnum,
+        policyKey: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): Unit =
         dev.octri.showcase.vercel.methods.KmsDeleteKmsIssuerPolicyOperation.deleteKmsIssuerPolicy(
             clientConfig,
             issuerId,
@@ -873,16 +1087,26 @@ data class UpdateKmsIssuerResponse(
         )
 
     /**
-     * Deletes a policy from a KMS issuer. Use `issuerId`, `kind`, and `policyKey` to identify the issuer policy, and use `teamId` or `slug` to specify the team context when needed.
+     * Deletes a policy from a KMS issuer. Use `issuerId`, `kind`, and `policyKey` to identify the
+     * issuer policy, and use `teamId` or `slug` to specify the team context when needed.
      */
-    fun deleteKmsIssuerPolicyWithRawResponse(clientConfig: ClientConfig, issuerId: String, kind: DeleteKmsIssuerPolicyParameterEnum, policyKey: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<Unit> =
-        dev.octri.showcase.vercel.methods.KmsDeleteKmsIssuerPolicyOperation.deleteKmsIssuerPolicyWithRawResponse(
-            clientConfig,
-            issuerId,
-            kind,
-            policyKey,
-            teamId,
-            slug,
-            options,
-        )
+    fun deleteKmsIssuerPolicyWithRawResponse(
+        clientConfig: ClientConfig,
+        issuerId: String,
+        kind: DeleteKmsIssuerPolicyParameterEnum,
+        policyKey: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<Unit> =
+        dev.octri.showcase.vercel.methods.KmsDeleteKmsIssuerPolicyOperation
+            .deleteKmsIssuerPolicyWithRawResponse(
+                clientConfig,
+                issuerId,
+                kind,
+                policyKey,
+                teamId,
+                slug,
+                options,
+            )
 }

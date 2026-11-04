@@ -3,11 +3,13 @@
 
 package dev.octri.showcase.vercel.models
 
-class AddRouteResponseRouteRouteTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is AddRouteResponseRouteRouteTypeEnum && value == other.value
+class AddRouteResponseRouteRouteTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is AddRouteResponseRouteRouteTypeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -17,19 +19,22 @@ class AddRouteResponseRouteRouteTypeEnum private constructor(
         @JvmField val SET_STATUS = AddRouteResponseRouteRouteTypeEnum("set_status")
         @JvmField val TRANSFORM = AddRouteResponseRouteRouteTypeEnum("transform")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = AddRouteResponseRouteRouteTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = AddRouteResponseRouteRouteTypeEnum(value)
     }
 }
 
-/**
- * The syntax type of the source pattern. Determines how the pattern is compiled to regex.
- */
-class AddRouteResponseRouteSrcSyntaxEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is AddRouteResponseRouteSrcSyntaxEnum && value == other.value
+/** The syntax type of the source pattern. Determines how the pattern is compiled to regex. */
+class AddRouteResponseRouteSrcSyntaxEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is AddRouteResponseRouteSrcSyntaxEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -38,19 +43,25 @@ class AddRouteResponseRouteSrcSyntaxEnum private constructor(
         @JvmField val PATH_TO_REGEXP = AddRouteResponseRouteSrcSyntaxEnum("path-to-regexp")
         @JvmField val REGEX = AddRouteResponseRouteSrcSyntaxEnum("regex")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = AddRouteResponseRouteSrcSyntaxEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = AddRouteResponseRouteSrcSyntaxEnum(value)
     }
 }
 
 /**
- * Whether this route is new and not yet published to production. Set to true only when a route is first created via add-route. Cleared (set to false) when a version is promoted to production.
+ * Whether this route is new and not yet published to production. Set to true only when a route is
+ * first created via add-route. Cleared (set to false) when a version is promoted to production.
  */
-class AddRouteResponseRouteStagedEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is AddRouteResponseRouteStagedEnum && value == other.value
+class AddRouteResponseRouteStagedEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is AddRouteResponseRouteStagedEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -58,19 +69,22 @@ class AddRouteResponseRouteStagedEnum private constructor(
         @JvmField val FALSE = AddRouteResponseRouteStagedEnum(false)
         @JvmField val TRUE = AddRouteResponseRouteStagedEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = AddRouteResponseRouteStagedEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = AddRouteResponseRouteStagedEnum(value)
     }
 }
 
-/**
- * Whether this version is currently live in production.
- */
-class AddRouteResponseVersionIsLiveEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is AddRouteResponseVersionIsLiveEnum && value == other.value
+/** Whether this version is currently live in production. */
+class AddRouteResponseVersionIsLiveEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is AddRouteResponseVersionIsLiveEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -78,19 +92,22 @@ class AddRouteResponseVersionIsLiveEnum private constructor(
         @JvmField val FALSE = AddRouteResponseVersionIsLiveEnum(false)
         @JvmField val TRUE = AddRouteResponseVersionIsLiveEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = AddRouteResponseVersionIsLiveEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = AddRouteResponseVersionIsLiveEnum(value)
     }
 }
 
-/**
- * Whether this version is staged and not yet promoted to production.
- */
-class AddRouteResponseVersionIsStagingEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is AddRouteResponseVersionIsStagingEnum && value == other.value
+/** Whether this version is staged and not yet promoted to production. */
+class AddRouteResponseVersionIsStagingEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is AddRouteResponseVersionIsStagingEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -98,16 +115,21 @@ class AddRouteResponseVersionIsStagingEnum private constructor(
         @JvmField val FALSE = AddRouteResponseVersionIsStagingEnum(false)
         @JvmField val TRUE = AddRouteResponseVersionIsStagingEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = AddRouteResponseVersionIsStagingEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = AddRouteResponseVersionIsStagingEnum(value)
     }
 }
 
-class StageRoutesRoutesItemRouteHasItemTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is StageRoutesRoutesItemRouteHasItemTypeEnum && value == other.value
+class StageRoutesRoutesItemRouteHasItemTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is StageRoutesRoutesItemRouteHasItemTypeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -117,16 +139,21 @@ class StageRoutesRoutesItemRouteHasItemTypeEnum private constructor(
         @JvmField val COOKIE = StageRoutesRoutesItemRouteHasItemTypeEnum("cookie")
         @JvmField val QUERY = StageRoutesRoutesItemRouteHasItemTypeEnum("query")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = StageRoutesRoutesItemRouteHasItemTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = StageRoutesRoutesItemRouteHasItemTypeEnum(value)
     }
 }
 
-class StageRoutesRoutesItemRouteMissingItemTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is StageRoutesRoutesItemRouteMissingItemTypeEnum && value == other.value
+class StageRoutesRoutesItemRouteMissingItemTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is StageRoutesRoutesItemRouteMissingItemTypeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -136,16 +163,21 @@ class StageRoutesRoutesItemRouteMissingItemTypeEnum private constructor(
         @JvmField val COOKIE = StageRoutesRoutesItemRouteMissingItemTypeEnum("cookie")
         @JvmField val QUERY = StageRoutesRoutesItemRouteMissingItemTypeEnum("query")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = StageRoutesRoutesItemRouteMissingItemTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = StageRoutesRoutesItemRouteMissingItemTypeEnum(value)
     }
 }
 
-class StageRoutesRoutesItemRouteTransformsItemOpEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is StageRoutesRoutesItemRouteTransformsItemOpEnum && value == other.value
+class StageRoutesRoutesItemRouteTransformsItemOpEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is StageRoutesRoutesItemRouteTransformsItemOpEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -154,37 +186,48 @@ class StageRoutesRoutesItemRouteTransformsItemOpEnum private constructor(
         @JvmField val SET = StageRoutesRoutesItemRouteTransformsItemOpEnum("set")
         @JvmField val DELETE = StageRoutesRoutesItemRouteTransformsItemOpEnum("delete")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = StageRoutesRoutesItemRouteTransformsItemOpEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = StageRoutesRoutesItemRouteTransformsItemOpEnum(value)
     }
 }
 
-class StageRoutesRoutesItemRouteTransformsItemTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is StageRoutesRoutesItemRouteTransformsItemTypeEnum && value == other.value
+class StageRoutesRoutesItemRouteTransformsItemTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is StageRoutesRoutesItemRouteTransformsItemTypeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val REQUEST_HEADERS = StageRoutesRoutesItemRouteTransformsItemTypeEnum("request.headers")
-        @JvmField val REQUEST_QUERY = StageRoutesRoutesItemRouteTransformsItemTypeEnum("request.query")
-        @JvmField val RESPONSE_HEADERS = StageRoutesRoutesItemRouteTransformsItemTypeEnum("response.headers")
+        @JvmField
+        val REQUEST_HEADERS = StageRoutesRoutesItemRouteTransformsItemTypeEnum("request.headers")
+        @JvmField
+        val REQUEST_QUERY = StageRoutesRoutesItemRouteTransformsItemTypeEnum("request.query")
+        @JvmField
+        val RESPONSE_HEADERS = StageRoutesRoutesItemRouteTransformsItemTypeEnum("response.headers")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = StageRoutesRoutesItemRouteTransformsItemTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = StageRoutesRoutesItemRouteTransformsItemTypeEnum(value)
     }
 }
 
-/**
- * Whether this version is currently live in production.
- */
-class StageRoutesResponseVersionIsLiveEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is StageRoutesResponseVersionIsLiveEnum && value == other.value
+/** Whether this version is currently live in production. */
+class StageRoutesResponseVersionIsLiveEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is StageRoutesResponseVersionIsLiveEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -192,19 +235,22 @@ class StageRoutesResponseVersionIsLiveEnum private constructor(
         @JvmField val FALSE = StageRoutesResponseVersionIsLiveEnum(false)
         @JvmField val TRUE = StageRoutesResponseVersionIsLiveEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = StageRoutesResponseVersionIsLiveEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = StageRoutesResponseVersionIsLiveEnum(value)
     }
 }
 
-/**
- * Whether this version is staged and not yet promoted to production.
- */
-class StageRoutesResponseVersionIsStagingEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is StageRoutesResponseVersionIsStagingEnum && value == other.value
+/** Whether this version is staged and not yet promoted to production. */
+class StageRoutesResponseVersionIsStagingEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is StageRoutesResponseVersionIsStagingEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -212,16 +258,21 @@ class StageRoutesResponseVersionIsStagingEnum private constructor(
         @JvmField val FALSE = StageRoutesResponseVersionIsStagingEnum(false)
         @JvmField val TRUE = StageRoutesResponseVersionIsStagingEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = StageRoutesResponseVersionIsStagingEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = StageRoutesResponseVersionIsStagingEnum(value)
     }
 }
 
-class EditRouteRouteRouteHasItemTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteRouteRouteHasItemTypeEnum && value == other.value
+class EditRouteRouteRouteHasItemTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteRouteRouteHasItemTypeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -231,16 +282,21 @@ class EditRouteRouteRouteHasItemTypeEnum private constructor(
         @JvmField val COOKIE = EditRouteRouteRouteHasItemTypeEnum("cookie")
         @JvmField val QUERY = EditRouteRouteRouteHasItemTypeEnum("query")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = EditRouteRouteRouteHasItemTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = EditRouteRouteRouteHasItemTypeEnum(value)
     }
 }
 
-class EditRouteRouteRouteMissingItemTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteRouteRouteMissingItemTypeEnum && value == other.value
+class EditRouteRouteRouteMissingItemTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteRouteRouteMissingItemTypeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -250,16 +306,21 @@ class EditRouteRouteRouteMissingItemTypeEnum private constructor(
         @JvmField val COOKIE = EditRouteRouteRouteMissingItemTypeEnum("cookie")
         @JvmField val QUERY = EditRouteRouteRouteMissingItemTypeEnum("query")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = EditRouteRouteRouteMissingItemTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = EditRouteRouteRouteMissingItemTypeEnum(value)
     }
 }
 
-class EditRouteRouteRouteTransformsItemOpEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteRouteRouteTransformsItemOpEnum && value == other.value
+class EditRouteRouteRouteTransformsItemOpEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteRouteRouteTransformsItemOpEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -268,37 +329,46 @@ class EditRouteRouteRouteTransformsItemOpEnum private constructor(
         @JvmField val SET = EditRouteRouteRouteTransformsItemOpEnum("set")
         @JvmField val DELETE = EditRouteRouteRouteTransformsItemOpEnum("delete")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = EditRouteRouteRouteTransformsItemOpEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = EditRouteRouteRouteTransformsItemOpEnum(value)
     }
 }
 
-class EditRouteRouteRouteTransformsItemTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteRouteRouteTransformsItemTypeEnum && value == other.value
+class EditRouteRouteRouteTransformsItemTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteRouteRouteTransformsItemTypeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val REQUEST_HEADERS = EditRouteRouteRouteTransformsItemTypeEnum("request.headers")
         @JvmField val REQUEST_QUERY = EditRouteRouteRouteTransformsItemTypeEnum("request.query")
-        @JvmField val RESPONSE_HEADERS = EditRouteRouteRouteTransformsItemTypeEnum("response.headers")
+        @JvmField
+        val RESPONSE_HEADERS = EditRouteRouteRouteTransformsItemTypeEnum("response.headers")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = EditRouteRouteRouteTransformsItemTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = EditRouteRouteRouteTransformsItemTypeEnum(value)
     }
 }
 
-/**
- * Pattern syntax type. If not provided, inferred from pattern.
- */
-class EditRouteRouteSrcSyntaxEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteRouteSrcSyntaxEnum && value == other.value
+/** Pattern syntax type. If not provided, inferred from pattern. */
+class EditRouteRouteSrcSyntaxEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteRouteSrcSyntaxEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -307,19 +377,22 @@ class EditRouteRouteSrcSyntaxEnum private constructor(
         @JvmField val PATH_TO_REGEXP = EditRouteRouteSrcSyntaxEnum("path-to-regexp")
         @JvmField val REGEX = EditRouteRouteSrcSyntaxEnum("regex")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = EditRouteRouteSrcSyntaxEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = EditRouteRouteSrcSyntaxEnum(value)
     }
 }
 
-/**
- * Whether the routing rule is enabled. Defaults to true.
- */
-class EditRouteResponseRouteEnabledEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteResponseRouteEnabledEnum && value == other.value
+/** Whether the routing rule is enabled. Defaults to true. */
+class EditRouteResponseRouteEnabledEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteResponseRouteEnabledEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -327,16 +400,21 @@ class EditRouteResponseRouteEnabledEnum private constructor(
         @JvmField val FALSE = EditRouteResponseRouteEnabledEnum(false)
         @JvmField val TRUE = EditRouteResponseRouteEnabledEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = EditRouteResponseRouteEnabledEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = EditRouteResponseRouteEnabledEnum(value)
     }
 }
 
-class EditRouteResponseRouteRouteCaseSensitiveEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteResponseRouteRouteCaseSensitiveEnum && value == other.value
+class EditRouteResponseRouteRouteCaseSensitiveEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteResponseRouteRouteCaseSensitiveEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -344,16 +422,21 @@ class EditRouteResponseRouteRouteCaseSensitiveEnum private constructor(
         @JvmField val FALSE = EditRouteResponseRouteRouteCaseSensitiveEnum(false)
         @JvmField val TRUE = EditRouteResponseRouteRouteCaseSensitiveEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = EditRouteResponseRouteRouteCaseSensitiveEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = EditRouteResponseRouteRouteCaseSensitiveEnum(value)
     }
 }
 
-class EditRouteResponseRouteRouteCheckEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteResponseRouteRouteCheckEnum && value == other.value
+class EditRouteResponseRouteRouteCheckEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteResponseRouteRouteCheckEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -361,16 +444,21 @@ class EditRouteResponseRouteRouteCheckEnum private constructor(
         @JvmField val FALSE = EditRouteResponseRouteRouteCheckEnum(false)
         @JvmField val TRUE = EditRouteResponseRouteRouteCheckEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = EditRouteResponseRouteRouteCheckEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = EditRouteResponseRouteRouteCheckEnum(value)
     }
 }
 
-class EditRouteResponseRouteRouteContinueEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteResponseRouteRouteContinueEnum && value == other.value
+class EditRouteResponseRouteRouteContinueEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteResponseRouteRouteContinueEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -378,16 +466,21 @@ class EditRouteResponseRouteRouteContinueEnum private constructor(
         @JvmField val FALSE = EditRouteResponseRouteRouteContinueEnum(false)
         @JvmField val TRUE = EditRouteResponseRouteRouteContinueEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = EditRouteResponseRouteRouteContinueEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = EditRouteResponseRouteRouteContinueEnum(value)
     }
 }
 
-class EditRouteResponseRouteRouteImportantEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteResponseRouteRouteImportantEnum && value == other.value
+class EditRouteResponseRouteRouteImportantEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteResponseRouteRouteImportantEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -395,16 +488,21 @@ class EditRouteResponseRouteRouteImportantEnum private constructor(
         @JvmField val FALSE = EditRouteResponseRouteRouteImportantEnum(false)
         @JvmField val TRUE = EditRouteResponseRouteRouteImportantEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = EditRouteResponseRouteRouteImportantEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = EditRouteResponseRouteRouteImportantEnum(value)
     }
 }
 
-class EditRouteResponseRouteRouteMitigateActionEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteResponseRouteRouteMitigateActionEnum && value == other.value
+class EditRouteResponseRouteRouteMitigateActionEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteResponseRouteRouteMitigateActionEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -412,16 +510,21 @@ class EditRouteResponseRouteRouteMitigateActionEnum private constructor(
         @JvmField val CHALLENGE = EditRouteResponseRouteRouteMitigateActionEnum("challenge")
         @JvmField val DENY = EditRouteResponseRouteRouteMitigateActionEnum("deny")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = EditRouteResponseRouteRouteMitigateActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = EditRouteResponseRouteRouteMitigateActionEnum(value)
     }
 }
 
-class EditRouteResponseRouteRouteOverrideEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteResponseRouteRouteOverrideEnum && value == other.value
+class EditRouteResponseRouteRouteOverrideEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteResponseRouteRouteOverrideEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -429,16 +532,21 @@ class EditRouteResponseRouteRouteOverrideEnum private constructor(
         @JvmField val FALSE = EditRouteResponseRouteRouteOverrideEnum(false)
         @JvmField val TRUE = EditRouteResponseRouteRouteOverrideEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = EditRouteResponseRouteRouteOverrideEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = EditRouteResponseRouteRouteOverrideEnum(value)
     }
 }
 
-class EditRouteResponseRouteRouteRespectOriginCacheControlEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteResponseRouteRouteRespectOriginCacheControlEnum && value == other.value
+class EditRouteResponseRouteRouteRespectOriginCacheControlEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteResponseRouteRouteRespectOriginCacheControlEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -446,16 +554,22 @@ class EditRouteResponseRouteRouteRespectOriginCacheControlEnum private construct
         @JvmField val FALSE = EditRouteResponseRouteRouteRespectOriginCacheControlEnum(false)
         @JvmField val TRUE = EditRouteResponseRouteRouteRespectOriginCacheControlEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = EditRouteResponseRouteRouteRespectOriginCacheControlEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            EditRouteResponseRouteRouteRespectOriginCacheControlEnum(value)
     }
 }
 
-class EditRouteResponseRouteRouteTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteResponseRouteRouteTypeEnum && value == other.value
+class EditRouteResponseRouteRouteTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteResponseRouteRouteTypeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -465,19 +579,22 @@ class EditRouteResponseRouteRouteTypeEnum private constructor(
         @JvmField val SET_STATUS = EditRouteResponseRouteRouteTypeEnum("set_status")
         @JvmField val TRANSFORM = EditRouteResponseRouteRouteTypeEnum("transform")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = EditRouteResponseRouteRouteTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = EditRouteResponseRouteRouteTypeEnum(value)
     }
 }
 
-/**
- * The syntax type of the source pattern. Determines how the pattern is compiled to regex.
- */
-class EditRouteResponseRouteSrcSyntaxEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteResponseRouteSrcSyntaxEnum && value == other.value
+/** The syntax type of the source pattern. Determines how the pattern is compiled to regex. */
+class EditRouteResponseRouteSrcSyntaxEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteResponseRouteSrcSyntaxEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -486,19 +603,25 @@ class EditRouteResponseRouteSrcSyntaxEnum private constructor(
         @JvmField val PATH_TO_REGEXP = EditRouteResponseRouteSrcSyntaxEnum("path-to-regexp")
         @JvmField val REGEX = EditRouteResponseRouteSrcSyntaxEnum("regex")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = EditRouteResponseRouteSrcSyntaxEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = EditRouteResponseRouteSrcSyntaxEnum(value)
     }
 }
 
 /**
- * Whether this route is new and not yet published to production. Set to true only when a route is first created via add-route. Cleared (set to false) when a version is promoted to production.
+ * Whether this route is new and not yet published to production. Set to true only when a route is
+ * first created via add-route. Cleared (set to false) when a version is promoted to production.
  */
-class EditRouteResponseRouteStagedEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteResponseRouteStagedEnum && value == other.value
+class EditRouteResponseRouteStagedEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteResponseRouteStagedEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -506,19 +629,22 @@ class EditRouteResponseRouteStagedEnum private constructor(
         @JvmField val FALSE = EditRouteResponseRouteStagedEnum(false)
         @JvmField val TRUE = EditRouteResponseRouteStagedEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = EditRouteResponseRouteStagedEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = EditRouteResponseRouteStagedEnum(value)
     }
 }
 
-/**
- * Whether this version is currently live in production.
- */
-class EditRouteResponseVersionIsLiveEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteResponseVersionIsLiveEnum && value == other.value
+/** Whether this version is currently live in production. */
+class EditRouteResponseVersionIsLiveEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteResponseVersionIsLiveEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -526,19 +652,22 @@ class EditRouteResponseVersionIsLiveEnum private constructor(
         @JvmField val FALSE = EditRouteResponseVersionIsLiveEnum(false)
         @JvmField val TRUE = EditRouteResponseVersionIsLiveEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = EditRouteResponseVersionIsLiveEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = EditRouteResponseVersionIsLiveEnum(value)
     }
 }
 
-/**
- * Whether this version is staged and not yet promoted to production.
- */
-class EditRouteResponseVersionIsStagingEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is EditRouteResponseVersionIsStagingEnum && value == other.value
+/** Whether this version is staged and not yet promoted to production. */
+class EditRouteResponseVersionIsStagingEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is EditRouteResponseVersionIsStagingEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -546,16 +675,21 @@ class EditRouteResponseVersionIsStagingEnum private constructor(
         @JvmField val FALSE = EditRouteResponseVersionIsStagingEnum(false)
         @JvmField val TRUE = EditRouteResponseVersionIsStagingEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = EditRouteResponseVersionIsStagingEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = EditRouteResponseVersionIsStagingEnum(value)
     }
 }
 
-class GenerateRouteResponseRouteActionsItemHeadersItemOpEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GenerateRouteResponseRouteActionsItemHeadersItemOpEnum && value == other.value
+class GenerateRouteResponseRouteActionsItemHeadersItemOpEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GenerateRouteResponseRouteActionsItemHeadersItemOpEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -564,25 +698,38 @@ class GenerateRouteResponseRouteActionsItemHeadersItemOpEnum private constructor
         @JvmField val DELETE = GenerateRouteResponseRouteActionsItemHeadersItemOpEnum("delete")
         @JvmField val SET = GenerateRouteResponseRouteActionsItemHeadersItemOpEnum("set")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GenerateRouteResponseRouteActionsItemHeadersItemOpEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = GenerateRouteResponseRouteActionsItemHeadersItemOpEnum(value)
     }
 }
 
-class GenerateRouteResponseRouteActionsItemSubTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GenerateRouteResponseRouteActionsItemSubTypeEnum && value == other.value
+class GenerateRouteResponseRouteActionsItemSubTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GenerateRouteResponseRouteActionsItemSubTypeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val RESPONSE_HEADERS = GenerateRouteResponseRouteActionsItemSubTypeEnum("response-headers")
-        @JvmField val TRANSFORM_REQUEST_HEADER = GenerateRouteResponseRouteActionsItemSubTypeEnum("transform-request-header")
-        @JvmField val TRANSFORM_REQUEST_QUERY = GenerateRouteResponseRouteActionsItemSubTypeEnum("transform-request-query")
+        @JvmField
+        val RESPONSE_HEADERS = GenerateRouteResponseRouteActionsItemSubTypeEnum("response-headers")
+        @JvmField
+        val TRANSFORM_REQUEST_HEADER =
+            GenerateRouteResponseRouteActionsItemSubTypeEnum("transform-request-header")
+        @JvmField
+        val TRANSFORM_REQUEST_QUERY =
+            GenerateRouteResponseRouteActionsItemSubTypeEnum("transform-request-query")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GenerateRouteResponseRouteActionsItemSubTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = GenerateRouteResponseRouteActionsItemSubTypeEnum(value)
     }
 }

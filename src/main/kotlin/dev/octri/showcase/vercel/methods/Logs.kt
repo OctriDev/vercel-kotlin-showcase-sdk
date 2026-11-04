@@ -13,45 +13,74 @@ import dev.octri.showcase.vercel.SdkResponse
 
 object Logs {
 
-
-
-
-
-data class GetRuntimeLogsResponse(
-    val domain: String,
-    val level: GetRuntimeLogsResponseLevelEnum,
-    val message: String,
-    val messageTruncated: Boolean,
-    val requestMethod: String,
-    val requestPath: String,
-    val responseStatusCode: Double,
-    val rowId: String,
-    val source: GetRuntimeLogsResponseSourceEnum,
-    val timestampInMs: Double
-) : SdkResource()
+    data class GetRuntimeLogsResponse(
+        val domain: String,
+        val level: GetRuntimeLogsResponseLevelEnum,
+        val message: String,
+        val messageTruncated: Boolean,
+        val requestMethod: String,
+        val requestPath: String,
+        val responseStatusCode: Double,
+        val rowId: String,
+        val source: GetRuntimeLogsResponseSourceEnum,
+        val timestampInMs: Double,
+    ) : SdkResource()
 
     /**
-     * Retrieves a stream of runtime logs for a deployment in a project. Use `projectId` and `deploymentId` to identify the deployment, and optionally set `teamId` or `slug` to specify the team context.
+     * Retrieves a stream of runtime logs for a deployment in a project. Use `projectId` and
+     * `deploymentId` to identify the deployment, and optionally set `teamId` or `slug` to specify
+     * the team context.
      *
      * Returns a stream of logs for a given deployment.
      *
      * @param teamId The Team identifier to perform the request on behalf of.
      * @param slug The Team slug to perform the request on behalf of.
      */
-    fun getRuntimeLogs(clientConfig: ClientConfig, projectId: String, deploymentId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): GetRuntimeLogsResponse {
-        return getRuntimeLogsWithRawResponse(clientConfig, projectId, deploymentId, teamId, slug, options).data
+    fun getRuntimeLogs(
+        clientConfig: ClientConfig,
+        projectId: String,
+        deploymentId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): GetRuntimeLogsResponse {
+        return getRuntimeLogsWithRawResponse(
+                clientConfig,
+                projectId,
+                deploymentId,
+                teamId,
+                slug,
+                options,
+            )
+            .data
     }
 
-
-    /** [getRuntimeLogs], returning the [SdkResponse] envelope: status code, headers, request ID and latency. */
-    fun getRuntimeLogsWithRawResponse(clientConfig: ClientConfig, projectId: String, deploymentId: String, teamId: String? = null, slug: String? = null, options: RequestOptions? = null): SdkResponse<GetRuntimeLogsResponse> {
-        return SdkClient.request<GetRuntimeLogsResponse>(SdkClient.RequestSpec("GET", "/v1/projects/${SdkClient.encodePathSegment(projectId)}/deployments/${SdkClient.encodePathSegment(deploymentId)}/runtime-logs", config = clientConfig, query = mapOf("teamId" to SdkClient.queryValue(teamId, "form", true), "slug" to SdkClient.queryValue(slug, "form", true)), operationId = "getRuntimeLogs", decoder = SdkClient.ResponseDecoder.JSON, options = options))
+    /**
+     * [getRuntimeLogs], returning the [SdkResponse] envelope: status code, headers, request ID and
+     * latency.
+     */
+    fun getRuntimeLogsWithRawResponse(
+        clientConfig: ClientConfig,
+        projectId: String,
+        deploymentId: String,
+        teamId: String? = null,
+        slug: String? = null,
+        options: RequestOptions? = null,
+    ): SdkResponse<GetRuntimeLogsResponse> {
+        return SdkClient.request<GetRuntimeLogsResponse>(
+            SdkClient.RequestSpec(
+                "GET",
+                "/v1/projects/${SdkClient.encodePathSegment(projectId)}/deployments/${SdkClient.encodePathSegment(deploymentId)}/runtime-logs",
+                config = clientConfig,
+                query =
+                    mapOf(
+                        "teamId" to SdkClient.queryValue(teamId, "form", true),
+                        "slug" to SdkClient.queryValue(slug, "form", true),
+                    ),
+                operationId = "getRuntimeLogs",
+                decoder = SdkClient.ResponseDecoder.JSON,
+                options = options,
+            )
+        )
     }
-
-
-
-
-
-
-
 }

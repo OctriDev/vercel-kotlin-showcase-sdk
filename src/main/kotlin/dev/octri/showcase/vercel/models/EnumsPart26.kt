@@ -3,7 +3,9 @@
 
 package dev.octri.showcase.vercel.models
 
-enum class DeleteProjectAvatarResponseEnvItemContentHintVariant13TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseEnvItemContentHintVariant13TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_DATABASE("postgres-database");
 
     override fun toString() = value
@@ -11,12 +13,15 @@ enum class DeleteProjectAvatarResponseEnvItemContentHintVariant13TypeEnum(@com.f
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class DeleteProjectAvatarResponseEnvItemContentHintVariant14TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseEnvItemContentHintVariant14TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_URL_NO_SSL("postgres-url-no-ssl");
 
     override fun toString() = value
@@ -24,12 +29,15 @@ enum class DeleteProjectAvatarResponseEnvItemContentHintVariant14TypeEnum(@com.f
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class DeleteProjectAvatarResponseEnvItemContentHintVariant15TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseEnvItemContentHintVariant15TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     INTEGRATION_STORE_SECRET("integration-store-secret");
 
     override fun toString() = value
@@ -37,12 +45,15 @@ enum class DeleteProjectAvatarResponseEnvItemContentHintVariant15TypeEnum(@com.f
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class DeleteProjectAvatarResponseEnvItemContentHintVariant16TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseEnvItemContentHintVariant16TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     FLAGS_CONNECTION_STRING("flags-connection-string");
 
     override fun toString() = value
@@ -50,12 +61,15 @@ enum class DeleteProjectAvatarResponseEnvItemContentHintVariant16TypeEnum(@com.f
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class DeleteProjectAvatarResponseEnvItemContentHintVariant2TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseEnvItemContentHintVariant2TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     REDIS_REST_API_TOKEN("redis-rest-api-token");
 
     override fun toString() = value
@@ -63,12 +77,15 @@ enum class DeleteProjectAvatarResponseEnvItemContentHintVariant2TypeEnum(@com.fa
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class DeleteProjectAvatarResponseEnvItemContentHintVariant3TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseEnvItemContentHintVariant3TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     REDIS_REST_API_READ_ONLY_TOKEN("redis-rest-api-read-only-token");
 
     override fun toString() = value
@@ -76,12 +93,15 @@ enum class DeleteProjectAvatarResponseEnvItemContentHintVariant3TypeEnum(@com.fa
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class DeleteProjectAvatarResponseEnvItemContentHintVariant4TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseEnvItemContentHintVariant4TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     BLOB_READ_WRITE_TOKEN("blob-read-write-token");
 
     override fun toString() = value
@@ -89,12 +109,15 @@ enum class DeleteProjectAvatarResponseEnvItemContentHintVariant4TypeEnum(@com.fa
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class DeleteProjectAvatarResponseEnvItemContentHintVariant5TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseEnvItemContentHintVariant5TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     BLOB_STORE_ID("blob-store-id");
 
     override fun toString() = value
@@ -102,12 +125,15 @@ enum class DeleteProjectAvatarResponseEnvItemContentHintVariant5TypeEnum(@com.fa
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class DeleteProjectAvatarResponseEnvItemContentHintVariant6TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseEnvItemContentHintVariant6TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     BLOB_WEBHOOK_PUBLIC_KEY("blob-webhook-public-key");
 
     override fun toString() = value
@@ -115,12 +141,15 @@ enum class DeleteProjectAvatarResponseEnvItemContentHintVariant6TypeEnum(@com.fa
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class DeleteProjectAvatarResponseEnvItemContentHintVariant7TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseEnvItemContentHintVariant7TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_URL("postgres-url");
 
     override fun toString() = value
@@ -128,12 +157,15 @@ enum class DeleteProjectAvatarResponseEnvItemContentHintVariant7TypeEnum(@com.fa
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class DeleteProjectAvatarResponseEnvItemContentHintVariant8TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseEnvItemContentHintVariant8TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_URL_NON_POOLING("postgres-url-non-pooling");
 
     override fun toString() = value
@@ -141,12 +173,15 @@ enum class DeleteProjectAvatarResponseEnvItemContentHintVariant8TypeEnum(@com.fa
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class DeleteProjectAvatarResponseEnvItemContentHintVariant9TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseEnvItemContentHintVariant9TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     POSTGRES_PRISMA_URL("postgres-prisma-url");
 
     override fun toString() = value
@@ -154,28 +189,42 @@ enum class DeleteProjectAvatarResponseEnvItemContentHintVariant9TypeEnum(@com.fa
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class DeleteProjectAvatarResponseInternalRoutesItemVariant1HasItemVX493a2cb4c4 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteProjectAvatarResponseInternalRoutesItemVariant1HasItemVX493a2cb4c4 && value == other.value
+class DeleteProjectAvatarResponseInternalRoutesItemVariant1HasItemVX493a2cb4c4
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteProjectAvatarResponseInternalRoutesItemVariant1HasItemVX493a2cb4c4 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val X_VERCEL_IP_COUNTRY = DeleteProjectAvatarResponseInternalRoutesItemVariant1HasItemVX493a2cb4c4("x-vercel-ip-country")
+        @JvmField
+        val X_VERCEL_IP_COUNTRY =
+            DeleteProjectAvatarResponseInternalRoutesItemVariant1HasItemVX493a2cb4c4(
+                "x-vercel-ip-country"
+            )
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = DeleteProjectAvatarResponseInternalRoutesItemVariant1HasItemVX493a2cb4c4(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            DeleteProjectAvatarResponseInternalRoutesItemVariant1HasItemVX493a2cb4c4(value)
     }
 }
 
-enum class DeleteProjectAvatarResponseInternalRoutesItemVariant1HasItemVX4155507881(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseInternalRoutesItemVariant1HasItemVX4155507881(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     HEADER("header");
 
     override fun toString() = value
@@ -183,12 +232,15 @@ enum class DeleteProjectAvatarResponseInternalRoutesItemVariant1HasItemVX4155507
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class DeleteProjectAvatarResponseInternalRoutesItemVariant1HasItemVXcfdbf4851b(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseInternalRoutesItemVariant1HasItemVXcfdbf4851b(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     HOST("host");
 
     override fun toString() = value
@@ -196,32 +248,46 @@ enum class DeleteProjectAvatarResponseInternalRoutesItemVariant1HasItemVXcfdbf48
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class DeleteProjectAvatarResponseInternalRoutesItemVariant1MitigateActionEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteProjectAvatarResponseInternalRoutesItemVariant1MitigateActionEnum && value == other.value
+class DeleteProjectAvatarResponseInternalRoutesItemVariant1MitigateActionEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteProjectAvatarResponseInternalRoutesItemVariant1MitigateActionEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val BLOCK_LEGAL_CWC = DeleteProjectAvatarResponseInternalRoutesItemVariant1MitigateActionEnum("block_legal_cwc")
+        @JvmField
+        val BLOCK_LEGAL_CWC =
+            DeleteProjectAvatarResponseInternalRoutesItemVariant1MitigateActionEnum(
+                "block_legal_cwc"
+            )
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = DeleteProjectAvatarResponseInternalRoutesItemVariant1MitigateActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            DeleteProjectAvatarResponseInternalRoutesItemVariant1MitigateActionEnum(value)
     }
 }
 
-class DeleteProjectAvatarResponseLinkVariant0SourcelessEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteProjectAvatarResponseLinkVariant0SourcelessEnum && value == other.value
+class DeleteProjectAvatarResponseLinkVariant0SourcelessEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteProjectAvatarResponseLinkVariant0SourcelessEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -229,12 +295,17 @@ class DeleteProjectAvatarResponseLinkVariant0SourcelessEnum private constructor(
         @JvmField val FALSE = DeleteProjectAvatarResponseLinkVariant0SourcelessEnum(false)
         @JvmField val TRUE = DeleteProjectAvatarResponseLinkVariant0SourcelessEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = DeleteProjectAvatarResponseLinkVariant0SourcelessEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = DeleteProjectAvatarResponseLinkVariant0SourcelessEnum(value)
     }
 }
 
-enum class DeleteProjectAvatarResponseLinkVariant0TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseLinkVariant0TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     GITHUB("github");
 
     override fun toString() = value
@@ -242,16 +313,19 @@ enum class DeleteProjectAvatarResponseLinkVariant0TypeEnum(@com.fasterxml.jackso
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class DeleteProjectAvatarResponseLinkVariant1SourcelessEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteProjectAvatarResponseLinkVariant1SourcelessEnum && value == other.value
+class DeleteProjectAvatarResponseLinkVariant1SourcelessEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteProjectAvatarResponseLinkVariant1SourcelessEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -259,12 +333,17 @@ class DeleteProjectAvatarResponseLinkVariant1SourcelessEnum private constructor(
         @JvmField val FALSE = DeleteProjectAvatarResponseLinkVariant1SourcelessEnum(false)
         @JvmField val TRUE = DeleteProjectAvatarResponseLinkVariant1SourcelessEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = DeleteProjectAvatarResponseLinkVariant1SourcelessEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = DeleteProjectAvatarResponseLinkVariant1SourcelessEnum(value)
     }
 }
 
-enum class DeleteProjectAvatarResponseLinkVariant1TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseLinkVariant1TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     GITHUB_LIMITED("github-limited");
 
     override fun toString() = value
@@ -272,16 +351,19 @@ enum class DeleteProjectAvatarResponseLinkVariant1TypeEnum(@com.fasterxml.jackso
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class DeleteProjectAvatarResponseLinkVariant2SourcelessEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteProjectAvatarResponseLinkVariant2SourcelessEnum && value == other.value
+class DeleteProjectAvatarResponseLinkVariant2SourcelessEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteProjectAvatarResponseLinkVariant2SourcelessEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -289,12 +371,17 @@ class DeleteProjectAvatarResponseLinkVariant2SourcelessEnum private constructor(
         @JvmField val FALSE = DeleteProjectAvatarResponseLinkVariant2SourcelessEnum(false)
         @JvmField val TRUE = DeleteProjectAvatarResponseLinkVariant2SourcelessEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = DeleteProjectAvatarResponseLinkVariant2SourcelessEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = DeleteProjectAvatarResponseLinkVariant2SourcelessEnum(value)
     }
 }
 
-enum class DeleteProjectAvatarResponseLinkVariant2TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseLinkVariant2TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     GITHUB_CUSTOM_HOST("github-custom-host");
 
     override fun toString() = value
@@ -302,16 +389,19 @@ enum class DeleteProjectAvatarResponseLinkVariant2TypeEnum(@com.fasterxml.jackso
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class DeleteProjectAvatarResponseLinkVariant3SourcelessEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteProjectAvatarResponseLinkVariant3SourcelessEnum && value == other.value
+class DeleteProjectAvatarResponseLinkVariant3SourcelessEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteProjectAvatarResponseLinkVariant3SourcelessEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -319,12 +409,17 @@ class DeleteProjectAvatarResponseLinkVariant3SourcelessEnum private constructor(
         @JvmField val FALSE = DeleteProjectAvatarResponseLinkVariant3SourcelessEnum(false)
         @JvmField val TRUE = DeleteProjectAvatarResponseLinkVariant3SourcelessEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = DeleteProjectAvatarResponseLinkVariant3SourcelessEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = DeleteProjectAvatarResponseLinkVariant3SourcelessEnum(value)
     }
 }
 
-enum class DeleteProjectAvatarResponseLinkVariant3TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseLinkVariant3TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     GITLAB("gitlab");
 
     override fun toString() = value
@@ -332,16 +427,19 @@ enum class DeleteProjectAvatarResponseLinkVariant3TypeEnum(@com.fasterxml.jackso
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class DeleteProjectAvatarResponseLinkVariant4SourcelessEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteProjectAvatarResponseLinkVariant4SourcelessEnum && value == other.value
+class DeleteProjectAvatarResponseLinkVariant4SourcelessEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteProjectAvatarResponseLinkVariant4SourcelessEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -349,12 +447,17 @@ class DeleteProjectAvatarResponseLinkVariant4SourcelessEnum private constructor(
         @JvmField val FALSE = DeleteProjectAvatarResponseLinkVariant4SourcelessEnum(false)
         @JvmField val TRUE = DeleteProjectAvatarResponseLinkVariant4SourcelessEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = DeleteProjectAvatarResponseLinkVariant4SourcelessEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = DeleteProjectAvatarResponseLinkVariant4SourcelessEnum(value)
     }
 }
 
-enum class DeleteProjectAvatarResponseLinkVariant4TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseLinkVariant4TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     BITBUCKET("bitbucket");
 
     override fun toString() = value
@@ -362,16 +465,19 @@ enum class DeleteProjectAvatarResponseLinkVariant4TypeEnum(@com.fasterxml.jackso
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class DeleteProjectAvatarResponseLinkVariant5SourcelessEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteProjectAvatarResponseLinkVariant5SourcelessEnum && value == other.value
+class DeleteProjectAvatarResponseLinkVariant5SourcelessEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteProjectAvatarResponseLinkVariant5SourcelessEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -379,12 +485,17 @@ class DeleteProjectAvatarResponseLinkVariant5SourcelessEnum private constructor(
         @JvmField val FALSE = DeleteProjectAvatarResponseLinkVariant5SourcelessEnum(false)
         @JvmField val TRUE = DeleteProjectAvatarResponseLinkVariant5SourcelessEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = DeleteProjectAvatarResponseLinkVariant5SourcelessEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = DeleteProjectAvatarResponseLinkVariant5SourcelessEnum(value)
     }
 }
 
-enum class DeleteProjectAvatarResponseLinkVariant5TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseLinkVariant5TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     VERCEL("vercel");
 
     override fun toString() = value
@@ -392,16 +503,19 @@ enum class DeleteProjectAvatarResponseLinkVariant5TypeEnum(@com.fasterxml.jackso
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class DeleteProjectAvatarResponseLinkVariant6SourcelessEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteProjectAvatarResponseLinkVariant6SourcelessEnum && value == other.value
+class DeleteProjectAvatarResponseLinkVariant6SourcelessEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteProjectAvatarResponseLinkVariant6SourcelessEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -409,12 +523,17 @@ class DeleteProjectAvatarResponseLinkVariant6SourcelessEnum private constructor(
         @JvmField val FALSE = DeleteProjectAvatarResponseLinkVariant6SourcelessEnum(false)
         @JvmField val TRUE = DeleteProjectAvatarResponseLinkVariant6SourcelessEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = DeleteProjectAvatarResponseLinkVariant6SourcelessEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = DeleteProjectAvatarResponseLinkVariant6SourcelessEnum(value)
     }
 }
 
-enum class DeleteProjectAvatarResponseLinkVariant6TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseLinkVariant6TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     V0("v0");
 
     override fun toString() = value
@@ -422,16 +541,19 @@ enum class DeleteProjectAvatarResponseLinkVariant6TypeEnum(@com.fasterxml.jackso
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class DeleteProjectAvatarResponseLinkVariant7SourcelessEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteProjectAvatarResponseLinkVariant7SourcelessEnum && value == other.value
+class DeleteProjectAvatarResponseLinkVariant7SourcelessEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteProjectAvatarResponseLinkVariant7SourcelessEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -439,12 +561,17 @@ class DeleteProjectAvatarResponseLinkVariant7SourcelessEnum private constructor(
         @JvmField val FALSE = DeleteProjectAvatarResponseLinkVariant7SourcelessEnum(false)
         @JvmField val TRUE = DeleteProjectAvatarResponseLinkVariant7SourcelessEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = DeleteProjectAvatarResponseLinkVariant7SourcelessEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = DeleteProjectAvatarResponseLinkVariant7SourcelessEnum(value)
     }
 }
 
-enum class DeleteProjectAvatarResponseLinkVariant7TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class DeleteProjectAvatarResponseLinkVariant7TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     CURSOR_ORIGIN("cursor-origin");
 
     override fun toString() = value
@@ -452,137 +579,199 @@ enum class DeleteProjectAvatarResponseLinkVariant7TypeEnum(@com.fasterxml.jackso
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/**
- * Whether microfrontends are enabled for this project.
- */
-class DeleteProjectAvatarResponseMicrofrontendsVariant0EnabledEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteProjectAvatarResponseMicrofrontendsVariant0EnabledEnum && value == other.value
+/** Whether microfrontends are enabled for this project. */
+class DeleteProjectAvatarResponseMicrofrontendsVariant0EnabledEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteProjectAvatarResponseMicrofrontendsVariant0EnabledEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
         @JvmField val TRUE = DeleteProjectAvatarResponseMicrofrontendsVariant0EnabledEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = DeleteProjectAvatarResponseMicrofrontendsVariant0EnabledEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            DeleteProjectAvatarResponseMicrofrontendsVariant0EnabledEnum(value)
     }
 }
 
 /**
- * Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
+ * Whether the project was part of the legacy limits for hobby and pro-trial before billing was
+ * added. This field is only set when the team is upgraded to a paid plan and we are backfilling the
+ * subscription status. We cap the subscription to 2 projects and set this field for the 3rd
+ * project. When this field is set, the project is not charged for and we do not call any billing
+ * APIs for this project.
  */
-class DeleteProjectAvatarResponseMicrofrontendsVariant0FreeProjectFX89bf4a694a private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteProjectAvatarResponseMicrofrontendsVariant0FreeProjectFX89bf4a694a && value == other.value
+class DeleteProjectAvatarResponseMicrofrontendsVariant0FreeProjectFX89bf4a694a
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteProjectAvatarResponseMicrofrontendsVariant0FreeProjectFX89bf4a694a &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = DeleteProjectAvatarResponseMicrofrontendsVariant0FreeProjectFX89bf4a694a(false)
-        @JvmField val TRUE = DeleteProjectAvatarResponseMicrofrontendsVariant0FreeProjectFX89bf4a694a(true)
+        @JvmField
+        val FALSE = DeleteProjectAvatarResponseMicrofrontendsVariant0FreeProjectFX89bf4a694a(false)
+        @JvmField
+        val TRUE = DeleteProjectAvatarResponseMicrofrontendsVariant0FreeProjectFX89bf4a694a(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = DeleteProjectAvatarResponseMicrofrontendsVariant0FreeProjectFX89bf4a694a(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            DeleteProjectAvatarResponseMicrofrontendsVariant0FreeProjectFX89bf4a694a(value)
     }
 }
 
-class DeleteProjectAvatarResponseMicrofrontendsVariant0IsDefaultAppEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteProjectAvatarResponseMicrofrontendsVariant0IsDefaultAppEnum && value == other.value
+class DeleteProjectAvatarResponseMicrofrontendsVariant0IsDefaultAppEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteProjectAvatarResponseMicrofrontendsVariant0IsDefaultAppEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
         @JvmField val TRUE = DeleteProjectAvatarResponseMicrofrontendsVariant0IsDefaultAppEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = DeleteProjectAvatarResponseMicrofrontendsVariant0IsDefaultAppEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            DeleteProjectAvatarResponseMicrofrontendsVariant0IsDefaultAppEnum(value)
     }
 }
 
 /**
- * Whether to add microfrontends routing to aliases. This means domains in this project will route as a microfrontend.
+ * Whether to add microfrontends routing to aliases. This means domains in this project will route
+ * as a microfrontend.
  */
-class DeleteProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiX5f1982e0ff private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiX5f1982e0ff && value == other.value
+class DeleteProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiX5f1982e0ff
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiX5f1982e0ff &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = DeleteProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiX5f1982e0ff(false)
-        @JvmField val TRUE = DeleteProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiX5f1982e0ff(true)
+        @JvmField
+        val FALSE = DeleteProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiX5f1982e0ff(false)
+        @JvmField
+        val TRUE = DeleteProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiX5f1982e0ff(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = DeleteProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiX5f1982e0ff(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            DeleteProjectAvatarResponseMicrofrontendsVariant1DoNotRouteWiX5f1982e0ff(value)
     }
 }
 
-/**
- * Whether microfrontends are enabled for this project.
- */
-class DeleteProjectAvatarResponseMicrofrontendsVariant1EnabledEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteProjectAvatarResponseMicrofrontendsVariant1EnabledEnum && value == other.value
+/** Whether microfrontends are enabled for this project. */
+class DeleteProjectAvatarResponseMicrofrontendsVariant1EnabledEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteProjectAvatarResponseMicrofrontendsVariant1EnabledEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
         @JvmField val TRUE = DeleteProjectAvatarResponseMicrofrontendsVariant1EnabledEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = DeleteProjectAvatarResponseMicrofrontendsVariant1EnabledEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            DeleteProjectAvatarResponseMicrofrontendsVariant1EnabledEnum(value)
     }
 }
 
 /**
- * Whether the project was part of the legacy limits for hobby and pro-trial before billing was added. This field is only set when the team is upgraded to a paid plan and we are backfilling the subscription status. We cap the subscription to 2 projects and set this field for the 3rd project. When this field is set, the project is not charged for and we do not call any billing APIs for this project.
+ * Whether the project was part of the legacy limits for hobby and pro-trial before billing was
+ * added. This field is only set when the team is upgraded to a paid plan and we are backfilling the
+ * subscription status. We cap the subscription to 2 projects and set this field for the 3rd
+ * project. When this field is set, the project is not charged for and we do not call any billing
+ * APIs for this project.
  */
-class DeleteProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX3816d53a08 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX3816d53a08 && value == other.value
+class DeleteProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX3816d53a08
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX3816d53a08 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = DeleteProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX3816d53a08(false)
-        @JvmField val TRUE = DeleteProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX3816d53a08(true)
+        @JvmField
+        val FALSE = DeleteProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX3816d53a08(false)
+        @JvmField
+        val TRUE = DeleteProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX3816d53a08(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = DeleteProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX3816d53a08(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            DeleteProjectAvatarResponseMicrofrontendsVariant1FreeProjectFX3816d53a08(value)
     }
 }
 
-class DeleteProjectAvatarResponseMicrofrontendsVariant1IsDefaultAppEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is DeleteProjectAvatarResponseMicrofrontendsVariant1IsDefaultAppEnum && value == other.value
+class DeleteProjectAvatarResponseMicrofrontendsVariant1IsDefaultAppEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is DeleteProjectAvatarResponseMicrofrontendsVariant1IsDefaultAppEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = DeleteProjectAvatarResponseMicrofrontendsVariant1IsDefaultAppEnum(false)
+        @JvmField
+        val FALSE = DeleteProjectAvatarResponseMicrofrontendsVariant1IsDefaultAppEnum(false)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = DeleteProjectAvatarResponseMicrofrontendsVariant1IsDefaultAppEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            DeleteProjectAvatarResponseMicrofrontendsVariant1IsDefaultAppEnum(value)
     }
 }

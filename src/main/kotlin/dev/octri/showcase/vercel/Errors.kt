@@ -9,8 +9,8 @@ import com.fasterxml.jackson.databind.JsonNode
 import java.time.Duration
 
 /**
- * Envelope returned by the low-level request layer. High-level endpoint
- * methods unwrap [data] automatically.
+ * Envelope returned by the low-level request layer. High-level endpoint methods unwrap [data]
+ * automatically.
  */
 data class SdkResponse<T>(
     val data: T,
@@ -33,11 +33,14 @@ open class SdkResource {
     }
 
     /**
-     * The body as the API sent it: wire field names, unknown fields included. A model built in
-     * code returns its own fields.
+     * The body as the API sent it: wire field names, unknown fields included. A model built in code
+     * returns its own fields.
      */
     fun toMap(): Map<String, Any?> =
-        SdkClient.mapper.convertValue(source ?: this, object : TypeReference<Map<String, Any?>>() {})
+        SdkClient.mapper.convertValue(
+            source ?: this,
+            object : TypeReference<Map<String, Any?>>() {},
+        )
 
     /** [toMap] as JSON text. */
     fun toJson(): String = SdkClient.mapper.writeValueAsString(source ?: this)
@@ -60,14 +63,18 @@ open class SdkResource {
 }
 
 /**
- * Top-level error type for every SDK failure path. Concrete subclasses:
- * [SdkValidationError], [SdkHttpError], [SdkNetworkError], [SdkTimeoutError].
+ * Top-level error type for every SDK failure path. Concrete subclasses: [SdkValidationError],
+ * [SdkHttpError], [SdkNetworkError], [SdkTimeoutError].
  */
-sealed class SdkError(message: String, cause: Throwable? = null) : RuntimeException(message, cause) {
+sealed class SdkError(message: String, cause: Throwable? = null) :
+    RuntimeException(message, cause) {
     /** HTTP status code when produced from an HTTP response, otherwise null. */
-    open val statusCode: Int? get() = null
+    open val statusCode: Int?
+        get() = null
+
     /** Request id captured from the HTTP response, if any. */
-    open val requestId: String? get() = null
+    open val requestId: String?
+        get() = null
 }
 
 /** Thrown when a method argument fails an OpenAPI constraint pre-flight. */
@@ -97,7 +104,8 @@ open class SdkHttpError(
      */
     val data: ErrorBody? = null,
 ) : SdkError(sdkHttpErrorMessage(statusCode, statusText, body, headers)) {
-    val bodyText: String get() = body.toString(Charsets.UTF_8)
+    val bodyText: String
+        get() = body.toString(Charsets.UTF_8)
 
     /**
      * Decodes the body into the model the API declares for this error, on the same terms as a
@@ -128,7 +136,9 @@ open class SdkHttpError(
                 }
             val status = statusCode.toString()
             val model = errors[status] ?: errors["${status[0]}XX"] ?: errors["default"]
-            val data = model?.let { runCatching { SdkClient.mapper.readValue(body, it) }.getOrNull() }
+            val data = model?.let {
+                runCatching { SdkClient.mapper.readValue(body, it) }.getOrNull()
+            }
             return create(statusCode, statusText, body, headers, requestId, data)
         }
     }
@@ -145,8 +155,8 @@ class SdkBadRequestError(
 ) : SdkHttpError(statusCode, statusText, body, headers, requestId, data)
 
 /**
- * Thrown for a 2xx response whose body reports an error: Slack answers HTTP 200
- * {"ok": false, "error": "channel_not_found"}, and [code] holds that code.
+ * Thrown for a 2xx response whose body reports an error: Slack answers HTTP 200 {"ok": false,
+ * "error": "channel_not_found"}, and [code] holds that code.
  */
 class SdkApiError(
     statusCode: Int,
@@ -158,8 +168,8 @@ class SdkApiError(
 ) : SdkHttpError(statusCode, statusText, body, headers, requestId)
 
 /**
- * Thrown for a 2xx response whose body does not decode into its declared type.
- * [body] keeps the raw bytes; [field] names the value a schema constraint refused.
+ * Thrown for a 2xx response whose body does not decode into its declared type. [body] keeps the raw
+ * bytes; [field] names the value a schema constraint refused.
  */
 class SdkResponseDecodeError(
     message: String,
@@ -325,7 +335,6 @@ class SdkTimeoutError(
     cause: Throwable? = null,
 ) : SdkError("Request timed out after ${elapsed.toMillis()}ms", cause)
 
-
 /** Thrown when the configured [OAuth2TokenProvider] cannot supply a usable access token. */
 class SdkAuthProviderError(
     val operationId: String,
@@ -334,4 +343,3 @@ class SdkAuthProviderError(
     message: String,
     cause: Throwable? = null,
 ) : SdkError(message, cause)
-

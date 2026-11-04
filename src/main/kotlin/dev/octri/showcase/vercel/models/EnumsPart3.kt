@@ -3,14 +3,14 @@
 
 package dev.octri.showcase.vercel.models
 
-/**
- * Indicates whether the user is managed by an enterprise.
- */
-class AuthUserIsEnterpriseManagedEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is AuthUserIsEnterpriseManagedEnum && value == other.value
+/** Indicates whether the user is managed by an enterprise. */
+class AuthUserIsEnterpriseManagedEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is AuthUserIsEnterpriseManagedEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -18,19 +18,22 @@ class AuthUserIsEnterpriseManagedEnum private constructor(
         @JvmField val FALSE = AuthUserIsEnterpriseManagedEnum(false)
         @JvmField val TRUE = AuthUserIsEnterpriseManagedEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = AuthUserIsEnterpriseManagedEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = AuthUserIsEnterpriseManagedEnum(value)
     }
 }
 
-/**
- * Optional enumerated value serialized in the `enabled` wire field.
- */
-class AuthUserRemoteCachingEnabledEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is AuthUserRemoteCachingEnabledEnum && value == other.value
+/** Optional enumerated value serialized in the `enabled` wire field. */
+class AuthUserRemoteCachingEnabledEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is AuthUserRemoteCachingEnabledEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -38,19 +41,25 @@ class AuthUserRemoteCachingEnabledEnum private constructor(
         @JvmField val FALSE = AuthUserRemoteCachingEnabledEnum(false)
         @JvmField val TRUE = AuthUserRemoteCachingEnabledEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = AuthUserRemoteCachingEnabledEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = AuthUserRemoteCachingEnabledEnum(value)
     }
 }
 
 /**
- * An object containing infomation related to the amount of platform resources may be allocated to the User account.
+ * An object containing infomation related to the amount of platform resources may be allocated to
+ * the User account.
  */
-class AuthUserResourceConfigBuildEntitlementsEnhancedBuildsEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is AuthUserResourceConfigBuildEntitlementsEnhancedBuildsEnum && value == other.value
+class AuthUserResourceConfigBuildEntitlementsEnhancedBuildsEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is AuthUserResourceConfigBuildEntitlementsEnhancedBuildsEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -58,39 +67,56 @@ class AuthUserResourceConfigBuildEntitlementsEnhancedBuildsEnum private construc
         @JvmField val FALSE = AuthUserResourceConfigBuildEntitlementsEnhancedBuildsEnum(false)
         @JvmField val TRUE = AuthUserResourceConfigBuildEntitlementsEnhancedBuildsEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = AuthUserResourceConfigBuildEntitlementsEnhancedBuildsEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            AuthUserResourceConfigBuildEntitlementsEnhancedBuildsEnum(value)
     }
 }
 
 /**
- * An object containing infomation related to the amount of platform resources may be allocated to the User account.
+ * An object containing infomation related to the amount of platform resources may be allocated to
+ * the User account.
  */
-class AuthUserResourceConfigBuildQueueConfigurationEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is AuthUserResourceConfigBuildQueueConfigurationEnum && value == other.value
+class AuthUserResourceConfigBuildQueueConfigurationEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is AuthUserResourceConfigBuildQueueConfigurationEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val SKIP_NAMESPACE_QUEUE = AuthUserResourceConfigBuildQueueConfigurationEnum("SKIP_NAMESPACE_QUEUE")
-        @JvmField val WAIT_FOR_NAMESPACE_QUEUE = AuthUserResourceConfigBuildQueueConfigurationEnum("WAIT_FOR_NAMESPACE_QUEUE")
+        @JvmField
+        val SKIP_NAMESPACE_QUEUE =
+            AuthUserResourceConfigBuildQueueConfigurationEnum("SKIP_NAMESPACE_QUEUE")
+        @JvmField
+        val WAIT_FOR_NAMESPACE_QUEUE =
+            AuthUserResourceConfigBuildQueueConfigurationEnum("WAIT_FOR_NAMESPACE_QUEUE")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = AuthUserResourceConfigBuildQueueConfigurationEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = AuthUserResourceConfigBuildQueueConfigurationEnum(value)
     }
 }
 
 /**
- * An object containing infomation related to the amount of platform resources may be allocated to the User account.
+ * An object containing infomation related to the amount of platform resources may be allocated to
+ * the User account.
  */
-class AuthUserResourceConfigElasticConcurrencyEnabledEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is AuthUserResourceConfigElasticConcurrencyEnabledEnum && value == other.value
+class AuthUserResourceConfigElasticConcurrencyEnabledEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is AuthUserResourceConfigElasticConcurrencyEnabledEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -98,19 +124,25 @@ class AuthUserResourceConfigElasticConcurrencyEnabledEnum private constructor(
         @JvmField val FALSE = AuthUserResourceConfigElasticConcurrencyEnabledEnum(false)
         @JvmField val TRUE = AuthUserResourceConfigElasticConcurrencyEnabledEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = AuthUserResourceConfigElasticConcurrencyEnabledEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = AuthUserResourceConfigElasticConcurrencyEnabledEnum(value)
     }
 }
 
 /**
- * An object containing infomation related to the amount of platform resources may be allocated to the User account.
+ * An object containing infomation related to the amount of platform resources may be allocated to
+ * the User account.
  */
-class AuthUserResourceConfigFlagsExplorerUnlimitedOverridesEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is AuthUserResourceConfigFlagsExplorerUnlimitedOverridesEnum && value == other.value
+class AuthUserResourceConfigFlagsExplorerUnlimitedOverridesEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is AuthUserResourceConfigFlagsExplorerUnlimitedOverridesEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -118,19 +150,26 @@ class AuthUserResourceConfigFlagsExplorerUnlimitedOverridesEnum private construc
         @JvmField val FALSE = AuthUserResourceConfigFlagsExplorerUnlimitedOverridesEnum(false)
         @JvmField val TRUE = AuthUserResourceConfigFlagsExplorerUnlimitedOverridesEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = AuthUserResourceConfigFlagsExplorerUnlimitedOverridesEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            AuthUserResourceConfigFlagsExplorerUnlimitedOverridesEnum(value)
     }
 }
 
 /**
- * Whether the Enterprise Managed User joined the current team through the Update Account flow and should see its welcome experience.
+ * Whether the Enterprise Managed User joined the current team through the Update Account flow and
+ * should see its welcome experience.
  */
-class AuthUserShouldShowEnterpriseManagedWelcomeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is AuthUserShouldShowEnterpriseManagedWelcomeEnum && value == other.value
+class AuthUserShouldShowEnterpriseManagedWelcomeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is AuthUserShouldShowEnterpriseManagedWelcomeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -138,103 +177,166 @@ class AuthUserShouldShowEnterpriseManagedWelcomeEnum private constructor(
         @JvmField val FALSE = AuthUserShouldShowEnterpriseManagedWelcomeEnum(false)
         @JvmField val TRUE = AuthUserShouldShowEnterpriseManagedWelcomeEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = AuthUserShouldShowEnterpriseManagedWelcomeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = AuthUserShouldShowEnterpriseManagedWelcomeEnum(value)
     }
 }
 
-/**
- * Optional enumerated value serialized in the `blockedDueToOverageType` wire field.
- */
-class AuthUserSoftBlockBlockedDueToOverageTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is AuthUserSoftBlockBlockedDueToOverageTypeEnum && value == other.value
+/** Optional enumerated value serialized in the `blockedDueToOverageType` wire field. */
+class AuthUserSoftBlockBlockedDueToOverageTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is AuthUserSoftBlockBlockedDueToOverageTypeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val ANALYTICSUSAGE = AuthUserSoftBlockBlockedDueToOverageTypeEnum("analyticsUsage")
+        @JvmField
+        val ANALYTICSUSAGE = AuthUserSoftBlockBlockedDueToOverageTypeEnum("analyticsUsage")
         @JvmField val ARTIFACTS = AuthUserSoftBlockBlockedDueToOverageTypeEnum("artifacts")
         @JvmField val BANDWIDTH = AuthUserSoftBlockBlockedDueToOverageTypeEnum("bandwidth")
-        @JvmField val BLOBDATATRANSFER = AuthUserSoftBlockBlockedDueToOverageTypeEnum("blobDataTransfer")
-        @JvmField val BLOBTOTALADVANCEDREQUESTS = AuthUserSoftBlockBlockedDueToOverageTypeEnum("blobTotalAdvancedRequests")
-        @JvmField val BLOBTOTALAVGSIZEINBYTES = AuthUserSoftBlockBlockedDueToOverageTypeEnum("blobTotalAvgSizeInBytes")
-        @JvmField val BLOBTOTALGETRESPONSEOBJECTSIZEINBYTES = AuthUserSoftBlockBlockedDueToOverageTypeEnum("blobTotalGetResponseObjectSizeInBytes")
-        @JvmField val BLOBTOTALSIMPLEREQUESTS = AuthUserSoftBlockBlockedDueToOverageTypeEnum("blobTotalSimpleRequests")
-        @JvmField val CONNECTDATATRANSFER = AuthUserSoftBlockBlockedDueToOverageTypeEnum("connectDataTransfer")
+        @JvmField
+        val BLOBDATATRANSFER = AuthUserSoftBlockBlockedDueToOverageTypeEnum("blobDataTransfer")
+        @JvmField
+        val BLOBTOTALADVANCEDREQUESTS =
+            AuthUserSoftBlockBlockedDueToOverageTypeEnum("blobTotalAdvancedRequests")
+        @JvmField
+        val BLOBTOTALAVGSIZEINBYTES =
+            AuthUserSoftBlockBlockedDueToOverageTypeEnum("blobTotalAvgSizeInBytes")
+        @JvmField
+        val BLOBTOTALGETRESPONSEOBJECTSIZEINBYTES =
+            AuthUserSoftBlockBlockedDueToOverageTypeEnum("blobTotalGetResponseObjectSizeInBytes")
+        @JvmField
+        val BLOBTOTALSIMPLEREQUESTS =
+            AuthUserSoftBlockBlockedDueToOverageTypeEnum("blobTotalSimpleRequests")
+        @JvmField
+        val CONNECTDATATRANSFER =
+            AuthUserSoftBlockBlockedDueToOverageTypeEnum("connectDataTransfer")
         @JvmField val DATACACHEREAD = AuthUserSoftBlockBlockedDueToOverageTypeEnum("dataCacheRead")
-        @JvmField val DATACACHEWRITE = AuthUserSoftBlockBlockedDueToOverageTypeEnum("dataCacheWrite")
-        @JvmField val EDGECONFIGREAD = AuthUserSoftBlockBlockedDueToOverageTypeEnum("edgeConfigRead")
-        @JvmField val EDGECONFIGWRITE = AuthUserSoftBlockBlockedDueToOverageTypeEnum("edgeConfigWrite")
-        @JvmField val EDGEFUNCTIONEXECUTIONUNITS = AuthUserSoftBlockBlockedDueToOverageTypeEnum("edgeFunctionExecutionUnits")
-        @JvmField val EDGEMIDDLEWAREINVOCATIONS = AuthUserSoftBlockBlockedDueToOverageTypeEnum("edgeMiddlewareInvocations")
+        @JvmField
+        val DATACACHEWRITE = AuthUserSoftBlockBlockedDueToOverageTypeEnum("dataCacheWrite")
+        @JvmField
+        val EDGECONFIGREAD = AuthUserSoftBlockBlockedDueToOverageTypeEnum("edgeConfigRead")
+        @JvmField
+        val EDGECONFIGWRITE = AuthUserSoftBlockBlockedDueToOverageTypeEnum("edgeConfigWrite")
+        @JvmField
+        val EDGEFUNCTIONEXECUTIONUNITS =
+            AuthUserSoftBlockBlockedDueToOverageTypeEnum("edgeFunctionExecutionUnits")
+        @JvmField
+        val EDGEMIDDLEWAREINVOCATIONS =
+            AuthUserSoftBlockBlockedDueToOverageTypeEnum("edgeMiddlewareInvocations")
         @JvmField val EDGEREQUEST = AuthUserSoftBlockBlockedDueToOverageTypeEnum("edgeRequest")
-        @JvmField val EDGEREQUESTADDITIONALCPUDURATION = AuthUserSoftBlockBlockedDueToOverageTypeEnum("edgeRequestAdditionalCpuDuration")
-        @JvmField val ELASTICCONCURRENCYBUILDSLOTS = AuthUserSoftBlockBlockedDueToOverageTypeEnum("elasticConcurrencyBuildSlots")
-        @JvmField val FASTDATATRANSFER = AuthUserSoftBlockBlockedDueToOverageTypeEnum("fastDataTransfer")
-        @JvmField val FASTORIGINTRANSFER = AuthUserSoftBlockBlockedDueToOverageTypeEnum("fastOriginTransfer")
-        @JvmField val FLUIDCPUDURATION = AuthUserSoftBlockBlockedDueToOverageTypeEnum("fluidCpuDuration")
+        @JvmField
+        val EDGEREQUESTADDITIONALCPUDURATION =
+            AuthUserSoftBlockBlockedDueToOverageTypeEnum("edgeRequestAdditionalCpuDuration")
+        @JvmField
+        val ELASTICCONCURRENCYBUILDSLOTS =
+            AuthUserSoftBlockBlockedDueToOverageTypeEnum("elasticConcurrencyBuildSlots")
+        @JvmField
+        val FASTDATATRANSFER = AuthUserSoftBlockBlockedDueToOverageTypeEnum("fastDataTransfer")
+        @JvmField
+        val FASTORIGINTRANSFER = AuthUserSoftBlockBlockedDueToOverageTypeEnum("fastOriginTransfer")
+        @JvmField
+        val FLUIDCPUDURATION = AuthUserSoftBlockBlockedDueToOverageTypeEnum("fluidCpuDuration")
         @JvmField val FLUIDDURATION = AuthUserSoftBlockBlockedDueToOverageTypeEnum("fluidDuration")
-        @JvmField val FUNCTIONDURATION = AuthUserSoftBlockBlockedDueToOverageTypeEnum("functionDuration")
-        @JvmField val FUNCTIONINVOCATION = AuthUserSoftBlockBlockedDueToOverageTypeEnum("functionInvocation")
-        @JvmField val IMAGEOPTIMIZATIONCACHEREAD = AuthUserSoftBlockBlockedDueToOverageTypeEnum("imageOptimizationCacheRead")
-        @JvmField val IMAGEOPTIMIZATIONCACHEWRITE = AuthUserSoftBlockBlockedDueToOverageTypeEnum("imageOptimizationCacheWrite")
-        @JvmField val IMAGEOPTIMIZATIONTRANSFORMATION = AuthUserSoftBlockBlockedDueToOverageTypeEnum("imageOptimizationTransformation")
-        @JvmField val LOGDRAINSVOLUME = AuthUserSoftBlockBlockedDueToOverageTypeEnum("logDrainsVolume")
-        @JvmField val MONITORINGMETRIC = AuthUserSoftBlockBlockedDueToOverageTypeEnum("monitoringMetric")
-        @JvmField val OBSERVABILITYEVENT = AuthUserSoftBlockBlockedDueToOverageTypeEnum("observabilityEvent")
-        @JvmField val ONDEMANDCONCURRENCYMINUTES = AuthUserSoftBlockBlockedDueToOverageTypeEnum("onDemandConcurrencyMinutes")
-        @JvmField val RUNTIMECACHEREAD = AuthUserSoftBlockBlockedDueToOverageTypeEnum("runtimeCacheRead")
-        @JvmField val RUNTIMECACHEWRITE = AuthUserSoftBlockBlockedDueToOverageTypeEnum("runtimeCacheWrite")
-        @JvmField val SERVERLESSFUNCTIONEXECUTION = AuthUserSoftBlockBlockedDueToOverageTypeEnum("serverlessFunctionExecution")
+        @JvmField
+        val FUNCTIONDURATION = AuthUserSoftBlockBlockedDueToOverageTypeEnum("functionDuration")
+        @JvmField
+        val FUNCTIONINVOCATION = AuthUserSoftBlockBlockedDueToOverageTypeEnum("functionInvocation")
+        @JvmField
+        val IMAGEOPTIMIZATIONCACHEREAD =
+            AuthUserSoftBlockBlockedDueToOverageTypeEnum("imageOptimizationCacheRead")
+        @JvmField
+        val IMAGEOPTIMIZATIONCACHEWRITE =
+            AuthUserSoftBlockBlockedDueToOverageTypeEnum("imageOptimizationCacheWrite")
+        @JvmField
+        val IMAGEOPTIMIZATIONTRANSFORMATION =
+            AuthUserSoftBlockBlockedDueToOverageTypeEnum("imageOptimizationTransformation")
+        @JvmField
+        val LOGDRAINSVOLUME = AuthUserSoftBlockBlockedDueToOverageTypeEnum("logDrainsVolume")
+        @JvmField
+        val MONITORINGMETRIC = AuthUserSoftBlockBlockedDueToOverageTypeEnum("monitoringMetric")
+        @JvmField
+        val OBSERVABILITYEVENT = AuthUserSoftBlockBlockedDueToOverageTypeEnum("observabilityEvent")
+        @JvmField
+        val ONDEMANDCONCURRENCYMINUTES =
+            AuthUserSoftBlockBlockedDueToOverageTypeEnum("onDemandConcurrencyMinutes")
+        @JvmField
+        val RUNTIMECACHEREAD = AuthUserSoftBlockBlockedDueToOverageTypeEnum("runtimeCacheRead")
+        @JvmField
+        val RUNTIMECACHEWRITE = AuthUserSoftBlockBlockedDueToOverageTypeEnum("runtimeCacheWrite")
+        @JvmField
+        val SERVERLESSFUNCTIONEXECUTION =
+            AuthUserSoftBlockBlockedDueToOverageTypeEnum("serverlessFunctionExecution")
         @JvmField val SOURCEIMAGES = AuthUserSoftBlockBlockedDueToOverageTypeEnum("sourceImages")
-        @JvmField val WAFOWASPEXCESSBYTES = AuthUserSoftBlockBlockedDueToOverageTypeEnum("wafOwaspExcessBytes")
-        @JvmField val WAFOWASPREQUESTS = AuthUserSoftBlockBlockedDueToOverageTypeEnum("wafOwaspRequests")
-        @JvmField val WAFRATELIMITREQUEST = AuthUserSoftBlockBlockedDueToOverageTypeEnum("wafRateLimitRequest")
-        @JvmField val WEBANALYTICSEVENT = AuthUserSoftBlockBlockedDueToOverageTypeEnum("webAnalyticsEvent")
+        @JvmField
+        val WAFOWASPEXCESSBYTES =
+            AuthUserSoftBlockBlockedDueToOverageTypeEnum("wafOwaspExcessBytes")
+        @JvmField
+        val WAFOWASPREQUESTS = AuthUserSoftBlockBlockedDueToOverageTypeEnum("wafOwaspRequests")
+        @JvmField
+        val WAFRATELIMITREQUEST =
+            AuthUserSoftBlockBlockedDueToOverageTypeEnum("wafRateLimitRequest")
+        @JvmField
+        val WEBANALYTICSEVENT = AuthUserSoftBlockBlockedDueToOverageTypeEnum("webAnalyticsEvent")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = AuthUserSoftBlockBlockedDueToOverageTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = AuthUserSoftBlockBlockedDueToOverageTypeEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `reason` wire field.
- */
-class AuthUserSoftBlockReasonEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is AuthUserSoftBlockReasonEnum && value == other.value
+/** Required enumerated value serialized in the `reason` wire field. */
+class AuthUserSoftBlockReasonEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is AuthUserSoftBlockReasonEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val BLOCKED_FOR_PLATFORM_ABUSE = AuthUserSoftBlockReasonEnum("BLOCKED_FOR_PLATFORM_ABUSE")
-        @JvmField val DOMAIN_OWNER_DELETION_REQUEST = AuthUserSoftBlockReasonEnum("DOMAIN_OWNER_DELETION_REQUEST")
+        @JvmField
+        val BLOCKED_FOR_PLATFORM_ABUSE = AuthUserSoftBlockReasonEnum("BLOCKED_FOR_PLATFORM_ABUSE")
+        @JvmField
+        val DOMAIN_OWNER_DELETION_REQUEST =
+            AuthUserSoftBlockReasonEnum("DOMAIN_OWNER_DELETION_REQUEST")
         @JvmField val ENTERPRISE_TRIAL_ENDED = AuthUserSoftBlockReasonEnum("ENTERPRISE_TRIAL_ENDED")
-        @JvmField val ENTERPRISE_UNPAID_INVOICE = AuthUserSoftBlockReasonEnum("ENTERPRISE_UNPAID_INVOICE")
+        @JvmField
+        val ENTERPRISE_UNPAID_INVOICE = AuthUserSoftBlockReasonEnum("ENTERPRISE_UNPAID_INVOICE")
         @JvmField val EXPOSURE_CAP_EXCEEDED = AuthUserSoftBlockReasonEnum("EXPOSURE_CAP_EXCEEDED")
-        @JvmField val FAIR_USE_LIMITS_EXCEEDED = AuthUserSoftBlockReasonEnum("FAIR_USE_LIMITS_EXCEEDED")
+        @JvmField
+        val FAIR_USE_LIMITS_EXCEEDED = AuthUserSoftBlockReasonEnum("FAIR_USE_LIMITS_EXCEEDED")
         @JvmField val SUBSCRIPTION_CANCELED = AuthUserSoftBlockReasonEnum("SUBSCRIPTION_CANCELED")
         @JvmField val SUBSCRIPTION_EXPIRED = AuthUserSoftBlockReasonEnum("SUBSCRIPTION_EXPIRED")
         @JvmField val UNPAID_INVOICE = AuthUserSoftBlockReasonEnum("UNPAID_INVOICE")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = AuthUserSoftBlockReasonEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = AuthUserSoftBlockReasonEnum(value)
     }
 }
 
-/**
- * Indicates whether the user is managed by an enterprise.
- */
-class AuthUserLimitedIsEnterpriseManagedEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is AuthUserLimitedIsEnterpriseManagedEnum && value == other.value
+/** Indicates whether the user is managed by an enterprise. */
+class AuthUserLimitedIsEnterpriseManagedEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is AuthUserLimitedIsEnterpriseManagedEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -242,38 +344,51 @@ class AuthUserLimitedIsEnterpriseManagedEnum private constructor(
         @JvmField val FALSE = AuthUserLimitedIsEnterpriseManagedEnum(false)
         @JvmField val TRUE = AuthUserLimitedIsEnterpriseManagedEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = AuthUserLimitedIsEnterpriseManagedEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = AuthUserLimitedIsEnterpriseManagedEnum(value)
     }
 }
 
 /**
- * Property indicating that this User data contains only limited information, due to the authentication token missing privileges to read the full User data. Re-login with email, GitHub, GitLab or Bitbucket in order to upgrade the authentication token with the necessary privileges.
+ * Property indicating that this User data contains only limited information, due to the
+ * authentication token missing privileges to read the full User data. Re-login with email, GitHub,
+ * GitLab or Bitbucket in order to upgrade the authentication token with the necessary privileges.
  */
-class AuthUserLimitedLimitedEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is AuthUserLimitedLimitedEnum && value == other.value
+class AuthUserLimitedLimitedEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is AuthUserLimitedLimitedEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
         @JvmField val TRUE = AuthUserLimitedLimitedEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = AuthUserLimitedLimitedEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = AuthUserLimitedLimitedEnum(value)
     }
 }
 
 /**
- * Whether the Enterprise Managed User joined the current team through the Update Account flow and should see its welcome experience.
+ * Whether the Enterprise Managed User joined the current team through the Update Account flow and
+ * should see its welcome experience.
  */
-class AuthUserLimitedShouldShowEnterpriseManagedWelcomeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is AuthUserLimitedShouldShowEnterpriseManagedWelcomeEnum && value == other.value
+class AuthUserLimitedShouldShowEnterpriseManagedWelcomeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is AuthUserLimitedShouldShowEnterpriseManagedWelcomeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -281,111 +396,150 @@ class AuthUserLimitedShouldShowEnterpriseManagedWelcomeEnum private constructor(
         @JvmField val FALSE = AuthUserLimitedShouldShowEnterpriseManagedWelcomeEnum(false)
         @JvmField val TRUE = AuthUserLimitedShouldShowEnterpriseManagedWelcomeEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = AuthUserLimitedShouldShowEnterpriseManagedWelcomeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = AuthUserLimitedShouldShowEnterpriseManagedWelcomeEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `code` wire field.
- */
-class BadRequestCodeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
+/** Required enumerated value serialized in the `code` wire field. */
+class BadRequestCodeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
     override fun equals(other: Any?): Boolean = other is BadRequestCodeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val BAD_REQUEST = BadRequestCodeEnum("bad_request")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = BadRequestCodeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = BadRequestCodeEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `status` wire field.
- */
-class BadRequestStatusEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Long,
-) {
-    override fun equals(other: Any?): Boolean = other is BadRequestStatusEnum && value == other.value
+/** Required enumerated value serialized in the `status` wire field. */
+class BadRequestStatusEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Long) {
+    override fun equals(other: Any?): Boolean =
+        other is BadRequestStatusEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
         @JvmField val V400 = BadRequestStatusEnum(400)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Long) = BadRequestStatusEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Long) = BadRequestStatusEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `code` wire field.
- */
-class BoughtTooRecentlyCodeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is BoughtTooRecentlyCodeEnum && value == other.value
+/** Required enumerated value serialized in the `code` wire field. */
+class BoughtTooRecentlyCodeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is BoughtTooRecentlyCodeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val BOUGHT_TOO_RECENTLY = BoughtTooRecentlyCodeEnum("bought_too_recently")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = BoughtTooRecentlyCodeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = BoughtTooRecentlyCodeEnum(value)
     }
 }
 
-/**
- * Required enumerated value serialized in the `status` wire field.
- */
-class BoughtTooRecentlyStatusEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Long,
-) {
-    override fun equals(other: Any?): Boolean = other is BoughtTooRecentlyStatusEnum && value == other.value
+/** Required enumerated value serialized in the `status` wire field. */
+class BoughtTooRecentlyStatusEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Long) {
+    override fun equals(other: Any?): Boolean =
+        other is BoughtTooRecentlyStatusEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
         @JvmField val V400 = BoughtTooRecentlyStatusEnum(400)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Long) = BoughtTooRecentlyStatusEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Long) = BoughtTooRecentlyStatusEnum(value)
     }
 }
 
-/**
- * The currency being purchased
- */
-class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0X54eaf1f3cf private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0X54eaf1f3cf && value == other.value
+/** The currency being purchased */
+class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0X54eaf1f3cf
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0X54eaf1f3cf &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val AI_CREDITS = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0X54eaf1f3cf("ai_credits")
-        @JvmField val AI_GATEWAY_CREDITS = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0X54eaf1f3cf("ai_gateway_credits")
-        @JvmField val COPPER_TEST_UNITS = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0X54eaf1f3cf("copper_test_units")
-        @JvmField val V0_USER_CREDITS = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0X54eaf1f3cf("v0_user_credits")
-        @JvmField val VERCEL_AGENT_CREDITS = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0X54eaf1f3cf("vercel_agent_credits")
+        @JvmField
+        val AI_CREDITS =
+            BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0X54eaf1f3cf("ai_credits")
+        @JvmField
+        val AI_GATEWAY_CREDITS =
+            BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0X54eaf1f3cf(
+                "ai_gateway_credits"
+            )
+        @JvmField
+        val COPPER_TEST_UNITS =
+            BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0X54eaf1f3cf(
+                "copper_test_units"
+            )
+        @JvmField
+        val V0_USER_CREDITS =
+            BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0X54eaf1f3cf(
+                "v0_user_credits"
+            )
+        @JvmField
+        val VERCEL_AGENT_CREDITS =
+            BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0X54eaf1f3cf(
+                "vercel_agent_credits"
+            )
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0X54eaf1f3cf(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0X54eaf1f3cf(value)
     }
 }
 
-enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     CREDIT_TOPUP("credit_topup");
 
     override fun toString() = value
@@ -393,30 +547,46 @@ enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant0TypeEnum
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant1X72f100ae11 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant1X72f100ae11 && value == other.value
+class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant1X72f100ae11
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant1X72f100ae11 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val PURCHASE = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant1X72f100ae11("purchase")
-        @JvmField val RENEWAL = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant1X72f100ae11("renewal")
-        @JvmField val TRANSFER = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant1X72f100ae11("transfer")
+        @JvmField
+        val PURCHASE =
+            BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant1X72f100ae11("purchase")
+        @JvmField
+        val RENEWAL =
+            BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant1X72f100ae11("renewal")
+        @JvmField
+        val TRANSFER =
+            BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant1X72f100ae11("transfer")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant1X72f100ae11(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant1X72f100ae11(value)
     }
 }
 
-enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant1TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant1TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     DOMAIN_NAME("domain_name");
 
     override fun toString() = value
@@ -424,49 +594,72 @@ enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant1TypeEnum
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/**
- * Whether or not to reset the billing cycle
- */
-class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2X76ce35af27 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2X76ce35af27 && value == other.value
+/** Whether or not to reset the billing cycle */
+class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2X76ce35af27
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2X76ce35af27 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2X76ce35af27(false)
-        @JvmField val TRUE = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2X76ce35af27(true)
+        @JvmField
+        val FALSE = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2X76ce35af27(false)
+        @JvmField
+        val TRUE = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2X76ce35af27(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2X76ce35af27(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2X76ce35af27(value)
     }
 }
 
-class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Xf87cb67240 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Xf87cb67240 && value == other.value
+class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Xf87cb67240
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Xf87cb67240 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val END_OF_SUBSCRIPTION_TERM = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Xf87cb67240("end_of_subscription_term")
-        @JvmField val IMMEDIATE = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Xf87cb67240("immediate")
+        @JvmField
+        val END_OF_SUBSCRIPTION_TERM =
+            BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Xf87cb67240(
+                "end_of_subscription_term"
+            )
+        @JvmField
+        val IMMEDIATE =
+            BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Xf87cb67240("immediate")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Xf87cb67240(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2Xf87cb67240(value)
     }
 }
 
-enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     ORB_PLAN_CHANGE("orb_plan_change");
 
     override fun toString() = value
@@ -474,32 +667,42 @@ enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant2TypeEnum
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/**
- * Whether to allow invoice credit or void
- */
-class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3X42cc706b8e private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3X42cc706b8e && value == other.value
+/** Whether to allow invoice credit or void */
+class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3X42cc706b8e
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3X42cc706b8e &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3X42cc706b8e(false)
-        @JvmField val TRUE = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3X42cc706b8e(true)
+        @JvmField
+        val FALSE = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3X42cc706b8e(false)
+        @JvmField
+        val TRUE = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3X42cc706b8e(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3X42cc706b8e(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3X42cc706b8e(value)
     }
 }
 
-enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     ORB_PRICE_INTERVAL("orb_price_interval");
 
     override fun toString() = value
@@ -507,32 +710,42 @@ enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant3TypeEnum
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/**
- * Whether to align the subscription start date with the billing subscription start date
- */
-class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4X49f3ac7155 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4X49f3ac7155 && value == other.value
+/** Whether to align the subscription start date with the billing subscription start date */
+class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4X49f3ac7155
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4X49f3ac7155 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4X49f3ac7155(false)
-        @JvmField val TRUE = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4X49f3ac7155(true)
+        @JvmField
+        val FALSE = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4X49f3ac7155(false)
+        @JvmField
+        val TRUE = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4X49f3ac7155(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4X49f3ac7155(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4X49f3ac7155(value)
     }
 }
 
-enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     ORB_SUBSCRIPTION("orb_subscription");
 
     override fun toString() = value
@@ -540,12 +753,15 @@ enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant4TypeEnum
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant5TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant5TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     ORB_SUBSCRIPTION_INTENT("orb_subscription_intent");
 
     override fun toString() = value
@@ -553,12 +769,15 @@ enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant5TypeEnum
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant6TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant6TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     SUBSCRIPTION("subscription");
 
     override fun toString() = value
@@ -566,19 +785,20 @@ enum class BuyCreditsResponseVariant1PurchaseIntentConfigurationVariant6TypeEnum
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-/**
- * The currency for the purchase intent
- */
-class BuyCreditsResponseVariant1PurchaseIntentCurrencyEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is BuyCreditsResponseVariant1PurchaseIntentCurrencyEnum && value == other.value
+/** The currency for the purchase intent */
+class BuyCreditsResponseVariant1PurchaseIntentCurrencyEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is BuyCreditsResponseVariant1PurchaseIntentCurrencyEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -586,7 +806,10 @@ class BuyCreditsResponseVariant1PurchaseIntentCurrencyEnum private constructor(
         @JvmField val MIU = BuyCreditsResponseVariant1PurchaseIntentCurrencyEnum("miu")
         @JvmField val USD = BuyCreditsResponseVariant1PurchaseIntentCurrencyEnum("usd")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = BuyCreditsResponseVariant1PurchaseIntentCurrencyEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = BuyCreditsResponseVariant1PurchaseIntentCurrencyEnum(value)
     }
 }

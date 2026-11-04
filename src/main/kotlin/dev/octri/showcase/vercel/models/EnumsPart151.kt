@@ -3,11 +3,13 @@
 
 package dev.octri.showcase.vercel.models
 
-class GenerateRouteResponseRouteActionsItemTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GenerateRouteResponseRouteActionsItemTypeEnum && value == other.value
+class GenerateRouteResponseRouteActionsItemTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GenerateRouteResponseRouteActionsItemTypeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -17,16 +19,21 @@ class GenerateRouteResponseRouteActionsItemTypeEnum private constructor(
         @JvmField val REWRITE = GenerateRouteResponseRouteActionsItemTypeEnum("rewrite")
         @JvmField val SET_STATUS = GenerateRouteResponseRouteActionsItemTypeEnum("set-status")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GenerateRouteResponseRouteActionsItemTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = GenerateRouteResponseRouteActionsItemTypeEnum(value)
     }
 }
 
-class GenerateRouteResponseRouteConditionsItemFieldEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GenerateRouteResponseRouteConditionsItemFieldEnum && value == other.value
+class GenerateRouteResponseRouteConditionsItemFieldEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GenerateRouteResponseRouteConditionsItemFieldEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -36,16 +43,21 @@ class GenerateRouteResponseRouteConditionsItemFieldEnum private constructor(
         @JvmField val HOST = GenerateRouteResponseRouteConditionsItemFieldEnum("host")
         @JvmField val QUERY = GenerateRouteResponseRouteConditionsItemFieldEnum("query")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GenerateRouteResponseRouteConditionsItemFieldEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = GenerateRouteResponseRouteConditionsItemFieldEnum(value)
     }
 }
 
-class GenerateRouteResponseRouteConditionsItemMissingEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GenerateRouteResponseRouteConditionsItemMissingEnum && value == other.value
+class GenerateRouteResponseRouteConditionsItemMissingEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GenerateRouteResponseRouteConditionsItemMissingEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -53,16 +65,21 @@ class GenerateRouteResponseRouteConditionsItemMissingEnum private constructor(
         @JvmField val FALSE = GenerateRouteResponseRouteConditionsItemMissingEnum(false)
         @JvmField val TRUE = GenerateRouteResponseRouteConditionsItemMissingEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GenerateRouteResponseRouteConditionsItemMissingEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = GenerateRouteResponseRouteConditionsItemMissingEnum(value)
     }
 }
 
-class GenerateRouteResponseRouteConditionsItemOperatorEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GenerateRouteResponseRouteConditionsItemOperatorEnum && value == other.value
+class GenerateRouteResponseRouteConditionsItemOperatorEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GenerateRouteResponseRouteConditionsItemOperatorEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -72,37 +89,46 @@ class GenerateRouteResponseRouteConditionsItemOperatorEnum private constructor(
         @JvmField val EXISTS = GenerateRouteResponseRouteConditionsItemOperatorEnum("exists")
         @JvmField val RE = GenerateRouteResponseRouteConditionsItemOperatorEnum("re")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GenerateRouteResponseRouteConditionsItemOperatorEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = GenerateRouteResponseRouteConditionsItemOperatorEnum(value)
     }
 }
 
-class GenerateRouteResponseRoutePathConditionSyntaxEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is GenerateRouteResponseRoutePathConditionSyntaxEnum && value == other.value
+class GenerateRouteResponseRoutePathConditionSyntaxEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is GenerateRouteResponseRoutePathConditionSyntaxEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val EQUALS = GenerateRouteResponseRoutePathConditionSyntaxEnum("equals")
-        @JvmField val PATH_TO_REGEXP = GenerateRouteResponseRoutePathConditionSyntaxEnum("path-to-regexp")
+        @JvmField
+        val PATH_TO_REGEXP = GenerateRouteResponseRoutePathConditionSyntaxEnum("path-to-regexp")
         @JvmField val REGEX = GenerateRouteResponseRoutePathConditionSyntaxEnum("regex")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = GenerateRouteResponseRoutePathConditionSyntaxEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = GenerateRouteResponseRoutePathConditionSyntaxEnum(value)
     }
 }
 
-/**
- * Whether this version is currently live in production.
- */
-class GetRouteVersionsResponseVersionsItemIsLiveEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetRouteVersionsResponseVersionsItemIsLiveEnum && value == other.value
+/** Whether this version is currently live in production. */
+class GetRouteVersionsResponseVersionsItemIsLiveEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetRouteVersionsResponseVersionsItemIsLiveEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -110,19 +136,22 @@ class GetRouteVersionsResponseVersionsItemIsLiveEnum private constructor(
         @JvmField val FALSE = GetRouteVersionsResponseVersionsItemIsLiveEnum(false)
         @JvmField val TRUE = GetRouteVersionsResponseVersionsItemIsLiveEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetRouteVersionsResponseVersionsItemIsLiveEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = GetRouteVersionsResponseVersionsItemIsLiveEnum(value)
     }
 }
 
-/**
- * Whether this version is staged and not yet promoted to production.
- */
-class GetRouteVersionsResponseVersionsItemIsStagingEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is GetRouteVersionsResponseVersionsItemIsStagingEnum && value == other.value
+/** Whether this version is staged and not yet promoted to production. */
+class GetRouteVersionsResponseVersionsItemIsStagingEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is GetRouteVersionsResponseVersionsItemIsStagingEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -130,16 +159,21 @@ class GetRouteVersionsResponseVersionsItemIsStagingEnum private constructor(
         @JvmField val FALSE = GetRouteVersionsResponseVersionsItemIsStagingEnum(false)
         @JvmField val TRUE = GetRouteVersionsResponseVersionsItemIsStagingEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = GetRouteVersionsResponseVersionsItemIsStagingEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = GetRouteVersionsResponseVersionsItemIsStagingEnum(value)
     }
 }
 
-class UpdateRouteVersionsActionEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is UpdateRouteVersionsActionEnum && value == other.value
+class UpdateRouteVersionsActionEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is UpdateRouteVersionsActionEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -148,19 +182,22 @@ class UpdateRouteVersionsActionEnum private constructor(
         @JvmField val RESTORE = UpdateRouteVersionsActionEnum("restore")
         @JvmField val DISCARD = UpdateRouteVersionsActionEnum("discard")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = UpdateRouteVersionsActionEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = UpdateRouteVersionsActionEnum(value)
     }
 }
 
-/**
- * Whether this version is currently live in production.
- */
-class UpdateRouteVersionsResponseVersionIsLiveEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UpdateRouteVersionsResponseVersionIsLiveEnum && value == other.value
+/** Whether this version is currently live in production. */
+class UpdateRouteVersionsResponseVersionIsLiveEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UpdateRouteVersionsResponseVersionIsLiveEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -168,19 +205,22 @@ class UpdateRouteVersionsResponseVersionIsLiveEnum private constructor(
         @JvmField val FALSE = UpdateRouteVersionsResponseVersionIsLiveEnum(false)
         @JvmField val TRUE = UpdateRouteVersionsResponseVersionIsLiveEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UpdateRouteVersionsResponseVersionIsLiveEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = UpdateRouteVersionsResponseVersionIsLiveEnum(value)
     }
 }
 
-/**
- * Whether this version is staged and not yet promoted to production.
- */
-class UpdateRouteVersionsResponseVersionIsStagingEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is UpdateRouteVersionsResponseVersionIsStagingEnum && value == other.value
+/** Whether this version is staged and not yet promoted to production. */
+class UpdateRouteVersionsResponseVersionIsStagingEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is UpdateRouteVersionsResponseVersionIsStagingEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -188,19 +228,22 @@ class UpdateRouteVersionsResponseVersionIsStagingEnum private constructor(
         @JvmField val FALSE = UpdateRouteVersionsResponseVersionIsStagingEnum(false)
         @JvmField val TRUE = UpdateRouteVersionsResponseVersionIsStagingEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = UpdateRouteVersionsResponseVersionIsStagingEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = UpdateRouteVersionsResponseVersionIsStagingEnum(value)
     }
 }
 
-/**
- * The state of the flags to retrieve. Defaults to `active`.
- */
-class ListFlagsParameterEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is ListFlagsParameterEnum && value == other.value
+/** The state of the flags to retrieve. Defaults to `active`. */
+class ListFlagsParameterEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is ListFlagsParameterEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -208,16 +251,21 @@ class ListFlagsParameterEnum private constructor(
         @JvmField val ACTIVE = ListFlagsParameterEnum("active")
         @JvmField val ARCHIVED = ListFlagsParameterEnum("archived")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = ListFlagsParameterEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = ListFlagsParameterEnum(value)
     }
 }
 
-class CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum && value == other.value
+class CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -226,15 +274,27 @@ class CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum private construc
         @JvmField val EQ_2 = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("!eq")
         @JvmField val ONEOF = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("oneOf")
         @JvmField val ONEOF_2 = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("!oneOf")
-        @JvmField val CONTAINSALLOF = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("containsAllOf")
-        @JvmField val CONTAINSANYOF = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("containsAnyOf")
-        @JvmField val CONTAINSNONEOF = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("containsNoneOf")
-        @JvmField val STARTSWITH = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("startsWith")
-        @JvmField val STARTSWITH_2 = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("!startsWith")
-        @JvmField val ENDSWITH = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("endsWith")
-        @JvmField val ENDSWITH_2 = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("!endsWith")
-        @JvmField val CONTAINS = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("contains")
-        @JvmField val CONTAINS_2 = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("!contains")
+        @JvmField
+        val CONTAINSALLOF =
+            CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("containsAllOf")
+        @JvmField
+        val CONTAINSANYOF =
+            CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("containsAnyOf")
+        @JvmField
+        val CONTAINSNONEOF =
+            CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("containsNoneOf")
+        @JvmField
+        val STARTSWITH = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("startsWith")
+        @JvmField
+        val STARTSWITH_2 = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("!startsWith")
+        @JvmField
+        val ENDSWITH = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("endsWith")
+        @JvmField
+        val ENDSWITH_2 = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("!endsWith")
+        @JvmField
+        val CONTAINS = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("contains")
+        @JvmField
+        val CONTAINS_2 = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("!contains")
         @JvmField val EX = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("ex")
         @JvmField val EX_2 = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("!ex")
         @JvmField val GT = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("gt")
@@ -246,36 +306,49 @@ class CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum private construc
         @JvmField val BEFORE = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("before")
         @JvmField val AFTER = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum("after")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateFlagEnvironmentsValueRulesItemConditionsItemCmpEnum(value)
     }
 }
 
-class CreateFlagEnvironmentsValueRulesItemConditionsItemRhsVariant0TypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateFlagEnvironmentsValueRulesItemConditionsItemRhsVariant0TypeEnum && value == other.value
+class CreateFlagEnvironmentsValueRulesItemConditionsItemRhsVariant0TypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateFlagEnvironmentsValueRulesItemConditionsItemRhsVariant0TypeEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val LIST_INLINE = CreateFlagEnvironmentsValueRulesItemConditionsItemRhsVariant0TypeEnum("list/inline")
-        @JvmField val LIST = CreateFlagEnvironmentsValueRulesItemConditionsItemRhsVariant0TypeEnum("list")
+        @JvmField
+        val LIST_INLINE =
+            CreateFlagEnvironmentsValueRulesItemConditionsItemRhsVariant0TypeEnum("list/inline")
+        @JvmField
+        val LIST = CreateFlagEnvironmentsValueRulesItemConditionsItemRhsVariant0TypeEnum("list")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateFlagEnvironmentsValueRulesItemConditionsItemRhsVariant0TypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateFlagEnvironmentsValueRulesItemConditionsItemRhsVariant0TypeEnum(value)
     }
 }
 
-/**
- * The kind of flag
- */
-class CreateFlagKindEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
+/** The kind of flag */
+class CreateFlagKindEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
     override fun equals(other: Any?): Boolean = other is CreateFlagKindEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -285,16 +358,20 @@ class CreateFlagKindEnum private constructor(
         @JvmField val NUMBER = CreateFlagKindEnum("number")
         @JvmField val JSON = CreateFlagKindEnum("json")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateFlagKindEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = CreateFlagKindEnum(value)
     }
 }
 
-class CreateFlagStateEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
+class CreateFlagStateEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
     override fun equals(other: Any?): Boolean = other is CreateFlagStateEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
@@ -302,16 +379,21 @@ class CreateFlagStateEnum private constructor(
         @JvmField val ACTIVE = CreateFlagStateEnum("active")
         @JvmField val ARCHIVED = CreateFlagStateEnum("archived")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateFlagStateEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) = CreateFlagStateEnum(value)
     }
 }
 
-class CreateFlagResponseEnvironmentsValueActiveEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateFlagResponseEnvironmentsValueActiveEnum && value == other.value
+class CreateFlagResponseEnvironmentsValueActiveEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateFlagResponseEnvironmentsValueActiveEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -319,12 +401,17 @@ class CreateFlagResponseEnvironmentsValueActiveEnum private constructor(
         @JvmField val FALSE = CreateFlagResponseEnvironmentsValueActiveEnum(false)
         @JvmField val TRUE = CreateFlagResponseEnvironmentsValueActiveEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateFlagResponseEnvironmentsValueActiveEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = CreateFlagResponseEnvironmentsValueActiveEnum(value)
     }
 }
 
-enum class CreateFlagResponseEnvironmentsValueFallthroughVariant0TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class CreateFlagResponseEnvironmentsValueFallthroughVariant0TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     VARIANT("variant");
 
     override fun toString() = value
@@ -332,28 +419,39 @@ enum class CreateFlagResponseEnvironmentsValueFallthroughVariant0TypeEnum(@com.f
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class CreateFlagResponseEnvironmentsValueFallthroughVariant1BaseTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateFlagResponseEnvironmentsValueFallthroughVariant1BaseTypeEnum && value == other.value
+class CreateFlagResponseEnvironmentsValueFallthroughVariant1BaseTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateFlagResponseEnvironmentsValueFallthroughVariant1BaseTypeEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val ENTITY = CreateFlagResponseEnvironmentsValueFallthroughVariant1BaseTypeEnum("entity")
+        @JvmField
+        val ENTITY = CreateFlagResponseEnvironmentsValueFallthroughVariant1BaseTypeEnum("entity")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateFlagResponseEnvironmentsValueFallthroughVariant1BaseTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateFlagResponseEnvironmentsValueFallthroughVariant1BaseTypeEnum(value)
     }
 }
 
-enum class CreateFlagResponseEnvironmentsValueFallthroughVariant1TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class CreateFlagResponseEnvironmentsValueFallthroughVariant1TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     SPLIT("split");
 
     override fun toString() = value
@@ -361,28 +459,39 @@ enum class CreateFlagResponseEnvironmentsValueFallthroughVariant1TypeEnum(@com.f
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class CreateFlagResponseEnvironmentsValueFallthroughVariant2BaseTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateFlagResponseEnvironmentsValueFallthroughVariant2BaseTypeEnum && value == other.value
+class CreateFlagResponseEnvironmentsValueFallthroughVariant2BaseTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateFlagResponseEnvironmentsValueFallthroughVariant2BaseTypeEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val ENTITY = CreateFlagResponseEnvironmentsValueFallthroughVariant2BaseTypeEnum("entity")
+        @JvmField
+        val ENTITY = CreateFlagResponseEnvironmentsValueFallthroughVariant2BaseTypeEnum("entity")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateFlagResponseEnvironmentsValueFallthroughVariant2BaseTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateFlagResponseEnvironmentsValueFallthroughVariant2BaseTypeEnum(value)
     }
 }
 
-enum class CreateFlagResponseEnvironmentsValueFallthroughVariant2TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class CreateFlagResponseEnvironmentsValueFallthroughVariant2TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     ROLLOUT("rollout");
 
     override fun toString() = value
@@ -390,12 +499,15 @@ enum class CreateFlagResponseEnvironmentsValueFallthroughVariant2TypeEnum(@com.f
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class CreateFlagResponseEnvironmentsValueFallthroughVariant3TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class CreateFlagResponseEnvironmentsValueFallthroughVariant3TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     EXPERIMENT("experiment");
 
     override fun toString() = value
@@ -403,32 +515,41 @@ enum class CreateFlagResponseEnvironmentsValueFallthroughVariant3TypeEnum(@com.f
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class CreateFlagResponseEnvironmentsValuePausedOutcomeTypeEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateFlagResponseEnvironmentsValuePausedOutcomeTypeEnum && value == other.value
+class CreateFlagResponseEnvironmentsValuePausedOutcomeTypeEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateFlagResponseEnvironmentsValuePausedOutcomeTypeEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
         @JvmField val VARIANT = CreateFlagResponseEnvironmentsValuePausedOutcomeTypeEnum("variant")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateFlagResponseEnvironmentsValuePausedOutcomeTypeEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateFlagResponseEnvironmentsValuePausedOutcomeTypeEnum(value)
     }
 }
 
-class CreateFlagResponseEnvironmentsValueReuseActiveEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateFlagResponseEnvironmentsValueReuseActiveEnum && value == other.value
+class CreateFlagResponseEnvironmentsValueReuseActiveEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateFlagResponseEnvironmentsValueReuseActiveEnum && value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
@@ -436,67 +557,112 @@ class CreateFlagResponseEnvironmentsValueReuseActiveEnum private constructor(
         @JvmField val FALSE = CreateFlagResponseEnvironmentsValueReuseActiveEnum(false)
         @JvmField val TRUE = CreateFlagResponseEnvironmentsValueReuseActiveEnum(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateFlagResponseEnvironmentsValueReuseActiveEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) = CreateFlagResponseEnvironmentsValueReuseActiveEnum(value)
     }
 }
 
-class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum && value == other.value
+class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val CONTAINS = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("!contains")
-        @JvmField val ENDSWITH = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("!endsWith")
+        @JvmField
+        val CONTAINS =
+            CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("!contains")
+        @JvmField
+        val ENDSWITH =
+            CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("!endsWith")
         @JvmField val EQ = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("!eq")
         @JvmField val EX = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("!ex")
-        @JvmField val ONEOF = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("!oneOf")
-        @JvmField val REGEX = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("!regex")
-        @JvmField val STARTSWITH = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("!startsWith")
-        @JvmField val AFTER = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("after")
-        @JvmField val BEFORE = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("before")
-        @JvmField val CONTAINS_2 = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("contains")
-        @JvmField val CONTAINSALLOF = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("containsAllOf")
-        @JvmField val CONTAINSANYOF = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("containsAnyOf")
-        @JvmField val CONTAINSNONEOF = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("containsNoneOf")
-        @JvmField val ENDSWITH_2 = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("endsWith")
+        @JvmField
+        val ONEOF = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("!oneOf")
+        @JvmField
+        val REGEX = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("!regex")
+        @JvmField
+        val STARTSWITH =
+            CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("!startsWith")
+        @JvmField
+        val AFTER = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("after")
+        @JvmField
+        val BEFORE = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("before")
+        @JvmField
+        val CONTAINS_2 =
+            CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("contains")
+        @JvmField
+        val CONTAINSALLOF =
+            CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("containsAllOf")
+        @JvmField
+        val CONTAINSANYOF =
+            CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("containsAnyOf")
+        @JvmField
+        val CONTAINSNONEOF =
+            CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("containsNoneOf")
+        @JvmField
+        val ENDSWITH_2 =
+            CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("endsWith")
         @JvmField val EQ_2 = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("eq")
         @JvmField val EX_2 = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("ex")
         @JvmField val GT = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("gt")
         @JvmField val GTE = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("gte")
         @JvmField val LT = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("lt")
         @JvmField val LTE = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("lte")
-        @JvmField val ONEOF_2 = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("oneOf")
-        @JvmField val REGEX_2 = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("regex")
-        @JvmField val STARTSWITH_2 = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("startsWith")
+        @JvmField
+        val ONEOF_2 = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("oneOf")
+        @JvmField
+        val REGEX_2 = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("regex")
+        @JvmField
+        val STARTSWITH_2 =
+            CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum("startsWith")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpEnum(value)
     }
 }
 
-class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpX1f088c5d12 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpX1f088c5d12 && value == other.value
+class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpX1f088c5d12
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpX1f088c5d12 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpX1f088c5d12(false)
-        @JvmField val TRUE = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpX1f088c5d12(true)
+        @JvmField
+        val FALSE = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpX1f088c5d12(false)
+        @JvmField
+        val TRUE = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpX1f088c5d12(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpX1f088c5d12(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateFlagResponseEnvironmentsValueRulesItemConditionsItemCmpX1f088c5d12(value)
     }
 }
 
-enum class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsXbfdbdb49f4(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsXbfdbdb49f4(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     SEGMENT("segment");
 
     override fun toString() = value
@@ -504,12 +670,15 @@ enum class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsXbfdbdb4
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-enum class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsX871fc457ca(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsX871fc457ca(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     ENTITY("entity");
 
     override fun toString() = value
@@ -517,62 +686,93 @@ enum class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemLhsX871fc45
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }
 
-class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX20a4fb8a73 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX20a4fb8a73 && value == other.value
+class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX20a4fb8a73
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX20a4fb8a73 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val LIST = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX20a4fb8a73("list")
-        @JvmField val LIST_INLINE = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX20a4fb8a73("list/inline")
+        @JvmField
+        val LIST = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX20a4fb8a73("list")
+        @JvmField
+        val LIST_INLINE =
+            CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX20a4fb8a73("list/inline")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX20a4fb8a73(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX20a4fb8a73(value)
     }
 }
 
-class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX942b61cb51 private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: String,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX942b61cb51 && value == other.value
+class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX942b61cb51
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: String) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX942b61cb51 &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value
 
     companion object {
 
-        @JvmField val REGEX = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX942b61cb51("regex")
+        @JvmField
+        val REGEX =
+            CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX942b61cb51("regex")
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: String) = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX942b61cb51(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: String) =
+            CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX942b61cb51(value)
     }
 }
 
-class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX02960be7ab private constructor(
-    @get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean,
-) {
-    override fun equals(other: Any?): Boolean = other is CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX02960be7ab && value == other.value
+class CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX02960be7ab
+private constructor(@get:com.fasterxml.jackson.annotation.JsonValue val value: Boolean) {
+    override fun equals(other: Any?): Boolean =
+        other is CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX02960be7ab &&
+            value == other.value
+
     override fun hashCode(): Int = value.hashCode()
+
     override fun toString(): String = value.toString()
 
     companion object {
 
-        @JvmField val FALSE = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX02960be7ab(false)
-        @JvmField val TRUE = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX02960be7ab(true)
+        @JvmField
+        val FALSE = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX02960be7ab(false)
+        @JvmField
+        val TRUE = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX02960be7ab(true)
 
-        @com.fasterxml.jackson.annotation.JsonCreator(mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING)
-        @JvmStatic fun fromValue(value: Boolean) = CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX02960be7ab(value)
+        @com.fasterxml.jackson.annotation.JsonCreator(
+            mode = com.fasterxml.jackson.annotation.JsonCreator.Mode.DELEGATING
+        )
+        @JvmStatic
+        fun fromValue(value: Boolean) =
+            CreateFlagResponseEnvironmentsValueRulesItemConditionsItemRhsX02960be7ab(value)
     }
 }
 
-enum class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant0TypeEnum(@com.fasterxml.jackson.annotation.JsonValue val value: String) {
+enum class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant0TypeEnum(
+    @com.fasterxml.jackson.annotation.JsonValue val value: String
+) {
     VARIANT("variant");
 
     override fun toString() = value
@@ -580,7 +780,8 @@ enum class CreateFlagResponseEnvironmentsValueRulesItemOutcomeVariant0TypeEnum(@
     companion object {
         @com.fasterxml.jackson.annotation.JsonCreator
         @JvmStatic
-        fun fromValue(v: String) = values().find { it.value == v }
-            ?: throw IllegalArgumentException("Unknown enum value: $v")
+        fun fromValue(v: String) =
+            values().find { it.value == v }
+                ?: throw IllegalArgumentException("Unknown enum value: $v")
     }
 }

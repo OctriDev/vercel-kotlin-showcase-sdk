@@ -7,20 +7,12 @@ import dev.octri.showcase.vercel.SdkResource
 
 typealias TldName = String
 
-/**
- * The TLD is not currently supported.
- */
+/** The TLD is not currently supported. */
 data class TldNotSupported(
-    /**
-     * Required enumerated value serialized in the `status` wire field.
-     */
+    /** Required enumerated value serialized in the `status` wire field. */
     val status: Long,
-    /**
-     * Required enumerated value serialized in the `code` wire field.
-     */
+    /** Required enumerated value serialized in the `code` wire field. */
     val code: TldNotSupportedCodeEnum,
-    /**
-     * Required `string` value serialized in the `message` wire field.
-     */
-    val message: String
+    /** Required `string` value serialized in the `message` wire field. */
+    val message: String,
 ) : SdkResource()
